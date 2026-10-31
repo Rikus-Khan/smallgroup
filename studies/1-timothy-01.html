@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Timothy 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ti01-where: where we are in 1 Timothy (a deck.css candidate; every 1 Timothy study can copy it as is).
+   Row 1: the six chapters (.ti01-ch, --k; read ones .done, ours .here). Row 2: the three parts of the letter (.ti01-part: small, b, q, cite),
+   widths 1 : 2 : 3 to sit under their chapters. The part we're in is .now. */
+.ti01-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px 6px; margin: .5em 0 1em; }
+.ti01-ch { padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .ti01-ch { opacity: 1; }
+.ti01-ch.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ti01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .ti01-ch.here { animation: ti01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes ti01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ti01-part { --c: var(--line-strong); padding: .45em .7em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 700ms); }
+.slide.active .ti01-part { opacity: 1; transform: none; }
+.ti01-part small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ti01-part b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--c); }
+.ti01-part q { display: block; margin-top: .25em; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.ti01-part cite { display: block; margin-top: .1em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.ti01-guard { --c: var(--wine); grid-column: 1 / 2; }
+.ti01-order { --c: var(--accent); grid-column: 2 / 4; }
+.ti01-serve { --c: var(--cool); grid-column: 4 / 7; }
+.ti01-part.now { background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+@media (max-width: 640px) {
+  .ti01-guard, .ti01-order, .ti01-serve { grid-column: 1 / -1; }
+  .ti01-part { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ti01-aim: three roots (a pure heart, a good conscience, faith unfeigned) grow into one stem: love */
+.ti01-root { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.2s ease; transition-delay: calc(var(--k, 0) * 350ms + 500ms); }
+.slide.active .ti01-root { stroke-dashoffset: 0; }
+.ti01-seed { fill: var(--surface-2); stroke: var(--accent); stroke-width: 2.5; }
+.ti01-fruit { transform-box: fill-box; transform-origin: 50% 100%; transform: scale(0); transition: transform .8s cubic-bezier(.3,1.4,.5,1) 2.1s; }
+.slide.active .ti01-fruit { transform: none; }
+
+/* ti01-bars: sin that abounded, and grace that did much more abound (bars grow when the slide opens) */
+.ti01-bars { display: grid; gap: .6em; margin: .6em 0 1em; }
+.ti01-bars span { display: block; margin-bottom: .15em; font: 700 clamp(.85rem, .78rem + .3vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ti01-bars div > i { display: block; height: clamp(26px, 4vw, 40px); width: 0; border-radius: 6px; transition: width 1.6s cubic-bezier(.3,.7,.3,1) .6s; }
+.ti01-bars .sin { background: var(--danger); }
+.ti01-bars .grace { background: var(--accent); position: relative; transition-delay: 1.6s; }
+.ti01-bars .grace::after { content: "and more →"; position: absolute; right: .6em; top: 50%; transform: translateY(-50%); font: 700 clamp(.8rem, .74rem + .3vw, 1.05rem) var(--sans); color: var(--on-accent); white-space: nowrap; }
+.slide.active .ti01-bars i { width: var(--w); }
+
+/* ti01-pattern: the first one, then the ones who come after, each stamped from the same mercy */
+.ti01-fig { fill: var(--ink-soft); opacity: 0; transition: opacity .6s ease, transform .6s ease; transform-box: fill-box; transform-origin: 50% 100%;
+  transition-delay: calc(var(--k, 0) * 260ms + 900ms); }
+.ti01-fig.first { fill: var(--accent); opacity: 1; transition-delay: 0s; }
+.ti01-fig.you { fill: var(--accent-hot); }
+.slide.active .ti01-fig { opacity: 1; }
+.ti01-stamp { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 600ms); }
+.slide.active .ti01-stamp { opacity: 1; }
+
+/* ti01-ship: a ship holding faith and a good conscience; a step puts the conscience away and it breaks on the rocks */
+.ti01-boat { transform-box: fill-box; transform-origin: 50% 80%; transition: transform 2.2s cubic-bezier(.5,0,.4,1); }
+.slide:has(.ti01-wreck.on) .ti01-boat { transform: translate(110px, 50px) rotate(26deg); }
+.ti01-ok { transition: opacity .6s ease; }
+.slide:has(.ti01-wreck.on) .ti01-ok { opacity: 0; }
+.ti01-bad { opacity: 0; transition: opacity .8s ease 1.4s; }
+.slide:has(.ti01-wreck.on) .ti01-bad { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Timothy 1</h1>
+    <p class="sub rise" style="--d:3">The worst sinner, a pattern of mercy</p>
+    <p class="tag rise" style="--d:5">An old pastor writes to a young one he raised in the faith. In the middle of his advice he stops and tells the truth about himself: <em>“of whom I am chief.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="430 165 240 152" data-towns="Thessalonica:l, Philippi:t, Troas:r, Ephesus*:l" role="img" aria-label="A map of the Aegean Sea. Ephesus, on the west coast of what is now Turkey, is lit. A line runs from Ephesus north by sea to Troas, then across the north of the Aegean to Philippi in Macedonia, in northern Greece. Thessalonica is also in Macedonia.">
+          <path class="map-route" data-via="Ephesus, @26.0 38.7, @25.6 39.5, Troas, @25.3 40.4, Neapolis, Philippi"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The first letter to Timothy</h2>
+        <div class="letter">
+          <p class="from">“Paul, an apostle of Jesus Christ… Unto Timothy, my own son in the faith: Grace, mercy, and peace, from God our Father and Jesus Christ our Lord.”</p>
+          <dl>
+            <dt>Written from</dt><dd>probably Macedonia, in northern Greece: <em>“when I went into Macedonia”</em> (1:3)</dd>
+            <dt>When</dt><dd>about AD 62 to 64, after Paul was let go from his first imprisonment in Rome</dd>
+            <dt>To whom</dt><dd>Timothy, left in charge of the church at Ephesus, the big port city of Asia</dd>
+            <dt>Why</dt><dd class="step">to steady a young pastor: guard the gospel, keep order in God's house, and don't let anyone look down on you</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="440 150 320 203" data-towns="Lystra*:t, Troas:r, Philippi:t, Ephesus!:l" role="img" aria-label="A map from the middle of what is now Turkey to northern Greece. A line runs from Lystra, where Timothy joined Paul, west across Asia and over to Troas, then across the sea to Philippi. Ephesus, where he was later left in charge, is marked on the coast.">
+          <path class="map-route" data-via="Lystra, Antioch in Pisidia, @28.5 39.4, Troas, @25.3 40.4, Neapolis, Philippi"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where Timothy came from</h2>
+        <blockquote class="quote rise" style="--d:2"><p>“Then came he to Derbe and Lystra: and, behold, a certain disciple was there, named Timotheus, the son of a certain woman, which was a Jewess, and believed; but his father was a Greek: Which was well reported of by the brethren that were at Lystra and Iconium.”</p><cite>Acts 16:1–2</cite></blockquote>
+        <p class="note step">Timothy was a young man from a small town in what is now Turkey. A believing mother, a Greek father, and a good name among the brothers. About AD 49 to 50, Paul asked him to come along.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 1 Timothy fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 49 to 50, Timothy joins Paul at Lystra. About 53 to 56, Paul at Ephesus, with Timothy at his side. About 60 to 62, house arrest in Rome, Timothy with him. About AD 62 to 64, Paul is released, leaves Timothy at Ephesus, and writes 1 Timothy. About AD 64, Rome burns. About 66 to 67, Paul writes 2 Timothy, his last letter. About 67 to 68, by tradition, he is put to death.">
+      <li style="--k:0"><b>about AD 49 to 50</b><span>Timothy joins Paul</span><small>Lystra, Acts 16</small></li>
+      <li style="--k:1"><b>about 53 to 56</b><span>Three years at Ephesus</span><small>Acts 19:22</small></li>
+      <li style="--k:2"><b>about 60 to 62</b><span>Paul in chains at Rome</span><small>Timothy by his side</small></li>
+      <li class="lit" style="--k:3"><b>about 62 to 64</b><span>1 Timothy</span><small>Paul free again; Timothy at Ephesus</small></li>
+      <li style="--k:4"><b>about 64</b><span>Rome burns</span><small>Nero turns on Christians</small></li>
+      <li class="wait" style="--k:5"><b>about 66 to 67</b><span>2 Timothy</span><small>Paul's last letter</small></li>
+      <li class="wait" style="--k:6"><b>about 67 to 68</b><span>Paul put to death</span><small>by tradition</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Timothy had been at Paul's side for well over ten years by now, through the road, the riots and the prison. Few men knew Paul better.</p>
+    <p class="note step">Paul wrote this letter at a calm moment: out of prison, with a church to guard. In two years or so the persecution would turn deadly, and Timothy needed to be ready before it did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">An older man and a younger man</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The older man</p>
+        <h3>Paul</h3>
+        <p>A former persecutor, beaten, shipwrecked and jailed. He has learned what he can't do alone and doesn't pretend otherwise.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The younger man</p>
+        <h3>Timothy</h3>
+        <p>Young enough that some were despising him (4:12). A believing mother and grandmother behind him. A timid streak: <em>“God hath not given us the spirit of fear”</em> (2 Timothy 1:7).</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But ye know the proof of him, that, as a son with the father, he hath served with me in the gospel.”</p><cite>Philippians 2:22</cite></blockquote>
+    <p class="note step">Nobody grows up in the faith alone. Today: who is your Paul, an older man you can ask? And who is your Timothy, a newer man you can quietly look after? If you've no one for either, say so in the prayer time.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">1 Timothy in one picture</h2>
+    <div class="ti01-where" role="img" aria-label="1 Timothy in three parts. Chapter 1: guard the gospel, Christ Jesus came into the world to save sinners, 1:15. Chapters 2 and 3: order in God's house, how thou oughtest to behave thyself in the house of God, 3:15. Chapters 4 to 6: be a good minister, a good minister of Jesus Christ, 4:6; fight the good fight of faith, 6:12. We are in chapter 1.">
+      <span class="ti01-ch here" style="--k:0">1</span><span class="ti01-ch" style="--k:1">2</span><span class="ti01-ch" style="--k:2">3</span>
+      <span class="ti01-ch" style="--k:3">4</span><span class="ti01-ch" style="--k:4">5</span><span class="ti01-ch" style="--k:5">6</span>
+      <div class="ti01-part ti01-guard now" style="--k:0"><small>Chapter 1</small><b>Guard the gospel</b><q>Christ Jesus came into the world to save sinners</q><cite>1:15</cite></div>
+      <div class="ti01-part ti01-order" style="--k:1"><small>Chapters 2–3</small><b>Order in God's house</b><q>how thou oughtest to behave thyself in the house of God</q><cite>3:15</cite></div>
+      <div class="ti01-part ti01-serve" style="--k:2"><small>Chapters 4–6</small><b>Be a good minister</b><q>Fight the good fight of faith</q><cite>6:12</cite></div>
+    </div>
+    <p class="note step">Paul starts with the gospel, because everything else in the church hangs on it. Then how God's people pray, lead and treat each other. Then how to keep going when it's hard.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What is the aim of the commandment, and where does it grow from?</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">What is the law good for, if a man uses it lawfully?</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">What was Paul before Christ, and what did he obtain?</span></li>
+      <li class="step"><span class="topic">A faithful saying</span><span class="seed-q">What is the faithful saying worthy of all acceptation?</span></li>
+      <li class="step"><span class="topic">A pattern</span><span class="seed-q">Why did Paul say he obtained mercy?</span></li>
+      <li class="step"><span class="topic">Warfare</span><span class="seed-q">What must Timothy hold to fight a good warfare and escape shipwreck?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Guard the gospel</h2>
+    <p class="range rise" style="--d:2">Verses 1–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Some in Ephesus were drifting into clever talk. Paul says what the law, and the whole commandment, is really for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="my own son in the faith|Grace, mercy, and peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="my own son in the faith|Grace, mercy, and peace"></blockquote>
+    <h2 class="rise" style="--d:1">A son who isn't his son</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">no blood between them, and a Greek father</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">“my own son in the faith”</span>
+      <span class="gloss step">Paul didn't father Timothy. But he led him, taught him and trusted him, the way a father does. Timothy's own faith began with his mother and grandmother (2 Timothy 1:5); Paul took it further.</span>
+    </div>
+    <p class="note step">Watch the greeting. Paul usually writes <em>“grace and peace.”</em> To Timothy he adds <em>mercy</em>. Mercy is not getting the punishment you've earned. It will come up twice more in this chapter, and the second time it's about Paul himself.</p>
+    <div class="tally rise" style="--d:3" aria-label="Verses 1 to 20. The word mercy appears in verse 2, verse 13 and verse 16. Three times.">
+      <span><i>1</i>&nbsp;</span><span class="hit" style="--k:0"><i>2</i>×1</span>
+      <span><i>3</i>&nbsp;</span><span><i>4</i>&nbsp;</span><span><i>5</i>&nbsp;</span><span><i>6</i>&nbsp;</span><span><i>7</i>&nbsp;</span><span><i>8</i>&nbsp;</span><span><i>9</i>&nbsp;</span><span><i>10</i>&nbsp;</span><span><i>11</i>&nbsp;</span><span><i>12</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>13</i>×1</span><span><i>14</i>&nbsp;</span><span><i>15</i>&nbsp;</span><span class="hit" style="--k:2"><i>16</i>×1</span>
+      <span><i>17</i>&nbsp;</span><span><i>18</i>&nbsp;</span><span><i>19</i>&nbsp;</span><span><i>20</i>&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="abide still at Ephesus|fables and endless genealogies|godly edifying which is in faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="fables and endless genealogies|godly edifying which is in faith"></blockquote>
+    <h2 class="rise" style="--d:1">Talk that goes in circles</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What some were teaching</p>
+        <h3>“Fables and endless genealogies”</h3>
+        <p>Made-up stories and long family trees, spun into theories. Clever, never finished, and nobody's life changed by them. They <em>“minister questions.”</em></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What God wants built</p>
+        <h3>“Godly edifying which is in faith”</h3>
+        <p><em>Edifying</em> means building up. Teaching that ends with a man trusting God more and living better.</p>
+      </div>
+    </div>
+    <p class="note step">Every man here knows what it is to win an argument and lose the point. Test any talk, any video, any group chat by one question: <em>is this building me up in faith, or just keeping me busy?</em> Paul tells Timothy to charge them to stop. Not to hate them: to stop.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="charity out of a pure heart, and of a good conscience, and of faith unfeigned|vain jangling"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="Three roots, labeled a pure heart, a good conscience, and faith unfeigned, grow up together into one stem. At the top is a flower labeled charity, which means love.">
+          <path class="ti01-root" style="--k:0" pathLength="1" d="M120 270 C120 220 290 250 300 190"/>
+          <path class="ti01-root" style="--k:1" pathLength="1" d="M300 270 L300 190"/>
+          <path class="ti01-root" style="--k:2" pathLength="1" d="M480 270 C480 220 310 250 300 190"/>
+          <path class="ti01-root" style="--k:3" pathLength="1" d="M300 190 L300 120"/>
+          <rect class="ti01-seed" x="45" y="270" width="150" height="46" rx="10"/>
+          <rect class="ti01-seed" x="225" y="270" width="150" height="46" rx="10"/>
+          <rect class="ti01-seed" x="405" y="270" width="150" height="46" rx="10"/>
+          <g font-size="17" text-anchor="middle" style="fill:var(--ink)">
+            <text x="120" y="299">a pure heart</text><text x="300" y="299">a good conscience</text><text x="480" y="299">faith unfeigned</text>
+          </g>
+          <g class="ti01-fruit">
+            <circle cx="300" cy="72" r="54" style="fill:var(--accent)"/>
+            <text x="300" y="70" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--on-accent)">charity</text>
+            <text x="300" y="94" text-anchor="middle" font-size="16" style="fill:var(--on-accent)">love</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What it's all for</h2>
+        <p class="note rise" style="--d:2"><em>“The end of the commandment”</em> means its goal: love. And love has three roots. A <em>pure heart</em>: no double life. A <em>good conscience</em>: nothing hidden. <em>Faith unfeigned</em>: no act, the real thing.</p>
+        <p class="note step">A guilty conscience isn't God being done with you. It's a smoke alarm: loud, and doing its job. Don't rip it down. <em>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness”</em> (1 John 1:9). That's how a conscience gets good again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="the law is good, if a man use it lawfully|for the lawless and disobedient"></section>
+<section class="slide verse" data-v="10-11" data-hl="contrary to sound doctrine|the glorious gospel of the blessed God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9-10" data-hl="not made for a righteous man, but for the lawless"></blockquote>
+    <h2 class="rise" style="--d:1">The list, plainly</h2>
+    <p class="note rise" style="--d:2">The law is good when it's used the way it was meant to be used: to show what sin is. Paul lists the kinds of people it has always spoken against. It's a hard list, so here it is sorted, without dressing it up:</p>
+    <div class="sort">
+      <div class="rise" style="--d:3"><h3>Against God</h3><p>the lawless and disobedient, the ungodly, sinners, the unholy and profane</p></div>
+      <div class="rise" style="--d:4"><h3>Against life</h3><p>those who strike down or kill a father or a mother, and every manslayer</p></div>
+      <div class="rise" style="--d:5"><h3>Against people</h3><p>the sexually immoral of every kind, and menstealers: kidnappers who sold people as slaves</p></div>
+      <div class="rise" style="--d:6"><h3>Against the truth</h3><p>liars, and perjured persons, who swear to a lie</p></div>
+    </div>
+    <p class="note step">The law is a mirror. It tells a man what's wrong, and a mirror can't wash anybody. <em>“By the law is the knowledge of sin”</em> (Romans 3:20). If you see your own past on this list, don't look away. Look at the next page.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“And such were some of you”</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+    <div class="rename">
+      <span class="old step">what the list says I was</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">washed, set apart, and declared right with God</span>
+      <span class="gloss step">The law names the sin. The gospel (<em>“the glorious gospel of the blessed God”</em>, v. 11) deals with it. Paul puts both in the same paragraph on purpose, because the second half is what he was trusted to carry.</span>
+    </div>
+    <p class="note step">Past tense: <em>such were some of you.</em> Not <em>such are you.</em> Whatever you were called in the worst of it, if you're in Christ, that's the name of a man who has been washed.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Of whom I am chief</h2>
+    <p class="range rise" style="--d:2">Verses 12–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The gospel was handed to Paul. Here is the man it was handed to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy|the grace of our Lord was exceeding abundant"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="a blasphemer, and a persecutor, and injurious|I obtained mercy"></blockquote>
+    <h2 class="rise" style="--d:1">Three words for what he was</h2>
+    <ol class="signs">
+      <li class="step"><b>A blasphemer</b>he spoke against Jesus and His name</li>
+      <li class="step"><b>A persecutor</b><em>“he made havock of the church… haling men and women”</em> (Acts 8:3)</li>
+      <li class="step"><b>Injurious</b>a violent, insulting man; a bully who hurt people</li>
+    </ol>
+    <p class="note step">That's Paul's own résumé. And then the one word that turns it: <em>“but I obtained mercy.”</em> He never says he was decent underneath. <em>“Because I did it ignorantly in unbelief”</em> isn't an excuse; he still needed all of it. It only means he'd been blind, not defiant, and mercy could still reach him.</p>
+    <p class="note step">If you hurt people, if you hurt your family, Paul knows what that is. You're not too late.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="the grace of our Lord was exceeding abundant"></blockquote>
+    <h2 class="rise" style="--d:1">Way more than enough</h2>
+    <div class="ti01-bars" role="img" aria-label="Two bars. The short red bar is the sin that abounded. The long bar, running off the end, is the grace that did much more abound.">
+      <div><span>Where sin abounded…</span><i class="sin" style="--w:36%"></i></div>
+      <div><span>…grace did much more abound</span><i class="grace" style="--w:100%"></i></div>
+    </div>
+    <blockquote class="quote step"><p>“Moreover the law entered, that the offence might abound. But where sin abounded, grace did much more abound:”</p><cite>Romans 5:20</cite></blockquote>
+    <p class="note step"><em>“Exceeding abundant.”</em> Paul says the grace he got was more than the sin he had. Whatever your worst looks like, the same grace is in Christ Jesus, with <em>“faith and love”</em> thrown in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15" data-hl="This is a faithful saying, and worthy of all acceptation|Christ Jesus came into the world to save sinners; of whom I am chief"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="Christ Jesus came into the world to save sinners"></blockquote>
+    <p class="saying rise" style="--d:1">Christ Jesus came into the world <em>to save sinners.</em></p>
+    <p class="note rise" style="--d:3"><em>“Faithful saying”</em> means you can bet your life on it. <em>“Worthy of all acceptation”</em> means it deserves to be received, by everyone. That includes the man at the back of the room.</p>
+    <blockquote class="quote step"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+    <p class="note step">He didn't come to find the people who already had it together. He came for the lost. If you're one, you're exactly who He came for.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="of whom I am chief"></blockquote>
+    <h2 class="rise" style="--d:1">Paul keeps getting more honest</h2>
+    <ol class="stairs" style="--n:3" aria-label="Three steps down, over about eight years. About AD 55: I am the least of the apostles. About AD 60: less than the least of all saints. About AD 62 to 64: of sinners I am chief.">
+      <li style="--k:0"><b>“The least of the apostles”</b>1 Corinthians 15:9, about AD 55</li>
+      <li style="--k:1"><b>“Less than the least of all saints”</b>Ephesians 3:8, about AD 60</li>
+      <li style="--k:2"><b>“Of whom I am chief”</b>1 Timothy 1:15, about AD 62 to 64</li>
+    </ol>
+    <p class="note step">Read the verb: <em>“I am chief,”</em> not <em>“I was.”</em> The closer Paul walked with Jesus, the better he could see what he'd been, and the less afraid he was of it. A man who's no longer hiding can say the worst thing about himself out loud, and still be at peace.</p>
+    <p class="note step">That's not shame. Shame hides. Paul tells it, because the point of the story was never him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="in me first Jesus Christ might shew forth all longsuffering, for a pattern|believe on him to life everlasting"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="in me first Jesus Christ might shew forth all longsuffering, for a pattern to them which should hereafter believe on him"></blockquote>
+    <svg viewBox="0 0 700 240" style="width:100%; max-height:30vh" role="img" aria-label="On the left, one large figure in the accent color, labeled Paul, the worst of sinners, first. To his right, a long line of smaller figures comes in, one after another: all who should hereafter believe. The last is labeled you.">
+      <defs>
+        <symbol id="ti01-man" viewBox="-20 -44 40 66" overflow="visible"><circle cx="0" cy="-30" r="13"/><path d="M-18 22 L-18 -6 Q-18 -17 0 -17 Q18 -17 18 -6 L18 22 Z"/></symbol>
+      </defs>
+      <g class="ti01-stamp" style="--k:0">
+        <circle cx="90" cy="108" r="78" fill="none" stroke-width="3" stroke-dasharray="8 7" style="stroke:var(--accent)"/>
+      </g>
+      <use class="ti01-fig first" href="#ti01-man" x="90" y="100" width="82" height="136" transform="translate(-41 -78)"/>
+      <text class="ti01-stamp" style="--k:0; fill:var(--accent-hot)" x="90" y="222" text-anchor="middle" font-size="17" font-weight="700">Paul, first</text>
+      <path class="ti01-stamp" style="--k:1; stroke:var(--ink-soft)" d="M190 120 L240 120" stroke-width="3" fill="none"/>
+      <path class="ti01-stamp" style="--k:1; stroke:var(--ink-soft)" d="M232 111 L243 120 L232 129" stroke-width="3" fill="none"/>
+      <g>
+        <use class="ti01-fig" style="--k:0" href="#ti01-man" x="260" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig" style="--k:1" href="#ti01-man" x="320" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig" style="--k:2" href="#ti01-man" x="380" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig" style="--k:3" href="#ti01-man" x="440" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig" style="--k:4" href="#ti01-man" x="500" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig" style="--k:5" href="#ti01-man" x="560" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+        <use class="ti01-fig you" style="--k:6" href="#ti01-man" x="630" y="120" width="40" height="66" transform="translate(-20 -22)"/>
+      </g>
+      <text class="ti01-stamp" style="--k:7; fill:var(--ink-soft)" x="410" y="206" text-anchor="middle" font-size="17">“them which should hereafter believe”</text>
+      <text class="ti01-stamp" style="--k:8; fill:var(--accent-hot)" x="630" y="222" text-anchor="middle" font-size="17" font-weight="700">you</text>
+    </svg>
+    <h2 class="rise" style="--d:1">A pattern, not an exception</h2>
+    <p class="note step">A <em>pattern</em> is a model that other copies are made from. God picked the worst one first, on purpose: <em>“that in me first Jesus Christ might shew forth all longsuffering.”</em> If mercy worked on Paul, there is no sinner it can't reach. And that's what He wants every later believer to see.</p>
+    <p class="note step">Then Paul can't hold it in: verse 17 is a burst of worship. Mercy like that ends in thanks.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Your story is somebody's pattern</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>Before</i><b>What I was</b><p>Paul: <em>“a blasphemer, and a persecutor, and injurious.”</em> Say yours plainly, in a sentence.</p></div>
+      <div class="step"><i>Mercy</i><b>What God did</b><p>Paul: <em>“but I obtained mercy.”</em> When did you first know He had come for you?</p></div>
+      <div class="step"><i>Now</i><b>Who I'm becoming</b><p>Paul: <em>“the grace of our Lord was exceeding abundant with faith and love.”</em> One true thing that's different today.</p></div>
+    </div>
+    <p class="note step">Three sentences. Write them on a card today. Some man at work, or in your family, or in your own head, is sure he's the one who's too far gone. Your three sentences are the pattern for him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">War a good warfare</h2>
+    <p class="range rise" style="--d:2">Verses 18–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Grace isn't a reason to coast. Paul charges Timothy to fight, and names two men who didn't hold on.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="war a good warfare|Holding faith, and a good conscience|have made shipwreck"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A ship sails with a mast and sail marked faith and, in its hold, a good conscience. Rocks wait on the right. On a click, the conscience is put away and the ship tips onto the rocks: shipwreck.">
+          <g class="ti01-boat">
+            <line x1="300" y1="190" x2="300" y2="70" stroke-width="6" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <path d="M306 78 L306 176 L392 176 Z" style="fill:color-mix(in srgb, var(--accent) 35%, transparent);stroke:var(--accent)" stroke-width="2.5"/>
+            <text x="338" y="170" font-size="15" text-anchor="middle" style="fill:var(--ink)">faith</text>
+            <path d="M170 190 L430 190 L398 250 L202 250 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="3"/>
+            <g class="ti01-ok"><text x="300" y="228" font-size="17" text-anchor="middle" font-weight="700" style="fill:var(--accent-hot)">a good conscience</text></g>
+          </g>
+          <path d="M410 292 L450 250 L470 268 L500 238 L548 292 Z" style="fill:var(--line-strong)"/>
+          <path d="M20 262 Q60 246 100 262 T180 262 T260 262 T340 262 T420 262 T500 262 T580 262 L580 310 L20 310 Z" style="fill:color-mix(in srgb, var(--cool) 28%, transparent)"/>
+          <g class="ti01-bad"><text x="300" y="296" font-size="22" font-weight="700" text-anchor="middle" style="fill:var(--danger)">shipwreck</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two things to hold onto</h2>
+        <p class="note rise" style="--d:2">A good warfare isn't loud. It's <em>holding</em>: <em>faith</em>, still trusting Him, and <em>a good conscience</em>, keeping nothing hidden from Him. Those are the two things a ship needs to stay off the rocks.</p>
+        <p class="note step ti01-wreck">Put away the conscience (stop listening to it, stop confessing, start hiding) and the faith soon follows. <em>“Which some having put away concerning faith have made shipwreck.”</em> It happens slowly, then it happens all at once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20" data-hl="Hymenaeus and Alexander|that they may learn not to blaspheme"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="that they may learn not to blaspheme"></blockquote>
+    <h2 class="rise" style="--d:1">Hymenaeus and Alexander</h2>
+    <p class="note rise" style="--d:2">Two names, and a hard sentence. <em>“Delivered unto Satan”</em> means Paul, with the church, sent them out from its shelter, out of the circle where believers are looked after. The word that matters is <em>“learn.”</em></p>
+    <ul class="nots">
+      <li class="step"><span class="k">a way of throwing a man away</span><span class="why">The aim is that they <em>“learn not to blaspheme.”</em> It's meant to teach, not to finish them.</span></li>
+      <li class="step"><span class="k">a sign they can never return</span><span class="why">The same Paul was once a blasphemer and a persecutor, and mercy found him.</span></li>
+      <li class="step yes"><span class="k">a warning, and a way back</span><span class="why">A man can wreck his testimony and his peace. The door home is still the same door.</span></li>
+    </ul>
+    <p class="note step">Bible teachers explain exactly what happened to these men a little differently. What's plain: Paul names it, because it's real. Believers are kept by Christ's own hand; but a believer who drifts can still wreck his usefulness, his marriage, his peace.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Peter failed too, and was strengthened</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+    <div class="ifthen">
+      <div class="if step"><small>Jesus says to a man who is about to fall</small>“I have prayed for thee”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>and when he comes back</small>“strengthen thy brethren”</div>
+    </div>
+    <p class="note step">Peter denied Jesus three times that night. Jesus had already prayed for him and already planned what he'd do next. You can fall, be put back, and then be the man who helps another man up. And if you've drifted lately, don't wait for the rocks: tell God, and one brother, today. That's a ship turning round in time.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“The end of the commandment is charity out of a pure heart, and of a good conscience, and of faith unfeigned” <cite>1:5</cite></span><span class="take">All of God's instruction aims at love, and love grows from a clean heart, a clear conscience and a real faith.</span></li>
+      <li class="step"><span class="topic">The law</span><span class="seed-q">“The law is good, if a man use it lawfully” <cite>1:8</cite></span><span class="take">The law shows us what sin is. It can't wash us, but it points to the gospel that can.</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy” <cite>1:13</cite></span><span class="take">Paul was one of the worst, and mercy found him. Whatever you were, you're not too far gone.</span></li>
+      <li class="step"><span class="topic">A faithful saying</span><span class="seed-q">“Christ Jesus came into the world to save sinners; of whom I am chief” <cite>1:15</cite></span><span class="take">You can bet your life on it, and it's for everyone.</span></li>
+      <li class="step"><span class="topic">A pattern</span><span class="seed-q">“For a pattern to them which should hereafter believe on him to life everlasting” <cite>1:16</cite></span><span class="take">The worst sinner was made the pattern so no one would think he was beyond mercy.</span></li>
+      <li class="step"><span class="topic">Warfare</span><span class="seed-q">“Holding faith, and a good conscience” <cite>1:19</cite></span><span class="take">Keep trusting and keep nothing hidden. Put those away and a man drifts toward the rocks; hold them and he stays afloat.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What is the aim of the commandment, and where does it grow from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="charity out of a pure heart"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love. It grows from a pure heart, a good conscience and a sincere faith. If your conscience is heavy, confessing to God is how it gets cleansed again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The law</span>
+      <h2>What is the law good for, if a man uses it lawfully?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8-9" data-hl="the law is good, if a man use it lawfully"></blockquote>
+      <blockquote class="quote step"><p>“Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.”</p><cite>Romans 3:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It shows what sin is. The law names it, and that's its job. It doesn't save anyone, and it isn't the last word: the glorious gospel is.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>What was Paul before Christ, and what did he obtain?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="a blasphemer, and a persecutor, and injurious"></blockquote>
+      <blockquote class="quote step"><p>“As for Saul, he made havock of the church, entering into every house, and haling men and women committed them to prison.”</p><cite>Acts 8:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A blasphemer, a persecutor and a bully, and he obtained mercy. The same mercy is there for the man who has hurt people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">A faithful saying</span>
+      <h2>What is the faithful saying worthy of all acceptation?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“For the Son of man is come to seek and to save that which was lost.”</p><cite>Luke 19:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That Christ Jesus came into the world to save sinners. It's worth believing and worth receiving, for everyone, and the one who said it called himself the chief of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">A pattern</span>
+      <h2>Why did Paul say he obtained mercy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“Moreover the law entered, that the offence might abound. But where sin abounded, grace did much more abound:”</p><cite>Romans 5:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that Jesus Christ could show all His patience in the worst sinner first, as a pattern for everyone who would believe after him. If he was reached, no one is out of reach.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Warfare</span>
+      <h2>What must Timothy hold to fight a good warfare and escape shipwreck?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18-19"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="learn not to blaspheme"></blockquote>
+      <blockquote class="quote step"><p>“But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.”</p><cite>Luke 22:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Faith and a good conscience. Put them away and a man drifts to the rocks like Hymenaeus and Alexander. But a man who has fallen can come back, and then help the next one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“And the grace of our Lord was exceeding abundant with faith and love which is in Christ Jesus.”</p><cite>1 Timothy 1:14</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Timothy chapter 1
+const V = {
+  1: "Paul, an apostle of Jesus Christ by the commandment of God our Saviour, and Lord Jesus Christ, which is our hope;",
+  2: "Unto Timothy, my own son in the faith: Grace, mercy, and peace, from God our Father and Jesus Christ our Lord.",
+  3: "As I besought thee to abide still at Ephesus, when I went into Macedonia, that thou mightest charge some that they teach no other doctrine,",
+  4: "Neither give heed to fables and endless genealogies, which minister questions, rather than godly edifying which is in faith: so do.",
+  5: "Now the end of the commandment is charity out of a pure heart, and of a good conscience, and of faith unfeigned:",
+  6: "From which some having swerved have turned aside unto vain jangling;",
+  7: "Desiring to be teachers of the law; understanding neither what they say, nor whereof they affirm.",
+  8: "But we know that the law is good, if a man use it lawfully;",
+  9: "Knowing this, that the law is not made for a righteous man, but for the lawless and disobedient, for the ungodly and for sinners, for unholy and profane, for murderers of fathers and murderers of mothers, for manslayers,",
+  10: "For whoremongers, for them that defile themselves with mankind, for menstealers, for liars, for perjured persons, and if there be any other thing that is contrary to sound doctrine;",
+  11: "According to the glorious gospel of the blessed God, which was committed to my trust.",
+  12: "And I thank Christ Jesus our Lord, who hath enabled me, for that he counted me faithful, putting me into the ministry;",
+  13: "Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy, because I did it ignorantly in unbelief.",
+  14: "And the grace of our Lord was exceeding abundant with faith and love which is in Christ Jesus.",
+  15: "This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief.",
+  16: "Howbeit for this cause I obtained mercy, that in me first Jesus Christ might shew forth all longsuffering, for a pattern to them which should hereafter believe on him to life everlasting.",
+  17: "Now unto the King eternal, immortal, invisible, the only wise God, be honour and glory for ever and ever. Amen.",
+  18: "This charge I commit unto thee, son Timothy, according to the prophecies which went before on thee, that thou by them mightest war a good warfare;",
+  19: "Holding faith, and a good conscience; which some having put away concerning faith have made shipwreck:",
+  20: "Of whom is Hymenaeus and Alexander; whom I have delivered unto Satan, that they may learn not to blaspheme."
+};
+const BOOK = "1 Timothy 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

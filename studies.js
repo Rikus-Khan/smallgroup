@@ -14159,6 +14159,135 @@ window.STUDIES = [
     }
   },
   {
+    "id": "1-timothy-01",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "1 Timothy 1",
+    "sub": "The worst sinner, a pattern of mercy",
+    "about": "Paul writes to young Timothy at Ephesus: guard the gospel, and remember that Christ Jesus came to save sinners, of whom Paul was chief.",
+    "tags": [
+      "Mercy",
+      "The law",
+      "Testimony",
+      "Conscience",
+      "Grace",
+      "Spiritual warfare"
+    ],
+    "url": "studies/1-timothy-01.html",
+    "overview": {
+      "where": "Written probably from Macedonia, to Timothy at Ephesus",
+      "when": "About AD 62 to 64, after Paul was released from his first imprisonment in Rome",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "hymenaeus",
+        "alexander-shipwreck",
+        "satan"
+      ],
+      "places": [
+        "ephesus",
+        "macedonia"
+      ],
+      "story": [
+        "Paul greets Timothy, “my own son in the faith,” and reminds him why he was left at Ephesus: to tell some men to stop teaching strange things and endless genealogies (1–7).",
+        "The aim of the commandment is love, from a pure heart, a good conscience and sincere faith. The law is good when used lawfully: it names sin, and it points to the gospel (5–11).",
+        "Paul thanks Christ for putting him into the ministry. He had been a blasphemer, a persecutor and a violent man, but he obtained mercy (12–14).",
+        "“Christ Jesus came into the world to save sinners; of whom I am chief.” Paul was made a pattern of mercy for all who would believe after him, and he bursts into worship (15–17).",
+        "Timothy is charged to war a good warfare, holding faith and a good conscience. Hymenaeus and Alexander put them away and made shipwreck (18–20)."
+      ],
+      "key": {
+        "ref": "1 Timothy 1:15",
+        "text": "This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief."
+      },
+      "big": "Christ Jesus came to save sinners, and the worst of them, Paul, was made the pattern of His mercy. No one is too far gone. Hold on to faith and a good conscience, and keep going."
+    }
+  },
+  {
+    "id": "1-timothy-02",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "1 Timothy 2",
+    "sub": "Pray for all men",
+    "about": "Paul asks that the church begin with prayer for all men, even kings, because God wants every man saved and Christ gave Himself a ransom for all. Then he sets out how men and women serve in God's house.",
+    "tags": [
+      "Prayer",
+      "God's heart for all",
+      "The mediator",
+      "Anger",
+      "Men and women in the church",
+      "Hard texts"
+    ],
+    "url": "studies/1-timothy-02.html",
+    "overview": {
+      "where": "Written probably from Macedonia, to Timothy at Ephesus",
+      "when": "About AD 62 to 64",
+      "people": [
+        "paul",
+        "timothy",
+        "adam",
+        "eve"
+      ],
+      "places": [],
+      "story": [
+        "First of all, pray for all men, and for kings and everyone in authority, so the church can live a quiet and peaceable life (1–3).",
+        "God our Saviour wants all men to be saved and to know the truth. There is one God and one mediator, the man Christ Jesus, who gave Himself a ransom for all (4–7).",
+        "Men are to pray everywhere, lifting up holy hands, without wrath and doubting (8).",
+        "Women are to adorn themselves with modest dress and good works (9–10).",
+        "A hard passage on men and women in the church's teaching and leading, resting on creation and the fall. Baptists hold that the pastor's office is for men, and good teachers differ on how far the rest reaches. “Saved in childbearing” is explained several ways (11–15)."
+      ],
+      "key": {
+        "ref": "1 Timothy 2:4",
+        "text": "Who will have all men to be saved, and to come unto the knowledge of the truth."
+      },
+      "big": "God wants every man saved, and there is one bridge between God and men, Jesus, who gave Himself a ransom for all. Pray for everyone, pray without anger, and take hard texts slowly and humbly."
+    }
+  },
+  {
+    "id": "1-timothy-03",
+    "type": "chapter",
+    "book": "1 Timothy",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "1 Timothy 3",
+    "sub": "A picture of a grown man",
+    "about": "Paul describes the men who lead and serve a church as a picture of mature Christian manhood, then says why it matters: the church is the house of God, the pillar and ground of the truth.",
+    "tags": [
+      "Mature manhood",
+      "Leaders",
+      "Servants",
+      "The church",
+      "Godliness",
+      "Growth"
+    ],
+    "url": "studies/1-timothy-03.html",
+    "overview": {
+      "where": "Written probably from Macedonia, to Timothy at Ephesus",
+      "when": "About AD 62 to 64",
+      "people": [
+        "paul",
+        "timothy"
+      ],
+      "places": [],
+      "story": [
+        "To desire the office of a bishop (overseer, pastor) is to desire a good work. He must be blameless, the husband of one wife, vigilant, sober, not given to wine, no striker, patient, not covetous (1–3).",
+        "He must rule his own house well, not be a novice, and have a good report from outsiders (4–7).",
+        "Deacons, servants of the church, are to be grave, honest, steady and holding the faith in a pure conscience. They are first proved, and those who serve well gain a good standing and great boldness (8–13).",
+        "Paul writes so Timothy will know how to behave in the house of God, the church of the living God, the pillar and ground of the truth (14–15).",
+        "The great mystery of godliness: God was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, and received up into glory (16)."
+      ],
+      "key": {
+        "ref": "1 Timothy 3:15",
+        "text": "But if I tarry long, that thou mayest know how thou oughtest to behave thyself in the house of God, which is the church of the living God, the pillar and ground of the truth."
+      },
+      "big": "The list is a picture of the grown man every believer can become by God's grace, not a wall that keeps anyone from God. The church holds up the truth, and the truth is a Person: Jesus."
+    }
+  },
+  {
     "id": "2-timothy-01",
     "type": "chapter",
     "book": "2 Timothy",

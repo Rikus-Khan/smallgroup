@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Timothy 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ti01-where: where we are in 1 Timothy (same block as 1 Timothy 1; a deck.css candidate).
+   Row 1: the six chapters (.ti01-ch, --k; read ones .done, ours .here). Row 2: the three parts of the letter (.ti01-part: small, b, q, cite),
+   widths 1 : 2 : 3 to sit under their chapters. The part we're in is .now. */
+.ti01-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px 6px; margin: .5em 0 1em; }
+.ti01-ch { padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 70ms + 200ms); }
+.slide.active .ti01-ch { opacity: 1; }
+.ti01-ch.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ti01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .ti01-ch.here { animation: ti01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes ti01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ti01-part { --c: var(--line-strong); padding: .45em .7em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 8%, transparent);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 700ms); }
+.slide.active .ti01-part { opacity: 1; transform: none; }
+.ti01-part small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.ti01-part b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--c); }
+.ti01-part q { display: block; margin-top: .25em; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.ti01-part cite { display: block; margin-top: .1em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.ti01-guard { --c: var(--wine); grid-column: 1 / 2; }
+.ti01-order { --c: var(--accent); grid-column: 2 / 4; }
+.ti01-serve { --c: var(--cool); grid-column: 4 / 7; }
+.ti01-part.now { background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+@media (max-width: 640px) {
+  .ti01-guard, .ti01-order, .ti01-serve { grid-column: 1 / -1; }
+  .ti01-part { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ti02-rings: prayer going outward in rings, from you to all men (rings grow out from the middle, one after another) */
+.ti02-ring { fill: color-mix(in srgb, var(--accent) calc(7% + var(--k, 0) * 0%), transparent); stroke: var(--accent); stroke-width: 2; transform-box: fill-box; transform-origin: 50% 50%;
+  transform: scale(.3); opacity: 0; transition: transform .9s cubic-bezier(.3,.8,.3,1), opacity .6s ease; transition-delay: calc((3 - var(--k, 0)) * 0ms + var(--k, 0) * 450ms + 400ms); }
+.slide.active .ti02-ring { transform: none; opacity: 1; }
+.ti02-lab { fill: var(--ink); font-size: 17px; text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-width: 6px; stroke-linejoin: round;
+  opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 450ms + 900ms); }
+.slide.active .ti02-lab { opacity: 1; }
+
+/* ti02-dots: forty dots that light up one by one: "all men" (a deck.css candidate) */
+.ti02-dots { display: grid; grid-template-columns: repeat(20, 1fr); gap: clamp(5px, .9vw, 10px); max-width: 640px; margin: .6em 0 .8em; }
+.ti02-dots i { aspect-ratio: 1; border-radius: 50%; background: var(--line); transition: background .4s ease, transform .4s ease; transition-delay: calc(var(--k, 0) * 55ms + 300ms); }
+.slide.active .ti02-dots i { background: var(--accent); }
+.ti02-dots i.me { background: var(--line); }
+.slide.active .ti02-dots i.me { background: var(--accent-hot); transform: scale(1.25); }
+
+/* ti02-bridge: a gap between God and men, and one man who spans it (the plank draws across on a .ti02-go step) */
+.ti02-plank { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.6s cubic-bezier(.4,.1,.3,1); }
+.slide:has(.ti02-go.on) .ti02-plank { transform: none; }
+.ti02-said { opacity: 0; transition: opacity .8s ease 1.2s; }
+.slide:has(.ti02-go.on) .ti02-said { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Timothy 2</h1>
+    <p class="sub rise" style="--d:3">Pray for all men</p>
+    <p class="tag rise" style="--d:5">Paul asks Timothy to start the church's life with prayer, for everyone, even the emperor. Then he sets out how men and women serve in God's house.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 1 Timothy</h2>
+    <div class="ti01-where" role="img" aria-label="1 Timothy in three parts. Chapter 1: guard the gospel, done. Chapters 2 and 3: order in God's house, how thou oughtest to behave thyself in the house of God, 3:15. We are in chapter 2. Chapters 4 to 6: be a good minister, a good minister of Jesus Christ, 4:6; fight the good fight of faith, 6:12.">
+      <span class="ti01-ch done" style="--k:0">1</span><span class="ti01-ch here" style="--k:1">2</span><span class="ti01-ch" style="--k:2">3</span>
+      <span class="ti01-ch" style="--k:3">4</span><span class="ti01-ch" style="--k:4">5</span><span class="ti01-ch" style="--k:5">6</span>
+      <div class="ti01-part ti01-guard" style="--k:0"><small>Chapter 1</small><b>Guard the gospel</b><q>Christ Jesus came into the world to save sinners</q><cite>1:15</cite></div>
+      <div class="ti01-part ti01-order now" style="--k:1"><small>Chapters 2–3</small><b>Order in God's house</b><q>how thou oughtest to behave thyself in the house of God</q><cite>3:15</cite></div>
+      <div class="ti01-part ti01-serve" style="--k:2"><small>Chapters 4–6</small><b>Be a good minister</b><q>Fight the good fight of faith</q><cite>6:12</cite></div>
+    </div>
+    <p class="note step">Last time: the gospel Timothy has to guard, and the worst sinner it reached. Now Paul says how a church that holds that gospel lives together: it prays (chapter 2), and it has leaders worth following (chapter 3).</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">Who should we pray for, and what do we ask for them?</span></li>
+      <li class="step"><span class="topic">God's heart</span><span class="seed-q">What does God our Saviour want for all men?</span></li>
+      <li class="step"><span class="topic">The mediator</span><span class="seed-q">Who stands between God and men, and what did He give?</span></li>
+      <li class="step"><span class="topic">Men at prayer</span><span class="seed-q">How should men pray?</span></li>
+      <li class="step"><span class="topic">Beauty</span><span class="seed-q">What does Paul say should adorn a woman who professes godliness?</span></li>
+      <li class="step"><span class="topic">A hard text</span><span class="seed-q">What reasons does Paul give for how men and women serve in the church?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">First of all, pray</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Prayer goes first, and it goes wide. Then Paul says why: God's heart is wide too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="first of all|for all men|For kings, and for all that are in authority|a quiet and peaceable life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 380 400" style="max-height:52vh" role="img" aria-label="Four rings, growing outward from the middle. In the middle: you. Then the people near me. Then kings, and all in authority. The outer ring: all men.">
+          <circle class="ti02-ring" style="--k:3" cx="190" cy="200" r="180"/>
+          <circle class="ti02-ring" style="--k:2" cx="190" cy="200" r="135"/>
+          <circle class="ti02-ring" style="--k:1" cx="190" cy="200" r="90"/>
+          <circle class="ti02-ring" style="--k:0" cx="190" cy="200" r="45"/>
+          <text class="ti02-lab" style="--k:0" x="190" y="206" font-weight="700">you</text>
+          <text class="ti02-lab" style="--k:1" x="190" y="120">people near me</text>
+          <text class="ti02-lab" style="--k:2" x="190" y="75">kings, and all in authority</text>
+          <text class="ti02-lab" style="--k:3" x="190" y="30" font-weight="700">all men</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Pray past your own door</h2>
+        <p class="note rise" style="--d:2">Four kinds of praying: <em>supplications</em> (asking), <em>prayers</em>, <em>intercessions</em> (standing in for someone else) and <em>thanks</em>. First on the list of people: <em>“kings, and all that are in authority.”</em> In AD 62 to 64 that was Nero.</p>
+        <p class="note step">Why? <em>“That we may lead a quiet and peaceable life.”</em> It's hard to hate a man you're praying for: your boss, your judge, your parole officer. Name one today.</p>
+        <p class="note step">Even exiles in pagan Babylon were told to <em>“pray unto the LORD for it”</em> (Jeremiah 29:7).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="God our Saviour|Who will have all men to be saved, and to come unto the knowledge of the truth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">He wants all of them</h2>
+    <div class="ti02-dots" role="img" aria-label="Forty dots light up, one after another, and one near the end is larger: you. All men.">
+      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i>
+      <i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i><i style="--k:26"></i><i class="me" style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i>
+      <i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i><i style="--k:39"></i>
+    </div>
+    <p class="note rise" style="--d:2"><em>“All men”</em> means all men: Nero, the guy in the next cell, the man who hurt you, and you. Paul calls God <em>“our Saviour”</em> and says what He wills: that every one <em>“be saved, and … come unto the knowledge of the truth.”</em></p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+    <p class="note step">Offered to everyone, received by faith: <em>“whosoever shall call upon the name of the Lord shall be saved”</em> (Romans 10:13). You never have to wonder if God wants you in.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="one mediator between God and men, the man Christ Jesus|Who gave himself a ransom for all"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two cliffs with a deep gap between them. On the left cliff: God. On the right cliff: men. In the gap: sin. On a click, a bridge reaches across from God's side to ours, labeled the man Christ Jesus, a ransom for all.">
+          <path d="M0 140 L200 140 L196 300 L0 300 Z" style="fill:color-mix(in srgb, var(--accent) 22%, transparent);stroke:var(--accent)" stroke-width="3"/>
+          <path d="M400 140 L600 140 L600 300 L404 300 Z" style="fill:var(--surface-2);stroke:var(--line-strong)" stroke-width="3"/>
+          <text x="100" y="110" text-anchor="middle" font-size="28" font-weight="700" style="fill:var(--accent-hot)">God</text>
+          <text x="500" y="110" text-anchor="middle" font-size="28" font-weight="700" style="fill:var(--ink)">men</text>
+          <text x="300" y="240" text-anchor="middle" font-size="19" style="fill:var(--danger)">sin</text>
+          <g class="ti02-plank"><rect x="196" y="128" width="208" height="16" rx="4" style="fill:var(--accent)"/></g>
+          <g class="ti02-said"><text x="300" y="112" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the man Christ Jesus</text><text x="300" y="168" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a ransom for all</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One bridge, for all</h2>
+        <p class="note rise" style="--d:2">A <em>mediator</em> stands between two sides and brings them together. Between God and us is a gap we can't cross by being good or trying harder. Paul says there's <em>“one mediator.”</em> Only one.</p>
+        <p class="note step ti02-go"><em>“The man Christ Jesus”</em>: truly one of us, so He could stand with us. And a <em>ransom</em> is the price that buys a slave free: He <em>“gave himself a ransom for all.”</em></p>
+        <blockquote class="quote step"><p>“And he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.”</p><cite>1 John 2:2</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">In God's house</h2>
+    <p class="range rise" style="--d:2">Verses 8–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">How the men pray, how the women are known, and one passage where good teachers don't all agree.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8" data-hl="men pray every where, lifting up holy hands, without wrath and doubting"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="lifting up holy hands, without wrath and doubting"></blockquote>
+    <h2 class="rise" style="--d:1">Hands up, fists down</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">clenched fists, a grudge, “will He even hear me?”</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">open, lifted hands</span>
+      <span class="gloss step">Lifting hands was a common way to pray: open, empty, asking (<em>“Lift up your hands in the sanctuary, and bless the LORD,”</em> Psalm 134:2). <em>Holy</em> means set apart for Him, not spotless. Two things spoil it: <em>wrath</em> at someone, and <em>doubting</em> that God will listen.</span>
+    </div>
+    <blockquote class="quote step"><p>“Therefore if thou bring thy gift to the altar, and there rememberest that thy brother hath ought against thee; Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.”</p><cite>Matthew 5:23–24</cite></blockquote>
+    <p class="note step">Paul speaks to the men here: anger is a common trouble for men at prayer. Before you pray today: who are you angry with? Name it to God. If you can fix it, go and fix it first.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="modest apparel, with shamefacedness and sobriety|not with broided hair, or gold, or pearls, or costly array|with good works"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What makes a woman beautiful in God's house</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Not</p>
+        <h3>Showing off</h3>
+        <p><em>“Broided hair, or gold, or pearls, or costly array.”</em> In Ephesus a rich woman could wear a fortune on her head. In a church where slaves and the wealthy sat side by side, that sent the wrong message.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">But</p>
+        <h3>“Good works”</h3>
+        <p>Modest dress, with <em>“shamefacedness”</em> (a gentle sense of shame, not showing off) and <em>“sobriety”</em> (a steady mind). Her adorning is what she does.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“But let it be the hidden man of the heart, in that which is not corruptible, even the ornament of a meek and quiet spirit, which is in the sight of God of great price.”</p><cite>1 Peter 3:4</cite></blockquote>
+    <p class="note step">It isn't a ban on a wedding ring. Christians apply it in different ways, but the point is plain: don't make your clothes the first thing about you. That holds for men too. What are you trying to prove with how you look?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Let the woman learn in silence with all subjection|But I suffer not a woman to teach, nor to usurp authority over the man, but to be in silence"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11-12" data-hl="Let the woman learn"></blockquote>
+    <h2 class="rise" style="--d:1">A hard text, taken slowly</h2>
+    <p class="note rise" style="--d:2">Good, godly, Bible-believing teachers read these verses a little differently. Here is what we can say honestly.</p>
+    <div class="sort">
+      <div class="step"><h3>“Let the woman learn”</h3><p>The first word is permission to be taught. Women were often shut out of religious study. Paul says: come and learn.</p></div>
+      <div class="step"><h3>“In silence”</h3><p>The word means <em>quietness</em>, a calm, learning spirit. It's the same word as <em>“a quiet and peaceable life”</em> in verse 2.</p></div>
+      <div class="step"><h3>“To teach… authority over the man”</h3><p>Paul is speaking of the church's teaching and leading. Baptists hold that the office of pastor is for men, and see these verses, with chapter 3, as the reason.</p></div>
+    </div>
+    <p class="note step">What's plain: men and women are equal in Christ (<em>“there is neither male nor female: for ye are all one in Christ Jesus,”</em> Galatians 3:28). Women served God in the early church, and a woman like Priscilla helped teach even Apollos (Acts 18:26).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What's plain, and where teachers differ</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Plain</p>
+        <h3>Agreed by nearly everyone</h3>
+        <p>Women are saved the same way men are. Women are to learn, and are valued. Women have always served: <em>“Phebe our sister, which is a servant of the church”</em> (Romans 16:1). Paul's reasons come from creation (vv. 13–14), not only from Ephesus.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">Differ</p>
+        <h3>How far it reaches</h3>
+        <p>Good Baptist teachers differ over how far <em>“teach”</em> and <em>“authority”</em> go: a class of men and women, teaching women or children, missions, writing. The office of pastor is held to be for men. The rest, a church works out with its leaders, prayerfully, together.</p>
+      </div>
+    </div>
+    <p class="note step">It would be easy to skip a passage like this. But you can say two things at once: we take the whole Bible seriously, and we're not looking for ways to put anyone down. Both are true here.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="For Adam was first formed, then Eve|the woman being deceived was in the transgression|she shall be saved in childbearing, if they continue in faith and charity and holiness with sobriety"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="she shall be saved in childbearing"></blockquote>
+    <h2 class="rise" style="--d:1">“Saved in childbearing”</h2>
+    <p class="note rise" style="--d:2">Here the teachers really do differ, so we'll go slowly. First, what it can't mean:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+    <div class="sort">
+      <div class="step"><h3>The Saviour was born</h3><p>God promised a Son born of a woman who would crush the serpent (Genesis 3:15). The woman who fell brought the Saviour into the world.</p></div>
+      <div class="step"><h3>Kept safe through it</h3><p>Brought safely through the danger of childbirth, as a mother who trusts God.</p></div>
+      <div class="step"><h3>Saved in her calling</h3><p>She is kept and fulfilled, not shut out, in the ordinary life God gave her, if she continues in faith.</p></div>
+    </div>
+    <p class="note step">No one is saved by having children, or by anything done. We are saved by grace, through faith, in Jesus. Everyone agrees on that, and what Paul adds, <em>“faith and charity and holiness,”</em> is what a saved life looks like in a man or a woman.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Supplications, prayers, intercessions, and giving of thanks, be made for all men; for kings, and for all that are in authority” <cite>2:1–2</cite></span><span class="take">Pray for everyone, including the people over you, and pray with thanks.</span></li>
+      <li class="step"><span class="topic">God's heart</span><span class="seed-q">“Who will have all men to be saved, and to come unto the knowledge of the truth” <cite>2:4</cite></span><span class="take">God wants every man saved. That includes you, and the man you've given up on.</span></li>
+      <li class="step"><span class="topic">The mediator</span><span class="seed-q">“One mediator between God and men, the man Christ Jesus; who gave himself a ransom for all” <cite>2:5–6</cite></span><span class="take">One bridge between God and us, and Jesus paid the price for all.</span></li>
+      <li class="step"><span class="topic">Men at prayer</span><span class="seed-q">“Lifting up holy hands, without wrath and doubting” <cite>2:8</cite></span><span class="take">Pray with open hands: no grudge, and no doubt that He hears.</span></li>
+      <li class="step"><span class="topic">Beauty</span><span class="seed-q">“Which becometh women professing godliness, with good works” <cite>2:10</cite></span><span class="take">A godly woman is known by what she does, not by what she wears to be noticed.</span></li>
+      <li class="step"><span class="topic">A hard text</span><span class="seed-q">“For Adam was first formed, then Eve” <cite>2:13</cite></span><span class="take">Paul gives creation as his reason. Baptists hold that the pastor's office is for men, and teachers differ on how far the rest goes.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>Who should we pray for, and what do we ask for them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1-2"></blockquote>
+      <blockquote class="quote step"><p>“And seek the peace of the city whither I have caused you to be carried away captives, and pray unto the LORD for it: for in the peace thereof shall ye have peace.”</p><cite>Jeremiah 29:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All men, and especially kings and everyone in authority. We ask, we plead for them, and we give thanks, so that we can lead a quiet, peaceable life in godliness. It's hard to hate a man you're praying for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">God's heart</span>
+      <h2>What does God our Saviour want for all men?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He wants every man saved and brought to know the truth. Nobody is left off the list, and whoever calls on Him will be saved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The mediator</span>
+      <h2>Who stands between God and men, and what did He give?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6"></blockquote>
+      <blockquote class="quote step"><p>“For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.”</p><cite>Mark 10:45</cite></blockquote>
+      <blockquote class="quote step"><p>“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”</p><cite>John 14:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The man Christ Jesus, the only mediator. He gave Himself as a ransom: the price that buys a slave free. And it's offered for all.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Men at prayer</span>
+      <h2>How should men pray?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Lift up your hands in the sanctuary, and bless the LORD.”</p><cite>Psalm 134:2</cite></blockquote>
+      <blockquote class="quote step"><p>“Therefore if thou bring thy gift to the altar, and there rememberest that thy brother hath ought against thee; Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.”</p><cite>Matthew 5:23–24</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With open, lifted hands, without anger and without doubt. If there's a grudge, deal with it first. Then pray, sure that He hears.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Beauty</span>
+      <h2>What does Paul say should adorn a woman who professes godliness?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9-10"></blockquote>
+      <blockquote class="quote step"><p>“Whose adorning let it not be that outward adorning of plaiting the hair, and of wearing of gold, or of putting on of apparel; But let it be the hidden man of the heart, in that which is not corruptible, even the ornament of a meek and quiet spirit, which is in the sight of God of great price.”</p><cite>1 Peter 3:3–4</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Good works, with modest dress and a steady mind, not showing off. In God's eyes the best ornament is a gentle, quiet spirit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A hard text</span>
+      <h2>What reasons does Paul give for how men and women serve in the church?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13-14"></blockquote>
+      <blockquote class="quote step"><p>“There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus.”</p><cite>Galatians 3:28</cite></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Creation: Adam was formed first, and the woman was deceived. Baptists hold that the pastor's office is for men; good teachers differ on how far the rest reaches. Everyone agrees men and women are saved the same way, by grace, and are equal in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;”</p><cite>1 Timothy 2:1</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Timothy chapter 2
+const V = {
+  1: "I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;",
+  2: "For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty.",
+  3: "For this is good and acceptable in the sight of God our Saviour;",
+  4: "Who will have all men to be saved, and to come unto the knowledge of the truth.",
+  5: "For there is one God, and one mediator between God and men, the man Christ Jesus;",
+  6: "Who gave himself a ransom for all, to be testified in due time.",
+  7: "Whereunto I am ordained a preacher, and an apostle, (I speak the truth in Christ, and lie not;) a teacher of the Gentiles in faith and verity.",
+  8: "I will therefore that men pray every where, lifting up holy hands, without wrath and doubting.",
+  9: "In like manner also, that women adorn themselves in modest apparel, with shamefacedness and sobriety; not with broided hair, or gold, or pearls, or costly array;",
+  10: "But (which becometh women professing godliness) with good works.",
+  11: "Let the woman learn in silence with all subjection.",
+  12: "But I suffer not a woman to teach, nor to usurp authority over the man, but to be in silence.",
+  13: "For Adam was first formed, then Eve.",
+  14: "And Adam was not deceived, but the woman being deceived was in the transgression.",
+  15: "Notwithstanding she shall be saved in childbearing, if they continue in faith and charity and holiness with sobriety."
+};
+const BOOK = "1 Timothy 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
