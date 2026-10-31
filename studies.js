@@ -16877,5 +16877,105 @@ window.STUDIES = [
       },
       "big": "Before the end, God offers the everlasting gospel to everyone, warns plainly, and then gathers the harvest. Those who die in the Lord are blessed and at rest, and nothing done for Christ is lost."
     }
+  },
+  {
+    "id": "revelation-15",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 15,
+    "date": "2026-10-31",
+    "title": "Revelation 15",
+    "sub": "The song on the far shore",
+    "about": "Before the last plagues fall, God's people stand on a sea of glass mingled with fire, singing the song of Moses and the Lamb.",
+    "tags": [
+      "Worship",
+      "Victory",
+      "Judgment",
+      "God's holiness",
+      "Hope",
+      "The Lamb"
+    ],
+    "url": "studies/revelation-15.html",
+    "overview": {
+      "where": "Heaven, before God's throne and His temple, in John's vision on Patmos",
+      "when": "About AD 95; the calm just before the seven last plagues",
+      "people": [
+        "seven-angels-with-plagues",
+        "the-lamb",
+        "moses",
+        "four-beasts",
+        "john-the-apostle"
+      ],
+      "places": [
+        "heaven",
+        "sea-of-glass",
+        "temple",
+        "tabernacle-of-the-testimony"
+      ],
+      "story": [
+        "John sees another great sign in heaven: seven angels with the seven last plagues, in which the wrath of God is filled up (1).",
+        "Those who got the victory over the beast stand on a sea of glass mingled with fire, holding the harps of God (2).",
+        "They sing the song of Moses and the song of the Lamb: “Great and marvellous are thy works … just and true are thy ways” (3–4).",
+        "The temple of the tabernacle of the testimony in heaven opens, and the seven angels come out in pure white linen with golden girdles (5–6).",
+        "One of the four beasts gives them seven golden vials full of God's wrath, and the temple fills with smoke from His glory; no man can enter till the plagues are done (7–8)."
+      ],
+      "key": {
+        "ref": "Revelation 15:3",
+        "text": "And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints."
+      },
+      "big": "God's people always end on the far shore, singing about Him. His judgments are just and true, the man in Christ is saved from wrath, and today the way into God's presence is still open."
+    }
+  },
+  {
+    "id": "revelation-16",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 16,
+    "date": "2026-10-31",
+    "title": "Revelation 16",
+    "sub": "It is done",
+    "about": "Seven bowls of wrath are poured out, men blaspheme and will not repent, the kings gather to Armageddon, and a voice from the throne says, “It is done.”",
+    "tags": [
+      "Judgment",
+      "Justice",
+      "Hard hearts",
+      "Watchfulness",
+      "Deception",
+      "Christ's return"
+    ],
+    "url": "studies/revelation-16.html",
+    "overview": {
+      "where": "The temple in heaven, and the whole earth below: the sea, the rivers, the Euphrates, and a place called Armageddon",
+      "when": "About AD 95, in John's vision; Bible teachers differ on when, and how literally, the bowls are poured",
+      "people": [
+        "seven-angels-with-plagues",
+        "angel-of-the-waters",
+        "the-beast",
+        "the-dragon",
+        "the-false-prophet",
+        "kings-of-the-east",
+        "john-the-apostle"
+      ],
+      "places": [
+        "temple",
+        "euphrates",
+        "seat-of-the-beast",
+        "armageddon",
+        "megiddo",
+        "babylon"
+      ],
+      "story": [
+        "A great voice sends the seven angels out. The first three bowls bring a grievous sore, the sea turned to blood, and the rivers turned to blood (1–4).",
+        "The angel of the waters and a voice from the altar agree: “true and righteous are thy judgments” (5–7).",
+        "The fourth bowl lets the sun scorch men; the fifth darkens the beast's kingdom. Men blaspheme God and repent not (8–11).",
+        "The sixth bowl dries up the Euphrates for the kings of the east. Three unclean spirits like frogs gather the kings of the earth to Armageddon, and Jesus says, “Behold, I come as a thief” (12–16).",
+        "The seventh bowl is poured into the air: “It is done.” A great earthquake, Babylon remembered before God, and a great hail; and men still blaspheme (17–21)."
+      ],
+      "key": {
+        "ref": "Revelation 16:7",
+        "text": "And I heard another out of the altar say, Even so, Lord God Almighty, true and righteous are thy judgments."
+      },
+      "big": "God's judgment is just, and pain alone never softens a hard heart. Jesus is coming like a thief, so stay awake and keep the garments He gave you. Evil will be finished: it is done."
+    }
   }
 ];

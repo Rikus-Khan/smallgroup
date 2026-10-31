@@ -1164,7 +1164,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Jude", 1,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 15,
+    [ 3 ] ] ]
  },
  {
   "id": "elijah",
@@ -3873,7 +3876,13 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Revelation", 14,
-    [ 15, 17 ] ] ]
+    [ 15, 17 ] ],
+   [
+    "Revelation", 15,
+    [ 5, 6, 8 ] ],
+   [
+    "Revelation", 16,
+    [ 1, 17 ] ] ]
  },
  {
   "id": "israel",
@@ -4473,7 +4482,13 @@ window.GLOSSARY = [
     [ 6, 13 ] ],
    [
     "Revelation", 14,
-    [ 2, 6, 7, 13, 17 ] ] ]
+    [ 2, 6, 7, 13, 17 ] ],
+   [
+    "Revelation", 15,
+    [ 1, 5 ] ],
+   [
+    "Revelation", 16,
+    [ 11, 17, 21 ] ] ]
  },
  {
   "id": "hell",
@@ -5007,7 +5022,10 @@ window.GLOSSARY = [
     [ 8, 9, 11 ] ],
    [
     "Jude", 1,
-    [ 6, 13 ] ] ]
+    [ 6, 13 ] ],
+   [
+    "Revelation", 16,
+    [ 10 ] ] ]
  },
  {
   "id": "grace",
@@ -5823,7 +5841,13 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Revelation", 14,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Revelation", 15,
+    [ 8 ] ],
+   [
+    "Revelation", 16,
+    [ 9 ] ] ]
  },
  {
   "id": "the-law",
@@ -7746,7 +7770,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Revelation", 14,
-    [ 8, 10 ] ] ]
+    [ 8, 10 ] ],
+   [
+    "Revelation", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "waterpots",
@@ -7914,6 +7941,12 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Revelation", 13,
+    [ 14 ] ],
+   [
+    "Revelation", 15,
+    [ 1 ] ],
+   [
+    "Revelation", 16,
     [ 14 ] ] ]
  },
  {
@@ -9255,7 +9288,10 @@ window.GLOSSARY = [
     [ 1, 29 ] ],
    [
     "1 John", 3,
-    [ 7, 10, 12 ] ] ]
+    [ 7, 10, 12 ] ],
+   [
+    "Revelation", 16,
+    [ 5, 7 ] ] ]
  },
  {
   "id": "wicked",
@@ -9960,7 +9996,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Revelation", 14,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 16,
+    [ 16 ] ] ]
  },
  {
   "id": "anger",
@@ -10185,7 +10224,13 @@ window.GLOSSARY = [
     [ 16, 17 ] ],
    [
     "Revelation", 14,
-    [ 8, 10, 19 ] ] ]
+    [ 8, 10, 19 ] ],
+   [
+    "Revelation", 15,
+    [ 1, 7 ] ],
+   [
+    "Revelation", 16,
+    [ 1, 19 ] ] ]
  },
  {
   "id": "pride",
@@ -13437,7 +13482,13 @@ window.GLOSSARY = [
     [ 4, 8, 12, 15 ] ],
    [
     "Revelation", 14,
-    [ 7, 9, 11 ] ] ]
+    [ 7, 9, 11 ] ],
+   [
+    "Revelation", 15,
+    [ 4 ] ],
+   [
+    "Revelation", 16,
+    [ 2 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -13740,7 +13791,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Revelation", 13,
-    [ 1, 5, 6 ] ] ]
+    [ 1, 5, 6 ] ],
+   [
+    "Revelation", 16,
+    [ 9, 11, 21 ] ] ]
  },
  {
   "id": "ye-are-gods",
@@ -16239,7 +16293,13 @@ window.GLOSSARY = [
     [ 1, 5, 7, 8, 9, 10 ] ],
    [
     "Revelation", 14,
-    [ 6, 8, 9, 10, 15, 17, 18, 19 ] ] ]
+    [ 6, 8, 9, 10, 15, 17, 18, 19 ] ],
+   [
+    "Revelation", 15,
+    [ 1, 6, 7, 8 ] ],
+   [
+    "Revelation", 16,
+    [ 1, 3, 4, 5, 8, 10, 12, 17 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -17013,7 +17073,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Revelation", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 15,
+    [ 6 ] ] ]
  },
  {
   "id": "tarry",
@@ -17181,7 +17244,10 @@ window.GLOSSARY = [
     [ 2, 9 ] ],
    [
     "Revelation", 6,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Revelation", 15,
+    [ 5 ] ] ]
  },
  {
   "id": "lazarus",
@@ -23199,7 +23265,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Revelation", 14,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 16,
+    [ 19 ] ] ]
  },
  {
   "id": "burden",
@@ -24657,7 +24726,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Revelation", 9,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 16,
+    [ 16 ] ] ]
  },
  {
   "id": "tarshish",
@@ -27651,7 +27723,10 @@ window.GLOSSARY = [
     [ 3, 19 ] ],
    [
     "Revelation", 9,
-    [ 20, 21 ] ] ]
+    [ 20, 21 ] ],
+   [
+    "Revelation", 16,
+    [ 9, 11 ] ] ]
  },
  {
   "id": "camels-hair",
@@ -27942,7 +28017,10 @@ window.GLOSSARY = [
     [ 20, 21 ] ],
    [
     "Revelation", 9,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Revelation", 16,
+    [ 14 ] ] ]
  },
  {
   "id": "compassion",
@@ -37488,7 +37566,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Revelation", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 16,
+    [ 15 ] ] ]
  },
  {
   "id": "swords-and-staves",
@@ -41703,7 +41784,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Revelation", 6,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 16,
+    [ 18 ] ] ]
  },
  {
   "id": "sirs",
@@ -41919,7 +42003,13 @@ window.GLOSSARY = [
     [ 7, 10 ] ],
    [
     "Revelation", 14,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Revelation", 15,
+    [ 3 ] ],
+   [
+    "Revelation", 16,
+    [ 6 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -42402,7 +42492,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Revelation", 13,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 15,
+    [ 5 ] ] ]
  },
  {
   "id": "stiffnecked",
@@ -44364,7 +44457,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Revelation", 1,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 15,
+    [ 6 ] ] ]
  },
  {
   "id": "evangelist",
@@ -57285,7 +57381,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Peter", 3,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Revelation", 16,
+    [ 15 ] ] ]
  },
  {
   "id": "elements-melt",
@@ -57636,7 +57735,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Revelation", 14,
-    [ 1, 4, 10 ] ] ]
+    [ 1, 4, 10 ] ],
+   [
+    "Revelation", 15,
+    [ 3 ] ] ]
  },
  {
   "id": "lion-of-juda",
@@ -57687,7 +57789,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Revelation", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Revelation", 15,
+    [ 7 ] ] ]
  },
  {
   "id": "twenty-four-elders",
@@ -57999,7 +58104,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Revelation", 14,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Revelation", 16,
+    [ 7 ] ] ]
  },
  {
   "id": "prayers-of-the-saints",
@@ -58353,7 +58461,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 4,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 15,
+    [ 2 ] ] ]
  },
  {
   "id": "holy-holy-holy",
@@ -58371,7 +58482,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 4,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 15,
+    [ 3 ] ],
+   [
+    "Revelation", 16,
+    [ 7 ] ] ]
  },
  {
   "id": "thou-art-worthy",
@@ -58719,7 +58836,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 9,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 16,
+    [ 12 ] ] ]
  },
  {
   "id": "four-angels-euphrates",
@@ -58833,7 +58953,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 13,
-    [ 2, 4, 11 ] ] ]
+    [ 2, 4, 11 ] ],
+   [
+    "Revelation", 16,
+    [ 13 ] ] ]
  },
  {
   "id": "the-beast",
@@ -58845,7 +58968,13 @@ window.GLOSSARY = [
     [ 1, 2, 3, 4, 12, 14, 15, 17, 18 ] ],
    [
     "Revelation", 14,
-    [ 9, 11 ] ] ]
+    [ 9, 11 ] ],
+   [
+    "Revelation", 15,
+    [ 2 ] ],
+   [
+    "Revelation", 16,
+    [ 2, 10, 13 ] ] ]
  },
  {
   "id": "the-false-prophet",
@@ -58854,7 +58983,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 13,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 16,
+    [ 13 ] ] ]
  },
  {
   "id": "seven-heads-ten-horns",
@@ -58902,7 +59034,13 @@ window.GLOSSARY = [
     [ 14, 15 ] ],
    [
     "Revelation", 14,
-    [ 9, 11 ] ] ]
+    [ 9, 11 ] ],
+   [
+    "Revelation", 15,
+    [ 2 ] ],
+   [
+    "Revelation", 16,
+    [ 2 ] ] ]
  },
  {
   "id": "mark-of-the-beast",
@@ -58914,7 +59052,13 @@ window.GLOSSARY = [
     [ 16, 17 ] ],
    [
     "Revelation", 14,
-    [ 9, 11 ] ] ]
+    [ 9, 11 ] ],
+   [
+    "Revelation", 15,
+    [ 2 ] ],
+   [
+    "Revelation", 16,
+    [ 2 ] ] ]
  },
  {
   "id": "number-of-the-beast",
@@ -58923,7 +59067,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 13,
-    [ 17, 18 ] ] ]
+    [ 17, 18 ] ],
+   [
+    "Revelation", 15,
+    [ 2 ] ] ]
  },
  {
   "id": "everlasting-gospel",
@@ -58960,5 +59107,239 @@ window.GLOSSARY = [
    [
     "Revelation", 14,
     [ 18, 19 ] ] ]
+ },
+ {
+  "id": "seven-angels-with-plagues",
+  "kind": "person",
+  "name": "The seven angels with the seven last plagues (who pour out the seven vials)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 1, 6, 7, 8 ] ],
+   [
+    "Revelation", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "plagues-of-revelation",
+  "kind": "term",
+  "name": "The seven last plagues (God's last judgments on the earth, like the plagues on Egypt)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 1, 6, 8 ] ],
+   [
+    "Revelation", 16,
+    [ 9, 21 ] ] ]
+ },
+ {
+  "id": "wrath-of-god",
+  "kind": "term",
+  "name": "The wrath of God (His settled, holy anger against sin)",
+  "refs": [
+   [
+    "John", 3,
+    [ 36 ] ],
+   [
+    "Romans", 1,
+    [ 18 ] ],
+   [
+    "Ephesians", 5,
+    [ 6 ] ],
+   [
+    "Colossians", 3,
+    [ 6 ] ],
+   [
+    "Revelation", 14,
+    [ 10, 19 ] ],
+   [
+    "Revelation", 15,
+    [ 1, 7 ] ],
+   [
+    "Revelation", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "harps-of-god",
+  "kind": "term",
+  "name": "The harps of God (harps for praising God, given to those who overcame)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "song-of-moses-and-the-lamb",
+  "kind": "term",
+  "name": "The song of Moses and the song of the Lamb (the Red sea song of Exodus 15, sung again for a greater rescue)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "king-of-saints",
+  "kind": "person",
+  "name": "Thou King of saints (God, King over all His holy people)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "tabernacle-of-the-testimony",
+  "kind": "place",
+  "name": "The temple of the tabernacle of the testimony (the holy place that held the ark with God's law, in heaven)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "pure-and-white-linen",
+  "kind": "term",
+  "name": "Pure and white linen (the clean clothing of priests)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "vials-of-wrath",
+  "kind": "term",
+  "name": "The seven golden vials (wide, shallow bowls full of the wrath of God, poured out one by one)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 7 ] ],
+   [
+    "Revelation", 16,
+    [ 1, 2, 3, 4, 8, 10, 12, 17 ] ] ]
+ },
+ {
+  "id": "temple-filled-with-smoke",
+  "kind": "term",
+  "name": "The temple filled with smoke (God's glory so heavy no one could enter, as at the tabernacle and Solomon's temple)",
+  "refs": [
+   [
+    "Revelation", 15,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "noisome-and-grievous-sore",
+  "kind": "term",
+  "name": "A noisome and grievous sore (a foul, painful ulcer, like the boils on Egypt)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "angel-of-the-waters",
+  "kind": "person",
+  "name": "The angel of the waters (the angel over the rivers and fountains)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "true-and-righteous-judgments",
+  "kind": "term",
+  "name": "True and righteous are thy judgments (God's punishments fit exactly: no more, no less)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "seat-of-the-beast",
+  "kind": "place",
+  "name": "The seat of the beast (his throne, the center of his kingdom)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "kings-of-the-east",
+  "kind": "person",
+  "name": "The kings of the east (rulers from beyond the Euphrates; John doesn't name them)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "unclean-spirits-like-frogs",
+  "kind": "term",
+  "name": "Three unclean spirits like frogs (lying spirits of devils, like the frogs on Egypt)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "great-day-of-god-almighty",
+  "kind": "term",
+  "name": "That great day of God Almighty (the day God settles everything)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "keepeth-his-garments",
+  "kind": "term",
+  "name": "Keepeth his garments (stays dressed and ready, not caught naked and ashamed)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "armageddon",
+  "kind": "place",
+  "name": "Armageddon (Har-Megiddo, the hill of Megiddo above the valley of Jezreel, where Israel's armies fought)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "it-is-done",
+  "kind": "term",
+  "name": "It is done (God's work finished: judgment at the seventh vial, and all things new at 21:6)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "fierceness-of-his-wrath",
+  "kind": "term",
+  "name": "The cup of the wine of the fierceness of his wrath (God's judgment, drunk to the bottom)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "great-hail",
+  "kind": "term",
+  "name": "A great hail (hailstones about a talent each, like the hail on Egypt)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "weight-of-a-talent",
+  "kind": "term",
+  "name": "The weight of a talent (a heavy weight, often figured at about 75 pounds)",
+  "refs": [
+   [
+    "Revelation", 16,
+    [ 21 ] ] ]
  }
 ];

@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv15-where: where we are in Revelation. Seven blocks (div > i, span); the seals-trumpets-bowls block is wider and holds
+   one cell (u) per chapter, 6 to 16, with u.at for this chapter. .done for blocks already read, .now for the one we're in */
+.rv15-where { display: grid; grid-template-columns: 1fr 1fr 1fr 2.8fr 1fr 1fr 1fr; gap: 6px; margin: .3em 0 .9em; }
+.rv15-where > div { display: flex; flex-direction: column; gap: .35em; min-width: 0; }
+.rv15-where i { font: 600 clamp(.8rem, .68rem + .45vw, 1.1rem)/1 var(--sans); font-style: normal; text-align: center; padding: .5em 0; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); }
+.rv15-where .done i { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+.rv15-where .now i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.rv15-where b { display: grid; grid-template-columns: repeat(11, 1fr); gap: 2px; }
+.rv15-where u { text-decoration: none; font: 600 clamp(.55rem, .5rem + .25vw, .78rem)/1 var(--sans); text-align: center; padding: .35em 0; border-radius: 3px; background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink-soft); }
+.rv15-where u.at { background: var(--accent-hot); color: var(--on-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-hot) 30%, transparent); }
+.slide.active .rv15-where u.at { animation: rv15-here 2.4s 1s ease-in-out infinite; }
+@keyframes rv15-here { 50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent-hot) 8%, transparent); } }
+.rv15-where span { border-top: 3px solid var(--line-strong); padding-top: .35em; text-align: center; font-size: clamp(.62rem, .56rem + .3vw, .92rem); line-height: 1.2; color: var(--ink-soft); }
+.rv15-where .now span { border-top-color: var(--accent); color: var(--ink); font-weight: 700; }
+@media (max-width: 600px) { .rv15-where { gap: 3px; } .rv15-where u { font-size: 0; padding: .45em 0; } .rv15-where u.at { font-size: .6rem; padding: .2em 0; } }
+
+/* rv15-three: the three sevens. One .row per series (--k staggers them): its name, seven cells (seals round, trumpets flared,
+   bowls bowl-shaped), and how far it reaches (a bar that fills to --w). .open marks a series not yet poured */
+.rv15-three { display: grid; gap: .55rem; margin: .4em 0 .9em; }
+.rv15-three .row { display: grid; grid-template-columns: 8.5em 1fr 10.5em; align-items: center; gap: .4rem 1rem; padding: .55em .9em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line);
+  opacity: 0; transform: translateY(8px); transition: opacity .7s ease calc(.4s + var(--k) * .8s), transform .7s ease calc(.4s + var(--k) * .8s); }
+.slide.active .rv15-three .row { opacity: 1; transform: none; }
+.rv15-three .name b { display: block; font: 700 clamp(1rem, .9rem + .4vw, 1.25rem) var(--sans); color: var(--ink); }
+.rv15-three small { color: var(--ink-soft); font-size: clamp(.75rem, .7rem + .25vw, .95rem); }
+.rv15-three ol { display: grid; grid-template-columns: repeat(7, 1fr); gap: .35rem; list-style: none; margin: 0; padding: 0; }
+.rv15-three li { height: 2.1em; display: grid; place-items: center; font: 700 clamp(.8rem, .72rem + .3vw, 1rem) var(--sans); color: var(--ink); background: color-mix(in srgb, var(--accent) 18%, var(--surface-2)); border: 2px solid var(--line-strong); }
+.rv15-three .seals li { border-radius: 50%; width: 2.1em; justify-self: center; }
+.rv15-three .trumpets li { border-radius: 3px 16px 16px 3px; }
+.rv15-three .bowls li { border-radius: 3px 3px 50% 50% / 3px 3px 100% 100%; border-color: var(--accent); color: var(--accent-hot); }
+.rv15-three .bowls.open li { background: transparent; border-style: dashed; }
+.rv15-three .reach { display: grid; gap: .2em; margin: 0; }
+.rv15-three .bar { display: block; height: 12px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
+.rv15-three .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 1.4s ease calc(1.2s + var(--k) * .8s); }
+.rv15-three .bowls .bar i { background: var(--accent-hot); }
+.slide.active .rv15-three .bar i { width: var(--w); }
+.rv15-three .reach b { font: 700 clamp(.85rem, .78rem + .3vw, 1.05rem) var(--sans); color: var(--ink); }
+@media (max-width: 600px) { .rv15-three .row { grid-template-columns: 1fr 1fr; } .rv15-three ol { grid-column: 1 / -1; grid-row: 2; } }
+
+/* rv15-shore: the far shore. The Red sea parts, the people cross and stand singing on the far shore, the sea closes on the chariots.
+   On .rv15-go the same sea turns to glass mingled with fire, and the people stand on it (Exodus 15 becomes Revelation 15). */
+.rv15-land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv15-sea { fill: color-mix(in srgb, var(--cool) 45%, var(--bg)); transition: fill 1.6s ease; }
+.slide:has(.rv15-go.on) .rv15-sea { fill: color-mix(in srgb, var(--glow) 55%, var(--cool)); }
+.rv15-wave { fill: none; stroke: var(--bg); stroke-width: 2; opacity: .45; transition: opacity 1s ease; }
+.slide:has(.rv15-go.on) .rv15-wave { opacity: 0; }
+.rv15-path { fill: color-mix(in srgb, var(--warm) 35%, var(--surface-2)); transition: opacity 1.2s ease; }
+.slide.active .rv15-path { opacity: 0; transition-delay: 4.2s; }
+.rv15-fire { fill: none; stroke: var(--warm); stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease .6s; }
+.rv15-fire.b { stroke: var(--danger); }
+.rv15-flame { fill: var(--warm); stroke: none; }
+.rv15-flame.b { fill: var(--danger); }
+.slide:has(.rv15-go.on) .rv15-fire { opacity: .85; animation: rv15-flicker 1.7s ease-in-out infinite calc(var(--k) * -.4s); }
+@keyframes rv15-flicker { 50% { opacity: .35; } }
+.rv15-throne { fill: var(--glow); opacity: 0; transition: opacity 1.6s ease .6s; }
+.slide:has(.rv15-go.on) .rv15-throne { opacity: .55; }
+.rv15-glint { fill: none; stroke: color-mix(in srgb, var(--cool) 60%, var(--on-glow)); stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity 1.2s ease .3s; }
+.slide:has(.rv15-go.on) .rv15-glint { opacity: .5; }
+.rv15-lab.big.b { fill: var(--on-glow); }
+.rv15-man { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; transform: translate(0, 0); transition: transform 3s cubic-bezier(.4,0,.3,1); }
+.slide.active .rv15-man { transform: translate(var(--dx), var(--dy)); transition-delay: calc(.5s + var(--k) * .12s); }
+.slide:has(.rv15-go.on) .rv15-man { transform: translate(var(--dx), var(--gy)); transition-delay: calc(.4s + var(--k) * .08s); }
+.rv15-chariot { fill: var(--danger); transition: transform 2s ease, opacity .8s ease; }
+.slide.active .rv15-chariot { transform: translateY(-105px); opacity: 0; transition: transform 2s ease 2.2s, opacity .8s ease 4.1s; }
+.rv15-note { font: 700 24px var(--serif); fill: var(--accent-hot); opacity: 0; }
+.slide.active .rv15-note.a { animation: rv15-rise 3s ease-out infinite calc(4.6s + var(--k) * .7s); }
+.slide:has(.rv15-go.on) .rv15-note.a { animation: none; opacity: 0; }
+.slide:has(.rv15-go.on) .rv15-note.b { animation: rv15-rise 3s ease-out infinite calc(2.4s + var(--k) * .7s); }
+@keyframes rv15-rise { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-40px); } }
+.rv15-lab { font: 700 17px var(--sans); fill: var(--ink-soft); letter-spacing: .08em; transition: opacity 1s ease; }
+.rv15-lab.big { font: 400 26px var(--serif); letter-spacing: 0; fill: var(--ink); }
+.rv15-lab.hot { fill: var(--accent-hot); }
+.rv15-lab.b { opacity: 0; }
+.slide:has(.rv15-go.on) .rv15-lab.a { opacity: 0; }
+.slide:has(.rv15-go.on) .rv15-lab.b { opacity: 1; transition-delay: .8s; }
+@media (max-width: 600px) { .rv15-lab { font-size: 21px; } .rv15-lab.big { font-size: 30px; } }
+
+/* rv15-vial: a golden vial (a wide, shallow bowl). The prayers of the saints rise from one (5:8); on .rv15-go the wrath fills the other (15:7) */
+.rv15-bowl { fill: var(--warm); stroke: color-mix(in srgb, var(--warm) 55%, var(--ink)); stroke-width: 2; }
+.rv15-rim { fill: color-mix(in srgb, var(--warm) 45%, var(--bg)); stroke: color-mix(in srgb, var(--warm) 55%, var(--ink)); stroke-width: 2; }
+.rv15-blaze { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; }
+.rv15-blaze.hot { fill: var(--warm); }
+.slide:has(.rv15-go2.on) .rv15-blaze { animation: rv15-lick 1.3s ease-in-out infinite alternate calc(var(--k) * -.35s); }
+@keyframes rv15-lick { from { transform: scaleY(.8) skewX(-4deg); } to { transform: scaleY(1.08) skewX(4deg); } }
+.rv15-curl { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.slide.active .rv15-curl { animation: rv15-curl 3.4s ease-out infinite calc(.6s + var(--k) * .9s); }
+@keyframes rv15-curl { 0% { stroke-dashoffset: 1; opacity: .9; } 70% { stroke-dashoffset: 0; opacity: .7; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+.rv15-wrath { opacity: 0; transition: opacity 1s ease .4s; }
+.slide:has(.rv15-go2.on) .rv15-wrath { opacity: 1; }
+.rv15-link { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; }
+.rv15-t { font: 20px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.rv15-t.k { font: 700 22px var(--sans); fill: var(--ink); }
+.rv15-t.q { font: italic 21px var(--serif); fill: var(--accent-hot); }
+@media (max-width: 600px) { .rv15-t { font-size: 24px; } .rv15-t.k { font-size: 26px; } .rv15-t.q { font-size: 25px; } }
+
+/* rv15-smoke: two doors. The temple fills with smoke and no man can enter (15:8); on .rv15-go3 the other door opens: the way in today (Hebrews 10:19) */
+.rv15-wall { fill: var(--surface); stroke: var(--line-strong); stroke-width: 3; }
+.rv15-door { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv15-puff { fill: var(--ink-soft); opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transform: translateY(40px) scale(.3); }
+.slide.active .rv15-puff { animation: rv15-puff 4.5s ease-out forwards calc(.3s + var(--k) * .3s); }
+@keyframes rv15-puff { to { opacity: .55; transform: none; } }
+.rv15-bar { stroke: var(--danger); stroke-width: 8; stroke-linecap: round; opacity: 0; transition: opacity .8s ease 3.4s; }
+.slide.active .rv15-bar { opacity: 1; }
+.rv15-open { opacity: .25; transition: opacity 1s ease; }
+.slide:has(.rv15-go3.on) .rv15-open { opacity: 1; }
+.rv15-light { fill: var(--glow); opacity: 0; transition: opacity 1.2s ease .5s; }
+.slide:has(.rv15-go3.on) .rv15-light { opacity: 1; }
+.rv15-leaf { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; transform-box: fill-box; transition: transform 1.2s ease .3s; }
+.rv15-leaf.l { transform-origin: 0 50%; } .rv15-leaf.r { transform-origin: 100% 50%; }
+.slide:has(.rv15-go3.on) .rv15-leaf { transform: scaleX(.18); }
+.rv15-beam { fill: var(--glow); opacity: 0; transition: opacity 1.4s ease 1s; }
+.slide:has(.rv15-go3.on) .rv15-beam { opacity: .8; }
+@media (max-width: 600px) { .rv15-t.sm { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 15</h1>
+    <p class="sub rise" style="--d:3">The song on the far shore</p>
+    <p class="tag rise" style="--d:5">Before the last plagues fall, John sees the end of the story for God's people: standing safe on a sea of glass, singing about Him.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Last</span><span class="seed-q">Why are these called the seven last plagues?</span></li>
+      <li class="step"><span class="topic">Victory</span><span class="seed-q">Who stands on the sea of glass, and how did they win?</span></li>
+      <li class="step"><span class="topic">Song</span><span class="seed-q">Whose song do they sing, and who is it about?</span></li>
+      <li class="step"><span class="topic">Holy</span><span class="seed-q">Why should every man fear God and glorify His name?</span></li>
+      <li class="step"><span class="topic">Temple</span><span class="seed-q">Why could no man enter the temple?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv15-where rise" style="--d:1" role="img" aria-label="Revelation in seven parts. Chapter 1: a vision of Christ. Chapters 2 and 3: the seven churches. Chapters 4 and 5: the throne and the Lamb. Chapters 6 to 16: seals, trumpets and bowls; we are in chapter 15. Chapters 17 and 18: Babylon falls. Chapters 19 and 20: Christ returns and reigns. Chapters 21 and 22: all things new.">
+      <div class="done"><i>1</i><span>Vision of Christ</span></div>
+      <div class="done"><i>2–3</i><span>Seven churches</span></div>
+      <div class="done"><i>4–5</i><span>Throne and Lamb</span></div>
+      <div class="now"><i>6–16</i><b><u>6</u><u>7</u><u>8</u><u>9</u><u>10</u><u>11</u><u>12</u><u>13</u><u>14</u><u class="at">15</u><u>16</u></b><span>Seals, trumpets, bowls</span></div>
+      <div><i>17–18</i><span>Babylon falls</span></div>
+      <div><i>19–20</i><span>Christ returns and reigns</span></div>
+      <div><i>21–22</i><span>All things new</span></div>
+    </div>
+    <p class="note rise" style="--d:2">John is an old prisoner on the island of Patmos, about AD 95, writing to seven churches under pressure. Chapters 12 to 14 pulled back the curtain: the dragon, the beast, and the Lamb standing on mount Sion with His people.</p>
+    <p class="note step">Now the last set of seven begins. Chapter 15 is short: eight verses. It is the calm before the bowls are poured, and the first thing God shows John is not the judgment. It is His people, safe, and singing.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Seven last plagues</h2>
+    <p class="range rise" style="--d:2">Verse 1</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Seals, then trumpets, then bowls. And these are the last.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="great and marvellous|seven angels having the seven last plagues|for in them is filled up the wrath of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three sevens</h2>
+    <div class="rv15-three" role="img" aria-label="Three series of seven. The seven seals, chapters 6 to 8, reach a fourth part of the earth. The seven trumpets, chapters 8 to 11, reach a third part. The seven bowls, chapters 15 and 16, not yet poured, reach all of it.">
+      <div class="row seals" style="--k:0">
+        <p class="name"><b>Seven seals</b><small>6:1 – 8:1</small></p>
+        <ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li></ol>
+        <p class="reach"><span class="bar"><i style="--w:25%"></i></span><b>a fourth part</b><small>6:8</small></p>
+      </div>
+      <div class="row trumpets" style="--k:1">
+        <p class="name"><b>Seven trumpets</b><small>8:2 – 11:19</small></p>
+        <ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li></ol>
+        <p class="reach"><span class="bar"><i style="--w:33.3%"></i></span><b>the third part</b><small>8:7–12</small></p>
+      </div>
+      <div class="row bowls open" style="--k:2">
+        <p class="name"><b>Seven bowls</b><small>15:1 – 16:21</small></p>
+        <ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li></ol>
+        <p class="reach"><span class="bar"><i style="--w:100%"></i></span><b>all of it</b><small>16:3</small></p>
+      </div>
+    </div>
+    <p class="note step">Each set reaches further than the last. The seals touch a fourth part, the trumpets a third. The bowls (the <em>vials</em>, 15:7) hold nothing back. In them <em>is filled up the wrath of God</em>.</p>
+    <p class="note step">Bible teachers differ on how the three fit. Some read them one after another; others see the same days told three times, each sharper. Both agree on the plain thing: God warns in part before He judges in full.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="for in them is filled up the wrath of God"></blockquote>
+    <h2 class="rise" style="--d:1">What “last” means</h2>
+    <p class="note rise" style="--d:2">God's <em>wrath</em> isn't a temper. It is His settled, holy opposition to evil: to every lie, every abuse, every innocent life thrown away. A judge who never judged anything would not be good.</p>
+    <p class="note step"><em>Filled up</em> means finished. Evil will not run forever. There is a <em>last</em>, and after it, God makes all things new (21:5).</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Without Christ</p>
+        <h3>Wrath abides</h3>
+        <p>“… he that believeth not the Son shall not see life; but the wrath of God abideth on him.” <small>John 3:36</small></p>
+      </div>
+      <div class="col grace step">
+        <p class="who">In Christ</p>
+        <h3>Saved from wrath</h3>
+        <p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.” <small>Romans 5:9</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where are believers when the bowls pour?</h2>
+    <p class="note rise" style="--d:1">Good Baptist teachers answer this differently, and they can sit at the same table.</p>
+    <ul class="nots">
+      <li class="step yes"><span class="k">Many teach the church is caught up first</span><span class="why">1 Thessalonians 4:17; those who stand here believed during those days</span></li>
+      <li class="step yes"><span class="k">Others teach believers go through, kept by God</span><span class="why">as Israel was kept in Goshen while Egypt was struck</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ,”</p><cite>1 Thessalonians 5:9</cite></blockquote>
+    <p class="note step">Whatever the order of events, that verse holds. The man who has trusted Jesus is not on the list for wrath. He was taken off it at the cross.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The song on the far shore</h2>
+    <p class="range rise" style="--d:2">Verses 2–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God's people have stood on the far shore singing before. They will again.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-4" data-hl="a sea of glass mingled with fire|them that had gotten the victory over the beast|the song of Moses the servant of God, and the song of the Lamb|Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints|Who shall not fear thee, O Lord, and glorify thy name? for thou only art holy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">They have stood here before</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 380" style="max-height:54vh" role="img" aria-label="The Red sea from above. A dry path opens through it; God's people cross from the near shore to the far shore, the sea closes over the chariots behind them, and they sing. Then the sea turns to glass mingled with fire, and the same people stand on it, singing: Revelation 15.">
+          <rect class="rv15-land" x="2" y="2" width="596" height="376" rx="8"/>
+          <path class="rv15-throne" d="M110 4 A190 70 0 0 0 490 4 Z"/>
+          <rect class="rv15-sea" x="2" y="86" width="596" height="190"/>
+          <path class="rv15-wave" d="M30 120 q20 -10 40 0 t40 0 M420 112 q20 -10 40 0 t40 0 M120 230 q20 -10 40 0 t40 0 M440 240 q20 -10 40 0 t40 0 M60 180 q20 -10 40 0 t40 0 M380 176 q20 -10 40 0 t40 0"/>
+          <path class="rv15-glint" d="M40 110 l26 -12 M180 160 l34 -16 M420 128 l26 -12 M520 236 l34 -16 M90 252 l22 -10 M350 252 l30 -14 M560 110 l20 -9"/>
+          <path class="rv15-fire" style="--k:0" d="M20 140 C 70 122, 110 158, 170 138 S 250 124, 280 140"/>
+          <path class="rv15-fire b" style="--k:1" d="M330 214 C 380 196, 420 236, 470 212 S 550 198, 590 218"/>
+          <path class="rv15-fire" style="--k:2" d="M30 236 C 90 220, 150 248, 210 232"/>
+          <path class="rv15-fire rv15-flame" style="--k:0" d="M60 150 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame b" style="--k:1" d="M150 222 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame" style="--k:2" d="M230 124 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame b" style="--k:0" d="M372 226 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame" style="--k:1" d="M455 140 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame b" style="--k:2" d="M540 206 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame" style="--k:1" d="M100 196 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame b" style="--k:0" d="M500 112 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame" style="--k:1" d="M20 120 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame b" style="--k:0" d="M585 160 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <path class="rv15-fire rv15-flame" style="--k:2" d="M300 126 c -7 -6 -6 -14 0 -22 c 1 7 9 9 8 16 c -1 5 -4 7 -8 6 z"/>
+          <rect class="rv15-path" x="276" y="86" width="48" height="190"/>
+          <g class="rv15-chariot"><rect x="272" y="330" width="22" height="14" rx="3"/><rect x="306" y="336" width="22" height="14" rx="3"/><rect x="286" y="352" width="22" height="14" rx="3"/></g>
+            <g class="rv15-man" style="--k:0; --dx:-170px; --dy:-250px; --gy:-124px"><circle cx="300" cy="297" r="6"/><rect x="293" y="304" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:1; --dx:-128px; --dy:-250px; --gy:-118px"><circle cx="290" cy="305" r="6"/><rect x="283" y="312" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:2; --dx:-86px; --dy:-258px; --gy:-132px"><circle cx="310" cy="305" r="6"/><rect x="303" y="312" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:3; --dx:-44px; --dy:-260px; --gy:-128px"><circle cx="300" cy="315" r="6"/><rect x="293" y="322" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:4; --dx:0px; --dy:-276px; --gy:-150px"><circle cx="288" cy="323" r="6"/><rect x="281" y="330" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:5; --dx:44px; --dy:-268px; --gy:-136px"><circle cx="312" cy="323" r="6"/><rect x="305" y="330" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:6; --dx:86px; --dy:-284px; --gy:-158px"><circle cx="300" cy="331" r="6"/><rect x="293" y="338" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:7; --dx:128px; --dy:-284px; --gy:-152px"><circle cx="290" cy="339" r="6"/><rect x="283" y="346" width="14" height="16" rx="6"/></g>
+            <g class="rv15-man" style="--k:8; --dx:170px; --dy:-292px; --gy:-166px"><circle cx="310" cy="339" r="6"/><rect x="303" y="346" width="14" height="16" rx="6"/></g>
+          <text class="rv15-note a" style="--k:0" x="110" y="40">♪</text><text class="rv15-note a" style="--k:1" x="300" y="34">♫</text><text class="rv15-note a" style="--k:2" x="480" y="40">♪</text>
+          <text class="rv15-note b" style="--k:0" x="110" y="166">♪</text><text class="rv15-note b" style="--k:1" x="300" y="156">♫</text><text class="rv15-note b" style="--k:2" x="490" y="166">♪</text>
+          <text class="rv15-lab a" x="22" y="26">THE FAR SHORE</text>
+          <text class="rv15-lab a" x="22" y="366">EGYPT BEHIND THEM</text>
+          <text class="rv15-lab big a" x="580" y="264" text-anchor="end">the Red sea</text>
+          <text class="rv15-lab hot a" x="580" y="26" text-anchor="end">EXODUS 15</text>
+          <text class="rv15-lab b" x="22" y="26">BEFORE THE THRONE</text>
+          <text class="rv15-lab b" x="22" y="366">THE BEAST BEHIND THEM</text>
+          <text class="rv15-lab big b" x="580" y="264" text-anchor="end">a sea of glass mingled with fire</text>
+          <text class="rv15-lab hot b" x="580" y="26" text-anchor="end">REVELATION 15</text>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">Israel stood at the Red sea with Pharaoh's army behind them. God opened the sea, they crossed on dry ground, and the water came back over the chariots. On the far shore, Moses led them in a song (Exodus 15).</p>
+        <p class="note step rv15-go">Now look at John's sea. It is the calm <em>sea of glass</em> before the throne (4:6), now <em>mingled with fire</em>: judgment about to fall. And God's people aren't drowning in it. They <em>stand on</em> it, with harps.</p>
+        <p class="note step">That is how the story of God's people always ends: through the water, and singing on the far side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="them that had gotten the victory over the beast"></blockquote>
+    <h2 class="rise" style="--d:1">How they won</h2>
+    <p class="note rise" style="--d:2">The beast had the power to say who could buy or sell (13:17). These people had none of it, and many paid with their lives. Yet God calls them the winners.</p>
+    <blockquote class="quote step"><p>“And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.”</p><cite>Revelation 12:11</cite></blockquote>
+    <p class="note step">They didn't win by being stronger, but by the blood of the Lamb and by refusing to bow. Some of us fought every fight the hard way and lost anyway. This victory is His, and He shares it.</p>
+    <blockquote class="quote step"><p>“For whatsoever is born of God overcometh the world: and this is the victory that overcometh the world, even our faith.”</p><cite>1 John 5:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two songs, one God</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><p class="ref">Exodus 15:11 · the song of Moses</p><p class="kjv">Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?</p></div>
+      <div class="scroll step"><p class="ref">Revelation 15:3–4 · the song of the Lamb</p><p class="kjv">Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints. <mark>Who shall not fear thee, O Lord</mark>, and glorify thy name? for thou only art holy.</p></div>
+    </div>
+    <p class="note step">Moses sang about one rescue: out of Egypt, through the sea. The Lamb's song is about the bigger one. Back in Egypt the blood of a lamb on the door kept death away (Exodus 12:13). Jesus is that Lamb, and His blood keeps a man from the judgment itself.</p>
+    <p class="note step">Same God, same kind of song, a thousand years and more apart. He hasn't changed how He saves: He goes ahead, opens the way, and brings His people through.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Not one word about themselves</h2>
+    <blockquote class="quote rise" style="--d:1"><p>“Great and marvellous are <mark>thy</mark> works, Lord God Almighty; just and true are <mark>thy</mark> ways, <mark>thou</mark> King of saints. Who shall not fear <mark>thee</mark>, O Lord, and glorify <mark>thy</mark> name? for <mark>thou</mark> only art holy: for all nations shall come and worship before <mark>thee</mark>; for <mark>thy</mark> judgments are made manifest.”</p><cite>Revelation 15:3–4</cite></blockquote>
+    <div class="temples">
+      <div class="stone-t step"><h3>I, me, my, we</h3><div class="big">0</div><p>Not their suffering, not their courage.</p></div>
+      <div class="body-t step"><h3>Thee, thy, thou</h3><div class="big">8</div><p>His works, His ways, His name.</p></div>
+    </div>
+    <p class="note step">These people had been through the worst. On the far shore they don't tell their story. They tell His. Your regrets won't be the last word on your life either. When you get there, you'll be singing about what He did.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="for all nations shall come and worship before thee"></blockquote>
+    <h2 class="rise" style="--d:1">Who shall not fear thee?</h2>
+    <p class="note rise" style="--d:2">The song borrows from older ones. David sang it first:</p>
+    <blockquote class="quote step"><p>“All nations whom thou hast made shall come and worship before thee, O Lord; and shall glorify thy name.”</p><cite>Psalm 86:9</cite></blockquote>
+    <p class="note step">To <em>fear</em> God here is to take Him seriously: awe, respect, bowing low. <em>Thou only art holy</em>: nobody else is completely clean, not the preacher, not the saint, not us. That's why every man needs the Lamb.</p>
+    <p class="note step"><em>All nations</em>: the song is wide open. People from every kind of background, every kind of past, will stand on that sea. The door is open to whosoever.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The temple filled with smoke</h2>
+    <p class="range rise" style="--d:2">Verses 5–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Seven angels come out of God's own house, and the door closes behind them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="the temple of the tabernacle of the testimony in heaven was opened|clothed in pure and white linen"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Out of the tabernacle of the testimony</h2>
+    <div class="split">
+      <div>
+        <p class="note rise" style="--d:1">The <em>testimony</em> was God's law, the two tablets Moses kept in the ark:</p>
+        <blockquote class="quote rise" style="--d:2"><p>“And thou shalt put into the ark the testimony which I shall give thee.”</p><cite>Exodus 25:16</cite></blockquote>
+        <p class="note step">So the angels come out from beside God's own law. Judgment doesn't come from a bad mood. It comes from His holiness, measured by His word.</p>
+        <p class="note step">They are dressed like priests, in <em>pure and white linen</em> with <em>golden girdles</em> (belts), the way John saw Jesus in chapter 1:13. They serve Him.</p>
+      </div>
+      <div>
+        <p class="note rise" style="--d:3">Next (verse 7), <em>one of the four beasts</em>, the four living creatures around the throne (4:6), hands them <em>seven golden vials</em>.</p>
+        <p class="note rise" style="--d:4">A <em>vial</em> here isn't a small bottle. It is a wide, shallow bowl, the kind used in the temple. Built to be poured.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="seven golden vials full of the wrath of God|the temple was filled with smoke from the glory of God|no man was able to enter into the temple"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The same golden bowls</h2>
+    <svg viewBox="0 0 600 290" style="max-height:38vh" role="img" aria-label="Two golden bowls. From the first, the prayers of the saints rise like incense: Revelation 5:8, and their cry, How long, O Lord? Then the second fills with the wrath of God, flames rising from it: Revelation 15:7. The prayers are being answered.">
+      <path class="rv15-link" d="M200 120 C 260 70, 340 70, 400 120"/>
+      <text class="rv15-t q" x="300" y="60">“How long, O Lord?” (6:10)</text>
+      <path class="rv15-curl" style="--k:0" pathLength="1" d="M110 150 C 90 120, 130 100, 110 70 S 120 30, 112 14"/>
+      <path class="rv15-curl" style="--k:1" pathLength="1" d="M140 150 C 160 120, 120 96, 142 66 S 136 32, 146 18"/>
+      <path class="rv15-curl" style="--k:2" pathLength="1" d="M170 150 C 150 124, 190 100, 168 76 S 176 40, 168 26"/>
+      <path class="rv15-bowl" d="M60 160 L220 160 Q210 214 140 218 Q70 214 60 160 Z"/>
+      <ellipse class="rv15-rim" cx="140" cy="160" rx="80" ry="12"/>
+      <text class="rv15-t k" x="140" y="252">full of odours: prayers</text>
+      <text class="rv15-t" x="140" y="278">Revelation 5:8</text>
+      <path class="rv15-bowl" style="opacity:.35" d="M380 160 L540 160 Q530 214 460 218 Q390 214 380 160 Z"/>
+      <g class="rv15-wrath">
+        <path class="rv15-blaze hot" style="--k:0" d="M396 158 C 392 132, 408 124, 412 100 C 418 122, 428 132, 424 158 Z"/>
+        <path class="rv15-blaze" style="--k:1" d="M418 158 C 414 132, 430 124, 434 100 C 440 122, 450 132, 446 158 Z"/>
+        <path class="rv15-blaze hot" style="--k:2" d="M442 158 C 438 132, 454 124, 458 100 C 464 122, 474 132, 470 158 Z"/>
+        <path class="rv15-blaze" style="--k:0" d="M466 158 C 462 132, 478 124, 482 100 C 488 122, 498 132, 494 158 Z"/>
+        <path class="rv15-blaze hot" style="--k:1" d="M490 158 C 486 132, 502 124, 506 100 C 512 122, 522 132, 518 158 Z"/>
+        <path class="rv15-bowl" d="M380 160 L540 160 Q530 214 460 218 Q390 214 380 160 Z"/>
+        <ellipse class="rv15-rim" cx="460" cy="160" rx="80" ry="12"/>
+        <text class="rv15-t k" x="460" y="252">full of the wrath of God</text>
+        <text class="rv15-t" x="460" y="278">Revelation 15:7</text>
+      </g>
+    </svg>
+    <p class="note rise" style="--d:2">In chapter 5 the golden vials were <em>full of odours, which are the prayers of saints</em>. Under the altar the martyrs cried, <em>“How long, O Lord?”</em></p>
+    <p class="note step rv15-go2">Now golden vials come out full of judgment. The bowls of wrath are God's answer to His people's prayers. No prayer for justice is wasted, even one that waits years.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">No man could enter. Today the door is open.</h2>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" style="max-height:44vh" role="img" aria-label="Two doors. The first temple fills with smoke, and a red bar falls across its door: no man was able to enter, Revelation 15:8. Then a second door opens, and light pours out of it: boldness to enter by the blood of Jesus, Hebrews 10:19.">
+          <defs><clipPath id="rv15-clip"><path d="M40 110 L150 50 L260 110 L260 250 L40 250 Z"/></clipPath><filter id="rv15-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+          <path class="rv15-wall" d="M40 110 L150 50 L260 110 L260 250 L40 250 Z"/>
+          <rect class="rv15-door" x="120" y="170" width="60" height="80"/>
+          <g clip-path="url(#rv15-clip)"><g filter="url(#rv15-soft)">
+            <circle class="rv15-puff" style="--k:0" cx="70" cy="240" r="26"/>
+            <circle class="rv15-puff" style="--k:1" cx="110" cy="236" r="30"/>
+            <circle class="rv15-puff" style="--k:2" cx="150" cy="240" r="28"/>
+            <circle class="rv15-puff" style="--k:3" cx="190" cy="236" r="30"/>
+            <circle class="rv15-puff" style="--k:4" cx="230" cy="240" r="26"/>
+            <circle class="rv15-puff" style="--k:5" cx="90" cy="200" r="30"/>
+            <circle class="rv15-puff" style="--k:6" cx="150" cy="196" r="34"/>
+            <circle class="rv15-puff" style="--k:7" cx="210" cy="200" r="30"/>
+            <circle class="rv15-puff" style="--k:8" cx="110" cy="160" r="28"/>
+            <circle class="rv15-puff" style="--k:9" cx="190" cy="160" r="28"/>
+            <circle class="rv15-puff" style="--k:10" cx="150" cy="130" r="30"/>
+            <circle class="rv15-puff" style="--k:11" cx="80" cy="130" r="22"/>
+            <circle class="rv15-puff" style="--k:12" cx="220" cy="130" r="22"/>
+          </g></g>
+          <path class="rv15-wall" style="fill:none" d="M40 110 L150 50 L260 110 L260 250 L40 250 Z"/>
+          <line class="rv15-bar" x1="104" y1="212" x2="196" y2="212"/>
+          <text class="rv15-t sm" x="150" y="296">no man able to enter (15:8)</text>
+          <g class="rv15-open">
+            <path class="rv15-beam" d="M420 250 L480 250 L540 276 L360 276 Z"/>
+            <path class="rv15-wall" d="M340 110 L450 50 L560 110 L560 250 L340 250 Z"/>
+            <rect class="rv15-light" x="420" y="170" width="60" height="80"/>
+            <rect class="rv15-leaf l" x="420" y="170" width="30" height="80"/>
+            <rect class="rv15-leaf r" x="450" y="170" width="30" height="80"/>
+            <text class="rv15-t sm" x="450" y="296">boldness to enter (Hebrews 10:19)</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="note rise" style="--d:2">It happened at the tabernacle and at Solomon's temple: God's glory filled the place like a cloud, and even Moses <em>was not able to enter</em> (Exodus 40:35). Here the smoke shuts the temple <em>till the seven plagues … were fulfilled</em>. There's a day when the time of waiting is over.</p>
+        <p class="note step rv15-go3">That day isn't today. Today the door stands open:</p>
+        <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Sing on this side of the sea</h2>
+    <p class="note rise" style="--d:1">The far shore is coming. But you don't have to wait for it to start the song. Some of the best singing in the Bible happened in a cell:</p>
+    <blockquote class="quote step"><p>“And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them.”</p><cite>Acts 16:25</cite></blockquote>
+    <p class="note step"><em>And the prisoners heard them.</em> Men who are still in the middle of it are listening to how you handle yours.</p>
+    <p class="note step">Today, before the day gets loud: name three things God has done for you, out loud, and thank Him for them. Not what you did. What He did. That's the song of Moses and the Lamb, started early.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Last</span><span class="seed-q">“In them is filled up the wrath of God” <cite>15:1</cite></span><span class="take">God warns in part before He judges in full, and evil won't run forever. In Christ, a man is saved from wrath.</span></li>
+      <li class="step"><span class="topic">Victory</span><span class="seed-q">“Them that had gotten the victory over the beast” <cite>15:2</cite></span><span class="take">They won by the blood of the Lamb and by refusing to bow, not by being stronger.</span></li>
+      <li class="step"><span class="topic">Song</span><span class="seed-q">“The song of Moses … and the song of the Lamb” <cite>15:3</cite></span><span class="take">The same God who brought Israel through the sea brings His people through. The song is all about Him.</span></li>
+      <li class="step"><span class="topic">Holy</span><span class="seed-q">“For thou only art holy” <cite>15:4</cite></span><span class="take">He alone is holy, and every nation will bow. That's why every man needs the Lamb.</span></li>
+      <li class="step"><span class="topic">Temple</span><span class="seed-q">“No man was able to enter into the temple” <cite>15:8</cite></span><span class="take">A day comes when the waiting is over. Today the way into God's presence is open by the blood of Jesus.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 5</p>
+      <span class="topic">Last</span>
+      <h2>Why are these called the seven last plagues?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because in them the wrath of God is filled up: finished. The seals and trumpets struck part of the earth; the bowls hold nothing back. Evil won't run forever. And the man justified by Jesus' blood is saved from that wrath.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 5</p>
+      <span class="topic">Victory</span>
+      <h2>Who stands on the sea of glass, and how did they win?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.”</p><cite>Revelation 12:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Those who got the victory over the beast, his image, his mark and his name. They won by the blood of the Lamb and the word of their testimony, refusing to bow even at the cost of their lives. Now they stand safe before God with harps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 5</p>
+      <span class="topic">Song</span>
+      <h2>Whose song do they sing, and who is it about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“Then sang Moses and the children of Israel this song unto the LORD, and spake, saying, I will sing unto the LORD, for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.”</p><cite>Exodus 15:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The song of Moses and the song of the Lamb. Moses sang on the far shore of the Red sea; the Lamb's people sing on the sea of glass. And it is all about God: His works, His ways, His name, His judgments. Not one word about themselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 5</p>
+      <span class="topic">Holy</span>
+      <h2>Why should every man fear God and glorify His name?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“All nations whom thou hast made shall come and worship before thee, O Lord; and shall glorify thy name.”</p><cite>Psalm 86:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He alone is holy, His works are great, His ways are just and true, and His judgments will be seen by all. Every nation will come and worship. Nobody else is clean, so every man needs the Lamb.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 5</p>
+      <span class="topic">Temple</span>
+      <h2>Why could no man enter the temple?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“And Moses was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of the LORD filled the tabernacle.”</p><cite>Exodus 40:35</cite></blockquote>
+      <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus,”</p><cite>Hebrews 10:19</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The temple was filled with smoke from God's glory and power, until the seven plagues were finished. A day is coming when the time of waiting is over. But today the way into God's presence is open, by the blood of Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings. And he hath put a new song in my mouth, even praise unto our God: many shall see it, and fear, and shall trust in the LORD.”</p><cite>Psalm 40:2–3</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 15
+const V = {
+  1: "And I saw another sign in heaven, great and marvellous, seven angels having the seven last plagues; for in them is filled up the wrath of God.",
+  2: "And I saw as it were a sea of glass mingled with fire: and them that had gotten the victory over the beast, and over his image, and over his mark, and over the number of his name, stand on the sea of glass, having the harps of God.",
+  3: "And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints.",
+  4: "Who shall not fear thee, O Lord, and glorify thy name? for thou only art holy: for all nations shall come and worship before thee; for thy judgments are made manifest.",
+  5: "And after that I looked, and, behold, the temple of the tabernacle of the testimony in heaven was opened:",
+  6: "And the seven angels came out of the temple, having the seven plagues, clothed in pure and white linen, and having their breasts girded with golden girdles.",
+  7: "And one of the four beasts gave unto the seven angels seven golden vials full of the wrath of God, who liveth for ever and ever.",
+  8: "And the temple was filled with smoke from the glory of God, and from his power; and no man was able to enter into the temple, till the seven plagues of the seven angels were fulfilled."
+};
+const BOOK = "Revelation 15";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
