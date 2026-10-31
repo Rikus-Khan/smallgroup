@@ -462,7 +462,16 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Colossians", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1, 3, 10 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 14, 15, 19 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "john-the-baptist",
@@ -1341,7 +1350,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1, 3 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "holy-spirit",
@@ -1557,7 +1572,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Colossians", 1,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 5, 6 ] ] ]
  },
  {
   "id": "disciples",
@@ -2106,7 +2124,10 @@ window.GLOSSARY = [
     [ 13, 14, 15 ] ],
    [
     "Galatians", 3,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "servants",
@@ -4029,7 +4050,10 @@ window.GLOSSARY = [
     [ 5, 16, 20, 23 ] ],
    [
     "Colossians", 4,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 10 ] ] ]
  },
  {
   "id": "hell",
@@ -4824,7 +4848,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Colossians", 1,
-    [ 5, 6 ] ] ]
+    [ 5, 6 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 13 ] ] ]
  },
  {
   "id": "glory",
@@ -5091,7 +5118,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Colossians", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 6, 12, 20 ] ] ]
  },
  {
   "id": "the-law",
@@ -5679,7 +5709,16 @@ window.GLOSSARY = [
     [ 1, 3, 4, 11, 13, 16, 24 ] ],
    [
     "Colossians", 4,
-    [ 3, 12 ] ] ]
+    [ 3, 12 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1, 3 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 6, 14, 19 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 2, 11, 13 ] ] ]
  },
  {
   "id": "son-of-god",
@@ -6183,7 +6222,13 @@ window.GLOSSARY = [
     [ 13, 19 ] ],
    [
     "Philippians", 1,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 7 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 10, 13 ] ] ]
  },
  {
   "id": "witness",
@@ -6348,7 +6393,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Colossians", 4,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "baptize",
@@ -6522,7 +6570,10 @@ window.GLOSSARY = [
     [ 47 ] ],
    [
     "2 Corinthians", 12,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "tenth-hour",
@@ -8490,7 +8541,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 3,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "tongue",
@@ -8829,7 +8883,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Colossians", 3,
-    [ 6, 8, 21 ] ] ]
+    [ 6, 8, 21 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 10 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "pride",
@@ -9645,6 +9705,9 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Proverbs", 29,
+    [ 5 ] ],
+   [
+    "1 Thessalonians", 2,
     [ 5 ] ] ]
  },
  {
@@ -10062,7 +10125,10 @@ window.GLOSSARY = [
     [ 15, 16 ] ],
    [
     "Philippians", 2,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "subtilty",
@@ -11874,7 +11940,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Corinthians", 12,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "parable",
@@ -12342,7 +12411,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Galatians", 1,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 14 ] ] ]
  },
  {
   "id": "bethlehem",
@@ -12705,7 +12777,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Colossians", 1,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 16 ] ] ]
  },
  {
   "id": "glorified",
@@ -14787,7 +14862,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Colossians", 2,
-    [ 15, 23 ] ] ]
+    [ 15, 23 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "fishers-coat",
@@ -15624,7 +15702,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "2 Corinthians", 12,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 18 ] ] ]
  },
  {
   "id": "girded",
@@ -16089,7 +16170,10 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "John", 15,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 5 ] ] ]
  },
  {
   "id": "reprove",
@@ -16161,7 +16245,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Galatians", 4,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "tribulation",
@@ -16200,6 +16287,9 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Corinthians", 7,
+    [ 4 ] ],
+   [
+    "1 Thessalonians", 3,
     [ 4 ] ] ]
  },
  {
@@ -18894,7 +18984,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Corinthians", 6,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 9 ] ] ]
  },
  {
   "id": "morning-cloud",
@@ -21288,7 +21381,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Luke", 2,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "solemn-feasts",
@@ -24732,7 +24828,16 @@ window.GLOSSARY = [
     [ 3, 15 ] ],
    [
     "Colossians", 1,
-    [ 5, 23 ] ] ]
+    [ 5, 23 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 5 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 2, 4, 8, 9 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "repent",
@@ -26499,7 +26604,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Ephesians", 4,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 6 ] ] ]
  },
  {
   "id": "bartholomew",
@@ -27033,7 +27141,10 @@ window.GLOSSARY = [
     [ 9, 13 ] ],
    [
     "Galatians", 6,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 5 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -27327,7 +27438,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Philippians", 3,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 15 ] ] ]
  },
  {
   "id": "salt",
@@ -30417,7 +30531,10 @@ window.GLOSSARY = [
     [ 18, 24 ] ],
    [
     "Colossians", 4,
-    [ 15, 16 ] ] ]
+    [ 15, 16 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "bind-and-loose",
@@ -31698,7 +31815,10 @@ window.GLOSSARY = [
     [ 7, 23, 25 ] ],
    [
     "Colossians", 4,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 2 ] ] ]
  },
  {
   "id": "joanna",
@@ -35340,7 +35460,10 @@ window.GLOSSARY = [
     [ 4, 5 ] ],
    [
     "Colossians", 1,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -37452,6 +37575,12 @@ window.GLOSSARY = [
     [ 1, 23 ] ],
    [
     "Colossians", 4,
+    [ 18 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 2,
     [ 18 ] ] ]
  },
  {
@@ -37635,7 +37764,13 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Colossians", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 2, 6 ] ] ]
  },
  {
   "id": "lydia",
@@ -37692,7 +37827,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Philippians", 1,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 2 ] ] ]
  },
  {
   "id": "troas",
@@ -37752,7 +37890,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Philippians", 4,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "samothracia",
@@ -37899,7 +38040,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 16,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 17 ] ] ]
  },
  {
   "id": "seller-of-purple",
@@ -38163,7 +38307,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Colossians", 1,
-    [ 2, 4, 12, 26 ] ] ]
+    [ 2, 4, 12, 26 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -38922,7 +39069,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Philippians", 4,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "amphipolis",
@@ -38964,6 +39114,9 @@ window.GLOSSARY = [
     [ 15, 16, 21, 22 ] ],
    [
     "Acts", 18,
+    [ 1 ] ],
+   [
+    "1 Thessalonians", 3,
     [ 1 ] ] ]
  },
  {
@@ -39186,7 +39339,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Corinthians", 11,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "cenchrea",
@@ -40278,6 +40434,9 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "1 Corinthians", 14,
+    [ 3 ] ],
+   [
+    "1 Thessalonians", 2,
     [ 3 ] ] ]
  },
  {
@@ -40806,7 +40965,13 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Colossians", 1,
-    [ 5, 23, 27 ] ] ]
+    [ 5, 23, 27 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 3 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 19 ] ] ]
  },
  {
   "id": "experience",
@@ -40962,7 +41127,10 @@ window.GLOSSARY = [
     [ 12, 17, 18 ] ],
    [
     "Colossians", 2,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 12 ] ] ]
  },
  {
   "id": "reign",
@@ -41169,7 +41337,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Colossians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 3 ] ] ]
  },
  {
   "id": "holiness",
@@ -41181,7 +41352,10 @@ window.GLOSSARY = [
     [ 19, 22 ] ],
    [
     "Ephesians", 4,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "wages",
@@ -41736,7 +41910,16 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 4,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 4 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 1, 9, 14, 17 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 7 ] ] ]
  },
  {
   "id": "captain-of-the-guard",
@@ -42687,7 +42870,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Ephesians", 4,
-    [ 1, 4 ] ] ]
+    [ 1, 4 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 12 ] ] ]
  },
  {
   "id": "foreknow",
@@ -42882,7 +43068,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Romans", 11,
-    [ 5, 7, 28 ] ] ]
+    [ 5, 7, 28 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "harden",
@@ -42990,7 +43179,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Colossians", 1,
-    [ 23, 28 ] ] ]
+    [ 23, 28 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 9 ] ] ]
  },
  {
   "id": "beautiful-feet",
@@ -43470,7 +43662,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 16,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "milk-and-meat",
@@ -44121,7 +44316,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Colossians", 3,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 6 ] ] ]
  },
  {
   "id": "edifieth",
@@ -44976,7 +45174,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 1,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "comfort",
@@ -44997,7 +45198,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Colossians", 4,
-    [ 8, 11 ] ] ]
+    [ 8, 11 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 11 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 2, 7 ] ] ]
  },
  {
   "id": "pressed-out-of-measure",
@@ -46116,7 +46323,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Philippians", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "1 Thessalonians", 1,
+    [ 7 ] ] ]
  },
  {
   "id": "enemies-of-the-cross",
@@ -48067,5 +48277,188 @@ window.GLOSSARY = [
    [
     "Colossians", 4,
     [ 13 ] ] ]
+ },
+ {
+  "id": "sounded-out",
+  "kind": "term",
+  "name": "Sounded out (rang out like a trumpet; the Greek gives us our word echo)",
+  "refs": [
+   [
+    "1 Thessalonians", 1,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "living-and-true-god",
+  "kind": "term",
+  "name": "The living and true God (the real God, against dead idols)",
+  "refs": [
+   [
+    "1 Thessalonians", 1,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "wrath-to-come",
+  "kind": "term",
+  "name": "The wrath to come (the judgment sin earns, which Jesus delivers us from)",
+  "refs": [
+   [
+    "1 Thessalonians", 1,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "followers-imitators",
+  "kind": "term",
+  "name": "Followers (imitators, those who copy a pattern)",
+  "refs": [
+   [
+    "1 Thessalonians", 1,
+    [ 6 ] ],
+   [
+    "1 Thessalonians", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "afflictions",
+  "kind": "term",
+  "name": "Affliction (pressure, hard times, trouble for the faith)",
+  "refs": [
+   [
+    "1 Thessalonians", 1,
+    [ 6 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 3, 7 ] ] ]
+ },
+ {
+  "id": "shamefully-entreated",
+  "kind": "term",
+  "name": "Shamefully entreated (treated outrageously: beaten and jailed at Philippi)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "allowed-of-god",
+  "kind": "term",
+  "name": "Allowed of God (tested, approved and trusted by God)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "burdensome-weight",
+  "kind": "term",
+  "name": "Burdensome (a weight on someone: Paul chose not to be one)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "nurse-mother",
+  "kind": "term",
+  "name": "A nurse (here a mother nursing her own children)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "cherisheth-warm",
+  "kind": "term",
+  "name": "Cherisheth (keeps warm, holds close)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "chargeable-burden",
+  "kind": "term",
+  "name": "Chargeable (a cost to someone: Paul wouldn't be one)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "countrymen",
+  "kind": "term",
+  "name": "Countrymen (your own people, the ones you grew up with)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "crown-of-rejoicing",
+  "kind": "term",
+  "name": "Crown of rejoicing (the wreath of the winner: Paul's prize is people)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "unblameable",
+  "kind": "term",
+  "name": "Unblameable (nothing left to charge against you)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 10 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "coming-of-the-lord",
+  "kind": "term",
+  "name": "The coming of the Lord (Jesus' return)",
+  "refs": [
+   [
+    "1 Thessalonians", 2,
+    [ 19 ] ],
+   [
+    "1 Thessalonians", 3,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "forbear-no-longer",
+  "kind": "term",
+  "name": "Forbear (hold it in, put up with it: Paul could no longer)",
+  "refs": [
+   [
+    "1 Thessalonians", 3,
+    [ 1, 5 ] ] ]
+ },
+ {
+  "id": "appointed-thereunto",
+  "kind": "term",
+  "name": "Appointed thereunto (hard times come with a new life)",
+  "refs": [
+   [
+    "1 Thessalonians", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "stand-fast",
+  "kind": "term",
+  "name": "Stand fast (stay firm in the Lord)",
+  "refs": [
+   [
+    "1 Thessalonians", 3,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "perfect-mend",
+  "kind": "term",
+  "name": "Perfect (here: mend, set right, as a net is mended)",
+  "refs": [
+   [
+    "1 Thessalonians", 3,
+    [ 10 ] ] ]
  }
 ];

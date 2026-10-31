@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Thessalonians 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t101-where: where we are in 1 Thessalonians (a deck.css candidate; the 1 Thessalonians 4-5 studies can copy it as is).
+   Three parts (div, --k). Each holds its chapters (p > i; read ones .done, the one we are in .here), its name (b), what it says (small)
+   and a key phrase (q + cite). The part we're in is .now. */
+.t101-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t101-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t101-where > div { opacity: 1; transform: none; }
+.t101-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t101-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t101-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t101-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t101-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t101-where i.here { animation: t101-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t101-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t101-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t101-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t101-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t101-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t101-where { grid-template-columns: 1fr; gap: 6px; }
+  .t101-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* t103-ripple: love that grows and overflows. A man at the centre, then rings that come in one at a time:
+   "one toward another", then "toward all men". Rings are .step so the story builds on each click. */
+.t103-ripple { display: block; width: 100%; max-height: 62vh; }
+.t103-ripple text { font-family: var(--sans); fill: var(--ink); }
+.t103-ripple .ring { fill: color-mix(in srgb, var(--accent) 10%, transparent); stroke: var(--accent); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.6); transition: opacity .8s ease, transform .9s ease; }
+.t103-ripple .ring.r2 { fill: color-mix(in srgb, var(--accent) 5%, transparent); stroke-dasharray: 8 8; }
+.t103-ripple .lab { font-size: 20px; font-weight: 700; opacity: 0; transition: opacity .6s ease .5s; }
+.t103-ripple .lab small { font-size: 17px; }
+.t103-ripple .me { fill: var(--accent); }
+.t103-ripple .mine { font-size: 21px; font-weight: 800; fill: var(--on-accent); }
+.slide:has(.t103-g1.on) .t103-ripple .r1, .slide:has(.t103-g2.on) .t103-ripple .r2 { opacity: 1; transform: none; }
+.slide:has(.t103-g1.on) .t103-ripple .l1, .slide:has(.t103-g2.on) .t103-ripple .l2 { opacity: 1; }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Thessalonians 3</h1>
+    <p class="sub rise" style="--d:3">Now we live</p>
+    <p class="tag rise" style="--d:5">Paul couldn't stand not knowing how they were doing, so he sent Timothy back to find out. The good news that came back lifted him up, and it ends in one of the warmest prayers in the Bible.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in 1 Thessalonians</h2>
+    <div class="t101-where" role="img" aria-label="1 Thessalonians in three parts. Chapters 1 to 3: the church and the men who started it, thanks, memories and a mentor who could not rest. Key phrase: now we live, if ye stand fast in the Lord, 3:8. Chapter 4: living to please God, and hope for those who have died. Key phrase: comfort one another with these words, 4:18. Chapter 5: ready for the day of the Lord. Key phrase: Rejoice evermore, pray without ceasing, 5:16 and 17. We are in chapter 3.">
+      <div class="now" style="--k:0"><p><i class="done">1</i><i class="done">2</i><i class="here">3</i></p><b>Thanks, and a mentor who couldn't rest</b><small>What the church was to Paul, what Paul was to them, and the news that brought him back to life</small><q>now we live, if ye stand fast in the Lord</q><cite>3:8</cite></div>
+      <div style="--k:1"><p><i>4</i></p><b>Live to please God</b><small>Keep clean, love one another, and don't grieve like men with no hope</small><q>comfort one another with these words</q><cite>4:18</cite></div>
+      <div style="--k:2"><p><i>5</i></p><b>Ready for the day</b><small>Stay awake and sober, look after each other, give thanks</small><q>Rejoice evermore. Pray without ceasing.</q><cite>5:16–17</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 1: what Paul saw in them. Chapter 2: what they saw in him. Chapter 3: what he did when he was torn away from them. This is the end of the first long conversation. Next come the practical chapters.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Couldn't wait</span><span class="seed-q">Why did Paul send Timothy to Thessalonica?</span></li>
+      <li class="step"><span class="topic">Warned</span><span class="seed-q">What had Paul told them to expect?</span></li>
+      <li class="step"><span class="topic">The tempter</span><span class="seed-q">What was Paul afraid of?</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">What did Timothy bring back?</span></li>
+      <li class="step"><span class="topic">Standing</span><span class="seed-q">What made Paul say, “now we live”?</span></li>
+      <li class="step"><span class="topic">Paul's prayer</span><span class="seed-q">What did Paul pray for them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Couldn't wait</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul is stuck in a strange city with no news, and he can't take it any more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="we could no longer forbear|left at Athens alone|sent Timotheus, our brother, and minister of God, and our fellowlabourer in the gospel of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="432 178 95 125" style="max-height:62vh" data-towns="Thessalonica*:t, Berea:l, Athens*:r, Corinth!:l" role="img" aria-label="A map of Greece. Timothy sails from Athens to Thessalonica, then returns south to Paul at Corinth.">
+          <path class="map-route r1 j2" data-via="Athens, @23.6 37.85, @24.1 37.55, @24.45 37.85, @24.72 38.12, @24.2 38.75, @24.0 39.3, @23.2 39.75, @22.85 40.2, Thessalonica"/>
+          <path class="map-route r2 j4" data-via="Thessalonica, Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, @24.1 37.55, @23.6 37.85, Cenchrea, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Timothy goes and comes back</h2>
+        <p class="note rise" style="--d:2"><em>“Forbear”</em> means hold it in, put up with it. Paul couldn't. So he chose to be <em>“left at Athens alone”</em>, in a city full of idols, so that Timothy could go.</p>
+        <p class="note step map-go1">Timothy goes to Thessalonica, to <em>“establish you, and to comfort you.”</em></p>
+        <p class="note step map-go2">And back, to Paul at Corinth, with Silas (Acts 18:5).</p>
+        <p class="note step">Look at how Paul describes him: <em>“our brother, and minister of God, and our fellowlabourer.”</em> A mentor who lifts the younger man up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="no man should be moved by these afflictions|we told you before that we should suffer tribulation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4" data-hl="no man should be moved by these afflictions|we told you before that we should suffer tribulation"></blockquote>
+    <h2 class="rise" style="--d:1">He had warned them</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>Paul, while he was with them</small>Trouble is coming. It comes with the territory.</p>
+      <p class="reply step"><small>…and later</small>It came, just as you said. And you were ready.</p>
+    </div>
+    <p class="note step"><em>“Moved”</em> means shaken. <em>“Appointed thereunto”</em> doesn't mean God wants you hurt; a new life against the grain meets pushback. Jesus said the same:</p>
+    <blockquote class="quote step"><p>“These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.”</p><cite>John 16:33</cite></blockquote>
+    <p class="note step">Old friends, a hard home, a craving at ten at night. Told it would be rough, you're less likely to think something has gone wrong.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5" data-hl="lest by some means the tempter have tempted you|our labour be in vain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle. Arrows fly at it and fall away.">
+          <circle class="kept-wall" cx="300" cy="180" r="130"/>
+          <text class="kept-tag" font-size="18" x="300" y="88" text-anchor="middle">kept in Christ</text>
+          <g class="kept-in"><circle cx="300" cy="130" r="9"/><circle cx="335" cy="140" r="9"/><circle cx="357" cy="168" r="9"/><circle cx="357" cy="202" r="9"/><circle cx="335" cy="230" r="9"/><circle cx="300" cy="240" r="9"/><circle cx="265" cy="230" r="9"/><circle cx="243" cy="202" r="9"/><circle cx="243" cy="168" r="9"/><circle cx="265" cy="140" r="9"/><circle cx="300" cy="185" r="9"/></g>
+          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
+          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M520 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The tempter</h2>
+        <p class="note rise" style="--d:2">Satan is real, and so are his darts. But look at what Paul is afraid of: not that they'd lose Jesus, but that they'd be knocked off their feet and his work come to nothing.</p>
+        <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+        <p class="note step">A believer is held in the Father's hand. But a held man can still be shaken, scared and miserable. That's why he needs brothers beside him, and why Paul couldn't rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Good news</h2>
+    <p class="range rise" style="--d:2">Verses 6–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Timothy comes back. Watch what happens to Paul.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="Timotheus came from you unto us, and brought us good tidings of your faith and charity|comforted over you in all our affliction and distress by your faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="brought us good tidings of your faith and charity"></blockquote>
+    <h2 class="rise" style="--d:1">“Good tidings”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">εὐαγγελίζομαι</span>
+      <span class="say step">said <em class="gk">euangelizomai</em></span>
+      <span class="means step">“to bring good news”: the word our <em>gospel</em> and <em>evangelist</em> come from</span>
+    </div>
+    <p class="note step">Paul uses the <em>gospel</em> word for Timothy's report. Their faith was news worth announcing. <em>“Charity”</em> is the old English word for love.</p>
+    <p class="note step">And they missed him as much as he missed them: <em>“desiring greatly to see us, as we also to see you.”</em> Paul was in trouble himself at that moment, and still, hearing they were standing <em>comforted</em> him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8" data-hl="now we live, if ye stand fast in the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="now we live, if ye stand fast in the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Fear, news, life</h2>
+    <svg class="curve" viewBox="0 0 600 300" style="max-height:30vh" role="img" aria-label="A line starts level, falls to a low point labelled could no longer forbear, then climbs to a high point labelled now we live.">
+      <line class="curve-base" x1="10" y1="100" x2="590" y2="100"/>
+      <path class="curve-line" pathLength="1" d="M20 100 C 90 100, 130 130, 180 220 C 210 275, 250 275, 280 220 C 330 120, 400 50, 580 40"/>
+      <g class="curve-pt low" style="--at:1.6s"><circle cx="230" cy="258" r="9"/><text x="230" y="292" text-anchor="middle">“could no longer forbear”</text></g>
+      <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="41" r="10"/><text class="q" x="590" y="146" text-anchor="end">“now we live”</text></g>
+    </svg>
+    <p class="note step">Paul was strong, and his joy still depended on his friends. Mentors, sponsors and fathers know it: you come alive when the man you care about is standing.</p>
+    <p class="note step">So your standing matters to somebody. When you show up, tell the truth, and get up after a bad day, you give life to men who pray for you. And notice: <em>“in the Lord.”</em> Not in yourself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="all the joy wherewith we joy for your sakes|Night and day praying exceedingly|perfect that which is lacking in your faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="perfect that which is lacking in your faith"></blockquote>
+    <h2 class="rise" style="--d:1">“Perfect” means mend</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">καταρτίσαι</span>
+      <span class="say step">said <em class="gk">katartisai</em></span>
+      <span class="means step">“to mend, repair, put right”</span>
+    </div>
+    <blockquote class="quote step"><p>“And when he had gone a little further thence, he saw James the son of Zebedee, and John his brother, who also were in the ship mending their nets.”</p><cite>Mark 1:19</cite></blockquote>
+    <p class="note step">The same word as <em>“mending their nets.”</em> Paul isn't saying they have no faith; a good net has gaps that need mending. He says it <em>“night and day, praying exceedingly.”</em> The next two chapters are the mending.</p>
+    <p class="note step">What gap are you embarrassed about? A net being mended is not thrown away.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The prayer</h2>
+    <p class="range rise" style="--d:2">Verses 11–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul ends the way he does everything: by asking God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11" data-hl="God himself and our Father, and our Lord Jesus Christ, direct our way unto you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="direct our way unto you"></blockquote>
+    <h2 class="rise" style="--d:1">From blocked to open</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Chapter 2</p>
+        <h3>“Satan hindered us”</h3>
+        <p>The road was blocked, and Paul couldn't come, though he tried more than once (2:18).</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Chapter 3</p>
+        <h3>“God himself … direct our way unto you”</h3>
+        <p>Paul doesn't give up and doesn't just complain. He takes the blocked road to God in prayer.</p>
+      </div>
+    </div>
+    <p class="note step">Years later, he did get to Macedonia and Greece again (Acts 20:1–2). The door that was shut opened, in God's time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="the Lord make you to increase and abound in love one toward another, and toward all men|stablish your hearts unblameable in holiness before God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="t103-ripple" viewBox="0 0 520 400" role="img" aria-label="A man at the centre. A first ring around him reads: one toward another, the brothers. A larger ring reads: toward all men, including the people who are hard to love.">
+          <circle class="ring r2" cx="260" cy="200" r="190"/>
+          <circle class="ring r1" cx="260" cy="200" r="128"/>
+          <circle class="me" cx="260" cy="200" r="38"/>
+          <text class="mine" x="260" y="207" text-anchor="middle">you</text>
+          <text class="lab l1" x="260" y="146" text-anchor="middle">one toward another</text>
+          <text class="lab l2" x="260" y="44" text-anchor="middle">toward all men</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Love that overflows</h2>
+        <p class="note rise" style="--d:2">Paul doesn't say, <em>“try harder.”</em> He says, <em>“the Lord make you.”</em> Love grows because God grows it. <em>“Increase and abound”</em> means grow, then overflow.</p>
+        <p class="note step t103-g1">First, <em>“one toward another.”</em> The brothers beside you. People like this room.</p>
+        <p class="note step t103-g2">Then <em>“toward all men.”</em> Even the hard ones, the old enemies, and the strangers at work. <em>“Even as we do toward you,”</em> Paul adds. He had shown them how.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="stablish your hearts unblameable in holiness before God"></blockquote>
+    <h2 class="rise" style="--d:1">What “unblameable” means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">never failing</span><span class="why">none of us is that, and Paul isn't asking for it</span></li>
+      <li class="step"><span class="k">looking good to people</span><span class="why">he says <em>before God</em>, who sees the heart</span></li>
+      <li class="step yes"><span class="k">nothing left that can be charged against you</span><span class="why">because of Jesus, and the Lord Himself <em>stablishes</em> the heart</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step"><em>“Holiness”</em> means set apart for God. And he ends where every chapter ends: <em>“at the coming of our Lord Jesus Christ with all his saints.”</em> If you stumbled yesterday, 1 John 1:9 is still true: confess it, and He is faithful and just to forgive. Then stand up again.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“For now we live, if ye <em>stand fast</em> in the Lord.”</p>
+    <p class="note rise" style="--d:2">A mentor who can't rest until he knows his men are standing. That's Paul. That's what this group does for each other.</p>
+    <p class="note step">One thing to do today: send one text to a man in this group. <em>“How are you standing?”</em> Or, if you're the one wobbling, tell one of them. They are Timothys, and they've been waiting to hear.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Couldn't wait</span><span class="seed-q">“when we could no longer forbear, we thought it good to be left at Athens alone” <cite>3:1</cite></span><span class="take">Real care costs something. Paul gave up company to find out how they were.</span></li>
+      <li class="step"><span class="topic">Warned</span><span class="seed-q">“that no man should be moved by these afflictions” <cite>3:3</cite></span><span class="take">Hard times come with a new life. Knowing it helps you stand.</span></li>
+      <li class="step"><span class="topic">The tempter</span><span class="seed-q">“lest by some means the tempter have tempted you, and our labour be in vain” <cite>3:5</cite></span><span class="take">A held man can still be shaken, so we need each other.</span></li>
+      <li class="step"><span class="topic">Good news</span><span class="seed-q">“Timotheus came from you unto us, and brought us good tidings of your faith and charity” <cite>3:6</cite></span><span class="take">Your faith is good news to someone.</span></li>
+      <li class="step"><span class="topic">Standing</span><span class="seed-q">“For now we live, if ye stand fast in the Lord.” <cite>3:8</cite></span><span class="take">Your standing gives life to the men who love you.</span></li>
+      <li class="step"><span class="topic">Paul's prayer</span><span class="seed-q">“the Lord make you to increase and abound in love one toward another, and toward all men” <cite>3:12</cite></span><span class="take">Love is grown by the Lord. Ask Him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Couldn't wait</span>
+      <h2>Why did Paul send Timothy to Thessalonica?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1-2"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“Bear ye one another’s burdens, and so fulfil the law of Christ.”</p><cite>Galatians 6:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He couldn't stand not knowing. He wanted Timothy to establish and comfort them, and to find out whether they were standing. Caring for people means going to them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Warned</span>
+      <h2>What had Paul told them to expect?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.”</p><cite>John 16:33</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Afflictions. He had told them while he was with them that they would suffer tribulation, and it happened. Jesus said the same, and said to be of good cheer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The tempter</span>
+      <h2>What was Paul afraid of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour: Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.”</p><cite>1 Peter 5:8–9</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father’s hand.”</p><cite>John 10:28–29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That the tempter had tempted them and his work come to nothing. Believers are held in the Father's hand, but the devil still prowls, so stand firm together.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Good news</span>
+      <h2>What did Timothy bring back?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“First, I thank my God through Jesus Christ for you all, that your faith is spoken of throughout the whole world.”</p><cite>Romans 1:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Good tidings of their faith and love, and that they remembered Paul and wanted to see him. It comforted Paul in his own affliction and distress.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Standing</span>
+      <h2>What made Paul say, “now we live”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in the work of the Lord, forasmuch as ye know that your labour is not in vain in the Lord.”</p><cite>1 Corinthians 15:58</cite></blockquote>
+      <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Hearing that they stood fast in the Lord. He was glad because they were holding on, and because God finishes what He starts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Paul's prayer</span>
+      <h2>What did Paul pray for them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.”</p><cite>Hebrews 10:24–25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That the Lord would make their love increase and abound toward each other and all men, and stablish their hearts unblameable in holiness.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Casting all your care upon him; for he careth for you.”</p><cite>1 Peter 5:7</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Thessalonians chapter 3
+const V = {
+  1: "Wherefore when we could no longer forbear, we thought it good to be left at Athens alone;",
+  2: "And sent Timotheus, our brother, and minister of God, and our fellowlabourer in the gospel of Christ, to establish you, and to comfort you concerning your faith:",
+  3: "That no man should be moved by these afflictions: for yourselves know that we are appointed thereunto.",
+  4: "For verily, when we were with you, we told you before that we should suffer tribulation; even as it came to pass, and ye know.",
+  5: "For this cause, when I could no longer forbear, I sent to know your faith, lest by some means the tempter have tempted you, and our labour be in vain.",
+  6: "But now when Timotheus came from you unto us, and brought us good tidings of your faith and charity, and that ye have good remembrance of us always, desiring greatly to see us, as we also to see you:",
+  7: "Therefore, brethren, we were comforted over you in all our affliction and distress by your faith:",
+  8: "For now we live, if ye stand fast in the Lord.",
+  9: "For what thanks can we render to God again for you, for all the joy wherewith we joy for your sakes before our God;",
+  10: "Night and day praying exceedingly that we might see your face, and might perfect that which is lacking in your faith?",
+  11: "Now God himself and our Father, and our Lord Jesus Christ, direct our way unto you.",
+  12: "And the Lord make you to increase and abound in love one toward another, and toward all men, even as we do toward you:",
+  13: "To the end he may stablish your hearts unblameable in holiness before God, even our Father, at the coming of our Lord Jesus Christ with all his saints."
+};
+const BOOK = "1 Thessalonians 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

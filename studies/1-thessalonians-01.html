@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Thessalonians 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* t101-where: where we are in 1 Thessalonians (a deck.css candidate; the 1 Thessalonians 4-5 studies can copy it as is).
+   Three parts (div, --k). Each holds its chapters (p > i; read ones .done, the one we are in .here), its name (b), what it says (small)
+   and a key phrase (q + cite). The part we're in is .now. */
+.t101-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.t101-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .t101-where > div { opacity: 1; transform: none; }
+.t101-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.t101-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.t101-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.t101-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.t101-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .t101-where i.here { animation: t101-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes t101-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.t101-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.t101-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.t101-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.t101-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .t101-where { grid-template-columns: 1fr; gap: 6px; }
+  .t101-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* t101-trio: faith, love and hope, each with what it looks like when you can see it. Cards (.step) come in one at a time. */
+.t101-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: .5em 0 1em; }
+.t101-trio > div { padding: .6em .85em .75em; border-top: 6px solid var(--accent); border-radius: 0 0 12px 12px; background: color-mix(in srgb, var(--surface) 75%, transparent); text-align: center; }
+.t101-trio small { display: block; font: 700 clamp(.78rem, .72rem + .3vw, 1rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.t101-trio i { display: block; font: normal 700 clamp(1.1rem, .95rem + .6vw, 1.5rem) var(--sans); color: var(--accent-hot); line-height: 1.1; }
+.t101-trio b { display: block; font: 600 clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem)/1.05 var(--serif); color: var(--ink); }
+.t101-trio p { margin: .35em 0 0; font-size: clamp(.86rem, .78rem + .36vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+@media (max-width: 640px) { .t101-trio { grid-template-columns: 1fr; gap: 8px; } }
+
+/* t101-turn: turned FROM idols, TO the living God, to WAIT for His Son. The man is shown facing the idols, then facing the sun.
+   Steps: .t101-g1 (turn), .t101-g2 (serve), .t101-g3 (wait). */
+.t101-turn { display: block; width: 100%; max-height: 36vh; margin: .2em 0 .6em; overflow: visible; }
+.t101-turn text { fill: var(--ink); font-family: var(--sans); }
+.t101-turn .cap { font-size: 26px; font-weight: 700; letter-spacing: .12em; fill: var(--ink-soft); }
+.t101-turn .sub { font-size: 20px; fill: var(--ink-soft); }
+.t101-turn .ground { stroke: var(--line-strong); stroke-width: 3; }
+.t101-turn .idol { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; transition: opacity .8s ease; }
+.t101-turn .xx { stroke: var(--danger); stroke-width: 7; stroke-linecap: round; opacity: 0; transition: opacity .5s ease .9s; }
+.slide:has(.t101-g1.on) .t101-turn .idol { opacity: .35; }
+.slide:has(.t101-g1.on) .t101-turn .xx { opacity: 1; }
+.t101-turn .man { fill: var(--ink); }
+.t101-turn .gaze { fill: var(--accent-hot); }
+.t101-turn .ghost { opacity: .35; transition: opacity .8s ease; }
+.slide:has(.t101-g1.on) .t101-turn .ghost { opacity: .12; }
+.t101-turn .new { opacity: 0; transition: opacity .8s ease .8s; }
+.slide:has(.t101-g1.on) .t101-turn .new { opacity: 1; }
+.t101-turn .arc { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s ease; }
+.slide:has(.t101-g1.on) .t101-turn .arc { stroke-dashoffset: 0; }
+.t101-turn .head { fill: var(--accent); opacity: 0; transition: opacity .3s ease 1.2s; }
+.slide:has(.t101-g1.on) .t101-turn .head { opacity: 1; }
+.t101-turn .word { font-size: 40px; font-weight: 800; fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease .7s; letter-spacing: .06em; }
+.slide:has(.t101-g1.on) .t101-turn .word { opacity: 1; }
+.t101-turn .sun { opacity: 0; transition: opacity .8s ease; }
+.slide:has(.t101-g1.on) .t101-turn .sun { opacity: .35; }
+.slide:has(.t101-g2.on) .t101-turn .sun { opacity: 1; }
+.t101-turn .sun circle { fill: var(--glow); }
+.t101-turn .sun path { stroke: var(--glow); stroke-width: 6; stroke-linecap: round; }
+.slide:has(.t101-g2.on) .t101-turn .sun { animation: t101-sun 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes t101-sun { 50% { transform: scale(1.06); } }
+.t101-turn .serve { opacity: 0; transition: opacity .6s ease .3s; }
+.slide:has(.t101-g2.on) .t101-turn .serve { opacity: 1; }
+.t101-turn .wait { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease; }
+.slide:has(.t101-g3.on) .t101-turn .wait { stroke-dashoffset: 0; }
+.t101-turn .waitword { font-size: 26px; font-weight: 700; fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease .8s; }
+.slide:has(.t101-g3.on) .t101-turn .waitword { opacity: 1; }
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Thessalonians 1</h1>
+    <p class="sub rise" style="--d:3">Turned to God</p>
+    <p class="tag rise" style="--d:5">Paul writes one of his very first letters to a church only weeks old. He opens with thanks, and a picture of what a changed life looks like: they turned from idols to serve the living God, and now they wait for His Son.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="432 178 95 125" style="max-height:62vh" data-towns="Philippi:t, Amphipolis:b, Thessalonica!:t, Berea:l, Athens:r, Corinth*:l" role="img" aria-label="A map of northern and southern Greece. Paul's second journey draws in: from Philippi along the coast road to Thessalonica, then Berea, by sea to Athens, and on to Corinth, where this letter was written. Thessalonica, the church it was sent to, is marked.">
+          <path class="map-route" data-journey="2"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter to the Thessalonians</h2>
+        <div class="letter">
+          <p class="from">“Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians which is in God the Father and in the Lord Jesus Christ”</p>
+          <dl>
+            <dt>Written from</dt><dd>Corinth, in Greece, a few months after Paul was run out of Thessalonica (Acts 17–18)</dd>
+            <dt>When</dt><dd>about AD 50 to 51. One of the very first letters Paul wrote, and so one of the earliest books of the New Testament.</dd>
+            <dt>To whom</dt><dd>a young church in Thessalonica, the capital of Macedonia, started on Paul's second journey (Acts 17)</dd>
+            <dt>Why</dt><dd class="step">Paul had to leave in a hurry and worried about them. Timothy brought good news, so Paul writes to thank them, to answer the whispers against him, and to settle their questions about Jesus coming back.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="432 178 95 125" style="max-height:62vh" data-towns="Philippi:t, Amphipolis:b, Thessalonica!:t, Berea:l, Athens:r, Corinth*:l" role="img" aria-label="A map of Greece with four legs of Paul's second journey drawing in turn: Philippi to Thessalonica along the coast road; Thessalonica to Berea; Berea by sea to Athens; and Athens to Corinth.">
+          <path class="map-route r1 j2" data-via="Philippi, Amphipolis, Thessalonica"/>
+          <path class="map-route r2 j1" data-via="Thessalonica, Berea"/>
+          <path class="map-route r3 j3" data-via="Berea, @22.85 40.2, @23.2 39.75, @24.0 39.3, @24.2 38.75, @24.72 38.12, @24.45 37.85, @24.1 37.55, @23.6 37.85, Athens"/>
+          <path class="map-route r4 j4" data-via="Athens, Corinth"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Driven out after three sabbaths</h2>
+        <p class="note step map-go1">Beaten and jailed at Philippi, Paul and Silas went along the coast road to <em>Thessalonica</em> (Acts 17:1).</p>
+        <p class="note step">Three sabbaths in the synagogue, then a mob at the door of Jason, who had taken them in (Acts 17:2, 5–9).</p>
+        <p class="note step map-go2">That night the brothers sent Paul and Silas off to <em>Berea</em>.</p>
+        <p class="note step map-go3">Trouble followed, so Paul went by sea to <em>Athens</em>, alone.</p>
+        <p class="note step map-go4">Then <em>Corinth</em>, where he writes this letter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The newest believers in town</h2>
+    <blockquote class="quote rise"><p>“And Paul, as his manner was, went in unto them, and three sabbath days reasoned with them out of the scriptures, Opening and alleging, that Christ must needs have suffered, and risen again from the dead; and that this Jesus, whom I preach unto you, is Christ.”</p><cite>Acts 17:2–3</cite></blockquote>
+    <blockquote class="quote step"><p>“But the Jews which believed not, moved with envy, took unto them certain lewd fellows of the baser sort, and gathered a company, and set all the city on an uproar, and assaulted the house of Jason, and sought to bring them out to the people. And when they found them not, they drew Jason and certain brethren unto the rulers of the city, crying, These that have turned the world upside down are come hither also;”</p><cite>Acts 17:5–6</cite></blockquote>
+    <p class="note step">Acts names three sabbaths in the synagogue; we can't tell how long Paul stayed in all. Either way, these people had known Jesus for weeks or months. The teachers were gone overnight, and their host Jason had been dragged before the rulers. Nobody would be surprised if they gave up. This letter is for people in exactly that spot: new, shaky, and under pressure.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where 1 Thessalonians fits in Paul's life</h2>
+    <ol class="timeline" aria-label="About AD 49, Paul's second journey begins. About AD 50, Philippi, then Thessalonica: three sabbaths and a church. Berea and Athens; Timothy is sent back to check on them. About AD 50 to 51, Corinth, where Timothy returns with good news. About AD 50 to 51, Paul writes 1 Thessalonians. Soon after, 2 Thessalonians. About AD 52, the journey ends.">
+      <li style="--k:0"><b>about AD 49</b><span>Second journey begins</span><small>Acts 15:36–16:10</small></li>
+      <li style="--k:1"><b>about AD 50</b><span>Thessalonica: three sabbaths, a new church</span><small>Acts 17:1–9</small></li>
+      <li style="--k:2"><b>about AD 50</b><span>Berea, Athens. Timothy sent back to check on them</span><small>1 Thess. 3:1–2</small></li>
+      <li style="--k:3"><b>about AD 50 to 51</b><span>Corinth. Timothy returns with good news</span><small>Acts 18:5; 1 Thess. 3:6</small></li>
+      <li class="lit" style="--k:4"><b>about AD 50 to 51</b><span>1 Thessalonians</span><small>“now we live”</small></li>
+      <li class="wait" style="--k:5"><b>soon after</b><span>2 Thessalonians</span><small>a short follow-up</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Only about twenty years after the cross, and long before the Gospels were written down, Paul was already writing letters like this one. Galatians is the only letter that might be earlier.</p>
+    <p class="note step">Notice how fast it all moves: planted, driven out, sent a messenger, a report back, a letter. Paul is writing while the news is still warm.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter on one page</h2>
+    <div class="t101-where" role="img" aria-label="1 Thessalonians in three parts. Chapters 1 to 3: the church and the men who started it, thanks, memories and a mentor who could not rest. Key phrase: now we live, if ye stand fast in the Lord, 3:8. Chapter 4: living to please God, and hope for those who have died. Key phrase: comfort one another with these words, 4:18. Chapter 5: ready for the day of the Lord. Key phrase: Rejoice evermore, pray without ceasing, 5:16 and 17. We are in chapter 1.">
+      <div class="now" style="--k:0"><p><i class="here">1</i><i>2</i><i>3</i></p><b>Thanks, and a mentor who couldn't rest</b><small>What the church was to Paul, what Paul was to them, and the news that brought him back to life</small><q>now we live, if ye stand fast in the Lord</q><cite>3:8</cite></div>
+      <div style="--k:1"><p><i>4</i></p><b>Live to please God</b><small>Keep clean, love one another, and don't grieve like men with no hope</small><q>comfort one another with these words</q><cite>4:18</cite></div>
+      <div style="--k:2"><p><i>5</i></p><b>Ready for the day</b><small>Stay awake and sober, look after each other, give thanks</small><q>Rejoice evermore. Pray without ceasing.</q><cite>5:16–17</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">Five short chapters. The first three are one long, warm conversation: what Paul saw in them, how he lived among them, and what he did when he couldn't stop worrying. Then come the practical chapters. Today is chapter 1.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith, love, hope</span><span class="seed-q">What did Paul remember about them “without ceasing”?</span></li>
+      <li class="step"><span class="topic">The gospel's power</span><span class="seed-q">How did the gospel come to them?</span></li>
+      <li class="step"><span class="topic">Joy in hard times</span><span class="seed-q">What did they receive the word with?</span></li>
+      <li class="step"><span class="topic">A changed life</span><span class="seed-q">What did they turn from, and what did they turn to?</span></li>
+      <li class="step"><span class="topic">Word gets around</span><span class="seed-q">How far did the news of their faith travel?</span></li>
+      <li class="step"><span class="topic">Waiting</span><span class="seed-q">Who are they waiting for, and what has He done for them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Remembering you</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul's first words are thanks. And he starts with what he has seen in their lives.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Paul, and Silvanus, and Timotheus|Grace be unto you, and peace|We give thanks to God always for you all"></section>
+
+<section class="slide verse" data-v="3-4" data-hl="your work of faith, and labour of love, and patience of hope|Knowing, brethren beloved"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="work of faith, and labour of love, and patience of hope"></blockquote>
+    <h2 class="rise" style="--d:1">Three things you can see</h2>
+    <div class="t101-trio" role="img" aria-label="Faith shows up as work. Love shows up as labour, tiring toil. Hope shows up as patience, staying power.">
+      <div class="step"><small>faith</small><i>shows up as</i><b>work</b><p>Faith that stays inside a man's head isn't much. Real faith gets up and does something.</p></div>
+      <div class="step"><small>love</small><i>shows up as</i><b>labour</b><p>The word means hard, tiring toil. Love that costs you sleep and time.</p></div>
+      <div class="step"><small>hope</small><i>shows up as</i><b>patience</b><p>Staying power. You keep going when it's hard because you know how the story ends.</p></div>
+    </div>
+    <p class="note step">Faith, love and hope can't be seen, but what they do can. And look at the very end of verse 3: <em>“in our Lord Jesus Christ.”</em> This isn't self-help. It's all in Him. These believers were weeks old, and Paul could already point to a record.</p>
+    <p class="note step">Try it today: what is one small <em>work of faith</em> for you? A call you've been putting off, a meeting you'll go to, one honest sentence to someone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="your election of God"></blockquote>
+    <h2 class="rise" style="--d:1">How Paul knew God had chosen them</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>our gospel came not unto you in word only, but also in power</q><small>God made it count</small><b>1:5</b></li>
+      <li class="step"><span class="tick">✓</span><q>ye became followers of us, and of the Lord</q><small>they followed Jesus</small><b>1:6</b></li>
+      <li class="step"><span class="tick">✓</span><q>received the word in much affliction, with joy</q><small>it cost them</small><b>1:6</b></li>
+      <li class="step"><span class="tick">✓</span><q>ye turned to God from idols</q><small>a changed direction</small><b>1:9</b></li>
+    </ol>
+    <p class="note step"><em>Election</em> means God's choosing. Good Bible teachers have long argued over how God's choosing and ours fit together. What is plain: the invitation goes to everyone, and Paul doesn't read a secret list. He points to what he can see: they heard, believed, and turned.</p>
+    <blockquote class="quote step"><p>“For whosoever shall call upon the name of the Lord shall be saved.”</p><cite>Romans 10:13</cite></blockquote>
+    
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">How it came, how it spread</h2>
+    <p class="range rise" style="--d:2">Verses 5–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The message came with power, landed in hard times, and rang out from there across Greece.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="not unto you in word only, but also in power|as ye know what manner of men we were among you|in much affliction, with joy of the Holy Ghost"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="not unto you in word only, but also in power"></blockquote>
+    <h2 class="rise" style="--d:1">Not words only</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">in word only</span><span class="why">Talk is cheap. Any con man has words.</span></li>
+      <li class="step yes"><span class="k">but also in power, and in the Holy Ghost, and in much assurance</span><span class="why">God Himself was at work, and lives changed.</span></li>
+    </ul>
+    <p class="note step">Paul adds: <em>“as ye know what manner of men we were among you.”</em> The message came with messengers whose lives matched it. The men around you may read your life long before they hear your words.</p>
+    <p class="note step">And look at verse 6: <em>“much affliction, with joy of the Holy Ghost.”</em> That isn't pretend happiness. This is joy that shows up in the middle of trouble, because the Holy Spirit lives in every believer from the day he believes. There is no extra step to wait for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="ensamples to all that believe in Macedonia and Achaia|from you sounded out the word of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="432 178 95 125" style="max-height:62vh" data-towns="Philippi:t, Thessalonica*:t, Berea:l, Athens:r, Corinth:l" role="img" aria-label="A map of Greece. Rings spread out from Thessalonica in the north. The north is labelled Macedonia and the south, Achaia. Corinth, where Paul is writing, is in Achaia.">
+          <text class="map-region" x="448" y="186" text-anchor="middle">MACEDONIA</text>
+          <text class="map-region" x="452" y="276" text-anchor="middle">ACHAIA</text>
+          <circle class="map-ping" cx="477.5" cy="204.5" r="7"/>
+          <circle class="map-ping" cx="477.5" cy="204.5" r="14" style="animation-delay:1.5s"/>
+          <circle class="map-ping" cx="477.5" cy="204.5" r="22" style="animation-delay:2s"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From Thessalonica, all of Greece</h2>
+        <p class="note rise" style="--d:2"><em>Macedonia</em> is northern Greece: Thessalonica, Philippi, Berea. <em>Achaia</em> is the south: Athens and Corinth.</p>
+        <p class="note step"><em>“Ensamples”</em> means examples, patterns. Weeks-old believers had become the pattern for older ones.</p>
+        <p class="note step">Paul is writing from Corinth, in Achaia. He says he hardly has to speak: people there already tell him how the Thessalonians turned to God. A changed life is the best advertisement there is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="from you sounded out the word of the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">“Sounded out”</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">ἐξήχηται</span>
+      <span class="say step">said <em class="gk">exēchētai</em></span>
+      <span class="means step">“has rung out”: like a trumpet blast or a roll of thunder</span>
+    </div>
+    <p class="note step">Our word <em>echo</em> comes from the same root. The sound of their changed lives kept bouncing from town to town.</p>
+    <p class="note step">Nobody planned it. They didn't have a program or a budget. They just turned to God out loud, in front of everybody, and people noticed. You don't have to be a preacher. Just be a changed man where people already know you.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Turned</h2>
+    <p class="range rise" style="--d:2">Verses 9–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two verses that sum up what happens when a man becomes a Christian.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="ye turned to God from idols to serve the living and true God|to wait for his Son from heaven|whom he raised from the dead|delivered us from the wrath to come"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="ye turned to God from idols to serve the living and true God"></blockquote>
+    <h2 class="rise" style="--d:1">Turned from, turned to</h2>
+    <svg class="t101-turn" viewBox="0 0 900 360" role="img" aria-label="A man turns around. On the left, three stone idols; he starts out facing them. An arc carries him over to the right, where he faces a bright sun, the living and true God. Then he looks up, waiting for God's Son from heaven. The idols fade and are crossed out.">
+      <line class="ground" x1="20" y1="300" x2="880" y2="300"/>
+      <text class="cap" x="140" y="42" text-anchor="middle">FROM</text>
+      <text class="sub" x="140" y="70" text-anchor="middle">idols</text>
+      <g>
+        <g class="idol-g"><rect class="idol" x="40" y="210" width="44" height="90" rx="10"/><circle class="idol" cx="62" cy="190" r="20"/></g>
+        <g class="idol-g"><rect class="idol" x="118" y="196" width="44" height="104" rx="10"/><circle class="idol" cx="140" cy="174" r="22"/></g>
+        <g class="idol-g"><rect class="idol" x="196" y="214" width="44" height="86" rx="10"/><circle class="idol" cx="218" cy="194" r="20"/></g>
+        <line class="xx" x1="30" y1="170" x2="250" y2="300"/><line class="xx" x1="250" y1="170" x2="30" y2="300"/>
+      </g>
+      <g class="ghost"><circle class="man" cx="340" cy="238" r="18"/><rect class="man" x="323" y="260" width="34" height="40" rx="10"/><path class="gaze" d="M314 238 l-16 -9 v18 z"/></g>
+      <path class="arc" pathLength="1" d="M340 205 C 340 80, 560 80, 560 205"/>
+      <path class="head" d="M560 218 l-14 -22 h28 z"/>
+      <text class="word" x="450" y="60" text-anchor="middle">TURNED</text>
+      <g class="new"><circle class="man" cx="580" cy="238" r="18"/><rect class="man" x="563" y="260" width="34" height="40" rx="10"/><path class="gaze" d="M606 238 l16 -9 v18 z"/></g>
+      <g class="sun"><circle cx="760" cy="196" r="34"/><path d="M760 140 v-14 M760 252 v14 M704 196 h-14 M816 196 h14 M720 156 l-10 -10 M800 156 l10 -10 M720 236 l-10 10 M800 236 l10 10"/></g>
+      <g class="serve"><text class="cap" x="760" y="42" text-anchor="middle">TO SERVE</text><text class="sub" x="760" y="70" text-anchor="middle">the living and true God</text></g>
+      <path class="wait" pathLength="1" d="M604 200 L 604 138 M 592 154 L 604 136 L 616 154"/>
+      <text class="waitword" x="450" y="346" text-anchor="middle">and wait for his Son from heaven</text>
+    </svg>
+    <p class="note step t101-g1">First, <em>turned from</em>: whatever a man hands his life to in place of God.</p>
+    <p class="note step t101-g2">Then <em>turned to</em>. Quitting alone leaves a hole. The new life faces <em>the living and true God</em>, to serve Him.</p>
+    <p class="note step t101-g3">And <em>wait</em>. A man with his eyes on Jesus' return keeps going.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="from idols"></blockquote>
+    <h2 class="rise" style="--d:1">What's an idol?</h2>
+    <p class="note rise" style="--d:2">In Thessalonica the idols were carved gods of stone and gold. Here is what the Bible says about them:</p>
+    <blockquote class="quote step"><p>“Their idols are silver and gold, the work of men’s hands. They have mouths, but they speak not: eyes have they, but they see not: They have ears, but they hear not: noses have they, but they smell not: They have hands, but they handle not: feet have they, but they walk not: neither speak they through their throat. They that make them are like unto them; so is every one that trusteth in them.”</p><cite>Psalm 115:4–8</cite></blockquote>
+    <p class="note step">Today's idols: the bottle, the needle, the bet, the screen, the money, your own reputation. They promise everything and answer nothing, and men become <em>“like unto them.”</em></p>
+    <p class="note step"><em>“Ye turned”</em> is a direction, not a perfect record. A man who steps back toward the old thing doesn't start over from nothing. He turns again, and God is waiting (1 John 1:9).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="delivered us from the wrath to come"></blockquote>
+    <h2 class="rise" style="--d:1">Rescued from what's coming</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What was coming</p>
+        <h3>“The wrath to come”</h3>
+        <p>Sin has a cost, and God is just. This isn't a threat to scare you. It's a fact, like a flood warning.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Who stepped in</p>
+        <h3>“Jesus, which delivered us”</h3>
+        <p>He took the whole cost Himself on the cross. And God <em>“raised him from the dead”</em>, proof that the price was paid.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+    <p class="note step">If you're carrying yesterday's failure, hear this: the wrath is the one thing you don't have to wait for. He has already delivered us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Every chapter ends with Jesus coming back</h2>
+    <ol class="timeline" aria-label="Each of the five chapters of 1 Thessalonians ends with the return of Jesus. Chapter 1: to wait for his Son from heaven. Chapter 2: at his coming. Chapter 3: at the coming of our Lord Jesus Christ with all his saints. Chapter 4: the Lord himself shall descend from heaven. Chapter 5: unto the coming of our Lord Jesus Christ.">
+      <li class="lit" data-n="1" style="--k:0"><b>Chapter 1</b><span>to wait for his Son from heaven</span><small>1:10</small></li>
+      <li data-n="2" style="--k:1"><b>Chapter 2</b><span>in the presence of our Lord Jesus Christ at his coming</span><small>2:19</small></li>
+      <li data-n="3" style="--k:2"><b>Chapter 3</b><span>at the coming of our Lord Jesus Christ with all his saints</span><small>3:13</small></li>
+      <li data-n="4" style="--k:3"><b>Chapter 4</b><span>the Lord himself shall descend from heaven</span><small>4:16</small></li>
+      <li class="wait" data-n="5" style="--k:4"><b>Chapter 5</b><span>unto the coming of our Lord Jesus Christ</span><small>5:23</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Paul can't mention their faith, his work, or his prayers without looking up at the end. For him, Jesus' return isn't a puzzle for later; it's why a man keeps going today.</p>
+    <p class="note step">Chapter 1 is the first of five. By the last one you'll see why: the men who wait for Him are the men who stay awake and clean.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">“Ye turned to God <em>from</em> idols <em>to</em> serve the living and true God.”</p>
+    <p class="note rise" style="--d:2">Here is the whole new life in one line: <em>turned from</em>, <em>turned to</em>, <em>waiting</em>. Your regret belongs on the "from" side of that line, with the old things. It doesn't come with you.</p>
+    <p class="note step">One thing to do today: say out loud, to yourself or one other man, what you turned from and what you are turning toward. Then do one small <em>work</em> that goes with it.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith, love, hope</span><span class="seed-q">“your work of faith, and labour of love, and patience of hope” <cite>1:3</cite></span><span class="take">Faith works, love labours, hope holds on. All of it is in Jesus.</span></li>
+      <li class="step"><span class="topic">The gospel's power</span><span class="seed-q">“our gospel came not unto you in word only, but also in power” <cite>1:5</cite></span><span class="take">The message came with God's power, and with men whose lives matched it.</span></li>
+      <li class="step"><span class="topic">Joy in hard times</span><span class="seed-q">“having received the word in much affliction, with joy of the Holy Ghost” <cite>1:6</cite></span><span class="take">Real joy shows up in trouble, because the Spirit lives in every believer.</span></li>
+      <li class="step"><span class="topic">A changed life</span><span class="seed-q">“ye turned to God from idols to serve the living and true God” <cite>1:9</cite></span><span class="take">Turn from the old, turn to Him, and serve.</span></li>
+      <li class="step"><span class="topic">Word gets around</span><span class="seed-q">“from you sounded out the word of the Lord” <cite>1:8</cite></span><span class="take">A changed life rings out further than you'd think.</span></li>
+      <li class="step"><span class="topic">Waiting</span><span class="seed-q">“to wait for his Son from heaven, whom he raised from the dead” <cite>1:10</cite></span><span class="take">Jesus delivered us from the wrath to come, and He is coming back.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Faith, love, hope</span>
+      <h2>What did Paul remember about them “without ceasing”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step"><p>“And now abideth faith, hope, charity, these three; but the greatest of these is charity.”</p><cite>1 Corinthians 13:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Their work of faith, labour of love, and patience of hope: faith that acts, love that works hard, hope that holds on. All three were in Jesus, and Paul could see them already.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The gospel's power</span>
+      <h2>How did the gospel come to them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step"><p>“For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek.”</p><cite>Romans 1:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not in words only, but in power, in the Holy Ghost, and in much assurance, with messengers who lived what they preached. It is the power of God to everyone who believes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Joy in hard times</span>
+      <h2>What did they receive the word with?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="in much affliction, with joy of the Holy Ghost"></blockquote>
+      <blockquote class="quote step"><p>“These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.”</p><cite>John 16:33</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Joy of the Holy Ghost, in the middle of much affliction. Jesus said we'd have trouble, and He said to be of good cheer, because He has overcome the world.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">A changed life</span>
+      <h2>What did they turn from, and what did they turn to?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They turned from idols to the living and true God, to serve Him. Old things passed away. It started when they turned, and it keeps going every day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Word gets around</span>
+      <h2>How far did the news of their faith travel?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“First, I thank my God through Jesus Christ for you all, that your faith is spoken of throughout the whole world.”</p><cite>Romans 1:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>All through Macedonia and Achaia, and in every place. A few weeks of real change rang out across Greece.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Waiting</span>
+      <h2>Who are they waiting for, and what has He done for them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“Much more then, being now justified by his blood, we shall be saved from wrath through him.”</p><cite>Romans 5:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They wait for God's Son from heaven, Jesus, whom God raised from the dead. He delivered us from the wrath to come. It's finished, and He's coming back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“We give thanks to God always for you all, making mention of you in our prayers;”</p><cite>1 Thessalonians 1:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Thessalonians chapter 1
+const V = {
+  1: "Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians which is in God the Father and in the Lord Jesus Christ: Grace be unto you, and peace, from God our Father, and the Lord Jesus Christ.",
+  2: "We give thanks to God always for you all, making mention of you in our prayers;",
+  3: "Remembering without ceasing your work of faith, and labour of love, and patience of hope in our Lord Jesus Christ, in the sight of God and our Father;",
+  4: "Knowing, brethren beloved, your election of God.",
+  5: "For our gospel came not unto you in word only, but also in power, and in the Holy Ghost, and in much assurance; as ye know what manner of men we were among you for your sake.",
+  6: "And ye became followers of us, and of the Lord, having received the word in much affliction, with joy of the Holy Ghost:",
+  7: "So that ye were ensamples to all that believe in Macedonia and Achaia.",
+  8: "For from you sounded out the word of the Lord not only in Macedonia and Achaia, but also in every place your faith to God-ward is spread abroad; so that we need not to speak any thing.",
+  9: "For they themselves shew of us what manner of entering in we had unto you, and how ye turned to God from idols to serve the living and true God;",
+  10: "And to wait for his Son from heaven, whom he raised from the dead, even Jesus, which delivered us from the wrath to come."
+};
+const BOOK = "1 Thessalonians 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

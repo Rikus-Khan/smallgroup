@@ -13783,5 +13783,146 @@ window.STUDIES = [
       },
       "big": "The new life is lived in prayer, in gracious words, and among real people. Onesimus came home a brother, Mark became useful again, Luke stayed, and Demas is a gentle warning. Finish what God gave you, and rest on grace."
     }
+  },
+  {
+    "id": "1-thessalonians-01",
+    "type": "chapter",
+    "book": "1 Thessalonians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "1 Thessalonians 1",
+    "sub": "Turned to God",
+    "about": "Paul writes one of his very first letters to a church only weeks old, and finds the whole new life in two verses: they turned from idols to serve the living God, and wait for His Son.",
+    "tags": [
+      "Faith, love, hope",
+      "The gospel's power",
+      "Joy in hard times",
+      "Turning to God",
+      "A changed life",
+      "Waiting for Jesus"
+    ],
+    "overview": {
+      "where": "Written from Corinth to the church in Thessalonica, the capital of Macedonia (northern Greece)",
+      "when": "About AD 50 to 51, a few months after Paul had to leave Thessalonica on his second journey",
+      "people": [
+        "paul",
+        "silvanus",
+        "timothy",
+        "jesus",
+        "the-father",
+        "holy-spirit"
+      ],
+      "places": [
+        "thessalonica",
+        "macedonia",
+        "achaia",
+        "corinth"
+      ],
+      "story": [
+        "Paul, Silvanus and Timotheus greet the young church in Thessalonica with grace and peace (1–2).",
+        "Paul remembers their work of faith, labour of love and patience of hope, and sees God's hand on them (3–4).",
+        "The gospel came with power and the Holy Ghost. They received it in much affliction, with joy, and followed Paul and the Lord (5–6).",
+        "Their faith became an example across Macedonia and Achaia: the word of the Lord sounded out from them (7–8).",
+        "They turned to God from idols to serve the living and true God, and to wait for His Son from heaven, Jesus, who delivered us from the wrath to come (9–10)."
+      ],
+      "key": {
+        "ref": "1 Thessalonians 1:9",
+        "text": "For they themselves shew of us what manner of entering in we had unto you, and how ye turned to God from idols to serve the living and true God;"
+      },
+      "big": "A changed life has a shape: turn from the old thing, turn to the living God, serve Him, and wait for Jesus. They did it in hard times, only weeks after hearing the gospel, and the whole region heard about it."
+    },
+    "url": "studies/1-thessalonians-01.html"
+  },
+  {
+    "id": "1-thessalonians-02",
+    "type": "chapter",
+    "book": "1 Thessalonians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "1 Thessalonians 2",
+    "sub": "A nurse and a father",
+    "about": "Whispers said Paul was in it for himself, so he reminds them how he really lived among them: gentle as a mother, firm as a father, working night and day to be no burden.",
+    "tags": [
+      "Pleasing God",
+      "Gentle and firm",
+      "Honest work",
+      "The word of God",
+      "Opposition",
+      "Mentoring"
+    ],
+    "overview": {
+      "where": "Written from Corinth to Thessalonica. Paul looks back at his time among them, with Philippi and Judaea in the background",
+      "when": "About AD 50 to 51, a few months after Paul left Thessalonica",
+      "people": [
+        "paul",
+        "jesus",
+        "the-jews",
+        "satan"
+      ],
+      "places": [
+        "thessalonica",
+        "philippi",
+        "judaea"
+      ],
+      "story": [
+        "Paul reminds them his visit was not in vain: bold in God even after the beating at Philippi (1–2).",
+        "He spoke with no deceit, flattery or cloak of greed, to please God who tries the heart, and not men (3–6).",
+        "Gentle as a nurse, he gave them the gospel and his own soul, and worked night and day to be no burden (7–10).",
+        "Like a father he exhorted, comforted and charged every one of them. They took his message as the word of God, and suffered from their own countrymen as the churches in Judaea had (11–16).",
+        "Torn away for a while, Paul tried again and again to return, but Satan hindered him. Their faith is his glory and joy (17–20)."
+      ],
+      "key": {
+        "ref": "1 Thessalonians 2:8",
+        "text": "So being affectionately desirous of you, we were willing to have imparted unto you, not the gospel of God only, but also our own souls, because ye were dear unto us."
+      },
+      "big": "A good teacher gives more than a message. Paul lived honestly, worked with his hands, and cared for them like a mother and a father, and the word of God took root in them."
+    },
+    "url": "studies/1-thessalonians-02.html"
+  },
+  {
+    "id": "1-thessalonians-03",
+    "type": "chapter",
+    "book": "1 Thessalonians",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "1 Thessalonians 3",
+    "sub": "Now we live",
+    "about": "Paul couldn't stand not knowing how they were doing, so he sent Timothy back. The good news that returned lifted him up, and ends in one of the warmest prayers in the Bible.",
+    "tags": [
+      "Standing firm",
+      "Hard times",
+      "Temptation",
+      "Good news",
+      "Mentors and friends",
+      "Love and holiness"
+    ],
+    "overview": {
+      "where": "Paul alone in Athens, then at Corinth; Timothy sent to Thessalonica and back",
+      "when": "About AD 50 to 51, within a few months of leaving Thessalonica",
+      "people": [
+        "paul",
+        "timothy",
+        "jesus",
+        "the-father"
+      ],
+      "places": [
+        "athens",
+        "thessalonica",
+        "corinth"
+      ],
+      "story": [
+        "Paul can't bear the not knowing, so he stays alone in Athens and sends Timotheus to establish and comfort them (1–2).",
+        "He had warned them that afflictions were coming, and they came. He feared the tempter had tempted them and his labour was in vain (3–5).",
+        "Timotheus returns with good tidings of their faith and charity, and Paul is comforted: “now we live, if ye stand fast in the Lord” (6–8).",
+        "He thanks God and prays night and day to see them and to perfect, to mend, what is lacking in their faith (9–10).",
+        "His prayer: that God would direct his way to them, make their love increase and abound toward each other and all men, and stablish their hearts unblameable in holiness at the coming of the Lord Jesus (11–13)."
+      ],
+      "key": {
+        "ref": "1 Thessalonians 3:8",
+        "text": "For now we live, if ye stand fast in the Lord."
+      },
+      "big": "A mentor's joy rides on whether his men are standing. Hard times are expected, the tempter is real, and God Himself grows our love and steadies our hearts. Your standing gives life to the men who love you."
+    },
+    "url": "studies/1-thessalonians-03.html"
   }
 ];
