@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jm01-where: where we are in James (a deck.css candidate; every James study can copy it as is).
+   Five chapter cards (.jm01-ch, --k; read ones .done, ours .here), each with a small label, a theme, a key verse and its reference. */
+.jm01-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: .5em 0 1em; }
+.jm01-ch { padding: .55em .7em .7em; border-top: 6px solid var(--line-strong); border-radius: 4px 4px 12px 12px; background: var(--surface);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 140ms + 300ms); }
+.slide.active .jm01-ch { opacity: 1; transform: none; }
+.jm01-ch small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.jm01-ch b { display: block; margin: .1em 0 .3em; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.jm01-ch q { display: block; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.jm01-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.jm01-ch.done { border-top-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.jm01-ch.here { border-top-color: var(--accent-hot); background: color-mix(in srgb, var(--accent) 22%, var(--surface)); box-shadow: inset 0 0 0 2px var(--accent); }
+.slide.active .jm01-ch.here { animation: jm01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes jm01-here { 50% { box-shadow: inset 0 0 0 2px var(--accent), 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+@media (max-width: 640px) { .jm01-where { grid-template-columns: 1fr; gap: 8px; } }
+
+
+/* ja02-door: a man in gold and a man in vile raiment come into the assembly; a step puts them in the same seat */
+.ja02-poor { transition: transform 2.2s ease; }
+.slide:has(.ja02-same.on) .ja02-poor { transform: translateX(-170px); }
+.ja02-before { transition: opacity .8s ease; }
+.slide:has(.ja02-same.on) .ja02-before { opacity: 0; }
+.ja02-after { opacity: 0; transition: opacity .8s ease 1.5s; }
+.slide:has(.ja02-same.on) .ja02-after { opacity: 1; }
+
+/* ja02-pane: one crack breaks the whole pane (James 2:10) */
+.ja02-crack { fill: none; stroke: var(--danger); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease-out; }
+.ja02-crack.b { transition-delay: .45s; }
+.slide.active .ja02-crack { stroke-dashoffset: 0; transition-delay: .8s; }
+.slide.active .ja02-crack.b { transition-delay: 1.3s; }
+.ja02-shard { opacity: 0; transition: opacity .8s ease 1.6s; }
+.slide.active .ja02-shard { opacity: 1; }
+
+/* ja02-two: two questions, two honest answers (Paul and James) */
+.ja02-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: .5em 0 .8em; }
+.ja02-who { --c: var(--accent); padding: .6em .9em .8em; border-top: 7px solid var(--c); border-radius: 4px 4px 14px 14px; background: color-mix(in srgb, var(--c) 10%, var(--surface)); }
+.ja02-who.j { --c: var(--cool); }
+.ja02-who small { display: block; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.ja02-who h3 { margin: .1em 0 .3em; font: 600 clamp(1.2rem, 1rem + .8vw, 1.7rem)/1.1 var(--serif); color: var(--ink); }
+.ja02-who .ask { margin: 0 0 .4em; font: italic clamp(.95rem, .85rem + .4vw, 1.2rem)/1.3 var(--serif); color: var(--ink); }
+.ja02-who .ans { margin: 0 0 .5em; font: 700 clamp(.95rem, .85rem + .4vw, 1.2rem)/1.25 var(--sans); color: var(--c); }
+.ja02-who p { margin: .3em 0 0; font-size: clamp(.82rem, .76rem + .28vw, 1.02rem); line-height: 1.35; color: var(--ink-soft); }
+.ja02-who cite { display: block; margin-top: .4em; font-style: normal; font-size: clamp(.78rem, .72rem + .24vw, .96rem); color: var(--ink-soft); }
+@media (max-width: 640px) { .ja02-two { grid-template-columns: 1fr; } }
+
+/* ja02-tree: faith alone is the root; works are the fruit. The tree has both */
+.ja02-root { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s ease; transition-delay: calc(var(--k, 0) * 250ms + 400ms); }
+.slide.active .ja02-root { stroke-dashoffset: 0; }
+.ja02-fruit { transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0); transition: transform .7s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--k, 0) * 200ms + 2s); }
+.slide.active .ja02-fruit { transform: none; }
+.ja02-cap { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 1.6s); }
+.slide.active .ja02-cap { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">James 2</h1>
+    <p class="sub rise" style="--d:3">Faith that shows</p>
+    <p class="tag rise" style="--d:5">A man in gold walks into church, and then a man in rags. James asks what we do with each, and then asks the hardest question in the letter: <em>“can faith save him?”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in James</h2>
+    <div class="jm01-where" role="img" aria-label="James in five chapters. 1, faith under pressure: be ye doers of the word, and not hearers only, 1:22. 2, faith that works: faith, if it hath not works, is dead, 2:17. 3, words and wisdom: the tongue can no man tame, 3:8. 4, humble yourselves: draw nigh to God, and he will draw nigh to you, 4:8. 5, patience and prayer: the effectual fervent prayer of a righteous man availeth much, 5:16. We are in chapter 2.">
+      <div class="jm01-ch done" style="--k:0"><small>Chapter 1</small><b>Faith under pressure</b><q>Be ye doers of the word, and not hearers only</q><cite>James 1:22</cite></div>
+      <div class="jm01-ch here" style="--k:1"><small>Chapter 2</small><b>Faith that works</b><q>Faith, if it hath not works, is dead</q><cite>James 2:17</cite></div>
+      <div class="jm01-ch" style="--k:2"><small>Chapter 3</small><b>Words and wisdom</b><q>The tongue can no man tame</q><cite>James 3:8</cite></div>
+      <div class="jm01-ch" style="--k:3"><small>Chapter 4</small><b>Humble yourselves</b><q>Draw nigh to God, and he will draw nigh to you</q><cite>James 4:8</cite></div>
+      <div class="jm01-ch" style="--k:4"><small>Chapter 5</small><b>Patience and prayer</b><q>The effectual fervent prayer of a righteous man availeth much</q><cite>James 5:16</cite></div>
+    </div>
+    <p class="note step">Chapter 1 asked for faith that does what it hears. Chapter 2 asks what that looks like with a poor man at the door, and why a faith that never moves is not much of a faith.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">No favourites</span><span class="seed-q">Whom has God chosen, that the church was despising?</span></li>
+      <li class="step"><span class="topic">The royal law</span><span class="seed-q">What is the royal law, and what does breaking one point make a man?</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">What rejoiceth against judgment?</span></li>
+      <li class="step"><span class="topic">Dead faith</span><span class="seed-q">What is faith that hath not works?</span></li>
+      <li class="step"><span class="topic">Demons</span><span class="seed-q">Who else believes there is one God, and what do they do?</span></li>
+      <li class="step"><span class="topic">Abraham and Rahab</span><span class="seed-q">How did faith show itself in Abraham and in Rahab?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The man at the door</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Two men walk into the meeting. One of them gets the good seat.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons|a man with a gold ring|a poor man in vile raiment|Stand thou there, or sit here under my footstool"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="Two chairs on the left and a stool on the right. A man in good clothes with a gold ring sits in the first chair under the words: sit thou here in a good place. A poor man in plain clothes stands by the stool under the words: stand thou there, or sit here under my footstool. On a click the poor man walks over and sits in the second chair, beside the rich man: the same seat.">
+          <defs>
+            <symbol id="ja02-man" viewBox="-20 -44 40 66" overflow="visible"><circle cx="0" cy="-30" r="13"/><path d="M-18 22 L-18 -6 Q-18 -17 0 -17 Q18 -17 18 -6 L18 22 Z"/></symbol>
+          </defs>
+          <path d="M20 292 L580 292" style="stroke:var(--line-strong)" stroke-width="4" stroke-linecap="round"/>
+          <g style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="4" stroke-linejoin="round">
+            <path d="M70 292 L70 214 L170 214 L170 292 M70 214 L70 140 L170 140 L170 214" fill="none"/>
+            <path d="M200 292 L200 214 L300 214 L300 292 M200 214 L200 140 L300 140 L300 214" fill="none"/>
+            <rect class="ja02-before" x="450" y="262" width="60" height="30" rx="4"/>
+          </g>
+          <use href="#ja02-man" x="120" y="230" width="84" height="138" transform="translate(-42 -90)" style="fill:var(--accent)"/>
+          <circle cx="147" cy="212" r="6" fill="none" style="stroke:var(--accent-hot)" stroke-width="3"/>
+          <g class="ja02-poor"><use href="#ja02-man" x="480" y="252" width="84" height="138" transform="translate(-42 -90)" style="fill:var(--ink-soft)"/></g>
+          <g font-size="19" style="fill:var(--ink)">
+            <text x="120" y="60" text-anchor="middle">“Sit thou here</text><text x="120" y="84" text-anchor="middle">in a good place”</text>
+            <g class="ja02-before"><text x="480" y="60" text-anchor="middle">“Stand thou there,</text><text x="480" y="84" text-anchor="middle">or sit here under</text><text x="480" y="108" text-anchor="middle">my footstool”</text></g>
+            <g class="ja02-after"><text x="250" y="44" text-anchor="middle" font-size="26" font-weight="700" style="fill:var(--accent-hot)">the same seat</text></g>
+          </g>
+          <g font-size="17" style="fill:var(--ink-soft)">
+            <text x="120" y="320" text-anchor="middle">gold ring, goodly apparel</text>
+            <text x="480" y="320" text-anchor="middle">vile raiment</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two men, one door</h2>
+        <p class="note rise" style="--d:2">A man in a sharp suit and a gold ring is shown to the best seat. A man in <em>“vile raiment,”</em> worn-out, dirty clothes, is told to stand or sit on the floor.</p>
+        <p class="note step">James calls it <em>“respect of persons”</em>: judging a man by his looks and his money before he says a word.</p>
+        <p class="note step ja02-same">Picture the man who walks in fresh out of prison, still shaking from last night. How does that room treat him? How did it treat <em>you</em>? And if you are in the good chair today, move over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="Hath not God chosen the poor of this world rich in faith|But ye have despised the poor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5-6" data-hl="Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom|But ye have despised the poor"></blockquote>
+    <h2 class="rise" style="--d:1">What God did with the poor man</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">What the church did</p><h3>Despised him</h3><p>Looked him over and gave him the footstool, and bowed to the men with money. Even though, James says, those are the men who <em>“oppress you, and draw you before the judgment seats”</em> and speak against the name of Christ.</p></div>
+      <div class="col grace step"><p class="who">What God did</p><h3>Chose him</h3><p><em>“Rich in faith, and heirs of the kingdom.”</em> God has never judged a man by his bank account or his record. He picked fishermen, a tax collector, a thief on a cross.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.”</p><cite>Matthew 25:40</cite></blockquote>
+    <p class="note step">If you have ever been the man with the footstool, remember that this verse was written about you. Today: look for the new face in the room, and sit next to him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The royal law</h2>
+    <p class="range rise" style="--d:2">Verses 8–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Favoritism is not a small thing. James holds it up against the law, and then shows how mercy answers the law.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-9" data-hl="Thou shalt love thy neighbour as thyself|if ye have respect to persons, ye commit sin"></section>
+<section class="slide verse" data-v="10-13" data-hl="offend in one point, he is guilty of all|he shall have judgment without mercy|mercy rejoiceth against judgment"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A pane of glass with a single crack that starts at one corner and runs across it, branching. The whole pane is broken, though only one line was drawn. The caption says one point, guilty of all.">
+          <rect x="120" y="30" width="360" height="250" rx="8" style="fill:color-mix(in srgb, var(--cool) 18%, transparent);stroke:var(--ink-soft)" stroke-width="6"/>
+          <path d="M150 55 L215 100 L200 150 L270 190 L255 255" class="ja02-crack" pathLength="1"/>
+          <path d="M270 190 L350 175 L410 230 L440 262" class="ja02-crack b" pathLength="1"/>
+          <path d="M215 100 L305 80 L370 40" class="ja02-crack b" pathLength="1"/>
+          <g class="ja02-shard" style="fill:var(--danger);opacity:.18"><path d="M215 100 L305 80 L350 175 L270 190 L200 150 Z"/></g>
+          <text x="300" y="324" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--danger)">one crack, a broken window</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One crack is enough</h2>
+        <p class="note rise" style="--d:2">Verse 10 is hard. The law is not a list where you can score 90 and pass. It is one pane of glass: a single crack, and it is broken. <em>“He that said, Do not commit adultery, said also, Do not kill.”</em> The same God spoke both.</p>
+        <p class="note step">James is not saying every sin is the same size. He is saying nobody keeps the law by being <em>mostly good.</em> That includes the man in the good chair, and the man who sneered at the poor one, and every one of us.</p>
+        <p class="note step">Now the turn. <em>“So speak ye, and so do, as they that shall be judged by the law of liberty.”</em> And then:</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="mercy rejoiceth against judgment"></blockquote>
+    <h2 class="rise" style="--d:1">Mercy laughs at the judge</h2>
+    <div class="ifthen">
+      <div class="if step"><small>The man who shows no mercy</small>gets judgment with none</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>but</small>mercy rejoiceth against judgment</div>
+    </div>
+    <p class="note step"><em>“Rejoiceth against”</em> means mercy stands over judgment, and wins. A man who knows how much mercy he has been given will find it hard to withhold it. Look back at the man in vile raiment: every one of us was him when we came to God, with nothing to put on.</p>
+    <p class="note step">The cross is where this is settled. Judgment fell on Jesus, so mercy could stand over every man who trusts Him. Today: where do you owe someone the mercy you were shown?</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Faith that works</h2>
+    <p class="range rise" style="--d:2">Verses 14–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most argued-over paragraph in the letter. Read it slowly: James and Paul are on the same side.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="though a man say he hath faith, and have not works|Depart in peace, be ye warmed and filled|faith, if it hath not works, is dead, being alone"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Words that fill no stomach</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>A brother, hungry and cold</small>I have not eaten since yesterday, and I have no coat.</p>
+      <p class="reply step"><small>The believer</small>Go in peace. Be warmed and filled.<br><span class="flag">and gives him nothing</span></p>
+    </div>
+    <p class="note step">Every word of that was kind, and none of it fed anybody. <em>“What doth it profit?”</em> James asks. That is what faith that never moves looks like: nice words and an empty plate.</p>
+    <p class="note step">Notice what James is not saying. He does not say works <em>add</em> to what Jesus did. He says a faith that never does anything is <em>“dead, being alone.”</em> It is a corpse, a body that has stopped breathing. It looks like a person, but nothing is alive in it.</p>
+    <blockquote class="quote step"><p>“My little children, let us not love in word, neither in tongue; but in deed and in truth.”</p><cite>1 John 3:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="shew me thy faith without thy works, and I will shew thee my faith by my works|the devils also believe, and tremble|faith without works is dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="the devils also believe, and tremble"></blockquote>
+    <h2 class="rise" style="--d:1">Even the demons believe</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Believing God exists</span><span class="why">The demons do that, and it makes them shake. They know exactly who He is. They are not saved.</span></li>
+      <li class="step"><span class="k">Saying “I have faith”</span><span class="why">James: <em>“shew me.”</em> Words cost nothing. They never fed the brother in the cold.</span></li>
+      <li class="step"><span class="k">Agreeing with the right doctrine</span><span class="why">Right answers are good. But a man can ace the test and never trust the Teacher.</span></li>
+      <li class="step yes"><span class="k">Trusting Him, and so living like it</span><span class="why">Faith is not only knowing that He is there. It is resting your whole weight on what He did, and your life starts to lean that way.</span></li>
+    </ul>
+    <p class="note step">If you are worried that you do not have enough works to prove your faith, you are not behind. Every believer starts with nothing to show except trust. James is asking whether that trust is alive, whether it has started to move, even a little, even by one phone call today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-24" data-hl="Abraham believed God, and it was imputed unto him for righteousness|the Friend of God|by works a man is justified, and not by faith only"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Abraham: believed first, shown later</h2>
+    <ol class="timeline" aria-label="Genesis 15: Abraham believes God, and it is counted to him for righteousness. Genesis 21: Isaac is born, when Abraham is a hundred. Genesis 22: Abraham offers Isaac on the altar, and is stopped. James 2: the scripture was fulfilled, and he was called the Friend of God.">
+      <li class="lit" style="--k:0"><b>Genesis 15</b><span>Abraham believes God</span><small>“counted it to him for righteousness”</small></li>
+      <li style="--k:1"><b>Years pass</b><span>The promise waits</span><small>he and Sarah grow old</small></li>
+      <li style="--k:2"><b>Genesis 21</b><span>Isaac is born</span><small>Abraham is a hundred</small></li>
+      <li class="lit" style="--k:3"><b>Genesis 22</b><span>The altar</span><small>“now I know that thou fearest God”</small></li>
+    </ol>
+    <blockquote class="quote rise" style="--d:3"><p>“And he believed in the LORD; and he counted it to him for righteousness.”</p><cite>Genesis 15:6</cite></blockquote>
+    <p class="note step">Abraham was counted righteous in Genesis 15, long <em>before</em> he lifted a knife, and before the law, and before Isaac was even born. So when James says Abraham was <em>“justified by works,”</em> he cannot mean that is how he got right with God. He means the altar <em>showed</em> his faith was the real thing. The Scripture <em>“was fulfilled”</em>: Genesis 22 filled up what Genesis 15 said.</p>
+    <blockquote class="quote step"><p>“And he said, Lay not thine hand upon the lad, neither do thou any thing unto him: for now I know that thou fearest God, seeing thou hast not withheld thy son, thine only son from me.”</p><cite>Genesis 22:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">James and Paul: same side</h2>
+    <div class="ja02-two">
+      <div class="ja02-who rise" style="--d:2"><small>Paul, in Romans 4</small><h3>Faith's root</h3><p class="ask">How does a sinner get right with God?</p><p class="ans">By trusting Him, with no works to bring.</p><p>Before <em>God</em>. Abraham in Genesis 15.</p><cite>Romans 4:5</cite></div>
+      <div class="ja02-who j step"><small>James, in chapter 2</small><h3>Faith's proof</h3><p class="ask">How do people know my faith is real?</p><p class="ans">By what it makes me do.</p><p>Before <em>people</em>. Abraham in Genesis 22.</p><cite>James 2:18</cite></div>
+    </div>
+    <blockquote class="quote step"><p>“But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.”</p><cite>Romans 4:5</cite></blockquote>
+    <p class="note step">Two writers, two questions. Paul is answering a man who thinks he must earn it. James is answering a man who thinks he can say the words and change nothing. Neither of them has the other's problem. <em>“Justified”</em> in Paul means declared right with God. In James it means shown to be right, proved. A faith that saves is never alone, so James and Paul agree: we are saved by faith alone, but the faith that saves is never alone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 360" role="img" aria-label="A tree. Under the ground the roots are labeled faith alone, saves us before God, Romans 4:5. Above the ground the trunk and branches carry fruit, labeled works, which show it before people, James 2:18.">
+          <path d="M20 200 L580 200" style="stroke:var(--line-strong)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M300 200 L300 120" style="stroke:var(--leather, var(--ink-soft))" stroke-width="14" stroke-linecap="round"/>
+          <path d="M300 150 Q250 130 220 96 M300 140 Q350 120 388 86 M300 125 L300 62" style="stroke:var(--leather, var(--ink-soft))" fill="none" stroke-width="8" stroke-linecap="round"/>
+          <g>
+            <circle class="ja02-fruit" style="--k:0;fill:var(--accent-hot)" cx="220" cy="88" r="17"/>
+            <circle class="ja02-fruit" style="--k:1;fill:var(--accent-hot)" cx="300" cy="52" r="17"/>
+            <circle class="ja02-fruit" style="--k:2;fill:var(--accent-hot)" cx="390" cy="78" r="17"/>
+            <circle class="ja02-fruit" style="--k:3;fill:var(--accent-hot)" cx="262" cy="124" r="13"/>
+            <circle class="ja02-fruit" style="--k:4;fill:var(--accent-hot)" cx="338" cy="110" r="13"/>
+          </g>
+          <g>
+            <path class="ja02-root" style="--k:0" pathLength="1" d="M300 200 L300 262"/>
+            <path class="ja02-root" style="--k:1" pathLength="1" d="M300 205 Q250 225 205 262"/>
+            <path class="ja02-root" style="--k:2" pathLength="1" d="M300 205 Q350 225 395 262"/>
+          </g>
+          <g text-anchor="middle" font-size="21">
+            <text class="ja02-cap" style="--k:0;fill:var(--accent)" x="300" y="296" font-weight="700">faith alone saves us</text>
+            <text class="ja02-cap" style="--k:1;fill:var(--ink-soft)" x="300" y="322">before God (Paul)</text>
+            <text class="ja02-cap" style="--k:2;fill:var(--accent-hot)" x="125" y="150" font-weight="700">works</text>
+            <text class="ja02-cap" style="--k:3;fill:var(--ink-soft)" x="125" y="174">show it to people (James)</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">One tree</h2>
+        <p class="note rise" style="--d:2">Nobody asks whether the root or the fruit makes it a tree. A tree is both. Under the ground, faith alone: no works needed to get in. Above the ground, fruit: not to <em>get</em> the tree, but because the tree is alive.</p>
+        <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.”</p><cite>Ephesians 2:8–10</cite></blockquote>
+        <p class="note step">Paul says it in one breath, with both halves: saved by grace through faith, <em>for</em> good works. The works are what He had in mind for you from the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-26" data-hl="Rahab the harlot justified by works|the body without the spirit is dead, so faith without works is dead also"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25" data-hl="Rahab the harlot"></blockquote>
+    <h2 class="rise" style="--d:1">Rahab, a woman with a past</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Rahab the harlot, of Jericho</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">in the family line of Jesus</span>
+      <span class="gloss step">She heard what the LORD had done and believed it: <em>“the LORD your God, he is God in heaven above, and in earth beneath”</em> (Joshua 2:11). Then she hid the spies and sent them out another way. Her trust did something.</span>
+    </div>
+    <blockquote class="quote step"><p>“By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace.”</p><cite>Hebrews 11:31</cite></blockquote>
+    <p class="note step">Abraham was the respected father of the Jews. Rahab was a foreigner and a prostitute. Faith worked the same way in both, and she is named in the line of Jesus: <em>“Salmon begat Booz of Rachab”</em> (Matthew 1:5, the same woman). Nobody's past is too far gone.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">As the body without the spirit</h2>
+    <p class="saying rise" style="--d:2">A body with no breath is a body. <em>It is not a person.</em></p>
+    <p class="note rise" style="--d:3">That is verse 26. Faith without works is not a small, weak faith. It is a dead one. And a living faith always breathes: it shows up in something. The size does not matter. A small thing counts. Pick one today:</p>
+    <ol class="signs">
+      <li class="step"><b>A seat</b>Sit next to the new man.</li>
+      <li class="step"><b>A meal</b>Feed somebody who is hungry.</li>
+      <li class="step"><b>A call</b>Apologise to the one you hurt.</li>
+      <li class="step"><b>A promise</b>Keep the small one you made.</li>
+    </ol>
+    <p class="note step">None of these will make God love you more. He already does. These are just what a living faith does: it breathes.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">No favourites</span><span class="seed-q">“Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?” <cite>2:5</cite></span><span class="take">God chose the man we were tempted to push to the back. If you were that man, He chose you too.</span></li>
+      <li class="step"><span class="topic">The royal law</span><span class="seed-q">“If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well” <cite>2:8</cite></span><span class="take">Love your neighbour is the king's own law, and breaking even one point breaks the whole pane. We all need mercy.</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.” <cite>2:13</cite></span><span class="take">Mercy stands over judgment. A man who has received it will give it away.</span></li>
+      <li class="step"><span class="topic">Dead faith</span><span class="seed-q">“Even so faith, if it hath not works, is dead, being alone.” <cite>2:17</cite></span><span class="take">Faith alone saves, but the faith that saves is never alone. It is alive, and it moves.</span></li>
+      <li class="step"><span class="topic">Demons</span><span class="seed-q">“Thou believest that there is one God; thou doest well: the devils also believe, and tremble.” <cite>2:19</cite></span><span class="take">Knowing that God is there is not the same as trusting Him. The demons know, and they are not saved.</span></li>
+      <li class="step"><span class="topic">Abraham and Rahab</span><span class="seed-q">“Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?” <cite>2:25</cite></span><span class="take">A respected patriarch and a prostitute: in both, real faith moved. Nobody's past is too far gone.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">No favourites</span>
+      <h2>Whom has God chosen, that the church was despising?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6" data-hl="Hath not God chosen the poor of this world rich in faith|But ye have despised the poor"></blockquote>
+      <blockquote class="quote step"><p>“And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.”</p><cite>Matthew 25:40</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The poor of this world, rich in faith and heirs of the kingdom. The church had given them the footstool, and God had given them the kingdom.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The royal law</span>
+      <h2>What is the royal law, and what does breaking one point make a man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="Thou shalt love thy neighbour as thyself"></blockquote>
+      <blockquote class="quote step" data-q="10-11" data-hl="offend in one point, he is guilty of all"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Love your neighbour as yourself. Break one point and you are guilty of the whole, like one crack in a pane of glass. None of us keeps it, which is why we need mercy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>What rejoiceth against judgment?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Mercy. It stands over judgment and wins, for the man who has received it and gives it away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Dead faith</span>
+      <h2>What is faith that hath not works?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14-17" data-hl="faith, if it hath not works, is dead, being alone"></blockquote>
+      <blockquote class="quote step" data-q="26" data-hl="faith without works is dead also"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Dead, being alone, like a body without breath. We are saved by faith alone, but the faith that saves is never alone: it shows up in good works.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Demons</span>
+      <h2>Who else believes there is one God, and what do they do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19"></blockquote>
+      <blockquote class="quote step"><p>“And why call ye me, Lord, Lord, and do not the things which I say?”</p><cite>Luke 6:46</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The devils, and they tremble. Believing that He is there is not the same as trusting Him and living like it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Abraham and Rahab</span>
+      <h2>How did faith show itself in Abraham and in Rahab?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21-23" data-hl="Abraham believed God, and it was imputed unto him for righteousness"></blockquote>
+      <blockquote class="quote step" data-q="25" data-hl="Rahab the harlot"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Abraham believed God, and his faith showed when he offered Isaac. Rahab believed, and hid the spies and sent them away safe. In each, trust moved.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:”</p><cite>Ephesians 2:8</cite></blockquote>
+  </div>
+</section>
+</main>
+
+<script>
+// King James Version, James chapter 2
+const V = {
+  1: "My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons.",
+  2: "For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment;",
+  3: "And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say to the poor, Stand thou there, or sit here under my footstool:",
+  4: "Are ye not then partial in yourselves, and are become judges of evil thoughts?",
+  5: "Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?",
+  6: "But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?",
+  7: "Do not they blaspheme that worthy name by the which ye are called?",
+  8: "If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well:",
+  9: "But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors.",
+  10: "For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.",
+  11: "For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.",
+  12: "So speak ye, and so do, as they that shall be judged by the law of liberty.",
+  13: "For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.",
+  14: "What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?",
+  15: "If a brother or sister be naked, and destitute of daily food,",
+  16: "And one of you say unto them, Depart in peace, be ye warmed and filled; notwithstanding ye give them not those things which are needful to the body; what doth it profit?",
+  17: "Even so faith, if it hath not works, is dead, being alone.",
+  18: "Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works.",
+  19: "Thou believest that there is one God; thou doest well: the devils also believe, and tremble.",
+  20: "But wilt thou know, O vain man, that faith without works is dead?",
+  21: "Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?",
+  22: "Seest thou how faith wrought with his works, and by works was faith made perfect?",
+  23: "And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.",
+  24: "Ye see then how that by works a man is justified, and not by faith only.",
+  25: "Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?",
+  26: "For as the body without the spirit is dead, so faith without works is dead also."
+};
+const BOOK = "James 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

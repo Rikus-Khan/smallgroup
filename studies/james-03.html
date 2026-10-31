@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jm01-where: where we are in James (a deck.css candidate; every James study can copy it as is).
+   Five chapter cards (.jm01-ch, --k; read ones .done, ours .here), each with a small label, a theme, a key verse and its reference. */
+.jm01-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: .5em 0 1em; }
+.jm01-ch { padding: .55em .7em .7em; border-top: 6px solid var(--line-strong); border-radius: 4px 4px 12px 12px; background: var(--surface);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 140ms + 300ms); }
+.slide.active .jm01-ch { opacity: 1; transform: none; }
+.jm01-ch small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.jm01-ch b { display: block; margin: .1em 0 .3em; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.jm01-ch q { display: block; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.jm01-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.jm01-ch.done { border-top-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.jm01-ch.here { border-top-color: var(--accent-hot); background: color-mix(in srgb, var(--accent) 22%, var(--surface)); box-shadow: inset 0 0 0 2px var(--accent); }
+.slide.active .jm01-ch.here { animation: jm01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes jm01-here { 50% { box-shadow: inset 0 0 0 2px var(--accent), 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+@media (max-width: 640px) { .jm01-where { grid-template-columns: 1fr; gap: 8px; } }
+
+
+/* ja03-steer: a very small thing turns a very large one (bit and horse, helm and ship) */
+.ja03-steer { display: grid; gap: 1em; margin: .6em 0 .9em; }
+.ja03-row { display: grid; grid-template-columns: clamp(70px, 10vw, 120px) 1fr; align-items: center; gap: 12px; }
+.ja03-lab { font: 700 clamp(.85rem, .78rem + .3vw, 1.1rem)/1.15 var(--sans); color: var(--ink-soft); text-align: right; }
+.ja03-lab b { display: block; color: var(--accent-hot); }
+.ja03-track { position: relative; height: clamp(70px, 9vw, 100px); }
+.ja03-big { position: absolute; left: 0; top: 28%; width: 84%; height: 44%; border-radius: 10px; background: var(--surface-2); border: 2px solid var(--line-strong);
+  transform-origin: 0 50%; transition: transform 1.8s cubic-bezier(.4,0,.2,1); transition-delay: calc(var(--k, 0) * 700ms + 1.2s); display: flex; align-items: center; justify-content: flex-end; padding-right: .8em;
+  font: 600 clamp(.95rem, .85rem + .4vw, 1.25rem) var(--serif); color: var(--ink); }
+.ja03-tiny { position: absolute; left: 0; top: 40%; width: clamp(14px, 2vw, 24px); height: 20%; border-radius: 4px; background: var(--accent-hot); z-index: 2; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+  transform-origin: 0 50%; transition: transform 1.8s cubic-bezier(.4,0,.2,1); transition-delay: calc(var(--k, 0) * 700ms + 1.2s); }
+.slide.active .ja03-big, .slide.active .ja03-tiny { transform: rotate(calc(var(--turn, 0) * 1deg)); }
+.slide.active .ja03-row .ja03-tiny { transform: rotate(calc(var(--turn, 0) * 1deg)); }
+
+/* ja03-fire: a spark, then a forest on fire (the trees catch one after another) */
+.ja03-tree { fill: var(--cool); transition: fill .6s ease; transition-delay: calc(var(--k, 0) * 380ms + 1.2s); }
+.slide.active .ja03-tree { fill: var(--danger); }
+.ja03-ember { fill: var(--accent-hot); transform-box: fill-box; transform-origin: 50% 100%; opacity: 0; }
+.slide.active .ja03-ember { animation: ja03-flame 1.2s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * 380ms + 1.2s); }
+@keyframes ja03-flame { from { opacity: .35; transform: scale(.7); } to { opacity: 1; transform: scale(1.15); } }
+.ja03-spark { fill: var(--accent-hot); transform-box: fill-box; transform-origin: 50% 50%; animation: ja03-spark 1.4s ease-in-out infinite alternate; }
+@keyframes ja03-spark { from { transform: scale(.8); } to { transform: scale(1.3); } }
+.ja03-smoke { fill: var(--ink-soft); opacity: 0; }
+.slide.active .ja03-smoke { animation: ja03-smoke 4s ease-out infinite; animation-delay: calc(var(--k, 0) * .6s + 2s); }
+@keyframes ja03-smoke { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .5; } 100% { opacity: 0; transform: translateY(-40px); } }
+
+/* ja03-spout: one spout, two cups (blessing and cursing from the same mouth) */
+.ja03-jet { fill: none; stroke: var(--cool); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 10 14; animation: ja03-flow .9s linear infinite; }
+.ja03-jet.bad { stroke: var(--danger); }
+@keyframes ja03-flow { to { stroke-dashoffset: -24; } }
+.ja03-cup-fill { transition: height 2s ease; }
+@media (prefers-reduced-motion: reduce) { .ja03-jet, .ja03-spark, .slide.active .ja03-ember, .slide.active .ja03-smoke { animation: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">James 3</h1>
+    <p class="sub rise" style="--d:3">The little fire</p>
+    <p class="tag rise" style="--d:5">The smallest muscle in the body can steer a life or burn one down. And two kinds of wisdom: <em>“first pure, then peaceable.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in James</h2>
+    <div class="jm01-where" role="img" aria-label="James in five chapters. 1, faith under pressure: be ye doers of the word, and not hearers only, 1:22. 2, faith that works: faith, if it hath not works, is dead, 2:17. 3, words and wisdom: the tongue can no man tame, 3:8. 4, humble yourselves: draw nigh to God, and he will draw nigh to you, 4:8. 5, patience and prayer: the effectual fervent prayer of a righteous man availeth much, 5:16. We are in chapter 3.">
+      <div class="jm01-ch done" style="--k:0"><small>Chapter 1</small><b>Faith under pressure</b><q>Be ye doers of the word, and not hearers only</q><cite>James 1:22</cite></div>
+      <div class="jm01-ch done" style="--k:1"><small>Chapter 2</small><b>Faith that works</b><q>Faith, if it hath not works, is dead</q><cite>James 2:17</cite></div>
+      <div class="jm01-ch here" style="--k:2"><small>Chapter 3</small><b>Words and wisdom</b><q>The tongue can no man tame</q><cite>James 3:8</cite></div>
+      <div class="jm01-ch" style="--k:3"><small>Chapter 4</small><b>Humble yourselves</b><q>Draw nigh to God, and he will draw nigh to you</q><cite>James 4:8</cite></div>
+      <div class="jm01-ch" style="--k:4"><small>Chapter 5</small><b>Patience and prayer</b><q>The effectual fervent prayer of a righteous man availeth much</q><cite>James 5:16</cite></div>
+    </div>
+    <p class="note step">Chapter 2 showed faith at work with its hands. Chapter 3 turns to the smallest muscle in the body, and then to two kinds of wisdom.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Teachers</span><span class="seed-q">Why does James say, “be not many masters”?</span></li>
+      <li class="step"><span class="topic">Small things</span><span class="seed-q">What little things steer great things?</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">What is the tongue like, and who can tame it?</span></li>
+      <li class="step"><span class="topic">One mouth</span><span class="seed-q">What ought not to come out of the same mouth?</span></li>
+      <li class="step"><span class="topic">Earthly wisdom</span><span class="seed-q">Where envying and strife is, what follows?</span></li>
+      <li class="step"><span class="topic">Wisdom from above</span><span class="seed-q">What is the wisdom that is from above like?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Be not many masters</h2>
+    <p class="range rise" style="--d:2">Verses 1–2</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Teachers get judged more strictly, and James puts himself in the same boat: <em>“we offend all.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="be not many masters, knowing that we shall receive the greater condemnation|in many things we offend all|a perfect man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="be not many masters"></blockquote>
+    <h2 class="rise" style="--d:1">Handle with care</h2>
+    <div class="ifthen">
+      <div class="if step"><small>A man who teaches</small>speaks for God, and people trust him</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>so he faces</small>the greater condemnation</div>
+    </div>
+    <p class="note step">A <em>master</em> here is a teacher. Anyone who tells others what God says, a pastor, a Bible-study leader, a man giving a friend advice, will answer for it more strictly, because people will build on what he said. James says it about himself: <em>“we shall receive.”</em></p>
+    <p class="saying step">For in many things <em>we offend all.</em></p>
+    <p class="note step">The honest part: <em>all</em>. James puts himself in with everyone else. He is not a clean man talking down to dirty ones. Then he says what a mature man looks like: the one who does not <em>“offend in word.”</em> That is how hard words are to control. If the speaker is not perfect, and the listener is not perfect, we need the same mercy.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Small thing, great fire</h2>
+    <p class="range rise" style="--d:2">Verses 3–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A bit, a rudder and a spark. James picks three small things to show how much weight the tongue carries.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="we put bits in the horses|turned about with a very small helm|how great a matter a little fire kindleth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Small steering</h2>
+    <div class="ja03-steer" role="img" aria-label="Two rows. In the first, a tiny bit at the front of a big bar labeled horse turns the whole horse. In the second, a tiny helm at the front of a big bar labeled ship turns the whole ship.">
+      <div class="ja03-row"><div class="ja03-lab"><b>a bit</b>in a horse's mouth</div><div class="ja03-track"><div class="ja03-big" style="--turn:-3;--k:0">the whole horse</div><div class="ja03-tiny" style="--turn:-3;--k:0"></div></div></div>
+      <div class="ja03-row"><div class="ja03-lab"><b>a helm</b>a very small rudder</div><div class="ja03-track"><div class="ja03-big" style="--turn:3;--k:1">the whole ship, in fierce winds</div><div class="ja03-tiny" style="--turn:3;--k:1"></div></div></div>
+    </div>
+    <p class="note step">A horse weighs hundreds of pounds, and a little piece of metal in its mouth turns all of it. A ship is driven by <em>“fierce winds,”</em> and a rudder, small next to the ship, turns it where the pilot wants.</p>
+    <p class="note step"><em>“Even so the tongue is a little member, and boasteth great things.”</em> Small, and it steers the whole man. What you say to yourself and to others at 7 a.m. points the day. A man who talks himself down all morning ends up where he is talking to.</p>
+    <p class="note step">There is good news in the picture: whoever holds the bit decides. Put the words under His hand, and a very small thing can turn a very big life the right way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="the tongue is a fire, a world of iniquity|set on fire of hell|the tongue can no man tame|full of deadly poison"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="A small glowing spark at the left. Beside it, a row of seven green trees. One after another the trees turn red, as the fire spreads right across the whole forest, with smoke rising.">
+          <path d="M20 270 L580 270" style="stroke:var(--line-strong)" stroke-width="4" stroke-linecap="round"/>
+          <g>
+            <path class="ja03-tree" style="--k:0" d="M130 270 L130 250 M112 250 L130 196 L148 250 Z"/>
+            <path class="ja03-tree" style="--k:1" d="M190 270 L190 250 M170 250 L190 170 L210 250 Z"/>
+            <path class="ja03-tree" style="--k:2" d="M250 270 L250 250 M228 250 L250 150 L272 250 Z"/>
+            <path class="ja03-tree" style="--k:3" d="M312 270 L312 250 M290 250 L312 160 L334 250 Z"/>
+            <path class="ja03-tree" style="--k:4" d="M374 270 L374 250 M352 250 L374 140 L396 250 Z"/>
+            <path class="ja03-tree" style="--k:5" d="M436 270 L436 250 M416 250 L436 176 L456 250 Z"/>
+            <path class="ja03-tree" style="--k:6" d="M494 270 L494 250 M476 250 L494 200 L512 250 Z"/>
+          </g>
+          <g>
+            <path class="ja03-ember" style="--k:0" d="M130 196 q-8 -18 0 -34 q8 16 0 34 Z"/>
+            <path class="ja03-ember" style="--k:1" d="M190 170 q-9 -20 0 -38 q9 18 0 38 Z"/>
+            <path class="ja03-ember" style="--k:2" d="M250 150 q-10 -22 0 -42 q10 20 0 42 Z"/>
+            <path class="ja03-ember" style="--k:3" d="M312 160 q-9 -20 0 -38 q9 18 0 38 Z"/>
+            <path class="ja03-ember" style="--k:4" d="M374 140 q-10 -22 0 -42 q10 20 0 42 Z"/>
+            <path class="ja03-ember" style="--k:5" d="M436 176 q-8 -18 0 -34 q8 16 0 34 Z"/>
+            <path class="ja03-ember" style="--k:6" d="M494 200 q-7 -16 0 -30 q7 14 0 30 Z"/>
+          </g>
+          <g>
+            <circle class="ja03-smoke" style="--k:0" cx="250" cy="100" r="11"/><circle class="ja03-smoke" style="--k:1" cx="330" cy="92" r="14"/><circle class="ja03-smoke" style="--k:2" cx="400" cy="84" r="10"/>
+          </g>
+          <circle class="ja03-spark" cx="62" cy="256" r="9"/>
+          <text x="62" y="300" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">a spark</text>
+          <text x="300" y="38" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">“how great a matter a little fire kindleth!”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The tongue is a fire</h2>
+        <p class="note rise" style="--d:2">James does not soften it: <em>“a fire, a world of iniquity,”</em> <em>“an unruly evil, full of deadly poison.”</em> One lie, one cutting remark, one rumour, and a whole forest goes up.</p>
+        <p class="note step">Every man here has set a fire with his mouth. <em>“Set on fire of hell”</em> uses the word <em>Gehenna</em>, the burning rubbish dump outside Jerusalem.</p>
+        <p class="note step"><em>“The tongue can no man tame.”</em> You cannot fix your mouth by willpower alone. But notice: no <em>man</em>. What no man can do, God can.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The tongue is only the tap</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.”</p><cite>Matthew 12:34</cite></blockquote>
+    <div class="ifthen">
+      <div class="if step"><small>What is in the heart</small>anger, envy, pride, hurt</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>comes out of the mouth</small>the mouth speaks it</div>
+    </div>
+    <p class="note step">The mouth is where it comes out, not where it starts. That is why the cure is not a stricter lip, but a new heart, and a Helper. A man who has been forgiven, and who is being changed from the inside by the Holy Spirit, begins to talk differently over months, not days.</p>
+    <blockquote class="quote step"><p>“Set a watch, O LORD, before my mouth; keep the door of my lips.”</p><cite>Psalm 141:3</cite></blockquote>
+    <p class="note step">Pray that one. Out loud, in the morning. And if your mouth has already wrecked something lately, the way back is a short, plain sentence: <em>“I was wrong. I'm sorry.”</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="Therewith bless we God, even the Father; and therewith curse we men|Out of the same mouth proceedeth blessing and cursing|these things ought not so to be"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="One spout at the top. Two streams run from it, one blue into a cup on the left labeled blessing, and one red into a cup on the right labeled cursing.">
+          <rect x="235" y="20" width="130" height="34" rx="8" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="4"/>
+          <text x="300" y="44" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--ink)">one mouth</text>
+          <path class="ja03-jet" d="M285 58 C285 120 170 120 150 215"/>
+          <path class="ja03-jet bad" d="M315 58 C315 120 430 120 450 215"/>
+          <path d="M95 220 L205 220 L190 300 L110 300 Z" style="fill:color-mix(in srgb, var(--cool) 24%, transparent);stroke:var(--cool)" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M395 220 L505 220 L490 300 L410 300 Z" style="fill:color-mix(in srgb, var(--danger) 24%, transparent);stroke:var(--danger)" stroke-width="4" stroke-linejoin="round"/>
+          <text x="150" y="268" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--cool)">blessing</text>
+          <text x="450" y="268" text-anchor="middle" font-size="21" font-weight="700" style="fill:var(--danger)">cursing</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sweet water and bitter</h2>
+        <p class="note rise" style="--d:2"><em>“Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God.”</em> Singing on Sunday and swearing at the driver on Monday. Praising God and then tearing into a man He made in His own likeness.</p>
+        <p class="note step"><em>“These things ought not so to be.”</em> A spring does not send out sweet water and bitter, a fig tree does not grow olives, a salt spring does not give fresh water. What is in the well comes up in the bucket.</p>
+        <p class="note step">Notice who gets the cursing: <em>men, made after the similitude of God.</em> Even the one who hurt you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Therewith bless we God, even the Father"></blockquote>
+    <h2 class="rise" style="--d:1">Three questions at the gate</h2>
+    <p class="note rise" style="--d:2">Between the thought and the mouth, put a gate. Before you speak, one of these three:</p>
+    <ol class="signs">
+      <li class="step"><b>Is it true?</b>No lies, and no half-truths that do the same job.</li>
+      <li class="step"><b>Is it kind?</b>You can say a hard thing without cruelty. <em>“A soft answer turneth away wrath.”</em></li>
+      <li class="step"><b>Does it build up?</b><em>“That which is good to the use of edifying, that it may minister grace unto the hearers.”</em></li>
+    </ol>
+    <blockquote class="quote step"><p>“Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.”</p><cite>Ephesians 4:29</cite></blockquote>
+    <p class="note step">You will fail some days, as everybody does. Say sorry, and start again with the next sentence. Today, pick one person and say one good thing to them, and mean it.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Two kinds of wisdom</h2>
+    <p class="range rise" style="--d:2">Verses 13–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">James ends with a test for any man who calls himself wise. Where does it come from, and what does it grow?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Who is a wise man and endued with knowledge among you|bitter envying and strife in your hearts|earthly, sensual, devilish"></section>
+<section class="slide verse" data-v="16-18" data-hl="where envying and strife is, there is confusion and every evil work|first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits|sown in peace of them that make peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where it comes from</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2"><p class="who">Verses 14–16</p><h3>Earthly, sensual, devilish</h3><p><em>Earthly</em>: it runs on what people think of you. <em>Sensual</em>: it runs on feelings and cravings. <em>Devilish</em>: it copies the devil's own moves. It shows up as <em>“bitter envying and strife.”</em> And where those are, <em>“there is confusion and every evil work.”</em></p></div>
+      <div class="col grace step"><p class="who">Verse 17</p><h3>From above</h3><p>It <em>“descendeth”</em> from the Father of lights, the same Father as in chapter 1. It is not clever. It is clean, calm and kind, and it grows peace.</p></div>
+    </div>
+    <p class="note step">Envy and strife are old companions of men in recovery: the guy who got the better job, the one who got out sooner, the one whose family came back. James says that kind of cleverness looks like wisdom but is not. Look at what it grows: confusion, and every evil work.</p>
+    <p class="note step">So <em>“glory not, and lie not against the truth.”</em> Do not boast about being wise while you are eaten up with envy. Admit it, to God, and to one man.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits"></blockquote>
+    <h2 class="rise" style="--d:1">What wisdom from above looks like</h2>
+    <ol class="signs">
+      <li class="step"><b>Pure</b>first of all: clean motives.</li>
+      <li class="step"><b>Peaceable</b>it quiets a room.</li>
+      <li class="step"><b>Gentle</b>kind, even when it is right.</li>
+      <li class="step"><b>Easy to be intreated</b>you can talk to it. It listens.</li>
+      <li class="step"><b>Full of mercy</b>it forgives, because it has been forgiven.</li>
+      <li class="step"><b>Good fruits</b>it does things for people.</li>
+      <li class="step"><b>Without partiality</b>no favourites: chapter 2 again.</li>
+      <li class="step"><b>Without hypocrisy</b>the same in private as in public.</li>
+    </ol>
+    <p class="note step">That is a picture of Jesus. And <em>“easy to be intreated”</em> may be the hardest for a stubborn man, so ask yourself it today: <em>can anyone tell me when I am wrong, and live?</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">The fruit of righteousness is <em>sown in peace</em> of them that make peace.</p>
+    <blockquote class="quote rise" data-q="18" style="--d:2"></blockquote>
+    <p class="note step">A peacemaker is not a man who avoids every fight. He is a man who plants peace on purpose and waits for the harvest. It is slow, like a seed, and you will not see it in a day.</p>
+    <blockquote class="quote step"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+    <p class="note step">And remember where wisdom comes from: it is given. You do not have to be clever. Ask. Then, today, plant one small piece of peace: a text to a man you have been cold to, a word to the one you argued with. That is how wisdom from above gets started.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Teachers</span><span class="seed-q">“My brethren, be not many masters, knowing that we shall receive the greater condemnation.” <cite>3:1</cite></span><span class="take">Whoever teaches answers for it more strictly. James puts himself in the same boat: in many things we offend all.</span></li>
+      <li class="step"><span class="topic">Small things</span><span class="seed-q">“Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth.” <cite>3:4</cite></span><span class="take">A bit turns a horse and a rudder turns a ship. Small things steer big ones, and the tongue steers a life.</span></li>
+      <li class="step"><span class="topic">The tongue</span><span class="seed-q">“But the tongue can no man tame; it is an unruly evil, full of deadly poison.” <cite>3:8</cite></span><span class="take">No man can tame it by willpower, but God can. Ask Him to set a watch before your mouth.</span></li>
+      <li class="step"><span class="topic">One mouth</span><span class="seed-q">“Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.” <cite>3:10</cite></span><span class="take">Praise and cursing do not belong in the same mouth. What is in the well comes up in the bucket.</span></li>
+      <li class="step"><span class="topic">Earthly wisdom</span><span class="seed-q">“For where envying and strife is, there is confusion and every evil work.” <cite>3:16</cite></span><span class="take">Envy and strife look clever and grow only confusion and every evil work.</span></li>
+      <li class="step"><span class="topic">Wisdom from above</span><span class="seed-q">“But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.” <cite>3:17</cite></span><span class="take">Pure, peaceable, gentle, merciful, and the same in private as in public. It is given to anyone who asks.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Teachers</span>
+      <h2>Why does James say, “be not many masters”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="be not many masters, knowing that we shall receive the greater condemnation"></blockquote>
+      <blockquote class="quote step" data-q="2" data-hl="in many things we offend all"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because teachers will be judged more strictly. And he adds himself to the list: in many things we all offend, so no teacher stands above his hearers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Small things</span>
+      <h2>What little things steer great things?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4" data-hl="we put bits in the horses|turned about with a very small helm"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="the tongue is a little member, and boasteth great things"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A bit turns a horse, a very small helm turns a great ship, and the tongue, a little member, steers a whole life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The tongue</span>
+      <h2>What is the tongue like, and who can tame it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="the tongue is a fire, a world of iniquity"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="the tongue can no man tame"></blockquote>
+      <blockquote class="quote step"><p>“Set a watch, O LORD, before my mouth; keep the door of my lips.”</p><cite>Psalm 141:3</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A fire, a world of iniquity, an unruly evil full of deadly poison. No man can tame it, so ask the Lord to set a watch before your mouth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">One mouth</span>
+      <h2>What ought not to come out of the same mouth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9-10" data-hl="Out of the same mouth proceedeth blessing and cursing"></blockquote>
+      <blockquote class="quote step" data-q="11-12" data-hl="Doth a fountain send forth at the same place sweet water and bitter"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Blessing and cursing. A spring does not give sweet water and bitter, and the mouth speaks out of what fills the heart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Earthly wisdom</span>
+      <h2>Where envying and strife is, what follows?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14-15" data-hl="bitter envying and strife in your hearts|earthly, sensual, devilish"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Confusion and every evil work. That kind of wisdom is earthly, sensual and devilish, however clever it sounds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Wisdom from above</span>
+      <h2>What is the wisdom that is from above like?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>First pure, then peaceable, gentle, easy to be intreated, full of mercy and good fruits, without partiality and without hypocrisy. And it is given to anyone who asks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Set a watch, O LORD, before my mouth; keep the door of my lips.”</p><cite>Psalm 141:3</cite></blockquote>
+  </div>
+</section>
+</main>
+
+<script>
+// King James Version, James chapter 3
+const V = {
+  1: "My brethren, be not many masters, knowing that we shall receive the greater condemnation.",
+  2: "For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.",
+  3: "Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body.",
+  4: "Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth.",
+  5: "Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!",
+  6: "And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.",
+  7: "For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind:",
+  8: "But the tongue can no man tame; it is an unruly evil, full of deadly poison.",
+  9: "Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God.",
+  10: "Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.",
+  11: "Doth a fountain send forth at the same place sweet water and bitter?",
+  12: "Can the fig tree, my brethren, bear olive berries? either a vine, figs? so can no fountain both yield salt water and fresh.",
+  13: "Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom.",
+  14: "But if ye have bitter envying and strife in your hearts, glory not, and lie not against the truth.",
+  15: "This wisdom descendeth not from above, but is earthly, sensual, devilish.",
+  16: "For where envying and strife is, there is confusion and every evil work.",
+  17: "But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.",
+  18: "And the fruit of righteousness is sown in peace of them that make peace."
+};
+const BOOK = "James 3";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

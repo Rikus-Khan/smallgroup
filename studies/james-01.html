@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jm01-where: where we are in James (a deck.css candidate; every James study can copy it as is).
+   Five chapter cards (.jm01-ch, --k; read ones .done, ours .here), each with a small label, a theme, a key verse and its reference. */
+.jm01-where { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: .5em 0 1em; }
+.jm01-ch { padding: .55em .7em .7em; border-top: 6px solid var(--line-strong); border-radius: 4px 4px 12px 12px; background: var(--surface);
+  opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 140ms + 300ms); }
+.slide.active .jm01-ch { opacity: 1; transform: none; }
+.jm01-ch small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.jm01-ch b { display: block; margin: .1em 0 .3em; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.15 var(--serif); color: var(--ink); }
+.jm01-ch q { display: block; font: italic clamp(.8rem, .74rem + .28vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.jm01-ch cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.jm01-ch.done { border-top-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.jm01-ch.here { border-top-color: var(--accent-hot); background: color-mix(in srgb, var(--accent) 22%, var(--surface)); box-shadow: inset 0 0 0 2px var(--accent); }
+.slide.active .jm01-ch.here { animation: jm01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes jm01-here { 50% { box-shadow: inset 0 0 0 2px var(--accent), 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+@media (max-width: 640px) { .jm01-where { grid-template-columns: 1fr; gap: 8px; } }
+
+
+/* ja01-fire: faith in the crucible. The fire burns the dross off; what is left is gold */
+.ja01-flame { transform-box: fill-box; transform-origin: 50% 100%; animation: ja01-flick 1.1s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.3s); }
+@keyframes ja01-flick { from { transform: scaleY(.8) scaleX(1.05); } to { transform: scaleY(1.15) scaleX(.9); } }
+.ja01-dross { fill: var(--ink-soft); opacity: 0; }
+.slide.active .ja01-dross { animation: ja01-rise 4.5s ease-out infinite; animation-delay: calc(var(--k, 0) * .7s + .6s); }
+@keyframes ja01-rise { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .9; } 100% { opacity: 0; transform: translateY(-85px); } }
+.ja01-gold { transition: fill .01s; animation: ja01-shine 3s ease-in-out infinite alternate; }
+@keyframes ja01-shine { from { filter: brightness(.9); } to { filter: brightness(1.25); } }
+
+/* ja01-sun: the flower of the grass, withered by the sun that rises with a burning heat */
+.ja01-stem { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 2.4s ease-in .8s; }
+.slide.active .ja01-stem { transform: rotate(calc(var(--lean, 30) * 1deg)); }
+.ja01-bloom { transition: fill 2.4s ease .8s, r 2.4s ease .8s, opacity 2.4s ease .8s; fill: var(--accent-hot); }
+.slide.active .ja01-bloom { fill: var(--ink-soft); opacity: .45; r: 7; }
+.ja01-sunball { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 2.4s ease .4s; }
+.slide.active .ja01-sunball { transform: scale(1.35); }
+
+/* ja01-chain: the anatomy of a relapse, five links getting heavier, with the places to break it */
+.ja01-chain { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: .5em 0 .8em; counter-reset: ja01; }
+.ja01-link { --h: 0%; position: relative; padding: .5em .65em .7em; border-radius: 4px 4px 12px 12px; border-top: 7px solid color-mix(in srgb, var(--danger) var(--h), var(--accent));
+  background: color-mix(in srgb, var(--danger) calc(var(--h) * .28), var(--surface)); }
+.ja01-link:not(:last-child)::after { content: "\2192"; position: absolute; right: -13px; top: 38%; z-index: 1; font: 700 1.3rem var(--sans); color: var(--ink-soft); }
+.ja01-link small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.ja01-link b { display: block; margin: .05em 0 .25em; font: 600 clamp(1.15rem, .95rem + .8vw, 1.7rem)/1.1 var(--serif); color: var(--ink); }
+.ja01-link q { display: block; font: italic clamp(.82rem, .76rem + .3vw, 1.04rem)/1.3 var(--serif); quotes: "\201C" "\201D"; color: var(--ink); }
+.ja01-link p { margin: .45em 0 0; font-size: clamp(.82rem, .76rem + .28vw, 1rem); line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 640px) { .ja01-chain { grid-template-columns: 1fr; } .ja01-link:not(:last-child)::after { content: "\2193"; right: .8em; top: auto; bottom: -1.1em; } }
+
+/* ja01-cost: what it costs to stop it at each link (bars grow when the slide opens) */
+.ja01-cost { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: end; margin: .4em 0 .6em; }
+.ja01-col { display: flex; flex-direction: column; justify-content: flex-end; height: clamp(190px, 34vh, 300px); }
+.ja01-cut { align-self: flex-start; margin-bottom: .35em; padding: .1em .55em; border-radius: 99px; font: 700 clamp(.72rem, .68rem + .22vw, .92rem) var(--sans); background: var(--accent); color: var(--on-accent); opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k, 0) * 200ms + 1.8s); }
+.slide.active .ja01-cut { opacity: 1; }
+.ja01-col.no .ja01-cut { visibility: hidden; }
+.ja01-bar { height: 0; border-radius: 8px 8px 0 0; background: color-mix(in srgb, var(--danger) var(--h), var(--accent)); transition: height 1.1s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 200ms + .5s); }
+.slide.active .ja01-bar { height: var(--tall); }
+.ja01-lab { margin-top: .4em; font: 700 clamp(.82rem, .76rem + .3vw, 1.05rem)/1.15 var(--sans); color: var(--ink); }
+.ja01-lab small { display: block; margin-top: .15em; font-weight: 400; font-size: clamp(.75rem, .7rem + .24vw, .95rem); color: var(--ink-soft); }
+@media (max-width: 640px) { .ja01-cost { gap: 6px; } .ja01-lab small { display: none; } }
+
+/* ja01-meter: swift to hear, slow to speak, slow to wrath */
+.ja01-meter { display: grid; gap: .55em; margin: .6em 0 .9em; }
+.ja01-meter span { display: block; margin-bottom: .15em; font: 700 clamp(.85rem, .78rem + .3vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ja01-meter div > i { display: block; height: clamp(26px, 4vw, 40px); width: 0; border-radius: 6px; transition: width 1.5s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 500ms + .5s); }
+.ja01-meter .ear { background: var(--accent); }
+.ja01-meter .mouth { background: var(--cool); }
+.ja01-meter .wrath { background: var(--danger); }
+.slide.active .ja01-meter i { width: var(--w); }
+
+/* ja01-mirror: a man looks in the glass, then walks away and forgets his face */
+.ja01-man { transform-box: fill-box; transition: transform 2.4s ease-in, opacity 2.4s ease-in; }
+.slide:has(.ja01-away.on) .ja01-man { transform: translateX(150px); opacity: .25; }
+.ja01-face { transition: opacity 2.2s ease .5s; }
+.slide:has(.ja01-away.on) .ja01-face { opacity: 0; }
+.ja01-forget { opacity: 0; transition: opacity .8s ease 1.6s; }
+.slide:has(.ja01-away.on) .ja01-forget { opacity: 1; }
+
+/* ja01-lights: the sun moves and shadows turn; the Father of lights does not */
+.ja01-orbit { animation: ja01-orbit 7s ease-in-out infinite alternate; }
+.ja01-shadow { transform-box: view-box; transform-origin: 145px 255px; animation: ja01-turn 7s ease-in-out infinite alternate; }
+@keyframes ja01-orbit { from { transform: translateX(-90px); } to { transform: translateX(90px); } }
+@keyframes ja01-turn { from { transform: rotate(-52deg); } to { transform: rotate(52deg); } }
+.ja01-ray { transform-box: fill-box; transform-origin: 50% 50%; animation: ja01-pulse 3.2s ease-in-out infinite alternate; }
+@keyframes ja01-pulse { from { opacity: .45; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ja01-orbit, .ja01-shadow, .ja01-ray, .ja01-flame, .ja01-gold, .slide.active .ja01-dross { animation: none; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">James 1</h1>
+    <p class="sub rise" style="--d:3">Faith that does something</p>
+    <p class="tag rise" style="--d:5">A letter from the Lord's own brother, the Proverbs of the New Testament. It is about what believing looks like on a Tuesday, in a hard week, when the temptation comes: <em>“be ye doers of the word, and not hearers only.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="560 280 348 250" data-towns="Jerusalem!:r, Damascus:b, Antioch:r, Salamis:r, Alexandria:b" role="img" aria-label="A map of the eastern end of the Mediterranean. Jerusalem is lit and pulsing. From Jerusalem one line runs north up the coast through Caesarea and Tyre to Antioch in Syria, and another runs to Damascus. Cyprus, with Salamis, and Alexandria in Egypt are marked. These are the places the believers were scattered to.">
+          <path class="map-route" data-via="Jerusalem, Caesarea, Tyre, Sidon, @35.7 34.8, @35.8 35.6, Antioch"/>
+          <path class="map-route" data-via="Jerusalem, Damascus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The letter of James</h2>
+        <div class="letter">
+          <p class="from">“James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting.”</p>
+          <dl>
+            <dt>Written from</dt><dd>Jerusalem, where James led the church (Acts 15)</dd>
+            <dt>When</dt><dd>about AD 45 to 50, perhaps the earliest letter in the New Testament</dd>
+            <dt>To whom</dt><dd>Jewish believers scattered by persecution, <em>“throughout the regions of Judaea and Samaria”</em> and on to Phenice, Cyprus and Antioch (Acts 8:1; 11:19)</dd>
+            <dt>Why</dt><dd class="step">to show hurt, scattered people what real faith looks like in everyday life: in trouble, in temptation, with money, with their mouths</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Now they which were scattered abroad upon the persecution that arose about Stephen travelled as far as Phenice, and Cyprus, and Antioch, preaching the word to none but unto the Jews only.”</p><cite>Acts 11:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The skeptic in the family</h2>
+    <p class="note rise" style="--d:2">This James is the brother of Jesus. He grew up in the same house, ate at the same table, and for years did not believe a word of it.</p>
+    <div class="daybreak">
+      <div class="rise" style="--d:3"><i>John 7:5</i><b>Not a believer</b><p>“For neither did his brethren believe in him.” Thirty years of watching Jesus up close, and still no.</p></div>
+      <div class="step"><i>1 Corinthians 15:7</i><b>He saw the risen Lord</b><p>“After that, he was seen of James; then of all the apostles.” Something happened in that meeting that changed everything.</p></div>
+      <div class="step"><i>Acts 15:13</i><b>A leader at Jerusalem</b><p>At the great council it is James who sums up: “my sentence is…” Paul calls him one of the pillars (Galatians 1:19; 2:9).</p></div>
+    </div>
+    <p class="note step">Now look at how he introduces himself: <em>“a servant of God and of the Lord Jesus Christ.”</em> Not “the Lord's brother.” He had the best family connection in the whole church, and he calls himself a servant. A man who was once the family doubter knows what it is to be wrong about Jesus, and what it is to be forgiven for it.</p>
+    <p class="note step">If somebody in your family has written you off, or you wrote them off, remember James. The brother who did not believe became the man who wrote this letter. Early writers say that he died for Jesus at Jerusalem, about AD 62.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where James fits</h2>
+    <ol class="timeline" aria-label="About AD 30 to 33, Jesus is crucified, risen and ascended, and the church begins at Jerusalem. About AD 34 to 35, Saul is converted. About AD 45 to 50, James writes his letter from Jerusalem. About AD 46 to 48, Paul's first journey. About AD 49, the Jerusalem council. About AD 57, Paul writes Romans. About AD 70, Rome destroys Jerusalem.">
+      <li style="--k:0"><b>about AD 30 to 33</b><span>Jesus risen</span><small>James sees Him</small></li>
+      <li style="--k:1"><b>about 34 to 35</b><span>Saul converted</span><small>Damascus road</small></li>
+      <li class="lit" style="--k:2"><b>about 45 to 50</b><span>James writes</span><small>perhaps the first letter</small></li>
+      <li style="--k:3"><b>about 46 to 48</b><span>Paul's first journey</span><small>Cyprus and Galatia</small></li>
+      <li style="--k:4"><b>about 49</b><span>The Jerusalem council</span><small>James presides</small></li>
+      <li class="wait" style="--k:5"><b>about 57</b><span>Romans</span><small>from Corinth</small></li>
+      <li class="wait" style="--k:6"><b>about 70</b><span>Jerusalem destroyed</span><small>by Rome</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">If James is early, his readers were very new believers, many of them thrown out of their homes and jobs, and a few years from the cross. No New Testament yet. Just the Old Testament, a handful of stories about Jesus, and each other.</p>
+    <p class="note step">So he does not write theory. He writes the way a wise old man talks to younger men in trouble: short, plain, and a little blunt. That is why people call James <em>the Proverbs of the New Testament</em>.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in James</h2>
+    <div class="jm01-where" role="img" aria-label="James in five chapters. 1, faith under pressure: be ye doers of the word, and not hearers only, 1:22. 2, faith that works: faith, if it hath not works, is dead, 2:17. 3, words and wisdom: the tongue can no man tame, 3:8. 4, humble yourselves: draw nigh to God, and he will draw nigh to you, 4:8. 5, patience and prayer: the effectual fervent prayer of a righteous man availeth much, 5:16. We are in chapter 1.">
+      <div class="jm01-ch here" style="--k:0"><small>Chapter 1</small><b>Faith under pressure</b><q>Be ye doers of the word, and not hearers only</q><cite>James 1:22</cite></div>
+      <div class="jm01-ch" style="--k:1"><small>Chapter 2</small><b>Faith that works</b><q>Faith, if it hath not works, is dead</q><cite>James 2:17</cite></div>
+      <div class="jm01-ch" style="--k:2"><small>Chapter 3</small><b>Words and wisdom</b><q>The tongue can no man tame</q><cite>James 3:8</cite></div>
+      <div class="jm01-ch" style="--k:3"><small>Chapter 4</small><b>Humble yourselves</b><q>Draw nigh to God, and he will draw nigh to you</q><cite>James 4:8</cite></div>
+      <div class="jm01-ch" style="--k:4"><small>Chapter 5</small><b>Patience and prayer</b><q>The effectual fervent prayer of a righteous man availeth much</q><cite>James 5:16</cite></div>
+    </div>
+    <p class="note step">James has no long argument. He gives five short sermons on one question: <em>what does real faith look like at work, at home, in a temptation and in a bad week?</em> Chapter 1 sets out all of it in seed form.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Trials</span><span class="seed-q">What is the trying of your faith meant to work in you?</span></li>
+      <li class="step"><span class="topic">Wisdom</span><span class="seed-q">What should a man do if he lacks wisdom, and how does God answer?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">Where does temptation come from, and where does it lead?</span></li>
+      <li class="step"><span class="topic">The Father</span><span class="seed-q">What kind of gifts does the Father of lights give?</span></li>
+      <li class="step"><span class="topic">Doing</span><span class="seed-q">What does James say we must be, and not hearers only?</span></li>
+      <li class="step"><span class="topic">Real religion</span><span class="seed-q">What is pure religion and undefiled before God?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Count it all joy</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">James starts with the hard stuff: trouble, and what it is for. And a promise about what to do when you do not know what to do.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="count it all joy when ye fall into divers temptations|the trying of your faith worketh patience|perfect and entire, wanting nothing"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A crucible over a fire. In it is a lump of metal labeled your faith. Grey flecks of dross float up off it and disappear while the metal gleams. Underneath, flames flicker.">
+          <path d="M150 140 L450 140 L418 250 Q300 282 182 250 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="4" stroke-linejoin="round"/>
+          <ellipse class="ja01-gold" cx="300" cy="142" rx="146" ry="22" style="fill:var(--accent-hot)"/>
+          <g>
+            <circle class="ja01-dross" style="--k:0" cx="230" cy="136" r="7"/>
+            <circle class="ja01-dross" style="--k:1" cx="290" cy="134" r="5"/>
+            <circle class="ja01-dross" style="--k:2" cx="350" cy="136" r="8"/>
+            <circle class="ja01-dross" style="--k:3" cx="400" cy="134" r="5"/>
+            <circle class="ja01-dross" style="--k:4" cx="260" cy="136" r="6"/>
+          </g>
+          <text x="300" y="214" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--ink)">your faith</text>
+          <g style="fill:var(--danger)">
+            <path class="ja01-flame" style="--k:0" d="M200 330 C185 300 215 292 205 268 C230 285 240 305 232 330 Z"/>
+            <path class="ja01-flame" style="--k:1" d="M270 332 C250 295 295 285 285 258 C315 280 320 308 308 332 Z"/>
+            <path class="ja01-flame" style="--k:2" d="M345 332 C330 300 360 292 352 268 C378 288 382 310 372 332 Z"/>
+          </g>
+          <text x="30" y="60" font-size="24" style="fill:var(--ink-soft)">the fire is not the point.</text>
+          <text x="30" y="92" font-size="24" style="fill:var(--ink-soft)">what is left is.</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Why would anyone count it joy?</h2>
+        <p class="note rise" style="--d:2">James does not say <em>feel</em> happy. <em>“Count”</em> is a bookkeeping word: work it out. Hard times are not wasted. The fire does not make the gold; it burns off what was never gold.</p>
+        <blockquote class="quote step"><p>“That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:”</p><cite>1 Peter 1:7</cite></blockquote>
+        <p class="note step"><em>“Patience”</em> is staying power under pressure, and you get it by getting through today. God's aim is <em>“perfect and entire”</em>: whole, grown up, nothing missing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="let him ask of God|giveth to all men liberally, and upbraideth not|A double minded man is unstable in all his ways"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="giveth to all men liberally, and upbraideth not"></blockquote>
+    <h2 class="rise" style="--d:1">Asking without being told off</h2>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>You</small>God, I did it again. I do not know what to do, and I do not know how to start.</p>
+      <p class="reply step"><small>God, giving to all men liberally</small>Here is wisdom. Take it.<br><span class="flag">and not one word of scolding</span></p>
+    </div>
+    <p class="note step"><em>“Upbraideth not.”</em> It means He does not throw it back in your face. A lot of us are slow to ask God for help because we expect the lecture a person would give. James says it plainly: God gives <em>liberally</em>, with an open hand, and with no lecture attached.</p>
+    <p class="note step">Wisdom is not being clever. It is knowing what to do next, in the real situation, today. Ask for it in plain words, and then watch for it: a verse, a friend's advice, a door that closes.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="A double minded man is unstable in all his ways"></blockquote>
+    <h2 class="rise" style="--d:1">Two minds</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">δίψυχος</span>
+      <span class="say step">said <em class="gk">dipsychos</em></span>
+      <span class="means step"><span class="gk">di</span> = two &nbsp;+&nbsp; <span class="gk">psychē</span> = soul. <em>Two-souled.</em></span>
+    </div>
+    <p class="note step">The man James has in mind asks God for help, and all the while has one foot out the door. <em>“Like a wave of the sea driven with the wind and tossed.”</em> Up one minute, down the next, because he has not decided who is steering.</p>
+    <p class="note step">This is not a man with doubts. Every believer has doubts, and Jesus took doubting men in His hands. It is a man who asks for help while holding back the very thing he is asking about. <em>Today:</em> is there one thing you ask God to fix while still keeping a back door open? Name it to Him, and shut the door.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="the flower of the grass|Blessed is the man that endureth temptation|the crown of life"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Three flowers on green stems, with a sun above. As the sun grows hotter the stems lean over, and the bright flowers shrink and turn grey. The grass withers.">
+          <g class="ja01-sunball"><circle cx="500" cy="62" r="34" style="fill:var(--accent-hot)"/></g>
+          <g class="ja01-ray" style="stroke:var(--accent-hot)" stroke-width="4" stroke-linecap="round"><path d="M500 8 L500 -4"/><path d="M446 62 L430 62"/><path d="M554 62 L570 62"/><path d="M462 24 L452 14"/><path d="M538 24 L548 14"/></g>
+          <path d="M20 292 L580 292" style="stroke:var(--line-strong)" stroke-width="4" stroke-linecap="round"/>
+          <g>
+            <g class="ja01-stem" style="--lean:-45"><path d="M160 292 L160 170" style="stroke:var(--cool)" stroke-width="7" stroke-linecap="round"/><circle class="ja01-bloom" cx="160" cy="156" r="18"/></g>
+            <g class="ja01-stem" style="--lean:48"><path d="M290 292 L290 140" style="stroke:var(--cool)" stroke-width="7" stroke-linecap="round"/><circle class="ja01-bloom" cx="290" cy="124" r="20"/></g>
+            <g class="ja01-stem" style="--lean:62"><path d="M440 292 L440 180" style="stroke:var(--cool)" stroke-width="7" stroke-linecap="round"/><circle class="ja01-bloom" cx="440" cy="166" r="17"/></g>
+          </g>
+          <text x="300" y="316" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">“the flower of the grass”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Money fades. A crown does not.</h2>
+        <p class="note rise" style="--d:2">Two men in the church: one poor, one rich. The poor man can be glad: in Christ he is <em>“exalted.”</em> The rich man must remember he is the flower, and the heat is coming for every flower.</p>
+        <p class="note step">Then the promise, for the man who stays on his feet in a hard week: <em>“Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.”</em> Notice: <em>when</em> he is tried, not if.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Where temptation comes from</h2>
+    <p class="range rise" style="--d:2">Verses 13–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same word means a test and a temptation. James now draws the line between God's tests and our own wants, and shows how one becomes the other.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="I am tempted of God|drawn away of his own lust, and enticed|bringeth forth sin|bringeth forth death"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">One word, two directions</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:3">πειρασμός</span>
+      <span class="say step">said <em class="gk">peirasmos</em></span>
+      <span class="means step">a test, a trial, or a temptation. Only the situation tells you which.</span>
+    </div>
+    <div class="columns">
+      <div class="col grace step"><p class="who">From God (verses 2–4, 12)</p><h3>A test</h3><p>The hard thing that shows what is real and builds staying power. God allows it, and He is with you in it. <em>“Count it all joy.”</em></p></div>
+      <div class="col law step"><p class="who">From my own wants (verses 13–15)</p><h3>A temptation</h3><p>The pull toward sin. <em>“God cannot be tempted with evil, neither tempteth he any man.”</em> He never baits the hook.</p></div>
+    </div>
+    <p class="note step">The same Tuesday can hold both. The loss of a job is a test. What you do with the free evening is where the temptation starts. God stands behind the first, never the second.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13-14" data-hl="I am tempted of God|of his own lust"></blockquote>
+    <h2 class="rise" style="--d:1">Whose fault is it, then?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">“God put this in front of me”</span><span class="why">He does not tempt anyone. Hard situations come, but the pull to sin is not His doing.</span></li>
+      <li class="step"><span class="k">“It came out of nowhere”</span><span class="why">It rarely does. James says it grows from something already in us: <em>“his own lust.”</em> It has a start, and a start can be found.</span></li>
+      <li class="step"><span class="k">“That's just who I am”</span><span class="why">It is what you are drawn to, not who you have to stay. The next verse shows how fast it grows, and how early it can be stopped.</span></li>
+      <li class="step yes"><span class="k">“It started in me, so I can deal with it in me, with God's help”</span><span class="why">That is honest, and it is hopeful. If it begins in the wanting, it can be cut in the wanting.</span></li>
+    </ul>
+    <p class="note step">None of this is meant to make you feel low. A man who knows where it starts is a man who can stop it earlier next time.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14-15" data-hl="drawn away of his own lust, and enticed|bringeth forth sin|bringeth forth death"></blockquote>
+    <h2 class="rise" style="--d:1">The anatomy of a relapse</h2>
+    <div class="ja01-chain" role="img" aria-label="Five links, getting heavier. One, desire: drawn away of his own lust. Two, bait: enticed, a fishing word. Three, conception: when lust hath conceived. Four, sin: it bringeth forth sin. Five, death: sin, when it is finished, bringeth forth death.">
+      <div class="ja01-link step" style="--h:0%"><small>One</small><b>Desire</b><q>drawn away of his own lust</q><p>A want, a craving, a thought that will not go. Not yet a sin.</p></div>
+      <div class="ja01-link step" style="--h:22%"><small>Two</small><b>Bait</b><q>and enticed</q><p>A fishing word. The hook hides inside something that looks good. I start looking at the bait.</p></div>
+      <div class="ja01-link step" style="--h:48%"><small>Three</small><b>Conception</b><q>when lust hath conceived</q><p>I say yes in my head. I make a plan. I tell myself no one will know.</p></div>
+      <div class="ja01-link step" style="--h:75%"><small>Four</small><b>Sin</b><q>it bringeth forth sin</q><p>It is born. I do the thing I swore I would not.</p></div>
+      <div class="ja01-link step" style="--h:100%"><small>Five</small><b>Death</b><q>when it is finished, bringeth forth death</q><p>Full grown, it kills: marriages, jobs, trust, a man's life.</p></div>
+    </div>
+    <p class="note step">James picks a picture of pregnancy: it grows in secret, then it is born, then it grows up. The scary part is not the first link. It is how <em>ordinary</em> the first link looks. Every man here has been at link one on a normal Tuesday.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Break it early</h2>
+    <div class="ja01-cost" role="img" aria-label="Five bars getting taller, one for each link, showing what it costs to stop there. At desire: tell one man, change your route. At bait: walk away, leave the room. At conception: tell someone before you act. At sin: confess and start again. At death: a wrecked life. The first four have a mark: break it here.">
+      <div class="ja01-col" style="--k:0"><span class="ja01-cut">break it here</span><div class="ja01-bar" style="--h:0%; --tall:16%"></div><p class="ja01-lab">Desire<small>one text to a brother, a different route home</small></p></div>
+      <div class="ja01-col" style="--k:1"><span class="ja01-cut">or here</span><div class="ja01-bar" style="--h:22%; --tall:32%"></div><p class="ja01-lab">Bait<small>walk out of the room, shut the screen</small></p></div>
+      <div class="ja01-col" style="--k:2"><span class="ja01-cut">or here</span><div class="ja01-bar" style="--h:48%; --tall:52%"></div><p class="ja01-lab">Conception<small>say the plan out loud to someone</small></p></div>
+      <div class="ja01-col" style="--k:3"><span class="ja01-cut">even here</span><div class="ja01-bar" style="--h:75%; --tall:76%"></div><p class="ja01-lab">Sin<small>confess it, and begin again</small></p></div>
+      <div class="ja01-col no" style="--k:4"><span class="ja01-cut">-</span><div class="ja01-bar" style="--h:100%; --tall:100%"></div><p class="ja01-lab">Death<small>what a long road costs</small></p></div>
+    </div>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+    <p class="note step">Every link has a door out, and the cheapest door is the first. Pick yours today: the person you will call, the place you will not go, the thing you will delete.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">And if you are already at link four</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <div class="ifthen">
+      <div class="if step"><small>If I fell last night</small>and I say so to God, plainly</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then step"><small>then He is</small>faithful and just to forgive, and to clean me up</div>
+    </div>
+    <p class="note step">Regret is what you do with the past. It is allowed, and it can turn you around. But regret is not supposed to be a place to live. Confess it, tell one man who can help carry it, and start again with the day in front of you. James is not warning you that you are finished. He is showing you where to cut next time.</p>
+    <p class="note step">One more thing. A believer is held by Christ (John 10:28), and no link in this chain can pull him out of those hands. But sin can still cost him his peace, his family and his health. That is why we cut it early.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-18" data-hl="Do not err, my beloved brethren|Father of lights, with whom is no variableness, neither shadow of turning|Of his own will begat he us with the word of truth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 320" role="img" aria-label="Two panels. On the left, the sun slides across the sky and a post's shadow swings back and forth: things change. On the right, a steady sun stands overhead and the post casts no moving shadow: with God there is no shadow of turning.">
+          <line x1="300" y1="22" x2="300" y2="300" style="stroke:var(--line)" stroke-width="2" stroke-dasharray="5 7"/>
+          <g>
+            <g class="ja01-orbit"><circle cx="145" cy="70" r="26" style="fill:var(--accent-hot)"/></g>
+            <rect class="ja01-shadow" x="141" y="255" width="8" height="70" rx="3" style="fill:var(--ink-soft);opacity:.55;transform-origin:145px 255px"/>
+            <rect x="141" y="188" width="8" height="70" rx="3" style="fill:var(--ink)"/>
+            <path d="M40 258 L250 258" style="stroke:var(--line-strong)" stroke-width="3" stroke-linecap="round"/>
+            <text x="145" y="294" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">everything else:</text><text x="145" y="318" text-anchor="middle" font-size="22" style="fill:var(--ink-soft)">shadows turn</text>
+          </g>
+          <g>
+            <g class="ja01-ray" style="stroke:var(--accent-hot)" stroke-width="4" stroke-linecap="round"><path d="M455 18 L455 6"/><path d="M406 70 L392 70"/><path d="M504 70 L518 70"/><path d="M420 34 L411 25"/><path d="M490 34 L499 25"/></g>
+            <circle cx="455" cy="70" r="34" style="fill:var(--accent-hot)"/>
+            <rect x="451" y="188" width="8" height="70" rx="3" style="fill:var(--ink)"/>
+            <path d="M350 258 L560 258" style="stroke:var(--line-strong)" stroke-width="3" stroke-linecap="round"/>
+            <text x="455" y="294" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">the Father of lights:</text><text x="455" y="318" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">no shadow</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">He does not change</h2>
+        <p class="note rise" style="--d:2">The sun moves across the sky, the moon waxes and wanes, and shadows turn through the day. <em>“The Father of lights”</em> made all of them. <em>“With whom is no variableness, neither shadow of turning.”</em></p>
+        <p class="note step">So <em>“every good gift and every perfect gift”</em> comes from Him, and temptation never does. He is the same this morning as He was before the worst thing you ever did.</p>
+        <p class="note step"><em>“Of his own will begat he us with the word of truth.”</em> That is the new birth, and it was His idea, His will. You did not talk Him into it, and you cannot talk Him out of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Hearers and doers</h2>
+    <p class="range rise" style="--d:2">Verses 19–27</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Now the practical part: how to listen, how to read the Bible, and what the real thing looks like.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="swift to hear, slow to speak, slow to wrath|the wrath of man worketh not the righteousness of God|receive with meekness the engrafted word"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Fast, slow, slow</h2>
+    <div class="ja01-meter" role="img" aria-label="Three bars. Swift to hear: a very long bar. Slow to speak: a short bar. Slow to wrath: a tiny bar.">
+      <div><span>Swift to hear</span><i class="ear" style="--w:100%; --k:0"></i></div>
+      <div><span>Slow to speak</span><i class="mouth" style="--w:34%; --k:1"></i></div>
+      <div><span>Slow to wrath</span><i class="wrath" style="--w:12%; --k:2"></i></div>
+    </div>
+    <blockquote class="quote step" data-q="20" data-hl="the wrath of man worketh not the righteousness of God"></blockquote>
+    <p class="note step">Anger feels like strength. James says it never gets you the life God wants. Most of us have burned something down in a rage that we could not rebuild. The fix is not to feel nothing. It is the gap: hear the whole thing first, wait before you answer, and cool down before you act.</p>
+    <p class="note step">Verse 21 is about clothes. <em>“Lay apart”</em> is how you take off dirty clothes: filth and leftover wickedness go on the floor. Then you <em>“receive”</em> the word like something planted in you, and it grows. The same Word that began the new life keeps it going.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-25" data-hl="be ye doers of the word, and not hearers only|forgetteth what manner of man he was|the perfect law of liberty"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 340" role="img" aria-label="A mirror on the left shows a man's face with smudges on it. The man stands in front of it. On a click he turns and walks away, the face in the mirror fades, and the caption says: he forgot what kind of man he was.">
+          <rect x="60" y="40" width="190" height="250" rx="95" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="7"/>
+          <rect x="140" y="288" width="30" height="40" style="fill:var(--ink-soft)"/>
+          <g class="ja01-face">
+            <circle cx="155" cy="150" r="52" style="fill:var(--line)"/>
+            <circle cx="138" cy="140" r="5" style="fill:var(--ink)"/><circle cx="172" cy="140" r="5" style="fill:var(--ink)"/>
+            <path d="M135 172 Q155 186 175 172" fill="none" style="stroke:var(--ink)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="170" cy="118" r="8" style="fill:var(--danger);opacity:.7"/><circle cx="130" cy="158" r="6" style="fill:var(--danger);opacity:.7"/><circle cx="182" cy="164" r="5" style="fill:var(--danger);opacity:.7"/>
+            <path d="M95 250 Q155 200 215 250" style="fill:var(--line)"/>
+          </g>
+          <g class="ja01-man">
+            <circle cx="380" cy="130" r="34" style="fill:var(--ink-soft)"/>
+            <path d="M330 290 L330 192 Q330 168 380 168 Q430 168 430 192 L430 290 Z" style="fill:var(--ink-soft)"/>
+          </g>
+          <text class="ja01-forget" x="400" y="326" text-anchor="middle" font-size="26" font-weight="700" style="fill:var(--accent-hot)">straightway forgetteth</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The man in the mirror</h2>
+        <p class="note rise" style="--d:2">A mirror tells you the truth about your face: the smudge, the mess. A man glances in it, walks away and <em>“straightway forgetteth what manner of man he was.”</em> The mirror did nothing wrong. He did nothing about it.</p>
+        <p class="note step ja01-away">That is how a man hears a sermon: <em>that was good</em>, and off to his truck. Nothing changed because nothing was done: <em>“deceiving your own selves.”</em></p>
+        <p class="note step">The cure is to <em>do</em> the one thing you saw: make the call, say sorry, skip the bar, pay the bill. God's word is <em>“the perfect law of liberty”</em>: it frees the man who keeps looking and acts. Today: what have you heard and not yet done?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-27" data-hl="bridleth not his tongue|To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What the real thing looks like</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>A bridled tongue</b>He keeps a rein on what he says (verse 26). It comes back in chapter 3.</li>
+      <li class="now"><b>Visit the fatherless and the widows</b>Look after people who cannot pay you back, in their <em>“affliction.”</em></li>
+      <li class="now"><b>Keep unspotted from the world</b>Stay clean from the way the world does things.</li>
+    </ol>
+    <p class="note step"><em>“Religion”</em> here means the outward practice of faith. James is not knocking church. He is asking what it looks like when it is real, and his answer is simple, and it costs something: care for the people nobody else will, and keep yourself clean.</p>
+    <p class="note step">The fatherless and the widows were the people with nobody: no income, no one to speak for them. Many of the men in this room know what it is to be that person, and God calls looking after them pure religion, <em>“undefiled before God and the Father.”</em> And He does not ask perfect men to do it. He has always used men with a past.</p>
+    <p class="note step">Today: one concrete visit. A man in a bad place, a widow in your street, a kid with no dad who needs a lift. And when you are tempted to talk someone down, keep it behind your teeth.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Trials</span><span class="seed-q">“Knowing this, that the trying of your faith worketh patience.” <cite>1:3</cite></span><span class="take">Hard times are the fire that burns off what is not real, and builds staying power in what is.</span></li>
+      <li class="step"><span class="topic">Wisdom</span><span class="seed-q">“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not” <cite>1:5</cite></span><span class="take">Ask. He gives freely, with no lecture, and no one is too much of a mess to ask.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.” <cite>1:15</cite></span><span class="take">It starts in me, so I can cut it early: desire, bait, conception, sin, death. The first door out is the cheapest.</span></li>
+      <li class="step"><span class="topic">The Father</span><span class="seed-q">“Every good gift and every perfect gift is from above, and cometh down from the Father of lights” <cite>1:17</cite></span><span class="take">Every good thing comes from Him, and He does not change. He is the same today as before your worst day.</span></li>
+      <li class="step"><span class="topic">Doing</span><span class="seed-q">“But be ye doers of the word, and not hearers only, deceiving your own selves.” <cite>1:22</cite></span><span class="take">Do the one thing you saw in the mirror. Hearing alone changes nothing.</span></li>
+      <li class="step"><span class="topic">Real religion</span><span class="seed-q">“Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.” <cite>1:27</cite></span><span class="take">Real faith looks after the people nobody else will, and keeps itself clean.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Trials</span>
+      <h2>What is the trying of your faith meant to work in you?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3-4"></blockquote>
+      <blockquote class="quote step"><p>“That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:”</p><cite>1 Peter 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Patience, which is staying power, and in the end a whole, grown-up faith with nothing missing. The fire burns off what was never gold.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Wisdom</span>
+      <h2>What should a man do if he lacks wisdom, and how does God answer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5-6" data-hl="let him ask of God|giveth to all men liberally, and upbraideth not"></blockquote>
+      <blockquote class="quote step"><p>“For the LORD giveth wisdom: out of his mouth cometh knowledge and understanding.”</p><cite>Proverbs 2:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Ask God, in faith, and not with a back door open. He gives liberally, to all, and He does not throw it back at you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>Where does temptation come from, and where does it lead?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13-15" data-hl="drawn away of his own lust, and enticed|bringeth forth sin|bringeth forth death"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not from God. It starts in my own wanting, grows from desire to bait to sin, and ends in death. Break it at the first link, and if you have fallen, confess it and start again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The Father</span>
+      <h2>What kind of gifts does the Father of lights give?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="Of his own will begat he us with the word of truth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Every good gift and every perfect gift, from above. He does not change, and He chose to give us new life through His word of truth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Doing</span>
+      <h2>What does James say we must be, and not hearers only?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="23-25" data-hl="forgetteth what manner of man he was|a doer of the work"></blockquote>
+      <blockquote class="quote step"><p>“And why call ye me, Lord, Lord, and do not the things which I say?”</p><cite>Luke 6:46</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Doers of the word. A man who only hears is like a man who looks in a mirror and forgets his own face. The man who keeps looking and does it is blessed in what he does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Real religion</span>
+      <h2>What is pure religion and undefiled before God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27"></blockquote>
+      <blockquote class="quote step"><p>“My little children, let us not love in word, neither in tongue; but in deed and in truth.”</p><cite>1 John 3:18</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To visit the fatherless and widows in their affliction, and to keep yourself unspotted from the world. Care for people nobody else will, and keep yourself clean.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.”</p><cite>James 1:5</cite></blockquote>
+  </div>
+</section>
+</main>
+
+<script>
+// King James Version, James chapter 1
+const V = {
+  1: "James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting.",
+  2: "My brethren, count it all joy when ye fall into divers temptations;",
+  3: "Knowing this, that the trying of your faith worketh patience.",
+  4: "But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.",
+  5: "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.",
+  6: "But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed.",
+  7: "For let not that man think that he shall receive any thing of the Lord.",
+  8: "A double minded man is unstable in all his ways.",
+  9: "Let the brother of low degree rejoice in that he is exalted:",
+  10: "But the rich, in that he is made low: because as the flower of the grass he shall pass away.",
+  11: "For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways.",
+  12: "Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.",
+  13: "Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:",
+  14: "But every man is tempted, when he is drawn away of his own lust, and enticed.",
+  15: "Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.",
+  16: "Do not err, my beloved brethren.",
+  17: "Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.",
+  18: "Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures.",
+  19: "Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:",
+  20: "For the wrath of man worketh not the righteousness of God.",
+  21: "Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.",
+  22: "But be ye doers of the word, and not hearers only, deceiving your own selves.",
+  23: "For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:",
+  24: "For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was.",
+  25: "But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.",
+  26: "If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain.",
+  27: "Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world."
+};
+const BOOK = "James 1";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

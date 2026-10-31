@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 Peter 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* pt04-run: a crowd running on to the next party, and one man who has stopped (a deck.css candidate). */
+.pt04-run svg { max-height: 36vh; }
+.pt04-p { fill: var(--ink-soft); }
+.pt04-me { fill: var(--accent); }
+.pt04-line { stroke: var(--line-strong); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 12; }
+.pt04-bub { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.pt04-run text { fill: var(--ink); font-family: var(--serif); font-style: italic; font-size: 20px; }
+.pt04-run .pt04-lbl { fill: var(--accent-hot); font-style: normal; font-weight: 700; font-family: var(--sans); font-size: 16px; }
+.slide.active .pt04-p { animation: pt04-bob .7s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.17s); }
+@keyframes pt04-bob { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+.slide.active .pt04-sp { animation: pt04-speed 1.1s linear infinite; }
+@keyframes pt04-speed { to { stroke-dashoffset: -28; } }
+.pt04-ask { opacity: 0; transition: opacity .6s ease .8s; }
+.slide.active .pt04-ask { opacity: 1; }
+
+/* pt04-table: a table with room for one more (a deck.css candidate). */
+.pt04-seat { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.pt04-top { fill: color-mix(in srgb, var(--accent) 14%, var(--surface)); stroke: var(--accent); stroke-width: 3; }
+.pt04-empty { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-dasharray: 7 7; transition: fill .7s ease, stroke-dasharray .7s ease; }
+.slide:has(.pt04-go.on) .pt04-empty { fill: var(--accent); stroke-dasharray: 0; }
+.pt04-plate { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.pt04-table text { fill: var(--ink-soft); font-size: 17px; font-family: var(--sans); }
+.pt04-table .pt04-who { fill: var(--accent-hot); font-weight: 700; }
+.pt04-cup { opacity: 0; transition: opacity .7s ease .5s; }
+.slide:has(.pt04-go.on) .pt04-cup { opacity: 1; }
+
+/* pt04-fire: gold in the crucible; the heat lifts the dross off (a deck.css candidate). */
+.pt04-pot { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 5; stroke-linejoin: round; }
+.pt04-gold { fill: var(--glow); }
+.pt04-rim { fill: var(--on-glow); stroke: var(--ink-soft); stroke-width: 5; }
+.pt04-flame { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; }
+.pt04-flame.b { fill: var(--accent); }
+.slide.active .pt04-flame { animation: pt04-flick 1.2s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.31s); }
+@keyframes pt04-flick { from { transform: scale(1, 1) skewX(-4deg); } to { transform: scale(.88, 1.18) skewX(5deg); } }
+.pt04-dross { fill: var(--ink-soft); opacity: 0; }
+.slide.active .pt04-dross { animation: pt04-rise 4s ease-in infinite; animation-delay: calc(var(--k, 0) * .9s); }
+@keyframes pt04-rise { 0% { opacity: 0; transform: translate(0, 0); } 20% { opacity: .9; } 100% { opacity: 0; transform: translate(var(--dx, 30px), -90px); } }
+.pt04-fire text { fill: var(--ink-soft); font-family: var(--sans); font-size: 18px; }
+.pt04-fire .pt04-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* pt04-kinds: two kinds of suffering side by side. */
+.pt04-kinds .col h3 { font-size: clamp(1.15rem, 1rem + .6vw, 1.6rem); }
+.pt04-kinds ul { margin: .4em 0 0; padding-left: 1.1em; }
+.pt04-kinds li { margin: .15em 0; }
+
+@media (prefers-reduced-motion: reduce) { .pt04-p, .pt04-flame, .pt04-dross, .pt04-sp { animation: none !important; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">1 Peter 4</h1>
+    <p class="sub rise" style="--d:3">Enough is enough</p>
+    <p class="tag rise" style="--d:5">Your old friends think you have lost your mind. Peter says the years you spent on that life were enough, the end is near, and the fire you are walking through has not caught God by surprise.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">What does Peter say about the old life, and how much of it is enough?</span></li>
+      <li class="step"><span class="topic">Strange</span><span class="seed-q">Why do old friends think it strange when you stop?</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">What does love do about other people's sins?</span></li>
+      <li class="step"><span class="topic">Gifts</span><span class="seed-q">What are we supposed to do with what God has given us?</span></li>
+      <li class="step"><span class="topic">Fire</span><span class="seed-q">Why shouldn't we be surprised by the fiery trial, and which suffering is not for Christ?</span></li>
+      <li class="step"><span class="topic">Keeping</span><span class="seed-q">Where do we put our souls when everything hurts?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Peter's story</h2>
+    <ol class="timeline" aria-label="Three points. About AD 62 to 64: Peter writes this letter from Rome. About AD 64: Rome burns and Nero turns on the Christians. About AD 67 to 68: by tradition Peter is put to death in Rome.">
+      <li data-n="1" style="--k:0"><b>About AD 62–64</b><span>Peter writes</span><small>from “Babylon,” which most Bible teachers take to be Rome</small></li>
+      <li class="lit" data-n="2" style="--k:1"><b>About AD 64</b><span>The fire</span><small>Rome burns; Nero blames the Christians</small></li>
+      <li data-n="3" style="--k:2"><b>About AD 67–68</b><span>Peter's own end</span><small>put to death in Rome, by tradition</small></li>
+    </ol>
+    <p class="note step">Many think the storm was already gathering when Peter wrote: people talking, neighbours turning, trouble coming. So when he says <em>“the fiery trial,”</em> he is not being poetic. He knows what is coming, and a few years later it comes for him too. He is not telling the men a story from a safe place. Today's chapter is where the letter turns to face it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Enough</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Peter looks at the old life, and the friends still in it, and says what a man needs to hear: that was enough.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-4" data-hl="arm yourselves likewise with the same mind|hath ceased from sin|the time past of our life may suffice us|Wherein they think it strange"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin"></blockquote>
+    <h2 class="rise" style="--d:1">Arm yourself with the same mind</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>Christ</small>suffered in the flesh, and would not sin to avoid it</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>so you</small>take up the same mind, the same decision.</div>
+    </div>
+    <p class="note step"><em>“Arm yourselves”</em> is a soldier's word: put the gear on before the fight, not during it. The mind of Christ is that when it costs something to do right, you pay it. A man who has once taken the hit rather than go back to the old thing has <em>“ceased from sin”</em>: sin no longer runs him.</p>
+    <p class="note step">That doesn't mean he never fails again. It means sin is no longer the master, and when he stumbles he gets up and says so to God (1 John 1:9). The goal of the rest of your life is verse 2: <em>“the will of God,”</em> not <em>“the lusts of men.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the time past of our life may suffice us to have wrought the will of the Gentiles"></blockquote>
+    <h2 class="rise" style="--d:1">“May suffice us”</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">lasciviousness, lusts</span><span class="why">appetite with no brakes</span></li>
+      <li class="step"><span class="k">excess of wine</span><span class="why">drinking to be drunk</span></li>
+      <li class="step"><span class="k">revellings, banquetings</span><span class="why">the wild nights, the drinking parties</span></li>
+      <li class="step"><span class="k">abominable idolatries</span><span class="why">putting something else in God's place</span></li>
+      <li class="step yes"><span class="k">enough</span><span class="why">you have already spent your share of years on it</span></li>
+    </ul>
+    <p class="note step">Peter is a little dry about it: you have <em>“wrought the will of the Gentiles”</em> long enough, and you know what it was like. No lecture, and no shame. He just says you do not owe it one more year. Paul once told the Corinthians the same list, and then said, <em>“And such were some of you.”</em> Were.</p>
+    <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="Wherein they think it strange that ye run not with them to the same excess of riot, speaking evil of you"></blockquote>
+    <h2 class="rise" style="--d:1">They think it strange</h2>
+    <div class="stage pt04-run">
+      <svg viewBox="0 0 640 230" role="img" aria-label="A crowd of men running to the right, bobbing along. One man at the left has stopped and stands still. The crowd looks back and asks what is wrong with him.">
+        <line class="pt04-line pt04-sp" x1="215" y1="196" x2="620" y2="196"/>
+        <line class="pt04-line pt04-sp" x1="240" y1="166" x2="620" y2="166"/>
+        <circle class="pt04-p" style="--k:0" cx="330" cy="150" r="17"/>
+        <circle class="pt04-p" style="--k:1" cx="380" cy="168" r="17"/>
+        <circle class="pt04-p" style="--k:2" cx="430" cy="146" r="17"/>
+        <circle class="pt04-p" style="--k:3" cx="480" cy="170" r="17"/>
+        <circle class="pt04-p" style="--k:4" cx="530" cy="148" r="17"/>
+        <circle class="pt04-p" style="--k:5" cx="580" cy="168" r="17"/>
+        <circle class="pt04-me" cx="110" cy="160" r="22"/>
+        <text class="pt04-lbl" x="110" y="214" text-anchor="middle">you</text>
+        <g class="pt04-ask">
+          <rect class="pt04-bub" x="232" y="26" rx="14" width="300" height="52"/>
+          <text x="382" y="59" text-anchor="middle">“What's wrong with him?”</text>
+          <path class="pt04-bub" d="M330 78 l-14 22 l34 -22"/>
+        </g>
+      </svg>
+    </div>
+    <p class="note step">The word <em>“strange”</em> is from the same family as <em>stranger</em>, the big word of this whole letter. Once you stop, they treat you like a foreigner. They are not mainly angry. They are surprised, and often a little hurt, because your stopping shows them something. So they talk: <em>“speaking evil of you.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What do I do about the old crowd?</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>Old friend</small>You don't come out anymore? One drink won't kill you.</p>
+      <p class="reply step"><small>You</small>I'm good. I'll catch up with you over coffee.</p>
+      <p class="step"><small>Old friend, later</small>You think you're better than us now?</p>
+      <p class="reply step"><small>You</small>No. I just can't do that anymore. I'm not mad at you.</p>
+    </div>
+    <p class="note step">Peter does not say hate them, and he does not say run with them to prove you're not stuck-up. He says expect the talk, and do not let it move you. Be honest that some of them may drop away, and that it hurts. Today: change one route, one phone contact or one Friday night, and tell one believer you are doing it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="ready to judge the quick and the dead|was the gospel preached also to them that are dead|live according to God in the spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5-6" data-hl="Who shall give account to him that is ready to judge the quick and the dead"></blockquote>
+    <h2 class="rise" style="--d:1">Two courts</h2>
+    <div class="columns pt04-kinds">
+      <div class="col law step">
+        <p class="who">Their court</p>
+        <h3>“Judged according to men in the flesh”</h3>
+        <ul><li>they call you strange</li><li>they say evil of you</li><li>for some, it goes as far as the sword</li></ul>
+      </div>
+      <div class="col grace step">
+        <p class="who">His court</p>
+        <h3>“Live according to God in the spirit”</h3>
+        <ul><li>He is ready to judge, and He is fair</li><li>everyone gives account to Him</li><li>the believer lives, even after men have done their worst</li></ul>
+      </div>
+    </div>
+    <p class="note step">Verse 6 is one of the hard ones. Most Bible teachers read it plainly: the gospel was preached to people who heard it while they were alive, and who have since died. Men judged them harshly in the body, but they live with God in the spirit. It does not teach a second chance after death (Hebrews 9:27 closes that door). It teaches that the verdict that counts is God's, not the crowd's.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Ready, and useful</h2>
+    <p class="range rise" style="--d:2">Verses 7–11</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The end is near. So Peter gives four jobs: stay clear-headed, love, open the door, and use what God gave you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="the end of all things is at hand|be ye therefore sober, and watch unto prayer|fervent charity|charity shall cover the multitude of sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="the end of all things is at hand: be ye therefore sober, and watch unto prayer"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="clock" style="--stop:-10deg" viewBox="0 -44 320 364" role="img" aria-label="A clock hand sweeps toward twelve and stops just short. The label reads: the end of all things is at hand.">
+          <circle class="clock-face" cx="160" cy="160" r="140"/>
+          <g>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(30 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(60 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(90 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(120 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(150 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(180 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(210 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(240 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(270 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(300 160 160)"/>
+            <line class="clock-tick" x1="160" y1="38" x2="160" y2="58" transform="rotate(330 160 160)"/>
+          </g>
+          <circle class="clock-hour" cx="160" cy="44" r="12"/>
+          <text x="160" y="-14" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the end</text>
+          <line class="clock-hand" x1="160" y1="160" x2="160" y2="68"/>
+          <circle cx="160" cy="160" r="10" style="fill:var(--ink)"/>
+          <text x="160" y="312" text-anchor="middle" font-size="22" class="serif" font-style="italic" style="fill:var(--ink-soft)">at hand</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Near, so be ready</h2>
+        <p class="note rise" style="--d:2"><em>“At hand”</em> means near, close enough that it could be today. Nobody knows the day, and Peter has already been told that (Acts 1:7). He doesn't use it to scare anybody. He uses it to wake people up.</p>
+        <ol class="signs step">
+          <li><b>Sober</b>clear in the head</li>
+          <li class="now"><b>Watch</b>eyes open</li>
+          <li><b>Pray</b>talking to Him</li>
+        </ol>
+        <p class="note step"><em>Sober</em> means clear-headed and self-controlled in every way. For a man who has lost years to the bottle or the pipe, it also means what it says: Baptists have long urged believers to leave alcohol alone, and many men in recovery would say that is where their freedom started. Today: put prayer first on the list, before the first thing that can go wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins"></blockquote>
+    <h2 class="rise" style="--d:1">Love covers</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Spread it</p>
+        <h3>Gossip uncovers</h3>
+        <p>Every failure is a story to tell. A man's worst night follows him around the room before he gets there.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Cover it</p>
+        <h3>Love covers</h3>
+        <p><em>“Fervent”</em> means stretched, like a muscle under load: love that keeps going when it's hard. It forgives, and doesn't broadcast.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Hatred stirreth up strifes: but love covereth all sins.”</p><cite>Proverbs 10:12</cite></blockquote>
+    <p class="note step">Covering is not pretending nothing happened, and it does not mean hiding abuse. It means that when a brother falls, you go to him, not around him. The same love will be needed for you. Guys in this room will fall; the ones who stay are the ones who got covered.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="Use hospitality one to another without grudging|good stewards of the manifold grace of God|as the oracles of God|that God in all things may be glorified"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Use hospitality one to another without grudging"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="pt04-table" viewBox="0 0 440 340" role="img" aria-label="A round table with five seats taken and one empty dashed seat, which fills in when someone is invited.">
+          <ellipse class="pt04-top" cx="220" cy="170" rx="120" ry="70"/>
+          <circle class="pt04-plate" cx="170" cy="160" r="14"/><circle class="pt04-plate" cx="270" cy="160" r="14"/><circle class="pt04-plate" cx="220" cy="190" r="14"/>
+          <circle class="pt04-seat" cx="130" cy="95" r="26"/><circle class="pt04-seat" cx="310" cy="95" r="26"/>
+          <circle class="pt04-seat" cx="90" cy="195" r="26"/><circle class="pt04-seat" cx="350" cy="195" r="26"/>
+          <circle class="pt04-seat" cx="130" cy="272" r="26"/>
+          <circle class="pt04-empty" cx="310" cy="272" r="26"/>
+          <g class="pt04-cup"><circle class="pt04-plate" cx="310" cy="240" r="9"/></g>
+          <text class="pt04-who" x="220" y="40" text-anchor="middle">come and eat</text>
+          <text x="310" y="322" text-anchor="middle">one more</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">An open door, without muttering</h2>
+        <p class="note rise" style="--d:2">In Peter's day there were no hotels you'd want to stay in, and a traveling believer needed a bed. <em>Hospitality</em> was how the church got fed and housed. And <em>“without grudging”</em> means without muttering: no sighing at the door.</p>
+        <p class="note step pt04-go">Many of these men came out of a life with no table at all. Now you can be the table. It doesn't take a house or a good cook. A coffee on the porch, a ride to a meeting and a seat at the cheap burger place all count. Today: ask one man who's alone to sit down with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10-11" data-hl="As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God|that God in all things may be glorified through Jesus Christ"></blockquote>
+    <h2 class="rise" style="--d:1">Good stewards</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>Every man has received</small>a gift he didn't earn</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>so he is a steward</small>managing it for Someone Else.</div>
+    </div>
+    <ol class="signs step">
+      <li><b>Speak</b>“as the oracles of God”: say what God said, not just what sounds good</li>
+      <li class="now"><b>Serve</b>“as of the ability which God giveth”: with His strength, not a show</li>
+      <li><b>Why</b>“that God in all things may be glorified”</li>
+    </ol>
+    <p class="note step">A <em>steward</em> runs somebody else's house. The gift isn't yours to be proud of, and it isn't yours to bury. You don't have to be gifted at speaking. Someone who can fix a car, listen well, drive, cook or just show up on time is already ministering. Today: tell one man one thing he is good at, and put your own to use for him.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The fiery trial</h2>
+    <p class="range rise" style="--d:2">Verses 12–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The honest part: some suffering is for Christ and some is our own doing. God meets us in both.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-14" data-hl="think it not strange concerning the fiery trial|partakers of Christ’s sufferings|the spirit of glory and of God resteth upon you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="pt04-fire" viewBox="0 0 400 360" role="img" aria-label="Gold melting in a crucible over a fire. Flames flicker underneath, and grey bits of dross rise off the gold and drift away.">
+          <path class="pt04-flame b" style="--k:0" d="M110 330 C95 290 125 275 120 240 C150 265 165 300 150 330 Z"/>
+          <path class="pt04-flame" style="--k:1" d="M165 336 C140 285 190 265 185 215 C225 255 240 300 215 336 Z"/>
+          <path class="pt04-flame b" style="--k:2" d="M235 332 C220 295 245 280 245 245 C275 270 290 305 272 332 Z"/>
+          <path class="pt04-flame" style="--k:3" d="M270 336 C262 305 280 295 282 270 C300 290 312 316 300 336 Z"/>
+          <path class="pt04-pot" d="M90 150 L110 250 Q200 280 290 250 L310 150 Z"/>
+          <ellipse class="pt04-rim" cx="200" cy="150" rx="110" ry="24"/>
+          <ellipse class="pt04-gold" cx="200" cy="153" rx="92" ry="16"/>
+          <circle class="pt04-dross" style="--k:0;--dx:-30px" cx="150" cy="150" r="7"/>
+          <circle class="pt04-dross" style="--k:1;--dx:20px" cx="200" cy="146" r="6"/>
+          <circle class="pt04-dross" style="--k:2;--dx:40px" cx="245" cy="152" r="8"/>
+          <circle class="pt04-dross" style="--k:3;--dx:-10px" cx="180" cy="156" r="5"/>
+          <text class="pt04-lbl" x="200" y="38" text-anchor="middle">the fire is a test,</text>
+          <text class="pt04-lbl" x="200" y="62" text-anchor="middle">not an accident</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not strange, and not wasted</h2>
+        <p class="note rise" style="--d:2">The word <em>“try”</em> is the word for testing metal. Peter already wrote about it in chapter 1, and now he comes back to it:</p>
+        <blockquote class="quote step"><p>“That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:”</p><cite>1 Peter 1:7</cite></blockquote>
+        <p class="note step">Fire doesn't destroy gold. It lifts off the junk. You are not being punished for being a Christian, and you didn't take a wrong turn. This is the road Jesus walked first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13-14" data-hl="rejoice, inasmuch as ye are partakers|If ye be reproached for the name of Christ, happy are ye|the spirit of glory and of God resteth upon you"></blockquote>
+    <h2 class="rise" style="--d:1">Reproach, company, glory</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:3"><i>Verse 14</i><b>Reproached</b><p>Mocked, written off, talked about, “for the name of Christ.”</p></div>
+      <div class="step"><i>Verses 13, 14</i><b>Not alone</b><p>You are a “partaker” of Christ's sufferings, and the Spirit of glory and of God “resteth upon you.”</p></div>
+      <div class="step"><i>Verse 13</i><b>Glory revealed</b><p>“When his glory shall be revealed, ye may be glad also with exceeding joy.”</p></div>
+    </div>
+    <blockquote class="quote step"><p>“For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory;”</p><cite>2 Corinthians 4:17</cite></blockquote>
+    <p class="note step">The Spirit already lives in every believer from the day he trusts Christ. <em>“Resteth upon you”</em> says He doesn't leave when it gets hot: He is there, and especially there, when you are reproached for Jesus.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-19" data-hl="let none of you suffer as a murderer, or as a thief|suffer as a Christian, let him not be ashamed|judgment must begin at the house of God|as unto a faithful Creator"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15-16" data-hl="let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busybody in other men’s matters|if any man suffer as a Christian, let him not be ashamed"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of trouble</h2>
+    <div class="columns pt04-kinds">
+      <div class="col law step">
+        <p class="who">“As an evildoer”</p>
+        <h3>Because of what I did</h3>
+        <ul><li>the court date and the fine</li><li>the job I can't get with that record</li><li>the family that doesn't pick up</li><li>a busybody's trouble: meddling and talking</li></ul>
+      </div>
+      <div class="col grace step">
+        <p class="who">“As a Christian”</p>
+        <h3>Because of whose I am</h3>
+        <ul><li>mocked for not drinking</li><li>left out by the old crowd</li><li>passed over for saying no to the shady job</li><li>“let him not be ashamed”</li></ul>
+      </div>
+    </div>
+    <p class="note step">Peter is honest, and so should we be. A lot of what hurts a man like you comes from the old days, and that is not persecution. Don't dress it up as suffering for Jesus. Own it, take the consequence, and go the long way through it. But it doesn't mean God has gone. Forgiven men still live with the results (1 John 1:9), and God still meets them there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17-18" data-hl="judgment must begin at the house of God|if the righteous scarcely be saved"></blockquote>
+    <h2 class="rise" style="--d:1">It begins at the house of God</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>If a Father is working on His own sons first</small>judgment begins at the house of God</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then think what it means</small>for those who won't obey the gospel.</div>
+    </div>
+    <blockquote class="quote step"><p>“For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.”</p><cite>Hebrews 12:6</cite></blockquote>
+    <p class="note step">This is not a threat to a believer. The word is closer to God's refining and correcting of His own family, as a father does with a son. There is <em>“no condemnation”</em> for those in Christ (Romans 8:1). <em>“Scarcely saved”</em> doesn't mean we barely squeak in: it means salvation was hard and costly, and it was Jesus who paid. Those He has, He keeps (John 10:28).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19" data-hl="commit the keeping of their souls to him in well doing, as unto a faithful Creator"></blockquote>
+    <h2 class="rise" style="--d:1">Put your soul in His hands</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>Commit</small>hand it over, like a deposit left for safekeeping</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>to a faithful Creator</small>who made you and won't walk off from His work.</div>
+    </div>
+    <blockquote class="quote step"><p>“And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost.”</p><cite>Luke 23:46</cite></blockquote>
+    <p class="note step"><em>“Commit”</em> is the same word Jesus used on the cross: <em>“into thy hands I commend my spirit.”</em> You can say it too: with your record, with your shame, with the phone call you're dreading. And Peter adds two words that carry the weight: <em>“in well doing.”</em> Keep doing the next right thing while you wait. God keeps the soul, and you keep walking. Today: say it out loud once.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">“the time past of our life may suffice us” <cite>4:3</cite></span><span class="take">You have already spent your share of years on the old life. You don't owe it one more.</span></li>
+      <li class="step"><span class="topic">Strange</span><span class="seed-q">“Wherein they think it strange that ye run not with them” <cite>4:4</cite></span><span class="take">When you stop, old friends are surprised and may say evil of you. Expect it, and don't let it move you.</span></li>
+      <li class="step"><span class="topic">Love</span><span class="seed-q">“charity shall cover the multitude of sins” <cite>4:8</cite></span><span class="take">Love forgives and doesn't broadcast. You will need it, and so will your brother.</span></li>
+      <li class="step"><span class="topic">Gifts</span><span class="seed-q">“good stewards of the manifold grace of God” <cite>4:10</cite></span><span class="take">What you have been given is on loan for other people. Use it.</span></li>
+      <li class="step"><span class="topic">Fire</span><span class="seed-q">“think it not strange concerning the fiery trial” <cite>4:12</cite></span><span class="take">The fire is a test, not an accident. Own the trouble you caused, and don't be ashamed of the trouble you get for Christ.</span></li>
+      <li class="step"><span class="topic">Keeping</span><span class="seed-q">“commit the keeping of their souls to him in well doing, as unto a faithful Creator” <cite>4:19</cite></span><span class="take">Hand your soul to Him, and keep doing the next right thing.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Enough</span>
+      <h2>What does Peter say about the old life, and how much of it is enough?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="no longer should live the rest of his time in the flesh to the lusts of men, but to the will of God"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="the time past of our life may suffice us to have wrought the will of the Gentiles"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The old life was lust, drunkenness, wild parties and idols, and you have already spent enough years on it. From here on you live for the will of God, not the lusts of men. It is not a lecture: it is a door that's open, and Paul says of the same list, “such were some of you.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Strange</span>
+      <h2>Why do old friends think it strange when you stop?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="Wherein they think it strange that ye run not with them to the same excess of riot, speaking evil of you"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="Who shall give account to him that is ready to judge the quick and the dead"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>You used to run with them, and now you don't. Your stopping shows them something, so they are surprised, sometimes hurt, and they talk. Peter says expect it, and remember that everybody, them included, gives account to God, not to the crowd.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Love</span>
+      <h2>What does love do about other people's sins?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="have fervent charity among yourselves: for charity shall cover the multitude of sins"></blockquote>
+      <blockquote class="quote step"><p>“Hatred stirreth up strifes: but love covereth all sins.”</p><cite>Proverbs 10:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It covers them: it forgives and doesn't broadcast. Gossip uncovers and hatred stirs up trouble, but love goes to the brother who fell and helps him up. It doesn't pretend nothing happened, and it doesn't hide abuse.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Gifts</span>
+      <h2>What are we supposed to do with what God has given us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="Use hospitality one to another without grudging"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="that God in all things may be glorified through Jesus Christ"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Use it for others, as stewards of grace that belongs to God. Open the door without muttering, speak what God said, serve with the strength He gives, and let all of it point back to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Fire</span>
+      <h2>Why shouldn't we be surprised by the fiery trial, and which suffering is not for Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="think it not strange concerning the fiery trial which is to try you"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="let none of you suffer as a murderer, or as a thief, or as an evildoer"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The fire is a test, and Jesus walked it first, so it is not strange. But the trouble you earned as a murderer, a thief, an evildoer or a busybody isn't suffering for Christ. Own that, and don't call it persecution. Suffering as a Christian is something to glorify God in, not hide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Keeping</span>
+      <h2>Where do we put our souls when everything hurts?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="commit the keeping of their souls to him in well doing, as unto a faithful Creator"></blockquote>
+      <blockquote class="quote step"><p>“And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost.”</p><cite>Luke 23:46</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In God's hands. He is a faithful Creator: He made you and He won't walk off from His work. Hand your soul to Him the way Jesus did on the cross, and keep doing the next right thing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="19"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, 1 Peter chapter 4
+const V = {
+  1: "Forasmuch then as Christ hath suffered for us in the flesh, arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin;",
+  2: "That he no longer should live the rest of his time in the flesh to the lusts of men, but to the will of God.",
+  3: "For the time past of our life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:",
+  4: "Wherein they think it strange that ye run not with them to the same excess of riot, speaking evil of you:",
+  5: "Who shall give account to him that is ready to judge the quick and the dead.",
+  6: "For for this cause was the gospel preached also to them that are dead, that they might be judged according to men in the flesh, but live according to God in the spirit.",
+  7: "But the end of all things is at hand: be ye therefore sober, and watch unto prayer.",
+  8: "And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.",
+  9: "Use hospitality one to another without grudging.",
+  10: "As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.",
+  11: "If any man speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth: that God in all things may be glorified through Jesus Christ, to whom be praise and dominion for ever and ever. Amen.",
+  12: "Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you:",
+  13: "But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.",
+  14: "If ye be reproached for the name of Christ, happy are ye; for the spirit of glory and of God resteth upon you: on their part he is evil spoken of, but on your part he is glorified.",
+  15: "But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busybody in other men’s matters.",
+  16: "Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.",
+  17: "For the time is come that judgment must begin at the house of God: and if it first begin at us, what shall the end be of them that obey not the gospel of God?",
+  18: "And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?",
+  19: "Wherefore let them that suffer according to the will of God commit the keeping of their souls to him in well doing, as unto a faithful Creator."
+};
+const BOOK = "1 Peter 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -15402,5 +15402,210 @@ window.STUDIES = [
       },
       "big": "Faith in a better Saviour shows up in ordinary life: love, purity, contentment and praise. The man who has been left, or who did the leaving, has a Lord who will never leave him, and who is the same today as at the cross."
     }
+  },
+  {
+    "id": "james-01",
+    "type": "chapter",
+    "book": "James",
+    "url": "studies/james-01.html",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "James 1",
+    "sub": "Faith that does something",
+    "about": "The Lord's own brother, who once did not believe, writes to scattered believers about trials, temptation, and doing what the word says.",
+    "tags": [
+      "Trials",
+      "Wisdom",
+      "Temptation",
+      "The Father of lights",
+      "Doing the word",
+      "Real religion"
+    ],
+    "overview": {
+      "where": "Jerusalem, where James led the church, writing to Jewish believers scattered across the Roman world",
+      "when": "About AD 45 to 50, perhaps the earliest letter in the New Testament",
+      "people": [
+        "james",
+        "jesus"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "James, a servant of God and of the Lord Jesus Christ, writes to the twelve tribes scattered abroad. He says to count it all joy when you fall into trials, because the testing of faith works patience (1–4).",
+        "If you lack wisdom, ask God, who gives liberally and does not scold. A double minded man is unstable in all his ways (5–8).",
+        "The poor man and the rich man both pass away like the flower of the grass, but the man who endures temptation will receive the crown of life (9–12).",
+        "Temptation is not from God. It starts in a man's own desire and grows: lust, sin, death. Every good gift comes down from the Father of lights, who never changes (13–18).",
+        "Be swift to hear, slow to speak, slow to wrath. Be doers of the word and not hearers only, like a man who looks in a mirror and forgets what he saw. Pure religion is to visit the fatherless and widows and keep unspotted from the world (19–27)."
+      ],
+      "key": {
+        "ref": "James 1:22",
+        "text": "But be ye doers of the word, and not hearers only, deceiving your own selves."
+      },
+      "big": "Real faith is not only hearing: it does what it hears. God never tempts, He gives good gifts freely, and a man who breaks the chain of desire early finds the way out."
+    }
+  },
+  {
+    "id": "james-02",
+    "type": "chapter",
+    "book": "James",
+    "url": "studies/james-02.html",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "James 2",
+    "sub": "Faith that shows",
+    "about": "A rich man and a poor man walk into church, and James asks what real faith looks like: mercy, not favourites, and a faith that is alive.",
+    "tags": [
+      "No favourites",
+      "The royal law",
+      "Mercy",
+      "Dead faith",
+      "Demons",
+      "Abraham and Rahab"
+    ],
+    "overview": {
+      "where": "The church assembly at Jerusalem, and the stories of Abraham and Rahab",
+      "when": "About AD 45 to 50",
+      "people": [
+        "abraham",
+        "isaac",
+        "rahab"
+      ],
+      "places": [
+        "jerusalem"
+      ],
+      "story": [
+        "A man with a gold ring and a poor man in vile raiment come into church. Showing favourites is sin: God has chosen the poor of this world, rich in faith (1–7).",
+        "The royal law is to love your neighbour as yourself. Whoever breaks one point is guilty of all, but mercy rejoiceth against judgment (8–13).",
+        "Faith without works is dead, like words of comfort that never feed a hungry brother. Even the devils believe, and tremble (14–20).",
+        "Abraham, who offered Isaac, and Rahab the harlot, who hid the spies, both showed their faith by what they did. Faith alone saves, but the faith that saves is never alone (21–26)."
+      ],
+      "key": {
+        "ref": "James 2:17",
+        "text": "Even so faith, if it hath not works, is dead, being alone."
+      },
+      "big": "We are saved by faith alone, and the faith that saves is never alone. James shows faith's proof to people, as Paul shows faith's root before God."
+    }
+  },
+  {
+    "id": "james-03",
+    "type": "chapter",
+    "book": "James",
+    "url": "studies/james-03.html",
+    "ch": 3,
+    "date": "2026-10-31",
+    "title": "James 3",
+    "sub": "The little fire",
+    "about": "The smallest muscle in the body can steer a life or burn it down, and there are two kinds of wisdom: one from above and one from below.",
+    "tags": [
+      "Teachers",
+      "Small things",
+      "The tongue",
+      "One mouth",
+      "Earthly wisdom",
+      "Wisdom from above"
+    ],
+    "overview": {
+      "where": "The churches of the scattered believers, with pictures from stables, ships and forests",
+      "when": "About AD 45 to 50",
+      "people": [
+        "the-father"
+      ],
+      "places": [],
+      "story": [
+        "Be not many masters: teachers are judged more strictly, and in many things we all offend (1–2).",
+        "A bit turns a horse and a small helm turns a ship, and the little tongue boasts great things. It is a fire, a world of iniquity, that no man can tame (3–8).",
+        "With the same mouth we bless God and curse men made in His likeness. A fountain does not send out sweet water and bitter (9–12).",
+        "Earthly wisdom is bitter envy and strife and grows confusion. The wisdom from above is first pure, then peaceable, gentle, full of mercy, and the fruit of righteousness is sown in peace (13–18)."
+      ],
+      "key": {
+        "ref": "James 3:17",
+        "text": "But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy."
+      },
+      "big": "Words are the smallest thing that steer a whole life, and no man can tame them alone. Wisdom from above makes peace; envy and strife make confusion."
+    }
+  },
+  {
+    "id": "1-peter-04",
+    "type": "chapter",
+    "book": "1 Peter",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "1 Peter 4",
+    "sub": "Enough is enough",
+    "about": "Old friends think it strange that you don't run with them anymore. Peter says the years you spent on that life were enough, and the fire you are in is a test, not an accident.",
+    "tags": [
+      "Old life",
+      "Old friends",
+      "Love",
+      "Gifts",
+      "Suffering",
+      "Trusting God"
+    ],
+    "url": "studies/1-peter-04.html",
+    "overview": {
+      "where": "Rome (“Babylon”), writing to believers scattered across Asia Minor",
+      "when": "About AD 62 to 64, just before Rome burned and Nero turned on the Christians",
+      "people": [
+        "christ",
+        "gentiles"
+      ],
+      "places": [],
+      "story": [
+        "Christ suffered in the flesh, so arm yourselves with the same mind. The time past of our life may suffice to have done the will of the Gentiles. Old friends think it strange that you no longer run with them, and speak evil of you (1–6).",
+        "The end of all things is at hand: be sober, watch unto prayer, have fervent love, open your home without grudging, and use your gift as a good steward (7–11).",
+        "Do not think the fiery trial strange. Rejoice in sharing Christ's sufferings, but do not suffer as a murderer, thief, evildoer or busybody. If you suffer as a Christian, do not be ashamed (12–16).",
+        "Judgment begins at the house of God. Those who suffer according to God's will commit their souls to a faithful Creator in well doing (17–19)."
+      ],
+      "key": {
+        "ref": "1 Peter 4:19",
+        "text": "Wherefore let them that suffer according to the will of God commit the keeping of their souls to him in well doing, as unto a faithful Creator."
+      },
+      "big": "The old life took enough of your years, and old friends may think you strange for leaving it. Own the trouble you caused, expect trouble for Christ, and hand your soul to a faithful Creator while you keep doing the next right thing."
+    }
+  },
+  {
+    "id": "1-peter-05",
+    "type": "chapter",
+    "book": "1 Peter",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "1 Peter 5",
+    "sub": "Cast it all on Him",
+    "about": "Peter, who once denied Jesus, tells the shepherds to feed the flock and every man to be humble, awake and to cast all his care on God. The letter ends in peace.",
+    "tags": [
+      "Leadership",
+      "Example",
+      "Humility",
+      "Anxiety",
+      "Spiritual warfare",
+      "Hope"
+    ],
+    "url": "studies/1-peter-05.html",
+    "overview": {
+      "where": "Rome (“Babylon”), the letter carried by Silvanus to believers in Asia Minor",
+      "when": "About AD 62 to 64",
+      "people": [
+        "elders",
+        "silvanus",
+        "john-mark",
+        "devil"
+      ],
+      "places": [
+        "babylon"
+      ],
+      "story": [
+        "Peter, a fellow elder and witness of Christ's sufferings, tells the elders to feed the flock willingly, not for money and not as lords, but as examples. The chief Shepherd will give a crown that fades not away (1–4).",
+        "Younger men, submit to the elders, and all be clothed with humility. God resists the proud and gives grace to the humble. Cast all your care on Him, for He cares for you (5–7).",
+        "Be sober and vigilant: the devil walks about like a roaring lion. Resist him steadfast in the faith, knowing your brothers suffer the same (8–9).",
+        "After you have suffered a while, the God of all grace will make you perfect, stablish, strengthen and settle you (10–11).",
+        "Peter writes by Silvanus, sends greetings from the church at Babylon and from Marcus his son, and ends with peace to all in Christ Jesus (12–14)."
+      ],
+      "key": {
+        "ref": "1 Peter 5:7",
+        "text": "Casting all your care upon him; for he careth for you."
+      },
+      "big": "You do not have to carry it alone. Humble yourself, cast every care on the God who cares for you, stay with the flock so the lion cannot pick you off, and trust that after a while the God of all grace will settle you."
+    }
   }
 ];
