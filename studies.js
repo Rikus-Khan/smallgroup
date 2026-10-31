@@ -13039,6 +13039,94 @@ window.STUDIES = [
     }
   },
   {
+    "id": "galatians-05",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "Galatians 5",
+    "sub": "Stand fast in the liberty",
+    "about": "Christ set you free: don't go back under the yoke, and don't spend your freedom on the flesh. Walk with the Spirit, and watch what grows.",
+    "tags": [
+      "Liberty",
+      "Grace",
+      "The Holy Spirit",
+      "The flesh",
+      "Fruit of the Spirit",
+      "Recovery"
+    ],
+    "url": "studies/galatians-05.html",
+    "overview": {
+      "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
+      "when": "About AD 48 to 49; chapter 5 opens the letter's last part: how a free man lives",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "brethren-believers"
+      ],
+      "places": [
+        "galatia"
+      ],
+      "story": [
+        "“Stand fast therefore in the liberty wherewith Christ hath made us free.” Take on circumcision to be justified, and Christ profits you nothing: “ye are fallen from grace,” back in debt to the whole law. What counts is “faith which worketh by love” (1–6).",
+        "They did run well until someone cut in. “A little leaven leaveneth the whole lump”; the troubler will bear his judgment, and the offence of the cross still stands (7–12).",
+        "Called unto liberty, but not as an occasion to the flesh: “by love serve one another.” “Walk in the Spirit, and ye shall not fulfil the lust of the flesh,” though the flesh and the Spirit war inside (13–18).",
+        "The works of the flesh are plain to see: sexual sin, idolatry and witchcraft, hatred and strife, drunkenness and revellings (19–21).",
+        "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance. They that are Christ’s have crucified the flesh, so let us keep in step with the Spirit (22–26)."
+      ],
+      "key": {
+        "ref": "Galatians 5:16",
+        "text": "This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh."
+      },
+      "big": "Christ set us free, so don't go back under the law and don't use freedom to feed the flesh. A man doesn't beat the flesh by willpower but by walking with the Spirit, who grows His fruit in him."
+    }
+  },
+  {
+    "id": "galatians-06",
+    "type": "chapter",
+    "book": "Galatians",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "Galatians 6",
+    "sub": "Bear one another's burdens",
+    "about": "Go get the brother who fell, carry each other, sow to the Spirit and don't quit. Then Paul takes the pen and ends where he began: grace.",
+    "tags": [
+      "Restoring",
+      "Burdens",
+      "Sowing and reaping",
+      "Perseverance",
+      "The cross",
+      "New creature"
+    ],
+    "url": "studies/galatians-06.html",
+    "overview": {
+      "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
+      "when": "About AD 48 to 49; the letter's last chapter, which Paul finishes in his own hand",
+      "people": [
+        "paul",
+        "jesus",
+        "holy-spirit",
+        "brethren-believers"
+      ],
+      "places": [
+        "galatia",
+        "lystra"
+      ],
+      "story": [
+        "If a man be overtaken in a fault, the spiritual restore him in meekness, watching themselves. “Bear ye one another’s burdens”; every man also carries his own (1–5).",
+        "Share with those who teach you. “God is not mocked: for whatsoever a man soweth, that shall he also reap.” Don't be weary in well doing: in due season we shall reap (6–10).",
+        "Paul takes the pen: the false teachers want “a fair shew in the flesh,” but he will glory only in the cross. What counts is “a new creature” (11–16).",
+        "He bears in his body “the marks of the Lord Jesus,” and ends as he began: “the grace of our Lord Jesus Christ be with your spirit” (17–18)."
+      ],
+      "key": {
+        "ref": "Galatians 6:2",
+        "text": "Bear ye one another’s burdens, and so fulfil the law of Christ."
+      },
+      "big": "Free men carry each other: we restore the fallen, share the crushing loads, keep sowing to the Spirit and don't quit. The only boast is the cross, and what counts is a new creature, by grace from first to last."
+    }
+  },
+  {
     "id": "ephesians-01",
     "type": "chapter",
     "book": "Ephesians",

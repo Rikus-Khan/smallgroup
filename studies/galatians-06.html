@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galatians 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ga06-where: where we are in Galatians (the same marker as Galatians 1's ga01-where).
+   Three parts of two chapters each. Each part (div, --k) holds its chapters (p > i; read ones .done, ours .here),
+   its name (b), what it says (small) and a key phrase (q + cite). The part we're in is .now. */
+.ga06-where { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .5em 0 1em; }
+.ga06-where > div { --c: var(--line-strong); padding: .55em .8em .65em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .ga06-where > div { opacity: 1; transform: none; }
+.ga06-where > div.now { --c: var(--accent); background: color-mix(in srgb, var(--accent) 15%, transparent); box-shadow: inset 0 0 0 2px var(--accent); }
+.ga06-where p { display: flex; gap: 6px; margin: 0 0 .4em; }
+.ga06-where i { min-width: 2.2em; padding: .22em .3em; text-align: center; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); font-style: normal; color: var(--ink-soft); }
+.ga06-where i.done { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ga06-where i.here { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.slide.active .ga06-where i.here { animation: ga06-here 2.4s ease-in-out 1.8s infinite; }
+@keyframes ga06-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.ga06-where b { display: block; font: 600 clamp(1.05rem, .88rem + .7vw, 1.5rem)/1.1 var(--serif); color: var(--ink); }
+.ga06-where small { display: block; margin: .2em 0 .35em; font-size: clamp(.78rem, .72rem + .26vw, 1rem); line-height: 1.3; color: var(--ink-soft); }
+.ga06-where q { display: block; font: italic clamp(.86rem, .78rem + .34vw, 1.08rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.ga06-where cite { display: block; margin-top: .2em; font-style: normal; font-size: clamp(.72rem, .68rem + .22vw, .92rem); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .ga06-where { grid-template-columns: 1fr; gap: 6px; }
+  .ga06-where > div { border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* Stick figures: strokes in .ga06-man, a filled head (circle). */
+.ga06-man { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.ga06-man circle { fill: var(--ink); stroke: none; }
+
+/* ga06-net: restoring a man "overtaken in a fault" (6:1), pictured as mending a torn net (Matthew 4:21).
+   The mesh is a rotated pattern clipped around a tear (.ga06-edge marks it). On a .ga06-mend step new cords
+   (.ga06-patch, the same mesh in a new color) are woven across the hole from left to right, and the label changes from .ga06-was to .ga06-now. */
+.ga06-cord { fill: none; stroke: var(--ink-soft); stroke-width: 2.2; }
+.ga06-rope { stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; }
+.ga06-float { fill: var(--warm); stroke: var(--leather); stroke-width: 1.5; }
+.ga06-edge { fill: none; stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 5 5; transition: opacity .8s ease 1.4s; }
+.ga06-cord.new { stroke: var(--accent-hot); stroke-width: 3.4; }
+.ga06-patch { clip-path: inset(0 100% 0 0); transition: clip-path 2s linear .2s; }
+.slide:has(.ga06-mend.on) .ga06-patch { clip-path: inset(0 0 0 0); }
+.slide:has(.ga06-mend.on) .ga06-edge { opacity: 0; }
+.ga06-was, .ga06-now { transition: opacity .8s ease; }
+.ga06-now { opacity: 0; transition-delay: 1.5s; }
+.slide:has(.ga06-mend.on) .ga06-was { opacity: 0; }
+.slide:has(.ga06-mend.on) .ga06-now { opacity: 1; }
+
+/* ga06-loads: two words for "burden" (6:2, 6:5). Left, a man crushed under a boulder; on a .ga06-lift step two
+   helpers (.ga06-helper) come, the boulder (.ga06-rock-g) rises, and he stands (.ga06-stand). Right, a man walks
+   with his own pack (.ga06-walker). */
+.ga06-rock { fill: color-mix(in srgb, var(--ink-soft) 60%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
+.ga06-rock-g { transition: transform 1.4s cubic-bezier(.3,.7,.3,1) .7s; }
+.slide:has(.ga06-lift.on) .ga06-rock-g { transform: translateY(-40px); }
+.ga06-helper, .ga06-stand { opacity: 0; transition: opacity .8s ease; }
+.ga06-stand { transition-delay: 1.2s; }
+.ga06-crouch { transition: opacity .6s ease 1.1s; }
+.ga06-helper .ga06-man { stroke: var(--accent-hot); }
+.ga06-helper .ga06-man circle { fill: var(--accent-hot); }
+.slide:has(.ga06-lift.on) :is(.ga06-helper, .ga06-stand) { opacity: 1; }
+.slide:has(.ga06-lift.on) .ga06-crouch { opacity: 0; }
+.ga06-pack { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.slide.active .ga06-walker { animation: ga06-bob .6s ease-in-out infinite alternate; }
+@keyframes ga06-bob { to { transform: translateY(-4px); } }
+
+/* ga06-fields: sowing and reaping (6:7-8), two plots built from deck.css's .seed-fall / .seed-stalk / .seed-head.
+   Seeds drop in when the slide opens; a .seed-grow step brings up both crops: crooked stalks with withered heads
+   (corruption) on the flesh side, straight stalks with full grain (life) on the Spirit side. */
+.ga06-soil { fill: color-mix(in srgb, var(--leather) 70%, var(--bg)); }
+.ga06-bad { fill: none; stroke: color-mix(in srgb, var(--ink-soft) 70%, var(--danger)); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.ga06-good { fill: none; stroke: var(--accent); stroke-width: 4.5; stroke-linecap: round; }
+
+/* ga06-hand: Paul takes the pen (6:11). A page in a helper's small, neat hand (.ga06-scribe); then Paul's own big
+   letters (.ga06-big) write themselves in from the left when it comes on. */
+.ga06-page { margin: .3em 0 1em; padding: 1rem 1.4rem 1.2rem; border-radius: 6px; border: 1.5px solid var(--line-strong);
+  background: linear-gradient(color-mix(in srgb, var(--warm) 10%, var(--surface)), var(--surface)); box-shadow: 0 10px 26px -16px var(--ink); }
+.ga06-page small { display: block; font: 700 clamp(.7rem, .66rem + .2vw, .86rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .25em; }
+.ga06-scribe { margin: 0 0 .9em; font: italic clamp(.82rem, .76rem + .3vw, 1.02rem)/1.5 var(--serif); color: var(--ink-soft); max-width: 46em; }
+.ga06-big { display: block; margin: 0; font: italic 600 clamp(1.5rem, .9rem + 2.6vw, 2.9rem)/1.15 var(--serif); color: var(--accent-hot);
+  transform: rotate(-1.5deg); transform-origin: left; clip-path: inset(0 100% 0 0); transition: clip-path 2.6s linear .3s; }
+.ga06-big.on { clip-path: inset(-10% -2% -10% 0); }
+
+/* ga06-arc: the whole letter, looking back. One card per chapter (li, --k): chapter (i), what it's about (b),
+   a key phrase (q) and its reference (small). */
+.ga06-arc { list-style: none; padding: 0; margin: .3em 0 .9em; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+@media (max-width: 640px) { .ga06-arc { grid-template-columns: 1fr 1fr; } }
+.ga06-arc li { padding: .5em .75em .6em; border-radius: 10px; border: 1.5px solid var(--line-strong); background: color-mix(in srgb, var(--surface) 75%, transparent);
+  opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 300ms + 300ms); }
+.slide.active .ga06-arc li { opacity: 1; transform: none; }
+.ga06-arc i { display: block; font: 700 clamp(.68rem, .64rem + .2vw, .86rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.ga06-arc b { display: block; margin: .12em 0 .25em; font: 600 clamp(1.02rem, .88rem + .6vw, 1.42rem)/1.15 var(--serif); color: var(--ink); }
+.ga06-arc q { display: block; font: italic clamp(.84rem, .78rem + .3vw, 1.04rem)/1.3 var(--serif); color: var(--accent-hot); quotes: "\201C" "\201D"; }
+.ga06-arc small { display: block; margin-top: .2em; font-size: clamp(.72rem, .68rem + .2vw, .9rem); color: var(--ink-soft); }
+.ga06-arc li.now { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Galatians 6</h1>
+    <p class="sub rise" style="--d:3">Bear one another's burdens</p>
+    <p class="tag rise" style="--d:5">Go get the brother who fell. Carry each other. Sow to the Spirit and don't quit. Then Paul takes the pen himself, and ends where he began: with grace.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Restoring</span><span class="seed-q">What should we do when a brother is overtaken in a fault?</span></li>
+      <li class="step"><span class="topic">Burdens</span><span class="seed-q">Which burdens do we carry together, and which does each man carry himself?</span></li>
+      <li class="step"><span class="topic">Sowing</span><span class="seed-q">If God forgives our sin, why do the consequences still come?</span></li>
+      <li class="step"><span class="topic">Weary</span><span class="seed-q">What does God promise the man who keeps doing right and sees nothing yet?</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">What was the one thing Paul would boast about?</span></li>
+      <li class="step"><span class="topic">A new creature</span><span class="seed-q">What really counts with God?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Galatians</h2>
+    <div class="ga06-where" role="img" aria-label="Galatians in three parts. Chapters 1 and 2, Paul's story: the gospel came from God, not from men. Chapters 3 and 4, the argument: faith, not the law. Chapters 5 and 6, living free: walk in the Spirit, and carry each other. We are in chapter 6, the last chapter.">
+      <div style="--k:0"><p><i class="done">1</i><i class="done">2</i></p><b>Paul's story</b><small>The gospel came from God, not from men</small><q>I am crucified with Christ</q><cite>2:20</cite></div>
+      <div style="--k:1"><p><i class="done">3</i><i class="done">4</i></p><b>Faith, not the law</b><small>Abraham, the curse, sons and not slaves</small><q>The just shall live by faith</q><cite>3:11</cite></div>
+      <div class="now" style="--k:2"><p><i class="done">5</i><i class="here">6</i></p><b>Living free</b><small>Walk in the Spirit, and carry each other</small><q>Bear ye one another’s burdens</q><cite>6:2</cite></div>
+    </div>
+    <p class="note rise" style="--d:3">The last chapter. Chapter 5 ended with free men walking in step with the Spirit. Now Paul shows what that looks like in a church family: what we do when one of us falls, what we carry, and what we sow.</p>
+    <p class="note step">Then he takes the pen from his helper and writes the ending himself, in big letters.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: RESTORE AND CARRY ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Restore and carry</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Exactly what this group is for.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="if a man be overtaken in a fault|restore such an one in the spirit of meekness|considering thyself, lest thou also be tempted"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="restore such an one"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A fishing net hangs from a rope with floats. There's a ragged tear in the middle, marked overtaken in a fault. Then new cords are woven across the hole one by one until it is mended: restore such an one.">
+          <defs>
+            <pattern id="ga06-mesh" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="ga06-cord" d="M0 0 L30 0 M0 0 L0 30"/></pattern>
+            <pattern id="ga06-mesh-new" width="21.2132" height="21.2132" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="ga06-cord new" d="M0 0 L21.2132 0 M0 0 L0 21.2132"/></pattern>
+            <clipPath id="ga06-torn"><path clip-rule="evenodd" d="M0 0 H600 V300 H0 Z M232 128 L250 104 L276 112 L298 92 L326 108 L352 98 L372 124 L366 150 L380 172 L350 186 L322 176 L296 192 L268 178 L240 184 L226 160 Z"/></clipPath>
+            <clipPath id="ga06-hole"><path d="M232 128 L250 104 L276 112 L298 92 L326 108 L352 98 L372 124 L366 150 L380 172 L350 186 L322 176 L296 192 L268 178 L240 184 L226 160 Z"/></clipPath>
+          </defs>
+          <rect x="30" y="40" width="540" height="222" fill="url(#ga06-mesh)" clip-path="url(#ga06-torn)"/>
+          <path class="ga06-edge" d="M232 128 L250 104 L276 112 L298 92 L326 108 L352 98 L372 124 L366 150 L380 172 L350 186 L322 176 L296 192 L268 178 L240 184 L226 160 Z"/>
+          <g clip-path="url(#ga06-hole)"><rect class="ga06-patch" x="200" y="80" width="200" height="130" fill="url(#ga06-mesh-new)"/></g>
+          <line class="ga06-rope" x1="24" y1="40" x2="576" y2="40"/>
+          <g class="ga06-float"><ellipse cx="80" cy="40" rx="16" ry="9"/><ellipse cx="190" cy="40" rx="16" ry="9"/><ellipse cx="300" cy="40" rx="16" ry="9"/><ellipse cx="410" cy="40" rx="16" ry="9"/><ellipse cx="520" cy="40" rx="16" ry="9"/></g>
+          <text class="ga06-was" x="300" y="290" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--danger)">“overtaken in a fault”</text>
+          <text class="ga06-now" x="300" y="290" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">“restore such an one”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Mend him</h2>
+        <p class="note rise" style="--d:2"><em>“Overtaken”</em> means caught: caught off guard, or caught in the act.</p>
+        <p class="note step ga06-mend"><em>“Restore”</em> is the word for mending a torn net, or setting a broken bone. James and John were <em>“mending their nets”</em> when Jesus called them (Matthew 4:21): same word. You don't throw out a good net because it tore. You sit down and fix it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">How to go get a brother</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>ye which are spiritual, restore such an one</q><small>Go to him. “Spiritual” doesn't mean perfect. It means walking in the Spirit (5:16, 25).</small><b>Go</b></li>
+      <li class="step"><span class="tick">✓</span><q>in the spirit of meekness</q><small>Go gently. Strength under control, not a lecture.</small><b>Gently</b></li>
+      <li class="step"><span class="tick">✓</span><q>considering thyself, lest thou also be tempted</q><small>Go humbly. It could have been you. Next time it might be.</small><b>Humbly</b></li>
+    </ol>
+    <p class="note step">This is exactly what this group is for. If you fell yesterday, the worst thing you can do is hide it. Tell us. And if a brother falls, don't gossip about him and don't write him off. Go get him.</p>
+    <blockquote class="quote step"><p>“Wherefore let him that thinketh he standeth take heed lest he fall.”</p><cite>1 Corinthians 10:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-5" data-hl="Bear ye one another’s burdens, and so fulfil the law of Christ|let every man prove his own work|every man shall bear his own burden"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2"></blockquote>
+    <div class="stage rise" style="--d:1">
+      <svg viewBox="0 0 600 312" style="max-height:36vh" role="img" aria-label="Two kinds of burden. On the left a man is crushed under a boulder, until two others come and help lift it, and he stands up. On the right a man walks along carrying his own pack.">
+        <line x1="20" y1="262" x2="580" y2="262" stroke-width="3" style="stroke:var(--line-strong)"/>
+        <line x1="300" y1="30" x2="300" y2="250" stroke-width="2" stroke-dasharray="6 6" style="stroke:var(--line)"/>
+        <g class="ga06-crouch ga06-man">
+          <circle cx="150" cy="192" r="11"/>
+          <path d="M150 203 L148 232 M148 232 L132 246 L136 262 M148 232 L166 246 L162 262 M149 210 L132 180 M149 210 L168 180"/>
+        </g>
+        <g class="ga06-stand ga06-man">
+          <circle cx="150" cy="168" r="11"/>
+          <path d="M150 179 L150 222 M150 222 L138 262 M150 222 L162 262 M150 188 L136 140 M150 188 L164 140"/>
+        </g>
+        <g class="ga06-helper">
+          <g class="ga06-man"><circle cx="76" cy="170" r="11"/><path d="M76 181 L76 222 M76 222 L64 262 M76 222 L88 262 M76 190 L100 116"/></g>
+          <g class="ga06-man"><circle cx="224" cy="170" r="11"/><path d="M224 181 L224 222 M224 222 L212 262 M224 222 L236 262 M224 190 L200 116"/></g>
+        </g>
+        <g class="ga06-rock-g">
+          <path class="ga06-rock" d="M100 132 C94 104 112 76 144 72 C172 68 200 86 204 114 C208 146 190 176 152 178 C120 180 104 160 100 132 Z"/>
+          <text x="152" y="130" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--bg)">too heavy</text>
+          <text x="152" y="148" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--bg)">for one man</text>
+        </g>
+        <g class="ga06-walker">
+          <rect class="ga06-pack" x="420" y="160" width="24" height="40" rx="6"/>
+          <g class="ga06-man"><circle cx="452" cy="150" r="11"/><path d="M450 161 L448 212 M448 212 L436 262 M448 212 L462 262 M449 175 L468 200 M446 166 L438 178"/></g>
+        </g>
+        <text x="150" y="286" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--ink)">“one another’s burdens”</text>
+        <text x="150" y="306" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a crushing weight</text>
+        <text x="450" y="286" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--ink)">“his own burden”</text>
+        <text x="450" y="306" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a soldier's pack</text>
+      </svg>
+    </div>
+    <p class="note step ga06-lift">Verse 2 and verse 5 use two different Greek words. The <em>“burdens”</em> of verse 2 are crushing weights: a relapse, a death, a court date, a craving at two in the morning. Nobody carries those alone. Pick up the phone. Show up.</p>
+    <p class="note step">The <em>“burden”</em> of verse 5 is a soldier's pack, the gear every man carries for himself: your own choices, your job, your own walk with God. Nobody can carry that for you, and you shouldn't ask them to.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3-4"></blockquote>
+    <h2 class="rise" style="--d:1">Stop measuring by the next man</h2>
+    <div class="mirror">
+      <div class="step"><span>Next to him</span><span class="arrow">→</span><span class="word">“at least I'm not as bad as he is”</span><small>“he deceiveth himself” (v. 3)</small></div>
+      <div class="step"><span>Next to him</span><span class="arrow">→</span><span class="word">“I'll never be like him”</span><small>that's the same mistake, upside down</small></div>
+      <div class="step"><span>Before God</span><span class="arrow">→</span><span class="word">“prove his own work”</span><small>test your own work honestly, and be glad of what God is doing in you</small></div>
+    </div>
+    <p class="note step">The man who thinks he's too strong to fall won't restore anybody. He'll look down on them. Carry each other's weight; answer for your own walk. Both at once.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: SOWING AND REAPING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Whatsoever a man soweth</h2>
+    <p class="range rise" style="--d:2">Verses 6–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The crop always comes up. So sow the right seed, and don't quit.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-8" data-hl="Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap|he that soweth to the Spirit shall of the Spirit reap life everlasting"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Two plots of ground. Seeds drop into both. On the left, sow to the flesh: crooked stalks come up with withered heads, corruption. On the right, sow to the Spirit: straight stalks come up full of grain, life everlasting.">
+          <rect class="ga06-soil" x="0" y="214" width="600" height="86"/>
+          <line x1="0" y1="214" x2="600" y2="214" stroke-width="3" style="stroke:var(--leather)"/>
+          <line x1="300" y1="20" x2="300" y2="300" stroke-width="2" stroke-dasharray="6 6" style="stroke:var(--line-strong)"/>
+          <text x="150" y="26" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--danger)">sow to the flesh</text>
+          <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">sow to the Spirit</text>
+          <g class="seed-fall" style="fill:var(--ink-soft)"><ellipse cx="110" cy="236" rx="7" ry="10"/><ellipse cx="150" cy="240" rx="7" ry="10"/><ellipse cx="190" cy="236" rx="7" ry="10"/></g>
+          <g class="seed-fall" style="fill:var(--warm)"><ellipse cx="410" cy="236" rx="7" ry="10"/><ellipse cx="450" cy="240" rx="7" ry="10"/><ellipse cx="490" cy="236" rx="7" ry="10"/></g>
+          <g class="seed-stalk" style="--w:0s"><path class="ga06-bad" d="M110 226 L104 196 L116 170 L102 140 L112 118 M104 196 L90 186 M116 170 L130 162"/></g>
+          <g class="seed-stalk" style="--w:.2s"><path class="ga06-bad" d="M150 230 L158 196 L144 166 L156 134 L148 104 M144 166 L130 156 M156 134 L172 128"/></g>
+          <g class="seed-stalk" style="--w:.4s"><path class="ga06-bad" d="M190 226 L184 198 L198 170 L186 146 L194 124 M198 170 L212 164"/></g>
+          <g style="fill:color-mix(in srgb, var(--ink-soft) 75%, var(--danger))">
+            <g class="seed-head" style="--w:0s"><path d="M112 118 Q122 120 120 134 Q112 130 112 118 Z"/></g>
+            <g class="seed-head" style="--w:.2s"><path d="M148 104 Q136 108 138 122 Q148 118 148 104 Z"/></g>
+            <g class="seed-head" style="--w:.4s"><path d="M194 124 Q204 128 200 142 Q193 136 194 124 Z"/></g>
+          </g>
+          <g class="seed-stalk" style="--w:0s"><path class="ga06-good" d="M410 226 Q412 160 408 70"/></g>
+          <g class="seed-stalk" style="--w:.2s"><path class="ga06-good" d="M450 230 Q452 150 450 54"/></g>
+          <g class="seed-stalk" style="--w:.4s"><path class="ga06-good" d="M490 226 Q488 160 492 70"/></g>
+          <g style="fill:var(--warm)">
+            <g class="seed-head" style="--w:0s"><ellipse cx="401" cy="76" rx="6" ry="10"/><ellipse cx="415" cy="76" rx="6" ry="10"/><ellipse cx="401" cy="96" rx="6" ry="10"/><ellipse cx="415" cy="96" rx="6" ry="10"/><ellipse cx="408" cy="58" rx="5" ry="9"/></g>
+            <g class="seed-head" style="--w:.2s"><ellipse cx="443" cy="60" rx="6" ry="10"/><ellipse cx="457" cy="60" rx="6" ry="10"/><ellipse cx="443" cy="80" rx="6" ry="10"/><ellipse cx="457" cy="80" rx="6" ry="10"/><ellipse cx="450" cy="42" rx="5" ry="9"/></g>
+            <g class="seed-head" style="--w:.4s"><ellipse cx="485" cy="76" rx="6" ry="10"/><ellipse cx="499" cy="76" rx="6" ry="10"/><ellipse cx="485" cy="96" rx="6" ry="10"/><ellipse cx="499" cy="96" rx="6" ry="10"/><ellipse cx="492" cy="58" rx="5" ry="9"/></g>
+          </g>
+          <text class="seed-head" style="--w:.6s;fill:var(--glow)" x="150" y="276" text-anchor="middle" font-size="19" font-weight="700">corruption</text>
+          <text class="seed-head" style="--w:.6s;fill:var(--glow)" x="450" y="276" text-anchor="middle" font-size="19" font-weight="700">life everlasting</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The crop comes up</h2>
+        <p class="note rise" style="--d:2"><em>“Mocked”</em> means to turn your nose up at someone, as if he'd never notice. A farmer can't plant weed seed and pray for wheat.</p>
+        <p class="note step seed-grow">Every day you're sowing into one field or the other: what you watch, who you run with, where your money goes. Verse 6 is one kind of sowing too: <em>“communicate”</em> means share, so support the men who teach you the Word.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Grace, and the crop</h2>
+    <div class="columns">
+      <div class="col grace step"><span class="who">What grace does</span><h3>The debt is gone</h3><p>Confessed sin is forgiven, completely, the moment you bring it to God. No condemnation. He doesn't hold it over you, and you don't have to pay it off.</p></div>
+      <div class="col law step"><span class="who">What can still come up</span><h3>The crop</h3><p>Grace forgives the sin, but seeds already planted can still sprout: a record, a damaged body, a wife who doesn't trust you yet, kids who are wary. God is not mocked.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">Don't let regret tell you that the bad crop means God hasn't forgiven you. He has. Face the harvest honestly, with Him beside you. And here's the hope: you can start sowing to the Spirit today. That crop comes up too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="let us not be weary in well doing: for in due season we shall reap, if we faint not|let us do good unto all men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9"></blockquote>
+    <h2 class="rise" style="--d:1">In due season</h2>
+    <ol class="timeline" aria-label="A season in five steps. Sow: today's right choice. Water: keep at it. Wait: nothing showing. Wait: still nothing. Reap: in due season.">
+      <li style="--k:0"><b>Sow</b><span>today's right choice</span></li>
+      <li style="--k:1"><b>Water</b><span>keep at it</span></li>
+      <li class="wait" style="--k:2"><b>Wait</b><span>nothing showing</span></li>
+      <li class="wait" style="--k:3"><b>Wait</b><span>still nothing</span></li>
+      <li class="lit" style="--k:4"><b>Reap</b><span>“in due season”</span><small>if we faint not</small></li>
+    </ol>
+    <p class="note step">Every man in recovery knows the waiting part: thirty days clean and the bills are still there, the court date is still coming, and she still won't call. That's the season Paul is talking to. <em>“Faint”</em> means give out, quit. The harvest is God's job; not quitting is yours.</p>
+    <blockquote class="quote step"><p>“They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.”</p><cite>Psalm 126:5–6</cite></blockquote>
+    <p class="note step">Verse 10: do good <em>“as we have therefore opportunity.”</em> Today will hand you a few chances. Take one.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: WITH MINE OWN HAND ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">With mine own hand</h2>
+    <p class="range rise" style="--d:2">Verses 11–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Paul signs off: the cross, a new creature, and grace.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="Ye see how large a letter I have written unto you with mine own hand|make a fair shew in the flesh|that they may glory in your flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul takes the pen</h2>
+    <div class="ga06-page rise" style="--d:1">
+      <small>A helper writes as Paul speaks</small>
+      <p class="ga06-scribe">And let us not be weary in well doing: for in due season we shall reap, if we faint not. As we have therefore opportunity, let us do good unto all men, especially unto them who are of the household of faith.</p>
+      <small>Then Paul writes himself</small>
+      <p class="ga06-big step">Ye see how large a letter I have written unto you with mine own hand.</p>
+    </div>
+    <p class="note step">Paul usually spoke his letters to a helper who wrote them down (Romans 16:22), then added a line in his own hand at the end (2 Thessalonians 3:17). Many Bible teachers take verse 11 to mean <em>see what large letters I write</em>: Paul's own handwriting was big, maybe from his weak eyes (4:15), maybe to make sure they didn't miss this part.</p>
+    <p class="note step">And this part is about the false teachers. They wanted to <em>“make a fair shew in the flesh”</em>: to count circumcised Gentiles like trophies. They didn't even keep the law themselves.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-16" data-hl="God forbid that I should glory, save in the cross of our Lord Jesus Christ|by whom the world is crucified unto me, and I unto the world|but a new creature"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14"></blockquote>
+    <p class="saying rise" style="--d:1">Nothing to boast about <em>but the cross.</em></p>
+    <div class="mirror">
+      <div class="step"><span>The world</span><span class="arrow">→</span><span class="word">“crucified unto me”</span><small>its applause, its pleasures and its opinion of me are dead to me now</small></div>
+      <div class="step"><span>And I</span><span class="arrow">→</span><span class="word">“unto the world”</span><small>and I'm dead to it: it has nothing left to offer me and no hold on me</small></div>
+    </div>
+    <p class="note step"><em>“Glory”</em> means boast. The false teachers boasted in numbers. Paul could have boasted in his record (1:14). He boasted in one thing: a Roman cross where Jesus died for him. That's the only boast a forgiven man has, and it's enough.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15"></blockquote>
+    <h2 class="rise" style="--d:1">What counts</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">Circumcised</span><span class="why">what was done to your body</span></li>
+      <li class="step"><span class="k">Uncircumcised</span><span class="why">what wasn't</span></li>
+      <li class="step yes"><span class="k">“a new creature”</span><span class="why">what God has done in you</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+    <p class="note step">Verse 16 blesses everyone who walks by <em>“this rule”</em>: the cross, and a new creature. Bible teachers differ on <em>“the Israel of God”</em>: some take it as Jewish believers in Christ, others as all believers together. Either way, peace and mercy rest on every man who walks this way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="I bear in my body the marks of the Lord Jesus|the grace of our Lord Jesus Christ be with your spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="648 232 185 175" data-towns="Antioch in Pisidia:t, Iconium:t, Lystra!:r, Derbe:b, Antioch:b, Perga:l, Tarsus:t" role="img" aria-label="A map of the south of what is now Turkey. Paul's first journey runs from Antioch in Syria through the churches of Galatia: Antioch in Pisidia, Iconium, Lystra and Derbe. Lystra pulses: there Paul was stoned and left for dead.">
+          <path class="map-route" data-journey="1"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Scars they had seen</h2>
+        <div class="morph">
+          <span class="big rise" style="--d:2">στίγματα</span>
+          <span class="say step">said <em class="gk">STIG-ma-ta</em></span>
+          <span class="means step">brands: the marks burned into a slave to show who owned him</span>
+        </div>
+        <p class="note step">The false teachers wanted to put a mark on the Galatians' flesh. Paul already carried Jesus' marks: scars from whips, rods and stones. Some were made in Galatia itself. At Lystra a mob stoned him and dragged him out for dead (Acts 14:19).</p>
+      </div>
+    </div>
+    <p class="note step">Many of us carry marks too: from fights, needles, prison, the years we threw away. In Christ even those can tell whose you are now, and how far He brought you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">It starts and ends with grace</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:1"><div class="ref">The first words · Galatians 1:3</div><div class="kjv">“Grace be to you and peace from God the Father, and from our Lord Jesus Christ,”</div></div>
+      <div class="scroll rise" style="--d:2"><div class="ref">The last words · Galatians 6:18</div><div class="kjv">“Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen.”</div></div>
+    </div>
+    <p class="note step">After six chapters of hard words, the very last thing Paul calls them is <em>“Brethren.”</em> He is still their brother. Every bit of the letter was written to get them back to the grace they started with.</p>
+    <p class="note step">If you've drifted into trying to earn God's love, or you've used grace as an excuse, the way back is the same: grace. It's where the letter starts, and it's where it ends.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The whole letter, looking back</h2>
+    <ol class="ga06-arc">
+      <li style="--k:0"><i>Chapter 1</i><b>No other gospel</b><q>Who gave himself for our sins</q><small>1:4</small></li>
+      <li style="--k:1"><i>Chapter 2</i><b>Crucified with Christ</b><q>I am crucified with Christ: nevertheless I live</q><small>2:20</small></li>
+      <li style="--k:2"><i>Chapter 3</i><b>By faith, not the law</b><q>The just shall live by faith</q><small>3:11</small></li>
+      <li style="--k:3"><i>Chapter 4</i><b>Sons, not slaves</b><q>Wherefore thou art no more a servant, but a son</q><small>4:7</small></li>
+      <li style="--k:4"><i>Chapter 5</i><b>Walk in the Spirit</b><q>Stand fast therefore in the liberty wherewith Christ hath made us free</q><small>5:1</small></li>
+      <li class="now" style="--k:5"><i>Chapter 6</i><b>Carry each other</b><q>Bear ye one another’s burdens</q><small>6:2</small></li>
+    </ol>
+    <p class="note step">Galatians in one breath: Jesus gave Himself for your sins. You're made right with God by faith in Him, not by keeping rules. That makes you a son, not a slave. So stand free, walk with the Spirit, and carry your brothers.</p>
+    <p class="note step">If you fell yesterday, chapter 6 says your brothers should come and get you. If you're tired of trying to be good enough, chapter 3 says you never could be, and Christ already was. Start it again any time you need it.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Restoring</span><span class="seed-q">“Restore such an one in the spirit of meekness” <cite>6:1</cite></span><span class="take">When a brother falls, go get him: gently, humbly, knowing it could be you.</span></li>
+      <li class="step"><span class="topic">Burdens</span><span class="seed-q">“Bear ye one another’s burdens” <cite>6:2</cite></span><span class="take">Help carry what crushes your brother. Carry your own pack yourself.</span></li>
+      <li class="step"><span class="topic">Sowing</span><span class="seed-q">“Whatsoever a man soweth, that shall he also reap” <cite>6:7</cite></span><span class="take">Grace forgives the sin; old seed can still come up. Start sowing to the Spirit today.</span></li>
+      <li class="step"><span class="topic">Weary</span><span class="seed-q">“In due season we shall reap, if we faint not” <cite>6:9</cite></span><span class="take">The harvest is God's job. Not quitting is yours.</span></li>
+      <li class="step"><span class="topic">The cross</span><span class="seed-q">“God forbid that I should glory, save in the cross” <cite>6:14</cite></span><span class="take">Not your record, not your numbers: only the cross is worth boasting about.</span></li>
+      <li class="step"><span class="topic">A new creature</span><span class="seed-q">“But a new creature” <cite>6:15</cite></span><span class="take">What counts isn't what was done to your body, but what God has done in you.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Restoring</span>
+      <h2>What should we do when a brother is overtaken in a fault?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.”</p><cite>James 5:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Restore him: go to him and help mend what tore. Do it gently, not with a lecture, and humbly, remembering you could fall too. And if you're the one who fell, don't hide it. Confess it to a brother and let him help.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Burdens</span>
+      <h2>Which burdens do we carry together, and which does each man carry himself?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <blockquote class="quote step"><p>“For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up.”</p><cite>Ecclesiastes 4:10</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We carry together the crushing weights no man can lift alone: a fall, a loss, a crisis. Each man carries his own pack: his own choices and his own walk with God. Both are true at once.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Sowing</span>
+      <h2>If God forgives our sin, why do the consequences still come?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God is not mocked: what a man sows comes up. Forgiveness takes away the guilt, completely, but seed already in the ground can still sprout. God walks with us through that harvest, and we can start sowing to the Spirit today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Weary</span>
+      <h2>What does God promise the man who keeps doing right and sees nothing yet?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step"><p>“They that sow in tears shall reap in joy.”</p><cite>Psalm 126:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A harvest, “in due season.” Not on our schedule, but surely. Our part is not to faint: to keep sowing and keep doing good while we wait.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The cross</span>
+      <h2>What was the one thing Paul would boast about?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step"><p>“I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.”</p><cite>Galatians 2:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The cross of Jesus Christ. Not his past, his record or his converts. The cross is where Jesus loved him and gave Himself for him, and there the world lost its grip on him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">A new creature</span>
+      <h2>What really counts with God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="15"></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not rituals or marks in the flesh, and not a clean record. What counts is a new creature: a man made new by God through faith in Christ. Old things passed away. That's what happened to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="2"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Galatians chapter 6
+const V = {
+  1: "Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.",
+  2: "Bear ye one another’s burdens, and so fulfil the law of Christ.",
+  3: "For if a man think himself to be something, when he is nothing, he deceiveth himself.",
+  4: "But let every man prove his own work, and then shall he have rejoicing in himself alone, and not in another.",
+  5: "For every man shall bear his own burden.",
+  6: "Let him that is taught in the word communicate unto him that teacheth in all good things.",
+  7: "Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap.",
+  8: "For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.",
+  9: "And let us not be weary in well doing: for in due season we shall reap, if we faint not.",
+  10: "As we have therefore opportunity, let us do good unto all men, especially unto them who are of the household of faith.",
+  11: "Ye see how large a letter I have written unto you with mine own hand.",
+  12: "As many as desire to make a fair shew in the flesh, they constrain you to be circumcised; only lest they should suffer persecution for the cross of Christ.",
+  13: "For neither they themselves who are circumcised keep the law; but desire to have you circumcised, that they may glory in your flesh.",
+  14: "But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world.",
+  15: "For in Christ Jesus neither circumcision availeth any thing, nor uncircumcision, but a new creature.",
+  16: "And as many as walk according to this rule, peace be on them, and mercy, and upon the Israel of God.",
+  17: "From henceforth let no man trouble me: for I bear in my body the marks of the Lord Jesus.",
+  18: "Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen."
+};
+const BOOK = "Galatians 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

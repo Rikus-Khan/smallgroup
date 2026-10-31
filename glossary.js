@@ -416,6 +416,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 14 ] ],
    [
+    "Galatians", 5,
+    [ 6 ] ],
+   [
+    "Galatians", 6,
+    [ 14, 15, 17, 18 ] ],
+   [
     "Ephesians", 1,
     [ 1, 2, 3, 5, 15, 17 ] ],
    [
@@ -1498,6 +1504,12 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 6, 29 ] ],
+   [
+    "Galatians", 5,
+    [ 5, 16, 17, 18, 22, 25 ] ],
+   [
+    "Galatians", 6,
+    [ 8 ] ],
    [
     "Ephesians", 1,
     [ 13 ] ],
@@ -3698,6 +3710,9 @@ window.GLOSSARY = [
     "2 Corinthians", 3,
     [ 7, 13 ] ],
    [
+    "Galatians", 6,
+    [ 16 ] ],
+   [
     "Ephesians", 2,
     [ 12 ] ],
    [
@@ -4559,6 +4574,12 @@ window.GLOSSARY = [
     "Galatians", 2,
     [ 9, 21 ] ],
    [
+    "Galatians", 5,
+    [ 4 ] ],
+   [
+    "Galatians", 6,
+    [ 18 ] ],
+   [
     "Ephesians", 1,
     [ 6, 7 ] ],
    [
@@ -4735,6 +4756,9 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 16 ] ],
+   [
+    "Galatians", 5,
+    [ 7 ] ],
    [
     "Ephesians", 1,
     [ 13 ] ],
@@ -4985,6 +5009,12 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 5 ] ],
    [
+    "Galatians", 5,
+    [ 26 ] ],
+   [
+    "Galatians", 6,
+    [ 13, 14 ] ],
+   [
     "Ephesians", 1,
     [ 6, 12, 14, 17, 18 ] ],
    [
@@ -5215,6 +5245,12 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 4, 5, 21 ] ],
+   [
+    "Galatians", 5,
+    [ 3, 4, 14, 18, 23 ] ],
+   [
+    "Galatians", 6,
+    [ 2, 13 ] ],
    [
     "Ephesians", 2,
     [ 15 ] ],
@@ -5539,6 +5575,12 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 7, 14, 19 ] ],
+   [
+    "Galatians", 5,
+    [ 1, 2, 4, 6, 24 ] ],
+   [
+    "Galatians", 6,
+    [ 2, 12, 14, 15, 18 ] ],
    [
     "Ephesians", 1,
     [ 1, 2, 3, 5, 10, 12, 17, 20 ] ],
@@ -7859,6 +7901,9 @@ window.GLOSSARY = [
     "Galatians", 3,
     [ 6, 21 ] ],
    [
+    "Galatians", 5,
+    [ 5 ] ],
+   [
     "Ephesians", 4,
     [ 24 ] ],
    [
@@ -8657,6 +8702,9 @@ window.GLOSSARY = [
     "Romans", 13,
     [ 4, 5 ] ],
    [
+    "Galatians", 5,
+    [ 20 ] ],
+   [
     "Ephesians", 2,
     [ 3 ] ],
    [
@@ -8871,6 +8919,9 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "1 Corinthians", 11,
+    [ 21 ] ],
+   [
+    "Galatians", 5,
     [ 21 ] ] ]
  },
  {
@@ -9177,7 +9228,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Romans", 13,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Galatians", 5,
+    [ 19 ] ] ]
  },
  {
   "id": "apple-of-the-eye",
@@ -9873,6 +9927,9 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "2 Corinthians", 12,
+    [ 20 ] ],
+   [
+    "Galatians", 5,
     [ 20 ] ],
    [
     "Philippians", 1,
@@ -10572,7 +10629,10 @@ window.GLOSSARY = [
     [ 2, 3, 5 ] ],
    [
     "Romans", 5,
-    [ 16, 18 ] ] ]
+    [ 16, 18 ] ],
+   [
+    "Galatians", 5,
+    [ 10 ] ] ]
  },
  {
   "id": "scriptures",
@@ -12230,6 +12290,12 @@ window.GLOSSARY = [
     "Galatians", 2,
     [ 3, 7, 8, 9, 12 ] ],
    [
+    "Galatians", 5,
+    [ 2, 3, 6, 11 ] ],
+   [
+    "Galatians", 6,
+    [ 12, 13, 15 ] ],
+   [
     "Philippians", 3,
     [ 3 ] ],
    [
@@ -13017,7 +13083,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Galatians", 4,
-    [ 26, 30, 31 ] ] ]
+    [ 26, 30, 31 ] ],
+   [
+    "Galatians", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "bondage",
@@ -13044,7 +13113,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Galatians", 4,
-    [ 3, 9, 24, 25 ] ] ]
+    [ 3, 9, 24, 25 ] ],
+   [
+    "Galatians", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "servant-of-sin",
@@ -13197,7 +13269,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "1 Corinthians", 15,
-    [ 50 ] ] ]
+    [ 50 ] ],
+   [
+    "Galatians", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "wind",
@@ -14201,6 +14276,12 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 3 ] ],
    [
+    "Galatians", 5,
+    [ 22 ] ],
+   [
+    "Galatians", 6,
+    [ 16 ] ],
+   [
     "Ephesians", 4,
     [ 3 ] ],
    [
@@ -14546,6 +14627,9 @@ window.GLOSSARY = [
     "2 Corinthians", 8,
     [ 24 ] ],
    [
+    "Galatians", 6,
+    [ 12 ] ],
+   [
     "Ephesians", 2,
     [ 7 ] ],
    [
@@ -14770,6 +14854,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 15,
     [ 15 ] ],
+   [
+    "Galatians", 5,
+    [ 3 ] ],
    [
     "Ephesians", 4,
     [ 17 ] ] ]
@@ -15755,6 +15842,9 @@ window.GLOSSARY = [
     "1 Corinthians", 15,
     [ 27 ] ],
    [
+    "Galatians", 5,
+    [ 19 ] ],
+   [
     "Colossians", 1,
     [ 26 ] ] ]
  },
@@ -16411,6 +16501,12 @@ window.GLOSSARY = [
    [
     "Galatians", 3,
     [ 1 ] ],
+   [
+    "Galatians", 5,
+    [ 11, 24 ] ],
+   [
+    "Galatians", 6,
+    [ 12, 14 ] ],
    [
     "Ephesians", 2,
     [ 16 ] ],
@@ -17903,6 +17999,9 @@ window.GLOSSARY = [
     "2 Corinthians", 4,
     [ 1 ] ],
    [
+    "Galatians", 6,
+    [ 16 ] ],
+   [
     "Ephesians", 2,
     [ 4 ] ],
    [
@@ -18345,7 +18444,10 @@ window.GLOSSARY = [
     [ 12, 13 ] ],
    [
     "2 Corinthians", 9,
-    [ 6, 10 ] ] ]
+    [ 6, 10 ] ],
+   [
+    "Galatians", 6,
+    [ 7, 8, 9 ] ] ]
  },
  {
   "id": "chastise",
@@ -20196,7 +20298,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "1 Corinthians", 5,
-    [ 6, 7, 8 ] ] ]
+    [ 6, 7, 8 ] ],
+   [
+    "Galatians", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "free-offerings",
@@ -20979,7 +21084,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "2 Corinthians", 6,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Galatians", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "vile",
@@ -21096,7 +21204,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Nahum", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "wellfavoured",
@@ -21264,7 +21375,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Nahum", 3,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "standing-images",
@@ -22131,6 +22245,12 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "2 Corinthians", 10,
+    [ 1 ] ],
+   [
+    "Galatians", 5,
+    [ 23 ] ],
+   [
+    "Galatians", 6,
     [ 1 ] ],
    [
     "Ephesians", 4,
@@ -26580,7 +26700,10 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Luke", 12,
-    [ 51, 52, 53 ] ] ]
+    [ 51, 52, 53 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "lose-his-life",
@@ -26718,7 +26841,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "1 Corinthians", 10,
-    [ 9, 13 ] ] ]
+    [ 9, 13 ] ],
+   [
+    "Galatians", 6,
+    [ 1 ] ] ]
  },
  {
   "id": "an-hungred",
@@ -27005,6 +27131,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 29 ] ],
    [
+    "Galatians", 5,
+    [ 11 ] ],
+   [
+    "Galatians", 6,
+    [ 12 ] ],
+   [
     "Philippians", 3,
     [ 6 ] ] ]
  },
@@ -27180,7 +27312,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 10,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Galatians", 5,
+    [ 16, 17, 24 ] ] ]
  },
  {
   "id": "divorcement",
@@ -27234,7 +27369,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "2 Corinthians", 12,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Galatians", 5,
+    [ 19 ] ] ]
  },
  {
   "id": "forswear",
@@ -27916,6 +28054,9 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 5 ] ],
+   [
+    "Galatians", 6,
+    [ 18 ] ],
    [
     "Ephesians", 3,
     [ 21 ] ],
@@ -30240,7 +30381,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Romans", 13,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Galatians", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "eye-of-a-needle",
@@ -30790,6 +30934,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 12,
     [ 21 ] ],
+   [
+    "Galatians", 5,
+    [ 19 ] ],
    [
     "Ephesians", 4,
     [ 19 ] ] ]
@@ -31885,6 +32032,9 @@ window.GLOSSARY = [
    [
     "Romans", 15,
     [ 2 ] ],
+   [
+    "Galatians", 5,
+    [ 14 ] ],
    [
     "Ephesians", 4,
     [ 25 ] ] ]
@@ -33789,7 +33939,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 22,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Galatians", 5,
+    [ 1 ] ] ]
  },
  {
   "id": "god-of-abraham",
@@ -34098,7 +34251,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 18,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Galatians", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "smote-upon-his-breast",
@@ -34143,7 +34299,10 @@ window.GLOSSARY = [
     [ 16, 17 ] ],
    [
     "Galatians", 3,
-    [ 8, 11, 24 ] ] ]
+    [ 8, 11, 24 ] ],
+   [
+    "Galatians", 5,
+    [ 4 ] ] ]
  },
  {
   "id": "beginnings-of-sorrows",
@@ -34413,7 +34572,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Galatians", 3,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Galatians", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "broken-or-ground",
@@ -34597,6 +34759,9 @@ window.GLOSSARY = [
    [
     "Romans", 13,
     [ 13 ] ],
+   [
+    "Galatians", 5,
+    [ 26 ] ],
    [
     "Philippians", 1,
     [ 15 ] ] ]
@@ -37010,6 +37175,9 @@ window.GLOSSARY = [
     "Galatians", 1,
     [ 1 ] ],
    [
+    "Galatians", 5,
+    [ 2 ] ],
+   [
     "Ephesians", 1,
     [ 1 ] ],
    [
@@ -38610,7 +38778,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "1 Corinthians", 10,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "consorted",
@@ -39369,7 +39540,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 24,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "ringleader",
@@ -39399,7 +39573,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Corinthians", 11,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
  },
  {
   "id": "void-of-offence",
@@ -39417,7 +39594,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 24,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Galatians", 5,
+    [ 23 ] ] ]
  },
  {
   "id": "judgment-to-come",
@@ -40241,6 +40421,9 @@ window.GLOSSARY = [
     "2 Corinthians", 6,
     [ 6 ] ],
    [
+    "Galatians", 5,
+    [ 22 ] ],
+   [
     "Ephesians", 4,
     [ 2 ] ],
    [
@@ -40318,6 +40501,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 15,
     [ 19 ] ],
+   [
+    "Galatians", 5,
+    [ 5 ] ],
    [
     "Ephesians", 1,
     [ 18 ] ],
@@ -40672,6 +40858,9 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 12,
     [ 21 ] ],
+   [
+    "Galatians", 5,
+    [ 19 ] ],
    [
     "Ephesians", 4,
     [ 19 ] ] ]
@@ -41221,6 +41410,12 @@ window.GLOSSARY = [
    [
     "Galatians", 4,
     [ 12, 28, 31 ] ],
+   [
+    "Galatians", 5,
+    [ 11, 13 ] ],
+   [
+    "Galatians", 6,
+    [ 1, 18 ] ],
    [
     "Philippians", 3,
     [ 1, 13, 17 ] ],
@@ -41978,6 +42173,12 @@ window.GLOSSARY = [
     "Galatians", 4,
     [ 23, 29 ] ],
    [
+    "Galatians", 5,
+    [ 13, 16, 17, 19, 24 ] ],
+   [
+    "Galatians", 6,
+    [ 8, 12, 13 ] ],
+   [
     "Ephesians", 2,
     [ 3 ] ],
    [
@@ -42160,6 +42361,9 @@ window.GLOSSARY = [
    [
     "Galatians", 1,
     [ 6, 15 ] ],
+   [
+    "Galatians", 5,
+    [ 13 ] ],
    [
     "Ephesians", 4,
     [ 1, 4 ] ] ]
@@ -43098,7 +43302,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 5,
-    [ 6, 7 ] ] ]
+    [ 6, 7 ] ],
+   [
+    "Galatians", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "sincerity",
@@ -43224,7 +43431,10 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "1 Corinthians", 15,
-    [ 50 ] ] ]
+    [ 50 ] ],
+   [
+    "Galatians", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "adulterers",
@@ -43866,7 +44076,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Galatians", 2,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Galatians", 5,
+    [ 1, 13 ] ] ]
  },
  {
   "id": "offence",
@@ -43878,7 +44091,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "2 Corinthians", 6,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Galatians", 5,
+    [ 11 ] ] ]
  },
  {
   "id": "unknown-tongue",
@@ -44394,7 +44610,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 16,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Galatians", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "maranatha",
@@ -44802,7 +45021,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 5,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Galatians", 6,
+    [ 15 ] ] ]
  },
  {
   "id": "ambassadors",
@@ -44949,7 +45171,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 12,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Galatians", 5,
+    [ 21 ] ] ]
  },
  {
   "id": "wraths",
@@ -45694,6 +45919,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Communicate (share in, stand beside)",
   "refs": [
+   [
+    "Galatians", 6,
+    [ 6 ] ],
    [
     "Philippians", 4,
     [ 14, 15 ] ] ]
@@ -46618,5 +46846,251 @@ window.GLOSSARY = [
    [
     "Ephesians", 2,
     [ 22 ] ] ]
+ },
+ {
+  "id": "fallen-from-grace",
+  "kind": "term",
+  "name": "Fallen from grace (turned from grace back to law-keeping as the way to be right with God)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "availeth",
+  "kind": "term",
+  "name": "Availeth (counts for anything, gets you anywhere)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 6 ] ],
+   [
+    "Galatians", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "faith-worketh-by-love",
+  "kind": "term",
+  "name": "Faith which worketh by love (real faith goes to work through love)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "hinder-runner",
+  "kind": "term",
+  "name": "Hinder (cut in on a runner and knock him off his stride)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "occasion-to-the-flesh",
+  "kind": "term",
+  "name": "An occasion to the flesh (a base for the old life to launch from)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "walk-in-the-spirit",
+  "kind": "term",
+  "name": "Walk in the Spirit (live step by step with the Holy Spirit)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 16, 25 ] ] ]
+ },
+ {
+  "id": "works-of-the-flesh",
+  "kind": "term",
+  "name": "The works of the flesh (what the old sinful self produces)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "hatred",
+  "kind": "term",
+  "name": "Hatred",
+  "refs": [
+   [
+    "Proverbs", 10,
+    [ 18 ] ],
+   [
+    "Proverbs", 15,
+    [ 17 ] ],
+   [
+    "Proverbs", 26,
+    [ 26 ] ],
+   [
+    "Hosea", 9,
+    [ 7, 8 ] ],
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "emulations",
+  "kind": "term",
+  "name": "Emulations (jealous rivalry)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "revellings",
+  "kind": "term",
+  "name": "Revellings (wild, drunken parties)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "fruit-of-the-spirit",
+  "kind": "term",
+  "name": "The fruit of the Spirit (what the Holy Spirit grows in a believer)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "gentleness",
+  "kind": "term",
+  "name": "Gentleness (kindness)",
+  "refs": [
+   [
+    "2 Corinthians", 10,
+    [ 1 ] ],
+   [
+    "Galatians", 5,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "vain-glory",
+  "kind": "term",
+  "name": "Vain glory (empty bragging, showing off)",
+  "refs": [
+   [
+    "Galatians", 5,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "overtaken-in-a-fault",
+  "kind": "term",
+  "name": "Overtaken in a fault (caught off guard by sin, or caught in the act)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "restore-such-an-one",
+  "kind": "term",
+  "name": "Restore (mend, set right: the word for mending nets and setting bones)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bear-one-anothers-burdens",
+  "kind": "term",
+  "name": "Bear one another's burdens (help carry what is too heavy for one man)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "law-of-christ",
+  "kind": "term",
+  "name": "The law of Christ (His command to love one another)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "god-is-not-mocked",
+  "kind": "term",
+  "name": "God is not mocked (no one fools God: what a man sows, he reaps)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "well-doing",
+  "kind": "term",
+  "name": "Well doing (doing good)",
+  "refs": [
+   [
+    "Romans", 2,
+    [ 7 ] ],
+   [
+    "Galatians", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "due-season",
+  "kind": "term",
+  "name": "Due season (the right time, God's time)",
+  "refs": [
+   [
+    "Proverbs", 15,
+    [ 23 ] ],
+   [
+    "Matthew", 24,
+    [ 45 ] ],
+   [
+    "Luke", 12,
+    [ 42 ] ],
+   [
+    "Galatians", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "household-of-faith",
+  "kind": "term",
+  "name": "The household of faith (the family of believers)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "fair-shew",
+  "kind": "term",
+  "name": "A fair shew in the flesh (a good outward show to boast about)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "israel-of-god",
+  "kind": "term",
+  "name": "The Israel of God",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "marks-of-the-lord-jesus",
+  "kind": "term",
+  "name": "The marks of the Lord Jesus (Paul's scars, like a slave's brand)",
+  "refs": [
+   [
+    "Galatians", 6,
+    [ 17 ] ] ]
  }
 ];
