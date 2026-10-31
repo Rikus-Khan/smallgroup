@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv07-where: where this chapter sits in Revelation, the current chapter lit (a deck.css candidate for every Revelation study). */
+.rv07-where { display: flex; gap: 6px; margin: .3em 0 .8em; }
+.rv07-sec { flex: var(--n) 1 0; min-width: 0; }
+.rv07-cells { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 2px; }
+.rv07-cells i { display: grid; place-items: center; height: 2.1em; font: 700 clamp(.7rem, .6rem + .3vw, .9rem) var(--sans); color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.rv07-cells i.now { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.slide.active .rv07-cells i.now { animation: rv07-beat 1.8s ease-in-out infinite; }
+@keyframes rv07-beat { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent); } }
+.rv07-sec b { display: block; margin-top: .35em; padding-top: .3em; border-top: 2px solid var(--line-strong); font: 600 clamp(.72rem, .62rem + .35vw, .95rem)/1.2 var(--sans); color: var(--ink-soft); }
+.rv07-sec.here b { border-color: var(--accent); color: var(--accent-hot); }
+@media (max-width: 700px) {
+  .rv07-where { flex-direction: column; gap: 5px; }
+  .rv07-sec { display: grid; grid-template-columns: 1fr 8.5rem; gap: .7em; align-items: center; }
+  .rv07-cells { grid-template-columns: repeat(11, 1fr); }
+  .rv07-cells i { height: 1.7em; }
+  .rv07-sec b { margin: 0; padding: 0; border: 0; }
+}
+
+/* rv07-seals: seven seals in a row, the opened ones broken; a pause before the last (a deck.css candidate, paired with rv08-trumpets). */
+.rv07-seals svg { max-height: 20vh; }
+.rv07-wax { fill: var(--wine); stroke: var(--accent); stroke-width: 1.5; }
+.rv07-ring { fill: none; stroke: var(--glow); stroke-opacity: .55; stroke-width: 2; }
+.rv07-seals text { fill: var(--ink-soft); font-size: 15px; font-weight: 700; }
+.rv07-seals .rv07-lbl { fill: var(--accent-hot); font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 17px; }
+.rv07-gap { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; }
+.slide.active .rv07-gap { animation: rv07-glow 2.4s ease-in-out infinite; }
+@keyframes rv07-glow { 50% { fill: color-mix(in srgb, var(--accent) 28%, transparent); } }
+.rv07-half { transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1s ease; transition-delay: calc(var(--k, 0) * 160ms + 300ms); }
+.slide.active .rv07-half.l { transform: translate(-4px, 3px) rotate(-14deg); }
+.slide.active .rv07-half.r { transform: translate(4px, -2px) rotate(12deg); }
+.rv07-wait { transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv07-wait { animation: rv07-shiver 3s ease-in-out infinite; }
+@keyframes rv07-shiver { 0%, 80%, 100% { transform: none; } 85% { transform: rotate(-6deg); } 90% { transform: rotate(6deg); } 95% { transform: rotate(-3deg); } }
+
+/* rv07-winds: four angels hold back the winds while the servants are sealed (a deck.css candidate). */
+.rv07-earth { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.rv07-sea { fill: color-mix(in srgb, var(--cool) 40%, transparent); }
+.rv07-wave { fill: none; stroke: var(--cool); stroke-width: 2.5; }
+.rv07-trunk { stroke: var(--ink-soft); stroke-width: 4; stroke-linecap: round; }
+.rv07-leaf { fill: color-mix(in srgb, var(--cool) 55%, var(--ink-soft)); }
+.rv07-wing { fill: color-mix(in srgb, var(--glow) 70%, transparent); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv07-body { fill: var(--glow); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv07-gust { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; }
+.slide.active .rv07-push { animation: rv07-strain 1.6s ease-in-out infinite alternate; }
+@keyframes rv07-strain { from { transform: translate(0, 0); } to { transform: translate(var(--x), var(--y)); } }
+.rv07-hand { stroke: var(--accent-hot); stroke-width: 6; stroke-linecap: round; }
+.rv07-winds text { fill: var(--ink-soft); font-size: 16px; }
+.rv07-winds .rv07-lbl { fill: var(--accent-hot); font-weight: 700; }
+.rv07-east { opacity: 0; transform: translateY(90px); transition: opacity 1s ease, transform 1.6s cubic-bezier(.2,.7,.2,1); }
+.slide:has(.rv07-go.on) .rv07-east { opacity: 1; transform: none; }
+.rv07-sealdot { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+
+/* rv07-stamp: a seal pressed on, leaving God's mark (a deck.css candidate). */
+.rv07-headshape { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.rv07-stamp-tool { fill: var(--leather); stroke: var(--ink-soft); stroke-width: 2; }
+.rv07-stamp-face { fill: var(--accent); }
+.rv07-press { transform: translateY(-70px); }
+.slide.active .rv07-press { animation: rv07-press 3.2s .6s ease-in-out forwards; }
+@keyframes rv07-press { 0% { transform: translateY(-70px); } 35%, 50% { transform: translateY(0); } 100% { transform: translateY(-110px); opacity: 0; } }
+.rv07-mark { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv07-mark { animation: rv07-mark 1.2s 1.9s ease forwards; }
+@keyframes rv07-mark { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
+.rv07-markring { fill: color-mix(in srgb, var(--accent) 30%, transparent); stroke: var(--accent-hot); stroke-width: 3; }
+.rv07-stamp text { fill: var(--ink-soft); font-size: 17px; }
+.rv07-stamp .rv07-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* rv07-crowd: a multitude streaming in from every side to stand before the throne and the Lamb (a deck.css candidate). */
+.rv07-crowd svg { max-height: 60vh; }
+.rv07-man { opacity: 0; }
+.slide.active .rv07-man { animation: rv07-come 2.2s cubic-bezier(.2,.7,.3,1) both; animation-delay: calc(var(--k) * 1s + .3s); }
+@keyframes rv07-come { from { opacity: 0; translate: var(--dx) var(--dy); } 30% { opacity: 1; } to { opacity: 1; translate: 0 0; } }
+.rv07-robe-s { fill: var(--glow); stroke: var(--ink-soft); stroke-width: .8; }
+.rv07-head { stroke: var(--ink-soft); stroke-width: .6; }
+.rv07-head.h1 { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); }
+.rv07-head.h2 { fill: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); }
+.rv07-head.h3 { fill: color-mix(in srgb, var(--warm) 30%, var(--on-glow)); }
+.rv07-head.h4 { fill: color-mix(in srgb, var(--wine) 35%, var(--glow)); }
+.rv07-palm { fill: none; stroke: var(--cool); stroke-width: 1.6; stroke-linecap: round; }
+.rv07-bow { fill: none; stroke: var(--cool); stroke-width: 5; opacity: .7; }
+.rv07-seat { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+.rv07-halo { fill: var(--glow); opacity: .25; transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv07-halo { animation: rv07-halo 3s ease-in-out infinite alternate; }
+@keyframes rv07-halo { to { opacity: .55; transform: scale(1.25); } }
+.rv07-lamb .wool { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 1.2; }
+.rv07-lamb .leg { stroke: var(--ink-soft); stroke-width: 2; stroke-linecap: round; }
+.rv07-crowd text { fill: var(--ink-soft); font-size: 15px; }
+
+/* rv07-robe: a stained robe washed white in red (a deck.css candidate). */
+.rv07-robe svg { max-height: 50vh; }
+.rv07-dirty { fill: color-mix(in srgb, var(--ink-soft) 45%, var(--surface-2)); }
+.rv07-stain { fill: color-mix(in srgb, var(--on-glow) 55%, var(--ink-soft)); opacity: .85; }
+.rv07-white { fill: var(--glow); }
+.rv07-red { fill: var(--wine); }
+.rv07-wash { transform: translateY(430px); transition: transform 3.4s cubic-bezier(.45,0,.3,1); }
+.slide:has(.rv07-washgo.on) .rv07-wash { transform: translateY(0); }
+.rv07-outline { fill: none; stroke: var(--line-strong); stroke-width: 2.5; stroke-linejoin: round; }
+.rv07-robe text { fill: var(--ink); font-size: 16px; font-family: var(--serif); font-style: italic; }
+.rv07-tag { transition: opacity 1s ease; }
+.slide:has(.rv07-washgo.on) .rv07-tag { opacity: 0; transition-delay: .8s; }
+.rv07-clean { opacity: 0; transition: opacity 1.2s ease 3s; }
+.slide:has(.rv07-washgo.on) .rv07-clean { opacity: 1; }
+.rv07-robe .rv07-clean text { fill: var(--on-glow); font-style: normal; font-weight: 700; font-family: var(--sans); }
+
+/* rv07-lead: the Lamb, now the Shepherd, leading His people to living fountains (a deck.css candidate). */
+.rv07-trail { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 2 10; stroke-linecap: round; }
+.rv07-walker { offset-path: path("M40 262 C140 262 150 170 250 190 S380 250 430 160 S470 92 520 96"); offset-rotate: 0deg; opacity: 0; }
+.slide.active .rv07-walker { animation: rv07-walk 9s linear infinite; animation-delay: calc(var(--k) * 1.1s); }
+@keyframes rv07-walk { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 88% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+.rv07-follow { fill: var(--glow); stroke: var(--ink-soft); stroke-width: 1; }
+.rv07-pool { fill: color-mix(in srgb, var(--cool) 45%, transparent); stroke: var(--cool); stroke-width: 2; }
+.rv07-jet { fill: none; stroke: var(--cool); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 10; }
+.slide.active .rv07-jet { animation: rv07-flow 1.2s linear infinite; }
+@keyframes rv07-flow { to { stroke-dashoffset: -36; } }
+.rv07-lead text { fill: var(--ink-soft); font-size: 16px; }
+.rv07-lead .rv07-lbl { fill: var(--accent-hot); font-weight: 700; }
+
+/* rv07-tears: tears in the night, wiped away one by one as the day comes (a deck.css candidate). */
+.rv07-tears { border: 1px solid var(--line-strong); border-radius: 12px; background: var(--on-glow); transition: background 2.6s ease 1.2s; overflow: hidden; margin: .3em 0 .9em; }
+.slide:has(.rv07-wipe.on) .rv07-tears { background: var(--glow); }
+.rv07-tears svg { display: block; width: 100%; height: auto; max-height: 40vh; }
+.rv07-drop { fill: color-mix(in srgb, var(--cool) 75%, var(--glow)); }
+.rv07-tear { transition: opacity .9s ease, transform 1.2s ease; transition-delay: calc(var(--k) * 260ms + 500ms); transform-box: fill-box; transform-origin: 50% 0; }
+.slide.active .rv07-fall { animation: rv07-fall 3.4s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.6s); }
+@keyframes rv07-fall { from { transform: translateY(-4px); } to { transform: translateY(8px); } }
+.slide:has(.rv07-wipe.on) .rv07-tear { opacity: 0; transform: scale(.2); }
+.rv07-tears text { fill: var(--glow); font-family: var(--serif); font-style: italic; font-size: 17px; }
+.rv07-sweep { fill: url(#rv07-sweepg); transform: translateX(-420px); }
+.slide:has(.rv07-wipe.on) .rv07-sweep { transition: transform 3.2s ease-in-out .3s; transform: translateX(1000px); }
+.rv07-promise { opacity: 0; transition: opacity 1.4s ease 3.4s; }
+.slide:has(.rv07-wipe.on) .rv07-promise { opacity: 1; }
+.rv07-tears .rv07-promise text { fill: var(--on-glow); font-size: 30px; }
+.rv07-tears .rv07-promise .rv07-ref { font-family: var(--sans); font-style: normal; font-size: 16px; font-weight: 700; }
+
+/* rv07-seven: the seven words of praise, lit one after another. */
+.rv07-seven { grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
+.rv07-seven li { transition: border-color .6s, background .6s; }
+.slide.active .rv07-seven li { animation: rv07-lit 1s ease both; animation-delay: calc(var(--k) * 300ms + 500ms); }
+@keyframes rv07-lit { from { opacity: .25; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv07-push, .rv07-walker, .rv07-jet, .rv07-fall, .rv07-halo, .rv07-wait, .rv07-cells i.now { animation: none !important; }
+  .rv07-man, .rv07-press, .rv07-mark { animation: none !important; opacity: 1; transform: none; }
+  .rv07-walker { opacity: 1; offset-distance: 60%; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 7</h1>
+    <p class="sub rise" style="--d:3">Every tear</p>
+    <p class="tag rise" style="--d:5">Chapter 6 ended with a question: who shall be able to stand? Before the last seal opens, God holds back the storm and answers it. A crowd no one can count stands before the throne in robes washed white, and the Lamb wipes away every tear.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Held</span><span class="seed-q">Why does God hold back the four winds?</span></li>
+      <li class="step"><span class="topic">Sealed</span><span class="seed-q">What does it mean to be sealed by the living God?</span></li>
+      <li class="step"><span class="topic">Counted</span><span class="seed-q">Who are the 144,000, and what is plain whichever way you read it?</span></li>
+      <li class="step"><span class="topic">Multitude</span><span class="seed-q">Who stands before the throne, and how many are there?</span></li>
+      <li class="step"><span class="topic">Washed</span><span class="seed-q">How are dirty robes made white?</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">What will the Lamb do for those who have suffered?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv07-where rise" style="--d:1" role="img" aria-label="The 22 chapters of Revelation in seven sections: chapter 1, a vision of Christ; 2 and 3, seven churches; 4 and 5, the throne and the Lamb; 6 to 16, seals, trumpets and bowls; 17 and 18, Babylon falls; 19 and 20, Christ returns and reigns; 21 and 22, all things new. Chapter 7 is lit.">
+      <div class="rv07-sec" style="--n:1"><span class="rv07-cells"><i>1</i></span><b>Vision of Christ</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>2</i><i>3</i></span><b>Seven churches</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>4</i><i>5</i></span><b>Throne and Lamb</b></div>
+      <div class="rv07-sec here" style="--n:11"><span class="rv07-cells"><i>6</i><i class="now">7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i></span><b>Seals, trumpets, bowls</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>17</i><i>18</i></span><b>Babylon falls</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>19</i><i>20</i></span><b>Christ returns and reigns</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>21</i><i>22</i></span><b>All things new</b></div>
+    </div>
+    <div class="stage rv07-seals rise" style="--d:2">
+      <svg viewBox="0 0 640 112" role="img" aria-label="Seven wax seals in a row. Seals one to six are broken open. Between the sixth and the seventh is a lit space marked chapter 7, a pause. The seventh seal is still whole, waiting.">
+        <g transform="translate(40 40)"><path class="rv07-wax rv07-half l" style="--k:0" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:0" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">1</text></g>
+        <g transform="translate(112 40)"><path class="rv07-wax rv07-half l" style="--k:1" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:1" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">2</text></g>
+        <g transform="translate(184 40)"><path class="rv07-wax rv07-half l" style="--k:2" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:2" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">3</text></g>
+        <g transform="translate(256 40)"><path class="rv07-wax rv07-half l" style="--k:3" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:3" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">4</text></g>
+        <g transform="translate(328 40)"><path class="rv07-wax rv07-half l" style="--k:4" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:4" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">5</text></g>
+        <g transform="translate(400 40)"><path class="rv07-wax rv07-half l" style="--k:5" d="M0 -22 A22 22 0 0 0 0 22 Z"/><path class="rv07-wax rv07-half r" style="--k:5" d="M0 -22 A22 22 0 0 1 0 22 Z"/><text y="50" text-anchor="middle">6</text></g>
+        <rect class="rv07-gap" x="440" y="10" width="124" height="60" rx="10"/>
+        <text class="rv07-lbl" x="502" y="36" text-anchor="middle">chapter 7:</text>
+        <text class="rv07-lbl" x="502" y="58" text-anchor="middle">a pause</text>
+        <g transform="translate(604 40)"><g class="rv07-wait"><circle class="rv07-wax" r="22"/><circle class="rv07-ring" r="14"/></g><text y="50" text-anchor="middle">7</text></g>
+      </svg>
+    </div>
+    <p class="note step">Six seals have opened, and the sixth shook the sky itself. Everyone expects the seventh. Instead, John is shown two scenes: God's servants sealed on earth, and a great crowd safe in heaven. Chapter 6 asked, <em>“who shall be able to stand?”</em> (6:17). Chapter 7 answers: these do.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Held and sealed</h2>
+    <p class="range rise" style="--d:2">Verses 1–8</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The storm is ready, and God says: not yet. First He puts His mark on His own.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="holding the four winds of the earth|having the seal of the living God|Hurt not the earth|till we have sealed the servants of our God in their foreheads"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="holding the four winds of the earth, that the wind should not blow"></blockquote>
+    <div class="split">
+      <div class="stage rv07-winds">
+        <svg viewBox="0 0 520 380" role="img" aria-label="The earth in the middle, with land, sea and three still trees. An angel stands at each of the four corners, and wind gusts strain toward the earth but are held back by the angels' hands. Then another angel rises from the east carrying a gold seal.">
+          <defs><clipPath id="rv07-earthclip"><circle cx="250" cy="200" r="104"/></clipPath></defs>
+          <circle class="rv07-earth" cx="250" cy="200" r="104"/>
+          <g clip-path="url(#rv07-earthclip)">
+            <rect class="rv07-sea" x="140" y="232" width="220" height="80"/>
+            <path class="rv07-wave" d="M146 244 q12 -8 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0"/>
+          </g>
+          <line class="rv07-trunk" x1="200" y1="226" x2="200" y2="196"/><circle class="rv07-leaf" cx="200" cy="186" r="18"/>
+          <line class="rv07-trunk" x1="252" y1="226" x2="252" y2="186"/><circle class="rv07-leaf" cx="252" cy="172" r="23"/>
+          <line class="rv07-trunk" x1="300" y1="226" x2="300" y2="200"/><circle class="rv07-leaf" cx="300" cy="190" r="16"/>
+          <!-- four angels at the four corners, each holding a wind -->
+          <g transform="translate(52 52)"><ellipse class="rv07-wing" cx="-14" cy="0" rx="14" ry="24" transform="rotate(-20)"/><ellipse class="rv07-wing" cx="14" cy="0" rx="14" ry="24" transform="rotate(20)"/><path class="rv07-body" d="M-9 -2 L9 -2 L14 30 L-14 30 Z"/><circle class="rv07-body" cy="-12" r="9"/></g>
+          <g transform="translate(448 52)"><ellipse class="rv07-wing" cx="-14" cy="0" rx="14" ry="24" transform="rotate(-20)"/><ellipse class="rv07-wing" cx="14" cy="0" rx="14" ry="24" transform="rotate(20)"/><path class="rv07-body" d="M-9 -2 L9 -2 L14 30 L-14 30 Z"/><circle class="rv07-body" cy="-12" r="9"/></g>
+          <g transform="translate(52 318)"><ellipse class="rv07-wing" cx="-14" cy="0" rx="14" ry="24" transform="rotate(-20)"/><ellipse class="rv07-wing" cx="14" cy="0" rx="14" ry="24" transform="rotate(20)"/><path class="rv07-body" d="M-9 -2 L9 -2 L14 30 L-14 30 Z"/><circle class="rv07-body" cy="-12" r="9"/></g>
+          <g transform="translate(448 318)"><ellipse class="rv07-wing" cx="-14" cy="0" rx="14" ry="24" transform="rotate(-20)"/><ellipse class="rv07-wing" cx="14" cy="0" rx="14" ry="24" transform="rotate(20)"/><path class="rv07-body" d="M-9 -2 L9 -2 L14 30 L-14 30 Z"/><circle class="rv07-body" cy="-12" r="9"/></g>
+          <g class="rv07-push" style="--x:8px;--y:7px"><path class="rv07-gust" d="M82 92 q20 4 30 22 M92 80 q24 2 36 24 M76 106 q16 6 22 18"/></g>
+          <g class="rv07-push" style="--x:-8px;--y:7px"><path class="rv07-gust" d="M418 92 q-20 4 -30 22 M408 80 q-24 2 -36 24 M424 106 q-16 6 -22 18"/></g>
+          <g class="rv07-push" style="--x:8px;--y:-7px"><path class="rv07-gust" d="M82 290 q20 -4 30 -22 M92 302 q24 -2 36 -24 M76 276 q16 -6 22 -18"/></g>
+          <g class="rv07-push" style="--x:-8px;--y:-7px"><path class="rv07-gust" d="M418 290 q-20 -4 -30 -22 M408 302 q-24 -2 -36 -24 M424 276 q-16 -6 -22 -18"/></g>
+          <line class="rv07-hand" x1="124" y1="128" x2="144" y2="108"/>
+          <line class="rv07-hand" x1="376" y1="128" x2="356" y2="108"/>
+          <line class="rv07-hand" x1="124" y1="254" x2="144" y2="274"/>
+          <line class="rv07-hand" x1="376" y1="254" x2="356" y2="274"/>
+          <text class="rv07-lbl" x="250" y="22" text-anchor="middle">“not blow … nor on any tree”</text>
+          <g class="rv07-east">
+            <g transform="translate(470 200)"><ellipse class="rv07-wing" cx="-12" cy="0" rx="12" ry="22" transform="rotate(-20)"/><ellipse class="rv07-wing" cx="12" cy="0" rx="12" ry="22" transform="rotate(20)"/><path class="rv07-body" d="M-8 -2 L8 -2 L12 26 L-12 26 Z"/><circle class="rv07-body" cy="-11" r="8"/><circle class="rv07-sealdot" cx="-20" cy="10" r="9"/></g>
+            <text x="470" y="250" text-anchor="middle">from the east,</text>
+            <text class="rv07-lbl" x="470" y="270" text-anchor="middle">the seal</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The storm on a leash</h2>
+        <p class="note rise" style="--d:2"><em>“Four corners”</em> and <em>“four winds”</em> are the Bible's way of saying everywhere: north, south, east and west (Daniel 7:2 and Zechariah 6:5 use the same picture). The winds of judgment are ready, and four angels hold them back.</p>
+        <p class="note step rv07-go">Then a fifth angel comes from the sunrise with <em>“the seal of the living God”</em>, and the order is: <em>“Hurt not … till.”</em> Nothing touches the earth until God's people are marked as His. Judgment waits on mercy. The storm in your life is on a leash too, and it is God who holds it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="till we have sealed the servants of our God in their foreheads"></blockquote>
+    <div class="split">
+      <div class="stage rv07-stamp">
+        <svg viewBox="0 0 360 330" role="img" aria-label="A seal comes down and presses on a man's forehead, then lifts away, leaving a glowing mark: the living God's.">
+          <path class="rv07-headshape" d="M110 330 L110 280 Q70 260 72 196 Q74 112 180 108 Q286 112 288 196 Q290 260 250 280 L250 330"/>
+          <g class="rv07-mark"><circle class="rv07-markring" cx="180" cy="150" r="22"/><circle cx="180" cy="150" r="9" style="fill:var(--accent-hot)"/></g>
+          <g class="rv07-press">
+            <rect class="rv07-stamp-tool" x="166" y="20" width="28" height="70" rx="12"/>
+            <rect class="rv07-stamp-tool" x="146" y="86" width="68" height="20" rx="5"/>
+            <rect class="rv07-stamp-face" x="152" y="104" width="56" height="8" rx="3"/>
+          </g>
+          <text class="rv07-lbl" x="180" y="226" text-anchor="middle">His</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Marked as His</h2>
+        <ol class="signs rise" style="--d:2">
+          <li class="now"><b>Owned</b>a seal said whose a thing was</li>
+          <li><b>Kept</b>no one broke a king's seal</li>
+          <li><b>Real</b>the seal proved it genuine</li>
+        </ol>
+        <p class="note step">Ezekiel saw it before Jerusalem fell: those who grieved over sin were marked, and judgment passed them by.</p>
+        <blockquote class="quote step"><p>“And the LORD said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.”</p><cite>Ezekiel 9:4</cite></blockquote>
+        <p class="note step">Every believer is sealed the day he trusts Christ: <em>“ye were sealed with that holy Spirit of promise”</em> (Ephesians 1:13). Not when you get your act together. Owned, kept and real, even the morning after a bad night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-8" data-hl="an hundred and forty and four thousand of all the tribes of the children of Israel|Of the tribe of Juda|Of the tribe of Levi|Of the tribe of Joseph"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="an hundred and forty and four thousand of all the tribes of the children of Israel"></blockquote>
+    <h2 class="rise" style="--d:1">Twelve tribes, every one counted</h2>
+    <ol class="signs rise" style="--d:2">
+      <li class="now"><b>Juda</b>12,000</li><li><b>Reuben</b>12,000</li><li><b>Gad</b>12,000</li><li><b>Aser</b>12,000</li>
+      <li><b>Nepthalim</b>12,000</li><li><b>Manasses</b>12,000</li><li><b>Simeon</b>12,000</li><li><b>Levi</b>12,000</li>
+      <li><b>Issachar</b>12,000</li><li><b>Zabulon</b>12,000</li><li><b>Joseph</b>12,000</li><li><b>Benjamin</b>12,000</li>
+    </ol>
+    <div class="math step"><div><b>12</b><span>tribes</span></div><div><b>× 12,000</b><span>from each</span></div><div><b>= 144,000</b><span>not one missing</span></div></div>
+    <p class="note step">These are the old Greek spellings: Juda is Judah, Aser is Asher, Nepthalim is Naphtali, Manasses is Manasseh, Zabulon is Zebulun. The list is unusual. Juda comes first, ahead of Reuben the firstborn: Jesus is <em>“the Lion of the tribe of Juda”</em> (5:5). Dan and Ephraim are missing, and no one knows for sure why. Many think it is because both led Israel into idol worship (Judges 18; Hosea 4:17).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who are the 144,000?</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:1">
+        <p class="who">Many Bible teachers</p>
+        <h3>Israel, as written</h3>
+        <p>Jewish believers, counted from the twelve tribes, sealed and kept by God through the trouble that is coming. God has not forgotten His promises to Israel (Romans 11).</p>
+      </div>
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Other Bible teachers</p>
+        <h3>All God's people, pictured</h3>
+        <p>Twelve times twelve times a thousand: the whole people of God, complete, with not one lost. The same people John then sees as a multitude in verse 9.</p>
+      </div>
+    </div>
+    <p class="note step">Good Baptist teachers hold both, and they hold them without fighting. Here is what is plain either way. God knows exactly who His people are, down to the last one. He marks them before trouble comes. And He loses none of them.</p>
+    <p class="note step">One more plain thing: no group today owns this number. Some have claimed only 144,000 of their own members will be in heaven. Verse 9 shuts that door: right after the number comes a crowd <em>“which no man could number.”</em></p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">No man could number</h2>
+    <p class="range rise" style="--d:2">Verses 9–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John heard a number. Then he turned and looked, and saw a crowd too big to count.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-12" data-hl="a great multitude, which no man could number|of all nations, and kindreds, and people, and tongues|clothed with white robes, and palms in their hands|Salvation to our God which sitteth upon the throne, and unto the Lamb"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb"></blockquote>
+    <div class="stage rv07-crowd">
+      <svg viewBox="0 0 640 400" role="img" aria-label="The throne at the top under a rainbow, with the Lamb before it in a glow. Hundreds of small figures in white robes, many holding palm branches, stream in from every side and settle in great curved rows before the throne.">
+        <circle class="rv07-halo" cx="320" cy="64" r="44"/>
+        <path class="rv07-bow" d="M262 54 A58 50 0 0 1 378 54"/>
+        <rect class="rv07-seat" x="298" y="30" width="44" height="30" rx="6"/>
+        <g class="rv07-lamb" transform="translate(320 82)"><line class="leg" x1="-8" y1="6" x2="-8" y2="16"/><line class="leg" x1="7" y1="6" x2="7" y2="16"/><ellipse class="wool" rx="15" ry="9"/><circle class="wool" cx="-5" cy="-6" r="6"/><circle class="wool" cx="4" cy="-7" r="6"/><ellipse class="wool" cx="16" cy="-8" rx="6" ry="5"/></g>
+        <g>
+          <g class="rv07-man" style="--dx:239px;--dy:97px;--k:0.59" transform="translate(432.9 64.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:261px;--dy:136px;--k:1.52" transform="translate(428.0 82.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:205px;--dy:172px;--k:1.98" transform="translate(419.6 97.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:215px;--dy:203px;--k:2.26" transform="translate(403.4 113.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:152px;--dy:229px;--k:1.62" transform="translate(386.1 126.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:120px;--dy:247px;--k:0.93" transform="translate(361.4 133.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:77px;--dy:257px;--k:1.56" transform="translate(338.6 138.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-6px;--dy:260px;--k:1.42" transform="translate(312.5 139.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-74px;--dy:254px;--k:0.96" transform="translate(293.9 135.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-120px;--dy:240px;--k:0.79" transform="translate(269.0 129.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-149px;--dy:219px;--k:0.65" transform="translate(247.4 121.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-185px;--dy:191px;--k:1.45" transform="translate(233.1 108.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-210px;--dy:158px;--k:0.70" transform="translate(219.8 90.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-224px;--dy:121px;--k:2.46" transform="translate(206.6 72.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:228px;--dy:97px;--k:0.29" transform="translate(458.9 65.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:240px;--dy:130px;--k:1.73" transform="translate(455.8 83.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:256px;--dy:160px;--k:2.61" transform="translate(447.1 104.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:167px;--dy:187px;--k:0.07" transform="translate(428.3 117.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:186px;--dy:211px;--k:0.73" transform="translate(415.9 133.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:105px;--dy:231px;--k:1.44" transform="translate(394.4 146.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:59px;--dy:246px;--k:2.59" transform="translate(374.5 155.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:37px;--dy:255px;--k:0.69" transform="translate(351.2 160.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:29px;--dy:260px;--k:2.07" transform="translate(324.4 163.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-60px;--dy:259px;--k:1.99" transform="translate(300.8 163.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-34px;--dy:252px;--k:2.74" transform="translate(281.9 159.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-83px;--dy:240px;--k:1.18" transform="translate(255.7 151.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-162px;--dy:223px;--k:1.81" transform="translate(238.9 140.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-208px;--dy:202px;--k:0.94" transform="translate(219.6 127.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-178px;--dy:176px;--k:0.63" transform="translate(203.6 114.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-212px;--dy:148px;--k:2.72" transform="translate(190.5 96.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-236px;--dy:117px;--k:1.53" transform="translate(181.5 75.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:275px;--dy:97px;--k:0.21" transform="translate(488.5 69.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:229px;--dy:125px;--k:0.80" transform="translate(479.1 90.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:258px;--dy:151px;--k:2.70" transform="translate(469.0 108.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:234px;--dy:175px;--k:1.82" transform="translate(461.9 121.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:156px;--dy:197px;--k:0.44" transform="translate(441.2 137.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:138px;--dy:216px;--k:0.51" transform="translate(427.1 154.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:172px;--dy:232px;--k:1.32" transform="translate(405.2 163.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:65px;--dy:245px;--k:0.78" transform="translate(384.7 172.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:66px;--dy:254px;--k:0.48" transform="translate(360.4 181.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:11px;--dy:259px;--k:1.95" transform="translate(337.0 180.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-15px;--dy:260px;--k:1.02" transform="translate(318.0 181.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-65px;--dy:257px;--k:2.72" transform="translate(290.6 179.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-43px;--dy:250px;--k:2.38" transform="translate(267.5 178.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-114px;--dy:240px;--k:1.52" transform="translate(244.7 168.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-127px;--dy:226px;--k:2.61" transform="translate(225.8 160.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-138px;--dy:208px;--k:2.87" transform="translate(205.6 147.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-183px;--dy:188px;--k:2.20" transform="translate(188.4 135.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-197px;--dy:165px;--k:0.43" transform="translate(173.6 115.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-235px;--dy:140px;--k:1.38" transform="translate(165.0 100.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-236px;--dy:113px;--k:1.35" transform="translate(158.4 80.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:287px;--dy:97px;--k:2.51" transform="translate(513.1 72.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:232px;--dy:121px;--k:2.78" transform="translate(508.9 91.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:251px;--dy:144px;--k:2.72" transform="translate(497.3 109.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:195px;--dy:166px;--k:0.53" transform="translate(489.2 129.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:223px;--dy:185px;--k:0.56" transform="translate(474.5 145.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:188px;--dy:204px;--k:2.38" transform="translate(459.2 159.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:120px;--dy:220px;--k:1.92" transform="translate(438.8 170.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:140px;--dy:233px;--k:1.97" transform="translate(416.8 181.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:117px;--dy:244px;--k:1.34" transform="translate(399.2 189.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:105px;--dy:252px;--k:1.61" transform="translate(376.0 196.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:59px;--dy:258px;--k:2.75" transform="translate(353.0 204.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-21px;--dy:260px;--k:2.86" transform="translate(328.2 202.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:13px;--dy:259px;--k:2.64" transform="translate(300.4 202.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-56px;--dy:256px;--k:1.77" transform="translate(277.4 198.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-120px;--dy:249px;--k:0.33" transform="translate(256.0 194.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-96px;--dy:240px;--k:1.64" transform="translate(233.8 189.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-120px;--dy:228px;--k:2.90" transform="translate(213.8 181.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-202px;--dy:213px;--k:2.24" transform="translate(195.6 165.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-191px;--dy:196px;--k:0.55" transform="translate(176.7 152.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-235px;--dy:177px;--k:2.00" transform="translate(160.4 137.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-198px;--dy:157px;--k:0.33" transform="translate(145.4 123.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-218px;--dy:134px;--k:0.24" transform="translate(137.5 105.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-289px;--dy:111px;--k:0.69" transform="translate(131.4 84.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:280px;--dy:97px;--k:1.16" transform="translate(536.6 79.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:278px;--dy:118px;--k:2.17" transform="translate(530.8 99.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:260px;--dy:139px;--k:2.99" transform="translate(526.0 117.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:256px;--dy:158px;--k:0.73" transform="translate(514.7 132.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:235px;--dy:176px;--k:2.59" transform="translate(502.5 149.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:200px;--dy:193px;--k:2.55" transform="translate(483.7 162.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:151px;--dy:209px;--k:1.85" transform="translate(470.8 180.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:154px;--dy:222px;--k:1.35" transform="translate(450.2 192.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:112px;--dy:234px;--k:0.99" transform="translate(431.0 203.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:89px;--dy:243px;--k:1.95" transform="translate(411.0 211.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:54px;--dy:251px;--k:0.60" transform="translate(386.3 216.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:41px;--dy:256px;--k:1.25" transform="translate(364.9 223.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:20px;--dy:259px;--k:1.33" transform="translate(336.8 223.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-38px;--dy:260px;--k:2.63" transform="translate(314.3 225.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-39px;--dy:258px;--k:0.83" transform="translate(288.7 223.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-62px;--dy:254px;--k:2.70" transform="translate(268.9 222.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-57px;--dy:248px;--k:1.90" transform="translate(245.2 216.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-146px;--dy:240px;--k:1.14" transform="translate(225.3 205.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-160px;--dy:229px;--k:1.77" transform="translate(202.7 198.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-155px;--dy:217px;--k:2.94" transform="translate(183.7 187.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-174px;--dy:202px;--k:2.21" transform="translate(165.3 173.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-174px;--dy:186px;--k:2.18" transform="translate(149.0 161.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-223px;--dy:169px;--k:0.34" transform="translate(134.4 143.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-213px;--dy:150px;--k:2.90" transform="translate(124.6 124.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-248px;--dy:130px;--k:1.48" transform="translate(110.3 106.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-285px;--dy:110px;--k:1.13" transform="translate(106.6 90.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:221px;--dy:97px;--k:1.38" transform="translate(562.5 81.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:244px;--dy:116px;--k:2.09" transform="translate(558.0 101.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:280px;--dy:135px;--k:2.16" transform="translate(549.9 121.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:193px;--dy:152px;--k:2.70" transform="translate(537.4 136.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:200px;--dy:169px;--k:0.74" transform="translate(529.0 153.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:165px;--dy:185px;--k:2.65" transform="translate(514.8 171.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:161px;--dy:199px;--k:0.45" transform="translate(500.9 183.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:195px;--dy:212px;--k:2.32" transform="translate(479.3 199.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:168px;--dy:224px;--k:0.59" transform="translate(459.4 211.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:138px;--dy:234px;--k:0.78" transform="translate(443.0 222.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:78px;--dy:243px;--k:2.83" transform="translate(420.6 231.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:78px;--dy:250px;--k:3.10" transform="translate(398.7 236.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:31px;--dy:255px;--k:0.86" transform="translate(375.3 240.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:3px;--dy:258px;--k:1.68" transform="translate(353.7 246.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:2px;--dy:260px;--k:0.93" transform="translate(327.1 248.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:9px;--dy:260px;--k:0.40" transform="translate(302.4 245.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-28px;--dy:257px;--k:2.70" transform="translate(281.3 245.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-98px;--dy:253px;--k:0.59" transform="translate(255.4 237.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-103px;--dy:247px;--k:2.17" transform="translate(230.4 233.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-100px;--dy:240px;--k:2.76" transform="translate(212.0 227.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-129px;--dy:230px;--k:1.48" transform="translate(190.0 216.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-169px;--dy:219px;--k:3.07" transform="translate(172.0 205.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-143px;--dy:207px;--k:2.34" transform="translate(150.0 195.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-196px;--dy:193px;--k:1.58" transform="translate(137.1 177.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-250px;--dy:178px;--k:1.17" transform="translate(120.8 164.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-190px;--dy:162px;--k:0.37" transform="translate(103.7 147.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-202px;--dy:145px;--k:2.91" transform="translate(95.6 131.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-278px;--dy:127px;--k:1.50" transform="translate(85.4 112.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-261px;--dy:108px;--k:0.38" transform="translate(78.5 92.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:220px;--dy:97px;--k:1.65" transform="translate(591.0 87.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:242px;--dy:115px;--k:0.54" transform="translate(581.4 103.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:274px;--dy:131px;--k:1.98" transform="translate(574.2 126.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:229px;--dy:147px;--k:1.27" transform="translate(567.8 140.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:233px;--dy:163px;--k:2.25" transform="translate(552.2 157.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:229px;--dy:177px;--k:2.32" transform="translate(539.5 173.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:176px;--dy:191px;--k:0.87" transform="translate(529.7 188.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:153px;--dy:204px;--k:1.84" transform="translate(508.8 203.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:134px;--dy:215px;--k:2.98" transform="translate(492.7 219.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:117px;--dy:226px;--k:1.49" transform="translate(476.0 231.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:149px;--dy:235px;--k:2.21" transform="translate(450.8 240.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:66px;--dy:243px;--k:1.37" transform="translate(433.5 249.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:77px;--dy:249px;--k:2.56" transform="translate(410.5 258.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:23px;--dy:254px;--k:1.85" transform="translate(383.2 262.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:15px;--dy:258px;--k:1.89" transform="translate(360.5 265.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:42px;--dy:260px;--k:2.81" transform="translate(340.4 268.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:28px;--dy:260px;--k:1.46" transform="translate(316.8 268.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-65px;--dy:259px;--k:2.03" transform="translate(288.3 265.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-35px;--dy:256px;--k:3.12" transform="translate(264.1 262.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-68px;--dy:252px;--k:2.15" transform="translate(246.4 261.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-93px;--dy:246px;--k:2.07" transform="translate(220.9 253.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-86px;--dy:239px;--k:0.45" transform="translate(200.4 244.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-174px;--dy:231px;--k:1.01" transform="translate(180.9 234.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-161px;--dy:221px;--k:2.79" transform="translate(159.1 225.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-184px;--dy:210px;--k:0.99" transform="translate(141.6 212.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-221px;--dy:198px;--k:1.99" transform="translate(120.8 200.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-195px;--dy:185px;--k:0.51" transform="translate(108.7 183.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-228px;--dy:171px;--k:1.86" transform="translate(90.6 169.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-198px;--dy:156px;--k:0.55" transform="translate(81.5 154.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-231px;--dy:140px;--k:1.09" transform="translate(69.3 132.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-277px;--dy:124px;--k:0.89" transform="translate(62.4 115.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-240px;--dy:107px;--k:2.74" transform="translate(56.2 98.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:251px;--dy:97px;--k:1.49" transform="translate(616.9 88.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:221px;--dy:113px;--k:2.89" transform="translate(612.0 107.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:240px;--dy:128px;--k:2.56" transform="translate(599.6 128.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:231px;--dy:143px;--k:3.10" transform="translate(590.4 144.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:246px;--dy:157px;--k:1.40" transform="translate(584.5 165.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:227px;--dy:171px;--k:2.45" transform="translate(570.9 180.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:181px;--dy:184px;--k:1.52" transform="translate(557.7 197.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:220px;--dy:196px;--k:2.44" transform="translate(538.1 210.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:136px;--dy:207px;--k:2.53" transform="translate(523.8 226.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:157px;--dy:218px;--k:3.24" transform="translate(501.6 236.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:120px;--dy:227px;--k:3.16" transform="translate(482.2 249.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:161px;--dy:235px;--k:0.92" transform="translate(465.3 258.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:88px;--dy:242px;--k:0.60" transform="translate(442.4 270.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:98px;--dy:248px;--k:2.47" transform="translate(419.9 277.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:27px;--dy:253px;--k:1.94" transform="translate(400.1 282.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:46px;--dy:257px;--k:0.52" transform="translate(373.5 287.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:34px;--dy:259px;--k:1.98" transform="translate(352.3 288.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:41px;--dy:260px;--k:2.46" transform="translate(325.6 290.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-47px;--dy:260px;--k:1.98" transform="translate(303.9 291.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-50px;--dy:258px;--k:1.95" transform="translate(276.8 288.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-59px;--dy:255px;--k:0.76" transform="translate(256.2 282.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-50px;--dy:251px;--k:1.05" transform="translate(232.4 280.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-69px;--dy:246px;--k:2.00" transform="translate(206.7 274.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-96px;--dy:239px;--k:1.91" transform="translate(189.6 263.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-95px;--dy:232px;--k:1.63" transform="translate(168.5 253.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-131px;--dy:223px;--k:2.90" transform="translate(144.6 244.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-129px;--dy:213px;--k:2.34" transform="translate(129.1 232.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-220px;--dy:203px;--k:1.86" transform="translate(108.6 218.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-166px;--dy:191px;--k:0.84" transform="translate(94.9 205.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-216px;--dy:178px;--k:2.37" transform="translate(76.7 190.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-221px;--dy:165px;--k:2.59" transform="translate(62.5 172.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-239px;--dy:151px;--k:2.14" transform="translate(50.8 158.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-245px;--dy:137px;--k:3.03" transform="translate(43.3 135.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-250px;--dy:122px;--k:1.72" transform="translate(34.6 117.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-285px;--dy:106px;--k:1.70" transform="translate(27.4 99.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:232px;--dy:140px;--k:1.26" transform="translate(621.1 152.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:221px;--dy:153px;--k:2.75" transform="translate(610.2 168.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:234px;--dy:166px;--k:2.25" transform="translate(594.2 186.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:219px;--dy:178px;--k:2.21" transform="translate(585.2 204.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:231px;--dy:189px;--k:2.47" transform="translate(569.1 216.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:151px;--dy:200px;--k:2.50" transform="translate(553.9 233.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:176px;--dy:210px;--k:2.21" transform="translate(532.0 243.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:129px;--dy:220px;--k:2.21" transform="translate(518.5 257.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:127px;--dy:228px;--k:1.58" transform="translate(496.9 267.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:157px;--dy:236px;--k:1.82" transform="translate(477.9 277.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:79px;--dy:242px;--k:3.25" transform="translate(455.3 289.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:95px;--dy:248px;--k:2.05" transform="translate(431.6 293.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:95px;--dy:252px;--k:2.77" transform="translate(411.8 300.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:52px;--dy:256px;--k:2.95" transform="translate(388.4 304.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:35px;--dy:258px;--k:1.30" transform="translate(361.6 310.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:47px;--dy:260px;--k:3.23" transform="translate(339.2 309.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-30px;--dy:260px;--k:1.16" transform="translate(317.3 313.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-61px;--dy:259px;--k:2.96" transform="translate(291.8 312.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-35px;--dy:257px;--k:0.55" transform="translate(264.1 307.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-45px;--dy:254px;--k:1.19" transform="translate(242.2 303.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-46px;--dy:250px;--k:1.65" transform="translate(222.0 299.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-58px;--dy:245px;--k:3.33" transform="translate(195.0 293.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-139px;--dy:239px;--k:2.79" transform="translate(176.3 283.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-153px;--dy:232px;--k:1.26" transform="translate(151.9 274.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-128px;--dy:224px;--k:2.41" transform="translate(136.8 261.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-164px;--dy:216px;--k:3.10" transform="translate(114.3 253.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-167px;--dy:206px;--k:2.84" transform="translate(94.3 237.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-193px;--dy:196px;--k:1.38" transform="translate(80.0 224.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-230px;--dy:184px;--k:1.11" transform="translate(63.7 209.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-206px;--dy:172px;--k:2.11" transform="translate(53.3 192.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-203px;--dy:160px;--k:1.32" transform="translate(35.2 179.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-208px;--dy:147px;--k:1.73" transform="translate(24.1 161.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-211px;--dy:134px;--k:3.04" transform="translate(19.5 144.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:249px;--dy:161px;--k:1.14" transform="translate(626.7 192.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:196px;--dy:173px;--k:3.35" transform="translate(610.9 207.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:220px;--dy:184px;--k:1.50" transform="translate(594.2 221.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:169px;--dy:194px;--k:1.12" transform="translate(578.7 238.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:159px;--dy:204px;--k:1.31" transform="translate(562.7 249.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:149px;--dy:213px;--k:1.37" transform="translate(548.2 265.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:116px;--dy:221px;--k:2.20" transform="translate(525.6 274.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:114px;--dy:229px;--k:0.93" transform="translate(509.0 287.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:143px;--dy:236px;--k:2.63" transform="translate(487.7 300.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:99px;--dy:242px;--k:2.94" transform="translate(464.2 305.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:58px;--dy:247px;--k:2.97" transform="translate(445.1 314.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:82px;--dy:252px;--k:2.47" transform="translate(420.1 319.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:32px;--dy:255px;--k:1.27" transform="translate(395.1 323.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:77px;--dy:258px;--k:3.30" transform="translate(372.2 331.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:49px;--dy:259px;--k:1.95" transform="translate(351.6 332.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-8px;--dy:260px;--k:2.06" transform="translate(325.3 331.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:6px;--dy:260px;--k:1.00" transform="translate(301.3 330.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:6px;--dy:259px;--k:3.13" transform="translate(277.0 329.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-77px;--dy:257px;--k:1.33" transform="translate(252.9 327.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-78px;--dy:254px;--k:2.15" transform="translate(229.8 322.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-116px;--dy:250px;--k:2.32" transform="translate(205.6 319.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-121px;--dy:245px;--k:2.54" transform="translate(187.9 311.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-132px;--dy:239px;--k:2.65" transform="translate(166.6 304.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-166px;--dy:233px;--k:2.58" transform="translate(144.3 294.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-130px;--dy:226px;--k:3.14" transform="translate(120.8 285.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-149px;--dy:218px;--k:3.38" transform="translate(106.1 270.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-138px;--dy:209px;--k:1.64" transform="translate(82.5 257.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-205px;--dy:199px;--k:0.74" transform="translate(66.1 246.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-206px;--dy:189px;--k:2.93" transform="translate(50.2 228.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-183px;--dy:179px;--k:1.61" transform="translate(35.9 214.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-196px;--dy:167px;--k:1.60" transform="translate(23.8 199.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:207px;--dy:178px;--k:3.03" transform="translate(622.9 226.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:208px;--dy:188px;--k:1.66" transform="translate(610.9 243.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:161px;--dy:198px;--k:2.74" transform="translate(592.5 258.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:181px;--dy:207px;--k:1.55" transform="translate(578.7 270.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:164px;--dy:215px;--k:2.44" transform="translate(560.1 286.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:177px;--dy:223px;--k:2.59" transform="translate(539.2 294.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:128px;--dy:230px;--k:3.12" transform="translate(517.7 308.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:119px;--dy:236px;--k:2.84" transform="translate(496.5 315.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:98px;--dy:242px;--k:2.75" transform="translate(479.9 326.7)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:63px;--dy:247px;--k:0.90" transform="translate(456.0 335.3)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:108px;--dy:251px;--k:3.15" transform="translate(431.1 342.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:90px;--dy:254px;--k:1.64" transform="translate(409.5 345.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:29px;--dy:257px;--k:2.51" transform="translate(387.4 349.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-5px;--dy:259px;--k:2.01" transform="translate(365.0 352.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:22px;--dy:260px;--k:3.13" transform="translate(338.2 351.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:0px;--dy:260px;--k:2.08" transform="translate(316.7 351.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-5px;--dy:259px;--k:2.43" transform="translate(290.7 351.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-56px;--dy:258px;--k:2.19" transform="translate(269.7 352.0)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-90px;--dy:256px;--k:2.38" transform="translate(246.0 349.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-98px;--dy:253px;--k:1.83" transform="translate(216.8 344.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-116px;--dy:249px;--k:2.49" transform="translate(199.7 338.6)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-138px;--dy:245px;--k:2.88" transform="translate(176.3 332.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-151px;--dy:239px;--k:1.08" transform="translate(155.2 323.5)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-118px;--dy:233px;--k:2.30" transform="translate(128.9 311.8)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h3" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-152px;--dy:227px;--k:1.10" transform="translate(108.9 301.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-155px;--dy:219px;--k:2.46" transform="translate(91.7 288.9)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-151px;--dy:211px;--k:0.90" transform="translate(71.7 279.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+          <g class="rv07-man" style="--dx:-168px;--dy:203px;--k:2.81" transform="translate(54.9 267.2)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h2" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-203px;--dy:194px;--k:2.86" transform="translate(40.9 250.4)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h1" cy="-3" r="4.3"/></g>
+          <g class="rv07-man" style="--dx:-177px;--dy:184px;--k:2.63" transform="translate(23.8 235.1)"><path class="rv07-robe-s" d="M-5 2 L5 2 L8 15 L-8 15 Z"/><circle class="rv07-head h4" cy="-3" r="4.3"/><path class="rv07-palm" d="M7 13 L11 -9 M11 -9 l-5 2 M11 -9 l4 3 M10 -4 l-5 2 M10 -4 l4 3"/></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">I heard … I beheld</h2>
+    <div class="temples">
+      <div class="stone-t rise" style="--d:1"><h3>What John heard (verse 4)</h3><div class="big">144,000</div><p>a number, counted to the last man</p></div>
+      <div class="body-t step"><h3>What John saw (verse 9)</h3><div class="big">∞</div><p>“a great multitude, which no man could number”</p></div>
+    </div>
+    <p class="note step">John did the same thing in chapter 5. He <em>heard</em> of a Lion, and when he turned he <em>saw</em> a Lamb (5:5–6). Some teachers think the 144,000 and the multitude are one people, heard and then seen. Others think they are two groups, Israel and then the nations. Either way, God promised Abraham a family like the stars, <em>“if thou be able to number them”</em> (Genesis 15:5). Here it is, and nobody can.</p>
+    <p class="note step">And look who is in it: every nation, every family line, every people, every language. No one is too far gone, too foreign, or too late. If He has room for that crowd, He has room for you.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="Salvation to our God which sitteth upon the throne, and unto the Lamb"></blockquote>
+    <h2 class="rise" style="--d:1">White robes, palms, and one loud shout</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>White robes</b>made clean; we'll see how in verse 14</li>
+      <li><b>Palms</b>the branches of victory and welcome</li>
+      <li class="now"><b>“Salvation to our God”</b>none of them takes the credit</li>
+    </ol>
+    <blockquote class="quote step"><p>“Took branches of palm trees, and went forth to meet him, and cried, Hosanna: Blessed is the King of Israel that cometh in the name of the Lord.”</p><cite>John 12:13</cite></blockquote>
+    <p class="note step">The crowd at Jerusalem waved palms at Jesus for one afternoon, and within a week a crowd was shouting for His death. This crowd will never turn. All the angels answer them with seven words of praise:</p>
+    <ol class="signs rv07-seven step">
+      <li style="--k:0"><b>Blessing</b></li><li style="--k:1"><b>Glory</b></li><li style="--k:2"><b>Wisdom</b></li><li style="--k:3"><b>Thanksgiving</b></li><li style="--k:4"><b>Honour</b></li><li style="--k:5"><b>Power</b></li><li style="--k:6"><b>Might</b></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Washed white</h2>
+    <p class="range rise" style="--d:2">Verses 13–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An elder asks who these people are. The answer is the whole gospel in one line, and it ends with tears wiped away.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="What are these which are arrayed in white robes? and whence came they?|These are they which came out of great tribulation|have washed their robes, and made them white in the blood of the Lamb|he that sitteth on the throne shall dwell among them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="have washed their robes, and made them white in the blood of the Lamb"></blockquote>
+    <div class="split">
+      <div class="stage rv07-robe">
+        <svg viewBox="0 0 320 380" role="img" aria-label="A robe stained with dark marks labelled what I did, what I said, and where I've been. A red wash rises through it from the bottom, and the robe it leaves behind is white. The label reads: made white in the blood of the Lamb.">
+          <defs><clipPath id="rv07-robeclip"><path d="M110 40 L210 40 L300 110 L262 150 L230 126 L238 350 L82 350 L90 126 L58 150 L20 110 Z"/></clipPath></defs>
+          <g clip-path="url(#rv07-robeclip)">
+            <rect class="rv07-dirty" x="0" y="0" width="320" height="380"/>
+            <path class="rv07-stain" d="M120 150 q20 -18 40 -4 q16 14 -6 26 q-24 10 -34 -22 Z"/>
+            <path class="rv07-stain" d="M186 214 q26 -10 34 10 q4 24 -20 22 q-28 -2 -14 -32 Z"/>
+            <path class="rv07-stain" d="M106 272 q22 -16 44 2 q10 22 -14 26 q-30 4 -30 -28 Z"/>
+            <path class="rv07-stain" d="M60 120 q12 -6 18 6 q-2 12 -14 8 Z"/>
+            <g class="rv07-wash"><rect class="rv07-red" x="0" y="-60" width="320" height="64"/><rect class="rv07-white" x="0" y="0" width="320" height="400"/></g>
+          </g>
+          <path class="rv07-outline" d="M110 40 L210 40 L300 110 L262 150 L230 126 L238 350 L82 350 L90 126 L58 150 L20 110 Z"/>
+          <path class="rv07-outline" d="M140 40 Q160 70 180 40"/>
+          <g class="rv07-tag"><text x="160" y="132" text-anchor="middle">what I did</text><text x="190" y="276" text-anchor="middle">what I said</text><text x="160" y="330" text-anchor="middle">where I've been</text></g>
+          <g class="rv07-clean"><text x="160" y="214" text-anchor="middle">made white</text><text x="160" y="236" text-anchor="middle">in the blood</text><text x="160" y="258" text-anchor="middle">of the Lamb</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Washed white in red</h2>
+        <p class="note rise" style="--d:2">You don't make anything white by washing it in blood. Except this. These people did not come to heaven in clean clothes. They came in robes that needed washing, and they washed them where the Lamb's blood was shed for them. That is the gospel, for them and for you.</p>
+        <blockquote class="quote step rv07-washgo"><p>“Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.”</p><cite>Isaiah 1:18</cite></blockquote>
+        <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14-15" data-hl="These are they which came out of great tribulation|he that sitteth on the throne shall dwell among them"></blockquote>
+    <h2 class="rise" style="--d:1">Out of great tribulation</h2>
+    <p class="note rise" style="--d:2">Teachers differ here too. Many Baptists hold that the church is caught up before the worst comes, and that these are people saved during the great tribulation itself. Others read them as all believers, out of all the trouble of every age. Both agree on what is plain: they <em>“came out of”</em> it. Through, not around, and out the other side.</p>
+    <div class="ifthen step">
+      <div class="if"><small>Before</small>tribulation: pressure, crushing, loss</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Now</small>“before the throne of God,” and He shall “dwell among them”</div>
+    </div>
+    <p class="note step"><em>“Dwell among them”</em> is literally <em>spread His tent over them</em> (<span class="gk">σκηνώσει</span>, <em>skēnōsei</em>), the word John used for Jesus in John 1:14, <em>“dwelt among us.”</em> The God who pitched His tent beside us at Bethlehem will spread it over us for good. No more sleeping outside.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="They shall hunger no more, neither thirst any more|the Lamb which is in the midst of the throne shall feed them|shall lead them unto living fountains of waters|God shall wipe away all tears from their eyes"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters"></blockquote>
+    <div class="stage rv07-lead">
+      <svg viewBox="0 0 600 300" role="img" aria-label="A winding path from the lower left up to a spring on the right where water leaps and pools. The Lamb walks the path in front, and a line of people follows him to the living fountains.">
+        <path class="rv07-trail" d="M40 262 C140 262 150 170 250 190 S380 250 430 160 S470 92 520 96"/>
+        <ellipse class="rv07-pool" cx="530" cy="112" rx="56" ry="16"/>
+        <path class="rv07-jet" d="M530 104 q-20 -50 -44 -6 M530 104 q20 -54 46 -6 M530 104 q0 -64 0 -70"/>
+        <g class="rv07-walker" style="--k:-5"><g class="rv07-lamb" transform="translate(0 -14)"><line class="leg" x1="-8" y1="6" x2="-8" y2="16"/><line class="leg" x1="7" y1="6" x2="7" y2="16"/><ellipse class="wool" rx="15" ry="9"/><circle class="wool" cx="-5" cy="-6" r="6"/><circle class="wool" cx="4" cy="-7" r="6"/><ellipse class="wool" cx="16" cy="-8" rx="6" ry="5"/></g></g>
+        <g class="rv07-walker" style="--k:-4.1"><path class="rv07-follow" d="M-6 -16 L6 -16 L9 0 L-9 0 Z"/><circle class="rv07-follow" cy="-22" r="5"/></g>
+        <g class="rv07-walker" style="--k:-3.3"><path class="rv07-follow" d="M-6 -16 L6 -16 L9 0 L-9 0 Z"/><circle class="rv07-follow" cy="-22" r="5"/></g>
+        <g class="rv07-walker" style="--k:-2.5"><path class="rv07-follow" d="M-6 -16 L6 -16 L9 0 L-9 0 Z"/><circle class="rv07-follow" cy="-22" r="5"/></g>
+        <g class="rv07-walker" style="--k:-1.7"><path class="rv07-follow" d="M-6 -16 L6 -16 L9 0 L-9 0 Z"/><circle class="rv07-follow" cy="-22" r="5"/></g>
+        <g class="rv07-walker" style="--k:-0.9"><path class="rv07-follow" d="M-6 -16 L6 -16 L9 0 L-9 0 Z"/><circle class="rv07-follow" cy="-22" r="5"/></g>
+        <text class="rv07-lbl" x="530" y="152" text-anchor="middle">living fountains</text>
+        <text x="40" y="292">no more hunger · no more thirst · no more scorching sun</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">The Lamb becomes the Shepherd</h2>
+    <p class="note rise" style="--d:2"><em>“Feed them”</em> is the shepherd's word: tend them, lead them to grass. The Lamb who was slain is now the Shepherd who goes in front. Isaiah promised it about 700 years before:</p>
+    <blockquote class="quote step"><p>“They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them.”</p><cite>Isaiah 49:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="God shall wipe away all tears from their eyes"></blockquote>
+    <div class="rv07-tears rise" style="--d:1">
+      <svg viewBox="0 0 640 260" role="img" aria-label="A dark night with seven tears hanging in it, each named: the years I lost, my kids, what I did, the people I hurt, the night I fell again, the funeral I missed, alone. A band of light sweeps across, each tear vanishes, the night turns to day, and the words appear: God shall wipe away all tears from their eyes.">
+        <defs><linearGradient id="rv07-sweepg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0"/><stop offset=".5" style="stop-color:var(--glow);stop-opacity:.9"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></linearGradient></defs>
+        <g class="rv07-tear" style="--k:0"><g class="rv07-fall" style="--k:0"><path class="rv07-drop" d="M70 40 C70 40 54 66 54 78 a16 16 0 0 0 32 0 C86 66 70 40 70 40 Z"/></g><text x="70" y="122" text-anchor="middle">the years I lost</text></g>
+        <g class="rv07-tear" style="--k:1"><g class="rv07-fall" style="--k:1"><path class="rv07-drop" d="M232 30 C232 30 220 50 220 59 a12 12 0 0 0 24 0 C244 50 232 30 232 30 Z"/></g><text x="232" y="98" text-anchor="middle">my kids</text></g>
+        <g class="rv07-tear" style="--k:2"><g class="rv07-fall" style="--k:2"><path class="rv07-drop" d="M392 44 C392 44 378 68 378 78 a14 14 0 0 0 28 0 C406 68 392 44 392 44 Z"/></g><text x="392" y="118" text-anchor="middle">what I did</text></g>
+        <g class="rv07-tear" style="--k:3"><g class="rv07-fall" style="--k:3"><path class="rv07-drop" d="M560 30 C560 30 546 54 546 64 a14 14 0 0 0 28 0 C574 54 560 30 560 30 Z"/></g><text x="560" y="104" text-anchor="middle">the people I hurt</text></g>
+        <g class="rv07-tear" style="--k:4"><g class="rv07-fall" style="--k:4"><path class="rv07-drop" d="M150 148 C150 148 136 172 136 182 a14 14 0 0 0 28 0 C164 172 150 148 150 148 Z"/></g><text x="150" y="222" text-anchor="middle">the night I fell again</text></g>
+        <g class="rv07-tear" style="--k:5"><g class="rv07-fall" style="--k:5"><path class="rv07-drop" d="M330 150 C330 150 318 170 318 179 a12 12 0 0 0 24 0 C342 170 330 150 330 150 Z"/></g><text x="330" y="216" text-anchor="middle">the funeral I missed</text></g>
+        <g class="rv07-tear" style="--k:6"><g class="rv07-fall" style="--k:6"><path class="rv07-drop" d="M500 146 C500 146 484 172 484 184 a16 16 0 0 0 32 0 C516 172 500 146 500 146 Z"/></g><text x="500" y="228" text-anchor="middle">alone</text></g>
+        <rect class="rv07-sweep" x="0" y="0" width="220" height="260"/>
+        <g class="rv07-promise"><text x="320" y="122" text-anchor="middle">“God shall wipe away all tears</text><text x="320" y="160" text-anchor="middle">from their eyes.”</text><text class="rv07-ref" x="320" y="196" text-anchor="middle">Revelation 7:17</text></g>
+      </svg>
+    </div>
+    <p class="note step rv07-wipe">Not <em>“the tears”</em> in general. <em>Their</em> eyes, every one, wiped by God Himself, the way a father wipes a boy's face. He will say it again at the very end of the book: <em>“no more death, neither sorrow, nor crying”</em> (21:4).</p>
+    <p class="note step">Until then, not one tear is wasted. David wrote, <em>“put thou my tears into thy bottle: are they not in thy book?”</em> (Psalm 56:8). He keeps them now, and wipes them then.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Today, between the seals</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>The night</i><b>Your tears are kept</b><p>Regret is real. Bring it to God by name; He keeps every tear in His bottle.</p><p class="kjv">“are they not in thy book?”</p></div>
+      <div class="step"><i>This morning</i><b>Wash, and follow</b><p>Confess what stained you yesterday. The blood still washes (1 John 1:9). Then follow the Shepherd into the day.</p></div>
+      <div class="step"><i>That day</i><b>Wiped away</b><p>No more hunger, no more thirst, no more crying. The Lamb Himself will see to it.</p><p class="kjv">“God shall wipe away all tears”</p></div>
+    </div>
+    <p class="note step">Today: name one regret to God out loud, the one you keep carrying. Then tell one brother in this room, so you are not carrying it alone.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Held</span><span class="seed-q">“Hurt not the earth … till we have sealed the servants of our God” <cite>7:3</cite></span><span class="take">The storm is on a leash. Judgment waits until God's people are marked as His.</span></li>
+      <li class="step"><span class="topic">Sealed</span><span class="seed-q">“having the seal of the living God” <cite>7:2</cite></span><span class="take">A seal means owned, kept and real. Every believer is sealed by the Holy Spirit the day he trusts Christ.</span></li>
+      <li class="step"><span class="topic">Counted</span><span class="seed-q">“an hundred and forty and four thousand of all the tribes” <cite>7:4</cite></span><span class="take">Literal Israel or all God's people pictured: either way, God knows every one of His and loses none. No group owns the number.</span></li>
+      <li class="step"><span class="topic">Multitude</span><span class="seed-q">“a great multitude, which no man could number” <cite>7:9</cite></span><span class="take">From every nation, family and language. No one is too far gone to be in that crowd.</span></li>
+      <li class="step"><span class="topic">Washed</span><span class="seed-q">“made them white in the blood of the Lamb” <cite>7:14</cite></span><span class="take">They came with stained robes and washed them in Jesus' blood. The same blood cleans you today.</span></li>
+      <li class="step"><span class="topic">Tears</span><span class="seed-q">“God shall wipe away all tears from their eyes” <cite>7:17</cite></span><span class="take">The Lamb will shepherd them to living water, and God Himself will wipe every tear.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Held</span>
+      <h2>Why does God hold back the four winds?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="holding the four winds of the earth, that the wind should not blow on the earth"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our God in their foreheads"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that His servants can be sealed first. The winds of judgment are ready, but God says “not till.” Judgment waits on mercy, and the storm only moves when God lets it. The trouble in your life is on His leash too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Sealed</span>
+      <h2>What does it mean to be sealed by the living God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="having the seal of the living God"></blockquote>
+      <blockquote class="quote step"><p>“And the LORD said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.”</p><cite>Ezekiel 9:4</cite></blockquote>
+      <blockquote class="quote step"><p>“In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A seal says who owns a thing, keeps it safe, and proves it genuine. God marks His own before trouble comes, as He did in Ezekiel's day. Every believer today is sealed with the Holy Spirit the moment he believes, not after he has cleaned himself up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Counted</span>
+      <h2>Who are the 144,000, and what is plain whichever way you read it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="an hundred and forty and four thousand of all the tribes of the children of Israel"></blockquote>
+      <blockquote class="quote step" data-q="9" data-hl="a great multitude, which no man could number"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Many teachers read them as Jewish believers from the twelve tribes; others as a picture of all God's people, complete. Either way, God knows exactly who are His, marks them, and loses none. And no group today owns the number: the very next scene is a crowd no one can count.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Multitude</span>
+      <h2>Who stands before the throne, and how many are there?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues"></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="Salvation to our God which sitteth upon the throne, and unto the Lamb"></blockquote>
+      <blockquote class="quote step"><p>“And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.”</p><cite>Genesis 15:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>More than anyone can count, from every nation, family, people and language, in white robes with palms of victory. Not one of them takes the credit: they shout that salvation belongs to God and the Lamb. If there is room for that crowd, there is room for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Washed</span>
+      <h2>How are dirty robes made white?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="have washed their robes, and made them white in the blood of the Lamb"></blockquote>
+      <blockquote class="quote step"><p>“Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.”</p><cite>Isaiah 1:18</cite></blockquote>
+      <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In the blood of the Lamb. Nobody in heaven arrived clean. They brought their stains to Jesus, whose blood was shed for them, and He made them white. The same blood still cleanses from all sin, today's included.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Tears</span>
+      <h2>What will the Lamb do for those who have suffered?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16" data-hl="They shall hunger no more, neither thirst any more"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes"></blockquote>
+      <blockquote class="quote step"><p>“Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?”</p><cite>Psalm 56:8</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He will shepherd them: feed them, lead them to living water, and shelter them so hunger, thirst and heat never touch them again. And God Himself will wipe away every tear. Until that day He keeps them, every one, in His bottle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="17"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 7
+const V = {
+  1: "And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.",
+  2: "And I saw another angel ascending from the east, having the seal of the living God: and he cried with a loud voice to the four angels, to whom it was given to hurt the earth and the sea,",
+  3: "Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our God in their foreheads.",
+  4: "And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Israel.",
+  5: "Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand. Of the tribe of Gad were sealed twelve thousand.",
+  6: "Of the tribe of Aser were sealed twelve thousand. Of the tribe of Nepthalim were sealed twelve thousand. Of the tribe of Manasses were sealed twelve thousand.",
+  7: "Of the tribe of Simeon were sealed twelve thousand. Of the tribe of Levi were sealed twelve thousand. Of the tribe of Issachar were sealed twelve thousand.",
+  8: "Of the tribe of Zabulon were sealed twelve thousand. Of the tribe of Joseph were sealed twelve thousand. Of the tribe of Benjamin were sealed twelve thousand.",
+  9: "After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;",
+  10: "And cried with a loud voice, saying, Salvation to our God which sitteth upon the throne, and unto the Lamb.",
+  11: "And all the angels stood round about the throne, and about the elders and the four beasts, and fell before the throne on their faces, and worshipped God,",
+  12: "Saying, Amen: Blessing, and glory, and wisdom, and thanksgiving, and honour, and power, and might, be unto our God for ever and ever. Amen.",
+  13: "And one of the elders answered, saying unto me, What are these which are arrayed in white robes? and whence came they?",
+  14: "And I said unto him, Sir, thou knowest. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb.",
+  15: "Therefore are they before the throne of God, and serve him day and night in his temple: and he that sitteth on the throne shall dwell among them.",
+  16: "They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat.",
+  17: "For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes."
+};
+const BOOK = "Revelation 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

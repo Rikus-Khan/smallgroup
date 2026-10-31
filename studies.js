@@ -16403,5 +16403,95 @@ window.STUDIES = [
       },
       "big": "Nothing happens outside the Lamb's hand: He opens every seal and limits every rider. He sees and comforts His martyrs, and the only shelter from the wrath of the Lamb is the Lamb Himself."
     }
+  },
+  {
+    "id": "revelation-07",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 7,
+    "date": "2026-10-31",
+    "title": "Revelation 7",
+    "sub": "Every tear",
+    "about": "Before the seventh seal opens, God holds back the storm and seals His servants. Then John sees a crowd no one can count, in robes washed white in the blood of the Lamb, and God wipes away every tear.",
+    "tags": [
+      "Sealed",
+      "The 144,000",
+      "Every nation",
+      "Washed",
+      "Grief",
+      "Heaven"
+    ],
+    "url": "studies/revelation-07.html",
+    "overview": {
+      "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "the-lamb",
+        "angels",
+        "elders",
+        "four-beasts",
+        "great-multitude"
+      ],
+      "places": [
+        "israel",
+        "heaven"
+      ],
+      "story": [
+        "Four angels hold back the four winds of the earth until another angel, coming from the east with the seal of the living God, has sealed God's servants in their foreheads (1–3).",
+        "John hears the number of the sealed: 144,000, twelve thousand from each tribe of the children of Israel (4–8).",
+        "He looks and sees a great multitude no man could number, from every nation, in white robes with palms, crying salvation to God and the Lamb, and all the angels worship (9–12).",
+        "An elder tells him who they are: they came out of great tribulation and washed their robes white in the blood of the Lamb. God will dwell among them (13–15).",
+        "They will never hunger, thirst or burn again. The Lamb will shepherd them to living fountains of waters, and God will wipe away all tears from their eyes (16–17)."
+      ],
+      "key": {
+        "ref": "Revelation 7:17",
+        "text": "For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes."
+      },
+      "big": "God marks His own before the storm and loses none of them. Heaven will be full of people no one could count, from every nation, who came in stained robes and were washed white in the Lamb's blood. The Lamb will shepherd them, and God Himself will wipe away every tear."
+    }
+  },
+  {
+    "id": "revelation-08",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 8,
+    "date": "2026-10-31",
+    "title": "Revelation 8",
+    "sub": "Your prayers are not lost",
+    "about": "The seventh seal opens, and heaven falls silent. The prayers of the saints rise with incense before God and are answered with fire. Then four trumpets sound: warnings that strike a third and spare the rest, so men will turn.",
+    "tags": [
+      "Silence",
+      "Prayer",
+      "Trumpets",
+      "Warning",
+      "Bitterness",
+      "Repentance"
+    ],
+    "url": "studies/revelation-08.html",
+    "overview": {
+      "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
+      "when": "About AD 95, under Domitian",
+      "people": [
+        "angels",
+        "saints-believers",
+        "inhabiters-of-the-earth"
+      ],
+      "places": [
+        "heaven",
+        "golden-altar"
+      ],
+      "story": [
+        "The Lamb opens the seventh seal, and there is silence in heaven about half an hour. Seven angels are given seven trumpets (1–2).",
+        "Another angel offers much incense with the prayers of all saints on the golden altar, and the smoke rises before God. Then he fills the censer with fire from the altar and casts it to the earth: voices, thunderings, lightnings and an earthquake (3–6).",
+        "The first trumpet brings hail and fire mingled with blood, burning a third of the trees. The second casts a burning mountain into the sea, and a third of the sea becomes blood (7–9).",
+        "The third brings the star Wormwood, making a third of the waters bitter. The fourth darkens a third of the sun, moon and stars (10–12).",
+        "An angel flies through heaven crying, Woe, woe, woe, to the inhabiters of the earth, for three trumpets are yet to sound (13)."
+      ],
+      "key": {
+        "ref": "Revelation 8:4",
+        "text": "And the smoke of the incense, which came with the prayers of the saints, ascended up before God out of the angel’s hand."
+      },
+      "big": "Heaven goes silent before God acts, and the first thing it hears is His people's prayers, kept like incense and answered from the same altar. The trumpets are warnings with limits: a third struck, two thirds spared, so men will turn while there is time."
+    }
   }
 ];

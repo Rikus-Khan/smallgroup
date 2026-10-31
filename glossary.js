@@ -3822,7 +3822,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Acts", 26,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Revelation", 7,
+    [ 15 ] ] ]
  },
  {
   "id": "israel",
@@ -4071,7 +4074,10 @@ window.GLOSSARY = [
     [ 8, 10 ] ],
    [
     "Hebrews", 11,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Revelation", 7,
+    [ 4 ] ] ]
  },
  {
   "id": "heaven",
@@ -4395,7 +4401,10 @@ window.GLOSSARY = [
     [ 3, 13 ] ],
    [
     "Revelation", 6,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Revelation", 8,
+    [ 1, 10, 13 ] ] ]
  },
  {
   "id": "hell",
@@ -4575,6 +4584,9 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Revelation", 5,
+    [ 5 ] ],
+   [
+    "Revelation", 7,
     [ 5 ] ] ]
  },
  {
@@ -4782,7 +4794,10 @@ window.GLOSSARY = [
     [ 5, 7 ] ],
    [
     "1 John", 2,
-    [ 8, 9, 10 ] ] ]
+    [ 8, 9, 10 ] ],
+   [
+    "Revelation", 7,
+    [ 16 ] ] ]
  },
  {
   "id": "darkness",
@@ -5724,7 +5739,10 @@ window.GLOSSARY = [
     [ 24, 25 ] ],
    [
     "Revelation", 5,
-    [ 12, 13 ] ] ]
+    [ 12, 13 ] ],
+   [
+    "Revelation", 7,
+    [ 12 ] ] ]
  },
  {
   "id": "the-law",
@@ -8058,6 +8076,9 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Revelation", 5,
+    [ 12 ] ],
+   [
+    "Revelation", 7,
     [ 12 ] ] ]
  },
  {
@@ -13230,7 +13251,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Revelation", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "good-shepherd",
@@ -15990,7 +16014,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Revelation", 5,
-    [ 2, 11 ] ] ]
+    [ 2, 11 ] ],
+   [
+    "Revelation", 7,
+    [ 1, 2, 11 ] ],
+   [
+    "Revelation", 8,
+    [ 2, 3, 4, 5, 6, 7, 8, 10, 12, 13 ] ] ]
  },
  {
   "id": "sepulchre",
@@ -17451,7 +17481,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 12,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Revelation", 7,
+    [ 9 ] ] ]
  },
  {
   "id": "ass",
@@ -18270,7 +18303,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "2 Thessalonians", 1,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Revelation", 7,
+    [ 14 ] ] ]
  },
  {
   "id": "son-of-perdition",
@@ -19143,7 +19179,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "1 Peter", 5,
-    [ 1, 5 ] ] ]
+    [ 1, 5 ] ],
+   [
+    "Revelation", 7,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "locusts",
@@ -19404,7 +19443,10 @@ window.GLOSSARY = [
     [ 52 ] ],
    [
     "Hebrews", 12,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 8,
+    [ 13 ] ] ]
  },
  {
   "id": "rend-your-heart",
@@ -20178,7 +20220,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Hebrews", 12,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Revelation", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "whoredom",
@@ -21384,7 +21429,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Philippians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Revelation", 7,
+    [ 8 ] ] ]
  },
  {
   "id": "mizpah",
@@ -21792,7 +21840,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Matthew", 27,
-    [ 34 ] ] ]
+    [ 34 ] ],
+   [
+    "Revelation", 8,
+    [ 11 ] ] ]
  },
  {
   "id": "seven-stars-and-orion",
@@ -22983,7 +23034,10 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Jude", 1,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 8,
+    [ 13 ] ] ]
  },
  {
   "id": "thick-clay",
@@ -26001,7 +26055,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Hebrews", 7,
-    [ 5, 9, 11 ] ] ]
+    [ 5, 9, 11 ] ],
+   [
+    "Revelation", 7,
+    [ 7 ] ] ]
  },
  {
   "id": "shimei",
@@ -26700,7 +26757,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 1,
-    [ 9, 10, 11 ] ] ]
+    [ 9, 10, 11 ] ],
+   [
+    "Revelation", 8,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "barren",
@@ -28275,7 +28335,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Luke", 2,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "Revelation", 7,
+    [ 6 ] ] ]
  },
  {
   "id": "prophetess",
@@ -29724,7 +29787,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Matthew", 4,
-    [ 13, 15 ] ] ]
+    [ 13, 15 ] ],
+   [
+    "Revelation", 7,
+    [ 8 ] ] ]
  },
  {
   "id": "nephthalim",
@@ -31032,7 +31098,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "Revelation", 5,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Revelation", 7,
+    [ 12 ] ] ]
  },
  {
   "id": "treasure-in-heaven",
@@ -36597,7 +36666,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Mark", 13,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Revelation", 7,
+    [ 1 ] ] ]
  },
  {
   "id": "my-words-shall-not-pass-away",
@@ -39561,7 +39633,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 3,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Revelation", 7,
+    [ 9 ] ] ]
  },
  {
   "id": "iniquities",
@@ -41403,7 +41478,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Revelation", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Revelation", 8,
+    [ 3, 4 ] ] ]
  },
  {
   "id": "upper-chamber",
@@ -41517,7 +41595,10 @@ window.GLOSSARY = [
     [ 1, 8 ] ],
    [
     "1 Corinthians", 14,
-    [ 5, 6, 18, 21, 22, 23, 39 ] ] ]
+    [ 5, 6, 18, 21, 22, 23, 39 ] ],
+   [
+    "Revelation", 7,
+    [ 9 ] ] ]
  },
  {
   "id": "elymas",
@@ -41766,7 +41847,10 @@ window.GLOSSARY = [
     [ 9, 13, 14, 18 ] ],
    [
     "Hebrews", 11,
-    [ 21, 22 ] ] ]
+    [ 21, 22 ] ],
+   [
+    "Revelation", 7,
+    [ 8 ] ] ]
  },
  {
   "id": "charran",
@@ -44844,7 +44928,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "2 Timothy", 2,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Revelation", 7,
+    [ 2 ] ] ]
  },
  {
   "id": "father-of-many-nations",
@@ -47652,7 +47739,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Hebrews", 10,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Revelation", 7,
+    [ 14 ] ] ]
  },
  {
   "id": "harlot",
@@ -49038,7 +49128,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Ephesians", 4,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Revelation", 7,
+    [ 3, 4, 5, 6, 7, 8 ] ] ]
  },
  {
   "id": "earnest",
@@ -54852,7 +54945,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Hebrews", 9,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Revelation", 8,
+    [ 3, 5 ] ] ]
  },
  {
   "id": "ark-of-the-covenant",
@@ -57003,7 +57099,10 @@ window.GLOSSARY = [
     [ 6, 8, 12, 13 ] ],
    [
     "Revelation", 6,
-    [ 1, 16 ] ] ]
+    [ 1, 16 ] ],
+   [
+    "Revelation", 7,
+    [ 9, 10, 14, 17 ] ] ]
  },
  {
   "id": "lion-of-juda",
@@ -57045,7 +57144,10 @@ window.GLOSSARY = [
     [ 6, 8, 11, 14 ] ],
    [
     "Revelation", 6,
-    [ 1, 3, 5, 6, 7 ] ] ]
+    [ 1, 3, 5, 6, 7 ] ],
+   [
+    "Revelation", 7,
+    [ 11 ] ] ]
  },
  {
   "id": "twenty-four-elders",
@@ -57054,7 +57156,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 5,
-    [ 5, 6, 8, 11, 14 ] ] ]
+    [ 5, 6, 8, 11, 14 ] ],
+   [
+    "Revelation", 7,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "seven-spirits",
@@ -57147,7 +57252,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Revelation", 6,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Revelation", 7,
+    [ 9, 13 ] ] ]
  },
  {
   "id": "moon-as-blood",
@@ -57181,5 +57289,179 @@ window.GLOSSARY = [
    [
     "Revelation", 6,
     [ 16, 17 ] ] ]
+ },
+ {
+  "id": "reuben",
+  "kind": "person",
+  "name": "Reuben (the tribe of Jacob's firstborn)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "gad-tribe",
+  "kind": "person",
+  "name": "Gad (the tribe)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "nepthalim",
+  "kind": "person",
+  "name": "Nepthalim (the tribe of Naphtali)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "manasses-tribe",
+  "kind": "person",
+  "name": "Manasses (the tribe of Manasseh, Joseph's son)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "simeon-tribe",
+  "kind": "person",
+  "name": "Simeon (the tribe)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "issachar",
+  "kind": "person",
+  "name": "Issachar (the tribe)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "four-corners-of-the-earth",
+  "kind": "term",
+  "name": "The four corners of the earth (every direction, the whole world)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "hundred-forty-four-thousand",
+  "kind": "term",
+  "name": "The 144,000 (twelve thousand sealed from each tribe of Israel)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "great-multitude",
+  "kind": "person",
+  "name": "The great multitude (a crowd no man could number, from every nation)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "living-fountains",
+  "kind": "term",
+  "name": "Living fountains of waters (where the Lamb leads His people)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "wipe-away-all-tears",
+  "kind": "term",
+  "name": "Wipe away all tears (God's promise to His people)",
+  "refs": [
+   [
+    "Revelation", 7,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "seventh-seal",
+  "kind": "term",
+  "name": "The seventh seal (the last seal on the Lamb's scroll)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "silence-in-heaven",
+  "kind": "term",
+  "name": "Silence in heaven (the hush before God acts)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "seven-trumpets",
+  "kind": "term",
+  "name": "The seven trumpets (warnings sounded by seven angels)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 2, 6, 13 ] ] ]
+ },
+ {
+  "id": "golden-altar",
+  "kind": "place",
+  "name": "The golden altar (the altar of incense before God's throne)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 3, 5 ] ] ]
+ },
+ {
+  "id": "prayers-of-the-saints",
+  "kind": "term",
+  "name": "The prayers of the saints (offered with incense before God)",
+  "refs": [
+   [
+    "Revelation", 5,
+    [ 8 ] ],
+   [
+    "Revelation", 8,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "third-part",
+  "kind": "term",
+  "name": "The third part (judgment limited: a third struck, two thirds spared)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 7, 8, 9, 10, 11, 12 ] ] ]
+ },
+ {
+  "id": "burning-mountain",
+  "kind": "term",
+  "name": "A great mountain burning with fire",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "inhabiters-of-the-earth",
+  "kind": "person",
+  "name": "The inhabiters of the earth (those who live for this world alone)",
+  "refs": [
+   [
+    "Revelation", 8,
+    [ 13 ] ] ]
  }
 ];

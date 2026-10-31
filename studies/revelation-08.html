@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv07-where: where this chapter sits in Revelation, the current chapter lit (the same marker as Revelation 7; a deck.css candidate for every Revelation study). */
+.rv07-where { display: flex; gap: 6px; margin: .3em 0 .8em; }
+.rv07-sec { flex: var(--n) 1 0; min-width: 0; }
+.rv07-cells { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 2px; }
+.rv07-cells i { display: grid; place-items: center; height: 2.1em; font: 700 clamp(.7rem, .6rem + .3vw, .9rem) var(--sans); color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.rv07-cells i.now { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.slide.active .rv07-cells i.now { animation: rv07-beat 1.8s ease-in-out infinite; }
+@keyframes rv07-beat { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent); } }
+.rv07-sec b { display: block; margin-top: .35em; padding-top: .3em; border-top: 2px solid var(--line-strong); font: 600 clamp(.72rem, .62rem + .35vw, .95rem)/1.2 var(--sans); color: var(--ink-soft); }
+.rv07-sec.here b { border-color: var(--accent); color: var(--accent-hot); }
+@media (max-width: 700px) {
+  .rv07-where { flex-direction: column; gap: 5px; }
+  .rv07-sec { display: grid; grid-template-columns: 1fr 8.5rem; gap: .7em; align-items: center; }
+  .rv07-cells { grid-template-columns: repeat(11, 1fr); }
+  .rv07-cells i { height: 1.7em; }
+  .rv07-sec b { margin: 0; padding: 0; border: 0; }
+}
+
+/* Seals, as in Revelation 7 (rv07-seals), here all broken; the seventh opens into the trumpets. */
+.rv07-wax { fill: var(--wine); stroke: var(--accent); stroke-width: 1.5; }
+.rv07-half.l { transform: translate(-4px, 3px) rotate(-14deg); transform-box: fill-box; transform-origin: 50% 50%; }
+.rv07-half.r { transform: translate(4px, -2px) rotate(12deg); transform-box: fill-box; transform-origin: 50% 50%; }
+
+/* rv08-trumpets: seven trumpets in a row, echoing the seven seals; sounded ones send out waves (a deck.css candidate, paired with rv07-seals). */
+.rv08-trumpets svg { max-height: 30vh; }
+.rv08-horn { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 1.2; stroke-linejoin: round; }
+.rv08-quiet .rv08-horn { fill: var(--surface-2); stroke: var(--line-strong); }
+.rv08-trumpets text { fill: var(--ink-soft); font-size: 15px; font-weight: 700; }
+.rv08-trumpets .rv08-cap { font-weight: 400; font-size: 14px; fill: var(--ink); }
+.rv08-wave { fill: none; stroke: var(--accent-hot); stroke-width: 2.5; stroke-linecap: round; opacity: 0; }
+.slide.active .rv08-sounded .rv08-wave { animation: rv08-ring 1.8s ease-out infinite; animation-delay: calc(var(--k, 0) * .6s + var(--w, 0s)); }
+@keyframes rv08-ring { 0% { opacity: 0; transform: translateY(6px); } 30% { opacity: .9; } 100% { opacity: 0; transform: translateY(-14px); } }
+.rv08-lift { transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .rv08-ready .rv08-lift { animation: rv08-ready 2.6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * .25s); }
+@keyframes rv08-ready { 50% { transform: translateY(-5px); } }
+.rv08-woe { fill: color-mix(in srgb, var(--danger) 16%, transparent); stroke: var(--danger); stroke-width: 2; stroke-dasharray: 6 5; }
+.rv08-trumpets .rv08-woetext { fill: var(--danger); font-family: var(--serif); font-style: italic; font-size: 20px; }
+.rv08-link { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 6; }
+.rv08-lit { fill: none; stroke: var(--accent-hot); stroke-width: 3; }
+.slide.active .rv08-lit { animation: rv07-beat2 2s ease-in-out infinite; }
+@keyframes rv07-beat2 { 50% { stroke-opacity: .25; } }
+
+/* rv08-hush: the loud praise of heaven falls silent; half an hour passes (a deck.css candidate). */
+.rv08-bar { fill: var(--accent); transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv08-bar { animation: rv08-quiet 3s ease-in forwards; animation-delay: calc(var(--k) * 45ms + 1.2s); }
+@keyframes rv08-quiet { to { transform: scaleY(.05); fill: var(--line-strong); } }
+.rv08-sing { fill: var(--accent-hot); font-family: var(--serif); font-style: italic; font-size: 17px; }
+.slide.active .rv08-sing { animation: rv08-fade 2s ease forwards; animation-delay: calc(var(--k) * .3s + 1.6s); }
+@keyframes rv08-fade { to { opacity: 0; } }
+.rv08-face { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.rv08-half { fill: none; stroke: color-mix(in srgb, var(--cool) 55%, transparent); stroke-width: 56; stroke-dasharray: 0 176; transform: rotate(-90deg); transform-box: fill-box; transform-origin: 50% 50%; }
+.slide.active .rv08-half { animation: rv08-pass 4s ease-in-out 3.8s forwards; }
+@keyframes rv08-pass { to { stroke-dasharray: 88 176; } }
+.rv08-hush text { fill: var(--ink-soft); font-size: 16px; }
+.rv08-hush .rv08-lbl { fill: var(--accent-hot); font-weight: 700; }
+.rv08-still { opacity: 0; }
+.slide.active .rv08-still { animation: rv08-show 1.2s ease 4s forwards; }
+@keyframes rv08-show { to { opacity: 1; } }
+
+/* rv08-incense: prayers rising from the earth to the golden altar, smoke going up to the throne, then fire cast down (a deck.css candidate). */
+.rv08-incense svg { max-height: 56vh; }
+.rv08-throne { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+.rv08-halo { fill: var(--glow); opacity: .22; }
+.rv08-altar { fill: var(--accent); stroke: var(--accent-hot); stroke-width: 2; }
+.rv08-altar-top { fill: var(--accent-hot); }
+.rv08-ground { stroke: var(--line-strong); stroke-width: 2; }
+.rv08-prayer { fill: var(--glow); stroke: var(--accent); stroke-width: 1.5; opacity: 0; }
+.slide.active .rv08-prayer { animation: rv08-up 4.5s ease-in infinite; animation-delay: calc(var(--k) * .9s); }
+@keyframes rv08-up { 0% { opacity: 0; transform: translate(var(--dx), var(--dy)); } 12% { opacity: 1; } 85% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; transform: translate(0, 0); } }
+.rv08-smoke { fill: none; stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 14 22; opacity: .55; }
+.slide.active .rv08-smoke { animation: rv08-drift 2.4s linear infinite; }
+@keyframes rv08-drift { to { stroke-dashoffset: 72; } }
+.rv08-incense text { fill: var(--ink-soft); font-size: 14px; font-family: var(--serif); font-style: italic; }
+.rv08-incense .rv08-lbl { fill: var(--accent-hot); font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 15px; }
+.rv08-fire { fill: var(--danger); stroke: var(--accent-hot); stroke-width: 2; opacity: 0; }
+.slide:has(.rv08-cast.on) .rv08-fire { animation: rv08-throw 1.6s cubic-bezier(.5,0,.8,.6) forwards; }
+@keyframes rv08-throw { 0% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 1; transform: translate(110px, 168px); } }
+.rv08-bolt { fill: none; stroke: var(--accent-hot); stroke-width: 4; stroke-linejoin: round; opacity: 0; }
+.slide:has(.rv08-cast.on) .rv08-bolt { animation: rv08-flash 1.4s 1.5s steps(2, jump-none) 3; animation-fill-mode: forwards; }
+@keyframes rv08-flash { from { opacity: 0; } to { opacity: 1; } }
+.rv08-quake { opacity: 0; transition: opacity 1s ease 2s; }
+.slide:has(.rv08-cast.on) .rv08-quake { opacity: 1; }
+.slide:has(.rv08-cast.on) .rv08-shake { animation: rv08-shake .25s 1.6s linear 6; }
+@keyframes rv08-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+
+/* rv08-third: a third struck, two thirds spared (a deck.css candidate). */
+.rv08-third svg { max-height: 28vh; }
+.rv08-disc { stroke: var(--line-strong); stroke-width: 2; }
+.rv08-disc.land { fill: color-mix(in srgb, var(--cool) 40%, var(--ink-soft)); }
+.rv08-disc.sea { fill: color-mix(in srgb, var(--cool) 70%, var(--surface-2)); }
+.rv08-disc.river { fill: color-mix(in srgb, var(--cool) 45%, var(--glow)); }
+.rv08-disc.sky { fill: var(--glow); }
+.rv08-cut { fill: color-mix(in srgb, var(--danger) 75%, var(--on-glow)); stroke: var(--danger); stroke-width: 2; opacity: 0; transform-box: view-box; }
+.slide.active .rv08-cut { animation: rv08-cut 1s ease forwards; animation-delay: calc(var(--k) * .5s + .6s); }
+@keyframes rv08-cut { from { opacity: 0; } to { opacity: .9; } }
+.rv08-third text { fill: var(--ink-soft); font-size: 16px; }
+.rv08-third .rv08-lbl { fill: var(--accent-hot); font-weight: 700; }
+.rv08-third .rv08-bad { fill: var(--danger); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv08-wave, .rv08-lift, .rv08-prayer, .rv08-smoke, .rv08-shake, .rv07-cells i.now, .rv08-lit { animation: none !important; }
+  .rv08-bar, .rv08-sing, .rv08-half, .rv08-still, .rv08-cut { animation-duration: .01s !important; animation-delay: 0s !important; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 8</h1>
+    <p class="sub rise" style="--d:3">Your prayers are not lost</p>
+    <p class="tag rise" style="--d:5">The seventh seal opens, and heaven goes silent. The prayers of God's people rise like incense before His throne, and they are answered. Then the trumpets begin: warnings that strike a third and spare the rest, so that men will turn while there is time.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Silence</span><span class="seed-q">Why does heaven go silent for half an hour?</span></li>
+      <li class="step"><span class="topic">Prayers</span><span class="seed-q">What happens to the prayers of God's people?</span></li>
+      <li class="step"><span class="topic">Trumpets</span><span class="seed-q">What is a trumpet for?</span></li>
+      <li class="step"><span class="topic">A third</span><span class="seed-q">Why is only a third struck?</span></li>
+      <li class="step"><span class="topic">Bitter</span><span class="seed-q">What does the star called Wormwood teach us about bitter water?</span></li>
+      <li class="step"><span class="topic">Woe</span><span class="seed-q">What is the angel's “Woe, woe, woe” calling men to do?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv07-where rise" style="--d:1" role="img" aria-label="The 22 chapters of Revelation in seven sections: chapter 1, a vision of Christ; 2 and 3, seven churches; 4 and 5, the throne and the Lamb; 6 to 16, seals, trumpets and bowls; 17 and 18, Babylon falls; 19 and 20, Christ returns and reigns; 21 and 22, all things new. Chapter 8 is lit.">
+      <div class="rv07-sec" style="--n:1"><span class="rv07-cells"><i>1</i></span><b>Vision of Christ</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>2</i><i>3</i></span><b>Seven churches</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>4</i><i>5</i></span><b>Throne and Lamb</b></div>
+      <div class="rv07-sec here" style="--n:11"><span class="rv07-cells"><i>6</i><i>7</i><i class="now">8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i></span><b>Seals, trumpets, bowls</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>17</i><i>18</i></span><b>Babylon falls</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>19</i><i>20</i></span><b>Christ returns and reigns</b></div>
+      <div class="rv07-sec" style="--n:2"><span class="rv07-cells"><i>21</i><i>22</i></span><b>All things new</b></div>
+    </div>
+    <div class="stage rv08-trumpets rise" style="--d:2">
+      <svg viewBox="0 0 640 230" role="img" aria-label="Seven broken seals in a row. The seventh is lit, and a dashed line runs from it down to a row of seven trumpets, still silent.">
+        <defs><symbol id="rv08-tr" viewBox="0 0 40 100" overflow="visible"><path d="M8 4 Q20 10 32 4 L32 8 Q24 16 23 34 L23 84 L25 88 L25 96 L15 96 L15 88 L17 84 L17 34 Q16 16 8 8 Z"/><ellipse cx="20" cy="5" rx="13" ry="3.5"/></symbol></defs>
+        <g transform="translate(50 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(140 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(230 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(320 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(410 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(500 34)"><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <g transform="translate(590 34)"><circle class="rv08-lit" r="27"/><path class="rv07-wax rv07-half l" d="M0 -18 A18 18 0 0 0 0 18 Z"/><path class="rv07-wax rv07-half r" d="M0 -18 A18 18 0 0 1 0 18 Z"/></g>
+        <text x="20" y="80">seals 1–6: chapter 6</text>
+        <text x="620" y="80" text-anchor="end" style="fill:var(--accent-hot)">seal 7: silence, then …</text>
+        <path class="rv08-link" d="M590 62 C590 104 470 92 320 104 C170 116 50 104 50 126"/>
+        <g class="rv08-quiet">
+          <use href="#rv08-tr" class="rv08-horn" x="34" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="124" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="214" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="304" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="394" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="484" y="126" width="32" height="80"/><use href="#rv08-tr" class="rv08-horn" x="574" y="126" width="32" height="80"/>
+        </g>
+        <text x="320" y="226" text-anchor="middle" style="fill:var(--accent-hot)">seven trumpets</text>
+      </svg>
+    </div>
+    <p class="note step">Out of the seventh seal come seven trumpets, and later seven bowls (chapters 15–16). Teachers differ on how they fit together. Some read them one after another, each worse than the last. Others think the trumpets and bowls tell the same days again from a closer angle. Either way, the Lamb opened every seal, and nothing in this chapter is out of His hands.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Silence and incense</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Heaven, which has been loud with praise for four chapters, goes quiet. And the first thing that happens next is prayer.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="there was silence in heaven about the space of half an hour|to them were given seven trumpets"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="there was silence in heaven about the space of half an hour"></blockquote>
+    <div class="stage rv08-hush">
+      <svg viewBox="0 0 620 220" role="img" aria-label="A sound wave of loud praise, labelled holy, holy, holy; worthy is the Lamb; salvation to our God. The bars sink until the line is flat and silent. Beside it, a clock face slowly fills half way: half an hour.">
+        <text class="rv08-sing" style="--k:0" x="40" y="30">“Holy, holy, holy”</text>
+        <text class="rv08-sing" style="--k:1" x="180" y="30">“Worthy is the Lamb”</text>
+        <text class="rv08-sing" style="--k:2" x="330" y="30">“Salvation to our God”</text>
+        <rect class="rv08-bar" style="--k:0" x="24" y="95" width="8" height="50" rx="4"/>
+          <rect class="rv08-bar" style="--k:1" x="38" y="83" width="8" height="74" rx="4"/>
+          <rect class="rv08-bar" style="--k:2" x="52" y="87" width="8" height="66" rx="4"/>
+          <rect class="rv08-bar" style="--k:3" x="66" y="98.5" width="8" height="43" rx="4"/>
+          <rect class="rv08-bar" style="--k:4" x="80" y="92" width="8" height="56" rx="4"/>
+          <rect class="rv08-bar" style="--k:5" x="94" y="90.5" width="8" height="59" rx="4"/>
+          <rect class="rv08-bar" style="--k:6" x="108" y="106" width="8" height="28" rx="4"/>
+          <rect class="rv08-bar" style="--k:7" x="122" y="94" width="8" height="52" rx="4"/>
+          <rect class="rv08-bar" style="--k:8" x="136" y="94" width="8" height="52" rx="4"/>
+          <rect class="rv08-bar" style="--k:9" x="150" y="71" width="8" height="98" rx="4"/>
+          <rect class="rv08-bar" style="--k:10" x="164" y="105.5" width="8" height="29" rx="4"/>
+          <rect class="rv08-bar" style="--k:11" x="178" y="93.5" width="8" height="53" rx="4"/>
+          <rect class="rv08-bar" style="--k:12" x="192" y="95" width="8" height="50" rx="4"/>
+          <rect class="rv08-bar" style="--k:13" x="206" y="107" width="8" height="26" rx="4"/>
+          <rect class="rv08-bar" style="--k:14" x="220" y="90" width="8" height="60" rx="4"/>
+          <rect class="rv08-bar" style="--k:15" x="234" y="77.5" width="8" height="85" rx="4"/>
+          <rect class="rv08-bar" style="--k:16" x="248" y="94.5" width="8" height="51" rx="4"/>
+          <rect class="rv08-bar" style="--k:17" x="262" y="109.5" width="8" height="21" rx="4"/>
+          <rect class="rv08-bar" style="--k:18" x="276" y="105.5" width="8" height="29" rx="4"/>
+          <rect class="rv08-bar" style="--k:19" x="290" y="104" width="8" height="32" rx="4"/>
+          <rect class="rv08-bar" style="--k:20" x="304" y="102.5" width="8" height="35" rx="4"/>
+          <rect class="rv08-bar" style="--k:21" x="318" y="93" width="8" height="54" rx="4"/>
+          <rect class="rv08-bar" style="--k:22" x="332" y="72" width="8" height="96" rx="4"/>
+          <rect class="rv08-bar" style="--k:23" x="346" y="71.5" width="8" height="97" rx="4"/>
+          <rect class="rv08-bar" style="--k:24" x="360" y="94" width="8" height="52" rx="4"/>
+          <rect class="rv08-bar" style="--k:25" x="374" y="92.5" width="8" height="55" rx="4"/>
+          <rect class="rv08-bar" style="--k:26" x="388" y="101.5" width="8" height="37" rx="4"/>
+          <rect class="rv08-bar" style="--k:27" x="402" y="81" width="8" height="78" rx="4"/>
+          <rect class="rv08-bar" style="--k:28" x="416" y="87.5" width="8" height="65" rx="4"/>
+          <rect class="rv08-bar" style="--k:29" x="430" y="92" width="8" height="56" rx="4"/>
+        <text class="rv08-still rv08-lbl" x="230" y="200" text-anchor="middle">silence</text>
+        <circle class="rv08-face" cx="540" cy="120" r="58"/>
+        <circle class="rv08-half" cx="540" cy="120" r="28"/>
+        <line x1="540" y1="120" x2="540" y2="70" style="stroke:var(--ink);stroke-width:3;stroke-linecap:round"/>
+        <circle cx="540" cy="120" r="5" style="fill:var(--ink)"/>
+        <text class="rv08-still rv08-lbl" x="540" y="200" text-anchor="middle">half an hour</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:1">Heaven holds its breath</h2>
+    <p class="note rise" style="--d:2">Since chapter 4, heaven has never stopped singing. Now: nothing. The prophets knew this kind of silence. It is the hush before God acts.</p>
+    <blockquote class="quote step"><p>“But the LORD is in his holy temple: let all the earth keep silence before him.”</p><cite>Habakkuk 2:20</cite></blockquote>
+    <p class="note step">Some teachers think heaven goes quiet so the prayers in the next verses can be heard. Whether or not, there are times to stop talking and be still before God. Today, try five quiet minutes before you say a word to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-6" data-hl="with the prayers of all saints upon the golden altar which was before the throne|ascended up before God|cast it into the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="much incense, that he should offer it with the prayers of all saints upon the golden altar"></blockquote>
+    <div class="split">
+      <div class="stage rv08-incense">
+        <svg viewBox="0 0 520 420" role="img" aria-label="At the bottom, the earth, with prayers written along it: keep me clean today, save my son, how long, Lord?, forgive me, help me find work. Small lights rise from each one to a golden altar in the middle. Smoke rises from the altar up to the throne at the top. Then fire from the altar is thrown down to the earth, with lightning and a shaking.">
+          <circle class="rv08-halo" cx="260" cy="46" r="42"/>
+          <rect class="rv08-throne" x="236" y="26" width="48" height="34" rx="6"/>
+          <text class="rv08-lbl" x="260" y="84" text-anchor="middle">before God</text>
+          <path class="rv08-smoke" d="M250 214 C230 186 270 160 250 130 S262 104 254 96"/>
+          <path class="rv08-smoke" d="M270 214 C290 186 250 158 272 128 S258 104 266 96" style="animation-delay:-1.2s"/>
+          <g class="rv08-shake">
+            <rect class="rv08-altar" x="210" y="226" width="100" height="56" rx="3"/>
+            <rect class="rv08-altar-top" x="204" y="218" width="112" height="10" rx="2"/>
+            <rect class="rv08-altar-top" x="202" y="210" width="12" height="12"/><rect class="rv08-altar-top" x="306" y="210" width="12" height="12"/>
+            <text class="rv08-lbl" x="260" y="304" text-anchor="middle" style="font-size:13px">the golden altar</text>
+            <circle class="rv08-prayer" style="--k:0;--dx:-200px;--dy:150px" cx="260" cy="218" r="6"/>
+            <circle class="rv08-prayer" style="--k:1;--dx:-100px;--dy:170px" cx="260" cy="218" r="6"/>
+            <circle class="rv08-prayer" style="--k:2;--dx:0px;--dy:150px" cx="260" cy="218" r="6"/>
+            <circle class="rv08-prayer" style="--k:3;--dx:100px;--dy:170px" cx="260" cy="218" r="6"/>
+            <circle class="rv08-prayer" style="--k:4;--dx:200px;--dy:150px" cx="260" cy="218" r="6"/>
+            <circle class="rv08-fire" cx="300" cy="218" r="12"/>
+            <line class="rv08-ground" x1="10" y1="388" x2="510" y2="388"/>
+            <text x="60" y="364" text-anchor="middle">“keep me</text><text x="60" y="380" text-anchor="middle">clean today”</text>
+            <text x="160" y="384" text-anchor="middle">“save my son”</text>
+            <text x="260" y="364" text-anchor="middle">“how long,</text><text x="260" y="380" text-anchor="middle">Lord?”</text>
+            <text x="360" y="384" text-anchor="middle">“forgive me”</text>
+            <text x="460" y="364" text-anchor="middle">“help me</text><text x="460" y="380" text-anchor="middle">find work”</text>
+          </g>
+          <path class="rv08-bolt" d="M420 250 L400 290 L424 290 L398 336"/>
+          <path class="rv08-bolt" d="M484 246 L470 276 L488 276 L466 310"/>
+          <text class="rv08-quake rv08-lbl" x="260" y="412" text-anchor="middle">voices, thunderings, lightnings, an earthquake</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Your prayers are kept</h2>
+        <p class="note rise" style="--d:2">The angel mixes <em>“much incense”</em> with the prayers of all God's people, and they go up before God. Not lost, not forgotten, not too small. Two chapters back, the elders held <em>“golden vials full of odours, which are the prayers of saints”</em> (5:8). Heaven keeps them.</p>
+        <blockquote class="quote step"><p>“Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.”</p><cite>Psalm 141:2</cite></blockquote>
+        <p class="note step rv08-cast">Then watch verse 5. The same censer is filled with fire <em>from that altar</em> and thrown to the earth. The answer to the prayers comes from the place where the prayers went.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="the angel took the censer, and filled it with fire of the altar, and cast it into the earth"></blockquote>
+    <h2 class="rise" style="--d:1">The prayers are answered</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>Chapter 6:10, the saints under the altar</small>“How long, O Lord, holy and true …?”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Chapter 8:5, from the same altar</small>fire cast to the earth: God is acting</div>
+    </div>
+    <blockquote class="quote step"><p>“And shall not God avenge his own elect, which cry day and night unto him, though he bear long with them?”</p><cite>Luke 18:7</cite></blockquote>
+    <p class="note step">Prayer is not a wish shouted into the dark. It goes before the throne, and it moves the hand of God, in His time. Many of you have prayed for years for a son, a wife, a mother, your own freedom. Don't stop. Heaven has every one of them in the bowl.</p>
+    <p class="note step">And if you hardly know how to pray, that's covered too: the Spirit <em>“maketh intercession for us with groanings which cannot be uttered”</em> (Romans 8:26). Today: pray for one person by name, and write it down.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="the seven angels which had the seven trumpets prepared themselves to sound"></blockquote>
+    <h2 class="rise" style="--d:1">What is a trumpet for?</h2>
+    <div class="stage rv08-trumpets rise" style="--d:2">
+      <svg viewBox="0 0 640 140" role="img" aria-label="Seven trumpets in a row, raised and ready, not yet sounding.">
+        <defs><symbol id="rv08-tr2" viewBox="0 0 40 100" overflow="visible"><path d="M8 4 Q20 10 32 4 L32 8 Q24 16 23 34 L23 84 L25 88 L25 96 L15 96 L15 88 L17 84 L17 34 Q16 16 8 8 Z"/><ellipse cx="20" cy="5" rx="13" ry="3.5"/></symbol></defs>
+        <g class="rv08-ready">
+          <g class="rv08-lift" style="--k:0"><use href="#rv08-tr2" class="rv08-horn" x="30" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:1"><use href="#rv08-tr2" class="rv08-horn" x="120" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:2"><use href="#rv08-tr2" class="rv08-horn" x="210" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:3"><use href="#rv08-tr2" class="rv08-horn" x="300" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:4"><use href="#rv08-tr2" class="rv08-horn" x="390" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:5"><use href="#rv08-tr2" class="rv08-horn" x="480" y="10" width="40" height="100"/></g>
+          <g class="rv08-lift" style="--k:6"><use href="#rv08-tr2" class="rv08-horn" x="570" y="10" width="40" height="100"/></g>
+        </g>
+        <text x="50" y="134" text-anchor="middle">1</text><text x="140" y="134" text-anchor="middle">2</text><text x="230" y="134" text-anchor="middle">3</text><text x="320" y="134" text-anchor="middle">4</text><text x="410" y="134" text-anchor="middle">5</text><text x="500" y="134" text-anchor="middle">6</text><text x="590" y="134" text-anchor="middle">7</text>
+      </svg>
+    </div>
+    <p class="note rise" style="--d:3">In Israel a trumpet called the people together, sounded for battle, and above all, <em>warned</em>. A watchman who saw an enemy coming blew it so the city could get ready:</p>
+    <blockquote class="quote step"><p>“If when he seeth the sword come upon the land, he blow the trumpet, and warn the people;”</p><cite>Ezekiel 33:3</cite></blockquote>
+    <p class="note step">At Jericho, seven priests blew seven trumpets before the walls fell (Joshua 6:4). Here seven angels hold seven trumpets. A trumpet is loud on purpose: God wants to be heard <em>before</em> the end, not after.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Four trumpets</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Land, sea, rivers and sky are struck in turn. Every time, a third. Every time, two thirds left standing.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="hail and fire mingled with blood|a great mountain burning with fire was cast into the sea|the third part of the sea became blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="there followed hail and fire mingled with blood"></blockquote>
+    <h2 class="rise" style="--d:1">The God of the Exodus</h2>
+    <p class="note rise" style="--d:2">Anyone who knew his Bible would hear Egypt in these trumpets. The same God who struck Pharaoh's land to set His people free is at work again.</p>
+    <div class="mirror">
+      <div class="rise" style="--d:3"><span class="word">1st trumpet: hail and fire</span><span class="arrow">↔</span><span>Egypt's hail, <em>“and fire mingled with the hail”</em> (Exodus 9:24)</span></div>
+      <div class="rise" style="--d:4"><span class="word">2nd trumpet: the sea becomes blood</span><span class="arrow">↔</span><span>the Nile turned to blood (Exodus 7:20)</span></div>
+      <div class="rise" style="--d:5"><span class="word">3rd trumpet: bitter waters</span><span class="arrow">↔</span><span>the waters made undrinkable (Exodus 7:21)</span></div>
+      <div class="rise" style="--d:6"><span class="word">4th trumpet: darkness</span><span class="arrow">↔</span><span>three days of thick darkness (Exodus 10:22)</span></div>
+    </div>
+    <p class="note step">How literal is it? Good teachers differ. Some expect a real burning mountain and real blood; others read a picture of judgment on the world's food, trade and water. Both agree on what is plain: God judges evil, and He is not done saving His people.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="there fell a great star from heaven, burning as it were a lamp|the name of the star is called Wormwood|because they were made bitter|the third part of the sun was smitten"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="the name of the star is called Wormwood: and the third part of the waters became wormwood"></blockquote>
+    <h2 class="rise" style="--d:1">Wormwood: bitter water</h2>
+    <p class="note rise" style="--d:2"><em>Wormwood</em> is a real plant, so bitter that its name meant sorrow. In the prophets it is what sin tastes like in the end:</p>
+    <blockquote class="quote rise" style="--d:3"><p>“Therefore thus saith the LORD of hosts, the God of Israel; Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink.”</p><cite>Jeremiah 9:15</cite></blockquote>
+    <p class="note step">You may know that taste. What looked like water turned out to be poison: the drink, the pipe, a woman who wasn't your wife. <em>“Many men died of the waters, because they were made bitter.”</em> Sin always gets bitter, and so does a heart that holds on to it.</p>
+    <div class="ifthen step">
+      <div class="if"><small>Marah (Exodus 15:23)</small>“they were bitter”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="if"><small>Moses cried to the LORD</small>“the LORD shewed him a tree”</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>Exodus 15:25</small>“the waters were made sweet”</div>
+    </div>
+    <p class="note step">Many preachers have seen the cross in that tree. Whatever has gone bitter in you, cry to the Lord as Moses did. He still sweetens water.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="the third part of the sun was smitten, and the third part of the moon, and the third part of the stars"></blockquote>
+    <h2 class="rise" style="--d:1">A third, not all</h2>
+    <div class="stage rv08-third rise" style="--d:2">
+      <svg viewBox="0 0 640 190" role="img" aria-label="Four circles: trees and grass, the sea and its ships, the rivers and springs, and the sun, moon and stars. In each, one third is struck dark red, and two thirds are left whole.">
+        <circle class="rv08-disc land" cx="80" cy="76" r="60"/><path class="rv08-cut" style="--k:0" d="M80 76 L80 16 A60 60 0 0 1 131.96 106 Z"/>
+        <circle class="rv08-disc sea" cx="240" cy="76" r="60"/><path class="rv08-cut" style="--k:1" d="M240 76 L240 16 A60 60 0 0 1 291.96 106 Z"/>
+        <circle class="rv08-disc river" cx="400" cy="76" r="60"/><path class="rv08-cut" style="--k:2" d="M400 76 L400 16 A60 60 0 0 1 451.96 106 Z"/>
+        <circle class="rv08-disc sky" cx="560" cy="76" r="60"/><path class="rv08-cut" style="--k:3" d="M560 76 L560 16 A60 60 0 0 1 611.96 106 Z"/>
+        <text x="80" y="160" text-anchor="middle">trees, grass</text><text x="240" y="160" text-anchor="middle">sea, ships</text><text x="400" y="160" text-anchor="middle">rivers, springs</text><text x="560" y="160" text-anchor="middle">sun, moon, stars</text>
+        <text class="rv08-bad" x="314" y="186" text-anchor="end">each: ⅓ struck</text><text class="rv08-lbl" x="326" y="186">⅔ spared</text>
+      </svg>
+    </div>
+    <p class="note step">Four times, the same fraction. These are not the final judgment; they are warnings with the brakes on. God strikes part so that the rest can see, and turn.</p>
+    <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+    <p class="note step">Maybe your life has taken a hit like that: a third gone, the job, the license, the marriage, your health. That loss can be a trumpet, not an ending. Two thirds is still standing. Turn to Him with it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Woe, woe, woe</h2>
+    <p class="range rise" style="--d:2">Verse 13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Before the last three trumpets, an angel flies through the sky and cries out a warning.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13" data-hl="Woe, woe, woe, to the inhabiters of the earth|which are yet to sound"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="Woe, woe, woe, to the inhabiters of the earth"></blockquote>
+    <div class="stage rv08-trumpets rise" style="--d:1">
+      <svg viewBox="0 0 640 200" role="img" aria-label="The seven trumpets. The first four are gold and sounding, with captions: hail and fire, a burning mountain, the star Wormwood, a third darkened. The last three are grey and silent, under a red banner: woe, woe, woe.">
+        <defs><symbol id="rv08-tr3" viewBox="0 0 40 100" overflow="visible"><path d="M8 4 Q20 10 32 4 L32 8 Q24 16 23 34 L23 84 L25 88 L25 96 L15 96 L15 88 L17 84 L17 34 Q16 16 8 8 Z"/><ellipse cx="20" cy="5" rx="13" ry="3.5"/></symbol></defs>
+        <g class="rv08-sounded">
+          <g style="--k:0"><use href="#rv08-tr3" class="rv08-horn" x="30" y="50" width="40" height="100"/><path class="rv08-wave" d="M34 44 Q50 34 66 44"/><path class="rv08-wave" style="--w:.3s" d="M28 34 Q50 20 72 34"/></g>
+          <g style="--k:1"><use href="#rv08-tr3" class="rv08-horn" x="120" y="50" width="40" height="100"/><path class="rv08-wave" d="M124 44 Q140 34 156 44"/><path class="rv08-wave" style="--w:.3s" d="M118 34 Q140 20 162 34"/></g>
+          <g style="--k:2"><use href="#rv08-tr3" class="rv08-horn" x="210" y="50" width="40" height="100"/><path class="rv08-wave" d="M214 44 Q230 34 246 44"/><path class="rv08-wave" style="--w:.3s" d="M208 34 Q230 20 252 34"/></g>
+          <g style="--k:3"><use href="#rv08-tr3" class="rv08-horn" x="300" y="50" width="40" height="100"/><path class="rv08-wave" d="M304 44 Q320 34 336 44"/><path class="rv08-wave" style="--w:.3s" d="M298 34 Q320 20 342 34"/></g>
+        </g>
+        <rect class="rv08-woe" x="368" y="8" width="262" height="40" rx="8"/>
+        <text class="rv08-woetext" x="499" y="35" text-anchor="middle">Woe, woe, woe</text>
+        <g class="rv08-quiet">
+          <use href="#rv08-tr3" class="rv08-horn" x="390" y="56" width="40" height="100"/><use href="#rv08-tr3" class="rv08-horn" x="480" y="56" width="40" height="100"/><use href="#rv08-tr3" class="rv08-horn" x="570" y="56" width="40" height="100"/>
+        </g>
+        <text class="rv08-cap" x="50" y="172" text-anchor="middle">hail, fire</text><text class="rv08-cap" x="140" y="172" text-anchor="middle">a burning</text><text class="rv08-cap" x="140" y="188" text-anchor="middle">mountain</text><text class="rv08-cap" x="230" y="172" text-anchor="middle">Wormwood</text><text class="rv08-cap" x="320" y="172" text-anchor="middle">a third</text><text class="rv08-cap" x="320" y="188" text-anchor="middle">darkened</text>
+        <text x="410" y="176" text-anchor="middle">5</text><text x="500" y="176" text-anchor="middle">6</text><text x="590" y="176" text-anchor="middle">7</text>
+      </svg>
+    </div>
+    <h2 class="rise" style="--d:2">The worst is still a warning</h2>
+    <p class="note rise" style="--d:3">Three woes for three trumpets still to come. <em>“The inhabiters of the earth”</em> is Revelation's name for people who live as if this world is all there is. The angel is not gloating. He is shouting while there is still time to hear.</p>
+    <p class="note step">Chapter 9 ends sadly: after all of it, men <em>“repented not of the works of their hands”</em> (9:20). Don't be that man. You don't need a burning mountain to turn around. Turn today, while the trumpet is still only a warning.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">So, today</h2>
+    <ol class="signs rise" style="--d:1">
+      <li class="now"><b>Be still</b>Heaven went quiet before God acted. Give Him five quiet minutes before the day gets loud.</li>
+      <li><b>Pray by name</b>Your prayers rise like incense and are kept before the throne. Pray for one person by name.</li>
+      <li><b>Hear the warning</b>If something in your life is sounding like a trumpet, don't wait for the next one. Turn now.</li>
+      <li><b>Let Him sweeten it</b>Bring the bitter thing to the Lord, as Moses did at Marah.</li>
+    </ol>
+    <p class="note step">Revelation 8 sounds frightening, and it is meant to be serious. But look at who is in charge. The Lamb opened the seal. God set the limits: a third, no more. And before a single trumpet sounded, He stopped to hear His people pray. You are not forgotten in the noise.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Silence</span><span class="seed-q">“there was silence in heaven about the space of half an hour” <cite>8:1</cite></span><span class="take">Heaven holds its breath before God acts. There is a time to be still before Him.</span></li>
+      <li class="step"><span class="topic">Prayers</span><span class="seed-q">“the smoke of the incense, which came with the prayers of the saints, ascended up before God” <cite>8:4</cite></span><span class="take">Your prayers are kept before the throne, and the answer comes from the same altar.</span></li>
+      <li class="step"><span class="topic">Trumpets</span><span class="seed-q">“to them were given seven trumpets” <cite>8:2</cite></span><span class="take">A trumpet warns. God sounds it before the end so men can get ready.</span></li>
+      <li class="step"><span class="topic">A third</span><span class="seed-q">“the third part of the sun was smitten” <cite>8:12</cite></span><span class="take">God limits His judgment. Two thirds is spared, so that people will turn while there is time.</span></li>
+      <li class="step"><span class="topic">Bitter</span><span class="seed-q">“many men died of the waters, because they were made bitter” <cite>8:11</cite></span><span class="take">Sin always turns bitter. The Lord who made Marah sweet can sweeten what has gone bitter in you.</span></li>
+      <li class="step"><span class="topic">Woe</span><span class="seed-q">“Woe, woe, woe, to the inhabiters of the earth” <cite>8:13</cite></span><span class="take">The angel cries out while there is still time. Turn today, before the next trumpet.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Silence</span>
+      <h2>Why does heaven go silent for half an hour?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="there was silence in heaven about the space of half an hour"></blockquote>
+      <blockquote class="quote step"><p>“But the LORD is in his holy temple: let all the earth keep silence before him.”</p><cite>Habakkuk 2:20</cite></blockquote>
+      <blockquote class="quote step"><p>“Hold thy peace at the presence of the Lord GOD: for the day of the LORD is at hand: for the LORD hath prepared a sacrifice, he hath bid his guests.”</p><cite>Zephaniah 1:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It is the hush before God acts, the silence the prophets spoke of. Some teachers think heaven goes quiet so the prayers of the saints can be heard. Either way, it is awe: even heaven stops talking when God is about to move.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Prayers</span>
+      <h2>What happens to the prayers of God's people?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne"></blockquote>
+      <blockquote class="quote step" data-q="5" data-hl="filled it with fire of the altar, and cast it into the earth"></blockquote>
+      <blockquote class="quote step"><p>“Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.”</p><cite>Psalm 141:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They rise before God like incense and are kept there. Then fire from the same altar is cast to the earth: the prayers are answered, in God's time and His way. No prayer of yours is wasted.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Trumpets</span>
+      <h2>What is a trumpet for?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="the seven angels which had the seven trumpets prepared themselves to sound"></blockquote>
+      <blockquote class="quote step"><p>“If when he seeth the sword come upon the land, he blow the trumpet, and warn the people;”</p><cite>Ezekiel 33:3</cite></blockquote>
+      <blockquote class="quote step"><p>“Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of the LORD cometh, for it is nigh at hand;”</p><cite>Joel 2:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To warn. A watchman blew the trumpet when he saw danger coming, so people could get ready. God sounds these trumpets before the end, not after it, because He wants to be heard in time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">A third</span>
+      <h2>Why is only a third struck?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="the third part of trees was burnt up"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="the third part of the sun was smitten"></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God limits His judgment. These are warnings, not the end: He strikes part and spares the rest so that people will see and turn. He is patient, not willing that any should perish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Bitter</span>
+      <h2>What does the star called Wormwood teach us about bitter water?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11" data-hl="many men died of the waters, because they were made bitter"></blockquote>
+      <blockquote class="quote step"><p>“Therefore thus saith the LORD of hosts, the God of Israel; Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink.”</p><cite>Jeremiah 9:15</cite></blockquote>
+      <blockquote class="quote step"><p>“And he cried unto the LORD; and the LORD shewed him a tree, which when he had cast into the waters, the waters were made sweet: there he made for them a statute and an ordinance, and there he proved them,”</p><cite>Exodus 15:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Sin always turns bitter in the end, and bitter water kills. But at Marah, Moses cried to the Lord and a tree made the water sweet. Bring the bitter thing to Him; He still sweetens water.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Woe</span>
+      <h2>What is the angel's “Woe, woe, woe” calling men to do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="Woe, woe, woe, to the inhabiters of the earth by reason of the other voices of the trumpet of the three angels, which are yet to sound"></blockquote>
+      <blockquote class="quote step"><p>“And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:”</p><cite>Revelation 9:20</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To turn while there is still time. The worst is yet to come, and the angel cries out before it does. Sadly, many would not repent. Don't wait for the next trumpet: turn to Christ today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="4"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 8
+const V = {
+  1: "And when he had opened the seventh seal, there was silence in heaven about the space of half an hour.",
+  2: "And I saw the seven angels which stood before God; and to them were given seven trumpets.",
+  3: "And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.",
+  4: "And the smoke of the incense, which came with the prayers of the saints, ascended up before God out of the angel’s hand.",
+  5: "And the angel took the censer, and filled it with fire of the altar, and cast it into the earth: and there were voices, and thunderings, and lightnings, and an earthquake.",
+  6: "And the seven angels which had the seven trumpets prepared themselves to sound.",
+  7: "The first angel sounded, and there followed hail and fire mingled with blood, and they were cast upon the earth: and the third part of trees was burnt up, and all green grass was burnt up.",
+  8: "And the second angel sounded, and as it were a great mountain burning with fire was cast into the sea: and the third part of the sea became blood;",
+  9: "And the third part of the creatures which were in the sea, and had life, died; and the third part of the ships were destroyed.",
+  10: "And the third angel sounded, and there fell a great star from heaven, burning as it were a lamp, and it fell upon the third part of the rivers, and upon the fountains of waters;",
+  11: "And the name of the star is called Wormwood: and the third part of the waters became wormwood; and many men died of the waters, because they were made bitter.",
+  12: "And the fourth angel sounded, and the third part of the sun was smitten, and the third part of the moon, and the third part of the stars; so as the third part of them was darkened, and the day shone not for a third part of it, and the night likewise.",
+  13: "And I beheld, and heard an angel flying through the midst of heaven, saying with a loud voice, Woe, woe, woe, to the inhabiters of the earth by reason of the other voices of the trumpet of the three angels, which are yet to sound!"
+};
+const BOOK = "Revelation 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
