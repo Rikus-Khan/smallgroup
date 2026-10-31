@@ -434,6 +434,12 @@ window.GLOSSARY = [
     "Ephesians", 4,
     [ 21 ] ],
    [
+    "Ephesians", 5,
+    [ 20 ] ],
+   [
+    "Ephesians", 6,
+    [ 23, 24 ] ],
+   [
     "Philippians", 1,
     [ 1, 2, 6, 8, 11, 19, 26 ] ],
    [
@@ -1307,6 +1313,12 @@ window.GLOSSARY = [
     "Ephesians", 4,
     [ 6 ] ],
    [
+    "Ephesians", 5,
+    [ 20 ] ],
+   [
+    "Ephesians", 6,
+    [ 23 ] ],
+   [
     "Philippians", 1,
     [ 2 ] ],
    [
@@ -1522,6 +1534,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 3, 4, 30 ] ],
+   [
+    "Ephesians", 5,
+    [ 9, 18 ] ],
+   [
+    "Ephesians", 6,
+    [ 17, 18 ] ],
    [
     "Philippians", 1,
     [ 19 ] ],
@@ -3989,6 +4007,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 15 ] ],
    [
+    "Ephesians", 6,
+    [ 9 ] ],
+   [
     "Philippians", 2,
     [ 10 ] ],
    [
@@ -4340,6 +4361,9 @@ window.GLOSSARY = [
     "2 Corinthians", 11,
     [ 14 ] ],
    [
+    "Ephesians", 5,
+    [ 8, 13, 14 ] ],
+   [
     "Colossians", 1,
     [ 12 ] ] ]
  },
@@ -4450,6 +4474,12 @@ window.GLOSSARY = [
    [
     "2 Corinthians", 6,
     [ 14 ] ],
+   [
+    "Ephesians", 5,
+    [ 8, 11 ] ],
+   [
+    "Ephesians", 6,
+    [ 12 ] ],
    [
     "Colossians", 1,
     [ 13 ] ] ]
@@ -4765,6 +4795,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 15, 21, 25 ] ],
+   [
+    "Ephesians", 5,
+    [ 9 ] ],
+   [
+    "Ephesians", 6,
+    [ 14 ] ],
    [
     "Philippians", 1,
     [ 18 ] ],
@@ -5593,6 +5629,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 7, 12, 13, 15, 20, 32 ] ],
+   [
+    "Ephesians", 5,
+    [ 2, 5, 14, 20, 23, 24, 25, 32 ] ],
+   [
+    "Ephesians", 6,
+    [ 5, 6, 23, 24 ] ],
    [
     "Philippians", 1,
     [ 1, 2, 6, 8, 10, 11, 13, 15, 16, 18, 19, 20, 21, 23, 26, 27, 29 ] ],
@@ -6588,7 +6630,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Romans", 14,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Ephesians", 5,
+    [ 18 ] ] ]
  },
  {
   "id": "waterpots",
@@ -7112,6 +7157,9 @@ window.GLOSSARY = [
     "Ephesians", 4,
     [ 18 ] ],
    [
+    "Ephesians", 5,
+    [ 17 ] ],
+   [
     "Philippians", 4,
     [ 7 ] ],
    [
@@ -7533,7 +7581,10 @@ window.GLOSSARY = [
     [ 6, 11 ] ],
    [
     "Galatians", 3,
-    [ 1, 3 ] ] ]
+    [ 1, 3 ] ],
+   [
+    "Ephesians", 5,
+    [ 4, 15 ] ] ]
  },
  {
   "id": "scorner",
@@ -7907,6 +7958,12 @@ window.GLOSSARY = [
     "Ephesians", 4,
     [ 24 ] ],
    [
+    "Ephesians", 5,
+    [ 9 ] ],
+   [
+    "Ephesians", 6,
+    [ 14 ] ],
+   [
     "Philippians", 1,
     [ 11 ] ],
    [
@@ -8086,6 +8143,9 @@ window.GLOSSARY = [
    [
     "1 Corinthians", 5,
     [ 8, 13 ] ],
+   [
+    "Ephesians", 6,
+    [ 12, 16 ] ],
    [
     "Colossians", 1,
     [ 21 ] ] ]
@@ -8377,6 +8437,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 18 ] ],
+   [
+    "Ephesians", 5,
+    [ 19 ] ],
+   [
+    "Ephesians", 6,
+    [ 5, 6 ] ],
    [
     "Philippians", 1,
     [ 7 ] ] ]
@@ -8709,7 +8775,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Ephesians", 4,
-    [ 26, 31 ] ] ]
+    [ 26, 31 ] ],
+   [
+    "Ephesians", 5,
+    [ 6 ] ],
+   [
+    "Ephesians", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "pride",
@@ -9744,7 +9816,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Romans", 2,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Ephesians", 6,
+    [ 9 ] ] ]
  },
  {
   "id": "rod",
@@ -11334,7 +11409,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Ephesians", 4,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Ephesians", 6,
+    [ 11 ] ] ]
  },
  {
   "id": "man-born-blind",
@@ -11949,7 +12027,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "1 Corinthians", 7,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Ephesians", 5,
+    [ 26 ] ] ]
  },
  {
   "id": "stoning",
@@ -13086,7 +13167,10 @@ window.GLOSSARY = [
     [ 26, 30, 31 ] ],
    [
     "Galatians", 5,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Ephesians", 6,
+    [ 8 ] ] ]
  },
  {
   "id": "bondage",
@@ -13741,6 +13825,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 1,
     [ 13 ] ],
+   [
+    "Ephesians", 6,
+    [ 17 ] ],
    [
     "Philippians", 1,
     [ 19, 28 ] ],
@@ -14736,7 +14823,10 @@ window.GLOSSARY = [
     [ 7, 18 ] ],
    [
     "Acts", 21,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Ephesians", 6,
+    [ 14 ] ] ]
  },
  {
   "id": "tarry",
@@ -15845,6 +15935,9 @@ window.GLOSSARY = [
     "Galatians", 5,
     [ 19 ] ],
    [
+    "Ephesians", 5,
+    [ 13 ] ],
+   [
     "Colossians", 1,
     [ 26 ] ] ]
  },
@@ -15936,7 +16029,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "John", 16,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Ephesians", 5,
+    [ 11 ] ] ]
  },
  {
   "id": "offended",
@@ -18802,6 +18898,9 @@ window.GLOSSARY = [
    [
     "Luke", 2,
     [ 11 ] ],
+   [
+    "Ephesians", 5,
+    [ 23 ] ],
    [
     "Philippians", 3,
     [ 20 ] ] ]
@@ -24548,6 +24647,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 6 ] ],
    [
+    "Ephesians", 6,
+    [ 15, 19 ] ],
+   [
     "Philippians", 4,
     [ 3, 15 ] ],
    [
@@ -27372,7 +27474,10 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Galatians", 5,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Ephesians", 5,
+    [ 3 ] ] ]
  },
  {
   "id": "forswear",
@@ -28060,6 +28165,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 3,
     [ 21 ] ],
+   [
+    "Ephesians", 6,
+    [ 24 ] ],
    [
     "Philippians", 4,
     [ 20, 23 ] ] ]
@@ -28978,6 +29086,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 3,
     [ 3, 4, 9 ] ],
+   [
+    "Ephesians", 5,
+    [ 32 ] ],
+   [
+    "Ephesians", 6,
+    [ 19 ] ],
    [
     "Colossians", 1,
     [ 26, 27 ] ],
@@ -30188,6 +30302,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 10, 21 ] ],
    [
+    "Ephesians", 5,
+    [ 23, 24, 25, 27, 29, 32 ] ],
+   [
     "Philippians", 3,
     [ 6 ] ],
    [
@@ -30300,7 +30417,10 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "1 Corinthians", 6,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Ephesians", 5,
+    [ 31 ] ] ]
  },
  {
   "id": "eunuchs",
@@ -30360,7 +30480,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Luke", 18,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Ephesians", 6,
+    [ 2 ] ] ]
  },
  {
   "id": "love-thy-neighbour",
@@ -31459,6 +31582,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 3,
     [ 7 ] ],
+   [
+    "Ephesians", 6,
+    [ 21 ] ],
    [
     "Colossians", 1,
     [ 7, 23, 25 ] ] ]
@@ -36068,6 +36194,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 9 ] ],
    [
+    "Ephesians", 5,
+    [ 11 ] ],
+   [
     "Philippians", 3,
     [ 10 ] ] ]
  },
@@ -36090,7 +36219,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 2,
-    [ 46 ] ] ]
+    [ 46 ] ],
+   [
+    "Ephesians", 6,
+    [ 5 ] ] ]
  },
  {
   "id": "john-the-apostle",
@@ -37885,6 +38017,12 @@ window.GLOSSARY = [
    [
     "Ephesians", 4,
     [ 12 ] ],
+   [
+    "Ephesians", 5,
+    [ 3 ] ],
+   [
+    "Ephesians", 6,
+    [ 18 ] ],
    [
     "Philippians", 1,
     [ 1 ] ],
@@ -39939,7 +40077,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 20,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Ephesians", 6,
+    [ 21 ] ] ]
  },
  {
   "id": "trophimus",
@@ -40317,7 +40458,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 1,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Ephesians", 5,
+    [ 4 ] ] ]
  },
  {
   "id": "debate",
@@ -40791,7 +40935,10 @@ window.GLOSSARY = [
     [ 12, 14, 18, 19, 20, 22, 23, 25, 26, 27 ] ],
    [
     "Ephesians", 4,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Ephesians", 5,
+    [ 30 ] ] ]
  },
  {
   "id": "instruments",
@@ -40863,7 +41010,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Ephesians", 4,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Ephesians", 5,
+    [ 3 ] ] ]
  },
  {
   "id": "holiness",
@@ -41416,6 +41566,9 @@ window.GLOSSARY = [
    [
     "Galatians", 6,
     [ 1, 18 ] ],
+   [
+    "Ephesians", 6,
+    [ 10, 23 ] ],
    [
     "Philippians", 3,
     [ 1, 13, 17 ] ],
@@ -42440,6 +42593,9 @@ window.GLOSSARY = [
     "Ephesians", 3,
     [ 10 ] ],
    [
+    "Ephesians", 6,
+    [ 12 ] ],
+   [
     "Colossians", 1,
     [ 16 ] ],
    [
@@ -42808,6 +42964,9 @@ window.GLOSSARY = [
    [
     "Ephesians", 3,
     [ 6 ] ],
+   [
+    "Ephesians", 5,
+    [ 7 ] ],
    [
     "Philippians", 1,
     [ 7 ] ],
@@ -43314,7 +43473,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 5,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Ephesians", 6,
+    [ 24 ] ] ]
  },
  {
   "id": "keep-company",
@@ -43350,7 +43512,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "1 Corinthians", 10,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Ephesians", 5,
+    [ 5 ] ] ]
  },
  {
   "id": "covetous",
@@ -43362,7 +43527,10 @@ window.GLOSSARY = [
     [ 10, 11 ] ],
    [
     "1 Corinthians", 6,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Ephesians", 5,
+    [ 3, 5 ] ] ]
  },
  {
   "id": "drunkard",
@@ -43968,7 +44136,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "1 Corinthians", 10,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Ephesians", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "serpents-wilderness",
@@ -44645,6 +44816,9 @@ window.GLOSSARY = [
     "2 Corinthians", 2,
     [ 7 ] ],
    [
+    "Ephesians", 6,
+    [ 22 ] ],
+   [
     "Colossians", 2,
     [ 2 ] ] ]
  },
@@ -44829,7 +45003,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 2,
-    [ 14, 15, 16 ] ] ]
+    [ 14, 15, 16 ] ],
+   [
+    "Ephesians", 5,
+    [ 2 ] ] ]
  },
  {
   "id": "corrupt-the-word",
@@ -45375,7 +45552,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "2 Corinthians", 7,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Ephesians", 5,
+    [ 4 ] ] ]
  },
  {
   "id": "revenge",
@@ -45875,6 +46055,9 @@ window.GLOSSARY = [
   "name": "Supplication (asking God for what you need)",
   "refs": [
    [
+    "Ephesians", 6,
+    [ 18 ] ],
+   [
     "Philippians", 4,
     [ 6 ] ] ]
  },
@@ -45989,6 +46172,9 @@ window.GLOSSARY = [
   "name": "Bonds (Paul's chains, in prison)",
   "refs": [
    [
+    "Ephesians", 6,
+    [ 20 ] ],
+   [
     "Philippians", 1,
     [ 7, 13, 14, 16 ] ] ]
  },
@@ -46087,6 +46273,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Fear and trembling (a serious, humble care, not terror)",
   "refs": [
+   [
+    "Ephesians", 6,
+    [ 5 ] ],
    [
     "Philippians", 2,
     [ 12 ] ] ]
@@ -46719,7 +46908,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Ephesians", 2,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Ephesians", 5,
+    [ 6 ] ] ]
  },
  {
   "id": "children-of-wrath",
@@ -46959,7 +47151,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Galatians", 5,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Ephesians", 5,
+    [ 9 ] ] ]
  },
  {
   "id": "gentleness",
@@ -47092,5 +47287,437 @@ window.GLOSSARY = [
    [
     "Galatians", 6,
     [ 17 ] ] ]
+ },
+ {
+  "id": "followers-of-god",
+  "kind": "term",
+  "name": "Followers of God (imitators: children copying their Father)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "whoremonger",
+  "kind": "person",
+  "name": "Whoremonger (a man who lives in sexual sin)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "jesting",
+  "kind": "term",
+  "name": "Jesting (coarse, dirty joking)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "vain-words",
+  "kind": "term",
+  "name": "Vain words (empty talk that makes sin sound small)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "inheritance-in-the-kingdom",
+  "kind": "term",
+  "name": "Inheritance in the kingdom (a share in God's kingdom)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "sometimes-once",
+  "kind": "term",
+  "name": "Sometimes (old English: once, at one time)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "children-of-light",
+  "kind": "person",
+  "name": "Children of light (believers, who now belong to the light)",
+  "refs": [
+   [
+    "Luke", 16,
+    [ 8 ] ],
+   [
+    "John", 12,
+    [ 36 ] ],
+   [
+    "Ephesians", 5,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "proving",
+  "kind": "term",
+  "name": "Proving (testing, finding out by trying)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "unfruitful-works-of-darkness",
+  "kind": "term",
+  "name": "The unfruitful works of darkness (sin done in secret, that grows nothing good)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "awake-thou-that-sleepest",
+  "kind": "term",
+  "name": "Awake thou that sleepest (a call to wake up and live, echoing Isaiah 60:1)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "circumspectly",
+  "kind": "term",
+  "name": "Circumspectly (looking all around, carefully)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "redeeming-the-time",
+  "kind": "term",
+  "name": "Redeeming the time (buying back the hours, making the most of every chance)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "excess",
+  "kind": "term",
+  "name": "Excess (a wasted, out-of-control life, like the prodigal's riotous living)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "filled-with-the-spirit",
+  "kind": "term",
+  "name": "Filled with the Spirit (led by the Spirit who already lives in every believer, yielding to Him day by day)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "psalms-hymns-songs",
+  "kind": "term",
+  "name": "Psalms and hymns and spiritual songs (the church's singing)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "making-melody",
+  "kind": "term",
+  "name": "Making melody (singing, making music)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "submit-yourselves",
+  "kind": "term",
+  "name": "Submit yourselves (willingly give way, put another first)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 21, 22 ] ] ]
+ },
+ {
+  "id": "head-of-the-wife",
+  "kind": "term",
+  "name": "The head of the wife (a husband's charge to lead by giving himself up, as Christ did)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "spot-or-wrinkle",
+  "kind": "term",
+  "name": "Spot, or wrinkle (any stain or flaw, all washed away)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "nourisheth-and-cherisheth",
+  "kind": "term",
+  "name": "Nourisheth and cherisheth (feeds, and keeps warm)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "reverence-respect",
+  "kind": "term",
+  "name": "Reverence (honour, respect)",
+  "refs": [
+   [
+    "Ephesians", 5,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "provoke-to-wrath",
+  "kind": "term",
+  "name": "Provoke to wrath (push someone to anger)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "nurture",
+  "kind": "term",
+  "name": "Nurture (training, steady discipline)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "servants-slaves",
+  "kind": "person",
+  "name": "Servants (slaves, in Paul's day; for us, anyone who works for a boss)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "masters-according-to-the-flesh",
+  "kind": "person",
+  "name": "Masters according to the flesh (earthly masters; for us, the boss)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "eyeservice",
+  "kind": "term",
+  "name": "Eyeservice (working only while the boss is watching)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "menpleasers",
+  "kind": "term",
+  "name": "Menpleasers (people who work to look good to men)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "bond-or-free",
+  "kind": "term",
+  "name": "Bond or free (slave or free)",
+  "refs": [
+   [
+    "1 Corinthians", 12,
+    [ 13 ] ],
+   [
+    "Ephesians", 6,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "forbearing-threatening",
+  "kind": "term",
+  "name": "Forbearing threatening (giving up threats; no ruling by fear)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "strong-in-the-lord",
+  "kind": "term",
+  "name": "Be strong in the Lord (strong in His power, not your own)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "whole-armour-of-god",
+  "kind": "term",
+  "name": "The whole armour of God (God's own armour, given to believers to stand)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 11, 13 ] ] ]
+ },
+ {
+  "id": "wiles",
+  "kind": "term",
+  "name": "Wiles (schemes, tricks)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "wrestle",
+  "kind": "term",
+  "name": "Wrestle (a close, hand-to-hand struggle)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "flesh-and-blood-people",
+  "kind": "term",
+  "name": "Flesh and blood (people, human beings)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "rulers-of-the-darkness",
+  "kind": "person",
+  "name": "The rulers of the darkness of this world (the devil's forces)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "spiritual-wickedness-in-high-places",
+  "kind": "person",
+  "name": "Spiritual wickedness in high places (evil spirit-powers in the heavenly realm)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "evil-day",
+  "kind": "term",
+  "name": "The evil day (the hour of attack, when temptation hits hardest)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "breastplate-of-righteousness",
+  "kind": "term",
+  "name": "The breastplate of righteousness (armour over the heart)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "feet-shod-gospel-of-peace",
+  "kind": "term",
+  "name": "Feet shod with the preparation of the gospel of peace (a soldier's boots: sure footing, ready to go)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "shield-of-faith",
+  "kind": "term",
+  "name": "The shield of faith (the big Roman shield that covered the whole man)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "fiery-darts",
+  "kind": "term",
+  "name": "Fiery darts (burning arrows: the devil's lies and temptations)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "helmet-of-salvation",
+  "kind": "term",
+  "name": "The helmet of salvation (a guarded mind, sure of being saved)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "sword-of-the-spirit",
+  "kind": "term",
+  "name": "The sword of the Spirit (the word of God, used like a soldier's short sword)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "perseverance",
+  "kind": "term",
+  "name": "Perseverance (keeping at it, not quitting)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "utterance",
+  "kind": "term",
+  "name": "Utterance (the words to say)",
+  "refs": [
+   [
+    "Acts", 2,
+    [ 4 ] ],
+   [
+    "1 Corinthians", 1,
+    [ 5 ] ],
+   [
+    "2 Corinthians", 8,
+    [ 7 ] ],
+   [
+    "Ephesians", 6,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "ambassador-in-bonds",
+  "kind": "term",
+  "name": "An ambassador in bonds (Christ's envoy, in chains)",
+  "refs": [
+   [
+    "Ephesians", 6,
+    [ 20 ] ] ]
  }
 ];

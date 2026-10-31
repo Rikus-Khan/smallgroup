@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephesians 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ep06-where: where we are in Ephesians. Six chapter tabs (.ep06-ch, .here), under each the "walk" and "stand" verses it holds
+   (.ep06-walk span; .old is the old walk of 2:2), and three bands under them (.ep06-band: Sit, Walk, Stand; .now is lit). */
+.ep06-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px 6px; margin: .5em 0 1em; }
+.ep06-ch { text-align: center; padding: .25em 0 .3em; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.85rem, .75rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ep06-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ep06-walk { display: flex; flex-direction: column; gap: 4px; min-height: 2em; }
+.ep06-walk span { padding: .2em .5em; border: 1.5px dashed var(--line-strong); border-radius: 8px; font-size: clamp(.68rem, .62rem + .28vw, .9rem); line-height: 1.2; color: var(--ink-soft);
+  opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 200ms + 500ms); }
+.slide.active .ep06-walk span { opacity: 1; transform: none; }
+.ep06-walk span b { display: block; font-weight: 700; color: var(--ink); }
+.ep06-walk span.old { border-color: var(--danger); }
+.ep06-walk span.old b { color: var(--danger); }
+.ep06-walk.here span { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ep06-walk.here span b { color: var(--accent-hot); }
+.ep06-band { --c: var(--accent); grid-row: 3; padding: .45em .65em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.ep06-band small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ep06-band b { display: block; font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--ink); }
+.ep06-band i { display: block; font: italic clamp(.75rem, .7rem + .25vw, .95rem)/1.25 var(--serif); color: var(--ink-soft); }
+.ep06-band.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ep06-b1 { --c: var(--cool); grid-column: 1 / 4; } .ep06-b2 { --c: var(--warm); grid-column: 4 / 6; } .ep06-b3 { --c: var(--accent); grid-column: 6 / 7; }
+@media (max-width: 640px) {
+  .ep06-where { grid-template-columns: 1fr; }
+  .ep06-ch, .ep06-walk:not(.here) { display: none; }
+  .ep06-band { grid-row: auto; grid-column: 1; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ep06-tablets: the Ten Commandments on two stones, the fifth lit, with its promise */
+.ep06-stone { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; }
+.ep06-tablets text { font: 600 17px var(--sans); fill: var(--ink-soft); }
+.ep06-tablets text.n { font: 700 18px var(--serif); fill: var(--ink-soft); }
+.ep06-five rect { fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 2.5; }
+.ep06-five text, .ep06-five text.n { fill: var(--ink); font-weight: 700; }
+.ep06-promise { opacity: 0; transition: opacity .8s ease 1s; }
+.slide.active .ep06-promise { opacity: 1; }
+.ep06-promise text { font: italic 600 19px var(--serif); fill: var(--accent-hot); }
+
+/* ep06-shift: a shift at work, hour by hour. The boss's eye (.ep06-eye, .shut) above two rows of effort bars (--h):
+   eyeservice rises and falls with the eye; from the heart (on an .ep06-heart-go step) stays level. */
+.ep06-shift { display: grid; grid-template-columns: 7.5em repeat(8, minmax(0, 1fr)); gap: 6px 8px; align-items: end; margin: .4em 0 1em; }
+@media (max-width: 600px) {
+  .ep06-shift { grid-template-columns: 4.4em repeat(8, minmax(0, 1fr)); gap: 6px 3px; }
+  .ep06-shift small { font-size: .62rem; }
+  .ep06-eye { width: 1.2rem; height: .75rem; border-width: 2px; }
+  .ep06-eye::after { width: .32rem; height: .32rem; margin: -.16rem 0 0 -.16rem; }
+}
+.ep06-shift small { font: 700 clamp(.78rem, .72rem + .3vw, 1rem)/1.2 var(--sans); color: var(--ink-soft); align-self: center; text-align: right; }
+.ep06-eye { justify-self: center; position: relative; width: 2rem; height: 1.1rem; border: 2.5px solid var(--ink); border-radius: 50% / 60% 60% 40% 40%; }
+.ep06-eye::after { content: ""; position: absolute; left: 50%; top: 50%; width: .5rem; height: .5rem; margin: -.25rem 0 0 -.25rem; border-radius: 50%; background: var(--ink); }
+.ep06-eye.shut { height: 0; border-width: 2.5px 0 0; border-color: var(--line-strong); border-radius: 0; }
+.ep06-eye.shut::after { display: none; }
+.ep06-bar { height: clamp(3.4rem, 2.4rem + 4vh, 5.4rem); display: flex; align-items: flex-end; border-bottom: 2px solid var(--line-strong); }
+.ep06-bar i { display: block; width: 100%; height: 0; border-radius: 5px 5px 0 0; background: color-mix(in srgb, var(--danger) 60%, var(--surface-2)); transition: height .7s ease; transition-delay: calc(var(--k) * 120ms + 400ms); }
+.slide.active .ep06-bar i { height: var(--h); }
+.ep06-bar.heart i { background: var(--accent); height: 0 !important; }
+.slide:has(.ep06-heart-go.on) .ep06-bar.heart i { height: var(--h) !important; }
+.ep06-hr { text-align: center; font: 600 clamp(.66rem, .6rem + .25vw, .85rem) var(--sans); color: var(--ink-soft); }
+
+/* ep06-armour: a Roman soldier armed one click at a time. The body (.ep06-body) is a faint outline; each piece (.ep06-p1 … .ep06-p7)
+   drops into place when its list item (.ep06-s1 … .ep06-s7) steps on. Fiery darts (.ep06-dart) fly at the shield and go out once it is on. */
+.ep06-body { fill: color-mix(in srgb, var(--ink-soft) 16%, transparent); stroke: color-mix(in srgb, var(--ink-soft) 55%, transparent); stroke-width: 2; stroke-dasharray: 6 5; }
+.ep06-limb { fill: none; stroke: color-mix(in srgb, var(--ink-soft) 26%, transparent); stroke-width: 24; stroke-linecap: round; stroke-linejoin: round; }
+.ep06-metal { fill: color-mix(in srgb, var(--cool) 30%, var(--surface-2)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.ep06-band-line { stroke: var(--ink-soft); stroke-width: 2; opacity: .7; }
+.ep06-leather { fill: var(--leather); stroke: var(--leather-light); stroke-width: 2; }
+.ep06-strap { stroke: var(--leather-light); stroke-width: 5; stroke-linecap: round; fill: none; }
+.ep06-gold { fill: var(--warm); }
+.ep06-red { fill: var(--wine); stroke: var(--warm); stroke-width: 3.5; }
+.ep06-blade { fill: color-mix(in srgb, var(--glow) 75%, var(--cool)); stroke: var(--ink-soft); stroke-width: 2; }
+.ep06-p { opacity: 0; transform: translateY(-34px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.slide:has(.ep06-s1.on) .ep06-p1, .slide:has(.ep06-s2.on) .ep06-p2, .slide:has(.ep06-s3.on) .ep06-p3, .slide:has(.ep06-s4.on) .ep06-p4,
+.slide:has(.ep06-s5.on) .ep06-p5, .slide:has(.ep06-s6.on) .ep06-p6, .slide:has(.ep06-s7.on) .ep06-p7 { opacity: 1; transform: none; }
+.ep06-p7 ellipse { fill: none; stroke: var(--accent-hot); stroke-width: 3; stroke-dasharray: 3 12; stroke-linecap: round; }
+.ep06-p7 text { font: italic 600 20px var(--serif); fill: var(--accent-hot); }
+.ep06-dart { opacity: 0; }
+.ep06-dart line { stroke: var(--ink-soft); stroke-width: 3; }
+.ep06-dart path { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-linecap: round; }
+.ep06-dart circle { fill: var(--warm); }
+.ep06-dart circle + circle { fill: var(--danger); }
+.slide:has(.ep06-s4.on) .ep06-dart { animation: ep06-fly 2.8s ease-in infinite; animation-delay: var(--w); }
+@keyframes ep06-fly {
+  0% { opacity: 0; transform: translateX(130px); }
+  12% { opacity: 1; }
+  50% { opacity: 1; transform: translateX(0); }
+  70%, 100% { opacity: 0; transform: translateX(0); }
+}
+.ep06-kit { list-style: none; padding: 0; margin: 0; display: grid; gap: .32em; }
+.ep06-kit li { padding: .28em .7em .32em; border-left: 4px solid var(--line-strong); border-radius: 0 8px 8px 0; background: var(--surface); }
+.ep06-kit li.on { border-left-color: var(--accent); }
+.ep06-kit b { font: 600 clamp(1rem, .9rem + .45vw, 1.3rem) var(--serif); color: var(--ink); }
+.ep06-kit span { display: block; font: italic clamp(.82rem, .76rem + .3vw, 1.02rem)/1.3 var(--serif); color: var(--ink-soft); }
+.ep06-kit li.on:last-child b { color: var(--accent-hot); }
+
+/* ep06-duel: a fiery dart (a lie, .d) answered by the sword (a verse, .s), row by row */
+.ep06-duel { display: grid; grid-template-columns: 1fr 1.9fr; gap: .7em 1.2em; align-items: center; margin: .5em 0 1em; }
+@media (max-width: 700px) { .ep06-duel { grid-template-columns: 1fr; } }
+.ep06-duel p { margin: 0; padding: .55em .9em .65em; font: clamp(1.05rem, .92rem + .6vw, 1.45rem)/1.35 var(--serif); }
+.ep06-duel small { display: block; font: 700 clamp(.7rem, .65rem + .25vw, .88rem) var(--sans); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .15em; }
+.ep06-duel .d { border: 2px solid var(--danger); border-radius: 16px 16px 16px 4px; background: color-mix(in srgb, var(--danger) 10%, transparent); }
+.ep06-duel .d small { color: var(--danger); }
+.ep06-duel .s { border: 2px solid var(--accent); border-radius: 16px 16px 4px 16px; background: color-mix(in srgb, var(--accent) 10%, transparent); font-style: italic; }
+.ep06-duel .s small { color: var(--accent-hot); font-style: normal; }
+
+/* ep06-cards: three pieces of armour, each with what it did for a Roman soldier and what it means today */
+.ep06-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .ep06-cards { grid-template-columns: 1fr; } }
+.ep06-cards > div { padding: .7em .9em .8em; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); border-top: 5px solid var(--accent); }
+.ep06-cards h3 { font: 600 clamp(1.15rem, 1rem + .7vw, 1.6rem)/1.15 var(--serif); color: var(--ink); margin-bottom: .15em; }
+.ep06-cards .kjv { margin: 0 0 .5em; font: italic clamp(.88rem, .8rem + .35vw, 1.1rem)/1.3 var(--serif); color: var(--accent-hot); }
+.ep06-cards p { margin: 0 0 .45em; font-size: clamp(.86rem, .78rem + .35vw, 1.08rem); line-height: 1.38; color: var(--ink-soft); }
+.ep06-cards p:last-child { margin-bottom: 0; color: var(--ink); }
+.ep06-cards p b { color: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Ephesians 6</h1>
+    <p class="sub rise" style="--d:3">Be strong in the Lord</p>
+    <p class="tag rise" style="--d:5">At home, at work, and in the real fight: put on the whole armour of God, piece by piece, and stand.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Ephesians</h2>
+    <div class="ep06-where rise" style="--d:2" role="img" aria-label="Ephesians in three parts. Chapters 1 to 3: sit, all God has done for you in Christ. Chapter 4 to chapter 6 verse 9: walk, how to live it out. Chapter 6, verses 10 to 20: stand. The walk verses run through chapters 2, 4 and 5; chapter 6 says stand, four times. Chapter 6, the last chapter, is lit.">
+      <span class="ep06-ch">1</span><span class="ep06-ch">2</span><span class="ep06-ch">3</span><span class="ep06-ch">4</span><span class="ep06-ch">5</span><span class="ep06-ch here">6</span>
+      <div class="ep06-walk"></div>
+      <div class="ep06-walk"><span class="old" style="--k:0"><b>2:2</b>ye walked the old way</span><span style="--k:1"><b>2:10</b>walk in good works</span></div>
+      <div class="ep06-walk"></div>
+      <div class="ep06-walk"><span style="--k:2"><b>4:1</b>walk worthy</span><span style="--k:3"><b>4:17</b>walk not as other Gentiles</span></div>
+      <div class="ep06-walk"><span style="--k:4"><b>5:2</b>walk in love</span><span style="--k:5"><b>5:8</b>as children of light</span><span style="--k:6"><b>5:15</b>circumspectly</span></div>
+      <div class="ep06-walk here"><span style="--k:7"><b>6:11</b>able to stand</span><span style="--k:8"><b>6:13</b>withstand… and… stand</span><span style="--k:9"><b>6:14</b>Stand therefore</span></div>
+      <div class="ep06-band ep06-b1"><small>Chapters 1–3</small><b>Sit</b><i>what God has done: “made us sit together in heavenly places” (2:6)</i></div>
+      <div class="ep06-band ep06-b2"><small>4:1–6:9</small><b>Walk</b><i>how to live it, on the street</i></div>
+      <div class="ep06-band ep06-b3 now"><small>6:10–20</small><b>Stand</b><i>in the fight</i></div>
+    </div>
+    <p class="note rise" style="--d:3">Chapter 5 took the new life home to husbands and wives. Chapter 6 finishes the house: children and fathers, then the workplace. Then Paul pulls back the curtain on the fight behind it all.</p>
+    <p class="note step">It's the last chapter of the letter. At the end of the study we'll look back over all six.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Home</span><span class="seed-q">What does God ask of children, and of fathers?</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">How should a believer work when the boss isn't watching?</span></li>
+      <li class="step"><span class="topic">The enemy</span><span class="seed-q">Who is our real enemy?</span></li>
+      <li class="step"><span class="topic">The armour</span><span class="seed-q">What armour has God given us to stand in?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">Why does Paul finish the armour with prayer?</span></li>
+      <li class="step"><span class="topic">The whole letter</span><span class="seed-q">What has Ephesians taught us about who we are in Christ?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: AT HOME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">At home</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A word for sons, and a harder one for fathers.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Children, obey your parents in the Lord|Honour thy father and mother|which is the first commandment with promise"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="ep06-tablets" viewBox="0 0 560 330" role="img" aria-label="The Ten Commandments on two stone tablets. The first four, about God, are on the left. The fifth, honour thy father and mother, opens the right-hand tablet and is lit, with its promise: that it may be well with thee.">
+          <path class="ep06-stone" d="M20 300 L20 70 Q20 20 75 20 L195 20 Q250 20 250 70 L250 300 Z"/>
+          <path class="ep06-stone" d="M280 300 L280 70 Q280 20 335 20 L455 20 Q510 20 510 70 L510 300 Z"/>
+          <text class="n" x="44" y="88">I</text><text x="80" y="88">no other gods</text>
+          <text class="n" x="44" y="138">II</text><text x="80" y="138">no idols</text>
+          <text class="n" x="44" y="188">III</text><text x="80" y="188">His name</text>
+          <text class="n" x="44" y="238">IV</text><text x="80" y="238">the sabbath</text>
+          <g class="ep06-five"><rect x="290" y="56" width="210" height="44" rx="8"/><text class="n" x="300" y="85">V</text><text x="334" y="85">honour your parents</text></g>
+          <text class="n" x="300" y="130">VI</text><text x="340" y="130">no killing</text>
+          <text class="n" x="300" y="166">VII</text><text x="340" y="166">no adultery</text>
+          <text class="n" x="300" y="202">VIII</text><text x="340" y="202">no stealing</text>
+          <text class="n" x="300" y="238">IX</text><text x="340" y="238">no lying</text>
+          <text class="n" x="300" y="274">X</text><text x="340" y="274">no coveting</text>
+          <text x="135" y="326" text-anchor="middle">toward God</text>
+          <g class="ep06-promise"><text x="395" y="326" text-anchor="middle">“that it may be well with thee”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The first with a promise</h2>
+        <p class="note rise" style="--d:2">Paul quotes the fifth commandment: <em>“Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee”</em> (Exodus 20:12). It opens the commands about people, and it comes with a promise.</p>
+        <p class="note step">Some of us had parents who drank, hit, or left. Honour doesn't mean pretending it didn't happen. It means no cursing them, no revenge, forgiving them, and caring for them when they're old, if they'll let you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4" data-hl="ye fathers, provoke not your children to wrath|bring them up in the nurture and admonition of the Lord"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4"></blockquote>
+    <h2 class="rise" style="--d:1">Fathers</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Provoke not to wrath</p>
+        <h3>What makes a kid angry</h3>
+        <p>Broken promises. Yelling. Never pleased. Rules for them, none for you. Showing up drunk, or not showing up.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Nurture and admonition</p>
+        <h3>Train them, and talk to them</h3>
+        <p>“Nurture” is <em>training</em>, the steady kind. “Admonition” is <em>putting it in their mind</em>: warning and teaching with words, gently.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Fathers, provoke not your children to anger, lest they be discouraged.”</p><cite>Colossians 3:21</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Rebuilding trust with your kids</h2>
+    <div class="stage">
+      <svg class="curve" viewBox="0 0 680 300" style="max-height:34vh" role="img" aria-label="A line that runs down from a child's trust, through broken promises and years away, to rock bottom; then climbs back through being saved, showing up, keeping small promises, and trust slowly growing back.">
+        <line class="curve-base" x1="20" y1="112" x2="660" y2="112"/>
+        <path class="curve-line" pathLength="1" d="M40 50 L140 160 L230 240 L330 205 L430 150 L530 105 L630 55"/>
+        <g class="curve-pt high" style="--k:0"><circle cx="40" cy="50" r="9"/><text x="58" y="44">“Daddy!”</text></g>
+        <g class="curve-pt low" style="--k:1"><circle cx="140" cy="160" r="9"/><text x="126" y="192" text-anchor="end">broken promises</text></g>
+        <g class="curve-pt low" style="--k:2"><circle cx="230" cy="240" r="9"/><text x="230" y="276" text-anchor="middle">years away</text></g>
+        <g class="curve-pt" style="--k:3"><circle cx="330" cy="205" r="9"/><text x="344" y="232">saved, sober</text></g>
+        <g class="curve-pt" style="--k:4"><circle cx="430" cy="150" r="9"/><text x="444" y="176">showed up on time</text></g>
+        <g class="curve-pt" style="--k:5"><circle cx="530" cy="105" r="9"/><text x="546" y="136">kept it, again</text></g>
+        <g class="curve-pt high" style="--k:6"><circle cx="630" cy="55" r="10"/><text x="650" y="30" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">trust grows back</text></g>
+      </svg>
+    </div>
+    <p class="note step">Trust breaks in a day and grows back slowly. Don't promise big; promise small, and keep it. Don't demand their trust. Earn it, and let them be angry for a while.</p>
+    <blockquote class="quote step"><p>“And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.”</p><cite>Malachi 4:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: AT WORK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">At work</h2>
+    <p class="range rise" style="--d:2">Verses 5–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Whoever signs your paycheck, you work for Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-8" data-hl="Not with eyeservice, as menpleasers|doing the will of God from the heart|as to the Lord, and not to men"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="Servants, be obedient to them that are your masters according to the flesh"></blockquote>
+    <h2 class="rise" style="--d:1">Servants in Ephesus</h2>
+    <p class="note rise" style="--d:2">These “servants” were slaves, and many believers in a city like Ephesus were. Paul isn't defending slavery. He tells believers how to live like Christ inside the world as it was.</p>
+    <p class="note step">And the gospel was already undoing it. A runaway slave named Onesimus was sent back to his master with a letter from Paul: take him back <em>“not now as a servant, but above a servant, a brother beloved”</em> (Philemon 16). Over time, that kind of teaching broke the chains.</p>
+    <p class="note step">Most of us aren't slaves. But we have a foreman, a manager, a boss. Paul's words fit the job site just fine.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">When the boss isn't looking</h2>
+    <div class="ep06-shift rise" style="--d:2" role="img" aria-label="An eight-hour shift. The boss is watching in hours 1, 2, 5 and 8. The eyeservice worker works hard only in those hours and slacks off in between. The worker from the heart works steadily every hour.">
+      <small>the boss</small>
+      <i class="ep06-eye"></i><i class="ep06-eye"></i><i class="ep06-eye shut"></i><i class="ep06-eye shut"></i><i class="ep06-eye"></i><i class="ep06-eye shut"></i><i class="ep06-eye shut"></i><i class="ep06-eye"></i>
+      <small>eyeservice</small>
+      <div class="ep06-bar"><i style="--h:92%;--k:0"></i></div><div class="ep06-bar"><i style="--h:88%;--k:1"></i></div><div class="ep06-bar"><i style="--h:30%;--k:2"></i></div><div class="ep06-bar"><i style="--h:18%;--k:3"></i></div>
+      <div class="ep06-bar"><i style="--h:90%;--k:4"></i></div><div class="ep06-bar"><i style="--h:26%;--k:5"></i></div><div class="ep06-bar"><i style="--h:15%;--k:6"></i></div><div class="ep06-bar"><i style="--h:95%;--k:7"></i></div>
+      <small>from the heart</small>
+      <div class="ep06-bar heart"><i style="--h:85%;--k:0"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:1"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:2"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:3"></i></div>
+      <div class="ep06-bar heart"><i style="--h:85%;--k:4"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:5"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:6"></i></div><div class="ep06-bar heart"><i style="--h:85%;--k:7"></i></div>
+      <span></span><span class="ep06-hr">8</span><span class="ep06-hr">9</span><span class="ep06-hr">10</span><span class="ep06-hr">11</span><span class="ep06-hr">12</span><span class="ep06-hr">1</span><span class="ep06-hr">2</span><span class="ep06-hr">3</span>
+    </div>
+    <p class="note step ep06-heart-go">“Eyeservice” is working for the boss's eyes: busy when he's looking, on the phone when he's not. A believer works the same in every hour, because his real Boss never looks away.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="whatsoever good thing any man doeth, the same shall he receive of the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">Clocking in for Christ</h2>
+    <ol class="checks">
+      <li class="step"><span class="tick">✓</span><q>On time, the whole shift</q><small>a stolen hour is still stealing (4:28: “let him that stole steal no more”)</small></li>
+      <li class="step"><span class="tick">✓</span><q>No skimming, no padding</q><small>not tools, not cash, not hours on the time sheet</small></li>
+      <li class="step"><span class="tick">✓</span><q>Good will, not grumbling</q><small>do the dirty job as if Jesus asked you to. He did.</small></li>
+    </ol>
+    <p class="note step">Nobody may thank you for it. Verse 8 says the Lord sees every good thing, and He pays back, in His time. For a man with a record, a steady, honest work life is one of the loudest testimonies there is.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9" data-hl="forbearing threatening|your Master also is in heaven|neither is there respect of persons with him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale now" style="--at:300px 80px; --from:-12deg; --tip:0deg; --wait:.9s" viewBox="0 0 600 320" role="img" aria-label="A balance scale with a worker on one side and his boss on the other. It settles level: God weighs them the same.">
+          <path d="M240 300 L360 300 L330 280 L270 280 Z" style="fill:var(--surface-2);stroke:var(--ink-soft)" stroke-width="2.5"/>
+          <rect x="294" y="74" width="12" height="208" style="fill:var(--ink-soft)"/>
+          <g class="scale-beam">
+            <rect x="130" y="74" width="340" height="12" rx="6" style="fill:var(--ink)"/>
+            <circle cx="300" cy="80" r="11" style="fill:var(--accent)"/>
+            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M140 86 L100 196 M140 86 L180 196"/><path d="M460 86 L420 196 M460 86 L500 196"/></g>
+            <path d="M88 196 L192 196 Q140 236 88 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M408 196 L512 196 Q460 236 408 196 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <g style="fill:var(--cool)"><circle cx="140" cy="150" r="13"/><path d="M118 194 Q120 166 140 166 Q160 166 162 194 Z"/></g>
+            <g style="fill:var(--warm)"><circle cx="460" cy="150" r="13"/><path d="M438 194 Q440 166 460 166 Q480 166 482 194 Z"/></g>
+            <text x="140" y="256" text-anchor="middle" font-size="20" font-weight="700">the worker</text>
+            <text x="460" y="256" text-anchor="middle" font-size="20" font-weight="700">the boss</text>
+          </g>
+          <text x="300" y="40" text-anchor="middle" font-size="22" font-weight="700" style="fill:var(--accent-hot)">no respect of persons</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">If you're the boss</h2>
+        <p class="note rise" style="--d:2">Some of you will run a crew one day, or already do. <em>“Do the same things unto them”</em>: the same good will you'd want from them.</p>
+        <p class="note step"><em>“Forbearing threatening”</em>: no ruling by fear, no “do it or you're fired” for sport. You have a Master too, and He doesn't play favorites. Boss and worker stand on level ground before Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE ARMOUR OF GOD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The whole armour of God</h2>
+    <p class="range rise" style="--d:2">Verses 10–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The fight behind every other fight, and what God gives you to stand.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="be strong in the Lord, and in the power of his might|Put on the whole armour of God"></section>
+
+<section class="slide verse" data-v="12-13" data-hl="we wrestle not against flesh and blood|having done all, to stand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="we wrestle not against flesh and blood"></blockquote>
+    <h2 class="rise" style="--d:1">Who you're really fighting</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">not the probation officer</span><span class="why">or the judge</span></li>
+      <li class="step"><span class="k">not your ex</span><span class="why">or her lawyer</span></li>
+      <li class="step"><span class="k">not the boss, not the old crew</span><span class="why">they're flesh and blood, people Christ died for</span></li>
+      <li class="step yes"><span class="k">the wiles of the devil</span><span class="why">and the powers of darkness behind him</span></li>
+    </ul>
+    <p class="note step">“Wiles” means <em>schemes, tricks, a planned method</em>. The devil doesn't charge in the front door. He waits for the bad day, the lonely night, the payday, the old phone number. That's <em>“the evil day.”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10"></blockquote>
+    <h2 class="rise" style="--d:1">Strong in His strength, standing on your feet</h2>
+    <p class="note rise" style="--d:2">Paul doesn't say <em>be strong</em>. He says be strong <em>in the Lord</em>: in His might, not yours. Willpower alone has lost this fight before. His power hasn't.</p>
+    <p class="note step">And four times he says <em>stand</em> (verses 11, 13, 13, 14). Not charge. Not win the whole war today. The battle was won at the cross. Your job is to hold the ground He gave you: still standing at the end of the day.</p>
+    <blockquote class="quote step"><p>“Submit yourselves therefore to God. Resist the devil, and he will flee from you.”</p><cite>James 4:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Paul's model was in the room</h2>
+    <ol class="timeline" aria-label="About AD 57, Paul is arrested in Jerusalem. About AD 57 to 59, two years in prison at Caesarea. About AD 59 to 60, the voyage and shipwreck. About AD 60 to 62, under house arrest in Rome, chained to a soldier; he writes Ephesians. About AD 66 to 67, his last letter, 2 Timothy, from a Roman prison.">
+      <li style="--k:0"><b>about AD 57</b><span>Arrested in Jerusalem</span><small>Acts 21</small></li>
+      <li style="--k:1"><b>about AD 57–59</b><span>Two years in prison at Caesarea</span><small>Acts 24–26</small></li>
+      <li style="--k:2"><b>about AD 59–60</b><span>Voyage and shipwreck</span><small>Acts 27</small></li>
+      <li class="lit" style="--k:3"><b>about AD 60–62</b><span>Rome, chained to a soldier: Ephesians</span><small>Acts 28</small></li>
+      <li class="wait" style="--k:4"><b>about AD 66–67</b><span>2 Timothy, his last letter</span></li>
+    </ol>
+    <blockquote class="quote step"><p>“And when we came to Rome, the centurion delivered the prisoners to the captain of the guard: but Paul was suffered to dwell by himself with a soldier that kept him.”</p><cite>Acts 28:16</cite></blockquote>
+    <p class="note step">Day and night, a Roman soldier guarded him. Paul had time to study the man's gear: belt, breastplate, boots, shield, helmet, sword. He calls himself <em>“an ambassador in bonds”</em> (v. 20). The chain was real.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="Stand therefore, having your loins girt about with truth|the breastplate of righteousness|your feet shod with the preparation of the gospel of peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three pieces you never take off</h2>
+    <p class="note rise" style="--d:1">Verses 14 and 15 say <em>“having”</em>: these are already on, worn all day, every day.</p>
+    <div class="ep06-cards">
+      <div class="rise" style="--d:2"><h3>The belt of truth</h3><p class="kjv">“loins girt about with truth”</p><p>A Roman's wide belt held his tunic up and his sword on. Nothing stays in place without it.</p><p><b>Today:</b> no lies, not even small ones. A lie is where the old life gets back in.</p></div>
+      <div class="rise" style="--d:3"><h3>The breastplate of righteousness</h3><p class="kjv">“having on the breastplate”</p><p>It covered the heart and lungs, where one blow kills.</p><p><b>Today:</b> Christ's righteousness covers you, so the accuser can't land the killing blow. And a clean life keeps the heart guarded.</p></div>
+      <div class="rise" style="--d:4"><h3>Shoes of the gospel of peace</h3><p class="kjv">“feet shod with the preparation”</p><p>Roman boots had iron studs for grip. A soldier who loses his footing is finished.</p><p><b>Today:</b> you have peace with God; stand on it. And be ready to carry that peace to the next man.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="taking the shield of faith|quench all the fiery darts of the wicked|the helmet of salvation|the sword of the Spirit, which is the word of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Three pieces you take up</h2>
+    <p class="note rise" style="--d:1">Now the words change to <em>“taking”</em> and <em>“take”</em>: reach for these when the fight comes.</p>
+    <div class="ep06-cards">
+      <div class="rise" style="--d:2"><h3>The shield of faith</h3><p class="kjv">“quench all the fiery darts”</p><p>The big Roman shield covered almost the whole man. Enemies shot arrows wrapped in burning pitch.</p><p><b>Today:</b> the dart is a thought: <em>one won't hurt, you'll never change.</em> Faith believes God over it, and the fire goes out.</p></div>
+      <div class="rise" style="--d:3"><h3>The helmet of salvation</h3><p class="kjv">“take the helmet of salvation”</p><p>It guarded the head. No soldier fought bareheaded.</p><p><b>Today:</b> guard your mind with what's settled: you are saved, sealed, and kept. Shame doesn't get the last word.</p></div>
+      <div class="rise" style="--d:4"><h3>The sword of the Spirit</h3><p class="kjv">“which is the word of God”</p><p>The short Roman sword was for close fighting, face to face. The only weapon in the list.</p><p><b>Today:</b> learn one verse by heart, so it's in your hand when the fight is close.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 520 570" role="img" aria-label="The outline of a man. Piece by piece a Roman soldier's armour drops onto him: the belt, the breastplate, the boots, the big shield, the helmet, and the sword. Burning darts fly at the shield and go out. Last, a ring of prayer surrounds him.">
+          <!-- the man -->
+          <path class="ep06-limb" d="M152 152 L120 232 L102 296"/>
+          <path class="ep06-limb" d="M250 152 L284 228 L300 266"/>
+          <path class="ep06-limb" d="M178 366 L174 500 M224 366 L228 500" stroke-width="28"/>
+          <circle class="ep06-body" cx="200" cy="88" r="32"/>
+          <path class="ep06-body" d="M146 140 Q200 126 254 140 L266 300 L134 300 Z"/>
+          <path class="ep06-body" d="M134 300 L266 300 L280 368 L120 368 Z"/>
+          <ellipse class="ep06-body" cx="168" cy="514" rx="24" ry="10"/><ellipse class="ep06-body" cx="234" cy="514" rx="24" ry="10"/>
+          <!-- 3. the boots -->
+          <g class="ep06-p ep06-p3">
+            <rect class="ep06-leather" x="142" y="504" width="50" height="16" rx="7"/><rect class="ep06-leather" x="210" y="504" width="50" height="16" rx="7"/>
+            <path class="ep06-strap" d="M162 504 L186 488 M162 488 L186 504 M164 486 L184 472 M210 504 L236 488 M212 488 L236 504 M214 486 L234 472"/>
+            <g class="ep06-gold"><circle cx="150" cy="522" r="2.5"/><circle cx="162" cy="522" r="2.5"/><circle cx="174" cy="522" r="2.5"/><circle cx="186" cy="522" r="2.5"/><circle cx="218" cy="522" r="2.5"/><circle cx="230" cy="522" r="2.5"/><circle cx="242" cy="522" r="2.5"/><circle cx="254" cy="522" r="2.5"/></g>
+          </g>
+          <!-- 2. the breastplate -->
+          <g class="ep06-p ep06-p2">
+            <path class="ep06-metal" d="M144 142 Q200 128 256 142 L264 282 L136 282 Z"/>
+            <path class="ep06-band-line" d="M142 176 Q200 166 258 176 M140 206 Q200 196 260 206 M139 234 Q200 224 261 234 M137 260 Q200 250 263 260"/>
+            <path class="ep06-metal" d="M136 140 Q148 118 180 128 L176 162 Q150 162 136 152 Z"/>
+            <path class="ep06-metal" d="M264 140 Q252 118 220 128 L224 162 Q250 162 264 152 Z"/>
+          </g>
+          <!-- 1. the belt -->
+          <g class="ep06-p ep06-p1">
+            <rect class="ep06-leather" x="130" y="282" width="140" height="24" rx="5"/>
+            <rect class="ep06-gold" x="188" y="284" width="24" height="20" rx="3"/>
+            <path class="ep06-strap" d="M182 306 L182 356 M194 306 L194 360 M206 306 L206 360 M218 306 L218 356"/>
+            <g class="ep06-gold"><circle cx="182" cy="358" r="4"/><circle cx="194" cy="362" r="4"/><circle cx="206" cy="362" r="4"/><circle cx="218" cy="358" r="4"/></g>
+          </g>
+          <!-- 5. the helmet -->
+          <g class="ep06-p ep06-p5">
+            <path class="ep06-red" d="M174 56 Q200 10 226 56 Z" stroke-width="2"/>
+            <path class="ep06-metal" d="M164 84 Q164 48 200 48 Q236 48 236 84 Z"/>
+            <path class="ep06-metal" d="M158 80 L242 80 L246 88 L154 88 Z"/>
+            <path class="ep06-metal" d="M162 86 L176 86 L178 114 L164 108 Z"/>
+            <path class="ep06-metal" d="M238 86 L224 86 L222 114 L236 108 Z"/>
+          </g>
+          <!-- 4. the shield, and the darts -->
+          <g class="ep06-p ep06-p4">
+            <path class="ep06-red" d="M262 172 Q320 162 378 172 L378 408 Q320 418 262 408 Z"/>
+            <path d="M320 180 L320 268 M320 312 L320 400 M272 290 L298 290 M342 290 L368 290" fill="none" stroke-width="3" style="stroke:var(--warm)"/>
+            <circle class="ep06-gold" cx="320" cy="290" r="20"/>
+          </g>
+          <g class="ep06-dart" style="--w:0s"><line x1="384" y1="216" x2="430" y2="216"/><path d="M384 216 l12 -7 M384 216 l12 7"/><circle cx="436" cy="216" r="9"/><circle cx="436" cy="216" r="4.5"/></g>
+          <g class="ep06-dart" style="--w:.9s"><line x1="384" y1="300" x2="430" y2="300"/><path d="M384 300 l12 -7 M384 300 l12 7"/><circle cx="436" cy="300" r="9"/><circle cx="436" cy="300" r="4.5"/></g>
+          <g class="ep06-dart" style="--w:1.8s"><line x1="384" y1="372" x2="430" y2="372"/><path d="M384 372 l12 -7 M384 372 l12 7"/><circle cx="436" cy="372" r="9"/><circle cx="436" cy="372" r="4.5"/></g>
+          <!-- 6. the sword -->
+          <g class="ep06-p ep06-p6"><g transform="translate(102 296) rotate(-20)">
+            <path class="ep06-blade" d="M-7 -12 L-7 -122 L0 -142 L7 -122 L7 -12 Z"/>
+            <rect class="ep06-gold" x="-17" y="-14" width="34" height="8" rx="3"/>
+            <rect class="ep06-leather" x="-5" y="-6" width="10" height="26" rx="3"/>
+            <circle class="ep06-gold" cx="0" cy="24" r="7"/>
+          </g></g>
+          <!-- 7. prayer -->
+          <g class="ep06-p ep06-p7">
+            <ellipse cx="236" cy="282" rx="226" ry="262"/>
+            <text x="236" y="568" text-anchor="middle">praying always</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise">Put it on, piece by piece</h2>
+        <ol class="ep06-kit">
+          <li class="step ep06-s1"><b>The belt</b><span>“having your loins girt about with truth”</span></li>
+          <li class="step ep06-s2"><b>The breastplate</b><span>“the breastplate of righteousness”</span></li>
+          <li class="step ep06-s3"><b>The boots</b><span>“your feet shod with… the gospel of peace”</span></li>
+          <li class="step ep06-s4"><b>The shield</b><span>“the shield of faith… quench all the fiery darts”</span></li>
+          <li class="step ep06-s5"><b>The helmet</b><span>“the helmet of salvation”</span></li>
+          <li class="step ep06-s6"><b>The sword</b><span>“the sword of the Spirit, which is the word of God”</span></li>
+          <li class="step ep06-s7"><b>And over it all, prayer</b><span>“praying always with all prayer… in the Spirit”</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Whose armour is it?</h2>
+    <p class="note rise" style="--d:1">It's called <em>“the whole armour of God”</em>, and it really is His. Isaiah saw the LORD Himself dressed for battle in it:</p>
+    <blockquote class="quote rise" style="--d:2"><p>“For he put on righteousness as a breastplate, and an helmet of salvation upon his head; and he put on the garments of vengeance for clothing, and was clad with zeal as a cloke.”</p><cite>Isaiah 59:17</cite></blockquote>
+    <p class="note step">You aren't asked to make your own armour out of good intentions. God hands you His. Truth, righteousness, peace, faith and salvation are all gifts of Christ before they are anything you do.</p>
+    <p class="note step">And notice there's nothing for your back. A soldier in this armour doesn't run. He stands, faces it, and keeps his brothers on either side.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="the sword of the Spirit, which is the word of God"></blockquote>
+    <h2 class="rise" style="--d:1">It is written</h2>
+    <p class="note rise" style="--d:2">When Satan tempted Jesus in the wilderness, Jesus didn't argue. Three times He answered, <em>“It is written”</em> (Matthew 4:4). That's how the sword works.</p>
+    <div class="ep06-duel">
+      <p class="d step"><small>the dart</small>One drink won't hurt.</p>
+      <p class="s step"><small>the sword: Proverbs 20:1</small>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p>
+      <p class="d step"><small>the dart</small>You'll never change.</p>
+      <p class="s step"><small>the sword: 2 Corinthians 5:17</small>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p>
+    </div>
+    <p class="note step">A sword you don't own can't help you. Pick one verse for the dart that hits you most, and learn it by heart today.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-20" data-hl="Praying always with all prayer and supplication in the Spirit|for all saints|an ambassador in bonds"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18"></blockquote>
+    <h2 class="rise" style="--d:1">The line back to headquarters</h2>
+    <p class="note rise" style="--d:2">A soldier cut off from his commander is in trouble, however good his armour. Prayer keeps the line open, <em>“always,”</em> not only in the emergency.</p>
+    <p class="note step"><em>“For all saints”</em>: the man next to you is in the same fight. Pray for him by name today, and text him that you did.</p>
+    <p class="note step">Look what Paul asks for himself. Not to get out of the chains, but to speak <em>boldly</em> in them. An ambassador was supposed to be untouchable; Christ's ambassador was in chains, and still on duty.</p>
+    <blockquote class="quote step"><p>“Pray without ceasing.”</p><cite>1 Thessalonians 5:17</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: TYCHICUS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Tychicus</h2>
+    <p class="range rise" style="--d:2">Verses 21–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The man who carried the letter, and Paul's last word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="Tychicus, a beloved brother and faithful minister in the Lord|that he might comfort your hearts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-world viewBox="190 120 480 250" data-towns="Rome!:t, Puteoli:l, Ephesus*:t, Laodicea:b, Colosse:t" role="img" aria-label="A map from Rome to Asia. A line runs from Rome down the coast of Italy, across the sea south of Greece, to Ephesus. Then a second line goes inland to Laodicea and Colosse.">
+          <path class="map-route" data-via="Rome, Puteoli, @14.6 40.3, @15.7 39.4, @15.5 38.4, Rhegium, @17.5 37.4, @21.0 36.4, @23.3 36.15, @24.9 36.25, @26.3 36.9, @26.95 37.55, @27.15 37.85, Ephesus"/>
+          <path class="map-route j2 r1" data-via="Ephesus, Laodicea, Colosse"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The mailman</h2>
+        <p class="note rise" style="--d:2">There was no post office. Tychicus, a believer from Asia (Acts 20:4), carried this letter by hand, hundreds of miles, by road and sea. The way he went isn't known.</p>
+        <p class="note step map-go1">He carried Colossians on the same trip, with Onesimus, the runaway slave, going home (Colossians 4:7–9).</p>
+        <p class="note step">Paul calls him <em>“beloved”</em> and <em>“faithful.”</em> No miracles, no sermons we know of. Just a man you could trust to deliver. Years later, Paul sent him to Ephesus again (2 Timothy 4:12).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="Peace be to the brethren|Grace be with all them that love our Lord Jesus Christ in sincerity"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24"></blockquote>
+    <h2 class="rise" style="--d:1">Peace, love, faith, grace</h2>
+    <p class="note rise" style="--d:2">The letter opened with <em>“Grace be to you, and peace”</em> (1:2), and it closes the same way. Everything in between was grace.</p>
+    <p class="note step">“In sincerity” is literally <em>in incorruption</em>: a love for Jesus that doesn't rot or wear out. Not a love that never stumbles; a love that keeps coming back.</p>
+    <p class="note step"><em>Today:</em> be somebody's Tychicus. Carry a word of comfort to one brother. <em>“That he might comfort your hearts.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART FIVE: LOOKING BACK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part five</p>
+    <h2 class="rise" style="--d:1">Looking back</h2>
+    <p class="range rise" style="--d:2">The whole letter</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">That was the last chapter. Here is where Ephesians has taken us.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Six chapters: sit, walk, stand</h2>
+    <ol class="timeline" aria-label="Six chapters of Ephesians. Chapter 1: every blessing in Christ, chosen in him and sealed with the Spirit. Chapter 2: dead, then made alive, by grace through faith, and the wall broken down. Chapter 3: the mystery made known, and a prayer for strength. Chapter 4: walk worthy, put off the old man and put on the new. Chapter 5: walk in love and light, filled with the Spirit. Chapter 6: stand, in the whole armour of God.">
+      <li style="--k:0"><b>1</b><span>Every blessing, in Christ</span><small>chosen in Him; sealed</small></li>
+      <li style="--k:1"><b>2</b><span>Dead, then made alive</span><small>by grace, through faith</small></li>
+      <li style="--k:2"><b>3</b><span>The mystery made known</span><small>Jew and Gentile, one body</small></li>
+      <li style="--k:3"><b>4</b><span>Walk worthy</span><small>put off, put on</small></li>
+      <li style="--k:4"><b>5</b><span>Walk in love and light</span><small>filled with the Spirit</small></li>
+      <li class="lit" style="--k:5"><b>6</b><span>Stand</span><small>the whole armour</small></li>
+    </ol>
+    <p class="note step">Notice the order. Paul spends three chapters telling you what God has done <em>before</em> he tells you to do anything. You sit in what Christ won, then you walk it out, then you stand your ground. Never the other way round.</p>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What this letter gave us</h2>
+    <ol class="signs rise" style="--d:1" aria-label="Sin, regret, grace, hope, and the real world, each with a line from Ephesians">
+      <li><b>Sin</b>“dead in trespasses and sins” (2:1): that's where every one of us started</li>
+      <li><b>Regret</b>“ye who sometimes were far off are made nigh by the blood of Christ” (2:13)</li>
+      <li><b>Grace</b>“by grace are ye saved through faith” (2:8)</li>
+      <li><b>Hope</b>“exceeding abundantly above all that we ask or think” (3:20)</li>
+      <li class="now"><b>The real world</b>“be ye kind one to another, tenderhearted, forgiving one another” (4:32)</li>
+    </ol>
+    <p class="note step">If you remember one thing, make it this: you are <em>in Christ</em>. Paul says it, or something like it, again and again from the first chapter to the last. Chosen in Him, forgiven in Him, sealed in Him, and strong in Him.</p>
+    <p class="note step">So wherever you fell yesterday, get up today, put on the armour, and stand. <em>“Be strong in the Lord, and in the power of his might.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Home</span><span class="seed-q">“Ye fathers, provoke not your children to wrath” <cite>6:4</cite></span><span class="take">Honour your parents, even imperfect ones. Fathers: train gently, and rebuild trust one kept promise at a time.</span></li>
+      <li class="step"><span class="topic">Work</span><span class="seed-q">“Not with eyeservice… but as the servants of Christ” <cite>6:6</cite></span><span class="take">Work the same in every hour. Your real Boss never looks away, and He repays.</span></li>
+      <li class="step"><span class="topic">The enemy</span><span class="seed-q">“We wrestle not against flesh and blood” <cite>6:12</cite></span><span class="take">People aren't the enemy. The devil's schemes are. Be strong in the Lord, and stand.</span></li>
+      <li class="step"><span class="topic">The armour</span><span class="seed-q">“Put on the whole armour of God” <cite>6:11</cite></span><span class="take">Truth, righteousness, peace, faith, salvation, and the word of God: God's own armour, given to you.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Praying always with all prayer and supplication in the Spirit” <cite>6:18</cite></span><span class="take">Prayer keeps the line to the Commander open, for you and for every brother in the fight.</span></li>
+      <li class="step"><span class="topic">The whole letter</span><span class="seed-q">“Be strong in the Lord, and in the power of his might” <cite>6:10</cite></span><span class="take">In Christ you are chosen, forgiven, sealed and strong. Sit in it, walk it out, and stand.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Home</span>
+      <h2>What does God ask of children, and of fathers?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step"><p>“Fathers, provoke not your children to anger, lest they be discouraged.”</p><cite>Colossians 3:21</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Children: obey and honour your parents. Fathers: don't push your kids to anger with harshness or broken promises; train them and teach them in the Lord. Trust lost can be rebuilt, slowly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Work</span>
+      <h2>How should a believer work when the boss isn't watching?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“And whatsoever ye do, do it heartily, as to the Lord, and not unto men;”</p><cite>Colossians 3:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The same as when he is. A believer works from the heart, as for Christ: on time, honest with tools and hours, with good will. The Lord sees it and repays it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The enemy</span>
+      <h2>Who is our real enemy?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Submit yourselves therefore to God. Resist the devil, and he will flee from you.”</p><cite>James 4:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not people. The devil and the powers of darkness, with their schemes. We stand in the Lord's strength.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The armour</span>
+      <h2>What armour has God given us to stand in?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The belt of truth, the breastplate of righteousness, the shoes of the gospel of peace, the shield of faith, the helmet of salvation, and the sword of the Spirit, the word of God. It is God's own armour.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>Why does Paul finish the armour with prayer?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step" data-q="19" data-hl="that I may open my mouth boldly"></blockquote>
+      <blockquote class="quote step"><p>“Pray without ceasing.”</p><cite>1 Thessalonians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because armour is no good to a soldier cut off from his Commander. Prayer keeps us leaning on God's strength, always, and it holds up every brother in the same fight.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The whole letter</span>
+      <h2>What has Ephesians taught us about who we are in Christ?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:”</p><cite>Ephesians 2:8</cite></blockquote>
+      <blockquote class="quote step"><p>“For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.”</p><cite>Ephesians 2:10</cite></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>In Christ we are saved by grace, forgiven, sealed by the Spirit, and made God's own workmanship. So we walk worthy of it, and stand strong in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? Your kids, your job, the fight you're in right now?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us, Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.”</p><cite>Ephesians 3:20–21</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Ephesians chapter 6
+const V = {
+  1: "Children, obey your parents in the Lord: for this is right.",
+  2: "Honour thy father and mother; (which is the first commandment with promise;)",
+  3: "That it may be well with thee, and thou mayest live long on the earth.",
+  4: "And, ye fathers, provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord.",
+  5: "Servants, be obedient to them that are your masters according to the flesh, with fear and trembling, in singleness of your heart, as unto Christ;",
+  6: "Not with eyeservice, as menpleasers; but as the servants of Christ, doing the will of God from the heart;",
+  7: "With good will doing service, as to the Lord, and not to men:",
+  8: "Knowing that whatsoever good thing any man doeth, the same shall he receive of the Lord, whether he be bond or free.",
+  9: "And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; neither is there respect of persons with him.",
+  10: "Finally, my brethren, be strong in the Lord, and in the power of his might.",
+  11: "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.",
+  12: "For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.",
+  13: "Wherefore take unto you the whole armour of God, that ye may be able to withstand in the evil day, and having done all, to stand.",
+  14: "Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;",
+  15: "And your feet shod with the preparation of the gospel of peace;",
+  16: "Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.",
+  17: "And take the helmet of salvation, and the sword of the Spirit, which is the word of God:",
+  18: "Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints;",
+  19: "And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel,",
+  20: "For which I am an ambassador in bonds: that therein I may speak boldly, as I ought to speak.",
+  21: "But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things:",
+  22: "Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts.",
+  23: "Peace be to the brethren, and love with faith, from God the Father and the Lord Jesus Christ.",
+  24: "Grace be with all them that love our Lord Jesus Christ in sincerity. Amen."
+};
+const BOOK = "Ephesians 6";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

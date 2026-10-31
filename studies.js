@@ -13323,6 +13323,100 @@ window.STUDIES = [
     }
   },
   {
+    "id": "ephesians-05",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "Ephesians 5",
+    "sub": "Walk in love",
+    "about": "Copy your Father, walk as children of light, be filled with the Spirit instead of the bottle, and love your wife the way Christ loved the church.",
+    "tags": [
+      "Walking with God",
+      "Sexual sin",
+      "Light and darkness",
+      "Alcohol",
+      "The Holy Spirit",
+      "Marriage"
+    ],
+    "url": "studies/ephesians-05.html",
+    "overview": {
+      "where": "Paul, a prisoner in Rome, writing to the believers at Ephesus",
+      "when": "About AD 60 to 62",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father",
+        "holy-spirit",
+        "saints-believers"
+      ],
+      "places": [
+        "rome",
+        "ephesus"
+      ],
+      "story": [
+        "Be followers of God, as dear children, and walk in love, as Christ loved us and gave Himself for us (1–2).",
+        "Fornication, uncleanness and covetousness must not be once named among saints; give thanks instead. Don't be deceived by vain words (3–7).",
+        "Ye were sometimes darkness, but now are ye light in the Lord: walk as children of light, and bring the hidden things into the light. Awake thou that sleepest (8–14).",
+        "Walk circumspectly, redeeming the time. Be not drunk with wine, but be filled with the Spirit, singing, giving thanks, and submitting one to another (15–21).",
+        "Wives, submit to your own husbands as unto the Lord. Husbands, love your wives even as Christ loved the church and gave Himself for it. This is a great mystery: Christ and the church (22–33)."
+      ],
+      "key": {
+        "ref": "Ephesians 5:2",
+        "text": "And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour."
+      },
+      "big": "A forgiven man copies his Father. He walks in love and in the light, lets the Spirit fill the place the bottle used to, and loves his wife by giving himself up for her, as Christ did for the church."
+    }
+  },
+  {
+    "id": "ephesians-06",
+    "type": "chapter",
+    "book": "Ephesians",
+    "ch": 6,
+    "date": "2026-10-31",
+    "title": "Ephesians 6",
+    "sub": "Be strong in the Lord",
+    "about": "The last chapter: honour at home, honest work for Christ, and the whole armour of God for the real fight. Tychicus carries the letter, and we look back over all six chapters.",
+    "tags": [
+      "Fathers",
+      "Work",
+      "Spiritual warfare",
+      "The armour of God",
+      "Prayer",
+      "Standing firm"
+    ],
+    "url": "studies/ephesians-06.html",
+    "overview": {
+      "where": "Paul, chained to a Roman soldier in Rome, writing to the believers at Ephesus; Tychicus carries the letter",
+      "when": "About AD 60 to 62",
+      "people": [
+        "paul",
+        "jesus",
+        "tychicus",
+        "holy-spirit",
+        "saints-believers"
+      ],
+      "places": [
+        "rome",
+        "ephesus",
+        "asia",
+        "colosse"
+      ],
+      "story": [
+        "Children, obey and honour your parents, the first commandment with promise. Fathers, provoke not your children to wrath, but bring them up in the nurture and admonition of the Lord (1–4).",
+        "Servants, work not with eyeservice, as menpleasers, but as the servants of Christ, from the heart. Masters, forbear threatening: your Master is in heaven (5–9).",
+        "Be strong in the Lord. We wrestle not against flesh and blood. Put on the whole armour of God and stand: truth, righteousness, the gospel of peace, faith, salvation, and the sword of the Spirit (10–17).",
+        "Pray always, for all saints, and for Paul, an ambassador in bonds, to speak boldly (18–20).",
+        "Tychicus, a beloved brother and faithful minister, will tell them everything and comfort their hearts. Peace, love and grace to all who love the Lord Jesus Christ in sincerity (21–24)."
+      ],
+      "key": {
+        "ref": "Ephesians 6:10",
+        "text": "Finally, my brethren, be strong in the Lord, and in the power of his might."
+      },
+      "big": "Our fight is not with people but with the devil's schemes, and we don't fight it in our own strength. God gives us His own armour and the line of prayer, so that, having done all, we stand."
+    }
+  },
+  {
     "id": "philippians-01",
     "type": "chapter",
     "book": "Philippians",

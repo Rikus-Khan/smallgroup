@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephesians 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ep05-where: where we are in Ephesians. Six chapter tabs (.ep05-ch, .here), under each the "walk" verses it holds (.ep05-walk span; .old is the
+   old walk of 2:2), and three bands under them (.ep05-band: Sit 1–3, Walk 4–6, Stand 6:10–20; .now is lit). */
+.ep05-where { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px 6px; margin: .5em 0 1em; }
+.ep05-ch { text-align: center; padding: .25em 0 .3em; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.85rem, .75rem + .4vw, 1.1rem) var(--sans); color: var(--ink-soft); }
+.ep05-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.ep05-walk { display: flex; flex-direction: column; gap: 4px; min-height: 2em; }
+.ep05-walk span { padding: .2em .5em; border: 1.5px dashed var(--line-strong); border-radius: 8px; font-size: clamp(.68rem, .62rem + .28vw, .9rem); line-height: 1.2; color: var(--ink-soft);
+  opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k, 0) * 220ms + 500ms); }
+.slide.active .ep05-walk span { opacity: 1; transform: none; }
+.ep05-walk span b { display: block; font-weight: 700; color: var(--ink); }
+.ep05-walk span.old { border-color: var(--danger); }
+.ep05-walk span.old b { color: var(--danger); }
+.ep05-walk.here span { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); }
+.ep05-walk.here span b { color: var(--accent-hot); }
+.ep05-band { --c: var(--accent); grid-row: 3; padding: .45em .65em .55em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.ep05-band small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); color: var(--ink-soft); }
+.ep05-band b { display: block; font: 600 clamp(1.05rem, .9rem + .7vw, 1.6rem)/1.1 var(--serif); color: var(--ink); }
+.ep05-band i { display: block; font: italic clamp(.75rem, .7rem + .25vw, .95rem)/1.25 var(--serif); color: var(--ink-soft); }
+.ep05-band.now { background: color-mix(in srgb, var(--c) 22%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.ep05-b1 { --c: var(--cool); grid-column: 1 / 4; } .ep05-b2 { --c: var(--accent); grid-column: 4 / 6; } .ep05-b3 { --c: var(--wine); grid-column: 6 / 7; }
+@media (max-width: 640px) {
+  .ep05-where { grid-template-columns: 1fr; }
+  .ep05-ch, .ep05-walk:not(.here) { display: none; }
+  .ep05-band { grid-row: auto; grid-column: 1; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* ep05-prints: a father's footprints, and a child's small ones stepping into them, one by one */
+.ep05-big { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.ep05-small { fill: var(--accent); opacity: 0; transform: scale(.4); transform-box: fill-box; transform-origin: center; transition: opacity .4s ease, transform .4s ease; transition-delay: calc(var(--k) * 550ms + 700ms); }
+.slide.active .ep05-small { opacity: 1; transform: none; }
+.ep05-lbl { font: 600 18px var(--sans); fill: var(--ink-soft); }
+.ep05-lbl.hot { fill: var(--accent-hot); }
+
+/* ep05-words: old words, each with its plain meaning, in cards */
+.ep05-words { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: .4em 0 1em; }
+@media (max-width: 760px) { .ep05-words { grid-template-columns: 1fr 1fr; } }
+.ep05-words > div { padding: .55em .8em .65em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
+.ep05-words b { display: block; font: italic 600 clamp(1.05rem, .92rem + .55vw, 1.4rem) var(--serif); color: var(--accent-hot); }
+.ep05-words p { margin: .15em 0 0; font-size: clamp(.88rem, .8rem + .35vw, 1.1rem); line-height: 1.3; color: var(--ink-soft); }
+
+/* ep05-day: the same day, bought back. Blocks of hours (--w) show the old use (.a); an .ep05-buy step swaps each block to its new use (.b), one after another (--k). */
+.ep05-day { display: flex; gap: 4px; margin: .2em 0 1em; }
+.ep05-day > div { flex: var(--w) 1 0; min-width: 0; position: relative; height: clamp(4.6rem, 3.6rem + 3vw, 6.6rem); border-radius: 8px; overflow: hidden; }
+.ep05-day span { position: absolute; inset: 0; display: grid; place-items: center; padding: .2em .35em; text-align: center; font-size: clamp(.72rem, .64rem + .35vw, 1rem); line-height: 1.2; transition: opacity .6s ease; transition-delay: calc(var(--k) * 260ms); }
+.ep05-day .a { background: color-mix(in srgb, var(--danger) 26%, var(--surface-2)); color: var(--ink); border: 1.5px solid color-mix(in srgb, var(--danger) 60%, transparent); border-radius: 8px; }
+.ep05-day .b { background: color-mix(in srgb, var(--accent) 24%, var(--surface-2)); color: var(--ink); border: 1.5px solid var(--accent); border-radius: 8px; opacity: 0; font-weight: 600; }
+.slide:has(.ep05-buy.on) .ep05-day .a { opacity: 0; }
+.slide:has(.ep05-buy.on) .ep05-day .b { opacity: 1; }
+.ep05-hrs { display: flex; gap: 4px; margin-top: .4em; font: 600 clamp(.66rem, .6rem + .25vw, .85rem) var(--sans); color: var(--ink-soft); }
+.ep05-hrs i { flex: var(--w) 1 0; min-width: 0; font-style: normal; }
+@media (max-width: 640px) {
+  .ep05-day { flex-direction: column; }
+  .ep05-day > div { flex: none; height: 2.2rem; }
+  .ep05-hrs { display: none; }
+}
+
+/* ep05-flow: one filling, four things that flow out of it (verses 19–21). The lines draw, then the four boxes appear. */
+.ep05-flow .src rect { fill: var(--accent); }
+.ep05-flow .src text { fill: var(--on-accent); font: 700 24px var(--serif); }
+.ep05-flow path { fill: none; stroke: var(--accent); stroke-width: 4; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s ease; transition-delay: calc(var(--k) * 300ms + 600ms); }
+.slide.active .ep05-flow path { stroke-dashoffset: 0; }
+.ep05-flow .out { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--k) * 300ms + 1.5s); }
+.slide.active .ep05-flow .out { opacity: 1; }
+.ep05-flow .out rect { fill: color-mix(in srgb, var(--accent) 12%, var(--surface-2)); stroke: var(--accent); stroke-width: 2; }
+.ep05-flow .out text { font: 600 17px var(--sans); fill: var(--ink); }
+.ep05-flow .out text.v { font: 600 15px var(--sans); fill: var(--ink-soft); }
+.ep05-flow .out text.w { font: italic 700 22px var(--serif); fill: var(--accent-hot); }
+
+/* ep05-count: two bars, how many words Paul gives to wives and to husbands (--to is the bar's length) */
+.ep05-count { display: grid; gap: .55em; margin: .5em 0 1em; }
+.ep05-count > div { display: grid; grid-template-columns: 7.5em 1fr; align-items: center; gap: .8em; }
+.ep05-count small { font: 700 clamp(.9rem, .82rem + .35vw, 1.15rem) var(--sans); color: var(--ink-soft); text-align: right; }
+.ep05-count p { margin: 0; height: clamp(2rem, 1.6rem + 1.2vw, 2.8rem); width: 0; border-radius: 6px; background: color-mix(in srgb, var(--cool) 45%, var(--surface-2)); display: flex; align-items: center; padding: 0 .7em; white-space: nowrap; overflow: visible;
+  font: 600 clamp(.85rem, .78rem + .35vw, 1.1rem) var(--sans); color: var(--ink); transition: width 1.4s ease .6s; }
+.ep05-count .h p { background: var(--accent); color: var(--on-accent); transition-delay: 1.2s; }
+.slide.active .ep05-count p { width: var(--to); }
+
+/* ep05-rings: two rings joined as one (a marriage), and the bigger marriage it pictures (Christ and the church), on an .ep05-big-go step */
+.ep05-rings circle { fill: none; stroke-width: 6; }
+.ep05-rings .r1 { stroke: var(--cool); } .ep05-rings .r2 { stroke: var(--warm); }
+.ep05-rings .big { opacity: .25; transition: opacity 1s ease; }
+.ep05-rings .big circle { stroke-width: 9; }
+.ep05-rings .big .r1 { stroke: var(--cool); } .ep05-rings .big .r2 { stroke: var(--accent); }
+.slide:has(.ep05-big-go.on) .ep05-rings .big { opacity: 1; }
+.ep05-rings .arrow { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 6 6; opacity: 0; transition: opacity .8s ease .3s; }
+.slide:has(.ep05-big-go.on) .ep05-rings .arrow { opacity: 1; }
+.ep05-rings text { font: 600 19px var(--sans); fill: var(--ink-soft); }
+.ep05-rings text.t { font: italic 700 23px var(--serif); fill: var(--ink); }
+.ep05-rings .big text.t { fill: var(--accent-hot); }
+
+/* ep05-plan: a ticked checklist in plain words (no quote marks) */
+.ep05-plan q { quotes: none; font-style: normal; font-family: var(--sans); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Ephesians 5</h1>
+    <p class="sub rise" style="--d:3">Walk in love</p>
+    <p class="tag rise" style="--d:5">Copy your Father, walk in the light, be filled with the Spirit instead of the bottle, and love your wife the way Christ loved the church.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Ephesians</h2>
+    <div class="ep05-where rise" style="--d:2" role="img" aria-label="Ephesians in three parts. Chapters 1 to 3: sit, all God has done for you in Christ. Chapters 4 to 6: walk, how to live it out. Chapter 6, verses 10 to 20: stand. The word walk comes up again and again: 2:2 the old walk, 2:10, 4:1, 4:17, and three times in chapter 5, verses 2, 8 and 15. Chapter 5 is lit.">
+      <span class="ep05-ch">1</span><span class="ep05-ch">2</span><span class="ep05-ch">3</span><span class="ep05-ch">4</span><span class="ep05-ch here">5</span><span class="ep05-ch">6</span>
+      <div class="ep05-walk"></div>
+      <div class="ep05-walk"><span class="old" style="--k:0"><b>2:2</b>ye walked the old way</span><span style="--k:1"><b>2:10</b>walk in good works</span></div>
+      <div class="ep05-walk"></div>
+      <div class="ep05-walk"><span style="--k:2"><b>4:1</b>walk worthy</span><span style="--k:3"><b>4:17</b>walk not as other Gentiles</span></div>
+      <div class="ep05-walk here"><span style="--k:4"><b>5:2</b>walk in love</span><span style="--k:5"><b>5:8</b>walk as children of light</span><span style="--k:6"><b>5:15</b>walk circumspectly</span></div>
+      <div class="ep05-walk"><span style="--k:7"><b>6:11–14</b>stand</span></div>
+      <div class="ep05-band ep05-b1"><small>Chapters 1–3</small><b>Sit</b><i>what God has done: “made us sit together in heavenly places” (2:6)</i></div>
+      <div class="ep05-band ep05-b2 now"><small>4:1–6:9</small><b>Walk</b><i>how to live it, on the street</i></div>
+      <div class="ep05-band ep05-b3"><small>6:10–20</small><b>Stand</b><i>in the fight</i></div>
+    </div>
+    <p class="note rise" style="--d:3">Paul wrote this from a Roman prison, about AD 60 to 62, to the believers at Ephesus. The first half told them who they are in Christ. The second half tells them how to <em>walk</em>.</p>
+    <p class="note step">Chapter 4 said: put off the old man, put on the new. Chapter 5 shows what the new man looks like with the lights on: in his mouth, in his habits, with his time, and in his own house.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Copying God</span><span class="seed-q">How do we become “followers of God, as dear children”?</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">Why should these sins “not be once named among you”?</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">What does it mean that we were darkness, but now are light?</span></li>
+      <li class="step"><span class="topic">Filled</span><span class="seed-q">What does it mean to be filled with the Spirit instead of drunk with wine?</span></li>
+      <li class="step"><span class="topic">Husbands</span><span class="seed-q">How is a husband to love his wife?</span></li>
+      <li class="step"><span class="topic">The mystery</span><span class="seed-q">What great mystery does marriage picture?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WALK IN LOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Walk in love</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Children copy their father. So copy yours, and leave the old life where it belongs.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Be ye therefore followers of God, as dear children|walk in love|hath given himself for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 400" role="img" aria-label="A line of large footprints walks up the page. Small footprints appear inside them one at a time, a child stepping exactly where his father stepped.">
+          <defs><g id="ep05-foot"><path d="M0 -38 C13 -38 19 -26 18 -10 C17 4 12 12 12 24 C12 38 7 46 0 46 C-8 46 -14 39 -13 27 C-12 14 -19 4 -19 -12 C-19 -28 -12 -38 0 -38 Z"/><circle cx="-13" cy="-49" r="5.5"/><circle cx="-3" cy="-54" r="6"/><circle cx="7" cy="-53" r="5"/><circle cx="14" cy="-48" r="4.2"/><circle cx="19" cy="-41" r="3.6"/></g></defs>
+          <g class="ep05-big">
+            <use href="#ep05-foot" transform="translate(150 330) rotate(-6) scale(1 1)"/>
+            <use href="#ep05-foot" transform="translate(250 262) rotate(6) scale(-1 1)"/>
+            <use href="#ep05-foot" transform="translate(150 194) rotate(-6) scale(1 1)"/>
+            <use href="#ep05-foot" transform="translate(250 126) rotate(6) scale(-1 1)"/>
+            <use href="#ep05-foot" transform="translate(150 60) rotate(-6) scale(1 1)"/>
+          </g>
+          <g transform="translate(150 338) rotate(-6) scale(0.52 .52)"><use class="ep05-small" style="--k:0" href="#ep05-foot"/></g>
+          <g transform="translate(250 270) rotate(6) scale(-0.52 .52)"><use class="ep05-small" style="--k:1" href="#ep05-foot"/></g>
+          <g transform="translate(150 202) rotate(-6) scale(0.52 .52)"><use class="ep05-small" style="--k:2" href="#ep05-foot"/></g>
+          <g transform="translate(250 134) rotate(6) scale(-0.52 .52)"><use class="ep05-small" style="--k:3" href="#ep05-foot"/></g>
+          <g transform="translate(150 68) rotate(-6) scale(0.52 .52)"><use class="ep05-small" style="--k:4" href="#ep05-foot"/></g>
+          <text class="ep05-lbl" x="296" y="60">the Father's steps</text>
+          <text class="ep05-lbl hot" x="296" y="330">a child's steps,</text>
+          <text class="ep05-lbl hot" x="296" y="352">right in them</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Like father, like son</h2>
+        <p class="note rise" style="--d:2">“Followers” is <span class="gk">mimētai</span>, where we get <em>mimic</em>. A little boy walks like his dad, talks like his dad, even pretends to shave.</p>
+        <p class="note step">Some of us had a father we didn't want to copy. Here is one you can copy safely. You are His <em>dear</em> child, loved, not just tolerated.</p>
+        <p class="note step">What does He look like? Verse 2: <em>Christ loved us, and gave himself for us.</em> Love that costs you something. That's the walk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="an offering and a sacrifice to God for a sweetsmelling savour"></blockquote>
+    <h2 class="rise" style="--d:1">A sweetsmelling savour</h2>
+    <p class="note rise" style="--d:2">In the Old Testament, when an offering burned on the altar, the smoke went up as <em>“a sweet savour unto the LORD”</em> (Leviticus 1:9): a gift God gladly accepted.</p>
+    <p class="note step">Paul says the cross was that kind of gift. When Christ gave Himself for you, the Father accepted it fully. Nothing is left to pay. Your record does not cancel what He did.</p>
+    <p class="note step">And a life of love done out of thanks for that, Paul says elsewhere, smells good to God too (Philippians 4:18). Paying back what you owe, keeping your word, helping the next man: offerings God is glad to receive.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="let it not be once named among you, as becometh saints|but rather giving of thanks"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Six old words, plainly</h2>
+    <div class="ep05-words">
+      <div class="rise" style="--d:1"><b>fornication</b><p>sex outside of marriage, of any kind</p></div>
+      <div class="rise" style="--d:2"><b>uncleanness</b><p>every dirty habit of the body and the mind, porn included</p></div>
+      <div class="rise" style="--d:3"><b>covetousness</b><p>always wanting more: more money, more pleasure, more of what's his</p></div>
+      <div class="rise" style="--d:4"><b>filthiness</b><p>the shameful and obscene</p></div>
+      <div class="rise" style="--d:5"><b>foolish talking</b><p>the talk of a fool: stupid, drunk talk</p></div>
+      <div class="rise" style="--d:6"><b>jesting</b><p>the clever dirty joke, the crude comeback</p></div>
+    </div>
+    <p class="note step">“Not convenient” means <em>not fitting</em>. It doesn't suit who you are now, like a man in a clean suit rolling in the mud. And <em>“not be once named among you”</em>: don't let it even be your reputation. You can name it to confess it. Just don't let it be the name people know you by.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="but rather giving of thanks"></blockquote>
+    <h2 class="rise" style="--d:1">What the mouth does instead</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The old mouth</p>
+        <h3>Dirty jokes and big talk</h3>
+        <p>On the job site, at the bar, in the cell. You learned to talk that way to fit in.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The new mouth</p>
+        <h3>Giving of thanks</h3>
+        <p>Paul doesn't just say stop. He gives the mouth a new job. A thankful man has less room for filth.</p>
+      </div>
+    </div>
+    <p class="note step">You don't have to preach at the guys at work. Just don't join in, and let them hear you thank God for something. That alone sets you apart.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="who is an idolater|Let no man deceive you with vain words|Be not ye therefore partakers with them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="nor covetous man, who is an idolater"></blockquote>
+    <h2 class="rise" style="--d:1">What Paul is saying, and what he isn't</h2>
+    <p class="note rise" style="--d:2">A “whoremonger” lives in sexual sin, the way a fishmonger lives by fish. Paul describes a life <em>ruled</em> by these things, not a believer who fell yesterday and hates it. And greed sits right beside them: whatever you can't stop wanting more of has become a god.</p>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Vain words (v. 6)</p>
+        <h3>“It's no big deal”</h3>
+        <p>Everybody does it. It's not hurting anybody. You only live once. Empty lines that make sin sound small.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">God's word</p>
+        <h3>“Such were some of you”</h3>
+        <p>“…but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus” (1 Corinthians 6:11).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: CHILDREN OF LIGHT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Children of light</h2>
+    <p class="range rise" style="--d:2">Verses 8–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">You weren't just in the dark. You were the dark. Now you're light. Wake up and walk in it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="For ye were sometimes darkness, but now are ye light in the Lord|walk as children of light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="ye were sometimes darkness, but now are ye light in the Lord"></blockquote>
+    <h2 class="rise" style="--d:1">A new name</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">darkness</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">light in the Lord</span>
+      <span class="gloss step">“Sometimes” is old English for <em>once, at one time</em>. That was then.</span>
+    </div>
+    <p class="note step">Paul doesn't say you were <em>in</em> the dark. He says you <em>were</em> darkness. And now you don't just have a little light. You <em>are</em> light, “in the Lord”: His light, shining through you.</p>
+    <p class="note step">So <em>walk</em> like it. Not to become light. You already are.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9-10"></blockquote>
+    <h2 class="rise" style="--d:1">What light grows</h2>
+    <ol class="signs rise" style="--d:2" aria-label="Three kinds of fruit: goodness, righteousness, truth">
+      <li><b>goodness</b>kind and generous, the opposite of using people</li>
+      <li><b>righteousness</b>doing what's right, at home and at work</li>
+      <li class="now"><b>truth</b>no more lies, no stories to keep straight</li>
+    </ol>
+    <p class="note step">“Proving” means <em>testing, finding out by trying</em>. A new believer learns what pleases God the way a new hire learns the job: step by step, asking, watching, getting it wrong and getting it right.</p>
+    <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="have no fellowship with the unfruitful works of darkness|which are done of them in secret|all things that are reproved are made manifest by the light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lid" viewBox="0 0 600 300" role="img" aria-label="A pile of secrets hidden under a heavy cover with a dark cloud above. The cover is lifted, the pile is carried away, and light shines where it was.">
+          <line x1="20" y1="252" x2="580" y2="252" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="lid-light">
+            <g stroke-width="5" stroke-linecap="round" style="stroke:var(--warm)">
+              <path d="M300 150 L300 70 M300 150 L360 92 M300 150 L240 92 M300 150 L392 150 M300 150 L208 150"/>
+            </g>
+            <circle cx="300" cy="150" r="34" style="fill:var(--warm)"/>
+            <text x="300" y="215" text-anchor="middle" font-size="30" font-weight="700" style="fill:var(--accent)">light</text>
+          </g>
+          <g class="lid-pile">
+            <rect x="236" y="204" width="56" height="48" rx="8" style="fill:color-mix(in srgb, var(--danger) 55%, var(--surface-2))"/>
+            <rect x="296" y="190" width="64" height="62" rx="8" style="fill:color-mix(in srgb, var(--ink-soft) 70%, var(--surface-2))"/>
+            <rect x="268" y="168" width="48" height="40" rx="8" style="fill:color-mix(in srgb, var(--danger) 35%, var(--surface-2))"/>
+          </g>
+          <path class="lid-cover" d="M200 252 Q206 150 300 146 Q394 150 400 252 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--ink-soft) 55%, var(--surface-2));stroke:var(--ink-soft)"/>
+          <g class="lid-cloud">
+            <g style="fill:var(--ink-soft)"><ellipse cx="270" cy="60" rx="50" ry="26"/><ellipse cx="320" cy="50" rx="44" ry="30"/><ellipse cx="350" cy="66" rx="40" ry="22"/></g>
+            <path d="M260 96 l-6 18 M300 96 l-6 18 M340 96 l-6 18" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <text x="480" y="62" text-anchor="middle" font-size="19" style="fill:var(--ink-soft)">done in secret</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Bring it into the light</h2>
+        <p class="note rise" style="--d:2">Sin grows best in the dark: the second phone, the hidden bottle, the money nobody knows about. “Reprove” means <em>expose, bring it out where it can be seen</em>.</p>
+        <p class="note step lid-off">Start with your own. Tell God the truth about it, and tell one brother you trust. Said out loud, a secret loses half its grip.</p>
+        <p class="note step lid-gone"><em>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness”</em> (1 John 1:9). Where the secret was, there is light.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14" data-hl="Awake thou that sleepest, and arise from the dead, and Christ shall give thee light"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14" data-hl="Awake thou that sleepest"></blockquote>
+    <h2 class="rise" style="--d:1">Wake up</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:2"><i>asleep</i><b>Awake thou that sleepest</b><p>Going through the motions, numb, half alive.</p></div>
+      <div class="step"><i>dead</i><b>Arise from the dead</b><p>God raises men who were <em>“dead in trespasses and sins”</em> (2:1).</p></div>
+      <div class="step"><i>morning</i><b>Christ shall give thee light</b><p class="kjv">He brings the light. You just get up.</p></div>
+    </div>
+    <p class="note step">“He saith” points back to Scripture. Many Bible teachers hear Isaiah 60:1 in it: <em>“Arise, shine; for thy light is come, and the glory of the LORD is risen upon thee.”</em> Some think the early Christians sang it as a hymn.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="walk circumspectly, not as fools, but as wise|Redeeming the time, because the days are evil|understanding what the will of the Lord is"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16"></blockquote>
+    <h2 class="rise" style="--d:1">Buy the hours back</h2>
+    <p class="note rise" style="--d:2">“Circumspectly” means <em>looking all around, carefully</em>, like a man crossing ice. “Redeeming” is <em>buying back</em>, like getting something out of the pawn shop.</p>
+    <div class="ep05-hrs rise" style="--d:3" aria-hidden="true"><i style="--w:2">6 am</i><i style="--w:4">8 am</i><i style="--w:5">noon</i><i style="--w:2">5 pm</i><i style="--w:2">7 pm</i><i style="--w:5">9 pm – 2 am</i></div>
+    <div class="ep05-day rise" style="--d:3" role="img" aria-label="The same day, block by block. The old day: sleeping it off, chasing money for it, using, the bar, the old crowd, up all night. Bought back: up and praying, at work, working as unto the Lord, supper with the kids, a meeting or a Bible study, rest.">
+      <div style="--w:2"><span class="a" style="--k:0">sleeping it off</span><span class="b" style="--k:0">up, coffee, prayer</span></div>
+      <div style="--w:4"><span class="a" style="--k:1">chasing money for it</span><span class="b" style="--k:1">on the job, on time</span></div>
+      <div style="--w:5"><span class="a" style="--k:2">using</span><span class="b" style="--k:2">working, as unto the Lord</span></div>
+      <div style="--w:2"><span class="a" style="--k:3">the bar</span><span class="b" style="--k:3">supper with the kids</span></div>
+      <div style="--w:2"><span class="a" style="--k:4">the old crowd</span><span class="b" style="--k:4">a meeting, Bible study</span></div>
+      <div style="--w:5"><span class="a" style="--k:5">up all night</span><span class="b" style="--k:5">rest</span></div>
+    </div>
+    <p class="note step ep05-buy">Same 24 hours. Different owner. You can't get the lost years back, but you can buy back <em>today</em>, one hour at a time. <em>“So teach us to number our days, that we may apply our hearts unto wisdom”</em> (Psalm 90:12).</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: FILLED WITH THE SPIRIT ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Filled with the Spirit</h2>
+    <p class="range rise" style="--d:2">Verses 18–21</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What used to fill the empty place, and what fills it now.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="be not drunk with wine, wherein is excess|be filled with the Spirit"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="cycle" style="--at:300px 200px; --lap:7s" viewBox="0 0 640 400" role="img" aria-label="A circle with five stops: empty, pour it in, full for a night, worse in the morning, emptier than before. A dot keeps running around. Then a bright path leads out: be filled with the Spirit.">
+          <circle class="cycle-ring" cx="300" cy="200" r="135"/>
+          <g class="rise" style="--d:1"><circle class="cycle-stop" cx="300" cy="65" r="15"/><text x="280" y="50" text-anchor="end" font-size="19">1. Empty inside</text></g>
+          <g class="rise" style="--d:2"><circle class="cycle-stop" cx="428" cy="158" r="15"/><text x="452" y="164" font-size="19">2. Pour it in</text></g>
+          <g class="rise" style="--d:3"><circle class="cycle-stop" cx="379" cy="309" r="15"/><text x="400" y="340" font-size="19">3. Full, for a night</text></g>
+          <g class="rise" style="--d:4"><circle class="cycle-stop" cx="221" cy="309" r="15"/><text x="200" y="340" text-anchor="end" font-size="19">4. Worse by morning</text></g>
+          <g class="rise" style="--d:5"><circle class="cycle-stop" cx="172" cy="158" r="15"/><text x="148" y="164" text-anchor="end" font-size="19" style="fill:var(--accent-hot)">5. Emptier</text></g>
+          <g class="cycle-spin"><circle cx="300" cy="65" r="8" style="fill:var(--accent-hot);stroke:var(--bg)" stroke-width="2"/></g>
+          <text x="300" y="196" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">wherein</text>
+          <text x="300" y="226" text-anchor="middle" font-size="24" class="serif" style="fill:var(--ink-soft)">is excess</text>
+          <g class="cycle-out">
+            <path class="cycle-way" d="M312 54 C350 12 450 6 560 14"/>
+            <path class="cycle-way" d="M545 0 L562 14 L545 30"/>
+            <text x="630" y="62" text-anchor="end" font-size="21" font-weight="700" style="fill:var(--accent-hot)">be filled with</text>
+            <text x="630" y="88" text-anchor="end" font-size="21" font-weight="700" style="fill:var(--accent-hot)">the Spirit</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">What filled the hole</h2>
+        <p class="note rise" style="--d:2">“Excess” is the same word family as the prodigal son's <em>“riotous living”</em> (Luke 15:13): a life poured out and wasted.</p>
+        <p class="note step">For some of us it was the bottle. For others, pills, porn, a woman, money, rage. Whatever it was, it filled the empty place for a night, and left it bigger by morning.</p>
+        <p class="note step cycle-go">Paul doesn't only say <em>stop</em>. He says be <em>filled</em> with something else. The empty place was made for God. Nothing else ever fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="be not drunk with wine"></blockquote>
+    <h2 class="rise" style="--d:1">About the wine</h2>
+    <p class="note rise" style="--d:2">Drunkenness is plainly sin. For a man who has fought the bottle, this isn't a fine line to walk. Southern Baptists have long urged believers to leave alcohol alone, and for a man in recovery, that is the wise road, and the safe one.</p>
+    <blockquote class="quote step"><p>“Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.”</p><cite>Proverbs 20:1</cite></blockquote>
+    <p class="note step">Notice the two go side by side: drunk with wine, filled with the Spirit. A drunk man is <em>under the influence</em>: something else is steering his mouth, his feet and his choices. Paul says: let the Spirit be the One steering.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="be filled with the Spirit"></blockquote>
+    <h2 class="rise" style="--d:1">What “filled” means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">a second blessing for a few</span><span class="why">every believer received the Spirit the day he believed</span></li>
+      <li class="step"><span class="k">a feeling, or a show</span><span class="why">it's seen in a changed life, not goose bumps</span></li>
+      <li class="step"><span class="k">getting more of Him</span><span class="why">you have all of Him; the question is whether He has all of you</span></li>
+      <li class="step yes"><span class="k">keep on being filled</span><span class="why">yield to Him, every room, every day</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“In whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+    <p class="note step">In Greek, “be filled” is a command that keeps going: <em>keep on being filled</em>. Yesterday's yielding doesn't cover today. Each morning: <em>Lord, You lead today.</em></p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-21" data-hl="singing and making melody in your heart to the Lord|Giving thanks always for all things|Submitting yourselves one to another in the fear of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What overflows</h2>
+    <div class="stage">
+      <svg class="ep05-flow" viewBox="0 0 640 272" role="img" aria-label="Be filled with the Spirit, at the top, branches into four things: speaking in psalms and hymns, singing in your heart, giving thanks always, and submitting one to another.">
+        <g class="src"><rect x="170" y="6" width="300" height="52" rx="26"/><text x="320" y="40" text-anchor="middle">be filled with the Spirit</text></g>
+        <path pathLength="1" style="--k:0" d="M260 58 C200 110 90 100 80 150"/>
+        <path pathLength="1" style="--k:1" d="M300 58 C290 100 245 110 240 150"/>
+        <path pathLength="1" style="--k:2" d="M340 58 C350 100 395 110 400 150"/>
+        <path pathLength="1" style="--k:3" d="M380 58 C440 110 550 100 560 150"/>
+        <g class="out" style="--k:0"><rect x="6" y="150" width="148" height="114" rx="12"/><text class="w" x="80" y="184" text-anchor="middle">speaking</text><text x="80" y="210" text-anchor="middle">psalms, hymns,</text><text x="80" y="232" text-anchor="middle">songs</text><text class="v" x="80" y="256" text-anchor="middle">v. 19</text></g>
+        <g class="out" style="--k:1"><rect x="166" y="150" width="148" height="114" rx="12"/><text class="w" x="240" y="184" text-anchor="middle">singing</text><text x="240" y="210" text-anchor="middle">in your heart,</text><text x="240" y="232" text-anchor="middle">to the Lord</text><text class="v" x="240" y="256" text-anchor="middle">v. 19</text></g>
+        <g class="out" style="--k:2"><rect x="326" y="150" width="148" height="114" rx="12"/><text class="w" x="400" y="184" text-anchor="middle">thanking</text><text x="400" y="210" text-anchor="middle">always, for</text><text x="400" y="232" text-anchor="middle">all things</text><text class="v" x="400" y="256" text-anchor="middle">v. 20</text></g>
+        <g class="out" style="--k:3"><rect x="486" y="150" width="148" height="114" rx="12"/><text class="w" x="560" y="184" text-anchor="middle">submitting</text><text x="560" y="210" text-anchor="middle">one to another,</text><text x="560" y="232" text-anchor="middle">not pushing</text><text class="v" x="560" y="256" text-anchor="middle">v. 21</text></g>
+      </svg>
+    </div>
+    <p class="note step">Drink makes a man loud, sloppy, ungrateful and ready to fight. The Spirit makes him sing, thank, and give way. You can tell what a man is full of by what spills out of him.</p>
+    <p class="note step"><em>Today:</em> before you sleep, write down three things you're thankful for. <em>“For all things”</em>: even the hard ones God is using.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: HUSBANDS AND WIVES ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">As Christ loved the church</h2>
+    <p class="range rise" style="--d:2">Verses 22–33</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A short word to wives, and a long, hard, hopeful word to husbands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="Wives, submit yourselves unto your own husbands, as unto the Lord|even as Christ is the head of the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21"></blockquote>
+    <h2 class="rise" style="--d:1">Who gets the longer talk</h2>
+    <div class="ep05-count" role="img" aria-label="Paul gives about 66 words to wives, and about 164 words to husbands, about two and a half times as many.">
+      <div><small>to wives</small><p style="--to:28%">about 66 words</p></div>
+      <div class="h"><small>to husbands</small><p style="--to:70%">about 164 words</p></div>
+    </div>
+    <p class="note step">Verse 21 sets the tone: every believer gives way to every other. Then Paul asks wives to follow their <em>own</em> husband's lead, willingly, <em>“as unto the Lord.”</em> Not every man's; her husband's. And never into sin: no one has to follow a husband into wrong, or stay under his fist.</p>
+    <p class="note step">Then he turns to the men, and talks two and a half times as long. We're all men here, so that's where we'll spend our time.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="Husbands, love your wives, even as Christ also loved the church, and gave himself for it|not having spot, or wrinkle"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="25"></blockquote>
+    <h2 class="rise" style="--d:1">What being the head means</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">being the boss</span><span class="why">Christ led by washing feet</span></li>
+      <li class="step"><span class="k">getting served</span><span class="why">“the Son of man came not to be ministered unto”</span></li>
+      <li class="step"><span class="k">having the last word</span><span class="why">or the loudest one</span></li>
+      <li class="step yes"><span class="k">going first in giving yourself up</span><span class="why">“and gave himself for it”</span></li>
+    </ul>
+    <p class="note step">The measure is not how she treats you. It's <em>“even as Christ.”</em> He loved the church before she loved Him back, when she was still dirty, and He paid with His life.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26-27" data-hl="That he might present it to himself a glorious church, not having spot, or wrinkle"></blockquote>
+    <h2 class="rise" style="--d:1">If you've failed here</h2>
+    <p class="note rise" style="--d:2">Many of us have. Cheating, drinking the rent money, the words we can't take back, the years we weren't there. Some marriages are over. Some are hanging by a thread.</p>
+    <p class="note step">Look at what Christ does with a stained bride: He <em>cleanses</em> her, and presents her <em>“not having spot, or wrinkle.”</em> That's what He has done for you. A man learns to love like that by first being loved like that.</p>
+    <p class="note step">So the starting place isn't shame. It's grace. You can't undo the past, but a forgiven man can start loving the right way today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Start today</h2>
+    <p class="note rise" style="--d:1">Christ's love was not a feeling. It was a string of things He did. Here are four you can do.</p>
+    <ol class="checks ep05-plan">
+      <li class="step"><span class="tick">✓</span><q>Ask what she needs from you today</q><small>and listen without defending yourself</small></li>
+      <li class="step"><span class="tick">✓</span><q>Keep one promise, however small</q><small>trust is rebuilt one kept word at a time</small></li>
+      <li class="step"><span class="tick">✓</span><q>Apologize with no “but”</q><small>“I was wrong. I'm sorry.” Full stop.</small></li>
+      <li class="step"><span class="tick">✓</span><q>If it's over, love still pays and prays</q><small>pay the support, speak well of her to the kids, pray for her</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-30" data-hl="So ought men to love their wives as their own bodies|nourisheth and cherisheth it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="29" data-hl="nourisheth and cherisheth it"></blockquote>
+    <h2 class="rise" style="--d:1">Two words for a husband</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">nourisheth</p>
+        <h3>Feed her, and help her grow</h3>
+        <p>The same word Paul uses for raising children in 6:4, <em>“bring them up.”</em> Provide, and help her become all God made her to be.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">cherisheth</p>
+        <h3>Keep her warm</h3>
+        <p>The word means <em>to warm</em>, like a mother holding a baby close (1 Thessalonians 2:7). Tender, safe, never cold.</p>
+      </div>
+    </div>
+    <p class="note step">No man has to be told to feed himself when he's hungry or come in out of the cold. Paul says: care for her that naturally. She's not your opponent. She's part of you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-33" data-hl="they two shall be one flesh|This is a great mystery: but I speak concerning Christ and the church"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="32"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="ep05-rings" viewBox="0 0 600 300" role="img" aria-label="Two small rings joined: a man and his wife, one flesh. An arrow points to two large rings joined: Christ and the church, the marriage it pictures.">
+          <g><circle class="r1" cx="100" cy="150" r="44"/><circle class="r2" cx="152" cy="150" r="44"/>
+            <text class="t" x="126" y="232" text-anchor="middle">one flesh</text><text x="126" y="256" text-anchor="middle">a man and his wife</text><text x="126" y="278" text-anchor="middle">Genesis 2:24</text></g>
+          <path class="arrow" d="M210 150 L300 150 M286 138 L300 150 L286 162"/>
+          <g class="big"><circle class="r1" cx="400" cy="140" r="82"/><circle class="r2" cx="490" cy="140" r="82"/>
+            <text class="t" x="445" y="262" text-anchor="middle">Christ and the church</text><text x="445" y="286" text-anchor="middle">the marriage that never ends</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A great mystery</h2>
+        <p class="note rise" style="--d:2">Verse 31 quotes Genesis 2:24, the first wedding. A “mystery” is a secret God has now made known.</p>
+        <p class="note step ep05-big-go">The secret: from the start, marriage was a picture of something bigger, Christ and His people.</p>
+        <p class="note step">Single, divorced, or widowed, you're not left out. You are part of the bride He gave Himself for: <em>“the marriage of the Lamb is come”</em> (Revelation 19:7).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="33"></blockquote>
+    <h2 class="rise" style="--d:1">Paul sums it up</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">Every one of you, in particular</p>
+        <h3>Love your wife as yourself</h3>
+        <p>Not husbands in general. You. In particular.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">And the wife</p>
+        <h3>Respect your husband</h3>
+        <p>“Reverence” here means honour and respect.</p>
+      </div>
+    </div>
+    <p class="note step">Each one does his own part, whether or not the other does. And it starts the way this chapter started: <em>walk in love, as Christ also hath loved us.</em></p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Copying God</span><span class="seed-q">“Be ye therefore followers of God, as dear children” <cite>5:1</cite></span><span class="take">Copy your Father the way a boy copies his dad: walk in the love Christ showed when He gave Himself for you.</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">“Let it not be once named among you, as becometh saints” <cite>5:3</cite></span><span class="take">Sexual sin, filth and greed don't fit who you are now. Confess them; don't let them be your name.</span></li>
+      <li class="step"><span class="topic">Light</span><span class="seed-q">“Now are ye light in the Lord: walk as children of light” <cite>5:8</cite></span><span class="take">You were darkness. Now you are light. Bring the secrets out, wake up, and buy back today.</span></li>
+      <li class="step"><span class="topic">Filled</span><span class="seed-q">“Be not drunk with wine… but be filled with the Spirit” <cite>5:18</cite></span><span class="take">The bottle filled the hole for a night. The Spirit already lives in you; yield to Him every day.</span></li>
+      <li class="step"><span class="topic">Husbands</span><span class="seed-q">“Even as Christ also loved the church, and gave himself for it” <cite>5:25</cite></span><span class="take">Lead by going first in giving yourself up. If you've failed, Christ cleanses, and you can start again today.</span></li>
+      <li class="step"><span class="topic">The mystery</span><span class="seed-q">“I speak concerning Christ and the church” <cite>5:32</cite></span><span class="take">Marriage is a picture of Christ and His people, a love every believer is part of.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Copying God</span>
+      <h2>How do we become “followers of God, as dear children”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2" data-hl="walk in love, as Christ also hath loved us"></blockquote>
+      <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>By copying our Father the way a loved child copies his dad. We look at how Christ loved us and gave Himself for us, and we love others the same way, at a cost to ourselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Sin</span>
+      <h2>Why should these sins “not be once named among you”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step"><p>“And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.”</p><cite>1 Corinthians 6:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They don't fit saints. They mark a life ruled by sin, and greed is idolatry. We were like that, but we've been washed. Confess them to God; don't let them be your name.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Light</span>
+      <h2>What does it mean that we were darkness, but now are light?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We didn't just live in the dark; we were part of it. In Christ we are now light, His light. So we walk in it: we bring our secrets into the open, we wake up, and we use today well.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Filled</span>
+      <h2>What does it mean to be filled with the Spirit instead of drunk with wine?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="18"></blockquote>
+      <blockquote class="quote step"><p>“In whom also after that ye believed, ye were sealed with that holy Spirit of promise,”</p><cite>Ephesians 1:13</cite></blockquote>
+      <blockquote class="quote step"><p>“This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.”</p><cite>Galatians 5:16</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A drunk man is steered by the drink. A Spirit-filled man lets the Spirit steer. Every believer already has the Spirit; being filled means yielding to Him, again every day, and it shows in singing, thanks, and giving way to others.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Husbands</span>
+      <h2>How is a husband to love his wife?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="29" data-hl="nourisheth and cherisheth it"></blockquote>
+      <blockquote class="quote step"><p>“Greater love hath no man than this, that a man lay down his life for his friends.”</p><cite>John 15:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Even as Christ loved the church: going first, giving himself up for her, feeding her and keeping her warm. If we've failed, Christ cleanses us too, and we start again today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The mystery</span>
+      <h2>What great mystery does marriage picture?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step"><p>“Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready.”</p><cite>Revelation 19:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Christ and the church. A man and wife made one flesh is a small picture of Christ joined to His people. Every believer, married or not, is part of that bride.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today? A craving, a secret, a marriage, a wife or a child you need to make things right with?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="20"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Ephesians chapter 5
+const V = {
+  1: "Be ye therefore followers of God, as dear children;",
+  2: "And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.",
+  3: "But fornication, and all uncleanness, or covetousness, let it not be once named among you, as becometh saints;",
+  4: "Neither filthiness, nor foolish talking, nor jesting, which are not convenient: but rather giving of thanks.",
+  5: "For this ye know, that no whoremonger, nor unclean person, nor covetous man, who is an idolater, hath any inheritance in the kingdom of Christ and of God.",
+  6: "Let no man deceive you with vain words: for because of these things cometh the wrath of God upon the children of disobedience.",
+  7: "Be not ye therefore partakers with them.",
+  8: "For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light:",
+  9: "(For the fruit of the Spirit is in all goodness and righteousness and truth;)",
+  10: "Proving what is acceptable unto the Lord.",
+  11: "And have no fellowship with the unfruitful works of darkness, but rather reprove them.",
+  12: "For it is a shame even to speak of those things which are done of them in secret.",
+  13: "But all things that are reproved are made manifest by the light: for whatsoever doth make manifest is light.",
+  14: "Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.",
+  15: "See then that ye walk circumspectly, not as fools, but as wise,",
+  16: "Redeeming the time, because the days are evil.",
+  17: "Wherefore be ye not unwise, but understanding what the will of the Lord is.",
+  18: "And be not drunk with wine, wherein is excess; but be filled with the Spirit;",
+  19: "Speaking to yourselves in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord;",
+  20: "Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ;",
+  21: "Submitting yourselves one to another in the fear of God.",
+  22: "Wives, submit yourselves unto your own husbands, as unto the Lord.",
+  23: "For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body.",
+  24: "Therefore as the church is subject unto Christ, so let the wives be to their own husbands in every thing.",
+  25: "Husbands, love your wives, even as Christ also loved the church, and gave himself for it;",
+  26: "That he might sanctify and cleanse it with the washing of water by the word,",
+  27: "That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish.",
+  28: "So ought men to love their wives as their own bodies. He that loveth his wife loveth himself.",
+  29: "For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church:",
+  30: "For we are members of his body, of his flesh, and of his bones.",
+  31: "For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.",
+  32: "This is a great mystery: but I speak concerning Christ and the church.",
+  33: "Nevertheless let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband."
+};
+const BOOK = "Ephesians 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
