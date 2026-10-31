@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revelation 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* rv13-where: where this chapter sits in Revelation. Twenty-two chapter boxes (span) in seven groups (div); each group's label (b)
+   sits above (.up) or below the row, across the columns in its --c. The current group is .now, the current chapter span.here.
+   On a phone each group becomes its own row. */
+.rv13-where { display: grid; grid-template-columns: repeat(22, 1fr); gap: 5px 3px; margin: .6em 0 1em; align-items: end; }
+.rv13-where > div { display: contents; }
+.rv13-where span { grid-row: 2; display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.75rem, .7rem + .3vw, 1rem) var(--sans); color: var(--ink-soft); }
+.rv13-where span.gap { margin-left: 5px; }
+.rv13-where b { grid-row: 3; grid-column: var(--c); align-self: start; text-align: center; font: 400 clamp(.8rem, .74rem + .32vw, 1.05rem)/1.25 var(--serif); color: var(--ink-soft); padding: 0 2px; }
+.rv13-where b.up { grid-row: 1; align-self: end; }
+.rv13-where b.left { text-align: left; }
+.rv13-where .now span { border-color: var(--accent); color: var(--ink); }
+.rv13-where .now b { color: var(--accent-hot); font-weight: 600; }
+.rv13-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .rv13-where { grid-template-columns: 1fr; gap: 6px; }
+  .rv13-where > div { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+  .rv13-where span { width: 1.75rem; height: 1.9rem; }
+  .rv13-where span.gap { margin-left: 0; }
+  .rv13-where b, .rv13-where b.up { margin-left: .4em; text-align: left; }
+}
+
+/* rv13-dan: Daniel's four beasts (7:3-7) as four tiles along the top. A .rv13-dan-go step draws four dashed lines
+   (.rv13-link, pathLength 1) down from the tiles and brings in John's one beast (.rv13-one) with all of them in it:
+   a spotted body, bear's feet, seven heads, ten horns, ten crowns */
+.rv13-tile { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+.rv13-tname { fill: var(--ink); font: 600 17px var(--serif); }
+.rv13-tref { fill: var(--ink-soft); font: 13px var(--sans); letter-spacing: .05em; }
+.rv13-mane { fill: var(--warm); }
+.rv13-fur { fill: color-mix(in srgb, var(--warm) 45%, var(--leather)); }
+.rv13-pale { fill: color-mix(in srgb, var(--warm) 30%, var(--glow)); }
+.rv13-dark { fill: var(--on-glow); }
+.rv13-iron { fill: var(--cool); }
+.rv13-tooth { fill: none; stroke: var(--cool); stroke-width: 2.5; stroke-linejoin: round; }
+.rv13-link { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: .8; transition: stroke-dashoffset 1s ease; }
+.rv13-one { opacity: 0; transform: translateY(14px); transition: opacity .9s ease .7s, transform .9s ease .7s; }
+.slide:has(.rv13-dan-go.on) .rv13-link { stroke-dashoffset: 0; }
+.slide:has(.rv13-dan-go.on) .rv13-one { opacity: 1; transform: none; }
+.rv13-body { fill: color-mix(in srgb, var(--warm) 55%, var(--surface)); stroke: var(--ink-soft); stroke-width: 2; }
+.rv13-spot { fill: var(--on-glow); opacity: .7; }
+.rv13-foot { fill: color-mix(in srgb, var(--leather) 70%, var(--ink-soft)); }
+.rv13-neck { fill: none; stroke: color-mix(in srgb, var(--warm) 55%, var(--surface)); stroke-width: 7; stroke-linecap: round; }
+.rv13-head { fill: var(--warm); stroke: var(--ink-soft); stroke-width: 1.5; }
+.rv13-horn { fill: var(--ink-soft); }
+.rv13-crown { fill: var(--accent-hot); }
+.rv13-olab { fill: var(--accent-hot); font: italic 16px var(--serif); }
+@media (max-width: 600px) { .rv13-tname { font-size: 20px; } .rv13-tref { font-size: 16px; } .rv13-olab { font-size: 19px; } }
+
+/* rv13-copy: the real and the copy, row by row. Three columns: what God does (.real), an arrow, what the dragon's side copies (.fake).
+   Each row is a .step; the last line (.rv13-copy-end) sums it up */
+.rv13-copy { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px 14px; margin: .3em 0 .8em; align-items: stretch; }
+.rv13-copy > div { display: contents; }
+.rv13-copy h3 { font: 700 .95rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--accent-hot); }
+.rv13-copy h3.fake { color: var(--danger); }
+.rv13-copy p { padding: .45em .7em; border-radius: 8px; font-size: clamp(.9rem, .82rem + .4vw, 1.18rem); line-height: 1.3; }
+.rv13-copy p small { display: block; color: var(--ink-soft); font-size: .78em; margin-top: .15em; }
+.rv13-copy p.real { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.rv13-copy p.fake { border: 2px dashed var(--danger); background: color-mix(in srgb, var(--danger) 7%, transparent); }
+.rv13-copy i { align-self: center; font-style: normal; color: var(--ink-soft); font-size: 1.3rem; }
+.rv13-copy > div.step p, .rv13-copy > div.step i { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; }
+.rv13-copy > div.step.on p, .rv13-copy > div.step.on i { opacity: 1; transform: none; }
+@media (max-width: 600px) { .rv13-copy { gap: 5px 6px; } .rv13-copy i { font-size: 1rem; } }
+
+/* rv13-mask: a lamb with two little horns. A .rv13-speak-go step opens a spiky speech bubble over it with the dragon's words,
+   and the caption under it changes from "like a lamb" to "spake as a dragon" */
+.rv13-wool-out circle { fill: var(--ink-soft); }
+.rv13-wool circle { fill: var(--glow); }
+.rv13-leg { fill: color-mix(in srgb, var(--glow) 62%, var(--leather)); }
+.rv13-lhead { fill: color-mix(in srgb, var(--glow) 80%, var(--leather)); stroke: var(--ink-soft); stroke-width: 2.5; }
+.rv13-lhorn { fill: color-mix(in srgb, var(--glow) 55%, var(--leather)); stroke: var(--ink-soft); stroke-width: 1.5; }
+.rv13-bubble { fill: color-mix(in srgb, var(--danger) 14%, var(--bg)); stroke: var(--danger); stroke-width: 3; stroke-linejoin: round; }
+.rv13-say { fill: var(--danger); font: italic 600 19px var(--serif); }
+.rv13-cap { fill: var(--accent-hot); font: italic 600 21px var(--serif); }
+.rv13-speak, .rv13-cap2 { opacity: 0; transform: scale(.85); transform-box: fill-box; transform-origin: 50% 100%; transition: opacity .45s ease, transform .45s cubic-bezier(.3,1.5,.5,1); }
+.rv13-cap1 { transition: opacity .4s ease; }
+.slide:has(.rv13-speak-go.on) .rv13-speak, .slide:has(.rv13-speak-go.on) .rv13-cap2 { opacity: 1; transform: none; }
+.slide:has(.rv13-speak-go.on) .rv13-cap1 { opacity: 0; }
+@media (max-width: 600px) { .rv13-say { font-size: 22px; } .rv13-cap { font-size: 24px; } }
+
+/* rv13-six: three rows of seven slots. Six fill in each row, one by one (--k); the seventh stays an empty dashed slot */
+.rv13-six { display: grid; gap: 8px; margin: .3em 0 .9em; }
+.rv13-six > div { display: grid; grid-template-columns: 2.4rem repeat(7, 1fr); gap: 6px; align-items: center; }
+.rv13-six b { font: 600 clamp(1.3rem, 1.1rem + .8vw, 1.9rem) var(--serif); color: var(--accent-hot); text-align: center; }
+.rv13-six i { height: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem); border-radius: 6px; background: var(--accent); opacity: .12; transition: opacity .35s ease; transition-delay: calc(var(--k) * 90ms + 300ms); }
+.slide.active .rv13-six i { opacity: .85; }
+.rv13-six i.miss { background: none; border: 2px dashed var(--line-strong); opacity: 1; display: grid; place-items: center; font: normal 600 .9rem var(--sans); color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Revelation 13</h1>
+    <p class="sub rise" style="--d:3">Borrowed power</p>
+    <p class="tag rise" style="--d:5">Two beasts, a mark, and a number, and the one book that keeps a man safe through all of it.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Borrowed</span><span class="seed-q">Where does the beast get his power?</span></li>
+      <li class="step"><span class="topic">Daniel</span><span class="seed-q">What do the leopard, the bear and the lion tell us?</span></li>
+      <li class="step"><span class="topic">The book</span><span class="seed-q">Who will not worship the beast?</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">What does God ask of His people when the beast makes war on them?</span></li>
+      <li class="step"><span class="topic">Deceived</span><span class="seed-q">Why does the second beast look like a lamb?</span></li>
+      <li class="step"><span class="topic">The mark</span><span class="seed-q">Can a believer take the mark by accident?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Revelation</h2>
+    <div class="rv13-where rise" style="--d:1" role="img" aria-label="The twenty-two chapters of Revelation in seven groups. Chapter 1: a vision of Christ. 2 and 3: the seven churches. 4 and 5: the throne and the Lamb. 6 to 16: seals, trumpets and bowls, with chapter 13 lit. 17 and 18: Babylon falls. 19 and 20: Christ returns and reigns. 21 and 22: all things new.">
+      <div><span>1</span><b class="up left" style="--c:1 / 4">a vision of Christ</b></div>
+      <div><span class="gap">2</span><span>3</span><b style="--c:1 / 5">the seven churches</b></div>
+      <div><span class="gap">4</span><span>5</span><b class="up left" style="--c:4 / 9">the throne and the Lamb</b></div>
+      <div class="now"><span class="gap">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span class="here">13</span><span>14</span><span>15</span><span>16</span><b style="--c:6 / 17">seals, trumpets and bowls</b></div>
+      <div><span class="gap">17</span><span>18</span><b class="up" style="--c:16 / 20">Babylon falls</b></div>
+      <div><span class="gap">19</span><span>20</span><b style="--c:18 / 22">Christ returns and reigns</b></div>
+      <div><span class="gap">21</span><span>22</span><b class="up" style="--c:20 / 23">all things new</b></div>
+    </div>
+    <p class="note step">In chapter 12 John saw the dragon, <em>“that old serpent, called the Devil, and Satan”</em> (12:9), thrown down to the earth, angry, <em>“because he knoweth that he hath but a short time”</em> (12:12).</p>
+    <p class="note step">He can't touch the throne, so he goes after God's people. Chapter 13 shows the two helpers he raises up to do it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Read this one calmly</h2>
+    <p class="note rise" style="--d:1">No chapter in the Bible has drawn more guesses, charts and fear. So here's how we'll read it:</p>
+    <ul class="nots">
+      <li class="step"><span class="k">no charts</span><span class="why">the pictures aren't a puzzle to solve on paper</span></li>
+      <li class="step"><span class="k">no dates</span><span class="why">“of that day and hour knoweth no man” (Matthew 24:36)</span></li>
+      <li class="step"><span class="k">no names off the news</span><span class="why">we won't pin the beast on any man, nation or thing</span></li>
+      <li class="step yes"><span class="k">what is plain</span><span class="why">let the Old Testament explain the pictures, and hold on to what is clear</span></li>
+    </ul>
+    <p class="note step">Good Bible teachers differ widely here. Many see a last world ruler still to come before Christ returns; others see the Rome of John's day; many see both, Rome then and a final beast to come. All of them agree on what matters most: the beast loses, and the Lamb wins.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE BEAST OUT OF THE SEA ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The beast out of the sea</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">John stands on the shore and watches something terrible climb out of the water. The whole world follows it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="a beast rise up out of the sea, having seven heads and ten horns|like unto a leopard|the feet of a bear|the mouth of a lion|the dragon gave him his power"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 420" role="img" aria-label="Four tiles along the top show Daniel's four beasts: a lion, a bear, a leopard, and a fourth beast with iron teeth and ten horns. On a step, dashed lines run down from all four into one beast below: a spotted body like a leopard, heavy feet like a bear's, seven heads, and ten horns with ten crowns.">
+          <rect class="rv13-tile" x="10" y="6" width="140" height="124" rx="10"/>
+          <rect class="rv13-tile" x="170" y="6" width="140" height="124" rx="10"/>
+          <rect class="rv13-tile" x="330" y="6" width="140" height="124" rx="10"/>
+          <rect class="rv13-tile" x="490" y="6" width="140" height="124" rx="10"/>
+          <!-- lion -->
+          <polygon class="rv13-mane" points="80.0 20.0 84.9 30.6 93.9 23.2 93.7 34.8 105.0 32.0 99.8 42.5 111.2 44.9 102.0 52.0 111.2 59.1 99.8 61.5 105.0 72.0 93.7 69.2 93.9 80.8 84.9 73.4 80.0 84.0 75.1 73.4 66.1 80.8 66.3 69.2 55.0 72.0 60.2 61.5 48.8 59.1 58.0 52.0 48.8 44.9 60.2 42.5 55.0 32.0 66.3 34.8 66.1 23.2 75.1 30.6"/>
+          <circle class="rv13-pale" cx="80" cy="52" r="17"/>
+          <circle class="rv13-dark" cx="74" cy="48" r="2.5"/><circle class="rv13-dark" cx="86" cy="48" r="2.5"/><path class="rv13-dark" d="M76 57 h8 l-4 5z"/>
+          <text class="rv13-tname" x="80" y="104" text-anchor="middle">a lion</text>
+          <text class="rv13-tref" x="80" y="122" text-anchor="middle">DANIEL 7:4</text>
+          <!-- bear -->
+          <circle class="rv13-fur" cx="222" cy="34" r="9"/><circle class="rv13-fur" cx="258" cy="34" r="9"/>
+          <circle class="rv13-fur" cx="240" cy="54" r="24"/>
+          <ellipse class="rv13-pale" cx="240" cy="63" rx="11" ry="8"/>
+          <circle class="rv13-dark" cx="231" cy="49" r="2.5"/><circle class="rv13-dark" cx="249" cy="49" r="2.5"/><ellipse class="rv13-dark" cx="240" cy="60" rx="4" ry="3"/>
+          <text class="rv13-tname" x="240" y="104" text-anchor="middle">a bear</text>
+          <text class="rv13-tref" x="240" y="122" text-anchor="middle">DANIEL 7:5</text>
+          <!-- leopard -->
+          <circle class="rv13-mane" cx="400" cy="52" r="26"/>
+          <g class="rv13-spot"><circle cx="388" cy="40" r="3.5"/><circle cx="404" cy="35" r="3"/><circle cx="415" cy="47" r="3.5"/><circle cx="386" cy="58" r="3"/><circle cx="398" cy="66" r="3.5"/><circle cx="412" cy="63" r="3"/><circle cx="400" cy="51" r="2.5"/></g>
+          <text class="rv13-tname" x="400" y="104" text-anchor="middle">a leopard</text>
+          <text class="rv13-tref" x="400" y="122" text-anchor="middle">DANIEL 7:6</text>
+          <!-- fourth beast: ten horns, iron teeth -->
+          <g class="rv13-horn"><path d="M528 40 l3 -16 l3 16z"/><path d="M537 40 l3 -18 l3 18z"/><path d="M546 40 l3 -16 l3 16z"/><path d="M555 40 l3 -18 l3 18z"/><path d="M564 40 l3 -16 l3 16z"/><path d="M573 40 l3 -18 l3 18z"/><path d="M582 40 l3 -16 l3 16z"/><path d="M591 40 l3 -18 l3 18z"/><path d="M600 40 l3 -16 l3 16z"/><path d="M609 40 l3 -18 l3 18z"/></g>
+          <rect class="rv13-iron" x="524" y="40" width="94" height="38" rx="12"/>
+          <circle class="rv13-dark" cx="552" cy="54" r="3"/><circle class="rv13-dark" cx="590" cy="54" r="3"/>
+          <path class="rv13-tooth" d="M536 84 l8 8 l8 -8 l8 8 l8 -8 l8 8 l8 -8 l8 8 l8 -8 l8 8"/>
+          <text class="rv13-tname" x="560" y="104" text-anchor="middle">a fourth beast</text>
+          <text class="rv13-tref" x="560" y="122" text-anchor="middle">DANIEL 7:7</text>
+          <!-- lines down -->
+          <path class="rv13-link" pathLength="1" d="M80 132 Q120 200 300 206"/>
+          <path class="rv13-link" pathLength="1" d="M240 132 Q250 180 316 202"/>
+          <path class="rv13-link" pathLength="1" d="M400 132 Q392 180 344 202"/>
+          <path class="rv13-link" pathLength="1" d="M560 132 Q520 200 360 206"/>
+          <!-- John's beast -->
+          <g class="rv13-one">
+            <path class="rv13-neck" d="M291.4 334.4 Q262.4 307.6 216.0 297.8"/><g><path class="rv13-horn" d="M208.0 289.8 L208.0 274.8 L214.0 289.8Z"/><circle class="rv13-crown" cx="208.0" cy="273.8" r="2.6"/><path class="rv13-horn" d="M218.0 289.8 L224.0 274.8 L224.0 289.8Z"/><circle class="rv13-crown" cx="224.0" cy="273.8" r="2.6"/><circle class="rv13-head" cx="216.0" cy="297.8" r="10"/></g>
+            <path class="rv13-neck" d="M299.4 329.0 Q276.4 292.3 239.6 267.9"/><g><path class="rv13-horn" d="M236.6 259.9 L239.6 244.9 L242.6 259.9Z"/><circle class="rv13-crown" cx="239.6" cy="243.9" r="2.6"/><circle class="rv13-head" cx="239.6" cy="267.9" r="10"/></g>
+            <path class="rv13-neck" d="M313.1 325.3 Q300.4 281.7 280.1 247.3"/><g><path class="rv13-horn" d="M272.1 239.3 L272.1 224.3 L278.1 239.3Z"/><circle class="rv13-crown" cx="272.1" cy="223.3" r="2.6"/><path class="rv13-horn" d="M282.1 239.3 L288.1 224.3 L288.1 239.3Z"/><circle class="rv13-crown" cx="288.1" cy="223.3" r="2.6"/><circle class="rv13-head" cx="280.1" cy="247.3" r="10"/></g>
+            <path class="rv13-neck" d="M330.0 324.0 Q330.0 278.0 330.0 240.0"/><g><path class="rv13-horn" d="M327.0 232.0 L330.0 217.0 L333.0 232.0Z"/><circle class="rv13-crown" cx="330.0" cy="216.0" r="2.6"/><circle class="rv13-head" cx="330.0" cy="240.0" r="10"/></g>
+            <path class="rv13-neck" d="M346.9 325.3 Q359.6 281.7 379.9 247.3"/><g><path class="rv13-horn" d="M371.9 239.3 L371.9 224.3 L377.9 239.3Z"/><circle class="rv13-crown" cx="371.9" cy="223.3" r="2.6"/><path class="rv13-horn" d="M381.9 239.3 L387.9 224.3 L387.9 239.3Z"/><circle class="rv13-crown" cx="387.9" cy="223.3" r="2.6"/><circle class="rv13-head" cx="379.9" cy="247.3" r="10"/></g>
+            <path class="rv13-neck" d="M360.6 329.0 Q383.6 292.3 420.4 267.9"/><g><path class="rv13-horn" d="M417.4 259.9 L420.4 244.9 L423.4 259.9Z"/><circle class="rv13-crown" cx="420.4" cy="243.9" r="2.6"/><circle class="rv13-head" cx="420.4" cy="267.9" r="10"/></g>
+            <path class="rv13-neck" d="M368.6 334.4 Q397.6 307.6 444.0 297.8"/><g><path class="rv13-horn" d="M441.0 289.8 L444.0 274.8 L447.0 289.8Z"/><circle class="rv13-crown" cx="444.0" cy="273.8" r="2.6"/><circle class="rv13-head" cx="444.0" cy="297.8" r="10"/></g>
+            <g class="rv13-foot"><rect x="262" y="364" width="20" height="42" rx="8"/><rect x="296" y="370" width="20" height="40" rx="8"/><rect x="346" y="370" width="20" height="40" rx="8"/><rect x="380" y="364" width="20" height="42" rx="8"/></g>
+            <ellipse class="rv13-body" cx="330" cy="350" rx="98" ry="32"/>
+            <g class="rv13-spot"><circle cx="268" cy="344" r="5"/><circle cx="292" cy="358" r="4.5"/><circle cx="305" cy="338" r="5"/><circle cx="330" cy="356" r="4.5"/><circle cx="352" cy="340" r="5"/><circle cx="372" cy="360" r="4.5"/><circle cx="392" cy="344" r="5"/><circle cx="410" cy="356" r="4"/><circle cx="250" cy="358" r="4"/></g>
+            <text class="rv13-olab" x="190" y="352" text-anchor="end">like a leopard</text>
+            <text class="rv13-olab" x="250" y="414" text-anchor="end">feet of a bear</text>
+            <text class="rv13-olab" x="470" y="352">mouth of a lion</text>
+            <text class="rv13-olab" x="470" y="232">seven heads,</text>
+            <text class="rv13-olab" x="470" y="252">ten horns, ten crowns</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Daniel saw it first</h2>
+        <p class="note rise" style="--d:2">Six hundred years before John, Daniel saw <em>“four great beasts”</em> come up from the sea (Daniel 7:3): a lion, a bear, a leopard, and a fourth with ten horns. He was told:</p>
+        <blockquote class="quote step"><p>“These great beasts, which are four, are four kings, which shall arise out of the earth.”</p><cite>Daniel 7:17</cite></blockquote>
+        <p class="note step rv13-dan-go">John sees <em>one</em> beast with all of Daniel's in it. Every proud kingdom that ever set itself against God, rolled into one. And the sea? <em>“The waters… are peoples… and nations”</em> (17:15): it rises out of restless mankind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="the dragon gave him his power, and his seat, and great authority"></blockquote>
+    <h2 class="rise" style="--d:1">Whose power is it?</h2>
+    <p class="note rise" style="--d:2">Look at the end of verse 2. Nothing the beast has is its own: the dragon <em>gave</em> it all. And the dragon of chapter 12 has the same <em>“seven heads and ten horns”</em> (12:3). The beast is the devil's image, walking on the earth.</p>
+    <p class="note step">In Daniel a horn is a king: <em>“the ten horns… are ten kings”</em> (Daniel 7:24). Heads, horns and crowns mean great, wide, worldly power. Teachers differ on which kings are meant; you don't need to know that to see the point.</p>
+    <p class="note step">Here is the point: the devil has never made anything. He can only borrow, bend and copy. Keep your eye on that word <em>gave</em>. It's going to keep showing up.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="his deadly wound was healed|all the world wondered after the beast|Who is like unto the beast? who is able to make war with him?"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“Who is like unto the beast?”</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Exodus 15:11, Moses' song</p><p class="kjv"><mark>Who is like unto thee, O LORD</mark>, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?</p></div>
+      <div class="scroll step"><p class="ref">Revelation 13:4, the world's song</p><p class="kjv">And they worshipped the beast, saying, <mark>Who is like unto the beast?</mark> who is able to make war with him?</p></div>
+    </div>
+    <p class="note step">The world takes Israel's song to God and sings it to the beast. And the wound <em>“wounded to death”</em> and healed is a copy of the Lamb <em>“as it had been slain”</em> who stands alive (5:6). The devil even fakes a resurrection.</p>
+    <p class="note step">Why do they worship? Not because the beast is good, but because it looks unbeatable: <em>“who is able to make war with him?”</em> Men have always bowed to whatever looks strongest: the gang, the money, the bottle, the crowd. That's the sin under this chapter.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: GIVEN, FOR A TIME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Given, for a time</h2>
+    <p class="range rise" style="--d:2">Verses 5–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The beast speaks big and makes war. But every line has a leash on it, and one book it can never touch.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="there was given unto him|power was given unto him to continue forty and two months"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">On a leash</h2>
+    <p class="note rise" style="--d:1">Count the times the beast's power is <em>gave</em> or <em>given</em> in verses 1 to 8:</p>
+    <div class="tally rise" style="--d:2" aria-label="Verses 1 through 8, with gave or given in verses 2, 4, 5 twice, and 7 twice">
+      <span><i>1</i>&nbsp;</span>
+      <span class="hit" style="--k:0"><i>2</i>×1</span>
+      <span><i>3</i>&nbsp;</span>
+      <span class="hit" style="--k:1"><i>4</i>×1</span>
+      <span class="hit" style="--k:2"><i>5</i>×2</span>
+      <span><i>6</i>&nbsp;</span>
+      <span class="hit" style="--k:3"><i>7</i>×2</span>
+      <span><i>8</i>&nbsp;</span>
+    </div>
+    <p class="note step">Borrowed power, and only for <em>“forty and two months.”</em> Daniel's last king also had a set time, <em>“a time and times and the dividing of time”</em> (Daniel 7:25), which many read as the same three and a half years. Some read it as three and a half literal years; others as a picture of a short, fixed season. Either way, God set the clock, and the beast can't add a day to it.</p>
+    <p class="note step">The devil is loud, but he is not free. He has <em>“but a short time”</em> (12:12), and he knows it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="it was given unto him to make war with the saints|whose names are not written in the book of life of the Lamb slain from the foundation of the world"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 400" role="img" aria-label="An open book with names written in it, inside a guarded circle labelled the book of life of the Lamb. Arrows labelled war, lies, and the mark keep pushing at the circle and are pushed back. Darts fly at it and fall away.">
+          <circle class="kept-wall" cx="300" cy="200" r="138"/>
+          <text class="kept-tag" x="300" y="92" text-anchor="middle" font-size="18">the book of life of the Lamb</text>
+          <path class="kept-wall inner" d="M210 150 Q255 136 298 150 L298 262 Q255 248 210 262 Z"/>
+          <path class="kept-wall inner" d="M302 150 Q345 136 390 150 L390 262 Q345 248 302 262 Z"/>
+          <g class="kept-in"><rect x="224" y="170" width="58" height="5" rx="2"/><rect x="224" y="188" width="46" height="5" rx="2"/><rect x="224" y="206" width="54" height="5" rx="2"/><rect x="224" y="224" width="40" height="5" rx="2"/><rect x="316" y="170" width="52" height="5" rx="2"/><rect x="316" y="188" width="58" height="5" rx="2"/><rect x="316" y="206" width="44" height="5" rx="2"/><rect x="316" y="224" width="56" height="5" rx="2"/></g>
+          <text x="300" y="300" text-anchor="middle" font-size="17" style="fill:var(--ink)">your name, if you are His</text>
+          <g class="kept-foe" style="--dx:16px;--dy:0px">
+            <text x="14" y="182" font-size="18">war</text>
+            <line x1="20" y1="200" x2="138" y2="200"/><path d="M150 200 L134 191 L134 209 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:-16px;--dy:0px;--w:.9s">
+            <text x="586" y="182" text-anchor="end" font-size="18">lies</text>
+            <line x1="580" y1="200" x2="462" y2="200"/><path d="M450 200 L466 191 L466 209 Z"/>
+          </g>
+          <g class="kept-foe" style="--dx:11px;--dy:-11px;--w:1.7s">
+            <text x="20" y="392" font-size="18">the mark</text>
+            <line x1="70" y1="370" x2="186" y2="316"/><path d="M196 310 L178 310 L186 326 Z"/>
+          </g>
+          <path class="kept-dart" style="--w:0s" d="M470 40 l-40 20 m12 -14 l-12 14 l18 2"/>
+          <path class="kept-dart" style="--w:1.3s" d="M520 340 l-36 -26 m4 16 l-4 -16 l16 2"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The safe place</h2>
+        <p class="note rise" style="--d:2">The whole world worships the beast, except those written in <em>“the book of life of the Lamb.”</em> He can make war on them. He can't take a name out of that book.</p>
+        <p class="note step">Jesus promised: <em>“I will not blot out his name out of the book of life”</em> (3:5).</p>
+        <p class="note step">And how does a name get there? Not by being good enough. It's the Lamb's book, and the Lamb was <em>slain</em>. His door is open: <em>“whosoever will, let him take the water of life freely”</em> (22:17).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="the Lamb slain from the foundation of the world"></blockquote>
+    <h2 class="rise" style="--d:1">Rescue planned before the fall</h2>
+    <p class="note rise" style="--d:2">Before the first man ever sinned, God had already planned the Lamb. Your sin didn't catch Him by surprise, and neither did yesterday.</p>
+    <blockquote class="quote step"><p>“But with the precious blood of Christ, as of a lamb without blemish and without spot: Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,”</p><cite>1 Peter 1:19–20</cite></blockquote>
+    <blockquote class="quote step"><p>“Notwithstanding in this rejoice not, that the spirits are subject unto you; but rather rejoice, because your names are written in heaven.”</p><cite>Luke 10:20</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="If any man have an ear, let him hear|Here is the patience and the faith of the saints"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Here is the patience of the saints</h2>
+    <p class="note rise" style="--d:1">Verse 7 is sobering: the beast is allowed <em>“to make war with the saints, and to overcome them.”</em> Believers may lose jobs, freedom, even their lives. God doesn't hide that. So what does He ask?</p>
+    <div class="columns">
+      <div class="col law step"><p class="who">What the beast can do</p><h3>Hurt the body</h3><p>Make war. Take your freedom. Take your living. Even take your life, for a short time.</p></div>
+      <div class="col grace step"><p class="who">What he can't do</p><h3>Touch the soul</h3><p>Blot out a name. Add a day to his clock. Pluck a man out of Christ's hand (John 10:28).</p></div>
+    </div>
+    <p class="note step"><em>Patience</em> here means endurance: staying put under the weight and not quitting. <em>Faith</em> means trusting God with the outcome. And verse 10 says leave the sword alone: God will repay. <em>“All they that take the sword shall perish with the sword”</em> (Matthew 26:52).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Who really overcomes?</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Revelation 13:7</p><p class="kjv">And it was given unto him to make war with the saints, and <mark>to overcome them</mark>: and power was given him over all kindreds, and tongues, and nations.</p></div>
+      <div class="scroll step"><p class="ref">Revelation 12:11</p><p class="kjv">And <mark>they overcame him</mark> by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.”</p><cite>Matthew 10:28</cite></blockquote>
+    <p class="note step">On earth it can look like the beast won. In heaven's record, the man who stayed faithful is the overcomer. You may feel beaten today. You are not defeated.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE BEAST OUT OF THE EARTH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The beast out of the earth</h2>
+    <p class="range rise" style="--d:2">Verses 11–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The second beast doesn't roar. It looks gentle, does wonders, and talks people into worship.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="he had two horns like a lamb, and he spake as a dragon|causeth the earth and them which dwell therein to worship the first beast"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 420 340" role="img" aria-label="A white lamb with two small horns, captioned: two horns like a lamb. On a step, a spiky red speech bubble opens over it, saying: make an image to the beast. The caption changes to: he spake as a dragon.">
+          <g class="rv13-speak">
+            <polygon class="rv13-bubble" points="401.5 62.0 380.2 68.6 393.2 76.7 365.7 81.1 369.1 89.9 338.1 91.7 331.6 100.4 300.1 99.4 300 128 268 105 255.5 103.5 232.0 109.5 208.5 103.5 179.6 107.1 163.9 99.4 132.4 100.4 125.9 91.7 94.9 89.9 98.3 81.1 70.8 76.7 83.8 68.6 62.5 62.0 83.8 55.4 70.8 47.3 98.3 42.9 94.9 34.1 125.9 32.3 132.4 23.6 163.9 24.6 179.6 16.9 208.5 20.5 232.0 14.5 255.5 20.5 284.4 16.9 300.1 24.6 331.6 23.6 338.1 32.3 369.1 34.1 365.7 42.9 393.2 47.3 380.2 55.4"/>
+            <text class="rv13-say" x="232" y="56" text-anchor="middle">“make an image</text>
+            <text class="rv13-say" x="232" y="80" text-anchor="middle">to the beast”</text>
+          </g>
+          <g transform="translate(70 120) scale(1.1)">
+            <g class="rv13-leg"><rect x="38" y="100" width="10" height="44" rx="4"/><rect x="58" y="104" width="10" height="42" rx="4"/><rect x="102" y="104" width="10" height="42" rx="4"/><rect x="122" y="100" width="10" height="44" rx="4"/></g>
+            <g class="rv13-wool-out"><circle cx="35" cy="78" r="32.5"/><circle cx="66" cy="56" r="34.5"/><circle cx="102" cy="60" r="32.5"/><circle cx="128" cy="82" r="28.5"/><circle cx="86" cy="94" r="32.5"/><circle cx="52" cy="98" r="28.5"/></g>
+            <g class="rv13-wool"><circle cx="35" cy="78" r="30"/><circle cx="66" cy="56" r="32"/><circle cx="102" cy="60" r="30"/><circle cx="128" cy="82" r="26"/><circle cx="86" cy="94" r="30"/><circle cx="52" cy="98" r="26"/></g>
+            <path class="rv13-lhorn" d="M146 22 q-2 -14 6 -20 q-1 10 4 18 z"/>
+            <path class="rv13-lhorn" d="M160 24 q2 -14 12 -18 q-4 10 -2 19 z"/>
+            <ellipse class="rv13-lhead" cx="152" cy="40" rx="19" ry="26" transform="rotate(28 152 40)"/>
+            <ellipse class="rv13-lhead" cx="136" cy="24" rx="13" ry="6" transform="rotate(-25 136 24)"/>
+            <circle class="rv13-dark" cx="160" cy="35" r="3.5"/>
+          </g>
+          <text class="rv13-cap rv13-cap1" x="210" y="328" text-anchor="middle">“two horns like a lamb”</text>
+          <text class="rv13-cap rv13-cap2" x="210" y="328" text-anchor="middle">“and he spake as a dragon”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Looks like a lamb</h2>
+        <p class="note rise" style="--d:2">The first beast came out of the sea, roaring. This one comes up quietly, with two little horns <em>“like a lamb.”</em> Later chapters call him <em>“the false prophet”</em> (16:13). His whole job is to point people to the first beast.</p>
+        <p class="note step rv13-speak-go">But listen to him talk, and it's the dragon's voice. Jesus warned about this very thing:</p>
+        <blockquote class="quote step"><p>“Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.”</p><cite>Matthew 7:15</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The copycat</h2>
+    <p class="note rise" style="--d:1">Put the dragon and his two beasts side by side with God, and you see what they are: a fake of the real thing.</p>
+    <div class="rv13-copy">
+      <div><h3>The real</h3><span></span><h3 class="fake">The copy</h3></div>
+      <div class="step"><p class="real">The Father gives the Son <em>“all power”</em><small>Matthew 28:18</small></p><i aria-hidden="true">→</i><p class="fake">The dragon gives the beast <em>“his power”</em><small>13:2</small></p></div>
+      <div class="step"><p class="real">The Lamb, slain and alive<small>5:6</small></p><i aria-hidden="true">→</i><p class="fake">A <em>“deadly wound”</em> healed<small>13:3</small></p></div>
+      <div class="step"><p class="real">The Spirit points men to the Son<small>John 16:14</small></p><i aria-hidden="true">→</i><p class="fake">The second beast points men to the first<small>13:12</small></p></div>
+      <div class="step"><p class="real">God's seal on His servants' foreheads<small>7:3</small></p><i aria-hidden="true">→</i><p class="fake">The beast's mark on hand or forehead<small>13:16</small></p></div>
+    </div>
+    <p class="note step">The devil can't create. He can only copy, and a copy always looks close enough to fool a man who isn't looking at the real thing.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Gentle voices</h2>
+    <p class="note rise" style="--d:1">Temptation rarely looks like a dragon. It looks like a friend, and it sounds kind:</p>
+    <div class="talk">
+      <p class="step"><small>the lamb's voice</small>“Just one won't hurt. You've earned it. Nobody's going to know.”</p>
+      <p class="reply step"><small>what it really says</small>Bow down to the old master again. <span class="flag">dragon</span></p>
+    </div>
+    <p class="note step">So don't judge a voice by how soft it sounds. Judge it by where it's leading you: to worship God, or to bow to something else. <em>“Try the spirits whether they are of God”</em> (1 John 4:1).</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="he doeth great wonders|deceiveth them that dwell on the earth by the means of those miracles|that they should make an image to the beast|as many as would not worship the image of the beast should be killed"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A miracle is not proof</h2>
+    <p class="note rise" style="--d:1">Fire from heaven was Elijah's sign on Mount Carmel (1 Kings 18:38). The false prophet copies it. Paul warned of the same thing:</p>
+    <blockquote class="quote step"><p>“Even him, whose coming is after the working of Satan with all power and signs and lying wonders,”</p><cite>2 Thessalonians 2:9</cite></blockquote>
+    <p class="note step">So the test of a teacher is never “Can he do wonders?” The test is “Does he lead me to worship the Lamb?” A man who can make fire fall and leads you away from Jesus is a liar with a good trick.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Bow or burn: it's happened before</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">Daniel 3:6, Nebuchadnezzar's golden image</p><p class="kjv">And <mark>whoso falleth not down and worshippeth</mark> shall the same hour be cast into the midst of a burning fiery furnace.</p></div>
+      <div class="scroll step"><p class="ref">Daniel 3:18, three young men answer</p><p class="kjv">But if not, be it known unto thee, O king, that <mark>we will not serve thy gods, nor worship the golden image</mark> which thou hast set up.</p></div>
+    </div>
+    <p class="note step">Babylon's king set up an image and said: worship or die. Shadrach, Meshach and Abed-nego said no. And when they were thrown in, the king saw <em>four</em> men walking loose in the fire (Daniel 3:25). God didn't keep them out of the furnace. He walked in it with them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="both small and great, rich and poor, free and bond|to receive a mark in their right hand, or in their foreheads|that no man might buy or sell"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Whose name do you wear?</h2>
+    <p class="note rise" style="--d:1">In John's world, slaves and soldiers were often marked with their owner's or general's name. A mark said: <em>this one belongs to me.</em> God told Israel to bind His word <em>“for a sign upon thine hand… as frontlets between thine eyes”</em> (Deuteronomy 6:8): the hand for what you do, the forehead for what you think.</p>
+    <div class="columns">
+      <div class="col grace step"><p class="who">Revelation 7:3; 14:1</p><h3>Sealed by God</h3><p>His servants carry <em>“his Father’s name written in their foreheads.”</em> They belong to the Lamb.</p></div>
+      <div class="col law step"><p class="who">Revelation 13:16–17</p><h3>Marked by the beast</h3><p>The beast's people carry his mark. They belong to him, and they've traded worship for a paycheck.</p></div>
+    </div>
+    <p class="note step">Notice the pressure: <em>“that no man might buy or sell.”</em> Most men don't sell out for a crown. They sell out to keep the job and pay the bills. Bowing to keep your living is an old temptation, and it didn't start here.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: HERE IS WISDOM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Here is wisdom</h2>
+    <p class="range rise" style="--d:2">Verse 18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The most guessed-at number in the world, and what is plain about it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18" data-hl="Here is wisdom|it is the number of a man|Six hundred threescore and six"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Six, six, six</h2>
+    <div class="math rise" style="--d:1">
+      <div><b>600</b><span>six hundred</span></div>
+      <div><b>+ 60</b><span>threescore (a score is 20)</span></div>
+      <div><b>+ 6</b><span>and six</span></div>
+      <div><b>= 666</b><span>“the number of a man”</span></div>
+    </div>
+    <div class="rv13-six step" role="img" aria-label="Three rows of seven slots. In each row six slots fill in and the seventh stays empty.">
+      <div><b>6</b><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i class="miss">7</i></div>
+      <div><b>6</b><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i class="miss">7</i></div>
+      <div><b>6</b><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i class="miss">7</i></div>
+    </div>
+    <p class="note step">In the Bible seven is the number of completeness, God's number. Many teachers see six as man's number: made on the sixth day, always one short. Six, six, six is man at his very best, three times over, and still short of God.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two thousand years of guesses</h2>
+    <p class="note rise" style="--d:1">In Greek and Hebrew, letters also served as numbers, so a name could be added up. That's why people have tried to “count” the number into a name ever since John wrote it.</p>
+    <p class="saying step">Every confident guess so far has been <em>wrong</em>.</p>
+    <p class="note step">Emperors, kings, generals, inventions: for two thousand years men have been sure, and every one of them died or faded and the world went on. We won't add another guess. <em>“Here is wisdom”</em> isn't a call to decode headlines. It's a call to see through the beast: impressive, but only a man.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Can a believer take it by accident?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">something that happens to you while you aren't looking</span></li>
+      <li class="step"><span class="k">the sin you fell into yesterday</span></li>
+      <li class="step"><span class="k">a rumor to lose sleep over</span></li>
+      <li class="step yes"><span class="k">a choice of whom to worship</span><span class="why">the mark goes with worship (13:8, 15; 14:9)</span></li>
+    </ul>
+    <p class="note step">The mark comes to those who <em>worship</em> the beast, and verse 8 says plainly who won't: everyone whose name is in the Lamb's book. A believer isn't tricked out of that book. <em>“They shall never perish, neither shall any man pluck them out of my hand”</em> (John 10:28).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What is plain</h2>
+    <div class="asks">
+      <div class="ask step"><span class="q">Whose power does the beast have?</span><span class="stamp">Borrowed</span><span class="ctx">The dragon gave it, and God allowed it: “it was given unto him” (13:7).</span></div>
+      <div class="ask step"><span class="q">How long does he get?</span><span class="stamp">Limited</span><span class="ctx">Forty-two months, set by God. Chapter 19 tells how he ends: taken, and cast into the lake of fire (19:20).</span></div>
+      <div class="ask step"><span class="q">Where is a man safe?</span><span class="stamp">The Lamb's book</span><span class="ctx">The names written there do not worship the beast, and are never blotted out (3:5).</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.”</p><cite>1 John 4:4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Take it to work today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>13:4</i><b>Don't bow to the strong</b><p>Name the thing that looks unbeatable in your life. It's on a leash. Tell God it doesn't get your worship.</p></div>
+      <div class="step"><i>13:11</i><b>Check the voice</b><p>When a soft voice says “just this once,” ask where it leads. If it leads away from Jesus, it's the dragon talking.</p></div>
+      <div class="step"><i>13:8</i><b>Rest in the book</b><p>If you belong to Jesus, your name is written. Go to work today as a man who is kept, not a man who is afraid.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Borrowed</span><span class="seed-q">“The dragon gave him his power” <cite>13:2</cite></span><span class="take">Everything the beast has is borrowed, and only for the time God allows.</span></li>
+      <li class="step"><span class="topic">Daniel</span><span class="seed-q">“Like unto a leopard… a bear… a lion” <cite>13:2</cite></span><span class="take">Daniel's beasts were kingdoms; this one is every proud empire against God rolled into one.</span></li>
+      <li class="step"><span class="topic">The book</span><span class="seed-q">“Written in the book of life of the Lamb” <cite>13:8</cite></span><span class="take">Those whose names are in the Lamb's book do not worship the beast.</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">“Here is the patience and the faith of the saints” <cite>13:10</cite></span><span class="take">Endure, trust God with the outcome, and leave the sword alone.</span></li>
+      <li class="step"><span class="topic">Deceived</span><span class="seed-q">“Two horns like a lamb, and he spake as a dragon” <cite>13:11</cite></span><span class="take">Deception looks gentle; judge a voice by where it leads.</span></li>
+      <li class="step"><span class="topic">The mark</span><span class="seed-q">“And all that dwell upon the earth shall worship him” <cite>13:8</cite></span><span class="take">The mark goes with worshipping the beast; it is a choice, not an accident.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Borrowed</span>
+      <h2>Where does the beast get his power?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step" data-q="5"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From the dragon, the devil. And even that is only allowed: over and over the chapter says “it was given unto him,” and only for forty-two months. His power is borrowed and his time is limited.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Daniel</span>
+      <h2>What do the leopard, the bear and the lion tell us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <blockquote class="quote step"><p>“These great beasts, which are four, are four kings, which shall arise out of the earth.”</p><cite>Daniel 7:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They come from Daniel 7, where four beasts out of the sea were four kingdoms. John's beast has all of them in it: every proud power that sets itself against God, rolled into one. Scripture explains its own pictures.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The book</span>
+      <h2>Who will not worship the beast?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.”</p><cite>Revelation 3:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Everyone whose name is written in the book of life of the Lamb. The beast can make war on them, but he can't take their names out of that book. It's the safe place, and the Lamb's door is open to whosoever will.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Patience</span>
+      <h2>What does God ask of His people when the beast makes war on them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step"><p>“And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.”</p><cite>Revelation 12:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Patience and faith: to endure under the weight without quitting, and to trust God with how it ends. Not to grab the sword, but to hold on. The beast can hurt the body; he can't touch the soul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Deceived</span>
+      <h2>Why does the second beast look like a lamb?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <blockquote class="quote step"><p>“Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves.”</p><cite>Matthew 7:15</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because deception works best when it looks gentle. He looks harmless, does wonders, and sounds reasonable, but he speaks for the dragon and leads people to worship the beast. Judge a voice by where it leads, not how it looks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The mark</span>
+      <h2>Can a believer take the mark by accident?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. The mark goes with worshipping the beast, a choice of whom to serve. Those whose names are in the Lamb's book do not worship him, and nobody can pluck them out of Christ's hand. A believer doesn't need to fear it; he needs to keep worshipping the Lamb.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="10" data-hl="Here is the patience and the faith of the saints"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Revelation chapter 13
+const V = {
+  1: "And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.",
+  2: "And the beast which I saw was like unto a leopard, and his feet were as the feet of a bear, and his mouth as the mouth of a lion: and the dragon gave him his power, and his seat, and great authority.",
+  3: "And I saw one of his heads as it were wounded to death; and his deadly wound was healed: and all the world wondered after the beast.",
+  4: "And they worshipped the dragon which gave power unto the beast: and they worshipped the beast, saying, Who is like unto the beast? who is able to make war with him?",
+  5: "And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months.",
+  6: "And he opened his mouth in blasphemy against God, to blaspheme his name, and his tabernacle, and them that dwell in heaven.",
+  7: "And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.",
+  8: "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.",
+  9: "If any man have an ear, let him hear.",
+  10: "He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword. Here is the patience and the faith of the saints.",
+  11: "And I beheld another beast coming up out of the earth; and he had two horns like a lamb, and he spake as a dragon.",
+  12: "And he exerciseth all the power of the first beast before him, and causeth the earth and them which dwell therein to worship the first beast, whose deadly wound was healed.",
+  13: "And he doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men,",
+  14: "And deceiveth them that dwell on the earth by the means of those miracles which he had power to do in the sight of the beast; saying to them that dwell on the earth, that they should make an image to the beast, which had the wound by a sword, and did live.",
+  15: "And he had power to give life unto the image of the beast, that the image of the beast should both speak, and cause that as many as would not worship the image of the beast should be killed.",
+  16: "And he causeth all, both small and great, rich and poor, free and bond, to receive a mark in their right hand, or in their foreheads:",
+  17: "And that no man might buy or sell, save he that had the mark, or the name of the beast, or the number of his name.",
+  18: "Here is wisdom. Let him that hath understanding count the number of the beast: for it is the number of a man; and his number is Six hundred threescore and six."
+};
+const BOOK = "Revelation 13";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

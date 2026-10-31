@@ -16781,5 +16781,101 @@ window.STUDIES = [
       },
       "big": "God keeps His promises even in judgment, and He will not be late. Some things are His alone to know, but He has given us His word to take in whole: sweet because it is His, and hard to carry because it is true. And He is not finished with His servants, however old or far gone they feel."
     }
+  },
+  {
+    "id": "revelation-13",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 13,
+    "date": "2026-10-31",
+    "title": "Revelation 13",
+    "sub": "Borrowed power",
+    "about": "Two beasts, a mark, and a number, and the one book that keeps a man safe through all of it.",
+    "tags": [
+      "Spiritual warfare",
+      "Deception",
+      "Worship",
+      "Endurance",
+      "Eternal security",
+      "Hope"
+    ],
+    "url": "studies/revelation-13.html",
+    "overview": {
+      "where": "A vision John saw on Patmos: the shore of the sea, then the whole earth",
+      "when": "Written about AD 95 to struggling churches; teachers differ on when these things are fulfilled",
+      "people": [
+        "the-dragon",
+        "the-beast",
+        "the-false-prophet",
+        "the-lamb",
+        "saints-believers"
+      ],
+      "places": [
+        "heaven"
+      ],
+      "story": [
+        "John watches a beast with seven heads and ten horns rise out of the sea, like a leopard, a bear and a lion: Daniel's beasts rolled into one. The dragon gives it his power (1–2).",
+        "A deadly wound is healed, and the whole world wonders and worships: “Who is like unto the beast?” (3–4).",
+        "Its power is “given” and lasts forty-two months. It blasphemes God and makes war on the saints, and all worship it except those written in the Lamb's book of life (5–8).",
+        "“Here is the patience and the faith of the saints”: endure, trust God, and leave the sword alone (9–10).",
+        "A second beast rises out of the earth, like a lamb but speaking as a dragon. With false wonders it gets an image made and worshipped (11–15).",
+        "It causes all to take a mark so no man can buy or sell without it. Its number is “the number of a man”: six hundred threescore and six (16–18)."
+      ],
+      "key": {
+        "ref": "Revelation 13:8",
+        "text": "And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world."
+      },
+      "big": "The beast's power is borrowed from the dragon and limited by God. Teachers differ on the details, but this is plain: the Lamb's book is the safe place, and no one whose name is written there is tricked into the beast's worship."
+    }
+  },
+  {
+    "id": "revelation-14",
+    "type": "chapter",
+    "book": "Revelation",
+    "ch": 14,
+    "date": "2026-10-31",
+    "title": "Revelation 14",
+    "sub": "The Lamb stood",
+    "about": "After the beasts, John looks up: the Lamb is standing, the gospel is still being preached, and harvest time is coming.",
+    "tags": [
+      "The gospel",
+      "Judgment",
+      "Warning",
+      "Grief and hope",
+      "Endurance",
+      "Second coming"
+    ],
+    "url": "studies/revelation-14.html",
+    "overview": {
+      "where": "A vision John saw on Patmos: mount Sion, the sky over the earth, and the harvest fields",
+      "when": "Written about AD 95; a look ahead to the end, just before the last seven plagues",
+      "people": [
+        "the-lamb",
+        "the-father",
+        "angels",
+        "saints-believers",
+        "the-beast",
+        "holy-spirit"
+      ],
+      "places": [
+        "sion",
+        "heaven",
+        "babylon",
+        "temple"
+      ],
+      "story": [
+        "The Lamb stands on mount Sion with the 144,000, His Father's name on their foreheads. They sing a new song, redeemed from among men, without fault (1–5).",
+        "One angel flies with the everlasting gospel for every nation, kindred, tongue and people: “Fear God, and give glory to him” (6–7).",
+        "A second angel cries, “Babylon is fallen, is fallen.” A third warns that whoever worships the beast and takes his mark will drink God's wrath without mixture (8–11).",
+        "“Here is the patience of the saints.” A voice from heaven: “Blessed are the dead which die in the Lord… they may rest from their labours” (12–13).",
+        "One like the Son of man, crowned, reaps the harvest of the earth from a white cloud (14–16).",
+        "An angel gathers the vine of the earth into the great winepress of God's wrath, trodden without the city (17–20)."
+      ],
+      "key": {
+        "ref": "Revelation 14:13",
+        "text": "And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in the Lord from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them."
+      },
+      "big": "Before the end, God offers the everlasting gospel to everyone, warns plainly, and then gathers the harvest. Those who die in the Lord are blessed and at rest, and nothing done for Christ is lost."
+    }
   }
 ];
