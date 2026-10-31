@@ -13322,5 +13322,94 @@ window.STUDIES = [
       },
       "big": "Worry has an answer: tell God everything, with thanks, and His peace stands guard. Contentment is learned in Christ, who is enough in want and in plenty."
     }
+  },
+  {
+    "id": "colossians-01",
+    "type": "chapter",
+    "book": "Colossians",
+    "ch": 1,
+    "date": "2026-10-31",
+    "title": "Colossians 1",
+    "sub": "Christ over everything",
+    "about": "Paul writes from prison to a church he has never visited: Jesus made everything, holds it together, and has already moved us out of the power of darkness.",
+    "tags": [
+      "Kingdom of the Son",
+      "Redemption",
+      "Who Jesus is",
+      "Reconciliation",
+      "Forgiveness",
+      "Christ in you"
+    ],
+    "url": "studies/colossians-01.html",
+    "overview": {
+      "where": "Written from Rome, where Paul was under house arrest, to the church at Colosse in the Lycus valley in Asia (now Turkey)",
+      "when": "About AD 60 to 62, in the years Paul was held in Rome",
+      "people": [
+        "paul",
+        "timothy",
+        "epaphras",
+        "jesus",
+        "the-father"
+      ],
+      "places": [
+        "colosse",
+        "heaven"
+      ],
+      "story": [
+        "Paul and Timotheus greet the saints at Colosse, give thanks for their faith, love and hope, and remember Epaphras, who brought them the gospel (1–8).",
+        "Paul prays that they will know God's will, walk worthily and be strong, giving thanks that God has delivered us from the power of darkness into the kingdom of his dear Son, where we have redemption and forgiveness (9–14).",
+        "Christ is the image of the invisible God and the firstborn of every creature: all things were made by him and for him, and by him all things consist. He is head of the church and first over all (15–20).",
+        "Once strangers and enemies, believers have been reconciled through his death, to be presented holy and unblameable, if they keep to the faith they heard (21–23).",
+        "Paul rejoices in suffering for the church and in the mystery now made known to the Gentiles: Christ in you, the hope of glory. He works hard, in Christ's strength, to present every man complete in Christ (24–29)."
+      ],
+      "key": {
+        "ref": "Colossians 1:13–14",
+        "text": "Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: In whom we have redemption through his blood, even the forgiveness of sins:"
+      },
+      "big": "Jesus is over everything, and everything that ever had a hold on you has lost it: God has moved you into His Son's kingdom, forgiven you, and put Christ himself in you as your hope of glory."
+    }
+  },
+  {
+    "id": "colossians-02",
+    "type": "chapter",
+    "book": "Colossians",
+    "ch": 2,
+    "date": "2026-10-31",
+    "title": "Colossians 2",
+    "sub": "Complete in him",
+    "about": "Christ is enough: the record of debt was nailed to the cross, and no list of rules can add to Him.",
+    "tags": [
+      "Christ is enough",
+      "False teaching",
+      "Baptism",
+      "Forgiveness",
+      "The cross",
+      "Rules and the heart"
+    ],
+    "url": "studies/colossians-02.html",
+    "overview": {
+      "where": "Written from Rome to the church at Colosse, with a thought for Laodicea nearby",
+      "when": "About AD 60 to 62",
+      "people": [
+        "paul",
+        "jesus",
+        "the-father"
+      ],
+      "places": [
+        "laodicea"
+      ],
+      "story": [
+        "Paul tells them how hard he strives for them and for Laodicea, though he has never met them. All the treasures of wisdom and knowledge are hid in Christ (1–5).",
+        "As they received Christ, so they should walk in him, rooted and built up, and not be carried off by philosophy and the traditions of men. In Christ dwells all the fulness of the Godhead, and they are complete in him (6–10).",
+        "They were buried with him in baptism and raised through faith, dead in sins and made alive with him, all trespasses forgiven (11–13).",
+        "God blotted out the handwriting of ordinances that was against us, nailing it to the cross, and made a public spectacle of the powers that opposed him (14–15).",
+        "No one should judge them over food, drink or holy days, which were only a shadow. Nor should they follow false humility, angel-worship or rules like Touch not; taste not; handle not, which look wise but cannot cure the flesh (16–23)."
+      ],
+      "key": {
+        "ref": "Colossians 2:14",
+        "text": "Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;"
+      },
+      "big": "Christ is enough. The debt we owed was cancelled on the cross, and no rule list can add to that or cure a man's heart. Only Christ can."
+    }
   }
 ];

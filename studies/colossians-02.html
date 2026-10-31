@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colossians 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* co01-book: the whole letter of Colossians on one line (a deck.css candidate; the other Colossians studies copy it).
+   Row 1: the four chapters (.co01-ch, --n = verses), the one we're in marked .here. Row 2: the five sections (.co01-part,
+   --n = verses), each with its verses (small), its name (b), a key phrase (q) and where it is (cite); a section we're in is .now.
+   Both rows use the same --n weights, so a section starts exactly where its verses do. */
+.co01-book { margin: .6em 0 1em; }
+.co01-chs, .co01-parts { display: flex; }
+.co01-chs { margin-bottom: 8px; }
+.co01-ch { flex: var(--n) 1 0; margin: 0 2px; padding: .25em 0 .3em; text-align: center; border-radius: 6px 6px 0 0; border-bottom: 3px solid var(--line-strong);
+  font: 700 clamp(.82rem, .74rem + .35vw, 1.08rem) var(--sans); color: var(--ink-soft);
+  opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k, 0) * 120ms + 200ms); }
+.slide.active .co01-ch { opacity: 1; }
+.co01-ch.here { background: var(--accent); border-bottom-color: var(--accent); color: var(--on-accent); }
+.slide.active .co01-ch.here { animation: co01-here 2.4s ease-in-out 1.6s infinite; }
+@keyframes co01-here { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 28%, transparent); } }
+.co01-part { --c: var(--accent); flex: var(--n) 1 0; min-width: 0; margin: 0 3px; padding: .5em .6em .6em; border-top: 6px solid var(--c); border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--c) 9%, transparent); opacity: 0; transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--k, 0) * 380ms + 900ms); }
+.slide.active .co01-part { opacity: 1; transform: none; }
+.co01-part small { display: block; font: 700 clamp(.7rem, .66rem + .22vw, .9rem) var(--sans); letter-spacing: .04em; color: var(--ink-soft); }
+.co01-part b { display: block; margin: .1em 0 .35em; font: 600 clamp(.95rem, .8rem + .6vw, 1.4rem)/1.1 var(--serif); color: var(--ink); }
+.co01-part q { display: block; font: italic clamp(.8rem, .74rem + .3vw, 1.02rem)/1.3 var(--serif); quotes: "\201C" "\201D"; }
+.co01-part cite { display: block; margin-top: .25em; font-style: normal; font-size: clamp(.7rem, .66rem + .2vw, .88rem); color: var(--ink-soft); }
+.co01-part.now { background: color-mix(in srgb, var(--c) 20%, transparent); box-shadow: inset 0 0 0 2px var(--c); }
+.co01-p1 { --c: var(--cool); }
+.co01-p2 { --c: var(--accent); }
+.co01-p3 { --c: var(--danger); }
+.co01-p4 { --c: var(--leather-light); }
+.co01-p5 { --c: var(--wine); }
+@media (max-width: 700px) {
+  .co01-chs { display: none; }
+  .co01-parts { display: grid; gap: 6px; }
+  .co01-part { margin: 0; border-top: 0; border-left: 6px solid var(--c); border-radius: 0 10px 10px 0; }
+}
+
+/* co02-chest: the treasures of wisdom and knowledge, hid in Christ (2:3). The lid lifts on a .co02-open step. */
+.co02-box { fill: var(--leather); stroke: var(--line-strong); stroke-width: 3; }
+.co02-band { fill: var(--leather-light); }
+.co02-lid { fill: var(--leather-light); stroke: var(--line-strong); stroke-width: 3; transform-box: view-box; transform-origin: 90px 160px; transition: transform 1.2s cubic-bezier(.4, 0, .2, 1); }
+.slide:has(.co02-open.on) .co02-lid { transform: rotate(-42deg); }
+.co02-beam { fill: color-mix(in srgb, var(--glow) 45%, transparent); opacity: 0; transition: opacity 1.2s ease .5s; }
+.slide:has(.co02-open.on) .co02-beam { opacity: 1; }
+.co02-gem { fill: var(--accent); stroke: var(--glow); stroke-width: 2; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform 1.2s ease; transition-delay: calc(var(--k, 0) * 220ms + 800ms); }
+.slide:has(.co02-open.on) .co02-gem { opacity: 1; transform: none; }
+.co02-treasure { fill: var(--ink); font: 700 18px var(--sans); opacity: 0; transition: opacity .8s ease; transition-delay: calc(var(--k, 0) * 220ms + 1000ms); }
+.slide:has(.co02-open.on) .co02-treasure { opacity: 1; }
+
+/* co02-tree: rooted and built up in him (2:7). Roots grow down and the crown grows up when the slide opens. */
+.co02-ground { stroke: var(--line-strong); stroke-width: 3; }
+.co02-trunk { fill: var(--leather); }
+.co02-crown { fill: color-mix(in srgb, var(--cool) 55%, var(--bg)); transform-box: fill-box; transform-origin: 50% 100%; transform: scale(.2); opacity: 0; transition: transform 2.2s ease 1.6s, opacity 1s ease 1.6s; }
+.slide.active .co02-crown { transform: none; opacity: 1; }
+.co02-root { fill: none; stroke: var(--leather-light); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; transition-delay: calc(var(--k, 0) * 200ms + 300ms); }
+.slide.active .co02-root { stroke-dashoffset: 0; }
+.co02-lbl { fill: var(--ink); font: 700 17px var(--sans); }
+.co02-lbl.soft { fill: var(--ink-soft); font-weight: 400; }
+
+/* co02-plus: Christ plus anything is still just Christ (2:8-10). The extras are struck out on a .co02-zero step. */
+.co02-plus { display: grid; gap: .6em; margin: .4em 0 1em; }
+.co02-plus ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5em .8em; }
+.co02-plus li { position: relative; padding: .35em .8em; border: 2px dashed var(--line-strong); border-radius: 999px; font: clamp(1rem, .9rem + .5vw, 1.35rem) var(--serif); font-style: italic; }
+.co02-plus li::after { content: ""; position: absolute; left: 4%; right: 4%; top: 52%; height: 3px; background: var(--danger); transform: scaleX(0); transform-origin: left; transition: transform .6s ease; transition-delay: calc(var(--k, 0) * 260ms); }
+.slide:has(.co02-zero.on) .co02-plus li { color: var(--ink-soft); }
+.slide:has(.co02-zero.on) .co02-plus li::after { transform: scaleX(1); }
+.co02-sum { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3em .7em; font-family: var(--serif); }
+.co02-sum b { font: 400 clamp(2rem, 1.2rem + 3.6vw, 4.4rem)/1 var(--serif); color: var(--accent-hot); }
+.co02-sum span { font: clamp(1.2rem, 1rem + 1vw, 2rem) var(--serif); color: var(--ink-soft); }
+.co02-sum .is { opacity: 0; transition: opacity .8s ease 1.6s; color: var(--accent-hot); font-style: italic; }
+.slide:has(.co02-zero.on) .co02-sum .is { opacity: 1; }
+
+/* co02-cert: the handwriting of ordinances (2:14). A certificate of debt is nailed to the cross (.co02-nail step), then stamped cancelled (.co02-stamp step). */
+.co02-cross { fill: var(--leather); stroke: var(--line-strong); stroke-width: 2; }
+.co02-cert { transform-box: view-box; transition: transform 1.5s cubic-bezier(.5, 0, .3, 1); }
+.slide:has(.co02-nail.on) .co02-cert { transform: translate(215px, 8px); }
+.co02-paper { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2.5; }
+.co02-ct { fill: var(--ink); font: italic 15px var(--serif); }
+.co02-ch { fill: var(--ink-soft); font: 700 12px var(--sans); letter-spacing: .08em; }
+.co02-owed { fill: var(--danger); font: 700 17px var(--sans); }
+.co02-line { stroke: var(--line-strong); stroke-width: 1.5; }
+.co02-nailpin { fill: var(--ink); opacity: 0; transform: translateY(-40px); transition: opacity .3s ease 1.3s, transform .5s ease 1.3s; }
+.slide:has(.co02-nail.on) .co02-nailpin { opacity: 1; transform: none; }
+.co02-stampg { opacity: 0; transform-box: fill-box; transform-origin: center; transform: rotate(-14deg) scale(2.2); transition: opacity .25s ease, transform .35s cubic-bezier(.3, 1.6, .5, 1); }
+.slide:has(.co02-stamp.on) .co02-stampg { opacity: 1; transform: rotate(-14deg) scale(1); }
+.co02-stampbox { fill: none; stroke: var(--danger); stroke-width: 4; }
+.co02-stamptxt { fill: var(--danger); font: 700 24px var(--sans); letter-spacing: .1em; }
+
+/* co02-shadow: a shadow and the real thing (2:16-17). */
+.co02-sh { fill: none; stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 8 6; stroke-linejoin: round; opacity: .8; }
+.co02-real { fill: color-mix(in srgb, var(--accent) 35%, transparent); stroke: var(--accent-hot); stroke-width: 3.5; stroke-linejoin: round; opacity: 0; transition: opacity 1.2s ease; }
+.slide:has(.co02-body.on) .co02-real { opacity: 1; }
+.co02-says { opacity: 0; transition: opacity .8s ease .6s; }
+.slide:has(.co02-body.on) .co02-says { opacity: 1; }
+
+/* co02-head: the whole body fed from the Head (2:19). Nourishment flows down the joints and bands; one member has let go. */
+.co02-band-line { fill: none; stroke: var(--line-strong); stroke-width: 3; }
+.co02-flow { fill: none; stroke: var(--accent-hot); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1 16; }
+.slide.active .co02-flow { animation: co02-flow 1.8s linear infinite; }
+@keyframes co02-flow { to { stroke-dashoffset: -34; } }
+.co02-member { fill: var(--surface-2); stroke: var(--accent); stroke-width: 3; }
+.co02-cut .co02-member { stroke: var(--ink-soft); stroke-dasharray: 5 5; }
+.co02-cutline { opacity: 0; transition: opacity .6s ease; }
+.slide:has(.co02-cutgo.on) .co02-cutline { opacity: 1; }
+.slide:has(.co02-cutgo.on) .co02-cut { opacity: .55; }
+
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .co02-wide { grid-template-columns: 1.25fr 1fr; } }
+/* co02-signs: touch not, taste not, handle not (2:21). Three plaques, one per step; the heart still wants what it wants. */
+.co02-signs { display: flex; flex-wrap: wrap; gap: .6em 1em; margin: .4em 0 1em; }
+.co02-signs div { padding: .3em .9em; border: 4px solid var(--danger); border-radius: 8px; color: var(--danger); font: 700 clamp(1.3rem, 1rem + 1.6vw, 2.4rem)/1.1 var(--sans); letter-spacing: .06em; text-transform: uppercase; transform: rotate(var(--r, -2deg)); }
+.co02-signs div:nth-child(2) { --r: 1.5deg; }
+.co02-signs div:nth-child(3) { --r: -1deg; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Colossians 2</h1>
+    <p class="sub rise" style="--d:3">Complete in him</p>
+    <p class="tag rise" style="--d:5">Christ is enough: the debt is paid, and no list of rules can add to Him. Paul warns the church not to be taken in by men who say otherwise.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are in Colossians</h2>
+    <p class="note rise" style="--d:2">Paul, a prisoner in Rome, is writing to a small church he has never visited. In chapter 1 he said who Jesus is: over everything and living in every believer. Now he warns them about teachers who say Jesus isn't enough.</p>
+    <div class="co01-book" role="img" aria-label="Colossians in five sections. 1:1 to 14, thanks and a prayer. 1:15 to 2:3, who Christ is. 2:4 to 23, do not be taken captive. 3:1 to 4:6, live the new life. 4:7 to 18, friends and farewells. Chapter 2 is highlighted.">
+      <div class="co01-chs">
+        <span class="co01-ch" style="--n:29;--k:0">1</span><span class="co01-ch here" style="--n:23;--k:1">2</span><span class="co01-ch" style="--n:25;--k:2">3</span><span class="co01-ch" style="--n:18;--k:3">4</span>
+      </div>
+      <div class="co01-parts">
+        <div class="co01-part co01-p1" style="--n:14;--k:0"><small>1:1–14</small><b>Thanks and a prayer</b><q>delivered us from the power of darkness</q><cite>1:13</cite></div>
+        <div class="co01-part co01-p2 now" style="--n:18;--k:1"><small>1:15–2:3</small><b>Who Christ is</b><q>the image of the invisible God</q><cite>1:15</cite></div>
+        <div class="co01-part co01-p3 now" style="--n:20;--k:2"><small>2:4–23</small><b>Don't be taken captive</b><q>Beware lest any man spoil you</q><cite>2:8</cite></div>
+        <div class="co01-part co01-p4" style="--n:31;--k:3"><small>3:1–4:6</small><b>Live the new life</b><q>seek those things which are above</q><cite>3:1</cite></div>
+        <div class="co01-part co01-p5" style="--n:12;--k:4"><small>4:7–18</small><b>Friends and farewells</b><q>Onesimus, a faithful and beloved brother</q><cite>4:9</cite></div>
+      </div>
+    </div>
+    <p class="note step">Chapter 2 is the fight. Teachers were telling the Colossians that Christ was a good start, but they needed more: special rules, special days, secret knowledge. Paul's answer is one word: <em>complete</em>.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rooted</span><span class="seed-q">What does it mean to be “rooted and built up in him”?</span></li>
+      <li class="step"><span class="topic">Beware</span><span class="seed-q">What did Paul tell the Colossians to beware of?</span></li>
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">Why are we “complete in him”?</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">What does being “buried with him in baptism” picture?</span></li>
+      <li class="step"><span class="topic">The debt</span><span class="seed-q">What happened to the record of debt that was against us?</span></li>
+      <li class="step"><span class="topic">Rules</span><span class="seed-q">Why can't rules alone change a man's heart?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Rooted in Christ</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A prisoner fights in prayer for strangers, then tells them what to hold on to.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="what great conflict I have for you|them at Laodicea|all the treasures of wisdom and knowledge"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 300" role="img" aria-label="A treasure chest. The lid lifts and a light shines out, with the words wisdom and knowledge rising from it. These are hid in Christ.">
+          <polygon class="co02-beam" points="130,150 230,150 300,20 60,20"/>
+          <rect class="co02-box" x="90" y="160" width="180" height="100" rx="10"/>
+          <rect class="co02-band" x="170" y="160" width="20" height="100"/>
+          <rect class="co02-lid" x="90" y="120" width="180" height="40" rx="12"/>
+          <circle class="co02-gem" style="--k:0" cx="140" cy="150" r="10"/>
+          <circle class="co02-gem" style="--k:1" cx="180" cy="144" r="12"/>
+          <circle class="co02-gem" style="--k:2" cx="222" cy="150" r="10"/>
+          <text class="co02-treasure" style="--k:0" x="298" y="70" text-anchor="middle">wisdom</text>
+          <text class="co02-treasure" style="--k:1" x="298" y="98" text-anchor="middle">knowledge</text>
+          <text class="co02-lbl" x="180" y="290" text-anchor="middle">“In whom are hid”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Where the treasure is</h2>
+        <p class="note rise" style="--d:2">Paul has never met these people, yet he calls his prayer a <em>“great conflict”</em>: a struggle, like an athlete's. He fights for them and for the church at Laodicea, a few miles away.</p>
+        <p class="note step co02-open">What he wants them to know: <em>“In whom are hid all the treasures of wisdom and knowledge.”</em> The real wisdom isn't in a secret teaching a clever man sells you. It's in Christ, and every believer already has Him.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-7" data-hl="lest any man should beguile you with enticing words|As ye have therefore received Christ Jesus the Lord, so walk ye in him|Rooted and built up in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 320" role="img" aria-label="A tree. Its roots grow deep into the ground and its crown grows up. Below the ground: rooted. Above: built up.">
+          <line class="co02-ground" x1="20" y1="170" x2="340" y2="170"/>
+          <ellipse class="co02-crown" cx="180" cy="72" rx="86" ry="60"/>
+          <rect class="co02-trunk" x="171" y="116" width="18" height="56" rx="4"/>
+          <g>
+            <path class="co02-root" pathLength="1" style="--k:0" d="M180 170 Q178 220 150 262"/>
+            <path class="co02-root" pathLength="1" style="--k:1" d="M180 170 Q184 230 190 292"/>
+            <path class="co02-root" pathLength="1" style="--k:2" d="M180 170 Q200 214 240 246"/>
+            <path class="co02-root" pathLength="1" style="--k:3" d="M178 180 Q130 196 96 232"/>
+            <path class="co02-root" pathLength="1" style="--k:4" d="M182 184 Q232 190 270 222"/>
+          </g>
+          <text class="co02-lbl" x="280" y="110">built up</text>
+          <text class="co02-lbl" x="28" y="262">rooted</text>
+          <text class="co02-lbl soft" x="28" y="284">drinking from Christ</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Rooted and built up</h2>
+        <p class="note rise" style="--d:2">Paul uses two pictures at once: a tree and a building. <em>Rooted</em>: the life goes down into Christ. <em>Built up</em>: the man grows up on top of it. <em>Stablished</em> means made firm.</p>
+        <p class="note step">Notice the one rule: <em>“As ye have therefore received Christ Jesus the Lord, so walk ye in him.”</em> You started by receiving Him, as a gift, by faith. You keep going the same way. Nobody starts on grace and finishes on his own effort.</p>
+        <p class="note step">Roots are mostly out of sight. The daily habits that feed them are small: a few verses, a prayer, one honest word to a brother.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="Beware lest any man spoil you through philosophy and vain deceit|after the tradition of men|in him dwelleth all the fulness of the Godhead bodily|ye are complete in him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8" data-hl="Beware lest any man spoil you through philosophy and vain deceit"></blockquote>
+    <h2 class="rise" style="--d:1">Don't be carried off</h2>
+    <p class="note rise" style="--d:2"><em>Spoil</em> means to carry off as plunder, the way an army carries off captives. <em>Philosophy</em> here means human ideas about God that leave Christ out.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">after the tradition of men</span><span class="why">rules and ideas handed down by people</span></li>
+      <li class="step"><span class="k">after the rudiments of the world</span><span class="why">the ABCs: the world's basic way of thinking</span></li>
+      <li class="step yes"><span class="k">but after Christ</span><span class="why">the only test: does it keep me near Him?</span></li>
+    </ul>
+    <p class="note step">Smooth talk and a good-sounding system have carried off plenty of men who meant well. Check anything you hear against Christ and what He has already done.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9-10" data-hl="all the fulness of the Godhead bodily|ye are complete in him"></blockquote>
+    <h2 class="rise" style="--d:1">Christ, plus anything</h2>
+    <div class="co02-plus rise" style="--d:2" role="img" aria-label="Christ, plus rules, plus special days, plus secret knowledge, plus angels. Each extra is struck out. Christ alone is complete.">
+      <div class="co02-sum"><b>Christ</b><span>+</span></div>
+      <ul>
+        <li style="--k:0">more rules</li>
+        <li style="--k:1">special days</li>
+        <li style="--k:2">secret knowledge</li>
+        <li style="--k:3">worshipping angels</li>
+        <li style="--k:4">a better record</li>
+      </ul>
+      <div class="co02-sum"><span class="is">…adds nothing. He is already</span><b class="is">complete.</b></div>
+    </div>
+    <p class="note step co02-zero">All the fulness of God lives in Jesus, <em>bodily</em>: in a real man's body. So when you have Him, you are <em>filled full</em> in Him. There is no second level to climb.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Dead, raised and forgiven</h2>
+    <p class="range rise" style="--d:2">Verses 11–15</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What Christ has already done for every man who believes, and the debt that was nailed to a cross.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-13" data-hl="the circumcision made without hands|Buried with him in baptism|dead in your sins|hath he quickened together with him, having forgiven you all trespasses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="Buried with him in baptism|through the faith of the operation of God"></blockquote>
+    <h2 class="rise" style="--d:1">A picture, not the means</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">The picture</p>
+        <h3>Baptism: going under, and coming up</h3>
+        <p>A believer is lowered under the water, like a burial, and raised up again. It shows what happened to him: the old life is buried with Christ, and a new life has begun.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What does the saving</p>
+        <h3>“Through the faith of the operation of God”</h3>
+        <p>God does the work, and a man receives it by faith. The water doesn't save anyone. The faith in Christ does, and baptism is the first step of obedience that says so out loud.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+    <p class="note step">Paul calls it <em>“the circumcision made without hands”</em>: God cutting away the old life, not a ceremony. If you've been baptized, it was a good step. If you haven't yet, talk to your pastor, and know that your forgiveness never depended on it.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="dead in your sins|hath he quickened together with him, having forgiven you all trespasses"></blockquote>
+    <h2 class="rise" style="--d:1">Dead. Alive. Forgiven.</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:2"><i>Before</i><b>Dead in your sins</b><p>Not sick, not struggling: dead to God. A man can't fix that himself.</p></div>
+      <div class="step"><i>Then</i><b>Quickened together with him</b><p><em>Quickened</em> is an old word for made alive. He raised us with Christ.</p></div>
+      <div class="step"><i>And now</i><b>All trespasses forgiven</b><p>Not some of them. <em>All.</em> The ones from yesterday and the ones you're still ashamed of.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">If you fall after this, don't hide. Confess it to God, and He's faithful to forgive. Your standing doesn't change, and the way back is open.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="Blotting out the handwriting of ordinances that was against us|nailing it to his cross|having spoiled principalities and powers|triumphing over them in it"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split co02-wide">
+      <div class="stage">
+        <svg viewBox="0 0 460 320" role="img" aria-label="A certificate of debt listing what a man owes. It is carried to a cross and nailed to it. Then a stamp falls across it: cancelled.">
+          <rect class="co02-cross" x="318" y="16" width="30" height="296" rx="3"/>
+          <rect class="co02-cross" x="262" y="66" width="142" height="28" rx="3"/>
+          <g class="co02-cert">
+            <rect x="20" y="64" width="196" height="210" rx="6" style="fill:var(--bg)"/><rect class="co02-paper" x="20" y="64" width="196" height="210" rx="6"/>
+            <text class="co02-ch" x="118" y="92" text-anchor="middle">WHAT I OWE</text>
+            <line class="co02-line" x1="36" y1="102" x2="200" y2="102"/>
+            <text class="co02-ct" x="36" y="132">every lie I told</text>
+            <text class="co02-ct" x="36" y="162">every drink and high</text>
+            <text class="co02-ct" x="36" y="192">every person I hurt</text>
+            <text class="co02-ct" x="36" y="222">every promise I broke</text>
+            <line class="co02-line" x1="36" y1="236" x2="200" y2="236"/>
+            <text class="co02-owed" x="118" y="260" text-anchor="middle">more than I can pay</text>
+            <circle class="co02-nailpin" cx="118" cy="72" r="7"/>
+            <g class="co02-stampg">
+              <rect class="co02-stampbox" x="30" y="148" width="176" height="46" rx="6"/>
+              <text class="co02-stamptxt" x="118" y="180" text-anchor="middle">CANCELLED</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The debt nailed to the cross</h2>
+        <p class="note rise" style="--d:2"><em>“Handwriting of ordinances”</em> was a certificate of debt: a signed record of what a man owes. Every one of us signed one by how we lived. The law could only list what we owed. It couldn't pay it.</p>
+        <p class="note step co02-nail">God <em>“took it out of the way, nailing it to his cross.”</em> When Jesus was crucified, the charge against Him was posted above His head. Paul says our charge went up there too.</p>
+        <p class="note step co02-stamp">Paid. <em>“Blotting out”</em> means wiped clean, like ink washed off a page. There is nothing left for anyone to collect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="having spoiled principalities and powers|triumphing over them in it"></blockquote>
+    <h2 class="rise" style="--d:1">The accuser has nothing left</h2>
+    <p class="saying rise" style="--d:2">He <em>made a shew of them openly</em>, triumphing over them.</p>
+    <p class="note rise" style="--d:3">Verse 15 pictures a Roman victory parade: the defeated enemies led through the streets in front of the crowds. <em>Principalities and powers</em> are the unseen forces that opposed God.</p>
+    <p class="note step">Their hold on us was the debt: <em>you owe, so we have a claim on you.</em> With the debt cancelled, their claim is gone. The voice that says <em>“you're still guilty”</em> is lying. Don't argue with it. Point to the cross.</p>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">No man-made rules</h2>
+    <p class="range rise" style="--d:2">Verses 16–23</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Why a list of dos and don'ts can look wise and still never make a man new.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="Let no man therefore judge you in meat, or in drink|of the sabbath days|a shadow of things to come; but the body is of Christ"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split co02-wide">
+      <div class="stage">
+        <svg viewBox="0 0 460 300" role="img" aria-label="On the left, a faint dashed outline of a man: the shadow, with meat, drink, holyday, new moon and sabbath written under it. On the right, a solid glowing man: the body, which is Christ.">
+          <line x1="20" y1="270" x2="440" y2="270" stroke-width="2" style="stroke:var(--line-strong)"/>
+          <g class="co02-sh">
+            <circle cx="110" cy="62" r="26"/>
+            <path d="M68 104 Q110 92 152 104 L162 190 Q110 200 58 190 Z"/>
+            <path d="M80 192 L76 266 H102 L108 196 Z M140 192 L144 266 H118 L112 196 Z"/>
+          </g>
+          <g class="co02-real">
+            <circle cx="340" cy="62" r="26"/>
+            <path d="M298 104 Q340 92 382 104 L392 190 Q340 200 288 190 Z"/>
+            <path d="M310 192 L306 266 H332 L338 196 Z M370 192 L374 266 H348 L342 196 Z"/>
+          </g>
+          <text class="co02-lbl soft" x="110" y="292" text-anchor="middle">the shadow</text><g class="co02-lbl soft" style="font-size:12px;text-anchor:middle"><text x="110" y="128" style="fill:var(--ink-soft)">meat and drink</text><text x="110" y="146" style="fill:var(--ink-soft)">holydays</text><text x="110" y="164" style="fill:var(--ink-soft)">new moon</text><text x="110" y="182" style="fill:var(--ink-soft)">sabbath days</text></g>
+          <text class="co02-lbl co02-says" x="340" y="292" text-anchor="middle">the body: Christ</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The shadow and the real thing</h2>
+        <p class="note rise" style="--d:2">Paul lists the old rules: food and drink laws, festival days, the new moon, sabbath days. They pointed ahead, the way a shadow shows something is coming.</p>
+        <p class="note step co02-body">Once the person arrives, you don't keep staring at the shadow. <em>“The body is of Christ.”</em> Nobody gets to hold a checklist over your standing with God.</p>
+        <blockquote class="quote step"><p>“For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect.”</p><cite>Hebrews 10:1</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Let no man therefore judge you in meat, or in drink"></blockquote>
+    <h2 class="rise" style="--d:1">What this does and doesn't say</h2>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">It does say</p>
+        <h3>No one's rule list decides where you stand</h3>
+        <p>In Paul's day, this was the old Jewish food laws and feast days. Don't let anyone tell you that keeping them, or any list like them, makes you right with God. Christ already did.</p>
+      </div>
+      <div class="col law step">
+        <p class="who">It does not say</p>
+        <h3>Anything goes</h3>
+        <p>It isn't a green light for the bottle. Baptists have long urged believers to leave alcohol alone, and for a man in recovery that is simply wisdom. The point is that a fence is a tool. It never earns you anything with God.</p>
+      </div>
+    </div>
+    <p class="note step">Keep the boundaries you need. Don't let anyone, you included, treat them as what saves you. And don't judge another man by his list. Paul says <em>“Let no man judge you,”</em> and the same goes for how you treat the next man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="vainly puffed up by his fleshly mind|not holding the Head|knit together, increaseth with the increase of God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 360 300" role="img" aria-label="The Head, Christ, at the top. Lines run down from him to five members of the body, with nourishment flowing along them. One member has let go and is cut off.">
+          <g fill="none">
+            <path class="co02-band-line" d="M180 82 Q90 150 40 232"/>
+            <path class="co02-band-line" d="M180 82 Q150 160 110 232"/>
+            <path class="co02-band-line" d="M180 82 L180 232"/>
+            <path class="co02-band-line" d="M180 82 Q210 160 250 232"/>
+            <path class="co02-flow" pathLength="100" d="M180 82 Q90 150 40 232"/>
+            <path class="co02-flow" pathLength="100" d="M180 82 Q150 160 110 232"/>
+            <path class="co02-flow" pathLength="100" d="M180 82 L180 232"/>
+            <path class="co02-flow" pathLength="100" d="M180 82 Q210 160 250 232"/>
+          </g>
+          <circle class="co02-member" cx="180" cy="52" r="30" style="fill:var(--accent);stroke:var(--accent-hot)"/>
+          <text class="co02-lbl" x="180" y="58" text-anchor="middle" style="fill:var(--on-accent)">Christ</text>
+          <circle class="co02-member" cx="40" cy="250" r="18"/>
+          <circle class="co02-member" cx="110" cy="250" r="18"/>
+          <circle class="co02-member" cx="180" cy="250" r="18"/>
+          <circle class="co02-member" cx="250" cy="250" r="18"/>
+          <g class="co02-cut"><circle class="co02-member" cx="320" cy="250" r="18"/></g>
+          <path class="co02-band-line co02-cutline" d="M180 82 Q290 140 312 232" style="stroke-dasharray:4 10"/>
+          <text class="co02-lbl co02-cutline" x="320" y="212" text-anchor="middle" style="fill:var(--danger)">cut off</text>
+          <text class="co02-lbl soft" x="180" y="292" text-anchor="middle">joints and bands</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Holding the Head</h2>
+        <p class="note rise" style="--d:2">Some teachers in Colosse worshipped angels and boasted about their visions. Paul says they were <em>“not holding the Head.”</em> A body gets its food and life through the Head, along <em>“joints and bands”</em>: the other believers.</p>
+        <p class="note step co02-cutgo">Cut a hand off from the body and it withers, however religious it looks. The fix is not more rules. It's to stay joined to Christ, and joined to His people, so His life keeps reaching you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-23" data-hl="Touch not; taste not; handle not|after the commandments and doctrines of men|not in any honour to the satisfying of the flesh"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21-23" data-hl="Touch not; taste not; handle not|not in any honour to the satisfying of the flesh"></blockquote>
+    <h2 class="rise" style="--d:1">Rules that look wise</h2>
+    <div class="co02-signs">
+      <div class="step">Touch not</div>
+      <div class="step">Taste not</div>
+      <div class="step">Handle not</div>
+    </div>
+    <p class="note step">These are the sort of rules men make: <em>“after the commandments and doctrines of men.”</em> Paul says they have <em>“a shew of wisdom”</em>, and a lot of effort goes into them (<em>“neglecting of the body”</em>), but they are <em>“not in any honour to the satisfying of the flesh.”</em> In other words, they do nothing to cure what the flesh wants.</p>
+    <blockquote class="quote step"><p>“But in vain they do worship me, teaching for doctrines the commandments of men.”</p><cite>Matthew 15:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A fence is not a new heart</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Rules alone</p>
+        <h3>Fence the door. Nothing changes inside.</h3>
+        <p>You can stay out of the bar and still be full of anger, pride and craving. Plenty of men have kept every rule on the outside and been miserable and cold inside.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Christ in you</p>
+        <h3>A new man, and a new want</h3>
+        <p>Christ cancels the debt, gives you His Spirit, and starts changing what you love. Then the rules (and you will still need some) become help, not a cage.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+    <p class="note step">That's exactly where chapter 3 goes next: <em>“If ye then be risen with Christ, seek those things which are above.”</em> Not a longer list of don'ts, but a Person.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What to do with this today</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Sin</b>Name the list you've been trying to keep. It can't save you, and it never could.</li>
+      <li><b>Regret</b>The debt was nailed to the cross. Thank Him for that, out loud.</li>
+      <li class="now"><b>Grace</b>You are <em>complete in him</em>. Nothing to add, nothing to earn.</li>
+      <li><b>Hope</b>Dead, then raised. Today isn't the end of your story.</li>
+    </ol>
+    <p class="note step"><strong>For the real world:</strong> pick one thing that has been making you feel you have to <em>earn</em> your place with God: a rule, a record, a guilty voice. Say to Jesus, <em>“You paid for this.”</em> Then keep the one boundary you need, and keep it as a man who is already forgiven.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Rooted</span><span class="seed-q">“Rooted and built up in him” <cite>2:7</cite></span><span class="take">Your life goes down into Christ and grows up from there. Keep walking as you began: by faith.</span></li>
+      <li class="step"><span class="topic">Beware</span><span class="seed-q">“Beware lest any man spoil you through philosophy and vain deceit” <cite>2:8</cite></span><span class="take">Human ideas that leave Christ out can carry a man off. Test everything against Him.</span></li>
+      <li class="step"><span class="topic">Enough</span><span class="seed-q">“Ye are complete in him” <cite>2:10</cite></span><span class="take">All the fulness of God is in Christ, and you have Him. Nothing to add.</span></li>
+      <li class="step"><span class="topic">Baptism</span><span class="seed-q">“Buried with him in baptism” <cite>2:12</cite></span><span class="take">A picture of the old life buried and a new one raised. Faith in Christ saves, not the water.</span></li>
+      <li class="step"><span class="topic">The debt</span><span class="seed-q">“Nailing it to his cross” <cite>2:14</cite></span><span class="take">The record of debt against us was wiped out and nailed to the cross. Paid, and cancelled.</span></li>
+      <li class="step"><span class="topic">Rules</span><span class="seed-q">“Touch not; taste not; handle not” <cite>2:21</cite></span><span class="take">Rules look wise but can't change a heart. Christ cancels the debt and makes a man new.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Rooted</span>
+      <h2>What does it mean to be “rooted and built up in him”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="7"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="all the treasures of wisdom and knowledge"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Your life draws from Christ, like a tree from its roots, and you are built up on Him, like a house on a foundation. You began by receiving Him by faith, and you go on the same way. The treasure you need is already in Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Beware</span>
+      <h2>What did Paul tell the Colossians to beware of?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4"></blockquote>
+      <blockquote class="quote step" data-q="8"></blockquote>
+      <blockquote class="quote step" data-q="18" data-hl="vainly puffed up by his fleshly mind"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Smooth talk that carries a man off: human ideas, rules and traditions of men, and proud claims of visions and secret knowledge. They all leave Christ out. The test is simple: does it keep me near Christ, or move me off Him?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Enough</span>
+      <h2>Why are we “complete in him”?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9"></blockquote>
+      <blockquote class="quote step" data-q="10"></blockquote>
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because all the fulness of God lives in Christ, and you are in Him. He made us alive and forgave all our trespasses. There's no second level and nothing to add, so you can stop trying to earn what He has already given.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Baptism</span>
+      <h2>What does being “buried with him in baptism” picture?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12"></blockquote>
+      <blockquote class="quote step"><p>“Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.”</p><cite>Romans 6:4</cite></blockquote>
+      <blockquote class="quote step"><p>“For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.”</p><cite>Ephesians 2:8–9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It pictures death and new life: the old man buried with Christ, and a new man raised with Him. It is the believer's first step of obedience, and it says out loud what God has done. It isn't what saves him. Faith in Christ does.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The debt</span>
+      <h2>What happened to the record of debt that was against us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="having forgiven you all trespasses"></blockquote>
+      <blockquote class="quote step" data-q="14"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="triumphing over them in it"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God wiped it out and nailed it to the cross of Christ. The debt is cancelled, and everything that gave the accuser a claim on you is gone. When your conscience says you still owe, point to the cross.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Rules</span>
+      <h2>Why can't rules alone change a man's heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21-22" data-hl="Touch not; taste not; handle not"></blockquote>
+      <blockquote class="quote step" data-q="23" data-hl="not in any honour to the satisfying of the flesh"></blockquote>
+      <blockquote class="quote step"><p>“Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.”</p><cite>Galatians 5:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Rules work on the outside. They look wise, but they do nothing about what the heart wants. A fence can help, and a man in recovery may need some. But only Christ cancels the debt, gives the Spirit, and makes a man new from the inside.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="6-7"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Colossians chapter 2
+const V = {
+  1: "For I would that ye knew what great conflict I have for you, and for them at Laodicea, and for as many as have not seen my face in the flesh;",
+  2: "That their hearts might be comforted, being knit together in love, and unto all riches of the full assurance of understanding, to the acknowledgement of the mystery of God, and of the Father, and of Christ;",
+  3: "In whom are hid all the treasures of wisdom and knowledge.",
+  4: "And this I say, lest any man should beguile you with enticing words.",
+  5: "For though I be absent in the flesh, yet am I with you in the spirit, joying and beholding your order, and the stedfastness of your faith in Christ.",
+  6: "As ye have therefore received Christ Jesus the Lord, so walk ye in him:",
+  7: "Rooted and built up in him, and stablished in the faith, as ye have been taught, abounding therein with thanksgiving.",
+  8: "Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.",
+  9: "For in him dwelleth all the fulness of the Godhead bodily.",
+  10: "And ye are complete in him, which is the head of all principality and power:",
+  11: "In whom also ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Christ:",
+  12: "Buried with him in baptism, wherein also ye are risen with him through the faith of the operation of God, who hath raised him from the dead.",
+  13: "And you, being dead in your sins and the uncircumcision of your flesh, hath he quickened together with him, having forgiven you all trespasses;",
+  14: "Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;",
+  15: "And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it.",
+  16: "Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days:",
+  17: "Which are a shadow of things to come; but the body is of Christ.",
+  18: "Let no man beguile you of your reward in a voluntary humility and worshipping of angels, intruding into those things which he hath not seen, vainly puffed up by his fleshly mind,",
+  19: "And not holding the Head, from which all the body by joints and bands having nourishment ministered, and knit together, increaseth with the increase of God.",
+  20: "Wherefore if ye be dead with Christ from the rudiments of the world, why, as though living in the world, are ye subject to ordinances,",
+  21: "(Touch not; taste not; handle not;",
+  22: "Which all are to perish with the using;) after the commandments and doctrines of men?",
+  23: "Which things have indeed a shew of wisdom in will worship, and humility, and neglecting of the body; not in any honour to the satisfying of the flesh.",
+};
+const BOOK = "Colossians 2";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
