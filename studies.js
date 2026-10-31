@@ -15247,6 +15247,115 @@ window.STUDIES = [
     }
   },
   {
+    "id": "hebrews-11",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 11,
+    "date": "2026-10-31",
+    "title": "Hebrews 11",
+    "sub": "By faith",
+    "about": "The hall of faith: ordinary, flawed people from across the whole Old Testament who took God at His word, and one frame still open for us.",
+    "tags": [
+      "Faith",
+      "Hope",
+      "Grace",
+      "Temptation",
+      "Suffering",
+      "Perseverance"
+    ],
+    "url": "studies/hebrews-11.html",
+    "overview": {
+      "where": "A letter to Jewish believers; its stories run from Ur and Canaan down to Egypt, through the Red sea, and in at Jericho",
+      "when": "Written about AD 64 to 68; the stories reach from Abel to the years before Christ",
+      "people": [
+        "abel",
+        "cain",
+        "enoch",
+        "noah",
+        "abraham",
+        "sarah",
+        "isaac",
+        "jacob",
+        "esau",
+        "joseph-son-of-jacob",
+        "moses",
+        "pharaohs-daughter",
+        "rahab",
+        "gideon",
+        "barak",
+        "samson",
+        "jephthah",
+        "david",
+        "samuel"
+      ],
+      "places": [
+        "egypt",
+        "red-sea",
+        "jericho"
+      ],
+      "story": [
+        "Faith is “the substance of things hoped for, the evidence of things not seen.” Abel, Enoch and Noah pleased God by it, and without it no one can (1–7).",
+        "Abraham went out “not knowing whither he went,” lived in tents, and looked for a city God built. With Sara, Isaac and Jacob he died in faith, a stranger and pilgrim on the earth (8–16).",
+        "Abraham offered up Isaac, trusting God could raise him; Isaac, Jacob and Joseph blessed and spoke of the future as they died (17–22).",
+        "Moses chose to suffer with God's people rather than enjoy “the pleasures of sin for a season.” Israel crossed the Red sea, Jericho fell, and Rahab the harlot was spared (23–31).",
+        "Gedeon, Barak, Samson, Jephthae, David, Samuel and the prophets: some were delivered, others tortured and killed, “of whom the world was not worthy.” They wait to be made perfect with us (32–40)."
+      ],
+      "key": {
+        "ref": "Hebrews 11:6",
+        "text": "But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him."
+      },
+      "big": "Faith takes God at His word before it sees the promise. God fills His hall with forgiven, flawed people, records their faith rather than their sins, and keeps a place in the line for us."
+    }
+  },
+  {
+    "id": "hebrews-12",
+    "type": "chapter",
+    "book": "Hebrews",
+    "ch": 12,
+    "date": "2026-10-31",
+    "title": "Hebrews 12",
+    "sub": "Run the race",
+    "about": "With a stadium full of witnesses, lay aside every weight, look unto Jesus, accept a loving Father's training, and remember which mountain you have come to.",
+    "tags": [
+      "Perseverance",
+      "Temptation",
+      "God's discipline",
+      "Bitterness",
+      "Grace",
+      "Reverence"
+    ],
+    "url": "studies/hebrews-12.html",
+    "overview": {
+      "where": "A letter to Jewish believers; its pictures move from a stadium to mount Sinai and mount Sion, the heavenly Jerusalem",
+      "when": "Written about AD 64 to 68, to believers tempted to give up",
+      "people": [
+        "jesus",
+        "cloud-of-witnesses",
+        "esau",
+        "moses",
+        "abel",
+        "angels"
+      ],
+      "places": [
+        "mount-sinai",
+        "sion",
+        "heavenly-jerusalem"
+      ],
+      "story": [
+        "Surrounded by a great cloud of witnesses, we lay aside every weight and the sin that so easily besets us, and run looking unto Jesus, who endured the cross (1–4).",
+        "“Whom the Lord loveth he chasteneth.” God trains us as sons, for our profit; it hurts now, but afterward it yields the peaceable fruit of righteousness (5–11).",
+        "Lift up the hanging hands and feeble knees, make straight paths, follow peace and holiness, and watch for any root of bitterness (12–15).",
+        "Esau sold his birthright for one morsel of meat, and later, though he wept, he could not undo it (16–17).",
+        "We have not come to fearful Sinai but to mount Sion and to Jesus, whose blood speaks better things than Abel's. God will shake everything that can be shaken; our God is a consuming fire (18–29)."
+      ],
+      "key": {
+        "ref": "Hebrews 12:2",
+        "text": "Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God."
+      },
+      "big": "Run the long race with your eyes on Jesus. God's discipline is a Father's love, not rejection. Don't trade your future for one moment, and serve Him with thanks and reverence, secure in a kingdom that cannot be moved."
+    }
+  },
+  {
     "id": "hebrews-13",
     "type": "chapter",
     "book": "Hebrews",

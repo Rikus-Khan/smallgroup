@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he11-where: where this chapter sits in Hebrews. Thirteen chapter boxes in five groups (--n boxes each), the current chapter lit */
+.he11-where { display: grid; grid-template-columns: 2fr 2fr 3fr 3fr 3fr; gap: 10px; margin: .6em 0 1em; }
+.he11-where > div { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 4px; align-content: start; }
+.he11-where span { display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); }
+.he11-where b { grid-column: 1 / -1; margin-top: .35em; font: 400 clamp(.85rem, .78rem + .35vw, 1.1rem)/1.3 var(--serif); color: var(--ink-soft); }
+.he11-where .now span { border-color: var(--accent); color: var(--ink); }
+.he11-where .now b { color: var(--accent-hot); font-weight: 600; }
+.he11-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .he11-where { grid-template-columns: 1fr; gap: 6px; }
+  .he11-where > div { grid-template-columns: repeat(var(--n), 2.2rem) 1fr; align-items: center; }
+  .he11-where b { grid-column: auto; margin: 0 0 0 .4em; }
+}
+
+/* he11-deed: faith as a title deed. Lines of the deed, then on a step (.he11-press) the wax seal is pressed on */
+.he11-deed { position: relative; max-width: 38rem; margin: .4em 0 1.4em; padding: .9em 1.3em 1.2em; border: 1.5px solid var(--line-strong); outline: 1px solid var(--line-strong); outline-offset: -7px; border-radius: 4px; background: var(--surface); }
+.he11-deed h3 { text-align: center; font: 600 clamp(1.1rem, .95rem + .7vw, 1.6rem) var(--serif); letter-spacing: .14em; text-transform: uppercase; }
+.he11-deed dl { display: grid; grid-template-columns: auto 1fr; gap: .3em 1em; margin: .5em 0 0; }
+.he11-deed dt { padding-top: .35em; font: 700 clamp(.7rem, .66rem + .2vw, .85rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.he11-deed dd { margin: 0; padding-bottom: .25em; border-bottom: 1px dashed var(--line-strong); font: italic clamp(1rem, .9rem + .5vw, 1.35rem)/1.35 var(--serif); }
+.he11-seal { position: absolute; right: 1.1em; bottom: -1.1em; display: grid; place-items: center; width: 5.2em; height: 5.2em; border-radius: 50%; background: var(--wine); box-shadow: inset 0 0 0 .35em color-mix(in srgb, var(--glow) 25%, var(--wine)); color: var(--glow); font: 700 .68rem/1.15 var(--sans); letter-spacing: .06em; text-align: center; opacity: 0; transform: rotate(-12deg) scale(1.8); transition: transform .5s cubic-bezier(.3,1.5,.6,1), opacity .4s ease; }
+.slide:has(.he11-press.on) .he11-seal { opacity: 1; transform: rotate(-12deg); }
+@media (max-width: 600px) { .he11-deed dl { grid-template-columns: 1fr; gap: 0; } .he11-deed dt { padding-top: .5em; } }
+
+/* he11-hall: the hall of faith as a walk through history. Each era (li.step) comes in on a click with its pin lit,
+   its date (i), its name (b), and the people in it in a frame (span). li.us is the last, open frame. Vertical on phones. */
+.he11-hall { list-style: none; padding: 0; margin: .5em 0 .8em; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 6px; }
+.he11-hall li { position: relative; padding-top: 1.75rem; text-align: center; }
+.he11-hall li::before { content: ""; position: absolute; z-index: 1; top: .2rem; left: 50%; width: 1.05rem; height: 1.05rem; margin-left: -.525rem; border-radius: 50%; border: 2px solid var(--accent); background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+.he11-hall li::after { content: ""; position: absolute; top: .69rem; left: -3px; right: -3px; height: 2px; background: var(--line-strong); }
+.he11-hall i { display: block; font: 700 clamp(.66rem, .6rem + .25vw, .84rem)/1.2 var(--sans); font-style: normal; color: var(--wine); }
+.he11-hall b { display: block; margin: .15em 0 .35em; font: 600 clamp(.85rem, .76rem + .35vw, 1.1rem)/1.15 var(--serif); }
+.he11-hall span { display: block; padding: .4em .25em; border: 4px double var(--line-strong); border-radius: 4px; background: var(--surface); font: italic clamp(.8rem, .72rem + .3vw, 1.02rem)/1.35 var(--serif); }
+.he11-hall small { display: block; margin-top: .3em; font-size: clamp(.66rem, .62rem + .2vw, .8rem); color: var(--ink-soft); }
+.he11-hall li.us::before { background: var(--bg); border-style: dashed; }
+.he11-hall li.us span { border: 2px dashed var(--accent); color: var(--accent-hot); font-style: normal; font-weight: 600; }
+@media (max-width: 600px) {
+  .he11-hall { grid-auto-flow: row; gap: 0; }
+  .he11-hall li { display: grid; grid-template-columns: 6.6rem 1fr; gap: 0 .6rem; align-items: start; padding: 0 0 .55rem 1.7rem; text-align: left; }
+  .he11-hall li::before { top: .2rem; left: 0; margin-left: 0; }
+  .he11-hall li::after { top: 0; bottom: 0; left: .45rem; right: auto; width: 2px; height: auto; }
+  .he11-hall i, .he11-hall b, .he11-hall small { grid-column: 1; }
+  .he11-hall span { grid-column: 2; grid-row: 1 / span 3; }
+}
+
+/* he11-map: labels of my own on the world map, kept the same size on screen as the map's own */
+.map.world .he11-lab { fill: var(--ink-soft); font: italic calc(21px * var(--u, 1)) var(--serif); }
+
+/* he11-tents: tents on the ground and, on a step (.he11-look), the city with foundations lights up above them */
+.he11-ground { stroke: var(--line-strong); stroke-width: 2; }
+.he11-tent { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; stroke-linejoin: round; }
+.he11-door { fill: var(--ink-soft); }
+.he11-city { opacity: .25; transition: opacity 1.4s ease; }
+.he11-city rect, .he11-city path { fill: color-mix(in srgb, var(--warm) 45%, var(--surface)); stroke: var(--warm); stroke-width: 2; }
+.he11-city .stone { fill: color-mix(in srgb, var(--warm) 25%, var(--surface)); }
+.he11-halo { fill: var(--warm); opacity: 0; transition: opacity 1.4s ease; }
+.slide:has(.he11-look.on) .he11-city { opacity: 1; }
+.slide:has(.he11-look.on) .he11-halo { opacity: .22; }
+.he11-cap { fill: var(--ink-soft); font: italic 19px var(--serif); }
+.he11-cap.hot { fill: var(--accent-hot); font-weight: 600; }
+@media (max-width: 600px) { .he11-cap { font-size: 24px; } }
+
+/* he11-sign: a signpost at a fork. The road back to the old country is always there (dashed); on a step (.he11-go)
+   the road to a better country draws itself and its board lights */
+.he11-road { fill: none; stroke-width: 6; stroke-linecap: round; }
+.he11-road.back { stroke: var(--line-strong); stroke-dasharray: 10 10; }
+.he11-road.fore { stroke: var(--accent); stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.he11-post { fill: var(--leather); }
+.he11-board path { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; transition: fill 1s ease, stroke 1s ease; }
+.he11-board text { fill: var(--ink); font: 600 21px var(--serif); transition: fill 1s ease; }
+.he11-board .ref { font: 14px var(--sans); fill: var(--ink-soft); }
+.slide:has(.he11-go.on) .he11-road.fore { stroke-dashoffset: 0; }
+.slide:has(.he11-go.on) .he11-board.fore path { fill: var(--accent); stroke: var(--accent); }
+.slide:has(.he11-go.on) .he11-board.fore text:not(.ref) { fill: var(--on-accent); }
+.he11-walker { fill: var(--ink); transition: transform 2.4s ease .6s; }
+.slide:has(.he11-go.on) .he11-walker { transform: translate(150px, -32px); }
+@media (max-width: 600px) { .he11-board text { font-size: 23px; } .he11-board .ref { font-size: 18px; } }
+
+/* he11-files: the record on five men, and on a step (.he11-stamp-go) each is stamped BY FAITH, one after another (--k) */
+.he11-files { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: .4em 0 1em; }
+.he11-files > div { position: relative; overflow: hidden; padding: .55em .7em .8em; border: 1.5px solid var(--line-strong); border-radius: 6px; background: var(--surface); }
+.he11-files b { display: block; font: 600 clamp(1.05rem, .9rem + .6vw, 1.45rem) var(--serif); }
+.he11-files small { display: block; margin: .1em 0 .35em; font: 700 clamp(.62rem, .58rem + .2vw, .75rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.he11-files p { font-size: clamp(.8rem, .74rem + .3vw, 1rem); line-height: 1.35; color: var(--ink-soft); transition: opacity 1s ease; }
+.he11-stamp { position: absolute; left: 50%; top: 58%; translate: -50% -50%; padding: .1em .45em; border: 3px solid var(--accent-hot); border-radius: 6px; background: color-mix(in srgb, var(--surface) 82%, transparent); color: var(--accent-hot); font: 800 clamp(.95rem, .8rem + .6vw, 1.45rem) var(--sans); letter-spacing: .08em; white-space: nowrap; opacity: 0; transform: rotate(-14deg) scale(2); transition: opacity .35s ease, transform .45s cubic-bezier(.3,1.5,.6,1); transition-delay: calc(var(--k, 0) * 380ms); }
+.slide:has(.he11-stamp-go.on) .he11-stamp { opacity: 1; transform: rotate(-14deg); }
+.slide:has(.he11-stamp-go.on) .he11-files p { opacity: .4; }
+@media (max-width: 860px) { .he11-files { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 11</h1>
+    <p class="sub rise" style="--d:3">By faith</p>
+    <p class="tag rise" style="--d:5">A hall of ordinary, flawed people from across the whole Old Testament. Every one of them made the list for the same reason: they took God at His word.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What is faith, and why does God require it?</span></li>
+      <li class="step"><span class="topic">Pilgrims</span><span class="seed-q">Why did these people live like strangers on the earth?</span></li>
+      <li class="step"><span class="topic">Moses</span><span class="seed-q">What did Moses give up, and why?</span></li>
+      <li class="step"><span class="topic">Rahab</span><span class="seed-q">Why is a harlot in this list?</span></li>
+      <li class="step"><span class="topic">Flawed</span><span class="seed-q">Why does God list men like Samson and Jephthae?</span></li>
+      <li class="step"><span class="topic">Rescued?</span><span class="seed-q">Does faith always mean God rescues us?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he11-where rise" style="--d:1" role="img" aria-label="The thirteen chapters of Hebrews in five groups. Chapters 1 and 2: Jesus is better than the angels. 3 and 4: better than Moses and Joshua. 5 to 7: a better high priest. 8 to 10: a better covenant and a better sacrifice. 11 to 13: so hold on, by faith; chapter 11 is lit.">
+      <div style="--n:2"><span>1</span><span>2</span><b>Jesus is better than the angels</b></div>
+      <div style="--n:2"><span>3</span><span>4</span><b>better than Moses and Joshua</b></div>
+      <div style="--n:3"><span>5</span><span>6</span><span>7</span><b>a better high priest</b></div>
+      <div style="--n:3"><span>8</span><span>9</span><span>10</span><b>a better covenant and sacrifice</b></div>
+      <div class="now" style="--n:3"><span class="here">11</span><span>12</span><span>13</span><b>so hold on, by faith</b></div>
+    </div>
+    <p class="note step">The writer of Hebrews wrote, about AD 64 to 68, to Jewish believers under pressure to go back to the old ways. For ten chapters he has shown them that Jesus is better than everything they would be going back to. Chapter 10 ended with a line from Habakkuk: <em>“the just shall live by faith.”</em> Then this:</p>
+    <blockquote class="quote step"><p>“But we are not of them who draw back unto perdition; but of them that believe to the saving of the soul.”</p><cite>Hebrews 10:39</cite></blockquote>
+    <p class="note step">So what does a life of faith look like? Chapter 11 answers with people, not a definition.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: WHAT FAITH IS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">What faith is</h2>
+    <p class="range rise" style="--d:2">Verses 1–7</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Faith holds on to what it can't see yet, because of who promised it. Without it, nobody pleases God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="Now faith is the substance of things hoped for, the evidence of things not seen|the elders obtained a good report"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1"></blockquote>
+    <h2 class="rise" style="--d:1">A deed to what you can't see yet</h2>
+    <div class="he11-deed rise" style="--d:2">
+      <h3>Title deed</h3>
+      <dl>
+        <dt>Property</dt><dd>“a better country… a city” (11:16)</dd>
+        <dt>Held by</dt><dd>whoever believes God</dd>
+        <dt>Possession</dt><dd>not yet: seen “afar off” (11:13)</dd>
+        <dt>Proof</dt><dd>“him faithful who had promised” (11:11)</dd>
+      </dl>
+      <span class="he11-seal">SEALED<br>BY HIS<br>WORD</span>
+    </div>
+    <p class="note step he11-press"><em>Substance</em> is what stands under a thing; many Bible teachers note that old business papers used the same Greek word for a title deed. <em>Evidence</em> is proof that convinces. Faith isn't wishing: it holds the deed before it lives in the house.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">“The elders”: a walk through history</h2>
+    <ol class="he11-hall" aria-label="A timeline of the people in Hebrews 11. Before the flood: Abel and Enoch. The flood: Noah. The fathers, about 2000 to 1800 BC: Abraham, Sara, Isaac, Jacob, Joseph. Out of Egypt, about 1450 BC: Moses and his parents. Into the land, about 1400 BC: Jericho and Rahab. The judges, about 1350 to 1050 BC: Gideon, Barak, Samson, Jephthae. The kingdom, about 1050 to 970 BC: Samuel and David. The prophets, about 850 to 400 BC. Those with no names, down to the years before Christ. And last, an open frame: us.">
+      <li class="step"><i>the beginning</i><b>Before the flood</b><span>Abel<br>Enoch</span><small>11:4–6</small></li>
+      <li class="step"><i>long ago</i><b>The flood</b><span>Noah</span><small>11:7</small></li>
+      <li class="step"><i>about 2000–1800 BC</i><b>The fathers</b><span>Abraham, Sara, Isaac, Jacob, Joseph</span><small>11:8–22</small></li>
+      <li class="step"><i>about 1450 BC</i><b>Out of Egypt</b><span>Moses and his parents</span><small>11:23–29</small></li>
+      <li class="step"><i>about 1400 BC</i><b>Into the land</b><span>Jericho<br>Rahab</span><small>11:30–31</small></li>
+      <li class="step"><i>about 1350–1050 BC</i><b>The judges</b><span>Gedeon, Barak, Samson, Jephthae</span><small>11:32</small></li>
+      <li class="step"><i>about 1050–970 BC</i><b>The kingdom</b><span>Samuel<br>David</span><small>11:32</small></li>
+      <li class="step"><i>about 850–400 BC</i><b>The prophets</b><span>lions, fire, the sword</span><small>11:32–34</small></li>
+      <li class="step"><i>to the years before Christ</i><b>No names given</b><span>tortured, stoned, in caves</span><small>11:35–38</small></li>
+      <li class="step us"><i>today</i><b>And us</b><span>“without us”</span><small>11:40</small></li>
+    </ol>
+    <p class="note step"><em>“The elders”</em> means the people of old. The writer walks through the whole Old Testament, one life at a time. And the last frame is still open.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="the worlds were framed by the word of God"></blockquote>
+    <h2 class="rise" style="--d:1">Faith starts at the beginning</h2>
+    <p class="note rise" style="--d:2">Nobody watched God make the world. We know it the way Abraham knew his promise: God said so. He spoke, and what wasn't there was there.</p>
+    <p class="note step">That matters for you. The God who made something out of nothing isn't stuck with the mess you made. He can start with nothing.</p>
+    <blockquote class="quote step"><p>“While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.”</p><cite>2 Corinthians 4:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="he being dead yet speaketh|he pleased God|But without faith it is impossible to please him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two men before the flood</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">11:4 · Genesis 4</p><h3>Abel</h3><p>Cain brought some of his crops. Abel brought the firstlings of his flock, and he brought them by faith. God accepted Abel and his gift. Cain killed him for it. But Abel <em>“being dead yet speaketh”</em>: his story still preaches.</p></div>
+      <div class="col step"><p class="who">11:5 · Genesis 5</p><h3>Enoch</h3><p>Three hundred years of ordinary days, walking with God. Then one day he wasn't there. God took him home without dying.</p></div>
+    </div>
+    <blockquote class="quote step"><p>“And Enoch walked with God: and he was not; for God took him.”</p><cite>Genesis 5:24</cite></blockquote>
+    <p class="note step">One was murdered young; one never died. Both pleased God the same way: by faith.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6"></blockquote>
+    <h2 class="rise" style="--d:1">What faith believes</h2>
+    <div class="ifthen">
+      <div class="if step"><small>he that cometh to God must believe</small>that He is</div>
+      <span class="arrow step">+</span>
+      <div class="then step"><small>and</small>that He rewards those who seek Him</div>
+    </div>
+    <p class="note step">Most men will say God exists. Fewer believe He's <em>good</em>: that seeking Him actually pays off, that He won't turn them away. That second part is where faith gets real.</p>
+    <blockquote class="quote step"><p>“So then faith cometh by hearing, and hearing by the word of God.”</p><cite>Romans 10:17</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7" data-hl="prepared an ark to the saving of his house"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Noah built for his family</h2>
+    <div class="math">
+      <div class="step"><b>300 cubits</b><span>long: about 450 feet (Genesis 6:15)</span></div>
+      <div class="step"><b>a flood</b><span>“things not seen as yet”</span></div>
+      <div class="step"><b>8 people</b><span>saved: “his house”</span></div>
+    </div>
+    <p class="note step">Noah worked for years on something nobody else could see coming. He was <em>“moved with fear”</em>, the right kind: he took God seriously. And his whole household came through.</p>
+    <p class="note step">You may be building something your family can't see yet: a clean record, steady work, trust. Day after day of hammer and nails. Keep building. It's <em>“to the saving of his house.”</em></p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: STRANGERS AND PILGRIMS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Strangers and pilgrims</h2>
+    <p class="range rise" style="--d:2">Verses 8–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Abraham walked out with no map, lived in tents, and died before the promise came. He thought it was worth it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="he went out, not knowing whither he went|whose builder and maker is God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-world viewBox="574 292 334 284" role="img" aria-label="A map from Egypt to the Euphrates. Abraham's road comes from Ur of the Chaldees up the Euphrates to Haran, then south past Damascus into Canaan, to Hebron. On a step, Jacob's family goes down from Hebron to Goshen in Egypt. On another step, Moses leads Israel out of Egypt, across the Red sea, south toward mount Sinai and off the map, then back north around the Dead Sea to Jericho.">
+          <path class="map-route" data-via="@40 35.1, @39 36, @39.03 36.86, @37.6 35.4, Damascus, @35.28 32.21, @35.1 31.53"/>
+          <path class="map-route j2 r2" data-via="@35.1 31.53, @34.6 31.25, @33.6 31.0, @32.6 30.85, @31.85 30.75"/>
+          <path class="map-route j3 r3" style="--draw:3.6s" data-via="@31.85 30.75, @32.3 30.35, @32.6 29.98, @32.85 29.85, @33.3 29.3, @33.9 28.4, @34.5 29.0, @34.45 30.6, @35.2 30.2, @35.7 30.4, @35.75 31.3, @35.44 31.87"/>
+          <text class="map-region" x="805" y="455" text-anchor="middle" style="font-size:calc(19px * var(--u))">CANAAN</text>
+          <g class="map-town here"><circle cx="882.8" cy="324.5" r="2.1"/><circle class="map-ping" cx="882.8" cy="324.5" r="2.7"/><text x="879" y="326.3" text-anchor="end">Haran</text></g>
+          <g class="map-town here"><circle cx="783.7" cy="495" r="2.1"/><text x="779.9" y="496.8" text-anchor="end">Hebron</text></g>
+          <g class="map-town"><circle cx="701.8" cy="520" r="2.1"/><text x="698" y="521.8" text-anchor="end">Goshen</text></g>
+          <g class="map-town"><circle cx="792.3" cy="484.2" r="2.1"/><text x="796.1" y="486" text-anchor="start">Jericho</text></g>
+          <text class="he11-lab" x="905" y="404" text-anchor="end">from Ur of the Chaldees</text>
+          <text class="he11-lab" x="736" y="573" text-anchor="end">to mount Sinai</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">No map</h2>
+        <p class="note rise" style="--d:2">About 2000 BC God told Abraham to leave Ur and his father's house <em>“unto a land that I will shew thee”</em> (Genesis 12:1). He didn't say where. Abraham went anyway.</p>
+        <p class="note step map-go2">His grandson Jacob's family went down to Egypt in a famine.</p>
+        <p class="note step map-go3">Centuries later, Moses led their children out, through the Red sea, and Joshua led them in at Jericho. The whole chapter happens on this road.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 330" role="img" aria-label="Three small tents on bare ground. On a step, a city with deep foundation stones lights up high above them: the city which hath foundations, whose builder and maker is God.">
+          <circle class="he11-halo" cx="430" cy="95" r="95"/>
+          <g class="he11-city">
+            <rect class="stone" x="340" y="150" width="180" height="16"/><rect class="stone" x="350" y="166" width="160" height="14"/>
+            <rect x="350" y="90" width="40" height="60"/><rect x="400" y="62" width="60" height="88"/><rect x="470" y="96" width="40" height="54"/>
+            <path d="M400 62 L430 34 L460 62 Z"/>
+          </g>
+          <text class="he11-cap hot" x="430" y="208" text-anchor="middle">“a city which hath foundations”</text>
+          <line class="he11-ground" x1="20" y1="290" x2="580" y2="290"/>
+          <path class="he11-tent" d="M40 290 L95 225 L150 290 Z"/><path class="he11-door" d="M88 290 L95 262 L102 290 Z"/>
+          <path class="he11-tent" d="M140 290 L185 238 L230 290 Z"/><path class="he11-door" d="M179 290 L185 268 L191 290 Z"/>
+          <path class="he11-tent" d="M220 290 L262 245 L304 290 Z"/><path class="he11-door" d="M257 290 L262 272 L267 290 Z"/>
+          <text class="he11-cap" x="172" y="320" text-anchor="middle">tabernacles: tents, 11:9</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Tents and a city</h2>
+        <p class="note rise" style="--d:2">God promised Abraham the land, yet he lived in it in tents, like a visitor, and so did Isaac and Jacob. Tents go up and come down.</p>
+        <p class="note step he11-look">He could live like that because he was looking past it, for a city God Himself built. What he had in his hands was temporary. What he had on his deed was not.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="because she judged him faithful who had promised|so many as the stars of the sky in multitude"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">From one man, as good as dead</h2>
+    <div class="dots rise" data-dots="180" style="--d:1;--pace:16ms;--wait:500ms;max-width:44rem" aria-label="One dot, then a crowd of dots, too many to count."></div>
+    <p class="note step">Sara laughed when she heard she'd have a son at ninety (Genesis 18:12). Yet Hebrews remembers her faith: she <em>“judged him faithful who had promised.”</em> She wasn't trusting her body. She was trusting Him.</p>
+    <p class="note step">From that one old couple came a nation like the stars and the sand. When God records your story, He can write the faith in bigger letters than the laugh.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="These all died in faith, not having received the promises|strangers and pilgrims on the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="having seen them afar off"></blockquote>
+    <h2 class="rise" style="--d:1">Seen from far off</h2>
+    <p class="note rise" style="--d:2">They died before the promises came true. They saw them coming the way you see a town's lights from miles down the highway, and they kept driving toward them.</p>
+    <blockquote class="quote step"><p>“Your father Abraham rejoiced to see my day: and he saw it, and was glad.”</p><cite>Jesus, John 8:56</cite></blockquote>
+    <p class="note step">A <em>pilgrim</em> is a man on his way somewhere. He doesn't put down roots in a motel. This world isn't the place God is taking you; it's the road.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="they might have had opportunity to have returned|God is not ashamed to be called their God"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="A signpost at a fork in the road. One board points back down a dashed road to the old country. On a step, the other board lights up, the road to a better country draws itself, and a man walks along it.">
+          <line class="he11-ground" x1="0" y1="272" x2="600" y2="272"/>
+          <path class="he11-road back" d="M300 272 C 220 272 120 268 10 258"/>
+          <path class="he11-road fore" pathLength="1" d="M300 272 C 390 270 470 246 590 208"/>
+          <rect class="he11-post" x="292" y="58" width="16" height="214" rx="3"/>
+          <g class="he11-board back"><path d="M284 70 H112 L84 96 L112 122 H284 Z"/><text x="190" y="103" text-anchor="middle">the old country</text><text class="ref" x="190" y="58" text-anchor="middle">11:15</text></g>
+          <g class="he11-board fore"><path d="M316 126 H488 L516 152 L488 178 H316 Z"/><text x="408" y="159" text-anchor="middle">a better country</text><text class="ref" x="524" y="157" text-anchor="start">11:16</text></g>
+          <g class="he11-walker"><circle cx="352" cy="232" r="8"/><path d="M342 242 h20 l4 28 h-28 z"/></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The road back is always open</h2>
+        <p class="note rise" style="--d:2">If they had kept their minds on the old country, the writer says, they could have gone back. Ur was still there. Nobody was stopping them.</p>
+        <p class="note step he11-go">The old life is still out there for you too: same streets, same numbers in your phone. You stay off that road by setting your heart on a better one. And God is <em>“not ashamed to be called their God.”</em> Not ashamed of you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-19" data-hl="offered up his only begotten son|Accounting that God was able to raise him up, even from the dead"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">On the mountain</h2>
+    <div class="swap rise" style="--d:1">
+      <h3><span>The altar</span>to die</h3>
+      <h3><span>Down the mountain</span>to live</h3>
+      <div class="a"><b>Isaac</b><small>the son of promise, bound</small></div>
+      <div class="b"><b>A ram</b><small>caught in a thicket, Genesis 22:13</small></div>
+    </div>
+    <p class="note step swap-go">Abraham told his servants, <em>“I and the lad will go yonder and worship, and come again to you”</em> (Genesis 22:5). He expected to come back <em>with</em> Isaac, even if God had to raise him. Then God stopped his hand and gave a ram in Isaac's place.</p>
+    <p class="note step">That's the <em>“figure”</em>: a picture. About two thousand years later, near those same hills, another Father gave His only begotten Son. No one stopped that hand. Jesus took our place, and on the third day God raised Him from the dead.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-22" data-hl="when he was a dying|gave commandment concerning his bones"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Faith at the finish</h2>
+    <ol class="signs">
+      <li class="step now"><b>Isaac</b>blessed his sons about a future he wouldn't see (11:20)</li>
+      <li class="step now"><b>Jacob</b>the old schemer, dying, worshipping on his staff (11:21)</li>
+      <li class="step now"><b>Joseph</b>“carry up my bones”: bury me in the promised land (11:22)</li>
+    </ol>
+    <blockquote class="quote step"><p>“And Joseph took an oath of the children of Israel, saying, God will surely visit you, and ye shall carry up my bones from hence.”</p><cite>Genesis 50:25</cite></blockquote>
+    <p class="note step">Joseph had every reason to stay bitter: sold by his brothers, framed, jailed. He died sure God would keep His word, and about four hundred years later Israel carried his bones home (Joshua 24:32). Jacob started as a cheat and finished as a worshipper. How you started isn't how you have to finish.</p>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: CHOOSING ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Choosing</h2>
+    <p class="range rise" style="--d:2">Verses 23–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Moses could have had a palace. A harlot could have stayed on the losing side. Both chose God.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-26" data-hl="Choosing rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season|Esteeming the reproach of Christ greater riches than the treasures in Egypt"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" style="--at:300px 70px;--arm:220;--from:-9deg;--tip:12deg" role="img" aria-label="A balance scale. On one side: the treasures of Egypt and the pleasures of sin for a season; at first that side hangs heavy. On a step the scale swings the other way: the reproach of Christ and the reward weigh more.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <ellipse cx="58" cy="182" rx="18" ry="7" style="fill:var(--warm)"/><ellipse cx="96" cy="182" rx="18" ry="7" style="fill:var(--warm)"/><ellipse cx="77" cy="172" rx="16" ry="6" style="fill:var(--warm)"/>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">Egypt's treasures,</text>
+            <text x="80" y="272" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">sin's pleasures</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+            <path d="M512 150 h16 v40 h-16 z M500 162 h40 v12 h-40 z" style="fill:var(--accent)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the reproach of Christ,</text>
+            <text x="520" y="272" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the reward</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Weighed up</h2>
+        <p class="note rise" style="--d:2">Raised in Pharaoh's palace, Moses had money, rank, and every pleasure Egypt could give. When he was grown, he walked away from it to stand with a nation of slaves.</p>
+        <p class="note step scale-go">To Egypt it looked like a fool's choice. But Moses weighed it with eternity on the scale: <em>“he had respect unto the recompence of the reward.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 600 330" role="img" aria-label="A line runs flat, shoots up to a sharp high, the pleasure for a season, then falls far below where it started, the cost, and stays down.">
+          <line class="curve-base" x1="10" y1="170" x2="590" y2="170"/>
+          <path class="curve-line" pathLength="1" d="M20 170 C 80 170, 100 168, 130 120 C 150 80, 165 40, 180 40 C 196 40, 205 90, 230 170 C 260 260, 300 290, 360 292 C 440 294, 520 290, 580 292"/>
+          <g class="curve-pt high" style="--at:1.2s"><circle cx="180" cy="40" r="10"/><text class="q" x="200" y="46">“for a season”</text></g>
+          <g class="curve-pt low" style="--at:3s"><circle cx="440" cy="293" r="9"/><text x="440" y="270" text-anchor="middle">what it cost</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The pleasures of sin</h2>
+        <p class="note rise" style="--d:2">The Bible doesn't pretend sin isn't fun. It calls it <em>pleasure</em>. Every man in recovery knows that's true, or he wouldn't have needed recovery.</p>
+        <p class="note step">But it's pleasure <em>“for a season.”</em> The high lasts a night. The bill comes for years: the marriage, the job, the kids, the record.</p>
+        <p class="note step">Faith doesn't deny the pleasure. It reads the whole line, to the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-29" data-hl="as seeing him who is invisible|the sprinkling of blood|By faith they passed through the Red sea as by dry land"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Blood on the door, a road through the sea</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">11:28 · Exodus 12</p><h3>The passover</h3><p>Lamb's blood on the doorposts. The destroyer passed over every house under the blood. A picture of Jesus, <em>“the Lamb of God”</em>, whose blood covers us.</p></div>
+      <div class="col step"><p class="who">11:29 · Exodus 14</p><h3>The same water</h3><p>Israel walked through on dry ground. The Egyptians tried the same thing and drowned. Same sea, same path. The difference was faith in God, not nerve.</p></div>
+    </div>
+    <p class="note step">And Moses himself? At forty he killed a man and ran for his life (Exodus 2:12–15). Forty years later God sent him back. He <em>“endured, as seeing him who is invisible.”</em> Your worst day doesn't disqualify you either.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="30-31" data-hl="the walls of Jericho fell down|By faith the harlot Rahab perished not"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31"></blockquote>
+    <h2 class="rise" style="--d:1">Rahab the harlot, in the hall of faith</h2>
+    <div class="rename">
+      <span class="old rise" style="--d:2">Rahab the harlot</span>
+      <span class="arrow step n2">→</span>
+      <span class="new step">in the family of Jesus</span>
+    </div>
+    <p class="note step">A Canaanite prostitute in a doomed city, she believed Israel's God: <em>“he is God in heaven above, and in earth beneath”</em> (Joshua 2:11). She hid His spies, and God spared her house.</p>
+    <blockquote class="quote step"><p>“And Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse;”</p><cite>Matthew 1:5</cite></blockquote>
+    <p class="note step">She became King David's great-great-grandmother. The Bible still says what she was. It also says what grace made her.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE TIME WOULD FAIL ME ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The time would fail me</h2>
+    <p class="range rise" style="--d:2">Verses 32–40</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Men with ugly chapters, and men and women nobody remembers by name. God remembers every one.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="32-34" data-hl="the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae|out of weakness were made strong"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Read their files</h2>
+    <div class="he11-files rise" style="--d:1">
+      <div><b>Gedeon</b><small>Judges 6–8</small><p>Hid from the enemy. Asked for sign after sign. Later made a gold ephod that “became a snare unto Gideon, and to his house.”</p><span class="he11-stamp" style="--k:0">BY FAITH</span></div>
+      <div><b>Barak</b><small>Judges 4</small><p>Told to lead Israel's army, he wouldn't go unless Deborah went with him.</p><span class="he11-stamp" style="--k:1">BY FAITH</span></div>
+      <div><b>Samson</b><small>Judges 13–16</small><p>Ruled by his lusts: a harlot at Gaza, then Delilah. Died blind, a prisoner.</p><span class="he11-stamp" style="--k:2">BY FAITH</span></div>
+      <div><b>Jephthae</b><small>Judges 11</small><p>Son of a harlot, thrown out by his brothers, ran with a rough crowd. A rash vow cost him his daughter.</p><span class="he11-stamp" style="--k:3">BY FAITH</span></div>
+      <div><b>David</b><small>2 Samuel 11–12</small><p>Took another man's wife, then had the man killed to cover it up.</p><span class="he11-stamp" style="--k:4">BY FAITH</span></div>
+    </div>
+    <p class="note step he11-stamp-go">Read their stories and you'll wince. Fear, lust, a violent past, adultery, murder. Yet when God writes their names in this chapter, He doesn't list their sins. He lists their faith.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Not excused, but forgiven</h2>
+    <p class="note rise" style="--d:1">Their sins were real, and they paid for them: Samson lost his eyes, and David's house was never the same. God doesn't pretend. But He forgives, and He uses men who come back to Him.</p>
+    <blockquote class="quote step"><p>“And David said unto Nathan, I have sinned against the LORD. And Nathan said unto David, The LORD also hath put away thy sin; thou shalt not die.”</p><cite>2 Samuel 12:13</cite></blockquote>
+    <blockquote class="quote step"><p>“O Lord GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once”</p><cite>Samson, blind and in chains, Judges 16:28</cite></blockquote>
+    <p class="note step">Samson's last prayer came from a prison. God heard it. If you are in Christ, your file says <em>forgiven</em> and <em>by faith</em>, and <em>“out of weakness were made strong”</em> is about men like you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="35-38" data-hl="others were tortured, not accepting deliverance; that they might obtain a better resurrection|Of whom the world was not worthy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Faith that won, and faith that suffered</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">11:33–35a</p><h3>Delivered</h3><p>Lions' mouths shut (Daniel). Fire that didn't burn (the three Hebrews). Sons raised from the dead for their mothers (Elijah, Elisha).</p></div>
+      <div class="col step"><p class="who">11:35b–38</p><h3>Not delivered</h3><p>Tortured. Mocked, whipped, jailed. Stoned, like the prophet Zechariah (2 Chronicles 24:21). Sawn in two, Isaiah by old tradition. Hiding in caves (1 Kings 18:4).</p></div>
+    </div>
+    <p class="note step">Same faith, both columns. Faith is not a deal where God promises you an easy life if you believe hard enough. Some were rescued <em>from</em> it, and some were carried <em>through</em> it, all the way to death and <em>“a better resurrection.”</em></p>
+    <blockquote class="quote step"><p>“But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.”</p><cite>Daniel 3:18</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="38"></blockquote>
+    <p class="saying step">The world wasn't <em>worthy of them</em>.</p>
+    <p class="note step">Homeless, in animal skins, living in holes in the ground. The world looked at them and saw nothing. God looked at them and said the world didn't deserve them.</p>
+    <p class="note step">People may have written you off: an inmate number, an addict, a waste. That's not how God reads a man who trusts Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="39-40" data-hl="received not the promise|God having provided some better thing for us"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Finished together</h2>
+    <ol class="timeline" aria-label="A timeline: the believers of old, who died not having received the promise; Christ comes, about AD 30 to 33, the promise kept; Hebrews is written, about AD 64 to 68; you, today; and the day Christ returns, when all are made perfect together.">
+      <li style="--k:0"><b>The elders</b><span>died in faith, still waiting</span><small>Abel to the prophets</small></li>
+      <li class="lit" style="--k:1"><b>Christ</b><span>the promise kept</span><small>about AD 30–33</small></li>
+      <li style="--k:2"><b>Hebrews</b><span>written to tired believers</span><small>about AD 64–68</small></li>
+      <li class="lit" style="--k:3"><b>You</b><span>your leg of the race</span><small>today</small></li>
+      <li class="wait" style="--k:4"><b>That day</b><span>all made perfect, together</span><small>when Christ returns</small></li>
+    </ol>
+    <p class="note step">They saw the promise from far off. We've seen it come: Jesus. And God has arranged it so they don't cross the finish line without us. One family, one resurrection morning.</p>
+    <p class="note step">Chapter 12 picks it up from here: <em>“Wherefore seeing we also are compassed about with so great a cloud of witnesses…”</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Your name in the line today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>11:6</i><b>Come to God</b><p>Believe He is, and that He rewards those who seek Him. Seek Him first thing today.</p></div>
+      <div class="step"><i>11:25</i><b>Choose</b><p>When sin's pleasure offers itself, remember it's “for a season.” Weigh it to the end.</p></div>
+      <div class="step"><i>11:15–16</i><b>Don't go back</b><p>The old country is still there. Keep your eyes on the better one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“Without faith it is impossible to please him” <cite>11:6</cite></span><span class="take">Faith holds God's promise like a deed, and trusts that He rewards those who seek Him.</span></li>
+      <li class="step"><span class="topic">Pilgrims</span><span class="seed-q">“Strangers and pilgrims on the earth” <cite>11:13</cite></span><span class="take">They wanted a better country, so they never went back to the old one.</span></li>
+      <li class="step"><span class="topic">Moses</span><span class="seed-q">“The pleasures of sin for a season” <cite>11:25</cite></span><span class="take">He gave up Egypt's treasure for Christ, because he looked to the reward.</span></li>
+      <li class="step"><span class="topic">Rahab</span><span class="seed-q">“The harlot Rahab perished not” <cite>11:31</cite></span><span class="take">She believed God, was spared, and became an ancestor of Jesus.</span></li>
+      <li class="step"><span class="topic">Flawed</span><span class="seed-q">“Out of weakness were made strong” <cite>11:34</cite></span><span class="take">God records the faith of forgiven men, not the sins He has put away.</span></li>
+      <li class="step"><span class="topic">Rescued?</span><span class="seed-q">“Of whom the world was not worthy” <cite>11:38</cite></span><span class="take">Some were delivered, some suffered; all were faithful, and all will rise.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What is faith, and why does God require it?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Faith is being sure of what God has promised before you can see it, like holding the deed before you live in the house. God requires it because coming to Him means trusting that He is, and that He is good to those who seek Him. Without that trust, nothing we do pleases Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Pilgrims</span>
+      <h2>Why did these people live like strangers on the earth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13"></blockquote>
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they were looking for a better country, a heavenly city God Himself built. They could have gone back to the old country, but they set their hearts ahead instead. And God is not ashamed to be called their God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Moses</span>
+      <h2>What did Moses give up, and why?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25"></blockquote>
+      <blockquote class="quote step" data-q="26"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He gave up being called the son of Pharaoh's daughter, with the treasures and pleasures of Egypt. He chose to suffer with God's people, because he weighed it to the end: sin's pleasures last only for a season, and the reward lasts forever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Rahab</span>
+      <h2>Why is a harlot in this list?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31"></blockquote>
+      <blockquote class="quote step"><p>“for the LORD your God, he is God in heaven above, and in earth beneath.”</p><cite>Joshua 2:11</cite></blockquote>
+      <blockquote class="quote step"><p>“And Salmon begat Booz of Rachab; and Booz begat Obed of Ruth; and Obed begat Jesse;”</p><cite>Matthew 1:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because she believed God. The list is about faith, not a clean past. Rahab trusted Israel's God, sided with His people, and was spared when Jericho fell. Grace took her all the way into the family line of Jesus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Flawed</span>
+      <h2>Why does God list men like Samson and Jephthae?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32"></blockquote>
+      <blockquote class="quote step"><p>“O Lord GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once”</p><cite>Judges 16:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because they trusted God, and He forgives and uses weak men who come to Him. Their sins were real and costly, but God writes down their faith. Out of weakness they were made strong. There's room in this list for men with ugly chapters.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Rescued?</span>
+      <h2>Does faith always mean God rescues us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="33"></blockquote>
+      <blockquote class="quote step" data-q="35"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Some were delivered from lions and fire. Others, just as faithful, were tortured and killed. Faith trusts God either way, and it looks to a better resurrection. God has something better for all of them, and for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="6"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 11
+const V = {
+  1: "Now faith is the substance of things hoped for, the evidence of things not seen.",
+  2: "For by it the elders obtained a good report.",
+  3: "Through faith we understand that the worlds were framed by the word of God, so that things which are seen were not made of things which do appear.",
+  4: "By faith Abel offered unto God a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, God testifying of his gifts: and by it he being dead yet speaketh.",
+  5: "By faith Enoch was translated that he should not see death; and was not found, because God had translated him: for before his translation he had this testimony, that he pleased God.",
+  6: "But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.",
+  7: "By faith Noah, being warned of God of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.",
+  8: "By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.",
+  9: "By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise:",
+  10: "For he looked for a city which hath foundations, whose builder and maker is God.",
+  11: "Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised.",
+  12: "Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable.",
+  13: "These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth.",
+  14: "For they that say such things declare plainly that they seek a country.",
+  15: "And truly, if they had been mindful of that country from whence they came out, they might have had opportunity to have returned.",
+  16: "But now they desire a better country, that is, an heavenly: wherefore God is not ashamed to be called their God: for he hath prepared for them a city.",
+  17: "By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son,",
+  18: "Of whom it was said, That in Isaac shall thy seed be called:",
+  19: "Accounting that God was able to raise him up, even from the dead; from whence also he received him in a figure.",
+  20: "By faith Isaac blessed Jacob and Esau concerning things to come.",
+  21: "By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff.",
+  22: "By faith Joseph, when he died, made mention of the departing of the children of Israel; and gave commandment concerning his bones.",
+  23: "By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king’s commandment.",
+  24: "By faith Moses, when he was come to years, refused to be called the son of Pharaoh’s daughter;",
+  25: "Choosing rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season;",
+  26: "Esteeming the reproach of Christ greater riches than the treasures in Egypt: for he had respect unto the recompence of the reward.",
+  27: "By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.",
+  28: "Through faith he kept the passover, and the sprinkling of blood, lest he that destroyed the firstborn should touch them.",
+  29: "By faith they passed through the Red sea as by dry land: which the Egyptians assaying to do were drowned.",
+  30: "By faith the walls of Jericho fell down, after they were compassed about seven days.",
+  31: "By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace.",
+  32: "And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:",
+  33: "Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,",
+  34: "Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens.",
+  35: "Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:",
+  36: "And others had trial of cruel mockings and scourgings, yea, moreover of bonds and imprisonment:",
+  37: "They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented;",
+  38: "(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth.",
+  39: "And these all, having obtained a good report through faith, received not the promise:",
+  40: "God having provided some better thing for us, that they without us should not be made perfect."
+};
+const BOOK = "Hebrews 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

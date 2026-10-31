@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hebrews 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* he12-where: where this chapter sits in Hebrews. Thirteen chapter boxes in five groups (--n boxes each), the current chapter lit */
+.he12-where { display: grid; grid-template-columns: 2fr 2fr 3fr 3fr 3fr; gap: 10px; margin: .6em 0 1em; }
+.he12-where > div { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 4px; align-content: start; }
+.he12-where span { display: grid; place-items: center; height: 2.3rem; border: 1.5px solid var(--line-strong); border-radius: 5px; font: 600 clamp(.85rem, .8rem + .3vw, 1.05rem) var(--sans); color: var(--ink-soft); }
+.he12-where b { grid-column: 1 / -1; margin-top: .35em; font: 400 clamp(.85rem, .78rem + .35vw, 1.1rem)/1.3 var(--serif); color: var(--ink-soft); }
+.he12-where .now span { border-color: var(--accent); color: var(--ink); }
+.he12-where .now b { color: var(--accent-hot); font-weight: 600; }
+.he12-where span.here { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent); }
+@media (max-width: 600px) {
+  .he12-where { grid-template-columns: 1fr; gap: 6px; }
+  .he12-where > div { grid-template-columns: repeat(var(--n), 2.2rem) 1fr; align-items: center; }
+  .he12-where b { grid-column: auto; margin: 0 0 0 .4em; }
+}
+
+/* he12-stadium: the race. The stands fill with the witnesses of chapter 11 (.he12-fan, staggered by --k) when the slide opens.
+   Steps: .he12-drop drops the runner's weights, .he12-loose shakes off the cord tangled round his legs,
+   .he12-run sends him down the track toward Jesus at the finish */
+.he12-stands { fill: color-mix(in srgb, var(--surface-2) 70%, transparent); stroke: var(--line-strong); stroke-width: 1.5; }
+.he12-fan { fill: var(--ink-soft); opacity: 0; }
+.slide.active .he12-fan { animation: he12-in .6s ease both; animation-delay: calc(var(--k, 0) * 25ms + 300ms); }
+@keyframes he12-in { from { opacity: 0; transform: translateY(6px); } to { opacity: .75; transform: none; } }
+.he12-name { fill: var(--accent-hot); font: italic 600 18px var(--serif); opacity: 0; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.he12-wide { grid-template-columns: 1.55fr 1fr; } }
+.slide.active .he12-name { animation: he12-name .8s ease both; animation-delay: calc(var(--k, 0) * 150ms + 1.6s); }
+@keyframes he12-name { to { opacity: 1; } }
+.he12-lane { stroke: var(--line-strong); stroke-width: 2; }
+.he12-track { fill: color-mix(in srgb, var(--wine) 22%, transparent); }
+.he12-line { stroke: var(--ink); stroke-width: 3; }
+.he12-tape { stroke: var(--accent-hot); stroke-width: 3; stroke-dasharray: 6 5; }
+.he12-lab { fill: var(--ink-soft); font: 15px var(--sans); }
+.he12-lab.hot { fill: var(--accent-hot); font: italic 600 17px var(--serif); }
+.he12-glow { fill: var(--warm); opacity: .3; }
+.slide.active .he12-glow { animation: he12-pulse 2.4s ease-in-out infinite alternate; }
+@keyframes he12-pulse { to { opacity: .55; } }
+.he12-jesus { fill: var(--accent-hot); }
+.he12-man { fill: var(--ink); stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.he12-runner { transition: transform 2.6s cubic-bezier(.4,0,.3,1); }
+.slide:has(.he12-run.on) .he12-runner { transform: translateX(455px); }
+.he12-sack { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
+.he12-weights { transition: transform .9s cubic-bezier(.5,0,.8,.6), opacity .9s ease; transform-box: view-box; transform-origin: 88px 290px; }
+.slide:has(.he12-drop.on) .he12-weights { transform: translateY(12px) rotate(10deg); opacity: .4; }
+.he12-tangle { fill: none; stroke: var(--danger); stroke-width: 3.5; stroke-linecap: round; transition: opacity .8s ease, transform .8s ease; }
+.slide:has(.he12-loose.on) .he12-tangle { opacity: 0; transform: translateY(14px); }
+@media (max-width: 600px) { .he12-name { font-size: 19px; } .he12-lab { font-size: 18px; } .he12-lab.hot { font-size: 21px; } }
+
+/* he12-mounts: two mountains. Sinai in the dark with fire, cloud and lightning, fenced off; on a step (.he12-sion)
+   mount Sion lights up in the day with its city and an innumerable company. Night is --on-glow, day is --glow, in every theme */
+.he12-night { fill: var(--on-glow); }
+.he12-day { fill: var(--glow); stroke: var(--line-strong); stroke-width: 1.5; }
+.he12-sinai { fill: color-mix(in srgb, var(--glow) 14%, var(--on-glow)); }
+.he12-cloud { fill: color-mix(in srgb, var(--glow) 28%, var(--on-glow)); }
+.he12-fire { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .he12-fire { animation: he12-flick 1.1s ease-in-out infinite alternate; }
+@keyframes he12-flick { from { transform: scaleY(.85); opacity: .85; } to { transform: scaleY(1.12); opacity: 1; } }
+.he12-bolt { fill: none; stroke: var(--warm); stroke-width: 3; opacity: 0; }
+.slide.active .he12-bolt { animation: he12-flash 3.2s ease-out infinite; animation-delay: var(--at, 0s); }
+@keyframes he12-flash { 0%, 100% { opacity: 0; } 4% { opacity: 1; } 10% { opacity: 0; } 14% { opacity: .8; } 20% { opacity: 0; } }
+.he12-fence { stroke: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); stroke-width: 3; }
+.he12-ntext { fill: var(--glow); font: 600 22px var(--serif); }
+.he12-nsmall { fill: color-mix(in srgb, var(--glow) 70%, var(--on-glow)); font: italic 15px var(--serif); }
+.he12-sion { fill: color-mix(in srgb, var(--warm) 30%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 70%, var(--on-glow)); stroke-width: 1.5; }
+.he12-ray { stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
+.he12-sun { fill: var(--warm); }
+.he12-town { fill: color-mix(in srgb, var(--on-glow) 18%, var(--glow)); stroke: color-mix(in srgb, var(--on-glow) 55%, var(--glow)); stroke-width: 1.5; }
+.he12-crowd { fill: color-mix(in srgb, var(--on-glow) 45%, var(--glow)); }
+.he12-dtext { fill: var(--on-glow); font: 600 22px var(--serif); }
+.he12-dsmall { fill: color-mix(in srgb, var(--on-glow) 70%, var(--glow)); font: italic 15px var(--serif); }
+.he12-right { opacity: .28; transition: opacity 1.4s ease; }
+.he12-left { transition: opacity 1.4s ease; }
+.slide:has(.he12-sion-go.on) .he12-right { opacity: 1; }
+.slide:has(.he12-sion-go.on) .he12-left { opacity: .55; }
+@media (max-width: 600px) { .he12-nsmall, .he12-dsmall { font-size: 18px; } }
+
+/* he12-root: a bitter root. One weed above ground; on a step (.he12-grow) its roots spread under the soil and come up in many places */
+.he12-soil { fill: color-mix(in srgb, var(--leather) 30%, var(--surface)); }
+.he12-grass { stroke: var(--line-strong); stroke-width: 2; }
+.he12-roots { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s ease; }
+.he12-weed { fill: var(--danger); }
+.he12-sprout { fill: var(--danger); transform-box: fill-box; transform-origin: 50% 100%; transform: scale(0); transition: transform .7s cubic-bezier(.3,1.5,.6,1); transition-delay: calc(2s + var(--k, 0) * 250ms); }
+.slide:has(.he12-grow.on) .he12-roots { stroke-dashoffset: 0; }
+.slide:has(.he12-grow.on) .he12-sprout { transform: none; }
+.he12-rl { fill: var(--ink-soft); font: italic 17px var(--serif); }
+@media (max-width: 600px) { .he12-rl { font-size: 21px; } }
+
+/* he12-shake: the things that can be shaken (span) tremble, and on a step (.he12-fall) fall away, leaving the kingdom (b) */
+.he12-shake { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .4em 0 1em; }
+.he12-shake span { padding: .45em .8em; border: 1.5px dashed var(--line-strong); border-radius: 8px; background: var(--surface); font-size: clamp(.95rem, .85rem + .4vw, 1.2rem); color: var(--ink-soft); transition: transform 1.1s cubic-bezier(.5,0,.9,.5), opacity 1.1s ease; transition-delay: calc(var(--k, 0) * 120ms); }
+.slide.active .he12-shake span { animation: he12-quake .35s linear infinite; animation-delay: calc(var(--k, 0) * -70ms); }
+@keyframes he12-quake { 0%, 100% { translate: 0 0; } 25% { translate: -2px 1px; } 50% { translate: 2px -1px; } 75% { translate: -1px -1px; } }
+.he12-shake b { padding: .45em .9em; border: 2px solid var(--accent); border-radius: 8px; background: color-mix(in srgb, var(--accent) 14%, transparent); font: 600 clamp(1.05rem, .9rem + .6vw, 1.45rem) var(--serif); color: var(--accent-hot); transition: box-shadow 1.2s ease 1s; }
+.slide:has(.he12-fall.on) .he12-shake span { transform: translateY(70px) rotate(12deg); opacity: 0; }
+.slide:has(.he12-fall.on) .he12-shake b { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 20%, transparent); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Hebrews 12</h1>
+    <p class="sub rise" style="--d:3">Run the race</p>
+    <p class="tag rise" style="--d:5">A stadium full of witnesses, a race to run, a Father who trains His sons, and a mountain we have already come to.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Witnesses</span><span class="seed-q">Who is the great cloud of witnesses?</span></li>
+      <li class="step"><span class="topic">The race</span><span class="seed-q">How are we to run the race set before us?</span></li>
+      <li class="step"><span class="topic">Chastening</span><span class="seed-q">Why does God chasten His children?</span></li>
+      <li class="step"><span class="topic">Esau</span><span class="seed-q">What did Esau lose, and why couldn't he get it back?</span></li>
+      <li class="step"><span class="topic">Mountains</span><span class="seed-q">What mountain have believers come to?</span></li>
+      <li class="step"><span class="topic">Fire</span><span class="seed-q">How should we serve a God who is a consuming fire?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where we are in Hebrews</h2>
+    <div class="he12-where rise" style="--d:1" role="img" aria-label="The thirteen chapters of Hebrews in five groups. Chapters 1 and 2: Jesus is better than the angels. 3 and 4: better than Moses and Joshua. 5 to 7: a better high priest. 8 to 10: a better covenant and sacrifice. 11 to 13: so hold on, by faith; chapter 12 is lit.">
+      <div style="--n:2"><span>1</span><span>2</span><b>Jesus is better than the angels</b></div>
+      <div style="--n:2"><span>3</span><span>4</span><b>better than Moses and Joshua</b></div>
+      <div style="--n:3"><span>5</span><span>6</span><span>7</span><b>a better high priest</b></div>
+      <div style="--n:3"><span>8</span><span>9</span><span>10</span><b>a better covenant and sacrifice</b></div>
+      <div class="now" style="--n:3"><span>11</span><span class="here">12</span><span>13</span><b>so hold on, by faith</b></div>
+    </div>
+    <p class="note step">Chapter 11 walked through the hall of faith, from Abel to the martyrs, and ended: they <em>“received not the promise… that they without us should not be made perfect.”</em></p>
+    <p class="note step">Now the writer turns to us. They ran their race. Here's how to run yours.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: THE RACE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The race</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The stands are full of people who finished. Drop what slows you down, and keep your eyes on the One at the finish line.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="so great a cloud of witnesses|let us lay aside every weight, and the sin which doth so easily beset us|Looking unto Jesus the author and finisher of our faith"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split he12-wide">
+      <div class="stage">
+        <svg viewBox="0 0 640 340" role="img" aria-label="A stadium. The stands fill with people, and names appear among them: Abel, Enoch, Noah, Abraham, Moses, Rahab, Samson, David. On the track below a runner stands at the start, loaded with two heavy sacks, a cord tangled round his legs. At the finish line stands Jesus. Step by step the runner drops the sacks, the cord falls away, and he runs down the track toward Jesus.">
+          <path class="he12-stands" d="M20 200 L20 52 Q320 20 620 52 L620 200 Z"/>
+          <g class="he12-fan" style="--k:0"><circle cx="38" cy="72.1" r="6.5"/><path d="M28 90.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:1"><circle cx="473" cy="170.2" r="6.5"/><path d="M463 188.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:2"><circle cx="128" cy="136.6" r="6.5"/><path d="M118 154.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:3"><circle cx="368" cy="58.4" r="6.5"/><path d="M358 76.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:4"><circle cx="458" cy="133.4" r="6.5"/><path d="M448 151.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:5"><circle cx="143" cy="99.6" r="6.5"/><path d="M133 117.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:6"><circle cx="233" cy="167.3" r="6.5"/><path d="M223 185.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:7"><circle cx="473" cy="98.2" r="6.5"/><path d="M463 116.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:8"><circle cx="128" cy="64.6" r="6.5"/><path d="M118 82.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:9"><circle cx="563" cy="176.5" r="6.5"/><path d="M553 194.5 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:10"><circle cx="218" cy="131.8" r="6.5"/><path d="M208 149.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:11"><circle cx="458" cy="61.4" r="6.5"/><path d="M448 79.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:12"><circle cx="548" cy="139.2" r="6.5"/><path d="M538 157.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:13"><circle cx="233" cy="95.3" r="6.5"/><path d="M223 113.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:14"><circle cx="323" cy="166.0" r="6.5"/><path d="M313 184.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:15"><circle cx="563" cy="104.5" r="6.5"/><path d="M553 122.5 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:16"><circle cx="218" cy="59.8" r="6.5"/><path d="M208 77.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:17"><circle cx="308" cy="130.0" r="6.5"/><path d="M298 148.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:18"><circle cx="548" cy="67.2" r="6.5"/><path d="M538 85.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:19"><circle cx="83" cy="176.0" r="6.5"/><path d="M73 194.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:20"><circle cx="323" cy="94.0" r="6.5"/><path d="M313 112.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:21"><circle cx="413" cy="167.5" r="6.5"/><path d="M403 185.5 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:22"><circle cx="68" cy="141.3" r="6.5"/><path d="M58 159.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:23"><circle cx="308" cy="58.0" r="6.5"/><path d="M298 76.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:24"><circle cx="398" cy="131.1" r="6.5"/><path d="M388 149.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:25"><circle cx="83" cy="104.0" r="6.5"/><path d="M73 122.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:26"><circle cx="173" cy="169.8" r="6.5"/><path d="M163 187.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:27"><circle cx="413" cy="95.5" r="6.5"/><path d="M403 113.5 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:28"><circle cx="68" cy="69.3" r="6.5"/><path d="M58 87.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:29"><circle cx="503" cy="172.0" r="6.5"/><path d="M493 190.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:30"><circle cx="158" cy="134.7" r="6.5"/><path d="M148 152.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:31"><circle cx="398" cy="59.1" r="6.5"/><path d="M388 77.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:32"><circle cx="488" cy="135.0" r="6.5"/><path d="M478 153.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:33"><circle cx="173" cy="97.8" r="6.5"/><path d="M163 115.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:34"><circle cx="263" cy="166.6" r="6.5"/><path d="M253 184.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:35"><circle cx="503" cy="100.0" r="6.5"/><path d="M493 118.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:36"><circle cx="158" cy="62.7" r="6.5"/><path d="M148 80.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:37"><circle cx="593" cy="179.2" r="6.5"/><path d="M583 197.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:38"><circle cx="248" cy="130.9" r="6.5"/><path d="M238 148.9 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:39"><circle cx="488" cy="63.0" r="6.5"/><path d="M478 81.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:40"><circle cx="578" cy="141.8" r="6.5"/><path d="M568 159.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:41"><circle cx="263" cy="94.6" r="6.5"/><path d="M253 112.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:42"><circle cx="353" cy="166.2" r="6.5"/><path d="M343 184.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:43"><circle cx="593" cy="107.2" r="6.5"/><path d="M583 125.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:44"><circle cx="248" cy="58.9" r="6.5"/><path d="M238 76.9 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:45"><circle cx="338" cy="130.1" r="6.5"/><path d="M328 148.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:46"><circle cx="578" cy="69.8" r="6.5"/><path d="M568 87.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:47"><circle cx="113" cy="173.6" r="6.5"/><path d="M103 191.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:48"><circle cx="353" cy="94.2" r="6.5"/><path d="M343 112.2 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:49"><circle cx="443" cy="168.7" r="6.5"/><path d="M433 186.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:50"><circle cx="98" cy="138.8" r="6.5"/><path d="M88 156.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:51"><circle cx="338" cy="58.1" r="6.5"/><path d="M328 76.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:52"><circle cx="428" cy="132.1" r="6.5"/><path d="M418 150.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:53"><circle cx="113" cy="101.6" r="6.5"/><path d="M103 119.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:54"><circle cx="203" cy="168.4" r="6.5"/><path d="M193 186.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:55"><circle cx="443" cy="96.7" r="6.5"/><path d="M433 114.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:56"><circle cx="98" cy="66.8" r="6.5"/><path d="M88 84.8 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:57"><circle cx="533" cy="174.1" r="6.5"/><path d="M523 192.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:58"><circle cx="188" cy="133.1" r="6.5"/><path d="M178 151.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:59"><circle cx="428" cy="60.1" r="6.5"/><path d="M418 78.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:0"><circle cx="518" cy="137.0" r="6.5"/><path d="M508 155.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:1"><circle cx="203" cy="96.4" r="6.5"/><path d="M193 114.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:2"><circle cx="293" cy="166.1" r="6.5"/><path d="M283 184.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:3"><circle cx="533" cy="102.1" r="6.5"/><path d="M523 120.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:4"><circle cx="188" cy="61.1" r="6.5"/><path d="M178 79.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:5"><circle cx="278" cy="130.3" r="6.5"/><path d="M268 148.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:6"><circle cx="518" cy="65.0" r="6.5"/><path d="M508 83.0 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:7"><circle cx="53" cy="178.7" r="6.5"/><path d="M43 196.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:8"><circle cx="293" cy="94.1" r="6.5"/><path d="M283 112.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:9"><circle cx="383" cy="166.7" r="6.5"/><path d="M373 184.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:10"><circle cx="38" cy="144.1" r="6.5"/><path d="M28 162.1 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:11"><circle cx="278" cy="58.3" r="6.5"/><path d="M268 76.3 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:12"><circle cx="368" cy="130.4" r="6.5"/><path d="M358 148.4 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:13"><circle cx="53" cy="106.7" r="6.5"/><path d="M43 124.7 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:14"><circle cx="143" cy="171.6" r="6.5"/><path d="M133 189.6 q10 -15 20 0 z"/></g>
+          <g class="he12-fan" style="--k:15"><circle cx="383" cy="94.7" r="6.5"/><path d="M373 112.7 q10 -15 20 0 z"/></g>
+          <text class="he12-name" style="--k:0" x="66" y="214" text-anchor="middle">Abel</text>
+          <text class="he12-name" style="--k:1" x="138" y="214" text-anchor="middle">Enoch</text>
+          <text class="he12-name" style="--k:2" x="210" y="214" text-anchor="middle">Noah</text>
+          <text class="he12-name" style="--k:3" x="282" y="214" text-anchor="middle">Abraham</text>
+          <text class="he12-name" style="--k:4" x="354" y="214" text-anchor="middle">Moses</text>
+          <text class="he12-name" style="--k:5" x="426" y="214" text-anchor="middle">Rahab</text>
+          <text class="he12-name" style="--k:6" x="498" y="214" text-anchor="middle">Samson</text>
+          <text class="he12-name" style="--k:7" x="570" y="214" text-anchor="middle">David</text>
+          <rect class="he12-track" x="20" y="222" width="600" height="96" rx="6"/>
+          <line class="he12-lane" x1="20" y1="222" x2="620" y2="222"/><line class="he12-lane" x1="20" y1="270" x2="620" y2="270"/><line class="he12-lane" x1="20" y1="318" x2="620" y2="318"/>
+          <line class="he12-line" x1="44" y1="222" x2="44" y2="320"/>
+          <line class="he12-tape" x1="596" y1="222" x2="596" y2="320"/>
+          <text class="he12-lab" x="44" y="336" text-anchor="middle">the author</text>
+          <text class="he12-lab hot" x="630" y="337" text-anchor="end">Jesus, the finisher</text>
+          <circle class="he12-glow" cx="612" cy="262" r="30"/>
+          <g class="he12-jesus"><circle cx="612" cy="240" r="9"/><path d="M600 252 h24 l5 46 h-34 z"/></g>
+          <g class="he12-runner">
+            <g class="he12-man"><circle cx="86" cy="234" r="8" style="stroke:none"/><path d="M86 244 L86 274 M86 252 L72 266 M86 252 L100 264 M86 274 L76 300 M86 274 L96 300" fill="none"/></g>
+            <path class="he12-tangle" d="M74 280 C 92 276, 100 286, 80 290 C 70 293, 98 296, 98 292 C 100 288, 76 300, 74 303"/>
+          </g>
+          <g class="he12-weights">
+            <path d="M72 266 L62 272 M100 264 L112 270" fill="none" stroke-width="2" style="stroke:var(--leather)"/>
+            <path class="he12-sack" d="M50 272 q-5 18 4 24 h16 q8 -7 2 -24 z"/>
+            <path class="he12-sack" d="M102 270 q-5 20 4 26 h18 q8 -8 0 -26 z"/>
+            <text class="he12-lab" x="134" y="292" text-anchor="start">weights</text>
+          </g>
+          <text class="he12-lab" x="320" y="290" text-anchor="middle">“the race that is set before us”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A stadium of witnesses</h2>
+        <p class="note rise" style="--d:2">The stands hold chapter 11's people. They aren't booing your mistakes; their lives <em>testify</em> that God got them home.</p>
+        <p class="note step he12-drop">So drop the <em>weights</em>: things that may not be sins, but slow you down.</p>
+        <p class="note step he12-loose">And shake off <em>“the sin which doth so easily beset”</em>, the one that wraps around your legs.</p>
+        <p class="note step he12-run">Then run, eyes on Jesus. He's at both ends of the track.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Weights and the sin</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">“every weight”</p><h3>What slows you down</h3><p>Not always sin. A friend who still uses. The bar where you watch the game. Your phone at 2 a.m. The grudge you rehearse. A runner doesn't ask “Is it wrong?” He asks “Does it slow me down?”</p></div>
+      <div class="col step"><p class="who">“the sin which doth so easily beset us”</p><h3>The one that trips you</h3><p><em>Beset</em> means to wrap around, like a long robe tangling a runner's legs. Every man knows his. It's the one you don't have to go looking for; it finds you.</p></div>
+    </div>
+    <p class="note step">Notice who lays it aside: <em>“let us.”</em> You do it on purpose, and you don't do it alone. Name your besetting sin to God, and to a brother you trust.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="who for the joy that was set before him endured the cross, despising the shame"></blockquote>
+    <h2 class="rise" style="--d:1">At both ends of the track</h2>
+    <div class="ifthen">
+      <div class="if step"><small>the author</small>He started your faith</div>
+      <span class="arrow step">→</span>
+      <div class="then step"><small>the finisher</small>He will finish it</div>
+    </div>
+    <blockquote class="quote step"><p>“Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:”</p><cite>Philippians 1:6</cite></blockquote>
+    <p class="note step">He ran His own race to a cross, and He thought nothing of the shame because of the joy ahead: bringing you home. You don't look at the stands, at the man in the next lane, or at your feet. You look at Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="lest ye be wearied and faint in your minds|Ye have not yet resisted unto blood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="consider him"></blockquote>
+    <h2 class="rise" style="--d:1">When you're tired of fighting</h2>
+    <p class="note rise" style="--d:2">The fight against sin wears a man out. Some days you're sick of resisting. The writer says: <em>consider Him</em>. Jesus was opposed, mocked and beaten by sinners, and He didn't quit.</p>
+    <p class="note step"><em>“Ye have not yet resisted unto blood”</em>: none of them had died for it yet. Jesus had. The fight is hard, but it isn't bigger than Him, and you don't fight it alone.</p>
+    <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: A FATHER'S DISCIPLINE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">A Father's discipline</h2>
+    <p class="range rise" style="--d:2">Verses 5–13</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Hard days aren't proof God has given up on you. Sometimes they're proof He hasn't.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="My son, despise not thou the chastening of the Lord|For whom the Lord loveth he chasteneth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="whom the Lord loveth"></blockquote>
+    <h2 class="rise" style="--d:1">What chastening is</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">not punishment for your sins</span><span class="why">Jesus already took that: “the chastisement of our peace was upon him” (Isaiah 53:5)</span></li>
+      <li class="step"><span class="k">not God giving up on you</span><span class="why">it's the opposite: He deals with you because He received you</span></li>
+      <li class="step"><span class="k">not a father losing his temper</span><span class="why">God isn't the man who hurt you</span></li>
+      <li class="step yes"><span class="k">a Father training a son</span><span class="why"><em>Chasten</em> means to train a child: correcting, teaching, shaping</span></li>
+    </ul>
+    <blockquote class="quote step"><p>“For whom the LORD loveth he correcteth; even as a father the son in whom he delighteth.”</p><cite>Proverbs 3:12</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="God dealeth with you as with sons|then are ye bastards, and not sons"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7"></blockquote>
+    <h2 class="rise" style="--d:1">Proof you belong</h2>
+    <p class="note rise" style="--d:2">In those days a son born outside the family might be fed, but nobody bothered to raise him. A real father trains his own boys. The writer's point: if God is working on you, that's because you're His.</p>
+    <p class="note step">Some of you grew up with a father who never showed up, or never cared what you did. That wasn't love. God is not absent, and He isn't indifferent to you.</p>
+    <blockquote class="quote step"><p>“When my father and my mother forsake me, then the LORD will take me up.”</p><cite>Psalm 27:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-11" data-hl="the Father of spirits|but he for our profit, that we might be partakers of his holiness|nevertheless afterward it yieldeth the peaceable fruit of righteousness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Two kinds of fathers</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">“fathers of our flesh” (12:9–10)</p><h3>For a few days</h3><p>They corrected us <em>“after their own pleasure”</em>: as it seemed best to them. Some did their best. Some did it in anger, or drunk, or not at all.</p></div>
+      <div class="col step"><p class="who">“the Father of spirits”</p><h3>For our profit</h3><p>Never in a rage, never for His own sake. Always for your good: <em>“that we might be partakers of his holiness.”</em></p></div>
+    </div>
+    <blockquote class="quote step"><p>“Like as a father pitieth his children, so the LORD pitieth them that fear him.”</p><cite>Psalm 103:13</cite></blockquote>
+    <p class="note step">If “father” is a hard word for you, let God define it, not the man who raised you, or didn't.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="curve" viewBox="0 0 600 330" role="img" aria-label="A line drops down into a hard low stretch, for the present grievous, then climbs high: afterward the peaceable fruit of righteousness.">
+          <line class="curve-base" x1="10" y1="120" x2="590" y2="120"/>
+          <path class="curve-line" pathLength="1" d="M20 120 C 70 120, 100 150, 140 230 C 170 290, 230 296, 280 260 C 340 210, 420 80, 580 50"/>
+          <g class="curve-pt low" style="--at:1.5s"><circle cx="205" cy="286" r="9"/><text x="205" y="320" text-anchor="middle">“for the present… grievous”</text></g>
+          <g class="curve-pt high" style="--at:3.4s"><circle cx="575" cy="51" r="10"/><text class="q" x="590" y="150" text-anchor="end">“afterward… the peaceable</text><text class="q" x="590" y="174" text-anchor="end">fruit of righteousness”</text></g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Afterward</h2>
+        <p class="note rise" style="--d:2">The Bible is honest: discipline doesn't feel good. Losing what you lost, facing what you did, the long days of getting clean. <em>Grievous.</em></p>
+        <p class="note step"><em>“Exercised”</em> is a gym word: trained by it. Pain you run from teaches nothing. Pain you let God use grows peace in you, a little at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12-13" data-hl="lift up the hands which hang down, and the feeble knees|make straight paths for your feet"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split road">
+      <div class="stage">
+        <svg viewBox="0 0 600 240" role="img" aria-label="A crooked road over hills is leveled and made straight.">
+          <g>
+            <path class="hill" d="M60 200 L150 80 L240 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="hill" d="M300 200 L380 110 L460 200 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path class="crooked" d="M20 200 C70 200 90 90 150 85 C210 80 220 210 270 205 C320 200 340 120 380 115 C420 110 440 205 480 200 C520 195 540 200 580 200" fill="none" stroke-width="5" stroke-dasharray="10 8" style="stroke:var(--ink-soft)"/>
+            <path class="draw" pathLength="1" d="M20 200 L580 200" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:var(--accent)"/>
+          </g>
+          <line x1="0" y1="203" x2="600" y2="203" stroke-width="1" opacity=".4" style="stroke:var(--ink-soft)"/>
+          <text x="580" y="232" text-anchor="end" font-size="18" style="fill:var(--accent-hot)">straight paths for your feet</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Hands up, road straight</h2>
+        <p class="note rise" style="--d:2">Hands hanging down, knees giving out: a worn-out runner. The writer is quoting Isaiah 35:3: <em>“Strengthen ye the weak hands, and confirm the feeble knees.”</em></p>
+        <p class="note step road-go">Then straighten the road. If your way home passes the liquor store or the old house, take another street. Make the path so plain that a limping man can't wander off it.</p>
+        <p class="note step">And men behind you are limping too. A straight path helps <em>“that which is lame”</em> be healed, not just you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: ONE MORSEL ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">One morsel</h2>
+    <p class="range rise" style="--d:2">Verses 14–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A root nobody sees, and a man who traded his whole future for one meal.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-15" data-hl="Follow peace with all men, and holiness|lest any root of bitterness springing up trouble you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 600 300" role="img" aria-label="Above the ground, one small bitter weed. Below, on a step, its roots spread under the soil, and new weeds come up in three other places: many defiled.">
+          <rect class="he12-soil" x="10" y="120" width="580" height="170" rx="6"/>
+          <line class="he12-grass" x1="10" y1="120" x2="590" y2="120"/>
+          <path class="he12-roots" pathLength="1" d="M110 122 C 120 170, 160 200, 210 205 C 260 210, 260 160, 270 124 M210 205 C 300 215, 340 240, 400 235 C 440 232, 400 160, 410 124 M400 235 C 470 245, 520 220, 530 124 M110 122 C 100 180, 70 220, 40 250"/>
+          <path class="he12-weed" d="M110 120 C 102 100, 88 92, 80 70 C 96 80, 104 90, 110 104 C 112 84, 120 70, 130 58 C 128 80, 120 98, 112 120 Z"/>
+          <path class="he12-sprout" style="--k:0" d="M270 120 C 262 104, 254 98, 248 84 C 260 92, 266 100, 270 108 C 272 94, 278 86, 286 78 C 284 94, 278 106, 272 120 Z"/>
+          <path class="he12-sprout" style="--k:1" d="M410 120 C 402 104, 394 98, 388 84 C 400 92, 406 100, 410 108 C 412 94, 418 86, 426 78 C 424 94, 418 106, 412 120 Z"/>
+          <path class="he12-sprout" style="--k:2" d="M530 120 C 522 104, 514 98, 508 84 C 520 92, 526 100, 530 108 C 532 94, 538 86, 546 78 C 544 94, 538 106, 532 120 Z"/>
+          <text class="he12-rl" x="110" y="40" text-anchor="middle">one root</text>
+          <text class="he12-rl" x="410" y="50" text-anchor="middle">“many be defiled”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A root of bitterness</h2>
+        <p class="note rise" style="--d:2">Bitterness grows underground. Nobody sees it for years. Then it comes up: in your temper, your marriage, your kids, the men around you.</p>
+        <p class="note step he12-grow">A man who nurses a grudge against his father, his ex, or the judge is drinking poison and calling it justice. And resentment has sent many men back to the bottle.</p>
+        <blockquote class="quote step"><p>“And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you.”</p><cite>Ephesians 4:32</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="who for one morsel of meat sold his birthright|he found no place of repentance, though he sought it carefully with tears"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="scale" viewBox="0 0 600 330" style="--at:300px 70px;--arm:220;--from:-10deg;--tip:12deg" role="img" aria-label="A balance scale. On one side a single bowl of stew, one morsel; on the other the birthright, a scroll. As Esau weighed it, hungry, the bowl hangs heavy. On a step the scale swings: the birthright was worth far more.">
+          <path d="M270 320 L330 320 L312 300 L288 300 Z" style="fill:var(--line-strong)"/>
+          <line x1="300" y1="300" x2="300" y2="70" stroke-width="8" style="stroke:var(--line-strong)"/>
+          <g class="scale-beam">
+            <line x1="80" y1="70" x2="520" y2="70" stroke-width="8" stroke-linecap="round" style="stroke:var(--ink-soft)"/>
+            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
+          </g>
+          <g class="scale-pan l">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="80" y1="70" x2="30" y2="190"/><line x1="80" y1="70" x2="130" y2="190"/></g>
+            <path d="M20 190 L140 190 Q130 220 80 220 Q30 220 20 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
+            <path d="M54 172 h52 q-4 18 -26 18 q-22 0 -26 -18 z" style="fill:var(--leather-light)"/>
+            <ellipse cx="80" cy="172" rx="26" ry="5" style="fill:var(--wine)"/>
+            <path d="M70 162 q4 -8 0 -14 M86 162 q4 -8 0 -14" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
+            <text x="80" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">one morsel</text>
+          </g>
+          <g class="scale-pan r">
+            <g stroke-width="2" style="stroke:var(--ink-soft)"><line x1="520" y1="70" x2="470" y2="190"/><line x1="520" y1="70" x2="570" y2="190"/></g>
+            <path d="M460 190 L580 190 Q570 220 520 220 Q470 220 460 190 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--accent)"/>
+            <rect x="496" y="150" width="48" height="34" rx="3" style="fill:var(--glow)"/>
+            <rect x="490" y="146" width="10" height="42" rx="5" style="fill:var(--warm)"/><rect x="540" y="146" width="10" height="42" rx="5" style="fill:var(--warm)"/>
+            <text x="520" y="250" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">the birthright</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Sold for one meal</h2>
+        <p class="note rise" style="--d:2">Esau came in from the field starving and traded his rights as the firstborn son for a bowl of stew: <em>“what profit shall this birthright do to me?”</em> (Genesis 25:32). In that moment the bowl felt heavier.</p>
+        <p class="note step scale-go">It never was. Genesis sums it up: <em>“thus Esau despised his birthright”</em> (25:34). You know that moment: one drink, one hit, one night. Your whole future on one side, and one morsel on the other.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="he found no place of repentance"></blockquote>
+    <h2 class="rise" style="--d:1">“No place of repentance”</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">It doesn't mean</p><h3>God refused him</h3><p>Esau wasn't begging God for forgiveness. He was begging his father to take back the blessing. God turns away no one who comes to Him.</p></div>
+      <div class="col step"><p class="who">It means</p><h3>He couldn't undo it</h3><p>The blessing had gone to Jacob, and Isaac couldn't change his mind: <em>“yea, and he shall be blessed”</em> (Genesis 27:33). Esau wept, but tears couldn't reverse the deal.</p></div>
+    </div>
+    <p class="note step">Some consequences stay: a record, a lost marriage, years. That's the warning, before the next morsel. But the forgiveness is never closed:</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: TWO MOUNTAINS ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">Two mountains</h2>
+    <p class="range rise" style="--d:2">Verses 18–29</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Israel stood trembling at Sinai. You have come to a different mountain, and a kingdom nothing can shake.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="the mount that might be touched, and that burned with fire"></section>
+
+<section class="slide verse" data-v="20-21" data-hl="I exceedingly fear and quake"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Two mountains side by side. On the left, mount Sinai in darkness: fire on the top, a black cloud, lightning, and a fence around its foot. On a step, the right side lights up: mount Sion in daylight, a city on top in the sun, and a great crowd gathered at its foot.">
+          <g class="he12-left">
+            <rect class="he12-night" x="0" y="0" width="314" height="300" rx="10"/>
+            <ellipse class="he12-cloud" cx="130" cy="70" rx="80" ry="26"/><ellipse class="he12-cloud" cx="190" cy="60" rx="70" ry="30"/>
+            <path class="he12-bolt" style="--at:.4s" d="M86 86 L72 120 L90 120 L74 160"/>
+            <path class="he12-bolt" style="--at:1.9s" d="M238 84 L226 116 L242 116 L230 150"/>
+            <path class="he12-sinai" d="M14 286 L157 96 L300 286 Z"/>
+            <path class="he12-fire" d="M140 102 C 136 84, 146 76, 150 62 C 154 76, 160 70, 158 56 C 168 70, 176 86, 172 102 Z"/>
+            <line class="he12-fence" x1="20" y1="276" x2="294" y2="276"/>
+            <g class="he12-fence"><line x1="30" y1="264" x2="30" y2="286"/><line x1="80" y1="264" x2="80" y2="286"/><line x1="130" y1="264" x2="130" y2="286"/><line x1="180" y1="264" x2="180" y2="286"/><line x1="230" y1="264" x2="230" y2="286"/><line x1="280" y1="264" x2="280" y2="286"/></g>
+            <text class="he12-ntext" x="20" y="34">Sinai</text>
+            <text class="he12-nsmall" x="294" y="34" text-anchor="end">“touch not”</text>
+          </g>
+          <g class="he12-right">
+            <rect class="he12-day" x="326" y="0" width="314" height="300" rx="10"/>
+            <circle class="he12-sun" cx="483" cy="70" r="22"/>
+            <g class="he12-ray"><line x1="483" y1="30" x2="483" y2="14"/><line x1="523" y1="70" x2="541" y2="70"/><line x1="443" y1="70" x2="425" y2="70"/><line x1="512" y1="42" x2="524" y2="30"/><line x1="454" y1="42" x2="442" y2="30"/></g>
+            <path class="he12-sion" d="M340 286 L483 130 L626 286 Z"/>
+            <g class="he12-town"><rect x="455" y="112" width="18" height="30"/><rect x="474" y="100" width="20" height="42"/><rect x="495" y="114" width="16" height="28"/></g>
+            <g class="he12-crowd">
+              <circle cx="360" cy="280" r="5"/><circle cx="376" cy="282" r="5"/><circle cx="392" cy="279" r="5"/><circle cx="408" cy="282" r="5"/><circle cx="424" cy="280" r="5"/><circle cx="440" cy="282" r="5"/><circle cx="456" cy="279" r="5"/><circle cx="472" cy="282" r="5"/><circle cx="488" cy="280" r="5"/><circle cx="504" cy="282" r="5"/><circle cx="520" cy="279" r="5"/><circle cx="536" cy="282" r="5"/><circle cx="552" cy="280" r="5"/><circle cx="568" cy="282" r="5"/><circle cx="584" cy="279" r="5"/><circle cx="600" cy="282" r="5"/>
+              <circle cx="368" cy="268" r="5"/><circle cx="400" cy="268" r="5"/><circle cx="432" cy="266" r="5"/><circle cx="464" cy="268" r="5"/><circle cx="496" cy="266" r="5"/><circle cx="528" cy="268" r="5"/><circle cx="560" cy="266" r="5"/><circle cx="592" cy="268" r="5"/>
+            </g>
+            <text class="he12-dtext" x="346" y="34">Sion</text>
+            <text class="he12-dsmall" x="626" y="34" text-anchor="end">“ye are come”</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Not that mountain</h2>
+        <p class="note rise" style="--d:2">At Sinai God gave the law. The mountain smoked, the ground shook, a trumpet blasted, and anyone who touched the mountain was to be put to death. The people begged God to stop speaking. Even Moses shook.</p>
+        <blockquote class="quote step"><p>“there were thunders and lightnings, and a thick cloud upon the mount, and the voice of the trumpet exceeding loud; so that all the people that was in the camp trembled.”</p><cite>Exodus 19:16</cite></blockquote>
+        <p class="note step he12-sion-go">That's what the law does to a sinner: keeps him at a distance, afraid. <em>“But ye are come unto mount Sion.”</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-24" data-hl="But ye are come unto mount Sion|which are written in heaven|And to Jesus the mediator of the new covenant"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Where you have already come</h2>
+    <ol class="signs">
+      <li class="step now"><b>Mount Sion</b>the city of the living God, the heavenly Jerusalem</li>
+      <li class="step now"><b>Angels</b>an innumerable company of them</li>
+      <li class="step now"><b>The church</b>of the firstborn, “written in heaven”</li>
+      <li class="step now"><b>God the Judge</b>of all, and you're welcome before Him</li>
+      <li class="step now"><b>Just men</b>“made perfect”: the hall of faith, home</li>
+      <li class="step now"><b>Jesus</b>the mediator, standing between you and God</li>
+    </ol>
+    <p class="note step">Notice the tense: <em>“ye are come.”</em> Not “you might get there if you behave.” If you belong to Christ, your name is <em>“written in heaven”</em> already, and you stand there by Him, not by yourself.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="24" data-hl="speaketh better things than that of Abel"></blockquote>
+    <h2 class="rise" style="--d:1">Two kinds of blood</h2>
+    <div class="columns">
+      <div class="col step"><p class="who">Genesis 4:10</p><h3>Abel's blood</h3><p>Cried out from the ground against his murderer: <em>“the voice of thy brother’s blood crieth unto me from the ground.”</em> It asked for justice.</p></div>
+      <div class="col step"><p class="who">12:24</p><h3>Jesus' blood</h3><p>Speaks better things. It doesn't cry out against you. It says: paid, forgiven, welcome.</p></div>
+    </div>
+    <p class="note step">Maybe there's blood, real or not, that cries out against you: someone you hurt, something you can't take back. The blood of Jesus speaks louder.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="See that ye refuse not him that speaketh|those things which cannot be shaken may remain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">What can be shaken, will be</h2>
+    <div class="he12-shake rise" style="--d:1">
+      <span style="--k:0">money</span><span style="--k:1">my reputation</span><span style="--k:2">my health</span><span style="--k:3">the old life</span><span style="--k:4">my plans</span><span style="--k:5">this world</span>
+      <b>a kingdom which cannot be moved</b>
+    </div>
+    <p class="note step he12-fall">God shook the ground at Sinai. He has promised one more shaking, of heaven and earth, and everything that can fall will fall (Haggai 2:6). Only His kingdom stays standing.</p>
+    <p class="note step">The warning, <em>“refuse not him that speaketh,”</em> is for the man who has heard the gospel and keeps turning away. It isn't meant to make a believer afraid he's lost his salvation. A man who belongs to Christ is held: <em>“they shall never perish, neither shall any man pluck them out of my hand”</em> (John 10:28). The warning drives you to hold on to Him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="28-29" data-hl="a kingdom which cannot be moved|For our God is a consuming fire"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise">Our God is a <em>consuming fire</em>.</p>
+    <blockquote class="quote step"><p>“For the LORD thy God is a consuming fire, even a jealous God.”</p><cite>Deuteronomy 4:24</cite></blockquote>
+    <p class="note step">Moses said it to Israel, warning them against idols. God is not a buddy, not a vending machine. He is holy, and He burns up what is false.</p>
+    <p class="note step">So serve Him with <em>“grace”</em> (many teachers read it as <em>thankfulness</em>) and with <em>“reverence and godly fear.”</em> Not the terror of Sinai: the respect of a son for a holy Father who will never let him go.</p>
+    <blockquote class="quote step"><p>“I will never leave thee, nor forsake thee.”</p><cite>Hebrews 13:5</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Run today</h2>
+    <div class="daybreak climb">
+      <div class="rise" style="--d:1"><i>12:1</i><b>Lay it aside</b><p>Name one weight and your besetting sin. Tell God, and tell a brother.</p></div>
+      <div class="step"><i>12:13</i><b>Straighten the road</b><p>Change one route, one contact, one habit that keeps leading you off the path.</p></div>
+      <div class="step"><i>12:2</i><b>Look unto Jesus</b><p>When you're tired, look at the finish line. He started this, and He will finish it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Witnesses</span><span class="seed-q">“So great a cloud of witnesses” <cite>12:1</cite></span><span class="take">The faithful of chapter 11, whose lives testify that God brings His people home.</span></li>
+      <li class="step"><span class="topic">The race</span><span class="seed-q">“Looking unto Jesus” <cite>12:2</cite></span><span class="take">Drop the weights and the besetting sin, run with patience, eyes on Jesus.</span></li>
+      <li class="step"><span class="topic">Chastening</span><span class="seed-q">“Whom the Lord loveth he chasteneth” <cite>12:6</cite></span><span class="take">A loving Father trains His sons for their good, not to punish or reject them.</span></li>
+      <li class="step"><span class="topic">Esau</span><span class="seed-q">“For one morsel of meat sold his birthright” <cite>12:16</cite></span><span class="take">He traded his future for one moment, and some consequences can't be undone.</span></li>
+      <li class="step"><span class="topic">Mountains</span><span class="seed-q">“But ye are come unto mount Sion” <cite>12:22</cite></span><span class="take">Not to Sinai's terror, but to God's city, by Jesus the mediator.</span></li>
+      <li class="step"><span class="topic">Fire</span><span class="seed-q">“Our God is a consuming fire” <cite>12:29</cite></span><span class="take">Serve Him with thankfulness, reverence, and godly fear.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Witnesses</span>
+      <h2>Who is the great cloud of witnesses?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“And these all, having obtained a good report through faith, received not the promise:”</p><cite>Hebrews 11:39</cite></blockquote>
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The men and women of faith in chapter 11, from Abel to the martyrs. They ran their race and finished. Their lives testify that God is faithful, and they surround us like a crowd in the stands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The race</span>
+      <h2>How are we to run the race set before us?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1"></blockquote>
+      <blockquote class="quote step" data-q="2"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Lay aside every weight and the sin that so easily wraps around us. Run with patience, steadily, for the long haul. And keep looking to Jesus, who started our faith and will finish it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Chastening</span>
+      <h2>Why does God chasten His children?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6"></blockquote>
+      <blockquote class="quote step" data-q="11"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because He loves us and we are His sons. He trains us for our good, so that we share His holiness. It hurts at the time, but afterward it grows the peaceable fruit of righteousness. It isn't punishment; Jesus took that.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Esau</span>
+      <h2>What did Esau lose, and why couldn't he get it back?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16"></blockquote>
+      <blockquote class="quote step" data-q="17"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He sold his birthright, and then lost the blessing that went with it, all for one meal. Afterward he wept, but the blessing had been given to Jacob and Isaac couldn't take it back. Some consequences can't be undone, though God's forgiveness is open to anyone who comes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Mountains</span>
+      <h2>What mountain have believers come to?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22"></blockquote>
+      <blockquote class="quote step" data-q="24"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not Sinai, with its fire, darkness, and fear. Believers have come to mount Sion, the heavenly Jerusalem, the city of the living God, with our names written in heaven, through Jesus the mediator and His blood that speaks better things than Abel's.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Fire</span>
+      <h2>How should we serve a God who is a consuming fire?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="28"></blockquote>
+      <blockquote class="quote step" data-q="29"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>With grace, that is, thankfulness for a kingdom that can never be shaken, and with reverence and godly fear. Not terror, because we are His sons, but deep respect for a holy God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="1-2"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Hebrews chapter 12
+const V = {
+  1: "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us,",
+  2: "Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.",
+  3: "For consider him that endured such contradiction of sinners against himself, lest ye be wearied and faint in your minds.",
+  4: "Ye have not yet resisted unto blood, striving against sin.",
+  5: "And ye have forgotten the exhortation which speaketh unto you as unto children, My son, despise not thou the chastening of the Lord, nor faint when thou art rebuked of him:",
+  6: "For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.",
+  7: "If ye endure chastening, God dealeth with you as with sons; for what son is he whom the father chasteneth not?",
+  8: "But if ye be without chastisement, whereof all are partakers, then are ye bastards, and not sons.",
+  9: "Furthermore we have had fathers of our flesh which corrected us, and we gave them reverence: shall we not much rather be in subjection unto the Father of spirits, and live?",
+  10: "For they verily for a few days chastened us after their own pleasure; but he for our profit, that we might be partakers of his holiness.",
+  11: "Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.",
+  12: "Wherefore lift up the hands which hang down, and the feeble knees;",
+  13: "And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed.",
+  14: "Follow peace with all men, and holiness, without which no man shall see the Lord:",
+  15: "Looking diligently lest any man fail of the grace of God; lest any root of bitterness springing up trouble you, and thereby many be defiled;",
+  16: "Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.",
+  17: "For ye know how that afterward, when he would have inherited the blessing, he was rejected: for he found no place of repentance, though he sought it carefully with tears.",
+  18: "For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest,",
+  19: "And the sound of a trumpet, and the voice of words; which voice they that heard intreated that the word should not be spoken to them any more:",
+  20: "(For they could not endure that which was commanded, And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart:",
+  21: "And so terrible was the sight, that Moses said, I exceedingly fear and quake:)",
+  22: "But ye are come unto mount Sion, and unto the city of the living God, the heavenly Jerusalem, and to an innumerable company of angels,",
+  23: "To the general assembly and church of the firstborn, which are written in heaven, and to God the Judge of all, and to the spirits of just men made perfect,",
+  24: "And to Jesus the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.",
+  25: "See that ye refuse not him that speaketh. For if they escaped not who refused him that spake on earth, much more shall not we escape, if we turn away from him that speaketh from heaven:",
+  26: "Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven.",
+  27: "And this word, Yet once more, signifieth the removing of those things that are shaken, as of things that are made, that those things which cannot be shaken may remain.",
+  28: "Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve God acceptably with reverence and godly fear:",
+  29: "For our God is a consuming fire."
+};
+const BOOK = "Hebrews 12";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
