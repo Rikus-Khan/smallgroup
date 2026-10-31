@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jm04-where: where we are in the letter of James, five dots with this chapter lit */
+.jm04-cap { margin: 1.2em 0 .5em; font: 700 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.jm04-where { list-style: none; display: flex; justify-content: center; gap: .4rem; padding: 0; margin: 0 auto; max-width: 36em; }
+.jm04-where li { flex: 1; position: relative; text-align: center; font-size: clamp(.72rem, .68rem + .25vw, .9rem); line-height: 1.25; color: var(--ink-soft); }
+.jm04-where li i { position: relative; z-index: 1; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; margin: 0 auto .3rem; border-radius: 50%; border: 2px solid var(--line-strong); background: var(--bg); font: 700 .95rem var(--sans); font-style: normal; }
+.jm04-where li + li::before { content: ""; position: absolute; top: .95rem; right: 50%; width: calc(100% + .4rem); height: 2px; background: var(--line-strong); }
+.jm04-where li.done i { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.jm04-where li.here { color: var(--accent-hot); font-weight: 700; }
+.jm04-where li.here i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+
+/* jm05-field: a field that grows through the seasons: seed, early rain, the long wait, latter rain, harvest.
+   Five bands line up with the five points of the timeline under it (a deck.css candidate). */
+.jm05-field { width: 100%; height: auto; display: block; margin: .2em 0 0; }
+.jm05-field .soil { stroke: var(--line-strong); stroke-width: 3; }
+.jm05-field .stalk { stroke: var(--cool); stroke-width: 4; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.06); transition: transform 2.6s ease-out calc(var(--k) * .11s + .3s); }
+.jm05-field .stalk.ripe { stroke: var(--accent); }
+.slide.active .jm05-field .stalk { transform: none; }
+.jm05-field .head { fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease calc(var(--k) * .11s + 2.4s); }
+.slide.active .jm05-field .head { opacity: 1; }
+.jm05-field .cloud { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.jm05-field .rain { stroke: var(--cool); stroke-width: 3; stroke-linecap: round; opacity: 0; }
+.slide.active .jm05-field .rain { animation: jm05-rain 1.5s linear infinite; animation-delay: calc(var(--k) * .28s); }
+@keyframes jm05-rain { 0% { opacity: 0; transform: translateY(-4px); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(46px); } }
+@media (prefers-reduced-motion: reduce) { .jm05-field .stalk { transition: none; transform: none; } .jm05-field .rain { animation: none !important; opacity: .6; } }
+
+/* jm05-go: one man wanders off, and a brother goes out after him and brings him home (a deck.css candidate) */
+.jm05-go { width: 100%; max-width: 40rem; height: auto; display: block; margin: .2em auto .6em; }
+.jm05-go .man { fill: var(--accent); }
+.jm05-go .far { fill: var(--surface-2); stroke: var(--danger); stroke-width: 3; stroke-dasharray: 5 5; }
+.jm05-go .ring { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 6; }
+.jm05-go .out, .jm05-go .back { fill: none; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
+.jm05-go .out { stroke: var(--ink-soft); }
+.jm05-go .back { stroke: var(--accent-hot); }
+.slide.active .jm05-go .out { stroke-dashoffset: 0; transition-delay: .4s; }
+.slide:has(.jm05-bring.on) .jm05-go .back { stroke-dashoffset: 0; }
+.slide:has(.jm05-bring.on) .jm05-go .far { fill: color-mix(in srgb, var(--accent) 25%, var(--surface)); stroke: var(--accent); stroke-dasharray: none; }
+.jm05-go text { font: 700 18px var(--sans); fill: var(--ink); }
+.jm05-go text.soft { font-weight: 400; font-size: 16px; fill: var(--ink-soft); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">James 5</h1>
+    <p class="sub rise" style="--d:3">Wait, pray, and go after your brother</p>
+    <p class="tag rise" style="--d:5">James ends the way a good friend ends a hard talk: with how to wait, how to pray, how to confess to each other, and how to go and get a brother who has wandered. The last chapter is the warmest.</p>
+    <p class="jm04-cap rise" style="--d:6">Where we are in James</p>
+    <ol class="jm04-where rise" style="--d:7" aria-label="Chapter five of five in the letter of James, the last chapter.">
+      <li class="done"><i>1</i>Trials and the Word</li>
+      <li class="done"><i>2</i>Faith that works</li>
+      <li class="done"><i>3</i>The tongue</li>
+      <li class="done"><i>4</i>Pride and submission</li>
+      <li class="here"><i>5</i>Patience and prayer</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pay</span><span class="seed-q">What does God think of cheating a working man?</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">How are we to wait, and who shows us how?</span></li>
+      <li class="step"><span class="topic">Words</span><span class="seed-q">What should a man's word be like?</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">What should we do when we are suffering, and when we are sick?</span></li>
+      <li class="step"><span class="topic">Confession</span><span class="seed-q">What happens when we confess our faults to each other and pray?</span></li>
+      <li class="step"><span class="topic">The wanderer</span><span class="seed-q">What should we do for a brother who wanders from the truth?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The cry of the cheated</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Hard words for rich men who got rich by cheating, and a comfort for every working man who has been cheated himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="ye rich men, weep and howl|Your riches are corrupted, and your garments are motheaten|the rust of them shall be a witness against you|heaped treasure together for the last days"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2-3" data-hl="Your riches are corrupted, and your garments are motheaten|Your gold and silver is cankered"></blockquote>
+    <h2 class="rise" style="--d:1">Riches that rot</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Corrupted</b>grain and goods spoiled while the owner sat on them</li>
+      <li><b>Motheaten</b>fine clothes, kept and never worn</li>
+      <li class="now"><b>Cankered</b>gold and silver gone dull with rust</li>
+    </ol>
+    <p class="note step">James isn't saying money is evil, or that a man who works hard and prospers is a sinner. He is talking to men who <em>“heaped treasure together”</em> and kept it, while the people who earned it for them went without. Their wealth is already rotting, and the rust will <em>“be a witness against”</em> them.</p>
+    <p class="note step">A word for any of us: if you owe somebody (back pay, child support, a debt, a repair), the honest thing to do today is to pay what you can, or to call and tell the truth about when you will.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="the hire of the labourers|kept back by fraud, crieth|the Lord of sabaoth|Ye have condemned and killed the just"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth"></blockquote>
+    <h2 class="rise" style="--d:1">The cry that is heard</h2>
+    <div class="chains">
+      <div class="chain step"><span class="who-chip">The worker</span><span class="said">reaps the fields</span><span class="who-chip">The rich owner</span><span class="said">keeps back the pay by fraud</span></div>
+      <div class="chain step"><span class="who-chip">The unpaid wages</span><span class="said">cry out, and the cries are</span><span class="who-chip jesus">entered into the ears of the Lord of sabaoth</span></div>
+    </div>
+    <p class="note step"><em>Sabaoth</em> is a Hebrew word for <em>armies</em>: the Lord of the armies of heaven. The unpaid man may have no lawyer and no power, and he is not unheard. God Himself hears the cry of the cheated.</p>
+    <p class="note step">If that is you, if you've been shorted, used, or never paid, hear this: God saw it. And if it is <em>you</em> who took what wasn't yours, the same God offers a way back, because Jesus has already paid the price for it. Pay the man back, and then rest in the forgiveness.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Patient like a farmer</h2>
+    <p class="range rise" style="--d:2">Verses 7–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Court dates, mending families, a body that heals slowly: the waiting is the hardest part, and James has a picture for it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-9" data-hl="Be patient therefore, brethren, unto the coming of the Lord|the husbandman waiteth for the precious fruit of the earth|the early and latter rain|stablish your hearts|Grudge not one against another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain"></blockquote>
+    <h2 class="rise" style="--d:1">What a farmer knows</h2>
+    <svg class="jm05-field" viewBox="0 0 800 160" style="max-height:25vh" role="img" aria-label="A field through the seasons from left to right. Bare ground at the seed. Early rain, and the first shoots. A long wait while the plants slowly grow. Latter rain. Then tall ripe grain at the harvest.">
+      <g aria-hidden="true">
+        <path class="cloud" d="M190 38 C170 38 168 14 192 14 C198 0 224 2 228 14 C250 10 262 36 240 38 Z"/>
+        <path class="cloud" d="M510 38 C490 38 488 14 512 14 C518 0 544 2 548 14 C570 10 582 36 560 38 Z"/>
+        <g stroke-linecap="round"><line class="rain" style="--k:0" x1="200" y1="48" x2="196" y2="62"/><line class="rain" style="--k:1" x1="214" y1="48" x2="210" y2="62"/><line class="rain" style="--k:2" x1="228" y1="48" x2="224" y2="62"/><line class="rain" style="--k:3" x1="522" y1="48" x2="518" y2="62"/><line class="rain" style="--k:4" x1="536" y1="48" x2="532" y2="62"/><line class="rain" style="--k:5" x1="550" y1="48" x2="546" y2="62"/></g>
+          <line class="stalk" style="--k:0" x1="16" y1="140" x2="16" y2="133"/>
+          <line class="stalk" style="--k:1" x1="32" y1="140" x2="32" y2="127"/>
+          <line class="stalk" style="--k:2" x1="48" y1="140" x2="48" y2="121"/>
+          <line class="stalk" style="--k:3" x1="64" y1="140" x2="64" y2="130"/>
+          <line class="stalk" style="--k:4" x1="80" y1="140" x2="80" y2="124"/>
+          <line class="stalk" style="--k:5" x1="96" y1="140" x2="96" y2="133"/>
+          <line class="stalk" style="--k:6" x1="112" y1="140" x2="112" y2="127"/>
+          <line class="stalk" style="--k:7" x1="128" y1="140" x2="128" y2="121"/>
+          <line class="stalk" style="--k:8" x1="144" y1="140" x2="144" y2="130"/>
+          <line class="stalk" style="--k:9" x1="160" y1="140" x2="160" y2="107"/>
+          <line class="stalk" style="--k:10" x1="176" y1="140" x2="176" y2="116"/>
+          <line class="stalk" style="--k:11" x1="192" y1="140" x2="192" y2="110"/>
+          <line class="stalk" style="--k:12" x1="208" y1="140" x2="208" y2="104"/>
+          <line class="stalk" style="--k:13" x1="224" y1="140" x2="224" y2="113"/>
+          <line class="stalk" style="--k:14" x1="240" y1="140" x2="240" y2="107"/>
+          <line class="stalk" style="--k:15" x1="256" y1="140" x2="256" y2="116"/>
+          <line class="stalk" style="--k:16" x1="272" y1="140" x2="272" y2="110"/>
+          <line class="stalk" style="--k:17" x1="288" y1="140" x2="288" y2="104"/>
+          <line class="stalk" style="--k:18" x1="304" y1="140" x2="304" y2="113"/>
+          <line class="stalk" style="--k:19" x1="320" y1="140" x2="320" y2="91"/>
+          <line class="stalk" style="--k:20" x1="336" y1="140" x2="336" y2="100"/>
+          <line class="stalk" style="--k:21" x1="352" y1="140" x2="352" y2="94"/>
+          <line class="stalk" style="--k:22" x1="368" y1="140" x2="368" y2="88"/>
+          <line class="stalk" style="--k:23" x1="384" y1="140" x2="384" y2="97"/>
+          <line class="stalk" style="--k:24" x1="400" y1="140" x2="400" y2="91"/>
+          <line class="stalk" style="--k:25" x1="416" y1="140" x2="416" y2="100"/>
+          <line class="stalk" style="--k:26" x1="432" y1="140" x2="432" y2="94"/>
+          <line class="stalk" style="--k:27" x1="448" y1="140" x2="448" y2="88"/>
+          <line class="stalk" style="--k:28" x1="464" y1="140" x2="464" y2="97"/>
+          <line class="stalk" style="--k:29" x1="480" y1="140" x2="480" y2="57"/>
+          <line class="stalk" style="--k:30" x1="496" y1="140" x2="496" y2="66"/>
+          <line class="stalk" style="--k:31" x1="512" y1="140" x2="512" y2="60"/>
+          <line class="stalk" style="--k:32" x1="528" y1="140" x2="528" y2="54"/>
+          <line class="stalk" style="--k:33" x1="544" y1="140" x2="544" y2="63"/>
+          <line class="stalk" style="--k:34" x1="560" y1="140" x2="560" y2="57"/>
+          <line class="stalk" style="--k:35" x1="576" y1="140" x2="576" y2="66"/>
+          <line class="stalk" style="--k:36" x1="592" y1="140" x2="592" y2="60"/>
+          <line class="stalk" style="--k:37" x1="608" y1="140" x2="608" y2="54"/>
+          <line class="stalk" style="--k:38" x1="624" y1="140" x2="624" y2="63"/>
+          <line class="stalk ripe" style="--k:39" x1="640" y1="140" x2="640" y2="31"/><circle class="head" style="--k:39" cx="640" cy="28" r="4.5"/>
+          <line class="stalk ripe" style="--k:40" x1="656" y1="140" x2="656" y2="40"/><circle class="head" style="--k:40" cx="656" cy="37" r="4.5"/>
+          <line class="stalk ripe" style="--k:41" x1="672" y1="140" x2="672" y2="34"/><circle class="head" style="--k:41" cx="672" cy="31" r="4.5"/>
+          <line class="stalk ripe" style="--k:42" x1="688" y1="140" x2="688" y2="28"/><circle class="head" style="--k:42" cx="688" cy="25" r="4.5"/>
+          <line class="stalk ripe" style="--k:43" x1="704" y1="140" x2="704" y2="37"/><circle class="head" style="--k:43" cx="704" cy="34" r="4.5"/>
+          <line class="stalk ripe" style="--k:44" x1="720" y1="140" x2="720" y2="31"/><circle class="head" style="--k:44" cx="720" cy="28" r="4.5"/>
+          <line class="stalk ripe" style="--k:45" x1="736" y1="140" x2="736" y2="40"/><circle class="head" style="--k:45" cx="736" cy="37" r="4.5"/>
+          <line class="stalk ripe" style="--k:46" x1="752" y1="140" x2="752" y2="34"/><circle class="head" style="--k:46" cx="752" cy="31" r="4.5"/>
+          <line class="stalk ripe" style="--k:47" x1="768" y1="140" x2="768" y2="28"/><circle class="head" style="--k:47" cx="768" cy="25" r="4.5"/>
+          <line class="stalk ripe" style="--k:48" x1="784" y1="140" x2="784" y2="37"/><circle class="head" style="--k:48" cx="784" cy="34" r="4.5"/>
+          
+        <line class="soil" x1="0" y1="141" x2="800" y2="141"/>
+      </g>
+    </svg>
+    <ol class="timeline" aria-label="Five points. Sow. Early rain. Wait. Latter rain. Harvest.">
+      <li data-n="1" style="--k:0"><b>Sow</b><span>work the ground</span></li>
+      <li data-n="2" style="--k:1"><b>Early rain</b><span>the seed takes root</span></li>
+      <li class="lit wait" data-n="3" style="--k:2"><b>Wait</b><span>nothing much to see</span></li>
+      <li data-n="4" style="--k:3"><b>Latter rain</b><span>the grain fills</span></li>
+      <li data-n="5" style="--k:4"><b>Harvest</b><span>the precious fruit</span></li>
+    </ol>
+    <p class="note step">A farmer can't hurry the rain. He does his part, then he <em>waits</em>, with <em>“long patience.”</em> Most of us hate that middle box: a court date, a family not ready to talk to us, a body that heals slowly, trust that has to be rebuilt. The harvest comes, and no amount of worry made it come sooner.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8-9" data-hl="stablish your hearts: for the coming of the Lord draweth nigh|Grudge not one against another, brethren, lest ye be condemned"></blockquote>
+    <h2 class="rise" style="--d:1">Waiting without taking it out on people</h2>
+    <p class="note rise" style="--d:2"><em>“Stablish your hearts”</em> means make them firm, like setting a post deep in the ground. And <em>“grudge not”</em> means don't <em>groan</em> against each other. When a man is waiting and worn out, the nearest brother takes the heat: the short word, the eye-roll, the cold shoulder.</p>
+    <p class="note step">James reminds us who is watching: <em>“the judge standeth before the door.”</em> That is a comfort as well as a warning. Jesus is near, He sees our situation, and He will make everything right. The first believers lived expecting Him any day, and so should we, without guessing dates.</p>
+    <p class="note step">So today: when you feel the wait getting to you, don't snap at the guy next to you. Say <em>“I'm having a hard day,”</em> and ask him to pray.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="Take, my brethren, the prophets|Behold, we count them happy which endure|the patience of Job|the Lord is very pitiful, and of tender mercy"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy"></blockquote>
+    <h2 class="rise" style="--d:1">Job, and the end of the Lord</h2>
+    <svg class="curve" viewBox="0 0 680 310" style="max-height:34vh;margin:0 auto" role="img" aria-label="A line that falls and rises again. Job had it all, then lost everything in a day, then sat in the ashes in pain, then poured out honest complaints to God. God answered him, and in the end the Lord blessed the latter end of Job.">
+      <line class="curve-base" x1="20" y1="150" x2="660" y2="150"/>
+      <path class="curve-line" pathLength="1" d="M40 60 L140 170 L230 250 L330 215 L450 120 L630 40"/>
+      <g class="curve-pt" style="--k:0"><circle cx="40" cy="60" r="9"/><text x="26" y="40">had it all</text><text class="ref" x="26" y="20">Job 1:1-3</text></g>
+      <g class="curve-pt low" style="--k:1"><circle cx="140" cy="170" r="9"/><text x="126" y="180" text-anchor="end">lost it in a day</text><text class="ref" x="126" y="198" text-anchor="end">Job 1:13-19</text></g>
+      <g class="curve-pt low" style="--k:2"><circle cx="230" cy="250" r="9"/><text x="230" y="280" text-anchor="middle">sat in the ashes</text><text class="ref" x="230" y="298" text-anchor="middle">Job 2:7-8</text></g>
+      <g class="curve-pt" style="--k:3"><circle cx="330" cy="215" r="9"/><text x="342" y="241">honest words to God</text><text class="ref" x="342" y="259">Job 3-37</text></g>
+      <g class="curve-pt" style="--k:4"><circle cx="450" cy="120" r="9"/><text x="462" y="146">God answered</text><text class="ref" x="462" y="164">Job 38-42</text></g>
+      <g class="curve-pt high" style="--k:5"><circle cx="630" cy="40" r="10"/><text x="650" y="20" text-anchor="end" font-weight="700" style="fill:var(--accent-hot)">the latter end</text><text class="ref" x="650" y="68" text-anchor="end">Job 42:12</text></g>
+    </svg>
+    <p class="note step"><em>Patience</em> here means staying power, not a quiet, smiling face. Job complained out loud, honestly, and never walked away from God. The prophets endured too: Jeremiah was dropped in a muddy pit for telling the truth. The Lord is <em>“very pitiful, and of tender mercy.”</em> If your waiting hasn't ended yet, the end of the Lord's story with you hasn't been written.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="12" data-hl="swear not|let your yea be yea; and your nay, nay|lest ye fall into condemnation"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="let your yea be yea; and your nay, nay"></blockquote>
+    <h2 class="rise" style="--d:1">A plain yes is enough</h2>
+    <div class="talk">
+      <p class="rise" style="--d:1"><small>The old habit</small>“I swear on my mother's grave, on my life, I'll pay you Friday. I swear to God.”<span class="flag">piling on oaths</span></p>
+      <p class="reply step"><small>James 5:12</small>“Yes.” And then I do it.<br>“No.” And I mean it.</p>
+    </div>
+    <p class="note step">Most of us have lied a lot, and learned that nobody believes a bare promise, so we piled oaths on top. James isn't banning an honest oath in court. He is saying: be a man whose plain <em>yes</em> can be trusted.</p>
+    <p class="note step">That is built one small promise at a time. Today, make one and keep it exactly: show up on time, make the call, return the tool.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Prayer, confession, and the wanderer</h2>
+    <p class="range rise" style="--d:2">Verses 13–20</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">What a group of brothers can do for each other, which is almost exactly what you do here every day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="Is any among you afflicted? let him pray|let him sing psalms|let him call for the elders of the church|anointing him with oil in the name of the Lord|the prayer of faith shall save the sick, and the Lord shall raise him up|if he have committed sins, they shall be forgiven him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13-14" data-hl="Is any among you afflicted? let him pray. Is any merry? let him sing psalms|Is any sick among you? let him call for the elders of the church"></blockquote>
+    <h2 class="rise" style="--d:1">Whatever you're in, take it to God</h2>
+    <ol class="signs rise" style="--d:2">
+      <li><b>Hard times?</b>“let him pray”</li>
+      <li><b>Good times?</b>“let him sing psalms”</li>
+      <li class="now"><b>Sick?</b>“call for the elders of the church”</li>
+    </ol>
+    <p class="note step"><em>Afflicted</em> means going through something hard: a loss, a pressure, a hard stretch. James doesn't say <em>tough it out.</em> He says pray. And when things are good, sing, because gratitude is part of prayer too. And when you are sick, don't go through it alone and quiet. Ask for help. Send for the men who lead the church.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="14-15" data-hl="let them pray over him, anointing him with oil in the name of the Lord|the prayer of faith shall save the sick, and the Lord shall raise him up"></blockquote>
+    <h2 class="rise" style="--d:1">The elders and the oil</h2>
+    <div class="columns">
+      <div class="col grace step">
+        <p class="who">What James plainly says</p>
+        <h3>Call the elders, and pray</h3>
+        <p>The sick man sends for the <em>elders</em>, the church's spiritual leaders. They pray over him <em>“in the name of the Lord.”</em> A man too weak to pray for himself is carried by others. It is <em>the Lord</em> who raises him up, and the prayer is a prayer of <em>faith in Him.</em></p>
+      </div>
+      <div class="col law step">
+        <p class="who">Where good teachers differ</p>
+        <h3>What the oil means</h3>
+        <p>Some see a <em>sign</em>: oil set kings and priests apart for God, so the man is set apart in prayer. Others see <em>medicine</em>: olive oil was the first aid of the day, like the oil the Samaritan poured on a wounded man. Either way, no oil heals by itself, and nothing here tells a man to skip the doctor. The point is that a sick man is not left alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="15" data-hl="the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him"></blockquote>
+    <h2 class="rise" style="--d:1">Will every sick man be healed?</h2>
+    <p class="note rise" style="--d:2">Pray for healing boldly: God does heal. But the Bible doesn't promise that every sick man will be healed this side of heaven, and it would be cruel to tell a man his sickness shows his faith is weak. Paul asked three times for his thorn to be removed (2 Corinthians 12:8). The answer was no:</p>
+    <blockquote class="quote step"><p>“And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness.”</p><cite>2 Corinthians 12:9</cite></blockquote>
+    <blockquote class="quote step"><p>“Erastus abode at Corinth: but Trophimus have I left at Miletum sick.”</p><cite>2 Timothy 4:20</cite></blockquote>
+    <p class="note step">And notice the <em>“if”</em> in verse 15: not every sickness is a punishment for sin, but if sin is in the picture, forgiveness is there. Pray, ask, and leave the answer with Him. Healed now, or made whole when He comes, you are held either way.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16" data-hl="Confess your faults one to another, and pray one for another, that ye may be healed|The effectual fervent prayer of a righteous man availeth much"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Confess your faults one to another, and pray one for another, that ye may be healed"></blockquote>
+    <h2 class="rise" style="--d:1">From hidden to healed</h2>
+    <div class="daybreak">
+      <div class="rise" style="--d:3"><i>Proverbs 28:13</i><b>Hidden</b><p>Kept secret, alone, in the dark.</p><p class="kjv">“He that covereth his sins shall not prosper”</p></div>
+      <div class="step"><i>James 5:16</i><b>Said</b><p>Told to a brother who will not run.</p><p class="kjv">“Confess your faults one to another”</p></div>
+      <div class="step"><i>James 5:16</i><b>Healed</b><p>Prayed for, carried, set free.</p><p class="kjv">“and pray one for another, that ye may be healed”</p></div>
+    </div>
+    <p class="note step">This is what this group is. You already have the forgiveness of God when you confess to Him (1 John 1:9), and you don't need a priest in the middle. But James says something more: <em>one to another.</em> A fault said out loud to a brother loses its power, and a man who is prayed for gets carried. <em>Faults</em> means slips and falls, not only the big ones. Tell somebody the real thing today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">The prayer of a righteous man <em>availeth much.</em></p>
+    <blockquote class="quote rise" style="--d:2" data-q="16" data-hl="The effectual fervent prayer of a righteous man availeth much"></blockquote>
+    <p class="note step"><em>Righteous</em> doesn't mean perfect. It means a man made right with God through Jesus, which is every believer. <em>Effectual fervent</em> means a prayer that is working, and meant: not pretty, just sincere. Your prayer, as a man still learning, has real power. You don't need to be the strong one in the room to pray for the man next to you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="Elias was a man subject to like passions as we are|he prayed earnestly that it might not rain|he prayed again, and the heaven gave rain"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17-18" data-hl="Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain|he prayed again, and the heaven gave rain"></blockquote>
+    <h2 class="rise" style="--d:1">Elijah: just a man like us</h2>
+    <ol class="timeline" aria-label="Five points in Elijah's story. He prayed, and no rain fell. Three and a half years of drought. He prayed again, and the rain came. Then he was afraid, ran, and asked to die. God fed him and sent him back to work.">
+      <li data-n="1" style="--k:0"><b>Prayed</b><span>no rain</span><small>1 Kings 17</small></li>
+      <li class="wait" data-n="2" style="--k:1"><b>Three and a half years</b><span>the drought</span></li>
+      <li class="lit" data-n="3" style="--k:2"><b>Prayed again</b><span>and the rain came</span><small>1 Kings 18</small></li>
+      <li data-n="4" style="--k:3"><b>Afraid</b><span>ran, and asked to die</span><small>1 Kings 19:3-4</small></li>
+      <li data-n="5" style="--k:4"><b>Fed and sent back</b><span>to his work</span><small>1 Kings 19:5-8</small></li>
+    </ol>
+    <p class="note step"><em>“Subject to like passions as we are”</em> means he had the same feelings we do. Elijah, the man whose prayer shut the sky, was so afraid of a queen's threat that he ran into the desert and asked God to let him die. And God fed him, and gave him work again. If a man like that can pray, so can you, on your worst day.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="if any of you do err from the truth, and one convert him|he which converteth the sinner from the error of his way shall save a soul from death|shall hide a multitude of sins"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="19-20" data-hl="if any of you do err from the truth, and one convert him|shall save a soul from death, and shall hide a multitude of sins"></blockquote>
+    <h2 class="rise" style="--d:1">Go after him</h2>
+    <svg class="jm05-go" viewBox="0 0 640 230" role="img" aria-label="A small group of five men on the left. One man has wandered far to the right, outside the circle. A line goes out from the group to him, and then a second line brings him back home.">
+      <circle class="ring" cx="130" cy="115" r="92"/>
+      <g aria-hidden="true"><circle class="man" cx="100" cy="80" r="14"/><circle class="man" cx="160" cy="84" r="14"/><circle class="man" cx="84" cy="140" r="14"/><circle class="man" cx="132" cy="160" r="14"/><circle class="man" cx="180" cy="130" r="14"/></g>
+      <path class="out" pathLength="1" d="M198 118 C290 40 400 40 506 108"/>
+      <path class="back" pathLength="1" d="M506 128 C400 210 290 210 202 138"/>
+      <circle class="far" cx="540" cy="118" r="18"/>
+      <text x="40" y="22">the brothers</text>
+      <text x="632" y="52" text-anchor="end">the one who wandered</text>
+      <text class="soft" x="632" y="74" text-anchor="end">err from the truth</text>
+    </svg>
+    <p class="note step jm05-bring">To <em>err</em> is to <em>wander</em>, the word for a sheep that strays. James doesn't say <em>write him off,</em> and he doesn't say <em>he's lost for good.</em> He says <em>one convert him</em>: one of us goes out, and turns him back.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="shall save a soul from death, and shall hide a multitude of sins"></blockquote>
+    <h2 class="rise" style="--d:1">A soul saved, and sins covered</h2>
+    <p class="note rise" style="--d:2">Good teachers differ on the <em>“death”</em> here: some say the wanderer is saved from the ruin where sin leads, and some say a man who only seemed to believe is truly saved. Either way, it is worth going to get him. And <em>“hide a multitude of sins”</em> means God covers them: forgiven. We don't earn that. We just get to carry the news.</p>
+    <p class="note step">Go the way Paul says to:</p>
+    <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+    <p class="note step">Gently, and remembering that you could be next. That is what a brother is for.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">One more thing today</h2>
+    <p class="saying rise" style="--d:2">Who has <em>gone quiet</em> on you?</p>
+    <p class="note rise" style="--d:3">Think of one brother who has stopped coming, or stopped answering, or you suspect has gone back to the old life. You don't need a speech. Send him a message today: <em>“I was thinking about you. No lecture. Just checking in.”</em> That is how a man gets brought back, and some day it will be you on the other end of that message.</p>
+    <p class="note step">If you are the one who has wandered, this verse is for you too: somebody in this group would come after you. Come back, and say so.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The whole letter, in five steps</h2>
+    <ol class="timeline" aria-label="The letter of James in five chapters. One: trials and the Word. Two: faith that works. Three: the tongue. Four: pride and submission. Five: patience and prayer.">
+      <li data-n="1" style="--k:0"><b>James 1</b><span>Trials and the Word</span><small>count it joy; do what it says</small></li>
+      <li data-n="2" style="--k:1"><b>James 2</b><span>Faith that works</span><small>no favourites; faith shows itself</small></li>
+      <li data-n="3" style="--k:2"><b>James 3</b><span>The tongue</span><small>a small fire; wisdom from above</small></li>
+      <li data-n="4" style="--k:3"><b>James 4</b><span>Pride and submission</span><small>submit, resist, draw near</small></li>
+      <li class="lit" data-n="5" style="--k:4"><b>James 5</b><span>Patience and prayer</span><small>wait, confess, pray, go and get him</small></li>
+    </ol>
+    <p class="note step">Looking back, one thread runs the whole way: <em>real faith shows up on an ordinary Tuesday.</em> It handles trouble, treats the poor man the same as the rich, watches its mouth, bows its pride, waits patiently, and prays with its brothers. None of it earns God's love, because that is a gift. All of it is what a man who has that gift starts to look like.</p>
+    <p class="note step">And James wrote it as a brother to brothers. He calls them <em>“my brethren”</em> over and over. That is how he speaks to you.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pay</span><span class="seed-q">“The hire of the labourers… kept back by fraud, crieth” <cite>5:4</cite></span><span class="take">God hears the cry of the cheated. Pay what you owe, and if you were cheated, He saw.</span></li>
+      <li class="step"><span class="topic">Patience</span><span class="seed-q">“Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth” <cite>5:7</cite></span><span class="take">Do your part like the farmer, then wait. And don't take the waiting out on your brothers.</span></li>
+      <li class="step"><span class="topic">Words</span><span class="seed-q">“Let your yea be yea; and your nay, nay” <cite>5:12</cite></span><span class="take">Be a man whose plain yes can be trusted. Keep one small promise today.</span></li>
+      <li class="step"><span class="topic">Prayer</span><span class="seed-q">“Is any among you afflicted? let him pray… Is any sick among you? let him call for the elders” <cite>5:13-14</cite></span><span class="take">Take hard times to God, and don't be sick alone. Healing is His to give, in His way.</span></li>
+      <li class="step"><span class="topic">Confession</span><span class="seed-q">“Confess your faults one to another, and pray one for another, that ye may be healed.” <cite>5:16</cite></span><span class="take">What is said out loud to a brother loses its power. Elijah was a man like us, and his prayer worked.</span></li>
+      <li class="step"><span class="topic">The wanderer</span><span class="seed-q">“He which converteth the sinner from the error of his way shall save a soul from death” <cite>5:20</cite></span><span class="take">Go after the brother who wandered. And if it is you, come back.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Pay</span>
+      <h2>What does God think of cheating a working man?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="ye rich men, weep and howl"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="kept back by fraud, crieth|entered into the ears of the Lord of sabaoth"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He hates it, and He hears. The wages kept back cry out, and the Lord of sabaoth hears. If you were cheated, God saw it. If you did the cheating, pay it back, and rest in the forgiveness Jesus already paid for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Patience</span>
+      <h2>How are we to wait, and who shows us how?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="the husbandman waiteth for the precious fruit of the earth, and hath long patience for it"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="Ye have heard of the patience of Job, and have seen the end of the Lord"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Like a farmer, who does his part and then waits for the rain, and like Job and the prophets, who endured and saw the end of the Lord. Stablish your hearts, don't take the wait out on your brothers, and remember the Lord is very pitiful and of tender mercy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Words</span>
+      <h2>What should a man's word be like?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="12" data-hl="let your yea be yea; and your nay, nay"></blockquote>
+      <blockquote class="quote step"><p>“But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.”</p><cite>Matthew 5:37</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Plain and true. A yes that means yes and a no that means no, with no pile of oaths on top. Trust is built one kept promise at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Prayer</span>
+      <h2>What should we do when we are suffering, and when we are sick?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="Is any among you afflicted? let him pray. Is any merry? let him sing psalms"></blockquote>
+      <blockquote class="quote step" data-q="14" data-hl="Is any sick among you? let him call for the elders of the church; and let them pray over him"></blockquote>
+      <blockquote class="quote step"><p>“And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness.”</p><cite>2 Corinthians 12:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Pray, and ask for help: send for the elders and let them pray over you. God hears and can heal, and the answer is His to give. He doesn't promise every sick man will be healed here, but He promises His grace is enough.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Confession</span>
+      <h2>What happens when we confess our faults to each other and pray?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16" data-hl="Confess your faults one to another, and pray one for another, that ye may be healed"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="The effectual fervent prayer of a righteous man availeth much"></blockquote>
+      <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>We are healed. A fault said out loud to a brother loses its grip, and a man who is prayed for gets carried. God forgives when we confess to Him, and brothers who pray for each other have real power, because Elijah was a man like us and his prayer worked.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The wanderer</span>
+      <h2>What should we do for a brother who wanders from the truth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="if any of you do err from the truth, and one convert him"></blockquote>
+      <blockquote class="quote step" data-q="20" data-hl="he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins"></blockquote>
+      <blockquote class="quote step"><p>“Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.”</p><cite>Galatians 6:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Go after him, gently, and bring him back. Turning a man from the error of his way saves him from where sin leads, and God covers a multitude of sins. Today, message one brother who has gone quiet. And if it is you who wandered, come home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="16"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, James chapter 5
+const V = {
+  1: "Go to now, ye rich men, weep and howl for your miseries that shall come upon you.",
+  2: "Your riches are corrupted, and your garments are motheaten.",
+  3: "Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.",
+  4: "Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.",
+  5: "Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.",
+  6: "Ye have condemned and killed the just; and he doth not resist you.",
+  7: "Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.",
+  8: "Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh.",
+  9: "Grudge not one against another, brethren, lest ye be condemned: behold, the judge standeth before the door.",
+  10: "Take, my brethren, the prophets, who have spoken in the name of the Lord, for an example of suffering affliction, and of patience.",
+  11: "Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.",
+  12: "But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.",
+  13: "Is any among you afflicted? let him pray. Is any merry? let him sing psalms.",
+  14: "Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord:",
+  15: "And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.",
+  16: "Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.",
+  17: "Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.",
+  18: "And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.",
+  19: "Brethren, if any of you do err from the truth, and one convert him;",
+  20: "Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.",
+};
+const BOOK = "James 5";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

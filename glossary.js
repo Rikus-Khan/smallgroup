@@ -1158,7 +1158,10 @@ window.GLOSSARY = [
     [ 21, 25 ] ],
    [
     "Romans", 11,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "James", 5,
+    [ 17 ] ] ]
  },
  {
   "id": "isaiah",
@@ -4272,7 +4275,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Hebrews", 12,
-    [ 23, 25, 26 ] ] ]
+    [ 23, 25, 26 ] ],
+   [
+    "James", 5,
+    [ 12, 18 ] ] ]
  },
  {
   "id": "hell",
@@ -4964,6 +4970,9 @@ window.GLOSSARY = [
     "James", 1,
     [ 11 ] ],
    [
+    "James", 4,
+    [ 6 ] ],
+   [
     "1 Peter", 4,
     [ 10 ] ],
    [
@@ -5184,7 +5193,10 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "James", 3,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "James", 5,
+    [ 19 ] ] ]
  },
  {
   "id": "glory",
@@ -5745,7 +5757,10 @@ window.GLOSSARY = [
     [ 25 ] ],
    [
     "James", 2,
-    [ 8, 9, 10, 11, 12 ] ] ]
+    [ 8, 9, 10, 11, 12 ] ],
+   [
+    "James", 4,
+    [ 11 ] ] ]
  },
  {
   "id": "only-begotten",
@@ -6964,6 +6979,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 11,
     [ 4 ] ],
+   [
+    "James", 5,
+    [ 3 ] ],
    [
     "1 Peter", 5,
     [ 1 ] ] ]
@@ -8747,6 +8765,9 @@ window.GLOSSARY = [
     "James", 3,
     [ 18 ] ],
    [
+    "James", 5,
+    [ 16 ] ],
+   [
     "1 Peter", 4,
     [ 18 ] ] ]
  },
@@ -9722,6 +9743,9 @@ window.GLOSSARY = [
     "2 Timothy", 3,
     [ 2 ] ],
    [
+    "James", 4,
+    [ 6 ] ],
+   [
     "1 Peter", 5,
     [ 5 ] ] ]
  },
@@ -9766,6 +9790,9 @@ window.GLOSSARY = [
    [
     "Colossians", 2,
     [ 18, 23 ] ],
+   [
+    "James", 4,
+    [ 6 ] ],
    [
     "1 Peter", 5,
     [ 5 ] ] ]
@@ -10062,7 +10089,10 @@ window.GLOSSARY = [
     [ 31 ] ],
    [
     "Acts", 27,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "James", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "abomination",
@@ -11592,7 +11622,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "James", 3,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "James", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "judgment",
@@ -11769,7 +11802,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "2 Timothy", 3,
-    [ 15, 16 ] ] ]
+    [ 15, 16 ] ],
+   [
+    "James", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "the-lad",
@@ -12397,6 +12433,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 2,
     [ 14 ] ],
+   [
+    "James", 4,
+    [ 7 ] ],
    [
     "1 Peter", 5,
     [ 8 ] ] ]
@@ -14208,7 +14247,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Hebrews", 11,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "James", 5,
+    [ 6, 9 ] ] ]
  },
  {
   "id": "conscience",
@@ -18425,6 +18467,9 @@ window.GLOSSARY = [
     "Titus", 1,
     [ 5 ] ],
    [
+    "James", 5,
+    [ 14 ] ],
+   [
     "1 Peter", 5,
     [ 1, 5 ] ] ]
  },
@@ -18822,7 +18867,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Zechariah", 10,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "James", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "fats",
@@ -19647,7 +19695,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "James", 3,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "James", 5,
+    [ 11 ] ] ]
  },
  {
   "id": "baal",
@@ -22581,7 +22632,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Hebrews", 1,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "James", 5,
+    [ 3 ] ] ]
  },
  {
   "id": "vine-and-fig-tree",
@@ -27093,7 +27147,10 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Colossians", 2,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "James", 5,
+    [ 15 ] ] ]
  },
  {
   "id": "on-this-fashion",
@@ -27165,7 +27222,10 @@ window.GLOSSARY = [
     [ 9, 15 ] ],
    [
     "Hebrews", 12,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "James", 4,
+    [ 8 ] ] ]
  },
  {
   "id": "physician",
@@ -28125,7 +28185,10 @@ window.GLOSSARY = [
     [ 1, 2, 8 ] ],
    [
     "Luke", 10,
-    [ 2, 7 ] ] ]
+    [ 2, 7 ] ],
+   [
+    "James", 5,
+    [ 4 ] ] ]
  },
  {
   "id": "apostles",
@@ -29025,7 +29088,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Luke", 6,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "James", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "peacemakers",
@@ -29295,7 +29361,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "James", 1,
-    [ 14, 15 ] ] ]
+    [ 14, 15 ] ],
+   [
+    "James", 4,
+    [ 1, 2, 3, 5 ] ] ]
  },
  {
   "id": "divorcement",
@@ -29406,7 +29475,10 @@ window.GLOSSARY = [
     [ 13, 16, 17 ] ],
    [
     "Hebrews", 7,
-    [ 20, 21, 28 ] ] ]
+    [ 20, 21, 28 ] ],
+   [
+    "James", 5,
+    [ 12 ] ] ]
  },
  {
   "id": "eye-for-an-eye",
@@ -32175,7 +32247,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Mark", 6,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "James", 5,
+    [ 14 ] ] ]
  },
  {
   "id": "millstone",
@@ -32344,6 +32419,9 @@ window.GLOSSARY = [
    [
     "Hebrews", 12,
     [ 23 ] ],
+   [
+    "James", 5,
+    [ 14 ] ],
    [
     "1 Peter", 5,
     [ 13 ] ] ]
@@ -33564,7 +33642,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Luke", 18,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "James", 5,
+    [ 2 ] ] ]
  },
  {
   "id": "world-to-come",
@@ -37020,7 +37101,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Titus", 3,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "James", 4,
+    [ 5 ] ] ]
  },
  {
   "id": "wine-mingled-with-myrrh",
@@ -37386,7 +37470,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "James", 1,
-    [ 3, 4 ] ] ]
+    [ 3, 4 ] ],
+   [
+    "James", 5,
+    [ 7, 10, 11 ] ] ]
  },
  {
   "id": "jerusalem-compassed",
@@ -40677,7 +40764,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Acts", 14,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "James", 5,
+    [ 17 ] ] ]
  },
  {
   "id": "vanities",
@@ -43500,7 +43590,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Colossians", 3,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "James", 4,
+    [ 1 ] ] ]
  },
  {
   "id": "instruments",
@@ -43674,7 +43767,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 3,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "James", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "sarah",
@@ -44224,6 +44320,12 @@ window.GLOSSARY = [
    [
     "Hebrews", 13,
     [ 22 ] ],
+   [
+    "James", 4,
+    [ 11 ] ],
+   [
+    "James", 5,
+    [ 7, 9, 10, 12, 19 ] ],
    [
     "1 Peter", 5,
     [ 9 ] ] ]
@@ -44879,6 +44981,9 @@ window.GLOSSARY = [
     "2 Corinthians", 7,
     [ 7 ] ],
    [
+    "James", 5,
+    [ 16 ] ],
+   [
     "1 Peter", 4,
     [ 8 ] ] ]
  },
@@ -45132,7 +45237,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Ephesians", 2,
-    [ 15, 16 ] ] ]
+    [ 15, 16 ] ],
+   [
+    "James", 4,
+    [ 4 ] ] ]
  },
  {
   "id": "creation-groaning",
@@ -45471,7 +45579,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Romans", 9,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "James", 5,
+    [ 4 ] ] ]
  },
  {
   "id": "stumblingstone",
@@ -46078,6 +46189,9 @@ window.GLOSSARY = [
    [
     "2 Thessalonians", 3,
     [ 3 ] ],
+   [
+    "James", 5,
+    [ 8 ] ],
    [
     "1 Peter", 5,
     [ 10 ] ] ]
@@ -47865,7 +47979,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Philippians", 2,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "James", 4,
+    [ 9 ] ] ]
  },
  {
   "id": "anguish",
@@ -50106,7 +50223,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Galatians", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "James", 5,
+    [ 16 ] ] ]
  },
  {
   "id": "faith-worketh-by-love",
@@ -50526,7 +50646,10 @@ window.GLOSSARY = [
     [ 21, 22 ] ],
    [
     "Hebrews", 13,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "James", 4,
+    [ 7 ] ] ]
  },
  {
   "id": "head-of-the-wife",
@@ -51033,7 +51156,10 @@ window.GLOSSARY = [
     [ 32, 33 ] ],
    [
     "Hebrews", 11,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "James", 5,
+    [ 10 ] ] ]
  },
  {
   "id": "shamefully-entreated",
@@ -54105,6 +54231,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "James", 1,
+    [ 8 ] ],
+   [
+    "James", 4,
     [ 8 ] ] ]
  },
  {
@@ -54346,5 +54475,203 @@ window.GLOSSARY = [
    [
     "1 Peter", 5,
     [ 14 ] ] ]
+ },
+ {
+  "id": "ask-amiss",
+  "kind": "term",
+  "name": "Ask amiss (pray for the wrong reason, to feed a craving)",
+  "refs": [
+   [
+    "James", 4,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "adulterers-and-adulteresses",
+  "kind": "term",
+  "name": "Adulterers and adulteresses (a heart unfaithful to God)",
+  "refs": [
+   [
+    "James", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "friendship-of-the-world",
+  "kind": "term",
+  "name": "The friendship of the world (a way of living that leaves God out)",
+  "refs": [
+   [
+    "James", 4,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "resist",
+  "kind": "term",
+  "name": "Resist (stand your ground against)",
+  "refs": [
+   [
+    "James", 4,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "draw-nigh",
+  "kind": "term",
+  "name": "Draw nigh (come close)",
+  "refs": [
+   [
+    "James", 4,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lawgiver",
+  "kind": "term",
+  "name": "The one Lawgiver (God, who gives the law and judges)",
+  "refs": [
+   [
+    "James", 4,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "vapour",
+  "kind": "term",
+  "name": "A vapour (mist or steam, gone in a moment)",
+  "refs": [
+   [
+    "James", 4,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "if-the-lord-will",
+  "kind": "term",
+  "name": "If the Lord will (holding your plans with an open hand)",
+  "refs": [
+   [
+    "James", 4,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "knoweth-to-do-good",
+  "kind": "term",
+  "name": "To know to do good and not do it (the sin of the good left undone)",
+  "refs": [
+   [
+    "James", 4,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "job",
+  "kind": "person",
+  "name": "Job (the patient man who lost everything, and was restored)",
+  "refs": [
+   [
+    "James", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "motheaten",
+  "kind": "term",
+  "name": "Motheaten (chewed by moths)",
+  "refs": [
+   [
+    "James", 5,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "cankered",
+  "kind": "term",
+  "name": "Cankered (rusted, tarnished)",
+  "refs": [
+   [
+    "James", 5,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "hire-kept-back",
+  "kind": "term",
+  "name": "Wages kept back by fraud (the hire of the labourers)",
+  "refs": [
+   [
+    "James", 5,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "wanton",
+  "kind": "term",
+  "name": "Wanton (living soft and selfish)",
+  "refs": [
+   [
+    "James", 5,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "husbandman-farmer",
+  "kind": "term",
+  "name": "Husbandman (a farmer)",
+  "refs": [
+   [
+    "James", 5,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "grudge",
+  "kind": "term",
+  "name": "Grudge (groan against one another)",
+  "refs": [
+   [
+    "James", 5,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "yea-be-yea",
+  "kind": "term",
+  "name": "Yea be yea, nay be nay (a plain yes and a plain no)",
+  "refs": [
+   [
+    "James", 5,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "pitiful",
+  "kind": "term",
+  "name": "Very pitiful (full of compassion)",
+  "refs": [
+   [
+    "James", 5,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "prayer-of-faith",
+  "kind": "term",
+  "name": "The prayer of faith (praying in trust that God hears)",
+  "refs": [
+   [
+    "James", 5,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "err-from-the-truth",
+  "kind": "term",
+  "name": "Err from the truth (wander off, like a straying sheep)",
+  "refs": [
+   [
+    "James", 5,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "converteth",
+  "kind": "term",
+  "name": "Convert (turn a man back)",
+  "refs": [
+   [
+    "James", 5,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "multitude-of-sins",
+  "kind": "term",
+  "name": "A multitude of sins (hidden: covered and forgiven by God)",
+  "refs": [
+   [
+    "James", 5,
+    [ 20 ] ] ]
  }
 ];

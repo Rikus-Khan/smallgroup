@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>James 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* jm04-where: where we are in the letter of James, five dots with this chapter lit */
+.jm04-cap { margin: 1.2em 0 .5em; font: 700 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.jm04-where { list-style: none; display: flex; justify-content: center; gap: .4rem; padding: 0; margin: 0 auto; max-width: 36em; }
+.jm04-where li { flex: 1; position: relative; text-align: center; font-size: clamp(.72rem, .68rem + .25vw, .9rem); line-height: 1.25; color: var(--ink-soft); }
+.jm04-where li i { position: relative; z-index: 1; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; margin: 0 auto .3rem; border-radius: 50%; border: 2px solid var(--line-strong); background: var(--bg); font: 700 .95rem var(--sans); font-style: normal; }
+.jm04-where li + li::before { content: ""; position: absolute; top: .95rem; right: 50%; width: calc(100% + .4rem); height: 2px; background: var(--line-strong); }
+.jm04-where li.done i { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.jm04-where li.here { color: var(--accent-hot); font-weight: 700; }
+.jm04-where li.here i { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 20%, transparent); }
+
+/* jm04-steps: three things to do when temptation comes, in order (a deck.css candidate) */
+.jm04-steps { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.jm04-steps li { position: relative; padding: .8em 1em .9em; border-radius: 12px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.jm04-steps li + li::before { content: "\2192"; position: absolute; left: -1.35rem; top: 50%; transform: translateY(-50%); font: 700 1.6rem var(--sans); color: var(--accent); }
+.jm04-steps small { display: block; font: 700 .72rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.jm04-steps b { display: block; font: 600 clamp(1.5rem, 1.2rem + 1.2vw, 2.3rem)/1.1 var(--serif); color: var(--accent-hot); margin: .1em 0 .15em; }
+.jm04-steps .do { display: block; font: italic 600 clamp(1rem, .9rem + .4vw, 1.3rem)/1.3 var(--serif); margin-bottom: .45em; }
+.jm04-steps p { margin: 0 0 .5em; font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); line-height: 1.4; color: var(--ink-soft); }
+.jm04-steps .res { display: block; padding-top: .45em; border-top: 1.5px dashed var(--line-strong); font: 700 clamp(.85rem, .8rem + .3vw, 1rem) var(--sans); color: var(--accent-hot); }
+@media (max-width: 700px) {
+  .jm04-steps { grid-template-columns: 1fr; gap: 1.3rem; }
+  .jm04-steps li + li::before { content: "\2193"; left: 50%; top: -1.35rem; transform: translateX(-50%); }
+}
+
+/* jm04-hill: grace runs off the proud hill and pools in the low place (a deck.css candidate) */
+.jm04-hill { width: 100%; height: auto; display: block; }
+.jm04-hill .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.jm04-hill .pool { fill: color-mix(in srgb, var(--cool) 55%, transparent); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.04); transition: transform 3.2s ease-out .8s; }
+.slide.active .jm04-hill .pool { transform: none; }
+.jm04-hill .flow { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 3 12; }
+.slide.active .jm04-hill .flow { animation: jm04-flow 1.6s linear infinite; }
+@keyframes jm04-flow { to { stroke-dashoffset: -30; } }
+.jm04-hill .drop { fill: var(--cool); opacity: 0; }
+.slide.active .jm04-hill .drop { animation: jm04-fall 2.2s ease-in infinite; animation-delay: calc(var(--k) * .55s); }
+@keyframes jm04-fall { 0% { opacity: 0; transform: translateY(-20px); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(70px); } }
+.jm04-hill text { font: 700 22px var(--sans); fill: var(--ink); }
+.jm04-hill .flag { fill: none; stroke: var(--danger); stroke-width: 3; stroke-linecap: round; }
+
+/* jm04-mist: a plan a year long, and the breath of steam that is a life (a deck.css candidate) */
+.jm04-mist { width: 100%; height: auto; display: block; }
+.jm04-mist .plan { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: var(--accent); stroke-width: 2; stroke-dasharray: 7 6; }
+.jm04-mist .cup { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; }
+.jm04-mist .steam { fill: none; stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; opacity: 0; }
+.slide.active .jm04-mist .steam { animation: jm04-rise 3.4s ease-out infinite; animation-delay: calc(var(--k) * 1.1s); }
+@keyframes jm04-rise { 0% { opacity: 0; transform: translateY(26px); } 25% { opacity: .75; } 100% { opacity: 0; transform: translateY(-48px); } }
+.jm04-mist text { font: 700 21px var(--sans); fill: var(--ink); }
+.jm04-mist text.soft { font-weight: 400; font-size: 20px; fill: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .jm04-mist .steam { animation: none !important; opacity: .5; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">James 4</h1>
+    <p class="sub rise" style="--d:3">Where the fights come from, and how to stand</p>
+    <p class="tag rise" style="--d:5">James doesn't flatter anyone. He says where our wars really start, and then he gives a short, workable way out: submit, resist, draw near. A man who knows he is weak can use it today.</p>
+    <p class="jm04-cap rise" style="--d:6">Where we are in James</p>
+    <ol class="jm04-where rise" style="--d:7" aria-label="Chapter four of five in the letter of James.">
+      <li class="done"><i>1</i>Trials and the Word</li>
+      <li class="done"><i>2</i>Faith that works</li>
+      <li class="done"><i>3</i>The tongue</li>
+      <li class="here"><i>4</i>Pride and submission</li>
+      <li><i>5</i>Patience and prayer</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Fights</span><span class="seed-q">Where do our fights and cravings really come from?</span></li>
+      <li class="step"><span class="topic">Asking</span><span class="seed-q">Why do we ask and not receive?</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">What does it mean to be a friend of the world?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Who gets more grace from God?</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">What three things do we do when temptation comes?</span></li>
+      <li class="step"><span class="topic">Tomorrow</span><span class="seed-q">What should we say about tomorrow, and what is sin for the man who knows to do good?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">The war inside</h2>
+    <p class="range rise" style="--d:2">Verses 1–6</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">James asks the question every man in recovery has asked: why do I keep fighting, and keep losing?</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="wars and fightings among you|lusts that war in your members|because ye ask not|ye ask amiss, that ye may consume it upon your lusts"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1-2" data-hl="come they not hence, even of your lusts that war in your members|ye fight and war, yet ye have not"></blockquote>
+    <h2 class="rise" style="--d:1">The war starts inside</h2>
+    <ol class="stairs down" style="--n:5" aria-label="Five steps down. I want it. I don't have it. I fight for it. I still can't get it. I'm still empty.">
+      <li style="--k:0"><b>I want it</b>the craving</li>
+      <li style="--k:1"><b>I haven't got it</b>“ye lust, and have not”</li>
+      <li style="--k:2"><b>I fight for it</b>“ye kill, and desire to have”</li>
+      <li style="--k:3"><b>I can't get it</b>“and cannot obtain”</li>
+      <li style="--k:4"><b>Still empty</b>“yet ye have not”</li>
+    </ol>
+    <p class="note step"><em>Lusts</em> is a strong old word for <em>pleasures</em>: the thing I'm sure I need. The fights outside (with the wife, the boss, the guy at the next bunk) start with a war <em>“in your members,”</em> in the parts of us that want. Many of us know how it feels to chase something and end up emptier than we started.</p>
+    <p class="note step">James says this to believers, <em>“among you,”</em> and he isn't shaming anyone. He is showing where the fire starts, because a man who knows that can put it out there.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2-3" data-hl="ye have not, because ye ask not|ye ask amiss, that ye may consume it upon your lusts"></blockquote>
+    <h2 class="rise" style="--d:1">Grab it, or ask for it</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What we do</p>
+        <h3>Grab it myself</h3>
+        <p>Want it, scheme for it, fight for it. Then, when we do pray, we ask <em>“amiss”</em> (wrongly): the prayer is only a way to get the thing that feeds the craving. <em>“That ye may consume it upon your lusts.”</em> Still empty.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What we can do</p>
+        <h3>Ask the Giver</h3>
+        <p>“Ye have not, because ye ask not.” God is not hiding the good things. Ask Him for what a good Father would give: strength, a clean day, honest work, peace. And ask with an open hand: if the answer is no, it's because He loves us.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-6" data-hl="the friendship of the world is enmity with God|But he giveth more grace|God resisteth the proud, but giveth grace unto the humble"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="the friendship of the world is enmity with God"></blockquote>
+    <h2 class="rise" style="--d:1">Which side am I on?</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>Making the world's way my best friend</small>Living as if God isn't in the room</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>means</small>I've picked a side against Him.</div>
+    </div>
+    <p class="note step"><em>“Adulterers and adulteresses”</em> is a hard word, and it is a picture the Bible uses again and again: God is the faithful husband, and a heart that runs after other loves is unfaithful. Hosea lived that picture out. <em>The world</em> doesn't mean people (God so loved the world). It means the way of living that leaves Him out: get it, take it, numb it, look good.</p>
+    <p class="note step">This isn't about being weird or cutting off every old friend overnight. It is about whose side you are on when it counts. And for many of us, honestly, the old scene is where the old habits live, so loving those people from a distance may be the wisest thing we can do.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="jm04-hill" viewBox="0 -14 640 294" role="img" aria-label="A hill on the left with the word proud, and a low valley beside it. Grace falls like rain, runs off the top of the hill, and pools in the valley.">
+          <rect class="pool" x="215" y="165" width="260" height="115"/>
+          <path class="land" d="M0 280 L0 90 C60 42 150 46 205 105 C255 160 295 205 345 207 C395 209 425 185 470 150 C520 112 580 104 640 122 L640 280 Z"/>
+          <path class="flow" d="M170 70 C225 100 262 160 305 198"/>
+          <g aria-hidden="true"><circle class="drop" style="--k:0" cx="60" cy="20" r="6"/><circle class="drop" style="--k:1" cx="200" cy="0" r="6"/><circle class="drop" style="--k:2" cx="300" cy="55" r="6"/><circle class="drop" style="--k:3" cx="400" cy="60" r="6"/><circle class="drop" style="--k:4" cx="520" cy="30" r="6"/></g>
+          <text x="20" y="22">The proud: it runs off</text>
+          <text x="215" y="262">The humble: it pools</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Grace runs downhill</h2>
+        <blockquote class="quote rise" style="--d:2" data-q="6" data-hl="God resisteth the proud, but giveth grace unto the humble"></blockquote>
+        <p class="note step"><em>“Resisteth”</em> is an army word: God lines up against the proud. And the proud man isn't always loud. It can be a man sure he's got this, or sure he is beyond help. Both say <em>“I know better than God.”</em></p>
+        <p class="note step">But first, <em>“he giveth more grace.”</em> More than our sin, more than we could use up, and it always goes to the low place. If you feel like you're at the bottom today, you're standing right where it pools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">Submit, resist, draw near</h2>
+    <p class="range rise" style="--d:2">Verses 7–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A plan for the minute temptation shows up, and a way back for the man who has already fallen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="Submit yourselves therefore to God|Resist the devil, and he will flee from you|Draw nigh to God, and he will draw nigh to you"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">When temptation comes</h2>
+    <ol class="jm04-steps" aria-label="Three steps. One: submit, hand it to God. Two: resist, say no and move. Three: draw near, pray and call a brother.">
+      <li class="step"><small>Step 1</small><b>Submit</b><span class="do">“Lord, I'm Yours. Not my way.”</span><p>Before anything else, line up under Him, like a soldier under orders. You can't do the second step without this one.</p><span class="res">Whose side am I on? His.</span></li>
+      <li class="step"><small>Step 2</small><b>Resist</b><span class="do">Say no, and move your feet.</span><p>Leave the room. Hang up. Put the phone down. Walk out of the store. Don't stay and argue with it.</p><span class="res">“He will flee from you.”</span></li>
+      <li class="step"><small>Step 3</small><b>Draw near</b><span class="do">Pray. Call a brother. Open the Book.</span><p>Don't stand there alone. Get closer to God and closer to people who love Him.</p><span class="res">“He will draw nigh to you.”</span></li>
+    </ol>
+    <p class="note step">Look at the order. Most of us try to resist first, on our own strength, and lose. James puts <em>submit</em> first. And <em>“resist”</em> means to stand your ground, not to win a fight alone. Peter says the same:</p>
+    <blockquote class="quote step"><p>“Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.”</p><cite>1 Peter 5:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Resist the devil, and he will flee from you"></blockquote>
+    <h2 class="rise" style="--d:1">A promise, and an honest word</h2>
+    <p class="note rise" style="--d:2">The promise is real: the devil does not outlast a man who stands with God. He <em>“will flee.”</em> Jesus Himself was tempted, and Luke ends the story this way:</p>
+    <blockquote class="quote step"><p>“And when the devil had ended all the temptation, he departed from him for a season.”</p><cite>Luke 4:13</cite></blockquote>
+    <p class="note step"><em>“For a season.”</em> He left, and he came back. So expect the craving to return, and don't read its return as proof you are failing. Each time, it's the same three steps.</p>
+    <p class="note step">And if you have already fallen, the steps still work. <em>Draw nigh to God</em> is an invitation to a man who has just failed, and the next verse tells you how to come.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="Be afflicted, and mourn, and weep|let your laughter be turned to mourning|Humble yourselves in the sight of the Lord, and he shall lift you up"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="8-9" data-hl="Cleanse your hands, ye sinners; and purify your hearts, ye double minded|Be afflicted, and mourn, and weep"></blockquote>
+    <h2 class="rise" style="--d:1">Sorrow, not shame</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">Shame</p>
+        <h3>“I'm no good”</h3>
+        <p>Hides. Keeps it secret. Stays away from God and from the group. Then runs back to whatever numbs it. Shame is where a lot of relapses start.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Mourning that God can use</p>
+        <h3>“I did it, and I'm sorry”</h3>
+        <p>Says it out loud and means it. <em>Hands</em> are what I did; <em>hearts</em> are what I want. <em>“Double minded”</em> means two souls: one for God, one for the craving. Both get brought to Him to be cleaned.</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+    <p class="note step">That is what to do with regret: bring it, don't carry it. Jesus already paid.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">Humble yourselves, <em>and he shall lift you up.</em></p>
+    <blockquote class="quote rise" style="--d:2" data-q="10" data-hl="Humble yourselves in the sight of the Lord, and he shall lift you up"></blockquote>
+    <p class="note step">Notice who does the lifting. You don't have to prop up your own name or prove you have changed. You get low; He lifts. Peter says it this way:</p>
+    <blockquote class="quote step"><p>“Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:”</p><cite>1 Peter 5:6</cite></blockquote>
+    <p class="note step"><em>“In due time”</em> is His time, not ours. Today's job is just the first half: get honest and get low. Your story doesn't end at the bottom, because that is where He does His lifting.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Humble in everyday life</h2>
+    <p class="range rise" style="--d:2">Verses 11–17</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Three everyday tests: how I talk about people, how I plan my life, and what I do about the good I already know.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="Speak not evil one of another, brethren|There is one lawgiver, who is able to save and to destroy|who art thou that judgest another"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="12" data-hl="There is one lawgiver, who is able to save and to destroy: who art thou that judgest another"></blockquote>
+    <h2 class="rise" style="--d:1">Whose chair is that?</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">running a brother down</span><span class="why">gossip and put-downs when he isn't there</span></li>
+      <li class="step"><span class="k">handing down my verdict</span><span class="why">“he'll never change,” “he's a fake”</span></li>
+      <li class="step"><span class="k">sitting in the judge's seat</span><span class="why">that chair belongs to the one Lawgiver</span></li>
+      <li class="step yes"><span class="k">leaving the verdict to Him</span><span class="why">“who is able to save”: He can do what I can't</span></li>
+    </ul>
+    <p class="note step">In jail and in the rooms, people size each other up all day: who's real, who's faking. James says that's not our job. This doesn't mean never saying a hard thing to a brother, because James himself will end this letter with going after a man who has wandered. The difference is whether I'm talking <em>about</em> him to feel big or <em>to</em> him to help him home.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-15" data-hl="To day or to morrow we will go into such a city|It is even a vapour|If the Lord will, we shall live"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="jm04-mist" viewBox="0 0 420 300" role="img" aria-label="A wide dashed box labelled a year, buy and sell, get gain, with a cup of hot coffee below. Steam rises from the cup and fades away before it gets anywhere near the box.">
+          <rect class="plan" x="10" y="10" width="400" height="74" rx="10"/>
+          <text x="210" y="42" text-anchor="middle">“Continue there a year,</text>
+          <text x="210" y="68" text-anchor="middle">buy and sell, and get gain”</text>
+          <g aria-hidden="true">
+            <path class="steam" style="--k:0" d="M170 215 C150 190 190 175 170 150"/>
+            <path class="steam" style="--k:1" d="M210 215 C190 190 230 175 210 150"/>
+            <path class="steam" style="--k:2" d="M250 215 C230 190 270 175 250 150"/>
+          </g>
+          <path class="cup" d="M140 225 L280 225 L270 285 L150 285 Z"/>
+          <path class="cup" d="M280 238 C312 238 312 268 272 268" fill="none"/>
+          <text class="soft" x="290" y="150">“a vapour”</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">A vapour</h2>
+        <p class="note step">James isn't against plans or work: <em>“buy and sell, and get gain”</em> is just business. The trouble is planning as if tomorrow belongs to me and God isn't in it. Life is like the steam off a cup of coffee: real, warm, and gone before you notice.</p>
+        <p class="note step">That isn't meant to scare us. It means <em>today</em> is the day we actually have. “I'll get right with God later.” “I'll quit next Monday.” Later isn't promised.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">“If the Lord will, we shall live, <em>and do this, or that.</em>”</p>
+    <p class="note rise" style="--d:3">This is not a magic phrase to tack onto a plan. It is a way of holding the plan, with an open hand: make it, work it, and let God have the final say.</p>
+    <blockquote class="quote step"><p>“Boast not thyself of to morrow; for thou knowest not what a day may bring forth.”</p><cite>Proverbs 27:1</cite></blockquote>
+    <p class="note step">Think of a court date, a job application, a release date, a reconciliation you're hoping for. Do your part. Then say, honestly, <em>“Lord, if You will.”</em> A man who does that sleeps better, because the outcome was never really in his hands.</p>
+    <p class="note step">Verse 16 gives the opposite: <em>“ye rejoice in your boastings: all such rejoicing is evil.”</em> Boasting is just pride with a plan.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="16-17" data-hl="ye rejoice in your boastings|to him that knoweth to do good, and doeth it not, to him it is sin"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="to him that knoweth to do good, and doeth it not, to him it is sin"></blockquote>
+    <h2 class="rise" style="--d:1">The sin of the good left undone</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What we usually count</p>
+        <h3>The wrong I did</h3>
+        <p>The drink. The lie. The fight. The theft. The night I'd like to forget. We know these are sins, and they are the ones that fill our regrets.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What James adds</p>
+        <h3>The good I knew to do, and didn't</h3>
+        <p>The call I never made. The debt I didn't pay. The apology I put off. The man I walked past. <em>“To him it is sin.”</em></p>
+      </div>
+    </div>
+    <p class="note step">Everyone has both lists, and the grace of 1 John 1:9 covers both. James isn't trying to bury you under a new list. He is pointing you at a short one for today: <em>one good thing you already know you should do.</em> Do it today.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Fights</span><span class="seed-q">“Come they not hence, even of your lusts that war in your members?” <cite>4:1</cite></span><span class="take">The war starts inside, in what I want. Name it there.</span></li>
+      <li class="step"><span class="topic">Asking</span><span class="seed-q">“Ye have not, because ye ask not.” <cite>4:2</cite></span><span class="take">Ask God, and ask for what He would give, not for what feeds the craving.</span></li>
+      <li class="step"><span class="topic">The world</span><span class="seed-q">“The friendship of the world is enmity with God.” <cite>4:4</cite></span><span class="take">It's about whose side I'm on, not about hating people.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“God resisteth the proud, but giveth grace unto the humble.” <cite>4:6</cite></span><span class="take">Grace runs downhill. The low place is where it pools.</span></li>
+      <li class="step"><span class="topic">Temptation</span><span class="seed-q">“Submit yourselves therefore to God. Resist the devil, and he will flee from you. Draw nigh to God, and he will draw nigh to you.” <cite>4:7-8</cite></span><span class="take">Submit first, then say no and move, then get close to God and to your brothers.</span></li>
+      <li class="step"><span class="topic">Tomorrow</span><span class="seed-q">“To him that knoweth to do good, and doeth it not, to him it is sin.” <cite>4:17</cite></span><span class="take">Hold tomorrow with an open hand, and do the good you know today.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Fights</span>
+      <h2>Where do our fights and cravings really come from?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="come they not hence, even of your lusts that war in your members"></blockquote>
+      <blockquote class="quote step" data-q="2" data-hl="Ye lust, and have not: ye kill, and desire to have, and cannot obtain"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>From our own wants, the cravings that war in us. We want, we grab, we fight, and we still end up empty. James says this to believers without shaming them, so we can find the fire where it starts and bring it to God.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Asking</span>
+      <h2>Why do we ask and not receive?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="ye have not, because ye ask not"></blockquote>
+      <blockquote class="quote step" data-q="3" data-hl="Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts"></blockquote>
+      <blockquote class="quote step"><p>“And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:”</p><cite>1 John 5:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Sometimes we don't ask at all. And sometimes we ask wrongly, for something that only feeds the craving. Ask God for what a good Father would give, and trust Him with a no.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">The world</span>
+      <h2>What does it mean to be a friend of the world?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="know ye not that the friendship of the world is enmity with God"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="whosoever therefore will be a friend of the world is the enemy of God"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It means making the world's way of living, with God left out, our closest companion. It's not hating people, because God loves the world. It's picking a side. The Bible calls that unfaithfulness, and the cure is to come back to Him.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Who gets more grace from God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="But he giveth more grace"></blockquote>
+      <blockquote class="quote step" data-q="6" data-hl="God resisteth the proud, but giveth grace unto the humble"></blockquote>
+      <blockquote class="quote step"><p>“Surely he scorneth the scorners: but he giveth grace unto the lowly.”</p><cite>Proverbs 3:34</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The humble. God sets Himself against the proud, but He gives more grace to the man who is low and honest. Grace runs downhill, so the man at the bottom is right where it pools.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Temptation</span>
+      <h2>What three things do we do when temptation comes?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="7" data-hl="Submit yourselves therefore to God. Resist the devil, and he will flee from you"></blockquote>
+      <blockquote class="quote step" data-q="8" data-hl="Draw nigh to God, and he will draw nigh to you"></blockquote>
+      <blockquote class="quote step"><p>“Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.”</p><cite>1 Peter 5:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Submit to God first. Then resist: say no and move your feet. Then draw near: pray, call a brother, open the Book. God promises the devil will flee and that He will draw near to you. And if you've already fallen, the same steps bring you back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Tomorrow</span>
+      <h2>What should we say about tomorrow, and what is sin for the man who knows to do good?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away"></blockquote>
+      <blockquote class="quote step" data-q="15" data-hl="If the Lord will, we shall live, and do this, or that"></blockquote>
+      <blockquote class="quote step" data-q="17" data-hl="to him that knoweth to do good, and doeth it not, to him it is sin"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>“If the Lord will.” Make your plans, and hold them with an open hand, because life is a vapour and tomorrow isn't promised. And when you know the good you should do and don't do it, James calls that sin too. Today, do the one good thing you know.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="8"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, James chapter 4
+const V = {
+  1: "From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?",
+  2: "Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, because ye ask not.",
+  3: "Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.",
+  4: "Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.",
+  5: "Do ye think that the scripture saith in vain, The spirit that dwelleth in us lusteth to envy?",
+  6: "But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.",
+  7: "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
+  8: "Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.",
+  9: "Be afflicted, and mourn, and weep: let your laughter be turned to mourning, and your joy to heaviness.",
+  10: "Humble yourselves in the sight of the Lord, and he shall lift you up.",
+  11: "Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.",
+  12: "There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?",
+  13: "Go to now, ye that say, To day or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain:",
+  14: "Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.",
+  15: "For that ye ought to say, If the Lord will, we shall live, and do this, or that.",
+  16: "But now ye rejoice in your boastings: all such rejoicing is evil.",
+  17: "Therefore to him that knoweth to do good, and doeth it not, to him it is sin.",
+};
+const BOOK = "James 4";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -15526,6 +15526,85 @@ window.STUDIES = [
     }
   },
   {
+    "id": "james-04",
+    "type": "chapter",
+    "book": "James",
+    "url": "studies/james-04.html",
+    "ch": 4,
+    "date": "2026-10-31",
+    "title": "James 4",
+    "sub": "Where the fights come from, and how to stand",
+    "about": "James says our wars start inside, then gives a plain plan for temptation: submit to God, resist the devil, draw near.",
+    "tags": [
+      "Temptation",
+      "Pride",
+      "Grace",
+      "Prayer",
+      "Humility",
+      "Doing good"
+    ],
+    "overview": {
+      "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
+      "when": "About AD 45 to 50, one of the earliest letters in the New Testament",
+      "people": [
+        "devil"
+      ],
+      "places": [],
+      "story": [
+        "James asks where wars and fightings come from, and answers: from the cravings that war inside us. We want, we fight, we still have not. We do not ask, or we ask wrongly (1–3).",
+        "Friendship with the world, a way of living that leaves God out, makes us God's enemy. But God gives more grace, and gives it to the humble (4–6).",
+        "Submit to God, resist the devil and he will flee, draw nigh to God and He will draw nigh to you. Mourn honestly over sin, and humble yourself, and He will lift you up (7–10).",
+        "Do not speak evil of a brother or sit in the judge's seat. Hold plans with an open hand, because life is a vapour: “If the Lord will.” To know the good and not do it is sin (11–17)."
+      ],
+      "key": {
+        "ref": "James 4:7-8",
+        "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you. Draw nigh to God, and he will draw nigh to you."
+      },
+      "big": "The fight is inside, and God gives more grace to the humble. When temptation comes: submit to God, resist, and draw near to Him and to your brothers. He will not leave you alone in it."
+    }
+  },
+  {
+    "id": "james-05",
+    "type": "chapter",
+    "book": "James",
+    "url": "studies/james-05.html",
+    "ch": 5,
+    "date": "2026-10-31",
+    "title": "James 5",
+    "sub": "Wait, pray, and go after your brother",
+    "about": "The last chapter of James: God hears the cheated, the farmer's patience, a plain yes, praying and confessing together, and going after the brother who wandered.",
+    "tags": [
+      "Patience",
+      "Prayer",
+      "Confession",
+      "Honesty",
+      "Healing",
+      "Restoring"
+    ],
+    "overview": {
+      "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
+      "when": "About AD 45 to 50, one of the earliest letters in the New Testament",
+      "people": [
+        "job",
+        "elijah",
+        "elders"
+      ],
+      "places": [],
+      "story": [
+        "James warns rich men who got rich by keeping back their workers' wages. Their rotting wealth is a witness against them, and the cries of the cheated have reached the Lord of sabaoth (1–6).",
+        "Be patient like a farmer who waits for the early and latter rain, like the prophets, and like Job, and see the end of the Lord, who is very pitiful and of tender mercy. Let your yea be yea and your nay, nay (7–12).",
+        "When afflicted, pray. When sick, call for the elders to pray and anoint with oil; the prayer of faith, in the Lord's hands, and sins forgiven (13–15).",
+        "Confess your faults one to another, and pray for one another, that ye may be healed. Elijah was a man like us, and his prayer worked (16–18).",
+        "If a brother wanders from the truth, go and turn him back: it saves a soul from death and hides a multitude of sins (19–20)."
+      ],
+      "key": {
+        "ref": "James 5:16",
+        "text": "Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much."
+      },
+      "big": "Real faith waits patiently, tells the truth, and prays together. Confess to each other so you can be healed, and never stop going after a brother who has wandered."
+    }
+  },
+  {
     "id": "1-peter-04",
     "type": "chapter",
     "book": "1 Peter",
