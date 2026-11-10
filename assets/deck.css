@@ -1043,7 +1043,9 @@ svg.kings { width: 100%; height: auto; display: block; font-family: var(--sans);
 .parallel > p b { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--r) * .7s + var(--c) * .25s - .5s); }
 .slide.active .parallel > p:not(.step) b, .parallel > p.step.on b { opacity: 1; transform: none; }
 @media (max-width: 640px) {
-  .parallel { grid-template-columns: 1fr; gap: .1em; }
-  .parallel b { grid-row: auto; grid-column: auto; order: var(--o); }
+  /* on a phone each line stays whole and wraps; the colors still show which pieces match */
+  .parallel { display: block; }
+  .parallel > p { display: flex; flex-wrap: wrap; gap: .15em .45em; margin: 0 0 .55em; }
+  .parallel > p:last-child { margin-bottom: 0; }
   .parallel > p:not(:first-of-type) b::before { display: none; }
 }

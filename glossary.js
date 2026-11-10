@@ -1625,6 +1625,9 @@ window.GLOSSARY = [
   "name": "The Holy Spirit (Holy Ghost)",
   "refs": [
    [
+    "Genesis", 1,
+    [ 2 ] ],
+   [
     "Matthew", 1,
     [ 18, 20 ] ],
    [
@@ -2729,6 +2732,54 @@ window.GLOSSARY = [
   "name": "The LORD",
   "refs": [
    [
+    "Genesis", 2,
+    [ 4, 5, 7, 8, 9, 15, 16, 18, 19, 21, 22 ] ],
+   [
+    "Genesis", 3,
+    [ 1, 8, 9, 13, 14, 21, 22, 23 ] ],
+   [
+    "Genesis", 4,
+    [ 1, 3, 4, 6, 9, 13, 15, 16, 26 ] ],
+   [
+    "Genesis", 5,
+    [ 29 ] ],
+   [
+    "Genesis", 6,
+    [ 3, 6, 7, 8 ] ],
+   [
+    "Genesis", 7,
+    [ 1, 5, 16 ] ],
+   [
+    "Genesis", 8,
+    [ 20, 21 ] ],
+   [
+    "Genesis", 9,
+    [ 26 ] ],
+   [
+    "Genesis", 10,
+    [ 9 ] ],
+   [
+    "Genesis", 11,
+    [ 5, 6, 8, 9 ] ],
+   [
+    "Genesis", 12,
+    [ 1, 4, 7, 8, 17 ] ],
+   [
+    "Genesis", 13,
+    [ 4, 10, 13, 14, 18 ] ],
+   [
+    "Genesis", 14,
+    [ 22 ] ],
+   [
+    "Genesis", 15,
+    [ 1, 4, 6, 7, 18 ] ],
+   [
+    "Genesis", 16,
+    [ 2, 5, 7, 9, 10, 11, 13 ] ],
+   [
+    "Genesis", 17,
+    [ 1 ] ],
+   [
     "Proverbs", 1,
     [ 7, 29 ] ],
    [
@@ -3323,6 +3374,9 @@ window.GLOSSARY = [
   "name": "The Jordan River",
   "refs": [
    [
+    "Genesis", 13,
+    [ 10, 11 ] ],
+   [
     "Zechariah", 11,
     [ 3 ] ],
    [
@@ -3364,6 +3418,12 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The wilderness",
   "refs": [
+   [
+    "Genesis", 14,
+    [ 6 ] ],
+   [
+    "Genesis", 16,
+    [ 7 ] ],
    [
     "Proverbs", 21,
     [ 19 ] ],
@@ -4190,6 +4250,18 @@ window.GLOSSARY = [
   "name": "Heaven",
   "refs": [
    [
+    "Genesis", 1,
+    [ 1, 9, 14, 15, 17, 20 ] ],
+   [
+    "Genesis", 11,
+    [ 4 ] ],
+   [
+    "Genesis", 14,
+    [ 19, 22 ] ],
+   [
+    "Genesis", 15,
+    [ 5 ] ],
+   [
     "Proverbs", 23,
     [ 5 ] ],
    [
@@ -4793,6 +4865,9 @@ window.GLOSSARY = [
   "name": "Light",
   "refs": [
    [
+    "Genesis", 1,
+    [ 3, 4, 5, 15, 16, 17, 18 ] ],
+   [
     "Proverbs", 4,
     [ 18 ] ],
    [
@@ -4970,6 +5045,12 @@ window.GLOSSARY = [
   "name": "Darkness",
   "refs": [
    [
+    "Genesis", 1,
+    [ 2, 4, 5, 18 ] ],
+   [
+    "Genesis", 15,
+    [ 12 ] ],
+   [
     "Proverbs", 2,
     [ 13 ] ],
    [
@@ -5110,6 +5191,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Grace",
   "refs": [
+   [
+    "Genesis", 6,
+    [ 8 ] ],
    [
     "Proverbs", 1,
     [ 9 ] ],
@@ -7004,6 +7088,9 @@ window.GLOSSARY = [
   "name": "Believe",
   "refs": [
    [
+    "Genesis", 15,
+    [ 6 ] ],
+   [
     "Proverbs", 14,
     [ 15 ] ],
    [
@@ -7741,6 +7828,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wine",
   "refs": [
+   [
+    "Genesis", 9,
+    [ 21, 24 ] ],
+   [
+    "Genesis", 14,
+    [ 18 ] ],
    [
     "Proverbs", 3,
     [ 10 ] ],
@@ -8495,6 +8588,9 @@ window.GLOSSARY = [
   "name": "Knowledge",
   "refs": [
    [
+    "Genesis", 2,
+    [ 9, 17 ] ],
+   [
     "Proverbs", 1,
     [ 4, 7, 22, 29 ] ],
    [
@@ -9113,6 +9209,12 @@ window.GLOSSARY = [
   "name": "Righteous, righteousness",
   "refs": [
    [
+    "Genesis", 7,
+    [ 1 ] ],
+   [
+    "Genesis", 15,
+    [ 6 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -9425,6 +9527,12 @@ window.GLOSSARY = [
   "name": "Wicked, wickedness",
   "refs": [
    [
+    "Genesis", 6,
+    [ 5 ] ],
+   [
+    "Genesis", 13,
+    [ 13 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -9622,6 +9730,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Heart",
   "refs": [
+   [
+    "Genesis", 6,
+    [ 5, 6 ] ],
+   [
+    "Genesis", 8,
+    [ 21 ] ],
+   [
+    "Genesis", 17,
+    [ 17 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -10136,6 +10253,9 @@ window.GLOSSARY = [
   "name": "Anger, wrath",
   "refs": [
    [
+    "Genesis", 4,
+    [ 5, 6 ] ],
+   [
     "Proverbs", 11,
     [ 4, 23 ] ],
    [
@@ -10558,6 +10678,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Strong drink, drunkenness",
   "refs": [
+   [
+    "Genesis", 9,
+    [ 21 ] ],
    [
     "Proverbs", 20,
     [ 1 ] ],
@@ -11660,6 +11783,9 @@ window.GLOSSARY = [
   "name": "Strife, contention",
   "refs": [
    [
+    "Genesis", 13,
+    [ 7, 8 ] ],
+   [
     "Proverbs", 13,
     [ 10 ] ],
    [
@@ -11762,6 +11888,9 @@ window.GLOSSARY = [
   "name": "Subtilty",
   "refs": [
    [
+    "Genesis", 3,
+    [ 1 ] ],
+   [
     "Proverbs", 1,
     [ 4 ] ],
    [
@@ -11782,6 +11911,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Surety (co-signing a debt)",
   "refs": [
+   [
+    "Genesis", 15,
+    [ 13 ] ],
    [
     "Proverbs", 6,
     [ 1 ] ],
@@ -11860,6 +11992,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Tree of life",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 9 ] ],
+   [
+    "Genesis", 3,
+    [ 22, 24 ] ],
    [
     "Proverbs", 3,
     [ 18 ] ],
@@ -11974,6 +12112,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Vision (revelation)",
   "refs": [
+   [
+    "Genesis", 15,
+    [ 1 ] ],
    [
     "Proverbs", 29,
     [ 18 ] ],
@@ -13052,6 +13193,12 @@ window.GLOSSARY = [
   "name": "Meat (food)",
   "refs": [
    [
+    "Genesis", 1,
+    [ 29, 30 ] ],
+   [
+    "Genesis", 9,
+    [ 3 ] ],
+   [
     "Matthew", 3,
     [ 4 ] ],
    [
@@ -14000,6 +14147,9 @@ window.GLOSSARY = [
   "name": "Sanctified (set apart)",
   "refs": [
    [
+    "Genesis", 2,
+    [ 3 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -14369,6 +14519,9 @@ window.GLOSSARY = [
   "name": "Circumcision",
   "refs": [
    [
+    "Genesis", 17,
+    [ 10, 11, 12, 13, 14, 23, 24, 25, 26, 27 ] ],
+   [
     "Luke", 1,
     [ 59 ] ],
    [
@@ -14596,6 +14749,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Gentiles",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 5 ] ],
    [
     "Hosea", 8,
     [ 8 ] ],
@@ -14978,8 +15134,29 @@ window.GLOSSARY = [
  {
   "id": "abraham",
   "kind": "person",
-  "name": "Abraham",
+  "name": "Abraham (Abram)",
   "refs": [
+   [
+    "Genesis", 11,
+    [ 26, 27, 29, 31 ] ],
+   [
+    "Genesis", 12,
+    [ 1, 4, 5, 6, 7, 9, 10, 14, 16, 17, 18 ] ],
+   [
+    "Genesis", 13,
+    [ 1, 2, 4, 5, 7, 8, 12, 14, 18 ] ],
+   [
+    "Genesis", 14,
+    [ 12, 13, 14, 19, 21, 22, 23 ] ],
+   [
+    "Genesis", 15,
+    [ 1, 2, 3, 11, 12, 13, 18 ] ],
+   [
+    "Genesis", 16,
+    [ 1, 2, 3, 5, 6, 15, 16 ] ],
+   [
+    "Genesis", 17,
+    [ 1, 3, 5, 9, 15, 17, 18, 22, 23, 24, 26 ] ],
    [
     "Micah", 7,
     [ 20 ] ],
@@ -16925,6 +17102,9 @@ window.GLOSSARY = [
   "name": "Shew, shewed (show, showed)",
   "refs": [
    [
+    "Genesis", 12,
+    [ 1 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -17212,6 +17392,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Cubit (about 18 inches)",
   "refs": [
+   [
+    "Genesis", 6,
+    [ 15, 16 ] ],
+   [
+    "Genesis", 7,
+    [ 20 ] ],
    [
     "Zechariah", 5,
     [ 2 ] ],
@@ -20339,6 +20525,9 @@ window.GLOSSARY = [
   "name": "Tyre (Tyrus) and Zidon (Sidon)",
   "refs": [
    [
+    "Genesis", 10,
+    [ 19 ] ],
+   [
     "Hosea", 9,
     [ 13 ] ],
    [
@@ -20506,6 +20695,15 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Egypt",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 10, 11, 14 ] ],
+   [
+    "Genesis", 13,
+    [ 1, 10 ] ],
+   [
+    "Genesis", 15,
+    [ 18 ] ],
    [
     "Proverbs", 7,
     [ 16 ] ],
@@ -21305,6 +21503,12 @@ window.GLOSSARY = [
   "name": "Assyria (Asshur)",
   "refs": [
    [
+    "Genesis", 2,
+    [ 14 ] ],
+   [
+    "Genesis", 10,
+    [ 11 ] ],
+   [
     "Hosea", 5,
     [ 13 ] ],
    [
@@ -21349,6 +21553,12 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Bethel (\"house of God\")",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 8 ] ],
+   [
+    "Genesis", 13,
+    [ 3 ] ],
    [
     "Hosea", 10,
     [ 15 ] ],
@@ -21452,6 +21662,9 @@ window.GLOSSARY = [
   "name": "Heifer (a young cow)",
   "refs": [
    [
+    "Genesis", 15,
+    [ 9 ] ],
+   [
     "Hosea", 4,
     [ 16 ] ],
    [
@@ -21508,6 +21721,12 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Admah and Zeboim (cities destroyed with Sodom)",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 19 ] ],
+   [
+    "Genesis", 14,
+    [ 2, 8 ] ],
    [
     "Hosea", 11,
     [ 8 ] ] ]
@@ -22136,6 +22355,18 @@ window.GLOSSARY = [
   "name": "Covenant",
   "refs": [
    [
+    "Genesis", 6,
+    [ 18 ] ],
+   [
+    "Genesis", 9,
+    [ 9, 11, 12, 13, 15, 16, 17 ] ],
+   [
+    "Genesis", 15,
+    [ 18 ] ],
+   [
+    "Genesis", 17,
+    [ 2, 4, 7, 9, 10, 11, 13, 14, 19, 21 ] ],
+   [
     "Proverbs", 2,
     [ 17 ] ],
    [
@@ -22391,6 +22622,12 @@ window.GLOSSARY = [
   "name": "Damascus",
   "refs": [
    [
+    "Genesis", 14,
+    [ 15 ] ],
+   [
+    "Genesis", 15,
+    [ 2 ] ],
+   [
     "Amos", 1,
     [ 3, 5 ] ],
    [
@@ -22595,6 +22832,9 @@ window.GLOSSARY = [
   "name": "Captivity (exile)",
   "refs": [
    [
+    "Genesis", 14,
+    [ 14 ] ],
+   [
     "Hosea", 6,
     [ 11 ] ],
    [
@@ -22664,6 +22904,9 @@ window.GLOSSARY = [
   "name": "Calneh",
   "refs": [
    [
+    "Genesis", 10,
+    [ 10 ] ],
+   [
     "Amos", 6,
     [ 2 ] ] ]
  },
@@ -22672,6 +22915,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Hamath (Hemath)",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 18 ] ],
    [
     "Amos", 6,
     [ 2, 14 ] ],
@@ -22696,6 +22942,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The Philistines",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 14 ] ],
    [
     "Amos", 1,
     [ 8 ] ],
@@ -22768,6 +23017,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Isaac",
   "refs": [
+   [
+    "Genesis", 17,
+    [ 19, 21 ] ],
    [
     "Amos", 7,
     [ 9, 16 ] ],
@@ -22847,6 +23099,9 @@ window.GLOSSARY = [
   "name": "Herdman",
   "refs": [
    [
+    "Genesis", 13,
+    [ 7, 8 ] ],
+   [
     "Amos", 1,
     [ 1 ] ],
    [
@@ -22870,6 +23125,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Dan",
   "refs": [
+   [
+    "Genesis", 14,
+    [ 14 ] ],
    [
     "Amos", 8,
     [ 14 ] ] ]
@@ -22940,6 +23198,9 @@ window.GLOSSARY = [
   "name": "Caphtor",
   "refs": [
    [
+    "Genesis", 10,
+    [ 14 ] ],
+   [
     "Amos", 9,
     [ 7 ] ] ]
  },
@@ -22960,6 +23221,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The Ethiopians (Cush)",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 13 ] ],
    [
     "Amos", 9,
     [ 7 ] ],
@@ -23062,6 +23326,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Gaza",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 19 ] ],
    [
     "Amos", 1,
     [ 6, 7 ] ],
@@ -23243,6 +23510,15 @@ window.GLOSSARY = [
   "name": "The Amorites",
   "refs": [
    [
+    "Genesis", 10,
+    [ 16 ] ],
+   [
+    "Genesis", 14,
+    [ 7, 13 ] ],
+   [
+    "Genesis", 15,
+    [ 16, 21 ] ],
+   [
     "Amos", 2,
     [ 9, 10 ] ] ]
  },
@@ -23348,6 +23624,15 @@ window.GLOSSARY = [
   "name": "Sodom and Gomorrah",
   "refs": [
    [
+    "Genesis", 10,
+    [ 19 ] ],
+   [
+    "Genesis", 13,
+    [ 10, 12, 13 ] ],
+   [
+    "Genesis", 14,
+    [ 2, 8, 10, 11, 12, 17, 21, 22 ] ],
+   [
     "Amos", 4,
     [ 11 ] ],
    [
@@ -23395,6 +23680,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Tithes",
   "refs": [
+   [
+    "Genesis", 14,
+    [ 20 ] ],
    [
     "Amos", 4,
     [ 4 ] ],
@@ -24122,6 +24410,9 @@ window.GLOSSARY = [
   "name": "Nineveh (the capital of Assyria)",
   "refs": [
    [
+    "Genesis", 10,
+    [ 11, 12 ] ],
+   [
     "Jonah", 1,
     [ 2 ] ],
    [
@@ -24154,6 +24445,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Vengeance, revengeth (God's just payback)",
   "refs": [
+   [
+    "Genesis", 4,
+    [ 15 ] ],
    [
     "Proverbs", 6,
     [ 34 ] ],
@@ -24485,6 +24779,9 @@ window.GLOSSARY = [
   "name": "Morter and brickkiln (making mud bricks)",
   "refs": [
    [
+    "Genesis", 11,
+    [ 3 ] ],
+   [
     "Nahum", 3,
     [ 14 ] ] ]
  },
@@ -24703,6 +25000,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Burnt offerings (sacrifices burned whole on the altar)",
   "refs": [
+   [
+    "Genesis", 8,
+    [ 20 ] ],
    [
     "Hosea", 6,
     [ 6 ] ],
@@ -24929,6 +25229,9 @@ window.GLOSSARY = [
   "name": "Subdue (tread down, break the power of)",
   "refs": [
    [
+    "Genesis", 1,
+    [ 28 ] ],
+   [
     "Micah", 7,
     [ 19 ] ] ]
  },
@@ -25004,6 +25307,9 @@ window.GLOSSARY = [
   "name": "Hebrew (an Israelite)",
   "refs": [
    [
+    "Genesis", 14,
+    [ 13 ] ],
+   [
     "Jonah", 1,
     [ 9 ] ],
    [
@@ -25037,6 +25343,9 @@ window.GLOSSARY = [
   "name": "Tarshish (far to the west, probably in Spain)",
   "refs": [
    [
+    "Genesis", 10,
+    [ 4 ] ],
+   [
     "Jonah", 1,
     [ 3 ] ],
    [
@@ -25066,6 +25375,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "From the presence of the LORD (running from God)",
   "refs": [
+   [
+    "Genesis", 3,
+    [ 8 ] ],
+   [
+    "Genesis", 4,
+    [ 16 ] ],
    [
     "Jonah", 1,
     [ 3, 10 ] ] ]
@@ -25250,6 +25565,18 @@ window.GLOSSARY = [
   "name": "The Canaanites",
   "refs": [
    [
+    "Genesis", 10,
+    [ 18, 19 ] ],
+   [
+    "Genesis", 12,
+    [ 6 ] ],
+   [
+    "Genesis", 13,
+    [ 7 ] ],
+   [
+    "Genesis", 15,
+    [ 21 ] ],
+   [
     "Obadiah", 1,
     [ 20 ] ] ]
  },
@@ -25297,6 +25624,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Substance (goods, wealth)",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 5 ] ],
+   [
+    "Genesis", 13,
+    [ 6 ] ],
    [
     "Obadiah", 1,
     [ 13 ] ],
@@ -25549,6 +25882,21 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Canaan",
   "refs": [
+   [
+    "Genesis", 11,
+    [ 31 ] ],
+   [
+    "Genesis", 12,
+    [ 5 ] ],
+   [
+    "Genesis", 13,
+    [ 12 ] ],
+   [
+    "Genesis", 16,
+    [ 3 ] ],
+   [
+    "Genesis", 17,
+    [ 8 ] ],
    [
     "Zephaniah", 2,
     [ 5 ] ],
@@ -25871,6 +26219,9 @@ window.GLOSSARY = [
   "name": "The angel of the LORD",
   "refs": [
    [
+    "Genesis", 16,
+    [ 7, 9, 10, 11 ] ],
+   [
     "Zechariah", 1,
     [ 11, 12 ] ],
    [
@@ -26162,6 +26513,9 @@ window.GLOSSARY = [
   "name": "The eyes of the LORD",
   "refs": [
    [
+    "Genesis", 6,
+    [ 8 ] ],
+   [
     "Proverbs", 5,
     [ 21 ] ],
    [
@@ -26269,6 +26623,15 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Shinar (the land of Babylon)",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 10 ] ],
+   [
+    "Genesis", 11,
+    [ 2 ] ],
+   [
+    "Genesis", 14,
+    [ 1, 9 ] ],
    [
     "Zechariah", 5,
     [ 11 ] ] ]
@@ -26467,6 +26830,12 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The Jebusites (Jerusalem's people before David)",
   "refs": [
+   [
+    "Genesis", 10,
+    [ 16 ] ],
+   [
+    "Genesis", 15,
+    [ 21 ] ],
    [
     "Zechariah", 9,
     [ 7 ] ] ]
@@ -27068,6 +27437,12 @@ window.GLOSSARY = [
   "name": "The curse (what breaking faith with God brings)",
   "refs": [
    [
+    "Genesis", 3,
+    [ 14, 17 ] ],
+   [
+    "Genesis", 4,
+    [ 11 ] ],
+   [
     "Malachi", 1,
     [ 14 ] ],
    [
@@ -27275,6 +27650,12 @@ window.GLOSSARY = [
   "name": "The windows of heaven (rain from God)",
   "refs": [
    [
+    "Genesis", 7,
+    [ 11 ] ],
+   [
+    "Genesis", 8,
+    [ 2 ] ],
+   [
     "Malachi", 3,
     [ 10 ] ] ]
  },
@@ -27449,6 +27830,9 @@ window.GLOSSARY = [
   "name": "Barren (unable to have children)",
   "refs": [
    [
+    "Genesis", 11,
+    [ 30 ] ],
+   [
     "Luke", 1,
     [ 7, 36 ] ],
    [
@@ -27589,6 +27973,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Handmaid, handmaiden (a woman servant)",
   "refs": [
+   [
+    "Genesis", 16,
+    [ 1 ] ],
    [
     "Luke", 1,
     [ 38, 48 ] ],
@@ -28712,6 +29099,9 @@ window.GLOSSARY = [
   "name": "Sinners (people known for their sin)",
   "refs": [
    [
+    "Genesis", 13,
+    [ 13 ] ],
+   [
     "Matthew", 9,
     [ 10, 11, 13 ] ],
    [
@@ -29063,6 +29453,9 @@ window.GLOSSARY = [
   "name": "Fourscore (eighty)",
   "refs": [
    [
+    "Genesis", 16,
+    [ 16 ] ],
+   [
     "Luke", 2,
     [ 37 ] ],
    [
@@ -29366,6 +29759,9 @@ window.GLOSSARY = [
   "name": "Throughly (thoroughly)",
   "refs": [
    [
+    "Genesis", 11,
+    [ 3 ] ],
+   [
     "Matthew", 3,
     [ 12 ] ],
    [
@@ -29498,6 +29894,24 @@ window.GLOSSARY = [
   "name": "Noe (Noah)",
   "refs": [
    [
+    "Genesis", 5,
+    [ 29, 30, 32 ] ],
+   [
+    "Genesis", 6,
+    [ 8, 9, 10, 13, 22 ] ],
+   [
+    "Genesis", 7,
+    [ 1, 5, 6, 7, 9, 11, 13, 15, 23 ] ],
+   [
+    "Genesis", 8,
+    [ 1, 6, 11, 13, 15, 18, 20 ] ],
+   [
+    "Genesis", 9,
+    [ 1, 8, 17, 18, 19, 20, 24, 28, 29 ] ],
+   [
+    "Genesis", 10,
+    [ 1, 32 ] ],
+   [
     "Matthew", 24,
     [ 37, 38 ] ],
    [
@@ -29519,8 +29933,26 @@ window.GLOSSARY = [
  {
   "id": "shem",
   "kind": "person",
-  "name": "Sem (Shem), son of Noah",
+  "name": "Shem (Sem), son of Noah",
   "refs": [
+   [
+    "Genesis", 5,
+    [ 32 ] ],
+   [
+    "Genesis", 6,
+    [ 10 ] ],
+   [
+    "Genesis", 7,
+    [ 13 ] ],
+   [
+    "Genesis", 9,
+    [ 18, 23, 26, 27 ] ],
+   [
+    "Genesis", 10,
+    [ 1, 21, 22, 31 ] ],
+   [
+    "Genesis", 11,
+    [ 10, 11 ] ],
    [
     "Luke", 3,
     [ 36 ] ] ]
@@ -29528,8 +29960,11 @@ window.GLOSSARY = [
  {
   "id": "terah",
   "kind": "person",
-  "name": "Thara (Terah), Abraham's father",
+  "name": "Terah (Thara), Abraham's father",
   "refs": [
+   [
+    "Genesis", 11,
+    [ 24, 25, 26, 27, 28, 31, 32 ] ],
    [
     "Luke", 3,
     [ 34 ] ] ]
@@ -29539,6 +29974,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Enoch, who walked with God",
   "refs": [
+   [
+    "Genesis", 5,
+    [ 18, 19, 21, 22, 23, 24 ] ],
    [
     "Luke", 3,
     [ 37 ] ],
@@ -29552,8 +29990,11 @@ window.GLOSSARY = [
  {
   "id": "methuselah",
   "kind": "person",
-  "name": "Mathusala (Methuselah)",
+  "name": "Methuselah (Mathusala)",
   "refs": [
+   [
+    "Genesis", 5,
+    [ 21, 22, 25, 26, 27 ] ],
    [
     "Luke", 3,
     [ 37 ] ] ]
@@ -29564,6 +30005,12 @@ window.GLOSSARY = [
   "name": "Seth, son of Adam",
   "refs": [
    [
+    "Genesis", 4,
+    [ 25, 26 ] ],
+   [
+    "Genesis", 5,
+    [ 3, 4, 6, 7, 8 ] ],
+   [
     "Luke", 3,
     [ 38 ] ] ]
  },
@@ -29572,6 +30019,18 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Adam, the first man",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 19, 20, 21, 23 ] ],
+   [
+    "Genesis", 3,
+    [ 8, 9, 17, 20, 21 ] ],
+   [
+    "Genesis", 4,
+    [ 1, 25 ] ],
+   [
+    "Genesis", 5,
+    [ 1, 2, 3, 4, 5 ] ],
    [
     "Luke", 3,
     [ 38 ] ],
@@ -31205,6 +31664,12 @@ window.GLOSSARY = [
   "name": "Perfect (complete, whole, full-grown)",
   "refs": [
    [
+    "Genesis", 6,
+    [ 9 ] ],
+   [
+    "Genesis", 17,
+    [ 1 ] ],
+   [
     "Matthew", 5,
     [ 48 ] ],
    [
@@ -31279,6 +31744,21 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Begat (was the father of)",
   "refs": [
+   [
+    "Genesis", 4,
+    [ 18 ] ],
+   [
+    "Genesis", 5,
+    [ 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19, 21, 22, 25, 26, 28, 30, 32 ] ],
+   [
+    "Genesis", 6,
+    [ 10 ] ],
+   [
+    "Genesis", 10,
+    [ 8, 13, 15, 24, 26 ] ],
+   [
+    "Genesis", 11,
+    [ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 ] ],
    [
     "Proverbs", 23,
     [ 22 ] ],
@@ -32036,6 +32516,9 @@ window.GLOSSARY = [
   "name": "The fowls (birds) of the air",
   "refs": [
    [
+    "Genesis", 6,
+    [ 7 ] ],
+   [
     "Matthew", 6,
     [ 26 ] ],
    [
@@ -32587,6 +33070,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Plagues (painful diseases; the word means a whip)",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 17 ] ],
    [
     "Mark", 3,
     [ 10 ] ],
@@ -33743,6 +34229,9 @@ window.GLOSSARY = [
   "name": "Victuals (food)",
   "refs": [
    [
+    "Genesis", 14,
+    [ 11 ] ],
+   [
     "Matthew", 14,
     [ 15 ] ],
    [
@@ -34291,6 +34780,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "One flesh",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 24 ] ],
    [
     "Matthew", 19,
     [ 5, 6 ] ],
@@ -35372,6 +35864,15 @@ window.GLOSSARY = [
   "name": "Male and female",
   "refs": [
    [
+    "Genesis", 1,
+    [ 27 ] ],
+   [
+    "Genesis", 5,
+    [ 2 ] ],
+   [
+    "Genesis", 7,
+    [ 16 ] ],
+   [
     "Matthew", 19,
     [ 4 ] ],
    [
@@ -35383,6 +35884,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Cleave (stick fast, hold on)",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 24 ] ],
    [
     "Matthew", 19,
     [ 5 ] ],
@@ -35578,6 +36082,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Steward (the manager of a household or estate)",
   "refs": [
+   [
+    "Genesis", 15,
+    [ 2 ] ],
    [
     "Matthew", 20,
     [ 8 ] ],
@@ -36313,6 +36820,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Abel, son of Adam (the first man murdered)",
   "refs": [
+   [
+    "Genesis", 4,
+    [ 2, 4, 8, 9, 25 ] ],
    [
     "Matthew", 23,
     [ 35 ] ],
@@ -38312,6 +38822,18 @@ window.GLOSSARY = [
   "name": "Lot, Abraham's nephew, brought out of Sodom (and Lot's wife)",
   "refs": [
    [
+    "Genesis", 11,
+    [ 27, 31 ] ],
+   [
+    "Genesis", 12,
+    [ 4, 5 ] ],
+   [
+    "Genesis", 13,
+    [ 1, 5, 7, 8, 10, 11, 12, 14 ] ],
+   [
+    "Genesis", 14,
+    [ 12, 16 ] ],
+   [
     "Luke", 17,
     [ 28, 29, 32 ] ],
    [
@@ -38351,6 +38873,18 @@ window.GLOSSARY = [
   "name": "The ark (Noah's)",
   "refs": [
    [
+    "Genesis", 6,
+    [ 14, 15, 16, 18, 19 ] ],
+   [
+    "Genesis", 7,
+    [ 1, 7, 9, 13, 15, 17, 18, 23 ] ],
+   [
+    "Genesis", 8,
+    [ 1, 4, 6, 9, 10, 13, 16, 19 ] ],
+   [
+    "Genesis", 9,
+    [ 10, 18 ] ],
+   [
     "Matthew", 24,
     [ 38 ] ],
    [
@@ -38368,6 +38902,21 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The flood (in Noah's day)",
   "refs": [
+   [
+    "Genesis", 6,
+    [ 17 ] ],
+   [
+    "Genesis", 7,
+    [ 6, 7, 10, 17 ] ],
+   [
+    "Genesis", 9,
+    [ 11, 15, 28 ] ],
+   [
+    "Genesis", 10,
+    [ 1, 32 ] ],
+   [
+    "Genesis", 11,
+    [ 10 ] ],
    [
     "Matthew", 24,
     [ 38, 39 ] ],
@@ -40571,6 +41120,9 @@ window.GLOSSARY = [
   "name": "Iniquities (sins, the crooked things we do)",
   "refs": [
    [
+    "Genesis", 15,
+    [ 16 ] ],
+   [
     "Acts", 1,
     [ 18 ] ],
    [
@@ -42551,6 +43103,9 @@ window.GLOSSARY = [
   "name": "Tongues (languages)",
   "refs": [
    [
+    "Genesis", 10,
+    [ 5, 20, 31 ] ],
+   [
     "Acts", 10,
     [ 46 ] ],
    [
@@ -42830,8 +43385,14 @@ window.GLOSSARY = [
  {
   "id": "charran",
   "kind": "place",
-  "name": "Charran (Haran, where Abraham's family settled)",
+  "name": "Haran (Charran), where Abraham's family settled",
   "refs": [
+   [
+    "Genesis", 11,
+    [ 31, 32 ] ],
+   [
+    "Genesis", 12,
+    [ 4, 5 ] ],
    [
     "Acts", 7,
     [ 2, 4 ] ] ]
@@ -42859,6 +43420,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Pharaoh (the king of Egypt)",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 15, 17, 18, 20 ] ],
    [
     "Acts", 7,
     [ 10, 13, 21 ] ],
@@ -42974,6 +43538,9 @@ window.GLOSSARY = [
   "name": "Sojourn (live as a stranger in a foreign land)",
   "refs": [
    [
+    "Genesis", 12,
+    [ 10 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -43027,6 +43594,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Hearken (listen carefully)",
   "refs": [
+   [
+    "Genesis", 3,
+    [ 17 ] ],
+   [
+    "Genesis", 4,
+    [ 23 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -45647,6 +46220,9 @@ window.GLOSSARY = [
   "name": "Dominion (rule, mastery)",
   "refs": [
    [
+    "Genesis", 1,
+    [ 26, 28 ] ],
+   [
     "Romans", 6,
     [ 9, 14 ] ],
    [
@@ -45914,8 +46490,20 @@ window.GLOSSARY = [
  {
   "id": "sarah",
   "kind": "person",
-  "name": "Sara (Sarah), Abraham's wife",
+  "name": "Sarah (Sarai, Sara), Abraham's wife",
   "refs": [
+   [
+    "Genesis", 11,
+    [ 29, 30, 31 ] ],
+   [
+    "Genesis", 12,
+    [ 5, 11, 17 ] ],
+   [
+    "Genesis", 16,
+    [ 1, 2, 3, 5, 6, 8 ] ],
+   [
+    "Genesis", 17,
+    [ 15, 17, 19, 21 ] ],
    [
     "Romans", 4,
     [ 19 ] ],
@@ -45937,6 +46525,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Impute, count, reckon (put to a man's account)",
   "refs": [
+   [
+    "Genesis", 15,
+    [ 6 ] ],
    [
     "Romans", 2,
     [ 26 ] ],
@@ -45976,6 +46567,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Father of many nations (Abraham's new name)",
   "refs": [
+   [
+    "Genesis", 17,
+    [ 4, 5 ] ],
    [
     "Romans", 4,
     [ 17, 18 ] ] ]
@@ -47429,6 +48023,9 @@ window.GLOSSARY = [
   "name": "Enmity (hostility, open war)",
   "refs": [
    [
+    "Genesis", 3,
+    [ 15 ] ],
+   [
     "Luke", 23,
     [ 12 ] ],
    [
@@ -48341,6 +48938,9 @@ window.GLOSSARY = [
   "name": "Bruise (crush; Genesis 3:15)",
   "refs": [
    [
+    "Genesis", 3,
+    [ 15 ] ],
+   [
     "Nahum", 3,
     [ 19 ] ],
    [
@@ -48751,6 +49351,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Inherit (receive as an heir what belongs to the family)",
   "refs": [
+   [
+    "Genesis", 15,
+    [ 7, 8 ] ],
    [
     "1 Corinthians", 6,
     [ 9, 10 ] ],
@@ -50312,6 +50915,9 @@ window.GLOSSARY = [
   "name": "Savour (smell, fragrance: the scent of Christ)",
   "refs": [
    [
+    "Genesis", 8,
+    [ 21 ] ],
+   [
     "2 Corinthians", 2,
     [ 14, 15, 16 ] ],
    [
@@ -50798,6 +51404,9 @@ window.GLOSSARY = [
   "name": "The serpent of Eden (the deceiver)",
   "refs": [
    [
+    "Genesis", 3,
+    [ 1, 2, 4, 13, 14 ] ],
+   [
     "2 Corinthians", 11,
     [ 3 ] ],
    [
@@ -50812,6 +51421,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Beguiled (deceived)",
   "refs": [
+   [
+    "Genesis", 3,
+    [ 13 ] ],
    [
     "2 Corinthians", 11,
     [ 3 ] ] ]
@@ -51158,6 +51770,21 @@ window.GLOSSARY = [
   "name": "The seed (Abraham's offspring; the one Seed is Christ)",
   "refs": [
    [
+    "Genesis", 12,
+    [ 7 ] ],
+   [
+    "Genesis", 13,
+    [ 15, 16 ] ],
+   [
+    "Genesis", 15,
+    [ 3, 5, 13, 18 ] ],
+   [
+    "Genesis", 16,
+    [ 10 ] ],
+   [
+    "Genesis", 17,
+    [ 7, 8, 9, 10, 12, 19 ] ],
+   [
     "Galatians", 3,
     [ 16, 19, 29 ] ],
    [
@@ -51254,8 +51881,11 @@ window.GLOSSARY = [
  {
   "id": "hagar",
   "kind": "person",
-  "name": "Agar (Hagar), Sarah's bondmaid and the mother of Ishmael",
+  "name": "Hagar (Agar), Sarah's bondmaid and the mother of Ishmael",
   "refs": [
+   [
+    "Genesis", 16,
+    [ 1, 3, 4, 8, 15, 16 ] ],
    [
     "Galatians", 4,
     [ 22, 23, 24, 25, 30, 31 ] ] ]
@@ -52189,6 +52819,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Meet (fit, qualified)",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 18, 20 ] ],
    [
     "Colossians", 1,
     [ 12 ] ],
@@ -54371,6 +55004,12 @@ window.GLOSSARY = [
   "name": "Eve, the first woman",
   "refs": [
    [
+    "Genesis", 3,
+    [ 20 ] ],
+   [
+    "Genesis", 4,
+    [ 1 ] ],
+   [
     "1 Timothy", 2,
     [ 13 ] ] ]
  },
@@ -55568,8 +56207,11 @@ window.GLOSSARY = [
  {
   "id": "melchisedec",
   "kind": "person",
-  "name": "Melchisedec (Melchizedek), king of Salem and priest of the most high God",
+  "name": "Melchizedek (Melchisedec), king of Salem and priest of the most high God",
   "refs": [
+   [
+    "Genesis", 14,
+    [ 18 ] ],
    [
     "Hebrews", 5,
     [ 6, 10 ] ],
@@ -55750,6 +56392,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Salem (the old name of Jerusalem; it means “peace”)",
   "refs": [
+   [
+    "Genesis", 14,
+    [ 18 ] ],
    [
     "Hebrews", 7,
     [ 1, 2 ] ] ]
@@ -55934,6 +56579,9 @@ window.GLOSSARY = [
   "name": "God's rest (the rest God gives, pictured by the sabbath and Canaan, found in Christ)",
   "refs": [
    [
+    "Genesis", 2,
+    [ 2, 3 ] ],
+   [
     "Hebrews", 3,
     [ 11, 18 ] ],
    [
@@ -55955,6 +56603,9 @@ window.GLOSSARY = [
   "name": "Carcases (dead bodies)",
   "refs": [
    [
+    "Genesis", 15,
+    [ 11 ] ],
+   [
     "Nahum", 3,
     [ 3 ] ],
    [
@@ -55966,6 +56617,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The seventh day (the day God rested from His finished work)",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 2, 3 ] ],
    [
     "Hebrews", 4,
     [ 4 ] ] ]
@@ -56096,8 +56750,11 @@ window.GLOSSARY = [
  {
   "id": "cherubims",
   "kind": "term",
-  "name": "Cherubims (angels of gold above the mercy seat)",
+  "name": "Cherubims (mighty angels: guarding Eden, and in gold above the mercy seat)",
   "refs": [
+   [
+    "Genesis", 3,
+    [ 24 ] ],
    [
     "Hebrews", 9,
     [ 5 ] ] ]
@@ -56434,6 +57091,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Cain (Adam's son, who killed his brother Abel)",
   "refs": [
+   [
+    "Genesis", 4,
+    [ 1, 2, 3, 5, 6, 8, 9, 13, 15, 16, 17, 24, 25 ] ],
    [
     "Hebrews", 11,
     [ 4 ] ],
@@ -57071,6 +57731,9 @@ window.GLOSSARY = [
   "name": "Husbandman (a farmer)",
   "refs": [
    [
+    "Genesis", 9,
+    [ 20 ] ],
+   [
     "James", 5,
     [ 7 ] ] ]
  },
@@ -57247,6 +57910,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Grievous (heavy, crushing, a burden)",
   "refs": [
+   [
+    "Genesis", 12,
+    [ 10 ] ],
    [
     "1 John", 5,
     [ 3 ] ] ]
@@ -59009,6 +59675,9 @@ window.GLOSSARY = [
   "name": "The rainbow (God's sign of His covenant promise, Genesis 9)",
   "refs": [
    [
+    "Genesis", 9,
+    [ 13, 14, 16 ] ],
+   [
     "Revelation", 4,
     [ 3 ] ],
    [
@@ -59465,8 +60134,14 @@ window.GLOSSARY = [
  {
   "id": "euphrates",
   "kind": "place",
-  "name": "The great river Euphrates (the far eastern edge of the Roman world, where invaders came from)",
+  "name": "The river Euphrates (one of Eden's rivers; later the edge of the promised land and of the Roman world)",
   "refs": [
+   [
+    "Genesis", 2,
+    [ 14 ] ],
+   [
+    "Genesis", 15,
+    [ 18 ] ],
    [
     "Revelation", 9,
     [ 14 ] ],
@@ -60811,5 +61486,962 @@ window.GLOSSARY = [
    [
     "Revelation", 22,
     [ 20 ] ] ]
+ },
+ {
+  "id": "god-the-creator",
+  "kind": "person",
+  "name": "God the Creator",
+  "refs": [
+   [
+    "Genesis", 1,
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 20, 21, 22, 24, 25, 26, 27, 28, 29, 31 ] ],
+   [
+    "Genesis", 2,
+    [ 2, 3, 4, 5, 7, 8, 9, 15, 16, 18, 19, 21, 22 ] ] ]
+ },
+ {
+  "id": "creation",
+  "kind": "term",
+  "name": "Created (God made all things out of nothing)",
+  "refs": [
+   [
+    "Genesis", 1,
+    [ 1, 21, 27 ] ],
+   [
+    "Genesis", 2,
+    [ 3, 4 ] ],
+   [
+    "Genesis", 5,
+    [ 1, 2 ] ],
+   [
+    "Genesis", 6,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "firmament",
+  "kind": "term",
+  "name": "The firmament (a spread-out expanse; the sky)",
+  "refs": [
+   [
+    "Genesis", 1,
+    [ 6, 7, 8, 14, 15, 17, 20 ] ] ]
+ },
+ {
+  "id": "evening-and-morning",
+  "kind": "term",
+  "name": "The evening and the morning (the six days of creation)",
+  "refs": [
+   [
+    "Genesis", 1,
+    [ 5, 8, 13, 19, 23, 31 ] ] ]
+ },
+ {
+  "id": "image-of-god-in-man",
+  "kind": "term",
+  "name": "The image of God (man made in God's likeness)",
+  "refs": [
+   [
+    "Genesis", 1,
+    [ 26, 27 ] ],
+   [
+    "Genesis", 5,
+    [ 1 ] ],
+   [
+    "Genesis", 9,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "eden",
+  "kind": "place",
+  "name": "Eden, the garden of God",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 8, 9, 10, 15, 16 ] ],
+   [
+    "Genesis", 3,
+    [ 1, 2, 3, 8, 10, 23, 24 ] ],
+   [
+    "Genesis", 4,
+    [ 16 ] ],
+   [
+    "Joel", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "pison",
+  "kind": "place",
+  "name": "Pison, a river of Eden",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "havilah",
+  "kind": "place",
+  "name": "Havilah, the land of gold by Eden",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "gihon-river",
+  "kind": "place",
+  "name": "Gihon, a river of Eden",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "hiddekel",
+  "kind": "place",
+  "name": "Hiddekel (the river Tigris)",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "dust-of-the-ground",
+  "kind": "term",
+  "name": "The dust of the ground (what man was made from)",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "living-soul",
+  "kind": "term",
+  "name": "A living soul (man, alive with the breath God breathed into him)",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 7 ] ],
+   [
+    "1 Corinthians", 15,
+    [ 45 ] ] ]
+ },
+ {
+  "id": "tree-of-knowledge",
+  "kind": "term",
+  "name": "The tree of the knowledge of good and evil",
+  "refs": [
+   [
+    "Genesis", 2,
+    [ 9, 17 ] ] ]
+ },
+ {
+  "id": "seed-of-the-woman",
+  "kind": "term",
+  "name": "The seed of the woman (the Deliverer promised in Genesis 3:15: Christ)",
+  "refs": [
+   [
+    "Genesis", 3,
+    [ 15 ] ],
+   [
+    "Genesis", 4,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "enoch-son-of-cain",
+  "kind": "person",
+  "name": "Enoch, son of Cain (not the Enoch who walked with God)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 17, 18 ] ] ]
+ },
+ {
+  "id": "city-of-enoch",
+  "kind": "place",
+  "name": "The city of Enoch (the first city, built by Cain)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "nod",
+  "kind": "place",
+  "name": "The land of Nod (“wandering”), east of Eden",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "irad",
+  "kind": "person",
+  "name": "Irad, son of Enoch (Cain's line)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "mehujael",
+  "kind": "person",
+  "name": "Mehujael (Cain's line)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "methusael",
+  "kind": "person",
+  "name": "Methusael, father of Lamech (Cain's line)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "lamech-of-cains-line",
+  "kind": "person",
+  "name": "Lamech of Cain's line (the first man with two wives; his boast of revenge)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 18, 19, 23, 24 ] ] ]
+ },
+ {
+  "id": "adah-wife-of-lamech",
+  "kind": "person",
+  "name": "Adah, wife of Lamech",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 19, 20, 23 ] ] ]
+ },
+ {
+  "id": "zillah",
+  "kind": "person",
+  "name": "Zillah, wife of Lamech",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 19, 22, 23 ] ] ]
+ },
+ {
+  "id": "jabal",
+  "kind": "person",
+  "name": "Jabal, father of those who live in tents and keep cattle",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "jubal",
+  "kind": "person",
+  "name": "Jubal, father of all who play the harp and organ",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "tubal-cain",
+  "kind": "person",
+  "name": "Tubal-cain, master of the bronze and iron workers",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "naamah-daughter-of-lamech",
+  "kind": "person",
+  "name": "Naamah, sister of Tubal-cain",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "enos",
+  "kind": "person",
+  "name": "Enos, son of Seth",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 26 ] ],
+   [
+    "Genesis", 5,
+    [ 6, 7, 9, 10, 11 ] ],
+   [
+    "Luke", 3,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "cainan",
+  "kind": "person",
+  "name": "Cainan, son of Enos",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 9, 10, 12, 13, 14 ] ] ]
+ },
+ {
+  "id": "mahalaleel",
+  "kind": "person",
+  "name": "Mahalaleel, son of Cainan",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 12, 13, 15, 16, 17 ] ] ]
+ },
+ {
+  "id": "jared",
+  "kind": "person",
+  "name": "Jared, father of Enoch",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 15, 16, 18, 19, 20 ] ],
+   [
+    "Luke", 3,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "lamech-father-of-noah",
+  "kind": "person",
+  "name": "Lamech, son of Methuselah and father of Noah",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 25, 26, 28, 30, 31 ] ],
+   [
+    "Luke", 3,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "ham",
+  "kind": "person",
+  "name": "Ham, son of Noah",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 32 ] ],
+   [
+    "Genesis", 6,
+    [ 10 ] ],
+   [
+    "Genesis", 7,
+    [ 13 ] ],
+   [
+    "Genesis", 9,
+    [ 18, 22 ] ],
+   [
+    "Genesis", 10,
+    [ 1, 6, 20 ] ] ]
+ },
+ {
+  "id": "japheth",
+  "kind": "person",
+  "name": "Japheth, son of Noah",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 32 ] ],
+   [
+    "Genesis", 6,
+    [ 10 ] ],
+   [
+    "Genesis", 7,
+    [ 13 ] ],
+   [
+    "Genesis", 9,
+    [ 18, 23, 27 ] ],
+   [
+    "Genesis", 10,
+    [ 1, 2, 21 ] ] ]
+ },
+ {
+  "id": "sons-of-god-genesis-6",
+  "kind": "term",
+  "name": "The sons of God (Genesis 6: read as Seth's godly line, or as fallen angels)",
+  "refs": [
+   [
+    "Genesis", 6,
+    [ 2, 4 ] ] ]
+ },
+ {
+  "id": "giants",
+  "kind": "term",
+  "name": "Giants (Hebrew nephilim, before the flood and in Canaan)",
+  "refs": [
+   [
+    "Genesis", 6,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "fountains-of-the-deep",
+  "kind": "term",
+  "name": "The fountains of the great deep (waters bursting up from under the earth at the flood)",
+  "refs": [
+   [
+    "Genesis", 7,
+    [ 11 ] ],
+   [
+    "Genesis", 8,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "ararat",
+  "kind": "place",
+  "name": "The mountains of Ararat (where the ark rested)",
+  "refs": [
+   [
+    "Genesis", 8,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "noahs-raven",
+  "kind": "term",
+  "name": "The raven (sent out from the ark; went to and fro)",
+  "refs": [
+   [
+    "Genesis", 8,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "noahs-dove",
+  "kind": "term",
+  "name": "The dove (sent out from the ark; came back with an olive leaf)",
+  "refs": [
+   [
+    "Genesis", 8,
+    [ 8, 9, 10, 11, 12 ] ] ]
+ },
+ {
+  "id": "noahs-altar",
+  "kind": "place",
+  "name": "Noah's altar (the first altar in the Bible, built after the flood)",
+  "refs": [
+   [
+    "Genesis", 8,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "canaan-son-of-ham",
+  "kind": "person",
+  "name": "Canaan, son of Ham (father of the Canaanites)",
+  "refs": [
+   [
+    "Genesis", 9,
+    [ 18, 22, 25, 26, 27 ] ],
+   [
+    "Genesis", 10,
+    [ 6, 15 ] ] ]
+ },
+ {
+  "id": "nimrod-the-hunter",
+  "kind": "person",
+  "name": "Nimrod, the mighty hunter (the first kingdom builder, at Babel)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 8, 9 ] ] ]
+ },
+ {
+  "id": "cush",
+  "kind": "person",
+  "name": "Cush, son of Ham (father of the peoples up the Nile beyond Egypt)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 6, 7, 8 ] ] ]
+ },
+ {
+  "id": "mizraim",
+  "kind": "person",
+  "name": "Mizraim, son of Ham (Egypt)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 6, 13 ] ] ]
+ },
+ {
+  "id": "phut",
+  "kind": "person",
+  "name": "Phut, son of Ham (a people west of Egypt)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "sidon-firstborn-of-canaan",
+  "kind": "person",
+  "name": "Sidon, Canaan's firstborn (father of the Sidonians)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "heth",
+  "kind": "person",
+  "name": "Heth, son of Canaan (father of the Hittites)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "javan",
+  "kind": "person",
+  "name": "Javan, son of Japheth (the Greeks)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 2, 4 ] ] ]
+ },
+ {
+  "id": "asshur",
+  "kind": "person",
+  "name": "Asshur, son of Shem (father of the Assyrians)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 11, 22 ] ] ]
+ },
+ {
+  "id": "aram",
+  "kind": "person",
+  "name": "Aram, son of Shem (father of the Syrians)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 22, 23 ] ] ]
+ },
+ {
+  "id": "eber",
+  "kind": "person",
+  "name": "Eber (Heber), forefather of the Hebrews",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 21, 24, 25 ] ],
+   [
+    "Genesis", 11,
+    [ 14, 15, 16, 17 ] ],
+   [
+    "Luke", 3,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "peleg",
+  "kind": "person",
+  "name": "Peleg (Phalec), in whose days the earth was divided",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 25 ] ],
+   [
+    "Genesis", 11,
+    [ 16, 17, 18, 19 ] ],
+   [
+    "Luke", 3,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "joktan",
+  "kind": "person",
+  "name": "Joktan, Peleg's brother (father of the Arabian tribes)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 25, 26, 29 ] ] ]
+ },
+ {
+  "id": "erech",
+  "kind": "place",
+  "name": "Erech (Uruk, a city of Nimrod's kingdom in Shinar)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "accad",
+  "kind": "place",
+  "name": "Accad (Akkad, a city of Nimrod's kingdom in Shinar)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "calah",
+  "kind": "place",
+  "name": "Calah (a city of Assyria, near Nineveh)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 11, 12 ] ] ]
+ },
+ {
+  "id": "gerar",
+  "kind": "place",
+  "name": "Gerar (a town in the south of Canaan, toward Gaza)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "ophir",
+  "kind": "place",
+  "name": "Ophir (a land famous for its gold)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "babel",
+  "kind": "place",
+  "name": "Babel (the city and its tower, in the land of Shinar)",
+  "refs": [
+   [
+    "Genesis", 10,
+    [ 10 ] ],
+   [
+    "Genesis", 11,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "ur",
+  "kind": "place",
+  "name": "Ur of the Chaldees (Abram's first home)",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 28, 31 ] ],
+   [
+    "Genesis", 15,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "haran-son-of-terah",
+  "kind": "person",
+  "name": "Haran, Abram's brother (Lot's father, died in Ur)",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 26, 27, 28, 29, 31 ] ] ]
+ },
+ {
+  "id": "nahor",
+  "kind": "person",
+  "name": "Nahor (Abram's grandfather, and Abram's brother of the same name)",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 22, 23, 24, 25, 26, 27, 29 ] ] ]
+ },
+ {
+  "id": "milcah",
+  "kind": "person",
+  "name": "Milcah, Nahor's wife (daughter of Haran)",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "iscah",
+  "kind": "person",
+  "name": "Iscah, daughter of Haran",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "reu",
+  "kind": "person",
+  "name": "Reu, son of Peleg",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 18, 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "serug",
+  "kind": "person",
+  "name": "Serug, Abram's great-grandfather",
+  "refs": [
+   [
+    "Genesis", 11,
+    [ 20, 21, 22, 23 ] ] ]
+ },
+ {
+  "id": "shechem",
+  "kind": "place",
+  "name": "Shechem (Sichem), in the hills of Canaan",
+  "refs": [
+   [
+    "Genesis", 12,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "moreh",
+  "kind": "place",
+  "name": "The plain of Moreh (a grove of oaks by Shechem)",
+  "refs": [
+   [
+    "Genesis", 12,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "hai",
+  "kind": "place",
+  "name": "Hai (Ai), the town east of Bethel",
+  "refs": [
+   [
+    "Genesis", 12,
+    [ 8 ] ],
+   [
+    "Genesis", 13,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "altar-abram",
+  "kind": "place",
+  "name": "Abram's altars (where he met the LORD and called on His name)",
+  "refs": [
+   [
+    "Genesis", 12,
+    [ 7, 8 ] ],
+   [
+    "Genesis", 13,
+    [ 4, 18 ] ] ]
+ },
+ {
+  "id": "plain-of-jordan",
+  "kind": "place",
+  "name": "The plain of Jordan (the green valley Lot chose)",
+  "refs": [
+   [
+    "Genesis", 13,
+    [ 10, 11, 12 ] ] ]
+ },
+ {
+  "id": "zoar",
+  "kind": "place",
+  "name": "Zoar (also called Bela), a small city of the plain",
+  "refs": [
+   [
+    "Genesis", 13,
+    [ 10 ] ],
+   [
+    "Genesis", 14,
+    [ 2, 8 ] ] ]
+ },
+ {
+  "id": "hebron",
+  "kind": "place",
+  "name": "Hebron",
+  "refs": [
+   [
+    "Genesis", 13,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "mamre",
+  "kind": "place",
+  "name": "Mamre (the oak grove at Hebron, and the Amorite who shared Abram's treaty)",
+  "refs": [
+   [
+    "Genesis", 13,
+    [ 18 ] ],
+   [
+    "Genesis", 14,
+    [ 13, 24 ] ] ]
+ },
+ {
+  "id": "perizzites",
+  "kind": "person",
+  "name": "The Perizzites (a people already living in Canaan)",
+  "refs": [
+   [
+    "Genesis", 13,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "chedorlaomer",
+  "kind": "person",
+  "name": "Chedorlaomer, king of Elam, and the three kings with him (Amraphel, Arioch, Tidal)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 1, 4, 5, 9, 17 ] ] ]
+ },
+ {
+  "id": "kings-of-the-plain",
+  "kind": "person",
+  "name": "The five kings of the plain (Bera of Sodom, Birsha, Shinab, Shemeber, and the king of Bela)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "king-of-sodom",
+  "kind": "person",
+  "name": "The king of Sodom",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 2, 8, 17, 21, 22 ] ] ]
+ },
+ {
+  "id": "rephaims",
+  "kind": "person",
+  "name": "The Rephaims, Zuzims, Emims and Horites (old peoples beaten by the four kings)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 5, 6 ] ],
+   [
+    "Genesis", 15,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "vale-of-siddim",
+  "kind": "place",
+  "name": "The vale of Siddim (where the kings fought, now under the Dead Sea)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 3, 8, 10 ] ] ]
+ },
+ {
+  "id": "salt-sea",
+  "kind": "place",
+  "name": "The Salt Sea (the Dead Sea)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "slimepits",
+  "kind": "term",
+  "name": "Slimepits (pits of tar)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "valley-of-shaveh",
+  "kind": "place",
+  "name": "The valley of Shaveh, the king's dale (near Salem)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "eshcol-and-aner",
+  "kind": "person",
+  "name": "Eshcol and Aner, Abram's allies",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 13, 24 ] ] ]
+ },
+ {
+  "id": "most-high-god",
+  "kind": "term",
+  "name": "The most high God (God above all)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 18, 19, 20, 22 ] ],
+   [
+    "Mark", 5,
+    [ 7 ] ],
+   [
+    "Acts", 16,
+    [ 17 ] ],
+   [
+    "Hebrews", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "eliezer",
+  "kind": "person",
+  "name": "Eliezer of Damascus, the steward of Abram's house",
+  "refs": [
+   [
+    "Genesis", 15,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "ten-nations-of-canaan",
+  "kind": "person",
+  "name": "The Kenites, Kenizzites, Kadmonites, Hittites, Perizzites, Rephaims and Girgashites (peoples of the promised land)",
+  "refs": [
+   [
+    "Genesis", 15,
+    [ 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "ishmael",
+  "kind": "person",
+  "name": "Ishmael, Abram's son by Hagar (“God hears”)",
+  "refs": [
+   [
+    "Genesis", 16,
+    [ 11, 15, 16 ] ],
+   [
+    "Genesis", 17,
+    [ 18, 20, 23, 25, 26 ] ] ]
+ },
+ {
+  "id": "shur",
+  "kind": "place",
+  "name": "Shur (the wilderness on the road from Canaan to Egypt)",
+  "refs": [
+   [
+    "Genesis", 16,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "beer-lahai-roi",
+  "kind": "place",
+  "name": "Beer-lahai-roi (“the well of the Living One who sees me”)",
+  "refs": [
+   [
+    "Genesis", 16,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "el-roi",
+  "kind": "term",
+  "name": "Thou God seest me (El Roi, the name Hagar gave the LORD)",
+  "refs": [
+   [
+    "Genesis", 16,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "el-shaddai",
+  "kind": "person",
+  "name": "The Almighty God (El Shaddai, God Almighty)",
+  "refs": [
+   [
+    "Genesis", 17,
+    [ 1 ] ] ]
  }
 ];

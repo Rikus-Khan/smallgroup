@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genesis 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ge11-wall: a wall of burnt bricks laid course by course, the dark "slime" (tar) showing between them (Genesis 11:3) */
+.ge11-wall .ge11-tar { fill: var(--on-glow); }   /* stays dark in every theme, like tar */
+.ge11-brick { fill: color-mix(in srgb, var(--warm) 55%, var(--surface)); stroke: color-mix(in srgb, var(--warm) 70%, var(--ink)); stroke-width: 1;
+  opacity: 0; transform: translateY(-16px); transform-box: fill-box;
+  transition: opacity .3s ease, transform .3s ease; transition-delay: calc(var(--k, 0) * 60ms + 300ms); }
+.slide.active .ge11-brick { opacity: 1; transform: none; }
+.ge11-wall text { font: 600 15px var(--sans); fill: var(--ink-soft); }
+
+/* ge11-sky: a tower built to reach heaven, falling far short, and the LORD coming down to see it (Genesis 11:4–5).
+   Tiers rise on open (.ge11-tier, --k); their reach (.ge11-reach) climbs and stops; on a .ge11-come step the line from heaven draws down (.ge11-down). */
+.ge11-sky .ge11-heaven { fill: color-mix(in srgb, var(--accent) 14%, transparent); }
+.ge11-sky .ge11-heaven-name { font: italic 600 22px var(--serif); fill: var(--accent-hot); }
+.ge11-sky .ge11-ground { stroke: var(--line-strong); stroke-width: 2; }
+.ge11-tier { fill: color-mix(in srgb, var(--warm) 45%, var(--surface)); stroke: var(--line-strong); stroke-width: 1.5;
+  transform: scaleY(0); transform-box: fill-box; transform-origin: 50% 100%;
+  transition: transform .7s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--k, 0) * 330ms + 250ms); }
+.slide.active .ge11-tier { transform: scaleY(1); }
+.ge11-courses { opacity: 0; transition: opacity .6s ease 2s; }
+.slide.active .ge11-courses { opacity: .55; }
+.ge11-course-line { stroke: color-mix(in srgb, var(--ink) 45%, transparent); stroke-width: 1; fill: none; }
+.ge11-reach { stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 7 7; fill: none; opacity: 0; transition: opacity .6s ease 2.3s; }
+.slide.active .ge11-reach { opacity: 1; }
+.ge11-sky .ge11-label { font: 600 17px var(--sans); fill: var(--ink-soft); }
+.ge11-sky .ge11-q { font: 700 30px var(--serif); fill: var(--ink-soft); opacity: 0; transition: opacity .6s ease 2.8s; }
+.slide.active .ge11-q { opacity: 1; }
+.ge11-down { stroke: var(--accent-hot); stroke-width: 4; fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.8s ease-in-out; }
+.ge11-down-name { font: 700 19px var(--sans); fill: var(--accent-hot); opacity: 0; transition: opacity .6s ease 1.2s; }
+.ge11-down-eye { fill: var(--accent-hot); opacity: 0; transition: opacity .5s ease 1.6s; }
+.slide:has(.ge11-come.on) .ge11-down { stroke-dashoffset: 0; }
+.slide:has(.ge11-come.on) .ge11-down-name, .slide:has(.ge11-come.on) .ge11-down-eye { opacity: 1; }
+
+/* ge11-lives: keeps the shared lives chart short enough to sit with a note under it */
+.ge11-lives { max-width: min(100%, 98vh); margin: 0 auto; }
+
+/* ge11-words: old words with their plain meanings, as a short glossary card */
+.ge11-words { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .45rem .9rem; margin: .5em 0 1em; padding: 0; list-style: none; }
+.ge11-words li { padding: .45em .8em .5em; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--surface);
+  font-size: clamp(.98rem, .88rem + .45vw, 1.28rem); line-height: 1.3; }
+.ge11-words b { display: block; font-family: var(--serif); font-style: italic; color: var(--accent-hot); }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Genesis 11</h1>
+    <p class="sub rise" style="--d:3">Let us make us a name</p>
+    <p class="tag rise" style="--d:5">Men build a tower to make a name for themselves, and God comes down. Then ten generations of names lead to one man, Abram, and a wife with no child.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">What were the builders really after?</span></li>
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">Can a man build his own way up to God?</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">Why did God scatter them?</span></li>
+      <li class="step"><span class="topic">Names</span><span class="seed-q">Why does God keep a list of names?</span></li>
+      <li class="step"><span class="topic">Regret</span><span class="seed-q">What does it cost to stop halfway?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What does God do with a dead end?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">From the flood to Abram</h2>
+    <ol class="timeline" aria-label="Year 1656 after creation, the flood. Some time after the flood, Babel: the tower and the scattering; no date is given, perhaps in Peleg's days. Year 2008, Abram is born. About 2090 BC, Abram leaves Haran for Canaan. About 1875 BC, Jacob's family goes down to Egypt.">
+      <li style="--k:0"><b>year 1656</b><span>The flood</span><small>years from creation, adding up Genesis 5</small></li>
+      <li class="lit" style="--k:1"><b>after the flood</b><span>Babel: the tower and the scattering</span><small>no date given; perhaps in Peleg's days (10:25)</small></li>
+      <li style="--k:2"><b>year 2008</b><span>Abram is born</span><small>adding up Genesis 11 with Acts 7:4</small></li>
+      <li style="--k:3"><b>about 2090 BC</b><span>Abram leaves Haran for Canaan</span><small>Genesis 12</small></li>
+      <li class="wait" style="--k:4"><b>about 1875 BC</b><span>Jacob's family goes down to Egypt</span><small>Genesis 46</small></li>
+    </ol>
+    <p class="note rise" style="--d:3">Chapter 10 listed the nations that came from Noah's three sons. Chapter 11 goes back and tells <em>how</em> they came to be spread over the earth, speaking different languages.</p>
+    <p class="note step">Then it narrows down from all mankind to one family line, and from that line to one man. Everything in the rest of the Bible flows through him.</p>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: LET US BUILD ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Let us build</h2>
+    <p class="range rise" style="--d:2">Verses 1–4</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">One people, one language, one plan, and God left out of it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="of one language, and of one speech|the land of Shinar"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-terrain="neareast" viewBox="560 0 420 470" data-regions="MESOPOTAMIA, ARAM" data-towns="Ararat:l, Babel!:l, Erech:r, Ur:r, Nineveh:r" role="img" aria-label="A map of Mesopotamia. The mountains of Ararat are at the top. The Tigris and Euphrates rivers run down to the Gulf. Babel lies on the Euphrates in the flat plain of Shinar, with Erech and Ur farther south.">
+          <text x="740" y="390" text-anchor="middle" style="font:italic 700 calc(30px * var(--u, 1)) var(--serif);fill:var(--accent-hot)">the land of Shinar</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The land of Shinar</h2>
+        <p class="note rise" style="--d:2">The ark came to rest on the mountains of Ararat (8:4). Over the years, Noah's descendants moved down into the wide, flat plain between the Tigris and the Euphrates. The Bible calls it <em>Shinar</em>. Later it was called Babylonia; today it is southern Iraq.</p>
+        <p class="note rise" style="--d:3">Rich soil, plenty of water, room to spread out. And everyone still spoke <em>one language</em>.</p>
+        <p class="note step">But God had given them a job when they came off the ark: “Be fruitful, and multiply, and replenish the earth” (9:1). <em>Fill the earth.</em> In Shinar they stopped, and dug in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="let us make brick|let us build us a city and a tower, whose top may reach unto heaven|let us make us a name|lest we be scattered abroad upon the face of the whole earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="3" data-hl="brick for stone|slime had they for morter"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="ge11-wall" viewBox="0 0 380 260" role="img" aria-label="A wall of fired bricks being laid row by row, with dark tar between them for mortar.">
+          <rect class="ge11-tar" x="8" y="38" width="362" height="182" rx="3"/>
+          <rect class="ge11-brick" x="10" y="190" width="58" height="28" rx="2" style="--k:0"/><rect class="ge11-brick" x="72" y="190" width="58" height="28" rx="2" style="--k:1"/><rect class="ge11-brick" x="134" y="190" width="58" height="28" rx="2" style="--k:2"/><rect class="ge11-brick" x="196" y="190" width="58" height="28" rx="2" style="--k:3"/><rect class="ge11-brick" x="258" y="190" width="58" height="28" rx="2" style="--k:4"/><rect class="ge11-brick" x="320" y="190" width="48" height="28" rx="2" style="--k:5"/>
+          <rect class="ge11-brick" x="10" y="160" width="28" height="28" rx="2" style="--k:6"/><rect class="ge11-brick" x="42" y="160" width="58" height="28" rx="2" style="--k:7"/><rect class="ge11-brick" x="104" y="160" width="58" height="28" rx="2" style="--k:8"/><rect class="ge11-brick" x="166" y="160" width="58" height="28" rx="2" style="--k:9"/><rect class="ge11-brick" x="228" y="160" width="58" height="28" rx="2" style="--k:10"/><rect class="ge11-brick" x="290" y="160" width="58" height="28" rx="2" style="--k:11"/><rect class="ge11-brick" x="352" y="160" width="16" height="28" rx="2" style="--k:12"/>
+          <rect class="ge11-brick" x="10" y="130" width="58" height="28" rx="2" style="--k:13"/><rect class="ge11-brick" x="72" y="130" width="58" height="28" rx="2" style="--k:14"/><rect class="ge11-brick" x="134" y="130" width="58" height="28" rx="2" style="--k:15"/><rect class="ge11-brick" x="196" y="130" width="58" height="28" rx="2" style="--k:16"/><rect class="ge11-brick" x="258" y="130" width="58" height="28" rx="2" style="--k:17"/><rect class="ge11-brick" x="320" y="130" width="48" height="28" rx="2" style="--k:18"/>
+          <rect class="ge11-brick" x="10" y="100" width="28" height="28" rx="2" style="--k:19"/><rect class="ge11-brick" x="42" y="100" width="58" height="28" rx="2" style="--k:20"/><rect class="ge11-brick" x="104" y="100" width="58" height="28" rx="2" style="--k:21"/><rect class="ge11-brick" x="166" y="100" width="58" height="28" rx="2" style="--k:22"/><rect class="ge11-brick" x="228" y="100" width="58" height="28" rx="2" style="--k:23"/><rect class="ge11-brick" x="290" y="100" width="58" height="28" rx="2" style="--k:24"/><rect class="ge11-brick" x="352" y="100" width="16" height="28" rx="2" style="--k:25"/>
+          <rect class="ge11-brick" x="10" y="70" width="58" height="28" rx="2" style="--k:26"/><rect class="ge11-brick" x="72" y="70" width="58" height="28" rx="2" style="--k:27"/><rect class="ge11-brick" x="134" y="70" width="58" height="28" rx="2" style="--k:28"/><rect class="ge11-brick" x="196" y="70" width="58" height="28" rx="2" style="--k:29"/><rect class="ge11-brick" x="258" y="70" width="58" height="28" rx="2" style="--k:30"/><rect class="ge11-brick" x="320" y="70" width="48" height="28" rx="2" style="--k:31"/>
+          <rect class="ge11-brick" x="10" y="40" width="28" height="28" rx="2" style="--k:32"/><rect class="ge11-brick" x="42" y="40" width="58" height="28" rx="2" style="--k:33"/><rect class="ge11-brick" x="104" y="40" width="58" height="28" rx="2" style="--k:34"/><rect class="ge11-brick" x="166" y="40" width="58" height="28" rx="2" style="--k:35"/><rect class="ge11-brick" x="228" y="40" width="58" height="28" rx="2" style="--k:36"/><rect class="ge11-brick" x="290" y="40" width="58" height="28" rx="2" style="--k:37"/><rect class="ge11-brick" x="352" y="40" width="16" height="28" rx="2" style="--k:38"/>
+          <text x="10" y="246">brick: river mud, shaped and fired hard</text>
+          <text x="10" y="22">slime: tar from the ground, for mortar</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Brick for stone</h2>
+        <ul class="ge11-words rise" style="--d:2">
+          <li><b>Go to</b>Come on! Let's go!</li>
+          <li><b>throughly</b>thoroughly, all the way through</li>
+          <li><b>slime</b>tar, the black pitch (bitumen) that seeps from the ground there</li>
+          <li><b>morter</b>mortar, what holds the bricks together</li>
+        </ul>
+        <p class="note step">Shinar is river mud, with hardly a stone in it. So they invented their own: bricks baked hard in a kiln, glued with tar. New know-how, and they meant to use it for something big.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="4" data-hl="let us make us a name|lest we be scattered abroad"></blockquote>
+    <h2 class="rise" style="--d:1">What they were really building</h2>
+    <ul class="nots">
+      <li class="step"><span class="k">a city</span><span class="why">safety in numbers, walls of their own</span></li>
+      <li class="step"><span class="k">a tower, whose top may reach unto heaven</span><span class="why">up to God, on their own terms</span></li>
+      <li class="step"><span class="k">let us make us a name</span><span class="why">glory, for themselves</span></li>
+      <li class="step"><span class="k">lest we be scattered</span><span class="why">fear, and a flat “no” to God's “fill the earth”</span></li>
+    </ul>
+    <p class="note step">Count the words: “let <em>us</em>… build <em>us</em>… make <em>us</em> a name.” God isn't in their plan at all. Building isn't the sin. A city isn't the sin. The sin is a life built around <em>us</em>: our name, our safety, our way up, and God told to stay out.</p>
+    <p class="note step">A man can build that kind of tower out of anything: a reputation, money, a tough-guy image, a bottle he keeps within reach so he'll never feel scattered. It looks strong. It's mud and tar.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE LORD CAME DOWN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The LORD came down</h2>
+    <p class="range rise" style="--d:2">Verses 5–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They built up to reach Him. He had to come down to see it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="the LORD came down to see the city and the tower|nothing will be restrained from them, which they have imagined to do"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="the LORD came down to see"></blockquote>
+    <div class="split">
+      <div class="stage">
+        <svg class="ge11-sky" viewBox="0 0 600 440" style="max-height:50vh" role="img" aria-label="A stepped brick tower rises from the plain. A dotted line climbs from its top toward heaven and stops far short, with a question mark. Then a line comes all the way down from heaven to the tower: the LORD came down to see.">
+          <defs>
+            <pattern id="ge11-course" width="24" height="10" patternUnits="userSpaceOnUse"><path class="ge11-course-line" d="M0 10H24M0 5H24M12 0V5M0 5V10"/></pattern>
+          </defs>
+          <rect class="ge11-heaven" x="0" y="0" width="600" height="56" rx="8"/>
+          <text class="ge11-heaven-name" x="300" y="36" text-anchor="middle">heaven</text>
+          <line class="ge11-ground" x1="20" y1="420" x2="580" y2="420"/>
+          <rect class="ge11-tier" x="200" y="390" width="200" height="30" style="--k:0"/>
+          <rect class="ge11-tier" x="222" y="363" width="156" height="27" style="--k:1"/>
+          <rect class="ge11-tier" x="245" y="339" width="110" height="24" style="--k:2"/>
+          <rect class="ge11-tier" x="265" y="318" width="70" height="21" style="--k:3"/>
+          <rect class="ge11-tier" x="283" y="301" width="34" height="17" style="--k:4"/>
+          <g class="ge11-courses">
+            <rect x="200" y="390" width="200" height="30" fill="url(#ge11-course)"/>
+            <rect x="222" y="363" width="156" height="27" fill="url(#ge11-course)"/>
+            <rect x="245" y="339" width="110" height="24" fill="url(#ge11-course)"/>
+            <rect x="265" y="318" width="70" height="21" fill="url(#ge11-course)"/>
+          </g>
+          <path class="ge11-reach" d="M300 294V236"/>
+          <text class="ge11-q" x="300" y="224" text-anchor="middle">?</text>
+          <text class="ge11-label" x="190" y="262" text-anchor="middle">“unto heaven”</text>
+          <path class="ge11-down" pathLength="1" d="M440 58 C 440 170, 390 262, 322 300"/>
+          <circle class="ge11-down-eye" cx="322" cy="300" r="6"/>
+          <text class="ge11-down-name" x="452" y="150">the LORD</text>
+          <text class="ge11-down-name" x="452" y="174">came down</text>
+          <text class="ge11-down-name" x="452" y="198">to see</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Come down to see it</h2>
+        <p class="note rise" style="--d:2">They meant it to reach heaven. God, in effect, has to <em>go down to see it.</em> Not because He couldn't see: Moses says it this way to show how tiny man's greatest work is next to Him.</p>
+        <p class="note step ge11-come">That is the gospel in a picture: no man can build his way up to God, so God comes down.</p>
+        <blockquote class="quote step"><p>“And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.”</p><cite>John 3:13</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="6" data-hl="nothing will be restrained from them, which they have imagined to do"></blockquote>
+    <h2 class="rise" style="--d:1">A brake, not a tantrum</h2>
+    <p class="note rise" style="--d:2">“Restrained” means held back. God isn't worried about bricks. He knows the heart of man: “every imagination of the thoughts of his heart was only evil continually” (6:5).</p>
+    <div class="ifthen step">
+      <div class="if"><small>If</small>all mankind is one crew, of one mind, set against God,</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>nothing will hold back the evil they imagine.</div>
+    </div>
+    <p class="note step">So God breaks up the crew. That's mercy. Some of us know it from the inside: the old running buddies, the house where it all went down, the friends who were never going to let us change. Sometimes God scatters that crew on purpose, and it feels like loss. It is rescue.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="let us go down, and there confound their language|they left off to build the city"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Go to, let us go down"></blockquote>
+    <h2 class="rise" style="--d:1">Their “let us,” and God's</h2>
+    <div class="mirror">
+      <div class="step"><span>Men</span><span class="arrow">↑</span><span class="word">“Go to, let us build us a city and a tower”</span><small>going up, to make a name (verse 4)</small></div>
+      <div class="step"><span>God</span><span class="arrow">↓</span><span class="word">“Go to, let us go down”</span><small>coming down, to stop it (verse 7)</small></div>
+    </div>
+    <p class="note step">Moses uses their own words back at them. They said “let us” three times. God answers in the very same words, and His one “let us” outweighs all of theirs.</p>
+    <p class="note step">Notice God says “<em>us</em>.” He spoke the same way when He made man: “Let us make man in our image” (1:26). One God, and yet He speaks as more than one. The New Testament shows us why: the Father, the Son and the Holy Ghost.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9" data-hl="Therefore is the name of it called Babel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="Babel|confound the language of all the earth"></blockquote>
+    <h2 class="rise" style="--d:1">Babel: a gate, or a mess?</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">בָּבֶל</span>
+      <span class="say step">said <em class="gk">Bavel</em>; it sounds like <em class="gk">balal</em>, “to mix up”</span>
+      <span class="means step">The people of that land later said the name meant “gate of god.” Moses says it means <em>confusion</em>.</span>
+    </div>
+    <ul class="ge11-words step">
+      <li><b>confound</b>confuse, mix up, throw into disorder</li>
+      <li><b>left off</b>stopped, quit</li>
+      <li><b>builded</b>built</li>
+    </ul>
+    <p class="note step">The tower was never finished. The city became Babylon, and all through the Bible Babylon stands for man's proud world without God, right up to Revelation 18. Every proud tower ends the same way: <em>they left off to build.</em></p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Babel undone</h2>
+    <p class="note rise" style="--d:2">Babel is not God's last word on languages. Fifty days after Jesus rose, God came down again: the Holy Ghost, on the day of Pentecost.</p>
+    <div class="columns">
+      <div class="col law rise" style="--d:3">
+        <p class="who">Babel, Genesis 11</p>
+        <h3>Men go up</h3>
+        <p>One language, mixed up so they can't understand each other. Scattered over the earth. “Let us make us a name.”</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">Pentecost, Acts 2</p>
+        <h3>God comes down</h3>
+        <p>Many languages, and every man hears the same good news. Gathered into one church. And “whosoever shall call on the name of the Lord shall be saved” (Acts 2:21).</p>
+      </div>
+    </div>
+    <blockquote class="quote step"><p>“Now when this was noised abroad, the multitude came together, and were confounded, because that every man heard them speak in his own language.”</p><cite>Acts 2:6</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE GENERATIONS OF SHEM ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The generations of Shem</h2>
+    <p class="range rise" style="--d:2">Verses 10–26</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The nations scatter. God keeps His eye on one family.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="These are the generations of Shem|two years after the flood"></section>
+
+<section class="slide verse" data-v="12-13" data-hl="begat Salah"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="10" data-hl="These are the generations of Shem"></blockquote>
+    <h2 class="rise" style="--d:1">Ten names, one road</h2>
+    <p class="note rise" style="--d:2">“Generations” means family history. “Begat” means <em>became the father of</em>. Chapter 5 gave ten generations from Adam to Noah. Now ten more, from Shem to Abram.</p>
+    <div class="chains">
+      <div class="chain rise" style="--d:3"><span class="who-chip">Shem</span><span class="said"></span><span class="who-chip">Arphaxad</span><span class="said"></span><span class="who-chip">Salah</span><span class="said"></span><span class="who-chip">Eber</span><span class="said"></span><span class="who-chip">Peleg</span><span class="said"></span><span class="who-chip">Reu</span><span class="said"></span><span class="who-chip">Serug</span><span class="said"></span><span class="who-chip">Nahor</span><span class="said"></span><span class="who-chip">Terah</span><span class="said"></span><span class="who-chip jesus">Abram</span></div>
+      <div class="chain step"><span class="said">and two thousand years later, down the same road:</span><span class="who-chip jesus">Jesus</span></div>
+    </div>
+    <blockquote class="quote step"><p>“Which was the son of Jacob, which was the son of Isaac, which was the son of Abraham, which was the son of Thara, which was the son of Nachor,”</p><cite>Luke 3:34</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="14-17" data-hl="begat Eber|begat Peleg"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="begat Peleg"></blockquote>
+    <h2 class="rise" style="--d:1">Eber and Peleg</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">פֶּלֶג</span>
+      <span class="say step">said <em class="gk">Peleg</em></span>
+      <span class="means step">“division”</span>
+    </div>
+    <blockquote class="quote step"><p>“And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan.”</p><cite>Genesis 10:25</cite></blockquote>
+    <p class="note step">Many Bible teachers think Peleg's name remembers Babel: in his lifetime mankind was split up by language and spread over the earth. And from <em>Eber</em>, many think, comes the word <em>Hebrew</em> (14:13). These are real men, and the names carry real history.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-21" data-hl="begat Reu|begat Serug"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">How long they lived</h2>
+    <div class="ge11-lives" data-lives="noah-jacob" data-mark="Shem, Peleg, Terah, Abraham"></div>
+    <p class="note step">Before the flood, men lived nine hundred years. After it, the numbers fall: Shem 600, then 430 to 460, then about 240 from Peleg on, and Nahor only 148. By Abraham, 175. Death, the wages of sin, is closing in (Romans 6:23).</p>
+    <p class="note step">Add up the ages and something surprising shows: Shem, who walked off the ark, was still alive when Abram set out for Canaan.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22-26" data-hl="begat Terah|begat Abram, Nahor, and Haran"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="26" data-hl="begat Abram, Nahor, and Haran"></blockquote>
+    <h2 class="rise" style="--d:1">Why a list of names?</h2>
+    <p class="note rise" style="--d:2">Abram is named first most likely because he matters most, not because he was the oldest. Terah was 70 when his sons began to come. Putting 11:32, 12:4 and Acts 7:4 together, Abram was most likely born when Terah was about 130.</p>
+    <p class="note step">Most of these men did nothing the Bible records except live, have children and die. Yet God wrote every one of their names down, and through them He kept His promise moving toward Christ.</p>
+    <p class="note step">God doesn't save “people” in a crowd. He knows men by name. Yours too.</p>
+    <blockquote class="quote step"><p>“But now thus saith the LORD that created thee, O Jacob, and he that formed thee, O Israel, Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.”</p><cite>Isaiah 43:1</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: THE GENERATIONS OF TERAH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">The generations of Terah</h2>
+    <p class="range rise" style="--d:2">Verses 27–32</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A grieving father, a fatherless boy, a barren wife, and a trip that stops halfway.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="27-28" data-hl="Haran begat Lot|Haran died before his father Terah|Ur of the Chaldees"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="27" data-hl="Terah begat Abram, Nahor, and Haran; and Haran begat Lot"></blockquote>
+    <h2 class="rise" style="--d:1">Terah's family</h2>
+    <div class="tree">
+      <ul><li><span data-icon="person">Terah<small>died in Haran, 205</small></span>
+        <ul>
+          <li><span class="hot" data-icon="tent">Abram<small>wife: Sarai</small></span></li>
+          <li><span>Nahor<small>wife: Milcah</small></span></li>
+          <li><span class="soft">Haran<small>died young, in Ur</small></span>
+            <ul><li><span>Lot</span></li><li><span>Milcah</span></li><li><span>Iscah</span></li></ul>
+          </li>
+        </ul>
+      </li></ul>
+    </div>
+    <p class="note step">Milcah appears twice: Haran's daughter married her uncle Nahor. Marrying within the family was common then. And Sarai was Abram's half-sister, as he says later (20:12).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="28" data-hl="Haran died before his father Terah in the land of his nativity"></blockquote>
+    <h2 class="rise" style="--d:1">A father buries his son</h2>
+    <ul class="ge11-words rise" style="--d:2">
+      <li><b>nativity</b>birth; “the land of his nativity” is the land where he was born</li>
+    </ul>
+    <p class="note rise" style="--d:3">Haran died <em>before his father</em>, in his father's lifetime. No cause is given. Only the grief, in a few plain words.</p>
+    <p class="note step">Some of you know that grief, or caused some of it. The Bible doesn't skip over it, and God doesn't either. He sees the father at the graveside.</p>
+    <p class="note step">And look who is left: Lot, a boy without a father. His grandfather takes him in (verse 31), and then his uncle Abram (12:4). Somebody in your life is a Lot. You don't have to be perfect to be the man who takes him along.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="the name of Abram’s wife was Sarai|But Sarai was barren; she had no child."></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <p class="saying rise" style="--d:1">But Sarai was barren; <em>she had no child.</em></p>
+    <p class="note rise" style="--d:2">“Barren” means unable to have children. Moses says it twice, so nobody misses it. In that world a woman's worth was counted in sons, and a family line with no child was a dead end.</p>
+    <p class="note step">Ten generations of “and begat… and begat…” run straight into a wall. The man God is about to choose has no son, and his wife can't have one.</p>
+    <p class="note step">That is exactly where God likes to begin. He will promise Abram a great nation (12:2), and twenty-five years later He keeps it:</p>
+    <blockquote class="quote step"><p>“For Sarah conceived, and bare Abraham a son in his old age, at the set time of which God had spoken to him.”</p><cite>Genesis 21:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="to go into the land of Canaan; and they came unto Haran, and dwelt there|Terah died in Haran"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-terrain="neareast" viewBox="340 80 580 370" data-regions="MESOPOTAMIA, CANAAN, ARABIAN DESERT" data-towns="Ur!, Babel, Mari, Haran*, Damascus, Shechem:l" role="img" aria-label="A map from Ur in the south of Mesopotamia, up the Euphrates past Babel and Mari, to Haran in the north. A second line, on a click, goes on from Haran down through Damascus to Shechem in Canaan.">
+          <path class="map-route" data-via="Ur, @45.2 31.6, Babel, @43.4 33.6, Mari, @39.6 35.9, Haran"/>
+          <path class="map-route j2 r1" data-via="Haran, @37.16 36.2, Hamath, Damascus, @35.6 32.9, Shechem"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Halfway</h2>
+        <p class="note rise" style="--d:2">Terah set out from Ur for <em>Canaan</em>. About six hundred miles up the river he came to Haran, settled down, and never went on. He died there.</p>
+        <p class="note step map-go1">Stephen tells us God had already called Abram back in Ur. After his father died, Abram finished the trip:</p>
+        <blockquote class="quote step"><p>“Then came he out of the land of the Chaldaeans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell.”</p><cite>Acts 7:4</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="31" data-hl="they came unto Haran, and dwelt there"></blockquote>
+    <h2 class="rise" style="--d:1">Don't settle in Haran</h2>
+    <p class="note rise" style="--d:2">Haran was a comfortable place to stop: a big trading town, out of Ur, far enough to feel like progress. Many men in recovery know Haran. Out of the worst of it, sober a while, but stopped short of where God is taking them.</p>
+    <p class="note step">Terah's family hadn't been following God at all, back in Ur. Joshua says so plainly:</p>
+    <blockquote class="quote step"><p>“And Joshua said unto all the people, Thus saith the LORD God of Israel, Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.”</p><cite>Joshua 24:2</cite></blockquote>
+    <p class="note step">(“The flood” there means the river Euphrates.) God called Abram out of an idol-worshipping home. Where you came from does not decide where God can take you. So don't stop halfway. Take the next step today.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Two ways to get a name</h2>
+    <div class="pair rise" style="--d:2">
+      <div class="scroll"><p class="ref">Babel</p><p class="kjv">“…let us make us a name, lest we be scattered abroad upon the face of the whole earth.”</p><p class="ref">Genesis 11:4</p></div>
+      <div class="scroll"><p class="ref">Abram</p><p class="kjv">“And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing:”</p><p class="ref">Genesis 12:2</p></div>
+    </div>
+    <p class="note step">The builders grabbed for a name and lost it: nobody knows who they were. Abram had nothing, no son, no land, a father's house full of idols, and God gave him a name the whole world knows.</p>
+    <p class="note step">You can spend your life making a name for yourself, or you can let God give you one. In Christ He already has: a son of God, forgiven, His.</p>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Pride</span><span class="seed-q">“Let us make us a name” <cite>11:4</cite></span><span class="take">They wanted glory, safety and heaven on their own terms, with God left out.</span></li>
+      <li class="step"><span class="topic">Who God is</span><span class="seed-q">“The LORD came down to see” <cite>11:5</cite></span><span class="take">No man builds his way up. God comes down, and in Jesus He came all the way.</span></li>
+      <li class="step"><span class="topic">Mercy</span><span class="seed-q">“Nothing will be restrained from them” <cite>11:6</cite></span><span class="take">God broke up the crew to put a brake on evil. Scattering can be rescue.</span></li>
+      <li class="step"><span class="topic">Names</span><span class="seed-q">“These are the generations of Shem” <cite>11:10</cite></span><span class="take">God writes down every name, and keeps His promise moving toward Christ.</span></li>
+      <li class="step"><span class="topic">Regret</span><span class="seed-q">“They came unto Haran, and dwelt there” <cite>11:31</cite></span><span class="take">Terah stopped short. Don't settle halfway; take the next step.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“Sarai was barren; she had no child” <cite>11:30</cite></span><span class="take">Where man's line runs out, God's promise begins.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Pride</span>
+      <h2>What were the builders really after?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="let us make us a name, lest we be scattered abroad"></blockquote>
+      <blockquote class="quote step"><p>“Pride goeth before destruction, and an haughty spirit before a fall.”</p><cite>Proverbs 16:18</cite></blockquote>
+      <blockquote class="quote step"><p>“But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.”</p><cite>James 4:6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>A name for themselves, safety on their own terms, and a way up to heaven without bowing to God. It was pride, and fear underneath it: “lest we be scattered.” God had told them to fill the earth, and they dug in instead. The same pride lives in us. God resists it, but He gives grace to the man who humbles himself.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Who God is</span>
+      <h2>Can a man build his own way up to God?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="the LORD came down to see the city and the tower"></blockquote>
+      <blockquote class="quote step"><p>“And no man hath ascended up to heaven, but he that came down from heaven, even the Son of man which is in heaven.”</p><cite>John 3:13</cite></blockquote>
+      <blockquote class="quote step"><p>“Except the LORD build the house, they labour in vain that build it: except the LORD keep the city, the watchman waketh but in vain.”</p><cite>Psalm 127:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. Babel's best was so small that God “came down to see” it. Religion, good works, cleaning yourself up: none of it reaches heaven. The only way is the One who came down: Jesus, the Son of God, who died for our sins and rose again. We don't climb up to Him. We receive Him by faith.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Mercy</span>
+      <h2>Why did God scatter them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="nothing will be restrained from them, which they have imagined to do"></blockquote>
+      <blockquote class="quote step"><p>“And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.”</p><cite>Genesis 6:5</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>To hold back evil, and to get done what He had told them to do. A whole world united against God, with nothing to slow it down, would have run to ruin as fast as the world before the flood. Scattering them was judgment, and it was mercy. Sometimes God breaks up our plans and our crew for the same reason.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Names</span>
+      <h2>Why does God keep a list of names?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="These are the generations of Shem"></blockquote>
+      <blockquote class="quote step"><p>“Which was the son of Jacob, which was the son of Isaac, which was the son of Abraham, which was the son of Thara, which was the son of Nachor,”</p><cite>Luke 3:34</cite></blockquote>
+      <blockquote class="quote step"><p>“But now thus saith the LORD that created thee, O Jacob, and he that formed thee, O Israel, Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.”</p><cite>Isaiah 43:1</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because these are real men in real history, and through them God was keeping His promise of a Saviour, all the way from Shem to Abram, and on to Jesus. And because God knows people by name. You are not a face in a crowd to Him. He calls you by your name.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Regret</span>
+      <h2>What does it cost to stop halfway?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="32" data-hl="Terah died in Haran"></blockquote>
+      <blockquote class="quote step"><p>“Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus.”</p><cite>Philippians 3:13–14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Terah set out for Canaan and died in Haran, short of it. A man can leave the worst of his old life and still settle somewhere comfortable, short of what God has for him. The cure for regret isn't staring back at Ur. It's the next step forward, today, with your brothers beside you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What does God do with a dead end?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30" data-hl="But Sarai was barren; she had no child."></blockquote>
+      <blockquote class="quote step"><p>“For Sarah conceived, and bare Abraham a son in his old age, at the set time of which God had spoken to him.”</p><cite>Genesis 21:2</cite></blockquote>
+      <blockquote class="quote step"><p>“Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised.”</p><cite>Hebrews 11:11</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He starts there. The chapter ends with a barren wife and a dead father, and the very next chapter opens with God's promise. Whatever looks finished in your life, a marriage, a family, your own name, is not finished to Him. He keeps His word, at His set time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“Humble yourselves in the sight of the Lord, and he shall lift you up.”</p><cite>James 4:10</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Genesis chapter 11
+const V = {
+  1: "And the whole earth was of one language, and of one speech.",
+  2: "And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there.",
+  3: "And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.",
+  4: "And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.",
+  5: "And the LORD came down to see the city and the tower, which the children of men builded.",
+  6: "And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.",
+  7: "Go to, let us go down, and there confound their language, that they may not understand one another’s speech.",
+  8: "So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city.",
+  9: "Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth.",
+  10: "These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:",
+  11: "And Shem lived after he begat Arphaxad five hundred years, and begat sons and daughters.",
+  12: "And Arphaxad lived five and thirty years, and begat Salah:",
+  13: "And Arphaxad lived after he begat Salah four hundred and three years, and begat sons and daughters.",
+  14: "And Salah lived thirty years, and begat Eber:",
+  15: "And Salah lived after he begat Eber four hundred and three years, and begat sons and daughters.",
+  16: "And Eber lived four and thirty years, and begat Peleg:",
+  17: "And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters.",
+  18: "And Peleg lived thirty years, and begat Reu:",
+  19: "And Peleg lived after he begat Reu two hundred and nine years, and begat sons and daughters.",
+  20: "And Reu lived two and thirty years, and begat Serug:",
+  21: "And Reu lived after he begat Serug two hundred and seven years, and begat sons and daughters.",
+  22: "And Serug lived thirty years, and begat Nahor:",
+  23: "And Serug lived after he begat Nahor two hundred years, and begat sons and daughters.",
+  24: "And Nahor lived nine and twenty years, and begat Terah:",
+  25: "And Nahor lived after he begat Terah an hundred and nineteen years, and begat sons and daughters.",
+  26: "And Terah lived seventy years, and begat Abram, Nahor, and Haran.",
+  27: "Now these are the generations of Terah: Terah begat Abram, Nahor, and Haran; and Haran begat Lot.",
+  28: "And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.",
+  29: "And Abram and Nahor took them wives: the name of Abram’s wife was Sarai; and the name of Nahor’s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.",
+  30: "But Sarai was barren; she had no child.",
+  31: "And Terah took Abram his son, and Lot the son of Haran his son’s son, and Sarai his daughter in law, his son Abram’s wife; and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there.",
+  32: "And the days of Terah were two hundred and five years: and Terah died in Haran."
+};
+const BOOK = "Genesis 11";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en" data-theme="stone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genesis 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A short word list: the old word (dt) and its plain meaning (dd) */
+.ge07-words { display: grid; grid-template-columns: auto 1fr; gap: .45em 1.4em; margin: .3em 0 1em; align-items: baseline; }
+.ge07-words dt { font: italic clamp(1.15rem, 1rem + .8vw, 1.6rem) var(--serif); color: var(--accent-hot); }
+.ge07-words dd { margin: 0; font-size: clamp(1rem, .9rem + .45vw, 1.3rem); padding-bottom: .35em; border-bottom: 1px solid var(--line); }
+
+/* The waters from above and below (svg.ge07-deep): rain falls from the windows of heaven (.ge07-rain),
+   and the fountains of the great deep burst up through the ground (.ge07-jet). Both run while the slide is open. */
+.ge07-deep .ge07-sky { fill: color-mix(in srgb, var(--cool) 14%, transparent); }
+.ge07-deep .ge07-window { fill: color-mix(in srgb, var(--ink) 55%, transparent); stroke: var(--line-strong); stroke-width: 2; }
+.ge07-deep .ge07-ground { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.ge07-deep .ge07-under { fill: color-mix(in srgb, var(--cool) 40%, transparent); }
+.ge07-deep .ge07-rain { stroke: var(--cool); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 10 18; opacity: 0; }
+.ge07-deep .ge07-jet { fill: none; stroke: var(--cool); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 14 12; opacity: 0; }
+.ge07-deep .ge07-tip { fill: none; stroke: var(--cool); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.ge07-deep text { fill: var(--ink); font-weight: 700; }
+.ge07-deep text.ge07-soft { fill: var(--ink-soft); font-weight: 400; font-style: italic; }
+.slide.active .ge07-deep .ge07-rain { animation: ge07-fall 1.1s linear infinite, ge07-in .6s ease forwards; animation-delay: 0s, var(--w, .6s); }
+.slide.active .ge07-deep .ge07-tip { animation: ge07-in .6s ease forwards; animation-delay: var(--w, 1.4s); }
+.slide.active .ge07-deep .ge07-jet { animation: ge07-burst 1s linear infinite, ge07-in .6s ease forwards; animation-delay: 0s, var(--w, 1.4s); }
+@keyframes ge07-fall { to { stroke-dashoffset: -28; } }
+@keyframes ge07-burst { to { stroke-dashoffset: 26; } }
+@keyframes ge07-in { to { opacity: 1; } }
+
+/* The waters rise over the mountains (svg.ge07-rise): the water (.ge07-water) and the ark (.ge07-ark) rise together when the slide
+   opens; then the fifteen cubits above the highest peak are marked (.ge07-mark). */
+.stage svg.ge07-rise { overflow: hidden; }
+.ge07-rise .ge07-mtn { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 3; stroke-linejoin: round; }
+.ge07-rise .ge07-water { fill: color-mix(in srgb, var(--cool) 48%, transparent); }
+.ge07-rise .ge07-wave { fill: none; stroke: var(--cool); stroke-width: 3; }
+.ge07-rise .ge07-hull { fill: var(--leather); stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+.ge07-rise .ge07-house { fill: var(--leather-light); stroke: var(--ink); stroke-width: 2.5; }
+.ge07-rise .ge07-peak { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 6 6; }
+.ge07-rise .ge07-mark line { stroke: var(--accent-hot); stroke-width: 3; }
+.ge07-rise text { fill: var(--ink); font-weight: 700; }
+.ge07-rise text.ge07-hot { fill: var(--accent-hot); }
+.ge07-rise text.ge07-soft { fill: var(--ink-soft); font-weight: 400; font-style: italic; }
+.ge07-rise .ge07-water, .ge07-rise .ge07-ark { transform: translateY(205px); }
+.slide.active .ge07-rise .ge07-water, .slide.active .ge07-rise .ge07-ark { animation: ge07-up 4.2s cubic-bezier(.4,.1,.3,1) .5s forwards; }
+.ge07-rise .ge07-mark, .ge07-rise .ge07-later { opacity: 0; }
+.slide.active .ge07-rise .ge07-mark, .slide.active .ge07-rise .ge07-later { animation: ge07-in .8s ease 4.6s forwards; }
+@keyframes ge07-up { to { transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.active .ge07-deep .ge07-rain, .slide.active .ge07-deep .ge07-jet, .slide.active .ge07-deep .ge07-tip { animation: none; opacity: 1; }
+  .ge07-rise .ge07-water, .ge07-rise .ge07-ark { transform: none; }
+  .slide.active .ge07-rise .ge07-water, .slide.active .ge07-rise .ge07-ark { animation: none; }
+  .ge07-rise .ge07-mark, .ge07-rise .ge07-later { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Genesis 7</h1>
+    <p class="sub rise" style="--d:3">The LORD shut him in</p>
+    <p class="tag rise" style="--d:5">God calls Noah into the ark, waits seven more days, then shuts the door with His own hand. The flood that judged the world carried the ark up above it.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">Why was Noah the one God called into the ark?</span></li>
+      <li class="step"><span class="topic">God's patience</span><span class="seed-q">How long did God wait before the flood came?</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">What did Noah do with what God told him?</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">Who shut the door of the ark, and why does that matter?</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">Does God take sin seriously?</span></li>
+      <li class="step"><span class="topic">The real world</span><span class="seed-q">Jesus said His coming would be like the days of Noah. How do we live ready?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: COME INTO THE ARK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">Come into the ark</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The ark is finished. The sky is still clear. And God says, “Come.”</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1" data-hl="Come thou and all thy house into the ark|thee have I seen righteous before me"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="Come thou|thee have I seen righteous"></blockquote>
+    <h2 class="rise" style="--d:1">Grace came first</h2>
+    <p class="note rise" style="--d:2">God doesn't say “Go into the ark.” He says <em>“Come.”</em> He speaks like a man standing in the doorway of his own house, calling his family in out of the storm.</p>
+    <p class="note step">Why Noah? Not because he was sinless. Two chapters on, we'll see him fall hard. Read the order in chapter 6:</p>
+    <div class="pair step">
+      <div class="scroll"><p class="ref">First</p><p class="kjv">“But Noah found grace in the eyes of the LORD.”</p><p class="ref">Genesis 6:8</p></div>
+      <div class="scroll"><p class="ref">Then</p><p class="kjv">“Noah was a just man and perfect in his generations, and Noah walked with God.”</p><p class="ref">Genesis 6:9</p></div>
+    </div>
+    <p class="note step">Grace first, then a righteous walk. Noah didn't earn the ark. He was given it, and then he lived like a man who had been given it. That's the order for us too.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="2-3" data-hl="Of every clean beast thou shalt take to thee by sevens|to keep seed alive upon the face of all the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2" data-hl="clean beast|by sevens|not clean by two"></blockquote>
+    <h2 class="rise" style="--d:1">Clean, and not clean</h2>
+    <div class="columns">
+      <div class="col grace rise" style="--d:2">
+        <p class="who">By sevens</p>
+        <h3>Clean beasts and birds</h3>
+        <p>The kinds God would accept as an offering: sheep, goats, cattle, doves. Noah would need extras. The first thing he does off the ark is sacrifice them (8:20).</p>
+      </div>
+      <div class="col law step">
+        <p class="who">By two</p>
+        <h3>Beasts not clean</h3>
+        <p>Every other kind, a male and a female, “to keep seed alive.” Enough to fill the earth again.</p>
+      </div>
+    </div>
+    <p class="note step">This is long before Moses wrote down the law of clean and unclean, but Noah already knew the difference. Bible teachers read “by sevens” two ways: seven animals of each clean kind, or seven pairs. Either way, God planned for worship before the first drop fell.</p>
+    <dl class="ge07-words step">
+      <dt>fowls</dt><dd>birds</dd>
+      <dt>seed</dt><dd>offspring; the next generation</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="For yet seven days|forty days and forty nights|Noah did according unto all that the LORD commanded him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">God waited: <em>“for yet seven days”</em></h2>
+    <div data-lives="adam-noah" data-mark="Methuselah, Noah"></div>
+    <p class="note step">Add up the ages in Genesis 5: Methuselah, the oldest man who ever lived, dies in the very year of the flood. God let the longest life in history run out before the waters came. Then He gave seven more days. Peter calls it <em>“the longsuffering of God”</em> (1 Peter 3:20).</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="5" data-hl="according unto all"></blockquote>
+    <h2 class="rise" style="--d:1">All that the LORD commanded</h2>
+    <p class="note rise" style="--d:2">Moses says it twice. Once when Noah builds (“Thus did Noah; according to all that God commanded him, so did he,” 6:22), and again here when he goes in.</p>
+    <ul class="nots">
+      <li class="step"><span class="k">most of it</span><span class="why">not the parts that made sense to him</span></li>
+      <li class="step"><span class="k">when he felt like it</span><span class="why">not after the rain started</span></li>
+      <li class="step yes"><span class="k">according unto all</span><span class="why">the whole thing, the way God said it</span></li>
+    </ul>
+    <p class="note step">Building took years of hammering on a boat nowhere near the sea. Going in took one step through a door. Both were obedience. For a man in recovery, most days it's not a hundred-year project. It's the next step God has already made plain.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-7" data-hl="six hundred years old|because of the waters of the flood"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="Noah went in"></blockquote>
+    <h2 class="rise" style="--d:1">In before the rain</h2>
+    <p class="note rise" style="--d:2">Noah was six hundred years old. No one had ever seen a flood like this. He went in on God's word, with the sky still dry.</p>
+    <blockquote class="quote step"><p>“By faith Noah, being warned of God of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.”</p><cite>Hebrews 11:7</cite></blockquote>
+    <p class="note step">That's what faith is: acting on what God said before you can see it. Noah didn't wait for the first drops to make up his mind.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="8-10" data-hl="There went in two and two unto Noah|after seven days"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="two and two unto Noah"></blockquote>
+    <h2 class="rise" style="--d:1">Seven days with the door open</h2>
+    <p class="note rise" style="--d:2">Noah didn't round up the animals. They came <em>“unto Noah,”</em> two and two, as God had said they would (6:20). Imagine the neighbors watching that parade for a week.</p>
+    <p class="note step">And still the door stood open for seven days. Jesus tells us what the world was doing that week:</p>
+    <blockquote class="quote step"><p>“For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark, And knew not until the flood came, and took them all away; so shall also the coming of the Son of man be.”</p><cite>Matthew 24:38–39</cite></blockquote>
+    <p class="note step">Eating, drinking, marrying: nothing wrong with any of it. Their sin was living as if God had never spoken. Normal life went on right up to the last day.</p>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE LORD SHUT HIM IN ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The LORD shut him in</h2>
+    <p class="range rise" style="--d:2">Verses 11–16</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The waters come from above and below, and God closes the door Himself.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="the second month, the seventeenth day of the month|all the fountains of the great deep broken up|the windows of heaven were opened"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="ge07-deep" viewBox="0 0 600 330" role="img" aria-label="Rain pours down from openings in the sky, the windows of heaven. Below the ground, the waters of the great deep burst up through the earth.">
+          <rect class="ge07-sky" x="0" y="0" width="600" height="190" rx="8"/>
+          <rect class="ge07-window" x="70" y="38" width="70" height="22" rx="4"/>
+          <rect class="ge07-window" x="210" y="38" width="70" height="22" rx="4"/>
+          <rect class="ge07-window" x="350" y="38" width="70" height="22" rx="4"/>
+          <rect class="ge07-window" x="480" y="38" width="70" height="22" rx="4"/>
+          <text x="300" y="26" text-anchor="middle">the windows of heaven</text>
+          <g>
+            <line class="ge07-rain" x1="85" y1="64" x2="85" y2="190"/><line class="ge07-rain" x1="105" y1="64" x2="105" y2="190" style="--w:.8s"/><line class="ge07-rain" x1="125" y1="64" x2="125" y2="190" style="--w:.7s"/>
+            <line class="ge07-rain" x1="225" y1="64" x2="225" y2="190" style="--w:.9s"/><line class="ge07-rain" x1="245" y1="64" x2="245" y2="190"/><line class="ge07-rain" x1="265" y1="64" x2="265" y2="190" style="--w:.8s"/>
+            <line class="ge07-rain" x1="365" y1="64" x2="365" y2="190" style="--w:.7s"/><line class="ge07-rain" x1="385" y1="64" x2="385" y2="190" style="--w:.9s"/><line class="ge07-rain" x1="405" y1="64" x2="405" y2="190"/>
+            <line class="ge07-rain" x1="495" y1="64" x2="495" y2="190" style="--w:.8s"/><line class="ge07-rain" x1="515" y1="64" x2="515" y2="190" style="--w:.7s"/><line class="ge07-rain" x1="535" y1="64" x2="535" y2="190" style="--w:.9s"/>
+          </g>
+          <path class="ge07-ground" d="M0 190 H160 L172 214 L184 190 H330 L342 214 L354 190 H460 L472 214 L484 190 H600 V236 H0 Z"/>
+          <rect class="ge07-under" x="0" y="236" width="600" height="94" rx="8"/>
+          <path class="ge07-jet" d="M172 252 V130"/><path class="ge07-tip" d="M160 144 L172 126 L184 144"/>
+          <path class="ge07-jet" d="M342 252 V118" style="--w:1.7s"/><path class="ge07-tip" d="M330 132 L342 114 L354 132" style="--w:1.7s"/>
+          <path class="ge07-jet" d="M472 252 V134" style="--w:2s"/><path class="ge07-tip" d="M460 148 L472 130 L484 148" style="--w:2s"/>
+          <text x="300" y="296" text-anchor="middle">the fountains of the great deep</text>
+          <text class="ge07-soft" x="300" y="320" text-anchor="middle">waters under the earth, broken up</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">From above and below</h2>
+        <p class="note rise" style="--d:2">This was more than a long rain. Water burst up out of the earth and poured down out of the sky, both on the same day.</p>
+        <p class="note step">On the second day of creation God <em>“divided the waters which were under the firmament from the waters which were above the firmament”</em> (1:7). Now He lets them run back together. The flood is creation coming undone.</p>
+        <p class="note step">And notice the date: the six hundredth year, second month, seventeenth day. That's a ship's log, not a fable. Genesis tells this as something that happened, on a day you could write down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="In the selfsame day entered Noah, and Shem, and Ham, and Japheth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="13" data-hl="Noah, and Shem, and Ham, and Japheth|the three wives of his sons"></blockquote>
+    <h2 class="rise" style="--d:1">Eight souls</h2>
+    <div class="tree">
+      <ul><li><span data-icon="ark">Noah<small>and his wife</small></span>
+        <ul>
+          <li><span>Shem<small>and his wife</small></span></li>
+          <li><span>Ham<small>and his wife</small></span></li>
+          <li><span>Japheth<small>and his wife</small></span></li>
+        </ul>
+      </li></ul>
+    </div>
+    <p class="note step">One family. Every person alive today comes from these eight. Peter counts them: <em>“few, that is, eight souls were saved by water”</em> (1 Peter 3:20).</p>
+    <dl class="ge07-words step">
+      <dt>selfsame day</dt><dd>that very same day</dd>
+      <dt>creepeth</dt><dd>creeps, crawls along the ground</dd>
+      <dt>after his kind</dt><dd>each of its own kind, the words of creation (Genesis 1) again</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="wherein is the breath of life|and the LORD shut him in"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="The ark with eight people safe inside. Waves and rain strike it and fall away. The door is shut, and the words say: the LORD shut him in.">
+          <path class="kept-wall" d="M90 180 H510 L470 270 H130 Z"/>
+          <path class="kept-wall inner" d="M170 180 V130 H430 V180"/>
+          <text class="kept-tag" font-size="22" x="300" y="105" text-anchor="middle">the LORD shut him in</text>
+          <g class="kept-in"><circle cx="190" cy="222" r="10"/><circle cx="225" cy="222" r="10"/><circle cx="260" cy="222" r="10"/><circle cx="295" cy="222" r="10"/><circle cx="330" cy="222" r="10"/><circle cx="365" cy="222" r="10"/><circle cx="400" cy="222" r="10"/><circle cx="435" cy="222" r="10"/></g>
+          <rect x="452" y="200" width="22" height="44" rx="3" style="fill:var(--accent-hot)"/>
+          <path class="kept-dart" style="--dx:50px;--dy:40px;--w:0s" d="M40 40 l30 40 m-14 -6 l14 6 l2 -16"/>
+          <path class="kept-dart" style="--dx:-50px;--dy:40px;--w:.9s" d="M560 50 l-30 40 m-2 -16 l2 16 l14 -6"/>
+          <path class="kept-dart" style="--dx:60px;--dy:-20px;--w:1.6s" d="M30 320 l50 -24 m-16 -4 l16 4 l-8 14"/>
+          <path class="kept-dart" style="--dx:-60px;--dy:-20px;--w:2.2s" d="M570 320 l-50 -24 m8 14 l-8 -14 l16 -4"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Who closed the door?</h2>
+        <p class="note rise" style="--d:2">Not Noah. <em>“The LORD shut him in.”</em> Noah's safety didn't hang on how well he latched it. God closed it Himself.</p>
+        <p class="note step">That's the security of a man in Christ. You are kept by God's hand, not by your grip.</p>
+        <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="the LORD shut him in"></blockquote>
+    <h2 class="rise" style="--d:1">One door, and it is open today</h2>
+    <p class="note rise" style="--d:2">God told Noah to put one door in the side of the ark (6:16). Not a door for each family on the road. One. Jesus says the same of Himself:</p>
+    <blockquote class="quote step"><p>“I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.”</p><cite>John 10:9</cite></blockquote>
+    <p class="note step">The same door that kept Noah in kept the world out. There came a day when it was shut, and knocking would not open it. That day hasn't come for you. The door is open right now.</p>
+    <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: THE WATERS PREVAILED ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">The waters prevailed</h2>
+    <p class="range rise" style="--d:2">Verses 17–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The same water that judged the world lifted the ark above it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18" data-hl="bare up the ark|the ark went upon the face of the waters"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="17" data-hl="bare up the ark, and it was lift up above the earth"></blockquote>
+    <h2 class="rise" style="--d:1">The flood carried the ark</h2>
+    <p class="note rise" style="--d:2">The more the waters rose, the higher the ark rode. The thing that destroyed everything outside was the very thing that lifted Noah up.</p>
+    <p class="note step">Peter sees Christ in this. Noah's family went down into the waters of judgment inside the ark, and came up the other side alive. Baptism is a picture of the same thing: a man in Christ goes through death and judgment with Him, and rises with Him.</p>
+    <blockquote class="quote step"><p>“The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:”</p><cite>1 Peter 3:21</cite></blockquote>
+    <p class="note step">The water didn't save anybody. The ark did. In the same way, baptism doesn't wash sin away; Peter says so. It's the outward picture of a man who is already safe inside Christ.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="all the high hills, that were under the whole heaven, were covered|Fifteen cubits upward did the waters prevail"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="ge07-rise" viewBox="0 0 600 340" role="img" aria-label="Water rises over the mountains and carries the ark up with it, until it stands fifteen cubits above the highest peak.">
+          <path class="ge07-mtn" d="M0 300 L70 250 L120 270 L230 120 L290 190 L340 160 L420 250 L480 225 L540 260 L600 245 V340 H0 Z"/>
+          <line class="ge07-peak ge07-later" x1="150" y1="120" x2="330" y2="120"/>
+          <g class="ge07-water">
+            <rect x="0" y="80" width="600" height="300"/>
+            <path class="ge07-wave" d="M0 80 Q 25 72 50 80 T 100 80 T 150 80 T 200 80 T 250 80 T 300 80 T 350 80 T 400 80 T 450 80 T 500 80 T 550 80 T 600 80"/>
+          </g>
+          <g class="ge07-ark">
+            <path class="ge07-hull" d="M400 66 H540 L522 92 H418 Z"/>
+            <rect class="ge07-house" x="425" y="48" width="90" height="18" rx="2"/>
+          </g>
+          <g class="ge07-mark">
+            <line x1="215" y1="80" x2="215" y2="120"/><line x1="205" y1="80" x2="225" y2="80"/><line x1="205" y1="120" x2="225" y2="120"/>
+            <text class="ge07-hot" x="200" y="106" text-anchor="end">15 cubits</text>
+          </g>
+          <text class="ge07-soft ge07-later" x="340" y="138">the highest peak</text>
+          <text class="ge07-soft" x="590" y="330" text-anchor="end">not to scale</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Fifteen cubits over the mountains</h2>
+        <p class="note rise" style="--d:2">A cubit is about 18 inches, so the water stood about 22 feet over the highest peak. <em>“All the high hills, that were under the whole heaven, were covered.”</em></p>
+        <p class="note step">The ark was thirty cubits high (6:15). Many have noticed that a loaded boat that size would ride about fifteen cubits deep. The water was just deep enough to carry it over every peak.</p>
+        <dl class="ge07-words step">
+          <dt>bare up</dt><dd>bore up, carried up</dd>
+          <dt>lift up</dt><dd>lifted up</dd>
+          <dt>prevailed</dt><dd>grew strong, won out, rose over everything</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="And all flesh died that moved upon the earth|and every man"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="all flesh died|every man"></blockquote>
+    <h2 class="rise" style="--d:1">God meant what He said</h2>
+    <p class="note rise" style="--d:2">There's no softening this. Every man outside the ark died. God had told Noah why:</p>
+    <blockquote class="quote step"><p>“And God said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.”</p><cite>Genesis 6:13</cite></blockquote>
+    <p class="note step">Violence, corruption, every thought <em>“only evil continually”</em> (6:5). God takes sin seriously because He takes people seriously. Sin was tearing His world apart.</p>
+    <p class="note step">But He takes no pleasure in it:</p>
+    <blockquote class="quote step"><p>“Say unto them, As I live, saith the Lord GOD, I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Israel?”</p><cite>Ezekiel 33:11</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="Noah only remained alive, and they that were with him in the ark|an hundred and fifty days"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="23" data-hl="Noah only remained alive, and they that were with him in the ark"></blockquote>
+    <h2 class="rise" style="--d:1">Only those in the ark</h2>
+    <p class="note step dots-go">A whole world of people, and eight left alive.</p>
+    <div class="dots rows rise" data-dots="80" data-keep="7 18 26 33 49 52 64 75" style="--d:2;--cols:20;--dot:var(--ink-soft);--pace:12ms;max-width:40rem" aria-label="Eighty dots fade until eight are left"></div>
+    <p class="note step">What made the difference? Not that the eight were stronger swimmers or better men. They were inside. Everyone in the ark lived; everyone outside it died.</p>
+    <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
+    <p class="note step">The waters stood a hundred and fifty days, five months, over the whole earth. Noah couldn't see land the whole time. But he was in the right place.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">The ark and Christ</h2>
+    <div class="match" style="--n:3" aria-label="The ark: one door, safe inside from the judgment, shut in by the LORD. Christ: I am the door, no condemnation in Christ, none shall pluck them out of my hand.">
+      <div class="a rise" style="--d:1"><span class="tag">The ark</span><span class="w">one door in its side</span><span class="w">inside, the judgment passed over</span><span class="w">the LORD shut him in</span></div>
+      <div class="step"><span></span><span class="link">a picture of</span><span class="link">a picture of</span><span class="link">a picture of</span></div>
+      <div class="b step"><span class="tag">Christ</span><span class="w">“I am the door” (John 10:9)</span><span class="w">“no condemnation” in Him (Romans 8:1)</span><span class="w">“neither shall any man pluck them out” (John 10:28)</span></div>
+    </div>
+    <p class="note step">You may have spent years with water over your head: drink, drugs, prison, a family torn apart. Being in Christ doesn't mean the water was never there. It means it can't sink you. He carries you over it.</p>
+    <blockquote class="quote step"><p>“When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.”</p><cite>Isaiah 43:2</cite></blockquote>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Noah found grace in the eyes of the LORD” <cite>6:8</cite></span><span class="take">Grace came first; the righteous walk came after.</span></li>
+      <li class="step"><span class="topic">God's patience</span><span class="seed-q">“For yet seven days” <cite>7:4</cite></span><span class="take">Even with judgment at the door, God gave more time.</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">“Noah did according unto all that the LORD commanded him” <cite>7:5</cite></span><span class="take">All of it, the hard years and the one step in.</span></li>
+      <li class="step"><span class="topic">Salvation</span><span class="seed-q">“And the LORD shut him in” <cite>7:16</cite></span><span class="take">God closed the door. A man in Christ is kept by God's hand.</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">“And every living substance was destroyed” <cite>7:23</cite></span><span class="take">God's judgment is real, and so is His long patience.</span></li>
+      <li class="step"><span class="topic">The real world</span><span class="seed-q">“As the days of Noe were” <cite>Matthew 24:37</cite></span><span class="take">The door is open today. Walk in, and live like it.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>Why was Noah the one God called into the ark?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“But Noah found grace in the eyes of the LORD.”</p><cite>Genesis 6:8</cite></blockquote>
+      <blockquote class="quote step" data-q="1" data-hl="thee have I seen righteous before me"></blockquote>
+      <blockquote class="quote step"><p>“By faith Noah, being warned of God of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.”</p><cite>Hebrews 11:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because he found grace. God's favor came first, and Noah believed God and walked with Him. Hebrews calls it “the righteousness which is by faith.” Noah wasn't sinless; he was a man who trusted God and lived like it. The same grace calls you in today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">God's patience</span>
+      <h2>How long did God wait before the flood came?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="For yet seven days"></blockquote>
+      <blockquote class="quote step"><p>“Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.”</p><cite>1 Peter 3:20</cite></blockquote>
+      <blockquote class="quote step"><p>“The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.”</p><cite>2 Peter 3:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Through the building of the ark and the whole life of Methuselah, then seven more days with the door open. God still waits, because He wants men to come in, not to perish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Obedience</span>
+      <h2>What did Noah do with what God told him?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="5" data-hl="according unto all that the LORD commanded him"></blockquote>
+      <blockquote class="quote step" data-q="7" data-hl="Noah went in"></blockquote>
+      <blockquote class="quote step"><p>“But be ye doers of the word, and not hearers only, deceiving your own selves.”</p><cite>James 1:22</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He did it, all of it, before he could see why. He built when there was no water, and he went in while the sky was still clear. Faith that only listens isn't faith. Today, do the next thing God has already made plain to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Salvation</span>
+      <h2>Who shut the door of the ark, and why does that matter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="16" data-hl="and the LORD shut him in"></blockquote>
+      <blockquote class="quote step"><p>“I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.”</p><cite>John 10:9</cite></blockquote>
+      <blockquote class="quote step"><p>“And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand.”</p><cite>John 10:28</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The LORD did. Noah's safety rested on God's hand, not his own. That's the security of every believer: Jesus is the one door, and once you are in Him, He keeps you. A bad day, even a fall, doesn't wash you overboard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Sin</span>
+      <h2>Does God take sin seriously?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="23" data-hl="every living substance was destroyed"></blockquote>
+      <blockquote class="quote step"><p>“And God said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.”</p><cite>Genesis 6:13</cite></blockquote>
+      <blockquote class="quote step"><p>“For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.”</p><cite>Romans 6:23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Yes. Sin destroys people, and God will not let it go on forever. The flood shows that judgment is real. But the ark shows that God always makes a way out before the judgment falls. Sin earns death; life comes as a gift, in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">The real world</span>
+      <h2>Jesus said His coming would be like the days of Noah. How do we live ready?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step"><p>“But as the days of Noe were, so shall also the coming of the Son of man be.”</p><cite>Matthew 24:37</cite></blockquote>
+      <blockquote class="quote step" data-q="10" data-hl="after seven days"></blockquote>
+      <blockquote class="quote step"><p>“(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)”</p><cite>2 Corinthians 6:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The people of Noah's day weren't caught out because they ate and worked and married. They were caught out because they lived as if God hadn't spoken. Living ready means being inside the ark now, trusting Christ, and then going to work today as a man who belongs to Him: honest, sober, and not ashamed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.”</p><cite>Isaiah 43:2</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Genesis chapter 7
+const V = {
+  1: "And the LORD said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.",
+  2: "Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female.",
+  3: "Of fowls also of the air by sevens, the male and the female; to keep seed alive upon the face of all the earth.",
+  4: "For yet seven days, and I will cause it to rain upon the earth forty days and forty nights; and every living substance that I have made will I destroy from off the face of the earth.",
+  5: "And Noah did according unto all that the LORD commanded him.",
+  6: "And Noah was six hundred years old when the flood of waters was upon the earth.",
+  7: "And Noah went in, and his sons, and his wife, and his sons’ wives with him, into the ark, because of the waters of the flood.",
+  8: "Of clean beasts, and of beasts that are not clean, and of fowls, and of every thing that creepeth upon the earth,",
+  9: "There went in two and two unto Noah into the ark, the male and the female, as God had commanded Noah.",
+  10: "And it came to pass after seven days, that the waters of the flood were upon the earth.",
+  11: "In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.",
+  12: "And the rain was upon the earth forty days and forty nights.",
+  13: "In the selfsame day entered Noah, and Shem, and Ham, and Japheth, the sons of Noah, and Noah’s wife, and the three wives of his sons with them, into the ark;",
+  14: "They, and every beast after his kind, and all the cattle after their kind, and every creeping thing that creepeth upon the earth after his kind, and every fowl after his kind, every bird of every sort.",
+  15: "And they went in unto Noah into the ark, two and two of all flesh, wherein is the breath of life.",
+  16: "And they that went in, went in male and female of all flesh, as God had commanded him: and the LORD shut him in.",
+  17: "And the flood was forty days upon the earth; and the waters increased, and bare up the ark, and it was lift up above the earth.",
+  18: "And the waters prevailed, and were increased greatly upon the earth; and the ark went upon the face of the waters.",
+  19: "And the waters prevailed exceedingly upon the earth; and all the high hills, that were under the whole heaven, were covered.",
+  20: "Fifteen cubits upward did the waters prevail; and the mountains were covered.",
+  21: "And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man:",
+  22: "All in whose nostrils was the breath of life, of all that was in the dry land, died.",
+  23: "And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.",
+  24: "And the waters prevailed upon the earth an hundred and fifty days."
+};
+const BOOK = "Genesis 7";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

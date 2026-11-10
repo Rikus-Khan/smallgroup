@@ -87,7 +87,22 @@
     ["sith", "since"], ["twain", "two"], ["fain", "gladly"],
     ["brasen", "made of bronze"], ["sackcloth", "rough goat-hair cloth worn in grief"], ["firstfruits", "the first of the harvest, given to God"],
     ["earnest", "a down payment, a pledge (or: eager)"], ["stripes", "lashes of a whip"], ["scourge|scourged", "whip, whipped"],
-    ["tidings", "news"], ["slothful", "lazy"], ["chasten|chastened|chasteneth|chastening", "discipline, train"], ["mete|meted", "measure out"]
+    ["tidings", "news"], ["slothful", "lazy"], ["chasten|chastened|chasteneth|chastening", "discipline, train"], ["mete|meted", "measure out"],
+    ["firmament", "the expanse of the sky"], ["fowl|fowls", "birds"], ["replenish", "fill"],
+    ["bdellium", "a sweet-smelling resin (some think pearls)"], ["thence", "from there"], ["compass|compassed|compasseth", "go around, surround"],
+    ["begat|beget", "became the father of"], ["renown", "fame"], ["selfsame", "the very same"],
+    ["asswaged", "sank, calmed (assuaged)"], ["pluckt", "plucked"], ["spake", "spoke"],
+    ["builded", "built"], ["savour", "smell, scent"], ["smite|smote|smitten|smiteth", "strike, struck"],
+    ["seedtime", "planting season"], ["whoso", "whoever"], ["similitude", "likeness"],
+    ["bondmen|bondman", "slaves"], ["hewers", "cutters (of wood or stone)"], ["isles", "coastlands across the sea"],
+    ["throughly", "thoroughly"], ["morter", "mortar"], ["nativity", "birth; the land of his birth"],
+    ["sojourn|sojourned|sojourneth|sojourner", "live somewhere as a stranger"], ["asses", "donkeys"], ["heathen", "the nations (people outside Israel)"],
+    ["herdmen", "herdsmen"], ["vale|dale", "valley"], ["slime|slimepits", "tar, tar pits"],
+    ["confederate", "allies"], ["shoelatchet", "a sandal strap"], ["brake", "broke"],
+    ["betwixt", "between"], ["hearken|hearkened|hearkeneth", "listen (and obey)"], ["fourscore", "eighty"],
+    ["handmaid|handmaiden", "a woman servant"], ["carcases|carcase", "dead bodies"], ["turtledove|turtledoves", "a small wild dove"],
+    ["heifer", "a young cow"], ["surety", "a guarantee; (of a surety) for certain"], ["abated", "went down, grew less"],
+    ["perdition", "ruin, destruction"], ["iniquity|iniquities", "sin, wrongdoing"], ["wherefore", "so, therefore; (asking) why"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
@@ -312,7 +327,7 @@
     "Succoth": [32.10, 30.55, "r"], "No (Thebes)": [32.65, 25.70, "r"],
     "Nuweiba": [34.66, 28.98, "l"], "Mount Sinai": [35.31, 28.65, "r", "m"], "Ezion-geber": [34.98, 29.55, "r"], "Kadesh-barnea": [34.42, 30.69, "l"],
     "Mount Nebo": [35.73, 31.77, "r", "m"], "Mount Hor": [35.40, 30.32, "r", "m"],
-    "Beersheba": [34.80, 31.25, "l"], "Gerar": [34.61, 31.38, "l"], "Hebron": [35.10, 31.53, "l"], "Bethlehem": [35.20, 31.70, "l"], "Jerusalem": [35.23, 31.78, "r"],
+    "Beersheba": [34.80, 31.25, "l"], "Sodom": [35.42, 31.10, "r"], "Zoar": [35.50, 30.98, "r"], "Salem": [35.23, 31.78, "l"], "Gerar": [34.61, 31.38, "l"], "Hebron": [35.10, 31.53, "l"], "Bethlehem": [35.20, 31.70, "l"], "Jerusalem": [35.23, 31.78, "r"],
     "Bethel": [35.22, 31.93, "l"], "Ai": [35.26, 31.92, "r"], "Shechem": [35.28, 32.21, "r"], "Shiloh": [35.29, 32.06, "r"], "Samaria": [35.19, 32.28, "l"],
     "Dothan": [35.24, 32.42, "l"], "Megiddo": [35.18, 32.58, "l"], "Jezreel": [35.33, 32.56, "r"], "Gibeon": [35.18, 31.85, "l"], "Gibeah": [35.24, 31.82, "r"],
     "Ramah": [35.23, 31.85, "r"], "Mizpah": [35.22, 31.88, "l"], "Anathoth": [35.26, 31.81, "r"], "Michmash": [35.28, 31.87, "r"], "Jericho": [35.44, 31.87, "r"],
@@ -830,7 +845,7 @@
     const n = Math.max(...lines.map(p => p.querySelectorAll(":scope > b").length));
     box.style.setProperty("--n", n);
     lines.forEach((p, r) => [...p.querySelectorAll(":scope > b")].forEach((b, c) => {
-      b.style.setProperty("--r", r + 1); b.style.setProperty("--c", c + 1); b.style.setProperty("--o", c * 10 + r); b.dataset.c = c % 6;
+      b.style.setProperty("--r", r + 1); b.style.setProperty("--c", c + 1); b.dataset.c = c % 6;
     }));
     const kind = box.dataset.kind;
     if (KINDS[kind]) box.insertAdjacentHTML("afterbegin", `<span class="pl-kind">${KINDS[kind]}</span>`);

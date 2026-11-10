@@ -17374,5 +17374,857 @@ window.STUDIES = [
       },
       "big": "What was lost in Eden is given back: the tree of life, no more curse, and God's face. Jesus is coming quickly, and until He does, the Bible's last invitation stands open to every man: whosoever will, come and take the water of life freely."
     }
+  },
+  {
+    "id": "genesis-01",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 1,
+    "date": "2026-11-10",
+    "title": "Genesis 1",
+    "sub": "In the beginning God",
+    "about": "Before there was anything, there was God. He spoke, and light, land, life and man came out of nothing, and He called it very good.",
+    "tags": [
+      "The Creator",
+      "God's word",
+      "Man",
+      "Sin",
+      "Grace",
+      "A new day"
+    ],
+    "url": "studies/genesis-01.html",
+    "overview": {
+      "where": "The whole world, from nothing to a finished earth; Moses wrote it down for Israel in the wilderness",
+      "when": "In the beginning; written by Moses about 1446 to 1406 BC",
+      "people": [
+        "god-the-creator",
+        "holy-spirit"
+      ],
+      "places": [
+        "heaven"
+      ],
+      "story": [
+        "In the beginning God creates the heaven and the earth. The earth is without form and void, dark and under water, and the Spirit of God moves upon the waters (1–2).",
+        "Day one: God says, “Let there be light,” and there is light. He divides it from the darkness, and the evening and the morning are the first day (3–5).",
+        "Day two: the firmament, the sky, between the waters below and the waters above (6–8). Day three: the dry land and the seas, and the earth brings forth grass, plants and fruit trees, each after his kind (9–13).",
+        "Day four: the sun, the moon and the stars, set in the sky to give light and to mark days, seasons and years (14–19).",
+        "Day five: the sea creatures and the birds, and God's first blessing: “Be fruitful, and multiply” (20–23). Day six: the land animals, each after his kind (24–25).",
+        "Then God says, “Let us make man in our image.” He creates man, male and female, in His own image, blesses them, and gives them the earth to fill, rule and care for (26–28).",
+        "God gives every plant and tree for food. He sees everything He has made, and behold, it is very good: the sixth day (29–31)."
+      ],
+      "key": {
+        "ref": "Genesis 1:1",
+        "text": "In the beginning God created the heaven and the earth."
+      },
+      "big": "God made everything there is, out of nothing, by His word, and called it very good. Man alone was made in His image. The mess in the world came later, from sin, not from God, and the God who spoke light into the dark can make any man new."
+    }
+  },
+  {
+    "id": "genesis-02",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 2,
+    "date": "2026-11-10",
+    "title": "Genesis 2",
+    "sub": "Dust, breath, and a garden",
+    "about": "God rests from His work. Then He forms a man out of the dust, breathes life into him, gives him a garden, a job, one command, and a wife.",
+    "tags": [
+      "Rest",
+      "Man",
+      "Work",
+      "Sin",
+      "Alone",
+      "Marriage"
+    ],
+    "url": "studies/genesis-02.html",
+    "overview": {
+      "where": "The garden of Eden, “eastward,” watered by a river that parts into four, two of them the Tigris and the Euphrates",
+      "when": "The seventh day, then a close look back at the sixth day, when man was made",
+      "people": [
+        "the-lord",
+        "adam"
+      ],
+      "places": [
+        "eden",
+        "pison",
+        "havilah",
+        "gihon-river",
+        "hiddekel",
+        "euphrates",
+        "assyria"
+      ],
+      "story": [
+        "The heavens and the earth are finished. On the seventh day God rests from all His work, and He blesses the day and sanctifies it (1–3).",
+        "The account of the heavens and the earth: before any plant grew or rain fell, a mist watered the ground. The LORD God forms man of the dust of the ground and breathes into his nostrils the breath of life, and man becomes a living soul (4–7).",
+        "The LORD God plants a garden eastward in Eden, full of good trees, with the tree of life and the tree of knowledge of good and evil in the midst (8–9).",
+        "A river goes out of Eden and parts into four: Pison, by Havilah's gold; Gihon, around Ethiopia; Hiddekel, east of Assyria; and Euphrates (10–14).",
+        "God puts the man in the garden to dress it and keep it. He may freely eat of every tree, but not of the tree of the knowledge of good and evil: in the day he eats of it he will surely die (15–17).",
+        "“It is not good that the man should be alone.” Adam names every animal, but none is a help meet for him (18–20).",
+        "God puts Adam into a deep sleep, makes a woman from his rib, and brings her to him. “This is now bone of my bones, and flesh of my flesh” (21–23).",
+        "So a man leaves his father and mother, cleaves to his wife, and they become one flesh. They were both naked, and were not ashamed (24–25)."
+      ],
+      "key": {
+        "ref": "Genesis 2:7",
+        "text": "And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul."
+      },
+      "big": "Man is dust with God's own breath in him: humble, and made to know his Maker. God gave him rest, good work, one loving command, and a wife, because it is not good for a man to be alone. What sin later broke, Jesus came to restore."
+    }
+  },
+  {
+    "id": "genesis-03",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 3,
+    "date": "2026-11-10",
+    "title": "Genesis 3",
+    "sub": "Where art thou?",
+    "about": "A lie, a bite, and a man hiding in the trees. Then God comes looking for him, with a promise and a covering.",
+    "tags": [
+      "The tempter",
+      "Sin",
+      "Hiding",
+      "The promise",
+      "The cost",
+      "Covered"
+    ],
+    "url": "studies/genesis-03.html",
+    "overview": {
+      "where": "The garden of Eden, and then outside it, to the east",
+      "when": "At the beginning of human history, soon after creation (before Abraham, so no BC date)",
+      "people": [
+        "adam",
+        "eve",
+        "serpent-of-eden"
+      ],
+      "places": [
+        "eden"
+      ],
+      "story": [
+        "The serpent, more subtil than any beast, asks the woman, “Yea, hath God said…?” She adds to God’s word and softens it (1–3).",
+        "He tells her, “Ye shall not surely die,” and that God is holding back from them. She sees the fruit is good for food, pleasant to the eyes and desired to make one wise; she eats, and Adam, who is with her, eats (4–6).",
+        "Their eyes are opened, they know they are naked, and they sew fig leaves into aprons (7).",
+        "They hide from the LORD God among the trees. He calls, “Where art thou?” Adam blames the woman, and God who gave her; the woman blames the serpent (8–13).",
+        "God curses the serpent and promises that the woman’s seed will bruise its head, and it will bruise his heel. The woman will bear children in sorrow; the ground is cursed for Adam’s sake, with thorns, sweat and a return to dust (14–19).",
+        "Adam names his wife Eve, the mother of all living. The LORD God makes them coats of skins and clothes them (20–21).",
+        "He sends them out of Eden, and places Cherubims and a flaming sword to keep the way of the tree of life (22–24)."
+      ],
+      "key": {
+        "ref": "Genesis 3:15",
+        "text": "And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel."
+      },
+      "big": "Sin promised to make man like God and left him naked, afraid and hiding. But God came looking for him, promised a Deliverer who would crush the serpent, and covered his shame at the cost of a life: the first picture of the gospel."
+    }
+  },
+  {
+    "id": "genesis-04",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 4,
+    "date": "2026-11-10",
+    "title": "Genesis 4",
+    "sub": "Sin lieth at the door",
+    "about": "Two brothers bring an offering. One is accepted, one gets angry, and God warns him before it’s too late. Then the first murder, and still the first mercy.",
+    "tags": [
+      "Worship",
+      "Anger",
+      "The road down",
+      "Brothers",
+      "Mercy",
+      "Hope"
+    ],
+    "url": "studies/genesis-04.html",
+    "overview": {
+      "where": "Outside Eden; then the land of Nod, on the east of Eden, where Cain builds the city of Enoch",
+      "when": "The first generations after the fall, before the flood (before Abraham, so no BC date)",
+      "people": [
+        "adam",
+        "eve",
+        "cain",
+        "abel",
+        "seth",
+        "enoch-son-of-cain",
+        "irad",
+        "mehujael",
+        "methusael",
+        "lamech-of-cains-line",
+        "adah-wife-of-lamech",
+        "zillah",
+        "jabal",
+        "jubal",
+        "tubal-cain",
+        "naamah-daughter-of-lamech"
+      ],
+      "places": [
+        "eden",
+        "nod",
+        "city-of-enoch"
+      ],
+      "story": [
+        "Eve bears Cain and then Abel. Abel keeps sheep; Cain tills the ground (1–2).",
+        "Cain brings fruit of the ground; Abel brings the firstlings of his flock and the fat. The LORD has respect to Abel and his offering, but not to Cain and his. Cain is very wroth (3–5).",
+        "The LORD asks why he is angry: if he does well he will be accepted, but sin lies at the door and desires him, and he must rule over it (6–7).",
+        "Cain talks with Abel, and in the field he rises up and kills him (8).",
+        "“Where is Abel thy brother?” “Am I my brother’s keeper?” Abel’s blood cries from the ground. Cain is cursed to be a fugitive and a vagabond (9–12).",
+        "Cain says his punishment is more than he can bear. The LORD sets a mark on him so no one will kill him, and Cain goes out from His presence to the land of Nod (13–16).",
+        "Cain builds a city named for his son Enoch. Five generations later Lamech takes two wives; his sons Jabal, Jubal and Tubal-cain father herding, music and metalwork. Lamech boasts of killing a man and of seventy-sevenfold revenge (17–24).",
+        "Eve bears Seth, “another seed instead of Abel.” Seth’s son is Enos, and then men begin to call upon the name of the LORD (25–26)."
+      ],
+      "key": {
+        "ref": "Genesis 4:7",
+        "text": "If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him."
+      },
+      "big": "God warned an angry man before he sinned and showed him mercy after. Sin crouches at every man’s door, but we can rule over it; we are our brothers’ keepers; and Christ’s blood speaks better things than Abel’s. Even after a murder, God kept His promise going through Seth, and men began to call on His name."
+    }
+  },
+  {
+    "id": "genesis-05",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 5,
+    "date": "2026-11-10",
+    "title": "Genesis 5",
+    "sub": "And he died",
+    "about": "Ten generations from Adam to Noah. “And he died” closes one long life after another, until Enoch walks with God and God takes him.",
+    "tags": [
+      "Genealogy",
+      "Death",
+      "Walking with God",
+      "Hope",
+      "Rest",
+      "Names"
+    ],
+    "url": "studies/genesis-05.html",
+    "overview": {
+      "where": "The world before the flood, among the children of Seth",
+      "when": "From creation to Noah's five hundredth year: about 1,556 years by adding up the ages in this chapter (no BC dates before Abraham)",
+      "people": [
+        "adam",
+        "seth",
+        "enos",
+        "cainan",
+        "mahalaleel",
+        "jared",
+        "enoch",
+        "methuselah",
+        "lamech-father-of-noah",
+        "noah",
+        "shem",
+        "ham",
+        "japheth"
+      ],
+      "places": [],
+      "story": [
+        "“The book of the generations of Adam”: God made man in His likeness, male and female, and blessed them. Adam's son Seth is born in Adam's own likeness, and Adam dies at 930 (1–5).",
+        "Seth, Enos, Cainan, Mahalaleel and Jared each live, beget sons and daughters, and die, in the same three lines, after hundreds of years (6–20).",
+        "Enoch walks with God for three hundred years after Methuselah is born, “and he was not; for God took him.” He is the only man in the list who doesn't end “and he died” (21–24).",
+        "Methuselah lives 969 years, the oldest man in the Bible; by the numbers he dies in the year of the flood (25–27).",
+        "Lamech names his son Noah: “This same shall comfort us concerning our work and toil of our hands, because of the ground which the LORD hath cursed.” Noah, at five hundred, begets Shem, Ham and Japheth (28–32)."
+      ],
+      "key": {
+        "ref": "Genesis 5:24",
+        "text": "And Enoch walked with God: and he was not; for God took him."
+      },
+      "big": "Sin brought death to every son of Adam, and even nine hundred years couldn't outrun it. But one man walked with God, and God took him: death doesn't get the last word. God writes every name down, and in Jesus the rest Lamech longed for is offered to every tired man."
+    }
+  },
+  {
+    "id": "genesis-06",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 6,
+    "date": "2026-11-10",
+    "title": "Genesis 6",
+    "sub": "But Noah found grace",
+    "about": "The earth fills with violence and every thought of man's heart is only evil, and it grieves God at His heart. But Noah finds grace, and God tells him to build an ark.",
+    "tags": [
+      "Sin",
+      "God's heart",
+      "Grace",
+      "Judgment",
+      "Obedience",
+      "The ark"
+    ],
+    "url": "studies/genesis-06.html",
+    "overview": {
+      "where": "The whole earth before the flood; where Noah built the ark isn't told",
+      "when": "The years before the flood, which came in Noah's six hundredth year (7:6); counting the ages in Genesis 5, the flood came about 1,656 years after creation",
+      "people": [
+        "the-lord",
+        "noah",
+        "shem",
+        "ham",
+        "japheth"
+      ],
+      "places": [],
+      "story": [
+        "As men multiply, “the sons of God” take wives of the daughters of men, “of all which they chose.” The LORD says His spirit shall not always strive with man: his days shall be 120 years. There were giants in those days, mighty men of renown (1–4).",
+        "God sees that every imagination of man's heart is only evil continually. It repents the LORD that He made man, it grieves Him at His heart, and He resolves to destroy man from the earth (5–7).",
+        "“But Noah found grace in the eyes of the LORD.” Noah is a just man, perfect in his generations, and walks with God; he has three sons, Shem, Ham and Japheth (8–10).",
+        "The earth is corrupt and filled with violence. God tells Noah the end of all flesh has come before Him (11–13).",
+        "God tells Noah to make an ark of gopher wood, pitched within and without, 300 cubits by 50 by 30, with a window, a door in the side, and three stories (14–16).",
+        "God will bring a flood of waters, but He will establish His covenant with Noah: Noah, his wife, his sons and their wives will come into the ark, with two of every sort of living thing and food for all. “Thus did Noah; according to all that God commanded him, so did he” (17–22)."
+      ],
+      "key": {
+        "ref": "Genesis 6:8",
+        "text": "But Noah found grace in the eyes of the LORD."
+      },
+      "big": "Sin starts in the heart and fills the earth, and it grieves God. But grace comes first: Noah found grace he didn't earn, then walked with God and did all God said. God warns before He judges, and He gives one way through: an ark with one door, a picture of Jesus, the one way to be saved."
+    }
+  },
+  {
+    "id": "genesis-07",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 7,
+    "date": "2026-11-10",
+    "title": "Genesis 7",
+    "sub": "The LORD shut him in",
+    "about": "God calls Noah and his family into the ark, waits seven more days, and shuts the door Himself. The waters rise over the mountains, and only those in the ark live.",
+    "tags": [
+      "The flood",
+      "The ark",
+      "Obedience",
+      "Judgment",
+      "Security",
+      "Grace"
+    ],
+    "url": "studies/genesis-07.html",
+    "overview": {
+      "where": "The ark, on the face of the waters that covered the whole earth",
+      "when": "In Noah's six hundredth year, the second month, the seventeenth day; by the ages in Genesis 5, the year 1656 after creation",
+      "people": [
+        "noah",
+        "shem",
+        "ham",
+        "japheth",
+        "the-lord"
+      ],
+      "places": [],
+      "story": [
+        "The LORD says to Noah, “Come thou and all thy house into the ark,” and tells him to take clean beasts and birds by sevens and the rest by two. In seven days the rain will come for forty days and forty nights (1–4).",
+        "Noah does all that the LORD commanded. At six hundred years old he goes in with his wife, his sons and their wives, and the animals come to him two and two (5–10).",
+        "On the seventeenth day of the second month the fountains of the great deep break up and the windows of heaven open. Noah, Shem, Ham, Japheth and their wives enter the ark, “and the LORD shut him in” (11–16).",
+        "The waters rise and bear up the ark, until they stand fifteen cubits over the highest mountains (17–20).",
+        "Every living thing on the dry land dies; “Noah only remained alive, and they that were with him in the ark.” The waters prevail a hundred and fifty days (21–24)."
+      ],
+      "key": {
+        "ref": "Genesis 7:16",
+        "text": "And they that went in, went in male and female of all flesh, as God had commanded him: and the LORD shut him in."
+      },
+      "big": "God was patient right up to the last seven days, and then His judgment was real. Noah lived because he was inside the ark, and the LORD Himself shut the door. Christ is that door now, it is open today, and the man inside Him is kept by God's hand, not his own grip."
+    }
+  },
+  {
+    "id": "genesis-08",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 8,
+    "date": "2026-11-10",
+    "title": "Genesis 8",
+    "sub": "God remembered Noah",
+    "about": "The waters go down, the ark rests on the mountains of Ararat, and a dove comes back with an olive leaf. Noah steps out on God's word, builds an altar, and God promises that seedtime and harvest, day and night shall not cease.",
+    "tags": [
+      "The flood",
+      "Waiting",
+      "The raven and the dove",
+      "Worship",
+      "The heart",
+      "God's promise"
+    ],
+    "url": "studies/genesis-08.html",
+    "overview": {
+      "where": "The ark on the mountains of Ararat, then the dry ground below",
+      "when": "From the seventh month of Noah's six hundredth year to the second month of his six hundred and first: a year and ten days after the flood began",
+      "people": [
+        "noah",
+        "the-lord"
+      ],
+      "places": [
+        "ararat"
+      ],
+      "story": [
+        "God remembers Noah and makes a wind pass over the earth. The fountains and the windows of heaven are stopped, and the waters go down (1–3).",
+        "On the seventeenth day of the seventh month the ark rests on the mountains of Ararat; on the first day of the tenth month the mountain tops are seen (4–5).",
+        "Noah opens the window and sends out a raven, then a dove that finds no rest and comes back; he pulls her in. Seven days later she brings an olive leaf; seven days after that she does not return (6–12).",
+        "On the first day of the first month the ground is dry, but Noah waits until God speaks: “Go forth of the ark.” He comes out with his family and every living thing, to be fruitful and multiply (13–19).",
+        "Noah builds an altar and offers burnt offerings. The LORD smells a sweet savour and promises never again to curse the ground for man's sake, for man's heart is evil from his youth: while the earth remains, seedtime and harvest, cold and heat, summer and winter, day and night shall not cease (20–22)."
+      ],
+      "key": {
+        "ref": "Genesis 8:22",
+        "text": "While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease."
+      },
+      "big": "God remembered Noah, and when God remembers, He acts. Noah waited for God's word to come out, and the first thing he built was an altar. The flood did not change man's heart, but God answered the sacrifice with mercy, and every morning since is a promise He has kept."
+    }
+  },
+  {
+    "id": "genesis-09",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 9,
+    "date": "2026-11-10",
+    "title": "Genesis 9",
+    "sub": "The bow in the cloud",
+    "about": "God blesses Noah, sets the worth of a man's life, and makes a covenant sealed with the rainbow. Then Noah gets drunk in his tent, and his sons choose whether to spread his shame or cover it.",
+    "tags": [
+      "Covenant",
+      "Grace",
+      "Image of God",
+      "Drink",
+      "Brothers",
+      "Hope"
+    ],
+    "url": "studies/genesis-09.html",
+    "overview": {
+      "where": "The earth after the flood, near the mountains of Ararat, where Noah and his family begin again and Noah plants a vineyard",
+      "when": "Just after the flood, about year 1656 counting the ages in Genesis 5; Noah lives 350 more years",
+      "people": [
+        "noah",
+        "shem",
+        "ham",
+        "japheth",
+        "canaan-son-of-ham",
+        "the-lord"
+      ],
+      "places": [],
+      "story": [
+        "God blesses Noah and his sons with the words He spoke to Adam: be fruitful, multiply, and fill the earth. Animals may now be eaten, but not with the blood, for the life is in the blood (1–4).",
+        "God will require a man's life of whoever takes it, for in the image of God made He man (5–7).",
+        "God makes a covenant with Noah, his seed and every living creature: never again will a flood destroy the earth. Noah is given no conditions (8–11).",
+        "The token of the covenant is God's bow in the cloud. When it is seen, God will remember His everlasting covenant (12–17).",
+        "Noah becomes a farmer, plants a vineyard, drinks the wine and lies drunk and uncovered in his tent (18–21).",
+        "Ham sees and tells his brothers; Shem and Japheth walk in backward and cover their father (22–24).",
+        "Noah speaks of what is coming: Canaan will be a servant, the LORD God of Shem is blessed, and Japheth will be enlarged and dwell in the tents of Shem. Noah dies at 950 (25–29)."
+      ],
+      "key": {
+        "ref": "Genesis 9:13",
+        "text": "I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth."
+      },
+      "big": "God's covenant with Noah rests entirely on God: He makes it, He keeps it, and He hangs a sign of it in the storm clouds. Every man bears God's image and is precious to Him. Even a godly man can fall to drink right after a great victory, and when a brother falls, the right thing is to cover his shame and help him up, not spread it."
+    }
+  },
+  {
+    "id": "genesis-10",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 10,
+    "date": "2026-11-10",
+    "title": "Genesis 10",
+    "sub": "The table of nations",
+    "about": "A family tree of the whole world: about seventy families from Noah's three sons, the first kingdom builder Nimrod, and the line of Shem through Eber and Peleg that the Bible will follow to Abram.",
+    "tags": [
+      "Genealogy",
+      "The nations",
+      "Nimrod",
+      "Line of promise",
+      "God knows names"
+    ],
+    "url": "studies/genesis-10.html",
+    "overview": {
+      "where": "From the mountains of Ararat out across the known world: the coastlands and Asia Minor, Egypt and Canaan, Shinar and Assyria, Aram and Arabia",
+      "when": "The generations after the flood, down to Peleg, in whose days the earth was divided (the time of Babel)",
+      "people": [
+        "noah",
+        "shem",
+        "ham",
+        "japheth",
+        "javan",
+        "cush",
+        "mizraim",
+        "canaan-son-of-ham",
+        "nimrod-the-hunter",
+        "asshur",
+        "eber",
+        "peleg",
+        "joktan",
+        "the-lord"
+      ],
+      "places": [
+        "shinar",
+        "babel",
+        "erech",
+        "nineveh",
+        "calah",
+        "gerar",
+        "gaza",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "These are the generations of Noah's sons, Shem, Ham and Japheth, born after the flood (1).",
+        "Japheth's sons and grandsons spread to the isles of the Gentiles, every one after his tongue (2–5).",
+        "Ham's sons are Cush, Mizraim (Egypt), Phut and Canaan. Cush begets Nimrod, a mighty hunter before the LORD, whose kingdom begins at Babel in the land of Shinar; Nineveh and Calah are built in Asshur (6–12).",
+        "Mizraim fathers seven peoples, the Philistines among them; Canaan fathers Sidon, Heth, the Jebusite, the Amorite and more, whose border runs from Sidon to Gaza and to Sodom and Gomorrah (13–20).",
+        "Shem is the father of all the children of Eber. His sons are Elam, Asshur, Arphaxad, Lud and Aram; through Salah comes Eber (21–24).",
+        "Eber has two sons: Peleg, for in his days the earth was divided, and Joktan, whose thirteen sons dwell toward the east (25–30).",
+        "These are the families of Noah's sons, and by them the nations were divided in the earth after the flood (31–32)."
+      ],
+      "key": {
+        "ref": "Genesis 10:32",
+        "text": "These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood."
+      },
+      "big": "Every nation on earth comes from one family, of one blood, and God kept track of every one of them by name. Nimrod built a name and a kingdom by strength, but the Bible follows Shem's quiet line through Eber and Peleg toward Abram and, in the end, Jesus, who will gather people from every one of these nations."
+    }
+  },
+  {
+    "id": "genesis-11",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 11,
+    "date": "2026-11-10",
+    "title": "Genesis 11",
+    "sub": "Let us make us a name",
+    "about": "Men build a tower to make a name for themselves, and the LORD comes down and scatters them. Then ten generations from Shem lead to Abram, and a wife with no child.",
+    "tags": [
+      "Pride",
+      "Babel",
+      "God's mercy",
+      "Genealogy",
+      "Abraham",
+      "Hope"
+    ],
+    "url": "studies/genesis-11.html",
+    "overview": {
+      "where": "The plain of Shinar (later Babylonia) where Babel was built; then Ur of the Chaldees, and Haran far up the Euphrates",
+      "when": "Some time after the flood (no date is given); then about 350 years of names from the flood to Abram's birth; Abram leaves Haran about 2090 BC",
+      "people": [
+        "the-lord",
+        "shem",
+        "eber",
+        "peleg",
+        "reu",
+        "serug",
+        "nahor",
+        "terah",
+        "abraham",
+        "haran-son-of-terah",
+        "lot",
+        "sarah",
+        "milcah",
+        "iscah"
+      ],
+      "places": [
+        "shinar",
+        "babel",
+        "ur",
+        "charran",
+        "canaan"
+      ],
+      "story": [
+        "The whole earth has one language. Moving into the plain of Shinar, men make bricks and say, Let us build us a city and a tower whose top may reach unto heaven, and let us make us a name, lest we be scattered (1–4).",
+        "The LORD comes down to see the tower. He confounds their language so they cannot understand one another, scatters them over all the earth, and they stop building. The city is called Babel (5–9).",
+        "The generations of Shem: ten names from Shem, two years after the flood, through Eber and Peleg, down to Terah, the father of Abram, Nahor and Haran. Their lives grow shorter as they go (10–26).",
+        "Haran dies before his father in Ur of the Chaldees, leaving his son Lot. Abram marries Sarai, and Nahor marries Milcah. But Sarai is barren; she has no child (27–30).",
+        "Terah takes Abram, Sarai and Lot from Ur to go to Canaan, but they stop at Haran and live there, and Terah dies in Haran (31–32)."
+      ],
+      "key": {
+        "ref": "Genesis 11:4",
+        "text": "And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth."
+      },
+      "big": "No man can build his way up to God; the LORD has to come down, and in Jesus He did. Babel grabbed for a name and lost it. Out of the scattered nations God picks one man with no son and a family that served idols, and promises to give him a name. Where man's line runs out, God's promise begins."
+    }
+  },
+  {
+    "id": "genesis-12",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 12,
+    "date": "2026-11-10",
+    "title": "Genesis 12",
+    "sub": "Get thee out",
+    "about": "God calls a seventy-five-year-old man to leave everything he knows and promises to bless every family on earth through him. Then Abram gets scared and lies in Egypt, and God keeps His promise anyway.",
+    "tags": [
+      "God's call",
+      "Faith",
+      "God's promise",
+      "Worship",
+      "Sin",
+      "Grace"
+    ],
+    "url": "studies/genesis-12.html",
+    "overview": {
+      "where": "Haran, then the land of Canaan (Shechem, Bethel), then down to Egypt",
+      "when": "About 2090 BC, when Abram is seventy-five",
+      "people": [
+        "abraham",
+        "sarah",
+        "lot",
+        "pharaoh",
+        "the-lord"
+      ],
+      "places": [
+        "charran",
+        "canaan",
+        "shechem",
+        "moreh",
+        "bethel",
+        "hai",
+        "egypt"
+      ],
+      "story": [
+        "The LORD calls Abram to leave his country and promises a great nation, a great name, and a blessing for all the families of the earth (1–3).",
+        "At seventy-five Abram leaves Haran with Sarai, Lot and all they own, and comes into Canaan (4–6).",
+        "The LORD appears and promises the land to his seed; Abram builds altars at Shechem and Bethel and calls on the LORD's name (7–9).",
+        "A famine sends him down to Egypt, where, afraid for his life, he has Sarai say she is his sister, and she is taken into Pharaoh's house (10–16).",
+        "The LORD plagues Pharaoh's house, Pharaoh rebukes Abram and sends him away with his wife and all he had (17–20)."
+      ],
+      "key": {
+        "ref": "Genesis 12:3",
+        "text": "And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed."
+      },
+      "big": "God called an ordinary old man and promised that through him every family on earth would be blessed, a promise that reaches us in Jesus. Abram's fear and lie did not cancel it: God protected the promise when Abram did not."
+    }
+  },
+  {
+    "id": "genesis-13",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 13,
+    "date": "2026-11-10",
+    "title": "Genesis 13",
+    "sub": "Lot lifted up his eyes",
+    "about": "Abram goes back to the altar where he began, gives his nephew the first pick of the land, and watches him choose by what the eye can see. God speaks to the man who let go.",
+    "tags": [
+      "Coming back",
+      "Trouble",
+      "Peace",
+      "Choices",
+      "God's promise",
+      "Trust"
+    ],
+    "url": "studies/genesis-13.html",
+    "overview": {
+      "where": "Between Bethel and Hai, the plain of Jordan, and Hebron",
+      "when": "Soon after Egypt, in Abram's lifetime as a tent-dweller in Canaan",
+      "people": [
+        "abraham",
+        "lot",
+        "canaanites",
+        "perizzites",
+        "the-lord"
+      ],
+      "places": [
+        "egypt",
+        "bethel",
+        "hai",
+        "plain-of-jordan",
+        "sodom-and-gomorrah",
+        "zoar",
+        "hebron",
+        "mamre"
+      ],
+      "story": [
+        "Abram goes up out of Egypt very rich, and returns to the altar at Bethel where he began and calls on the LORD (1–4).",
+        "Abram's and Lot's herds are too big for the land, and their herdmen quarrel while the Canaanite and the Perizzite look on (5–7).",
+        "Abram gives Lot first choice of the land: “Let there be no strife, I pray thee… for we be brethren” (8–9).",
+        "Lot lifts up his eyes, chooses the well-watered plain of Jordan, and pitches his tent toward wicked Sodom (10–13).",
+        "After Lot leaves, the LORD tells Abram to look in every direction: all the land, and a seed like the dust, will be his. Abram settles at Hebron and builds an altar (14–18)."
+      ],
+      "key": {
+        "ref": "Genesis 13:8",
+        "text": "And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren."
+      },
+      "big": "A man who has failed finds his way back to the altar, and a man who trusts God's promise can give up his rights for the sake of peace. Lot picked by sight and drifted toward Sodom, while Abram let go and received everything God had promised."
+    }
+  },
+  {
+    "id": "genesis-14",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 14,
+    "date": "2026-11-10",
+    "title": "Genesis 14",
+    "sub": "The rescue, and the priest-king",
+    "about": "Four kings from the east sweep down on Sodom and carry off Lot. Abram goes after him and wins, and a mysterious priest meets him with bread and wine, a picture of Jesus.",
+    "tags": [
+      "Choices",
+      "Rescue",
+      "God's help",
+      "Christ",
+      "Giving",
+      "Integrity"
+    ],
+    "url": "studies/genesis-14.html",
+    "overview": {
+      "where": "The vale of Siddim by the Salt Sea, then north to Dan and Damascus, and back to the valley of Shaveh near Salem",
+      "when": "Some years after Abram came to Canaan (about 2090 BC)",
+      "people": [
+        "abraham",
+        "lot",
+        "chedorlaomer",
+        "kings-of-the-plain",
+        "king-of-sodom",
+        "eshcol-and-aner",
+        "melchisedec"
+      ],
+      "places": [
+        "sodom-and-gomorrah",
+        "vale-of-siddim",
+        "salt-sea",
+        "mamre",
+        "dan",
+        "damascus",
+        "valley-of-shaveh",
+        "salem"
+      ],
+      "story": [
+        "Four kings from the east make war on five kings of the plain, who have rebelled after twelve years of serving Chedorlaomer (1–9).",
+        "The five kings are beaten in the vale of Siddim, and the victors take the goods of Sodom and Gomorrah, and Lot, who dwelt in Sodom (10–12).",
+        "Abram arms 318 trained men, chases the kings by night to Dan and beyond Damascus, and brings back all the goods and his brother Lot (13–16).",
+        "Melchizedek, king of Salem and priest of the most high God, brings bread and wine, blesses Abram, and receives a tenth of all (17–20).",
+        "The king of Sodom offers Abram the goods; Abram will take nothing, “from a thread even to a shoelatchet,” except his allies' share (21–24)."
+      ],
+      "key": {
+        "ref": "Genesis 14:20",
+        "text": "And blessed be the most high God, which hath delivered thine enemies into thy hand. And he gave him tithes of all."
+      },
+      "big": "Abram risks everything to rescue the brother who walked away, gives God the credit for the victory, and refuses to let Sodom make him rich. Melchizedek, priest and king, points ahead to Jesus, our priest for ever, who is able to save to the uttermost."
+    }
+  },
+  {
+    "id": "genesis-15",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 15,
+    "date": "2026-11-10",
+    "title": "Genesis 15",
+    "sub": "Counted righteous",
+    "about": "A frightened, childless Abram is told to count the stars. He believes God, and God counts it to him for righteousness, then seals the promise in a covenant that God walks alone.",
+    "tags": [
+      "Faith",
+      "Righteousness",
+      "Covenant",
+      "Promise",
+      "Waiting",
+      "Hope"
+    ],
+    "url": "studies/genesis-15.html",
+    "overview": {
+      "where": "Abram's camp in Canaan (the text does not name the spot); the promise stretches from the river of Egypt to the Euphrates",
+      "when": "Between about 2090 and 2080 BC, in Abram's first ten years in Canaan, before Ishmael is born",
+      "people": [
+        "abraham",
+        "the-lord",
+        "eliezer",
+        "amorites",
+        "canaanites",
+        "jebusite",
+        "ten-nations-of-canaan"
+      ],
+      "places": [
+        "ur",
+        "damascus",
+        "egypt",
+        "euphrates"
+      ],
+      "story": [
+        "The word of the LORD comes to Abram in a vision: “Fear not, Abram: I am thy shield, and thy exceeding great reward.” Abram answers honestly that he has no child, and his heir is Eliezer of Damascus (1–3).",
+        "God says the heir will come from Abram's own body, and takes him out to look at the stars: “So shall thy seed be.” “And he believed in the LORD; and he counted it to him for righteousness” (4–6).",
+        "Abram asks, “Whereby shall I know that I shall inherit it?” God tells him to bring a heifer, a she goat, a ram, a turtledove and a young pigeon. He cuts the animals in two and lays out the pieces, and drives off the birds of prey (7–11).",
+        "In a deep sleep and a horror of great darkness, Abram is told his family will be strangers and serve in a land not theirs for four hundred years, and will come out with great substance, because “the iniquity of the Amorites is not yet full” (12–16).",
+        "A smoking furnace and a burning lamp pass between the pieces. God alone walks, and Abram sleeps (17).",
+        "That day the LORD makes a covenant, giving Abram's seed the land from the river of Egypt to the Euphrates, with ten nations in it (18–21)."
+      ],
+      "key": {
+        "ref": "Genesis 15:6",
+        "text": "And he believed in the LORD; and he counted it to him for righteousness."
+      },
+      "big": "A man is made right with God by believing Him, not by earning it, and the promise rests on God, who walked the covenant lane alone while Abram slept. God's patience across four hundred years is never the same as being late."
+    }
+  },
+  {
+    "id": "genesis-16",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 16,
+    "date": "2026-11-10",
+    "title": "Genesis 16",
+    "sub": "The God who sees",
+    "about": "Abram and Sarai get tired of waiting and use Hagar to get a child. The home breaks down, and a runaway slave woman meets the God who sees her.",
+    "tags": [
+      "Waiting",
+      "Sin",
+      "Consequences",
+      "Grace",
+      "God sees",
+      "Family"
+    ],
+    "url": "studies/genesis-16.html",
+    "overview": {
+      "where": "Abram's camp in Canaan, and a spring in the wilderness of Shur on the road to Egypt",
+      "when": "About 2080 BC, after Abram had lived ten years in Canaan; Ishmael is born when Abram is eighty-six",
+      "people": [
+        "sarah",
+        "abraham",
+        "hagar",
+        "ishmael",
+        "angel-of-the-lord",
+        "the-lord"
+      ],
+      "places": [
+        "canaan",
+        "shur",
+        "beer-lahai-roi",
+        "wilderness"
+      ],
+      "story": [
+        "Sarai has no children. She gives her Egyptian servant Hagar to Abram as a wife, saying, “it may be that I may obtain children by her.” Abram listens to Sarai (1–3).",
+        "Hagar conceives and looks down on Sarai. Sarai blames Abram, Abram says “thy maid is in thy hand”, Sarai deals harshly with Hagar, and Hagar runs away (4–6).",
+        "The angel of the LORD finds her by a spring on the way to Shur, calls her by name, and asks, “whence camest thou? and whither wilt thou go?” (7–8).",
+        "He tells her to go back and submit, and promises a son named Ishmael, “because the LORD hath heard thy affliction”, and many descendants (9–12).",
+        "Hagar names the LORD “Thou God seest me”, and the well is called Beer-lahai-roi (13–14).",
+        "Hagar bears Abram a son, and Abram names him Ishmael. Abram is eighty-six (15–16)."
+      ],
+      "key": {
+        "ref": "Genesis 16:13",
+        "text": "And she called the name of the LORD that spake unto her, Thou God seest me: for she said, Have I also here looked after him that seeth me?"
+      },
+      "big": "A shortcut around God turns into a broken home, but the God who sees looks for the runaway nobody else cares about. Before a man runs, he can say where he is to his brothers in Christ and his pastor, because wherever he goes, God is already there."
+    }
+  },
+  {
+    "id": "genesis-17",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 17,
+    "date": "2026-11-10",
+    "title": "Genesis 17",
+    "sub": "God Almighty, and a new name",
+    "about": "Thirteen years after Hagar, God returns as God Almighty, makes an everlasting covenant, renames Abram and Sarai, gives circumcision as the sign, and promises Isaac.",
+    "tags": [
+      "Covenant",
+      "Grace",
+      "Identity",
+      "Promise",
+      "Faith",
+      "Family"
+    ],
+    "url": "studies/genesis-17.html",
+    "overview": {
+      "where": "Abram's camp in Canaan (the text does not name the spot; the next chapter finds him at Mamre)",
+      "when": "About 2066 BC; Abram is ninety-nine and Ishmael thirteen; Isaac is born the next year",
+      "people": [
+        "abraham",
+        "sarah",
+        "isaac",
+        "ishmael",
+        "el-shaddai",
+        "the-lord"
+      ],
+      "places": [
+        "canaan"
+      ],
+      "story": [
+        "When Abram is ninety-nine the LORD appears: “I am the Almighty God; walk before me, and be thou perfect.” He promises to make a covenant and multiply Abram exceedingly (1–2).",
+        "Abram falls on his face. God renames him Abraham, “a father of many nations”, and promises nations and kings, an everlasting covenant, and all the land of Canaan (3–8).",
+        "The sign of the covenant is circumcision, for every male: babies of eight days, servants born in the house or bought with money. A man who refuses it has broken the covenant (9–14).",
+        "God renames Sarai Sarah, and says she will bear a son. Abraham falls on his face and laughs, and prays, “O that Ishmael might live before thee!” (15–18).",
+        "God says Sarah's son will be named Isaac, and the covenant will be with him; but Ishmael is heard and blessed, with twelve princes and a great nation (19–22).",
+        "That same day Abraham circumcises Ishmael and every male in his house (23–27)."
+      ],
+      "key": {
+        "ref": "Genesis 17:1",
+        "text": "And when Abram was ninety years old and nine, the LORD appeared to Abram, and said unto him, I am the Almighty God; walk before me, and be thou perfect."
+      },
+      "big": "God comes back after the mistake and does not scold. He gives His servant a new name by what he will be, binds Himself with an everlasting covenant, and promises a child to a hundred-year-old man. The sign comes after faith and never replaces it, and even the child of a mistake is heard and blessed."
+    }
   }
 ];

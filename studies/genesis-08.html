@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genesis 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A short word list: the old word (dt) and its plain meaning (dd) */
+.ge08-words { display: grid; grid-template-columns: auto 1fr; gap: .45em 1.4em; margin: .3em 0 1em; align-items: baseline; }
+.ge08-words dt { font: italic clamp(1.15rem, 1rem + .8vw, 1.6rem) var(--serif); color: var(--accent-hot); }
+.ge08-words dd { margin: 0; font-size: clamp(1rem, .9rem + .45vw, 1.3rem); padding-bottom: .35em; border-bottom: 1px solid var(--line); }
+
+/* The flood year (svg.ge08-year + ol.ge08-log): the water level across the year in the ark, drawn when the slide opens,
+   with numbered pins (.ge08-pin, --k) that match the dated entries in the log below it. */
+.ge08-year { display: block; width: 100%; height: auto; max-height: 34vh; margin: .2em auto .4em; overflow: visible; }
+.ge08-year .ge08-base { stroke: var(--line-strong); stroke-width: 2; }
+.ge08-year .ge08-tops { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 6 6; }
+.ge08-year .ge08-area { fill: color-mix(in srgb, var(--cool) 30%, transparent); opacity: 0; }
+.ge08-year .ge08-line { fill: none; stroke: var(--cool); stroke-width: 4; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ge08-year .ge08-pin { opacity: 0; }
+.ge08-year .ge08-pin circle { fill: var(--accent); stroke: var(--bg); stroke-width: 3; }
+.ge08-year .ge08-pin text { fill: var(--on-accent); font-weight: 700; font-size: 17px; }
+.ge08-year text { fill: var(--ink-soft); font-size: 17px; }
+.ge08-year text.ge08-ink { fill: var(--ink); font-weight: 700; }
+.slide.active .ge08-year .ge08-line { animation: ge08-draw 3.2s ease-in-out .4s forwards; }
+.slide.active .ge08-year .ge08-area { animation: ge08-in 1.2s ease 2.6s forwards; }
+.slide.active .ge08-year .ge08-pin { animation: ge08-in .5s ease forwards; animation-delay: calc(var(--k) * 420ms + .6s); }
+@media (max-width: 600px) { .ge08-year text { font-size: 24px; } .ge08-year .ge08-pin text { font-size: 19px; } }
+@keyframes ge08-draw { to { stroke-dashoffset: 0; } }
+@keyframes ge08-in { to { opacity: 1; } }
+.ge08-log { list-style: none; padding: 0; margin: .2em 0 .6em; display: grid; gap: .3em 1.6em; font-size: clamp(.86rem, .78rem + .38vw, 1.1rem); line-height: 1.3; }
+@media (min-width: 760px) { .ge08-log { grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); } }
+.ge08-log li { display: grid; grid-template-columns: 1.7em 1fr; gap: .1em .6em; align-items: baseline; }
+.ge08-log li > i { grid-row: span 2; display: grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 .9em var(--sans); font-style: normal; }
+.ge08-log b { font-weight: 700; color: var(--ink); }
+.ge08-log span { color: var(--ink-soft); }
+.ge08-log small { color: var(--wine); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ge08-year .ge08-line { stroke-dashoffset: 0; }
+  .ge08-year .ge08-area, .ge08-year .ge08-pin { opacity: 1; }
+  .slide.active .ge08-year .ge08-line, .slide.active .ge08-year .ge08-area, .slide.active .ge08-year .ge08-pin { animation: none; }
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- ======================= OPENING ======================= -->
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Genesis 8</h1>
+    <p class="sub rise" style="--d:3">God remembered Noah</p>
+    <p class="tag rise" style="--d:5">The waters go down, a dove comes home with an olive leaf, and Noah steps out onto a washed earth. The first thing he builds is an altar, and God makes a promise that still holds every morning.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's faithfulness</span><span class="seed-q">What does it mean that God remembered Noah?</span></li>
+      <li class="step"><span class="topic">Waiting</span><span class="seed-q">What did Noah do while he waited for dry ground?</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">Why didn't Noah leave the ark as soon as the ground looked dry?</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">What was the first thing Noah did on the new earth?</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">Did the flood change the human heart?</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">What has God promised for as long as the earth remains?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PART ONE: GOD REMEMBERED NOAH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">God remembered Noah</h2>
+    <p class="range rise" style="--d:2">Verses 1–5</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Five months of nothing but water. Then a wind.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-3" data-hl="And God remembered Noah|God made a wind to pass over the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="1" data-hl="And God remembered Noah"></blockquote>
+    <h2 class="rise" style="--d:1">Remembered</h2>
+    <div class="morph">
+      <span class="big rise" style="--d:2">זָכַר</span>
+      <span class="say step">said <em class="gk">zakhar</em></span>
+      <span class="means step">to call to mind, and then to act on it</span>
+    </div>
+    <p class="note step">God hadn't forgotten Noah for five months and then suddenly thought of him. In the Bible, when God “remembers” someone, He moves. He had made Noah a promise (“with thee will I establish my covenant,” 6:18), and now He keeps it: He sends a wind.</p>
+    <p class="note step">A dying thief asked Jesus for the same thing, and got more than he asked:</p>
+    <blockquote class="quote step"><p>“And he said unto Jesus, Lord, remember me when thou comest into thy kingdom. And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:42–43</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="2-3" data-hl="were stopped|the rain from heaven was restrained|the waters were abated"></blockquote>
+    <h2 class="rise" style="--d:1">The tap turned off</h2>
+    <p class="note rise" style="--d:2">The same God who opened the fountains and the windows (7:11) now shuts them. He started the flood, and He decides when it ends. Psalm 29:10 says it: <em>“The LORD sitteth upon the flood.”</em></p>
+    <dl class="ge08-words step">
+      <dt>asswaged</dt><dd>sank, calmed down (we spell it <em>assuaged</em>)</dd>
+      <dt>restrained</dt><dd>held back</dd>
+      <dt>abated</dt><dd>went down, grew less</dd>
+      <dt>continually</dt><dd>steadily, without stopping</dd>
+    </dl>
+    <p class="note step">Whatever flood you're in, it has a ceiling and an end, and both are in God's hands.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="4-5" data-hl="the ark rested|upon the mountains of Ararat|were the tops of the mountains seen"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="map" data-terrain="neareast" viewBox="380 0 560 430" style="max-height:60vh" data-regions="MESOPOTAMIA, ASSYRIA, ARAM" data-towns="Ararat!, Haran, Nineveh, Babel, Ur, Jerusalem:r" role="img" aria-label="A map of the Near East. The mountains of Ararat are in the far north, above Assyria. Far to the south lie Babel and Ur on the Euphrates, and to the southwest, Jerusalem."></svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The mountains of Ararat</h2>
+        <p class="note rise" style="--d:2">Ararat was a land of high mountains north of Assyria, in what is now eastern Turkey, Armenia and Iran. (In 2 Kings 19:37 the KJV calls the same land “Armenia.”)</p>
+        <p class="note rise" style="--d:3">The verse says <em>“the mountains of,”</em> a range. It doesn't name the peak. The tallest, called Mount Ararat today, rises about 16,900 feet.</p>
+        <p class="note step">The ark came to rest exactly five months after the flood began: seventeenth day of the second month, to the seventeenth day of the seventh (7:11, 8:4). From these mountains, Noah's sons will spread south and west into the lands on this map.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PART TWO: THE RAVEN AND THE DOVE ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">The raven and the dove</h2>
+    <p class="range rise" style="--d:2">Verses 6–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Noah opens a window, and waits.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6-9" data-hl="he sent forth a raven|the dove found no rest for the sole of her foot|put forth his hand, and took her, and pulled her in unto him"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="7" data-hl="went forth to and fro"></blockquote>
+    <h2 class="rise" style="--d:1">Two birds, two natures</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The raven</p>
+        <h3>At home in the wreckage</h3>
+        <p>A raven eats what's dead. It could live on what the flood left floating. It went “to and fro” and never needed the ark again.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">The dove</p>
+        <h3>No rest out there</h3>
+        <p>A dove needs clean ground and clean food. It found nothing to stand on, so it flew back to the only safe place it knew.</p>
+      </div>
+    </div>
+    <p class="note step">The Bible doesn't explain the birds, but men have long seen a lesson in them. Some of us lived like the raven for years, feeding on the wreckage and calling it freedom. A man whom God has made new finds out he can't rest out there anymore.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="9" data-hl="then he put forth his hand, and took her, and pulled her in unto him"></blockquote>
+    <h2 class="rise" style="--d:1">Pulled her in</h2>
+    <p class="note rise" style="--d:2">Read it slowly. The dove comes back tired and empty-beaked. Noah doesn't shoo her off or scold her for coming back with nothing. He <em>put forth his hand</em>, <em>took her</em>, and <em>pulled her in unto him</em>.</p>
+    <p class="note step">If you went out and came back with nothing, if you fell and found no rest in it, that's how you're received. Come back to the window.</p>
+    <blockquote class="quote step"><p>“Come unto me, all ye that labour and are heavy laden, and I will give you rest.”</p><cite>Matthew 11:28</cite></blockquote>
+    <p class="note step">And come back to your brothers. A man who has slipped needs a hand to pull him in, not a lecture through the window. Call one of them today, and be that hand for the next man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-12" data-hl="he stayed yet other seven days|in her mouth was an olive leaf pluckt off|which returned not again unto him any more"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="11" data-hl="lo, in her mouth was an olive leaf pluckt off"></blockquote>
+    <h2 class="rise" style="--d:1">An olive leaf</h2>
+    <ol class="timeline" aria-label="First the raven goes out. Then the dove goes and comes back with nothing. Seven days later, the dove brings back an olive leaf. Seven days after that, the dove does not come back.">
+      <li style="--k:0" data-n="1"><b>The raven</b><span>“to and fro”</span><small>verse 7</small></li>
+      <li style="--k:1" data-n="2"><b>The dove</b><span>no rest; comes back</span><small>verse 9</small></li>
+      <li class="lit" style="--k:2" data-n="3"><b>7 days later</b><span>an olive leaf</span><small>verse 11</small></li>
+      <li style="--k:3" data-n="4"><b>7 more days</b><span>she doesn't come back</span><small>verse 12</small></li>
+    </ol>
+    <p class="note step">The leaf was <em>pluckt off</em>, freshly picked, not driftwood. Somewhere below, something was growing again. It wasn't dry land yet, but it was proof that life was coming back.</p>
+    <p class="note step">Notice what Noah did in between: he <em>stayed</em>. Seven days, then seven more. God's answers often come one small leaf at a time. Take the leaf, and keep waiting.</p>
+    <dl class="ge08-words step">
+      <dt>stayed</dt><dd>waited</dd>
+      <dt>lo</dt><dd>look! see!</dd>
+      <dt>pluckt</dt><dd>plucked, picked</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ======================= PART THREE: GO FORTH OF THE ARK ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">Go forth of the ark</h2>
+    <p class="range rise" style="--d:2">Verses 13–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The ground is dry. Noah still waits for a word.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Noah removed the covering of the ark|the face of the ground was dry|was the earth dried"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">A year in the ark</h2>
+    <svg class="ge08-year" viewBox="0 0 720 250" role="img" aria-label="The water level through the flood year. It rises fast for forty days, stays high until the ark rests at day one hundred fifty, falls below the mountain tops, and is gone by the first day of the new year. The earth is dry a year and ten days after the flood began.">
+      <line class="ge08-tops" x1="40" y1="120" x2="690" y2="120"/>
+      <text x="686" y="112" text-anchor="end">mountain tops</text>
+      <path class="ge08-area" d="M40 200 C 70 120, 88 70, 109 62 L 300 52 C 360 60, 400 100, 428 120 C 480 150, 540 185, 583 196 L 680 200 Z"/>
+      <path class="ge08-line" pathLength="1" d="M40 200 C 70 120, 88 70, 109 62 L 300 52 C 360 60, 400 100, 428 120 C 480 150, 540 185, 583 196 L 680 200"/>
+      <line class="ge08-base" x1="30" y1="200" x2="700" y2="200"/>
+      <line class="ge08-base" x1="583" y1="194" x2="583" y2="232"/>
+      <text class="ge08-ink" x="300" y="232" text-anchor="middle">Noah's 600th year</text>
+      <text class="ge08-ink" x="640" y="232" text-anchor="middle">601st</text>
+      <g class="ge08-pin" style="--k:0"><circle cx="40" cy="200" r="14"/><text x="40" y="206" text-anchor="middle">1</text></g>
+      <g class="ge08-pin" style="--k:1"><circle cx="109" cy="62" r="14"/><text x="109" y="68" text-anchor="middle">2</text></g>
+      <g class="ge08-pin" style="--k:2"><circle cx="300" cy="52" r="14"/><text x="300" y="58" text-anchor="middle">3</text></g>
+      <g class="ge08-pin" style="--k:3"><circle cx="428" cy="120" r="14"/><text x="428" y="126" text-anchor="middle">4</text></g>
+      <g class="ge08-pin" style="--k:4"><circle cx="500" cy="158" r="14"/><text x="500" y="164" text-anchor="middle">5</text></g>
+      <g class="ge08-pin" style="--k:5"><circle cx="583" cy="196" r="14"/><text x="583" y="202" text-anchor="middle">6</text></g>
+      <g class="ge08-pin" style="--k:6"><circle cx="680" cy="200" r="14"/><text x="680" y="206" text-anchor="middle">7</text></g>
+    </svg>
+    <ol class="ge08-log">
+      <li class="rise" style="--d:2"><i>1</i><b>2nd month, 17th day</b><span>the deep breaks up; the rain begins <small>7:11</small></span></li>
+      <li class="rise" style="--d:3"><i>2</i><b>40 days</b><span>the rain stops; the waters still prevail <small>7:12, 24</small></span></li>
+      <li class="rise" style="--d:4"><i>3</i><b>7th month, 17th day</b><span>the ark rests on Ararat, day 150 <small>8:3–4</small></span></li>
+      <li class="rise" style="--d:5"><i>4</i><b>10th month, 1st day</b><span>the mountain tops are seen <small>8:5</small></span></li>
+      <li class="rise" style="--d:6"><i>5</i><b>40 days later</b><span>the window; the raven; the dove three times <small>8:6–12</small></span></li>
+      <li class="rise" style="--d:7"><i>6</i><b>1st month, 1st day, year 601</b><span>the covering off; the ground dry <small>8:13</small></span></li>
+      <li class="rise" style="--d:8"><i>7</i><b>2nd month, 27th day</b><span>the earth dried; “Go forth” <small>8:14–16</small></span></li>
+    </ol>
+    <p class="note step">From the seventeenth day of the second month to the twenty-seventh day of the second month the next year: Noah's family lived in the ark a year and ten days.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-17" data-hl="Go forth of the ark|be fruitful, and multiply upon the earth"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="16" data-hl="Go forth of the ark"></blockquote>
+    <h2 class="rise" style="--d:1">He waited for the word</h2>
+    <p class="note rise" style="--d:2">On the first day of the first month Noah lifted the covering and saw dry ground with his own eyes (v. 13). He stayed in nearly eight more weeks, until <em>“God spake unto Noah.”</em> He went in on God's word, and he came out on God's word.</p>
+    <p class="note step">Many of you know what it is to have a season in an ark: a program, a jail term, a sober house, a hard year shut in. When the ground looks dry, it's tempting to jump. Wait for the word. Pray, read, and ask your pastor and your brothers before you step out.</p>
+    <dl class="ge08-words step">
+      <dt>spake</dt><dd>spoke</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="And Noah went forth|went forth out of the ark"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="18" data-hl="And Noah went forth"></blockquote>
+    <h2 class="rise" style="--d:1">A second start</h2>
+    <div class="pair rise" style="--d:2">
+      <div class="scroll"><p class="ref">To Adam</p><p class="kjv">“Be fruitful, and multiply, and replenish the earth, and subdue it…”</p><p class="ref">Genesis 1:28</p></div>
+      <div class="scroll"><p class="ref">To Noah</p><p class="kjv">“…be fruitful, and multiply upon the earth.”</p><p class="ref">Genesis 8:17</p></div>
+    </div>
+    <p class="note step">Same blessing, second start. Everything that went into the ark came out, family and animals together, and God hands the world back to men.</p>
+    <p class="note step">A new start isn't a punishment to get through. It's a commission. When God brings you out of your ark, He sends you out to build, to raise a family, to work, and to bless the people around you.</p>
+  </div>
+</section>
+
+<!-- ======================= PART FOUR: WHILE THE EARTH REMAINETH ======================= -->
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">While the earth remaineth</h2>
+    <p class="range rise" style="--d:2">Verses 20–22</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">An altar, a sweet savour, and a promise.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20" data-hl="Noah builded an altar unto the LORD|offered burnt offerings on the altar"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="20" data-hl="Noah builded an altar unto the LORD"></blockquote>
+    <h2 class="rise" style="--d:1"><span data-icon="altar">The first thing he built</span></h2>
+    <p class="note rise" style="--d:2">Not a house. Not a barn. An altar. It's the first altar named in the Bible. Before Noah built anything for himself on the new earth, he gave thanks to the God who had carried him through.</p>
+    <p class="note step">Now you see why God had him bring the clean animals <em>“by sevens”</em> (7:2). God had planned for this worship a year before. A burnt offering was burned whole: nothing kept back, all of it given to God.</p>
+    <p class="note step">We don't build stone altars now; Christ was the sacrifice once for all. But first things still come first:</p>
+    <blockquote class="quote step"><p>“I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.”</p><cite>Romans 12:1</cite></blockquote>
+    <dl class="ge08-words step">
+      <dt>builded</dt><dd>built</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21" data-hl="the LORD smelled a sweet savour|the imagination of man’s heart is evil from his youth|neither will I again smite any more every thing living"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="21" data-hl="the LORD smelled a sweet savour"></blockquote>
+    <h2 class="rise" style="--d:1">A sweet savour</h2>
+    <p class="note rise" style="--d:2">God doesn't need the smell of roasting meat. This is the Bible's way of saying God received the offering with pleasure. Paul uses the same words for the sacrifice that every altar pointed to:</p>
+    <blockquote class="quote step"><p>“And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.”</p><cite>Ephesians 5:2</cite></blockquote>
+    <dl class="ge08-words step">
+      <dt>savour</dt><dd>smell, scent</dd>
+      <dt>imagination</dt><dd>the plans and thoughts a man forms in his heart</dd>
+      <dt>smite</dt><dd>strike, strike down</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise">Same heart, different answer</h2>
+    <div class="pair rise" style="--d:1">
+      <div class="scroll"><p class="ref">Before the flood</p><p class="kjv">“And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.”</p><p class="ref">Genesis 6:5</p></div>
+      <div class="scroll"><p class="ref">After the flood</p><p class="kjv">“…for the imagination of man’s heart is evil from his youth; neither will I again smite any more every thing living, as I have done.”</p><p class="ref">Genesis 8:21</p></div>
+    </div>
+    <p class="note step">Same diagnosis both times: man's heart is evil. The flood washed the world, but not the heart. Sin climbed off the ark with Noah's family, as chapter 9 will show. What changed? An altar and a sacrifice stand between the two verses. Now God answers with mercy, not because man got better, but because an offering was made.</p>
+    <p class="note step">A new town, a new job, thirty days clean: good things, but none of them is a new heart. Only God gives that:</p>
+    <blockquote class="quote step"><p>“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</p><cite>Ezekiel 36:26</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="22" data-hl="While the earth remaineth|shall not cease"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <blockquote class="quote rise" data-q="22" data-hl="shall not cease"></blockquote>
+    <p class="saying rise" style="--d:1"><em>Shall not cease.</em></p>
+    <ol class="signs rise" style="--d:2">
+      <li><b>seedtime and harvest</b>the farmer's year</li>
+      <li><b>cold and heat</b>the weather</li>
+      <li><b>summer and winter</b>the seasons</li>
+      <li class="now"><b>day and night</b>every single morning</li>
+    </ol>
+    <p class="note step">Every sunrise since Noah has been God keeping His word. Tomorrow, when the alarm goes off, that's one more promise kept.</p>
+    <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+    <dl class="ge08-words step">
+      <dt>remaineth</dt><dd>remains, lasts</dd>
+      <dt>seedtime</dt><dd>planting season</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ======================= CLOSING ======================= -->
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's faithfulness</span><span class="seed-q">“And God remembered Noah” <cite>8:1</cite></span><span class="take">When God remembers, He acts. He has not forgotten you.</span></li>
+      <li class="step"><span class="topic">Waiting</span><span class="seed-q">“And he stayed yet other seven days” <cite>8:10</cite></span><span class="take">Waiting on God is not wasted time. Take the leaf, and keep waiting.</span></li>
+      <li class="step"><span class="topic">Obedience</span><span class="seed-q">“Go forth of the ark” <cite>8:16</cite></span><span class="take">Move on God's word, not just on what looks dry.</span></li>
+      <li class="step"><span class="topic">Worship</span><span class="seed-q">“And Noah builded an altar unto the LORD” <cite>8:20</cite></span><span class="take">First things first: thanks to the God who carried you through.</span></li>
+      <li class="step"><span class="topic">Sin</span><span class="seed-q">“The imagination of man’s heart is evil from his youth” <cite>8:21</cite></span><span class="take">A fresh start can't fix a heart. Only God gives a new one.</span></li>
+      <li class="step"><span class="topic">Hope</span><span class="seed-q">“Shall not cease” <cite>8:22</cite></span><span class="take">Every morning is a promise kept.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's faithfulness</span>
+      <h2>What does it mean that God remembered Noah?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="1" data-hl="And God remembered Noah"></blockquote>
+      <blockquote class="quote step"><p>“And I will remember my covenant, which is between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh.”</p><cite>Genesis 9:15</cite></blockquote>
+      <blockquote class="quote step"><p>“And he said unto Jesus, Lord, remember me when thou comest into thy kingdom. And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.”</p><cite>Luke 23:42–43</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>It doesn't mean God had forgotten. It means He acted on His promise: He sent the wind and dried the earth. God's remembering is never just a thought. If you belong to Him, He has His eye on you in the middle of your flood, and He will move at the right time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Waiting</span>
+      <h2>What did Noah do while he waited for dry ground?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="he stayed yet other seven days"></blockquote>
+      <blockquote class="quote step" data-q="11" data-hl="so Noah knew that the waters were abated from off the earth"></blockquote>
+      <blockquote class="quote step"><p>“Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD.”</p><cite>Psalm 27:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He watched, he sent out the birds, and he stayed put. He didn't sit idle and he didn't panic. He kept looking for signs of God's work, took the olive leaf as a gift, and waited seven days more. Waiting on God is active: pray, watch, keep doing the next right thing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Obedience</span>
+      <h2>Why didn't Noah leave the ark as soon as the ground looked dry?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="behold, the face of the ground was dry"></blockquote>
+      <blockquote class="quote step" data-q="15-16" data-hl="Go forth of the ark"></blockquote>
+      <blockquote class="quote step"><p>“Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.”</p><cite>Proverbs 3:5–6</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Because God had put him in, and he trusted God to tell him when to come out. What looked dry to Noah's eyes wasn't yet ready; nearly two months later the earth was fully dried, and then God spoke. Big moves, out of a program, back home, into a new job, go best on God's timing and with godly counsel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Worship</span>
+      <h2>What was the first thing Noah did on the new earth?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="20" data-hl="Noah builded an altar unto the LORD"></blockquote>
+      <blockquote class="quote step"><p>“I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.”</p><cite>Romans 12:1</cite></blockquote>
+      <blockquote class="quote step"><p>“And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.”</p><cite>Ephesians 5:2</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He built an altar and worshipped, before a house or a field. Christ has made the sacrifice for us. Our part is to give ourselves to God first: the first minutes of the day, the first word of thanks when we come through something hard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Sin</span>
+      <h2>Did the flood change the human heart?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="the imagination of man’s heart is evil from his youth"></blockquote>
+      <blockquote class="quote step"><p>“The heart is deceitful above all things, and desperately wicked: who can know it?”</p><cite>Jeremiah 17:9</cite></blockquote>
+      <blockquote class="quote step"><p>“Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p><cite>2 Corinthians 5:17</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>No. God says the heart is the same after the flood as before. Changing a man's surroundings doesn't change his heart. That's why a geographic cure never works by itself. What a man needs is to be made new, and that happens in Christ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Hope</span>
+      <h2>What has God promised for as long as the earth remains?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="22" data-hl="shall not cease"></blockquote>
+      <blockquote class="quote step"><p>“For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee.”</p><cite>Isaiah 54:9</cite></blockquote>
+      <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That planting and harvest, cold and heat, summer and winter, day and night will keep coming. Through Isaiah, God points to that same oath to promise His people He would not stay angry with them. If the sun came up today, God kept His word today. He'll keep the rest of it too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4"><p>“But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.”</p><cite>Isaiah 40:31</cite></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Genesis chapter 8
+const V = {
+  1: "And God remembered Noah, and every living thing, and all the cattle that was with him in the ark: and God made a wind to pass over the earth, and the waters asswaged;",
+  2: "The fountains also of the deep and the windows of heaven were stopped, and the rain from heaven was restrained;",
+  3: "And the waters returned from off the earth continually: and after the end of the hundred and fifty days the waters were abated.",
+  4: "And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat.",
+  5: "And the waters decreased continually until the tenth month: in the tenth month, on the first day of the month, were the tops of the mountains seen.",
+  6: "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made:",
+  7: "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth.",
+  8: "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground;",
+  9: "But the dove found no rest for the sole of her foot, and she returned unto him into the ark, for the waters were on the face of the whole earth: then he put forth his hand, and took her, and pulled her in unto him into the ark.",
+  10: "And he stayed yet other seven days; and again he sent forth the dove out of the ark;",
+  11: "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth.",
+  12: "And he stayed yet other seven days; and sent forth the dove; which returned not again unto him any more.",
+  13: "And it came to pass in the six hundredth and first year, in the first month, the first day of the month, the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.",
+  14: "And in the second month, on the seven and twentieth day of the month, was the earth dried.",
+  15: "And God spake unto Noah, saying,",
+  16: "Go forth of the ark, thou, and thy wife, and thy sons, and thy sons’ wives with thee.",
+  17: "Bring forth with thee every living thing that is with thee, of all flesh, both of fowl, and of cattle, and of every creeping thing that creepeth upon the earth; that they may breed abundantly in the earth, and be fruitful, and multiply upon the earth.",
+  18: "And Noah went forth, and his sons, and his wife, and his sons’ wives with him:",
+  19: "Every beast, every creeping thing, and every fowl, and whatsoever creepeth upon the earth, after their kinds, went forth out of the ark.",
+  20: "And Noah builded an altar unto the LORD; and took of every clean beast, and of every clean fowl, and offered burnt offerings on the altar.",
+  21: "And the LORD smelled a sweet savour; and the LORD said in his heart, I will not again curse the ground any more for man’s sake; for the imagination of man’s heart is evil from his youth; neither will I again smite any more every thing living, as I have done.",
+  22: "While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease."
+};
+const BOOK = "Genesis 8";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
