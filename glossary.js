@@ -2780,6 +2780,54 @@ window.GLOSSARY = [
     "Genesis", 17,
     [ 1 ] ],
    [
+    "Genesis", 18,
+    [ 1, 13, 14, 17, 19, 20, 22, 26, 33 ] ],
+   [
+    "Genesis", 19,
+    [ 13, 14, 16, 24, 27 ] ],
+   [
+    "Genesis", 20,
+    [ 18 ] ],
+   [
+    "Genesis", 21,
+    [ 1, 33 ] ],
+   [
+    "Genesis", 22,
+    [ 11, 14, 15, 16 ] ],
+   [
+    "Genesis", 24,
+    [ 1, 3, 7, 12, 21, 26, 27, 31, 35, 40, 42, 44, 48, 50, 51, 52, 56 ] ],
+   [
+    "Genesis", 25,
+    [ 21, 22, 23 ] ],
+   [
+    "Genesis", 26,
+    [ 2, 12, 22, 24, 25, 28, 29 ] ],
+   [
+    "Genesis", 27,
+    [ 7, 20, 27 ] ],
+   [
+    "Genesis", 28,
+    [ 13, 16, 21 ] ],
+   [
+    "Genesis", 29,
+    [ 31, 32, 33, 35 ] ],
+   [
+    "Genesis", 30,
+    [ 24, 27, 30 ] ],
+   [
+    "Genesis", 31,
+    [ 3, 49 ] ],
+   [
+    "Genesis", 32,
+    [ 9 ] ],
+   [
+    "Genesis", 38,
+    [ 7, 10 ] ],
+   [
+    "Genesis", 39,
+    [ 2, 3, 5, 21, 23 ] ],
+   [
     "Proverbs", 1,
     [ 7, 29 ] ],
    [
@@ -3377,6 +3425,9 @@ window.GLOSSARY = [
     "Genesis", 13,
     [ 10, 11 ] ],
    [
+    "Genesis", 32,
+    [ 10 ] ],
+   [
     "Zechariah", 11,
     [ 3 ] ],
    [
@@ -3424,6 +3475,15 @@ window.GLOSSARY = [
    [
     "Genesis", 16,
     [ 7 ] ],
+   [
+    "Genesis", 21,
+    [ 14, 20, 21 ] ],
+   [
+    "Genesis", 36,
+    [ 24 ] ],
+   [
+    "Genesis", 37,
+    [ 22 ] ],
    [
     "Proverbs", 21,
     [ 19 ] ],
@@ -3992,6 +4052,12 @@ window.GLOSSARY = [
   "name": "Israel",
   "refs": [
    [
+    "Genesis", 32,
+    [ 32 ] ],
+   [
+    "Genesis", 36,
+    [ 31 ] ],
+   [
     "Proverbs", 1,
     [ 1 ] ],
    [
@@ -4261,6 +4327,27 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 5 ] ],
+   [
+    "Genesis", 19,
+    [ 24 ] ],
+   [
+    "Genesis", 21,
+    [ 17 ] ],
+   [
+    "Genesis", 22,
+    [ 11, 15, 17 ] ],
+   [
+    "Genesis", 24,
+    [ 3, 7 ] ],
+   [
+    "Genesis", 26,
+    [ 4 ] ],
+   [
+    "Genesis", 27,
+    [ 28, 39 ] ],
+   [
+    "Genesis", 28,
+    [ 12, 17 ] ],
    [
     "Proverbs", 23,
     [ 5 ] ],
@@ -4820,6 +4907,21 @@ window.GLOSSARY = [
   "name": "The city gate",
   "refs": [
    [
+    "Genesis", 19,
+    [ 1 ] ],
+   [
+    "Genesis", 22,
+    [ 17 ] ],
+   [
+    "Genesis", 23,
+    [ 10, 18 ] ],
+   [
+    "Genesis", 24,
+    [ 60 ] ],
+   [
+    "Genesis", 34,
+    [ 20, 24 ] ],
+   [
     "Proverbs", 1,
     [ 21 ] ],
    [
@@ -5195,6 +5297,21 @@ window.GLOSSARY = [
     "Genesis", 6,
     [ 8 ] ],
    [
+    "Genesis", 19,
+    [ 19 ] ],
+   [
+    "Genesis", 32,
+    [ 5 ] ],
+   [
+    "Genesis", 33,
+    [ 8, 10, 15 ] ],
+   [
+    "Genesis", 34,
+    [ 11 ] ],
+   [
+    "Genesis", 39,
+    [ 4 ] ],
+   [
     "Proverbs", 1,
     [ 9 ] ],
    [
@@ -5419,6 +5536,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Truth",
   "refs": [
+   [
+    "Genesis", 24,
+    [ 27 ] ],
+   [
+    "Genesis", 32,
+    [ 10 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -5668,6 +5791,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Glory",
   "refs": [
+   [
+    "Genesis", 31,
+    [ 1 ] ],
    [
     "Proverbs", 3,
     [ 35 ] ],
@@ -7418,6 +7544,12 @@ window.GLOSSARY = [
   "name": "Witness (bare record)",
   "refs": [
    [
+    "Genesis", 21,
+    [ 30 ] ],
+   [
+    "Genesis", 31,
+    [ 44, 48, 50, 52 ] ],
+   [
     "Proverbs", 6,
     [ 19 ] ],
    [
@@ -7834,6 +7966,12 @@ window.GLOSSARY = [
    [
     "Genesis", 14,
     [ 18 ] ],
+   [
+    "Genesis", 19,
+    [ 32, 33, 34, 35 ] ],
+   [
+    "Genesis", 27,
+    [ 25, 28, 37 ] ],
    [
     "Proverbs", 3,
     [ 10 ] ],
@@ -8891,6 +9029,9 @@ window.GLOSSARY = [
   "name": "Fool, folly",
   "refs": [
    [
+    "Genesis", 34,
+    [ 7 ] ],
+   [
     "Proverbs", 1,
     [ 7, 22, 32 ] ],
    [
@@ -9215,6 +9356,18 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 6 ] ],
    [
+    "Genesis", 18,
+    [ 23, 24, 25, 26, 28 ] ],
+   [
+    "Genesis", 20,
+    [ 4 ] ],
+   [
+    "Genesis", 30,
+    [ 33 ] ],
+   [
+    "Genesis", 38,
+    [ 26 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -9533,6 +9686,15 @@ window.GLOSSARY = [
     "Genesis", 13,
     [ 13 ] ],
    [
+    "Genesis", 18,
+    [ 23, 25 ] ],
+   [
+    "Genesis", 38,
+    [ 7 ] ],
+   [
+    "Genesis", 39,
+    [ 9 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -9739,6 +9901,15 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 17 ] ],
+   [
+    "Genesis", 20,
+    [ 5, 6 ] ],
+   [
+    "Genesis", 24,
+    [ 45 ] ],
+   [
+    "Genesis", 27,
+    [ 41 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -10255,6 +10426,24 @@ window.GLOSSARY = [
    [
     "Genesis", 4,
     [ 5, 6 ] ],
+   [
+    "Genesis", 18,
+    [ 30, 32 ] ],
+   [
+    "Genesis", 27,
+    [ 45 ] ],
+   [
+    "Genesis", 30,
+    [ 2 ] ],
+   [
+    "Genesis", 31,
+    [ 36 ] ],
+   [
+    "Genesis", 34,
+    [ 7 ] ],
+   [
+    "Genesis", 39,
+    [ 19 ] ],
    [
     "Proverbs", 11,
     [ 4, 23 ] ],
@@ -10858,6 +11047,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Friend",
   "refs": [
+   [
+    "Genesis", 26,
+    [ 26 ] ],
+   [
+    "Genesis", 38,
+    [ 12, 20 ] ],
    [
     "Proverbs", 6,
     [ 1, 3 ] ],
@@ -11891,6 +12086,9 @@ window.GLOSSARY = [
     "Genesis", 3,
     [ 1 ] ],
    [
+    "Genesis", 27,
+    [ 35 ] ],
+   [
     "Proverbs", 1,
     [ 4 ] ],
    [
@@ -11914,6 +12112,9 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 13 ] ],
+   [
+    "Genesis", 26,
+    [ 9 ] ],
    [
     "Proverbs", 6,
     [ 1 ] ],
@@ -12022,6 +12223,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Upright, integrity",
   "refs": [
+   [
+    "Genesis", 20,
+    [ 5, 6 ] ],
    [
     "Proverbs", 2,
     [ 7, 13, 21 ] ],
@@ -12172,6 +12376,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Weights and balances",
   "refs": [
+   [
+    "Genesis", 24,
+    [ 22 ] ],
    [
     "Proverbs", 11,
     [ 1 ] ],
@@ -13199,6 +13406,9 @@ window.GLOSSARY = [
     "Genesis", 9,
     [ 3 ] ],
    [
+    "Genesis", 24,
+    [ 33 ] ],
+   [
     "Matthew", 3,
     [ 4 ] ],
    [
@@ -13517,6 +13727,9 @@ window.GLOSSARY = [
   "name": "Prophet",
   "refs": [
    [
+    "Genesis", 20,
+    [ 7 ] ],
+   [
     "Matthew", 1,
     [ 22 ] ],
    [
@@ -13672,6 +13885,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Worship",
   "refs": [
+   [
+    "Genesis", 22,
+    [ 5 ] ],
+   [
+    "Genesis", 24,
+    [ 26, 48, 52 ] ],
    [
     "Micah", 5,
     [ 13 ] ],
@@ -14489,6 +14708,9 @@ window.GLOSSARY = [
   "name": "Bethlehem",
   "refs": [
    [
+    "Genesis", 35,
+    [ 19 ] ],
+   [
     "Micah", 5,
     [ 2 ] ],
    [
@@ -14521,6 +14743,12 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 10, 11, 12, 13, 14, 23, 24, 25, 26, 27 ] ],
+   [
+    "Genesis", 21,
+    [ 4 ] ],
+   [
+    "Genesis", 34,
+    [ 15, 17, 22, 24 ] ],
    [
     "Luke", 1,
     [ 59 ] ],
@@ -15157,6 +15385,45 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 1, 3, 5, 9, 15, 17, 18, 22, 23, 24, 26 ] ],
+   [
+    "Genesis", 18,
+    [ 6, 7, 11, 13, 16, 17, 18, 19, 22, 23, 27, 33 ] ],
+   [
+    "Genesis", 19,
+    [ 27, 29 ] ],
+   [
+    "Genesis", 20,
+    [ 1, 2, 9, 10, 11, 14, 17, 18 ] ],
+   [
+    "Genesis", 21,
+    [ 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 14, 22, 24, 25, 27, 28, 29, 33, 34 ] ],
+   [
+    "Genesis", 22,
+    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 19, 20, 23 ] ],
+   [
+    "Genesis", 23,
+    [ 2, 3, 5, 7, 10, 12, 14, 16, 18, 19, 20 ] ],
+   [
+    "Genesis", 24,
+    [ 1, 2, 6, 9, 12, 15, 27, 34, 42, 48, 52, 59 ] ],
+   [
+    "Genesis", 25,
+    [ 1, 5, 6, 7, 8, 10, 11, 12, 19 ] ],
+   [
+    "Genesis", 26,
+    [ 1, 3, 5, 15, 18, 24 ] ],
+   [
+    "Genesis", 28,
+    [ 4, 9, 13 ] ],
+   [
+    "Genesis", 31,
+    [ 42, 53 ] ],
+   [
+    "Genesis", 32,
+    [ 9 ] ],
+   [
+    "Genesis", 35,
+    [ 12, 27 ] ],
    [
     "Micah", 7,
     [ 20 ] ],
@@ -15962,6 +16229,42 @@ window.GLOSSARY = [
   "name": "Jacob",
   "refs": [
    [
+    "Genesis", 25,
+    [ 26, 27, 28, 29, 30, 31, 33, 34 ] ],
+   [
+    "Genesis", 27,
+    [ 6, 11, 15, 17, 19, 21, 22, 30, 36, 41, 42, 46 ] ],
+   [
+    "Genesis", 28,
+    [ 1, 5, 6, 7, 10, 16, 18, 20 ] ],
+   [
+    "Genesis", 29,
+    [ 1, 4, 10, 11, 12, 13, 15, 18, 20, 21, 28 ] ],
+   [
+    "Genesis", 30,
+    [ 1, 2, 4, 5, 7, 9, 10, 12, 16, 17, 19, 25, 31, 36, 37, 40, 41, 42 ] ],
+   [
+    "Genesis", 31,
+    [ 1, 2, 3, 4, 11, 17, 20, 22, 24, 25, 26, 29, 31, 32, 33, 36, 43, 45, 46, 47, 51, 53, 54 ] ],
+   [
+    "Genesis", 32,
+    [ 1, 2, 3, 4, 6, 7, 9, 18, 20, 24, 25, 27, 28, 29, 30, 32 ] ],
+   [
+    "Genesis", 33,
+    [ 1, 10, 17, 18 ] ],
+   [
+    "Genesis", 34,
+    [ 1, 3, 5, 6, 7, 13, 19, 25, 27, 30 ] ],
+   [
+    "Genesis", 35,
+    [ 1, 2, 4, 5, 6, 9, 10, 14, 15, 20, 22, 23, 26, 27, 29 ] ],
+   [
+    "Genesis", 36,
+    [ 6 ] ],
+   [
+    "Genesis", 37,
+    [ 1, 2, 34 ] ],
+   [
     "Hosea", 10,
     [ 11 ] ],
    [
@@ -16481,6 +16784,18 @@ window.GLOSSARY = [
   "name": "Angels",
   "refs": [
    [
+    "Genesis", 24,
+    [ 7, 40 ] ],
+   [
+    "Genesis", 28,
+    [ 12 ] ],
+   [
+    "Genesis", 31,
+    [ 11 ] ],
+   [
+    "Genesis", 32,
+    [ 1 ] ],
+   [
     "Matthew", 1,
     [ 20, 24 ] ],
    [
@@ -16708,6 +17023,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The sepulchre (the tomb)",
   "refs": [
+   [
+    "Genesis", 23,
+    [ 6 ] ],
    [
     "Matthew", 27,
     [ 60, 61, 64, 66 ] ],
@@ -17104,6 +17422,21 @@ window.GLOSSARY = [
    [
     "Genesis", 12,
     [ 1 ] ],
+   [
+    "Genesis", 19,
+    [ 19 ] ],
+   [
+    "Genesis", 20,
+    [ 13 ] ],
+   [
+    "Genesis", 24,
+    [ 12, 14 ] ],
+   [
+    "Genesis", 32,
+    [ 10 ] ],
+   [
+    "Genesis", 39,
+    [ 21 ] ],
    [
     "Proverbs", 12,
     [ 17 ] ],
@@ -17506,6 +17839,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Tarry (stay, remain)",
   "refs": [
+   [
+    "Genesis", 19,
+    [ 2 ] ],
+   [
+    "Genesis", 27,
+    [ 44 ] ],
+   [
+    "Genesis", 28,
+    [ 11 ] ],
+   [
+    "Genesis", 30,
+    [ 27 ] ],
    [
     "Proverbs", 23,
     [ 30 ] ],
@@ -18233,6 +18578,9 @@ window.GLOSSARY = [
   "name": "Ass (donkey)",
   "refs": [
    [
+    "Genesis", 22,
+    [ 3, 5 ] ],
+   [
     "Proverbs", 26,
     [ 3 ] ],
    [
@@ -18608,6 +18956,9 @@ window.GLOSSARY = [
   "name": "Abode (a home, a place to stay)",
   "refs": [
    [
+    "Genesis", 29,
+    [ 14 ] ],
+   [
     "John", 1,
     [ 32, 39 ] ],
    [
@@ -18845,6 +19196,18 @@ window.GLOSSARY = [
   "name": "Abide (stay, remain)",
   "refs": [
    [
+    "Genesis", 19,
+    [ 2 ] ],
+   [
+    "Genesis", 22,
+    [ 5 ] ],
+   [
+    "Genesis", 24,
+    [ 55 ] ],
+   [
+    "Genesis", 29,
+    [ 19 ] ],
+   [
     "Matthew", 10,
     [ 11 ] ],
    [
@@ -18994,6 +19357,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Travail (labor in childbirth)",
   "refs": [
+   [
+    "Genesis", 38,
+    [ 27 ] ],
    [
     "Micah", 4,
     [ 9, 10 ] ],
@@ -19658,6 +20024,12 @@ window.GLOSSARY = [
   "name": "Gave up the ghost",
   "refs": [
    [
+    "Genesis", 25,
+    [ 8, 17 ] ],
+   [
+    "Genesis", 35,
+    [ 29 ] ],
+   [
     "Matthew", 27,
     [ 50 ] ],
    [
@@ -19973,6 +20345,9 @@ window.GLOSSARY = [
   "name": "Sackcloth (rough mourning cloth)",
   "refs": [
    [
+    "Genesis", 37,
+    [ 34 ] ],
+   [
     "Joel", 1,
     [ 8, 13 ] ],
    [
@@ -19999,6 +20374,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Meat offering and drink offering (grain and wine offerings)",
   "refs": [
+   [
+    "Genesis", 35,
+    [ 14 ] ],
    [
     "Joel", 1,
     [ 9, 13 ] ],
@@ -20705,6 +21083,21 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 18 ] ],
    [
+    "Genesis", 21,
+    [ 21 ] ],
+   [
+    "Genesis", 25,
+    [ 18 ] ],
+   [
+    "Genesis", 26,
+    [ 2 ] ],
+   [
+    "Genesis", 37,
+    [ 25, 28, 36 ] ],
+   [
+    "Genesis", 39,
+    [ 1 ] ],
+   [
     "Proverbs", 7,
     [ 16 ] ],
    [
@@ -20797,6 +21190,15 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Edom (Esau's descendants)",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 30 ] ],
+   [
+    "Genesis", 32,
+    [ 3 ] ],
+   [
+    "Genesis", 36,
+    [ 1, 8, 16, 17, 19, 21, 31, 32, 43 ] ],
    [
     "Joel", 3,
     [ 19 ] ],
@@ -21064,6 +21466,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Mercy",
   "refs": [
+   [
+    "Genesis", 19,
+    [ 19 ] ],
+   [
+    "Genesis", 24,
+    [ 27 ] ],
+   [
+    "Genesis", 32,
+    [ 10 ] ],
+   [
+    "Genesis", 39,
+    [ 21 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -21368,6 +21782,9 @@ window.GLOSSARY = [
   "name": "Teraphim (household idols)",
   "refs": [
    [
+    "Genesis", 31,
+    [ 19, 30, 32, 34, 35 ] ],
+   [
     "Hosea", 3,
     [ 4 ] ] ]
  },
@@ -21509,6 +21926,9 @@ window.GLOSSARY = [
     "Genesis", 10,
     [ 11 ] ],
    [
+    "Genesis", 25,
+    [ 18 ] ],
+   [
     "Hosea", 5,
     [ 13 ] ],
    [
@@ -21559,6 +21979,15 @@ window.GLOSSARY = [
    [
     "Genesis", 13,
     [ 3 ] ],
+   [
+    "Genesis", 28,
+    [ 19 ] ],
+   [
+    "Genesis", 31,
+    [ 13 ] ],
+   [
+    "Genesis", 35,
+    [ 1, 3, 6, 8, 15, 16 ] ],
    [
     "Hosea", 10,
     [ 15 ] ],
@@ -21893,6 +22322,12 @@ window.GLOSSARY = [
   "name": "Gilead (east of the Jordan)",
   "refs": [
    [
+    "Genesis", 31,
+    [ 21, 23, 25 ] ],
+   [
+    "Genesis", 37,
+    [ 25 ] ],
+   [
     "Hosea", 6,
     [ 8 ] ],
    [
@@ -22024,6 +22459,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Dew",
   "refs": [
+   [
+    "Genesis", 27,
+    [ 28, 39 ] ],
    [
     "Proverbs", 3,
     [ 20 ] ],
@@ -22271,6 +22709,9 @@ window.GLOSSARY = [
   "name": "Mizpah",
   "refs": [
    [
+    "Genesis", 31,
+    [ 49 ] ],
+   [
     "Hosea", 5,
     [ 1 ] ] ]
  },
@@ -22366,6 +22807,15 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 2, 4, 7, 9, 10, 11, 13, 14, 19, 21 ] ],
+   [
+    "Genesis", 21,
+    [ 27, 32 ] ],
+   [
+    "Genesis", 26,
+    [ 28 ] ],
+   [
+    "Genesis", 31,
+    [ 44 ] ],
    [
     "Proverbs", 2,
     [ 17 ] ],
@@ -22610,6 +23060,18 @@ window.GLOSSARY = [
   "name": "Beer-sheba",
   "refs": [
    [
+    "Genesis", 21,
+    [ 14, 31, 32, 33 ] ],
+   [
+    "Genesis", 22,
+    [ 19 ] ],
+   [
+    "Genesis", 26,
+    [ 23, 33 ] ],
+   [
+    "Genesis", 28,
+    [ 10 ] ],
+   [
     "Amos", 5,
     [ 5 ] ],
    [
@@ -22835,6 +23297,9 @@ window.GLOSSARY = [
     "Genesis", 14,
     [ 14 ] ],
    [
+    "Genesis", 34,
+    [ 29 ] ],
+   [
     "Hosea", 6,
     [ 11 ] ],
    [
@@ -22946,6 +23411,12 @@ window.GLOSSARY = [
     "Genesis", 10,
     [ 14 ] ],
    [
+    "Genesis", 21,
+    [ 32, 34 ] ],
+   [
+    "Genesis", 26,
+    [ 1, 8, 14, 15, 18 ] ],
+   [
     "Amos", 1,
     [ 8 ] ],
    [
@@ -23020,6 +23491,36 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 19, 21 ] ],
+   [
+    "Genesis", 21,
+    [ 3, 4, 5, 8, 10, 12 ] ],
+   [
+    "Genesis", 22,
+    [ 2, 3, 6, 7, 9 ] ],
+   [
+    "Genesis", 24,
+    [ 4, 14, 62, 63, 64, 66, 67 ] ],
+   [
+    "Genesis", 25,
+    [ 5, 6, 9, 11, 19, 20, 21, 26, 28 ] ],
+   [
+    "Genesis", 26,
+    [ 1, 6, 8, 9, 12, 16, 17, 18, 19, 20, 25, 27, 31, 32, 35 ] ],
+   [
+    "Genesis", 27,
+    [ 1, 5, 20, 21, 22, 26, 30, 32, 33, 37, 39, 46 ] ],
+   [
+    "Genesis", 28,
+    [ 1, 5, 6, 8, 13 ] ],
+   [
+    "Genesis", 31,
+    [ 18, 42, 53 ] ],
+   [
+    "Genesis", 32,
+    [ 9 ] ],
+   [
+    "Genesis", 35,
+    [ 12, 27, 28, 29 ] ],
    [
     "Amos", 7,
     [ 9, 16 ] ],
@@ -23102,6 +23603,9 @@ window.GLOSSARY = [
     "Genesis", 13,
     [ 7, 8 ] ],
    [
+    "Genesis", 26,
+    [ 20 ] ],
+   [
     "Amos", 1,
     [ 1 ] ],
    [
@@ -23158,6 +23662,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ephah and shekel (measure and weight)",
   "refs": [
+   [
+    "Genesis", 24,
+    [ 22 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -23245,6 +23752,15 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The Syrians",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 20 ] ],
+   [
+    "Genesis", 28,
+    [ 5 ] ],
+   [
+    "Genesis", 31,
+    [ 20, 24 ] ],
    [
     "Amos", 9,
     [ 7 ] ],
@@ -23399,6 +23915,9 @@ window.GLOSSARY = [
   "name": "Teman",
   "refs": [
    [
+    "Genesis", 36,
+    [ 11, 15, 34, 42 ] ],
+   [
     "Amos", 1,
     [ 12 ] ],
    [
@@ -23414,6 +23933,9 @@ window.GLOSSARY = [
   "name": "Bozrah",
   "refs": [
    [
+    "Genesis", 36,
+    [ 33 ] ],
+   [
     "Amos", 1,
     [ 12 ] ],
    [
@@ -23425,6 +23947,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Ammon (the children of Ammon)",
   "refs": [
+   [
+    "Genesis", 19,
+    [ 38 ] ],
    [
     "Amos", 1,
     [ 13 ] ],
@@ -23528,6 +24053,12 @@ window.GLOSSARY = [
   "name": "Moab",
   "refs": [
    [
+    "Genesis", 19,
+    [ 37 ] ],
+   [
+    "Genesis", 36,
+    [ 35 ] ],
+   [
     "Amos", 2,
     [ 1, 2 ] ],
    [
@@ -23551,6 +24082,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Pledge (security for a loan)",
   "refs": [
+   [
+    "Genesis", 38,
+    [ 17, 18, 20 ] ],
    [
     "Proverbs", 20,
     [ 16 ] ],
@@ -23633,6 +24167,12 @@ window.GLOSSARY = [
     "Genesis", 14,
     [ 2, 8, 10, 11, 12, 17, 21, 22 ] ],
    [
+    "Genesis", 18,
+    [ 16, 20, 22, 26 ] ],
+   [
+    "Genesis", 19,
+    [ 1, 4, 24, 28 ] ],
+   [
     "Amos", 4,
     [ 11 ] ],
    [
@@ -23671,6 +24211,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Kine (cows)",
   "refs": [
+   [
+    "Genesis", 32,
+    [ 15 ] ],
    [
     "Amos", 4,
     [ 1 ] ] ]
@@ -24020,6 +24563,9 @@ window.GLOSSARY = [
   "name": "Mount Paran (the wilderness of Paran)",
   "refs": [
    [
+    "Genesis", 21,
+    [ 21 ] ],
+   [
     "Habakkuk", 3,
     [ 3 ] ] ]
  },
@@ -24037,6 +24583,12 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Midian",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 2, 4 ] ],
+   [
+    "Genesis", 36,
+    [ 35 ] ],
    [
     "Habakkuk", 3,
     [ 7 ] ],
@@ -24173,6 +24725,9 @@ window.GLOSSARY = [
   "name": "Adullam (David's cave)",
   "refs": [
    [
+    "Genesis", 38,
+    [ 1, 12, 20 ] ],
+   [
     "Micah", 1,
     [ 15 ] ] ]
  },
@@ -24290,6 +24845,9 @@ window.GLOSSARY = [
   "name": "Judgment (justice, doing right)",
   "refs": [
    [
+    "Genesis", 18,
+    [ 19 ] ],
+   [
     "Micah", 3,
     [ 1, 8, 9 ] ],
    [
@@ -24358,6 +24916,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Her that halteth (the lame)",
   "refs": [
+   [
+    "Genesis", 32,
+    [ 31 ] ],
    [
     "Micah", 4,
     [ 6, 7 ] ],
@@ -24562,6 +25123,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Yoke (the beam laid on an ox's neck; bondage)",
   "refs": [
+   [
+    "Genesis", 27,
+    [ 40 ] ],
    [
     "Hosea", 11,
     [ 4 ] ],
@@ -24800,6 +25364,9 @@ window.GLOSSARY = [
   "name": "Ephratah (Ephrath, the old name of Bethlehem's district)",
   "refs": [
    [
+    "Genesis", 35,
+    [ 16, 19 ] ],
+   [
     "Micah", 5,
     [ 2 ] ] ]
  },
@@ -25003,6 +25570,9 @@ window.GLOSSARY = [
    [
     "Genesis", 8,
     [ 20 ] ],
+   [
+    "Genesis", 22,
+    [ 2, 3, 6, 7, 8, 13 ] ],
    [
     "Hosea", 6,
     [ 6 ] ],
@@ -25310,6 +25880,9 @@ window.GLOSSARY = [
     "Genesis", 14,
     [ 13 ] ],
    [
+    "Genesis", 39,
+    [ 14, 17 ] ],
+   [
     "Jonah", 1,
     [ 9 ] ],
    [
@@ -25535,6 +26108,30 @@ window.GLOSSARY = [
   "name": "Esau (Jacob's twin, father of Edom)",
   "refs": [
    [
+    "Genesis", 25,
+    [ 25, 26, 27, 28, 29, 30, 32, 34 ] ],
+   [
+    "Genesis", 26,
+    [ 34 ] ],
+   [
+    "Genesis", 27,
+    [ 1, 5, 6, 11, 15, 19, 21, 22, 23, 24, 30, 32, 34, 37, 38, 41, 42 ] ],
+   [
+    "Genesis", 28,
+    [ 5, 6, 8, 9 ] ],
+   [
+    "Genesis", 32,
+    [ 3, 4, 6, 8, 11, 13, 17, 18, 19 ] ],
+   [
+    "Genesis", 33,
+    [ 1, 4, 9, 15, 16 ] ],
+   [
+    "Genesis", 35,
+    [ 1, 29 ] ],
+   [
+    "Genesis", 36,
+    [ 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 40, 43 ] ],
+   [
     "Obadiah", 1,
     [ 6, 8, 9, 18, 19, 21 ] ],
    [
@@ -25576,6 +26173,12 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 21 ] ],
+   [
+    "Genesis", 24,
+    [ 3, 37 ] ],
+   [
+    "Genesis", 34,
+    [ 30 ] ],
    [
     "Obadiah", 1,
     [ 20 ] ] ]
@@ -25629,6 +26232,12 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Genesis", 13,
+    [ 6 ] ],
+   [
+    "Genesis", 34,
+    [ 23 ] ],
+   [
+    "Genesis", 36,
     [ 6 ] ],
    [
     "Obadiah", 1,
@@ -25898,6 +26507,27 @@ window.GLOSSARY = [
     "Genesis", 17,
     [ 8 ] ],
    [
+    "Genesis", 23,
+    [ 2, 19 ] ],
+   [
+    "Genesis", 28,
+    [ 1, 6, 8 ] ],
+   [
+    "Genesis", 31,
+    [ 18 ] ],
+   [
+    "Genesis", 33,
+    [ 18 ] ],
+   [
+    "Genesis", 35,
+    [ 6 ] ],
+   [
+    "Genesis", 36,
+    [ 2, 5, 6 ] ],
+   [
+    "Genesis", 37,
+    [ 1 ] ],
+   [
     "Zephaniah", 2,
     [ 5 ] ],
    [
@@ -26126,6 +26756,9 @@ window.GLOSSARY = [
   "name": "Signet (a king's seal ring)",
   "refs": [
    [
+    "Genesis", 38,
+    [ 18, 25 ] ],
+   [
     "Haggai", 2,
     [ 23 ] ] ]
  },
@@ -26221,6 +26854,9 @@ window.GLOSSARY = [
    [
     "Genesis", 16,
     [ 7, 9, 10, 11 ] ],
+   [
+    "Genesis", 22,
+    [ 11, 15 ] ],
    [
     "Zechariah", 1,
     [ 11, 12 ] ],
@@ -26659,6 +27295,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Grisled and bay (spotted, and strong)",
   "refs": [
+   [
+    "Genesis", 31,
+    [ 10, 12 ] ],
    [
     "Zechariah", 6,
     [ 3, 6, 7 ] ] ]
@@ -27422,6 +28061,12 @@ window.GLOSSARY = [
   "name": "Vow (a promise made to God)",
   "refs": [
    [
+    "Genesis", 28,
+    [ 20 ] ],
+   [
+    "Genesis", 31,
+    [ 13 ] ],
+   [
     "Malachi", 1,
     [ 14 ] ],
    [
@@ -27833,6 +28478,12 @@ window.GLOSSARY = [
     "Genesis", 11,
     [ 30 ] ],
    [
+    "Genesis", 25,
+    [ 21 ] ],
+   [
+    "Genesis", 29,
+    [ 31 ] ],
+   [
     "Luke", 1,
     [ 7, 36 ] ],
    [
@@ -27892,6 +28543,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Reproach (shame, disgrace)",
   "refs": [
+   [
+    "Genesis", 30,
+    [ 23 ] ],
+   [
+    "Genesis", 34,
+    [ 14 ] ],
    [
     "Luke", 1,
     [ 25 ] ],
@@ -27976,6 +28633,18 @@ window.GLOSSARY = [
    [
     "Genesis", 16,
     [ 1 ] ],
+   [
+    "Genesis", 25,
+    [ 12 ] ],
+   [
+    "Genesis", 29,
+    [ 24, 29 ] ],
+   [
+    "Genesis", 30,
+    [ 4 ] ],
+   [
+    "Genesis", 35,
+    [ 25, 26 ] ],
    [
     "Luke", 1,
     [ 38, 48 ] ],
@@ -28108,6 +28777,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Visited (came to help)",
   "refs": [
+   [
+    "Genesis", 21,
+    [ 1 ] ],
    [
     "Matthew", 25,
     [ 36, 43 ] ],
@@ -29225,6 +29897,9 @@ window.GLOSSARY = [
   "name": "Corn (grain: wheat or barley)",
   "refs": [
    [
+    "Genesis", 27,
+    [ 28, 37 ] ],
+   [
     "Matthew", 12,
     [ 1 ] ],
    [
@@ -29456,6 +30131,9 @@ window.GLOSSARY = [
     "Genesis", 16,
     [ 16 ] ],
    [
+    "Genesis", 35,
+    [ 28 ] ],
+   [
     "Luke", 2,
     [ 37 ] ],
    [
@@ -29500,6 +30178,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Waxed (grew)",
   "refs": [
+   [
+    "Genesis", 18,
+    [ 12 ] ],
+   [
+    "Genesis", 26,
+    [ 13 ] ],
    [
     "Matthew", 13,
     [ 15 ] ],
@@ -30860,6 +31544,9 @@ window.GLOSSARY = [
   "name": "Tempt, the tempter (to test, to entice to sin)",
   "refs": [
    [
+    "Genesis", 22,
+    [ 1 ] ],
+   [
     "Matthew", 4,
     [ 1, 3, 7 ] ],
    [
@@ -31159,6 +31846,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Mourn (grieve)",
   "refs": [
+   [
+    "Genesis", 23,
+    [ 2 ] ],
    [
     "Matthew", 5,
     [ 4 ] ],
@@ -31565,6 +32255,18 @@ window.GLOSSARY = [
   "name": "Swear, oaths (promises made in God's name)",
   "refs": [
    [
+    "Genesis", 21,
+    [ 23, 24 ] ],
+   [
+    "Genesis", 24,
+    [ 3, 8, 37, 41 ] ],
+   [
+    "Genesis", 25,
+    [ 33 ] ],
+   [
+    "Genesis", 26,
+    [ 3, 28 ] ],
+   [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
    [
@@ -31760,6 +32462,12 @@ window.GLOSSARY = [
     "Genesis", 11,
     [ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 ] ],
    [
+    "Genesis", 22,
+    [ 23 ] ],
+   [
+    "Genesis", 25,
+    [ 3, 19 ] ],
+   [
     "Proverbs", 23,
     [ 22 ] ],
    [
@@ -31783,6 +32491,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Thamar (Tamar)",
   "refs": [
+   [
+    "Genesis", 38,
+    [ 6, 11, 13, 24 ] ],
    [
     "Matthew", 1,
     [ 3 ] ] ]
@@ -31871,6 +32582,9 @@ window.GLOSSARY = [
   "name": "Warned in a dream",
   "refs": [
    [
+    "Genesis", 20,
+    [ 3, 6 ] ],
+   [
     "Matthew", 1,
     [ 20 ] ],
    [
@@ -31939,6 +32653,21 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Rachel, wife of Jacob",
   "refs": [
+   [
+    "Genesis", 29,
+    [ 6, 9, 10, 11, 12, 16, 17, 18, 20, 25, 28, 29, 30, 31 ] ],
+   [
+    "Genesis", 30,
+    [ 1, 2, 6, 7, 8, 14, 15, 22, 25 ] ],
+   [
+    "Genesis", 31,
+    [ 4, 14, 19, 32, 33, 34 ] ],
+   [
+    "Genesis", 33,
+    [ 1, 2, 7 ] ],
+   [
+    "Genesis", 35,
+    [ 16, 19, 20, 24, 25 ] ],
    [
     "Matthew", 2,
     [ 18 ] ] ]
@@ -32458,6 +33187,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Raiment (clothing)",
   "refs": [
+   [
+    "Genesis", 24,
+    [ 53 ] ],
+   [
+    "Genesis", 27,
+    [ 15, 27 ] ],
+   [
+    "Genesis", 28,
+    [ 20 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -34463,6 +35201,12 @@ window.GLOSSARY = [
   "name": "Damsel (a girl, a young woman)",
   "refs": [
    [
+    "Genesis", 24,
+    [ 14, 16, 28, 55, 57 ] ],
+   [
+    "Genesis", 34,
+    [ 3, 4, 12 ] ],
+   [
     "Matthew", 26,
     [ 69 ] ],
    [
@@ -34931,6 +35675,9 @@ window.GLOSSARY = [
   "name": "An hundredfold (a hundred times over)",
   "refs": [
    [
+    "Genesis", 26,
+    [ 12 ] ],
+   [
     "Matthew", 13,
     [ 8, 23 ] ],
    [
@@ -34993,6 +35740,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Defile (make unclean)",
   "refs": [
+   [
+    "Genesis", 34,
+    [ 2, 5, 13, 27 ] ],
    [
     "Matthew", 15,
     [ 11, 18, 20 ] ],
@@ -35161,6 +35911,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Raised again the third day",
   "refs": [
+   [
+    "Genesis", 22,
+    [ 4 ] ],
    [
     "Matthew", 16,
     [ 21 ] ],
@@ -36221,6 +36974,9 @@ window.GLOSSARY = [
   "name": "Stedfastly set His face to go to Jerusalem",
   "refs": [
    [
+    "Genesis", 31,
+    [ 21 ] ],
+   [
     "Luke", 9,
     [ 51, 53 ] ] ]
  },
@@ -37259,6 +38015,9 @@ window.GLOSSARY = [
   "name": "Eventide (evening)",
   "refs": [
    [
+    "Genesis", 24,
+    [ 63 ] ],
+   [
     "Mark", 11,
     [ 11 ] ],
    [
@@ -37396,6 +38155,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Raise up seed (a brother's duty to a childless widow, Deuteronomy 25:5)",
   "refs": [
+   [
+    "Genesis", 38,
+    [ 8 ] ],
    [
     "Matthew", 22,
     [ 24 ] ],
@@ -37789,6 +38551,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Kid (a young goat)",
   "refs": [
+   [
+    "Genesis", 37,
+    [ 31 ] ],
+   [
+    "Genesis", 38,
+    [ 17, 20, 23 ] ],
    [
     "Luke", 15,
     [ 29 ] ] ]
@@ -38528,6 +39296,9 @@ window.GLOSSARY = [
   "name": "Rent his clothes (tore his robe in grief or horror)",
   "refs": [
    [
+    "Genesis", 37,
+    [ 29, 34 ] ],
+   [
     "Matthew", 26,
     [ 65 ] ],
    [
@@ -38632,6 +39403,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The God of Abraham, Isaac, and Jacob",
   "refs": [
+   [
+    "Genesis", 26,
+    [ 24 ] ],
+   [
+    "Genesis", 28,
+    [ 13 ] ],
+   [
+    "Genesis", 31,
+    [ 42, 53 ] ],
    [
     "Matthew", 22,
     [ 32 ] ],
@@ -38833,6 +39613,9 @@ window.GLOSSARY = [
    [
     "Genesis", 14,
     [ 12, 16 ] ],
+   [
+    "Genesis", 19,
+    [ 1, 5, 6, 9, 10, 12, 14, 15, 18, 23, 29, 30, 36 ] ],
    [
     "Luke", 17,
     [ 28, 29, 32 ] ],
@@ -40601,6 +41384,9 @@ window.GLOSSARY = [
   "name": "Mesopotamia (the land between the rivers)",
   "refs": [
    [
+    "Genesis", 24,
+    [ 10 ] ],
+   [
     "Acts", 2,
     [ 9 ] ],
    [
@@ -40898,6 +41684,9 @@ window.GLOSSARY = [
   "name": "Afar off (far away; the nations)",
   "refs": [
    [
+    "Genesis", 22,
+    [ 4 ] ],
+   [
     "Acts", 2,
     [ 39 ] ],
    [
@@ -41035,6 +41824,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "I wot (I know)",
   "refs": [
+   [
+    "Genesis", 21,
+    [ 26 ] ],
    [
     "Acts", 3,
     [ 17 ] ],
@@ -43373,6 +44165,21 @@ window.GLOSSARY = [
   "name": "Joseph, son of Jacob (sold into Egypt)",
   "refs": [
    [
+    "Genesis", 30,
+    [ 24, 25 ] ],
+   [
+    "Genesis", 33,
+    [ 2, 7 ] ],
+   [
+    "Genesis", 35,
+    [ 24 ] ],
+   [
+    "Genesis", 37,
+    [ 2, 3, 5, 13, 17, 23, 28, 29, 31, 33 ] ],
+   [
+    "Genesis", 39,
+    [ 1, 2, 4, 5, 6, 7, 10, 11, 20, 21, 22 ] ],
+   [
     "Acts", 7,
     [ 9, 13, 14, 18 ] ],
    [
@@ -43393,6 +44200,15 @@ window.GLOSSARY = [
    [
     "Genesis", 12,
     [ 4, 5 ] ],
+   [
+    "Genesis", 27,
+    [ 43 ] ],
+   [
+    "Genesis", 28,
+    [ 10 ] ],
+   [
+    "Genesis", 29,
+    [ 4 ] ],
    [
     "Acts", 7,
     [ 2, 4 ] ] ]
@@ -43423,6 +44239,12 @@ window.GLOSSARY = [
    [
     "Genesis", 12,
     [ 15, 17, 18, 20 ] ],
+   [
+    "Genesis", 37,
+    [ 36 ] ],
+   [
+    "Genesis", 39,
+    [ 1 ] ],
    [
     "Acts", 7,
     [ 10, 13, 21 ] ],
@@ -43520,6 +44342,9 @@ window.GLOSSARY = [
   "name": "Uncircumcised in heart and ears (outward mark, no change inside)",
   "refs": [
    [
+    "Genesis", 34,
+    [ 14 ] ],
+   [
     "Acts", 7,
     [ 51 ] ] ]
  },
@@ -43541,6 +44366,15 @@ window.GLOSSARY = [
     "Genesis", 12,
     [ 10 ] ],
    [
+    "Genesis", 19,
+    [ 9 ] ],
+   [
+    "Genesis", 20,
+    [ 1 ] ],
+   [
+    "Genesis", 35,
+    [ 27 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -43552,6 +44386,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Threescore (sixty): threescore and fifteen is seventy-five",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 7, 26 ] ],
    [
     "Acts", 7,
     [ 14 ] ],
@@ -43600,6 +44437,15 @@ window.GLOSSARY = [
    [
     "Genesis", 4,
     [ 23 ] ],
+   [
+    "Genesis", 21,
+    [ 12 ] ],
+   [
+    "Genesis", 23,
+    [ 15 ] ],
+   [
+    "Genesis", 34,
+    [ 17 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -43792,6 +44638,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Purchased (bought)",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 10 ] ],
    [
     "Acts", 8,
     [ 20 ] ],
@@ -44084,6 +44933,9 @@ window.GLOSSARY = [
   "name": "Clave (stuck to, joined himself to)",
   "refs": [
    [
+    "Genesis", 34,
+    [ 3 ] ],
+   [
     "Acts", 17,
     [ 34 ] ] ]
  },
@@ -44350,6 +45202,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wrought (worked at his trade)",
   "refs": [
+   [
+    "Genesis", 34,
+    [ 7 ] ],
    [
     "Acts", 18,
     [ 3 ] ],
@@ -44887,6 +45742,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Deferred (put off, postponed)",
   "refs": [
+   [
+    "Genesis", 34,
+    [ 19 ] ],
    [
     "Acts", 24,
     [ 22 ] ] ]
@@ -45566,6 +46424,9 @@ window.GLOSSARY = [
   "name": "Audience (here, a hearing: they listened to him)",
   "refs": [
    [
+    "Genesis", 23,
+    [ 10, 13, 16 ] ],
+   [
     "Acts", 22,
     [ 22 ] ] ]
  },
@@ -45986,6 +46847,18 @@ window.GLOSSARY = [
   "name": "Peradventure (perhaps)",
   "refs": [
    [
+    "Genesis", 27,
+    [ 12 ] ],
+   [
+    "Genesis", 31,
+    [ 31 ] ],
+   [
+    "Genesis", 32,
+    [ 20 ] ],
+   [
+    "Genesis", 38,
+    [ 11 ] ],
+   [
     "Romans", 5,
     [ 7 ] ],
    [
@@ -46223,6 +47096,9 @@ window.GLOSSARY = [
     "Genesis", 1,
     [ 26, 28 ] ],
    [
+    "Genesis", 27,
+    [ 40 ] ],
+   [
     "Romans", 6,
     [ 9, 14 ] ],
    [
@@ -46415,6 +47291,15 @@ window.GLOSSARY = [
   "name": "Wages (what is earned and paid)",
   "refs": [
    [
+    "Genesis", 29,
+    [ 15 ] ],
+   [
+    "Genesis", 30,
+    [ 28 ] ],
+   [
+    "Genesis", 31,
+    [ 7, 8, 41 ] ],
+   [
     "Romans", 6,
     [ 23 ] ],
    [
@@ -46504,6 +47389,24 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 15, 17, 19, 21 ] ],
+   [
+    "Genesis", 18,
+    [ 6, 9, 10, 11, 12, 13, 14, 15 ] ],
+   [
+    "Genesis", 20,
+    [ 2, 14, 16, 18 ] ],
+   [
+    "Genesis", 21,
+    [ 1, 2, 3, 6, 7, 9, 12 ] ],
+   [
+    "Genesis", 23,
+    [ 1, 2, 19 ] ],
+   [
+    "Genesis", 24,
+    [ 36, 67 ] ],
+   [
+    "Genesis", 25,
+    [ 10, 12 ] ],
    [
     "Romans", 4,
     [ 19 ] ],
@@ -48080,6 +48983,9 @@ window.GLOSSARY = [
   "name": "To wit (that is to say)",
   "refs": [
    [
+    "Genesis", 24,
+    [ 21 ] ],
+   [
     "Romans", 8,
     [ 23 ] ] ]
  },
@@ -48304,6 +49210,30 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Rebecca (Rebekah), Isaac's wife, mother of Jacob and Esau",
   "refs": [
+   [
+    "Genesis", 22,
+    [ 23 ] ],
+   [
+    "Genesis", 24,
+    [ 15, 29, 30, 45, 51, 53, 58, 59, 60, 61, 64, 67 ] ],
+   [
+    "Genesis", 25,
+    [ 20, 21, 28 ] ],
+   [
+    "Genesis", 26,
+    [ 7, 8, 35 ] ],
+   [
+    "Genesis", 27,
+    [ 5, 6, 11, 15, 42, 46 ] ],
+   [
+    "Genesis", 28,
+    [ 5 ] ],
+   [
+    "Genesis", 29,
+    [ 12 ] ],
+   [
+    "Genesis", 35,
+    [ 8 ] ],
    [
     "Romans", 9,
     [ 10 ] ] ]
@@ -48685,6 +49615,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Strive (struggle hard, as a wrestler)",
   "refs": [
+   [
+    "Genesis", 26,
+    [ 20, 21, 22 ] ],
    [
     "Romans", 15,
     [ 20, 30 ] ] ]
@@ -49427,6 +50360,12 @@ window.GLOSSARY = [
   "name": "Harlot (a prostitute)",
   "refs": [
    [
+    "Genesis", 34,
+    [ 31 ] ],
+   [
+    "Genesis", 38,
+    [ 15, 21, 22, 24 ] ],
+   [
     "1 Corinthians", 6,
     [ 15, 16 ] ],
    [
@@ -49636,6 +50575,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Virgin (here, a never-married person)",
   "refs": [
+   [
+    "Genesis", 24,
+    [ 16, 43 ] ],
    [
     "1 Corinthians", 7,
     [ 25, 28, 34, 36, 37 ] ] ]
@@ -51020,6 +51962,12 @@ window.GLOSSARY = [
   "name": "Vail (a veil, a cloth over the face, and over the heart)",
   "refs": [
    [
+    "Genesis", 24,
+    [ 65 ] ],
+   [
+    "Genesis", 38,
+    [ 14, 19 ] ],
+   [
     "2 Corinthians", 3,
     [ 13, 14, 15, 16 ] ] ]
  },
@@ -51425,6 +52373,9 @@ window.GLOSSARY = [
     "Genesis", 3,
     [ 13 ] ],
    [
+    "Genesis", 29,
+    [ 25 ] ],
+   [
     "2 Corinthians", 11,
     [ 3 ] ] ]
  },
@@ -51785,6 +52736,18 @@ window.GLOSSARY = [
     "Genesis", 17,
     [ 7, 8, 9, 10, 12, 19 ] ],
    [
+    "Genesis", 21,
+    [ 12, 13 ] ],
+   [
+    "Genesis", 22,
+    [ 17, 18 ] ],
+   [
+    "Genesis", 24,
+    [ 7, 60 ] ],
+   [
+    "Genesis", 26,
+    [ 3, 4, 24 ] ],
+   [
     "Galatians", 3,
     [ 16, 19, 29 ] ],
    [
@@ -51829,6 +52792,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Heir (a son who receives his father's estate; in Christ, an heir of God)",
   "refs": [
+   [
+    "Genesis", 21,
+    [ 10 ] ],
    [
     "Galatians", 3,
     [ 29 ] ],
@@ -51886,6 +52852,12 @@ window.GLOSSARY = [
    [
     "Genesis", 16,
     [ 1, 3, 4, 8, 15, 16 ] ],
+   [
+    "Genesis", 21,
+    [ 9, 14, 17 ] ],
+   [
+    "Genesis", 25,
+    [ 12 ] ],
    [
     "Galatians", 4,
     [ 22, 23, 24, 25, 30, 31 ] ] ]
@@ -52234,6 +53206,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Bowels (old word for the deep feelings of the heart)",
   "refs": [
+   [
+    "Genesis", 25,
+    [ 23 ] ],
    [
     "Philippians", 1,
     [ 8 ] ],
@@ -55193,6 +56168,9 @@ window.GLOSSARY = [
   "name": "Intreat (to appeal to someone, ask earnestly)",
   "refs": [
    [
+    "Genesis", 23,
+    [ 8 ] ],
+   [
     "1 Timothy", 5,
     [ 1 ] ] ]
  },
@@ -56534,6 +57512,24 @@ window.GLOSSARY = [
   "name": "Sware, sworn (swore an oath)",
   "refs": [
    [
+    "Genesis", 21,
+    [ 31 ] ],
+   [
+    "Genesis", 22,
+    [ 16 ] ],
+   [
+    "Genesis", 24,
+    [ 7, 9 ] ],
+   [
+    "Genesis", 25,
+    [ 33 ] ],
+   [
+    "Genesis", 26,
+    [ 3, 31 ] ],
+   [
+    "Genesis", 31,
+    [ 53 ] ],
+   [
     "Amos", 4,
     [ 2 ] ],
    [
@@ -57296,6 +58292,12 @@ window.GLOSSARY = [
   "name": "Birthright (the firstborn son's rights: the double share and the family headship)",
   "refs": [
    [
+    "Genesis", 25,
+    [ 31, 32, 33, 34 ] ],
+   [
+    "Genesis", 27,
+    [ 36 ] ],
+   [
     "Hebrews", 12,
     [ 16 ] ] ]
  },
@@ -57913,6 +58915,9 @@ window.GLOSSARY = [
    [
     "Genesis", 12,
     [ 10 ] ],
+   [
+    "Genesis", 21,
+    [ 11, 12 ] ],
    [
     "1 John", 5,
     [ 3 ] ] ]
@@ -59180,8 +60185,20 @@ window.GLOSSARY = [
  {
   "id": "reuben",
   "kind": "person",
-  "name": "Reuben (the tribe of Jacob's firstborn)",
+  "name": "Reuben, Jacob's firstborn (and his tribe)",
   "refs": [
+   [
+    "Genesis", 29,
+    [ 32 ] ],
+   [
+    "Genesis", 30,
+    [ 14 ] ],
+   [
+    "Genesis", 35,
+    [ 22, 23 ] ],
+   [
+    "Genesis", 37,
+    [ 21, 22, 29 ] ],
    [
     "Revelation", 7,
     [ 5 ] ] ]
@@ -59225,8 +60242,14 @@ window.GLOSSARY = [
  {
   "id": "issachar",
   "kind": "person",
-  "name": "Issachar (the tribe)",
+  "name": "Issachar, Jacob's son (and his tribe)",
   "refs": [
+   [
+    "Genesis", 30,
+    [ 18 ] ],
+   [
+    "Genesis", 35,
+    [ 23 ] ],
    [
     "Revelation", 7,
     [ 7 ] ] ]
@@ -60184,6 +61207,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Brimstone (burning sulphur, the mark of God's judgment since Sodom)",
   "refs": [
+   [
+    "Genesis", 19,
+    [ 24 ] ],
    [
     "Luke", 17,
     [ 29 ] ],
@@ -61992,7 +63018,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 10,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Genesis", 23,
+    [ 3, 5, 7, 10, 16, 18, 20 ] ],
+   [
+    "Genesis", 25,
+    [ 10 ] ],
+   [
+    "Genesis", 27,
+    [ 46 ] ] ]
  },
  {
   "id": "javan",
@@ -62094,7 +63129,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 10,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Genesis", 20,
+    [ 1, 2 ] ],
+   [
+    "Genesis", 26,
+    [ 1, 6, 17, 20, 26 ] ] ]
  },
  {
   "id": "ophir",
@@ -62145,7 +63186,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 11,
-    [ 22, 23, 24, 25, 26, 27, 29 ] ] ]
+    [ 22, 23, 24, 25, 26, 27, 29 ] ],
+   [
+    "Genesis", 22,
+    [ 20, 23 ] ],
+   [
+    "Genesis", 24,
+    [ 10, 15, 24, 47 ] ],
+   [
+    "Genesis", 29,
+    [ 5 ] ],
+   [
+    "Genesis", 31,
+    [ 53 ] ] ]
  },
  {
   "id": "milcah",
@@ -62154,7 +63207,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 11,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Genesis", 22,
+    [ 20, 23 ] ],
+   [
+    "Genesis", 24,
+    [ 15, 24, 47 ] ] ]
  },
  {
   "id": "iscah",
@@ -62190,7 +63249,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 12,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Genesis", 33,
+    [ 18 ] ],
+   [
+    "Genesis", 35,
+    [ 4 ] ],
+   [
+    "Genesis", 37,
+    [ 12, 13, 14 ] ] ]
  },
  {
   "id": "moreh",
@@ -62223,7 +63291,10 @@ window.GLOSSARY = [
     [ 7, 8 ] ],
    [
     "Genesis", 13,
-    [ 4, 18 ] ] ]
+    [ 4, 18 ] ],
+   [
+    "Genesis", 22,
+    [ 9 ] ] ]
  },
  {
   "id": "plain-of-jordan",
@@ -62232,7 +63303,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 13,
-    [ 10, 11, 12 ] ] ]
+    [ 10, 11, 12 ] ],
+   [
+    "Genesis", 19,
+    [ 29 ] ] ]
  },
  {
   "id": "zoar",
@@ -62244,7 +63318,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Genesis", 14,
-    [ 2, 8 ] ] ]
+    [ 2, 8 ] ],
+   [
+    "Genesis", 19,
+    [ 22, 23, 30 ] ] ]
  },
  {
   "id": "hebron",
@@ -62253,7 +63330,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 13,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Genesis", 23,
+    [ 2, 19 ] ],
+   [
+    "Genesis", 35,
+    [ 27 ] ],
+   [
+    "Genesis", 37,
+    [ 14 ] ] ]
  },
  {
   "id": "mamre",
@@ -62265,7 +63351,19 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Genesis", 14,
-    [ 13, 24 ] ] ]
+    [ 13, 24 ] ],
+   [
+    "Genesis", 18,
+    [ 1 ] ],
+   [
+    "Genesis", 23,
+    [ 17, 19 ] ],
+   [
+    "Genesis", 25,
+    [ 9 ] ],
+   [
+    "Genesis", 35,
+    [ 27 ] ] ]
  },
  {
   "id": "perizzites",
@@ -62274,7 +63372,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 13,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Genesis", 34,
+    [ 30 ] ] ]
  },
  {
   "id": "chedorlaomer",
@@ -62313,7 +63414,10 @@ window.GLOSSARY = [
     [ 5, 6 ] ],
    [
     "Genesis", 15,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Genesis", 36,
+    [ 21, 29 ] ] ]
  },
  {
   "id": "vale-of-siddim",
@@ -62406,7 +63510,19 @@ window.GLOSSARY = [
     [ 11, 15, 16 ] ],
    [
     "Genesis", 17,
-    [ 18, 20, 23, 25, 26 ] ] ]
+    [ 18, 20, 23, 25, 26 ] ],
+   [
+    "Genesis", 21,
+    [ 9, 12, 14, 15, 16, 17, 18, 19, 20 ] ],
+   [
+    "Genesis", 25,
+    [ 9, 12, 13, 16, 17 ] ],
+   [
+    "Genesis", 28,
+    [ 9 ] ],
+   [
+    "Genesis", 36,
+    [ 3 ] ] ]
  },
  {
   "id": "shur",
@@ -62415,7 +63531,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 16,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Genesis", 20,
+    [ 1 ] ],
+   [
+    "Genesis", 25,
+    [ 18 ] ] ]
  },
  {
   "id": "beer-lahai-roi",
@@ -62424,7 +63546,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 16,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Genesis", 24,
+    [ 62 ] ],
+   [
+    "Genesis", 25,
+    [ 11 ] ] ]
  },
  {
   "id": "el-roi",
@@ -62442,6 +63570,966 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 17,
+    [ 1 ] ],
+   [
+    "Genesis", 28,
+    [ 3 ] ],
+   [
+    "Genesis", 35,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "angels-at-sodom",
+  "kind": "person",
+  "name": "The two angels who visited Abraham and then Sodom (the men with the LORD at Mamre)",
+  "refs": [
+   [
+    "Genesis", 18,
+    [ 2, 16, 22 ] ],
+   [
+    "Genesis", 19,
+    [ 1, 15 ] ] ]
+ },
+ {
+  "id": "lots-wife",
+  "kind": "person",
+  "name": "Lot's wife, who looked back and became a pillar of salt",
+  "refs": [
+   [
+    "Genesis", 19,
+    [ 15, 16, 26 ] ],
+   [
+    "Luke", 17,
+    [ 32 ] ] ]
+ },
+ {
+  "id": "benammi",
+  "kind": "person",
+  "name": "Benammi (Ben-ammi), Lot's younger son, father of the Ammonites",
+  "refs": [
+   [
+    "Genesis", 19,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "abimelech-of-gerar",
+  "kind": "person",
+  "name": "Abimelech, king of Gerar (Genesis 20, 21 and 26)",
+  "refs": [
+   [
+    "Genesis", 20,
+    [ 2, 3, 4, 8, 9, 10, 14, 15, 17, 18 ] ],
+   [
+    "Genesis", 21,
+    [ 22, 25, 26, 27, 29, 32 ] ],
+   [
+    "Genesis", 26,
+    [ 1, 8, 9, 10, 11, 16, 26 ] ] ]
+ },
+ {
+  "id": "kadesh",
+  "kind": "place",
+  "name": "Kadesh (Kadesh-barnea), in the desert south of Canaan",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 7 ] ],
+   [
+    "Genesis", 16,
+    [ 14 ] ],
+   [
+    "Genesis", 20,
     [ 1 ] ] ]
+ },
+ {
+  "id": "phichol",
+  "kind": "person",
+  "name": "Phichol, the chief captain of Abimelech's army",
+  "refs": [
+   [
+    "Genesis", 21,
+    [ 22, 32 ] ],
+   [
+    "Genesis", 26,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "moriah",
+  "kind": "place",
+  "name": "Moriah (the mountain where Abraham offered Isaac, later the temple hill)",
+  "refs": [
+   [
+    "Genesis", 22,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "jehovah-jireh",
+  "kind": "place",
+  "name": "Jehovah-jireh (“the LORD will provide”, the name Abraham gave the mountain)",
+  "refs": [
+   [
+    "Genesis", 22,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "ram-in-the-thicket",
+  "kind": "term",
+  "name": "The ram in the thicket (the substitute God provided in Isaac's place)",
+  "refs": [
+   [
+    "Genesis", 22,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "bethuel",
+  "kind": "person",
+  "name": "Bethuel, Nahor's son and the father of Rebekah",
+  "refs": [
+   [
+    "Genesis", 22,
+    [ 22, 23 ] ],
+   [
+    "Genesis", 24,
+    [ 15, 24, 47, 50 ] ],
+   [
+    "Genesis", 25,
+    [ 20 ] ],
+   [
+    "Genesis", 28,
+    [ 2, 5 ] ] ]
+ },
+ {
+  "id": "machpelah",
+  "kind": "place",
+  "name": "Machpelah (the cave and field Abraham bought as the family tomb)",
+  "refs": [
+   [
+    "Genesis", 23,
+    [ 9, 17, 19 ] ],
+   [
+    "Genesis", 25,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "ephron",
+  "kind": "person",
+  "name": "Ephron the Hittite (who sold Abraham the cave)",
+  "refs": [
+   [
+    "Genesis", 23,
+    [ 8, 10, 13, 14, 16, 17 ] ],
+   [
+    "Genesis", 25,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "kirjath-arba",
+  "kind": "place",
+  "name": "Kirjath-arba (the old name of Hebron)",
+  "refs": [
+   [
+    "Genesis", 23,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "abrahams-servant",
+  "kind": "person",
+  "name": "Abraham's eldest servant (sent to find a wife for Isaac)",
+  "refs": [
+   [
+    "Genesis", 24,
+    [ 2, 5, 9, 10, 17, 21, 22, 26, 29, 30, 32, 34, 52, 53, 59, 61, 65, 66 ] ] ]
+ },
+ {
+  "id": "laban",
+  "kind": "person",
+  "name": "Laban, Rebekah's brother (later Jacob's uncle and father-in-law)",
+  "refs": [
+   [
+    "Genesis", 24,
+    [ 29, 50 ] ],
+   [
+    "Genesis", 25,
+    [ 20 ] ],
+   [
+    "Genesis", 27,
+    [ 43 ] ],
+   [
+    "Genesis", 28,
+    [ 2, 5 ] ],
+   [
+    "Genesis", 29,
+    [ 5, 10, 13, 14, 15, 16, 19, 21, 22, 24, 25, 26, 29 ] ],
+   [
+    "Genesis", 30,
+    [ 25, 27, 34, 36, 40, 42 ] ],
+   [
+    "Genesis", 31,
+    [ 1, 2, 12, 19, 20, 22, 24, 25, 26, 31, 33, 34, 36, 43, 47, 48, 51, 55 ] ],
+   [
+    "Genesis", 32,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "keturah",
+  "kind": "person",
+  "name": "Keturah, Abraham's wife after Sarah",
+  "refs": [
+   [
+    "Genesis", 25,
+    [ 1, 4 ] ] ]
+ },
+ {
+  "id": "sons-of-keturah",
+  "kind": "person",
+  "name": "Keturah's sons and grandsons (Zimran, Jokshan, Medan, Ishbak, Shuah, Sheba, Dedan...)",
+  "refs": [
+   [
+    "Genesis", 25,
+    [ 2, 3, 4 ] ] ]
+ },
+ {
+  "id": "twelve-princes-of-ishmael",
+  "kind": "person",
+  "name": "Ishmael's twelve sons, the twelve princes",
+  "refs": [
+   [
+    "Genesis", 25,
+    [ 13, 14, 15 ] ] ]
+ },
+ {
+  "id": "padan-aram",
+  "kind": "place",
+  "name": "Padan-aram (“the plain of Aram”, the country around Haran)",
+  "refs": [
+   [
+    "Genesis", 25,
+    [ 20 ] ],
+   [
+    "Genesis", 28,
+    [ 2, 5, 6, 7 ] ],
+   [
+    "Genesis", 31,
+    [ 18 ] ],
+   [
+    "Genesis", 33,
+    [ 18 ] ],
+   [
+    "Genesis", 35,
+    [ 9, 26 ] ] ]
+ },
+ {
+  "id": "pottage",
+  "kind": "term",
+  "name": "Pottage (a thick stew): Esau's bowl of red stew",
+  "refs": [
+   [
+    "Genesis", 25,
+    [ 29, 30, 34 ] ] ]
+ },
+ {
+  "id": "esek",
+  "kind": "place",
+  "name": "Esek (“quarrel”), the first well Isaac's men dug in the valley of Gerar",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "sitnah",
+  "kind": "place",
+  "name": "Sitnah (“hostility”), the second well, also quarrelled over",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "rehoboth",
+  "kind": "place",
+  "name": "Rehoboth (“room”), the well nobody fought over",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "shebah",
+  "kind": "place",
+  "name": "Shebah, the well at Beer-sheba that gave the town its name",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "ahuzzath",
+  "kind": "person",
+  "name": "Ahuzzath, a friend of King Abimelech",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "judith-wife-of-esau",
+  "kind": "person",
+  "name": "Judith, Esau's Hittite wife",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "bashemath-wife-of-esau",
+  "kind": "person",
+  "name": "Bashemath, Esau's Hittite wife",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 34 ] ] ]
+ },
+ {
+  "id": "hittite-wives",
+  "kind": "person",
+  "name": "Esau's Hittite wives, “a grief of mind” to Isaac and Rebekah",
+  "refs": [
+   [
+    "Genesis", 26,
+    [ 34 ] ],
+   [
+    "Genesis", 27,
+    [ 46 ] ] ]
+ },
+ {
+  "id": "isaacs-blessing",
+  "kind": "term",
+  "name": "The blessing (a father's spoken word over the heir)",
+  "refs": [
+   [
+    "Genesis", 27,
+    [ 4, 7, 10, 12, 19, 23, 25, 27, 29, 30, 31, 33, 34, 35, 36, 38, 41 ] ] ]
+ },
+ {
+  "id": "savoury-meat",
+  "kind": "term",
+  "name": "Savoury meat and venison (tasty food, and meat from the hunt)",
+  "refs": [
+   [
+    "Genesis", 27,
+    [ 3, 4, 5, 7, 9, 14, 17, 19, 25, 31, 33 ] ] ]
+ },
+ {
+  "id": "supplanted",
+  "kind": "term",
+  "name": "Supplanted (pushed aside and taken the place of; what “Jacob” means)",
+  "refs": [
+   [
+    "Genesis", 27,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "galeed",
+  "kind": "place",
+  "name": "Galeed (Jegar-sahadutha), the heap of witness",
+  "refs": [
+   [
+    "Genesis", 31,
+    [ 47, 48 ] ] ]
+ },
+ {
+  "id": "mahanaim",
+  "kind": "place",
+  "name": "Mahanaim (\"two camps\"), where the angels met Jacob",
+  "refs": [
+   [
+    "Genesis", 32,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "seir",
+  "kind": "place",
+  "name": "Seir (Esau's hill country, the land of Edom)",
+  "refs": [
+   [
+    "Genesis", 14,
+    [ 6 ] ],
+   [
+    "Genesis", 32,
+    [ 3 ] ],
+   [
+    "Genesis", 33,
+    [ 14, 16 ] ],
+   [
+    "Genesis", 36,
+    [ 8, 9, 20, 21, 30 ] ] ]
+ },
+ {
+  "id": "jabbok",
+  "kind": "place",
+  "name": "The Jabbok (the river ford where Jacob wrestled)",
+  "refs": [
+   [
+    "Genesis", 32,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "peniel",
+  "kind": "place",
+  "name": "Peniel, or Penuel (\"the face of God\")",
+  "refs": [
+   [
+    "Genesis", 32,
+    [ 30, 31 ] ] ]
+ },
+ {
+  "id": "israel-the-man",
+  "kind": "person",
+  "name": "Israel (the new name God gave Jacob)",
+  "refs": [
+   [
+    "Genesis", 32,
+    [ 28 ] ],
+   [
+    "Genesis", 33,
+    [ 20 ] ],
+   [
+    "Genesis", 34,
+    [ 7 ] ],
+   [
+    "Genesis", 35,
+    [ 10, 21, 22 ] ],
+   [
+    "Genesis", 37,
+    [ 3, 13 ] ] ]
+ },
+ {
+  "id": "succoth-jacob",
+  "kind": "place",
+  "name": "Succoth (\"booths\"), where Jacob built a house",
+  "refs": [
+   [
+    "Genesis", 33,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "el-elohe-israel",
+  "kind": "place",
+  "name": "El-elohe-Israel (\"God, the God of Israel\", Jacob's altar)",
+  "refs": [
+   [
+    "Genesis", 33,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "hamor",
+  "kind": "person",
+  "name": "Hamor (the father of Shechem, from whom Jacob bought his field)",
+  "refs": [
+   [
+    "Genesis", 33,
+    [ 19 ] ],
+   [
+    "Genesis", 34,
+    [ 2, 4, 6, 8, 13, 18, 20, 24, 26 ] ] ]
+ },
+ {
+  "id": "shechem-son-of-hamor",
+  "kind": "person",
+  "name": "Shechem, son of Hamor (the prince who wronged Dinah)",
+  "refs": [
+   [
+    "Genesis", 34,
+    [ 2, 4, 6, 8, 11, 13, 18, 20, 24, 26 ] ] ]
+ },
+ {
+  "id": "hivites",
+  "kind": "person",
+  "name": "The Hivites (a people of Canaan)",
+  "refs": [
+   [
+    "Genesis", 34,
+    [ 2 ] ],
+   [
+    "Genesis", 36,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "deborah-rebekahs-nurse",
+  "kind": "person",
+  "name": "Deborah, Rebekah's nurse (buried under the oak of weeping)",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "allon-bachuth",
+  "kind": "place",
+  "name": "Allon-bachuth (\"the oak of weeping\"), where Deborah was buried",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "el-beth-el",
+  "kind": "place",
+  "name": "El-beth-el (\"the God of Bethel\"), Jacob's altar",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "ben-oni",
+  "kind": "person",
+  "name": "Ben-oni (\"son of my sorrow\"), the name Rachel gave Benjamin",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "benjamin-son-of-jacob",
+  "kind": "person",
+  "name": "Benjamin, Jacob's youngest son (\"son of the right hand\")",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 18, 24 ] ] ]
+ },
+ {
+  "id": "rachels-pillar",
+  "kind": "place",
+  "name": "The pillar on Rachel's grave",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "tower-of-edar",
+  "kind": "place",
+  "name": "The tower of Edar (\"the tower of the flock\"), near Bethlehem",
+  "refs": [
+   [
+    "Genesis", 35,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "adah-wife-of-esau",
+  "kind": "person",
+  "name": "Adah, wife of Esau (mother of Eliphaz)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 2, 4, 10, 12, 16 ] ] ]
+ },
+ {
+  "id": "aholibamah-wife-of-esau",
+  "kind": "person",
+  "name": "Aholibamah, wife of Esau (daughter of Anah)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 2, 5, 14, 18, 25, 41 ] ] ]
+ },
+ {
+  "id": "eliphaz-son-of-esau",
+  "kind": "person",
+  "name": "Eliphaz, Esau's oldest son",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 4, 10, 11, 12, 15, 16 ] ] ]
+ },
+ {
+  "id": "amalek-son-of-eliphaz",
+  "kind": "person",
+  "name": "Amalek, Esau's grandson (father of the Amalekites)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 12, 16 ] ] ]
+ },
+ {
+  "id": "timna-concubine-of-eliphaz",
+  "kind": "person",
+  "name": "Timna, Eliphaz's concubine and mother of Amalek",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "anah-the-horite",
+  "kind": "person",
+  "name": "Anah (the one who found the mules in the wilderness)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 2, 14, 18, 20, 24, 25, 29 ] ] ]
+ },
+ {
+  "id": "kings-of-edom",
+  "kind": "person",
+  "name": "The kings of Edom (Bela, Jobab, Husham, Hadad, Samlah, Saul, Baal-hanan, Hadar)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 32, 33, 34, 35, 36, 37, 38, 39 ] ] ]
+ },
+ {
+  "id": "dukes-of-edom",
+  "kind": "term",
+  "name": "Duke, dukes (a clan chief, not a lord in a castle)",
+  "refs": [
+   [
+    "Genesis", 36,
+    [ 15, 16, 17, 18, 19, 21, 29, 30, 40, 41, 42, 43 ] ] ]
+ },
+ {
+  "id": "dothan",
+  "kind": "place",
+  "name": "Dothan (where Joseph found his brothers)",
+  "refs": [
+   [
+    "Genesis", 37,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "ishmeelites",
+  "kind": "person",
+  "name": "The Ishmeelites (traders, sons of Ishmael)",
+  "refs": [
+   [
+    "Genesis", 37,
+    [ 25, 27, 28 ] ],
+   [
+    "Genesis", 39,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "midianites",
+  "kind": "person",
+  "name": "The Midianites (traders, sons of Midian)",
+  "refs": [
+   [
+    "Genesis", 37,
+    [ 28, 36 ] ] ]
+ },
+ {
+  "id": "potiphar",
+  "kind": "person",
+  "name": "Potiphar, captain of Pharaoh's guard",
+  "refs": [
+   [
+    "Genesis", 37,
+    [ 36 ] ],
+   [
+    "Genesis", 39,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "coat-of-many-colours",
+  "kind": "term",
+  "name": "The coat of many colours (Joseph's robe)",
+  "refs": [
+   [
+    "Genesis", 37,
+    [ 3, 23, 32 ] ] ]
+ },
+ {
+  "id": "hirah",
+  "kind": "person",
+  "name": "Hirah the Adullamite, Judah's friend",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 1, 12 ] ] ]
+ },
+ {
+  "id": "shuah-the-canaanite",
+  "kind": "person",
+  "name": "Shuah, the Canaanite whose daughter Judah married",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 2, 12 ] ] ]
+ },
+ {
+  "id": "er-son-of-judah",
+  "kind": "person",
+  "name": "Er, Judah's firstborn (Tamar's first husband)",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 3, 6, 7 ] ] ]
+ },
+ {
+  "id": "onan",
+  "kind": "person",
+  "name": "Onan, Judah's second son",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 4, 8, 9 ] ] ]
+ },
+ {
+  "id": "shelah-son-of-judah",
+  "kind": "person",
+  "name": "Shelah, Judah's youngest son",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 5, 11, 14, 26 ] ] ]
+ },
+ {
+  "id": "pharez",
+  "kind": "person",
+  "name": "Pharez, twin son of Judah and Tamar (in the line of David and of Christ)",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "zarah-son-of-judah",
+  "kind": "person",
+  "name": "Zarah (Zerah), Pharez's twin brother",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "timnath",
+  "kind": "place",
+  "name": "Timnath (where Judah went to the sheepshearing)",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 12, 13, 14 ] ] ]
+ },
+ {
+  "id": "chezib",
+  "kind": "place",
+  "name": "Chezib (where Shelah was born)",
+  "refs": [
+   [
+    "Genesis", 38,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "jacobs-ladder",
+  "kind": "term",
+  "name": "Jacob's ladder (the stairway to heaven)",
+  "refs": [
+   [
+    "Genesis", 28,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "luz",
+  "kind": "place",
+  "name": "Luz (the old name of Bethel)",
+  "refs": [
+   [
+    "Genesis", 28,
+    [ 19 ] ],
+   [
+    "Genesis", 35,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "mahalath",
+  "kind": "person",
+  "name": "Mahalath, Esau's wife (Ishmael's daughter)",
+  "refs": [
+   [
+    "Genesis", 28,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "leah",
+  "kind": "person",
+  "name": "Leah, Jacob's first wife (Laban's elder daughter)",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 16, 17, 23, 24, 25, 30, 31, 32 ] ],
+   [
+    "Genesis", 30,
+    [ 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20 ] ],
+   [
+    "Genesis", 31,
+    [ 4, 14, 33 ] ],
+   [
+    "Genesis", 33,
+    [ 1, 2, 7 ] ],
+   [
+    "Genesis", 34,
+    [ 1 ] ],
+   [
+    "Genesis", 35,
+    [ 23, 26 ] ] ]
+ },
+ {
+  "id": "zilpah",
+  "kind": "person",
+  "name": "Zilpah, Leah's maid (mother of Gad and Asher)",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 24 ] ],
+   [
+    "Genesis", 30,
+    [ 9, 10, 12 ] ],
+   [
+    "Genesis", 35,
+    [ 26 ] ],
+   [
+    "Genesis", 37,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "bilhah",
+  "kind": "person",
+  "name": "Bilhah, Rachel's maid (mother of Dan and Naphtali)",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 29 ] ],
+   [
+    "Genesis", 30,
+    [ 3, 4, 5, 7 ] ],
+   [
+    "Genesis", 35,
+    [ 22, 25 ] ],
+   [
+    "Genesis", 37,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "simeon-son-of-jacob",
+  "kind": "person",
+  "name": "Simeon, Jacob and Leah's second son",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 33 ] ],
+   [
+    "Genesis", 34,
+    [ 25, 30 ] ],
+   [
+    "Genesis", 35,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "levi-son-of-jacob",
+  "kind": "person",
+  "name": "Levi, Jacob and Leah's third son (father of the priestly tribe)",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 34 ] ],
+   [
+    "Genesis", 34,
+    [ 25, 30 ] ],
+   [
+    "Genesis", 35,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "judah-son-of-jacob",
+  "kind": "person",
+  "name": "Judah, Jacob and Leah's fourth son (the line of David and of Christ)",
+  "refs": [
+   [
+    "Genesis", 29,
+    [ 35 ] ],
+   [
+    "Genesis", 35,
+    [ 23 ] ],
+   [
+    "Genesis", 37,
+    [ 26 ] ],
+   [
+    "Genesis", 38,
+    [ 1, 2, 6, 7, 8, 11, 12, 15, 20, 22, 23, 24, 26 ] ] ]
+ },
+ {
+  "id": "dan-son-of-jacob",
+  "kind": "person",
+  "name": "Dan, Jacob's son by Rachel's maid Bilhah",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 6 ] ],
+   [
+    "Genesis", 35,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "naphtali",
+  "kind": "person",
+  "name": "Naphtali, Jacob's son by Bilhah",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 8 ] ],
+   [
+    "Genesis", 35,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "gad",
+  "kind": "person",
+  "name": "Gad, Jacob's son by Leah's maid Zilpah",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 11 ] ],
+   [
+    "Genesis", 35,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "asher",
+  "kind": "person",
+  "name": "Asher, Jacob's son by Zilpah",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 13 ] ],
+   [
+    "Genesis", 35,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "zebulun",
+  "kind": "person",
+  "name": "Zebulun, Jacob and Leah's sixth son",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 20 ] ],
+   [
+    "Genesis", 35,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "dinah",
+  "kind": "person",
+  "name": "Dinah, Jacob and Leah's daughter",
+  "refs": [
+   [
+    "Genesis", 30,
+    [ 21 ] ],
+   [
+    "Genesis", 34,
+    [ 1, 3, 5, 13, 25, 26 ] ] ]
  }
 ];

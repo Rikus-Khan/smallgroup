@@ -18226,5 +18226,1148 @@ window.STUDIES = [
       },
       "big": "God comes back after the mistake and does not scold. He gives His servant a new name by what he will be, binds Himself with an everlasting covenant, and promises a child to a hundred-year-old man. The sign comes after faith and never replaces it, and even the child of a mistake is heard and blessed."
     }
+  },
+  {
+    "id": "genesis-18",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 18,
+    "date": "2026-11-10",
+    "title": "Genesis 18",
+    "sub": "Three visitors, and a man who pleads",
+    "about": "The LORD and two angels visit Abraham at Mamre; Sarah laughs at the promise of a son; and Abraham pleads with God to spare Sodom for the sake of the righteous in it.",
+    "tags": [
+      "Hospitality",
+      "Promise",
+      "Prayer",
+      "Judgment",
+      "Faith",
+      "Fear"
+    ],
+    "url": "studies/genesis-18.html",
+    "overview": {
+      "where": "Abraham's tent in the plains of Mamre, by Hebron; the men then look toward Sodom",
+      "when": "About 2066 BC; Abraham is ninety-nine, Sarah eighty-nine, and Isaac is promised for the next year",
+      "people": [
+        "abraham",
+        "sarah",
+        "the-lord",
+        "angels-at-sodom"
+      ],
+      "places": [
+        "mamre",
+        "hebron",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "In the heat of the day the LORD appears to Abraham at Mamre in the form of three men. Abraham runs to meet them, bows, and hurries to give them water, bread, curds, milk and a tender calf (1–8).",
+        "They ask for Sarah, and the LORD promises that she will have a son at the time of life (9–10).",
+        "Sarah, listening behind the tent door, laughs to herself. The LORD asks why she laughed, and says, “Is any thing too hard for the LORD?” Sarah denies it, afraid, and He answers, “Nay; but thou didst laugh” (11–15).",
+        "The men look toward Sodom. The LORD asks, “Shall I hide from Abraham that thing which I do?” and gives the reason: Abraham will teach his household the way of the LORD. He tells him the cry of Sodom and Gomorrah is great (16–21).",
+        "The two men go on toward Sodom while Abraham stands before the LORD (22).",
+        "Abraham pleads: “Shall not the Judge of all the earth do right?” He brings the number down from fifty to ten, and each time the LORD agrees to spare the city (23–32).",
+        "The LORD goes His way, and Abraham returns to his place (33)."
+      ],
+      "key": {
+        "ref": "Genesis 18:14",
+        "text": "Is any thing too hard for the LORD? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son."
+      },
+      "big": "God comes to a tent for a meal and keeps His promise in plain words. A laugh of doubt and a lie of fear don't change it. He lets His friend in on what He is about to do, and Abraham learns to pray boldly and humbly, on the strength of who the Judge of all the earth is."
+    }
+  },
+  {
+    "id": "genesis-19",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 19,
+    "date": "2026-11-10",
+    "title": "Genesis 19",
+    "sub": "Out of Sodom",
+    "about": "Two angels reach Sodom and find Lot at the gate. The city's wickedness is shown, Lot is pulled out by the hand, fire falls on Sodom and Gomorrah, Lot's wife looks back, and Lot ends in a cave with his daughters.",
+    "tags": [
+      "Sin",
+      "Judgment",
+      "Mercy",
+      "Compromise",
+      "Family",
+      "Warning"
+    ],
+    "url": "studies/genesis-19.html",
+    "overview": {
+      "where": "Sodom, then Zoar, then a cave in the mountain east of the Dead Sea; Abraham watches from near Hebron",
+      "when": "About 2066 BC, the evening and morning after Genesis 18",
+      "people": [
+        "lot",
+        "lots-wife",
+        "angels-at-sodom",
+        "abraham",
+        "benammi",
+        "the-lord"
+      ],
+      "places": [
+        "sodom-and-gomorrah",
+        "zoar",
+        "moab",
+        "ammon"
+      ],
+      "story": [
+        "Two angels come to Sodom at evening. Lot, sitting in the gate, takes them in and bakes them bread (1–3).",
+        "The whole city surrounds the house. Lot goes out and begs them not to do so wickedly, and shamefully offers his daughters instead; the angels pull Lot in and strike the crowd with blindness (4–11).",
+        "At dawn Lot warns his sons-in-law, who think he is joking. While he lingers, the angels take him, his wife and his two daughters by the hand and lead them out, “the LORD being merciful unto him” (12–17).",
+        "Lot asks to go to the little city Zoar and is given it (18–23).",
+        "The LORD rains brimstone and fire on Sodom and Gomorrah. Lot's wife looks back and becomes a pillar of salt (24–26).",
+        "Abraham sees the smoke from the place where he stood, and “God remembered Abraham” and sent Lot out (27–29).",
+        "Afraid to stay in Zoar, Lot lives in a cave. His daughters make him drunk with wine, and the sons born are Moab and Benammi, the fathers of the Moabites and the Ammonites (30–38)."
+      ],
+      "key": {
+        "ref": "Genesis 19:16",
+        "text": "And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the LORD being merciful unto him: and they brought him forth, and set him without the city."
+      },
+      "big": "Lot drifted from a tent toward Sodom to a seat in its gate, and it cost him almost everything. Yet he was pulled out by the hand because the LORD was merciful and God remembered Abraham's prayer. Don't look back, and let your brothers in Christ take you by the hand."
+    }
+  },
+  {
+    "id": "genesis-20",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 20,
+    "date": "2026-11-10",
+    "title": "Genesis 20",
+    "sub": "The same lie, and the God who guards",
+    "about": "In Gerar, Abraham again says Sarah is his sister, and King Abimelech takes her. God warns Abimelech in a dream, protects Sarah, and restores her, and Abraham prays for Abimelech's household.",
+    "tags": [
+      "Fear",
+      "Lies",
+      "Protection",
+      "Prayer",
+      "Grace",
+      "Hope"
+    ],
+    "url": "studies/genesis-20.html",
+    "overview": {
+      "where": "Gerar, in the south of Canaan, between Kadesh and Shur",
+      "when": "About 2066 BC, shortly before Isaac is born; the same lie as in Egypt about 2090 BC",
+      "people": [
+        "abraham",
+        "sarah",
+        "abimelech-of-gerar",
+        "the-lord"
+      ],
+      "places": [
+        "gerar",
+        "kadesh",
+        "shur"
+      ],
+      "story": [
+        "Abraham moves south and lives in Gerar. Afraid, he says of Sarah, “She is my sister,” and Abimelech, king of Gerar, takes her (1–2).",
+        "God comes to Abimelech in a dream: “thou art but a dead man”. Abimelech had not touched her, and pleads his integrity (3–5).",
+        "God says, “I also withheld thee from sinning against me,” and tells him to restore Sarah, because Abraham “is a prophet, and he shall pray for thee” (6–7).",
+        "Abimelech tells his men, and they are sore afraid. He rebukes Abraham: “thou hast done deeds unto me that ought not to be done” (8–10).",
+        "Abraham says he thought the fear of God was not in the place, and that Sarah is also his half-sister (11–13).",
+        "Abimelech gives Abraham sheep, oxen, servants, Sarah and a thousand pieces of silver, and tells him to live wherever he pleases (14–16).",
+        "Abraham prays, and God heals Abimelech's household, whose wombs He had closed because of Sarah (17–18)."
+      ],
+      "key": {
+        "ref": "Genesis 20:6",
+        "text": "And God said unto him in a dream, Yea, I know that thou didst this in the integrity of thy heart; for I also withheld thee from sinning against me: therefore suffered I thee not to touch her."
+      },
+      "big": "Abraham, a man of faith, tells the same lie out of fear again, and God steps in to guard what he failed to guard. The pagan king is more honest than he is, yet God still uses him to pray. In the next chapter the promised son is born on schedule, so a man who repeats the same sin is not out of the story."
+    }
+  },
+  {
+    "id": "genesis-21",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 21,
+    "date": "2026-11-10",
+    "title": "Genesis 21",
+    "sub": "The promised son, and the boy God heard",
+    "about": "Isaac is born at the set time and Sarah laughs for joy. Hagar and Ishmael are sent away, God hears the boy and shows Hagar a well, and Abraham makes a covenant with Abimelech at Beer-sheba.",
+    "tags": [
+      "Promise",
+      "Grace",
+      "Family",
+      "Consequences",
+      "Prayer",
+      "Peace"
+    ],
+    "url": "studies/genesis-21.html",
+    "overview": {
+      "where": "Abraham's camp in the south of Canaan, in the Philistines' land around Gerar and Beer-sheba; Hagar goes out into the wilderness of Beer-sheba, and Ishmael grows up in the wilderness of Paran",
+      "when": "About 2065 BC, when Isaac is born and Abraham is a hundred; the feast is a few years later, when Isaac is weaned",
+      "people": [
+        "abraham",
+        "sarah",
+        "isaac",
+        "hagar",
+        "ishmael",
+        "the-lord",
+        "abimelech-of-gerar",
+        "phichol"
+      ],
+      "places": [
+        "beer-sheba",
+        "paran",
+        "egypt"
+      ],
+      "story": [
+        "The LORD visits Sarah as He had said. She bears Isaac at the set time, Abraham names him and circumcises him on the eighth day, and Sarah says, “God hath made me to laugh” (1–7).",
+        "Abraham makes a great feast the day Isaac is weaned. Sarah sees Hagar's son mocking and says, “Cast out this bondwoman and her son”, and it is very grievous to Abraham (8–11).",
+        "God tells Abraham to listen to Sarah: the line goes through Isaac, but He will make a nation of the other son too. Abraham sends Hagar and the boy away with bread and a bottle of water (12–14).",
+        "In the wilderness the water is spent. Hagar sits a bowshot away and weeps. God hears the voice of the lad, an angel calls to her from heaven, and God opens her eyes to a well (15–19).",
+        "God is with the boy, and he grows up in the wilderness of Paran and becomes an archer. His mother finds him a wife in Egypt (20–21).",
+        "Abimelech and Phichol see that God is with Abraham and ask him for a covenant. Abraham reproves him over a stolen well, they swear an oath at Beer-sheba, and Abraham plants a tree and calls on “the everlasting God” (22–34)."
+      ],
+      "key": {
+        "ref": "Genesis 21:17",
+        "text": "And God heard the voice of the lad; and the angel of God called to Hagar out of heaven, and said unto her, What aileth thee, Hagar? fear not; for God hath heard the voice of the lad where he is."
+      },
+      "big": "God keeps His word to the day, and He also hears the child that a family mistake sent away. A shortcut from long ago still cost people, but a woman at the end of her water was heard, and her eyes were opened to a well that was there. Nobody is too far out in the wilderness; when a man is there, he can call or text his brothers in Christ and his pastor."
+    }
+  },
+  {
+    "id": "genesis-22",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 22,
+    "date": "2026-11-10",
+    "title": "Genesis 22",
+    "sub": "The Lamb God provided",
+    "about": "God tests Abraham: take Isaac to Moriah and offer him. Abraham obeys in faith that God can raise the dead, the angel stops the knife, a ram takes Isaac's place, and Jehovah-jireh points ahead to the Lamb of God.",
+    "tags": [
+      "Faith",
+      "Sacrifice",
+      "Christ",
+      "Provision",
+      "Promise",
+      "Obedience"
+    ],
+    "url": "studies/genesis-22.html",
+    "overview": {
+      "where": "From Beer-sheba to “the land of Moriah”, three days' journey, to one of its mountains (2 Chronicles 3:1 puts the temple on Mount Moriah at Jerusalem)",
+      "when": "Some years after Isaac's birth, about 2065 BC (the text does not give his age; he is old enough to carry the wood)",
+      "people": [
+        "abraham",
+        "isaac",
+        "the-lord",
+        "angel-of-the-lord",
+        "nahor",
+        "milcah",
+        "bethuel",
+        "rebecca"
+      ],
+      "places": [
+        "moriah",
+        "jehovah-jireh",
+        "beer-sheba"
+      ],
+      "story": [
+        "God tests Abraham: “Take now thy son, thine only son Isaac, whom thou lovest”, and offer him on a mountain in the land of Moriah. Abraham rises early the next morning and goes (1–3).",
+        "On the third day Abraham sees the place. He tells his young men, “I and the lad will go yonder and worship, and come again to you” (4–5).",
+        "Isaac carries the wood and asks, “where is the lamb for a burnt offering?” Abraham answers, “God will provide himself a lamb” (6–8).",
+        "Abraham builds the altar, binds Isaac and takes up the knife. The angel of the LORD calls from heaven, “Lay not thine hand upon the lad”, and Abraham finds a ram caught in a thicket and offers it in his son's place (9–13).",
+        "Abraham names the place Jehovah-jireh: “In the mount of the LORD it shall be seen” (14).",
+        "The angel calls a second time. God swears by Himself to bless Abraham, multiply his seed like the stars and the sand, and bless all nations in his Seed (15–18).",
+        "Abraham goes home to Beer-sheba, and word comes that Milcah has borne eight sons to Nahor, among them Bethuel, who begat Rebekah (19–24)."
+      ],
+      "key": {
+        "ref": "Genesis 22:8",
+        "text": "And Abraham said, My son, God will provide himself a lamb for a burnt offering: so they went both of them together."
+      },
+      "big": "The whole mountain is a picture of the gospel. A father and his only son, wood on a back, a question about the lamb, and then God Himself provides a substitute. Isaac was spared; God's own Son was not, for us. Jehovah-jireh means the LORD sees ahead, and what we need is already provided, so no man has to walk his hard road alone."
+    }
+  },
+  {
+    "id": "genesis-23",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 23,
+    "date": "2026-11-10",
+    "title": "Genesis 23",
+    "sub": "A stranger buys a grave",
+    "about": "Sarah dies at a hundred and twenty-seven. Abraham weeps, then buys the cave of Machpelah from Ephron and the sons of Heth at full price, in public, and holds the first piece of the promised land.",
+    "tags": [
+      "Grief",
+      "Hope",
+      "Integrity",
+      "Promise",
+      "Faith",
+      "Family"
+    ],
+    "url": "studies/genesis-23.html",
+    "overview": {
+      "where": "Hebron (Kirjath-arba), in Canaan, by Mamre",
+      "when": "About 2028 BC; Sarah is 127, Abraham about 137 and Isaac about 37",
+      "people": [
+        "abraham",
+        "sarah",
+        "ephron",
+        "heth"
+      ],
+      "places": [
+        "hebron",
+        "kirjath-arba",
+        "machpelah",
+        "mamre",
+        "canaan"
+      ],
+      "story": [
+        "Sarah dies at a hundred and twenty-seven in Kirjath-arba, which is Hebron. Abraham comes to mourn for her and to weep for her (1–2).",
+        "He stands up and asks the sons of Heth for a burying place: “I am a stranger and a sojourner with you.” They answer that he is “a mighty prince among us” and offer him any of their tombs (3–6).",
+        "Abraham bows and asks to buy the cave of Machpelah at the end of Ephron's field, “for as much money as it is worth” (7–9).",
+        "Ephron offers the field and the cave as a gift, in front of the whole town. Abraham insists on paying, and Ephron names the price: four hundred shekels of silver (10–15).",
+        "Abraham weighs out the silver at the gate, and the field, the cave and all its trees are “made sure” to him. He buries Sarah in the cave of Machpelah, before Mamre (16–20)."
+      ],
+      "key": {
+        "ref": "Genesis 23:4",
+        "text": "I am a stranger and a sojourner with you: give me a possession of a buryingplace with you, that I may bury my dead out of my sight."
+      },
+      "big": "A man of faith weeps, and then does the next honest thing. Abraham pays full price in public, treats his neighbours with courtesy, and buries his wife in the land God promised, though he owns only the grave. Grief and hope go together, because the One who promised the land keeps His word even past the grave."
+    }
+  },
+  {
+    "id": "genesis-24",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 24,
+    "date": "2026-11-10",
+    "title": "Genesis 24",
+    "sub": "“I being in the way, the LORD led me”",
+    "about": "Abraham sends his oldest servant to his own kindred to find Isaac a wife. The servant prays at the well, Rebekah answers the prayer before he finishes it, and she says, “I will go.”",
+    "tags": [
+      "Prayer",
+      "Guidance",
+      "Marriage",
+      "Character",
+      "Faith",
+      "Comfort"
+    ],
+    "url": "studies/genesis-24.html",
+    "overview": {
+      "where": "From Abraham's camp in southern Canaan to the city of Nahor in Mesopotamia, near Haran, and home again to Isaac at Beer-lahai-roi",
+      "when": "About 2025 BC; Isaac is forty and Abraham about 140, three years after Sarah's death",
+      "people": [
+        "abraham",
+        "abrahams-servant",
+        "isaac",
+        "rebecca",
+        "bethuel",
+        "laban",
+        "nahor",
+        "milcah",
+        "sarah"
+      ],
+      "places": [
+        "mesopotamia",
+        "canaan",
+        "beer-lahai-roi",
+        "hebron"
+      ],
+      "story": [
+        "Abraham, old and blessed in everything, makes his oldest servant swear that Isaac will not marry a Canaanite, and will not be taken back to the old country. If the woman will not come, the servant is free from the oath (1–9).",
+        "The servant takes ten camels to the city of Nahor and waits by the well at evening. He prays that the girl who offers him a drink, and his camels too, may be the one God has chosen for Isaac (10–14).",
+        "Before he finishes praying, Rebekah, Bethuel's daughter and Abraham's great-niece, comes with her jar. She gives him a drink and draws water for all ten camels. The servant bows and worships: “I being in the way, the LORD led me” (15–27).",
+        "Her brother Laban brings him into the house. The servant will not eat until he has told his errand, and tells the whole story. Laban and Bethuel answer, “The thing proceedeth from the LORD” (28–51).",
+        "The servant worships again and gives gifts. The family wants ten days, but the servant says “Hinder me not”. They ask Rebekah, “Wilt thou go with this man?” and she answers, “I will go.” They bless her and send her off (52–61).",
+        "Isaac is walking in the field at evening. Rebekah sees him, covers herself with a veil, and he brings her into his mother Sarah's tent. “He loved her: and Isaac was comforted after his mother's death” (62–67)."
+      ],
+      "key": {
+        "ref": "Genesis 24:27",
+        "text": "And he said, Blessed be the LORD God of my master Abraham, who hath not left destitute my master of his mercy and his truth: I being in the way, the LORD led me to the house of my master’s brethren."
+      },
+      "big": "God leads a man who is on the road He sent him down. The servant prayed, did the next right thing, and watched God answer before he finished praying; and Rebekah's own “I will go” shows that God invites and does not drag. A man who has left an old life does not go back to it, and grief is met with God's comfort, often through a person."
+    }
+  },
+  {
+    "id": "genesis-25",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 25,
+    "date": "2026-11-10",
+    "title": "Genesis 25",
+    "sub": "A good old age, and a bowl of red stew",
+    "about": "Abraham settles his house and dies at 175, and Isaac and Ishmael bury him together. Ishmael's twelve princes are named, Jacob and Esau are born after twenty years of Isaac's prayer, and Esau sells his birthright for a bowl of stew.",
+    "tags": [
+      "Death",
+      "Family",
+      "Promise",
+      "Prayer",
+      "Appetite",
+      "Regret"
+    ],
+    "url": "studies/genesis-25.html",
+    "overview": {
+      "where": "Canaan: the cave of Machpelah near Mamre, Beer-lahai-roi in the south country, and the wilderness from Havilah to Shur",
+      "when": "About 2025 to 1990 BC; Isaac marries at forty, the twins are born when he is sixty (about 2005 BC), and Abraham dies at 175 (about 1990 BC)",
+      "people": [
+        "abraham",
+        "keturah",
+        "sons-of-keturah",
+        "isaac",
+        "ishmael",
+        "twelve-princes-of-ishmael",
+        "rebecca",
+        "esau",
+        "jacob"
+      ],
+      "places": [
+        "machpelah",
+        "beer-lahai-roi",
+        "padan-aram",
+        "edom",
+        "midian",
+        "shur"
+      ],
+      "story": [
+        "Abraham takes another wife, Keturah, and has six more sons. He gives “all that he had” to Isaac, and gifts to the other sons, and sends them east while he still lives (1–6).",
+        "Abraham dies at 175, “in a good old age, an old man, and full of years”, and is gathered to his people. Isaac and Ishmael bury him together in the cave of Machpelah, beside Sarah. God blesses Isaac (7–11).",
+        "The generations of Ishmael: twelve princes, by name, as God promised. Ishmael dies at 137, and his family dwells “in the presence of all his brethren” (12–18).",
+        "Isaac is forty when he marries Rebekah. She is barren, and Isaac prays to the LORD; she conceives twins. They struggle in her womb, and the LORD tells her that two nations are in her, and the elder shall serve the younger (19–23).",
+        "Esau is born red and hairy, and Jacob is born holding his heel; Isaac is sixty. Esau becomes a hunter and Jacob a quiet man of the tents. Isaac loves Esau, and Rebekah loves Jacob (24–28).",
+        "Esau comes in faint from the field, and sells his birthright to Jacob for bread and red lentil stew. “Thus Esau despised his birthright” (29–34)."
+      ],
+      "key": {
+        "ref": "Genesis 25:34",
+        "text": "Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright."
+      },
+      "big": "The promise passes from Abraham to Isaac, and God keeps His word to Ishmael too, down to the twelve princes. Isaac, unlike his father, waits and prays. And Esau shows how a man hungry and in a hurry can trade a whole future for a bowl of stew; Hebrews uses him as a warning, and Jesus says that the man who comes to Him He will in no wise cast out."
+    }
+  },
+  {
+    "id": "genesis-26",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 26,
+    "date": "2026-11-10",
+    "title": "Genesis 26",
+    "sub": "Like father, like son",
+    "about": "Famine drives Isaac toward Egypt, but the LORD says stay. Isaac repeats his father's lie about his wife, is blessed anyway, gives up two quarrelled wells for a third called Room, and at Beer-sheba the men who sent him away come asking for peace.",
+    "tags": [
+      "Fear",
+      "Sin",
+      "Grace",
+      "Peace",
+      "Promise",
+      "Family"
+    ],
+    "url": "studies/genesis-26.html",
+    "overview": {
+      "where": "Gerar and its valley in Philistine country, then up to Beer-sheba in the south of Canaan",
+      "when": "After Abraham's death, in Isaac's middle years; Esau is forty at the end of the chapter (about 1965 BC)",
+      "people": [
+        "isaac",
+        "rebecca",
+        "abraham",
+        "abimelech-of-gerar",
+        "ahuzzath",
+        "phichol",
+        "esau",
+        "judith-wife-of-esau",
+        "bashemath-wife-of-esau",
+        "philistines",
+        "the-lord"
+      ],
+      "places": [
+        "gerar",
+        "egypt",
+        "esek",
+        "sitnah",
+        "rehoboth",
+        "beer-sheba",
+        "shebah"
+      ],
+      "story": [
+        "A famine comes, besides the one in Abraham's day. Isaac goes to Gerar, and the LORD says: go not down into Egypt; sojourn here, and I will be with thee, and the promise made to Abraham is yours (1–5).",
+        "Isaac says Rebekah is his sister, for fear the men of Gerar would kill him for her. King Abimelech sees him with her, rebukes him, and orders that no one touch Isaac or his wife (6–11).",
+        "Isaac sows in that land and reaps an hundredfold, and the LORD blesses him. The Philistines envy him, stop up his father's wells, and Abimelech tells him to go (12–17).",
+        "Isaac digs the old wells again. Esek and Sitnah are fought over; at Rehoboth there is no quarrel: the LORD hath made room (18–22).",
+        "At Beer-sheba the LORD appears that night: fear not, for I am with thee. Isaac builds an altar. Abimelech, Ahuzzath and Phichol come for an oath of peace, and the same day his servants find water at Shebah (23–33).",
+        "Esau, at forty, marries two Hittite women, a grief of mind to Isaac and Rebekah (34–35)."
+      ],
+      "key": {
+        "ref": "Genesis 26:24",
+        "text": "And the LORD appeared unto him the same night, and said, I am the God of Abraham thy father: fear not, for I am with thee, and will bless thee, and multiply thy seed for my servant Abraham’s sake."
+      },
+      "big": "The LORD tells a frightened man where to stand in the famine and keeps His promise even after the man lies out of fear, for Abraham's sake (and for ours, for Christ's sake). A man who gives way instead of fighting finds room, and enemies can end up asking for peace."
+    }
+  },
+  {
+    "id": "genesis-27",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 27,
+    "date": "2026-11-10",
+    "title": "Genesis 27",
+    "sub": "The stolen blessing",
+    "about": "Isaac means to bless Esau against the LORD's word. Rebekah and Jacob trick him, Jacob takes the blessing in Esau's clothes, Esau weeps and plans to kill him, and Jacob has to flee.",
+    "tags": [
+      "Sin",
+      "Deception",
+      "Regret",
+      "Bitterness",
+      "Family",
+      "Hope"
+    ],
+    "url": "studies/genesis-27.html",
+    "overview": {
+      "where": "Isaac's tent, probably at Beer-sheba; Jacob flees toward Haran",
+      "when": "Isaac is old and nearly blind; Esau and Jacob are grown men (the text gives no exact date)",
+      "people": [
+        "isaac",
+        "rebecca",
+        "jacob",
+        "esau",
+        "laban",
+        "hittite-wives",
+        "the-lord"
+      ],
+      "places": [
+        "charran"
+      ],
+      "story": [
+        "Old and dim-eyed, Isaac tells Esau to hunt venison and make savoury meat, that his soul may bless him before he dies (1–4).",
+        "Rebekah overhears. She tells Jacob to bring two kids so she can cook it, and to take Esau's place. Jacob fears being found a deceiver, and she says: upon me be thy curse (5–13).",
+        "She dresses Jacob in Esau's raiment and goat skins. He lies to his father, even saying the LORD thy God brought it to me; Isaac feels his hands, smells his clothes, and blesses him (14–29).",
+        "Esau comes in. Isaac trembles, but says: yea, and he shall be blessed. Esau cries a great and exceeding bitter cry, and gets a lesser blessing (30–40).",
+        "Esau hates Jacob and says in his heart that he will slay him. Rebekah sends Jacob to her brother Laban in Haran, and gets Isaac's leave by speaking of Hittite wives (41–46)."
+      ],
+      "key": {
+        "ref": "Genesis 27:33",
+        "text": "And Isaac trembled very exceedingly, and said, Who? where is he that hath taken venison, and brought it me, and I have eaten of all before thou camest, and have blessed him? yea, and he shall be blessed."
+      },
+      "big": "Everyone in the chapter sins, and God's word stands anyway; the lie did not make His plan happen, it only added pain. Esau weeps over the loss, not toward God, and his grudge grows in secret until it becomes a murder plan. Say it to a brother in Christ before it grows."
+    }
+  },
+  {
+    "id": "genesis-28",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 28,
+    "date": "2026-11-10",
+    "title": "Genesis 28",
+    "sub": "A stone for a pillow, and a ladder to heaven",
+    "about": "Isaac sends Jacob to Padan-aram for a wife and blesses him with the blessing of Abraham, Esau marries Mahalath, and Jacob, running with nothing, dreams of a ladder at Bethel where the LORD promises to be with him; Jacob vows.",
+    "tags": [
+      "Grace",
+      "Presence",
+      "Promise",
+      "Christ",
+      "Vow",
+      "Family"
+    ],
+    "url": "studies/genesis-28.html",
+    "overview": {
+      "where": "The road from Beer-sheba north toward Haran, and a night's camp at Luz, which Jacob names Bethel",
+      "when": "About 1928 BC; Jacob is about seventy-seven, leaving home after chapter 27. His stay with Laban will last twenty years",
+      "people": [
+        "jacob",
+        "isaac",
+        "esau",
+        "rebecca",
+        "laban",
+        "mahalath",
+        "ishmael",
+        "the-lord"
+      ],
+      "places": [
+        "beer-sheba",
+        "charran",
+        "padan-aram",
+        "bethel",
+        "luz",
+        "canaan"
+      ],
+      "story": [
+        "Isaac calls Jacob, charges him not to take a Canaanite wife, sends him to Laban in Padan-aram, and blesses him with the blessing of Abraham (1–5).",
+        "Esau sees that his father dislikes the Canaanite wives, and takes Mahalath, Ishmael's daughter, as another wife (6–9).",
+        "Jacob leaves Beer-sheba, and at nightfall lies down at a certain place with a stone for a pillow (10–11).",
+        "He dreams of a ladder set on the earth with its top in heaven, angels going up and down, and the LORD above it, who promises him the land, a seed like the dust, blessing for all the families of the earth, and His own presence and keeping (12–15).",
+        "Jacob wakes: “Surely the LORD is in this place; and I knew it not.” He sets up the stone as a pillar, pours oil on it, and calls the place Bethel, once called Luz (16–19).",
+        "He vows that if God keeps him and brings him home in peace, the LORD will be his God and he will give God a tenth (20–22)."
+      ],
+      "key": {
+        "ref": "Genesis 28:15",
+        "text": "And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of."
+      },
+      "big": "God meets a runaway on the ground, before he has said a word, and promises His presence with no “if” on it. The ladder is God coming down to man, and Jesus tells Nathanael it points to Himself. Jacob's bargaining vow is a beginner's prayer, and God keeps every promise anyway."
+    }
+  },
+  {
+    "id": "genesis-29",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 29,
+    "date": "2026-11-10",
+    "title": "Genesis 29",
+    "sub": "The deceiver gets deceived, and Leah gets a name for praise",
+    "about": "Jacob meets Rachel at the well in Haran and serves Laban seven years for her. Laban gives him Leah first, and Leah, unloved but seen by the LORD, bears four sons and names the fourth Judah: “Now will I praise the LORD.”",
+    "tags": [
+      "Deceit",
+      "Reaping",
+      "Love",
+      "Grace",
+      "Praise",
+      "Family"
+    ],
+    "url": "studies/genesis-29.html",
+    "overview": {
+      "where": "The well and the household of Laban near Haran, in Padan-aram",
+      "when": "About 1928 to 1921 BC. Jacob serves seven years for Rachel, and Leah's first four sons are born in the years that follow",
+      "people": [
+        "jacob",
+        "rachel",
+        "leah",
+        "laban",
+        "zilpah",
+        "bilhah",
+        "reuben",
+        "simeon-son-of-jacob",
+        "levi-son-of-jacob",
+        "judah-son-of-jacob",
+        "the-lord"
+      ],
+      "places": [
+        "charran",
+        "padan-aram"
+      ],
+      "story": [
+        "Jacob comes to a well in the east, meets shepherds from Haran, and while they talk Rachel arrives with her father's sheep. He rolls away the stone, kisses her and weeps (1–12).",
+        "Laban embraces him, and after a month asks what his wages should be. Jacob offers seven years' work for Rachel (13–19).",
+        "The seven years seem a few days for love. At the wedding feast Laban brings Leah in the evening, and in the morning Jacob finds it is Leah. Laban says the younger may not go before the firstborn (20–26).",
+        "Jacob finishes Leah's week, receives Rachel too, and serves seven more years. Laban gives each daughter a maid, Zilpah and Bilhah (27–30).",
+        "The LORD sees that Leah is hated and opens her womb. She bears Reuben, Simeon, Levi, and then Judah: “Now will I praise the LORD” (31–35)."
+      ],
+      "key": {
+        "ref": "Genesis 29:35",
+        "text": "And she conceived again, and bare a son: and she said, Now will I praise the LORD: therefore she called his name Judah; and left bearing."
+      },
+      "big": "The man who tricked his father is tricked in the dark by his uncle, and sin comes back around. But the LORD sees the wife nobody wanted, and Leah's fourth son marks her turn from asking a husband for love to praising God. The line of Judah leads to David and to Jesus."
+    }
+  },
+  {
+    "id": "genesis-30",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 30,
+    "date": "2026-11-10",
+    "title": "Genesis 30",
+    "sub": "Two sisters at war, and a boy named Joseph",
+    "about": "Rachel envies Leah, and the sisters and their maids give Jacob eleven sons in a contest. God remembers Rachel and she bears Joseph. Jacob then wants to leave Laban, and bargains for the speckled and spotted flocks.",
+    "tags": [
+      "Envy",
+      "Our own plans",
+      "Hope",
+      "Work",
+      "Providence",
+      "Family"
+    ],
+    "url": "studies/genesis-30.html",
+    "overview": {
+      "where": "Laban's household and pastures, near Haran in Padan-aram",
+      "when": "About 1921 to 1914 BC, the second seven years of Jacob's service, ending with Joseph's birth; then the first of six more years for the flocks",
+      "people": [
+        "jacob",
+        "rachel",
+        "leah",
+        "laban",
+        "bilhah",
+        "zilpah",
+        "reuben",
+        "dan-son-of-jacob",
+        "naphtali",
+        "gad",
+        "asher",
+        "issachar",
+        "zebulun",
+        "dinah",
+        "joseph-son-of-jacob",
+        "the-lord"
+      ],
+      "places": [
+        "padan-aram"
+      ],
+      "story": [
+        "Rachel, childless, envies Leah; Jacob's anger rises. She gives him her maid Bilhah, who bears Dan and Naphtali (1–8).",
+        "Leah, who has stopped bearing, gives Jacob her maid Zilpah, who bears Gad and Asher (9–13).",
+        "Reuben finds mandrakes, and the sisters trade them for a night with Jacob. God hearkens to Leah, who bears Issachar, Zebulun and a daughter, Dinah (14–21).",
+        "God remembers Rachel and opens her womb. She bears Joseph and prays for another son (22–24).",
+        "Jacob asks to go home. Laban admits the LORD has blessed him for Jacob's sake, and Jacob names his wages: the speckled and spotted (25–34).",
+        "Laban removes those animals at once, but Jacob's flocks increase, and the man increases exceedingly (35–43)."
+      ],
+      "key": {
+        "ref": "Genesis 30:22",
+        "text": "And God remembered Rachel, and God hearkened to her, and opened her womb."
+      },
+      "big": "Envy and man-made plans turn a family into a contest, yet God still builds Jacob's twelve tribes from it. The mandrakes do nothing; God hearkens to Leah and remembers Rachel. Jacob's rods are clever, but the flocks come from God, and a cheated man's honest work blesses even his cheating boss."
+    }
+  },
+  {
+    "id": "genesis-31",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 31,
+    "date": "2026-11-10",
+    "title": "Genesis 31",
+    "sub": "Running from Laban, and the heap of witness",
+    "about": "After twenty years of Laban's cheating, the LORD tells Jacob to go home. Jacob slips away, Rachel steals her father's household gods, God warns Laban in a dream, and the two men make a covenant at the heap called Galeed and Mizpah.",
+    "tags": [
+      "Guidance",
+      "Idols",
+      "Sin",
+      "God's protection",
+      "Family",
+      "Covenant"
+    ],
+    "url": "studies/genesis-31.html",
+    "overview": {
+      "where": "From Haran (Padan-aram) to the hill country of Gilead, east of the Jordan",
+      "when": "About 1900 BC; Jacob has served Laban twenty years (verse 41)",
+      "people": [
+        "jacob",
+        "laban",
+        "rachel",
+        "leah",
+        "isaac",
+        "the-lord",
+        "angels",
+        "abraham",
+        "nahor"
+      ],
+      "places": [
+        "padan-aram",
+        "gilead",
+        "galeed",
+        "mizpah",
+        "bethel",
+        "canaan"
+      ],
+      "story": [
+        "Laban's sons are bitter and Laban's face has changed. The LORD tells Jacob to return to the land of his fathers, and promises to be with him. Jacob tells Rachel and Leah how God has taken Laban's flocks and given them to him, and they agree to go (1–16).",
+        "Jacob puts his family on camels and flees while Laban is shearing sheep. Rachel steals her father's household gods. Laban chases for seven days, and God warns him in a dream not to speak to Jacob either good or bad (17–24).",
+        "Laban overtakes Jacob and accuses him, and demands his gods. Jacob, not knowing Rachel has them, says whoever has them shall not live. Rachel hides them in her saddle and sits on them. Jacob's twenty years of anger pour out (25–42).",
+        "Laban and Jacob make a covenant, set up a pillar and a heap of stones, and call it Galeed and Mizpah: the LORD watch between me and thee. Jacob offers a sacrifice, and Laban kisses his children and goes home (43–55)."
+      ],
+      "key": {
+        "ref": "Genesis 31:49",
+        "text": "And Mizpah; for he said, The LORD watch between me and thee, when we are absent one from another."
+      },
+      "big": "Jacob and his household are all grabbing: Laban the wages, Jacob a secret escape, Rachel her father's gods. God sees the labour, guards the road, and puts a witness between two men who cannot trust each other. A god you have to carry cannot carry you; the LORD does, and He sees when no one else does."
+    }
+  },
+  {
+    "id": "genesis-32",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 32,
+    "date": "2026-11-10",
+    "title": "Genesis 32",
+    "sub": "Afraid, on his knees, and wrestling at the river",
+    "about": "On his way home Jacob meets angels at Mahanaim, hears that Esau is coming with four hundred men, prays in fear, sends a great present ahead, and wrestles with a man at the Jabbok until dawn, who renames him Israel and leaves him limping.",
+    "tags": [
+      "Fear",
+      "Prayer",
+      "Wrestling with God",
+      "New name",
+      "Weakness",
+      "Grace"
+    ],
+    "url": "studies/genesis-32.html",
+    "overview": {
+      "where": "East of the Jordan: Mahanaim in Gilead, and the ford of the river Jabbok at Peniel",
+      "when": "About 1900 BC; the night before Jacob meets Esau after twenty years",
+      "people": [
+        "jacob",
+        "esau",
+        "the-lord",
+        "angels",
+        "israel-the-man",
+        "abraham",
+        "isaac"
+      ],
+      "places": [
+        "mahanaim",
+        "seir",
+        "edom",
+        "jabbok",
+        "peniel",
+        "jordan"
+      ],
+      "story": [
+        "Angels of God meet Jacob on his way, and he names the place Mahanaim, two camps. He sends messengers to Esau in Seir, and they come back: Esau is coming with four hundred men (1–6).",
+        "Jacob is greatly afraid and divides his company into two bands. He prays: he calls on the God of Abraham and Isaac, says he is not worthy, asks to be delivered from Esau, and holds on to God's promise (7–12).",
+        "He chooses a huge present of more than five hundred animals, sends it ahead in droves, and spends the night in the camp (13–21).",
+        "At night he sends his family over the ford Jabbok and is left alone. A man wrestles with him until daybreak, touches his hip, and will not bless him until Jacob says his name. He is renamed Israel, calls the place Peniel, and limps away as the sun rises (22–32)."
+      ],
+      "key": {
+        "ref": "Genesis 32:28",
+        "text": "And he said, Thy name shall be called no more Jacob, but Israel: for as a prince hast thou power with God and with men, and hast prevailed."
+      },
+      "big": "A guilty, frightened man plans, prays and wrestles. God lets him hold on, puts his hip out of joint, makes him say the name that means cheat, and gives him a new one. Jacob limps into the morning blessed, and leaning, because his strength was never what saved him."
+    }
+  },
+  {
+    "id": "genesis-33",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 33,
+    "date": "2026-11-10",
+    "title": "Genesis 33",
+    "sub": "The brother who ran",
+    "about": "Jacob limps ahead of his family and bows seven times to Esau, who runs to meet him and embraces him. Jacob pushes his gift on Esau, the brothers part in peace, and Jacob settles near Shechem, buys a field, and builds an altar to El-elohe-Israel.",
+    "tags": [
+      "Forgiveness",
+      "Reconciliation",
+      "Humility",
+      "Amends",
+      "Family",
+      "Worship"
+    ],
+    "url": "studies/genesis-33.html",
+    "overview": {
+      "where": "East of the Jordan, then Succoth, and Shechem in Canaan",
+      "when": "About 1900 BC; the morning after the Jabbok",
+      "people": [
+        "jacob",
+        "esau",
+        "rachel",
+        "leah",
+        "bilhah",
+        "zilpah",
+        "joseph-son-of-jacob",
+        "hamor",
+        "the-lord"
+      ],
+      "places": [
+        "seir",
+        "succoth-jacob",
+        "shechem",
+        "canaan",
+        "padan-aram",
+        "el-elohe-israel"
+      ],
+      "story": [
+        "Esau comes with four hundred men. Jacob arranges his family, handmaids first and Rachel and Joseph last, goes ahead of them all, and bows to the ground seven times. Esau runs to meet him, embraces him, kisses him, and they weep (1–4).",
+        "Esau meets the wives and children, who bow. Jacob presses his present on Esau, saying seeing his face is like seeing the face of God. Esau says he has enough, but Jacob urges him and he takes it (5–11).",
+        "Esau offers to travel with Jacob. Jacob says the children and flocks are tender and he will lead on softly, and Esau returns to Seir. Jacob goes to Succoth and builds a house and booths (12–17).",
+        "Jacob comes safely to Shechem, buys a field from the children of Hamor for a hundred pieces of money, and builds an altar called El-elohe-Israel (18–20)."
+      ],
+      "key": {
+        "ref": "Genesis 33:4",
+        "text": "And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept."
+      },
+      "big": "The man who dreaded revenge finds that his brother has already forgiven him, before a word or a gift. Jacob makes amends, goes first, goes slowly, and builds an altar where the God of his father has become his own. Forgiveness runs to meet us; peace does not always mean moving in together."
+    }
+  },
+  {
+    "id": "genesis-34",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 34,
+    "date": "2026-11-10",
+    "title": "Genesis 34",
+    "sub": "Dinah, and the sword at Shechem",
+    "about": "Shechem, the prince of the land, wrongs Dinah. Her brothers answer with a lie told in the sign of God’s covenant, and Simeon and Levi turn a city into a slaughter. Not once in the chapter does anyone ask God.",
+    "tags": [
+      "Sin",
+      "Anger",
+      "Revenge",
+      "Deceit",
+      "Consequences",
+      "Family"
+    ],
+    "url": "studies/genesis-34.html",
+    "overview": {
+      "where": "Shechem, in the hill country of Canaan, where Jacob had bought a field (33:18–19)",
+      "when": "About 1900 BC, some years after Jacob came home from Haran; Jacob is near a hundred",
+      "people": [
+        "jacob",
+        "leah",
+        "dinah",
+        "shechem-son-of-hamor",
+        "hamor",
+        "simeon-son-of-jacob",
+        "levi-son-of-jacob"
+      ],
+      "places": [
+        "shechem",
+        "canaan"
+      ],
+      "story": [
+        "Dinah goes out to see the daughters of the land. Shechem, Hamor’s son and the prince of the country, takes her and defiles her, and then asks his father to get her for his wife (1–4).",
+        "Jacob keeps quiet until his sons come in from the field. They are grieved and very wroth: it is folly in Israel, a thing that ought not to be done (5–7).",
+        "Hamor and Shechem offer marriages, land, trade and any dowry, but Shechem never says he was wrong (8–12).",
+        "The sons answer deceitfully: they will agree only if every male is circumcised. Hamor and Shechem sell the plan to the men at the gate by promising the Hebrews’ cattle will be theirs (13–24).",
+        "On the third day, while the men are sore, Simeon and Levi take their swords and kill every male. The sons of Jacob then plunder the city and take the women and children captive (25–29).",
+        "Jacob fears for himself and his house. The sons reply, “Should he deal with our sister as with an harlot?”, and the chapter ends. God is not mentioned in it (30–31)."
+      ],
+      "key": {
+        "ref": "Genesis 34:7",
+        "text": "And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Israel in lying with Jacob’s daughter; which thing ought not to be done."
+      },
+      "big": "A real wrong done to Dinah is answered with a lie wearing God’s sign and a massacre, one justified step at a time. Anger at an evil is not the sin; revenge is. No one in the chapter asks God, and the next chapter opens with Him speaking first. A man with anger he is carrying can take it to his brothers in Christ and his pastor before it grows a plan."
+    }
+  },
+  {
+    "id": "genesis-35",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 35,
+    "date": "2026-11-10",
+    "title": "Genesis 35",
+    "sub": "Back to Bethel",
+    "about": "God tells Jacob to go up to Bethel. Jacob has his household put away their idols, God gives the name Israel again and repeats the promise, Rachel dies bearing Benjamin, Reuben sins, and Isaac dies.",
+    "tags": [
+      "Grace",
+      "Idols",
+      "Promise",
+      "Grief",
+      "Sin",
+      "Family"
+    ],
+    "url": "studies/genesis-35.html",
+    "overview": {
+      "where": "From Shechem to Bethel, then Ephrath (Bethlehem), and on to Hebron in the hill country of Canaan",
+      "when": "About 1900 to 1885 BC; Isaac dies at a hundred and eighty, when Jacob is about a hundred and twenty",
+      "people": [
+        "jacob",
+        "israel-the-man",
+        "rachel",
+        "benjamin-son-of-jacob",
+        "ben-oni",
+        "deborah-rebekahs-nurse",
+        "reuben",
+        "isaac",
+        "esau"
+      ],
+      "places": [
+        "bethel",
+        "el-beth-el",
+        "allon-bachuth",
+        "ephratah",
+        "hebron",
+        "mamre",
+        "shechem"
+      ],
+      "story": [
+        "God tells Jacob to go up to Bethel and make an altar. Jacob has his household put away the strange gods, be clean and change their garments. He buries the idols under the oak by Shechem, and the terror of God keeps the cities around from pursuing (1–5).",
+        "At Bethel, Jacob builds an altar and calls it El-beth-el. Rebekah’s nurse Deborah dies and is buried under an oak named Allon-bachuth (6–8).",
+        "God appears again, gives the name Israel again, says “I am God Almighty”, and promises a nation, kings and the land. Jacob sets up a pillar and pours a drink offering and oil (9–15).",
+        "On the way to Ephrath, which is Bethlehem, Rachel dies in childbirth. She names her son Ben-oni; his father calls him Benjamin. Jacob sets a pillar on her grave (16–20).",
+        "Reuben lies with his father’s concubine Bilhah, and Israel hears of it. The twelve sons are listed by their four mothers (21–26).",
+        "Jacob comes to Isaac at Hebron. Isaac dies at a hundred and eighty, and his sons Esau and Jacob bury him (27–29)."
+      ],
+      "key": {
+        "ref": "Genesis 35:1",
+        "text": "And God said unto Jacob, Arise, go up to Bethel, and dwell there: and make there an altar unto God, that appeared unto thee when thou fleddest from the face of Esau thy brother."
+      },
+      "big": "After the shame of chapter 34, God speaks first and calls Jacob back. A man cleans out what he has kept “just in case,” goes up, and finds the promise still stands. Grief and failure fill the chapter, but Jacob names his dying wife’s son for hope, and the promise is kept through every grave."
+    }
+  },
+  {
+    "id": "genesis-36",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 36,
+    "date": "2026-11-10",
+    "title": "Genesis 36",
+    "sub": "The family of Esau, who is Edom",
+    "about": "A chapter of names: Esau moves to Mount Seir and becomes Edom, with his wives, sons, clan chiefs, the sons of Seir the Horite, and eight kings who reigned before Israel had a king.",
+    "tags": [
+      "Genealogy",
+      "Edom",
+      "Esau",
+      "Peace",
+      "Promise",
+      "Kings"
+    ],
+    "url": "studies/genesis-36.html",
+    "overview": {
+      "where": "Mount Seir, the mountain country south-east of the Dead Sea (Edom)",
+      "when": "About 1900 BC for Esau’s move; the list of kings reaches long after, before Israel’s first king (about 1050 BC)",
+      "people": [
+        "esau",
+        "adah-wife-of-esau",
+        "aholibamah-wife-of-esau",
+        "bashemath-wife-of-esau",
+        "eliphaz-son-of-esau",
+        "amalek-son-of-eliphaz",
+        "anah-the-horite",
+        "jacob"
+      ],
+      "places": [
+        "edom",
+        "seir",
+        "bozrah",
+        "teman",
+        "canaan"
+      ],
+      "story": [
+        "Esau, who is Edom, took three wives and had sons born in Canaan: Eliphaz, Reuel, and Jeush, Jaalam and Korah (1–5).",
+        "Their riches were too great for the two brothers to dwell together, so Esau took his household and went to Mount Seir, away from Jacob (6–8).",
+        "The sons and grandsons of Esau are listed, with Amalek, born to Eliphaz’s concubine Timna. They become the dukes, or clan chiefs, of Edom (9–19).",
+        "The sons of Seir the Horite, who were in the land first, and their dukes. Anah is remembered for finding the mules in the wilderness (20–30).",
+        "Eight kings reigned in Edom before there was any king over Israel; none is the son of the one before him (31–39).",
+        "A last list of the dukes of Esau by their places: “he is Esau the father of the Edomites” (40–43)."
+      ],
+      "key": {
+        "ref": "Genesis 36:7",
+        "text": "For their riches were more than that they might dwell together; and the land wherein they were strangers could not bear them because of their cattle."
+      },
+      "big": "God keeps a full family for the brother who lost the blessing, and He knows every name in it. Esau steps aside instead of fighting, which shows that peace sometimes means making room. God knows His own by name, forgotten men included."
+    }
+  },
+  {
+    "id": "genesis-37",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 37,
+    "date": "2026-11-10",
+    "title": "Genesis 37",
+    "sub": "A coat, a pit, and a lie",
+    "about": "Jacob's favourite son is hated by his brothers for his coat and his dreams, thrown into a pit at Dothan, sold to traders for twenty pieces of silver, and mourned by his father over a coat dipped in goat's blood. God is already at work.",
+    "tags": [
+      "Family",
+      "Envy",
+      "Sin",
+      "Regret",
+      "Grief",
+      "Providence"
+    ],
+    "url": "studies/genesis-37.html",
+    "overview": {
+      "where": "Hebron, Shechem and Dothan in Canaan; the traders carry Joseph down to Egypt",
+      "when": "About 1898 BC; Joseph is seventeen",
+      "people": [
+        "joseph-son-of-jacob",
+        "jacob",
+        "israel-the-man",
+        "reuben",
+        "judah-son-of-jacob",
+        "ishmeelites",
+        "midianites",
+        "potiphar",
+        "pharaoh"
+      ],
+      "places": [
+        "hebron",
+        "shechem",
+        "dothan",
+        "gilead",
+        "egypt",
+        "canaan"
+      ],
+      "story": [
+        "Joseph, seventeen, brings his father a bad report of his brothers. Jacob loves him more than all his sons and makes him a coat of many colours, and his brothers hate him and cannot speak peaceably to him (1–4).",
+        "Joseph dreams that his brothers' sheaves bow to his, then that the sun, the moon and eleven stars bow to him. His brothers hate him more, and envy him; his father rebukes him, yet keeps the saying in mind (5–11).",
+        "Jacob sends Joseph from Hebron to check on his brothers. A stranger at Shechem sends him on to Dothan. His brothers see him afar off and plot to kill him (12–20).",
+        "Reuben stops the killing and says to cast him into a pit. They strip off his coat and throw him into an empty cistern, then sit down to eat (21–25).",
+        "A caravan of Ishmeelites and Midianites passes. Judah says, \"What profit is it if we slay our brother?\", and they sell Joseph for twenty pieces of silver. Reuben returns to find the pit empty (26–30).",
+        "The brothers dip the coat in goat's blood and tell Jacob, who mourns for many days and refuses to be comforted. The Midianites sell Joseph to Potiphar in Egypt (31–36)."
+      ],
+      "key": {
+        "ref": "Genesis 37:4",
+        "text": "And when his brethren saw that their father loved him more than all his brethren, they hated him, and could not speak peaceably unto him."
+      },
+      "big": "Favouritism, envy and hatred grow one small step at a time until a family sells its own brother and then lies about it for twenty years. Reuben and Judah each do something, but not enough. The caravan comes at exactly the right moment, and God is already turning the pit into the first step toward the palace."
+    }
+  },
+  {
+    "id": "genesis-38",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 38,
+    "date": "2026-11-10",
+    "title": "Genesis 38",
+    "sub": "More righteous than I",
+    "about": "While Joseph is in Egypt, Judah leaves his brothers, loses two sons, wrongs his daughter-in-law Tamar, and falls into sin; when his own signet is put in his hand he says, \"She hath been more righteous than I.\" Pharez, born of it, is in the line of David and of Christ.",
+    "tags": [
+      "Sin",
+      "Confession",
+      "Grace",
+      "Family",
+      "Hypocrisy",
+      "Hope"
+    ],
+    "url": "studies/genesis-38.html",
+    "overview": {
+      "where": "The hill country of Judah: Adullam, Chezib and Timnath",
+      "when": "Over the years Joseph is in Egypt; about 1898 BC onward",
+      "people": [
+        "judah-son-of-jacob",
+        "thamar",
+        "hirah",
+        "shuah-the-canaanite",
+        "er-son-of-judah",
+        "onan",
+        "shelah-son-of-judah",
+        "pharez",
+        "zarah-son-of-judah",
+        "the-lord"
+      ],
+      "places": [
+        "adullam",
+        "timnath",
+        "chezib",
+        "canaan"
+      ],
+      "story": [
+        "Judah goes down from his brothers, settles near Adullam, marries a Canaanite woman, and has three sons: Er, Onan and Shelah (1–5).",
+        "Er marries Tamar and is \"wicked in the sight of the LORD\"; the LORD slays him. Onan refuses his duty to raise up seed for his brother, and the LORD slays him too (6–10).",
+        "Judah sends Tamar home as a widow, promising Shelah when he is grown, but fear keeps him from keeping his word (11).",
+        "Judah's wife dies. Tamar sees that Shelah is grown and she has not been given to him, veils herself by the road to Timnath, and Judah, taking her for a prostitute, goes in to her and leaves his signet, bracelets and staff as a pledge (12–18).",
+        "The pledge cannot be found. Three months later Judah hears Tamar is with child and says, \"Bring her forth, and let her be burnt\" (19–24).",
+        "Tamar sends him the signet, bracelets and staff. Judah acknowledges them: \"She hath been more righteous than I\". Twins are born, Pharez and Zarah (25–30)."
+      ],
+      "key": {
+        "ref": "Genesis 38:26",
+        "text": "And Judah acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more."
+      },
+      "big": "A man drifts from his brothers, wrongs a widow, sins in secret, and then condemns the very woman he used, until the evidence is put in his own hand. He confesses, plainly and publicly, and stops. God places the child of this chapter in the family tree of David and of Jesus, and the man who fell later offers himself in his brother's place."
+    }
+  },
+  {
+    "id": "genesis-39",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 39,
+    "date": "2026-11-10",
+    "title": "Genesis 39",
+    "sub": "The LORD was with Joseph",
+    "about": "Sold to Potiphar in Egypt, Joseph is trusted with the whole house, refuses his master's wife day by day, and when she catches him he flees; falsely accused, he is put in the king's prison, where the LORD is still with him.",
+    "tags": [
+      "Temptation",
+      "Faithfulness",
+      "Injustice",
+      "God's presence",
+      "Hope",
+      "Integrity"
+    ],
+    "url": "studies/genesis-39.html",
+    "overview": {
+      "where": "Potiphar's house, then the king's prison, in Egypt",
+      "when": "About 1898 BC onward; Joseph is a young man, sold at seventeen",
+      "people": [
+        "joseph-son-of-jacob",
+        "potiphar",
+        "the-lord",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "Potiphar, captain of the guard, buys Joseph from the Ishmeelites. \"The LORD was with Joseph, and he was a prosperous man.\" His master sees it and makes him overseer of his whole house (1–6).",
+        "Potiphar's wife looks on Joseph and says, \"Lie with me\". He refuses: his master trusts him, and it would be \"great wickedness, and sin against God\" (7–9).",
+        "She asks him day by day, and he will not listen, or even be with her (10).",
+        "One day, alone in the house, she catches him by his garment. He leaves it in her hand and flees (11–12).",
+        "She lies, using the garment as proof, first to the men of her house and then to her husband. Potiphar puts Joseph in the prison where the king's prisoners are bound (13–20).",
+        "\"But the LORD was with Joseph, and shewed him mercy.\" The keeper of the prison commits everything to his hand, because the LORD was with him (21–23)."
+      ],
+      "key": {
+        "ref": "Genesis 39:2",
+        "text": "And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian."
+      },
+      "big": "The LORD was with Joseph in the house and in the dungeon. Tempted day by day, he said no, then fled, and doing right cost him his job, his name and his freedom. It was not a sign that God had left him; the same words are said again in the worst place he has been."
+    }
   }
 ];

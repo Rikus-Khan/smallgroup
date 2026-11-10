@@ -102,7 +102,23 @@
     ["betwixt", "between"], ["hearken|hearkened|hearkeneth", "listen (and obey)"], ["fourscore", "eighty"],
     ["handmaid|handmaiden", "a woman servant"], ["carcases|carcase", "dead bodies"], ["turtledove|turtledoves", "a small wild dove"],
     ["heifer", "a young cow"], ["surety", "a guarantee; (of a surety) for certain"], ["abated", "went down, grew less"],
-    ["perdition", "ruin, destruction"], ["iniquity|iniquities", "sin, wrongdoing"], ["wherefore", "so, therefore; (asking) why"]
+    ["perdition", "ruin, destruction"], ["iniquity|iniquities", "sin, wrongdoing"], ["wherefore", "so, therefore; (asking) why"],
+    ["aileth", "is troubling (what aileth thee = what's wrong?)"], ["badest", "told, commanded (bade)"], ["bondwoman", "a slave woman"],
+    ["brimstone", "burning sulphur"], ["buryingplace", "a burial place"], ["chode", "quarrelled, scolded"],
+    ["clave", "clung to, held fast (or: split)"], ["commune|communed", "talk together"], ["concubine|concubines", "a secondary wife"],
+    ["damsel", "a young woman"], ["digged", "dug"], ["endued", "gifted, given"],
+    ["eventide", "evening"], ["fetcht", "fetched"], ["gat", "got, went"],
+    ["hasted", "hurried"], ["hindermost", "last, at the back"], ["innocency", "innocence"],
+    ["intreat|intreated", "plead, pray (or: treat)"], ["lentiles", "lentils"], ["lien", "lain"],
+    ["merchantmen", "merchants, traders"], ["milch", "giving milk"], ["morrow", "the next day"],
+    ["obeisance", "a bow of respect"], ["pilled", "peeled"], ["pottage", "thick soup, stew"],
+    ["provender", "animal feed"], ["ringstraked", "striped (ring-streaked)"], ["grisled", "spotted, speckled"],
+    ["spicery", "spices"], ["stead", "place (in his stead = in his place)"], ["stript", "stripped"],
+    ["subtilty", "cunning, craftiness"], ["supplanted", "tripped up, took the place of"], ["sware|swear", "took an oath"],
+    ["tabret", "a small hand drum"], ["tarry|tarried|tarrieth", "stay, wait"], ["threescore", "sixty"],
+    ["to wit", "that is, namely"], ["ungirded", "unharnessed"], ["vail", "veil"],
+    ["venison", "wild game"], ["whoredom|whoredoms", "prostitution; unfaithfulness"], ["yesternight", "last night"],
+    ["sepulchre|sepulchres", "a tomb"], ["signet", "a seal ring"], ["lo", "look! see!"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
