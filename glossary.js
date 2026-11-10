@@ -1628,6 +1628,9 @@ window.GLOSSARY = [
     "Genesis", 1,
     [ 2 ] ],
    [
+    "Genesis", 41,
+    [ 38 ] ],
+   [
     "Matthew", 1,
     [ 18, 20 ] ],
    [
@@ -2828,6 +2831,9 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 2, 3, 5, 21, 23 ] ],
    [
+    "Genesis", 49,
+    [ 18 ] ],
+   [
     "Proverbs", 1,
     [ 7, 29 ] ],
    [
@@ -3427,6 +3433,9 @@ window.GLOSSARY = [
    [
     "Genesis", 32,
     [ 10 ] ],
+   [
+    "Genesis", 50,
+    [ 10, 11 ] ],
    [
     "Zechariah", 11,
     [ 3 ] ],
@@ -4058,6 +4067,9 @@ window.GLOSSARY = [
     "Genesis", 36,
     [ 31 ] ],
    [
+    "Genesis", 50,
+    [ 25 ] ],
+   [
     "Proverbs", 1,
     [ 1 ] ],
    [
@@ -4348,6 +4360,9 @@ window.GLOSSARY = [
    [
     "Genesis", 28,
     [ 12, 17 ] ],
+   [
+    "Genesis", 49,
+    [ 25 ] ],
    [
     "Proverbs", 23,
     [ 5 ] ],
@@ -5312,6 +5327,12 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 4 ] ],
    [
+    "Genesis", 47,
+    [ 25, 29 ] ],
+   [
+    "Genesis", 50,
+    [ 4 ] ],
+   [
     "Proverbs", 1,
     [ 9 ] ],
    [
@@ -5542,6 +5563,9 @@ window.GLOSSARY = [
    [
     "Genesis", 32,
     [ 10 ] ],
+   [
+    "Genesis", 42,
+    [ 16 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -5794,6 +5818,9 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 1 ] ],
+   [
+    "Genesis", 45,
+    [ 13 ] ],
    [
     "Proverbs", 3,
     [ 35 ] ],
@@ -7217,6 +7244,9 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 6 ] ],
    [
+    "Genesis", 45,
+    [ 26 ] ],
+   [
     "Proverbs", 14,
     [ 15 ] ],
    [
@@ -7972,6 +8002,9 @@ window.GLOSSARY = [
    [
     "Genesis", 27,
     [ 25, 28, 37 ] ],
+   [
+    "Genesis", 49,
+    [ 11, 12 ] ],
    [
     "Proverbs", 3,
     [ 10 ] ],
@@ -9911,6 +9944,12 @@ window.GLOSSARY = [
     "Genesis", 27,
     [ 41 ] ],
    [
+    "Genesis", 42,
+    [ 28 ] ],
+   [
+    "Genesis", 45,
+    [ 26 ] ],
+   [
     "Proverbs", 2,
     [ 2, 10 ] ],
    [
@@ -10444,6 +10483,21 @@ window.GLOSSARY = [
    [
     "Genesis", 39,
     [ 19 ] ],
+   [
+    "Genesis", 40,
+    [ 2 ] ],
+   [
+    "Genesis", 41,
+    [ 10 ] ],
+   [
+    "Genesis", 44,
+    [ 18 ] ],
+   [
+    "Genesis", 45,
+    [ 5 ] ],
+   [
+    "Genesis", 49,
+    [ 6, 7 ] ],
    [
     "Proverbs", 11,
     [ 4, 23 ] ],
@@ -11155,6 +11209,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Abomination",
   "refs": [
+   [
+    "Genesis", 43,
+    [ 32 ] ],
+   [
+    "Genesis", 46,
+    [ 34 ] ],
    [
     "Proverbs", 3,
     [ 32 ] ],
@@ -12116,6 +12176,12 @@ window.GLOSSARY = [
     "Genesis", 26,
     [ 9 ] ],
    [
+    "Genesis", 43,
+    [ 9 ] ],
+   [
+    "Genesis", 44,
+    [ 32 ] ],
+   [
     "Proverbs", 6,
     [ 1 ] ],
    [
@@ -12379,6 +12445,9 @@ window.GLOSSARY = [
    [
     "Genesis", 24,
     [ 22 ] ],
+   [
+    "Genesis", 43,
+    [ 21 ] ],
    [
     "Proverbs", 11,
     [ 1 ] ],
@@ -13409,6 +13478,9 @@ window.GLOSSARY = [
     "Genesis", 24,
     [ 33 ] ],
    [
+    "Genesis", 45,
+    [ 23 ] ],
+   [
     "Matthew", 3,
     [ 4 ] ],
    [
@@ -14132,6 +14204,9 @@ window.GLOSSARY = [
   "name": "The wolf",
   "refs": [
    [
+    "Genesis", 49,
+    [ 27 ] ],
+   [
     "John", 10,
     [ 12 ] ],
    [
@@ -14710,6 +14785,9 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 19 ] ],
+   [
+    "Genesis", 48,
+    [ 7 ] ],
    [
     "Micah", 5,
     [ 2 ] ],
@@ -15424,6 +15502,15 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 12, 27 ] ],
+   [
+    "Genesis", 48,
+    [ 15, 16 ] ],
+   [
+    "Genesis", 49,
+    [ 30, 31 ] ],
+   [
+    "Genesis", 50,
+    [ 13, 24 ] ],
    [
     "Micah", 7,
     [ 20 ] ],
@@ -16265,6 +16352,27 @@ window.GLOSSARY = [
     "Genesis", 37,
     [ 1, 2, 34 ] ],
    [
+    "Genesis", 42,
+    [ 1, 4, 29, 36 ] ],
+   [
+    "Genesis", 45,
+    [ 25, 26, 27 ] ],
+   [
+    "Genesis", 46,
+    [ 2, 5, 6, 8, 15, 18, 19, 22, 25, 26, 27 ] ],
+   [
+    "Genesis", 47,
+    [ 7, 8, 9, 10, 28 ] ],
+   [
+    "Genesis", 48,
+    [ 2, 3 ] ],
+   [
+    "Genesis", 49,
+    [ 1, 2, 7, 24, 33 ] ],
+   [
+    "Genesis", 50,
+    [ 24 ] ],
+   [
     "Hosea", 10,
     [ 11 ] ],
    [
@@ -16486,6 +16594,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Salvation",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 18 ] ],
    [
     "Micah", 7,
     [ 7 ] ],
@@ -17438,6 +17549,18 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 21 ] ],
    [
+    "Genesis", 40,
+    [ 14 ] ],
+   [
+    "Genesis", 41,
+    [ 25, 28, 39 ] ],
+   [
+    "Genesis", 46,
+    [ 31 ] ],
+   [
+    "Genesis", 48,
+    [ 11 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -17765,6 +17888,9 @@ window.GLOSSARY = [
   "name": "Dine (eat a meal)",
   "refs": [
    [
+    "Genesis", 43,
+    [ 16 ] ],
+   [
     "Luke", 11,
     [ 37 ] ],
    [
@@ -17851,6 +17977,9 @@ window.GLOSSARY = [
    [
     "Genesis", 30,
     [ 27 ] ],
+   [
+    "Genesis", 45,
+    [ 9 ] ],
    [
     "Proverbs", 23,
     [ 30 ] ],
@@ -18581,6 +18710,15 @@ window.GLOSSARY = [
     "Genesis", 22,
     [ 3, 5 ] ],
    [
+    "Genesis", 42,
+    [ 27 ] ],
+   [
+    "Genesis", 44,
+    [ 13 ] ],
+   [
+    "Genesis", 49,
+    [ 11, 14 ] ],
+   [
     "Proverbs", 26,
     [ 3 ] ],
    [
@@ -19207,6 +19345,9 @@ window.GLOSSARY = [
    [
     "Genesis", 29,
     [ 19 ] ],
+   [
+    "Genesis", 44,
+    [ 33 ] ],
    [
     "Matthew", 10,
     [ 11 ] ],
@@ -20075,6 +20216,9 @@ window.GLOSSARY = [
   "name": "Myrrh and aloes",
   "refs": [
    [
+    "Genesis", 43,
+    [ 11 ] ],
+   [
     "Proverbs", 7,
     [ 17 ] ],
    [
@@ -20765,6 +20909,9 @@ window.GLOSSARY = [
   "name": "Floors (threshing floors)",
   "refs": [
    [
+    "Genesis", 50,
+    [ 11 ] ],
+   [
     "Hosea", 9,
     [ 2 ] ],
    [
@@ -20905,6 +21052,9 @@ window.GLOSSARY = [
    [
     "Genesis", 10,
     [ 19 ] ],
+   [
+    "Genesis", 49,
+    [ 13 ] ],
    [
     "Hosea", 9,
     [ 13 ] ],
@@ -21097,6 +21247,33 @@ window.GLOSSARY = [
    [
     "Genesis", 39,
     [ 1 ] ],
+   [
+    "Genesis", 40,
+    [ 1, 5 ] ],
+   [
+    "Genesis", 41,
+    [ 8, 19, 29, 30, 33, 34, 36, 41, 43, 44, 45, 46, 48, 53, 54, 55, 56, 57 ] ],
+   [
+    "Genesis", 42,
+    [ 1, 2, 3 ] ],
+   [
+    "Genesis", 43,
+    [ 2, 15 ] ],
+   [
+    "Genesis", 45,
+    [ 4, 8, 9, 13, 18, 19, 20, 23, 25, 26 ] ],
+   [
+    "Genesis", 46,
+    [ 3, 4, 6, 7, 8, 20, 26, 27 ] ],
+   [
+    "Genesis", 47,
+    [ 6, 11, 13, 14, 15, 20, 21, 26, 27, 28, 29, 30 ] ],
+   [
+    "Genesis", 48,
+    [ 5 ] ],
+   [
+    "Genesis", 50,
+    [ 7, 14, 22, 26 ] ],
    [
     "Proverbs", 7,
     [ 16 ] ],
@@ -21478,6 +21655,9 @@ window.GLOSSARY = [
    [
     "Genesis", 39,
     [ 21 ] ],
+   [
+    "Genesis", 43,
+    [ 14 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -21989,6 +22169,9 @@ window.GLOSSARY = [
     "Genesis", 35,
     [ 1, 3, 6, 8, 15, 16 ] ],
    [
+    "Genesis", 48,
+    [ 3 ] ],
+   [
     "Hosea", 10,
     [ 15 ] ],
    [
@@ -22240,6 +22423,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The east wind (the scorching desert wind)",
   "refs": [
+   [
+    "Genesis", 41,
+    [ 6, 23, 27 ] ],
    [
     "Hosea", 12,
     [ 1 ] ],
@@ -23072,6 +23258,9 @@ window.GLOSSARY = [
     "Genesis", 28,
     [ 10 ] ],
    [
+    "Genesis", 46,
+    [ 1, 5 ] ],
+   [
     "Amos", 5,
     [ 5 ] ],
    [
@@ -23122,6 +23311,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Lamentation (a funeral song)",
   "refs": [
+   [
+    "Genesis", 50,
+    [ 10 ] ],
    [
     "Amos", 5,
     [ 1, 16, 17 ] ],
@@ -23521,6 +23713,18 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 12, 27, 28, 29 ] ],
+   [
+    "Genesis", 46,
+    [ 1 ] ],
+   [
+    "Genesis", 48,
+    [ 15, 16 ] ],
+   [
+    "Genesis", 49,
+    [ 31 ] ],
+   [
+    "Genesis", 50,
+    [ 24 ] ],
    [
     "Amos", 7,
     [ 9, 16 ] ],
@@ -24044,6 +24248,9 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 16, 21 ] ],
    [
+    "Genesis", 48,
+    [ 22 ] ],
+   [
     "Amos", 2,
     [ 9, 10 ] ] ]
  },
@@ -24214,6 +24421,9 @@ window.GLOSSARY = [
    [
     "Genesis", 32,
     [ 15 ] ],
+   [
+    "Genesis", 41,
+    [ 2, 3, 4, 18, 19, 20, 26, 27 ] ],
    [
     "Amos", 4,
     [ 1 ] ] ]
@@ -24869,6 +25079,9 @@ window.GLOSSARY = [
   "name": "Divine, diviners (fortune-telling)",
   "refs": [
    [
+    "Genesis", 44,
+    [ 5, 15 ] ],
+   [
     "Micah", 3,
     [ 6, 7, 11 ] ],
    [
@@ -24880,6 +25093,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The last days",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 1 ] ],
    [
     "Micah", 4,
     [ 1 ] ],
@@ -25258,6 +25474,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ravin (prey torn apart)",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 27 ] ],
    [
     "Nahum", 2,
     [ 12 ] ] ]
@@ -25883,6 +26102,12 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 14, 17 ] ],
    [
+    "Genesis", 41,
+    [ 12 ] ],
+   [
+    "Genesis", 43,
+    [ 32 ] ],
+   [
     "Jonah", 1,
     [ 9 ] ],
    [
@@ -26179,6 +26404,9 @@ window.GLOSSARY = [
    [
     "Genesis", 34,
     [ 30 ] ],
+   [
+    "Genesis", 50,
+    [ 11 ] ],
    [
     "Obadiah", 1,
     [ 20 ] ] ]
@@ -26527,6 +26755,30 @@ window.GLOSSARY = [
    [
     "Genesis", 37,
     [ 1 ] ],
+   [
+    "Genesis", 42,
+    [ 5, 7, 13, 29, 32 ] ],
+   [
+    "Genesis", 44,
+    [ 8 ] ],
+   [
+    "Genesis", 45,
+    [ 17, 25 ] ],
+   [
+    "Genesis", 46,
+    [ 6, 12, 31 ] ],
+   [
+    "Genesis", 47,
+    [ 1, 4, 13, 14, 15 ] ],
+   [
+    "Genesis", 48,
+    [ 3, 7 ] ],
+   [
+    "Genesis", 49,
+    [ 30 ] ],
+   [
+    "Genesis", 50,
+    [ 5, 13 ] ],
    [
     "Zephaniah", 2,
     [ 5 ] ],
@@ -29675,6 +29927,9 @@ window.GLOSSARY = [
   "name": "Forgive sins",
   "refs": [
    [
+    "Genesis", 50,
+    [ 17 ] ],
+   [
     "Matthew", 6,
     [ 12, 14, 15 ] ],
    [
@@ -29828,6 +30083,9 @@ window.GLOSSARY = [
   "name": "Physician (doctor)",
   "refs": [
    [
+    "Genesis", 50,
+    [ 2 ] ],
+   [
     "Matthew", 9,
     [ 12 ] ],
    [
@@ -29899,6 +30157,24 @@ window.GLOSSARY = [
    [
     "Genesis", 27,
     [ 28, 37 ] ],
+   [
+    "Genesis", 41,
+    [ 5, 35, 49, 57 ] ],
+   [
+    "Genesis", 42,
+    [ 1, 2, 3, 5, 19, 25, 26 ] ],
+   [
+    "Genesis", 43,
+    [ 2 ] ],
+   [
+    "Genesis", 44,
+    [ 2 ] ],
+   [
+    "Genesis", 45,
+    [ 23 ] ],
+   [
+    "Genesis", 47,
+    [ 14 ] ],
    [
     "Matthew", 12,
     [ 1 ] ],
@@ -30019,6 +30295,12 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The inn (a guest room or lodging)",
   "refs": [
+   [
+    "Genesis", 42,
+    [ 27 ] ],
+   [
+    "Genesis", 43,
+    [ 21 ] ],
    [
     "Luke", 2,
     [ 7 ] ],
@@ -30184,6 +30466,9 @@ window.GLOSSARY = [
    [
     "Genesis", 26,
     [ 13 ] ],
+   [
+    "Genesis", 41,
+    [ 56 ] ],
    [
     "Matthew", 13,
     [ 15 ] ],
@@ -32267,6 +32552,12 @@ window.GLOSSARY = [
     "Genesis", 26,
     [ 3, 28 ] ],
    [
+    "Genesis", 47,
+    [ 31 ] ],
+   [
+    "Genesis", 50,
+    [ 5, 6, 25 ] ],
+   [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
    [
@@ -32668,6 +32959,12 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 16, 19, 20, 24, 25 ] ],
+   [
+    "Genesis", 46,
+    [ 19, 22, 25 ] ],
+   [
+    "Genesis", 48,
+    [ 7 ] ],
    [
     "Matthew", 2,
     [ 18 ] ] ]
@@ -33196,6 +33493,12 @@ window.GLOSSARY = [
    [
     "Genesis", 28,
     [ 20 ] ],
+   [
+    "Genesis", 41,
+    [ 14 ] ],
+   [
+    "Genesis", 45,
+    [ 22 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -37568,6 +37871,9 @@ window.GLOSSARY = [
   "name": "Lade (to load down, like a pack animal)",
   "refs": [
    [
+    "Genesis", 45,
+    [ 17 ] ],
+   [
     "Luke", 11,
     [ 46 ] ] ]
  },
@@ -37978,6 +38284,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Colt (a young donkey, never ridden)",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 11 ] ],
    [
     "Zechariah", 9,
     [ 9 ] ],
@@ -40079,6 +40388,9 @@ window.GLOSSARY = [
   "name": "God forbid (may it never be!)",
   "refs": [
    [
+    "Genesis", 44,
+    [ 7, 17 ] ],
+   [
     "Luke", 20,
     [ 16 ] ],
    [
@@ -41915,6 +42227,9 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 16 ] ],
    [
+    "Genesis", 44,
+    [ 16 ] ],
+   [
     "Acts", 1,
     [ 18 ] ],
    [
@@ -42061,6 +42376,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Straitly (strictly, sternly)",
   "refs": [
+   [
+    "Genesis", 43,
+    [ 7 ] ],
    [
     "Acts", 4,
     [ 17 ] ],
@@ -42650,6 +42968,9 @@ window.GLOSSARY = [
   "name": "Dearth (a famine)",
   "refs": [
    [
+    "Genesis", 41,
+    [ 54 ] ],
+   [
     "Acts", 7,
     [ 11 ] ],
    [
@@ -42829,6 +43150,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ward (a guarded section of a prison)",
   "refs": [
+   [
+    "Genesis", 40,
+    [ 3, 4, 7 ] ],
+   [
+    "Genesis", 41,
+    [ 10 ] ],
+   [
+    "Genesis", 42,
+    [ 17 ] ],
    [
     "Acts", 12,
     [ 10 ] ] ]
@@ -44180,6 +44510,39 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 1, 2, 4, 5, 6, 7, 10, 11, 20, 21, 22 ] ],
    [
+    "Genesis", 40,
+    [ 3, 4, 6, 8, 9, 12, 16, 18, 22, 23 ] ],
+   [
+    "Genesis", 41,
+    [ 14, 15, 16, 17, 25, 39, 41, 42, 44, 45, 46, 49, 50, 51, 54, 55, 56, 57 ] ],
+   [
+    "Genesis", 42,
+    [ 3, 4, 6, 7, 8, 9, 14, 18, 23, 25, 36 ] ],
+   [
+    "Genesis", 43,
+    [ 15, 16, 17, 18, 19, 24, 25, 26, 30 ] ],
+   [
+    "Genesis", 44,
+    [ 2, 4, 14, 15 ] ],
+   [
+    "Genesis", 45,
+    [ 1, 3, 4, 9, 16, 17, 21, 26, 27, 28 ] ],
+   [
+    "Genesis", 46,
+    [ 4, 19, 20, 27, 28, 29, 30, 31 ] ],
+   [
+    "Genesis", 47,
+    [ 1, 5, 7, 11, 12, 14, 15, 16, 17, 20, 23, 26, 29 ] ],
+   [
+    "Genesis", 48,
+    [ 1, 2, 3, 8, 9, 11, 12, 13, 15, 17, 18, 21 ] ],
+   [
+    "Genesis", 49,
+    [ 22, 26 ] ],
+   [
+    "Genesis", 50,
+    [ 1, 2, 4, 7, 8, 14, 15, 16, 17, 19, 22, 23, 24, 25, 26 ] ],
+   [
     "Acts", 7,
     [ 9, 13, 14, 18 ] ],
    [
@@ -44245,6 +44608,30 @@ window.GLOSSARY = [
    [
     "Genesis", 39,
     [ 1 ] ],
+   [
+    "Genesis", 40,
+    [ 2, 7, 11, 13, 14, 17, 19, 20, 21 ] ],
+   [
+    "Genesis", 41,
+    [ 1, 4, 7, 8, 9, 10, 14, 15, 16, 17, 25, 28, 32, 33, 34, 35, 37, 38, 39, 41, 42, 44, 45, 46, 55 ] ],
+   [
+    "Genesis", 42,
+    [ 15, 16 ] ],
+   [
+    "Genesis", 44,
+    [ 18 ] ],
+   [
+    "Genesis", 45,
+    [ 2, 8, 16, 17, 21 ] ],
+   [
+    "Genesis", 46,
+    [ 5, 31, 33 ] ],
+   [
+    "Genesis", 47,
+    [ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 14, 19, 20, 22, 23, 24, 25, 26 ] ],
+   [
+    "Genesis", 50,
+    [ 4, 6, 7 ] ],
    [
     "Acts", 7,
     [ 10, 13, 21 ] ],
@@ -44375,6 +44762,9 @@ window.GLOSSARY = [
     "Genesis", 35,
     [ 27 ] ],
    [
+    "Genesis", 47,
+    [ 4 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -44389,6 +44779,9 @@ window.GLOSSARY = [
    [
     "Genesis", 25,
     [ 7, 26 ] ],
+   [
+    "Genesis", 50,
+    [ 3 ] ],
    [
     "Acts", 7,
     [ 14 ] ],
@@ -44446,6 +44839,9 @@ window.GLOSSARY = [
    [
     "Genesis", 34,
     [ 17 ] ],
+   [
+    "Genesis", 49,
+    [ 2 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -45406,6 +45802,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The twelve tribes (all Israel, still waiting on God's promise)",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 28 ] ],
    [
     "Acts", 26,
     [ 7 ] ] ]
@@ -46859,6 +47258,18 @@ window.GLOSSARY = [
     "Genesis", 38,
     [ 11 ] ],
    [
+    "Genesis", 42,
+    [ 4 ] ],
+   [
+    "Genesis", 43,
+    [ 12 ] ],
+   [
+    "Genesis", 44,
+    [ 34 ] ],
+   [
+    "Genesis", 50,
+    [ 15 ] ],
+   [
     "Romans", 5,
     [ 7 ] ],
    [
@@ -47407,6 +47818,9 @@ window.GLOSSARY = [
    [
     "Genesis", 25,
     [ 10, 12 ] ],
+   [
+    "Genesis", 49,
+    [ 31 ] ],
    [
     "Romans", 4,
     [ 19 ] ],
@@ -48226,6 +48640,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Revived (lived again)",
   "refs": [
+   [
+    "Genesis", 45,
+    [ 27 ] ],
    [
     "Romans", 7,
     [ 9 ] ],
@@ -49234,6 +49651,9 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 8 ] ],
+   [
+    "Genesis", 49,
+    [ 31 ] ],
    [
     "Romans", 9,
     [ 10 ] ] ]
@@ -51821,6 +52241,9 @@ window.GLOSSARY = [
   "name": "Anguish of heart (deep distress)",
   "refs": [
    [
+    "Genesis", 42,
+    [ 21 ] ],
+   [
     "2 Corinthians", 2,
     [ 4 ] ] ]
  },
@@ -53209,6 +53632,9 @@ window.GLOSSARY = [
    [
     "Genesis", 25,
     [ 23 ] ],
+   [
+    "Genesis", 43,
+    [ 30 ] ],
    [
     "Philippians", 1,
     [ 8 ] ],
@@ -56684,6 +57110,9 @@ window.GLOSSARY = [
   "name": "Blameless (nothing in his life to bring a charge against)",
   "refs": [
    [
+    "Genesis", 44,
+    [ 10 ] ],
+   [
     "Titus", 1,
     [ 6, 7 ] ],
    [
@@ -56998,6 +57427,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Sceptre (a king's rod, the sign of his rule)",
   "refs": [
+   [
+    "Genesis", 49,
+    [ 10 ] ],
    [
     "Amos", 1,
     [ 5, 8 ] ],
@@ -57529,6 +57961,12 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 53 ] ],
+   [
+    "Genesis", 47,
+    [ 31 ] ],
+   [
+    "Genesis", 50,
+    [ 24 ] ],
    [
     "Amos", 4,
     [ 2 ] ],
@@ -58298,6 +58736,9 @@ window.GLOSSARY = [
     "Genesis", 27,
     [ 36 ] ],
    [
+    "Genesis", 43,
+    [ 33 ] ],
+   [
     "Hebrews", 12,
     [ 16 ] ] ]
  },
@@ -58918,6 +59359,9 @@ window.GLOSSARY = [
    [
     "Genesis", 21,
     [ 11, 12 ] ],
+   [
+    "Genesis", 50,
+    [ 11 ] ],
    [
     "1 John", 5,
     [ 3 ] ] ]
@@ -60170,6 +60614,9 @@ window.GLOSSARY = [
   "name": "Bondman (a slave)",
   "refs": [
    [
+    "Genesis", 44,
+    [ 33 ] ],
+   [
     "Revelation", 6,
     [ 15 ] ] ]
  },
@@ -60199,6 +60646,18 @@ window.GLOSSARY = [
    [
     "Genesis", 37,
     [ 21, 22, 29 ] ],
+   [
+    "Genesis", 42,
+    [ 22, 37 ] ],
+   [
+    "Genesis", 46,
+    [ 8, 9 ] ],
+   [
+    "Genesis", 48,
+    [ 5 ] ],
+   [
+    "Genesis", 49,
+    [ 3 ] ],
    [
     "Revelation", 7,
     [ 5 ] ] ]
@@ -60250,6 +60709,12 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 23 ] ],
+   [
+    "Genesis", 46,
+    [ 13 ] ],
+   [
+    "Genesis", 49,
+    [ 14 ] ],
    [
     "Revelation", 7,
     [ 7 ] ] ]
@@ -63027,7 +63492,10 @@ window.GLOSSARY = [
     [ 10 ] ],
    [
     "Genesis", 27,
-    [ 46 ] ] ]
+    [ 46 ] ],
+   [
+    "Genesis", 49,
+    [ 32 ] ] ]
  },
  {
   "id": "javan",
@@ -63363,7 +63831,13 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Genesis", 35,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Genesis", 49,
+    [ 30 ] ],
+   [
+    "Genesis", 50,
+    [ 13 ] ] ]
  },
  {
   "id": "perizzites",
@@ -63576,7 +64050,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Genesis", 35,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Genesis", 43,
+    [ 14 ] ],
+   [
+    "Genesis", 48,
+    [ 3 ] ] ]
  },
  {
   "id": "angels-at-sodom",
@@ -63708,7 +64188,13 @@ window.GLOSSARY = [
     [ 9, 17, 19 ] ],
    [
     "Genesis", 25,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Genesis", 49,
+    [ 30 ] ],
+   [
+    "Genesis", 50,
+    [ 13 ] ] ]
  },
  {
   "id": "ephron",
@@ -63720,7 +64206,13 @@ window.GLOSSARY = [
     [ 8, 10, 13, 14, 16, 17 ] ],
    [
     "Genesis", 25,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Genesis", 49,
+    [ 29, 30 ] ],
+   [
+    "Genesis", 50,
+    [ 13 ] ] ]
  },
  {
   "id": "kirjath-arba",
@@ -63768,7 +64260,10 @@ window.GLOSSARY = [
     [ 1, 2, 12, 19, 20, 22, 24, 25, 26, 31, 33, 34, 36, 43, 47, 48, 51, 55 ] ],
    [
     "Genesis", 32,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Genesis", 46,
+    [ 18, 25 ] ] ]
  },
  {
   "id": "keturah",
@@ -63816,7 +64311,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Genesis", 35,
-    [ 9, 26 ] ] ]
+    [ 9, 26 ] ],
+   [
+    "Genesis", 46,
+    [ 15 ] ],
+   [
+    "Genesis", 48,
+    [ 7 ] ] ]
  },
  {
   "id": "pottage",
@@ -64002,7 +64503,31 @@ window.GLOSSARY = [
     [ 10, 21, 22 ] ],
    [
     "Genesis", 37,
-    [ 3, 13 ] ] ]
+    [ 3, 13 ] ],
+   [
+    "Genesis", 42,
+    [ 5 ] ],
+   [
+    "Genesis", 43,
+    [ 6, 8, 11 ] ],
+   [
+    "Genesis", 45,
+    [ 28 ] ],
+   [
+    "Genesis", 46,
+    [ 1, 2, 5, 29, 30 ] ],
+   [
+    "Genesis", 47,
+    [ 27, 29, 31 ] ],
+   [
+    "Genesis", 48,
+    [ 2, 8, 10, 11, 13, 14, 20, 21 ] ],
+   [
+    "Genesis", 49,
+    [ 2, 7, 16, 24, 28 ] ],
+   [
+    "Genesis", 50,
+    [ 2 ] ] ]
  },
  {
   "id": "succoth-jacob",
@@ -64098,7 +64623,25 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 35,
-    [ 18, 24 ] ] ]
+    [ 18, 24 ] ],
+   [
+    "Genesis", 42,
+    [ 4, 36 ] ],
+   [
+    "Genesis", 43,
+    [ 14, 15, 16, 29, 34 ] ],
+   [
+    "Genesis", 44,
+    [ 12 ] ],
+   [
+    "Genesis", 45,
+    [ 12, 14, 22 ] ],
+   [
+    "Genesis", 46,
+    [ 19, 21 ] ],
+   [
+    "Genesis", 49,
+    [ 27 ] ] ]
  },
  {
   "id": "rachels-pillar",
@@ -64266,7 +64809,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 38,
-    [ 3, 6, 7 ] ] ]
+    [ 3, 6, 7 ] ],
+   [
+    "Genesis", 46,
+    [ 12 ] ] ]
  },
  {
   "id": "onan",
@@ -64275,7 +64821,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 38,
-    [ 4, 8, 9 ] ] ]
+    [ 4, 8, 9 ] ],
+   [
+    "Genesis", 46,
+    [ 12 ] ] ]
  },
  {
   "id": "shelah-son-of-judah",
@@ -64284,7 +64833,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 38,
-    [ 5, 11, 14, 26 ] ] ]
+    [ 5, 11, 14, 26 ] ],
+   [
+    "Genesis", 46,
+    [ 12 ] ] ]
  },
  {
   "id": "pharez",
@@ -64293,7 +64845,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 38,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Genesis", 46,
+    [ 12 ] ] ]
  },
  {
   "id": "zarah-son-of-judah",
@@ -64302,7 +64857,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 38,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Genesis", 46,
+    [ 12 ] ] ]
  },
  {
   "id": "timnath",
@@ -64341,7 +64899,10 @@ window.GLOSSARY = [
     [ 19 ] ],
    [
     "Genesis", 35,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Genesis", 48,
+    [ 3 ] ] ]
  },
  {
   "id": "mahalath",
@@ -64374,7 +64935,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Genesis", 35,
-    [ 23, 26 ] ] ]
+    [ 23, 26 ] ],
+   [
+    "Genesis", 46,
+    [ 15, 18 ] ],
+   [
+    "Genesis", 49,
+    [ 31 ] ] ]
  },
  {
   "id": "zilpah",
@@ -64392,7 +64959,10 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Genesis", 37,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Genesis", 46,
+    [ 18 ] ] ]
  },
  {
   "id": "bilhah",
@@ -64410,7 +64980,10 @@ window.GLOSSARY = [
     [ 22, 25 ] ],
    [
     "Genesis", 37,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Genesis", 46,
+    [ 25 ] ] ]
  },
  {
   "id": "simeon-son-of-jacob",
@@ -64425,7 +64998,22 @@ window.GLOSSARY = [
     [ 25, 30 ] ],
    [
     "Genesis", 35,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Genesis", 42,
+    [ 24, 36 ] ],
+   [
+    "Genesis", 43,
+    [ 23 ] ],
+   [
+    "Genesis", 46,
+    [ 10 ] ],
+   [
+    "Genesis", 48,
+    [ 5 ] ],
+   [
+    "Genesis", 49,
+    [ 5 ] ] ]
  },
  {
   "id": "levi-son-of-jacob",
@@ -64440,7 +65028,13 @@ window.GLOSSARY = [
     [ 25, 30 ] ],
    [
     "Genesis", 35,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Genesis", 46,
+    [ 11 ] ],
+   [
+    "Genesis", 49,
+    [ 5 ] ] ]
  },
  {
   "id": "judah-son-of-jacob",
@@ -64458,7 +65052,19 @@ window.GLOSSARY = [
     [ 26 ] ],
    [
     "Genesis", 38,
-    [ 1, 2, 6, 7, 8, 11, 12, 15, 20, 22, 23, 24, 26 ] ] ]
+    [ 1, 2, 6, 7, 8, 11, 12, 15, 20, 22, 23, 24, 26 ] ],
+   [
+    "Genesis", 43,
+    [ 3, 8 ] ],
+   [
+    "Genesis", 44,
+    [ 14, 16, 18 ] ],
+   [
+    "Genesis", 46,
+    [ 12, 28 ] ],
+   [
+    "Genesis", 49,
+    [ 8, 9, 10 ] ] ]
  },
  {
   "id": "dan-son-of-jacob",
@@ -64470,7 +65076,13 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Genesis", 35,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Genesis", 46,
+    [ 23 ] ],
+   [
+    "Genesis", 49,
+    [ 16, 17 ] ] ]
  },
  {
   "id": "naphtali",
@@ -64482,7 +65094,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Genesis", 35,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Genesis", 46,
+    [ 24 ] ],
+   [
+    "Genesis", 49,
+    [ 21 ] ] ]
  },
  {
   "id": "gad",
@@ -64494,7 +65112,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Genesis", 35,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Genesis", 46,
+    [ 16 ] ],
+   [
+    "Genesis", 49,
+    [ 19 ] ] ]
  },
  {
   "id": "asher",
@@ -64506,7 +65130,13 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Genesis", 35,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Genesis", 46,
+    [ 17 ] ],
+   [
+    "Genesis", 49,
+    [ 20 ] ] ]
  },
  {
   "id": "zebulun",
@@ -64518,7 +65148,13 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Genesis", 35,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Genesis", 46,
+    [ 14 ] ],
+   [
+    "Genesis", 49,
+    [ 13 ] ] ]
  },
  {
   "id": "dinah",
@@ -64530,6 +65166,366 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Genesis", 34,
-    [ 1, 3, 5, 13, 25, 26 ] ] ]
+    [ 1, 3, 5, 13, 25, 26 ] ],
+   [
+    "Genesis", 46,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "chief-butler",
+  "kind": "person",
+  "name": "The chief butler (Pharaoh's cupbearer, restored to his place and then forgetting Joseph)",
+  "refs": [
+   [
+    "Genesis", 40,
+    [ 1, 2, 5, 9, 13, 20, 21, 23 ] ],
+   [
+    "Genesis", 41,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "chief-baker",
+  "kind": "person",
+  "name": "The chief baker (Pharaoh's baker, hanged as Joseph said)",
+  "refs": [
+   [
+    "Genesis", 40,
+    [ 1, 2, 5, 16, 20, 22 ] ],
+   [
+    "Genesis", 41,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "zaphnath-paaneah",
+  "kind": "person",
+  "name": "Zaphnath-paaneah (the Egyptian name Pharaoh gave Joseph)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 45 ] ] ]
+ },
+ {
+  "id": "asenath",
+  "kind": "person",
+  "name": "Asenath (Joseph's Egyptian wife, mother of Manasseh and Ephraim)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 45, 50 ] ],
+   [
+    "Genesis", 46,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "poti-pherah",
+  "kind": "person",
+  "name": "Poti-pherah (the priest of On, Asenath's father)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 45, 50 ] ],
+   [
+    "Genesis", 46,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "on",
+  "kind": "place",
+  "name": "On (the Egyptian city of the sun god; the Greeks called it Heliopolis)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 45, 50 ] ],
+   [
+    "Genesis", 46,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "manasseh-son-of-joseph",
+  "kind": "person",
+  "name": "Manasseh (Joseph's firstborn: “God hath made me forget”)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 51 ] ],
+   [
+    "Genesis", 46,
+    [ 20 ] ],
+   [
+    "Genesis", 48,
+    [ 1, 5, 13, 14, 17, 20 ] ],
+   [
+    "Genesis", 50,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "ephraim-son-of-joseph",
+  "kind": "person",
+  "name": "Ephraim (Joseph's second son: “fruitful in the land of my affliction”)",
+  "refs": [
+   [
+    "Genesis", 41,
+    [ 52 ] ],
+   [
+    "Genesis", 46,
+    [ 20 ] ],
+   [
+    "Genesis", 48,
+    [ 1, 5, 13, 14, 17, 20 ] ],
+   [
+    "Genesis", 50,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "seven-years-of-plenty-and-famine",
+  "kind": "term",
+  "name": "The seven years of plenty and the seven of famine (Pharaoh's dreams, read by Joseph)",
+  "refs": [
+   [
+    "Genesis", 5,
+    [ 7, 25, 31 ] ],
+   [
+    "Genesis", 11,
+    [ 21 ] ],
+   [
+    "Genesis", 25,
+    [ 17 ] ],
+   [
+    "Genesis", 29,
+    [ 18, 20 ] ],
+   [
+    "Genesis", 41,
+    [ 26, 27, 29, 30, 34, 36, 47, 48, 53, 54 ] ],
+   [
+    "Genesis", 47,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "the-man-lord-of-the-land",
+  "kind": "person",
+  "name": "“The man”, the lord of the land (Joseph, not yet known to his brothers)",
+  "refs": [
+   [
+    "Genesis", 42,
+    [ 30, 33 ] ],
+   [
+    "Genesis", 43,
+    [ 3, 5, 6, 7, 11, 13, 14 ] ] ]
+ },
+ {
+  "id": "josephs-interpreter",
+  "kind": "person",
+  "name": "The interpreter (the go-between who let Joseph speak Egyptian to his brothers)",
+  "refs": [
+   [
+    "Genesis", 42,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "money-in-the-sacks",
+  "kind": "term",
+  "name": "The money in the sacks (the brothers’ silver, secretly returned)",
+  "refs": [
+   [
+    "Genesis", 42,
+    [ 25, 27, 28, 35 ] ],
+   [
+    "Genesis", 43,
+    [ 12, 15, 18, 21, 22 ] ],
+   [
+    "Genesis", 44,
+    [ 1, 2, 8 ] ] ]
+ },
+ {
+  "id": "josephs-steward",
+  "kind": "person",
+  "name": "The steward of Joseph’s house (the ruler of his house)",
+  "refs": [
+   [
+    "Genesis", 43,
+    [ 16, 19 ] ],
+   [
+    "Genesis", 44,
+    [ 1, 4 ] ] ]
+ },
+ {
+  "id": "silver-cup",
+  "kind": "term",
+  "name": "Joseph’s silver cup (planted in Benjamin’s sack)",
+  "refs": [
+   [
+    "Genesis", 44,
+    [ 2, 12, 16, 17 ] ] ]
+ },
+ {
+  "id": "goshen",
+  "kind": "place",
+  "name": "Goshen (the green pasture land in the eastern Nile delta, where Jacob's family settled; also called the land of Rameses)",
+  "refs": [
+   [
+    "Genesis", 45,
+    [ 10 ] ],
+   [
+    "Genesis", 46,
+    [ 28, 29, 34 ] ],
+   [
+    "Genesis", 47,
+    [ 1, 4, 6, 27 ] ],
+   [
+    "Genesis", 50,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "wagons",
+  "kind": "term",
+  "name": "Wagons (carts on wheels, sent from Egypt to carry Jacob's family)",
+  "refs": [
+   [
+    "Genesis", 45,
+    [ 19, 21, 27 ] ],
+   [
+    "Genesis", 46,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "earing",
+  "kind": "term",
+  "name": "Earing (ploughing)",
+  "refs": [
+   [
+    "Genesis", 45,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "seventy-souls",
+  "kind": "term",
+  "name": "The seventy souls (the family of Jacob that went down into Egypt)",
+  "refs": [
+   [
+    "Genesis", 46,
+    [ 26, 27 ] ] ]
+ },
+ {
+  "id": "serah",
+  "kind": "person",
+  "name": "Serah (Asher's daughter, one of the only two women named among the seventy besides Dinah)",
+  "refs": [
+   [
+    "Genesis", 46,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "shepherds-of-goshen",
+  "kind": "term",
+  "name": "Shepherds (Jacob's family trade, which the Egyptians looked down on)",
+  "refs": [
+   [
+    "Genesis", 46,
+    [ 32, 34 ] ],
+   [
+    "Genesis", 47,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "rameses",
+  "kind": "place",
+  "name": "Rameses (the land of Rameses, another name for Goshen; later a store city built by Israel's slaves)",
+  "refs": [
+   [
+    "Genesis", 47,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "fifth-part",
+  "kind": "term",
+  "name": "The fifth part (Joseph's law: a fifth of the harvest to Pharaoh)",
+  "refs": [
+   [
+    "Genesis", 47,
+    [ 24, 26 ] ] ]
+ },
+ {
+  "id": "land-of-the-priests",
+  "kind": "term",
+  "name": "The land of the priests (the one land Joseph did not buy for Pharaoh)",
+  "refs": [
+   [
+    "Genesis", 47,
+    [ 22, 26 ] ] ]
+ },
+ {
+  "id": "pilgrimage",
+  "kind": "term",
+  "name": "Pilgrimage (a journey as a stranger passing through; Jacob's word for his whole life)",
+  "refs": [
+   [
+    "Genesis", 47,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "hand-under-the-thigh",
+  "kind": "term",
+  "name": "A hand under the thigh (the most solemn oath of the patriarchs' day)",
+  "refs": [
+   [
+    "Genesis", 24,
+    [ 2 ] ],
+   [
+    "Genesis", 47,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "shiloh-genesis-49",
+  "kind": "term",
+  "name": "Shiloh (the One to whom the rule belongs, Genesis 49:10)",
+  "refs": [
+   [
+    "Genesis", 49,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "atad",
+  "kind": "place",
+  "name": "Atad (the threshingfloor where Egypt mourned Jacob)",
+  "refs": [
+   [
+    "Genesis", 50,
+    [ 10, 11 ] ] ]
+ },
+ {
+  "id": "abel-mizraim",
+  "kind": "place",
+  "name": "Abel-mizraim (\"the mourning of the Egyptians\", the name for Atad)",
+  "refs": [
+   [
+    "Genesis", 50,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "embalming",
+  "kind": "term",
+  "name": "Embalming (preserving a body with spices and oils, as in Egypt)",
+  "refs": [
+   [
+    "Genesis", 50,
+    [ 2, 3, 26 ] ] ]
+ },
+ {
+  "id": "josephs-bones",
+  "kind": "term",
+  "name": "Joseph's bones (his oath that Israel would carry them out of Egypt)",
+  "refs": [
+   [
+    "Genesis", 50,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "machir",
+  "kind": "person",
+  "name": "Machir, son of Manasseh (Joseph's grandson, raised on Joseph's knees)",
+  "refs": [
+   [
+    "Genesis", 50,
+    [ 23 ] ] ]
  }
 ];

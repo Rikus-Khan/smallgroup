@@ -118,7 +118,15 @@
     ["tabret", "a small hand drum"], ["tarry|tarried|tarrieth", "stay, wait"], ["threescore", "sixty"],
     ["to wit", "that is, namely"], ["ungirded", "unharnessed"], ["vail", "veil"],
     ["venison", "wild game"], ["whoredom|whoredoms", "prostitution; unfaithfulness"], ["yesternight", "last night"],
-    ["sepulchre|sepulchres", "a tomb"], ["signet", "a seal ring"], ["lo", "look! see!"]
+    ["sepulchre|sepulchres", "a tomb"], ["signet", "a seal ring"], ["lo", "look! see!"],
+    ["forgat", "forgot"], ["bakemeats", "baked foods, pastries"], ["well favoured", "good-looking"],
+    ["ill favoured", "ugly, sickly"], ["fatfleshed", "plump, well fed"], ["leanfleshed", "thin, skin and bone"],
+    ["plenteous|plenteousness", "plentiful; plenty"], ["dearth", "famine, scarcity"], ["forasmuch", "since, seeing that"],
+    ["lade|laded|laden", "load, loaded"], ["espied", "caught sight of"], ["traffick", "trade"],
+    ["bade", "told, commanded"], ["messes", "portions of food"], ["earing", "ploughing"],
+    ["wittingly", "knowingly"], ["begettest", "you become the father of"], ["whelp|whelps", "a cub, a young lion"],
+    ["couched|coucheth", "crouched, lay down"], ["ravin", "tear prey"], ["progenitors", "ancestors"],
+    ["dainties", "delicacies, rich food"], ["threshingfloor", "flat ground where grain is beaten out"], ["requite|requited", "pay back"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");

@@ -19369,5 +19369,560 @@ window.STUDIES = [
       },
       "big": "The LORD was with Joseph in the house and in the dungeon. Tempted day by day, he said no, then fled, and doing right cost him his job, his name and his freedom. It was not a sign that God had left him; the same words are said again in the worst place he has been."
     }
+  },
+  {
+    "id": "genesis-40",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 40,
+    "date": "2026-11-10",
+    "title": "Genesis 40",
+    "sub": "Forgotten in prison",
+    "about": "In prison Joseph serves Pharaoh's butler and baker, tells each what his dream means, and watches one restored and one hanged. The butler forgets him.",
+    "tags": [
+      "Prison",
+      "Waiting",
+      "Grace",
+      "Truth",
+      "Ingratitude",
+      "Serving"
+    ],
+    "url": "studies/genesis-40.html",
+    "overview": {
+      "where": "The prison in the house of the captain of the guard, in Egypt",
+      "when": "About 1886 BC; Joseph is about twenty-eight, two years before he stands before Pharaoh at thirty (41:1, 46)",
+      "people": [
+        "joseph-son-of-jacob",
+        "pharaoh",
+        "chief-butler",
+        "chief-baker"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "Pharaoh is angry with his chief butler and chief baker and puts them in the prison where Joseph is. The captain of the guard puts Joseph in charge of them, and he serves them (1–4).",
+        "One night both men dream. In the morning Joseph sees they are sad, asks why, and says, “Do not interpretations belong to God? tell me them, I pray you” (5–8).",
+        "The butler dreams of a vine with three branches and Pharaoh's cup. Joseph says the three branches are three days, and the butler will be restored. He asks the butler to remember him and mention him to Pharaoh (9–15).",
+        "The baker, seeing the good news, tells his dream of three baskets and birds eating from the top one. Joseph says it is three days, and Pharaoh will hang him on a tree (16–19).",
+        "On the third day, Pharaoh's birthday, the butler is restored and the baker hanged, as Joseph said. “Yet did not the chief butler remember Joseph, but forgat him” (20–23)."
+      ],
+      "key": {
+        "ref": "Genesis 40:8",
+        "text": "And they said unto him, We have dreamed a dream, and there is no interpreter of it. And Joseph said unto them, Do not interpretations belong to God? tell me them, I pray you."
+      },
+      "big": "Joseph, forgotten and still in the pit, looks up at two sad faces and serves them, and gives God the credit for what he is shown. The man he helps walks free and forgets him, and the text leaves the wait standing. Men forget, but God does not, and a man who feels forgotten can say so to his brothers in Christ and his pastor."
+    }
+  },
+  {
+    "id": "genesis-41",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 41,
+    "date": "2026-11-10",
+    "title": "Genesis 41",
+    "sub": "From the dungeon to the throne",
+    "about": "Pharaoh dreams of seven fat and seven lean cows; the butler remembers Joseph, who says “It is not in me”, reads the dream as seven years of plenty and seven of famine, and is made ruler of Egypt.",
+    "tags": [
+      "Providence",
+      "Humility",
+      "Grace",
+      "Wisdom",
+      "Regret",
+      "Christ"
+    ],
+    "url": "studies/genesis-41.html",
+    "overview": {
+      "where": "Pharaoh's court in Egypt, and the whole land as Joseph goes through it",
+      "when": "About 1884 BC; Joseph is thirty when he stands before Pharaoh. About seven years of plenty follow, then the famine from about 1877 BC",
+      "people": [
+        "joseph-son-of-jacob",
+        "pharaoh",
+        "chief-butler",
+        "zaphnath-paaneah",
+        "asenath",
+        "poti-pherah",
+        "manasseh-son-of-joseph",
+        "ephraim-son-of-joseph"
+      ],
+      "places": [
+        "egypt",
+        "on"
+      ],
+      "story": [
+        "After two full years Pharaoh dreams twice: seven fat cows eaten by seven lean ones, and seven good ears eaten by seven thin ones. None of Egypt's magicians and wise men can say what it means (1–8).",
+        "The chief butler remembers his faults and tells Pharaoh about the young Hebrew in the prison who read his dream and the baker's (9–13).",
+        "Pharaoh sends for Joseph, who shaves and changes his clothes. “It is not in me: God shall give Pharaoh an answer of peace” (14–16).",
+        "Pharaoh tells both dreams. Joseph says they are one: seven years of great plenty, then seven of famine, and God will shortly bring it to pass (17–32).",
+        "Joseph advises Pharaoh to set a discreet and wise man over the land and store a fifth of the harvest in the good years (33–36).",
+        "Pharaoh asks, “Can we find such a one as this is, a man in whom the Spirit of God is?” He sets Joseph over all Egypt with his ring, fine linen, a gold chain and the second chariot, calls him Zaphnath-paaneah, and gives him Asenath to wife. Joseph is thirty (37–46).",
+        "In the seven good years Joseph gathers corn as the sand of the sea, and two sons are born: Manasseh (“God hath made me forget all my toil”) and Ephraim (“fruitful in the land of my affliction”) (47–52).",
+        "The famine comes over all the earth, but in Egypt there is bread. Pharaoh sends the hungry to Joseph, and all countries come to buy corn (53–57)."
+      ],
+      "key": {
+        "ref": "Genesis 41:16",
+        "text": "And Joseph answered Pharaoh, saying, It is not in me: God shall give Pharaoh an answer of peace."
+      },
+      "big": "God raises a forgotten prisoner to the throne in a day, and the prisoner gives the credit straight back: “It is not in me.” He uses the good years to prepare for the hard ones, and names his sons for what God has done in the land of his affliction. When the whole world is hungry, Pharaoh's word is “Go unto Joseph”, and for us it is Jesus."
+    }
+  },
+  {
+    "id": "genesis-42",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 42,
+    "date": "2026-11-10",
+    "title": "Genesis 42",
+    "sub": "Ten brothers bow, and a conscience wakes",
+    "about": "Famine sends Jacob’s ten sons to Egypt for grain. They bow to Joseph without knowing him, he accuses them of spying and holds Simeon, and after twenty years their guilt breaks out: “We are verily guilty concerning our brother.”",
+    "tags": [
+      "Regret",
+      "Guilt",
+      "Conscience",
+      "Providence",
+      "Family",
+      "Hope"
+    ],
+    "url": "studies/genesis-42.html",
+    "overview": {
+      "where": "Hebron in Canaan, and Egypt (the road between, and the lodging inn on the way back)",
+      "when": "About 1877 BC, in the first years of the famine; about twenty years after Joseph was sold",
+      "people": [
+        "jacob",
+        "joseph-son-of-jacob",
+        "reuben",
+        "simeon-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "josephs-interpreter",
+        "the-man-lord-of-the-land",
+        "pharaoh"
+      ],
+      "places": [
+        "canaan",
+        "egypt"
+      ],
+      "story": [
+        "Jacob sees there is corn in Egypt and asks his sons, “Why do ye look one upon another?” Ten go down; Benjamin stays home, for Jacob fears “mischief” may befall him (1–5).",
+        "Joseph, governor of the land, sees his brothers bow to him with their faces to the earth. He knows them; they do not know him. He remembers his dreams and charges them with being spies (6–14).",
+        "He puts them in ward three days, then offers a way: one stays bound, the rest carry corn home and return with the youngest brother (15–20).",
+        "Their old guilt surfaces: “We are verily guilty concerning our brother.” Reuben says, “Spake I not unto you?” Joseph, who understood them through his interpreter, turns away and weeps, then binds Simeon before their eyes (21–24).",
+        "He fills their sacks and secretly returns every man’s money. At the inn they find it, and their hearts fail: “What is this that God hath done unto us?” (25–28).",
+        "At home they tell Jacob everything. He refuses to send Benjamin: “All these things are against me” (29–38)."
+      ],
+      "key": {
+        "ref": "Genesis 42:21",
+        "text": "And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us."
+      },
+      "big": "Twenty years of silence did not kill the guilt. It woke the moment trouble came, and the brothers named it plainly: the anguish of his soul, and we would not hear. The man they wronged turns away and weeps. Jacob adds up every fact he has and calls it all against him, and misses the one that matters: Joseph is alive and holding the bread."
+    }
+  },
+  {
+    "id": "genesis-43",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 43,
+    "date": "2026-11-10",
+    "title": "Genesis 43",
+    "sub": "Judah puts himself on the line",
+    "about": "The grain runs out. Judah pledges himself for Benjamin, the brothers return with a present, learn the money in their sacks was already paid, and eat at Joseph’s table, where he has to leave the room to weep.",
+    "tags": [
+      "Responsibility",
+      "Grace",
+      "Fear",
+      "Tears",
+      "Promise",
+      "Change"
+    ],
+    "url": "studies/genesis-43.html",
+    "overview": {
+      "where": "Jacob’s camp in Canaan, then Joseph’s house in Egypt",
+      "when": "About 1876 BC, the second year of the famine, a few months after the first journey",
+      "people": [
+        "israel-the-man",
+        "judah-son-of-jacob",
+        "joseph-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "simeon-son-of-jacob",
+        "josephs-steward",
+        "the-man-lord-of-the-land",
+        "el-shaddai"
+      ],
+      "places": [
+        "egypt",
+        "canaan"
+      ],
+      "story": [
+        "The famine is sore and the corn is eaten. Jacob says go again; Judah answers that the man said they would not see his face without Benjamin (1–7).",
+        "Judah pledges himself: “I will be surety for him; of my hand shalt thou require him.” Jacob gives way, sends a present, double money and a prayer: “God Almighty give you mercy before the man” (8–14).",
+        "Joseph sees Benjamin and orders a meal. The brothers, afraid the returned money is a trap, speak to the steward, who answers: “Peace be to you, fear not… I had your money.” Simeon is brought out (15–25).",
+        "They bow to Joseph, and he asks after their father. Seeing Benjamin, his bowels yearn; he goes into his chamber and weeps, washes his face, and says “Set on bread” (26–31).",
+        "They are seated by age, and Benjamin’s mess is five times as much as theirs. They drink and are merry with him (32–34)."
+      ],
+      "key": {
+        "ref": "Genesis 43:9",
+        "text": "I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever:"
+      },
+      "big": "Judah, who once sold a brother for silver, now puts himself on the line for another, and Jacob lets go. The returned money is not a trap: it was paid before they asked. And the man who holds all the power weeps in a back room for his brother, while the men who once hated a favoured son sit beside one and are merry."
+    }
+  },
+  {
+    "id": "genesis-44",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 44,
+    "date": "2026-11-10",
+    "title": "Genesis 44",
+    "sub": "The silver cup, and the man who took his brother’s place",
+    "about": "Joseph’s silver cup is found in Benjamin’s sack and the ten are free to go home. Instead Judah, the brother who sold Joseph, pleads and offers himself as a slave in Benjamin’s place: a picture of substitution and of a changed man.",
+    "tags": [
+      "Substitution",
+      "Change",
+      "Regret",
+      "Loyalty",
+      "Christ",
+      "Hope"
+    ],
+    "url": "studies/genesis-44.html",
+    "overview": {
+      "where": "On the road out of Egypt, then Joseph’s house",
+      "when": "About 1876 BC, the morning after the feast of chapter 43",
+      "people": [
+        "joseph-son-of-jacob",
+        "judah-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "josephs-steward",
+        "pharaoh"
+      ],
+      "places": [
+        "canaan"
+      ],
+      "story": [
+        "Joseph has his steward fill the sacks again, and put his silver cup in the youngest’s sack. When they are not far from the city, the steward overtakes them and charges them with rewarding evil for good (1–6).",
+        "They swear that whoever has the cup shall die and the rest be bondmen. The cup is found in Benjamin’s sack. They rend their clothes and all return to the city (7–13).",
+        "Judah and his brethren fall before Joseph. “God hath found out the iniquity of thy servants.” Joseph offers the way out: only the man with the cup stays; the rest may go up in peace (14–17).",
+        "Judah comes near and pleads: an old father, a child of his old age, a life bound up in the lad’s life, and his own pledge as surety (18–32).",
+        "He offers himself: “let thy servant abide instead of the lad a bondman to my lord” (33–34)."
+      ],
+      "key": {
+        "ref": "Genesis 44:33",
+        "text": "Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren."
+      },
+      "big": "The brothers are offered the very thing they took in chapter 37: leave the favoured one and go home free. They do not take it. Judah, who sold his brother, offers to be a slave in the boy’s place, because he cannot bear to watch his father grieve twice. It is a picture of what Jesus did in full, the just for the unjust, and a promise that the worst chapter of a man’s life is not his last."
+    }
+  },
+  {
+    "id": "genesis-45",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 45,
+    "date": "2026-11-10",
+    "title": "Genesis 45",
+    "sub": "“I am Joseph”",
+    "about": "Joseph tells his brothers who he is, forgives them, says God sent him ahead to save lives, and sends them home with wagons to bring Jacob down to Goshen.",
+    "tags": [
+      "Forgiveness",
+      "Providence",
+      "Regret",
+      "Family",
+      "Hope"
+    ],
+    "url": "studies/genesis-45.html",
+    "overview": {
+      "where": "Joseph's house in Egypt; then the road back to Canaan, to Jacob",
+      "when": "About 1875 BC; Joseph is thirty-nine, two years into the famine, twenty-two years after he was sold",
+      "people": [
+        "joseph-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "jacob",
+        "israel-the-man",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt",
+        "goshen",
+        "canaan"
+      ],
+      "story": [
+        "Joseph clears the room and weeps aloud: “I am Joseph; doth my father yet live?” His brothers cannot answer, for they are troubled at his presence (1–3).",
+        "“Come near to me, I pray you.” He names the wrong once (“whom ye sold into Egypt”) and then lifts the guilt: “be not grieved, nor angry with yourselves”, for God sent him before them to preserve life (4–8).",
+        "He sends for Jacob to live in the land of Goshen, near him, through the five years of famine still to come. He weeps on Benjamin's neck and kisses all his brothers (9–15).",
+        "Pharaoh joins in: wagons, provision, and “the fat of the land”. Joseph gives each brother changes of raiment, Benjamin three hundred pieces of silver and five changes, and sends ten asses laden for his father (16–23).",
+        "His parting words: “See that ye fall not out by the way” (24).",
+        "Jacob's heart faints at the news, for he believes them not. When he sees the wagons Joseph sent, his spirit revives: “It is enough; Joseph my son is yet alive: I will go and see him before I die” (25–28)."
+      ],
+      "key": {
+        "ref": "Genesis 45:5",
+        "text": "Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for God did send me before you to preserve life."
+      },
+      "big": "Joseph names the sin once and then lifts it off his brothers: God took a wicked choice and bent it into a rescue, without making anyone sin. Forgiveness is given at once, trust grows as proof arrives, and Jacob's heart comes back to life when he sees the wagons."
+    }
+  },
+  {
+    "id": "genesis-46",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 46,
+    "date": "2026-11-10",
+    "title": "Genesis 46",
+    "sub": "“Fear not to go down into Egypt”",
+    "about": "God meets Jacob at Beer-sheba with the promise “I will go down with thee”; the seventy who went down to Egypt are counted; Jacob sees Joseph again, and the family is set apart in Goshen.",
+    "tags": [
+      "Guidance",
+      "Fear",
+      "Promise",
+      "Family",
+      "Genealogy"
+    ],
+    "url": "studies/genesis-46.html",
+    "overview": {
+      "where": "Beer-sheba, the last town in Canaan; then the land of Goshen in Egypt",
+      "when": "About 1875 BC; the beginning of the roughly 430 years of Israel in Egypt",
+      "people": [
+        "jacob",
+        "israel-the-man",
+        "joseph-son-of-jacob",
+        "judah-son-of-jacob",
+        "levi-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "pharaoh"
+      ],
+      "places": [
+        "beer-sheba",
+        "egypt",
+        "goshen",
+        "canaan"
+      ],
+      "story": [
+        "At Beer-sheba Israel offers sacrifices to the God of his father Isaac. God speaks in a night vision: “Jacob, Jacob… fear not to go down into Egypt; for I will there make of thee a great nation: I will go down with thee… and I will also surely bring thee up again” (1–4).",
+        "Jacob's sons carry him, their wives and little ones in Pharaoh's wagons, with their cattle and goods, into Egypt (5–7).",
+        "The names of the children of Israel who came into Egypt: Leah's household 33, Zilpah's 16, Rachel's 14, Bilhah's 7; “all the souls of the house of Jacob… were threescore and ten” (8–27).",
+        "Judah goes ahead to Goshen. Joseph rides up to meet his father, falls on his neck and weeps a good while. Israel says, “Now let me die, since I have seen thy face, because thou art yet alive” (28–30).",
+        "Joseph tells his brothers to say plainly that they are shepherds, so that they may dwell in Goshen, “for every shepherd is an abomination unto the Egyptians” (31–34)."
+      ],
+      "key": {
+        "ref": "Genesis 46:3",
+        "text": "And he said, I am God, the God of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:"
+      },
+      "big": "God stops Jacob at the border of the land with a promise: not “be brave” but “I will go down with thee”. The long list of names says that to God every man is a name, not a number, and Jacob's sorrow ends in a reunion, with the family kept apart in Goshen where a nation can grow."
+    }
+  },
+  {
+    "id": "genesis-47",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 47,
+    "date": "2026-11-10",
+    "title": "Genesis 47",
+    "sub": "“Few and evil have the days of my life been”",
+    "about": "Jacob blesses Pharaoh and tells him honestly that his years have been few and evil; the famine takes Egypt's money, cattle and land while Israel grows in Goshen; Jacob makes Joseph swear to bury him in Canaan.",
+    "tags": [
+      "Honesty",
+      "Famine",
+      "Bondage",
+      "Hope",
+      "Promise"
+    ],
+    "url": "studies/genesis-47.html",
+    "overview": {
+      "where": "Pharaoh's court; the land of Goshen (the land of Rameses) in Egypt",
+      "when": "About 1875 BC and the seventeen years after; Jacob is a hundred and thirty when he stands before Pharaoh and dies at a hundred and forty-seven",
+      "people": [
+        "jacob",
+        "israel-the-man",
+        "joseph-son-of-jacob",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt",
+        "goshen",
+        "rameses",
+        "canaan"
+      ],
+      "story": [
+        "Joseph presents five of his brothers to Pharaoh, who asks their occupation; they are shepherds, come to sojourn. Pharaoh tells Joseph to settle them in the best of the land, Goshen (1–6).",
+        "Jacob blesses Pharaoh. Asked his age, he says, “few and evil have the days of the years of my life been”, a hundred and thirty years of pilgrimage (7–10).",
+        "Joseph settles his family in the land of Rameses and feeds them with bread (11–12).",
+        "The famine is very sore. Egypt's money is spent, then their cattle, then their land and their very bodies, all for bread; Joseph buys the land for Pharaoh and gives seed, with a fifth part to Pharaoh. The land of the priests is not bought. “Thou hast saved our lives” (13–26).",
+        "Israel dwells in Goshen, grows and multiplies exceedingly. Jacob lives seventeen years in Egypt and dies at a hundred and forty-seven (27–28).",
+        "Jacob makes Joseph swear, with a hand under his thigh, to carry him out of Egypt and bury him with his fathers; Israel bows in worship (29–31)."
+      ],
+      "key": {
+        "ref": "Genesis 47:9",
+        "text": "And Jacob said unto Pharaoh, The days of the years of my pilgrimage are an hundred and thirty years: few and evil have the days of the years of my life been, and have not attained unto the days of the years of the life of my fathers in the days of their pilgrimage."
+      },
+      "big": "Jacob tells the king the plain truth about hard years and still calls his life a pilgrimage, a journey toward the land God promised. Egypt gives up money, cattle, land and finally itself for bread, a picture of what any hunger costs, while Israel is fed and grows by a promise, and the old man asks to be buried in the land of hope."
+    }
+  },
+  {
+    "id": "genesis-48",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 48,
+    "date": "2026-11-10",
+    "title": "Genesis 48",
+    "sub": "Crossed hands, and a blessing",
+    "about": "Jacob, sick and nearly blind, blesses Joseph's two sons, adopts them as his own, crosses his hands to put the younger Ephraim before Manasseh, and prays to \"the Angel which redeemed me from all evil.\"",
+    "tags": [
+      "Blessing",
+      "Grace",
+      "Redemption",
+      "Family",
+      "Death",
+      "Hope"
+    ],
+    "url": "studies/genesis-48.html",
+    "overview": {
+      "where": "Jacob's bed in Goshen, Egypt",
+      "when": "About 1858 BC; Jacob has lived in Egypt seventeen years and is close to 147",
+      "people": [
+        "jacob",
+        "joseph-son-of-jacob",
+        "manasseh-son-of-joseph",
+        "ephraim-son-of-joseph",
+        "rachel",
+        "abraham",
+        "isaac",
+        "reuben",
+        "simeon-son-of-jacob",
+        "el-shaddai"
+      ],
+      "places": [
+        "egypt",
+        "canaan",
+        "bethel",
+        "bethlehem",
+        "shechem"
+      ],
+      "story": [
+        "Joseph hears his father is sick and brings his two sons, Manasseh and Ephraim. Israel strengthens himself and sits up on the bed (1-2).",
+        "Jacob tells Joseph how God Almighty appeared to him at Luz and promised fruitfulness and the land, and claims Ephraim and Manasseh as his own sons, \"as Reuben and Simeon\" (3-6).",
+        "He remembers Rachel, who died on the road to Ephrath, which is Bethlehem (7). With dim eyes he asks, \"Who are these?\", kisses and embraces the boys, and says, \"God hath shewed me also thy seed\" (8-12).",
+        "Joseph sets Manasseh, the firstborn, at Jacob's right hand, but Jacob crosses his hands, \"guiding his hands wittingly\", and lays his right on Ephraim (13-14).",
+        "He blesses them: \"God, before whom my fathers Abraham and Isaac did walk, the God which fed me all my life long unto this day, the Angel which redeemed me from all evil, bless the lads\" (15-16).",
+        "Joseph objects; Jacob refuses: \"I know it, my son.\" Manasseh will be great, but the younger will be greater. He sets Ephraim before Manasseh (17-20).",
+        "\"Behold, I die: but God shall be with you.\" He promises a return to the land of their fathers and gives Joseph one portion above his brothers (21-22)."
+      ],
+      "key": {
+        "ref": "Genesis 48:16",
+        "text": "The Angel which redeemed me from all evil, bless the lads; and let my name be named on them, and the name of my fathers Abraham and Isaac; and let them grow into a multitude in the midst of the earth."
+      },
+      "big": "A dying man talks about what God did, not what he did, and calls Him the Angel who redeemed him from all evil. He crosses his hands on purpose: the blessing goes by God's mercy, not by birth, and a father spends his last strength blessing the boys left behind. His last words are for the family: \"I die: but God shall be with you.\""
+    }
+  },
+  {
+    "id": "genesis-49",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 49,
+    "date": "2026-11-10",
+    "title": "Genesis 49",
+    "sub": "Twelve sons, twelve blessings",
+    "about": "Jacob calls his twelve sons and tells each the truth: Reuben's fall, Simeon and Levi's anger, the sceptre and Shiloh from Judah, a cry for salvation in the middle, Joseph the fruitful bough, and his wish to be buried at Machpelah.",
+    "tags": [
+      "Honesty",
+      "Sin",
+      "Anger",
+      "Christ",
+      "Hope",
+      "Death"
+    ],
+    "url": "studies/genesis-49.html",
+    "overview": {
+      "where": "Jacob's bed in Egypt; the cave of Machpelah, near Mamre in Canaan, is named",
+      "when": "About 1858 BC, as Jacob dies at 147",
+      "people": [
+        "jacob",
+        "reuben",
+        "simeon-son-of-jacob",
+        "levi-son-of-jacob",
+        "judah-son-of-jacob",
+        "zebulun",
+        "issachar",
+        "dan-son-of-jacob",
+        "gad",
+        "asher",
+        "naphtali",
+        "joseph-son-of-jacob",
+        "benjamin-son-of-jacob",
+        "abraham",
+        "isaac"
+      ],
+      "places": [
+        "canaan",
+        "egypt",
+        "machpelah",
+        "mamre"
+      ],
+      "story": [
+        "Jacob calls his sons to tell them what will befall them \"in the last days\" (1-2).",
+        "Reuben, firstborn and Jacob's might, is \"unstable as water\" and will not excel, because he defiled his father's bed (3-4).",
+        "Simeon and Levi, brothers in cruelty and anger, are rebuked: \"Cursed be their anger, for it was fierce\"; they will be divided and scattered (5-7).",
+        "Judah is the lion's whelp whom his brethren will praise. \"The sceptre shall not depart from Judah... until Shiloh come; and unto him shall the gathering of the people be\" (8-12).",
+        "Zebulun, Issachar, Dan, Gad, Asher and Naphtali each receive a short word. In the middle of Dan's, Jacob cries out, \"I have waited for thy salvation, O LORD\" (13-21).",
+        "Joseph is \"a fruitful bough\": the archers grieved him, but his bow abode in strength by the mighty God of Jacob, \"the shepherd, the stone of Israel\"; the blessings are on the head of him that was separate from his brethren (22-26).",
+        "Benjamin shall ravin as a wolf (27). All are the twelve tribes, and he blessed every one according to his blessing (28).",
+        "Jacob charges them to bury him with his fathers in the cave of Machpelah, where Abraham, Sarah, Isaac, Rebekah and Leah lie, and then gathers up his feet into the bed, yields up the ghost, and is gathered unto his people (29-33)."
+      ],
+      "key": {
+        "ref": "Genesis 49:18",
+        "text": "I have waited for thy salvation, O LORD."
+      },
+      "big": "A father tells each son the truth: the sin and the cost, the anger and the scattering, and the King who comes from Judah. In the middle he stops and prays, \"I have waited for thy salvation, O LORD\", the word that gives Jesus His name. Every word is called a blessing, and the last wish is a grave in the land of the promise."
+    }
+  },
+  {
+    "id": "genesis-50",
+    "type": "chapter",
+    "book": "Genesis",
+    "ch": 50,
+    "date": "2026-11-10",
+    "title": "Genesis 50",
+    "sub": "God meant it unto good",
+    "about": "Jacob is embalmed, mourned seventy days and buried at Machpelah. The brothers fear Joseph's revenge, and he answers, \"ye thought evil against me; but God meant it unto good.\" Joseph dies with his bones promised to the land, and Genesis ends in a coffin and a promise.",
+    "tags": [
+      "Forgiveness",
+      "Grief",
+      "Providence",
+      "Hope",
+      "Promise",
+      "Family"
+    ],
+    "url": "studies/genesis-50.html",
+    "overview": {
+      "where": "Egypt; Goshen; the threshingfloor of Atad; the cave of Machpelah in Canaan",
+      "when": "About 1858 BC (Jacob's burial); about 1800 BC (Joseph dies at 110)",
+      "people": [
+        "joseph-son-of-jacob",
+        "jacob",
+        "pharaoh",
+        "ephraim-son-of-joseph",
+        "machir",
+        "abraham",
+        "isaac"
+      ],
+      "places": [
+        "egypt",
+        "goshen",
+        "canaan",
+        "atad",
+        "abel-mizraim",
+        "machpelah",
+        "jordan"
+      ],
+      "story": [
+        "Joseph falls on his father's face and weeps. The physicians embalm Israel, forty days, and Egypt mourns seventy days (1-3).",
+        "Joseph asks leave of Pharaoh to bury his father as he swore, and promises to return; Pharaoh says go (4-6).",
+        "A very great company, Pharaoh's servants and the elders of Egypt, chariots and horsemen, goes up. They lament seven days at the threshingfloor of Atad, which the Canaanites name Abel-mizraim (7-11).",
+        "His sons bury him in the cave of Machpelah, and Joseph returns to Egypt (12-14).",
+        "The brothers fear Joseph will now repay them, and send word, \"Forgive, I pray thee now, the trespass of thy brethren.\" Joseph weeps. \"Fear not: for am I in the place of God? ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive.\" He comforts them and speaks kindly (15-21).",
+        "Joseph lives to 110, sees Ephraim's children of the third generation and Machir's, and tells his brethren, \"God will surely visit you.\" He takes an oath that they will carry up his bones (22-25).",
+        "So Joseph died, and was embalmed, and put in a coffin in Egypt (26)."
+      ],
+      "key": {
+        "ref": "Genesis 50:20",
+        "text": "But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive."
+      },
+      "big": "A man lets his tears fall, keeps his word to bury his father, and then forgives the brothers who sold him: evil was evil, but God meant it for good, to save many alive. He dies holding a promise, with a coffin in Egypt and the words \"God will surely visit you\". Genesis ends with the sin of the garden still in the world, and the promise that begins to answer it."
+    }
   }
 ];
