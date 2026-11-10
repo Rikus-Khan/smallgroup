@@ -119,6 +119,30 @@ for (const tag of ["section", "div", "svg", "blockquote", "ol", "ul"]) {
   if (open !== close) err(`<${tag}> opened ${open} times but closed ${close} times`);
 }
 
+// ---------- Old Testament graphics: every name must be one deck.js knows ----------
+const deckJs = fs.readFileSync(path.join(root, "assets/deck.js"), "utf8");
+const table = name => { const m = deckJs.match(new RegExp(`const ${name} = ([\\[{][\\s\\S]*?\\n  [\\]}]);`)); return m ? new Function(`return ${m[1]}`)() : null; };
+const list = s => String(s || "").split(",").map(x => x.trim()).filter(Boolean);
+const attr = (tag, a) => tag.match(new RegExp(`\\s${a}="([^"]*)"`))?.[1];
+const [OT_MAPS, OT_PLACES, OT_JOURNEYS, ICONS] = ["OT_MAPS", "OT_PLACES", "OT_JOURNEYS", "ICONS"].map(table);
+const tribeNames = new Set([...deckJs.matchAll(/\["([A-Z][a-z]+)", "#[0-9a-f]{6}", \[/g)].map(m => m[1]));
+for (const [tag] of markup.matchAll(/<svg\b[^>]*\sdata-terrain="[^"]*"[^>]*>/g)) {
+  const map = attr(tag, "data-terrain");
+  if (!OT_MAPS[map]) { err(`data-terrain="${map}" must be one of: ${Object.keys(OT_MAPS).join(", ")}`); continue; }
+  for (const t of list(attr(tag, "data-towns"))) { const nm = t.replace(/[*!]?(:[lrtb])?$/, ""); if (!OT_PLACES[nm]) err(`No place "${nm}" on the Old Testament maps (add it to OT_PLACES in deck.js)`); }
+  for (const r of list(attr(tag, "data-regions"))) if (!OT_MAPS[map].regions[r]) err(`No region "${r}" on the ${map} map. It has: ${Object.keys(OT_MAPS[map].regions).join(", ")}`);
+  const tribes = attr(tag, "data-tribes");
+  if (tribes && map !== "land") err(`data-tribes works only on data-terrain="land"`);
+  if (tribes && tribes !== "all") for (const t of list(tribes)) if (!tribeNames.has(t.replace(/\*$/, ""))) err(`No tribe "${t}"`);
+}
+if (/data-terrain=/.test(markup)) {
+  for (const [, j] of markup.matchAll(/data-journey="([^"]*)"/g)) if (!OT_JOURNEYS[j] && !/^(1|2|3|rome)$/.test(j)) err(`No journey "${j}". Old Testament journeys: ${Object.keys(OT_JOURNEYS).join(", ")}`);
+  for (const [, via] of markup.matchAll(/data-via="([^"]*)"/g)) for (const p of list(via)) if (!p.startsWith("@") && !OT_PLACES[p] && !/data-world/.test(markup)) err(`No place "${p}" in data-via`);
+}
+for (const [, icon] of markup.matchAll(/data-icon="([^"]*)"/g)) if (!ICONS[icon]) err(`No icon "${icon}". Icons: ${Object.keys(ICONS).join(", ")}`);
+for (const [, v] of markup.matchAll(/data-lives="([^"]*)"/g)) if (!["adam-noah", "noah-jacob", "all"].includes(v)) err(`data-lives="${v}" must be adam-noah, noah-jacob or all`);
+for (const [, v] of markup.matchAll(/data-kings="([^"]*)"/g)) if (v && !/^\d{3,4}\s*-\s*\d{3}$/.test(v)) err(`data-kings="${v}" must be empty or a range like "931-586"`);
+
 // ---------- Report ----------
 const verseSlides = slides.filter(s => s.includes("verse")).length;
 console.log(`${path.basename(file)}: ${BOOK}, ${Object.keys(V).length} verses, ${slides.length} slides (${verseSlides} reading), ${watchQs.length} questions, theme ${theme}`);

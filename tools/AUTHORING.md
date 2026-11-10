@@ -125,6 +125,14 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `svg.map[data-land]` + `data-towns="Jerusalem, Sychar*, Bethlehem!:b"` | the whole land (Galilee, Samaria, Judaea, Perea, the lake, the Jordan, the Dead Sea), drawn by deck.js in a 400 × 560 box. Towns come from the list in deck.js: `*` lights one, `!` adds a pulse, `:l :r :t :b` places its name. Draw your routes inside the svg using those town positions. Give the svg its own `viewBox` to show part of the land, larger | John 4 slide 5 (whole land, a route on a step), John 7 slide 33 (cropped) |
 | `svg.map[data-world]` + `data-towns="Rome!, Corinth*, Ephesus:l"` | the Roman world of Acts and the letters (Italy to the Euphrates, the Black Sea to Egypt), with a real coastline, drawn by deck.js in a 908 × 576 box. Places come from PLACES in deck.js (Rome, Corinth, Ephesus, Philippi, Troas, the seven churches, Patmos, Melita, Antioch, Tarsus, Jerusalem, and more). A `<path class="map-route" data-journey="1">` draws Paul's first journey (also `"2"`, `"3"`, `"rome"`); add class `j1`–`j4` to color several on one map. `data-via="Troas, Neapolis, Philippi"` draws your own route; put `@lon lat` waypoints in it to keep a sea route off the land. Crop with your own `viewBox` (`"425 170 210 170"` the Aegean, `"540 225 140 105"` the seven churches): text and dots stay the same size on screen | new for the New Testament letters; no study uses it yet |
 | `div.letter` (`p.from`, then `dl` of `dt`/`dd`) | the opening of a letter: a sealed page with who wrote it ("Paul … to the saints which are at Ephesus", KJV from the letter's first verses), then Written from / When / To whom / Why, appearing in turn (`dd class="step"` holds one for a click). Put it in a `.split` beside an `svg.map[data-world]` on the first chapter's setting slide | new for the letters |
+| `svg.map[data-terrain="neareast"]` (or `"sinai"`, `"land"`) + `data-towns="Ur!, Haran*, Shechem:l"` | **The Old Testament maps**: real shaded relief (the mountains, the Jordan rift, the deserts), with the green of watered land along the rivers. `neareast` is Egypt to Persia (the patriarchs, the empires, the exile); `sinai` is Goshen, the Sinai and Midian to Canaan (the Exodus); `land` is the land itself, Dan to Kadesh-barnea, the coast to Bashan (the conquest, the tribes, the kings). Each is 1000 units wide (heights 807, 827, 1217); crop with your own `viewBox` and text stays one size. Places come from OT_PLACES in deck.js (towns, plus mountains drawn as a triangle: Mount Sinai, Nebo, Carmel, Tabor, Gilboa, Hermon, Ebal, Gerizim, Hor, Ararat). `data-regions="EGYPT, CANAAN"` chooses the region names (each map has a sensible default; `data-regions=""` shows none). A `<path class="map-route" data-journey="abraham">` draws a journey: `abraham`, `jacob`, `joseph`, `exodus`, `exile-israel`, `exile-judah`, `return`; or `data-via="Shechem, @35.4 32.0, Jericho"` for your own; `j2`–`j4` color more routes; `r1`–`r4` + `.map-go1`–`4` wait for a step, as on the other maps. On the land map, `data-tribes="all"` colors the twelve tribes' inheritance (Joshua 13–19), or `data-tribes="Judah*, Benjamin*, Ephraim"` shows some and lights the starred. The colors are the map's own in every theme. **The Exodus follows Ron Wyatt** (Rick's ruling): the crossing at Nuweiba and Mount Sinai at Jabal al-Lawz in Arabia; the `exodus` journey adds the credit line itself. To rebuild a map's picture and coastline: `node tools/terrain.mjs land` (or `neareast`, `sinai`, `all`) | `mockups/ot-graphics.html` slides 1–4, 12 (a local demo, not published) |
+| `svg[data-tabernacle]` | the tabernacle in its court, in 3D and to scale in cubits (Exodus 26–27): it builds itself in the order a priest meets it coming in from the east (gate, altar, laver, holy place, most holy place). `data-tabernacle="steps"` brings each piece on a click; `"inside"` shows the tent alone, roof off and near walls cut low, with the table of shewbread, the candlestick, the altar of incense, the vail and the ark (add `steps` to bring them in turn); `"nolabels"` drops the names | `mockups/ot-graphics.html` slides 5–6 |
+| `svg[data-temple]` | Solomon's temple in 3D, to scale (1 Kings 6–7, 2 Chronicles 3–4): the court, the brasen altar, the molten sea on its oxen, the ten lavers, Jachin and Boaz, the porch, the house with its side chambers and the oracle. Takes `steps` and `nolabels` like the tabernacle | `mockups/ot-graphics.html` slide 7 |
+| `div.tree` > `ul` > `li` > `span` (nested `ul`; `span.hot`, `span.soft`, `small`, `data-icon`; `li.step`) | a family tree: Jacob's sons by their mothers, David's line, Abraham's sons. Each generation arrives in turn; up to about twelve names fit across. Put `small` inside a name for a note ("called Israel"), `data-icon` for an icon | `mockups/ot-graphics.html` slide 8 |
+| `[data-icon="tent"]` on any element | a small drawn icon before the text: `tent crown scroll staff ark altar star sheaf harp sword lamp tablets well ladder coat heart person rainbow cross water city` | the tree above |
+| `div[data-lives="adam-noah"]` (or `"noah-jacob"`, `"all"`) + `data-mark="Methuselah, Noah"` | how long they lived (Genesis 5 and 11), as bars on one line of years from creation, with the flood marked. It shows what the numbers hide: Methuselah dies the year of the flood; Noah outlives Abraham's birth | `mockups/ot-graphics.html` slide 9 |
+| `div[data-kings]` (or `data-kings="1050-586"` with Saul, David, Solomon, or a narrower range like `"760-680"`) + `data-mark="Hezekiah, Isaiah"`, `data-prophets="off"` | the kings of Israel and Judah side by side, each reign colored by the books' own verdict (did right / right but not with a perfect heart / did evil in the sight of the LORD), the prophets above and below the kings they spoke to, and the fall of Samaria (722) and of Jerusalem (586) marked | `mockups/ot-graphics.html` slide 10 |
+| `div.parallel` > `p` > `b` pieces (`data-kind="same"`, `"opposite"`, `"more"`; `p.step`) | Hebrew poetry: two or three lines cut into pieces that line up in colored columns, with a badge saying how they pair (says it again / the other side / builds on it). Lighter than `.match`; use `.match` when each link needs its own label | `mockups/ot-graphics.html` slide 11 |
 | `svg.wells` (`.wells-pit`, `.wells-water.wells-drain`, `.wells-crack`, `.wells-drip`, `.wells-rock`, `.wells-spring`, `.wells-bubble`) | a broken cistern that leaks dry beside a spring that never stops (Jeremiah 2:13). Clip the drain to the pit with a study-prefixed clip id | John 4 slide 12, John 7 slide 26 |
 | `.walls > div` (`b`, `i`, `b`, `small`) | walls coming down between two kinds of people, one row per step | John 4 slide 10 |
 | `[data-dots="38"].dots` (`.rows` + `--cols`, `.fill`, `.fish`, `--dot`, `--pace`, `--wait`; `data-keep` + `.dots-go`) and `.dots-num` (`--to`), `.dots-cap` | a dot counter: dots that pop in, fill, or fade until a few are left, and a number that counts up | John 5 slide 8 (fill, count up), John 6 slide 9 (on a step), John 6 slide 47 (kept few), John 21 slide 15 (fish), John 4 slide 31 (rows) |
@@ -188,6 +196,33 @@ Use these, always with "about", so every study agrees. They are the common conse
 | Rome destroys Jerusalem and the temple | AD 70 |
 | John's letters, from Ephesus | AD 85 to 95 |
 | Revelation, from Patmos, under Domitian | AD 95 |
+
+## Old Testament dates
+
+Use these so every study agrees, with "about" before any date earlier than the kings. The kings follow Edwin Thiele's chronology (the one `div[data-kings]` draws). Years before Abraham come from adding up the ages in Genesis 5 and 11, as `div[data-lives]` does; don't turn them into BC dates.
+
+| Event | About |
+|---|---|
+| Abraham called out of Ur and Haran (Genesis 12) | about 2090 BC |
+| Jacob and his family go down to Egypt (Genesis 46) | about 1875 BC |
+| The Exodus (1 Kings 6:1: 480 years before Solomon's temple) | about 1446 BC |
+| Into the land under Joshua | about 1406 BC |
+| The judges | about 1380 to 1050 BC |
+| Saul | 1050 to 1010 BC |
+| David | 1010 to 970 BC |
+| Solomon; the temple built (966) | 970 to 931 BC |
+| The kingdom divides: Israel (north) and Judah (south) | 931 BC |
+| Elijah and Elisha in Israel | 870 to 797 BC |
+| Samaria falls; Israel taken to Assyria (2 Kings 17) | 722 BC |
+| Hezekiah; Isaiah; Sennacherib turned back (2 Kings 18–19) | 715 to 686 BC; 701 BC |
+| Josiah finds the book of the law (2 Kings 22) | 622 BC |
+| Daniel and the first captives taken to Babylon | 605 BC |
+| Jerusalem and the temple destroyed (2 Kings 25) | 586 BC |
+| Cyrus lets the Jews go home (Ezra 1) | 538 BC |
+| The temple built again (Ezra 6) | 516 BC |
+| Esther | about 483 to 473 BC |
+| Ezra comes to Jerusalem; Nehemiah builds the walls | 458 BC; 445 BC |
+| Malachi, the last of the prophets | about 430 BC |
 
 ## Proverbs notes
 

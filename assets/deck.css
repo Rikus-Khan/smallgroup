@@ -905,3 +905,145 @@ svg.map.world { overflow: hidden; border-radius: 6px; }
 .letter dt:nth-of-type(5), .letter dt:nth-of-type(5) + dd { transition-delay: 2.1s; }
 .slide.active .letter dt:not(:has(+ dd.step)), .slide.active .letter dd:not(.step), .letter dd.step.on, .letter dt:has(+ dd.step.on) { opacity: 1; transform: none; }
 @media (max-width: 600px) { .letter dl { grid-template-columns: 1fr; gap: .1rem; } .letter dd { margin-bottom: .5rem; } }
+
+/* ================= Old Testament graphics (drawn by deck.js; see tools/AUTHORING.md) ================= */
+
+/* svg.map[data-terrain]: real shaded relief. The picture keeps its own colors in every theme, so its labels do too.
+   --u keeps text, dots and lines one size on screen when the viewBox is cropped. */
+svg.map.terrain { overflow: hidden; border-radius: 8px; box-shadow: 0 8px 28px rgb(0 0 0 / .22); background: #94bccb; }
+.map.terrain .sea { fill: #94bccb; }
+.map.terrain .coast { fill: none; stroke: #4f7584; stroke-opacity: .7; stroke-width: calc(1.2px * var(--u, 1)); stroke-linejoin: round; }
+.map.terrain .lake, .map.terrain .lake ellipse { fill: #8fbccb; stroke: #4f7584; stroke-width: calc(1px * var(--u, 1)); }
+.map.terrain .rivers path { fill: none; stroke: #3f86a1; stroke-width: calc(2.2px * var(--u, 1)); stroke-linecap: round; stroke-linejoin: round; }
+.map.terrain .streams path { fill: none; stroke: #3f86a1; stroke-width: calc(1.5px * var(--u, 1)); stroke-dasharray: calc(5px * var(--u, 1)) calc(2.5px * var(--u, 1)); stroke-linecap: round; }
+.map.terrain text { font-family: var(--serif); paint-order: stroke; stroke: rgb(255 250 238 / .85); stroke-width: calc(5px * var(--u, 1)); stroke-linejoin: round; }
+.map.terrain .map-region { font-size: calc(19px * var(--u, 1)); font-weight: 700; letter-spacing: .2em; fill: #5a4630; stroke: rgb(255 248 230 / .55); }
+.map.terrain .map-water { font-size: calc(19px * var(--u, 1)); font-style: italic; fill: #23586b; stroke: rgb(220 238 243 / .7); }
+.map.terrain .river-name { font-size: calc(16px * var(--u, 1)); font-style: italic; fill: #23586b; }
+.map.terrain .map-town text { font-size: calc(23px * var(--u, 1)); font-weight: 600; fill: #2b211c; }
+.map.terrain .map-town > circle:not(.map-ping) { fill: #fffaf0; stroke: #2b211c; stroke-width: calc(2.4px * var(--u, 1)); }
+.map.terrain .map-town .mount { fill: #6b4a2b; stroke: #fff6e4; stroke-width: calc(1.6px * var(--u, 1)); stroke-linejoin: round; }
+.map.terrain .map-town.here > circle:not(.map-ping) { fill: #b3261e; stroke: #fff; }
+.map.terrain .map-town.here .mount { fill: #b3261e; }
+.map.terrain .map-town.here text { fill: #8e1b14; font-weight: 700; }
+.map.terrain .map-ping { stroke: #b3261e; stroke-width: calc(3px * var(--u, 1)); }
+.map.terrain .map-way { stroke: #5a4630; stroke-width: calc(2.5px * var(--u, 1)); stroke-dasharray: calc(3px * var(--u, 1)) calc(7px * var(--u, 1)); }
+.map.terrain .map-route { stroke: #b3261e; stroke-width: calc(4.5px * var(--u, 1)); }
+.map.terrain .map-route.under { stroke: rgb(255 255 255 / .8); stroke-width: calc(9px * var(--u, 1)); }
+.map.terrain .map-route.j2:not(.under) { stroke: #1f5f8b; } .map.terrain .map-route.j3:not(.under) { stroke: #6b2f7a; } .map.terrain .map-route.j4:not(.under) { stroke: #b86b0b; }
+.map.terrain .map-credit { font-size: calc(17px * var(--u, 1)); font-style: italic; fill: #3b2d1f; stroke-width: calc(4px * var(--u, 1)); }
+.map.terrain .tribe { fill-opacity: .3; stroke-opacity: .3; stroke-width: calc(1px * var(--u, 1)); mix-blend-mode: multiply; }
+.map.terrain .tribe.hot { fill-opacity: .55; } .map.terrain .tribe.dim { fill-opacity: .1; stroke-opacity: .1; }
+.map.terrain .tribe-border { fill: none; stroke: #4a3a28; stroke-opacity: .55; stroke-width: calc(1.3px * var(--u, 1)); stroke-dasharray: calc(5px * var(--u, 1)) calc(3px * var(--u, 1)); }
+.map.terrain .tribe-name { font-size: calc(18px * var(--u, 1)); font-weight: 700; letter-spacing: .08em; fill: #3d2a17; }
+.map.terrain .tribe-name.hot { fill: #7d1a12; font-size: calc(22px * var(--u, 1)); }
+.map.terrain .tribes, .map.terrain .tribe-name { opacity: 0; transition: opacity .9s ease .4s; }
+.slide.active .map.terrain .tribes, .slide.active .map.terrain .tribe-name { opacity: 1; }
+
+/* svg[data-tabernacle], svg[data-temple]: drawn in 3D. Labels take the theme's ink; the building keeps its gold, brass and linen. */
+svg.iso { width: 100%; height: auto; display: block; overflow: visible; }
+.iso .iso-label text { font: 500 15px var(--sans); fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
+.iso .iso-label path { stroke: var(--ink-soft); stroke-width: 1; fill: none; }
+.iso .iso-label circle { fill: var(--ink-soft); }
+.iso .iso-piece { opacity: 0; transform: translateY(-24px); }
+.iso-auto .iso-piece { transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--i) * .6s + .2s); }
+.iso-auto .iso-names { transition-delay: calc(var(--i) * .6s + .6s); }
+.slide.active .iso-auto .iso-piece, .iso-steps .iso-piece[data-i="0"] { opacity: 1; transform: none; }
+.iso-steps .iso-piece { transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.iso-steps:has(.iso-go[data-i="1"].on) .iso-piece[data-i="1"], .iso-steps:has(.iso-go[data-i="2"].on) .iso-piece[data-i="2"],
+.iso-steps:has(.iso-go[data-i="3"].on) .iso-piece[data-i="3"], .iso-steps:has(.iso-go[data-i="4"].on) .iso-piece[data-i="4"],
+.iso-steps:has(.iso-go[data-i="5"].on) .iso-piece[data-i="5"], .iso-steps:has(.iso-go[data-i="6"].on) .iso-piece[data-i="6"],
+.iso-steps:has(.iso-go[data-i="7"].on) .iso-piece[data-i="7"], .iso-steps:has(.iso-go[data-i="8"].on) .iso-piece[data-i="8"] { opacity: 1; transform: none; }
+.iso .glory { animation: glory 3.6s ease-in-out infinite alternate; }
+@keyframes glory { from { opacity: .55; } to { opacity: 1; } }
+.iso .flame { animation: flicker 1.4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center bottom; filter: drop-shadow(0 0 3px #ffcf5a); }
+.iso .smoke { stroke-dasharray: 6 5; animation: smoke 3s linear infinite; opacity: .8; }
+@keyframes smoke { to { stroke-dashoffset: -22; } }
+
+/* [data-icon]: a small drawn icon before the text */
+.icon { width: 1.15em; height: 1.15em; vertical-align: -.2em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* div.tree: a family tree. <div class="tree"><ul><li><span data-icon="tent">Abraham<small>Genesis 12</small></span><ul>…</ul></li></ul></div>
+   span.hot lights a name, span.soft quiets one; li.step brings a branch on a click. Each generation arrives in turn when the slide opens. */
+.tree { overflow-x: auto; padding: .4em 0 .6em; }
+.tree ul { display: flex; justify-content: center; margin: 0; padding: 1.3em 0 0; position: relative; }
+.tree > ul { padding-top: 0; width: max-content; min-width: 100%; }   /* wider than the screen: scrolls from its left edge instead of being cut off */
+.tree li { list-style: none; position: relative; padding: 1.3em .18em 0; text-align: center; }
+.tree > ul > li { padding-top: 0; }
+.tree li::before, .tree li::after { content: ""; position: absolute; top: 0; right: 50%; width: 50%; height: 1.3em; border-top: 2px solid var(--line-strong); }
+.tree li::after { right: auto; left: 50%; border-left: 2px solid var(--line-strong); }
+.tree li:only-child::before, .tree li:only-child::after { border-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after { border-top: 0; }
+.tree li:last-child::before { border-right: 2px solid var(--line-strong); border-radius: 0 8px 0 0; }
+.tree li:first-child::after { border-radius: 8px 0 0 0; }
+.tree li:only-child::after { border-radius: 0; }
+.tree > ul > li::before, .tree > ul > li::after { display: none; }
+.tree ul ul::before { content: ""; position: absolute; top: 0; left: 50%; height: 1.3em; border-left: 2px solid var(--line-strong); }
+.tree li > span { display: inline-flex; flex-direction: column; align-items: center; gap: .15em; min-width: 3.4em; padding: .4em .5em .45em; border: 1.5px solid var(--line-strong);
+  border-radius: 10px; background: var(--surface); color: var(--ink); font: 600 clamp(.8rem, .72rem + .32vw, 1.05rem)/1.15 var(--serif); box-shadow: 0 3px 10px rgb(0 0 0 / .1); }
+.tree li > span .icon { width: 1.5em; height: 1.5em; color: var(--accent); }
+.tree li > span small { font: 400 .72em/1.2 var(--sans); color: var(--ink-soft); }
+.tree li > span.hot { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, var(--surface)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent), 0 3px 12px rgb(0 0 0 / .15); }
+.tree li > span.soft { opacity: .6; font-weight: 400; }
+.tree li > span { opacity: 0; transform: translateY(8px); transition: opacity .55s ease, transform .55s ease; transition-delay: calc(var(--g, 0) * .45s + .2s); }
+.slide.active .tree li:not(.step) > span, .tree li.step.on > span { opacity: 1; transform: none; }
+.slide.active .tree li:not(.step) > span.soft { opacity: .6; }
+.tree li.step:not(.on) li > span { opacity: 0; }
+@media (max-width: 640px) { .tree li > span { min-width: 0; padding: .35em .45em; font-size: .74rem; } .tree li { padding-left: .12em; padding-right: .12em; } }
+
+/* div[data-lives]: how long they lived, Genesis 5 and 11 */
+svg.lives { width: 100%; height: auto; display: block; font-family: var(--sans); }
+.lives .lv-grid { stroke: var(--line); stroke-width: 1; }
+.lives .lv-year { font-size: 13px; fill: var(--ink-soft); }
+.lives .lv-name { font: 600 16px var(--serif); fill: var(--ink); }
+.lives .lv-age { font-size: 13px; fill: var(--ink-soft); }
+.lives .lv-bar { fill: color-mix(in srgb, var(--cool) 55%, transparent); }
+.lives .hot .lv-bar { fill: var(--accent); } .lives .hot .lv-name { fill: var(--accent-hot); }
+.lives .lv-flood { fill: color-mix(in srgb, var(--cool) 35%, transparent); }
+.lives .lv-flood-name { font-size: 13px; font-style: italic; fill: var(--cool); }
+.lives .lv-row { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--k) * .12s + .2s); }
+.lives .lv-bar { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); transition: transform .9s cubic-bezier(.3, .7, .3, 1); transition-delay: calc(var(--k) * .12s + .3s); }
+.slide.active .lives .lv-row { opacity: 1; } .slide.active .lives .lv-bar { transform: none; }
+.lv-caption { margin: .3em 0 0; font-size: .85rem; color: var(--ink-soft); text-align: right; }
+
+/* div[data-kings]: the kings of Israel and Judah, with the prophets */
+svg.kings { width: 100%; height: auto; display: block; font-family: var(--sans); }
+.kings .kg-tick { stroke: var(--line); stroke-width: 1; }
+.kings .kg-year { font-size: 12px; fill: var(--ink-soft); }
+.kings .kg-event { stroke: var(--wine); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: .7; }
+.kings .kg-event-name { font-size: 12.5px; font-style: italic; fill: var(--wine); font-weight: 600; }
+.kings .kg-lane { font: 700 16px var(--serif); fill: var(--ink); } .kings .kg-lane.soft { font: italic 400 12px var(--sans); fill: var(--ink-soft); }
+.kings .kg-fill-right, .kings .kg-right { fill: var(--accent); } .kings .kg-fill-evil, .kings .kg-evil { fill: color-mix(in srgb, var(--ink-soft) 45%, transparent); }
+.kings .kg-mixed { fill: url(#kg-mixed); }
+.kings .kg-bar { stroke: var(--bg); stroke-width: 1; }
+.kings .kg-bar.hot { stroke: var(--ink); stroke-width: 2.5; }
+.kings .kg-co { fill: color-mix(in srgb, var(--ink-soft) 25%, transparent); }
+.kings .kg-name { font-size: 15px; fill: var(--ink); } .kings .kg-name.in { font-weight: 600; }
+.kings .kg-name.hot { fill: var(--accent-hot); font-weight: 700; }
+.kings .kg-right + .kg-name.in, .kings .kg-mixed + .kg-name.in { fill: var(--on-accent); }
+.kings .kg-lead { stroke: var(--ink-soft); stroke-width: .8; fill: none; }
+.kings .kg-prophet rect { fill: var(--cool); } .kings .kg-prophet text { font: italic 14px var(--serif); fill: var(--ink); }
+.kings .kg-prophet.hot rect { fill: var(--accent); } .kings .kg-prophet.hot text { font-weight: 700; fill: var(--accent-hot); }
+.kg-key { display: flex; flex-wrap: wrap; gap: .3em 1.2em; align-items: center; margin: .5em 0 0; font-size: .82rem; color: var(--ink-soft); }
+.kg-key span { display: inline-block; width: 1.6em; height: .8em; border-radius: 3px; margin-right: .35em; vertical-align: -.05em; }
+.kg-key .kg-right { background: var(--accent); } .kg-key .kg-evil { background: color-mix(in srgb, var(--ink-soft) 45%, transparent); }
+.kg-key .kg-mixed { background: repeating-linear-gradient(45deg, var(--accent) 0 4px, color-mix(in srgb, var(--ink-soft) 45%, transparent) 4px 8px); }
+.kings .kg-bar, .kings .kg-co { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); transition: transform .7s ease; }
+.slide.active .kings .kg-bar, .slide.active .kings .kg-co { transform: none; transition-delay: .25s; }
+
+/* div.parallel: two (or three) lines of Hebrew poetry, cut into matching pieces that line up in columns */
+.parallel { position: relative; display: grid; grid-template-columns: repeat(var(--n), auto); justify-content: start; gap: .2em .9em; padding: 1.6em 1.2em 1em;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font: 400 clamp(1.15rem, 1rem + .9vw, 1.8rem)/1.3 var(--serif); }
+.parallel > p { display: contents; }
+.parallel b { grid-row: var(--r); grid-column: var(--c); font-weight: 400; padding: .05em .1em .15em; border-bottom: 4px solid var(--pc); position: relative; }
+.parallel b[data-c="0"] { --pc: var(--accent); } .parallel b[data-c="1"] { --pc: var(--cool); } .parallel b[data-c="2"] { --pc: #5e9c4a; }
+.parallel b[data-c="3"] { --pc: #c77d14; } .parallel b[data-c="4"] { --pc: #8a5a9e; } .parallel b[data-c="5"] { --pc: #c0504d; }
+.parallel > p:not(:first-of-type) b::before { content: ""; position: absolute; left: 50%; top: -.55em; height: .5em; border-left: 2px dotted var(--pc); }
+.parallel .pl-kind { position: absolute; top: -.75em; left: 1em; padding: .1em .7em; border-radius: 99px; background: var(--accent); color: var(--on-accent); font: 700 .78rem/1.5 var(--sans); letter-spacing: .05em; }
+.parallel > p b { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--r) * .7s + var(--c) * .25s - .5s); }
+.slide.active .parallel > p:not(.step) b, .parallel > p.step.on b { opacity: 1; transform: none; }
+@media (max-width: 640px) {
+  .parallel { grid-template-columns: 1fr; gap: .1em; }
+  .parallel b { grid-row: auto; grid-column: auto; order: var(--o); }
+  .parallel > p:not(:first-of-type) b::before { display: none; }
+}
