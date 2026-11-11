@@ -1,6 +1,6 @@
 // Bakes the terrain maps for svg.map[data-terrain]: a shaded-relief picture (assets/maps/<name>.webp) and its coastline,
 // lakes and rivers (assets/maps/<name>.js), both for the same lon/lat box.
-//   node tools/terrain.mjs neareast | sinai | land | all
+//   node tools/terrain.mjs neareast | sinai | land | world | gospel | galilee | jerusalem | nineveh | all
 // Elevation: AWS Terrain Tiles (terrarium PNGs, public). Coast, lakes, rivers: Natural Earth (public domain).
 // Downloads are cached in the system temp folder. Needs Microsoft Edge to encode the WebP.
 // If you change a box here, change OT_MAPS in assets/deck.js to match (the heights are printed at the end).
@@ -11,10 +11,19 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
-const PRESETS = {   // name: [lon0, lon1, lat0, lat1, tile zoom, picture width, relief exaggeration, Natural Earth scale]
+const PRESETS = {   // name: [lon0, lon1, lat0, lat1, tile zoom, picture width, relief exaggeration, Natural Earth scale, options]
   neareast: [24, 50, 22, 40, 7, 2000, 7, "50m"],
   sinai: [29.5, 37, 26.8, 32.2, 9, 2000, 3.5, "10m"],
-  land: [33.9, 37, 30.4, 33.6, 10, 1600, 2.2, "10m"]
+  land: [33.9, 37, 30.4, 33.6, 10, 1600, 2.2, "10m"],
+  // the two New Testament maps keep the frames the older drawn maps used (svg[data-world] 908 × 576, svg[data-land] 400 × 560),
+  // so every route and mark already drawn on them still lands in the right place
+  world: [4, 40.0317, 29, 47, 7, 2300, 9, "50m", { frame: [908, 576], margin: 40, lush: 1 }],
+  gospel: [34.1955, 36.2648, 31.0164, 33.4417, 11, 1600, 2.4, "10m", { frame: [400, 560], margin: 60 }],
+  // close-ups: the Sea of Galilee, Jerusalem with the Mount of Olives, and Nineveh
+  galilee: [35.42, 35.73, 32.62, 32.95, 13, 1600, 2, "10m", { wet: .35, near: 1, lake: { seed: [35.59, 32.82], from: -216, to: -208 }, rivers: [["Jordan",[[35.632,32.95],[35.629,32.93],[35.627,32.905],[35.626,32.895]]],["Jordan",[[35.572,32.708],[35.567,32.69],[35.57,32.67],[35.566,32.645],[35.57,32.62]]]] }],
+  jerusalem: [35.212, 35.272, 31.758, 31.798, 15, 1600, 1.6, "10m", { wet: .05, near: .1, soften: 7 }],
+  // Nineveh: the Tigris traced from the relief (its channel today), and the Khosr through the city
+  nineveh: [43.09, 43.21, 36.32, 36.41, 14, 1600, 2.5, "10m", { wet: .35, near: .6, soften: 4, rivers: [["Tigris", [[43.09,36.398],[43.1148,36.3931],[43.1125,36.387],[43.1073,36.381],[43.108,36.3647],[43.1215,36.3599],[43.135,36.3466],[43.15,36.3345],[43.171,36.32]]], ["Khosr", [[43.21,36.376],[43.19,36.368],[43.175,36.362],[43.16,36.357],[43.148,36.355],[43.135,36.351],[43.128,36.354]]]] }]
 };
 const want = process.argv[2];
 if (!PRESETS[want] && want !== "all") { console.error(`usage: node tools/terrain.mjs ${Object.keys(PRESETS).join(" | ")} | all`); process.exit(2); }
@@ -33,10 +42,13 @@ for (const f of ["ne_50m_land", "ne_10m_land", "ne_10m_lakes", "ne_10m_rivers_la
 }
 for (const name of want === "all" ? Object.keys(PRESETS) : [want]) await bake(name, ...PRESETS[name]);
 
-async function bake(name, L0, L1, B0, B1, Z, W, EX, scale) {
-// equirectangular, true scale at the middle latitude
+async function bake(name, L0, L1, B0, B1, Z, W, EX, scale, opt = {}) {
+// a framed map can bake a margin of terrain around its frame, so a slide that shows more than the frame still shows land and sea
+const M0 = opt.frame && opt.margin || 0, F = opt.frame || [1000, 0];
+if (M0) { const fx = F[0] / (L1 - L0), fy = F[1] / (B1 - B0); L0 -= M0 / fx; L1 += M0 / fx; B0 -= M0 / fy; B1 += M0 / fy; }
+// equirectangular, true scale at the middle latitude (or the frame's own shape, for the older maps)
 const latMid = (B0 + B1) / 2, kx = W / (L1 - L0);
-const H = Math.round((B1 - B0) * kx / Math.cos(latMid * Math.PI / 180)), ky = H / (B1 - B0);
+const H = opt.frame ? Math.round(W * (F[1] + 2 * M0) / (F[0] + 2 * M0)) : Math.round((B1 - B0) * kx / Math.cos(latMid * Math.PI / 180)), ky = H / (B1 - B0);
 const PX = lon => (lon - L0) * kx, PY = lat => (B1 - lat) * ky;
 
 // ---------- PNG decode / encode ----------
@@ -109,6 +121,25 @@ for (let y = 0; y < H; y++) {
   for (let x = 0; x < W; x++) E[y * W + x] = sample(mx(L0 + (x + .5) / kx), gy);
 }
 
+// a lake found from the elevation itself: the flat water surface (opt.lake = { seed: [lon, lat], from, to } in metres), flood-filled from a seed
+const water = new Uint8Array(W * H);
+if (opt.lake) { const { seed, from, to } = opt.lake, st = [Math.round((B1 - seed[1]) * ky) * W + Math.round((seed[0] - L0) * kx)];
+  while (st.length) { const k = st.pop(); if (water[k] || E[k] < from || E[k] > to) continue; water[k] = 1; const x = k % W;
+    if (x > 0) st.push(k - 1); if (x < W - 1) st.push(k + 1); if (k >= W) st.push(k - W); if (k < W * (H - 1)) st.push(k + W); }
+  // smooth the shore: open (drop specks and thin tongues), then close (fill little holes), with a round brush
+  const R = 4, morph = (src, grow) => { const out = new Uint8Array(W * H);
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { let v = grow ? 0 : 1;
+      for (let j = -R; j <= R && v === (grow ? 0 : 1); j++) for (let i = -R; i <= R; i++) { if (i * i + j * j > R * R) continue;
+        const X = Math.min(W - 1, Math.max(0, x + i)), Y = Math.min(H - 1, Math.max(0, y + j)), w = src[Y * W + X];
+        if (grow && w) { v = 1; break; } if (!grow && !w) { v = 0; break; } }
+      out[y * W + x] = v; }
+    return out; };
+  water.set(morph(morph(morph(morph(water, false), true), true), false)); }
+// close-ups: the elevation data is coarser than the picture, so soften it (box blur, opt.soften pixels) before shading
+if (opt.soften) { const R = opt.soften, t = new Float32Array(W * H);
+  for (let pass = 0; pass < 2; pass++) {
+    for (let y = 0; y < H; y++) { let a = 0, n = 0; for (let x = -R; x < W; x++) { if (x + R < W) { a += E[y * W + x + R]; n++; } if (x - R - 1 >= 0) { a -= E[y * W + x - R - 1]; n--; } if (x >= 0) t[y * W + x] = a / n; } }
+    for (let x = 0; x < W; x++) { let a = 0, n = 0; for (let y = -R; y < H; y++) { if (y + R < H) { a += t[(y + R) * W + x]; n++; } if (y - R - 1 >= 0) { a -= t[(y - R - 1) * W + x]; n--; } if (y >= 0) E[y * W + x] = a / n; } } } }
 // ---------- hillshade (several light directions) ----------
 const dxm = 111320 * Math.cos(latMid * Math.PI / 180) / kx, dym = 110574 / ky;
 const lights = [[315, .55], [270, .2], [0, .15], [225, .1]].map(([az, w]) => { const a = (360 - az + 90) * Math.PI / 180; return [Math.cos(a), Math.sin(a), w]; });
@@ -137,16 +168,16 @@ const tint = e => { let k = 0; while (k < ramp.length - 2 && e > ramp[k + 1][0])
 // ---------- the green of watered land: river valleys, the Nile delta, the Mesopotamian plain ----------
 const fert = new Float32Array(W * H), near = new Uint8Array(W * H);
 {
-  const kmPx = 111.32 * Math.cos(latMid * Math.PI / 180) / kx, r = Math.max(2, 7 / kmPx);
+  const kmPx = 111.32 * Math.cos(latMid * Math.PI / 180) / kx, r = Math.max(2, (opt.wet ?? 7) / kmPx);
   const stamp = (x, y, rad) => { for (let j = Math.floor(y - rad); j <= y + rad; j++) for (let i = Math.floor(x - rad); i <= x + rad; i++)
     if (i >= 0 && j >= 0 && i < W && j < H && (i - x) ** 2 + (j - y) ** 2 <= rad * rad) fert[j * W + i] = 1; };
   const stampNear = (x, y, rad) => { for (let j = Math.floor(y - rad); j <= y + rad; j++) for (let i = Math.floor(x - rad); i <= x + rad; i++)
     if (i >= 0 && j >= 0 && i < W && j < H && (i - x) ** 2 + (j - y) ** 2 <= rad * rad) near[j * W + i] = 1; };
   const WET = /Nile|Rosetta|Damietta|Euphrates|Firat|Furat|Tigris|Dicle|Jordan|Karkheh|Shatt al Arab|Orontes|Asi/i;
-  const rv = JSON.parse(fs.readFileSync(path.join(cache, "ne", `ne_${scale === "10m" ? "10m" : "50m"}_rivers_lake_centerlines.geojson`))).features;
+  const rv = opt.rivers ? opt.rivers.map(([name, line]) => ({ properties: { name }, geometry: { type: "LineString", coordinates: line } })) : JSON.parse(fs.readFileSync(path.join(cache, "ne", `ne_${scale === "10m" ? "10m" : "50m"}_rivers_lake_centerlines.geojson`))).features;
   for (const f of rv) if (WET.test(f.properties.name || "")) for (const l of (f.geometry.type === "LineString" ? [f.geometry.coordinates] : f.geometry.coordinates))
     for (let k = 1; k < l.length; k++) { const [a, b] = [l[k - 1], l[k]], n = Math.ceil(Math.hypot((b[0] - a[0]) * kx, (b[1] - a[1]) * ky) / 2) + 1;
-      for (let s = 0; s <= n; s++) { const X = PX(a[0] + (b[0] - a[0]) * s / n), Y = PY(a[1] + (b[1] - a[1]) * s / n); stamp(X, Y, r); if (/Euphrates|Firat|Furat|Tigris|Dicle|Shatt/i.test(f.properties.name)) stampNear(X, Y, 45 / kmPx); } }
+      for (let s = 0; s <= n; s++) { const X = PX(a[0] + (b[0] - a[0]) * s / n), Y = PY(a[1] + (b[1] - a[1]) * s / n); stamp(X, Y, r); if (/Euphrates|Firat|Furat|Tigris|Dicle|Shatt/i.test(f.properties.name)) stampNear(X, Y, (opt.near ?? 45) / kmPx); } }
   const inTri = (lon, lat, P) => { let c = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) if ((P[i][1] > lat) !== (P[j][1] > lat) && lon < (P[j][0] - P[i][0]) * (lat - P[i][1]) / (P[j][1] - P[i][1]) + P[i][0]) c = !c; return c; };
   const DELTA = [[31.25, 29.95], [29.85, 31.15], [30.4, 31.5], [31.9, 31.55], [32.35, 31.25]];
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
@@ -164,11 +195,20 @@ const GREEN = [150, 166, 108];
 const noise = (x, y) => { const h = (a, b) => { const n = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return n - Math.floor(n); };
   let v = 0, amp = .5, f = 1 / 24; for (let o = 0; o < 4; o++, amp /= 2, f *= 2) { const X = x * f, Y = y * f, i = Math.floor(X), j = Math.floor(Y), u = X - i, w = Y - j, sm = t => t * t * (3 - 2 * t);
     v += amp * (h(i, j) * (1 - sm(u)) * (1 - sm(w)) + h(i + 1, j) * sm(u) * (1 - sm(w)) + h(i, j + 1) * (1 - sm(u)) * sm(w) + h(i + 1, j + 1) * sm(u) * sm(w)); } return v; };
+const OLIVE = [168, 172, 122];
+const lushAt = (k, c) => { if (!opt.lush) return c; const lat = B1 - (((k / W) | 0) + .5) / ky, e = E[k];
+  // the deserts of Egypt, Libya and Arabia stay sand; the lands round the northern sea are scrub and olive groves
+  const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const lon = L0 + (k % W + .5) / kx, desert = ss(36.0, 37.6, lon) * (1 - ss(35.2, 37.2, lat));
+  const t = opt.lush * ss(31.2, 34.8, lat) * (1 - desert) * (1 - .5 * ss(900, 2200, e)) * (.55 + .3 * noise(k % W, (k / W) | 0));
+  return c.map((v, i) => v + (OLIVE[i] - v) * t); };
 const col = Buffer.alloc(W * H * 3);
 for (let k = 0; k < W * H; k++) {
-  const s = shade[k], c0 = tint(E[k]), g0 = Math.min(1, fert[k] * 1.25) * (.6 + .35 * noise(k % W, (k / W) | 0)), c = c0.map((v, i) => v + (GREEN[i] - v) * g0);
+  const s = shade[k], c0 = tint(E[k]), g0 = Math.min(1, fert[k] * 1.25) * (.6 + .35 * noise(k % W, (k / W) | 0)), c = lushAt(k, c0.map((v, i) => v + (GREEN[i] - v) * g0));
   // soft light: lift highlights a little, keep shadows warm
   for (let i = 0; i < 3; i++) col[k * 3 + i] = Math.max(0, Math.min(255, c[i] * (.22 + .86 * s) + (s > 1 ? (s - 1) * 60 : 0)));
+  if (water[k]) { const x = k % W, edge = !water[k - 1] || !water[k + 1] || !water[k - W] || !water[k + W] || !water[k - 2] || !water[k + 2] || !water[k - 2 * W] || !water[k + 2 * W];
+    (edge ? [79, 117, 132] : [143, 188, 203]).forEach((v, i) => col[k * 3 + i] = v); }
 }
 const pngPath = path.join(cache, `${name}.png`);
 fs.writeFileSync(pngPath, encodePNG(W, H, col));
@@ -194,11 +234,11 @@ function clipRing(ring) {   // Sutherland–Hodgman against the padded box
   }
   return pts;
 }
-const VS = 1000 / W, tol = .45;
+const FW = opt.frame ? F[0] + 2 * M0 : 1000, VS = FW / W, tol = .45 * FW / 1000;
 const toD = (pts, closed) => {
   let d = "", last = null;
   for (const [lon, lat] of pts) {
-    const x = PX(lon) * VS, y = PY(lat) * VS;
+    const x = PX(lon) * VS - M0, y = PY(lat) * VS - M0;
     if (last && Math.hypot(x - last[0], y - last[1]) < tol) continue;
     d += `${d ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`; last = [x, y];
   }
@@ -208,10 +248,10 @@ const polys = g => g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPol
 const lines = g => g.type === "LineString" ? [g.coordinates] : g.type === "MultiLineString" ? g.coordinates : [];
 const inBox = pts => pts.some(([a, b]) => a > bx[0] && a < bx[1] && b > bx[2] && b < bx[3]);
 const land = read(`ne_${scale}_land`).features.flatMap(f => polys(f.geometry)).flatMap(p => p.map(r => clipRing(r))).filter(r => r.length > 2).map(r => toD(r, true)).join("");
-const lakes = read("ne_10m_lakes").features.filter(f => !MODERN.test(f.properties.name || "")).flatMap(f => polys(f.geometry)).flatMap(p => p).filter(inBox).map(r => toD(clipRing(r), true)).join("");
-const rivers = read(`ne_${scale}_rivers_lake_centerlines`).features.filter(f => !MODERN.test(f.properties.name || "") && f.properties.featurecla !== "Lake Centerline")
+const lakes = opt.lake ? "" : read("ne_10m_lakes").features.filter(f => !MODERN.test(f.properties.name || "")).flatMap(f => polys(f.geometry)).flatMap(p => p).filter(inBox).map(r => toD(clipRing(r), true)).join("");
+const rivers = opt.rivers ? opt.rivers.map(([n, l]) => ({ name: n, d: toD(l, false) })) : read(`ne_${scale}_rivers_lake_centerlines`).features.filter(f => !MODERN.test(f.properties.name || "") && f.properties.featurecla !== "Lake Centerline")
   .flatMap(f => lines(f.geometry).filter(inBox).map(l => ({ name: f.properties.name, rank: f.properties.scalerank, d: toD(l, false) })));
-const data = { box: [L0, L1, B0, B1], w: 1000, h: +(H * VS).toFixed(2), land, lakes, rivers: rivers.filter(r => r.d.includes("L")).map(r => ({ n: r.name || "", d: r.d })) };
+const data = { box: [L0, L1, B0, B1], w: FW, h: +(H * VS).toFixed(2), ...(M0 ? { ox: -M0, oy: -M0 } : {}), land, lakes, rivers: rivers.filter(r => r.d.includes("L")).map(r => ({ n: r.name || "", d: r.d })) };
 fs.mkdirSync(path.join(root, "assets/maps"), { recursive: true });
 fs.writeFileSync(path.join(root, "assets/maps", `${name}.js`), `// ${name}: coastline, lakes and rivers from Natural Earth (public domain), projected for the terrain map. Made by tools/terrain.mjs.\n(window.TERRAIN = window.TERRAIN || {})[${JSON.stringify(name)}] = ${JSON.stringify(data)};\n`);
 toWebp(pngPath, path.join(root, "assets/maps", `${name}.webp`));

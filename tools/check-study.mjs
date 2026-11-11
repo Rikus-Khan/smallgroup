@@ -6,9 +6,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const [file, ...kjvFiles] = process.argv.slice(2);
-if (!file || !kjvFiles.length) {
-  console.error("usage: node tools/check-study.mjs <study.html> <kjv.json> [more kjv.json ...]");
+const [file, ...kjvArgs] = process.argv.slice(2);
+// --markup-only checks everything but the verse text (for work that changes only the slides, such as the maps)
+const markupOnly = kjvArgs[0] === "--markup-only", kjvFiles = markupOnly ? [] : kjvArgs;
+if (!file || (!kjvFiles.length && !markupOnly)) {
+  console.error("usage: node tools/check-study.mjs <study.html> <kjv.json> [more kjv.json ...]   (or --markup-only)");
   process.exit(2);
 }
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -34,11 +36,11 @@ for (const f of kjvFiles) {
 }
 const bookName = topic ? BOOK : BOOK.replace(/\s+\d+$/, "");
 if (kjv.__book && kjv.__book !== bookName) err(`KJV file is ${kjv.__book}, but BOOK says ${bookName}`);
-for (const [k, text] of Object.entries(V)) {
+if (!markupOnly) for (const [k, text] of Object.entries(V)) {
   if (!(k in kjv)) err(`V[${k}] isn't in the KJV file(s) given`);
   else if (norm(text) !== kjv[k]) err(`V[${k}] doesn't match the KJV word for word:\n    study: ${norm(text)}\n    KJV:   ${kjv[k]}`);
 }
-if (!topic) {
+if (!topic && !markupOnly) {
   for (const k of Object.keys(kjv)) if (k !== "__book" && !(k in V)) err(`Verse ${k} of ${BOOK} is missing from V (every verse must be included)`);
 }
 
@@ -124,20 +126,23 @@ const deckJs = fs.readFileSync(path.join(root, "assets/deck.js"), "utf8");
 const table = name => { const m = deckJs.match(new RegExp(`const ${name} = ([\\[{][\\s\\S]*?\\n  [\\]}]);`)); return m ? new Function(`return ${m[1]}`)() : null; };
 const list = s => String(s || "").split(",").map(x => x.trim()).filter(Boolean);
 const attr = (tag, a) => tag.match(new RegExp(`\\s${a}="([^"]*)"`))?.[1];
-const [OT_MAPS, OT_PLACES, OT_JOURNEYS, ICONS] = ["OT_MAPS", "OT_PLACES", "OT_JOURNEYS", "ICONS"].map(table);
+const [OT_MAPS, OT_PLACES, OT_JOURNEYS, ICONS, NT_PLACES, NT_JOURNEYS, GOSPEL_PLACES] = ["OT_MAPS", "OT_PLACES", "OT_JOURNEYS", "ICONS", "NT_PLACES", "NT_JOURNEYS", "GOSPEL_PLACES"].map(table);
+const NT_MAPS = (() => { const m = deckJs.match(/const NT_MAPS = ([\[{][\s\S]*?\n  [\]}]);/); return m ? new Function("NT_PLACES", "NT_JOURNEYS", "GOSPEL_PLACES", `return ${m[1]}`)(NT_PLACES, NT_JOURNEYS, GOSPEL_PLACES) : {}; })();
+const ALL_MAPS = { ...OT_MAPS, ...NT_MAPS };
 const tribeNames = new Set([...deckJs.matchAll(/\["([A-Z][a-z]+)", "#[0-9a-f]{6}", \[/g)].map(m => m[1]));
-for (const [tag] of markup.matchAll(/<svg\b[^>]*\sdata-terrain="[^"]*"[^>]*>/g)) {
-  const map = attr(tag, "data-terrain");
-  if (!OT_MAPS[map]) { err(`data-terrain="${map}" must be one of: ${Object.keys(OT_MAPS).join(", ")}`); continue; }
-  for (const t of list(attr(tag, "data-towns"))) { const nm = t.replace(/[*!]?(:[lrtb])?$/, ""); if (!OT_PLACES[nm]) err(`No place "${nm}" on the Old Testament maps (add it to OT_PLACES in deck.js)`); }
-  for (const r of list(attr(tag, "data-regions"))) if (!OT_MAPS[map].regions[r]) err(`No region "${r}" on the ${map} map. It has: ${Object.keys(OT_MAPS[map].regions).join(", ")}`);
+// every terrain map: data-terrain="<name>", data-world (the Roman world) or data-land (the land in Jesus' day)
+for (const [whole, tag] of markup.matchAll(/(<svg\b[^>]*\sdata-(?:terrain="[^"]*"|world\b|land\b)[^>]*>)[\s\S]*?<\/svg>/g)) {
+  const map = attr(tag, "data-terrain") || (/\sdata-world\b/.test(tag) ? "world" : "gospel"), M = ALL_MAPS[map];
+  if (!M) { err(`data-terrain="${map}" must be one of: ${Object.keys(ALL_MAPS).filter(k => k !== "world" && k !== "gospel").join(", ")}`); continue; }
+  const known = p => M.places?.[p] || OT_PLACES[p];
+  const where = `the ${map} map${M.places ? ` (its own places: ${Object.keys(M.places).join(", ")}; or any in OT_PLACES)` : " (OT_PLACES)"}`;
+  for (const t of list(attr(tag, "data-towns"))) { const nm = t.replace(/[*!]?(:[lrtb])?$/, ""); if (!known(nm)) err(`No place "${nm}" on ${where}`); }
+  for (const r of list(attr(tag, "data-regions"))) if (!M.regions[r]) err(`No region "${r}" on the ${map} map. It has: ${Object.keys(M.regions).join(", ")}`);
   const tribes = attr(tag, "data-tribes");
   if (tribes && map !== "land") err(`data-tribes works only on data-terrain="land"`);
   if (tribes && tribes !== "all") for (const t of list(tribes)) if (!tribeNames.has(t.replace(/\*$/, ""))) err(`No tribe "${t}"`);
-}
-if (/data-terrain=/.test(markup)) {
-  for (const [, j] of markup.matchAll(/data-journey="([^"]*)"/g)) if (!OT_JOURNEYS[j] && !/^(1|2|3|rome)$/.test(j)) err(`No journey "${j}". Old Testament journeys: ${Object.keys(OT_JOURNEYS).join(", ")}`);
-  for (const [, via] of markup.matchAll(/data-via="([^"]*)"/g)) for (const p of list(via)) if (!p.startsWith("@") && !OT_PLACES[p] && !/data-world/.test(markup)) err(`No place "${p}" in data-via`);
+  for (const [, j] of whole.matchAll(/data-journey="([^"]*)"/g)) if (!M.journeys?.[j] && !OT_JOURNEYS[j]) err(`No journey "${j}" on the ${map} map. Journeys: ${[...Object.keys(M.journeys || {}), ...Object.keys(OT_JOURNEYS)].join(", ")}`);
+  for (const [, via] of whole.matchAll(/data-via="([^"]*)"/g)) for (const p of list(via)) if (!p.startsWith("@") && !known(p)) err(`No place "${p}" in data-via on ${where}`);
 }
 for (const [, icon] of markup.matchAll(/data-icon="([^"]*)"/g)) if (!ICONS[icon]) err(`No icon "${icon}". Icons: ${Object.keys(ICONS).join(", ")}`);
 for (const [, v] of markup.matchAll(/data-lives="([^"]*)"/g)) if (!["adam-noah", "noah-jacob", "all"].includes(v)) err(`data-lives="${v}" must be adam-noah, noah-jacob or all`);

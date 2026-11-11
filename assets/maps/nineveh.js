@@ -1,0 +1,2 @@
+// nineveh: coastline, lakes and rivers from Natural Earth (public domain), projected for the terrain map. Made by tools/terrain.mjs.
+(window.TERRAIN = window.TERRAIN || {})["nineveh"] = {"box":[43.09,43.21,36.32,36.41],"w":1000,"h":931.25,"land":"M-12500.0 16452.1L-12500.0 -15520.8L13500.0 -15520.8L13500.0 16452.1Z","lakes":"","rivers":[{"n":"Tigris","d":"M0.0 124.2L206.7 174.9L187.5 238.0L144.2 300.1L150.0 468.7L262.5 518.4L375.0 656.0L500.0 781.2L675.0 931.3"},{"n":"Khosr","d":"M1000.0 351.8L833.3 434.6L708.3 496.7L583.3 548.4L483.3 569.1L375.0 610.5L316.7 579.4"}]};

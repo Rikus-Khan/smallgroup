@@ -911,6 +911,8 @@ svg.map.world { overflow: hidden; border-radius: 6px; }
 /* svg.map[data-terrain]: real shaded relief. The picture keeps its own colors in every theme, so its labels do too.
    --u keeps text, dots and lines one size on screen when the viewBox is cropped. */
 svg.map.terrain { overflow: hidden; border-radius: 8px; box-shadow: 0 8px 28px rgb(0 0 0 / .22); background: #94bccb; }
+/* the card takes the map's own shape (deck.js sets aspect-ratio from the viewBox), so a short map never shows empty sea at its sides */
+.stage svg.map.terrain { width: auto; max-width: 100%; }
 .map.terrain .sea { fill: #94bccb; }
 .map.terrain .coast { fill: none; stroke: #4f7584; stroke-opacity: .7; stroke-width: calc(1.2px * var(--u, 1)); stroke-linejoin: round; }
 .map.terrain .lake, .map.terrain .lake ellipse { fill: #8fbccb; stroke: #4f7584; stroke-width: calc(1px * var(--u, 1)); }
@@ -931,6 +933,8 @@ svg.map.terrain { overflow: hidden; border-radius: 8px; box-shadow: 0 8px 28px r
 .map.terrain .map-route { stroke: #b3261e; stroke-width: calc(4.5px * var(--u, 1)); }
 .map.terrain .map-route.under { stroke: rgb(255 255 255 / .8); stroke-width: calc(9px * var(--u, 1)); }
 .map.terrain .map-route.j2:not(.under) { stroke: #1f5f8b; } .map.terrain .map-route.j3:not(.under) { stroke: #6b2f7a; } .map.terrain .map-route.j4:not(.under) { stroke: #b86b0b; }
+.map.terrain .city-wall { fill: rgb(255 246 228 / .28); stroke: #6b4a2b; stroke-width: calc(4px * var(--u, 1)); stroke-linejoin: round; }
+.map.terrain .temple-mount { fill: rgb(201 162 39 / .35); stroke: #8a6a1c; stroke-width: calc(3px * var(--u, 1)); stroke-linejoin: round; }
 .map.terrain .map-credit { font-size: calc(17px * var(--u, 1)); font-style: italic; fill: #3b2d1f; stroke-width: calc(4px * var(--u, 1)); }
 .map.terrain .tribe { fill-opacity: .3; stroke-opacity: .3; stroke-width: calc(1px * var(--u, 1)); mix-blend-mode: multiply; }
 .map.terrain .tribe.hot { fill-opacity: .55; } .map.terrain .tribe.dim { fill-opacity: .1; stroke-opacity: .1; }
