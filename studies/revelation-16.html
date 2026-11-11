@@ -83,17 +83,18 @@
 @media (max-width: 600px) { .rv16-hard { grid-template-columns: 1fr 1fr; } }
 
 /* rv16-river: the Euphrates on the world map. .rv16-flow runs; on .rv16-dry the bed is covered and a dry dashed bed shows */
-.rv16-flow { fill: none; stroke: var(--cool); stroke-width: calc(6px * var(--u, 1)); stroke-linecap: round; stroke-dasharray: calc(10px * var(--u, 1)) calc(6px * var(--u, 1)); transition: opacity 1.4s ease; }
+.rv16-flow { fill: none; stroke: steelblue; stroke-width: calc(6px * var(--u, 1)); stroke-linecap: round; stroke-dasharray: calc(10px * var(--u, 1)) calc(6px * var(--u, 1)); transition: opacity 1.4s ease; }
 .slide.active .rv16-flow { animation: rv16-run 1.2s linear infinite; }
 @keyframes rv16-run { to { stroke-dashoffset: calc(-16px * var(--u, 1)); } }
-.rv16-cover { fill: none; stroke: color-mix(in srgb, var(--surface-2) 75%, var(--bg)); stroke-width: calc(8px * var(--u, 1)); stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease; }
-.rv16-bed { fill: none; stroke: var(--warm); stroke-width: calc(4.5px * var(--u, 1)); stroke-dasharray: calc(3px * var(--u, 1)) calc(5px * var(--u, 1)); stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease .6s; }
+.rv16-cover { fill: none; stroke: color-mix(in srgb, khaki 55%, tan); stroke-width: calc(8px * var(--u, 1)); stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease; }
+.rv16-bed { fill: none; stroke: saddlebrown; stroke-width: calc(4.5px * var(--u, 1)); stroke-dasharray: calc(3px * var(--u, 1)) calc(5px * var(--u, 1)); stroke-linecap: round; opacity: 0; transition: opacity 1.4s ease .6s; }
 .slide:has(.rv16-dry.on) .rv16-flow { opacity: 0; animation: none; }
 .slide:has(.rv16-dry.on) :is(.rv16-cover, .rv16-bed) { opacity: 1; }
-.rv16-lab { font-size: calc(28px * var(--u, 1)); font-style: italic; fill: var(--cool); }
-.rv16-lab.east { font-style: normal; font-weight: 700; letter-spacing: .1em; fill: var(--danger); font-size: calc(17px * var(--u, 1)); opacity: 0; transition: opacity 1s ease 1.4s; }
+.map.terrain .rv16-bab { fill: color-mix(in srgb, saddlebrown 60%, black); }
+.rv16-lab { font-size: calc(28px * var(--u, 1)); font-style: italic; fill: color-mix(in srgb, steelblue 55%, black); }
+.rv16-lab.east { font-style: normal; font-weight: 700; letter-spacing: .1em; fill: firebrick; font-size: calc(17px * var(--u, 1)); opacity: 0; transition: opacity 1s ease 1.4s; }
 .slide:has(.rv16-dry.on) .rv16-lab.east { opacity: 1; }
-.map .map-route.rv16-way { stroke: var(--danger); stroke-dasharray: none; }
+.map .map-route.rv16-way { stroke: firebrick; stroke-dasharray: none; }
 .rv16-arrow { fill: var(--danger); opacity: 0; transition: opacity .6s ease 2.4s; }
 .slide:has(.rv16-dry.on) .rv16-arrow { opacity: 1; }
 
@@ -114,24 +115,17 @@
 .slide.active .rv16-arm { opacity: 1; }
 @media (max-width: 600px) { .rv16-who { font-size: 23px; } .rv16-who.soft { font-size: 20px; } }
 
-/* rv16-meg: the land map cropped to the valley of Jezreel below Megiddo. Text and dots are resized for the close crop.
-   Each old battle (.rv16-fight with a number) lights when its .rv16-gN step comes on */
-.rv16-meg .map-town text { font-size: 7.5px; }
-.rv16-meg .map-town circle:not(.map-ping) { r: 2.6px; }
-.rv16-meg .map-ping { r: 3.4px; stroke-width: 1.2; }
-.rv16-meg .map-river { stroke-width: 1.6; }
-.rv16-meg .map-land { stroke-width: 1; }
-.rv16-meg :is(.map-region, .map-border) { display: none; }
-.rv16-plain { fill: color-mix(in srgb, var(--warm) 22%, transparent); stroke: color-mix(in srgb, var(--warm) 60%, transparent); stroke-width: .8; stroke-dasharray: 2 2; }
-.rv16-ridge { fill: none; stroke: var(--ink-soft); stroke-width: 3.2; stroke-linecap: round; opacity: .55; }
-.rv16-mt { fill: var(--ink-soft); opacity: .55; }
-.rv16-name { font-size: 6.5px; fill: var(--ink-soft); font-style: italic; }
-.rv16-name.big { font-size: 7px; font-style: normal; font-weight: 700; letter-spacing: .12em; fill: color-mix(in srgb, var(--warm) 75%, var(--ink)); }
-.rv16-fight circle { fill: var(--danger); stroke: var(--bg); stroke-width: .8; }
-.rv16-fight text { font: 700 6px var(--sans); fill: var(--glow); text-anchor: middle; }
+/* rv16-meg: the land terrain cropped to the valley of Jezreel, with the plain and the four old battles drawn over it.
+   Each old battle (.rv16-fight with a number) lights when its .rv16-gN step comes on. Sizes are in map units (the crop is 230 wide) */
+.rv16-plain { fill: color-mix(in srgb, firebrick 18%, transparent); stroke: firebrick; stroke-opacity: .6; stroke-width: .5; stroke-dasharray: 1.6 1.2; }
+.map.terrain .rv16-name { font: italic 4.6px var(--serif); fill: color-mix(in srgb, saddlebrown 60%, black); }
+.map.terrain .rv16-name.big { font-size: 5.6px; font-style: normal; font-weight: 700; letter-spacing: .12em; }
+.rv16-fight circle { fill: firebrick; stroke: white; stroke-width: .6; }
+.map.terrain .rv16-fight text { font: 700 4.4px var(--sans); fill: white; text-anchor: middle; stroke: none; }
 .rv16-fight { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.4); transition: opacity .5s ease, transform .5s cubic-bezier(.3,1.6,.5,1); }
 .slide:has(.rv16-g1.on) .rv16-fight.f1, .slide:has(.rv16-g2.on) .rv16-fight.f2,
 .slide:has(.rv16-g3.on) .rv16-fight.f3, .slide:has(.rv16-g4.on) .rv16-fight.f4 { opacity: 1; transform: none; }
+
 .rv16-list { list-style: none; margin: 0 0 .5em; padding: 0; display: grid; gap: .35em; }
 .rv16-list li { display: grid; grid-template-columns: 1.6em 1fr; gap: .5em; align-items: start; font-size: clamp(.9rem, .8rem + .4vw, 1.2rem); line-height: 1.35; }
 .rv16-list li > b { display: grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; background: var(--danger); color: var(--glow); font: 700 .8em var(--sans); }
@@ -346,15 +340,15 @@
     <div class="split">
       <div class="stage">
         <svg data-world viewBox="590 210 318 300" style="max-height:52vh" data-towns="Antioch, Damascus, Jerusalem:r" role="img" aria-label="Map of the eastern end of the Roman world. The river Euphrates runs down its east edge. The river dries up, and roads open from the east across it toward Megiddo, near Jerusalem.">
-          <path class="rv16-flow" d="M856.8 249.6 C859.3 258.1 871.1 288.0 871.9 300.8 C872.8 313.6 860.2 317.9 861.8 326.4 C863.5 334.9 874.4 342.9 882.0 352.0 C889.6 361.1 903.0 376.0 907.2 380.8"/>
-          <path class="rv16-cover" d="M856.8 249.6 C859.3 258.1 871.1 288.0 871.9 300.8 C872.8 313.6 860.2 317.9 861.8 326.4 C863.5 334.9 874.4 342.9 882.0 352.0 C889.6 361.1 903.0 376.0 907.2 380.8"/>
-          <path class="rv16-bed" d="M856.8 249.6 C859.3 258.1 871.1 288.0 871.9 300.8 C872.8 313.6 860.2 317.9 861.8 326.4 C863.5 334.9 874.4 342.9 882.0 352.0 C889.6 361.1 903.0 376.0 907.2 380.8"/>
-          <text class="rv16-lab" x="848" y="300" transform="rotate(72 848 300)" text-anchor="middle">Euphrates</text>
+          <path class="rv16-flow" d="M830.9 316.3L839.9 314.8L847.7 315.8L857.4 318.9L863.0 322.1L864.4 325.4L867.3 328.8L871.7 332.4L873.8 334.4L873.7 335.1L874.6 335.9L876.7 336.8L877.9 338.6L878.2 341.4L879.2 343.5L880.7 344.7L881.9 346.6L882.8 349.2L885.1 351.9L888.7 354.7L890.6 357.4L890.6 359.8L891.0 361.3L892.2 362.3L892.2 362.3L895.4 363.6L896.9 363.4L897.6 362.2L899.4 361.8L902.0 362.2L903.2 362.0L903.7 361.9L904.3 361.6L905.0 362.0L907.3 361.6L910.5 360.1L913.2 359.7L915.6 360.5L917.3 361.7L919.0 364.1L920.7 366.3L921.9 366.7L923.1 366.2L923.9 366.5L924.8 366.6"/>
+          <path class="rv16-cover" d="M830.9 316.3L839.9 314.8L847.7 315.8L857.4 318.9L863.0 322.1L864.4 325.4L867.3 328.8L871.7 332.4L873.8 334.4L873.7 335.1L874.6 335.9L876.7 336.8L877.9 338.6L878.2 341.4L879.2 343.5L880.7 344.7L881.9 346.6L882.8 349.2L885.1 351.9L888.7 354.7L890.6 357.4L890.6 359.8L891.0 361.3L892.2 362.3L892.2 362.3L895.4 363.6L896.9 363.4L897.6 362.2L899.4 361.8L902.0 362.2L903.2 362.0L903.7 361.9L904.3 361.6L905.0 362.0L907.3 361.6L910.5 360.1L913.2 359.7L915.6 360.5L917.3 361.7L919.0 364.1L920.7 366.3L921.9 366.7L923.1 366.2L923.9 366.5L924.8 366.6"/>
+          <path class="rv16-bed" d="M830.9 316.3L839.9 314.8L847.7 315.8L857.4 318.9L863.0 322.1L864.4 325.4L867.3 328.8L871.7 332.4L873.8 334.4L873.7 335.1L874.6 335.9L876.7 336.8L877.9 338.6L878.2 341.4L879.2 343.5L880.7 344.7L881.9 346.6L882.8 349.2L885.1 351.9L888.7 354.7L890.6 357.4L890.6 359.8L891.0 361.3L892.2 362.3L892.2 362.3L895.4 363.6L896.9 363.4L897.6 362.2L899.4 361.8L902.0 362.2L903.2 362.0L903.7 361.9L904.3 361.6L905.0 362.0L907.3 361.6L910.5 360.1L913.2 359.7L915.6 360.5L917.3 361.7L919.0 364.1L920.7 366.3L921.9 366.7L923.1 366.2L923.9 366.5L924.8 366.6"/>
+          <text class="rv16-lab" x="838" y="306" text-anchor="middle">Euphrates</text>
           <path class="map-route r1 rv16-way" style="--draw:2.4s" data-via="@40.6 35.6, @38.8 34.7, @37.2 33.6, @35.18 32.58"/>
           <path class="map-route r1 rv16-way" style="--draw:2.6s" data-via="@40.6 37.2, @38.6 36.3, @36.9 34.6, @35.6 33.2, @35.18 32.58"/>
           <text class="rv16-lab east" x="900" y="438" text-anchor="end">FROM THE EAST</text>
           <g class="map-town here"><circle cx="785.7" cy="461.4" r="2.5"/><circle class="map-ping" cx="785.7" cy="461.4" r="3.2"/><text x="781" y="458" text-anchor="end">Megiddo</text></g>
-          <text class="map-soft" x="902" y="500" text-anchor="end" style="font-size:7px">Babylon: further down the river →</text>
+          <text class="map-soft rv16-bab" x="904" y="478" text-anchor="end" style="font-size:7px">Babylon: further down the river →</text>
         </svg>
       </div>
       <div>
@@ -426,26 +420,15 @@
     <h2 class="rise">Armageddon: the hill of Megiddo</h2>
     <div class="split">
       <div class="stage">
-        <svg data-land viewBox="140 118 150 125" class="rv16-meg" style="max-height:50vh" data-towns="Nazareth:t" role="img" aria-label="Map of the valley of Jezreel. Megiddo sits at the foot of the Carmel ridge, looking out over a wide plain that runs east toward mount Gilboa and the Jordan. Four old battles are marked one by one: Deborah and Barak by the waters of Megiddo; Gideon in the valley of Jezreel; Saul on mount Gilboa; King Josiah at Megiddo.">
-          <path class="rv16-plain" d="M174 170 L200 168 L222 182 L240 194 L258 210 L252 222 L232 212 L212 212 L194 208 L182 194 Z"/>
-          <path class="rv16-ridge" d="M166 146 C 172 160, 180 176, 190 192"/>
-          <path class="rv16-ridge" d="M226 214 C 230 222, 234 230, 238 238"/>
-          <path class="map-river" d="M214 202 C 204 196, 194 186, 186 174 S 172 154, 167 146"/>
-          <circle class="rv16-mt" cx="232" cy="176" r="4"/>
-          <text class="rv16-name" x="238" y="184">mount Tabor</text>
-          <text class="rv16-name" x="146" y="132" style="fill:var(--cool)">the Great Sea</text>
-          <text class="rv16-name" x="224" y="240" text-anchor="end">mount Gilboa</text>
-          <text class="rv16-name" x="150" y="166" transform="rotate(62 150 166)">Carmel</text>
-          <text class="rv16-name" x="188" y="172">Kishon</text>
-          <text class="rv16-name big" x="206" y="194">JEZREEL</text>
-          <g class="map-town here"><circle cx="191" cy="198" r="6"/><circle class="map-ping" cx="191" cy="198" r="8"/><text x="187" y="208" text-anchor="end">Megiddo</text></g>
-          <g class="map-town"><circle cx="198" cy="214" r="6"/><text x="194" y="222" text-anchor="end">Taanach</text></g>
-          <g class="map-town"><circle cx="221" cy="206" r="6"/><text x="225" y="210">Jezreel</text></g>
-          <g class="map-town"><circle cx="255" cy="219" r="6"/><text x="255" y="231" text-anchor="middle">Beth-shan</text></g>
-          <g class="rv16-fight f1"><circle cx="204" cy="208" r="4.5"/><text x="204" y="210.2">1</text></g>
-          <g class="rv16-fight f2"><circle cx="228" cy="198" r="4.5"/><text x="228" y="200.2">2</text></g>
-          <g class="rv16-fight f3"><circle cx="232" cy="225" r="4.5"/><text x="232" y="227.2">3</text></g>
-          <g class="rv16-fight f4"><circle cx="196" cy="189" r="4.5"/><text x="196" y="191.2">4</text></g>
+        <svg data-terrain="land" viewBox="340 315 230 160" class="rv16-meg" style="max-height:50vh" data-regions="" data-towns="Megiddo!:l, Jezreel:r, Beth-shan:b, Mount Tabor:r, Mount Gilboa:l, Mount Carmel:r" role="img" aria-label="Map of the valley of Jezreel on real terrain. Megiddo sits at the foot of the Carmel ridge, looking out over a wide plain that runs east toward mount Gilboa and the Jordan, with mount Tabor to the north-east and the Kishon river running west. Four old battles are marked one by one: Deborah and Barak by the waters of Megiddo; Gideon in the valley of Jezreel; Saul on mount Gilboa; King Josiah at Megiddo.">
+          <path class="rv16-plain" d="M385.7 340.3 L429.1 337.1 L465.8 360.1 L495.8 379.9 L525.9 406.3 L515.9 426.0 L482.5 409.6 L449.1 409.6 L419.1 403.0 L399.0 379.9 Z"/>
+          <text class="rv16-name big" x="439.1" y="379.9">JEZREEL</text>
+          <g class="map-town"><circle cx="426.4" cy="409.5" r="1.6"/><text x="423.4" y="410.9" text-anchor="end">Taanach</text></g>
+          <g class="map-town"><circle cx="452.5" cy="343.6" r="1.6"/><text x="452.5" y="340.6" text-anchor="middle">Nazareth</text></g>
+          <g class="rv16-fight f1"><circle cx="435.8" cy="403.0" r="3.4"/><text x="435.8" y="404.6">1</text></g>
+          <g class="rv16-fight f2"><circle cx="475.8" cy="386.5" r="3.4"/><text x="475.8" y="388.1">2</text></g>
+          <g class="rv16-fight f3"><circle cx="482.5" cy="431.0" r="3.4"/><text x="482.5" y="432.6">3</text></g>
+          <g class="rv16-fight f4"><circle cx="422.4" cy="371.7" r="3.4"/><text x="422.4" y="373.3">4</text></g>
         </svg>
       </div>
       <div>

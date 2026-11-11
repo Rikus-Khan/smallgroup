@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+.map.terrain .mk11-lab { font-size: calc(22px * var(--u, 1)); font-weight: 600; font-style: italic; fill: saddlebrown; }
+.map.terrain .mk11-blue { fill: navy; }
 /* mk11-fig: a fig tree in full leaf with nothing on it. A .mk11-look step rings the branches: "nothing but leaves".
    svg.mk11-fig.dry: when the slide opens, the leaves fall one by one, the tree greys, and the roots show dried up. */
 .mk11-fig { --leaf: color-mix(in srgb, var(--cool) 70%, var(--warm)); }
@@ -93,29 +95,17 @@
     <blockquote class="quote rise" data-q="1" data-hl="unto Bethphage and Bethany, at the mount of Olives"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 600 420" role="img" aria-label="Map of Jerusalem and the Mount of Olives. The road from Jericho climbs from the east through Bethany and Bethphage, over the Mount of Olives, down across the Kidron valley, and into the city and the temple. At evening Jesus walks back out to Bethany.">
-          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
-          <path d="M318 40 C 380 20, 440 60, 456 130 C 470 210, 430 300, 340 340 C 330 250, 330 140, 318 40 Z" style="fill:color-mix(in srgb, var(--ink-soft) 16%, transparent)"/>
-          <text class="map-region" x="330" y="76" font-size="13">MOUNT OF</text>
-          <text class="map-region" x="336" y="94" font-size="13">OLIVES</text>
-          <path class="map-river" d="M296 10 C 286 110, 306 210, 290 410" style="stroke-dasharray:6 6"/>
-          <text class="map-water" x="282" y="372" text-anchor="end">Kidron valley</text>
-          <path d="M40 92 L252 70 L266 330 L62 352 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--accent) 8%, transparent);stroke:var(--line-strong)"/>
-          <path d="M178 112 L252 104 L258 212 L184 218 Z" stroke-width="2" style="fill:color-mix(in srgb, var(--accent) 26%, transparent);stroke:var(--accent)"/>
-          <text x="218" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">temple</text>
-          <text class="map-region" x="80" y="290">JERUSALEM</text>
-          <path class="map-way" d="M600 300 C 570 276, 546 248, 520 236 C 492 222, 462 186, 442 166 C 414 142, 374 128, 336 142 C 304 154, 278 160, 258 160"/>
-          <text class="map-soft" x="596" y="334" text-anchor="end" font-size="14">to Jericho, 15 miles</text>
-          <text class="map-soft" x="596" y="352" text-anchor="end" font-size="14">(uphill all the way)</text>
+        <svg data-terrain="jerusalem" viewBox="200 250 800 460" data-towns="Temple:l, Mount of Olives:b, Bethphage:t, Bethany!:b" role="img" aria-label="Map of Jerusalem and the Mount of Olives on real terrain. The road from Jericho climbs from the east through Bethany and Bethphage, over the Mount of Olives, down across the Kidron valley, and into the city and the temple. At evening Jesus walks back out to Bethany.">
+          <path class="map-way" data-via="@35.272 31.7655, Bethany, Bethphage, @35.2465 31.7815, @35.2398 31.779, Temple"/>
+          <text class="mk11-lab" x="990" y="672" text-anchor="end">to Jericho, 15 miles</text>
+          <text class="mk11-lab" x="990" y="698" text-anchor="end">(uphill all the way)</text>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" d="M600 300 C 570 276, 546 248, 520 236 C 492 222, 462 186, 442 166 C 414 142, 374 128, 336 142 C 304 154, 278 160, 226 160"/>
+            <path class="map-route r1" data-via="@35.272 31.7655, Bethany, Bethphage, @35.2465 31.7815, @35.2398 31.779, Temple"/>
           </g>
           <g class="step map-go2">
-            <path class="map-route r2" pathLength="1" style="stroke:var(--cool);--draw:1.6s" d="M232 196 C 290 240, 360 300, 440 300 C 480 298, 506 270, 516 248"/>
-            <text x="300" y="398" font-size="14" style="fill:var(--cool)">at evening, back to Bethany (v. 11)</text>
+            <path class="map-route r2 j2" data-via="Temple, @35.2398 31.7775, @35.2465 31.7742, @35.2545 31.7735, Bethany"/>
+            <text class="mk11-lab mk11-blue" x="560" y="590">at evening, back to Bethany (v. 11)</text>
           </g>
-          <g class="map-town"><circle cx="442" cy="166" r="7"/><text x="452" y="160">Bethphage</text></g>
-          <g class="map-town here"><circle class="map-ping" cx="520" cy="236" r="9"/><circle cx="520" cy="236" r="7"/><text x="530" y="226">Bethany</text></g>
         </svg>
       </div>
       <div>

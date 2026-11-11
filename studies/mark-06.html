@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+.map.terrain .mk06-lab { font-size: calc(22px * var(--u, 1)); font-weight: 600; }
+.map.terrain .mk06-red { fill: firebrick; }
+.map.terrain .mk06-brown { fill: saddlebrown; }
+.map.terrain .mk06-blue { fill: navy; }
 /* mk06-sea: a boat tossed at night on the shared .still waves; a figure comes walking on the water, then the wind stops.
    The panel is filled with --on-glow and drawn in --glow, so it is night in every theme. */
 .mk06-sky { fill: var(--on-glow); }
@@ -77,7 +81,7 @@
     <blockquote class="quote rise" data-q="1" data-hl="came into his own country"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" data-land data-towns="Capernaum:r, Nazareth!" viewBox="120 56 240 210" role="img" aria-label="Map of Galilee. A road runs from Capernaum on the Sea of Galilee southwest up into the hills to Nazareth, about twenty miles.">
+        <svg class="map" data-land data-towns="Capernaum:t, Nazareth!" viewBox="120 56 240 210" role="img" aria-label="Map of Galilee. A road runs from Capernaum on the Sea of Galilee southwest up into the hills to Nazareth, about twenty miles.">
           <path class="map-route" pathLength="1" style="--wait:.8s" d="M264 134 C 250 146, 236 150, 228 158 C 222 164, 218 168, 216 170"/>
           <text class="map-soft" x="146" y="200" font-size="11">about 20 miles</text>
         </svg>
@@ -377,21 +381,18 @@
     <blockquote class="quote rise" data-q="33" data-hl="ran afoot thither out of all cities, and outwent them"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The boat crosses the north end of the lake from Capernaum toward a lonely place near Bethsaida. The crowd runs on foot around the north shore and gets there first.">
-          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <text class="map-water" x="206" y="260" text-anchor="middle" font-size="17">Sea of Galilee</text>
-          <g class="map-town"><circle cx="146" cy="78" r="7"/><text x="134" y="72" text-anchor="end">Capernaum</text></g>
-          <g class="map-town"><circle cx="256" cy="58" r="7"/><text x="250" y="88" text-anchor="middle">Bethsaida</text></g>
-          <g class="map-town here"><circle class="map-ping" cx="306" cy="104" r="9"/><circle cx="306" cy="104" r="7"/><text x="318" y="98">a desert</text><text x="318" y="118">place</text></g>
+        <svg data-terrain="galilee" viewBox="380 70 460 380" data-regions="" data-towns="Capernaum:l, Bethsaida:t" role="img" aria-label="Map of the Sea of Galilee on real terrain. The boat crosses the north end of the lake from Capernaum toward a lonely place near Bethsaida. The crowd runs on foot around the north shore and gets there first.">
+          <g class="map-town here">
+            <circle cx="722" cy="218" r="5"/><circle class="map-ping" cx="722" cy="218" r="7"/>
+            <text class="mk06-lab" x="735" y="212">a desert</text><text class="mk06-lab" x="735" y="236">place</text>
+          </g>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" d="M154 86 C 200 112, 256 120, 296 108"/>
-            <text x="186" y="140" font-size="15" style="fill:var(--accent-hot)">by ship (v. 32)</text>
+            <path class="map-route r1" data-via="Capernaum, @35.595 32.874, @35.635 32.884, @35.6438 32.8935"/>
+            <text class="mk06-lab mk06-red" x="520" y="336">by ship (v. 32)</text>
           </g>
           <g class="step map-go2">
-            <path class="map-route r2" pathLength="1" style="stroke:var(--cool);--draw:1.4s" d="M140 70 C 170 26, 226 22, 252 46 C 272 62, 290 80, 300 96"/>
-            <text x="110" y="14" font-size="15" style="fill:var(--cool)">on foot, and first (v. 33)</text>
+            <path class="map-route r2 j2" data-via="Capernaum, @35.585 32.895, @35.615 32.912, @35.642 32.8955, @35.6438 32.8935"/>
+            <text class="mk06-lab mk06-blue" x="395" y="140">on foot, and first (v. 33)</text>
           </g>
         </svg>
       </div>
@@ -571,19 +572,18 @@
     <blockquote class="quote rise" data-q="56" data-hl="as many as touched him were made whole"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The disciples set out toward Bethsaida, but the wind was against them. They landed instead at Gennesaret, a plain on the northwest shore near Capernaum.">
-          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <text class="map-water" x="206" y="300" text-anchor="middle" font-size="17">Sea of Galilee</text>
-          <g class="map-town"><circle cx="146" cy="78" r="7"/><text x="134" y="72" text-anchor="end">Capernaum</text></g>
-          <g class="map-town"><circle cx="256" cy="58" r="7"/><text x="250" y="88" text-anchor="middle">Bethsaida</text></g>
-          <g class="map-town"><circle cx="306" cy="104" r="7"/><text x="318" y="100">the 5,000</text></g>
-          <path class="map-way" d="M296 110 C 280 90, 270 74, 260 64"/>
-          <text class="map-soft" x="318" y="138" font-size="14">set out for</text><text class="map-soft" x="318" y="156" font-size="14">Bethsaida (v. 45)</text>
-          <g class="map-town here"><circle class="map-ping" cx="108" cy="140" r="9"/><circle cx="108" cy="140" r="7"/><text x="96" y="146" text-anchor="end">Gennesaret</text></g>
-          <path class="map-route" pathLength="1" style="--wait:.8s;--draw:3s" d="M300 114 C 270 190, 230 210, 190 200 C 150 190, 124 164, 114 146"/>
-          <text x="170" y="236" font-size="15" style="fill:var(--accent-hot)">landed here (v. 53)</text>
+        <svg data-terrain="galilee" viewBox="180 90 650 420" data-regions="" data-towns="Capernaum:t, Bethsaida:l" role="img" aria-label="Map of the Sea of Galilee on real terrain. The disciples set out toward Bethsaida, but the wind was against them. They landed instead at Gennesaret, a plain on the northwest shore near Capernaum.">
+          <path class="map-way" data-via="@35.645 32.892, Bethsaida"/>
+          <g class="map-town">
+            <circle cx="722" cy="218" r="5"/><text class="mk06-lab" x="735" y="224">the 5,000</text>
+          </g>
+          <text class="mk06-lab mk06-brown" x="815" y="104" text-anchor="end">set out for</text><text class="mk06-lab mk06-brown" x="815" y="130" text-anchor="end">Bethsaida (v. 45)</text>
+          <path class="map-route" style="--wait:.8s;--draw:3s" data-via="@35.645 32.892, @35.62 32.855, @35.57 32.845, @35.535 32.855, @35.522 32.868"/>
+          <text class="mk06-lab mk06-red" x="470" y="450">landed here (v. 53)</text>
+          <g class="map-town here">
+            <circle cx="312" cy="318" r="5"/><circle class="map-ping" cx="312" cy="318" r="7"/>
+            <text class="mk06-lab" x="300" y="324" text-anchor="end">Gennesaret</text>
+          </g>
         </svg>
       </div>
       <div>

@@ -41,10 +41,10 @@
 .lk19-ft { font-size: 14px; fill: var(--ink-soft); }
 
 /* lk19-siege: a ring drawn around the city, and the temple stones thrown down on a step */
-.lk19-city { fill: color-mix(in srgb, var(--accent) 10%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
 .lk19-stone { fill: color-mix(in srgb, var(--leather-light) 55%, var(--surface)); stroke: var(--leather); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; transition: transform 1.4s cubic-bezier(.5,0,.8,.6), opacity 1.4s ease; transition-delay: calc(var(--k) * .12s); }
 .slide:has(.lk19-go3.on) .lk19-stone { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: .55; }
-.lk19-hot { font-size: 16px; font-weight: 700; fill: var(--danger); }
+.lk19-ring { stroke: darkred; }
+.lk19-hot { font-size: calc(var(--u, 1) * 26px); font-weight: 700; fill: darkred; }
 </style>
 </head>
 <body>
@@ -495,25 +495,21 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 400 344" role="img" aria-label="A sketch of Jerusalem and its temple. A ring is drawn all the way around the city: the siege works. On a step the temple stones are thrown down and scattered.">
-          <rect class="map-land" x="0" y="0" width="400" height="344" rx="6"/>
-          <path class="lk19-city" d="M90 80 L300 70 L316 170 L262 250 L200 280 L120 240 L80 160 Z"/>
+        <svg data-terrain="jerusalem" viewBox="120 220 440 440" data-towns="Temple:l" role="img" aria-label="A map of Jerusalem and its temple on real terrain. A ring is drawn all the way around the city: the siege works. On a step the temple stones are thrown down and scattered.">
           <g>
-            <rect class="lk19-stone" style="--k:0;--dx:-40px;--dy:60px;--r:-40deg" x="214" y="92" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:1;--dx:10px;--dy:84px;--r:30deg" x="238" y="92" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:2;--dx:50px;--dy:70px;--r:60deg" x="262" y="92" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:3;--dx:-60px;--dy:50px;--r:20deg" x="214" y="108" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:4;--dx:-6px;--dy:66px;--r:-70deg" x="238" y="108" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:5;--dx:40px;--dy:56px;--r:-20deg" x="262" y="108" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:6;--dx:-30px;--dy:40px;--r:50deg" x="214" y="124" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:7;--dx:20px;--dy:44px;--r:-50deg" x="238" y="124" width="22" height="14"/>
-            <rect class="lk19-stone" style="--k:8;--dx:60px;--dy:36px;--r:80deg" x="262" y="124" width="22" height="14"/>
+            <rect class="lk19-stone" style="--k:0;--dx:-40px;--dy:60px;--r:-40deg" x="364" y="352" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:1;--dx:10px;--dy:84px;--r:30deg" x="382" y="352" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:2;--dx:50px;--dy:70px;--r:60deg" x="400" y="352" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:3;--dx:-60px;--dy:50px;--r:20deg" x="364" y="365" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:4;--dx:-6px;--dy:66px;--r:-70deg" x="382" y="365" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:5;--dx:40px;--dy:56px;--r:-20deg" x="400" y="365" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:6;--dx:-30px;--dy:40px;--r:50deg" x="364" y="378" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:7;--dx:20px;--dy:44px;--r:-50deg" x="382" y="378" width="15" height="10"/>
+            <rect class="lk19-stone" style="--k:8;--dx:60px;--dy:36px;--r:80deg" x="400" y="378" width="15" height="10"/>
           </g>
-          <text class="map-soft" x="250" y="160" text-anchor="middle" font-size="14">temple</text>
-          <text class="map-region" x="100" y="226">JERUSALEM</text>
-          <path class="map-route" pathLength="1" style="--wait:.6s;--draw:3s;stroke:var(--danger)" d="M200 20 C 320 18, 372 100, 366 180 C 360 260, 290 304, 200 304 C 100 304, 34 250, 34 166 C 34 80, 96 22, 200 20 Z"/>
-          <text class="lk19-hot" x="200" y="14" text-anchor="middle" dy="0" style="font-size:14px">“compass thee round”</text>
-          <text class="lk19-hot step lk19-go3" x="200" y="334" text-anchor="middle" style="font-size:14px">“not one stone upon another”</text>
+          <path class="map-route lk19-ring" pathLength="1" style="--wait:.6s;--draw:3s" d="M338 292 C 440 292, 490 370, 484 450 C 478 535, 420 600, 338 602 C 250 600, 190 535, 190 450 C 190 360, 250 294, 338 292 Z"/>
+          <text class="lk19-hot" x="338" y="270" text-anchor="middle">“compass thee round”</text>
+          <text class="lk19-hot step lk19-go3" x="340" y="640" text-anchor="middle">“not one stone upon another”</text>
         </svg>
       </div>
       <div>

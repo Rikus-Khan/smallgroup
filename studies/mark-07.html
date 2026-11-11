@@ -10,16 +10,16 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* mk07-map: a cropped data-land map, with town names, dots and lines scaled down to fit the crop */
-.mk07-map .map-town text { font-size: 9px; }
-.mk07-map .map-town > circle:not(.map-ping) { r: 3.2px; }
-.mk07-map .map-town > .map-ping { r: 5px; stroke-width: 2; }
-.mk07-map .map-region { font-size: 8px; }
-.mk07-map .map-route { stroke-width: 2.6px; }
-.mk07-map .map-river, .mk07-map .map-lake, .mk07-map .map-land { stroke-width: 1.4px; }
-.mk07-map .map-border { stroke-width: 1.2px; stroke-dasharray: 3 4; }
-.mk07-map .mk07-label { font-size: 8.5px; }
-.mk07-map .mk07-zone { fill: color-mix(in srgb, var(--warm) 22%, transparent); stroke: color-mix(in srgb, var(--warm) 60%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
+/* mk07-map: a cropped data-land map on terrain, with town names, dots and lines scaled down to fit the crop */
+.map.terrain.mk07-map .map-town text { font-size: 9px; }
+.map.terrain.mk07-map .map-town > circle:not(.map-ping) { r: 3.2px; }
+.map.terrain.mk07-map .map-town > .map-ping { r: 5px; stroke-width: 2; }
+.map.terrain.mk07-map .map-region { font-size: 8px; }
+.map.terrain.mk07-map .map-route { stroke-width: 2.6px; }
+.map.terrain.mk07-map .map-river, .mk07-map .map-lake, .mk07-map .map-land { stroke-width: 1.4px; }
+.map.terrain.mk07-map .map-border { stroke-width: 1.2px; stroke-dasharray: 3 4; }
+.map.terrain.mk07-map .mk07-label { font-size: 8.5px; }
+.map.terrain.mk07-map .mk07-zone { fill: color-mix(in srgb, var(--warm) 22%, transparent); stroke: color-mix(in srgb, var(--warm) 60%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
 
 /* mk07-pile: men's rules dropped one by one on top of God's commandment, until it can hardly be seen.
    Each .mk07-rule is a .step; the last one (.mk07-last) dims the commandment underneath. */
@@ -106,7 +106,7 @@
     <blockquote class="quote rise" data-q="1" data-hl="which came from Jerusalem"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" data-land viewBox="100 90 260 330" data-towns="Capernaum!:r, Jericho:r, Jerusalem*:l" role="img" aria-label="A map of the land. A road draws itself from Jerusalem in Judaea down to Jericho and north up the Jordan valley to the Sea of Galilee, where Jesus is teaching.">
+        <svg class="map" data-land viewBox="100 90 260 330" data-towns="Capernaum!:l, Jericho:r, Jerusalem*:l" role="img" aria-label="A map of the land. A road draws itself from Jerusalem in Judaea down to Jericho and north up the Jordan valley to the Sea of Galilee, where Jesus is teaching.">
           <path class="map-route" pathLength="1" style="--wait:.8s;--draw:3s" d="M202 385 C 222 378, 236 370, 243 363 C 262 330, 262 290, 266 250 C 268 210, 268 175, 266 140"/>
           <text class="map-soft" x="252" y="290" font-size="14" text-anchor="end">several days</text>
           <text class="map-soft" x="252" y="308" font-size="14" text-anchor="end">on foot</text>
@@ -304,15 +304,14 @@
     <blockquote class="quote rise" data-q="24" data-hl="went into the borders of Tyre and Sidon"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map mk07-map" data-land viewBox="140 0 230 200" role="img" aria-label="A map of the north. A route draws from Capernaum on the Sea of Galilee northwest to Tyre on the coast; Sidon lies farther up the coast. On a step, a second route loops from Tyre east and around the top of the lake, then down into the Decapolis on the east side of the lake.">
+        <svg class="map mk07-map" data-land viewBox="140 0 230 200" data-regions="" data-towns="Capernaum:l, Tyre!:r" role="img" aria-label="A map of the north. A route draws from Capernaum on the Sea of Galilee northwest to Tyre on the coast; Sidon lies farther up the coast. On a step, a second route loops from Tyre east and around the top of the lake, then down into the Decapolis on the east side of the lake.">
           <path class="mk07-zone" d="M290 150 C 300 140, 330 140, 352 150 L 360 200 L 282 200 C 282 180, 284 160, 290 150 Z"/>
           <text class="map-region" x="296" y="186">DECAPOLIS</text>
-          <g class="map-town"><circle cx="268" cy="131" r="6"/><text x="258" y="126" text-anchor="end">Capernaum</text></g>
-          <g class="map-town here"><circle class="map-ping" cx="198" cy="56" r="8"/><circle cx="198" cy="56" r="6"/><text x="206" y="52">Tyre</text></g>
+          <text class="map-region" x="152" y="168">GALILEE</text>
           <text class="map-soft mk07-label" x="200" y="12">↑ Sidon, about 25 miles</text>
-          <path class="map-route" pathLength="1" style="--wait:.8s" d="M265 128 C 245 104, 222 80, 202 60"/>
-          <text class="map-soft mk07-label" x="226" y="80">about 35 miles</text>
-          <path class="map-route r1" pathLength="1" d="M202 56 C 236 46, 290 50, 306 88 C 316 112, 310 140, 292 160"/>
+          <path class="map-route" style="--wait:.8s" data-via="Capernaum, @35.40 33.06, Tyre"/>
+          <text class="map-soft mk07-label" x="236" y="100" text-anchor="end">about 35 miles</text>
+          <path class="map-route r1" data-via="Tyre, @35.42 33.24, @35.70 33.22, @35.78 33.06, @35.79 32.88, @35.72 32.76"/>
         </svg>
       </div>
       <div>

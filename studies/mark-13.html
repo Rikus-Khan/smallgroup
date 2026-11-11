@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+.map.terrain .mk13-lab { font-size: calc(22px * var(--u, 1)); font-weight: 600; font-style: italic; fill: saddlebrown; }
 /* mk13-wall: the temple's great stones, with a man for scale. On a .mk13-fall step every stone is thrown down (--dx, --dy, --r, --k). */
 .mk13-wall { display: block; width: 100%; height: auto; max-height: 34vh; }
 .mk13-stone { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2.5; transform-box: fill-box; transform-origin: 50% 50%; transition: transform 1.3s cubic-bezier(.55,0,.75,.4); transition-delay: calc(var(--k, 0) * 120ms); }
@@ -118,21 +119,11 @@
     <blockquote class="quote rise" data-q="3" data-hl="upon the mount of Olives over against the temple"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 600 420" role="img" aria-label="Map of Jerusalem and the Mount of Olives. Jesus sits on the slope of the Mount of Olives, across the Kidron valley from the temple, looking straight at it.">
-          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
-          <path d="M318 40 C 380 20, 440 60, 456 130 C 470 210, 430 300, 340 340 C 330 250, 330 140, 318 40 Z" style="fill:color-mix(in srgb, var(--ink-soft) 16%, transparent)"/>
-          <text class="map-region" x="370" y="76" font-size="13">MOUNT OF</text>
-          <text class="map-region" x="376" y="94" font-size="13">OLIVES</text>
-          <path class="map-river" d="M296 10 C 286 110, 306 210, 290 410" style="stroke-dasharray:6 6"/>
-          <text class="map-water" x="282" y="372" text-anchor="end">Kidron valley</text>
-          <path d="M40 92 L252 70 L266 330 L62 352 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--accent) 8%, transparent);stroke:var(--line-strong)"/>
-          <path d="M178 112 L252 104 L258 212 L184 218 Z" stroke-width="2" style="fill:color-mix(in srgb, var(--accent) 26%, transparent);stroke:var(--accent)"/>
-          <text x="218" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">temple</text>
-          <text class="map-region" x="80" y="290">JERUSALEM</text>
-          <path class="map-route" pathLength="1" style="--draw:1.6s" d="M376 168 C 340 166, 300 164, 262 162"/>
-          <g class="map-town here"><circle class="map-ping" cx="380" cy="168" r="9"/><circle cx="380" cy="168" r="7"/><text x="392" y="174">He sat here</text></g>
-          <text class="map-soft" x="392" y="196" font-size="14">with Peter, James,</text>
-          <text class="map-soft" x="392" y="214" font-size="14">John and Andrew</text>
+        <svg data-terrain="jerusalem" viewBox="220 230 620 400" data-towns="Temple:l, Mount of Olives!:b" role="img" aria-label="Map of Jerusalem and the Mount of Olives on real terrain. Jesus sits on the slope of the Mount of Olives, across the Kidron valley from the temple, looking straight at it.">
+          <path class="map-route" style="--draw:1.6s" data-via="Mount of Olives, Temple"/>
+          <text class="mk13-lab" x="575" y="470">He sat here</text>
+          <text class="mk13-lab" x="575" y="494">with Peter, James,</text>
+          <text class="mk13-lab" x="575" y="518">John and Andrew</text>
         </svg>
       </div>
       <div>

@@ -17,9 +17,9 @@
 .mt14-map .map-region { font-size: var(--mt14-g, 10px); }
 .mt14-map .map-water { font-size: var(--mt14-g, 10px); }
 .mt14-small { font-size: var(--mt14-g, 10px); }
-.mt14-land { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: color-mix(in srgb, var(--accent) 60%, transparent); stroke-width: 1.4; stroke-dasharray: 4 3; }
-.mt14-fort { fill: var(--danger); }
-.mt14-fort-t { font-weight: 700; fill: var(--danger); }
+.mt14-land { fill: color-mix(in srgb, saddlebrown 20%, transparent); stroke: color-mix(in srgb, saddlebrown 75%, transparent); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.mt14-fort { fill: darkred; }
+.mt14-fort-t { font-weight: 700; fill: darkred; }
 .mt14-boat { fill: var(--accent-hot); }
 
 /* mt14-tree: a family tree in boxes. .mt14-kin rows of .mt14-who cards; the .mt14-left card shows Herodias leaving one husband for the other */
@@ -112,14 +112,14 @@
     <blockquote class="quote rise" data-q="1" data-hl="Herod the tetrarch"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map mt14-map" data-land viewBox="110 30 250 460" data-towns="Tiberias!:l, Capernaum:r, Jerusalem:l" role="img" aria-label="Map of the land. The two parts Herod Antipas ruled are shaded: Galilee, west of the Sea of Galilee, and Perea, east of the Jordan. His capital, Tiberias, is on the lake. The fortress of Machaerus is east of the Dead Sea, at the south end of Perea.">
+        <svg class="map mt14-map" data-land viewBox="110 30 250 460" data-towns="Tiberias!:l, Capernaum:t, Jerusalem:l" role="img" aria-label="Map of the land. The two parts Herod Antipas ruled are shaded: Galilee, west of the Sea of Galilee, and Perea, east of the Jordan. His capital, Tiberias, is on the lake. The fortress of Machaerus is east of the Dead Sea, at the south end of Perea.">
           <path class="mt14-land rise" style="--d:2" d="M150 70 C190 60 250 56 276 60 L280 110 L266 172 L266 214 C230 222 180 212 140 219 C150 180 158 130 150 70 Z"/>
           <path class="mt14-land rise" style="--d:2" d="M272 232 C290 228 312 230 322 236 L324 448 C300 452 280 450 268 446 C266 400 272 340 266 292 C268 270 270 250 272 232 Z"/>
           <g class="rise" style="--d:4">
             <rect class="mt14-fort" x="288" y="430" width="9" height="9"/>
             <text class="mt14-fort-t mt14-small" x="302" y="458" text-anchor="middle">Machaerus</text>
           </g>
-          <text class="map-soft mt14-small" x="120" y="486">shaded: Herod Antipas' land (rough lines)</text>
+          <text class="map-soft mt14-small" style="fill:saddlebrown" x="120" y="486">shaded: Herod Antipas' land (rough lines)</text>
         </svg>
       </div>
       <div>
@@ -192,26 +192,17 @@
     <blockquote class="quote rise" data-q="13" data-hl="When Jesus heard of it"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. Jesus crosses by boat along the north end of the lake from near Capernaum to a lonely place near Bethsaida. On a step, the crowds walk around the shore on foot and get there too.">
-          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <text class="map-water" x="210" y="250" text-anchor="middle" font-size="18">Sea of Galilee</text>
-          <g class="map-town">
-            <circle cx="146" cy="78" r="7"/><text x="134" y="72" text-anchor="end" font-weight="700">Capernaum</text>
-            <circle cx="256" cy="58" r="7"/><text x="262" y="40" font-weight="700">Bethsaida</text>
-            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
-          </g>
-          <path class="map-route" pathLength="1" d="M152 96 C190 96 248 86 296 104"/>
-          <text class="map-soft" x="206" y="122" text-anchor="middle" font-size="15">by ship</text>
+        <svg class="map" data-terrain="galilee" viewBox="420 100 420 340" data-regions="" data-towns="Capernaum:l, Bethsaida:t" role="img" aria-label="Map of the Sea of Galilee on real terrain. Jesus crosses by boat along the north end of the lake from near Capernaum to a lonely place near Bethsaida. On a step, the crowds walk around the shore on foot and get there too.">
+          <path class="map-route" data-via="Capernaum, @35.605 32.873, @35.645 32.89"/>
+          <text class="map-soft" style="fill:saddlebrown" x="620" y="352" text-anchor="middle" font-size="12">by ship</text>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" style="stroke:var(--warm);stroke-dasharray:1" d="M140 66 C168 40 214 30 244 40 C266 48 286 70 300 94"/>
-            <text class="map-soft" x="190" y="22" text-anchor="middle" font-size="15">the crowds, on foot</text>
+            <path class="map-route r1" style="stroke:var(--warm);stroke-dasharray:1" data-via="Capernaum, @35.59 32.9, @35.625 32.906, @35.645 32.89"/>
+            <text class="map-soft" style="fill:saddlebrown" x="560" y="180" text-anchor="middle" font-size="12">the crowds, on foot</text>
           </g>
           <g class="map-town here">
-            <circle class="map-ping" cx="304" cy="104" r="10"/><circle cx="304" cy="104" r="7"/>
-            <text x="318" y="128" font-size="15">a desert</text>
-            <text x="318" y="146" font-size="15">place</text>
+            <circle class="map-ping" cx="726" cy="230" r="8"/><circle cx="726" cy="230" r="5"/>
+            <text x="738" y="262" font-size="12">a desert</text>
+            <text x="738" y="276" font-size="12">place</text>
           </g>
         </svg>
       </div>
@@ -381,28 +372,17 @@
     <blockquote class="quote rise" data-q="36" data-hl="as many as touched were made perfectly whole"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The boat's path runs from the lonely place near Bethsaida out into the middle of the lake, where the storm was, then on a step to the land of Gennesaret, a small plain on the northwest shore between Capernaum and Magdala.">
-          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <path class="mt14-land" d="M118 98 C136 104 132 156 116 188 C100 194 86 176 82 150 C80 124 98 100 118 98 Z"/>
-          <text class="map-soft" x="74" y="126" text-anchor="end" font-size="16" font-weight="700">Gennesaret</text>
-          <text class="map-soft" x="74" y="144" text-anchor="end" font-size="13">a rich, small plain</text>
-          <g class="map-town">
-            <circle cx="146" cy="78" r="7"/><text x="156" y="72" font-weight="700">Capernaum</text>
-            <circle cx="256" cy="58" r="7"/><text x="262" y="40" font-weight="700">Bethsaida</text>
-            <circle cx="108" cy="200" r="7"/><text x="96" y="214" text-anchor="end" font-weight="700">Magdala</text>
-            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
-          </g>
-          <circle cx="304" cy="104" r="5" style="fill:var(--ink-soft)"/>
-          <path class="map-route" pathLength="1" d="M300 110 C280 150 250 186 214 206"/>
+        <svg class="map" data-terrain="galilee" viewBox="170 130 620 540" data-regions="GENNESARET" data-towns="Capernaum:t, Bethsaida:r, Magdala:l, Tiberias" role="img" aria-label="Map of the Sea of Galilee on real terrain. The boat's path runs from the lonely place near Bethsaida out into the middle of the lake, where the storm was, then on a step to the land of Gennesaret, a small plain on the northwest shore between Capernaum and Magdala.">
+          <path class="mt14-land" d="M290 322 C330 322 345 350 338 395 C330 425 315 445 296 450 C272 425 262 380 268 350 C272 332 280 324 290 322 Z"/>
+          <circle cx="726" cy="230" r="4" style="fill:var(--ink-soft)"/>
+          <path class="map-route" data-via="@35.645 32.89, @35.6 32.855, @35.57 32.84"/>
           <g class="map-town here">
-            <circle class="map-ping" cx="214" cy="208" r="10"/>
-            <text x="214" y="240" text-anchor="middle" font-size="15">the storm,</text>
-            <text x="214" y="258" text-anchor="middle" font-size="15">“in the midst of the sea”</text>
+            <circle class="map-ping" cx="484" cy="422" r="7"/>
+            <text x="484" y="452" text-anchor="middle" font-size="12" style="fill:darkred">the storm,</text>
+            <text x="484" y="466" text-anchor="middle" font-size="12" style="fill:darkred">“in the midst of the sea”</text>
           </g>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" d="M210 204 C180 186 150 168 128 150"/>
+            <path class="map-route r1" data-via="@35.57 32.84, @35.53 32.85, @35.52 32.857"/>
           </g>
         </svg>
       </div>

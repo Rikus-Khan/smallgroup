@@ -29,17 +29,6 @@
 .slide.active .jn09-eye .ray { animation: jn09-ray 1s 3.7s ease forwards; }
 @keyframes jn09-ray { to { opacity: 1; } }
 
-/* A small map: from the temple down to the pool of Siloam, with Hezekiah's tunnel */
-.jn09-map .land { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.jn09-map .mount { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2; }
-.jn09-map .valley { fill: none; stroke: var(--line-strong); stroke-width: 2; stroke-dasharray: 4 7; }
-.jn09-map .water { fill: var(--cool); }
-.jn09-map .tunnel, .jn09-map .walk { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
-.jn09-map .tunnel { stroke: var(--cool); stroke-width: 5; }
-.jn09-map .walk { stroke: var(--accent); stroke-width: 5; }
-.jn09-map .soft { fill: var(--ink-soft); }
-.split:has(.jn09-walk-go.on) .jn09-map .walk, .split:has(.jn09-tunnel-go.on) .jn09-map .tunnel { stroke-dashoffset: 0; }
-
 /* Thirty-nine kinds of forbidden sabbath work, one of them kneading */
 .jn09-works { display: grid; grid-template-columns: repeat(13, 1fr); gap: 5px; margin: .5em 0 .4em; max-width: 34rem; }
 .jn09-works i { aspect-ratio: 1; border-radius: 4px; border: 1.5px solid var(--line-strong); background: var(--surface); opacity: 0; }
@@ -139,31 +128,16 @@
     <blockquote class="quote rise" data-q="7" data-hl="Go, wash in the pool of Siloam|which is by interpretation, Sent."></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn09-map" viewBox="0 0 520 450" role="img" aria-label="Map of Jerusalem in Jesus' day. The temple sits at the top. The old City of David runs south down a ridge to the pool of Siloam, which is fed by Hezekiah's tunnel from the Gihon spring.">
-          <path class="land" d="M140 30 H340 V165 L305 205 L290 330 L258 412 H212 L196 330 L182 205 L140 165 Z"/>
-          <rect class="mount" x="165" y="48" width="150" height="100" rx="4"/>
-          <text x="240" y="96" text-anchor="middle" font-size="20" font-weight="700">Temple</text>
-          <text x="240" y="120" text-anchor="middle" font-size="15" class="soft">where Jesus had been</text>
-          <path class="valley" d="M372 30 C 362 200, 342 330, 298 440"/>
-          <text x="380" y="330" font-size="15" class="soft">Kidron</text>
-          <text x="380" y="349" font-size="15" class="soft">Valley</text>
-          <text x="174" y="282" text-anchor="end" font-size="16" class="soft">City of</text>
-          <text x="174" y="301" text-anchor="end" font-size="16" class="soft">David</text>
-          <circle class="water" cx="318" cy="238" r="11"/>
-          <text x="336" y="236" font-size="16">Gihon</text>
-          <text x="336" y="255" font-size="16">spring</text>
-          <path class="tunnel" pathLength="1" d="M310 242 C 268 262, 300 300, 262 322 S 250 378, 236 394"/>
-          <path class="walk" pathLength="1" d="M240 150 C 236 220, 226 300, 226 388"/>
-          <rect class="water" x="206" y="390" width="56" height="22" rx="4"/>
-          <text x="234" y="438" text-anchor="middle" font-size="18" font-weight="700">Pool of Siloam</text>
-          <text x="40" y="52" font-size="16" class="soft">N ↑</text>
+        <svg class="jn09-map" data-terrain="jerusalem" viewBox="180 246 460 427" data-regions="CITY OF DAVID" data-towns="Temple, Gihon spring:r, Pool of Siloam*:b" role="img" aria-label="Map of Jerusalem in Jesus' day on real hills. The temple sits at the top. The old City of David runs south down a ridge between the Kidron and the valley of Hinnom to the pool of Siloam, which is fed by Hezekiah's tunnel from the Gihon spring.">
+          <path class="map-route r1" data-via="Temple, @35.2345 31.7745, @35.2349 31.7722, Pool of Siloam"/>
+          <path class="map-route r2 j2" data-via="Gihon spring, @35.2358 31.7725, @35.2354 31.7717, Pool of Siloam"/>
         </svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">The pool called “Sent”</h2>
         <p class="note rise" style="--d:2">Siloam sat at the far south end of the old city, downhill from the temple. John tells us the name means <em>Sent</em>.</p>
-        <p class="note step jn09-walk-go">Picture the walk: a blind man, clay on his eyes, feeling his way down through the streets with nothing to go on but a word from Jesus.</p>
-        <p class="note step jn09-tunnel-go">Its water came through a tunnel King Hezekiah cut through solid rock about seven hundred years earlier (2 Kings 20:20).</p>
+        <p class="note step map-go1">Picture the walk: a blind man, clay on his eyes, feeling his way down through the streets with nothing to go on but a word from Jesus.</p>
+        <p class="note step map-go2">Its water came through a tunnel King Hezekiah cut through solid rock about seven hundred years earlier (2 Kings 20:20).</p>
         <p class="note step">And who is the Sent One? Jesus calls the Father <em>“him that sent me”</em> (9:4). The man washed in Sent, at the word of the One who was sent.</p>
       </div>
     </div>

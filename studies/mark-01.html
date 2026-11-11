@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+.map.terrain .mk01-size { font-size: calc(22px * var(--u, 1)); }
+.map.terrain .map-town.mk01-walk text { font-size: calc(24px * var(--u, 1)); font-style: italic; }
 /* Mark 1: the touch. A camp of people, one man shut outside it; on a .mk01-go step, Jesus crosses the gap and touches him. */
 .mk01-touch .mk01-camp { fill: color-mix(in srgb, var(--accent) 8%, transparent); stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 7 7; }
 .mk01-touch .mk01-folk { fill: var(--ink-soft); }
@@ -245,26 +247,11 @@
     <blockquote class="quote rise" data-q="16" data-hl="the sea of Galilee"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Capernaum is on the north shore, near Bethsaida. Jesus walks the shore and calls four fishermen, then goes into Capernaum.">
-          <path class="map-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <text x="210" y="250" text-anchor="middle" font-size="18" class="serif" style="fill:var(--cool);font-style:italic">Sea of Galilee</text>
-          <text x="210" y="272" text-anchor="middle" font-size="14" style="fill:var(--cool)">about 13 miles long</text>
-          <text x="252" y="18" font-size="14" style="fill:var(--cool)">Jordan River</text>
-          <g class="map-town rise" style="--d:3">
-            <circle cx="256" cy="58" r="7"/>
-            <text x="268" y="52" font-size="17" font-weight="700">Bethsaida</text>
-          </g>
-          <g class="map-town here rise" style="--d:4">
-            <circle class="map-ping" cx="146" cy="78" r="10"/>
-            <circle cx="146" cy="78" r="8"/>
-            <text x="134" y="70" text-anchor="end" font-size="17" font-weight="700">Capernaum</text>
-          </g>
+        <svg data-terrain="galilee" viewBox="200 100 620 900" data-regions="" data-towns="Capernaum!:l, Bethsaida:r" role="img" aria-label="Map of the Sea of Galilee on real terrain. The Jordan River flows in at the north and out at the south. Capernaum is on the north shore, near Bethsaida. Jesus walks the shore and calls four fishermen, then goes into Capernaum.">
+          <text class="map-water mk01-size" x="560" y="680" text-anchor="middle">about 13 miles long</text>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" d="M108 190 C 114 140, 128 100, 146 82"/>
-            <text x="58" y="222" text-anchor="middle" font-size="15" style="fill:var(--accent-hot)">“as he walked</text>
-            <text x="58" y="240" text-anchor="middle" font-size="15" style="fill:var(--accent-hot)">by the sea”</text>
+            <path class="map-route r1" data-via="@35.528 32.80, @35.527 32.83, @35.54 32.865, Capernaum"/>
+            <g class="map-town here mk01-walk"><text x="300" y="430" text-anchor="end">“as he walked</text><text x="300" y="462" text-anchor="end">by the sea”</text></g>
           </g>
         </svg>
       </div>

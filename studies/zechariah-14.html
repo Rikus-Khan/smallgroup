@@ -10,19 +10,11 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* A mountain seen from above, north at the top, that splits in two: a .zec14-go step moves the north half up and
-   the south half down, opens a valley between them, and swaps the .zec14-before labels for the .zec14-after ones. */
-.zec14-cleave .zec14-half { transition: transform 1.4s cubic-bezier(.3,.7,.3,1); }
-.zec14-cleave .zec14-hill { fill: color-mix(in srgb, var(--warm) 30%, var(--surface-2)); stroke: var(--line-strong); stroke-width: 2; }
-.zec14-cleave .zec14-contour { fill: none; stroke: color-mix(in srgb, var(--ink-soft) 45%, transparent); stroke-width: 1.5; }
-.zec14-cleave .zec14-city { fill: color-mix(in srgb, var(--ink-soft) 18%, var(--surface)); stroke: var(--ink-soft); stroke-width: 2.5; }
-.zec14-cleave .zec14-valley { fill: color-mix(in srgb, var(--cool) 24%, transparent); opacity: 0; transition: opacity 1s .6s; }
+/* The Mount of Olives (Zechariah 14:4) drawn over the real ground: a .zec14-go step opens the valley between the halves of the mountain,
+   brings the arrows and the .zec14-after labels, and takes the .zec14-before labels away. */
+.zec14-cleave .zec14-valley { opacity: 0; transition: opacity 1s .6s; }
 .zec14-cleave .zec14-after { opacity: 0; transition: opacity .8s 1s; }
 .zec14-cleave .zec14-before { transition: opacity .5s; }
-.zec14-cleave .zec14-label { font: 600 18px var(--sans); fill: var(--ink); }
-.zec14-cleave .zec14-soft { font-size: 15px; fill: var(--ink-soft); }
-.slide:has(.zec14-go.on) .zec14-n { transform: translateY(-58px); }
-.slide:has(.zec14-go.on) .zec14-s { transform: translateY(58px); }
 .slide:has(.zec14-go.on) .zec14-valley, .slide:has(.zec14-go.on) .zec14-after { opacity: 1; }
 .slide:has(.zec14-go.on) .zec14-before { opacity: 0; }
 </style>
@@ -93,34 +85,23 @@
     <blockquote class="quote rise" data-q="4" data-hl="the mount of Olives shall cleave in the midst thereof"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map zec14-cleave" viewBox="0 0 600 360" role="img" aria-label="Seen from above, north at the top: Jerusalem on the west, and the Mount of Olives just east of it. On a step, the mountain splits; half moves north, half moves south, and a great valley opens running east from the city.">
-          <rect class="map-land" x="0" y="0" width="600" height="360" rx="6"/>
-          <path class="zec14-valley" d="M236 156 L600 140 L600 220 L236 204 Z"/>
-          <path class="map-route r1" pathLength="1" d="M214 180 L560 180"/>
-          <path class="map-route r1" pathLength="1" d="M544 166 L562 180 L544 194"/>
-          <path class="zec14-city" d="M96 120 L200 112 L214 150 L210 236 L104 246 L84 190 Z"/>
-          <text class="zec14-label" x="150" y="186" text-anchor="middle">Jerusalem</text>
-          <g class="zec14-half zec14-n">
-            <path class="zec14-hill" d="M300 180 C 296 126, 322 84, 362 82 C 402 84, 428 126, 424 180 Z"/>
-            <path class="zec14-contour" d="M322 176 C 322 136, 340 108, 362 106 C 384 108, 402 136, 402 176"/>
-            <path class="zec14-contour" d="M344 174 C 346 148, 352 132, 362 130 C 372 132, 378 148, 380 174"/>
-          </g>
-          <g class="zec14-half zec14-s">
-            <path class="zec14-hill" d="M300 180 L424 180 C 428 234, 402 276, 362 278 C 322 276, 296 234, 300 180 Z"/>
-            <path class="zec14-contour" d="M322 184 C 322 224, 340 252, 362 254 C 384 252, 402 224, 402 184"/>
-            <path class="zec14-contour" d="M344 186 C 346 212, 352 228, 362 230 C 372 228, 378 212, 380 186"/>
+        <svg class="map zec14-cleave" data-terrain="jerusalem" viewBox="230 150 770 520" data-regions="" data-towns="Temple:l" role="img" aria-label="Seen from above, north at the top: Jerusalem on the west, with its temple, and the Mount of Olives just east of it, across the Kidron valley. On a step, the mountain splits; half moves north, half moves south, and a great valley opens running east from the city.">
+          <path class="zec14-valley" style="fill:var(--cool);fill-opacity:.4;stroke:var(--cool);stroke-width:calc(3px * var(--u, 1));stroke-dasharray:calc(8px * var(--u, 1)) calc(5px * var(--u, 1))" d="M420 335 L1000 300 L1000 480 L420 440 Z"/>
+          <path class="map-route r1" d="M440 388 L960 388"/>
+          <path class="map-route r1" d="M945 380 L960 388 L945 396"/>
+          <g class="zec14-after">
+            <path class="map-route r1" d="M600 300 L600 220"/><path class="map-route r1" d="M593.5 232.2 L600 220 L606.5 232.2"/>
+            <path class="map-route r1" d="M600 480 L600 560"/><path class="map-route r1" d="M606.5 547.8 L600 560 L593.5 547.8"/>
+            <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="640" y="205" text-anchor="start">half toward the north</text>
+            <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="640" y="590" text-anchor="start">half toward the south</text>
+            <g class="map-town"><text x="800" y="360" text-anchor="middle">a very great valley</text></g>
+            <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="800" y="430" text-anchor="middle">toward the east</text>
           </g>
           <g class="zec14-before">
-            <text class="zec14-label" x="362" y="60" text-anchor="middle">the Mount of Olives</text>
-            <text class="zec14-soft" x="362" y="318" text-anchor="middle">just east of the city</text>
+            <g class="map-town"><text x="565" y="320" text-anchor="middle">the Mount of Olives</text></g>
+            <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="565" y="348" text-anchor="middle">just east of the city</text>
           </g>
-          <g class="zec14-after">
-            <text class="zec14-soft" x="362" y="16" text-anchor="middle">half toward the north ↑</text>
-            <text class="zec14-soft" x="362" y="352" text-anchor="middle">↓ half toward the south</text>
-            <text class="zec14-label" x="514" y="124" text-anchor="middle">a very great valley</text>
-            <text class="zec14-soft" x="500" y="244" text-anchor="middle">toward the east</text>
-          </g>
-          <text class="zec14-soft" x="580" y="30" text-anchor="end">N ↑</text>
+          <g class="map-town"><text x="342" y="470" text-anchor="middle">Jerusalem</text></g>
         </svg>
       </div>
       <div>
@@ -181,20 +162,15 @@
     <blockquote class="quote rise" data-q="8"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 600 300" role="img" aria-label="A map: Jerusalem in the middle of the hills. One river runs west from it to the Great Sea, the hinder sea. The other runs east to the Salt Sea, the former sea.">
-          <rect class="map-land" x="0" y="0" width="600" height="300" rx="6"/>
-          <path class="map-sea" d="M0 0 H128 C 118 80, 112 160, 96 220 C 88 250, 80 280, 74 300 H0 Z"/>
-          <text class="map-water" x="54" y="150" text-anchor="middle" transform="rotate(-80 54 150)">the Great Sea</text>
-          <path class="map-river" d="M470 0 C 466 40, 476 70, 468 110"/>
-          <path class="map-lake" d="M458 108 C 474 106, 486 120, 484 170 C 482 220, 484 260, 482 300 L 446 300 C 444 250, 440 200, 442 160 C 444 126, 446 110, 458 108 Z"/>
-          <text class="map-water" x="530" y="214" text-anchor="middle">the Salt Sea</text>
-          <path class="map-route" pathLength="1" d="M300 150 C 250 140, 180 160, 118 150"/>
-          <path class="map-route" pathLength="1" d="M300 150 C 350 160, 400 150, 440 160"/>
-          <text class="map-soft" x="200" y="104" text-anchor="middle" font-size="15">to the hinder sea</text>
-          <text class="map-soft" x="200" y="122" text-anchor="middle" font-size="13">(west, behind you)</text>
-          <text class="map-soft" x="372" y="104" text-anchor="middle" font-size="15">to the former sea</text>
-          <text class="map-soft" x="372" y="122" text-anchor="middle" font-size="13">(east, in front of you)</text>
-          <g class="map-town here"><circle cx="300" cy="152" r="7"/><circle class="map-ping" cx="300" cy="152" r="9"/><text x="300" y="182" text-anchor="middle">Jerusalem</text></g>
+        <svg class="map" data-terrain="land" viewBox="170 540 480 300" data-regions="" data-towns="Jerusalem!:t" role="img" aria-label="A map: Jerusalem in the middle of the hills. One river runs west from it to the Great Sea, the hinder sea. The other runs east to the Salt Sea, the former sea.">
+          <path class="map-route j2" data-via="Jerusalem, @35.05 31.84, @34.8 31.82, @34.6 31.8"/>
+          <path class="map-route j2" data-via="Jerusalem, @35.33 31.8, @35.46 31.78, @35.52 31.76"/>
+          <path class="map-route j2" d="M240.7 690.6 L225.8 684.8 L239 675.7"/>
+          <path class="map-route j2" d="M512.2 687.9 L522.6 700.1 L506.7 701.9"/>
+          <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="348.4" y="639.2" text-anchor="middle">to the hinder sea</text>
+          <text class="map-credit" style="font-size:calc(17px * var(--u, 1))" x="348.4" y="648.7" text-anchor="middle">(west, behind you)</text>
+          <text class="map-credit" style="font-size:calc(20px * var(--u, 1))" x="477.4" y="639.2" text-anchor="middle">to the former sea</text>
+          <text class="map-credit" style="font-size:calc(17px * var(--u, 1))" x="477.4" y="648.7" text-anchor="middle">(east, in front of you)</text>
         </svg>
       </div>
       <div>

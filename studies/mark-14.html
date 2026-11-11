@@ -10,12 +10,9 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* mk14-night: a sketch of Jerusalem for the night of the arrest, drawn with the shared map classes.
-   Olive trees mark the garden; .map-route r1 (upper room to Gethsemane) and r2 (back to the high priest) wait for steps. */
-.mk14-tree { fill: color-mix(in srgb, var(--cool) 60%, var(--warm)); opacity: .85; }
-.mk14-spot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
-.mk14-lbl { font: 700 16px var(--sans); fill: var(--ink); }
-.map .map-route.r2 { stroke: var(--danger); }
+/* mk14-night: Jerusalem for the night of the arrest, on the real terrain. Olive trees mark the garden; .map-route r1 (upper room to Gethsemane) and r2 (back to the high priest) wait for steps. */
+.map.terrain .mk14-tree circle { fill: darkolivegreen; stroke: white; stroke-width: calc(1.5px * var(--u, 1)); opacity: .9; }
+.map.terrain .mk14-oil { font-size: calc(22px * var(--u, 1)); font-style: italic; font-weight: 600; fill: saddlebrown; }
 </style>
 </head>
 <body>
@@ -233,27 +230,11 @@
     <blockquote class="quote rise" data-q="32" data-hl="a place which was named Gethsemane"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 600 420" role="img" aria-label="Sketch map of Jerusalem at night. From the upper room in the city a route runs out, down across the Kidron valley, to the garden of Gethsemane on the slope of the Mount of Olives. Then a second route runs back into the city, to the high priest's house.">
-          <rect class="map-land" x="0" y="0" width="600" height="420" rx="6"/>
-          <path d="M318 40 C 380 20, 440 60, 456 130 C 470 210, 430 300, 340 340 C 330 250, 330 140, 318 40 Z" style="fill:color-mix(in srgb, var(--ink-soft) 16%, transparent)"/>
-          <text class="map-region" x="370" y="76" font-size="13">MOUNT OF</text>
-          <text class="map-region" x="376" y="94" font-size="13">OLIVES</text>
-          <path class="map-river" d="M296 10 C 286 110, 306 210, 290 410" style="stroke-dasharray:6 6"/>
-          <text class="map-water" x="282" y="400" text-anchor="end">Kidron valley</text>
-          <path d="M40 92 L252 70 L266 330 L62 352 Z" stroke-width="3" style="fill:color-mix(in srgb, var(--accent) 8%, transparent);stroke:var(--line-strong)"/>
-          <path d="M178 112 L252 104 L258 212 L184 218 Z" stroke-width="2" style="fill:color-mix(in srgb, var(--accent) 26%, transparent);stroke:var(--accent)"/>
-          <text x="218" y="166" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">temple</text>
-          <text class="map-region" x="60" y="130">JERUSALEM</text>
-          <g class="mk14-tree"><circle cx="352" cy="196" r="11"/><circle cx="372" cy="184" r="11"/><circle cx="368" cy="208" r="11"/><circle cx="390" cy="198" r="11"/></g>
-          <path class="map-route r1" pathLength="1" d="M96 312 C 150 384, 262 380, 296 320 S 330 222, 352 206"/>
-          <path class="map-route r2" pathLength="1" d="M352 206 C 320 240, 290 280, 236 274 S 172 254, 152 246"/>
-          <circle class="mk14-spot" cx="96" cy="312" r="8"/>
-          <text class="mk14-lbl" x="78" y="290">Upper room</text>
-          <circle class="mk14-spot" cx="152" cy="246" r="8"/>
-          <text class="mk14-lbl" x="80" y="232">High priest's house</text>
-          <text class="mk14-lbl" x="404" y="196">Gethsemane</text>
-          <text class="map-soft" x="404" y="216" font-size="14">“oil press”</text>
-          <text class="map-soft" x="596" y="412" text-anchor="end" font-size="12">A sketch: places in the city are approximate.</text>
+        <svg data-terrain="jerusalem" viewBox="200 270 400 340" data-towns="Upper room:l, High priest's house:b, Gethsemane!:r" role="img" aria-label="Map of Jerusalem at night on real terrain. From the upper room in the city a route runs out, down across the Kidron valley, to the garden of Gethsemane on the slope of the Mount of Olives. Then a second route runs back into the city, to the high priest's house.">
+          <g class="mk14-tree"><circle cx="478" cy="385" r="9"/><circle cx="496" cy="375" r="9"/><circle cx="494" cy="395" r="9"/><circle cx="514" cy="388" r="9"/></g>
+          <path class="map-route r1" data-via="Upper room, @35.2335 31.7745, @35.2375 31.7772, Gethsemane"/>
+          <path class="map-route r2 j2" data-via="Gethsemane, @35.2385 31.7762, @35.2345 31.7738, High priest's house"/>
+          <text class="mk14-oil" x="520" y="352">“oil press”</text>
         </svg>
       </div>
       <div>

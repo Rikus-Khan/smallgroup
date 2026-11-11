@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+.map.terrain .mk04-crowd circle { fill: saddlebrown; stroke: white; stroke-width: calc(1.5px * var(--u, 1)); }
+.map.terrain .mk04-skiff { fill: firebrick; stroke: white; stroke-width: calc(1.5px * var(--u, 1)); }
+.map.terrain .mk04-mast { stroke: firebrick; stroke-width: calc(3px * var(--u, 1)); }
+.map.terrain .mk04-red { fill: firebrick; }
+.map.terrain .mk04-brown { fill: saddlebrown; }
+.map.terrain .mk04-lab { font-size: calc(22px * var(--u, 1)); font-weight: 600; }
 /* mk04-soils: one seed, four kinds of ground. Each panel is a step and plays its own story when it comes on. */
 .mk04-soils { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: .3em 0 .9em; }
 @media (max-width: 760px) { .mk04-soils { grid-template-columns: 1fr 1fr; } }
@@ -157,28 +163,16 @@
     <blockquote class="quote rise" data-q="1" data-hl="he entered into a ship, and sat in the sea"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. On the north shore near Capernaum, a crowd stands on the land and Jesus sits in a boat just off the shore, teaching.">
-          <path class="map-river rise" style="--d:2" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river rise" style="--d:2" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake rise" style="--d:2" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <text class="map-water" x="210" y="250" text-anchor="middle" font-size="18">Sea of Galilee</text>
-          <g class="map-town rise" style="--d:3">
-            <circle cx="146" cy="78" r="7"/><text x="134" y="70" text-anchor="end" font-weight="700">Capernaum</text>
-            <circle cx="256" cy="58" r="7"/><text x="268" y="52" font-weight="700">Bethsaida</text>
-            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
+        <svg data-terrain="galilee" viewBox="250 130 560 520" data-regions="" data-towns="Capernaum:l, Bethsaida:r, Tiberias:l" role="img" aria-label="Map of the Sea of Galilee on real terrain. On the north shore near Capernaum, a crowd stands on the land and Jesus sits in a boat just off the shore, teaching.">
+          <g class="mk04-crowd rise" style="--d:4" transform="translate(-26 -14)">
+            <circle cx="560" cy="212" r="5"/><circle cx="574" cy="222" r="5"/><circle cx="556" cy="230" r="5"/><circle cx="572" cy="238" r="5"/>
+            <circle cx="588" cy="230" r="5"/><circle cx="546" cy="242" r="5"/><circle cx="562" cy="250" r="5"/><circle cx="584" cy="248" r="5"/>
           </g>
-          <g class="rise" style="--d:4">
-            <g style="fill:var(--ink-soft)">
-              <circle cx="104" cy="104" r="4"/><circle cx="114" cy="96" r="4"/><circle cx="96" cy="116" r="4"/><circle cx="108" cy="116" r="4"/>
-              <circle cx="92" cy="104" r="4"/><circle cx="122" cy="88" r="4"/><circle cx="100" cy="128" r="4"/><circle cx="88" cy="122" r="4"/>
-            </g>
-            <path d="M126 116 L150 116 L144 124 L132 124 Z" style="fill:var(--accent-hot)"/>
-            <line x1="138" y1="116" x2="138" y2="102" stroke-width="2" style="stroke:var(--accent-hot)"/>
-          </g>
+          <path class="mk04-skiff rise" style="--d:4" d="M546 284 L580 284 L572 296 L554 296 Z"/>
+          <line class="mk04-mast rise" style="--d:4" x1="563" y1="284" x2="563" y2="266"/>
           <g class="map-town here rise" style="--d:5">
-            <circle class="map-ping" cx="138" cy="118" r="10"/>
-            <text x="166" y="130" font-size="15">Jesus in a boat,</text>
-            <text x="166" y="148" font-size="15">the crowd on the shore</text>
+            <text class="mk04-lab" x="592" y="290">Jesus in a boat,</text>
+            <text class="mk04-lab" x="592" y="316">the crowd on the shore</text>
           </g>
         </svg>
       </div>
@@ -516,24 +510,17 @@
     <blockquote class="quote rise" data-q="35" data-hl="Let us pass over unto the other side"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map" viewBox="0 0 420 470" role="img" aria-label="Map of the Sea of Galilee. The boat sets out from the north shore near Capernaum and crosses toward the east shore, the country of the Gadarenes. A storm hits in the middle of the lake.">
-          <path class="map-river" d="M238 0 C228 20 248 34 236 62"/>
-          <path class="map-river" d="M206 420 C214 436 198 450 210 470"/>
-          <path class="map-lake" d="M195 58 C250 52 292 82 306 132 C320 188 314 262 294 322 C274 382 240 420 205 424 C168 420 142 382 122 332 C102 278 96 202 110 142 C124 92 150 62 195 58 Z"/>
-          <g class="map-town">
-            <circle cx="146" cy="78" r="7"/><text x="134" y="70" text-anchor="end" font-weight="700">Capernaum</text>
-            <circle cx="104" cy="250" r="7"/><text x="92" y="256" text-anchor="end" font-weight="700">Tiberias</text>
-          </g>
-          <path class="map-route" pathLength="1" d="M140 116 C 180 150, 214 168, 236 196"/>
+        <svg data-terrain="galilee" viewBox="250 150 600 520" data-regions="" data-towns="Capernaum:l, Tiberias:l" role="img" aria-label="Map of the Sea of Galilee on real terrain. The boat sets out from the north shore near Capernaum and crosses toward the east shore, the country of the Gadarenes. A storm hits in the middle of the lake.">
+          <path class="map-route" data-via="Capernaum, @35.595 32.862"/>
           <g class="step map-go1">
-            <path class="map-route r1" pathLength="1" d="M236 196 C 256 220, 276 236, 300 250"/>
-            <text x="318" y="252" font-size="15" font-weight="700" style="fill:var(--accent-hot)">the other side</text>
-            <text class="map-soft" x="318" y="270" font-size="13">the country of</text>
-            <text class="map-soft" x="318" y="286" font-size="13">the Gadarenes (5:1)</text>
+            <path class="map-route r1" data-via="@35.595 32.862, @35.622 32.845, @35.648 32.83"/>
+            <text class="mk04-lab mk04-red" x="720" y="520" text-anchor="end">the other side</text>
+            <text class="mk04-lab mk04-brown" x="720" y="548" text-anchor="end">the country of the</text>
+            <text class="mk04-lab mk04-brown" x="720" y="574" text-anchor="end">Gadarenes (5:1)</text>
           </g>
           <g class="map-town here">
-            <circle class="map-ping" cx="236" cy="196" r="10"/>
-            <text x="226" y="226" text-anchor="end" font-size="15">a great storm</text>
+            <circle cx="565" cy="338" r="5"/><circle class="map-ping" cx="565" cy="338" r="7"/>
+            <text class="mk04-lab" x="553" y="352" text-anchor="end">a great storm</text>
           </g>
         </svg>
       </div>

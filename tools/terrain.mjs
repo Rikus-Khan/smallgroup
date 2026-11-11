@@ -21,7 +21,7 @@ const PRESETS = {   // name: [lon0, lon1, lat0, lat1, tile zoom, picture width, 
   gospel: [34.1955, 36.2648, 31.0164, 33.4417, 11, 1600, 2.4, "10m", { frame: [400, 560], margin: 60 }],
   // close-ups: the Sea of Galilee, Jerusalem with the Mount of Olives, and Nineveh
   galilee: [35.42, 35.73, 32.62, 32.95, 13, 1600, 2, "10m", { wet: .35, near: 1, lake: { seed: [35.59, 32.82], from: -216, to: -208 }, rivers: [["Jordan",[[35.632,32.95],[35.629,32.93],[35.627,32.905],[35.626,32.895]]],["Jordan",[[35.572,32.708],[35.567,32.69],[35.57,32.67],[35.566,32.645],[35.57,32.62]]]] }],
-  jerusalem: [35.212, 35.272, 31.758, 31.798, 15, 1600, 1.6, "10m", { wet: .05, near: .1, soften: 7 }],
+  jerusalem: [35.212, 35.272, 31.758, 31.798, 15, 2000, 1.8, "10m", { wet: .05, near: .1, soften: 9, local: [610, 820] }],
   // Nineveh: the Tigris traced from the relief (its channel today), and the Khosr through the city
   nineveh: [43.09, 43.21, 36.32, 36.41, 14, 1600, 2.5, "10m", { wet: .35, near: .6, soften: 4, rivers: [["Tigris", [[43.09,36.398],[43.1148,36.3931],[43.1125,36.387],[43.1073,36.381],[43.108,36.3647],[43.1215,36.3599],[43.135,36.3466],[43.15,36.3345],[43.171,36.32]]], ["Khosr", [[43.21,36.376],[43.19,36.368],[43.175,36.362],[43.16,36.357],[43.148,36.355],[43.135,36.351],[43.128,36.354]]]] }]
 };
@@ -164,7 +164,8 @@ for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
 const ramp = [   // metres → colour (desert-and-highland palette)
   [-500, [196, 190, 150]], [0, [205, 200, 160]], [150, [214, 204, 166]], [400, [222, 206, 165]], [800, [214, 190, 148]],
   [1300, [196, 168, 130]], [2000, [178, 152, 122]], [2800, [170, 160, 150]], [3800, [222, 220, 216]], [5000, [250, 250, 250]]];
-const tint = e => { let k = 0; while (k < ramp.length - 2 && e > ramp[k + 1][0]) k++; const [a, ca] = ramp[k], [b, cb] = ramp[k + 1], t = Math.min(1, Math.max(0, (e - a) / (b - a))); return ca.map((c, i) => c + (cb[i] - c) * t); };
+// a close-up can tint by its own height range instead (opt.local = [low, high] metres): valleys darker, ridges lighter
+const tint = opt.local ? e => { const t = Math.min(1, Math.max(0, (e - opt.local[0]) / (opt.local[1] - opt.local[0]))); return [168, 146, 108].map((v, i) => v + ([238, 226, 192][i] - v) * Math.pow(t, .8)); } : e => { let k = 0; while (k < ramp.length - 2 && e > ramp[k + 1][0]) k++; const [a, ca] = ramp[k], [b, cb] = ramp[k + 1], t = Math.min(1, Math.max(0, (e - a) / (b - a))); return ca.map((c, i) => c + (cb[i] - c) * t); };
 // ---------- the green of watered land: river valleys, the Nile delta, the Mesopotamian plain ----------
 const fert = new Float32Array(W * H), near = new Uint8Array(W * H);
 {

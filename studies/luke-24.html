@@ -10,22 +10,11 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* lk24-map: a close-up of the land around Jerusalem (svg.map[data-land] cropped to 96 x 64 units, about 6x), so the towns are
-   drawn here at a small size instead of with data-towns, and the shared lines are thinned to suit. Emmaus isn't in the shared TOWNS list */
-.lk24-map .map-land { stroke-width: .5; }
-.lk24-map .map-town text { font-size: 3.3px; }
-.lk24-map .map-town > circle:not(.map-ping) { r: 1.2px; }
-.lk24-map .map-ping { r: 1.8px; stroke-width: .45; }
-.lk24-map .map-route { stroke-width: .9; }
+/* lk24-map: the hill country around Jerusalem on real terrain; the two walks are drawn on top */
 .lk24-map .map-route.r2 { stroke: var(--accent-hot); }
-.lk24-map .map-river { stroke-width: .8; }
-.lk24-map .map-lake { stroke-width: .5; }
-.lk24-map .map-region { font-size: 3px; letter-spacing: .14em; }
-.lk24-map .map-water { font-size: 2.7px; }
-.lk24-map .map-soft { font-size: 2.5px; fill: var(--ink-soft); }
-.lk24-tag { font: italic 600 2.9px var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.4s; }
+.lk24-soft { font: italic calc(var(--u, 1) * 24px) var(--serif); fill: var(--ink-soft); }
+.lk24-tag { font: italic 600 calc(var(--u, 1) * 26px) var(--serif); fill: var(--accent-hot); opacity: 0; transition: opacity .8s ease 1.4s; }
 .slide:has(.map-go1.on) .lk24-tag.t1, .slide:has(.map-go2.on) .lk24-tag.t2 { opacity: 1; }
-@media (max-width: 600px) { .lk24-map .map-town text { font-size: 4.2px; } .lk24-tag { font-size: 3.6px; } }
 
 /* lk24-reach: the message going out in rings from Jerusalem (Luke 24:47, Acts 1:8); each ring is a step */
 .lk24-ring { fill: color-mix(in srgb, var(--accent) 9%, transparent); stroke: var(--accent); stroke-width: 2.5; }
@@ -175,19 +164,16 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg class="map lk24-map" data-land viewBox="164 350 96 64" role="img" aria-label="A close-up map of the hill country around Jerusalem. Emmaus lies about seven miles west and a little north of Jerusalem. On a step, a road is drawn from Jerusalem to Emmaus. On the next step, the road back to Jerusalem the same night. Bethany is just east of Jerusalem, and Jericho lies farther east toward the Jordan.">
-          <path class="map-route r1" pathLength="1" d="M201 384 C 195 381, 188 378, 182.5 376"/>
-          <path class="map-route r2" pathLength="1" d="M182 378.6 C 188 381.2, 195 384.2, 201 386.6"/>
-          <g class="map-town here"><circle cx="181" cy="377" r="1.2"/><circle class="map-ping" cx="181" cy="377" r="1.8"/><text x="181" y="373.2" text-anchor="middle">Emmaus</text></g>
-          <g class="map-town"><circle cx="202" cy="385" r="1.2"/><text x="200" y="390.6" text-anchor="end">Jerusalem</text></g>
-          <g class="map-town"><circle cx="207" cy="386" r="1.2"/><text x="209" y="387.2">Bethany</text></g>
-          <g class="map-town"><circle cx="243" cy="363" r="1.2"/><text x="243" y="359.4" text-anchor="middle">Jericho</text></g>
-          <text class="lk24-tag t1" x="181" y="369.6" text-anchor="middle">“that same day”</text>
-          <text class="lk24-tag t2" x="178" y="395.5">“the same hour”, back</text>
-          <text class="map-region" x="172" y="408">JUDAEA</text>
-          <path d="M212 407 H227.5 M212 406 V408 M227.5 406 V408" style="stroke:var(--ink-soft);stroke-width:.45;fill:none"/><text class="map-soft" x="219.7" y="411.5" text-anchor="middle">about 5 miles</text>
-          <text class="map-water" x="252" y="404" text-anchor="middle">Dead Sea</text>
-          <text class="map-soft" x="166" y="354.5">The exact site of Emmaus isn't known.</text>
+        <svg class="lk24-map" data-terrain="land" viewBox="380 650 125 84" data-regions="" data-towns="Jerusalem:b, Jericho:t" role="img" aria-label="A close-up map of the hill country around Jerusalem. Emmaus lies about seven miles west and a little north of Jerusalem. On a step, a road is drawn from Jerusalem to Emmaus. On the next step, the road back to Jerusalem the same night. Bethany is just east of Jerusalem, and Jericho lies farther east toward the Jordan.">
+          <path class="map-route r1" pathLength="1" d="M427.5 690.5 C 420 687, 408 683, 399 681"/>
+          <path class="map-route r2" pathLength="1" d="M399 683.5 C 408 687, 420 692, 427.5 693.2"/>
+          <g class="map-town here"><circle cx="397.6" cy="680.5" r="1.05"/><circle class="map-ping" cx="397.6" cy="680.5" r="1.4"/><text x="397.6" y="678.2" text-anchor="middle">Emmaus</text></g>
+          <g class="map-town"><circle cx="440.8" cy="696.3" r="1.05"/><text x="442.8" y="697.1">Bethany</text></g>
+          <text class="lk24-tag t1" x="397.6" y="673" text-anchor="middle">“that same day”</text>
+          <text class="lk24-tag t2" x="408" y="712" text-anchor="middle">“the same hour”, back</text>
+          <text class="map-region" x="410" y="726" text-anchor="middle">JUDAEA</text>
+          <path d="M470 726 H497 M470 725 V727 M497 725 V727" style="stroke:var(--ink-soft);stroke-width:.4;fill:none"/><text class="lk24-soft" x="483.5" y="731" text-anchor="middle">about 5 miles</text>
+          <text class="lk24-soft" x="383" y="732">The exact site of Emmaus isn't known.</text>
         </svg>
       </div>
       <div>

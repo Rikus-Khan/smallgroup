@@ -10,9 +10,13 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* The ring of nations is a tall map drawn small: larger names so they read */
-.am02-ring .map-town text { font-size: 25px; }
-.am02-ring .map-region { font-size: 19px; }
+/* The ring of nations is a tall map on a small stage: larger names so they read */
+.map.terrain.am02-ring .map-town text { font-size: calc(33px * var(--u, 1)); }
+.map.terrain.am02-ring .map-region { font-size: calc(26px * var(--u, 1)); }
+.map.terrain.am02-ring .map-water, .map.terrain.am02-ring .river-name { font-size: calc(24px * var(--u, 1)); }
+/* Chapter 1's ring of five nations stays faintly on the map while the new legs draw */
+.map.terrain .am02-old:not(.under) { opacity: .5; }
+.map.terrain .am02-old.under { opacity: .35; }
 </style>
 </head>
 <body>
@@ -111,34 +115,14 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg class="map am02-ring" viewBox="0 0 400 680" role="img" aria-label="A map of the nations around Israel. A line has already run from Damascus to Gaza, Tyre, Bozrah, and Rabbah. Now it runs on to Kirioth in Moab, then to Jerusalem in Judah, and last of all to Samaria in Israel, in the very middle.">
-          <rect class="map-land" x="0" y="0" width="400" height="680" rx="6"/>
-          <path class="map-sea" d="M0 0 H209 L195 41 L176 83 L170 122 L168 145 L148 143 L144 175 L140 193 L135 218 L127 258 L107 322 L86 380 L72 409 L49 444 L10 494 L0 513 Z"/>
-          <text class="map-water" x="66" y="262" text-anchor="middle" transform="rotate(-72 66 262)">the Great Sea</text>
-          <path class="map-river" d="M279 40 C 274 70, 282 100, 273 128"/>
-          <path class="map-river" d="M266 171 C 260 210, 274 245, 264 285 S 272 350, 258 387"/>
-          <ellipse class="map-lake" cx="270" cy="150" rx="13" ry="22"/>
-          <path class="map-lake" d="M250 386 C 262 384, 270 392, 268 420 C 266 460, 268 500, 262 548 C 258 562, 248 562, 244 548 C 240 520, 232 470, 234 430 C 234 400, 240 388, 250 386 Z"/>
-          <path class="map-border" d="M92 366 C 140 368, 180 376, 205 373 C 228 370, 242 378, 262 380"/>
-          <text class="map-region" x="200" y="230" text-anchor="middle">ISRAEL</text>
-          <text class="map-region" x="175" y="470" text-anchor="middle">JUDAH</text>
-          <text class="map-region" x="330" y="26" text-anchor="middle">SYRIA</text>
-          <text class="map-region" x="348" y="306" text-anchor="middle">AMMON</text>
-          <text class="map-region" x="345" y="520" text-anchor="middle">MOAB</text>
-          <text class="map-region" x="320" y="600" text-anchor="middle">EDOM</text>
-          <text class="map-region" x="98" y="540" text-anchor="middle">PHILISTIA</text>
-          <path class="map-route" pathLength="1" style="--draw:3s;--wait:.4s;opacity:.45" d="M352 62 C 280 180, 140 330, 56 452 C 110 330, 170 180, 192 66 C 260 240, 300 460, 290 640 C 330 540, 345 440, 336 352"/>
-          <path class="map-route r1" pathLength="1" d="M336 352 C 345 400, 330 440, 318 470"/>
-          <path class="map-route r2" pathLength="1" d="M318 470 C 280 440, 240 410, 202 390"/>
-          <path class="map-route r3" pathLength="1" style="stroke-width:7" d="M202 390 C 190 340, 186 300, 193 270"/>
-          <g class="map-town"><circle cx="352" cy="62" r="6"/><text x="342" y="56" text-anchor="end">Damascus</text></g>
-          <g class="map-town"><circle cx="56" cy="452" r="6"/><text x="66" y="470">Gaza</text></g>
-          <g class="map-town"><circle cx="192" cy="66" r="6"/><text x="180" y="62" text-anchor="end">Tyre</text></g>
-          <g class="map-town"><circle cx="290" cy="640" r="6"/><text x="278" y="660" text-anchor="end">Bozrah</text></g>
-          <g class="map-town"><circle cx="336" cy="352" r="6"/><text x="326" y="378" text-anchor="end">Rabbah</text></g>
-          <g class="map-town"><circle cx="318" cy="470" r="6"/><text x="300" y="486" text-anchor="end">Kirioth</text></g>
-          <g class="map-town"><circle cx="202" cy="390" r="6"/><text x="191" y="402" text-anchor="end">Jerusalem</text></g>
-          <g class="map-town here"><circle cx="193" cy="270" r="7"/><circle class="map-ping" cx="193" cy="270" r="9"/><text x="182" y="275" text-anchor="end">Samaria</text></g>
+        <svg class="am02-ring" data-terrain="land" style="max-height:76vh" data-regions="ISRAEL, JUDAH, SYRIA, GILEAD, AMMON, MOAB, EDOM" data-towns="Damascus, Gaza:l, Tyre:l, Bozrah, Rabbah:l, Kirioth:r, Jerusalem:l, Samaria!:l" role="img" aria-label="A map of the nations around Israel. A line has already run from Damascus to Gaza, Tyre, Bozrah, and Rabbah. Now it runs on to Kirioth in Moab, then to Jerusalem in Judah, and last of all to Samaria in Israel, in the very middle.">
+          <path class="map-route am02-old" style="--draw:3s;--wait:.4s" data-via="Damascus, Gaza"/>
+          <path class="map-route am02-old" style="--draw:3s;--wait:.4s" data-via="Gaza, Tyre"/>
+          <path class="map-route am02-old" style="--draw:3s;--wait:.4s" data-via="Tyre, Bozrah"/>
+          <path class="map-route am02-old" style="--draw:3s;--wait:.4s" data-via="Bozrah, Rabbah"/>
+          <path class="map-route r1" data-via="Rabbah, Kirioth"/>
+          <path class="map-route r2" data-via="Kirioth, Jerusalem"/>
+          <path class="map-route r3" style="stroke-width:7" data-via="Jerusalem, Samaria"/>
         </svg>
       </div>
       <div>

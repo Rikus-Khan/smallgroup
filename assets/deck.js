@@ -231,14 +231,14 @@
     "Bethany": [35.2664, 31.77, "r"], "Bethlehem": [35.2043, 31.705, "l"]
   };
   const NT_MAPS = {
-    world: { box: [4, 40.0317, 29, 47], w: 908, h: 576, u: vb => vb.width / 908, places: NT_PLACES, journeys: NT_JOURNEYS,
+    world: { box: [4, 40.0317, 29, 47], w: 908, h: 576, u: vb => Math.max(vb.width, 1.25 * vb.height) / 908, places: NT_PLACES, journeys: NT_JOURNEYS,
       regions: { ITALY: [14.8, 41.3, -55], MACEDONIA: [22.4, 41.6], ACHAIA: [22.2, 37.4], ASIA: [28.6, 39.6], GALATIA: [33, 39.3], BITHYNIA: [30.6, 40.7],
         PONTUS: [36.6, 40.5], CAPPADOCIA: [36.2, 38.6], PISIDIA: [31.3, 37.6], CILICIA: [34.3, 37.45], SYRIA: [37.6, 34.8], JUDAEA: [35.9, 31.2],
         EGYPT: [30.6, 29.7], ARABIA: [38, 30.5], LIBYA: [22.5, 31.5] },
       defaults: "ITALY, MACEDONIA, ACHAIA, ASIA, GALATIA, BITHYNIA, PONTUS, CAPPADOCIA, PISIDIA, CILICIA, SYRIA, JUDAEA, EGYPT, ARABIA, LIBYA",
       waters: [[19.5, 34.4, "the Great Sea"], [20, 36.2, "Adria"], [34.5, 43.3, "Black Sea"]] },
-    // the older land map's labels never shrank when it was cropped, so this one keeps them the same size (u is fixed)
-    gospel: { box: [34.1955, 36.2648, 31.0164, 33.4417], w: 400, h: 560, u: () => .74, places: GOSPEL_PLACES,
+    // the older land map's labels never shrank when it was cropped; these keep that size, except on a tight crop, where they shrink with it
+    gospel: { box: [34.1955, 36.2648, 31.0164, 33.4417], w: 400, h: 560, u: vb => Math.min(.74, Math.max(vb.width, 1.25 * vb.height) * .0016), places: GOSPEL_PLACES,
       regions: { GALILEE: [35.3491, 33.0086], SAMARIA: [35.106, 32.3763], JUDAEA: [34.9301, 31.4062], PEREA: [35.8251, 31.6227], DECAPOLIS: [35.9027, 32.6188], IDUMAEA: [34.8163, 31.1247], PHOENICIA: [35.1008, 33.3118] },
       defaults: "GALILEE, SAMARIA, JUDAEA, PEREA",
       waters: [[34.5369, 32.307, "the Great Sea", -72], [35.5509, 32.3373, "Jordan", -84, "r"]] },
@@ -328,7 +328,11 @@
     // added for the prophets' maps: the usual identifications (Kirioth = el-Qereiyat; Calneh = Kullania near Arpad; Hadrach = Hatarikka, Tell Afis;
     // Teman = Tawilan in Edom; Sela = Petra; Moresheth-gath = Tell el-Judeideh; Beth-aven by Bethel); Beer-sheba and Zidon as the KJV spells them
     "Kirioth": [35.77, 31.58, "r"], "Calneh": [36.95, 36.3, "r"], "Hadrach": [36.8, 35.97, "r"], "Teman": [35.47, 30.32, "r"], "Sela": [35.44, 30.33, "b"],
-    "Moresheth-gath": [34.92, 31.6, "r"], "Mareshah": [34.9, 31.59, "b"], "Beth-aven": [35.26, 31.9, "r"], "Beer-sheba": [34.8, 31.25, "l"], "Zidon": [35.37, 33.56, "l"]
+    "Moresheth-gath": [34.92, 31.6, "r"], "Mareshah": [34.9, 31.59, "b"], "Beth-aven": [35.26, 31.9, "r"], "Beer-sheba": [34.8, 31.25, "l"], "Zidon": [35.37, 33.56, "l"],
+    // New Testament towns, for the land map and as a fallback on the others (Emmaus and Dalmanutha: the sites are uncertain)
+    "Capernaum": [35.5751, 32.8807, "r"], "Nazareth": [35.3035, 32.7019, "l"], "Nain": [35.352, 32.633, "r"], "Cana": [35.34, 32.75, "l"],
+    "Bethany": [35.2614, 31.7713, "r"], "Emmaus": [35.132, 31.809, "l"], "Caesarea": [34.89, 32.5, "l"], "Antipatris": [34.9306, 32.1119, "l"],
+    "Caesarea Philippi": [35.695, 33.248, "r"], "Dalmanutha": [35.52, 32.83, "l"], "Taanach": [35.2217, 32.5236, "l"]
   };
   const OT_JOURNEYS = {
     abraham: "Ur, @45.2 31.6, Babel, @43.4 33.6, Mari, @39.6 35.9, Haran, @37.16 36.2, Hamath, Damascus, @35.6 32.9, Shechem, Bethel, Hebron, @34.8 31.0, @33.6 30.9, @32.4 30.7",
@@ -424,7 +428,7 @@
     const placeOf = s => M.places?.[s] || OT_PLACES[s], journeyOf = j => M.journeys?.[j] || OT_JOURNEYS[j];
     const P = (lon, lat) => [(lon - L0) * W / (L1 - L0), (B1 - lat) * H / (B1 - B0)];
     if (!svg.hasAttribute("viewBox")) svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-    const vb = svg.viewBox.baseVal, u = M.u ? M.u(vb) : vb.width / W;
+    const vb = svg.viewBox.baseVal, u = M.u ? M.u(vb) : Math.max(vb.width, 1.25 * vb.height) / W;
     svg.classList.add("map", "terrain");
     svg.style.setProperty("--u", u.toFixed(3));
     const where = s => {
@@ -443,7 +447,7 @@
       const pts = via.split(",").map(s => where(s.trim())).filter(Boolean);
       if (pts.length < 2) return;
       p.setAttribute("d", smooth(pts));
-      if (!p.hasAttribute("pathLength")) p.setAttribute("pathLength", "1");
+      if (!p.hasAttribute("pathLength") && p.classList.contains("map-route")) p.setAttribute("pathLength", "1");
       const under = p.cloneNode();
       under.classList.add("under");
       under.removeAttribute("id");
@@ -472,9 +476,11 @@
       if (X0 < vb.x || Y0 < vb.y || X1 > vb.x + vb.width || Y1 > vb.y + vb.height) svg.setAttribute("viewBox", `${f1(X0)} ${f1(Y0)} ${f1(X1 - X0)} ${f1(Y1 - Y0)}`);
     }
     svg.style.aspectRatio = `${vb.width} / ${vb.height}`;
-    const inside = (x, y) => x > vb.x && x < vb.x + vb.width && y > vb.y && y < vb.y + vb.height;
     const lbl = ([lon, lat, text, rot = 0, kind], cls) => { const [x, y] = P(lon, lat);
-      if (cls === "map-region" && !inside(x, y)) return "";
+      const k = kind === "r" ? "river-name" : cls, size = (k === "river-name" ? 16 : 19) * u, w = String(text).length * (k === "map-region" ? .82 : .5) * size / 2, h = .45 * size;
+      const c = Math.abs(Math.cos(rot * Math.PI / 180)), sn = Math.abs(Math.sin(rot * Math.PI / 180)), bx = c * w + sn * h, by = sn * w + c * h, m = 4 * u;
+      if (x - bx < vb.x + m || x + bx > vb.x + vb.width - m || y - by < vb.y + m || y + by > vb.y + vb.height - m) return "";
+      if (k === "map-region" && ext.some(e => x + bx > e[0] && x - bx < e[2] && y + by > e[1] && y - by < e[3])) return "";
       return `<text class="${kind === "r" ? "river-name" : cls}" x="${f1(x)}" y="${f1(y)}" text-anchor="middle"${rot ? ` transform="rotate(${rot} ${f1(x)} ${f1(y)})"` : ""}>${esc(text)}</text>`; };
     const pick = svg.hasAttribute("data-regions") ? svg.dataset.regions : M.defaults;
     const regions = pick.split(",").map(s => s.trim()).filter(Boolean).map(k => {

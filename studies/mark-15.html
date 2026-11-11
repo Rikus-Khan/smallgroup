@@ -10,9 +10,8 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* mk15-world: a hand-drawn map of the Great Sea, with Simon's long road from Cyrene to Jerusalem (a .map-route) */
-.mk15-world { display: block; width: 100%; height: auto; max-height: 46vh; border-radius: 6px; }
-.mk15-world .map-town text { font-size: 18px; }
+/* mk15-world: Simon's long road from Cyrene to Jerusalem, a .map-route on the real terrain */
+.map.terrain .mk15-miles { font-size: calc(22px * var(--u, 1)); }
 
 /* mk15-noon: a noon sky that goes dark from the sixth hour to the ninth, while a bar under it fills */
 .mk15-noon { display: block; width: 100%; height: auto; max-height: 40vh; }
@@ -238,22 +237,9 @@
     <blockquote class="quote rise" data-q="21" data-hl="Simon a Cyrenian|the father of Alexander and Rufus"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="map mk15-world" viewBox="0 0 600 300" role="img" aria-label="A map of the Great Sea. Cyrene is on the coast of North Africa, in Libya. A route runs east along the coast, past Alexandria in Egypt, to Jerusalem, about eight hundred miles away.">
-          <rect class="map-sea" x="0" y="0" width="600" height="300"/>
-          <path class="map-land" d="M0 40 L22 38 L14 84 L18 124 L4 150 L40 170 L74 191 L117 210 L152 255 L207 285 L230 221 L276 191 L290 197 L322 221 L350 240 L396 249 L458 255 L480 250 L501 244 L513 253 L547 259 L562 244 L569 223 L573 206 L580 177 L590 130 L596 60 L600 45 L600 300 L0 300 Z"/>
-          <path class="map-land" d="M600 0 L600 45 L560 50 L506 56 L476 43 L450 52 L414 49 L400 30 L405 0 Z"/>
-          <path class="map-land" d="M250 0 L262 30 L287 60 L300 40 L310 20 L320 0 Z"/>
-          <path class="map-land" d="M70 37 L130 22 L120 0 L80 0 Z"/>
-          <path class="map-land" d="M308 98 L342 92 L376 96 L370 106 L340 108 L312 106 Z"/>
-          <path class="map-land" d="M513 100 L540 88 L566 78 L548 98 L530 112 Z"/>
-          <text class="map-water" x="300" y="150" text-anchor="middle">the Great Sea</text>
-          <text class="map-region" x="200" y="272" text-anchor="middle">LIBYA</text>
-          <text class="map-region" x="430" y="285" text-anchor="middle">EGYPT</text>
-          <path class="map-route" pathLength="1" style="--draw:3s" d="M276 204 C 330 240, 400 262, 458 266 S 540 268, 579 236"/>
-          <g class="map-town here"><circle cx="276" cy="204" r="6"/><text x="276" y="232" text-anchor="middle">Cyrene</text></g>
-          <g class="map-town"><circle cx="458" cy="262" r="5"/><text x="458" y="242" text-anchor="middle" font-size="15">Alexandria</text></g>
-          <g class="map-town here"><circle cx="579" cy="232" r="6"/><circle class="map-ping" cx="579" cy="232" r="8"/><text x="570" y="214" text-anchor="end">Jerusalem</text></g>
-          <text class="map-soft" x="420" y="184" text-anchor="middle" font-size="15">about 800 miles</text>
+        <svg data-world viewBox="335 365 535 211" data-regions="LIBYA, EGYPT" data-towns="Cyrene!:t, Alexandria:b, Jerusalem!:t" role="img" aria-label="A map of the Great Sea on real terrain. Cyrene is on the coast of North Africa, in Libya. A route runs east along the coast, past Alexandria in Egypt, to Jerusalem, about eight hundred miles away.">
+          <path class="map-route" style="--draw:3s" data-via="Cyrene, @24.5 32.2, @27.2 31.45, Alexandria, @31.5 31.25, Gaza, Jerusalem"/>
+          <text class="map-water mk15-miles" x="640" y="440" text-anchor="middle">about 800 miles</text>
         </svg>
       </div>
       <div>

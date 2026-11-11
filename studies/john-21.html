@@ -10,12 +10,6 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* A small map of the lake */
-.jn21-map .lake { fill: color-mix(in srgb, var(--cool) 30%, transparent); stroke: var(--cool); stroke-width: 3; }
-.jn21-map .river { fill: none; stroke: var(--cool); stroke-width: 3; }
-.jn21-map .town { fill: var(--accent); }
-.jn21-map .here { fill: var(--accent-hot); }
-
 /* A long night of empty nets, then morning */
 .jn21-night { display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; margin: .4em 0 1.1em; }
 .jn21-night div { text-align: center; padding: .5em .1em; border-radius: 8px; border: 1.5px dashed var(--line-strong); background: var(--surface); opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--k) * 160ms + 300ms); }
@@ -105,21 +99,8 @@
     <blockquote class="quote rise" data-q="1" data-hl="the sea of Tiberias"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn21-map" viewBox="0 0 420 430" role="img" aria-label="Map of the Sea of Galilee. The Jordan River flows in at the north and out at the south. Bethsaida and Capernaum are on the north shore, Magdala and the city of Tiberias on the west shore. Jerusalem is about seventy miles to the south.">
-          <path class="river" d="M232 10 Q226 40 236 62"/>
-          <path class="river" d="M226 352 Q236 385 222 420"/>
-          <path class="lake" d="M220 60 Q285 58 300 120 Q318 200 290 270 Q265 345 222 352 Q178 345 168 280 Q150 205 160 140 Q172 66 220 60 Z"/>
-          <text x="232" y="190" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool)">Sea of Galilee</text>
-          <text x="232" y="212" text-anchor="middle" font-size="15" class="serif" style="fill:var(--cool)">(Sea of Tiberias)</text>
-          <circle class="town" cx="248" cy="58" r="6"/><text x="258" y="50" font-size="16">Bethsaida</text>
-          <circle class="town" cx="180" cy="86" r="6"/><text x="170" y="80" text-anchor="end" font-size="16">Capernaum</text>
-          <circle class="town" cx="160" cy="160" r="6"/><text x="150" y="165" text-anchor="end" font-size="16">Magdala</text>
-          <circle class="here" cx="164" cy="236" r="8"/><text x="152" y="242" text-anchor="end" font-size="16" font-weight="700" style="fill:var(--accent-hot)">Tiberias</text>
-          <text x="244" y="30" font-size="14" style="fill:var(--ink-soft)">Jordan River</text>
-          <text x="240" y="410" font-size="14" style="fill:var(--ink-soft)">Jerusalem, about 70 miles south ↓</text>
-          <line x1="330" y1="80" x2="330" y2="330" stroke-width="2" style="stroke:var(--line-strong)"/>
-          <text x="340" y="210" font-size="14" style="fill:var(--ink-soft)">about</text>
-          <text x="340" y="228" font-size="14" style="fill:var(--ink-soft)">13 miles</text>
+        <svg class="jn21-map" data-terrain="galilee" viewBox="330 60 560 700" data-towns="Capernaum:t, Bethsaida:r, Magdala, Tiberias*" role="img" aria-label="Map of the Sea of Galilee on real hills, also called the Sea of Tiberias. The Jordan River flows in at the north and out at the south. Bethsaida and Capernaum are on the north shore, Magdala and the city of Tiberias on the west shore. Jerusalem is about seventy miles to the south.">
+          <g class="map-town here"><text x="610" y="745" text-anchor="middle" font-size="13">Jerusalem, about 70 miles south ↓</text></g>
         </svg>
       </div>
       <div>
