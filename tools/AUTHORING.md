@@ -25,6 +25,7 @@ How it looks comes from the shared files in `assets/`, so it works in every them
   - **Traditional typology may be taught plainly** (the tabernacle, the sacrifices, the brasen serpent, Isaac on the altar point to Christ). Just don't claim a verse says what it doesn't: "this is a picture of the cross", not "the New Testament says this altar is the cross".
   - **Biblical names only.** Use the name the Bible gives (Jannes and Jambres, 2 Timothy 3:8). If the Bible doesn't name a person or a god, leave them unnamed: no Heqet, Apis, Thutmose, Salome. A modern place name may stand only to say where a biblical place was (Nuweiba, Jabal al-Lawz).
   - **KJV spelling and grammar in the teaching text too**: vail (Old Testament), cherubims, Saviour, honour, neighbour, devils (not demons), the council (not Sanhedrin), JEHOVAH (never YHWH or Yahweh). Pronouns for God are **lower case** (he, his, him), as the KJV prints them.
+  - **Dates and places by exegesis**: take them from what the text says ("the mountains of Ararat", "in the days of Uzziah", "the 480th year"), never from a chronologist's or an atlas-maker's guess (see "Old Testament dates"). The one outside source Rick accepts is **Ron Wyatt's** research, because it never contradicts the Bible, only the "experts" who make its miracles "more digestible": the Red sea crossing at Nuweiba, Mount Sinai at Jabal al-Lawz in Arabia, Golgotha and the Garden Tomb north of the Damascus Gate, and the ark's resting place at Durupinar in the mountains of Ararat. The maps already follow him.
   - **Counts are the Bible's own count**, counted from the KJV file with a script ("as the LORD commanded Moses": 7 times in Exodus 39 and 7 in Exodus 40), never estimated.
   - Saying honestly what the text doesn't tell us is still right ("Moses doesn't say why"). The rule is against doubting Scripture, not against refusing to add to it.
 - **When a passage touches despair, suicide or a man at the end of himself** (Judas, the jailor, Jonah, "men shall seek death"), point him to his **brothers in Christ and his church leaders**: "call or text your brothers in Christ, and your pastor." Never give a hotline number (Rick's rule). Giving a man both a refuge and a purpose makes him part of a larger company of men fighting the same enemy, and that belonging lifts him up. Find them in the chapter itself; don't bolt them on.
@@ -142,7 +143,7 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `div.tree` > `ul` > `li` > `span` (nested `ul`; `span.hot`, `span.soft`, `small`, `data-icon`; `li.step`) | a family tree: Jacob's sons by their mothers, David's line, Abraham's sons. Each generation arrives in turn; up to about twelve names fit across. Put `small` inside a name for a note ("called Israel"), `data-icon` for an icon | `mockups/ot-graphics.html` slide 8 |
 | `[data-icon="tent"]` on any element | a small drawn icon before the text: `tent crown scroll staff ark altar star sheaf harp sword lamp tablets well ladder coat heart person rainbow cross water city` | the tree above |
 | `div[data-lives="adam-noah"]` (or `"noah-jacob"`, `"all"`) + `data-mark="Methuselah, Noah"` | how long they lived (Genesis 5 and 11), as bars on one line of years from creation, with the flood marked. It shows what the numbers hide: Methuselah dies the year of the flood; Shem outlives Abraham's call (Abram counted as born when Terah was 130) | `mockups/ot-graphics.html` slide 9 |
-| `div[data-kings]` (or `data-kings="1050-586"` with Saul, David, Solomon, or a narrower range like `"760-680"`) + `data-mark="Hezekiah, Isaiah"`, `data-prophets="off"` | the kings of Israel and Judah side by side, each reign colored by the books' own verdict (did right / right but not with a perfect heart / did evil in the sight of the LORD), the prophets above and below the kings they spoke to, and the fall of Samaria (722) and of Jerusalem (586) marked | `mockups/ot-graphics.html` slide 10 |
+| `div[data-kings]` (or `data-kings="1050-586"` with Saul, David, Solomon, or a narrower range like `"760-680"`) + `data-mark="Hezekiah, Isaiah"`, `data-prophets="off"` | **Don't use until it is redrawn on the Bible's own reigns (see Old Testament dates); it still has a modern BC scale.** The kings of Israel and Judah side by side, each reign colored by the books' own verdict (did right / right but not with a perfect heart / did evil in the sight of the LORD), the prophets above and below the kings they spoke to, and the fall of Samaria (722) and of Jerusalem (586) marked | `mockups/ot-graphics.html` slide 10 |
 | `div.parallel` > `p` > `b` pieces (`data-kind="same"`, `"opposite"`, `"more"`; `p.step`) | Hebrew poetry: two or three lines cut into pieces that line up in colored columns, with a badge saying how they pair (says it again / the other side / builds on it). Lighter than `.match`; use `.match` when each link needs its own label | `mockups/ot-graphics.html` slide 11 |
 | `svg.wells` (`.wells-pit`, `.wells-water.wells-drain`, `.wells-crack`, `.wells-drip`, `.wells-rock`, `.wells-spring`, `.wells-bubble`) | a broken cistern that leaks dry beside a spring that never stops (Jeremiah 2:13). Clip the drain to the pit with a study-prefixed clip id | John 4 slide 12, John 7 slide 26 |
 | `.walls > div` (`b`, `i`, `b`, `small`) | walls coming down between two kinds of people, one row per step | John 4 slide 10 |
@@ -227,30 +228,34 @@ Use these, always with "about", so every study agrees. They are the common conse
 
 ## Old Testament dates
 
-Use these so every study agrees, with "about" before any date earlier than the kings. The kings follow Edwin Thiele's chronology (the one `div[data-kings]` draws). Years before Abraham come from adding up the ages in Genesis 5 and 11, as `div[data-lives]` does; don't turn them into BC dates.
+**Rick's ruling (2026-11-13): "If the Bible gives a date, use that."** No BC dates from any chronologist (Thiele, Ussher or anyone else): they are interpretations, and some contradict the Bible's own counts. Date every Old Testament event the way the Bible dates it, and quote the reference. Plain Bible arithmetic is fine (Isaac was born 25 years after the call: Abram was 75, Abraham 100). Don't join verses into a number the Bible doesn't state when they can be read more than one way. `div[data-lives]` counts years from creation by the ages in Genesis 5 and 11, which is the Bible's own count.
 
-| Event | About |
+| Event | The Bible's own date |
 |---|---|
-| Abraham called out of Ur and Haran (Genesis 12) | about 2090 BC |
-| Jacob and his family go down to Egypt (Genesis 46) | about 1875 BC |
-| The Exodus (1 Kings 6:1: 480 years before Solomon's temple) | about 1446 BC |
-| Into the land under Joshua | about 1406 BC |
-| The judges | about 1380 to 1050 BC |
-| Saul | 1050 to 1010 BC |
-| David | 1010 to 970 BC |
-| Solomon; the temple built (966) | 970 to 931 BC |
-| The kingdom divides: Israel (north) and Judah (south) | 931 BC |
-| Elijah and Elisha in Israel | 870 to 797 BC |
-| Samaria falls; Israel taken to Assyria (2 Kings 17) | 722 BC |
-| Hezekiah; Isaiah; Sennacherib turned back (2 Kings 18–19) | 715 to 686 BC; 701 BC |
-| Josiah finds the book of the law (2 Kings 22) | 622 BC |
-| Daniel and the first captives taken to Babylon | 605 BC |
-| Jerusalem and the temple destroyed (2 Kings 25) | 586 BC |
-| Cyrus lets the Jews go home (Ezra 1) | 538 BC |
-| The temple built again (Ezra 6) | 516 BC |
-| Esther | about 483 to 473 BC |
-| Ezra comes to Jerusalem; Nehemiah builds the walls | 458 BC; 445 BC |
-| Malachi, the last of the prophets | about 430 BC |
+| The flood | Noah's six hundredth year (Genesis 7:6, 11) |
+| Abram called out of Haran | at 75 (Genesis 12:4) |
+| Isaac born | Abraham 100 (Genesis 21:5) |
+| Jacob and Esau born | Isaac 60 (Genesis 25:26) |
+| Joseph sold; stands before Pharaoh | at 17 (37:2); at 30 (41:46) |
+| Jacob goes down to Egypt | at 130 (Genesis 47:9), in the second year of the famine (45:6) |
+| Jacob dies; Joseph dies | at 147 (47:28); at 110 (50:26) |
+| The affliction | "four hundred years" (Genesis 15:13; Acts 7:6) |
+| The sojourning; the law | "four hundred and thirty years… even the selfsame day" (Exodus 12:40–41); the law "four hundred and thirty years after" the covenant (Galatians 3:17) |
+| Moses | 40 when he went out to his brethren (Acts 7:23); 80, and Aaron 83, before Pharaoh (Exodus 7:7); 120 at his death (Deuteronomy 34:7) |
+| Out of Egypt; at Sinai | the 15th day of the first month (Numbers 33:3); the third month (Exodus 19:1) |
+| The tabernacle reared up | the first day of the first month of the second year (Exodus 40:17) |
+| Forty years in the wilderness | Numbers 14:33; Deuteronomy 1:3 (the fortieth year) |
+| Solomon begins the temple | the 480th year after the Exodus, the fourth year of Solomon (1 Kings 6:1) |
+| The kings | by their reigns as the Bible gives them ("David… reigned forty years", 1 Kings 2:11; "Uzziah… reigned fifty and two years", 2 Chronicles 26:3) |
+| The prophets | by the kings in their first verse (Hosea 1:1; Amos 1:1, "two years before the earthquake"; Micah 1:1; Zephaniah 1:1; Haggai 1:1, "the second year of Darius the king"; Zechariah 1:1). Jonah: the days of Jeroboam the son of Joash (2 Kings 14:25). A book that names no king doesn't date itself: say so |
+| Samaria taken; Israel carried away | the ninth year of Hoshea, the sixth year of Hezekiah (2 Kings 17:6; 18:10) |
+| Jerusalem burned | the nineteenth year of Nebuchadnezzar, the eleventh year of Zedekiah (2 Kings 25:2, 8) |
+| The captivity | seventy years (Jeremiah 25:11; Daniel 9:2) |
+| The return | the first year of Cyrus king of Persia (Ezra 1:1) |
+| The second temple finished | the sixth year of Darius the king (Ezra 6:15) |
+| Ezra; Nehemiah | the seventh year of Artaxerxes (Ezra 7:7); the twentieth year (Nehemiah 2:1) |
+
+`div[data-kings]` in deck.js still draws a BC scale from a modern chronology. It must be redrawn on the Bible's own reigns before it is used (1–2 Kings, 1–2 Chronicles).
 
 ## Proverbs notes
 

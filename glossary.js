@@ -22556,7 +22556,7 @@ window.GLOSSARY = [
  {
   "id": "jeroboam-ii",
   "kind": "person",
-  "name": "Jeroboam II, king of Israel",
+  "name": "Jeroboam the son of Joash, king of Israel",
   "refs": [
    [
     "Hosea", 1,
@@ -22571,7 +22571,7 @@ window.GLOSSARY = [
  {
   "id": "joash-king-of-israel",
   "kind": "person",
-  "name": "Joash, king of Israel (father of Jeroboam II)",
+  "name": "Joash, king of Israel (father of Jeroboam the son of Joash)",
   "refs": [
    [
     "Hosea", 1,
