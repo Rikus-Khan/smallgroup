@@ -1130,6 +1130,81 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 1, 16, 18, 19, 21, 23, 25, 27, 29, 31, 32, 33, 35 ] ],
    [
+    "Leviticus", 1,
+    [ 1 ] ],
+   [
+    "Leviticus", 4,
+    [ 1 ] ],
+   [
+    "Leviticus", 5,
+    [ 14 ] ],
+   [
+    "Leviticus", 6,
+    [ 1, 8, 19, 24 ] ],
+   [
+    "Leviticus", 7,
+    [ 22, 28, 38 ] ],
+   [
+    "Leviticus", 8,
+    [ 1, 4, 5, 6, 9, 10, 13, 15, 16, 17, 19, 20, 21, 23, 24, 28, 29, 30, 31, 36 ] ],
+   [
+    "Leviticus", 9,
+    [ 1, 5, 6, 7, 10, 21, 23 ] ],
+   [
+    "Leviticus", 10,
+    [ 3, 4, 5, 6, 7, 11, 12, 16, 19, 20 ] ],
+   [
+    "Leviticus", 11,
+    [ 1 ] ],
+   [
+    "Leviticus", 12,
+    [ 1 ] ],
+   [
+    "Leviticus", 13,
+    [ 1 ] ],
+   [
+    "Leviticus", 14,
+    [ 1, 33 ] ],
+   [
+    "Leviticus", 15,
+    [ 1 ] ],
+   [
+    "Leviticus", 16,
+    [ 1, 2, 34 ] ],
+   [
+    "Leviticus", 17,
+    [ 1 ] ],
+   [
+    "Leviticus", 18,
+    [ 1 ] ],
+   [
+    "Leviticus", 19,
+    [ 1 ] ],
+   [
+    "Leviticus", 20,
+    [ 1 ] ],
+   [
+    "Leviticus", 21,
+    [ 1, 16, 24 ] ],
+   [
+    "Leviticus", 22,
+    [ 1, 17, 26 ] ],
+   [
+    "Leviticus", 23,
+    [ 1, 9, 23, 26, 33, 44 ] ],
+   [
+    "Leviticus", 24,
+    [ 1, 11, 13, 23 ] ],
+   [
+    "Leviticus", 25,
+    [ 1 ] ],
+   [
+    "Leviticus", 26,
+    [ 46 ] ],
+   [
+    "Leviticus", 27,
+    [ 1, 34 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -2414,6 +2489,9 @@ window.GLOSSARY = [
     "Exodus", 6,
     [ 25 ] ],
    [
+    "Leviticus", 25,
+    [ 32, 33 ] ],
+   [
     "Luke", 10,
     [ 32 ] ],
    [
@@ -3037,6 +3115,87 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 1, 16, 19, 21, 23, 25, 27, 29, 32, 34, 35, 38 ] ],
+   [
+    "Leviticus", 1,
+    [ 1, 2, 3, 5, 9, 11, 13, 14, 17 ] ],
+   [
+    "Leviticus", 2,
+    [ 1, 2, 3, 8, 9, 10, 11, 12, 14, 16 ] ],
+   [
+    "Leviticus", 3,
+    [ 1, 3, 5, 6, 7, 9, 11, 12, 14, 16 ] ],
+   [
+    "Leviticus", 4,
+    [ 1, 2, 3, 4, 6, 7, 13, 15, 17, 18, 22, 24, 27, 31, 35 ] ],
+   [
+    "Leviticus", 5,
+    [ 6, 7, 12, 14, 15, 17, 19 ] ],
+   [
+    "Leviticus", 6,
+    [ 1, 2, 6, 7, 8, 14, 15, 18, 19, 20, 21, 22, 24, 25 ] ],
+   [
+    "Leviticus", 7,
+    [ 5, 11, 14, 20, 21, 22, 25, 28, 29, 30, 35, 36, 38 ] ],
+   [
+    "Leviticus", 8,
+    [ 1, 4, 5, 9, 13, 17, 21, 26, 27, 28, 29, 34, 35, 36 ] ],
+   [
+    "Leviticus", 9,
+    [ 2, 4, 5, 6, 7, 10, 21, 23, 24 ] ],
+   [
+    "Leviticus", 10,
+    [ 1, 2, 3, 6, 7, 8, 11, 12, 13, 15, 17, 19 ] ],
+   [
+    "Leviticus", 11,
+    [ 1, 44, 45 ] ],
+   [
+    "Leviticus", 12,
+    [ 1, 7 ] ],
+   [
+    "Leviticus", 13,
+    [ 1 ] ],
+   [
+    "Leviticus", 14,
+    [ 1, 11, 12, 16, 18, 23, 24, 27, 29, 31, 33 ] ],
+   [
+    "Leviticus", 15,
+    [ 1, 14, 15, 30 ] ],
+   [
+    "Leviticus", 16,
+    [ 1, 2, 7, 8, 9, 10, 12, 13, 18, 30, 34 ] ],
+   [
+    "Leviticus", 17,
+    [ 1, 2, 4, 5, 6, 9 ] ],
+   [
+    "Leviticus", 18,
+    [ 1, 2, 4, 5, 6, 21, 30 ] ],
+   [
+    "Leviticus", 19,
+    [ 1, 2, 3, 4, 5, 8, 10, 12, 14, 16, 18, 21, 22, 24, 25, 28, 30, 31, 32, 34, 36, 37 ] ],
+   [
+    "Leviticus", 20,
+    [ 1, 7, 8, 24, 26 ] ],
+   [
+    "Leviticus", 21,
+    [ 1, 6, 8, 12, 15, 16, 21, 23 ] ],
+   [
+    "Leviticus", 22,
+    [ 1, 2, 3, 8, 9, 15, 16, 17, 18, 21, 22, 24, 26, 27, 29, 30, 31, 32, 33 ] ],
+   [
+    "Leviticus", 23,
+    [ 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 16, 17, 18, 20, 22, 23, 25, 26, 27, 28, 33, 34, 36, 37, 38, 39, 40, 41, 43, 44 ] ],
+   [
+    "Leviticus", 24,
+    [ 1, 3, 4, 6, 7, 8, 9, 11, 12, 13, 16, 22, 23 ] ],
+   [
+    "Leviticus", 25,
+    [ 1, 2, 4, 17, 38, 55 ] ],
+   [
+    "Leviticus", 26,
+    [ 1, 2, 13, 44, 45, 46 ] ],
+   [
+    "Leviticus", 27,
+    [ 1, 2, 9, 11, 14, 16, 21, 22, 23, 26, 28, 30, 32, 34 ] ],
    [
     "Proverbs", 1,
     [ 7, 29 ] ],
@@ -3734,6 +3893,12 @@ window.GLOSSARY = [
     "Exodus", 19,
     [ 1, 2 ] ],
    [
+    "Leviticus", 7,
+    [ 38 ] ],
+   [
+    "Leviticus", 16,
+    [ 10, 21, 22 ] ],
+   [
     "Proverbs", 21,
     [ 19 ] ],
    [
@@ -4409,6 +4574,66 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 36, 38 ] ],
    [
+    "Leviticus", 1,
+    [ 2 ] ],
+   [
+    "Leviticus", 4,
+    [ 2, 13 ] ],
+   [
+    "Leviticus", 7,
+    [ 23, 29, 34, 36, 38 ] ],
+   [
+    "Leviticus", 9,
+    [ 1, 3 ] ],
+   [
+    "Leviticus", 10,
+    [ 6, 11, 14 ] ],
+   [
+    "Leviticus", 11,
+    [ 2 ] ],
+   [
+    "Leviticus", 12,
+    [ 2 ] ],
+   [
+    "Leviticus", 15,
+    [ 2, 31 ] ],
+   [
+    "Leviticus", 16,
+    [ 5, 16, 17, 19, 21, 34 ] ],
+   [
+    "Leviticus", 17,
+    [ 2, 3, 5, 8, 10, 12, 13, 14 ] ],
+   [
+    "Leviticus", 18,
+    [ 2 ] ],
+   [
+    "Leviticus", 19,
+    [ 2 ] ],
+   [
+    "Leviticus", 20,
+    [ 2 ] ],
+   [
+    "Leviticus", 21,
+    [ 24 ] ],
+   [
+    "Leviticus", 22,
+    [ 2, 3, 15, 18, 32 ] ],
+   [
+    "Leviticus", 23,
+    [ 2, 10, 24, 34, 43, 44 ] ],
+   [
+    "Leviticus", 24,
+    [ 2, 8, 10, 15, 23 ] ],
+   [
+    "Leviticus", 25,
+    [ 2, 33, 46, 55 ] ],
+   [
+    "Leviticus", 26,
+    [ 46 ] ],
+   [
+    "Leviticus", 27,
+    [ 2, 34 ] ],
+   [
     "Proverbs", 1,
     [ 1 ] ],
    [
@@ -4726,6 +4951,9 @@ window.GLOSSARY = [
    [
     "Exodus", 32,
     [ 13 ] ],
+   [
+    "Leviticus", 26,
+    [ 19 ] ],
    [
     "Proverbs", 23,
     [ 5 ] ],
@@ -5371,6 +5599,9 @@ window.GLOSSARY = [
    [
     "Exodus", 35,
     [ 8, 14, 28 ] ],
+   [
+    "Leviticus", 24,
+    [ 2 ] ],
    [
     "Proverbs", 4,
     [ 18 ] ],
@@ -6248,6 +6479,9 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 34, 35 ] ],
    [
+    "Leviticus", 9,
+    [ 6, 23 ] ],
+   [
     "Proverbs", 3,
     [ 35 ] ],
    [
@@ -6622,6 +6856,27 @@ window.GLOSSARY = [
    [
     "Exodus", 24,
     [ 12 ] ],
+   [
+    "Leviticus", 7,
+    [ 1, 7, 11, 37 ] ],
+   [
+    "Leviticus", 11,
+    [ 46 ] ],
+   [
+    "Leviticus", 12,
+    [ 7 ] ],
+   [
+    "Leviticus", 13,
+    [ 59 ] ],
+   [
+    "Leviticus", 14,
+    [ 2, 32, 54, 57 ] ],
+   [
+    "Leviticus", 15,
+    [ 32 ] ],
+   [
+    "Leviticus", 24,
+    [ 22 ] ],
    [
     "Proverbs", 1,
     [ 8 ] ],
@@ -8468,6 +8723,12 @@ window.GLOSSARY = [
     "Exodus", 29,
     [ 40 ] ],
    [
+    "Leviticus", 10,
+    [ 9 ] ],
+   [
+    "Leviticus", 23,
+    [ 13 ] ],
+   [
     "Proverbs", 3,
     [ 10 ] ],
    [
@@ -8641,6 +8902,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Purifying (ceremonial washing)",
   "refs": [
+   [
+    "Leviticus", 12,
+    [ 4, 5, 6 ] ],
    [
     "John", 2,
     [ 6 ] ],
@@ -8819,6 +9083,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 25 ] ],
    [
+    "Leviticus", 23,
+    [ 5 ] ],
+   [
     "Matthew", 26,
     [ 2, 17, 18, 19 ] ],
    [
@@ -8863,6 +9130,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Scourge",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 20 ] ],
    [
     "Matthew", 10,
     [ 17 ] ],
@@ -9917,6 +10187,9 @@ window.GLOSSARY = [
     "Exodus", 23,
     [ 7, 8 ] ],
    [
+    "Leviticus", 19,
+    [ 15 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -10250,6 +10523,15 @@ window.GLOSSARY = [
     "Exodus", 23,
     [ 1, 7 ] ],
    [
+    "Leviticus", 18,
+    [ 17 ] ],
+   [
+    "Leviticus", 19,
+    [ 29 ] ],
+   [
+    "Leviticus", 20,
+    [ 14, 17 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -10510,6 +10792,12 @@ window.GLOSSARY = [
    [
     "Exodus", 36,
     [ 2 ] ],
+   [
+    "Leviticus", 19,
+    [ 17 ] ],
+   [
+    "Leviticus", 26,
+    [ 16 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -11087,6 +11375,9 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 10, 11, 12, 19, 22 ] ],
    [
+    "Leviticus", 10,
+    [ 6, 16 ] ],
+   [
     "Proverbs", 11,
     [ 4, 23 ] ],
    [
@@ -11330,6 +11621,9 @@ window.GLOSSARY = [
   "name": "Pride",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 19 ] ],
+   [
     "Proverbs", 6,
     [ 17 ] ],
    [
@@ -11516,6 +11810,9 @@ window.GLOSSARY = [
     "Genesis", 9,
     [ 21 ] ],
    [
+    "Leviticus", 10,
+    [ 9 ] ],
+   [
     "Proverbs", 20,
     [ 1 ] ],
    [
@@ -11584,6 +11881,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Reproof, correction",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 17 ] ],
    [
     "Proverbs", 1,
     [ 23, 25, 30 ] ],
@@ -11813,6 +12113,18 @@ window.GLOSSARY = [
     "Exodus", 8,
     [ 26 ] ],
    [
+    "Leviticus", 7,
+    [ 18 ] ],
+   [
+    "Leviticus", 11,
+    [ 10, 11, 12, 13, 20, 23, 41, 42 ] ],
+   [
+    "Leviticus", 18,
+    [ 22, 26, 27, 29 ] ],
+   [
+    "Leviticus", 20,
+    [ 13 ] ],
+   [
     "Proverbs", 3,
     [ 32 ] ],
    [
@@ -11890,6 +12202,9 @@ window.GLOSSARY = [
    [
     "Exodus", 20,
     [ 14 ] ],
+   [
+    "Leviticus", 20,
+    [ 10 ] ],
    [
     "Proverbs", 6,
     [ 26, 32 ] ],
@@ -12035,6 +12350,9 @@ window.GLOSSARY = [
   "name": "Coals of fire",
   "refs": [
    [
+    "Leviticus", 16,
+    [ 12 ] ],
+   [
     "Proverbs", 25,
     [ 22 ] ],
    [
@@ -12046,6 +12364,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Conies (rock badgers)",
   "refs": [
+   [
+    "Leviticus", 11,
+    [ 5 ] ],
    [
     "Proverbs", 30,
     [ 26 ] ] ]
@@ -12226,6 +12547,12 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 22, 26 ] ],
+   [
+    "Leviticus", 2,
+    [ 12, 14 ] ],
+   [
+    "Leviticus", 23,
+    [ 10, 17, 20 ] ],
    [
     "Proverbs", 3,
     [ 9 ] ],
@@ -12545,6 +12872,9 @@ window.GLOSSARY = [
     "Exodus", 21,
     [ 20 ] ],
    [
+    "Leviticus", 27,
+    [ 32 ] ],
+   [
     "Proverbs", 10,
     [ 13 ] ],
    [
@@ -12857,6 +13187,9 @@ window.GLOSSARY = [
   "name": "Talebearer, whisperer",
   "refs": [
    [
+    "Leviticus", 19,
+    [ 16 ] ],
+   [
     "Proverbs", 11,
     [ 13 ] ],
    [
@@ -12880,6 +13213,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The lot (casting lots)",
   "refs": [
+   [
+    "Leviticus", 16,
+    [ 10 ] ],
    [
     "Proverbs", 1,
     [ 14 ] ],
@@ -12940,6 +13276,9 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 8 ] ],
+   [
+    "Leviticus", 26,
+    [ 13 ] ],
    [
     "Proverbs", 2,
     [ 7, 13, 21 ] ],
@@ -13006,6 +13345,9 @@ window.GLOSSARY = [
    [
     "Exodus", 22,
     [ 25 ] ],
+   [
+    "Leviticus", 25,
+    [ 36, 37 ] ],
    [
     "Proverbs", 28,
     [ 8 ] ],
@@ -13103,6 +13445,9 @@ window.GLOSSARY = [
     "Exodus", 30,
     [ 34 ] ],
    [
+    "Leviticus", 19,
+    [ 35, 36 ] ],
+   [
     "Proverbs", 11,
     [ 1 ] ],
    [
@@ -13189,6 +13534,21 @@ window.GLOSSARY = [
    [
     "Exodus", 35,
     [ 2, 3 ] ],
+   [
+    "Leviticus", 16,
+    [ 31 ] ],
+   [
+    "Leviticus", 23,
+    [ 3, 11, 15, 16, 24, 32, 39 ] ],
+   [
+    "Leviticus", 24,
+    [ 8 ] ],
+   [
+    "Leviticus", 25,
+    [ 2, 4, 6, 8 ] ],
+   [
+    "Leviticus", 26,
+    [ 2, 34, 35, 43 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -13339,6 +13699,9 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 29 ] ],
+   [
+    "Leviticus", 5,
+    [ 17, 18 ] ],
    [
     "Mark", 9,
     [ 6 ] ],
@@ -14161,6 +14524,15 @@ window.GLOSSARY = [
    [
     "Genesis", 45,
     [ 23 ] ],
+   [
+    "Leviticus", 11,
+    [ 34 ] ],
+   [
+    "Leviticus", 22,
+    [ 11, 13 ] ],
+   [
+    "Leviticus", 25,
+    [ 6, 7 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -15053,6 +15425,9 @@ window.GLOSSARY = [
   "name": "Blasphemy",
   "refs": [
    [
+    "Leviticus", 24,
+    [ 11, 16 ] ],
+   [
     "Matthew", 9,
     [ 3 ] ],
    [
@@ -15176,6 +15551,27 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 10, 11, 13 ] ],
    [
+    "Leviticus", 8,
+    [ 10, 11, 12, 15, 30 ] ],
+   [
+    "Leviticus", 10,
+    [ 3 ] ],
+   [
+    "Leviticus", 11,
+    [ 44 ] ],
+   [
+    "Leviticus", 20,
+    [ 7, 8 ] ],
+   [
+    "Leviticus", 21,
+    [ 8, 15, 23 ] ],
+   [
+    "Leviticus", 22,
+    [ 9, 16 ] ],
+   [
+    "Leviticus", 27,
+    [ 14, 15, 16, 17, 18, 19, 22, 26 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -15256,6 +15652,12 @@ window.GLOSSARY = [
    [
     "Exodus", 17,
     [ 4 ] ],
+   [
+    "Leviticus", 20,
+    [ 2, 27 ] ],
+   [
+    "Leviticus", 24,
+    [ 14, 16, 23 ] ],
    [
     "John", 10,
     [ 31, 32, 33 ] ],
@@ -15542,6 +15944,9 @@ window.GLOSSARY = [
   "name": "Feast of Tabernacles",
   "refs": [
    [
+    "Leviticus", 23,
+    [ 34 ] ],
+   [
     "Zechariah", 14,
     [ 16, 18, 19 ] ],
    [
@@ -15568,6 +15973,9 @@ window.GLOSSARY = [
    [
     "Exodus", 12,
     [ 44, 48 ] ],
+   [
+    "Leviticus", 12,
+    [ 3 ] ],
    [
     "Luke", 1,
     [ 59 ] ],
@@ -15971,6 +16379,9 @@ window.GLOSSARY = [
   "name": "Glorified",
   "refs": [
    [
+    "Leviticus", 10,
+    [ 3 ] ],
+   [
     "Matthew", 5,
     [ 16 ] ],
    [
@@ -16270,6 +16681,9 @@ window.GLOSSARY = [
    [
     "Exodus", 33,
     [ 1 ] ],
+   [
+    "Leviticus", 26,
+    [ 42 ] ],
    [
     "Micah", 7,
     [ 20 ] ],
@@ -17177,6 +17591,9 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 1 ] ],
    [
+    "Leviticus", 26,
+    [ 42 ] ],
+   [
     "Hosea", 10,
     [ 11 ] ],
    [
@@ -17557,6 +17974,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Harvest (soweth, reapeth)",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 9 ] ],
+   [
+    "Leviticus", 23,
+    [ 10, 22 ] ],
    [
     "Matthew", 6,
     [ 26 ] ],
@@ -18404,6 +18827,12 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 13, 18, 19 ] ],
    [
+    "Leviticus", 13,
+    [ 19, 49 ] ],
+   [
+    "Leviticus", 24,
+    [ 12 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -18797,6 +19226,12 @@ window.GLOSSARY = [
     "Exodus", 39,
     [ 5, 20, 21, 29 ] ],
    [
+    "Leviticus", 8,
+    [ 7, 13 ] ],
+   [
+    "Leviticus", 16,
+    [ 4 ] ],
+   [
     "Proverbs", 31,
     [ 17, 24 ] ],
    [
@@ -18860,6 +19295,9 @@ window.GLOSSARY = [
     "Exodus", 12,
     [ 39 ] ],
    [
+    "Leviticus", 14,
+    [ 8 ] ],
+   [
     "Proverbs", 23,
     [ 30 ] ],
    [
@@ -18913,6 +19351,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Testimony, testify",
   "refs": [
+   [
+    "Leviticus", 16,
+    [ 13 ] ],
    [
     "Matthew", 8,
     [ 4 ] ],
@@ -19283,6 +19724,9 @@ window.GLOSSARY = [
   "name": "High priest",
   "refs": [
    [
+    "Leviticus", 21,
+    [ 10 ] ],
+   [
     "Haggai", 1,
     [ 1, 12, 14 ] ],
    [
@@ -19579,6 +20023,9 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 27 ] ],
+   [
+    "Leviticus", 23,
+    [ 40 ] ],
    [
     "John", 12,
     [ 13 ] ],
@@ -21008,6 +21455,9 @@ window.GLOSSARY = [
   "name": "Cast lots",
   "refs": [
    [
+    "Leviticus", 16,
+    [ 8 ] ],
+   [
     "Joel", 3,
     [ 3 ] ],
    [
@@ -21064,6 +21514,9 @@ window.GLOSSARY = [
    [
     "Exodus", 12,
     [ 22 ] ],
+   [
+    "Leviticus", 14,
+    [ 4, 6, 49, 51, 52 ] ],
    [
     "John", 19,
     [ 29 ] ],
@@ -21200,6 +21653,57 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 13, 15 ] ],
    [
+    "Leviticus", 1,
+    [ 5, 7, 8, 9, 11, 12, 13, 15, 17 ] ],
+   [
+    "Leviticus", 2,
+    [ 2, 8, 9, 16 ] ],
+   [
+    "Leviticus", 3,
+    [ 2, 11, 16 ] ],
+   [
+    "Leviticus", 4,
+    [ 3, 5, 6, 7, 10, 16, 17, 20, 25, 26, 30, 31, 34, 35 ] ],
+   [
+    "Leviticus", 5,
+    [ 6, 8, 10, 12, 13, 16, 18 ] ],
+   [
+    "Leviticus", 6,
+    [ 6, 7, 10, 12, 22, 23, 26, 29 ] ],
+   [
+    "Leviticus", 7,
+    [ 5, 6, 7, 8, 9, 14, 31, 32, 34, 35 ] ],
+   [
+    "Leviticus", 12,
+    [ 6, 8 ] ],
+   [
+    "Leviticus", 13,
+    [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 19, 20, 21, 22, 23, 25, 26, 27, 28, 30, 31, 32, 33, 34, 36, 37, 39, 43, 44, 49, 50, 53, 54, 55, 56 ] ],
+   [
+    "Leviticus", 14,
+    [ 2, 3, 4, 5, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23, 24, 25, 26, 27, 28, 29, 31, 35, 36, 38, 39, 40, 44, 48 ] ],
+   [
+    "Leviticus", 15,
+    [ 14, 15, 29, 30 ] ],
+   [
+    "Leviticus", 16,
+    [ 30, 32, 33 ] ],
+   [
+    "Leviticus", 17,
+    [ 5, 6 ] ],
+   [
+    "Leviticus", 21,
+    [ 1, 9, 10, 21 ] ],
+   [
+    "Leviticus", 22,
+    [ 10, 11, 12, 13, 14 ] ],
+   [
+    "Leviticus", 23,
+    [ 10, 11, 20 ] ],
+   [
+    "Leviticus", 27,
+    [ 8, 11, 12, 14, 18, 21, 23 ] ],
+   [
     "Hosea", 4,
     [ 4, 6, 9 ] ],
    [
@@ -21329,6 +21833,12 @@ window.GLOSSARY = [
     "Exodus", 24,
     [ 1, 9, 14 ] ],
    [
+    "Leviticus", 4,
+    [ 15 ] ],
+   [
+    "Leviticus", 9,
+    [ 1 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -21437,6 +21947,9 @@ window.GLOSSARY = [
     "Exodus", 10,
     [ 4, 12, 13, 14, 19 ] ],
    [
+    "Leviticus", 11,
+    [ 22 ] ],
+   [
     "Joel", 1,
     [ 4 ] ],
    [
@@ -21496,6 +22009,30 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 29 ] ],
+   [
+    "Leviticus", 2,
+    [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15 ] ],
+   [
+    "Leviticus", 5,
+    [ 13 ] ],
+   [
+    "Leviticus", 6,
+    [ 14, 15, 20, 21, 23 ] ],
+   [
+    "Leviticus", 7,
+    [ 9, 10, 37 ] ],
+   [
+    "Leviticus", 9,
+    [ 4, 17 ] ],
+   [
+    "Leviticus", 10,
+    [ 12 ] ],
+   [
+    "Leviticus", 14,
+    [ 10, 20, 21, 31 ] ],
+   [
+    "Leviticus", 23,
+    [ 13, 16, 18, 37 ] ],
    [
     "Joel", 1,
     [ 9, 13 ] ],
@@ -21596,6 +22133,9 @@ window.GLOSSARY = [
   "name": "Solemn assembly (a sacred gathering)",
   "refs": [
    [
+    "Leviticus", 23,
+    [ 36 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -21680,6 +22220,9 @@ window.GLOSSARY = [
     "Exodus", 20,
     [ 18 ] ],
    [
+    "Leviticus", 25,
+    [ 9 ] ],
+   [
     "Hosea", 5,
     [ 8 ] ],
    [
@@ -21760,6 +22303,12 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The heathen (the nations)",
   "refs": [
+   [
+    "Leviticus", 25,
+    [ 44 ] ],
+   [
+    "Leviticus", 26,
+    [ 33, 38, 45 ] ],
    [
     "Joel", 2,
     [ 17, 19 ] ],
@@ -22343,6 +22892,27 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 18 ] ],
    [
+    "Leviticus", 11,
+    [ 45 ] ],
+   [
+    "Leviticus", 18,
+    [ 3 ] ],
+   [
+    "Leviticus", 19,
+    [ 34, 36 ] ],
+   [
+    "Leviticus", 22,
+    [ 33 ] ],
+   [
+    "Leviticus", 23,
+    [ 43 ] ],
+   [
+    "Leviticus", 25,
+    [ 38, 42, 55 ] ],
+   [
+    "Leviticus", 26,
+    [ 13, 45 ] ],
+   [
     "Proverbs", 7,
     [ 16 ] ],
    [
@@ -22685,6 +23255,12 @@ window.GLOSSARY = [
   "name": "Whoredom, harlot (unfaithfulness; idolatry)",
   "refs": [
    [
+    "Leviticus", 19,
+    [ 29 ] ],
+   [
+    "Leviticus", 20,
+    [ 5 ] ],
+   [
     "Hosea", 1,
     [ 2 ] ],
    [
@@ -23024,6 +23600,9 @@ window.GLOSSARY = [
   "name": "Homer (a dry measure, about six bushels)",
   "refs": [
    [
+    "Leviticus", 27,
+    [ 16 ] ],
+   [
     "Hosea", 3,
     [ 2 ] ] ]
  },
@@ -23056,6 +23635,9 @@ window.GLOSSARY = [
    [
     "Exodus", 39,
     [ 2, 5, 7, 8, 18, 19, 20, 21, 22 ] ],
+   [
+    "Leviticus", 8,
+    [ 7 ] ],
    [
     "Hosea", 3,
     [ 4 ] ] ]
@@ -23345,6 +23927,9 @@ window.GLOSSARY = [
   "name": "High places (hilltop shrines)",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 30 ] ],
+   [
     "Proverbs", 8,
     [ 2 ] ],
    [
@@ -23429,6 +24014,9 @@ window.GLOSSARY = [
   "name": "Chastise (discipline)",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 28 ] ],
+   [
     "Hosea", 7,
     [ 12 ] ],
    [
@@ -23467,6 +24055,9 @@ window.GLOSSARY = [
    [
     "Exodus", 20,
     [ 4 ] ],
+   [
+    "Leviticus", 26,
+    [ 1 ] ],
    [
     "Hosea", 11,
     [ 2 ] ],
@@ -23687,6 +24278,12 @@ window.GLOSSARY = [
   "name": "Idols",
   "refs": [
    [
+    "Leviticus", 19,
+    [ 4 ] ],
+   [
+    "Leviticus", 26,
+    [ 1, 30 ] ],
+   [
     "Hosea", 4,
     [ 17 ] ],
    [
@@ -23878,6 +24475,12 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 20 ] ],
+   [
+    "Leviticus", 25,
+    [ 25, 26, 29, 32, 48, 49 ] ],
+   [
+    "Leviticus", 27,
+    [ 13, 15, 19, 20, 27, 31 ] ],
    [
     "Proverbs", 6,
     [ 35 ] ],
@@ -24164,6 +24767,15 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 10, 12, 15, 27, 28 ] ],
    [
+    "Leviticus", 2,
+    [ 13 ] ],
+   [
+    "Leviticus", 24,
+    [ 8 ] ],
+   [
+    "Leviticus", 26,
+    [ 9, 15, 25, 42, 44, 45 ] ],
+   [
     "Proverbs", 2,
     [ 17 ] ],
    [
@@ -24232,6 +24844,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Oven",
   "refs": [
+   [
+    "Leviticus", 2,
+    [ 4 ] ],
+   [
+    "Leviticus", 7,
+    [ 9 ] ],
+   [
+    "Leviticus", 11,
+    [ 35 ] ],
+   [
+    "Leviticus", 26,
+    [ 26 ] ],
    [
     "Hosea", 7,
     [ 4, 6, 7 ] ],
@@ -24914,6 +25538,9 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 1 ] ],
    [
+    "Leviticus", 26,
+    [ 42 ] ],
+   [
     "Amos", 7,
     [ 9, 16 ] ],
    [
@@ -25066,6 +25693,18 @@ window.GLOSSARY = [
    [
     "Exodus", 38,
     [ 24, 25, 26 ] ],
+   [
+    "Leviticus", 5,
+    [ 11, 15 ] ],
+   [
+    "Leviticus", 6,
+    [ 20 ] ],
+   [
+    "Leviticus", 19,
+    [ 36 ] ],
+   [
+    "Leviticus", 27,
+    [ 3, 4, 5, 6, 7, 16, 25 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -25550,6 +26189,18 @@ window.GLOSSARY = [
     "Exodus", 29,
     [ 12 ] ],
    [
+    "Leviticus", 4,
+    [ 7, 18, 25, 30, 34 ] ],
+   [
+    "Leviticus", 8,
+    [ 15 ] ],
+   [
+    "Leviticus", 9,
+    [ 9 ] ],
+   [
+    "Leviticus", 16,
+    [ 18 ] ],
+   [
     "Amos", 3,
     [ 14 ] ] ]
  },
@@ -25658,6 +26309,9 @@ window.GLOSSARY = [
     "Genesis", 14,
     [ 20 ] ],
    [
+    "Leviticus", 27,
+    [ 30, 31, 32 ] ],
+   [
     "Amos", 4,
     [ 4 ] ],
    [
@@ -25690,6 +26344,18 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 25 ] ],
+   [
+    "Leviticus", 2,
+    [ 11 ] ],
+   [
+    "Leviticus", 6,
+    [ 17 ] ],
+   [
+    "Leviticus", 10,
+    [ 12 ] ],
+   [
+    "Leviticus", 23,
+    [ 17 ] ],
    [
     "Amos", 4,
     [ 5 ] ],
@@ -26312,6 +26978,9 @@ window.GLOSSARY = [
     "Exodus", 23,
     [ 2, 6 ] ],
    [
+    "Leviticus", 19,
+    [ 15, 35 ] ],
+   [
     "Micah", 3,
     [ 1, 8, 9 ] ],
    [
@@ -26596,6 +27265,9 @@ window.GLOSSARY = [
    [
     "Genesis", 27,
     [ 40 ] ],
+   [
+    "Leviticus", 26,
+    [ 13 ] ],
    [
     "Hosea", 11,
     [ 4 ] ],
@@ -26945,6 +27617,9 @@ window.GLOSSARY = [
   "name": "Standing images (sacred stone pillars)",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 1 ] ],
+   [
     "Micah", 5,
     [ 13 ] ] ]
  },
@@ -27052,6 +27727,57 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 12, 13, 31 ] ],
+   [
+    "Leviticus", 1,
+    [ 5, 7, 8, 11 ] ],
+   [
+    "Leviticus", 2,
+    [ 2, 3, 10 ] ],
+   [
+    "Leviticus", 3,
+    [ 2, 5, 8, 13 ] ],
+   [
+    "Leviticus", 6,
+    [ 9, 14, 16, 18, 20, 25 ] ],
+   [
+    "Leviticus", 7,
+    [ 10, 31, 33, 34, 35 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 6, 12, 13, 14, 18, 22, 23, 24, 27, 30, 31, 36 ] ],
+   [
+    "Leviticus", 9,
+    [ 1, 2, 7, 8, 9, 12, 18, 21, 22, 23 ] ],
+   [
+    "Leviticus", 10,
+    [ 1, 3, 4, 6, 8, 12, 16, 19 ] ],
+   [
+    "Leviticus", 11,
+    [ 1 ] ],
+   [
+    "Leviticus", 13,
+    [ 1, 2 ] ],
+   [
+    "Leviticus", 14,
+    [ 33 ] ],
+   [
+    "Leviticus", 15,
+    [ 1 ] ],
+   [
+    "Leviticus", 16,
+    [ 1, 2, 3, 6, 8, 9, 11, 21, 23 ] ],
+   [
+    "Leviticus", 17,
+    [ 2 ] ],
+   [
+    "Leviticus", 21,
+    [ 1, 17, 21, 24 ] ],
+   [
+    "Leviticus", 22,
+    [ 2, 4, 18 ] ],
+   [
+    "Leviticus", 24,
+    [ 3, 9 ] ],
    [
     "Micah", 6,
     [ 4 ] ],
@@ -27172,6 +27898,54 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 6, 10, 29 ] ],
+   [
+    "Leviticus", 1,
+    [ 3, 4, 6, 9, 10, 13, 14, 17 ] ],
+   [
+    "Leviticus", 3,
+    [ 5 ] ],
+   [
+    "Leviticus", 4,
+    [ 7, 10, 18, 24, 25, 29, 30, 33, 34 ] ],
+   [
+    "Leviticus", 5,
+    [ 7, 10 ] ],
+   [
+    "Leviticus", 6,
+    [ 9, 10, 12, 25 ] ],
+   [
+    "Leviticus", 7,
+    [ 2, 8, 37 ] ],
+   [
+    "Leviticus", 8,
+    [ 18, 28 ] ],
+   [
+    "Leviticus", 9,
+    [ 2, 3, 7, 12, 13, 14, 16, 22, 24 ] ],
+   [
+    "Leviticus", 10,
+    [ 19 ] ],
+   [
+    "Leviticus", 12,
+    [ 6, 8 ] ],
+   [
+    "Leviticus", 14,
+    [ 13, 19, 20, 22, 31 ] ],
+   [
+    "Leviticus", 15,
+    [ 15, 30 ] ],
+   [
+    "Leviticus", 16,
+    [ 3, 5, 24 ] ],
+   [
+    "Leviticus", 17,
+    [ 8 ] ],
+   [
+    "Leviticus", 22,
+    [ 18 ] ],
+   [
+    "Leviticus", 23,
+    [ 12, 18, 37 ] ],
    [
     "Hosea", 6,
     [ 6 ] ],
@@ -28187,6 +28961,15 @@ window.GLOSSARY = [
     "Exodus", 16,
     [ 35 ] ],
    [
+    "Leviticus", 14,
+    [ 34 ] ],
+   [
+    "Leviticus", 18,
+    [ 3 ] ],
+   [
+    "Leviticus", 25,
+    [ 38 ] ],
+   [
     "Zephaniah", 2,
     [ 5 ] ],
    [
@@ -28201,6 +28984,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The cormorant and the bittern (wild birds of the ruins)",
   "refs": [
+   [
+    "Leviticus", 11,
+    [ 17 ] ],
    [
     "Zephaniah", 2,
     [ 14 ] ] ]
@@ -28700,6 +29486,12 @@ window.GLOSSARY = [
     "Exodus", 39,
     [ 28, 31 ] ],
    [
+    "Leviticus", 8,
+    [ 9 ] ],
+   [
+    "Leviticus", 16,
+    [ 4 ] ],
+   [
     "Zechariah", 3,
     [ 5 ] ] ]
  },
@@ -28759,6 +29551,9 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 4, 24 ] ],
+   [
+    "Leviticus", 24,
+    [ 4 ] ],
    [
     "Zechariah", 4,
     [ 2, 11 ] ],
@@ -28955,6 +29750,9 @@ window.GLOSSARY = [
   "name": "Stork",
   "refs": [
    [
+    "Leviticus", 11,
+    [ 19 ] ],
+   [
     "Zechariah", 5,
     [ 9 ] ] ]
  },
@@ -29112,6 +29910,21 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Exodus", 39,
+    [ 7 ] ],
+   [
+    "Leviticus", 2,
+    [ 2, 9, 16 ] ],
+   [
+    "Leviticus", 5,
+    [ 12 ] ],
+   [
+    "Leviticus", 6,
+    [ 15 ] ],
+   [
+    "Leviticus", 23,
+    [ 24 ] ],
+   [
+    "Leviticus", 24,
     [ 7 ] ],
    [
     "Zechariah", 6,
@@ -29795,6 +30608,12 @@ window.GLOSSARY = [
   "name": "The blind, the lame, and the sick (blemished sacrifices)",
   "refs": [
    [
+    "Leviticus", 21,
+    [ 18 ] ],
+   [
+    "Leviticus", 22,
+    [ 22 ] ],
+   [
     "Malachi", 1,
     [ 8, 13 ] ] ]
  },
@@ -29818,6 +30637,18 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 13 ] ],
+   [
+    "Leviticus", 7,
+    [ 16 ] ],
+   [
+    "Leviticus", 22,
+    [ 18, 21, 23 ] ],
+   [
+    "Leviticus", 23,
+    [ 38 ] ],
+   [
+    "Leviticus", 27,
+    [ 2, 8 ] ],
    [
     "Malachi", 1,
     [ 14 ] ],
@@ -30017,6 +30848,12 @@ window.GLOSSARY = [
     "Exodus", 18,
     [ 20 ] ],
    [
+    "Leviticus", 18,
+    [ 3, 4, 30 ] ],
+   [
+    "Leviticus", 22,
+    [ 9 ] ],
+   [
     "Malachi", 3,
     [ 7, 14 ] ],
    [
@@ -30155,6 +30992,9 @@ window.GLOSSARY = [
   "name": "Statutes and judgments (the commands of the law)",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 46 ] ],
+   [
     "Malachi", 4,
     [ 4 ] ] ]
  },
@@ -30262,6 +31102,15 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 5, 27 ] ],
+   [
+    "Leviticus", 4,
+    [ 7 ] ],
+   [
+    "Leviticus", 10,
+    [ 1 ] ],
+   [
+    "Leviticus", 16,
+    [ 12, 13 ] ],
    [
     "Luke", 1,
     [ 9, 10, 11 ] ],
@@ -30499,6 +31348,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The eighth day (circumcision and naming)",
   "refs": [
+   [
+    "Leviticus", 12,
+    [ 3 ] ],
    [
     "Luke", 1,
     [ 59 ] ],
@@ -31148,6 +32000,9 @@ window.GLOSSARY = [
   "name": "Devils (evil spirits, unclean spirits)",
   "refs": [
    [
+    "Leviticus", 17,
+    [ 7 ] ],
+   [
     "Matthew", 4,
     [ 24 ] ],
    [
@@ -31288,6 +32143,15 @@ window.GLOSSARY = [
    [
     "Exodus", 4,
     [ 6 ] ],
+   [
+    "Leviticus", 13,
+    [ 2, 3, 8, 9, 11, 12, 13, 15, 20, 25, 27, 30, 42, 43, 45, 47, 49, 51, 52, 59 ] ],
+   [
+    "Leviticus", 14,
+    [ 2, 3, 7, 32, 34, 44, 54, 55, 57 ] ],
+   [
+    "Leviticus", 22,
+    [ 4 ] ],
    [
     "Matthew", 8,
     [ 2, 3 ] ],
@@ -31504,6 +32368,9 @@ window.GLOSSARY = [
    [
     "Exodus", 32,
     [ 32 ] ],
+   [
+    "Leviticus", 19,
+    [ 22 ] ],
    [
     "Matthew", 6,
     [ 12, 14, 15 ] ],
@@ -31754,6 +32621,12 @@ window.GLOSSARY = [
     "Exodus", 22,
     [ 6 ] ],
    [
+    "Leviticus", 2,
+    [ 14, 16 ] ],
+   [
+    "Leviticus", 23,
+    [ 14 ] ],
+   [
     "Matthew", 12,
     [ 1 ] ],
    [
@@ -31931,6 +32804,21 @@ window.GLOSSARY = [
   "name": "Turtledoves or young pigeons (the poor family's offering)",
   "refs": [
    [
+    "Leviticus", 1,
+    [ 14 ] ],
+   [
+    "Leviticus", 5,
+    [ 7, 11 ] ],
+   [
+    "Leviticus", 12,
+    [ 6, 8 ] ],
+   [
+    "Leviticus", 14,
+    [ 22, 30 ] ],
+   [
+    "Leviticus", 15,
+    [ 14, 29 ] ],
+   [
     "Luke", 2,
     [ 24 ] ] ]
  },
@@ -32023,6 +32911,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Redemption (being bought back and set free)",
   "refs": [
+   [
+    "Leviticus", 25,
+    [ 24, 51, 52 ] ],
    [
     "Luke", 2,
     [ 38 ] ],
@@ -33266,6 +34157,12 @@ window.GLOSSARY = [
   "name": "Confess (own openly)",
   "refs": [
    [
+    "Leviticus", 16,
+    [ 21 ] ],
+   [
+    "Leviticus", 26,
+    [ 40 ] ],
+   [
     "Matthew", 10,
     [ 32 ] ],
    [
@@ -33845,6 +34742,9 @@ window.GLOSSARY = [
   "name": "Salt (it keeps food from spoiling and gives it taste)",
   "refs": [
    [
+    "Leviticus", 2,
+    [ 13 ] ],
+   [
     "Matthew", 5,
     [ 13 ] ],
    [
@@ -33992,6 +34892,48 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 5, 6, 7, 10, 26, 29, 30, 32, 33 ] ],
    [
+    "Leviticus", 1,
+    [ 5, 7, 8, 9, 11, 12, 13, 15, 16, 17 ] ],
+   [
+    "Leviticus", 2,
+    [ 2, 8, 9, 12 ] ],
+   [
+    "Leviticus", 3,
+    [ 2, 5, 8, 11, 13, 16 ] ],
+   [
+    "Leviticus", 4,
+    [ 7, 10, 18, 19, 25, 26, 30, 31, 34, 35 ] ],
+   [
+    "Leviticus", 5,
+    [ 9, 12 ] ],
+   [
+    "Leviticus", 6,
+    [ 9, 10, 12, 13, 14, 15 ] ],
+   [
+    "Leviticus", 7,
+    [ 2, 5, 31 ] ],
+   [
+    "Leviticus", 8,
+    [ 11, 15, 16, 19, 21, 24, 28, 30 ] ],
+   [
+    "Leviticus", 9,
+    [ 7, 8, 9, 10, 12, 13, 14, 17, 18, 20, 24 ] ],
+   [
+    "Leviticus", 10,
+    [ 12 ] ],
+   [
+    "Leviticus", 16,
+    [ 12, 18, 20, 25, 33 ] ],
+   [
+    "Leviticus", 17,
+    [ 6, 11 ] ],
+   [
+    "Leviticus", 21,
+    [ 23 ] ],
+   [
+    "Leviticus", 22,
+    [ 22 ] ],
+   [
     "Matthew", 5,
     [ 23, 24 ] ],
    [
@@ -34090,6 +35032,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Writing of divorcement, divorced",
   "refs": [
+   [
+    "Leviticus", 21,
+    [ 14 ] ],
+   [
+    "Leviticus", 22,
+    [ 13 ] ],
    [
     "Matthew", 5,
     [ 31, 32 ] ],
@@ -34211,6 +35159,9 @@ window.GLOSSARY = [
     "Exodus", 22,
     [ 11 ] ],
    [
+    "Leviticus", 19,
+    [ 12 ] ],
+   [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
    [
@@ -34249,6 +35200,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "An eye for an eye (the law's limit on punishment)",
   "refs": [
+   [
+    "Leviticus", 24,
+    [ 20 ] ],
    [
     "Matthew", 5,
     [ 38 ] ] ]
@@ -34315,6 +35269,9 @@ window.GLOSSARY = [
    [
     "Genesis", 17,
     [ 1 ] ],
+   [
+    "Leviticus", 22,
+    [ 21 ] ],
    [
     "Matthew", 5,
     [ 48 ] ],
@@ -34411,6 +35368,9 @@ window.GLOSSARY = [
    [
     "Genesis", 25,
     [ 3, 19 ] ],
+   [
+    "Leviticus", 25,
+    [ 45 ] ],
    [
     "Proverbs", 23,
     [ 22 ] ],
@@ -34654,6 +35614,18 @@ window.GLOSSARY = [
    [
     "Exodus", 30,
     [ 34 ] ],
+   [
+    "Leviticus", 2,
+    [ 1, 2, 15, 16 ] ],
+   [
+    "Leviticus", 5,
+    [ 11 ] ],
+   [
+    "Leviticus", 6,
+    [ 15 ] ],
+   [
+    "Leviticus", 24,
+    [ 7 ] ],
    [
     "Matthew", 2,
     [ 11 ] ],
@@ -35171,6 +36143,9 @@ window.GLOSSARY = [
     "Exodus", 22,
     [ 9, 26, 27 ] ],
    [
+    "Leviticus", 11,
+    [ 32 ] ],
+   [
     "Matthew", 3,
     [ 4 ] ],
    [
@@ -35687,6 +36662,9 @@ window.GLOSSARY = [
   "name": "Swine (unclean animals)",
   "refs": [
    [
+    "Leviticus", 11,
+    [ 7 ] ],
+   [
     "Matthew", 7,
     [ 6 ] ],
    [
@@ -35794,6 +36772,15 @@ window.GLOSSARY = [
    [
     "Exodus", 12,
     [ 13 ] ],
+   [
+    "Leviticus", 13,
+    [ 2, 3, 4, 5, 6, 9, 12, 13, 17, 20, 22, 25, 27, 29, 30, 31, 32, 44, 45, 46, 47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ] ],
+   [
+    "Leviticus", 14,
+    [ 3, 32, 34, 35, 36, 37, 39, 40, 43, 44, 48, 54 ] ],
+   [
+    "Leviticus", 26,
+    [ 21 ] ],
    [
     "Mark", 3,
     [ 10 ] ],
@@ -36482,6 +37469,21 @@ window.GLOSSARY = [
   "name": "Profane (treat a holy thing as common)",
   "refs": [
    [
+    "Leviticus", 18,
+    [ 21 ] ],
+   [
+    "Leviticus", 19,
+    [ 8, 12 ] ],
+   [
+    "Leviticus", 20,
+    [ 3 ] ],
+   [
+    "Leviticus", 21,
+    [ 4, 6, 7, 9, 12, 14, 15, 23 ] ],
+   [
+    "Leviticus", 22,
+    [ 2, 9, 15, 32 ] ],
+   [
     "Matthew", 12,
     [ 5 ] ],
    [
@@ -36962,6 +37964,9 @@ window.GLOSSARY = [
     "Genesis", 14,
     [ 11 ] ],
    [
+    "Leviticus", 25,
+    [ 37 ] ],
+   [
     "Matthew", 14,
     [ 15 ] ],
    [
@@ -37220,6 +38225,9 @@ window.GLOSSARY = [
     "Exodus", 29,
     [ 2 ] ],
    [
+    "Leviticus", 2,
+    [ 4 ] ],
+   [
     "Mark", 6,
     [ 13 ] ],
    [
@@ -37249,6 +38257,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Maimed (crippled, missing a limb)",
   "refs": [
+   [
+    "Leviticus", 22,
+    [ 22 ] ],
    [
     "Matthew", 15,
     [ 30, 31 ] ],
@@ -37616,6 +38627,9 @@ window.GLOSSARY = [
   "name": "Love thy neighbour as thyself",
   "refs": [
    [
+    "Leviticus", 19,
+    [ 18 ] ],
+   [
     "Matthew", 5,
     [ 43 ] ],
    [
@@ -37744,6 +38758,24 @@ window.GLOSSARY = [
    [
     "Genesis", 34,
     [ 2, 5, 13, 27 ] ],
+   [
+    "Leviticus", 11,
+    [ 43, 44 ] ],
+   [
+    "Leviticus", 18,
+    [ 20, 23, 24, 25, 27, 28, 30 ] ],
+   [
+    "Leviticus", 19,
+    [ 31 ] ],
+   [
+    "Leviticus", 20,
+    [ 3 ] ],
+   [
+    "Leviticus", 21,
+    [ 1, 3, 4, 11 ] ],
+   [
+    "Leviticus", 22,
+    [ 8 ] ],
    [
     "Matthew", 15,
     [ 11, 18, 20 ] ],
@@ -38206,6 +39238,9 @@ window.GLOSSARY = [
    [
     "Exodus", 39,
     [ 39 ] ],
+   [
+    "Leviticus", 6,
+    [ 28 ] ],
    [
     "Mark", 7,
     [ 4 ] ] ]
@@ -39416,6 +40451,24 @@ window.GLOSSARY = [
     "Exodus", 21,
     [ 14 ] ],
    [
+    "Leviticus", 6,
+    [ 2 ] ],
+   [
+    "Leviticus", 18,
+    [ 20 ] ],
+   [
+    "Leviticus", 19,
+    [ 13, 15, 16, 17, 18 ] ],
+   [
+    "Leviticus", 20,
+    [ 10 ] ],
+   [
+    "Leviticus", 24,
+    [ 19 ] ],
+   [
+    "Leviticus", 25,
+    [ 14, 15 ] ],
+   [
     "Matthew", 5,
     [ 43 ] ],
    [
@@ -39742,6 +40795,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ravens (scavenger birds, unclean under the Law)",
   "refs": [
+   [
+    "Leviticus", 11,
+    [ 15 ] ],
    [
     "Proverbs", 30,
     [ 17 ] ],
@@ -40622,6 +41678,18 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 26 ] ],
    [
+    "Leviticus", 4,
+    [ 23, 28 ] ],
+   [
+    "Leviticus", 5,
+    [ 6 ] ],
+   [
+    "Leviticus", 9,
+    [ 3 ] ],
+   [
+    "Leviticus", 23,
+    [ 19 ] ],
+   [
     "Luke", 15,
     [ 29 ] ] ]
  },
@@ -41114,6 +42182,9 @@ window.GLOSSARY = [
   "name": "Sheep and goats",
   "refs": [
    [
+    "Leviticus", 1,
+    [ 10 ] ],
+   [
     "Matthew", 25,
     [ 32, 33 ] ] ]
  },
@@ -41233,6 +42304,12 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 18 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 26 ] ],
+   [
+    "Leviticus", 23,
+    [ 6 ] ],
    [
     "Matthew", 26,
     [ 17 ] ],
@@ -41860,6 +42937,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Avenge (see justice done)",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 18 ] ],
+   [
+    "Leviticus", 26,
+    [ 25 ] ],
    [
     "Luke", 18,
     [ 3, 5, 7, 8 ] ],
@@ -44036,6 +45119,33 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 7, 9 ] ],
    [
+    "Leviticus", 7,
+    [ 18 ] ],
+   [
+    "Leviticus", 10,
+    [ 17 ] ],
+   [
+    "Leviticus", 16,
+    [ 21, 22 ] ],
+   [
+    "Leviticus", 17,
+    [ 16 ] ],
+   [
+    "Leviticus", 18,
+    [ 25 ] ],
+   [
+    "Leviticus", 19,
+    [ 8 ] ],
+   [
+    "Leviticus", 20,
+    [ 17, 19 ] ],
+   [
+    "Leviticus", 22,
+    [ 16 ] ],
+   [
+    "Leviticus", 26,
+    [ 39, 40, 41, 43 ] ],
+   [
     "Acts", 1,
     [ 18 ] ],
    [
@@ -44807,6 +45917,15 @@ window.GLOSSARY = [
   "name": "Common and unclean (unfit by the old law)",
   "refs": [
    [
+    "Leviticus", 13,
+    [ 3, 8, 11, 14, 15, 20, 22, 25, 27, 30, 36, 44, 45, 46, 51, 55, 59 ] ],
+   [
+    "Leviticus", 14,
+    [ 36, 40, 41, 44, 45, 46, 57 ] ],
+   [
+    "Leviticus", 15,
+    [ 2, 4, 5, 6, 7, 8, 9, 10, 11, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 33 ] ],
+   [
     "Acts", 11,
     [ 8, 9 ] ] ]
  },
@@ -44968,6 +46087,9 @@ window.GLOSSARY = [
    [
     "Genesis", 42,
     [ 17 ] ],
+   [
+    "Leviticus", 24,
+    [ 12 ] ],
    [
     "Acts", 12,
     [ 10 ] ] ]
@@ -45667,6 +46789,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Bands (chains, shackles)",
   "refs": [
+   [
+    "Leviticus", 26,
+    [ 13 ] ],
    [
     "Acts", 16,
     [ 26 ] ] ]
@@ -46610,6 +47735,51 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 2, 5, 6, 9, 12, 17, 18, 19, 21, 22, 24, 28, 29, 33, 34, 35, 36, 38 ] ],
    [
+    "Leviticus", 1,
+    [ 1, 3, 5 ] ],
+   [
+    "Leviticus", 3,
+    [ 2, 8, 13 ] ],
+   [
+    "Leviticus", 4,
+    [ 4, 5, 7, 14, 16, 18 ] ],
+   [
+    "Leviticus", 6,
+    [ 16, 26, 30 ] ],
+   [
+    "Leviticus", 8,
+    [ 3, 4, 10, 31, 33, 35 ] ],
+   [
+    "Leviticus", 9,
+    [ 5, 23 ] ],
+   [
+    "Leviticus", 10,
+    [ 7, 9 ] ],
+   [
+    "Leviticus", 12,
+    [ 6 ] ],
+   [
+    "Leviticus", 14,
+    [ 11, 23 ] ],
+   [
+    "Leviticus", 15,
+    [ 14, 29, 31 ] ],
+   [
+    "Leviticus", 16,
+    [ 7, 16, 17, 20, 23, 33 ] ],
+   [
+    "Leviticus", 17,
+    [ 4, 5, 6, 9 ] ],
+   [
+    "Leviticus", 19,
+    [ 21 ] ],
+   [
+    "Leviticus", 24,
+    [ 3 ] ],
+   [
+    "Leviticus", 26,
+    [ 11 ] ],
+   [
     "Acts", 7,
     [ 43, 44, 46 ] ],
    [
@@ -46664,6 +47834,9 @@ window.GLOSSARY = [
     "Exodus", 6,
     [ 12, 30 ] ],
    [
+    "Leviticus", 26,
+    [ 41 ] ],
+   [
     "Acts", 7,
     [ 51 ] ] ]
  },
@@ -46703,6 +47876,21 @@ window.GLOSSARY = [
     "Exodus", 12,
     [ 40, 48, 49 ] ],
    [
+    "Leviticus", 16,
+    [ 29 ] ],
+   [
+    "Leviticus", 17,
+    [ 8, 10, 12, 13 ] ],
+   [
+    "Leviticus", 19,
+    [ 33 ] ],
+   [
+    "Leviticus", 20,
+    [ 2 ] ],
+   [
+    "Leviticus", 25,
+    [ 45 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -46726,6 +47914,9 @@ window.GLOSSARY = [
    [
     "Exodus", 38,
     [ 25 ] ],
+   [
+    "Leviticus", 12,
+    [ 5 ] ],
    [
     "Acts", 7,
     [ 14 ] ],
@@ -46804,6 +47995,9 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 26 ] ],
+   [
+    "Leviticus", 26,
+    [ 14, 18, 21, 27 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -48737,6 +49931,12 @@ window.GLOSSARY = [
     "Exodus", 39,
     [ 5, 20, 21, 29 ] ],
    [
+    "Leviticus", 8,
+    [ 7 ] ],
+   [
+    "Leviticus", 16,
+    [ 4 ] ],
+   [
     "Acts", 21,
     [ 11 ] ],
    [
@@ -49313,6 +50513,9 @@ window.GLOSSARY = [
   "name": "Reconciled (enemies made friends again)",
   "refs": [
    [
+    "Leviticus", 8,
+    [ 15 ] ],
+   [
     "Romans", 5,
     [ 10 ] ],
    [
@@ -49349,6 +50552,54 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 30 ] ],
    [
+    "Leviticus", 1,
+    [ 4 ] ],
+   [
+    "Leviticus", 4,
+    [ 20, 26, 31, 35 ] ],
+   [
+    "Leviticus", 5,
+    [ 6, 10, 13, 16, 18 ] ],
+   [
+    "Leviticus", 6,
+    [ 7 ] ],
+   [
+    "Leviticus", 7,
+    [ 7 ] ],
+   [
+    "Leviticus", 8,
+    [ 34 ] ],
+   [
+    "Leviticus", 9,
+    [ 7 ] ],
+   [
+    "Leviticus", 10,
+    [ 17 ] ],
+   [
+    "Leviticus", 12,
+    [ 7, 8 ] ],
+   [
+    "Leviticus", 14,
+    [ 18, 19, 20, 21, 29, 31, 53 ] ],
+   [
+    "Leviticus", 15,
+    [ 15, 30 ] ],
+   [
+    "Leviticus", 16,
+    [ 6, 10, 11, 16, 17, 18, 24, 27, 30, 32, 33, 34 ] ],
+   [
+    "Leviticus", 17,
+    [ 11 ] ],
+   [
+    "Leviticus", 19,
+    [ 22 ] ],
+   [
+    "Leviticus", 23,
+    [ 27, 28 ] ],
+   [
+    "Leviticus", 25,
+    [ 9 ] ],
+   [
     "Romans", 5,
     [ 11 ] ] ]
  },
@@ -49357,6 +50608,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Imputed (counted, put on someone's account)",
   "refs": [
+   [
+    "Leviticus", 7,
+    [ 18 ] ],
+   [
+    "Leviticus", 17,
+    [ 4 ] ],
    [
     "Romans", 5,
     [ 13 ] ],
@@ -49453,6 +50710,9 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 18 ] ],
+   [
+    "Leviticus", 26,
+    [ 17 ] ],
    [
     "Romans", 5,
     [ 14, 17, 21 ] ],
@@ -49661,6 +50921,18 @@ window.GLOSSARY = [
   "name": "Uncleanness (moral filth)",
   "refs": [
    [
+    "Leviticus", 7,
+    [ 20, 21 ] ],
+   [
+    "Leviticus", 16,
+    [ 16, 19 ] ],
+   [
+    "Leviticus", 18,
+    [ 19 ] ],
+   [
+    "Leviticus", 22,
+    [ 3, 5 ] ],
+   [
     "Zechariah", 13,
     [ 1 ] ],
    [
@@ -49741,6 +51013,9 @@ window.GLOSSARY = [
    [
     "Exodus", 2,
     [ 9 ] ],
+   [
+    "Leviticus", 19,
+    [ 13 ] ],
    [
     "Romans", 6,
     [ 23 ] ],
@@ -50707,6 +51982,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Stumblingblock (something in the road that makes a man fall)",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 14 ] ],
    [
     "Romans", 11,
     [ 9 ] ],
@@ -52586,6 +53864,12 @@ window.GLOSSARY = [
   "name": "His father’s wife (his stepmother; forbidden in Leviticus 18:8)",
   "refs": [
    [
+    "Leviticus", 18,
+    [ 8, 11 ] ],
+   [
+    "Leviticus", 20,
+    [ 11 ] ],
+   [
     "1 Corinthians", 5,
     [ 1 ] ] ]
  },
@@ -52730,6 +54014,9 @@ window.GLOSSARY = [
   "name": "Defrauded, defraud (cheated out of what is yours, or cheating another)",
   "refs": [
    [
+    "Leviticus", 19,
+    [ 13 ] ],
+   [
     "1 Corinthians", 6,
     [ 7, 8 ] ],
    [
@@ -52765,6 +54052,9 @@ window.GLOSSARY = [
    [
     "Exodus", 23,
     [ 30 ] ],
+   [
+    "Leviticus", 20,
+    [ 24 ] ],
    [
     "1 Corinthians", 6,
     [ 9, 10 ] ],
@@ -52843,6 +54133,9 @@ window.GLOSSARY = [
    [
     "Genesis", 38,
     [ 15, 21, 22, 24 ] ],
+   [
+    "Leviticus", 21,
+    [ 14 ] ],
    [
     "1 Corinthians", 6,
     [ 15, 16 ] ],
@@ -54356,6 +55649,21 @@ window.GLOSSARY = [
     "Genesis", 8,
     [ 21 ] ],
    [
+    "Leviticus", 1,
+    [ 9, 13, 17 ] ],
+   [
+    "Leviticus", 2,
+    [ 2, 9, 12 ] ],
+   [
+    "Leviticus", 3,
+    [ 5, 16 ] ],
+   [
+    "Leviticus", 17,
+    [ 6 ] ],
+   [
+    "Leviticus", 23,
+    [ 13, 18 ] ],
+   [
     "2 Corinthians", 2,
     [ 14, 15, 16 ] ],
    [
@@ -54493,6 +55801,15 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 3, 21, 22, 26 ] ],
+   [
+    "Leviticus", 16,
+    [ 2, 12, 15 ] ],
+   [
+    "Leviticus", 21,
+    [ 23 ] ],
+   [
+    "Leviticus", 24,
+    [ 3 ] ],
    [
     "2 Corinthians", 3,
     [ 13, 14, 15, 16 ] ] ]
@@ -55427,6 +56744,18 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 2, 4, 29, 32 ] ],
    [
+    "Leviticus", 7,
+    [ 38 ] ],
+   [
+    "Leviticus", 25,
+    [ 1 ] ],
+   [
+    "Leviticus", 26,
+    [ 46 ] ],
+   [
+    "Leviticus", 27,
+    [ 34 ] ],
+   [
     "Galatians", 4,
     [ 24, 25 ] ],
    [
@@ -55465,6 +56794,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Dung (rubbish, the scraps thrown away)",
   "refs": [
+   [
+    "Leviticus", 8,
+    [ 17 ] ],
    [
     "Philippians", 3,
     [ 8 ] ] ]
@@ -56957,6 +58289,9 @@ window.GLOSSARY = [
   "name": "Due season (the right time, God's time)",
   "refs": [
    [
+    "Leviticus", 26,
+    [ 4 ] ],
+   [
     "Proverbs", 15,
     [ 23 ] ],
    [
@@ -57232,6 +58567,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Reverence (honour, respect)",
   "refs": [
+   [
+    "Leviticus", 19,
+    [ 30 ] ],
+   [
+    "Leviticus", 26,
+    [ 2 ] ],
    [
     "Ephesians", 5,
     [ 33 ] ],
@@ -58967,6 +60308,9 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 10, 11, 22 ] ],
    [
+    "Leviticus", 25,
+    [ 47 ] ],
+   [
     "2 Timothy", 3,
     [ 13 ] ],
    [
@@ -60134,6 +61478,9 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 1 ] ],
    [
+    "Leviticus", 6,
+    [ 5 ] ],
+   [
     "Amos", 4,
     [ 2 ] ],
    [
@@ -60212,6 +61559,12 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 11 ] ],
    [
+    "Leviticus", 11,
+    [ 8, 11, 24, 25, 26, 27, 28, 35, 36, 37, 38, 39, 40 ] ],
+   [
+    "Leviticus", 26,
+    [ 30 ] ],
+   [
     "Nahum", 3,
     [ 3 ] ],
    [
@@ -60253,6 +61606,9 @@ window.GLOSSARY = [
    [
     "Exodus", 35,
     [ 2 ] ],
+   [
+    "Leviticus", 23,
+    [ 3, 8 ] ],
    [
     "Hebrews", 4,
     [ 4 ] ] ]
@@ -60323,6 +61679,9 @@ window.GLOSSARY = [
   "name": "The sanctuary (the first room of the tabernacle; “a worldly sanctuary”: an earthly holy place)",
   "refs": [
    [
+    "Leviticus", 21,
+    [ 12 ] ],
+   [
     "Hebrews", 9,
     [ 1, 2 ] ] ]
  },
@@ -60353,6 +61712,9 @@ window.GLOSSARY = [
     "Exodus", 26,
     [ 33, 34 ] ],
    [
+    "Leviticus", 16,
+    [ 2, 3, 16, 17, 20, 23, 27, 33 ] ],
+   [
     "Hebrews", 9,
     [ 3, 8, 12, 25 ] ],
    [
@@ -60364,6 +61726,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The golden censer (a gold pan for burning incense before the LORD)",
   "refs": [
+   [
+    "Leviticus", 16,
+    [ 12 ] ],
    [
     "Hebrews", 9,
     [ 4 ] ],
@@ -60415,6 +61780,9 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 20 ] ],
+   [
+    "Leviticus", 16,
+    [ 2, 13, 14, 15 ] ],
    [
     "Hebrews", 9,
     [ 5 ] ] ]
@@ -60706,6 +62074,27 @@ window.GLOSSARY = [
    [
     "Exodus", 33,
     [ 7 ] ],
+   [
+    "Leviticus", 4,
+    [ 12, 21 ] ],
+   [
+    "Leviticus", 6,
+    [ 11 ] ],
+   [
+    "Leviticus", 8,
+    [ 17 ] ],
+   [
+    "Leviticus", 9,
+    [ 11 ] ],
+   [
+    "Leviticus", 13,
+    [ 46 ] ],
+   [
+    "Leviticus", 16,
+    [ 27 ] ],
+   [
+    "Leviticus", 24,
+    [ 14 ] ],
    [
     "Hebrews", 13,
     [ 11, 12, 13 ] ] ]
@@ -61793,6 +63182,15 @@ window.GLOSSARY = [
   "name": "Be ye holy; for I am holy (set apart for God)",
   "refs": [
    [
+    "Leviticus", 11,
+    [ 44, 45 ] ],
+   [
+    "Leviticus", 19,
+    [ 2 ] ],
+   [
+    "Leviticus", 20,
+    [ 7, 26 ] ],
+   [
     "1 Peter", 1,
     [ 16 ] ] ]
  },
@@ -61807,6 +63205,12 @@ window.GLOSSARY = [
    [
     "Exodus", 21,
     [ 8 ] ],
+   [
+    "Leviticus", 25,
+    [ 30, 31, 48, 54 ] ],
+   [
+    "Leviticus", 27,
+    [ 20, 27, 28, 29, 33 ] ],
    [
     "1 Peter", 1,
     [ 18 ] ],
@@ -62552,6 +63956,9 @@ window.GLOSSARY = [
   "name": "Cleanseth (keeps on washing clean)",
   "refs": [
    [
+    "Leviticus", 16,
+    [ 19, 30 ] ],
+   [
     "1 John", 1,
     [ 7, 9 ] ] ]
  },
@@ -62899,6 +64306,9 @@ window.GLOSSARY = [
    [
     "Genesis", 44,
     [ 33 ] ],
+   [
+    "Leviticus", 25,
+    [ 39, 42, 44, 46 ] ],
    [
     "Revelation", 6,
     [ 15 ] ] ]
@@ -63310,6 +64720,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Spue (spit out, vomit)",
   "refs": [
+   [
+    "Leviticus", 18,
+    [ 28 ] ],
+   [
+    "Leviticus", 20,
+    [ 22 ] ],
    [
     "Revelation", 3,
     [ 16 ] ] ]
@@ -64868,6 +66284,9 @@ window.GLOSSARY = [
   "name": "Bewail (weep aloud over)",
   "refs": [
    [
+    "Leviticus", 10,
+    [ 6 ] ],
+   [
     "2 Corinthians", 12,
     [ 21 ] ],
    [
@@ -64921,6 +66340,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Odours (incense and perfumes)",
   "refs": [
+   [
+    "Leviticus", 26,
+    [ 31 ] ],
    [
     "Revelation", 18,
     [ 13 ] ] ]
@@ -67485,7 +68907,10 @@ window.GLOSSARY = [
     [ 34 ] ],
    [
     "Exodus", 38,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Leviticus", 24,
+    [ 11 ] ] ]
  },
  {
   "id": "naphtali",
@@ -68022,7 +69447,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 1,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Leviticus", 25,
+    [ 43, 46, 53 ] ] ]
  },
  {
   "id": "treasure-cities",
@@ -68115,7 +69543,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Exodus", 39,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Leviticus", 23,
+    [ 40 ] ] ]
  },
  {
   "id": "stranger-in-a-strange-land",
@@ -68193,7 +69624,10 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Exodus", 33,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Leviticus", 20,
+    [ 24 ] ] ]
  },
  {
   "id": "token",
@@ -68232,7 +69666,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Exodus", 9,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Leviticus", 26,
+    [ 25 ] ] ]
  },
  {
   "id": "jehovah",
@@ -68313,7 +69750,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Exodus", 38,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Leviticus", 10,
+    [ 6, 12, 16 ] ] ]
  },
  {
   "id": "phinehas",
@@ -68349,7 +69789,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 17, 18, 19, 21, 22, 24 ] ] ]
+    [ 17, 18, 19, 21, 22, 24 ] ],
+   [
+    "Leviticus", 10,
+    [ 4 ] ] ]
  },
  {
   "id": "putiel-and-amminadab",
@@ -68496,7 +69939,10 @@ window.GLOSSARY = [
     [ 12, 13 ] ],
    [
     "Exodus", 34,
-    [ 19, 20 ] ] ]
+    [ 19, 20 ] ],
+   [
+    "Leviticus", 27,
+    [ 26 ] ] ]
  },
  {
   "id": "frontlets",
@@ -68748,7 +70194,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 22,
-    [ 1, 3, 4, 5, 6, 12 ] ] ]
+    [ 1, 3, 4, 5, 6, 12 ] ],
+   [
+    "Leviticus", 6,
+    [ 4, 5 ] ],
+   [
+    "Leviticus", 24,
+    [ 21 ] ] ]
  },
  {
   "id": "witch",
@@ -68769,7 +70221,31 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Exodus", 23,
-    [ 9, 12 ] ] ]
+    [ 9, 12 ] ],
+   [
+    "Leviticus", 16,
+    [ 29 ] ],
+   [
+    "Leviticus", 17,
+    [ 8, 10, 12, 13, 15 ] ],
+   [
+    "Leviticus", 18,
+    [ 26 ] ],
+   [
+    "Leviticus", 19,
+    [ 10, 33, 34 ] ],
+   [
+    "Leviticus", 20,
+    [ 2 ] ],
+   [
+    "Leviticus", 23,
+    [ 22 ] ],
+   [
+    "Leviticus", 24,
+    [ 16, 22 ] ],
+   [
+    "Leviticus", 25,
+    [ 6, 23, 35, 45, 47 ] ] ]
  },
  {
   "id": "widow-in-israel",
@@ -68778,7 +70254,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 22,
-    [ 22, 24 ] ] ]
+    [ 22, 24 ] ],
+   [
+    "Leviticus", 22,
+    [ 13 ] ] ]
  },
  {
   "id": "dowry",
@@ -68838,7 +70317,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 24,
-    [ 1, 9 ] ] ]
+    [ 1, 9 ] ],
+   [
+    "Leviticus", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "abihu",
@@ -68847,7 +70329,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 24,
-    [ 1, 9 ] ] ]
+    [ 1, 9 ] ],
+   [
+    "Leviticus", 10,
+    [ 1 ] ] ]
  },
  {
   "id": "blood-of-the-covenant",
@@ -68871,7 +70356,37 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Exodus", 32,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Leviticus", 3,
+    [ 1, 3, 6, 9 ] ],
+   [
+    "Leviticus", 4,
+    [ 10, 26, 31, 35 ] ],
+   [
+    "Leviticus", 6,
+    [ 12 ] ],
+   [
+    "Leviticus", 7,
+    [ 11, 13, 14, 15, 18, 20, 21, 29, 32, 33, 34, 37 ] ],
+   [
+    "Leviticus", 9,
+    [ 4, 18, 22 ] ],
+   [
+    "Leviticus", 10,
+    [ 14 ] ],
+   [
+    "Leviticus", 17,
+    [ 5 ] ],
+   [
+    "Leviticus", 19,
+    [ 5 ] ],
+   [
+    "Leviticus", 22,
+    [ 21 ] ],
+   [
+    "Leviticus", 23,
+    [ 19 ] ] ]
  },
  {
   "id": "sapphire",
@@ -68958,7 +70473,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 28,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Leviticus", 8,
+    [ 8 ] ] ]
  },
  {
   "id": "breastplate-of-judgment",
@@ -69042,7 +70560,13 @@ window.GLOSSARY = [
     [ 42 ] ],
    [
     "Exodus", 39,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Leviticus", 6,
+    [ 10 ] ],
+   [
+    "Leviticus", 16,
+    [ 4 ] ] ]
  },
  {
   "id": "ouches",
@@ -69069,7 +70593,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Exodus", 39,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Leviticus", 8,
+    [ 13 ] ] ]
  },
  {
   "id": "caul-of-the-liver",
@@ -69078,7 +70605,22 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 29,
-    [ 13, 22 ] ] ]
+    [ 13, 22 ] ],
+   [
+    "Leviticus", 3,
+    [ 4, 10, 15 ] ],
+   [
+    "Leviticus", 4,
+    [ 9 ] ],
+   [
+    "Leviticus", 7,
+    [ 4 ] ],
+   [
+    "Leviticus", 8,
+    [ 16, 25 ] ],
+   [
+    "Leviticus", 9,
+    [ 10, 19 ] ] ]
  },
  {
   "id": "sin-offering",
@@ -69090,7 +70632,43 @@ window.GLOSSARY = [
     [ 14, 36 ] ],
    [
     "Exodus", 30,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Leviticus", 4,
+    [ 3, 8, 20, 21, 24, 25, 29, 32, 33, 34 ] ],
+   [
+    "Leviticus", 5,
+    [ 6, 7, 8, 9, 11, 12 ] ],
+   [
+    "Leviticus", 6,
+    [ 17, 25, 30 ] ],
+   [
+    "Leviticus", 7,
+    [ 7, 37 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 14 ] ],
+   [
+    "Leviticus", 9,
+    [ 2, 3, 7, 8, 10, 15, 22 ] ],
+   [
+    "Leviticus", 10,
+    [ 16, 17, 19 ] ],
+   [
+    "Leviticus", 12,
+    [ 6, 8 ] ],
+   [
+    "Leviticus", 14,
+    [ 13, 19, 22, 31 ] ],
+   [
+    "Leviticus", 15,
+    [ 15, 30 ] ],
+   [
+    "Leviticus", 16,
+    [ 3, 5, 6, 9, 11, 15, 25, 27 ] ],
+   [
+    "Leviticus", 23,
+    [ 19 ] ] ]
  },
  {
   "id": "wave-and-heave-offering",
@@ -69099,7 +70677,25 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 29,
-    [ 24, 26, 27, 28 ] ] ]
+    [ 24, 26, 27, 28 ] ],
+   [
+    "Leviticus", 7,
+    [ 14, 30, 32 ] ],
+   [
+    "Leviticus", 8,
+    [ 27, 29 ] ],
+   [
+    "Leviticus", 9,
+    [ 21 ] ],
+   [
+    "Leviticus", 10,
+    [ 15 ] ],
+   [
+    "Leviticus", 14,
+    [ 12, 24 ] ],
+   [
+    "Leviticus", 23,
+    [ 15, 20 ] ] ]
  },
  {
   "id": "bullock",
@@ -69108,7 +70704,28 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 29,
-    [ 1, 3, 10, 11, 12, 14, 36 ] ] ]
+    [ 1, 3, 10, 11, 12, 14, 36 ] ],
+   [
+    "Leviticus", 1,
+    [ 5 ] ],
+   [
+    "Leviticus", 4,
+    [ 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 20, 21 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 14, 17 ] ],
+   [
+    "Leviticus", 9,
+    [ 4, 18, 19 ] ],
+   [
+    "Leviticus", 16,
+    [ 3, 6, 11, 14, 15, 18, 27 ] ],
+   [
+    "Leviticus", 22,
+    [ 23, 27 ] ],
+   [
+    "Leviticus", 23,
+    [ 18 ] ] ]
  },
  {
   "id": "rams-of-consecration",
@@ -69117,7 +70734,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 29,
-    [ 1, 3, 15, 16, 17, 18, 19, 20, 22, 26, 27, 31, 32 ] ] ]
+    [ 1, 3, 15, 16, 17, 18, 19, 20, 22, 26, 27, 31, 32 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 18, 20, 21, 22, 29 ] ] ]
  },
  {
   "id": "anointing-oil",
@@ -69147,7 +70767,16 @@ window.GLOSSARY = [
     [ 38 ] ],
    [
     "Exodus", 40,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Leviticus", 8,
+    [ 2, 10, 12, 30 ] ],
+   [
+    "Leviticus", 10,
+    [ 7 ] ],
+   [
+    "Leviticus", 21,
+    [ 10, 12 ] ] ]
  },
  {
   "id": "hin-and-deal",
@@ -69159,7 +70788,19 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Exodus", 30,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Leviticus", 14,
+    [ 21 ] ],
+   [
+    "Leviticus", 19,
+    [ 36 ] ],
+   [
+    "Leviticus", 23,
+    [ 13, 17 ] ],
+   [
+    "Leviticus", 24,
+    [ 5 ] ] ]
  },
  {
   "id": "continual-burnt-offering",
@@ -69192,7 +70833,10 @@ window.GLOSSARY = [
     [ 39 ] ],
    [
     "Exodus", 40,
-    [ 7, 11, 30 ] ] ]
+    [ 7, 11, 30 ] ],
+   [
+    "Leviticus", 8,
+    [ 11 ] ] ]
  },
  {
   "id": "incense-spices",
@@ -69336,7 +70980,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 34,
-    [ 15, 16 ] ] ]
+    [ 15, 16 ] ],
+   [
+    "Leviticus", 20,
+    [ 5, 6 ] ] ]
  },
  {
   "id": "moses-face-shone",
@@ -69384,7 +71031,10 @@ window.GLOSSARY = [
     [ 9, 27 ] ],
    [
     "Exodus", 39,
-    [ 8, 9, 15, 16, 17, 19, 21 ] ] ]
+    [ 8, 9, 15, 16, 17, 19, 21 ] ],
+   [
+    "Leviticus", 8,
+    [ 8 ] ] ]
  },
  {
   "id": "pomegranate",
@@ -69427,5 +71077,1103 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 3, 5, 21 ] ] ]
+ },
+ {
+  "id": "without-blemish",
+  "kind": "term",
+  "name": "Without blemish (no flaw: the offering had to be perfect, and so had the priest at the altar)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 5 ] ],
+   [
+    "Exodus", 29,
+    [ 1 ] ],
+   [
+    "Leviticus", 1,
+    [ 3, 10 ] ],
+   [
+    "Leviticus", 3,
+    [ 1, 6 ] ],
+   [
+    "Leviticus", 4,
+    [ 3, 23, 28, 32 ] ],
+   [
+    "Leviticus", 5,
+    [ 15, 18 ] ],
+   [
+    "Leviticus", 6,
+    [ 6 ] ],
+   [
+    "Leviticus", 9,
+    [ 2, 3 ] ],
+   [
+    "Leviticus", 14,
+    [ 10 ] ],
+   [
+    "Leviticus", 21,
+    [ 17, 18, 20, 21, 23 ] ],
+   [
+    "Leviticus", 22,
+    [ 19, 20, 21, 25 ] ],
+   [
+    "Leviticus", 23,
+    [ 12, 18 ] ],
+   [
+    "Leviticus", 24,
+    [ 19, 20 ] ],
+   [
+    "Ephesians", 5,
+    [ 27 ] ],
+   [
+    "1 Peter", 1,
+    [ 19 ] ],
+   [
+    "2 Peter", 2,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "flay",
+  "kind": "term",
+  "name": "Flay (strip off the skin)",
+  "refs": [
+   [
+    "Leviticus", 1,
+    [ 6 ] ],
+   [
+    "Micah", 3,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "oblation",
+  "kind": "term",
+  "name": "Oblation (a gift offered to God)",
+  "refs": [
+   [
+    "Leviticus", 2,
+    [ 4, 5, 7, 12, 13 ] ],
+   [
+    "Leviticus", 3,
+    [ 1 ] ],
+   [
+    "Leviticus", 7,
+    [ 14, 29, 38 ] ],
+   [
+    "Leviticus", 22,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "fryingpan",
+  "kind": "term",
+  "name": "The fryingpan (a deep pan for baking the meat offering)",
+  "refs": [
+   [
+    "Leviticus", 2,
+    [ 7 ] ],
+   [
+    "Leviticus", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "kidneys",
+  "kind": "term",
+  "name": "The kidneys (burned on the altar with the fat on them)",
+  "refs": [
+   [
+    "Exodus", 29,
+    [ 13, 22 ] ],
+   [
+    "Leviticus", 3,
+    [ 4, 10, 15 ] ],
+   [
+    "Leviticus", 4,
+    [ 9 ] ],
+   [
+    "Leviticus", 7,
+    [ 4 ] ],
+   [
+    "Leviticus", 8,
+    [ 16, 25 ] ],
+   [
+    "Leviticus", 9,
+    [ 10, 19 ] ] ]
+ },
+ {
+  "id": "rump",
+  "kind": "term",
+  "name": "The rump (the tail end of the sheep, burned with its fat)",
+  "refs": [
+   [
+    "Exodus", 29,
+    [ 22 ] ],
+   [
+    "Leviticus", 3,
+    [ 9 ] ],
+   [
+    "Leviticus", 7,
+    [ 3 ] ],
+   [
+    "Leviticus", 8,
+    [ 25 ] ],
+   [
+    "Leviticus", 9,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "altar-of-sweet-incense",
+  "kind": "place",
+  "name": "The altar of sweet incense (the golden altar inside the holy place, before the vail)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "altar-of-burnt-offering",
+  "kind": "place",
+  "name": "The altar of burnt offering (the brasen altar at the door of the tabernacle)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 7, 10, 18, 25, 30, 34 ] ] ]
+ },
+ {
+  "id": "sin-through-ignorance",
+  "kind": "term",
+  "name": "Sin through ignorance (a wrong done without knowing it, for which the LORD made an offering)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 2, 13, 22, 27 ] ],
+   [
+    "Leviticus", 5,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "priest-that-is-anointed",
+  "kind": "person",
+  "name": "The priest that is anointed (the high priest, set apart with the anointing oil)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 3, 5, 16 ] ] ]
+ },
+ {
+  "id": "clean-place",
+  "kind": "place",
+  "name": "A clean place (outside the camp, where the ashes were poured out)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 12 ] ],
+   [
+    "Leviticus", 6,
+    [ 11 ] ],
+   [
+    "Leviticus", 10,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "common-people",
+  "kind": "person",
+  "name": "The common people (any ordinary man of Israel)",
+  "refs": [
+   [
+    "Leviticus", 4,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "trespass-offering",
+  "kind": "term",
+  "name": "A trespass offering (the offering for a wrong done against the LORD or a neighbour, with amends made)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 6, 15, 16, 18, 19 ] ],
+   [
+    "Leviticus", 6,
+    [ 5, 6, 17 ] ],
+   [
+    "Leviticus", 7,
+    [ 1, 2, 5, 7, 37 ] ],
+   [
+    "Leviticus", 14,
+    [ 12, 13, 14, 17, 21, 24, 25, 28 ] ],
+   [
+    "Leviticus", 19,
+    [ 21, 22 ] ] ]
+ },
+ {
+  "id": "voice-of-swearing",
+  "kind": "term",
+  "name": "The voice of swearing (an oath sworn aloud, which a witness must answer)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "bear-iniquity",
+  "kind": "term",
+  "name": "Bear his iniquity (carry his own guilt)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 1, 17 ] ],
+   [
+    "Leviticus", 7,
+    [ 18 ] ],
+   [
+    "Leviticus", 17,
+    [ 16 ] ],
+   [
+    "Leviticus", 19,
+    [ 8 ] ],
+   [
+    "Leviticus", 20,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "make-amends",
+  "kind": "term",
+  "name": "Make amends (put right the harm, and a fifth part more)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "fifth-part-added",
+  "kind": "term",
+  "name": "The fifth part added (one part in five, over and above what was owed)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 16 ] ],
+   [
+    "Leviticus", 6,
+    [ 5 ] ],
+   [
+    "Leviticus", 22,
+    [ 14 ] ],
+   [
+    "Leviticus", 27,
+    [ 13, 15, 19, 27, 31 ] ] ]
+ },
+ {
+  "id": "delivered-to-keep",
+  "kind": "term",
+  "name": "Delivered him to keep (a trust: something left in another man's care)",
+  "refs": [
+   [
+    "Leviticus", 6,
+    [ 2, 4 ] ] ]
+ },
+ {
+  "id": "fire-on-the-altar",
+  "kind": "term",
+  "name": "The fire on the altar (the fire that must never go out)",
+  "refs": [
+   [
+    "Leviticus", 1,
+    [ 7 ] ],
+   [
+    "Leviticus", 6,
+    [ 9, 12, 13 ] ] ]
+ },
+ {
+  "id": "most-holy-offering",
+  "kind": "term",
+  "name": "Most holy (the meat offering and the sin offering, set apart to the LORD)",
+  "refs": [
+   [
+    "Leviticus", 2,
+    [ 3, 10 ] ],
+   [
+    "Leviticus", 6,
+    [ 17, 25, 29 ] ],
+   [
+    "Leviticus", 7,
+    [ 1, 6 ] ],
+   [
+    "Leviticus", 10,
+    [ 12, 17 ] ],
+   [
+    "Leviticus", 14,
+    [ 13 ] ],
+   [
+    "Leviticus", 21,
+    [ 22 ] ],
+   [
+    "Leviticus", 24,
+    [ 9 ] ],
+   [
+    "Leviticus", 27,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "thanksgiving-offering",
+  "kind": "term",
+  "name": "The sacrifice of thanksgiving (a peace offering to thank God, eaten the same day)",
+  "refs": [
+   [
+    "Leviticus", 7,
+    [ 12, 13 ] ],
+   [
+    "Leviticus", 22,
+    [ 29 ] ],
+   [
+    "Amos", 4,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "cut-off-from-his-people",
+  "kind": "term",
+  "name": "Cut off from his people (put out of Israel; the text does not say how)",
+  "refs": [
+   [
+    "Leviticus", 7,
+    [ 20, 21, 25, 27 ] ],
+   [
+    "Leviticus", 17,
+    [ 4, 9, 10, 14 ] ],
+   [
+    "Leviticus", 18,
+    [ 29 ] ],
+   [
+    "Leviticus", 19,
+    [ 8 ] ],
+   [
+    "Leviticus", 20,
+    [ 3, 5, 6, 17, 18 ] ],
+   [
+    "Leviticus", 22,
+    [ 3 ] ],
+   [
+    "Leviticus", 23,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "consecration",
+  "kind": "term",
+  "name": "Consecration (setting a man apart to serve the LORD)",
+  "refs": [
+   [
+    "Leviticus", 7,
+    [ 37 ] ],
+   [
+    "Leviticus", 8,
+    [ 22, 28, 29, 31, 33 ] ],
+   [
+    "Leviticus", 16,
+    [ 32 ] ],
+   [
+    "Leviticus", 21,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "holy-crown",
+  "kind": "term",
+  "name": "The holy crown (the golden plate on the front of Aaron's mitre)",
+  "refs": [
+   [
+    "Exodus", 29,
+    [ 6 ] ],
+   [
+    "Exodus", 39,
+    [ 30 ] ],
+   [
+    "Leviticus", 8,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "fire-from-the-lord",
+  "kind": "term",
+  "name": "Fire from before the LORD (it came out and consumed the offering)",
+  "refs": [
+   [
+    "Leviticus", 9,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "strange-fire",
+  "kind": "term",
+  "name": "Strange fire (fire the LORD had not commanded)",
+  "refs": [
+   [
+    "Leviticus", 10,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "censer",
+  "kind": "term",
+  "name": "Censer (a pan for carrying burning coals, with incense laid on them)",
+  "refs": [
+   [
+    "Leviticus", 10,
+    [ 1 ] ],
+   [
+    "Leviticus", 16,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "cud-and-hoof",
+  "kind": "term",
+  "name": "Parteth the hoof and cheweth the cud (the two marks of a clean beast)",
+  "refs": [
+   [
+    "Leviticus", 11,
+    [ 3, 4, 5, 6, 7, 26 ] ] ]
+ },
+ {
+  "id": "fins-and-scales",
+  "kind": "term",
+  "name": "Fins and scales (the mark of a clean fish)",
+  "refs": [
+   [
+    "Leviticus", 11,
+    [ 9, 10, 12 ] ] ]
+ },
+ {
+  "id": "unclean-fowls",
+  "kind": "term",
+  "name": "The unclean fowls (the eagle, the ossifrage, the ospray and the rest)",
+  "refs": [
+   [
+    "Leviticus", 11,
+    [ 13, 16, 18, 19 ] ] ]
+ },
+ {
+  "id": "until-the-even",
+  "kind": "term",
+  "name": "Unclean until the even (until evening, and then clean again)",
+  "refs": [
+   [
+    "Leviticus", 11,
+    [ 24, 25, 27, 28, 31, 32, 39, 40 ] ],
+   [
+    "Leviticus", 14,
+    [ 46 ] ],
+   [
+    "Leviticus", 15,
+    [ 5, 6, 7, 8, 10, 11, 16, 17, 18, 19, 21, 22, 23, 27 ] ],
+   [
+    "Leviticus", 17,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "scall",
+  "kind": "term",
+  "name": "Scall (a scaly sore on the head or the beard)",
+  "refs": [
+   [
+    "Leviticus", 13,
+    [ 30, 31, 32, 33, 34, 35, 36, 37 ] ],
+   [
+    "Leviticus", 14,
+    [ 54 ] ] ]
+ },
+ {
+  "id": "warp-and-woof",
+  "kind": "term",
+  "name": "Warp and woof (the threads that run the length of a cloth, and the threads woven across)",
+  "refs": [
+   [
+    "Leviticus", 13,
+    [ 48, 49, 51, 52, 53, 56, 57, 58, 59 ] ] ]
+ },
+ {
+  "id": "fretting-leprosy",
+  "kind": "term",
+  "name": "A fretting leprosy (one that eats away and spreads)",
+  "refs": [
+   [
+    "Leviticus", 13,
+    [ 51, 52, 55 ] ],
+   [
+    "Leviticus", 14,
+    [ 44 ] ] ]
+ },
+ {
+  "id": "the-two-birds",
+  "kind": "term",
+  "name": "The two birds (one killed over running water, the other dipped in its blood and let go: the leper's cleansing)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 4, 5, 6, 7, 49, 50, 51, 52, 53 ] ] ]
+ },
+ {
+  "id": "running-water",
+  "kind": "term",
+  "name": "Running water (fresh, flowing water used in cleansing)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 5, 6, 50, 51, 52 ] ],
+   [
+    "Leviticus", 15,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "cedar-wood",
+  "kind": "term",
+  "name": "Cedar wood (a strong wood used in the leper's cleansing)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 4, 6, 49, 51, 52 ] ] ]
+ },
+ {
+  "id": "scarlet-thread",
+  "kind": "term",
+  "name": "Scarlet (red thread or wool, used in the leper's cleansing)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 4, 6, 49, 51, 52 ] ] ]
+ },
+ {
+  "id": "strakes",
+  "kind": "term",
+  "name": "Strakes (streaks or hollows in a wall)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 37 ] ] ]
+ },
+ {
+  "id": "plaister",
+  "kind": "term",
+  "name": "Plaister (plaster)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 42, 43, 48 ] ] ]
+ },
+ {
+  "id": "log-of-oil",
+  "kind": "term",
+  "name": "A log of oil (a small measure for liquids)",
+  "refs": [
+   [
+    "Leviticus", 14,
+    [ 10, 12, 15, 21, 24 ] ] ]
+ },
+ {
+  "id": "an-issue",
+  "kind": "term",
+  "name": "An issue (a flowing out of the body: the KJV's word for a discharge)",
+  "refs": [
+   [
+    "Leviticus", 15,
+    [ 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 15, 19, 25, 26, 28, 30, 32, 33 ] ] ]
+ },
+ {
+  "id": "scapegoat",
+  "kind": "term",
+  "name": "The scapegoat (the live goat that carried Israel's sins away into the wilderness)",
+  "refs": [
+   [
+    "Leviticus", 16,
+    [ 8, 10, 20, 21, 26 ] ] ]
+ },
+ {
+  "id": "fit-man",
+  "kind": "person",
+  "name": "The fit man (the man made ready to lead the scapegoat into the wilderness)",
+  "refs": [
+   [
+    "Leviticus", 16,
+    [ 21, 26 ] ] ]
+ },
+ {
+  "id": "day-of-atonement",
+  "kind": "term",
+  "name": "The day of atonement (the tenth day of the seventh month, once a year)",
+  "refs": [
+   [
+    "Leviticus", 16,
+    [ 29, 34 ] ],
+   [
+    "Leviticus", 23,
+    [ 27, 28 ] ],
+   [
+    "Leviticus", 25,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "life-of-the-flesh",
+  "kind": "term",
+  "name": "The life of the flesh is in the blood (why the blood makes atonement)",
+  "refs": [
+   [
+    "Leviticus", 17,
+    [ 11, 14 ] ],
+   [
+    "Proverbs", 14,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "eating-blood",
+  "kind": "term",
+  "name": "Eating blood (forbidden, because the life is in the blood)",
+  "refs": [
+   [
+    "Leviticus", 7,
+    [ 27 ] ],
+   [
+    "Leviticus", 17,
+    [ 10, 12, 14 ] ] ]
+ },
+ {
+  "id": "open-field",
+  "kind": "place",
+  "name": "The open field (sacrifices made out of sight, away from the tabernacle)",
+  "refs": [
+   [
+    "Leviticus", 17,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "molech",
+  "kind": "person",
+  "name": "Molech (a false god of the nations, to whom children were burned)",
+  "refs": [
+   [
+    "Leviticus", 18,
+    [ 21 ] ],
+   [
+    "Leviticus", 20,
+    [ 2, 3, 4, 5 ] ] ]
+ },
+ {
+  "id": "uncover-nakedness",
+  "kind": "term",
+  "name": "Uncover the nakedness (the Bible's modest phrase for sexual relations)",
+  "refs": [
+   [
+    "Leviticus", 18,
+    [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ],
+   [
+    "Leviticus", 20,
+    [ 11, 17, 18, 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "near-of-kin",
+  "kind": "term",
+  "name": "Near of kin, near kinswoman (a close relative)",
+  "refs": [
+   [
+    "Leviticus", 18,
+    [ 6, 12, 13, 17 ] ],
+   [
+    "Leviticus", 20,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "gleanings",
+  "kind": "term",
+  "name": "Glean, gleanings (picking up what the reapers left, left for the poor)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 9, 10 ] ],
+   [
+    "Leviticus", 23,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "corners-of-the-field",
+  "kind": "term",
+  "name": "The corners of the field (left unreaped for the poor and the stranger)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 9 ] ],
+   [
+    "Leviticus", 23,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "bondmaid",
+  "kind": "person",
+  "name": "Bondmaid (a slave girl)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 20 ] ],
+   [
+    "Leviticus", 25,
+    [ 44 ] ] ]
+ },
+ {
+  "id": "uncircumcised-fruit",
+  "kind": "term",
+  "name": "Uncircumcised fruit (the fruit of a young tree's first three years, not to be eaten)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "mingled-seed",
+  "kind": "term",
+  "name": "Diverse kinds and mingled seed (two kinds mixed together, forbidden in Israel)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "enchantment",
+  "kind": "term",
+  "name": "Enchantment and observing times (charms, spells and lucky days)",
+  "refs": [
+   [
+    "Exodus", 7,
+    [ 11, 22 ] ],
+   [
+    "Exodus", 8,
+    [ 7, 18 ] ],
+   [
+    "Leviticus", 19,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "cuttings-for-the-dead",
+  "kind": "term",
+  "name": "Cuttings in the flesh for the dead, and printed marks (the nations' mourning customs)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 28 ] ],
+   [
+    "Leviticus", 21,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "familiar-spirits",
+  "kind": "term",
+  "name": "Familiar spirits and wizards (mediums who claimed to call up the dead, and men of secret arts)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 31 ] ],
+   [
+    "Leviticus", 20,
+    [ 6, 27 ] ] ]
+ },
+ {
+  "id": "hoary-head",
+  "kind": "term",
+  "name": "The hoary head (grey hair, old age, to be honoured)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 32 ] ],
+   [
+    "Proverbs", 16,
+    [ 31 ] ] ]
+ },
+ {
+  "id": "meteyard",
+  "kind": "term",
+  "name": "Meteyard (a measuring rod)",
+  "refs": [
+   [
+    "Leviticus", 19,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "bread-of-their-god",
+  "kind": "term",
+  "name": "The bread of their God (the offerings burned on the altar, and the holy bread the priests ate)",
+  "refs": [
+   [
+    "Leviticus", 21,
+    [ 6, 8, 17, 21, 22 ] ],
+   [
+    "Leviticus", 22,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "scurvy-and-scabbed",
+  "kind": "term",
+  "name": "Scurvy and scabbed (diseases of the skin)",
+  "refs": [
+   [
+    "Leviticus", 21,
+    [ 20 ] ],
+   [
+    "Leviticus", 22,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "holy-things",
+  "kind": "term",
+  "name": "The holy things (the portions of the offerings given to the priests to eat)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 15, 16 ] ],
+   [
+    "Leviticus", 22,
+    [ 2, 3, 4, 6, 7, 10, 12, 14, 15, 16 ] ],
+   [
+    "Leviticus", 27,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "unwittingly",
+  "kind": "term",
+  "name": "Unwittingly (without knowing it)",
+  "refs": [
+   [
+    "Leviticus", 22,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "freewill-offering",
+  "kind": "term",
+  "name": "A freewill offering (a gift brought because a man wanted to, and no one asked)",
+  "refs": [
+   [
+    "Leviticus", 22,
+    [ 18, 21, 23 ] ],
+   [
+    "Leviticus", 23,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "the-dam",
+  "kind": "term",
+  "name": "The dam (the mother of an animal)",
+  "refs": [
+   [
+    "Leviticus", 22,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "wen",
+  "kind": "term",
+  "name": "A wen (a lump or growth on the skin)",
+  "refs": [
+   [
+    "Leviticus", 22,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "beeves",
+  "kind": "term",
+  "name": "Beeves (oxen, cattle)",
+  "refs": [
+   [
+    "Leviticus", 22,
+    [ 19, 21 ] ] ]
+ },
+ {
+  "id": "holy-convocation",
+  "kind": "term",
+  "name": "A holy convocation (a day God called his people together, to rest from work and meet with him)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 2, 3, 4, 7, 8, 21, 24, 27, 35, 36, 37 ] ] ]
+ },
+ {
+  "id": "servile-work",
+  "kind": "term",
+  "name": "Servile work (the ordinary labour of the week, forbidden on the feast days)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 7, 8, 21, 25, 35, 36 ] ] ]
+ },
+ {
+  "id": "feasts-of-the-lord",
+  "kind": "term",
+  "name": "The feasts of the LORD (the appointed times God gave Israel: the sabbath, passover, firstfruits, Pentecost, trumpets, atonement and booths)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 2, 4, 37, 44 ] ] ]
+ },
+ {
+  "id": "sheaf-of-the-firstfruits",
+  "kind": "term",
+  "name": "The sheaf (the first cut of the harvest, waved before the LORD)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 10, 11, 12, 15 ] ] ]
+ },
+ {
+  "id": "wave-loaves",
+  "kind": "term",
+  "name": "The two wave loaves (baked from the new harvest with leaven, fifty days after the sheaf)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "blowing-of-trumpets",
+  "kind": "term",
+  "name": "The blowing of trumpets (a memorial on the first day of the seventh month)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "afflict-your-souls",
+  "kind": "term",
+  "name": "Afflict your souls (humble yourselves, go without, and sorrow for sin)",
+  "refs": [
+   [
+    "Leviticus", 16,
+    [ 29, 31 ] ],
+   [
+    "Leviticus", 23,
+    [ 27, 29, 32 ] ] ]
+ },
+ {
+  "id": "booths",
+  "kind": "term",
+  "name": "Booths (shelters of branches that Israel lived in for the feast of tabernacles)",
+  "refs": [
+   [
+    "Leviticus", 23,
+    [ 42, 43 ] ] ]
+ },
+ {
+  "id": "shelomith",
+  "kind": "person",
+  "name": "Shelomith, the daughter of Dibri, of the tribe of Dan (the mother of the man who blasphemed)",
+  "refs": [
+   [
+    "Leviticus", 24,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "dibri",
+  "kind": "person",
+  "name": "Dibri (the father of Shelomith, of the tribe of Dan)",
+  "refs": [
+   [
+    "Leviticus", 24,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "israelitish-womans-son",
+  "kind": "person",
+  "name": "The Israelitish woman's son (the man with an Egyptian father who blasphemed the name of the LORD)",
+  "refs": [
+   [
+    "Leviticus", 24,
+    [ 10, 11 ] ] ]
+ },
+ {
+  "id": "twelve-cakes",
+  "kind": "term",
+  "name": "The twelve cakes (the holy bread, set in two rows of six on the pure table each sabbath)",
+  "refs": [
+   [
+    "Leviticus", 24,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "jubile",
+  "kind": "term",
+  "name": "Jubile (the fiftieth year: the trumpet, liberty, and every man back to his own land and family)",
+  "refs": [
+   [
+    "Leviticus", 25,
+    [ 9, 10, 11, 12, 13, 15, 28, 30, 31, 33, 40, 50, 52, 54 ] ],
+   [
+    "Leviticus", 27,
+    [ 17, 18, 21, 23, 24 ] ] ]
+ },
+ {
+  "id": "kinsman-that-redeemeth",
+  "kind": "term",
+  "name": "The kinsman that redeems (the near relative who buys back a poor brother and his land)",
+  "refs": [
+   [
+    "Leviticus", 25,
+    [ 25, 49 ] ] ]
+ },
+ {
+  "id": "consumption-and-ague",
+  "kind": "term",
+  "name": "Consumption and the burning ague (a wasting sickness and a burning fever)",
+  "refs": [
+   [
+    "Leviticus", 26,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "staff-of-bread",
+  "kind": "term",
+  "name": "The staff of bread (the food that holds a man up; its breaking is famine)",
+  "refs": [
+   [
+    "Leviticus", 26,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "seven-times-punishment",
+  "kind": "term",
+  "name": "“Seven times” (four rounds of warning, each answering a refusal to hearken)",
+  "refs": [
+   [
+    "Leviticus", 26,
+    [ 18, 21, 24, 28 ] ] ]
+ },
+ {
+  "id": "land-enjoys-sabbaths",
+  "kind": "term",
+  "name": "The land enjoys her sabbaths (the rest it was owed while the people were in exile; 2 Chronicles 36:21)",
+  "refs": [
+   [
+    "Leviticus", 26,
+    [ 34, 43 ] ] ]
+ },
+ {
+  "id": "estimation",
+  "kind": "term",
+  "name": "Estimation (the priest's valuation of a person or thing given to the LORD)",
+  "refs": [
+   [
+    "Leviticus", 5,
+    [ 15, 18 ] ],
+   [
+    "Leviticus", 6,
+    [ 6 ] ],
+   [
+    "Leviticus", 27,
+    [ 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 23, 27 ] ] ]
+ },
+ {
+  "id": "devoted-thing",
+  "kind": "term",
+  "name": "A devoted thing (given up wholly to the LORD, never to be bought back)",
+  "refs": [
+   [
+    "Leviticus", 27,
+    [ 21, 28, 29 ] ] ]
+ },
+ {
+  "id": "gerah",
+  "kind": "term",
+  "name": "Gerah (a twentieth of a shekel)",
+  "refs": [
+   [
+    "Exodus", 30,
+    [ 13 ] ],
+   [
+    "Leviticus", 27,
+    [ 25 ] ] ]
  }
 ];

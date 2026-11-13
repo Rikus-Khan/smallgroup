@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leviticus 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* a route drawn over svg[data-tabernacle]: the same 800 × 470 box, laid on top. Captions below are the steps;
+   each one lights its leg of the route (current bright, earlier ones dim) */
+.lv16-map{position:relative;margin:.2em auto .4em}
+.lv16-map > svg{display:block;width:100%;height:auto;max-height:52vh}
+.lv16-map > svg.lv16-over{position:absolute;inset:0;height:100%;max-height:none;overflow:visible;pointer-events:none}
+.lv16-over .way{fill:none;stroke:var(--danger);filter:drop-shadow(0 0 1.5px var(--glow));stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s ease}
+.lv16-over .way.in{stroke-width:3.5}
+.lv16-over .pin circle{fill:var(--accent);stroke:var(--bg);stroke-width:2.5}
+.lv16-over .pin text{font:700 15px var(--sans);fill:var(--on-accent);text-anchor:middle}
+.lv16-over .tag{font:600 15px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+.lv16-over .drop{fill:var(--danger);stroke:var(--bg);stroke-width:1}
+.lv16-over .puff{fill:var(--glow);opacity:.75;stroke:var(--ink-soft);stroke-width:1}
+.lv16-over .r{opacity:0;transition:opacity .6s ease}
+.lv16-caps{list-style:none;padding:0;margin:.3em auto 0;display:grid;max-width:46rem}
+.lv16-caps li{grid-area:1/1;font-size:clamp(1rem,.9rem + .4vw,1.25rem);line-height:1.35;text-align:center;color:var(--ink)}
+.lv16-caps li b{color:var(--accent-hot);margin-right:.35em}
+.lv16-caps li.on:has(~ li.on),.lv16-caps:has(li.on) .lv16-c0{opacity:0;transform:none}
+.lv16-c0{color:var(--ink-soft)!important;transition:opacity .4s ease}
+.lv16-day:has(.lv16-c1.on) .r1{opacity:.32}.lv16-day:has(.lv16-c1.on) .r1 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c1.on):not(:has(.lv16-c2.on)) .r1{opacity:1}
+.lv16-day:has(.lv16-c2.on) .r2{opacity:.32}.lv16-day:has(.lv16-c2.on) .r2 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c2.on):not(:has(.lv16-c3.on)) .r2{opacity:1}
+.lv16-day:has(.lv16-c3.on) .r3{opacity:.32}.lv16-day:has(.lv16-c3.on) .r3 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c3.on):not(:has(.lv16-c4.on)) .r3{opacity:1}
+.lv16-day:has(.lv16-c4.on) .r4{opacity:.32}.lv16-day:has(.lv16-c4.on) .r4 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c4.on):not(:has(.lv16-c5.on)) .r4{opacity:1}
+.lv16-day:has(.lv16-c5.on) .r5{opacity:.32}.lv16-day:has(.lv16-c5.on) .r5 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c5.on):not(:has(.lv16-c6.on)) .r5{opacity:1}
+.lv16-day:has(.lv16-c6.on) .r6{opacity:.32}.lv16-day:has(.lv16-c6.on) .r6 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c6.on):not(:has(.lv16-c7.on)) .r6{opacity:1}
+.lv16-day:has(.lv16-c7.on) .r7{opacity:.32}.lv16-day:has(.lv16-c7.on) .r7 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c7.on):not(:has(.lv16-c8.on)) .r7{opacity:1}
+.lv16-day:has(.lv16-c8.on) .r8{opacity:.32}.lv16-day:has(.lv16-c8.on) .r8 .way{stroke-dashoffset:0}
+.lv16-day:has(.lv16-c8.on) .r8{opacity:1}
+
+/* the inside of the tent: the cloud of incense and the blood, laid over svg[data-tabernacle="inside"] */
+.lv16-in .cloud{fill:var(--glow);stroke:var(--ink-soft);stroke-width:1;opacity:0;transform:scale(.6);transform-box:fill-box;transform-origin:center;transition:opacity 1.4s ease,transform 1.4s ease}
+.lv16-in .drop{fill:var(--danger);stroke:var(--bg);stroke-width:.8;opacity:0;transition:opacity .3s ease;transition-delay:calc(var(--k) * .45s + .3s)}
+.lv16-in .tag{font:600 15px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round;opacity:0;transition:opacity .6s ease 1s}
+.lv16-in .man{fill:var(--glow);stroke:var(--on-glow);stroke-width:1.2}
+.lv16-in .mantag{font:600 14px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+.lv16-inside:has(.lv16-i1.on) .lv16-in .cloud{opacity:.8;transform:none}
+.lv16-inside:has(.lv16-i1.on) .lv16-in .t1,.lv16-inside:has(.lv16-i2.on) .lv16-in .t2,.lv16-inside:has(.lv16-i2.on) .lv16-in .drop{opacity:1}
+/* the two goats: the lots, the LORD's goat on the altar, the scapegoat led away under its burden */
+.lv16-goats{display:block;width:100%;max-width:30rem;height:auto;margin:0 auto;overflow:visible}
+.lv16-goats .ground{stroke:var(--line-strong);stroke-width:2}
+.lv16-goats .hills{fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:4 4}
+.lv16-goats .body{fill:var(--surface-2);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.lv16-goats .leg{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.lv16-goats .horn{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round}
+.lv16-goats .eye{fill:var(--ink)}
+.lv16-goats .lot rect{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.lv16-goats .lot text{font:600 14px var(--sans);fill:var(--ink);text-anchor:middle}
+.lv16-goats .lot path{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:3 3}
+.lv16-goats .cap{font:500 13px var(--sans);fill:var(--ink-soft);text-anchor:middle}
+.lv16-goats .altar{fill:var(--leather-light);stroke:var(--ink);stroke-width:2}
+.lv16-goats .fire{fill:var(--accent-hot)}
+.lv16-goats .blood{fill:var(--danger)}
+.lv16-goats .burden{fill:var(--on-glow);stroke:var(--danger);stroke-width:1.5}
+.lv16-goats .say{font:600 13px var(--sans);fill:var(--ink);text-anchor:middle;paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+.lv16-goats .alive,.lv16-goats .g1,.lv16-goats .g2,.lv16-goats .after1,.lv16-goats .after2,.lv16-goats .burden{transition:opacity 1s ease}
+.lv16-goats .after1,.lv16-goats .after2,.lv16-goats .burden{opacity:0}
+.lv16-goats .walk{transition:transform 3.2s cubic-bezier(.5,0,.6,1) 1.2s,opacity 1s ease 3.6s}
+.lv16-goats .rise1{transition:transform 2s ease .8s;}
+.split:has(.lv16-go1.on) .lv16-goats .g1{opacity:0}
+.split:has(.lv16-go1.on) .lv16-goats .after1{opacity:1}
+.split:has(.lv16-go1.on) .lv16-goats .rise1{transform:translateY(-40px)}
+.split:has(.lv16-go2.on) .lv16-goats .burden,.split:has(.lv16-go2.on) .lv16-goats .after2{opacity:1}
+.split:has(.lv16-go2.on) .lv16-goats .walk{transform:translate(118px,-74px) scale(.26);opacity:.55}
+.split:has(.lv16-go2.on) .lv16-goats .alive{opacity:0}
+/* once a year, year after year */
+.lv16-years{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:.4em auto .8em;max-width:40rem}
+.lv16-years i{width:14px;height:20px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:var(--danger);opacity:0;transform:scale(.3);transition:opacity .3s ease,transform .3s ease;transition-delay:calc(var(--k) * 90ms + 300ms)}
+.slide.active .lv16-years i{opacity:.85;transform:none}
+/* the vail, torn from the top to the bottom (copied from exodus-26, ex26-tear) */
+.lv16-tear{display:block;width:100%;max-width:15rem;height:auto;margin:0 auto}
+.lv16-tear .room{fill:var(--on-glow)}
+.lv16-tear .shine{fill:var(--glow);opacity:0;transition:opacity 1.2s ease .4s}
+.lv16-tear .half{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.lv16-tear .half.l{fill:url(#lv16-cloth);stroke:var(--wine);stroke-width:2}
+.lv16-tear .half.r{fill:url(#lv16-cloth);stroke:var(--wine);stroke-width:2}
+.lv16-tear .rod{fill:var(--accent)}
+.lv16-tear text{font:600 13px var(--sans);fill:var(--on-glow);text-anchor:middle;opacity:0;transition:opacity 1s ease 1s}
+.split:has(.lv16-tgo.on) .lv16-tear .half.l{transform:translate(-34px,6px) rotate(-3deg)}
+.split:has(.lv16-tgo.on) .lv16-tear .half.r{transform:translate(34px,6px) rotate(3deg)}
+.split:has(.lv16-tgo.on) .lv16-tear .shine,.split:has(.lv16-tgo.on) .lv16-tear text{opacity:1}
+@media (prefers-reduced-motion:reduce){.lv16-goats .walk,.lv16-over .way{transition:none}}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Leviticus 16</h1>
+    <p class="sub rise" style="--d:3">The day of atonement</p>
+    <p class="tag rise" style="--d:5">Once a year, one man goes in behind the vail with blood, and comes out alive. Two goats: one dies for the people, and one carries all their sins away into the wilderness, never to come back. This is the heart of Leviticus.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The warning</span><span class="seed-q">Why could Aaron not come within the vail at all times?</span></li>
+      <li class="step"><span class="topic">The linen</span><span class="seed-q">What did Aaron wear to go in, and what did he do before he put it on?</span></li>
+      <li class="step"><span class="topic">For himself</span><span class="seed-q">Whose sin was atoned for first, and why does that matter?</span></li>
+      <li class="step"><span class="topic">The blood</span><span class="seed-q">Where did the high priest put the blood, and how many times?</span></li>
+      <li class="step"><span class="topic">The two goats</span><span class="seed-q">What happened to the goat for the LORD, and to the scapegoat?</span></li>
+      <li class="step"><span class="topic">Once a year</span><span class="seed-q">What were the people to do on that day, and what was done for them?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Where we are</h2>
+    <ol class="timeline rise" style="--d:2" aria-label="The tabernacle reared up on the first day of the first month of the second year. The eighth day, Aaron's first offerings. Nadab and Abihu die. The LORD speaks Leviticus 16. The first day of the second month, the numbering of Numbers 1.">
+      <li style="--k:0"><b>month 1, day 1</b><span>The tabernacle reared up</span><small>Exodus 40:17</small></li>
+      <li style="--k:1"><b>the eighth day</b><span>Aaron's first offerings</span><small>Leviticus 9:1</small></li>
+      <li style="--k:2"><b>strange fire</b><span>Nadab and Abihu die</span><small>Leviticus 10:1–2</small></li>
+      <li class="lit" style="--k:3"><b>after the death</b><span>The LORD speaks this chapter</span><small>16:1</small></li>
+      <li style="--k:4"><b>month 2, day 1</b><span>The numbering</span><small>Numbers 1:1</small></li>
+    </ol>
+    <p class="note step">We are still at the foot of mount Sinai, in the first weeks after the tabernacle went up. Moses dates this chapter by a funeral: “after the death of the two sons of Aaron.” The day itself was kept every year after, “in the seventh month, on the tenth day of the month” (verse 29).</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">“That he die not”</h2>
+    <p class="range rise" style="--d:2">Verses 1–10</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A warning to a grieving father, and then the way in: the clothes, the animals, and the two goats.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="after the death of the two sons of Aaron|that he come not at all times into the holy place within the vail|that he die not|I will appear in the cloud upon the mercy seat"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">After the death of the two sons</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before the LORD, which he commanded them not. And there went out fire from the LORD, and devoured them, and they died before the LORD.”</p><cite>Leviticus 10:1–2</cite></blockquote>
+    <p class="note step">Aaron had lost two sons who came near God their own way. Now the LORD speaks to that grieving house, and the first word is a warning: not at all times, “that he die not.” God is holy, and that has not changed since chapter 10.</p>
+    <p class="note step">But listen to the rest of it. He does not say “never.” He says “not at all times,” and then he spends a whole chapter telling Aaron how. The warning comes with a way in. “I will appear in the cloud upon the mercy seat”: he wants to be met.</p>
+    <blockquote class="quote step"><p>“But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people:”</p><cite>Hebrews 9:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="Thus shall Aaron come into the holy place|the holy linen coat|these are holy garments; therefore shall he wash his flesh in water, and so put them on"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Linen, not gold</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">Every other day</p>
+        <h3>garments for glory</h3>
+        <p>The ephod, the breastplate with its twelve stones, the robe of blue, the gold plate on the mitre: “for glory and for beauty” (Exodus 28:2).</p>
+      </div>
+      <div class="col grace rise" style="--d:3">
+        <p class="who">On this day</p>
+        <h3>plain white linen</h3>
+        <p>A linen coat, linen breeches, a linen girdle, a linen mitre. “Linen” comes four times in verse 4. Nothing gold.</p>
+      </div>
+    </div>
+    <p class="note step"><em>Breeches</em> are short linen drawers worn under the coat. <em>Girded</em> means belted. <em>Attired</em> means dressed. And first he washes: “wash his flesh in water, and so put them on.”</p>
+    <p class="note step">The greatest man in Israel goes in to God dressed like the plainest servant. It is a picture of the one who “made himself of no reputation, and took upon him the form of a servant” (Philippians 2:7). Nobody walks in there in his own glory.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-6" data-hl="two kids of the goats for a sin offering|make an atonement for himself, and for his house"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">For himself first</h2>
+    <ul class="signs rise" style="--d:2">
+      <li class="now"><b>For Aaron and his house</b>a young bullock for a sin offering, a ram for a burnt offering</li>
+      <li><b>For the people</b>two kids of the goats for a sin offering, one ram for a burnt offering</li>
+    </ul>
+    <p class="note step">Before Aaron can carry anybody's sin, his own has to be dealt with. “For himself” comes seven times in this chapter. The high priest was a sinner too, and he knew it. A <em>kid</em> is a young goat. His <em>house</em> is his household, his family.</p>
+    <blockquote class="quote step"><p>“For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens; Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people’s: for this he did once, when he offered up himself.”</p><cite>Hebrews 7:26–27</cite></blockquote>
+    <p class="note step">Here is the difference. Aaron needed a bullock for himself. Jesus needed nothing for himself, so all of it could be for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="present them before the LORD at the door of the tabernacle of the congregation|one lot for the LORD, and the other lot for the scapegoat"></section>
+
+<section class="slide verse" data-v="9-10" data-hl="offer him for a sin offering|shall be presented alive before the LORD|to let him go for a scapegoat into the wilderness"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lv16-goats" viewBox="0 0 420 260" role="img" aria-label="Two goats at the door, each under a lot: one for the LORD, one for the scapegoat. The LORD's goat is offered on the altar and its blood is carried up. The scapegoat, with a dark burden on its head, walks away into the hills and grows small in the distance.">
+          <line class="ground" x1="10" y1="215" x2="410" y2="215"/>
+          <path class="hills" d="M300 150Q330 126 358 146Q384 130 414 148"/>
+          <text class="say after2" x="330" y="104">bearing all their iniquities</text><text class="say after2" x="330" y="122">unto a land not inhabited</text>
+          <g class="lot rise" style="--d:2"><path d="M100 64V112"/><rect x="40" y="34" width="120" height="30" rx="15"/><text x="100" y="54">for the LORD</text></g>
+          <g class="lot rise" style="--d:3"><path d="M260 64V112"/><rect x="186" y="34" width="148" height="30" rx="15"/><text x="260" y="54">for the scapegoat</text></g>
+          <g class="g1" transform="translate(100 214)">
+            <path class="body" d="M-30 -36Q-30 -50 -12 -50L14 -50Q24 -50 28 -56L34 -66Q38 -72 46 -68L50 -62Q52 -58 46 -56L40 -54Q34 -44 30 -34Q26 -24 14 -24L-18 -24Q-30 -24 -30 -36Z"/>
+            <path class="leg" d="M-22 -26L-24 0M-12 -26L-11 0M14 -26L13 0M24 -28L26 0M-29 -44L-36 -52"/>
+            <path class="horn" d="M38 -70Q30 -86 18 -84M47 -57L46 -48"/>
+            <circle class="eye" cx="42" cy="-63" r="1.8"/>
+          </g>
+          <g class="after1">
+            <rect class="altar" x="72" y="176" width="56" height="38" rx="2"/>
+            <path class="fire" d="M82 176Q86 160 91 170Q95 150 100 166Q105 152 110 170Q115 162 118 176Z"/>
+            <text class="cap" x="100" y="236">a sin offering:</text>
+            <text class="cap" x="100" y="252">its blood within the vail</text>
+            <g class="rise1"><path class="blood" d="M100 142c-6 9 -9 14 -9 19a9 9 0 0 0 18 0c0 -5 -3 -10 -9 -19z"/></g>
+          </g>
+          <g transform="translate(250 214)">
+            <g class="walk">
+              <g class="g2">
+                <path class="body" d="M-30 -36Q-30 -50 -12 -50L14 -50Q24 -50 28 -56L34 -66Q38 -72 46 -68L50 -62Q52 -58 46 -56L40 -54Q34 -44 30 -34Q26 -24 14 -24L-18 -24Q-30 -24 -30 -36Z"/>
+                <path class="leg" d="M-22 -26L-24 0M-12 -26L-11 0M14 -26L13 0M24 -28L26 0M-29 -44L-36 -52"/>
+                <path class="horn" d="M38 -70Q30 -86 18 -84M47 -57L46 -48"/>
+                <circle class="eye" cx="42" cy="-63" r="1.8"/>
+              </g>
+              <rect class="burden" x="20" y="-92" width="34" height="18" rx="5"/>
+            </g>
+          </g>
+          <text class="cap alive" x="250" y="236">presented alive</text>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Two goats, one sin offering</h2>
+        <p class="note rise" style="--d:2">Verse 5 calls the two goats together “a sin offering”: it takes both to show what God does with sin. Aaron casts <em>lots</em>, and the LORD decides which is which: “The lot is cast into the lap; but the whole disposing thereof is of the LORD” (Proverbs 16:33).</p>
+        <p class="note step lv16-go1">The goat “upon which the LORD's lot fell” dies. Its blood goes within the vail. Sin is paid for.</p>
+        <p class="note step lv16-go2">The other is the <em>scapegoat</em>, the goat that escapes. It is “presented alive,” then walks away into the wilderness carrying the people's sins. Sin is taken away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">“Within the vail”</h2>
+    <p class="range rise" style="--d:2">Verses 11–19</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Incense, a cloud, and blood on the mercy seat, by one man alone.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="11-12" data-hl="shall kill the bullock of the sin offering which is for himself|a censer full of burning coals of fire from off the altar|bring it within the vail"></section>
+
+<section class="slide verse" data-v="13-14" data-hl="that the cloud of the incense may cover the mercy seat|that he die not|sprinkle it with his finger upon the mercy seat eastward|seven times"></section>
+
+<section class="slide ex">
+  <div class="inner lv16-inside">
+    <h2 class="rise" style="--d:1">Behind the vail</h2>
+    <div class="lv16-map" style="max-width:min(100%,96vh)">
+      <svg data-tabernacle="inside nolabels" style="max-height:48vh" role="img" aria-label="Inside the tabernacle, roof off: the table, the candlestick and the altar of incense in the holy place, the vail, and the ark with the mercy seat in the most holy place. A cloud of incense covers the mercy seat; blood is put on the mercy seat and sprinkled seven times on the ground before it; the high priest in white linen stands inside the vail."></svg>
+      <svg class="lv16-over lv16-in" viewBox="0 0 800 470" aria-hidden="true">
+        <ellipse class="cloud" cx="266" cy="160" rx="78" ry="40"/>
+        <text class="tag t1" x="150" y="112">the cloud of the incense</text>
+        <text class="tag" x="190" y="214" style="opacity:1;text-anchor:end">the ark and the mercy seat</text>
+        <text class="tag" x="380" y="172" style="opacity:1">the vail</text>
+        <text class="tag" x="560" y="330" style="opacity:1">the holy place</text>
+        <circle class="drop" style="--k:0" cx="282" cy="190" r="4"/>
+        <circle class="drop" style="--k:1" cx="288" cy="215" r="3.5"/>
+        <circle class="drop" style="--k:2" cx="292" cy="217.4" r="3.5"/>
+        <circle class="drop" style="--k:3" cx="296" cy="219.7" r="3.5"/>
+        <circle class="drop" style="--k:4" cx="300" cy="222" r="3.5"/>
+        <circle class="drop" style="--k:5" cx="304" cy="224.3" r="3.5"/>
+        <circle class="drop" style="--k:6" cx="308" cy="226.6" r="3.5"/>
+        <circle class="drop" style="--k:7" cx="312" cy="229" r="3.5"/>
+        <text class="tag t2" x="60" y="300">blood on the mercy seat,</text>
+        <text class="tag t2" x="60" y="320">and before it seven times</text>
+        <g transform="translate(272 240)">
+          <circle class="man" cx="0" cy="-34" r="6"/>
+          <path class="man" d="M-8 -26H8L11 0H-11Z"/>
+          <text class="mantag" x="-16" y="16" style="text-anchor:end">Aaron, in linen</text>
+        </g>
+      </svg>
+    </div>
+    <p class="note step lv16-i1">First the incense, so “the cloud of the incense may cover the mercy seat… that he die not.” A <em>censer</em> is a pan for live coals; <em>beaten small</em> means ground fine.</p>
+    <p class="note step lv16-i2">Then the blood, “upon the mercy seat eastward,” and seven times before it. Under it lay the tables of the law Israel had broken. The blood went between the broken law and the holy God.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The mercy seat</h2>
+    <p class="note rise" style="--d:2">Paul takes this very place, the lid with blood on it, and says what it was pointing at. <em>Propitiation</em> is the sacrifice that turns away God's wrath; Hebrews 9:5 uses the same word for the mercy seat.</p>
+    <blockquote class="quote step"><p>“Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God;”</p><cite>Romans 3:25</cite></blockquote>
+    <p class="note step">You do not have to hide the law you broke, or pretend you kept it. God set Christ forth as the mercy seat, and his blood is on it. The law is not thrown out. It is covered.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="kill the goat of the sin offering, that is for the people|because of the uncleanness of the children of Israel|that remaineth among them in the midst of their uncleanness"></section>
+
+<section class="slide verse" data-v="17" data-hl="there shall be no man in the tabernacle of the congregation|until he come out"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">No man with him</h2>
+    <p class="note rise" style="--d:2">Not a priest, not a son, not Moses. The whole camp stood outside and waited, and nobody could help. Aaron went in alone, and atonement was made “for all the congregation of Israel.”</p>
+    <blockquote class="quote step"><p>“Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;”</p><cite>Hebrews 1:3</cite></blockquote>
+    <p class="note step">“By himself.” Nobody helped Jesus pay for sin, and nobody needs to. Your part is not to add to it. Your part is to stand where Israel stood and trust the one who went in.</p>
+    <p class="note step">And look at verse 16: the tabernacle “remaineth among them in the midst of their uncleanness.” God did not move his tent away from a dirty camp. He stayed in the middle of it, and made a way to cleanse it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="18-19" data-hl="put it upon the horns of the altar round about|seven times, and cleanse it, and hallow it from the uncleanness of the children of Israel"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Even the altar needed cleansing</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>the horns of the altar</b>the four corner points of the brasen altar</li>
+      <li><b>hallow</b>make holy, set apart again for God</li>
+      <li><b>reconciling</b>(verse 20) making peace, bringing back together</li>
+      <li><b>seven times</b>twice in this chapter: before the mercy seat (14), and upon the altar (19)</li>
+    </ul>
+    <p class="note step">A year of a sinful people living around God's house left its mark, even on the holy things. So the blood went everywhere: the most holy place, the tent, the altar. Sin gets into everything. So does the blood.</p>
+    <blockquote class="quote step"><p>“How much more shall the blood of Christ, who through the eternal Spirit offered himself without spot to God, purge your conscience from dead works to serve the living God?”</p><cite>Hebrews 9:14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">“The goat shall bear upon him all their iniquities”</h2>
+    <p class="range rise" style="--d:2">Verses 20–28</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Both hands on its head, every sin said out loud, and the goat led away. Then the clothes, the washing, and the fire outside the camp.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="20-21" data-hl="he shall bring the live goat|lay both his hands upon the head of the live goat|confess over him all the iniquities of the children of Israel|putting them upon the head of the goat"></section>
+
+<section class="slide verse" data-v="22" data-hl="the goat shall bear upon him all their iniquities unto a land not inhabited"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Both hands, all their sins</h2>
+    <p class="note rise" style="--d:2">Aaron does not wave at the goat. He lays both hands on its head and confesses, out loud. Count the word “all” in verses 21 and 22: four times. Three words for wrong, so nothing slips through:</p>
+    <ul class="signs rise" style="--d:3">
+      <li><b>iniquities</b>crooked things, what is bent in a man</li>
+      <li><b>transgressions</b>lines crossed, the rebellion</li>
+      <li><b>sins</b>missing the mark, falling short</li>
+    </ul>
+    <p class="note step">God knew the sins already. The confessing was for the people: their sins named, then put on another, then carried out of sight. That is still how it works.</p>
+    <blockquote class="quote step"><p>“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”</p><cite>1 John 1:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Unto a land not inhabited</h2>
+    <p class="note rise" style="--d:2">A <em>fit man</em>, a man made ready for the job, leads the goat out past the last tent, out where nobody lives, and lets it go. Israel watched their sins walk away, and the goat did not come back.</p>
+    <div class="pair">
+      <div class="scroll step"><p class="ref">Psalm 103:12</p><p class="kjv">As far as the east is from the west, so far hath he removed our transgressions from us.</p></div>
+      <div class="scroll step"><p class="ref">John 1:29</p><p class="kjv">The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.</p></div>
+    </div>
+    <p class="note step">John did not say “behold the man who will teach you to manage your sin.” He said, this is the one who takes it away. Some of you carry something you did years ago as if it were still on your back. It was laid on another, and he carried it off.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-24" data-hl="shall put off the linen garments|wash his flesh with water in the holy place, and put on his garments, and come forth"></section>
+
+<section class="slide verse" data-v="25-26" data-hl="he that let go the goat for the scapegoat shall wash his clothes"></section>
+
+<section class="slide verse" data-v="27-28" data-hl="shall one carry forth without the camp|they shall burn in the fire their skins, and their flesh, and their dung"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Without the camp</h2>
+    <p class="note rise" style="--d:2">Everything that touched the day got washed: the high priest, the man who led the goat, the man who burned the bodies. And the bodies of the bullock and the goat, whose blood had gone in to the mercy seat, were not eaten. They were carried outside the camp and burned to ashes. Hebrews takes us right there:</p>
+    <blockquote class="quote step"><p>“For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp. Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate. Let us go forth therefore unto him without the camp, bearing his reproach.”</p><cite>Hebrews 13:11–13</cite></blockquote>
+    <p class="note step">Jesus died outside the walls, with the outcasts, in the place for things thrown away. If you have spent years on the outside of decent company, that is where he went to find you. “Let us go forth therefore unto him.” Being with him may cost you some <em>reproach</em>, some scorn. He bore it first.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner lv16-day">
+    <h2 class="rise" style="--d:1">Follow the high priest</h2>
+    <div class="lv16-map" style="max-width:min(100%,85vh)">
+      <svg data-tabernacle role="img" aria-label="The tabernacle in its court. A route follows the high priest through the day of atonement: in at the gate to the altar, in past the vail to the mercy seat with incense and blood, out again, in again with the goat's blood, out to the altar, then the live goat led out of the gate into the wilderness, the change of clothes in the tent, and the bodies carried out of the camp to be burned."></svg>
+      <svg class="lv16-over" viewBox="0 0 800 470" aria-hidden="true">
+        <g class="r r1"><path class="way" pathLength="1" d="M676 405L605 364L467 293"/><g class="pin"><circle cx="545" cy="298" r="12"/><text x="545" y="303">1</text></g></g>
+        <g class="r r2"><path class="way in" pathLength="1" d="M467 293L410 260L361 231L280 184L262 172"/><ellipse class="puff" cx="258" cy="150" rx="36" ry="18"/><g class="pin"><circle cx="222" cy="150" r="12"/><text x="222" y="155">2</text></g></g>
+        <g class="r r3"><circle class="drop" cx="268" cy="176" r="4"/><circle class="drop" cx="274" cy="180" r="3"/><circle class="drop" cx="280" cy="183" r="3"/><circle class="drop" cx="286" cy="187" r="3"/><circle class="drop" cx="292" cy="190" r="3"/><circle class="drop" cx="298" cy="194" r="3"/><circle class="drop" cx="304" cy="197" r="3"/><circle class="drop" cx="310" cy="201" r="3"/><g class="pin"><circle cx="250" cy="200" r="12"/><text x="250" y="205">3</text></g></g>
+        <g class="r r4"><path class="way in" pathLength="1" d="M262 182L467 302L467 293L262 172"/><g class="pin"><circle cx="390" cy="268" r="12"/><text x="390" y="273">4</text></g></g>
+        <g class="r r5"><path class="way" pathLength="1" d="M262 172L361 231L467 293"/><g class="pin"><circle cx="500" cy="262" r="12"/><text x="500" y="267">5</text></g></g>
+        <g class="r r6"><path class="way" pathLength="1" d="M467 293L605 364L700 418L770 455"/><g class="pin"><circle cx="740" cy="420" r="12"/><text x="740" y="425">6</text></g><text class="tag" x="792" y="392" style="text-anchor:end">into the wilderness</text></g>
+        <g class="r r7"><path class="way in" pathLength="1" d="M467 293L361 231L340 219M352 226L410 260L467 293"/><g class="pin"><circle cx="330" cy="238" r="12"/><text x="330" y="243">7</text></g></g>
+        <g class="r r8"><path class="way" pathLength="1" d="M467 293L600 371L660 432L690 466"/><g class="pin"><circle cx="652" cy="440" r="12"/><text x="652" y="445">8</text></g><text class="tag" x="634" y="466" style="text-anchor:end">without the camp</text></g>
+      </svg>
+    </div>
+    <ol class="lv16-caps">
+      <li class="lv16-c0">The whole day, step by step. Click to follow Aaron in and out.</li>
+      <li class="step lv16-c1"><b>1</b>In at the gate. At the altar he kills the bullock for himself and his house (11).</li>
+      <li class="step lv16-c2"><b>2</b>Coals from the altar and incense in his hands, past the vail: the cloud covers the mercy seat (12–13).</li>
+      <li class="step lv16-c3"><b>3</b>The bullock's blood: on the mercy seat, and before it seven times (14).</li>
+      <li class="step lv16-c4"><b>4</b>He kills the people's goat and brings its blood within the vail too (15).</li>
+      <li class="step lv16-c5"><b>5</b>Out to the altar: blood on its horns, and upon it seven times (18–19).</li>
+      <li class="step lv16-c6"><b>6</b>The live goat: both hands on its head, the sins confessed, led away into the wilderness (20–22).</li>
+      <li class="step lv16-c7"><b>7</b>Into the tent to put off the linen; washed, in his own garments, he comes forth to the burnt offerings (23–24).</li>
+      <li class="step lv16-c8"><b>8</b>The bullock and the goat carried forth and burned without the camp (27).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">He came out</h2>
+    <p class="note rise" style="--d:2">Think of the people that day, standing outside. Their high priest has gone in behind the vail, nearer than Nadab and Abihu ever came. Nobody can see him. Then, verse 24, he puts on his garments “and come forth.” He is alive, and the sins are gone. Hebrews says our high priest has gone in, and will come out again:</p>
+    <blockquote class="quote step"><p>“For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us:”</p><cite>Hebrews 9:24</cite></blockquote>
+    <blockquote class="quote step"><p>“So Christ was once offered to bear the sins of many; and unto them that look for him shall he appear the second time without sin unto salvation.”</p><cite>Hebrews 9:28</cite></blockquote>
+    <p class="note step">We are the people outside, waiting for him to come forth. He has done the work; he has not forgotten the ones who are watching for him.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">“Once a year”</h2>
+    <p class="range rise" style="--d:2">Verses 29–34</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The day on the calendar, what the people did, and a statute for ever.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-30" data-hl="in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all|that ye may be clean from all your sins before the LORD"></section>
+
+<section class="slide verse" data-v="31-32" data-hl="It shall be a sabbath of rest unto you"></section>
+
+<section class="slide verse" data-v="33-34" data-hl="for all the people of the congregation|for all their sins once a year|And he did as the LORD commanded Moses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Afflict your souls, and rest</h2>
+    <div class="columns">
+      <div class="col law rise" style="--d:2">
+        <p class="who">The people's part</p>
+        <h3>afflict your souls</h3>
+        <p>Humble yourselves before God, grieve over the sin. In Paul's day it was known simply as “the fast” (Acts 27:9). Do no work at all.</p>
+      </div>
+      <div class="col grace rise" style="--d:3">
+        <p class="who">The priest's part</p>
+        <h3>make an atonement for you</h3>
+        <p>“To cleanse you, that ye may be clean from all your sins before the LORD.” The whole work was his.</p>
+      </div>
+    </div>
+    <p class="note step">Notice what the people did not do. They did not work their way clean. They were sorry, they stopped, and they rested while another did it. “A sabbath of rest.” Being sorry is right. Trying to pay for it yourself is not your job; it never was.</p>
+    <p class="note step">Verse 32: the day outlived Aaron. The priest anointed “in his father's stead,” in his father's place, would do it after him. The chapter ends the way so much of Exodus ended: “he did as the LORD commanded Moses.”</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Once a year, every year</h2>
+    <div class="lv16-years" aria-label="A long row of drops of blood, one for each year, appearing one after another." role="img">
+      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i><i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i>
+    </div>
+    <p class="note rise" style="--d:3">“Atonement” comes fifteen times in this one chapter. And verse 34 says it had to be done “once a year,” every year, as long as the law stood. The next year, the same goats, the same blood, the same sins remembered.</p>
+    <blockquote class="quote step"><p>“But in those sacrifices there is a remembrance again made of sins every year. For it is not possible that the blood of bulls and of goats should take away sins.”</p><cite>Hebrews 10:3–4</cite></blockquote>
+    <blockquote class="quote step"><p>“And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;”</p><cite>Hebrews 10:11–12</cite></blockquote>
+    <p class="note step">“Standeth… sat down.” There was no seat for a priest in the tabernacle; his work was never done. Jesus offered one sacrifice for sins for ever, and sat down, because the work was finished.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg class="lv16-tear" viewBox="0 0 240 310" role="img" aria-label="The vail, a tall curtain striped blue, purple and scarlet, hanging from a rod. It splits down the middle from the top to the bottom and the two halves fall apart, with light behind it.">
+          <defs>
+            <linearGradient id="lv16-cloth" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="230" y2="0">
+              <stop offset="0" style="stop-color:var(--cool)"/><stop offset=".33" style="stop-color:var(--cool)"/>
+              <stop offset=".33" style="stop-color:var(--wine)"/><stop offset=".66" style="stop-color:var(--wine)"/>
+              <stop offset=".66" style="stop-color:var(--danger)"/><stop offset="1" style="stop-color:var(--danger)"/>
+            </linearGradient>
+          </defs>
+          <rect class="room" x="10" y="14" width="220" height="286"/>
+          <ellipse class="shine" cx="120" cy="170" rx="60" ry="120"/>
+          <path class="half l" d="M10 14 H125 L110 64 L128 114 L108 174 L126 234 L112 300 H10 Z"/>
+          <path class="half r" d="M125 14 H230 V300 H112 L126 234 L108 174 L128 114 L110 64 Z"/>
+          <rect class="rod" x="4" y="6" width="232" height="9" rx="3"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">The way in is open</h2>
+        <p class="note rise" style="--d:2">For Aaron: one day a year, “that he die not.” Then Jesus died:</p>
+        <blockquote class="quote step lv16-tgo"><p>“And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent;”</p><cite>Matthew 27:51</cite></blockquote>
+        <blockquote class="quote step"><p>“Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh;”</p><cite>Hebrews 10:19–20</cite></blockquote>
+        <p class="note step">Not once a year and trembling: “boldness to enter,” any day, for any man who comes by the blood of Jesus, the man who fell yesterday too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Real world: the day of atonement is done</h2>
+    <p class="note rise" style="--d:2">Israel waited a year for this day. You do not have to wait for anything.</p>
+    <blockquote class="quote step"><p>“And their sins and iniquities will I remember no more. Now where remission of these is, there is no more offering for sin.”</p><cite>Hebrews 10:17–18</cite></blockquote>
+    <ul class="signs step">
+      <li><b>Sin</b>Name it, all of it, the way Aaron did over the goat. Iniquities, transgressions, sins. Vague confession keeps a man stuck.</li>
+      <li><b>Regret</b>The goat did not come back. Neither do the sins God has carried off. Stop digging them up in the wilderness.</li>
+      <li><b>Grace</b>One man went in alone and did the whole work. You add nothing to it.</li>
+      <li><b>Hope</b>Our high priest is alive, and he will come forth again.</li>
+      <li><b>Today</b>Lay your hands on it: tell God plainly what you did, then tell a brother in Christ. Then rest. Don't work at being forgiven.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">The warning</span><span class="seed-q">“that he come not at all times into the holy place within the vail… that he die not” <cite>16:2</cite></span><span class="take">God is holy, and after Nadab and Abihu he warns Aaron. But he says “not at all times,” not “never,” and then shows him the way in.</span></li>
+      <li class="step"><span class="topic">The linen</span><span class="seed-q">“these are holy garments; therefore shall he wash his flesh in water, and so put them on” <cite>16:4</cite></span><span class="take">Washed, then plain white linen, no gold. Nobody goes in to God in his own glory.</span></li>
+      <li class="step"><span class="topic">For himself</span><span class="seed-q">“make an atonement for himself, and for his house” <cite>16:6</cite></span><span class="take">Aaron needed atonement first. Jesus needed none for himself, so all of it is for us.</span></li>
+      <li class="step"><span class="topic">The blood</span><span class="seed-q">“sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat… seven times” <cite>16:14</cite></span><span class="take">Blood on the mercy seat, over the broken law. Christ is our propitiation, our mercy seat.</span></li>
+      <li class="step"><span class="topic">The two goats</span><span class="seed-q">“the goat shall bear upon him all their iniquities unto a land not inhabited” <cite>16:22</cite></span><span class="take">One goat died, and its blood went in. One carried the sins away and did not come back.</span></li>
+      <li class="step"><span class="topic">Once a year</span><span class="seed-q">“that ye may be clean from all your sins before the LORD” <cite>16:30</cite></span><span class="take">The people humbled themselves and rested, while the priest made them clean. Jesus did it once for all.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">The warning</span>
+      <h2>Why could Aaron not come within the vail at all times?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="that he die not: for I will appear in the cloud upon the mercy seat"></blockquote>
+      <blockquote class="quote step"><p>“But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people:”</p><cite>Hebrews 9:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God is holy, and he appeared there in the cloud upon the mercy seat; Nadab and Abihu had just died. But he did not shut the door. He showed Aaron how to come: once a year, not without blood.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The linen</span>
+      <h2>What did Aaron wear to go in, and what did he do before he put it on?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="4" data-hl="the holy linen coat|wash his flesh in water, and so put them on"></blockquote>
+            <blockquote class="quote step"><p>“But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:”</p><cite>Philippians 2:7</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Plain white linen: coat, breeches, girdle and mitre, with none of his gold. He washed first. The highest man in Israel went in dressed as a servant, a picture of Christ, who took the form of a servant.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">For himself</span>
+      <h2>Whose sin was atoned for first, and why does that matter?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="6" data-hl="make an atonement for himself, and for his house"></blockquote>
+      <blockquote class="quote step"><p>“Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people’s: for this he did once, when he offered up himself.”</p><cite>Hebrews 7:27</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Aaron's own, and his house's. The high priest was a sinner too. Jesus is holy and undefiled; he needed no sacrifice for himself, so he offered himself, once, for us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The blood</span>
+      <h2>Where did the high priest put the blood, and how many times?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="14" data-hl="upon the mercy seat eastward|seven times"></blockquote>
+            <blockquote class="quote step"><p>“Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God;”</p><cite>Romans 3:25</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>On the mercy seat, and before it seven times; then on the horns of the altar, and upon it seven times (19). Christ is our propitiation, our mercy seat, through faith in his blood.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The two goats</span>
+      <h2>What happened to the goat for the LORD, and to the scapegoat?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="9" data-hl="offer him for a sin offering"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="the goat shall bear upon him all their iniquities unto a land not inhabited"></blockquote>
+      <blockquote class="quote step"><p>“The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.”</p><cite>John 1:29</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>The LORD's goat died, and its blood went within the vail. The scapegoat carried the confessed sins away into the wilderness. Jesus is both: he died for our sins, and he takes them away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Once a year</span>
+      <h2>What were the people to do on that day, and what was done for them?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="31" data-hl="It shall be a sabbath of rest unto you, and ye shall afflict your souls"></blockquote>
+      <blockquote class="quote step" data-q="30" data-hl="that ye may be clean from all your sins before the LORD"></blockquote>
+      <blockquote class="quote step"><p>“For by one offering he hath perfected for ever them that are sanctified.”</p><cite>Hebrews 10:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They humbled themselves and did no work at all, a sabbath of rest. The priest made the atonement that made them clean, once a year. Jesus has done it once, for ever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="30" data-hl="that ye may be clean from all your sins before the LORD"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Leviticus chapter 16
+const V = {
+  1: "And the LORD spake unto Moses after the death of the two sons of Aaron, when they offered before the LORD, and died;",
+  2: "And the LORD said unto Moses, Speak unto Aaron thy brother, that he come not at all times into the holy place within the vail before the mercy seat, which is upon the ark; that he die not: for I will appear in the cloud upon the mercy seat.",
+  3: "Thus shall Aaron come into the holy place: with a young bullock for a sin offering, and a ram for a burnt offering.",
+  4: "He shall put on the holy linen coat, and he shall have the linen breeches upon his flesh, and shall be girded with a linen girdle, and with the linen mitre shall he be attired: these are holy garments; therefore shall he wash his flesh in water, and so put them on.",
+  5: "And he shall take of the congregation of the children of Israel two kids of the goats for a sin offering, and one ram for a burnt offering.",
+  6: "And Aaron shall offer his bullock of the sin offering, which is for himself, and make an atonement for himself, and for his house.",
+  7: "And he shall take the two goats, and present them before the LORD at the door of the tabernacle of the congregation.",
+  8: "And Aaron shall cast lots upon the two goats; one lot for the LORD, and the other lot for the scapegoat.",
+  9: "And Aaron shall bring the goat upon which the LORD’S lot fell, and offer him for a sin offering.",
+  10: "But the goat, on which the lot fell to be the scapegoat, shall be presented alive before the LORD, to make an atonement with him, and to let him go for a scapegoat into the wilderness.",
+  11: "And Aaron shall bring the bullock of the sin offering, which is for himself, and shall make an atonement for himself, and for his house, and shall kill the bullock of the sin offering which is for himself:",
+  12: "And he shall take a censer full of burning coals of fire from off the altar before the LORD, and his hands full of sweet incense beaten small, and bring it within the vail:",
+  13: "And he shall put the incense upon the fire before the LORD, that the cloud of the incense may cover the mercy seat that is upon the testimony, that he die not:",
+  14: "And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times.",
+  15: "Then shall he kill the goat of the sin offering, that is for the people, and bring his blood within the vail, and do with that blood as he did with the blood of the bullock, and sprinkle it upon the mercy seat, and before the mercy seat:",
+  16: "And he shall make an atonement for the holy place, because of the uncleanness of the children of Israel, and because of their transgressions in all their sins: and so shall he do for the tabernacle of the congregation, that remaineth among them in the midst of their uncleanness.",
+  17: "And there shall be no man in the tabernacle of the congregation when he goeth in to make an atonement in the holy place, until he come out, and have made an atonement for himself, and for his household, and for all the congregation of Israel.",
+  18: "And he shall go out unto the altar that is before the LORD, and make an atonement for it; and shall take of the blood of the bullock, and of the blood of the goat, and put it upon the horns of the altar round about.",
+  19: "And he shall sprinkle of the blood upon it with his finger seven times, and cleanse it, and hallow it from the uncleanness of the children of Israel.",
+  20: "And when he hath made an end of reconciling the holy place, and the tabernacle of the congregation, and the altar, he shall bring the live goat:",
+  21: "And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Israel, and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of a fit man into the wilderness:",
+  22: "And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness.",
+  23: "And Aaron shall come into the tabernacle of the congregation, and shall put off the linen garments, which he put on when he went into the holy place, and shall leave them there:",
+  24: "And he shall wash his flesh with water in the holy place, and put on his garments, and come forth, and offer his burnt offering, and the burnt offering of the people, and make an atonement for himself, and for the people.",
+  25: "And the fat of the sin offering shall he burn upon the altar.",
+  26: "And he that let go the goat for the scapegoat shall wash his clothes, and bathe his flesh in water, and afterward come into the camp.",
+  27: "And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung.",
+  28: "And he that burneth them shall wash his clothes, and bathe his flesh in water, and afterward he shall come into the camp.",
+  29: "And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that sojourneth among you:",
+  30: "For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before the LORD.",
+  31: "It shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever.",
+  32: "And the priest, whom he shall anoint, and whom he shall consecrate to minister in the priest’s office in his father’s stead, shall make the atonement, and shall put on the linen clothes, even the holy garments:",
+  33: "And he shall make an atonement for the holy sanctuary, and he shall make an atonement for the tabernacle of the congregation, and for the altar, and he shall make an atonement for the priests, and for all the people of the congregation.",
+  34: "And this shall be an everlasting statute unto you, to make an atonement for the children of Israel for all their sins once a year. And he did as the LORD commanded Moses."
+};
+const BOOK = "Leviticus 16";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

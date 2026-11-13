@@ -21837,5 +21837,1248 @@ window.STUDIES = [
       },
       "big": "Exodus begins with slaves under hard bondage and ends with the glory of the LORD filling a tent in the middle of their camp: he brought them out so that he could dwell among them. Moses cannot go in, but the New Testament says the Word became flesh and dwelt among us, and that one day the tabernacle of God will be with men."
     }
+  },
+  {
+    "id": "leviticus-01",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 1,
+    "date": "2026-11-13",
+    "title": "Leviticus 1",
+    "sub": "The LORD called unto Moses",
+    "about": "The glory has filled the tabernacle, and the LORD calls to Moses out of it. He tells Israel how a man may bring a burnt offering: a bullock, a sheep or goat, or turtledoves, a male without blemish, with his hand laid on its head so that it is accepted for him. It is the first chapter of Leviticus, the book of how a sinful people can come near a holy God.",
+    "tags": [
+      "The LORD calls",
+      "The burnt offering",
+      "Without blemish",
+      "The hand on the head",
+      "Atonement",
+      "A sweet savour"
+    ],
+    "url": "studies/leviticus-01.html",
+    "overview": {
+      "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "The LORD calls to Moses out of the tabernacle of the congregation, and sends him to speak to the children of Israel (1-2).",
+        "A burnt offering from the herd: a male without blemish, brought of his own voluntary will to the door of the tabernacle (3).",
+        "He lays his hand on its head, and it is accepted for him to make atonement for him (4).",
+        "He kills the bullock, the priests sprinkle the blood round about on the altar; he flays and cuts it, the priests lay it in order on the fire, and the inwards and legs are washed (5-9).",
+        "The same from the flock, the sheep or the goats, a male without blemish, killed on the north side of the altar (10-13).",
+        "From the fowls: turtledoves or young pigeons, the head wrung off, the crop plucked away, the bird cleft but not divided asunder (14-17).",
+        "Each ends: an offering made by fire, of a sweet savour unto the LORD (9, 13, 17)."
+      ],
+      "key": {
+        "ref": "Leviticus 1:4",
+        "text": "And he shall put his hand upon the head of the burnt offering; and it shall be accepted for him to make atonement for him."
+      },
+      "big": "Before any law about being holy, the LORD calls a sinful people to come near, and gives them a way: a life given in the man's place, accepted for him. Hebrews says the blood of bulls and of goats could not take away sins, but by one offering Christ has perfected for ever them that are sanctified. A man who has fallen does not have to find his own way back: God called first."
+    }
+  },
+  {
+    "id": "leviticus-02",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 2,
+    "date": "2026-11-13",
+    "title": "Leviticus 2",
+    "sub": "Flour, oil and frankincense",
+    "about": "The meat offering is bread, not flesh: fine flour with oil and frankincense, baked in the oven, the pan or the fryingpan, or made of green ears of corn for the firstfruits. A handful is burned as a memorial, and the rest is for the priests. It is never made with leaven or honey, and always with salt, the salt of the covenant.",
+    "tags": [
+      "The meat offering",
+      "Oil and frankincense",
+      "The memorial",
+      "No leaven",
+      "The salt of the covenant",
+      "Firstfruits"
+    ],
+    "url": "studies/leviticus-02.html",
+    "overview": {
+      "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "people": [
+        "aaron",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "The meat offering of fine flour, oil and frankincense: the priest burns a handful as a memorial, and the rest is Aaron's and his sons', most holy (1-3).",
+        "Baked in the oven, in a pan or in the fryingpan, unleavened and mingled with oil, and the memorial burned on the altar (4-10).",
+        "No leaven and no honey in any offering made by fire; the oblation of the firstfruits is not burned for a sweet savour (11-12).",
+        "Every offering is seasoned with salt, the salt of the covenant of thy God (13).",
+        "The firstfruits: green ears of corn dried by the fire, with oil and frankincense, and the priest burns the memorial (14-16)."
+      ],
+      "key": {
+        "ref": "Leviticus 2:13",
+        "text": "And every oblation of thy meat offering shalt thou season with salt; neither shalt thou suffer the salt of the covenant of thy God to be lacking from thy meat offering: with all thine offerings thou shalt offer salt."
+      },
+      "big": "The offerings are not only about sin. Here a man gives the work of his hands back to the LORD, and the LORD is pleased with it. The New Testament says leaven is malice and wickedness (1 Corinthians 5:8), that a Christian's speech is seasoned with salt (Colossians 4:6), and that Christ is the firstfruits of them that slept (1 Corinthians 15:20)."
+    }
+  },
+  {
+    "id": "leviticus-03",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 3,
+    "date": "2026-11-13",
+    "title": "Leviticus 3",
+    "sub": "The peace offering",
+    "about": "The peace offering, from the herd, the flock or the goats, male or female, without blemish. The man lays his hand on its head and kills it at the door, the priests sprinkle the blood, and the fat, the kidneys and the caul are burned on the altar. All the fat is the LORD's, and Israel is never to eat fat or blood.",
+    "tags": [
+      "The peace offering",
+      "The hand and the blood",
+      "All the fat is the LORD's",
+      "The food of the offering",
+      "Neither fat nor blood"
+    ],
+    "url": "studies/leviticus-03.html",
+    "overview": {
+      "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "people": [
+        "aaron",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "A peace offering from the herd, male or female, without blemish; the hand on its head, killed at the door, the blood sprinkled round about on the altar (1-2).",
+        "The fat on the inwards, the two kidneys and the caul above the liver are burned upon the burnt sacrifice, a sweet savour unto the LORD (3-5).",
+        "From the flock, a lamb: the fat, the whole rump, the fat of the inwards, the kidneys and the caul burned, the food of the offering made by fire (6-11).",
+        "If a goat: the same, the hand on its head, the fat burned (12-16).",
+        "All the fat is the LORD's, a perpetual statute for their generations: ye eat neither fat nor blood (16-17)."
+      ],
+      "key": {
+        "ref": "Leviticus 3:16",
+        "text": "And the priest shall burn them upon the altar: it is the food of the offering made by fire for a sweet savour: all the fat is the LORD’S."
+      },
+      "big": "The peace offering is an offering that ends at a table, with the best part given to the LORD first. The New Testament says Christ made peace through the blood of his cross (Colossians 1:20), and that those who were far off are made nigh by his blood (Ephesians 2:13). The life is in the blood, and the blood was given on the altar."
+    }
+  },
+  {
+    "id": "leviticus-04",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 4,
+    "date": "2026-11-13",
+    "title": "Leviticus 4",
+    "sub": "The offering for the sin nobody meant",
+    "about": "Whether a priest, a whole people, a ruler or one of the common people sins through ignorance, the LORD gives a way back: a young bullock or a kid, the hand laid on its head, the blood on the horns of the altar, and at the end of each case, \"it shall be forgiven him.\"",
+    "tags": [
+      "The sin offering",
+      "Sin through ignorance",
+      "The hand on the head",
+      "Without the camp",
+      "Forgiven"
+    ],
+    "url": "studies/leviticus-04.html",
+    "overview": {
+      "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "people": [
+        "moses",
+        "priest-that-is-anointed",
+        "common-people"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar-of-sweet-incense",
+        "altar-of-burnt-offering",
+        "clean-place",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to speak to Israel: if a soul sins through ignorance against any of his commandments (1-2).",
+        "If the anointed priest sins according to the sin of the people, he brings a young bullock without blemish, lays his hand on its head, and kills it (3-4).",
+        "The blood is sprinkled seven times before the vail and put on the horns of the altar of sweet incense; the rest is poured at the foot of the altar of burnt offering; the fat is burned (5-10).",
+        "The whole bullock is carried without the camp to a clean place and burned (11-12).",
+        "If the whole congregation sins through ignorance, the elders lay their hands on a young bullock, and it is offered the same way, and it is forgiven them (13-21).",
+        "A ruler brings a kid of the goats, a male without blemish; the blood goes on the horns of the altar of burnt offering (22-26).",
+        "One of the common people brings a kid, a female, or a lamb, and it shall be forgiven him (27-35)."
+      ],
+      "key": {
+        "ref": "Leviticus 4:26",
+        "text": "And he shall burn all his fat upon the altar, as the fat of the sacrifice of peace offerings: and the priest shall make an atonement for him as concerning his sin, and it shall be forgiven him."
+      },
+      "big": "The first offering that begins with a sin: for the priest, the people, the ruler and the common man alike, even for what they did not know. The higher the man, the nearer the blood must go, but every case ends on the same word, forgiven. The New Testament says Jesus, like the bullock burned without the camp, suffered without the gate (Hebrews 13:11-13)."
+    }
+  },
+  {
+    "id": "leviticus-05",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 5,
+    "date": "2026-11-13",
+    "title": "Leviticus 5",
+    "sub": "Guilty when you did not know, and a way in for the poor man",
+    "about": "Saying nothing when you know, touching what you did not know was unclean, and an oath spoken too quickly are each sin, with the same road back: confess, bring what you can, and \"it shall be forgiven him.\" The poorest man brings a handful of flour, and the holy things wronged are made right with a fifth part added.",
+    "tags": [
+      "Silence",
+      "Confession",
+      "An offering at every price",
+      "Amends and a fifth",
+      "Guilty though he wist it not"
+    ],
+    "url": "studies/leviticus-05.html",
+    "overview": {
+      "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "people": [
+        "moses",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "If a soul hears the voice of swearing and is a witness and does not utter it, he shall bear his iniquity (1).",
+        "If he touches an unclean thing, or the uncleanness of man, or swears with his lips, and it is hid from him, he is guilty when he knows it (2-4).",
+        "He shall confess that he hath sinned in that thing, and bring a female lamb or kid for a trespass offering (5-6).",
+        "If he is not able, two turtledoves or two young pigeons, one for a sin offering and one for a burnt offering (7-10).",
+        "If not able even for these, the tenth part of an ephah of fine flour, with no oil and no frankincense, and it shall be forgiven him (11-13).",
+        "If a soul sins in the holy things of the LORD, he brings a ram without blemish, makes amends for the harm and adds the fifth part (14-16).",
+        "Though he wist it not, yet is he guilty; he brings a ram, and it shall be forgiven him (17-19)."
+      ],
+      "key": {
+        "ref": "Leviticus 5:5",
+        "text": "And it shall be, when he shall be guilty in one of these things, that he shall confess that he hath sinned in that thing:"
+      },
+      "big": "Guilt is not what a man feels but what is true about what he did, even when he did not know. Yet the same chapter names the remedy at every price: a lamb, two birds, or a handful of flour. Jesus’ own family brought the offering of the poor, two birds (Luke 2:24), and \"though he was rich, yet for your sakes he became poor\" (2 Corinthians 8:9)."
+    }
+  },
+  {
+    "id": "leviticus-06",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 6,
+    "date": "2026-11-13",
+    "title": "Leviticus 6",
+    "sub": "Make it right, and keep the fire burning",
+    "about": "A man who lied or took what was not his must restore it and add a fifth part, and bring a ram. Then the LORD tells the priests how to keep the altar burning every night, how the priests eat the meat offering, and calls the sin offering itself \"most holy.\"",
+    "tags": [
+      "Restitution",
+      "The fire that never goes out",
+      "The priests’ food",
+      "Most holy",
+      "Whatever touches it is holy"
+    ],
+    "url": "studies/leviticus-06.html",
+    "overview": {
+      "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "people": [
+        "moses",
+        "aaron",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "altar",
+        "clean-place",
+        "israel"
+      ],
+      "story": [
+        "If a soul lies to his neighbour about a thing delivered him to keep, a thing in fellowship, a thing taken away by violence, or a lost thing found, he restores it in the principal, adds the fifth part, and brings a ram without blemish; it shall be forgiven him (1-7).",
+        "The law of the burnt offering: it burns upon the altar all night; the priest puts on linen, takes up the ashes and carries them without the camp to a clean place (8-11).",
+        "The fire upon the altar shall never go out; the priest burns wood on it every morning (12-13).",
+        "The law of the meat offering: a handful is burned and the rest is eaten by Aaron’s sons, unleavened, in the holy place; it is most holy (14-18).",
+        "The priest’s own meat offering, half in the morning and half at night, is wholly burnt and not eaten (19-23).",
+        "The law of the sin offering: it is most holy; the priest that offers it eats it, but if the blood is brought into the tabernacle it is burnt in the fire; whatsoever touches the flesh shall be holy (24-30)."
+      ],
+      "key": {
+        "ref": "Leviticus 6:13",
+        "text": "The fire shall ever be burning upon the altar; it shall never go out."
+      },
+      "big": "God asks two things of the man who has wronged his neighbour: put it right, with a fifth part more, and bring the offering to the LORD who forgives. And the fire the LORD himself lit on the altar is kept burning by the priests’ daily work. The offering for sin is called most holy, and in the New Testament the Holy One touches the unclean and makes them clean (Matthew 8:3)."
+    }
+  },
+  {
+    "id": "leviticus-07",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 7,
+    "date": "2026-11-13",
+    "title": "Leviticus 7",
+    "sub": "What is holy, what is shared, and what is the LORD's alone",
+    "about": "The law of the trespass offering and the peace offerings: what the priests receive, how a man gives thanks at a meal with God and when he must eat it, why Israel may never eat fat or blood, and where and when the LORD gave all these laws to Moses.",
+    "tags": [
+      "The trespass offering",
+      "The priests' share",
+      "Thanksgiving",
+      "Fat and blood",
+      "The law of the offerings"
+    ],
+    "url": "studies/leviticus-07.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "In mount Sinai, in the wilderness of Sinai (7:38): the month between the tabernacle reared up (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "mount-sinai",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "The law of the trespass offering: it is most holy, killed where the burnt offering is killed, its fat burned and the flesh eaten by the males among the priests in the holy place (1-7).",
+        "The priest has the skin of the burnt offering and the baked and cooked meat offerings; every other meat offering belongs to all the sons of Aaron alike (8-10).",
+        "The sacrifice of peace offerings: a thanksgiving with cakes and leavened bread, one loaf to the priest, the flesh eaten the same day; a vow or free gift may be eaten the second day (11-16).",
+        "What is left on the third day is burnt; if it is eaten, it is not accepted, and the soul that eats it with uncleanness on him is cut off from his people (17-21).",
+        "No manner of fat of ox, sheep or goat, and no manner of blood, may be eaten, on pain of being cut off (22-27).",
+        "The wave breast and the heave shoulder are given to Aaron and his sons by a statute for ever (28-36).",
+        "The closing summary: the law of the burnt offering, the meat offering, the sin offering, the trespass offering, the consecrations and the peace offerings, given in mount Sinai (37-38)."
+      ],
+      "key": {
+        "ref": "Leviticus 7:15",
+        "text": "And the flesh of the sacrifice of his peace offerings for thanksgiving shall be eaten the same day that it is offered; he shall not leave any of it until the morning."
+      },
+      "big": "The peace offering is a meal: the LORD takes his part, the priests are fed, and the man who brought it sits down to eat with thanksgiving, the same day. The fat is the LORD's and the blood is the life, so neither is eaten. The New Testament says Christ made peace through the blood of his cross."
+    }
+  },
+  {
+    "id": "leviticus-08",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 8,
+    "date": "2026-11-13",
+    "title": "Leviticus 8",
+    "sub": "As the LORD commanded Moses",
+    "about": "Moses carries out Exodus 29 in front of all the congregation: Aaron and his sons are washed, clothed and anointed, the bullock for the sin offering and the two rams are offered, the blood is put on their right ear, thumb and great toe, and they stay seven days and nights at the door of the tabernacle.",
+    "tags": [
+      "At the door",
+      "Washed and clothed",
+      "The anointing",
+      "Hands on the head",
+      "The blood",
+      "Seven days"
+    ],
+    "url": "studies/leviticus-08.html",
+    "overview": {
+      "where": "At the door of the tabernacle, at the foot of Mount Sinai",
+      "when": "After the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17); the consecration lasts seven days (8:33)",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "tabernacle",
+        "altar",
+        "mount-sinai"
+      ],
+      "story": [
+        "The LORD tells Moses to take Aaron and his sons, the garments, the anointing oil, a bullock and two rams, and to gather all the congregation to the door (1-5).",
+        "Moses washes Aaron and his sons, clothes Aaron with the coat, the robe, the ephod and the breastplate with the Urim and the Thummim, and puts the mitre and the holy crown on his head (6-9).",
+        "He anoints the tabernacle, the altar and the laver, pours the oil on Aaron's head, and clothes Aaron's sons (10-13).",
+        "The bullock for the sin offering: hands laid on its head, the blood put on the horns of the altar, the body burnt without the camp (14-17).",
+        "The ram for the burnt offering is burnt whole, a sweet savour (18-21).",
+        "The ram of consecration: the blood is put on the right ear, the right thumb and the right great toe of Aaron and of his sons; the wave offering; the breast is Moses' part (22-29).",
+        "Moses sprinkles the oil and the blood on Aaron and his sons; they eat the flesh at the door, and abide there day and night seven days, \"that ye die not\" (30-36)."
+      ],
+      "key": {
+        "ref": "Leviticus 8:36",
+        "text": "So Aaron and his sons did all things which the LORD commanded by the hand of Moses."
+      },
+      "big": "The priesthood is not taken, it is given: Aaron and his sons are washed, clothed, anointed and covered with blood by another's hand, as the LORD commanded, and the chapter says so again and again. Their own sin offering comes first. The New Testament says believers are washed in his own blood and made a royal priesthood."
+    }
+  },
+  {
+    "id": "leviticus-09",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 9,
+    "date": "2026-11-13",
+    "title": "Leviticus 9",
+    "sub": "The eighth day: the glory of the LORD appears",
+    "about": "After the seven days at the door, on the eighth day Aaron offers first for himself and then for the people, lifts up his hand and blesses them, and the glory of the LORD appears to all the people. Fire comes out from before the LORD and consumes the offering on the altar, and the people shout and fall on their faces.",
+    "tags": [
+      "The eighth day",
+      "Aaron's own offering",
+      "The people's offerings",
+      "The blessing",
+      "The glory",
+      "Fire from the LORD"
+    ],
+    "url": "studies/leviticus-09.html",
+    "overview": {
+      "where": "At the altar before the tabernacle, at the foot of Mount Sinai",
+      "when": "The eighth day, after the seven days of consecration (9:1; 8:33)",
+      "people": [
+        "moses",
+        "aaron",
+        "elders"
+      ],
+      "places": [
+        "tabernacle",
+        "altar",
+        "israel"
+      ],
+      "story": [
+        "On the eighth day Moses calls Aaron, his sons and the elders of Israel, and tells Aaron to take a young calf and a ram, and the people a kid, a calf, a lamb, a bullock, a ram and a meat offering, \"for to day the LORD will appear unto you\" (1-6).",
+        "Aaron makes an atonement for himself first: the sin offering, then the burnt offering (7-14).",
+        "Then he offers the people's offering: their sin offering, burnt offering, meat offering and peace offerings, as the LORD commanded (15-21).",
+        "Aaron lifts up his hand toward the people and blesses them; Moses and Aaron go into the tabernacle and come out and bless the people (22-23).",
+        "The glory of the LORD appears unto all the people, and fire comes out from before the LORD and consumes the burnt offering and the fat on the altar; the people shout and fall on their faces (23-24)."
+      ],
+      "key": {
+        "ref": "Leviticus 9:24",
+        "text": "And there came a fire out from before the LORD, and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces."
+      },
+      "big": "God keeps his word: the priest who begins with his own sin offering, and the people who bring what he commanded, see the glory of the LORD appear and the fire fall on the altar. The fire is the LORD accepting the sacrifice, which is why chapter 10 must be read beside it."
+    }
+  },
+  {
+    "id": "leviticus-10",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 10,
+    "date": "2026-11-13",
+    "title": "Leviticus 10",
+    "sub": "Strange fire",
+    "about": "On the day the glory of the LORD appeared, Nadab and Abihu offer strange fire, which the LORD commanded them not, and fire from the LORD devours them. Aaron holds his peace. The LORD forbids wine and strong drink to the priests when they go in, and Aaron's grief over the sin offering is heard, and Moses is content.",
+    "tags": [
+      "Nadab and Abihu",
+      "Strange fire",
+      "Holiness",
+      "Wine and strong drink",
+      "Grief"
+    ],
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "The eighth day, after the seven days of the priests' consecration (8:33; 9:1), soon after the tabernacle was reared up (Exodus 40:17); the same day as chapter 9 (10:19)",
+      "people": [
+        "moses",
+        "aaron",
+        "nadab",
+        "abihu",
+        "aarons-sons",
+        "grandsons-of-levi"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "Nadab and Abihu offer strange fire before the LORD, which he commanded them not, and fire from the LORD devours them (1-2).",
+        "Moses tells Aaron, \"I will be sanctified in them that come nigh me\"; Aaron holds his peace (3).",
+        "Mishael and Elzaphan carry them out of the camp in their coats; Aaron, Eleazar and Ithamar may not mourn or leave the door, for the anointing oil is on them, while all Israel bewails the burning (4-7).",
+        "The LORD tells Aaron: no wine or strong drink when the priests go into the tabernacle, so that they may put difference between holy and unholy, unclean and clean, and teach Israel the statutes (8-11).",
+        "Moses tells Aaron and his sons that were left to eat the meat offering beside the altar, and the wave breast and heave shoulder in a clean place (12-15).",
+        "Moses finds the goat of the sin offering burnt and is angry; Aaron answers, \"such things have befallen me,\" and Moses is content (16-20)."
+      ],
+      "key": {
+        "ref": "Leviticus 10:3",
+        "text": "Then Moses said unto Aaron, This is it that the LORD spake, saying, I will be sanctified in them that come nigh me, and before all the people I will be glorified. And Aaron held his peace."
+      },
+      "big": "The same fire that accepted the offering on the altar devoured two priests who came near God their own way: God will be treated as holy by those who come near him. The command against wine follows the judgment, and the chapter ends with a father's honest grief that Moses does not argue with. We come near now by a high priest who never offered strange fire and is touched with the feeling of our infirmities."
+    },
+    "url": "studies/leviticus-10.html"
+  },
+  {
+    "id": "leviticus-11",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 11,
+    "date": "2026-11-13",
+    "title": "Leviticus 11",
+    "sub": "Clean and unclean",
+    "about": "The LORD tells Israel which beasts, fish, fowls and creeping things they may eat, and what makes a man unclean until the evening. The reason is his own: \"ye shall be holy; for I am holy.\" The New Testament calls the food laws a shadow whose body is Christ.",
+    "tags": [
+      "Clean and unclean",
+      "Food laws",
+      "Until the even",
+      "Be holy",
+      "A shadow of Christ"
+    ],
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "mount-sinai",
+        "egypt",
+        "israel"
+      ],
+      "story": [
+        "Beasts that part the hoof, are clovenfooted and chew the cud may be eaten; the camel, the coney, the hare and the swine may not (1-8).",
+        "In the waters, whatever has fins and scales may be eaten; the rest is an abomination (9-12).",
+        "Twenty fowls are named as an abomination, from the eagle to the bat (13-19).",
+        "Flying creeping things are unclean, except those with legs to leap: the locust, the bald locust, the beetle and the grasshopper (20-23).",
+        "Whoever touches or carries the carcase of an unclean thing is unclean until the even and washes his clothes; vessels are washed or broken, but a fountain with plenty of water stays clean (24-40).",
+        "Creeping things are not to be eaten: \"ye shall be holy; for I am holy,\" says the LORD who brought them out of Egypt (41-45).",
+        "This is the law to make a difference between the unclean and the clean (46-47)."
+      ],
+      "key": {
+        "ref": "Leviticus 11:45",
+        "text": "For I am the LORD that bringeth you up out of the land of Egypt, to be your God: ye shall therefore be holy, for I am holy."
+      },
+      "big": "The food laws drew a line through every meal so that Israel would know whose they were; the only reason given is God's own holiness, and he rescued them before he called them holy. Uncleanness lasted until the evening and then it was over. Jesus purged all meats, the food laws were a shadow whose body is Christ, and God taught Peter not to call any man common or unclean."
+    },
+    "url": "studies/leviticus-11.html"
+  },
+  {
+    "id": "leviticus-12",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 12,
+    "date": "2026-11-13",
+    "title": "Leviticus 12",
+    "sub": "A mother made clean",
+    "about": "After a birth, a mother is kept from the holy things for forty days for a son and eighty for a daughter. Then she brings a burnt offering and a sin offering, the priest makes an atonement, and she is clean; a mother too poor for a lamb brings two turtledoves or two young pigeons, as Mary did.",
+    "tags": [
+      "Childbirth",
+      "Circumcision",
+      "Purifying",
+      "The poor mother's offering",
+      "Mary"
+    ],
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "people": [
+        "moses",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "A mother who bears a son is unclean seven days; on the eighth day the child is circumcised (1-3).",
+        "She continues in the blood of her purifying thirty-three days, touching no hallowed thing; for a daughter, two weeks and then sixty-six days (4-5).",
+        "When her days are fulfilled she brings a lamb for a burnt offering and a young pigeon or turtledove for a sin offering, and the priest makes an atonement for her (6-7).",
+        "If she cannot bring a lamb, two turtledoves or two young pigeons will do, and she shall be clean (8)."
+      ],
+      "key": {
+        "ref": "Leviticus 12:8",
+        "text": "And if she be not able to bring a lamb, then she shall bring two turtles, or two young pigeons; the one for the burnt offering, and the other for a sin offering: and the priest shall make an atonement for her, and she shall be clean."
+      },
+      "big": "A child is a gift; what kept the mother from the holy things was the issue of her blood, and those days had an end. God priced the way back so that the poorest mother was made just as clean, and Mary brought that poor woman's offering while she carried the Lamb himself."
+    },
+    "url": "studies/leviticus-12.html"
+  },
+  {
+    "id": "leviticus-13",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 13,
+    "date": "2026-11-13",
+    "title": "Leviticus 13",
+    "sub": "The priest shall look",
+    "about": "A sore on the skin is brought to the priest, who looks, shuts the man up seven days, looks again, and pronounces him clean or unclean. The leper cries Unclean, unclean and lives alone outside the camp. The same plague in a garment is looked at, washed or burned. Jesus will one day put out his hand and touch such a man.",
+    "tags": [
+      "The priest looks",
+      "Shut up seven days",
+      "Clean or unclean",
+      "Unclean, unclean",
+      "The leper outside the camp",
+      "The garment"
+    ],
+    "url": "studies/leviticus-13.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "mount-sinai"
+      ],
+      "story": [
+        "The LORD speaks to Moses and Aaron: a rising, a scab or a bright spot is brought to the priest, who shuts the man up seven days and looks again, and pronounces him clean (it is but a scab) or unclean (it is a leprosy) (1-8).",
+        "An old leprosy with quick raw flesh is unclean; a man covered with white from head to foot is pronounced clean; raw flesh makes him unclean again (9-17).",
+        "A boil, a burning, and a scall on the head or beard are each looked at, shut up seven days, and judged by whether they are deeper than the skin, have white hair, or spread (18-37).",
+        "Freckles and baldness are clean; a white reddish sore in a bald head is a leprosy (38-44).",
+        "The leper has rent clothes, a bare head and a covering on his lip, cries Unclean, unclean, and dwells alone without the camp (45-46).",
+        "A fretting leprosy in a woollen or linen garment or in skin is shut up seven days, then burned if it has spread, or washed a second time and clean if it is gone (47-59)."
+      ],
+      "key": {
+        "ref": "Leviticus 13:46",
+        "text": "All the days wherein the plague shall be in him he shall be defiled; he is unclean: he shall dwell alone; without the camp shall his habitation be."
+      },
+      "big": "A man with a spot on his skin is not condemned in a hurry: the priest looks, waits seven days, looks again, and the verdicts are clean eight times and unclean eleven. But the man who is unclean must live alone outside the camp crying Unclean, unclean. It is the picture of a man shut out, and the next chapter, and the gospels, show the LORD coming out to him."
+    }
+  },
+  {
+    "id": "leviticus-14",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 14,
+    "date": "2026-11-13",
+    "title": "Leviticus 14",
+    "sub": "The day of his cleansing",
+    "about": "The priest goes out of the camp to a healed leper. Two birds, one killed over running water and one let go, cedar, scarlet and hyssop, a washing and a shaving, seven days, and on the eighth day blood and oil on the ear, thumb and toe at the door of the tabernacle. The poor man brings less, and a house with the plague is scraped, rebuilt or broken down, and cleansed.",
+    "tags": [
+      "The priest goes out",
+      "Two birds",
+      "Seven days",
+      "The eighth day",
+      "Blood and oil",
+      "The poor man",
+      "The leprosy of a house"
+    ],
+    "url": "studies/leviticus-14.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "canaan"
+      ],
+      "story": [
+        "The law of the leper in the day of his cleansing: the priest goes out of the camp, and if the plague is healed he takes two clean birds, cedar wood, scarlet and hyssop (1-4).",
+        "One bird is killed over running water; the living bird is dipped in its blood and let loose into the open field, and the man is sprinkled seven times and pronounced clean (5-7).",
+        "He washes, shaves all his hair, comes into the camp but tarries out of his tent seven days, and on the seventh day shaves and washes again (8-9).",
+        "On the eighth day he is brought to the door of the tabernacle with lambs, flour and oil; the trespass offering is waved, and its blood and then the oil are put on his right ear, thumb and great toe (10-18).",
+        "The sin offering, the burnt offering and the meat offering are offered, and the priest makes an atonement for him (19-20).",
+        "If he is poor he brings one lamb and two turtledoves or young pigeons, such as he is able to get (21-32).",
+        "In the land of Canaan, a house with the plague is emptied, shut up seven days, its stones removed, scraped and plaistered, and broken down if it returns; if healed it is cleansed with two birds and an atonement (33-53).",
+        "This is the law of all leprosy, to teach when it is unclean, and when it is clean (54-57)."
+      ],
+      "key": {
+        "ref": "Leviticus 14:7",
+        "text": "And he shall sprinkle upon him that is to be cleansed from the leprosy seven times, and shall pronounce him clean, and shall let the living bird loose into the open field."
+      },
+      "big": "A man who was alone outside the camp is met by the priest, sprinkled, washed, kept seven days at the edge of home, and on the eighth day stands before the LORD at the door of the tabernacle, marked with the same blood and oil as the priests. The poorest man is cleansed as fully as the richest. Jesus sent the cleansed leper to this chapter: offer the gift that Moses commanded (Matthew 8:4)."
+    }
+  },
+  {
+    "id": "leviticus-15",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 15,
+    "date": "2026-11-13",
+    "title": "Leviticus 15",
+    "sub": "Unclean until the even",
+    "about": "Bodily issues, for a man and for a woman, make a person and what he touches unclean, but a washing and an evening end it. After a long issue there are seven days, running water, and two turtledoves at the door of the tabernacle on the eighth day. The LORD's reason: that Israel die not in their uncleanness when they defile his tabernacle among them.",
+    "tags": [
+      "A running issue",
+      "Wash and wait for the even",
+      "The eighth day",
+      "A woman's issue",
+      "The tabernacle among them",
+      "Uncleanness is not sin"
+    ],
+    "url": "studies/leviticus-15.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The LORD speaks to Moses and Aaron: a man with a running issue is unclean, and so is his bed and whatever he sits on (1-4).",
+        "Whoever touches his bed, his seat or him washes his clothes, bathes in water and is unclean until the even; a vessel of earth is broken and one of wood rinsed (5-12).",
+        "When he is cleansed he numbers seven days, bathes in running water, and on the eighth day brings two turtledoves or young pigeons to the door of the tabernacle for a sin offering and a burnt offering (13-15).",
+        "A man's seed of copulation, and a man and woman lying together, mean washing and being unclean until the even (16-18).",
+        "A woman is put apart seven days, and what she lies or sits on is unclean until the even; a long issue carries on the same law (19-27).",
+        "When she is cleansed she numbers seven days and on the eighth day brings two turtles or young pigeons for a sin offering and a burnt offering (28-30).",
+        "The LORD's reason: that the children of Israel die not in their uncleanness, when they defile his tabernacle that is among them (31-33)."
+      ],
+      "key": {
+        "ref": "Leviticus 15:31",
+        "text": "Thus shall ye separate the children of Israel from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them."
+      },
+      "big": "God speaks plainly about the body, and without shame: most of this uncleanness ended with a washing and an evening, and the longer cases with seven days, running water and two small birds at the door of the tabernacle. Uncleanness is not the same as sin, but it reminded a people that a holy God lived among them. In Mark 5 a woman unclean twelve years touches Jesus' clothes, and she is made whole."
+    }
+  },
+  {
+    "id": "leviticus-16",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 16,
+    "date": "2026-11-13",
+    "title": "Leviticus 16",
+    "sub": "The day of atonement",
+    "about": "After the death of Nadab and Abihu, the LORD tells Aaron how he may come within the vail: once a year, washed and dressed in plain linen, with incense and blood. One goat dies for the people and its blood goes on the mercy seat; the scapegoat carries all their iniquities away into the wilderness. The heart of Leviticus, and a picture of Christ, who entered once for all by his own blood.",
+    "tags": [
+      "The day of atonement",
+      "The high priest",
+      "The mercy seat",
+      "The scapegoat",
+      "Once a year"
+    ],
+    "url": "studies/leviticus-16.html",
+    "overview": {
+      "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "After the death of Nadab and Abihu (16:1), in the first weeks after the tabernacle was reared up (Exodus 40:17); the day itself kept every year in the seventh month, on the tenth day (16:29)",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons",
+        "fit-man"
+      ],
+      "places": [
+        "tabernacle",
+        "holiest-of-all",
+        "mercy-seat",
+        "wilderness",
+        "without-the-camp",
+        "mount-sinai"
+      ],
+      "story": [
+        "After the death of Aaron's two sons, the LORD warns that Aaron must not come within the vail at all times, that he die not, for he will appear in the cloud upon the mercy seat (1-2).",
+        "Aaron is to come with a bullock and a ram for himself, wash, and put on the holy linen garments; from the people he takes two kids of the goats and a ram (3-5).",
+        "He offers the bullock for himself and his house, presents the two goats at the door and casts lots: one for the LORD, one for the scapegoat (6-10).",
+        "He kills the bullock, takes coals and incense within the vail so the cloud covers the mercy seat, and sprinkles the blood upon the mercy seat and before it seven times; then does the same with the people's goat (11-15).",
+        "He makes an atonement for the holy place, the tabernacle and the altar, alone in the tent, putting blood on the horns of the altar and sprinkling it seven times (16-19).",
+        "He lays both hands on the live goat, confesses over it all the iniquities of Israel, and a fit man leads it away into a land not inhabited (20-22).",
+        "Aaron puts off the linen, washes, puts on his garments and offers the burnt offerings; the men who led the goat and burned the bodies wash; the bullock and goat are burned without the camp (23-28).",
+        "On the tenth day of the seventh month the people afflict their souls and do no work, a sabbath of rest, while the priest makes them clean from all their sins, once a year, for ever (29-34)."
+      ],
+      "key": {
+        "ref": "Leviticus 16:30",
+        "text": "For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before the LORD."
+      },
+      "big": "God is holy, and no man walks in on him; but he does not shut the door, he shows the way in: once a year, by one high priest, alone, with blood on the mercy seat, while a second goat carries the confessed sins away for good. Hebrews says Christ is that high priest and that sacrifice, entering once for all by his own blood, and the vail is now torn for any man who comes by him."
+    }
+  },
+  {
+    "id": "leviticus-17",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 17,
+    "date": "2026-11-13",
+    "title": "Leviticus 17",
+    "sub": "The life of the flesh is in the blood",
+    "about": "Every animal offered must be brought to the door of the tabernacle, not sacrificed in the open field to devils. Then the reason for all the blood in Leviticus: the life of the flesh is in the blood, and God has given it upon the altar to make an atonement for the soul, so it must never be eaten.",
+    "tags": [
+      "The door of the tabernacle",
+      "No more sacrifices to devils",
+      "The life is in the blood",
+      "Atonement",
+      "Wash and be clean"
+    ],
+    "url": "studies/leviticus-17.html",
+    "overview": {
+      "where": "The camp and the tabernacle at the foot of Mount Sinai, in Arabia",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "stranger-in-the-land"
+      ],
+      "places": [
+        "tabernacle",
+        "altar",
+        "open-field",
+        "mount-sinai"
+      ],
+      "story": [
+        "The LORD tells Moses to speak to Aaron, his sons and all Israel (1-2).",
+        "Any man who kills an ox, lamb or goat and does not bring it to the door of the tabernacle has blood imputed to him and is cut off (3-4).",
+        "Sacrifices once made in the open field are to be brought to the priest as peace offerings, the blood sprinkled on the altar and the fat burned; they shall no more sacrifice to devils (5-7).",
+        "Israelite or stranger, any burnt offering or sacrifice not brought to the door cuts that man off (8-9).",
+        "Whoever eats blood, God sets his face against him: for the life of the flesh is in the blood, and he has given it upon the altar to make an atonement for the soul (10-12).",
+        "A hunter pours out the blood of what he catches and covers it with dust, for the life of all flesh is the blood (13-14).",
+        "A man who eats what died of itself or was torn washes and is unclean until the evening, then clean; if he will not wash, he bears his iniquity (15-16)."
+      ],
+      "key": {
+        "ref": "Leviticus 17:11",
+        "text": "For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul."
+      },
+      "big": "Blood is life, and God gave it on the altar as the way back: a life given in place of the sinner's soul. So every offering came to one door, none went to devils in the open field, and the blood was never eaten. It all points to the precious blood of Christ, and to the washing that makes a fallen man clean by evening."
+    }
+  },
+  {
+    "id": "leviticus-18",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 18,
+    "date": "2026-11-13",
+    "title": "Leviticus 18",
+    "sub": "Not after the doings of Egypt",
+    "about": "The LORD tells Israel not to live by the doings of Egypt or of Canaan, but by his statutes, \"which if a man do, he shall live in them.\" He puts a fence around the family, forbids a neighbour's wife, Molech and the abominations of the nations, and warns that the land vomited those nations out. The New Testament keeps the line, and offers the washing: \"such were some of you: but ye are washed.\"",
+    "tags": [
+      "Holy living",
+      "The family protected",
+      "Not the ways of the world",
+      "The land spues them out",
+      "Washed in Christ"
+    ],
+    "url": "studies/leviticus-18.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "molech"
+      ],
+      "places": [
+        "mount-sinai",
+        "egypt",
+        "canaan",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to say to Israel, \"I am the LORD your God\": they are not to do after the doings of Egypt, where they dwelt, or of Canaan, where he brings them (1-3).",
+        "They are to keep his judgments and statutes, \"which if a man do, he shall live in them\" (4-5).",
+        "None is to approach any that is near of kin: mother, father's wife, sister, granddaughter, aunt, uncle's wife, daughter in law, brother's wife, a woman and her daughter, or a wife's sister in her lifetime (6-18).",
+        "Not a wife in her uncleanness, not a neighbour's wife; no child given to pass through the fire to Molech; no lying with mankind as with womankind, which is abomination, nor with a beast, which is confusion (19-23).",
+        "The nations were defiled by all these, and the land vomits out its inhabitants; Israel, and the stranger among them, must not do these abominations, or the land will spue them out too (24-28).",
+        "Whoever commits them shall be cut off from among their people: \"I am the LORD your God\" (29-30)."
+      ],
+      "key": {
+        "ref": "Leviticus 18:5",
+        "text": "Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am the LORD."
+      },
+      "big": "God's holy standard for the home and the bed rests on one reason, said six times: \"I am the LORD.\" Not Egypt's ways behind or Canaan's ahead, but his. Every man has crossed some line of his, and the law shows it; the New Testament keeps the line and adds the hope: \"such were some of you: but ye are washed.\""
+    }
+  },
+  {
+    "id": "leviticus-19",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 19,
+    "date": "2026-11-13",
+    "title": "Leviticus 19",
+    "sub": "Love thy neighbour as thyself",
+    "about": "\"Ye shall be holy: for I the LORD your God am holy.\" The LORD shows what holiness looks like in daily life: honour for father and mother, the corners of the field left for the poor and stranger, honest wages and weights, no gossip and no grudge, the deaf and blind protected, the old man honoured, the stranger loved, no cuttings or marks for the dead. At the centre is the command Jesus called the second great commandment: \"thou shalt love thy neighbour as thyself.\"",
+    "tags": [
+      "Be holy",
+      "Love thy neighbour",
+      "The poor and the stranger",
+      "Honest dealing",
+      "Cuttings and marks"
+    ],
+    "url": "studies/leviticus-19.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "mount-sinai",
+        "tabernacle",
+        "egypt",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells all the congregation, \"Ye shall be holy: for I the LORD your God am holy\"; they are to fear mother and father, keep his sabbaths and turn not to idols (1-4).",
+        "Peace offerings are to be eaten the same day or the next; what is left on the third day is burnt (5-8).",
+        "The corners of the field and the gleanings of the harvest and vineyard are left for the poor and stranger (9-10).",
+        "No stealing, lying or false swearing; no defrauding a neighbour or keeping a hired man's wages overnight; no cursing the deaf or tripping the blind; no partiality in judgment and no talebearing (11-16).",
+        "\"Thou shalt not hate thy brother in thine heart\": rebuke him instead, bear no grudge, and \"love thy neighbour as thyself\" (17-18).",
+        "No mixing of kinds; a man who lies with a betrothed bondmaid brings a ram for a trespass offering and is forgiven; the fruit of new trees waits three years, is holy the fourth and is eaten the fifth (19-25).",
+        "No eating with the blood, no enchantment, no rounding the head or marring the beard, no cuttings in the flesh for the dead or printed marks; no prostituting a daughter (26-29).",
+        "Keep the sabbaths, reverence the sanctuary, regard not familiar spirits or wizards, rise up before the hoary head, love the stranger as thyself, and keep just weights and measures: \"I am the LORD\" (30-37)."
+      ],
+      "key": {
+        "ref": "Leviticus 19:18",
+        "text": "Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD."
+      },
+      "big": "Holiness is not only for the tabernacle; it is for the field, the pay window and the market. Fifteen times the chapter signs a command \"I am the LORD,\" and in the middle stands the verse Jesus called the second great commandment and Paul said fulfils the whole law: \"thou shalt love thy neighbour as thyself.\""
+    }
+  },
+  {
+    "id": "leviticus-20",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 20,
+    "date": "2026-11-13",
+    "title": "Leviticus 20",
+    "sub": "I am the LORD which sanctify you",
+    "about": "The LORD gives the penalties for the sins of chapter 18: death for giving a child to Molech, and, if the people hide their eyes, his own face set against the man and his family; his face against those who turn to familiar spirits; death, cutting off or childlessness for the sins of the bed. In the middle he says, \"I am the LORD which sanctify you,\" and at the end, \"I the LORD am holy, and have severed you from other people, that ye should be mine.\"",
+    "tags": [
+      "Molech",
+      "Familiar spirits",
+      "God sanctifies",
+      "The wages of sin",
+      "Separated to God"
+    ],
+    "url": "studies/leviticus-20.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "molech"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "Whoever gives his seed to Molech is to be stoned; and if the people of the land hide their eyes from him, the LORD will set his face against him, and against his family, and all that go a whoring after him (1-5).",
+        "The LORD will set his face against the soul that turns after familiar spirits and wizards (6).",
+        "\"Sanctify yourselves therefore, and be ye holy\"; \"I am the LORD which sanctify you\" (7-8).",
+        "He that curses father or mother shall be put to death; so shall the adulterer and the adulteress, and those who commit the sins of the bed named in chapter 18 (9-16).",
+        "Others shall be cut off, bear their iniquity, or die childless (17-21).",
+        "Israel must keep his statutes so the land does not spue them out; the nations were abhorred for these things, but Israel shall inherit their land, a land flowing with milk and honey (22-24).",
+        "They are to put difference between clean and unclean, and be holy, for the LORD has severed them from other people to be his; a man or woman with a familiar spirit shall be stoned (25-27)."
+      ],
+      "key": {
+        "ref": "Leviticus 20:8",
+        "text": "And ye shall keep my statutes, and do them: I am the LORD which sanctify you."
+      },
+      "big": "Chapter 20 shows what the sins of chapter 18 cost in Israel's courts: death, cutting off, childlessness. The wage of sin is death, and the New Testament shows Jesus taking that death, and saying to a woman this law condemned, \"Neither do I condemn thee: go, and sin no more.\" The LORD who calls his people holy is the LORD who sanctifies them."
+    }
+  },
+  {
+    "id": "leviticus-21",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 21,
+    "date": "2026-11-13",
+    "title": "Leviticus 21",
+    "sub": "Holy priests, and a place at the table",
+    "about": "The LORD tells Moses what holiness asks of Aaron's sons: how they mourn the dead, whom they marry, and what the high priest must keep. A priest with a blemish may not go near the altar, but he still eats the bread of his God. Three times the LORD says he is the one who sanctifies them.",
+    "tags": [
+      "Holy priests",
+      "Grief and the dead",
+      "The high priest",
+      "The blemished priest",
+      "The LORD sanctifies"
+    ],
+    "url": "studies/leviticus-21.html",
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to speak to the priests, the sons of Aaron: they are not to defile themselves for the dead, except for six near kin (1-4).",
+        "They are not to make baldness, shave off the corner of the beard or make cuttings in the flesh, because they offer the bread of their God and must be holy (5-8).",
+        "A priest's daughter who plays the whore profanes her father (9).",
+        "The high priest, with the anointing oil on his head, may not uncover his head, rend his clothes, go in to any dead body, or leave the sanctuary, and he must take a virgin of his own people to wife (10-15).",
+        "A man of Aaron's seed with any blemish may not approach to offer the bread of his God, and the list of blemishes is given (16-21).",
+        "He may still eat the bread of his God, but he may not go in unto the vail or come nigh unto the altar (22-23).",
+        "Moses tells it to Aaron, to his sons and to all the children of Israel (24)."
+      ],
+      "key": {
+        "ref": "Leviticus 21:22",
+        "text": "He shall eat the bread of his God, both of the most holy, and of the holy."
+      },
+      "big": "The nearer a man comes to the LORD's altar, the more is asked of him, and the LORD does not hide it. But the man the law turned away from the altar for a blemish still ate at the table, and three times the LORD says it is he who makes them holy. The New Testament shows the High Priest who is holy, harmless and undefiled, who touched the dead and gives life, and who calls every believer a royal priesthood."
+    }
+  },
+  {
+    "id": "leviticus-22",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 22,
+    "date": "2026-11-13",
+    "title": "Leviticus 22",
+    "sub": "The holy things, and what may be offered",
+    "about": "Who may eat the holy portions of the offerings, what an unclean priest must do to come back, and what an offering must be: without blemish. The chapter ends with the LORD's own words: I am the LORD which hallow you, that brought you out of the land of Egypt, to be your God.",
+    "tags": [
+      "The holy things",
+      "The way back from uncleanness",
+      "Who may eat",
+      "Without blemish",
+      "I am the LORD"
+    ],
+    "url": "studies/leviticus-22.html",
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "israel",
+        "egypt"
+      ],
+      "story": [
+        "The priests are to separate themselves from the holy things of Israel and not profane the LORD's holy name; whoever comes to them with his uncleanness upon him shall be cut off from his presence (1-3).",
+        "A priest who is a leper, has a running issue, or has touched what is unclean shall not eat of the holy things until he is clean (4-5).",
+        "He shall be unclean until even; he must wash his flesh with water, and when the sun is down he shall be clean and eat, because it is his food (6-7).",
+        "The priests are not to eat what dies of itself or is torn with beasts, lest they bear sin and die (8-9).",
+        "No stranger, sojourner or hired servant may eat of the holy thing, but one bought with the priest's money, or born in his house, may; and the priest's daughter eats or not by whether she has married out or come home (10-13).",
+        "A man who eats a holy thing unwittingly adds the fifth part and gives it to the priest (14-16).",
+        "Offerings for vows and freewill offerings must be a male without blemish; nothing blind, broken, maimed or injured is accepted, not even from a stranger's hand (17-25).",
+        "A young animal is seven days under the dam and accepted from the eighth day; the dam and her young are not killed in one day; a thanksgiving offering is eaten the same day (26-30).",
+        "The LORD ends: keep my commandments; I will be hallowed among the children of Israel; I am the LORD which hallow you, that brought you out of the land of Egypt, to be your God (31-33)."
+      ],
+      "key": {
+        "ref": "Leviticus 22:7",
+        "text": "And when the sun is down, he shall be clean, and shall afterward eat of the holy things; because it is his food."
+      },
+      "big": "Some things shut a man out from the holy things, and the LORD names them all, but every one has a way back: wash, wait for the evening, and eat your own food. The offering had to be without blemish, and the New Testament says Christ is that Lamb. The household eats; and in Christ the stranger is a fellowcitizen of the household of God."
+    }
+  },
+  {
+    "id": "leviticus-23",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 23,
+    "date": "2026-11-13",
+    "title": "Leviticus 23",
+    "sub": "The feasts of the LORD",
+    "about": "The LORD gives Israel his calendar: the sabbath, the passover and unleavened bread, the firstfruits and the fifty days to the new meat offering, the trumpets, the day of atonement, and the feast of tabernacles. The New Testament names what they point to: Christ our passover, the firstfruits of them that slept, the day of Pentecost, the trump of God, and the tabernacle of God with men.",
+    "tags": [
+      "The sabbath",
+      "The passover",
+      "Firstfruits and Pentecost",
+      "The day of atonement",
+      "The feast of tabernacles"
+    ],
+    "url": "studies/leviticus-23.html",
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "israel",
+        "egypt"
+      ],
+      "story": [
+        "The LORD names the feasts to be proclaimed as holy convocations: first the seventh day, the sabbath of rest (1-4).",
+        "The passover is the fourteenth day of the first month at even; on the fifteenth begins the feast of unleavened bread for seven days (5-8).",
+        "When they come into the land they bring a sheaf of the firstfruits, waved by the priest on the morrow after the sabbath, with a lamb without blemish, and eat nothing of the new crop until that day (9-14).",
+        "From that day they count seven sabbaths, fifty days, and bring a new meat offering and two wave loaves baken with leaven, with a sin offering and burnt offerings (15-21).",
+        "They are to leave the corners of the field and the gleaning for the poor and the stranger (22).",
+        "On the first day of the seventh month is a memorial of blowing of trumpets (23-25).",
+        "The tenth day of the seventh month is a day of atonement: they afflict their souls and do no work, from even unto even (26-32).",
+        "The fifteenth day is the feast of tabernacles for seven days, with the eighth day a solemn assembly; they take goodly boughs, rejoice before the LORD, and dwell in booths, so that their generations may know that he made them dwell in booths when he brought them out of Egypt (33-43).",
+        "Moses declares the feasts of the LORD to the children of Israel (44)."
+      ],
+      "key": {
+        "ref": "Leviticus 23:2",
+        "text": "Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts."
+      },
+      "big": "God gave his people a year with him in it: a rest every seventh day, a lamb at the passover, a first handful of the harvest, a day to humble themselves for sin, and a week of joy in booths. The New Testament says the body of these shadows is Christ: our passover sacrificed, the firstfruits risen, the Spirit come at Pentecost, the High Priest gone in once with his own blood, and, still ahead, the trump of God and the tabernacle of God with men."
+    }
+  },
+  {
+    "id": "leviticus-24",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 24,
+    "date": "2026-11-13",
+    "title": "Leviticus 24",
+    "sub": "Oil and bread, always; and a man who cursed the name",
+    "about": "The people bring pure oil so the lamps burn continually, and twelve cakes are set in two rows on the table before the LORD every sabbath. Then the son of an Israelitish woman blasphemes the name of the LORD in the camp, is put in ward until the LORD speaks, and is stoned without the camp; and the LORD gives one manner of law for the stranger and the born.",
+    "tags": [
+      "The lamps",
+      "The twelve cakes",
+      "The blasphemer",
+      "Without the camp",
+      "One manner of law"
+    ],
+    "url": "studies/leviticus-24.html",
+    "overview": {
+      "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "shelomith",
+        "dibri",
+        "dan-son-of-jacob"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "Israel brings pure oil olive beaten for the light, and Aaron orders the lamps before the LORD continually, from the evening unto the morning (1-4).",
+        "Twelve cakes of fine flour are set in two rows of six upon the pure table with frankincense, every sabbath, and are eaten by Aaron and his sons in the holy place (5-9).",
+        "The son of an Israelitish woman, whose father was an Egyptian, strives with a man of Israel in the camp, blasphemes the name of the LORD and curses; his mother was Shelomith, the daughter of Dibri, of the tribe of Dan (10-11).",
+        "They put him in ward that the mind of the LORD might be shewed them (12).",
+        "The LORD says to bring him without the camp, let all that heard him lay their hands upon his head, and let all the congregation stone him; whoever curseth his God shall bear his sin, and the stranger is under the same law as the born (13-16).",
+        "Life for life, beast for beast, and as a man hath caused a blemish in his neighbour, so shall it be done to him; one manner of law for the stranger and for one of their own country (17-22).",
+        "They bring him out of the camp and stone him, and the children of Israel do as the LORD commanded Moses (23)."
+      ],
+      "key": {
+        "ref": "Leviticus 24:22",
+        "text": "Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I am the LORD your God."
+      },
+      "big": "The lamps and the bread are never allowed to run out, and the name of the LORD is never to be made light of. The man who cursed it was taken without the camp, and the New Testament says Jesus, accused of blasphemy, suffered without the gate and was made a curse for us. So a blasphemer like Paul can obtain mercy, and the measure for a judge is not a licence for private revenge."
+    }
+  },
+  {
+    "id": "leviticus-25",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 25,
+    "date": "2026-11-13",
+    "title": "Leviticus 25",
+    "sub": "The sabbath year and the jubile",
+    "about": "Every seventh year the land rests. After seven sevens, on the day of atonement, the trumpet of the jubile sounds and liberty is proclaimed: every man returns to his possession and his family. The land is the LORD's, a poor brother is redeemed and never ruled with rigour, and Jesus read the same liberty about himself.",
+    "tags": [
+      "The sabbath year",
+      "The jubile",
+      "Liberty proclaimed",
+      "The land is the LORD's",
+      "The redeemer",
+      "A brother grown poor"
+    ],
+    "url": "studies/leviticus-25.html",
+    "overview": {
+      "where": "In mount Sinai, with the tabernacle newly reared up (25:1)",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel",
+        "canaan",
+        "egypt"
+      ],
+      "story": [
+        "The LORD speaks to Moses in mount Sinai: when they come into the land, the land is to keep a sabbath unto the LORD (1-2).",
+        "Six years they sow and prune; the seventh year is a sabbath of rest for the land, and what grows of itself is food for all (3-7).",
+        "Seven sabbaths of years make forty and nine; on the tenth day of the seventh month, the day of atonement, the trumpet of the jubile sounds, liberty is proclaimed, and every man returns to his possession and his family (8-13).",
+        "Buying and selling is by the number of harvests before the jubile, with no oppression; the LORD promises his blessing in the sixth year for the seventh (14-22).",
+        "The land is the LORD's and they are strangers and sojourners with him; a poor brother's land may be redeemed by his kin or by himself, or goes out at the jubile (23-28).",
+        "Houses in walled cities, in villages and in the cities of the Levites (29-34).",
+        "A brother grown poor is to be relieved, with no usury, and not made a bondservant but a hired servant until the jubile; they are the LORD's servants, brought out of Egypt (35-46).",
+        "A brother sold to a stranger may be redeemed by his kin or himself, or goes out free in the year of jubile with his children (47-55)."
+      ],
+      "key": {
+        "ref": "Leviticus 25:10",
+        "text": "And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family."
+      },
+      "big": "Rest for the land, release for the debtor, and redemption by a kinsman: the jubile says that nothing sold is lost for ever, because the land is the LORD's and his people are his servants. The trumpet sounds on the day of atonement, and Jesus read the same liberty about himself (Luke 4:18-19), the Brother who took flesh and blood to redeem us (Hebrews 2:14-15)."
+    }
+  },
+  {
+    "id": "leviticus-26",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 26,
+    "date": "2026-11-13",
+    "title": "Leviticus 26",
+    "sub": "The blessing, the warning, and the remembering",
+    "about": "Walk in his statutes and the LORD will walk among you. Walk contrary to him and the warnings come in four rounds, ending in the scattering and the desolate land. Yet even then, if they confess their iniquity, he will remember his covenant with Jacob, Isaac and Abraham, and will not cast them away.",
+    "tags": [
+      "Idols and sabbaths",
+      "The blessings",
+      "I will walk among you",
+      "Seven times",
+      "The land's sabbaths",
+      "He will remember his covenant"
+    ],
+    "url": "studies/leviticus-26.html",
+    "overview": {
+      "where": "In mount Sinai, with the tabernacle newly reared up (26:46)",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "people": [
+        "moses",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel",
+        "egypt",
+        "tabernacle"
+      ],
+      "story": [
+        "No idols or graven images; keep my sabbaths and reverence my sanctuary (1-2).",
+        "If they walk in his statutes: rain in due season, bread to the full, peace, no fear, and five chasing a hundred (3-8).",
+        "He will establish his covenant, set his tabernacle among them, walk among them, and be their God; he broke the bands of their yoke (9-13).",
+        "If they will not hearken: terror, consumption, the burning ague, enemies reigning, and then seven times more, four rounds (14-28).",
+        "The hardest things, the cities waste, the scattering among the heathen, and the land enjoying her sabbaths while they are in their enemies' land (29-39).",
+        "If they confess their iniquity and their uncircumcised hearts are humbled, he will remember his covenant with Jacob, Isaac and Abraham, and the land (40-42).",
+        "He will not cast them away nor abhor them utterly; these are the statutes, judgments and laws made in mount Sinai by the hand of Moses (43-46)."
+      ],
+      "key": {
+        "ref": "Leviticus 26:12",
+        "text": "And I will walk among you, and will be your God, and ye shall be my people."
+      },
+      "big": "The chapter lays two roads before Israel, and four rounds of warning between them, each with a door left open. At the end the LORD says that if they confess and are humbled he will remember his covenant, and “I will not cast them away”. Paul says the promise to walk among them is true of the church (2 Corinthians 6:16)."
+    }
+  },
+  {
+    "id": "leviticus-27",
+    "type": "chapter",
+    "book": "Leviticus",
+    "ch": 27,
+    "date": "2026-11-13",
+    "title": "Leviticus 27",
+    "sub": "Vows, the fifth part, and the tithe",
+    "about": "What a man has vowed to the LORD he is to pay, by the priest's valuation, and a fifth part more to buy it back. What is already the LORD's, the firstling and the tenth, no man can vow. The book closes: “These are the commandments, which the LORD commanded Moses for the children of Israel in mount Sinai.”",
+    "tags": [
+      "Vows",
+      "The priest's valuation",
+      "The fifth part",
+      "The firstling",
+      "The tithe",
+      "The end of Leviticus"
+    ],
+    "url": "studies/leviticus-27.html",
+    "overview": {
+      "where": "In mount Sinai, with the tabernacle newly reared up (27:34)",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel",
+        "tabernacle"
+      ],
+      "story": [
+        "A singular vow: the persons shall be for the LORD by the priest's estimation, in shekels of silver after the shekel of the sanctuary, by age and sex (1-7).",
+        "A man poorer than the estimation presents himself before the priest, who values him according to his ability (8).",
+        "A beast given to the LORD is holy and may not be changed; an unclean beast the priest values (9-13).",
+        "A house or a field given to the LORD, its valuation, redeeming it with the fifth part added, and the jubile (14-25).",
+        "The firstling is the LORD's already, and no man may sanctify it; a devoted thing is most holy and not redeemed (26-29).",
+        "The tithe of the land and of the herd and flock is the LORD's and holy (30-33).",
+        "These are the commandments the LORD commanded Moses for the children of Israel in mount Sinai (34)."
+      ],
+      "key": {
+        "ref": "Leviticus 27:34",
+        "text": "These are the commandments, which the LORD commanded Moses for the children of Israel in mount Sinai."
+      },
+      "big": "Leviticus ends with what a man owes God: a vow is a promise with a price, the poor man is valued by his ability, and what is already the LORD's cannot be vowed. Looking back, the whole book answers how a sinful people can come near a holy God: by the blood he gave (17:11) and the holiness he asks (19:2), which Christ has perfected for ever (Hebrews 10:14)."
+    }
   }
 ];

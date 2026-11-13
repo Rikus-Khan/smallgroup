@@ -147,7 +147,22 @@
     ["gerah", "1/20 of a shekel"], ["cunning", "skilful"], ["chapiters", "tops of pillars"],
     ["handbreadth", "a hand's width"], ["lookingglasses", "bronze mirrors"], ["bekah", "half a shekel"],
     ["sardius", "a red stone"], ["carbuncle", "a red gem"], ["girdle|girdles", "belt, sash"],
-    ["bullock|bullocks", "young bull"]
+    ["bullock|bullocks", "young bull"],
+    ["ague", "a burning fever"], ["asunder", "apart, in pieces"], ["baken", "baked"],
+    ["beeves", "oxen, cattle"], ["bondmaid|bondmaids", "a woman slave"], ["bondservant", "a slave"],
+    ["bonnets", "the linen caps of Aaron's sons"], ["brokenfooted", "with a broken foot, crippled"], ["brokenhanded", "with a broken hand, crippled"],
+    ["censer|censers", "a small pan for carrying burning coals, with incense laid on them"], ["clovenfooted", "with the hoof split in two"], ["coney", "a small beast that lives in the rocks"],
+    ["convocation", "a calling together, a holy gathering"], ["crookbackt", "with a bent, humped back"], ["cuckow", "the cuckoo"],
+    ["ephah", "a dry measure, about half a bushel"], ["fretting|fret", "eating away, spreading"], ["fryingpan", "a deep pan for baking or frying"],
+    ["gier eagle", "an eagle of the vulture kind"], ["girded", "belted, with a sash tied on"], ["gleaning|gleanings", "what is left in the field after the reapers"],
+    ["hard by", "close beside"], ["hoary", "grey or white with age"], ["homer", "a large dry measure of grain"],
+    ["jubile", "the fiftieth year, when the trumpet sounds and every man goes home"], ["kinswoman", "a woman relative"], ["lapwing", "a crested bird of the fields"],
+    ["meteyard", "a measuring rod"], ["oblation|oblations", "a gift offered to God"], ["ospray", "a hawk that dives for fish"],
+    ["ossifrage", "a great bird of prey ('bone-breaker')"], ["overplus", "the extra, what is left over"], ["plaister|plaistered", "plaster; plastered"],
+    ["scall", "a scaly sore on the head or the beard"], ["scurvy", "a scaly, itching skin disease"], ["servile", "slaves' work; the ordinary toil of the week"],
+    ["spue|spued", "spit out, vomit"], ["strakes", "streaks or hollows in a wall"], ["talebearer", "a gossip who carries stories about people"],
+    ["tenth deal|tenth deals", "a tenth part of an ephah, about two quarts"], ["turtles", "turtledoves, small wild doves"], ["unwittingly", "without knowing it"],
+    ["wen", "a lump or growth on the skin"], ["flay", "to strip off the skin"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
