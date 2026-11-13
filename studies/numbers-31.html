@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Numbers 31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* A thousand of every tribe (31:4–5), and the same twelve thousand counted home (31:49): twelve tiles, one per tribe, in the order of the camp (Numbers 2) */
+.nu31-twelve { display: grid; grid-template-columns: repeat(6, 1fr); gap: .45rem; margin: .3em 0 .9em; max-width: 46rem; }
+.nu31-twelve span { display: block; padding: .45em .2em .4em; border: 1.5px solid var(--line-strong); border-radius: 8px; background: var(--surface); text-align: center; line-height: 1.15; font-size: clamp(.72rem, .66rem + .3vw, .95rem); color: var(--ink-soft); opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease; transition-delay: calc(var(--k, 0) * 120ms + 300ms); }
+.nu31-twelve span b { display: block; font: 600 clamp(1rem, .9rem + .5vw, 1.4rem) var(--serif); color: var(--ink); }
+.slide.active .nu31-twelve span { opacity: 1; transform: none; }
+.nu31-twelve.nu31-home span { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.nu31-twelve.nu31-home span b { color: var(--accent-hot); }
+.nu31-twelve.nu31-home span { position: relative; }
+.nu31-twelve.nu31-home span::before { content: "✓"; position: absolute; bottom: .3em; right: .45em; font-weight: 700; color: var(--accent); }
+.nu31-sum { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1rem; margin: 0 0 .8em; font-family: var(--serif); }
+.nu31-sum b { font: 600 clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem)/1 var(--serif); color: var(--accent-hot); }
+.nu31-sum span { color: var(--ink-soft); font-size: clamp(.9rem, .82rem + .35vw, 1.1rem); }
+@media (max-width: 640px) { .nu31-twelve { grid-template-columns: repeat(4, 1fr); } }
+
+/* Through the fire, through the water (31:22–23): two baskets of plunder, each with the way it was made clean */
+.nu31-purge { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem 1.4rem; margin: .3em 0 1em; }
+.nu31-purge > div { padding: .8em 1em; border-radius: 10px; border: 2px solid var(--line-strong); background: var(--surface); }
+.nu31-purge h3 { margin: 0 0 .35em; font: 600 clamp(1.1rem, .95rem + .7vw, 1.6rem) var(--serif); }
+.nu31-purge .nu31-fire { border-color: var(--warm); background: color-mix(in srgb, var(--warm) 12%, var(--surface)); }
+.nu31-purge .nu31-fire h3 { color: var(--warm); }
+.nu31-purge .nu31-water { border-color: var(--cool); background: color-mix(in srgb, var(--cool) 12%, var(--surface)); }
+.nu31-purge .nu31-water h3 { color: var(--cool); }
+.nu31-purge ul { list-style: none; margin: 0 0 .5em; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; }
+.nu31-purge li { padding: .15em .55em; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--bg); font-size: clamp(.82rem, .76rem + .3vw, 1.02rem); }
+.nu31-purge p { margin: 0; color: var(--ink-soft); font-size: clamp(.85rem, .78rem + .3vw, 1.05rem); line-height: 1.35; }
+.nu31-purge small { color: var(--ink-soft); }
+@media (max-width: 640px) { .nu31-purge { grid-template-columns: 1fr; } }
+
+/* The prey divided (31:26–47): taken, halved, the LORD's part from each half */
+.nu31-split { width: 100%; border-collapse: collapse; margin: .2em 0 .9em; font-size: clamp(.8rem, .72rem + .38vw, 1.08rem); }
+.nu31-split th, .nu31-split td { padding: .32em .45em; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.nu31-split th { font: 600 .92em var(--sans); color: var(--ink-soft); vertical-align: bottom; white-space: normal; }
+.nu31-split th:first-child, .nu31-split td:first-child { text-align: left; }
+.nu31-split td:first-child { font-family: var(--serif); font-weight: 600; }
+.nu31-split .nu31-lord { color: var(--accent-hot); font-weight: 700; }
+.nu31-split .nu31-calc { color: var(--ink-soft); font-style: italic; }
+.nu31-split small { display: block; font-weight: 400; font-size: .85em; }
+@media (max-width: 640px) { .nu31-split th, .nu31-split td { padding: .3em .25em; white-space: normal; } }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Numbers 31</h1>
+    <p class="sub rise" style="--d:3">Not one man lacking</p>
+    <p class="tag rise" style="--d:5">Moses' last battle. The LORD's judgment falls on Midian for the snare at Peor, Balaam dies by the sword, the men of war are made clean, the spoil is shared, and the captains count their men and find every one of them alive.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Moses' last work</span><span class="seed-q">What did the LORD tell Moses would come after this war?</span></li>
+      <li class="step"><span class="topic">The LORD's quarrel</span><span class="seed-q">Why did the LORD send Israel against Midian?</span></li>
+      <li class="step"><span class="topic">Balaam's end</span><span class="seed-q">How did Balaam die, and what had he done to Israel?</span></li>
+      <li class="step"><span class="topic">Clean again</span><span class="seed-q">What did the men of war have to do before they came back into the camp?</span></li>
+      <li class="step"><span class="topic">The LORD's share</span><span class="seed-q">How was the prey divided, and what went to the LORD?</span></li>
+      <li class="step"><span class="topic">Not one man</span><span class="seed-q">What did the captains find when they counted their men, and what did they bring?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">“Avenge the LORD of Midian”</h2>
+    <p class="range rise" style="--d:2">Verses 1–12</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Twelve thousand men go out, and Balaam is found among the dead.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="Avenge the children of Israel of the Midianites|afterward shalt thou be gathered unto thy people"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">One more command, and then home</h2>
+    <p class="note rise" style="--d:2">This war was not Israel's idea. After Peor the LORD had already said it:</p>
+    <blockquote class="quote step"><p>“Vex the Midianites, and smite them: For they vex you with their wiles, wherewith they have beguiled you in the matter of Peor, and in the matter of Cozbi, the daughter of a prince of Midian, their sister, which was slain in the day of the plague for Peor’s sake.”</p><cite>Numbers 25:17–18</cite></blockquote>
+    <p class="note step">Now it is time, and it is Moses' last piece of work. “Afterward shalt thou be gathered unto thy people.” He has already been told he will see the land from the mountain and not go in (27:12–13). He doesn't argue, and he doesn't drag his feet. The next verse, he is giving orders.</p>
+    <p class="note step"><em>Gathered unto thy people</em> is not the language of a man who simply stops. It is the language of a man going to join those who went before. For a believer, the end of the work is not the end of the man.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-5" data-hl="avenge the LORD of Midian|twelve thousand armed for war"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A thousand of every tribe</h2>
+    <div class="nu31-twelve" role="img" aria-label="Twelve tiles, one for each tribe, each sending a thousand men: Judah, Issachar, Zebulun, Reuben, Simeon, Gad, Ephraim, Manasseh, Benjamin, Dan, Asher, Naphtali. Twelve thousand in all.">
+      <span style="--k:0"><b>Judah</b>1,000</span><span style="--k:1"><b>Issachar</b>1,000</span><span style="--k:2"><b>Zebulun</b>1,000</span>
+      <span style="--k:3"><b>Reuben</b>1,000</span><span style="--k:4"><b>Simeon</b>1,000</span><span style="--k:5"><b>Gad</b>1,000</span>
+      <span style="--k:6"><b>Ephraim</b>1,000</span><span style="--k:7"><b>Manasseh</b>1,000</span><span style="--k:8"><b>Benjamin</b>1,000</span>
+      <span style="--k:9"><b>Dan</b>1,000</span><span style="--k:10"><b>Asher</b>1,000</span><span style="--k:11"><b>Naphtali</b>1,000</span>
+    </div>
+    <p class="nu31-sum step"><b>12,000</b><span>out of 601,730 men of war just numbered (26:51): about one man in fifty</span></p>
+    <p class="note step">The LORD says, “Avenge the children of Israel.” Moses says, “avenge the LORD.” It is the same war, and Moses names it rightly: Midian's sin at Peor was first against God. <em>Avenge</em> means to see a wrong put right by judgment. This was the LORD's quarrel, carried out at his word, not a grudge.</p>
+    <blockquote class="quote step"><p>“Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”</p><cite>Romans 12:19</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="6" data-hl="Phinehas the son of Eleazar the priest|with the holy instruments, and the trumpets to blow in his hand"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A priest goes with the army</h2>
+    <p class="note rise" style="--d:2">Moses doesn't send a general at the head. He sends <em>Phinehas</em>, the priest's son, the man who stood up for the LORD at Peor and stopped the plague (25:7–8, 11). The holy instruments go with him (Moses doesn't list them), and the silver trumpets, as the LORD had ordered back at Sinai:</p>
+    <blockquote class="quote step"><p>“And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before the LORD your God, and ye shall be saved from your enemies.”</p><cite>Numbers 10:9</cite></blockquote>
+    <p class="note step">The message to every man in the ranks: this is God's battle, fought in God's presence. Twelve thousand were enough, because they weren't the ones who would win it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="7-8" data-hl="as the LORD commanded Moses|Balaam also the son of Beor they slew with the sword"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Balaam's last end</h2>
+    <div class="pair">
+      <div class="scroll rise" style="--d:2"><p class="ref">What Balaam wished, Numbers 23:10</p><p class="kjv">“Let me die the death of the righteous, and let my last end be like his!”</p></div>
+      <div class="scroll step"><p class="ref">How Balaam died, Numbers 31:8</p><p class="kjv">“Balaam also the son of Beor they slew with the sword.”</p></div>
+    </div>
+    <p class="note step">Balaam went home after the blessings (24:25), but he did not stay home. He was found among the Midianites, beside five kings: Evi, Rekem, Zur, Hur and Reba. Zur was the father of Cozbi, the woman slain at Peor (25:15). Balaam had thrown in his lot with Israel's enemies, and he fell with them.</p>
+    <blockquote class="quote step"><p>“Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;”</p><cite>2 Peter 2:15</cite></blockquote>
+    <p class="note step">Wanting to die the death of the righteous is not enough. You have to live on the LORD's side to die on it.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="9-10" data-hl="they burnt all their cities wherein they dwelt, and all their goodly castles, with fire"></section>
+
+<section class="slide verse" data-v="11-12" data-hl="unto the camp at the plains of Moab, which are by Jordan near Jericho"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Brought back to the camp</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>spoil</b>goods taken in war</li>
+      <li><b>prey</b>what was captured, of men and of beasts</li>
+      <li><b>castles</b>here, their walled strongholds, the fortified camps they lived in</li>
+      <li><b>goodly</b>fine, handsome</li>
+    </ul>
+    <p class="note step">Nothing was kept back in a tent. Everything taken was brought “unto Moses, and Eleazar the priest, and unto the congregation”, to the camp in the plains of Moab, across the Jordan from Jericho, where Israel had been since 22:1. What happened to it next was not up to the men who took it. The LORD would say.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">“Abide without the camp seven days”</h2>
+    <p class="range rise" style="--d:2">Verses 13–24</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">Moses is angry, and then the soldiers are made clean before they come home.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Moses was wroth with the officers of the host"></section>
+
+<section class="slide verse" data-v="15-16" data-hl="through the counsel of Balaam, to commit trespass against the LORD in the matter of Peor"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">What Balaam couldn't curse, he tried to corrupt</h2>
+    <p class="note rise" style="--d:2">Now we learn what Balaam did after he “returned to his place.” He couldn't curse Israel; God turned every curse into a blessing. So he gave Balak another plan: don't fight them, draw them in. Send the women of Midian and Moab, and invite Israel to the feasts of their gods.</p>
+    <blockquote class="quote step"><p>“And Israel abode in Shittim, and the people began to commit whoredom with the daughters of Moab. And they called the people unto the sacrifices of their gods: and the people did eat, and bowed down to their gods.”</p><cite>Numbers 25:1–2</cite></blockquote>
+    <blockquote class="quote step"><p>“But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Israel, to eat things sacrificed unto idols, and to commit fornication.”</p><cite>Revelation 2:14</cite></blockquote>
+    <p class="note step">It worked where the curses failed. Twenty and four thousand died in the plague (25:9). That is why Moses was <em>wroth</em> (very angry) to see the same women brought back into the camp. Many of us know this plan. The enemy that can't take you by force will try to take you by invitation.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="17-18"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A hard sentence</h2>
+    <p class="note rise" style="--d:2">This is one of the hardest commands in the Bible to read, and we shouldn't pretend otherwise. It was a sentence of judgment from the LORD on one people, at one time, for a sin that had already killed twenty and four thousand in Israel. The grown women, by whom the snare at Peor was laid, were put to death, and the boys with them; the young girls were spared and brought into Israel.</p>
+    <blockquote class="quote step"><p>“That be far from thee to do after this manner, to slay the righteous with the wicked: and that the righteous should be as the wicked, that be far from thee: Shall not the Judge of all the earth do right?”</p><cite>Genesis 18:25</cite></blockquote>
+    <p class="note step">God is the judge, and his judgments are right even when they are heavy. But this was never handed to us as a way to fight. A Christian's war is a different kind:</p>
+    <blockquote class="quote step"><p>“For though we walk in the flesh, we do not war after the flesh: (For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds;)”</p><cite>2 Corinthians 10:3–4</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="abide without the camp seven days|purify both yourselves and your captives on the third day, and on the seventh day"></section>
+
+<section class="slide verse" data-v="21-24" data-hl="Every thing that may abide the fire, ye shall make it go through the fire|it shall be purified with the water of separation|afterward ye shall come into the camp"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Through the fire, through the water</h2>
+    <div class="nu31-purge">
+      <div class="nu31-fire rise" style="--d:2">
+        <h3>What can abide the fire</h3>
+        <ul><li>gold</li><li>silver</li><li>brass</li><li>iron</li><li>tin</li><li>lead</li></ul>
+        <p>through the fire, and then the water of separation as well <small>(31:22–23)</small></p>
+      </div>
+      <div class="nu31-water step">
+        <h3>What would burn</h3>
+        <ul><li>raiment</li><li>skins</li><li>goats' hair</li><li>wood</li></ul>
+        <p>through the water <small>(31:20, 23)</small></p>
+      </div>
+    </div>
+    <p class="note step">The war was the LORD's own command, and still every man who had killed or touched the dead was unclean. Death defiles. They waited outside the camp seven days, washed on the third day and the seventh with the <em>water of separation</em> made from the red heifer's ashes (19:9, 12), and only then came home. <em>Abide the fire</em> means bear it without burning up.</p>
+    <blockquote class="quote step"><p>“That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ:”</p><cite>1 Peter 1:7</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Coming home clean</h2>
+    <p class="note rise" style="--d:2">These men came back from a hard place with things on them that didn't belong in the camp. They weren't sent away for good. They were given a way to be clean, and a day when they could walk back in.</p>
+    <p class="note step">Some of you have come back from years in places you'd rather not name, and you carry them. The Bible doesn't tell you to pretend you weren't there. It tells you there is a washing that reaches all the way down:</p>
+    <blockquote class="quote step"><p>“But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.”</p><cite>1 John 1:7</cite></blockquote>
+    <p class="note step">And notice where it puts you after the washing: in fellowship, “one with another”, back inside the camp with your brothers.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">“Divide the prey into two parts”</h2>
+    <p class="range rise" style="--d:2">Verses 25–47</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The fighters and the people share alike, and the LORD has his part from both.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="25-27" data-hl="divide the prey into two parts"></section>
+
+<section class="slide verse" data-v="28-29" data-hl="one soul of five hundred"></section>
+
+<section class="slide verse" data-v="30" data-hl="one portion of fifty"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Half and half</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>levy a tribute</b>raise a set share, a tax</li>
+      <li><b>one soul of five hundred</b>one out of every five hundred</li>
+      <li><b>beeves</b>oxen, cattle</li>
+      <li><b>heave offering</b>a portion lifted up to the LORD, then given to the priest</li>
+    </ul>
+    <p class="note step">Twelve thousand fighting men took half. The whole congregation, who stayed in the camp, took the other half. The LORD took his part from both: one in five hundred from the soldiers' half for <em>Eleazar the priest</em>, one in fifty from the people's half for <em>the Levites</em>.</p>
+    <p class="note step">The men who went out didn't keep it all, and the men who stayed home didn't go without. David made the same rule after a battle of his own:</p>
+    <blockquote class="quote step"><p>“For who will hearken unto you in this matter? but as his part is that goeth down to the battle, so shall his part be that tarrieth by the stuff: they shall part alike.”</p><cite>1 Samuel 30:24</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="31-32" data-hl="did as the LORD commanded Moses"></section>
+
+<section class="slide verse" data-v="33-35"></section>
+
+<section class="slide verse" data-v="36-37" data-hl="the LORD’S tribute of the sheep was six hundred and threescore and fifteen"></section>
+
+<section class="slide verse" data-v="38-40"></section>
+
+<section class="slide verse" data-v="41-44" data-hl="which was the LORD’S heave offering"></section>
+
+<section class="slide verse" data-v="45-47" data-hl="gave them unto the Levites, which kept the charge of the tabernacle of the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Every number checks</h2>
+    <table class="nu31-split rise" style="--d:2" aria-label="The prey divided. Sheep: 675,000 taken; each half 337,500; the LORD's tribute 675; the Levites' one in fifty 6,750. Beeves: 72,000; 36,000; 72; 720. Asses: 61,000; 30,500; 61; 610. Persons: 32,000; 16,000; 32; 320.">
+      <thead><tr><th></th><th>Taken</th><th>Each half</th><th>The LORD's tribute <small>1 in 500, to Eleazar</small></th><th>To the Levites <small>1 in 50</small></th></tr></thead>
+      <tbody>
+        <tr><td>Sheep</td><td>675,000</td><td>337,500</td><td class="nu31-lord">675</td><td class="nu31-calc">6,750</td></tr>
+        <tr><td>Beeves</td><td>72,000</td><td>36,000</td><td class="nu31-lord">72</td><td class="nu31-calc">720</td></tr>
+        <tr><td>Asses</td><td>61,000</td><td>30,500</td><td class="nu31-lord">61</td><td class="nu31-calc">610</td></tr>
+        <tr><td>Persons</td><td>32,000</td><td>16,000</td><td class="nu31-lord">32</td><td class="nu31-calc">320</td></tr>
+      </tbody>
+    </table>
+    <p class="note step">Work it out and every figure Moses wrote agrees: the two halves make the whole, and each tribute is exactly one in five hundred. (The Levites' column in italics is our own arithmetic; Moses gives the rule, “one portion of fifty”, not the totals.)</p>
+    <p class="note step">Four times in this chapter: “as the LORD commanded Moses” (31:7, 31, 41, 47). The plunder of a war was handled to the last ass by God's word. Nothing about a man's money or goods is outside it.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part four</p>
+    <h2 class="rise" style="--d:1">“There lacketh not one man of us”</h2>
+    <p class="range rise" style="--d:2">Verses 48–54</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">The captains count their men, and come to Moses with gold.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="48-50" data-hl="there lacketh not one man of us|to make an atonement for our souls before the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Twelve thousand out, twelve thousand home</h2>
+    <div class="nu31-twelve nu31-home" role="img" aria-label="The same twelve tiles, each tribe's thousand counted home, every one ticked.">
+      <span style="--k:0"><b>Judah</b>1,000</span><span style="--k:1"><b>Issachar</b>1,000</span><span style="--k:2"><b>Zebulun</b>1,000</span>
+      <span style="--k:3"><b>Reuben</b>1,000</span><span style="--k:4"><b>Simeon</b>1,000</span><span style="--k:5"><b>Gad</b>1,000</span>
+      <span style="--k:6"><b>Ephraim</b>1,000</span><span style="--k:7"><b>Manasseh</b>1,000</span><span style="--k:8"><b>Benjamin</b>1,000</span>
+      <span style="--k:9"><b>Dan</b>1,000</span><span style="--k:10"><b>Asher</b>1,000</span><span style="--k:11"><b>Naphtali</b>1,000</span>
+    </div>
+    <p class="note step">The officers took the count and it came out the same: “there lacketh not one man of us.” <em>Lacketh</em>: is missing. They didn't boast about it. They knew who had kept them, and they brought gold to say so.</p>
+    <p class="note step">Why “an atonement for our souls”? The captains don't explain. But they had just numbered their men, and the law said that when Israel was numbered, every man was to give “a ransom for his soul unto the LORD … that there be no plague among them” (Exodus 30:12). After Peor's plague, no one wanted to take that lightly.</p>
+    <blockquote class="quote step"><p>“That the saying might be fulfilled, which he spake, Of them which thou gavest me have I lost none.”</p><cite>John 18:9</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="51-52" data-hl="sixteen thousand seven hundred and fifty shekels"></section>
+
+<section class="slide verse" data-v="53-54" data-hl="For the men of war had taken spoil, every man for himself.|for a memorial for the children of Israel before the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">A memorial before the LORD</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>oblation</b>a gift offered to God</li>
+      <li><b>tablets</b>here, gold ornaments worn on the body</li>
+      <li><b>wrought jewels</b>gold worked into jewellery</li>
+      <li><b>memorial</b>something kept so a thing is not forgotten</li>
+    </ul>
+    <p class="note step"><em>16,750 shekels</em> of gold, from the captains alone. The common soldiers kept what they took (verse 53). The officers, who answered for other men's lives, gave theirs back to God. And Moses didn't melt it into something for himself. He put it in the tabernacle, “for a memorial for the children of Israel before the LORD.”</p>
+    <p class="note step">A memorial is for the forgetful, and that's all of us. The day God brought you through, the day nobody was lost, is worth marking.</p>
+    <blockquote class="quote step"><p>“Bless the LORD, O my soul, and forget not all his benefits:”</p><cite>Psalm 103:2</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Real world: the snare and the count</h2>
+    <p class="note rise" style="--d:2">Midian never came at Israel with swords. It came with an invitation. The chapter that closes that story closes with every man accounted for.</p>
+    <ul class="signs step">
+      <li><b>Sin</b>Peor: a trap laid by a man who couldn't curse Israel, so he tempted them. The enemy still works that way.</li>
+      <li><b>Regret</b>Twenty and four thousand died for one season of giving in. Sin always costs more than it shows.</li>
+      <li><b>Grace</b>A way to be clean and come back into the camp; a ransom for the soul; “I have lost none.”</li>
+      <li><b>Hope</b>The war is the LORD's. Twelve thousand went, and twelve thousand came home.</li>
+      <li><b>Today</b>Name your Peor: the place, the people, the invitation that gets you. Tell a brother today, and stay out of it.</li>
+    </ul>
+    <blockquote class="quote step"><p>“Wherefore let him that thinketh he standeth take heed lest he fall. There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:12–13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">Moses' last work</span><span class="seed-q">“afterward shalt thou be gathered unto thy people” <cite>31:2</cite></span><span class="take">Moses finished his work obediently, and went to join those who went before.</span></li>
+      <li class="step"><span class="topic">The LORD's quarrel</span><span class="seed-q">“avenge the LORD of Midian” <cite>31:3</cite></span><span class="take">Midian's snare at Peor was a sin against God, and God judged it.</span></li>
+      <li class="step"><span class="topic">Balaam's end</span><span class="seed-q">“Balaam also the son of Beor they slew with the sword” <cite>31:8</cite></span><span class="take">The man who counselled Israel into sin died among Israel's enemies.</span></li>
+      <li class="step"><span class="topic">Clean again</span><span class="seed-q">“ye shall be clean, and afterward ye shall come into the camp” <cite>31:24</cite></span><span class="take">Death defiles; God gave a way to be cleansed and come home.</span></li>
+      <li class="step"><span class="topic">The LORD's share</span><span class="seed-q">“divide the prey into two parts” <cite>31:27</cite></span><span class="take">Fighters and people shared alike, and the LORD had his part from both.</span></li>
+      <li class="step"><span class="topic">Not one man</span><span class="seed-q">“there lacketh not one man of us” <cite>31:49</cite></span><span class="take">Every man came home, and the captains gave thanks with gold for a memorial.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">Moses' last work</span>
+      <h2>What did the LORD tell Moses would come after this war?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="afterward shalt thou be gathered unto thy people"></blockquote>
+      <blockquote class="quote step"><p>“And when thou hast seen it, thou also shalt be gathered unto thy people, as Aaron thy brother was gathered.”</p><cite>Numbers 27:13</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>That afterward he would be gathered unto his people: this was his last work before he died. He obeyed at once.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">The LORD's quarrel</span>
+      <h2>Why did the LORD send Israel against Midian?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="3" data-hl="avenge the LORD of Midian"></blockquote>
+      <blockquote class="quote step" data-q="16" data-hl="through the counsel of Balaam, to commit trespass against the LORD in the matter of Peor"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>For Peor. By Balaam's counsel, Midian drew Israel into whoredom and idolatry, and twenty and four thousand died in the plague. It was the LORD's judgment, at his command.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Balaam's end</span>
+      <h2>How did Balaam die, and what had he done to Israel?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="8" data-hl="Balaam also the son of Beor they slew with the sword"></blockquote>
+      <blockquote class="quote step"><p>“But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Israel, to eat things sacrificed unto idols, and to commit fornication.”</p><cite>Revelation 2:14</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>He was slain with the sword among the Midianites. He could not curse Israel, so he taught Balak to lay a stumblingblock: idol feasts and fornication.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">Clean again</span>
+      <h2>What did the men of war have to do before they came back into the camp?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="19" data-hl="abide without the camp seven days"></blockquote>
+      <blockquote class="quote step" data-q="23-24" data-hl="it shall be purified with the water of separation|afterward ye shall come into the camp"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Stay outside the camp seven days, be purified on the third and seventh day, put metal through the fire and everything through the water, wash their clothes, and then come in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">The LORD's share</span>
+      <h2>How was the prey divided, and what went to the LORD?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="27" data-hl="divide the prey into two parts"></blockquote>
+      <blockquote class="quote step" data-q="28" data-hl="one soul of five hundred"></blockquote>
+      <blockquote class="quote step" data-q="30" data-hl="one portion of fifty"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Half to the men who fought, half to the congregation. One in five hundred of the soldiers' half went to Eleazar the priest, and one in fifty of the people's half to the Levites.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Not one man</span>
+      <h2>What did the captains find when they counted their men, and what did they bring?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="49-50" data-hl="there lacketh not one man of us|to make an atonement for our souls before the LORD"></blockquote>
+      <blockquote class="quote step"><p>“That the saying might be fulfilled, which he spake, Of them which thou gavest me have I lost none.”</p><cite>John 18:9</cite></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Not one man was missing. They brought their gold, 16,750 shekels, as an offering to the LORD, and Moses laid it up in the tabernacle as a memorial.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="49" data-hl="there lacketh not one man of us"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Numbers chapter 31
+const V = {
+  1: "And the LORD spake unto Moses, saying,",
+  2: "Avenge the children of Israel of the Midianites: afterward shalt thou be gathered unto thy people.",
+  3: "And Moses spake unto the people, saying, Arm some of yourselves unto the war, and let them go against the Midianites, and avenge the LORD of Midian.",
+  4: "Of every tribe a thousand, throughout all the tribes of Israel, shall ye send to the war.",
+  5: "So there were delivered out of the thousands of Israel, a thousand of every tribe, twelve thousand armed for war.",
+  6: "And Moses sent them to the war, a thousand of every tribe, them and Phinehas the son of Eleazar the priest, to the war, with the holy instruments, and the trumpets to blow in his hand.",
+  7: "And they warred against the Midianites, as the LORD commanded Moses; and they slew all the males.",
+  8: "And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword.",
+  9: "And the children of Israel took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods.",
+  10: "And they burnt all their cities wherein they dwelt, and all their goodly castles, with fire.",
+  11: "And they took all the spoil, and all the prey, both of men and of beasts.",
+  12: "And they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Israel, unto the camp at the plains of Moab, which are by Jordan near Jericho.",
+  13: "And Moses, and Eleazar the priest, and all the princes of the congregation, went forth to meet them without the camp.",
+  14: "And Moses was wroth with the officers of the host, with the captains over thousands, and captains over hundreds, which came from the battle.",
+  15: "And Moses said unto them, Have ye saved all the women alive?",
+  16: "Behold, these caused the children of Israel, through the counsel of Balaam, to commit trespass against the LORD in the matter of Peor, and there was a plague among the congregation of the LORD.",
+  17: "Now therefore kill every male among the little ones, and kill every woman that hath known man by lying with him.",
+  18: "But all the women children, that have not known a man by lying with him, keep alive for yourselves.",
+  19: "And do ye abide without the camp seven days: whosoever hath killed any person, and whosoever hath touched any slain, purify both yourselves and your captives on the third day, and on the seventh day.",
+  20: "And purify all your raiment, and all that is made of skins, and all work of goats’ hair, and all things made of wood.",
+  21: "And Eleazar the priest said unto the men of war which went to the battle, This is the ordinance of the law which the LORD commanded Moses;",
+  22: "Only the gold, and the silver, the brass, the iron, the tin, and the lead,",
+  23: "Every thing that may abide the fire, ye shall make it go through the fire, and it shall be clean: nevertheless it shall be purified with the water of separation: and all that abideth not the fire ye shall make go through the water.",
+  24: "And ye shall wash your clothes on the seventh day, and ye shall be clean, and afterward ye shall come into the camp.",
+  25: "And the LORD spake unto Moses, saying,",
+  26: "Take the sum of the prey that was taken, both of man and of beast, thou, and Eleazar the priest, and the chief fathers of the congregation:",
+  27: "And divide the prey into two parts; between them that took the war upon them, who went out to battle, and between all the congregation:",
+  28: "And levy a tribute unto the LORD of the men of war which went out to battle: one soul of five hundred, both of the persons, and of the beeves, and of the asses, and of the sheep:",
+  29: "Take it of their half, and give it unto Eleazar the priest, for an heave offering of the LORD.",
+  30: "And of the children of Israel’s half, thou shalt take one portion of fifty, of the persons, of the beeves, of the asses, and of the flocks, of all manner of beasts, and give them unto the Levites, which keep the charge of the tabernacle of the LORD.",
+  31: "And Moses and Eleazar the priest did as the LORD commanded Moses.",
+  32: "And the booty, being the rest of the prey which the men of war had caught, was six hundred thousand and seventy thousand and five thousand sheep,",
+  33: "And threescore and twelve thousand beeves,",
+  34: "And threescore and one thousand asses,",
+  35: "And thirty and two thousand persons in all, of women that had not known man by lying with him.",
+  36: "And the half, which was the portion of them that went out to war, was in number three hundred thousand and seven and thirty thousand and five hundred sheep:",
+  37: "And the LORD’S tribute of the sheep was six hundred and threescore and fifteen.",
+  38: "And the beeves were thirty and six thousand; of which the LORD’S tribute was threescore and twelve.",
+  39: "And the asses were thirty thousand and five hundred; of which the LORD’S tribute was threescore and one.",
+  40: "And the persons were sixteen thousand; of which the LORD’S tribute was thirty and two persons.",
+  41: "And Moses gave the tribute, which was the LORD’S heave offering, unto Eleazar the priest, as the LORD commanded Moses.",
+  42: "And of the children of Israel’s half, which Moses divided from the men that warred,",
+  43: "(Now the half that pertained unto the congregation was three hundred thousand and thirty thousand and seven thousand and five hundred sheep,",
+  44: "And thirty and six thousand beeves,",
+  45: "And thirty thousand asses and five hundred,",
+  46: "And sixteen thousand persons;)",
+  47: "Even of the children of Israel’s half, Moses took one portion of fifty, both of man and of beast, and gave them unto the Levites, which kept the charge of the tabernacle of the LORD; as the LORD commanded Moses.",
+  48: "And the officers which were over thousands of the host, the captains of thousands, and captains of hundreds, came near unto Moses:",
+  49: "And they said unto Moses, Thy servants have taken the sum of the men of war which are under our charge, and there lacketh not one man of us.",
+  50: "We have therefore brought an oblation for the LORD, what every man hath gotten, of jewels of gold, chains, and bracelets, rings, earrings, and tablets, to make an atonement for our souls before the LORD.",
+  51: "And Moses and Eleazar the priest took the gold of them, even all wrought jewels.",
+  52: "And all the gold of the offering that they offered up to the LORD, of the captains of thousands, and of the captains of hundreds, was sixteen thousand seven hundred and fifty shekels.",
+  53: "(For the men of war had taken spoil, every man for himself.)",
+  54: "And Moses and Eleazar the priest took the gold of the captains of thousands and of hundreds, and brought it into the tabernacle of the congregation, for a memorial for the children of Israel before the LORD."
+};
+const BOOK = "Numbers 31";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>

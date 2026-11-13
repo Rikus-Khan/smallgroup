@@ -162,7 +162,21 @@
     ["scall", "a scaly sore on the head or the beard"], ["scurvy", "a scaly, itching skin disease"], ["servile", "slaves' work; the ordinary toil of the week"],
     ["spue|spued", "spit out, vomit"], ["strakes", "streaks or hollows in a wall"], ["talebearer", "a gossip who carries stories about people"],
     ["tenth deal|tenth deals", "a tenth part of an ephah, about two quarts"], ["turtles", "turtledoves, small wild doves"], ["unwittingly", "without knowing it"],
-    ["wen", "a lump or growth on the skin"], ["flay", "to strip off the skin"]
+    ["wen", "a lump or growth on the skin"], ["flay", "to strip off the skin"],
+    ["polls", "heads: every male counted one head at a time"], ["ensign", "a banner or flag marking a family or tribe"], ["hindmost", "last, at the rear"],
+    ["rereward", "the rear guard"], ["matrix", "the womb"], ["pertaineth", "belongs to"],
+    ["on this wise", "in this way"], ["charger", "a large dish, a platter"], ["forbeareth", "holds back, refuses (to forbear is to refrain)"],
+    ["alway", "always"], ["mixt", "mixed"], ["swarest", "swore (thou swarest: you swore)"],
+    ["footmen", "men on foot, the fighting men"], ["apparently", "plainly, openly, with nothing hidden"], ["firstripe", "the first grapes to ripen"],
+    ["ribband", "a ribbon, a cord"], ["appertain|appertained", "to belong to"], ["yonder", "over there"],
+    ["unadvisedly", "without thinking it through, rashly"], ["unicorn|unicorns", "a strong horned beast that no man could tame"], ["lign aloes", "aloe trees (lign means wood)"],
+    ["advertise", "tell beforehand, give warning"],
+    ["loatheth", "is sick of, cannot stand"], ["sunrising", "the east, where the sun rises"], ["beguiled", "deceived, led astray by a trick"],
+    ["midianitish", "of Midian"], ["notwithstanding", "nevertheless, even so"], ["several", "separate, each one its own"],
+    ["disallow|disallowed", "refuse to allow, forbid"], ["pricks", "sharp points, goads"], ["molten", "melted and cast in a mould"],
+    ["goings out", "the places where a journey or a border ends or turns"], ["outmost", "outermost, the farthest edge"], ["suburbs", "the open ground round a city, for cattle and goods"],
+    ["revenger", "one who takes revenge: the dead man's nearest kinsman (the avenger of blood)"], ["manslayer", "a man who has killed someone"], ["laying of wait", "lying in ambush"],
+    ["helve", "the handle of an axe"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");

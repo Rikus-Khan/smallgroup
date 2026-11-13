@@ -23080,5 +23080,1834 @@ window.STUDIES = [
       },
       "big": "Leviticus ends with what a man owes God: a vow is a promise with a price, the poor man is valued by his ability, and what is already the LORD's cannot be vowed. Looking back, the whole book answers how a sinful people can come near a holy God: by the blood he gave (17:11) and the holiness he asks (19:2), which Christ has perfected for ever (Hebrews 10:14)."
     }
+  },
+  {
+    "id": "numbers-01",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 1,
+    "date": "2026-11-13",
+    "title": "Numbers 1",
+    "sub": "The LORD numbers his people",
+    "about": "A month after the tabernacle was reared up, the LORD tells Moses to count the men of Israel from twenty years old and upward, every man by his name, with a prince of every tribe to stand beside him. The total is six hundred thousand and three thousand and five hundred and fifty. The Levites are not numbered among them, but appointed over the tabernacle. This is the first chapter of Numbers, a book about a murmuring people God leads, feeds and keeps.",
+    "tags": [
+      "The book of Numbers",
+      "Counted by name",
+      "The twelve princes",
+      "603,550 men of war",
+      "The Levites left out",
+      "A good beginning"
+    ],
+    "url": "studies/numbers-01.html",
+    "overview": {
+      "where": "In the wilderness of Sinai, in the tabernacle of the congregation (1:1)",
+      "when": "On the first day of the second month, in the second year after Israel came out of the land of Egypt (1:1), a month after the tabernacle was reared up (Exodus 40:17)",
+      "people": [
+        "moses",
+        "aaron",
+        "elizur",
+        "shelumiel",
+        "nahshon",
+        "nethaneel",
+        "eliab-prince-of-zebulun",
+        "elishama-prince-of-ephraim",
+        "gamaliel-prince-of-manasseh",
+        "abidan",
+        "ahiezer",
+        "pagiel",
+        "eliasaph-prince-of-gad",
+        "ahira"
+      ],
+      "places": [
+        "mount-sinai",
+        "wilderness",
+        "israel",
+        "tabernacle"
+      ],
+      "story": [
+        "The LORD tells Moses to take the sum of the congregation, every male from twenty years old and upward able to go to war, by the house of their fathers and by their polls (1-3).",
+        "A man of every tribe, head of the house of his fathers, is to stand with Moses and Aaron: twelve princes, named (4-16).",
+        "Moses and Aaron assemble the congregation, and the people declare their pedigrees (17-19).",
+        "The twelve tribes are numbered, Reuben first and Naphtali last (20-43).",
+        "All that were numbered were six hundred thousand and three thousand and five hundred and fifty (44-46).",
+        "The Levites are not numbered, but appointed over the tabernacle of testimony, to bear it and to camp round about it (47-53).",
+        "The children of Israel did according to all that the LORD commanded Moses (54)."
+      ],
+      "key": {
+        "ref": "Numbers 1:46",
+        "text": "Even all they that were numbered were six hundred thousand and three thousand and five hundred and fifty."
+      },
+      "big": "God counts his people by name, every man ransomed and set in his place, with a man to stand beside him. The chapter opens a book where that people will murmur, fail at Kadesh and fall in the wilderness, yet God keeps his word to the children (1 Corinthians 10:11; Hebrews 3:19)."
+    }
+  },
+  {
+    "id": "numbers-02",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 2,
+    "date": "2026-11-13",
+    "title": "Numbers 2",
+    "sub": "Every man by his own standard",
+    "about": "The LORD tells Moses and Aaron how the camp is to be pitched: three tribes under each of four standards, Judah on the east, Reuben on the south, Ephraim on the west and Dan on the north, with the tabernacle and the Levites in the midst. The same order is the order of march, Judah first and Dan hindmost. The total is again six hundred thousand and three thousand and five hundred and fifty, and Israel did as the LORD commanded.",
+    "tags": [
+      "The four standards",
+      "Judah on the east",
+      "The camp round the tabernacle",
+      "In the midst",
+      "The line of march",
+      "As the LORD commanded"
+    ],
+    "url": "studies/numbers-02.html",
+    "overview": {
+      "where": "The camp of Israel round the tabernacle, in the wilderness of Sinai",
+      "when": "In the second year after Israel came out of Egypt, soon after the first day of the second month (1:1) and before they set forward on the twentieth day (10:11)",
+      "people": [
+        "moses",
+        "aaron",
+        "elizur",
+        "shelumiel",
+        "nahshon",
+        "nethaneel",
+        "eliab-prince-of-zebulun",
+        "elishama-prince-of-ephraim",
+        "gamaliel-prince-of-manasseh",
+        "abidan",
+        "ahiezer",
+        "pagiel",
+        "eliasaph-prince-of-gad",
+        "ahira"
+      ],
+      "places": [
+        "mount-sinai",
+        "wilderness",
+        "israel",
+        "tabernacle"
+      ],
+      "story": [
+        "Every man of Israel is to pitch by his own standard, with the ensign of his father's house, far off about the tabernacle (1-2).",
+        "East: the camp of Judah with Issachar and Zebulun, 186,400, who set forth first (3-9).",
+        "South: the camp of Reuben with Simeon and Gad, 151,450, in the second rank (10-16).",
+        "The tabernacle sets forward with the camp of the Levites in the midst of the camp (17).",
+        "West: the camp of Ephraim with Manasseh and Benjamin, 108,100, in the third rank (18-24).",
+        "North: the camp of Dan with Asher and Naphtali, 157,600, who go hindmost (25-31).",
+        "The total is 603,550; the Levites are not numbered; Israel pitched and set forward as the LORD commanded (32-34)."
+      ],
+      "key": {
+        "ref": "Numbers 2:34",
+        "text": "And the children of Israel did according to all that the LORD commanded Moses: so they pitched by their standards, and so they set forward, every one after their families, according to the house of their fathers."
+      },
+      "big": "God gives his people a place, a standard and an order, and sets himself in the midst of them. The camp is not a crowd but a house with God at its centre, a picture of the God who dwells with men (Revelation 21:3) and is in the midst of two or three gathered in his name (Matthew 18:20)."
+    }
+  },
+  {
+    "id": "numbers-03",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 3,
+    "date": "2026-11-13",
+    "title": "Numbers 3",
+    "sub": "The Levites shall be mine",
+    "about": "Aaron's four sons are named, and two of them, Nadab and Abihu, died for offering strange fire. The LORD gives the tribe of Levi to Aaron and his sons, taking them instead of all the firstborn of Israel. The three families, Gershon, Kohath and Merari, are numbered from a month old and set on the west, south and north of the tabernacle, each with its charge. The 273 firstborn over and above the Levites are redeemed at five shekels a head.",
+    "tags": [
+      "Nadab and Abihu",
+      "The Levites given to Aaron",
+      "Instead of the firstborn",
+      "Gershon, Kohath and Merari",
+      "The charge of the tabernacle",
+      "Redeemed at five shekels"
+    ],
+    "url": "studies/numbers-03.html",
+    "overview": {
+      "where": "In mount Sinai (3:1), in the wilderness of Sinai (3:14), round the tabernacle",
+      "when": "In the second year after Israel came out of Egypt, the second month (1:1), at Sinai, before they set forward on the twentieth day (10:11)",
+      "people": [
+        "moses",
+        "aaron",
+        "nadab",
+        "abihu",
+        "kohath",
+        "gershon-and-merari",
+        "amram",
+        "eliasaph-chief-of-the-gershonites",
+        "zuriel"
+      ],
+      "places": [
+        "mount-sinai",
+        "wilderness",
+        "israel",
+        "tabernacle"
+      ],
+      "story": [
+        "The sons of Aaron: Nadab and Abihu died before the LORD when they offered strange fire; Eleazar and Ithamar ministered in the priest's office (1-4).",
+        "The tribe of Levi is brought near and given wholly to Aaron and his sons to keep the charge of the tabernacle; the stranger that comes nigh is to be put to death (5-10).",
+        "The LORD takes the Levites instead of all the firstborn, because on the day he smote the firstborn in Egypt he hallowed the firstborn of Israel to himself (11-13).",
+        "The sons of Levi are numbered from a month old: Gershon, Kohath and Merari, with their families (14-20).",
+        "Gershon, 7,500, pitches behind the tabernacle westward with the curtains and hangings; Kohath, 8,600, southward with the ark, the table, the candlestick and the altars; Merari, 6,200, northward with the boards, bars and pillars; Moses, Aaron and his sons pitch eastward (21-38).",
+        "All the Levites numbered were twenty and two thousand (39).",
+        "The firstborn males of Israel, 22,273, are numbered; the Levites stand for them, and the 273 over and above are redeemed at five shekels apiece, 1,365 shekels, given to Aaron and his sons (40-51)."
+      ],
+      "key": {
+        "ref": "Numbers 3:12",
+        "text": "And I, behold, I have taken the Levites from among the children of Israel instead of all the firstborn that openeth the matrix among the children of Israel: therefore the Levites shall be mine;"
+      },
+      "big": "God takes a whole tribe in the place of every firstborn son and sets a price on the few left over, so that not one is unbought: a picture of the ransom the Son of man gave (Mark 10:45), and of the believers bought with a price who are not their own (1 Corinthians 6:19-20)."
+    }
+  },
+  {
+    "id": "numbers-04",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 4,
+    "date": "2026-11-13",
+    "title": "Numbers 4",
+    "sub": "Who carries the tabernacle",
+    "about": "When the camp sets forward, Aaron and his sons cover the holy things, and then the sons of Kohath, Gershon and Merari, from thirty to fifty years old, bear the tabernacle. They are numbered: 2,750, 2,630 and 3,200, eight thousand five hundred and fourscore in all, “every one according to his service, and according to his burden”.",
+    "tags": [
+      "The sons of Kohath",
+      "The holy things covered",
+      "Gershon and Merari",
+      "Thirty to fifty",
+      "The numbering of the Levites",
+      "Every one to his burden"
+    ],
+    "url": "studies/numbers-04.html",
+    "overview": {
+      "where": "In the wilderness of Sinai, round the tabernacle of the congregation (1:1)",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), after the numbering of the tribes and before the march begins on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons",
+        "kohath",
+        "gershon-and-merari",
+        "levi"
+      ],
+      "places": [
+        "tabernacle",
+        "wilderness",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses and Aaron to take the sum of the sons of Kohath, from thirty years old to fifty, all that enter into the host to do the work (1-3).",
+        "Aaron and his sons cover the ark with the vail, badgers’ skins and a cloth of blue; the table, the candlestick, the golden altar, the instruments and the other altar are each covered and put on staves or a bar (4-14).",
+        "The sons of Kohath then bear them, but shall not touch any holy thing, lest they die; the oil, the incense, the daily meat offering and the anointing oil are Eleazar’s charge (15-16).",
+        "The Kohathites are not to be cut off: Aaron and his sons go in first and appoint each man to his burden, that they may live, and not die (17-20).",
+        "The sons of Gershon bear the curtains, the coverings, the hangings of the court and the cords, under the hand of Ithamar (21-28).",
+        "The sons of Merari bear the boards, bars, pillars and sockets of the tabernacle and the court, the instruments reckoned by name, under the hand of Ithamar (29-33).",
+        "Moses and Aaron and the chief of the congregation number them: 2,750 of Kohath, 2,630 of Gershon, 3,200 of Merari, eight thousand five hundred and fourscore in all (34-49)."
+      ],
+      "key": {
+        "ref": "Numbers 4:49",
+        "text": "According to the commandment of the LORD they were numbered by the hand of Moses, every one according to his service, and according to his burden: thus were they numbered of him, as the LORD commanded Moses."
+      },
+      "big": "Every man of the three families of Levi had his own work and his own burden, set by the LORD and counted by name. The holy things are covered by the priests first, “that they may live, and not die” (4:19): the holy God makes a way. In Christ the High Priest has gone in before us, and we are told to come boldly unto the throne of grace (Hebrews 4:16)."
+    }
+  },
+  {
+    "id": "numbers-05",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 5,
+    "date": "2026-11-13",
+    "title": "Numbers 5",
+    "sub": "The camp kept clean, and the trial of jealousy",
+    "about": "The unclean are put out of the camp, “in the midst whereof I dwell”. A man who has wronged another confesses, repays the principal and adds a fifth part. And when a husband is jealous and there is no witness, the LORD takes the matter out of his hands: the wife is set before the LORD by the priest, and the LORD gives the verdict.",
+    "tags": [
+      "Out of the camp",
+      "Confess and recompense",
+      "The fifth part",
+      "The spirit of jealousy",
+      "The bitter water",
+      "The man guiltless"
+    ],
+    "url": "studies/numbers-05.html",
+    "overview": {
+      "where": "In the wilderness of Sinai, in the camp round the tabernacle",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "people": [
+        "moses",
+        "priests"
+      ],
+      "places": [
+        "tabernacle",
+        "wilderness",
+        "israel"
+      ],
+      "story": [
+        "The children of Israel put out of the camp every leper, every one that hath an issue and whosoever is defiled by the dead, that they defile not their camps, in the midst whereof the LORD dwells (1-4).",
+        "A man or woman who trespasses against the LORD confesses, recompenses the principal and adds the fifth part, giving it to the one wronged, or, if he has no kinsman, to the LORD, even to the priest, with the ram of the atonement (5-8).",
+        "What is brought to the priest is the priest’s (9-10).",
+        "The law of jealousies: when the spirit of jealousy comes upon a husband and there is no witness, he brings his wife to the priest with an offering of barley meal, with no oil or frankincense (11-15).",
+        "The priest sets her before the LORD with holy water, dust from the tabernacle floor and the bitter water that causeth the curse; he charges her by an oath, and she says Amen, amen (16-22).",
+        "The curses are written in a book and blotted out with the bitter water; the offering is waved and a handful burned upon the altar before she drinks (23-26).",
+        "If she is defiled the curse shall come upon her; if she is clean she shall be free, and shall conceive seed; the man is guiltless from iniquity and the woman bears her iniquity (27-31)."
+      ],
+      "key": {
+        "ref": "Numbers 5:7",
+        "text": "Then they shall confess their sin which they have done: and he shall recompense his trespass with the principal thereof, and add unto it the fifth part thereof, and give it unto him against whom he hath trespassed."
+      },
+      "big": "The LORD dwells in the camp, so the unclean are put out and a wronged man is paid back with a fifth part more. Where a husband’s suspicion has no witness, the trial puts the matter before the LORD and takes it out of the husband’s hands: no man was to judge by suspicion. Christ went outside the gate for us (Hebrews 13:12), was made a curse for us (Galatians 3:13), and forgives the sin we confess (1 John 1:9)."
+    }
+  },
+  {
+    "id": "numbers-06",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 6,
+    "date": "2026-11-13",
+    "title": "Numbers 6",
+    "sub": "The Nazarite, and “The LORD bless thee, and keep thee”",
+    "about": "A man or a woman could separate themselves to the LORD for a time: no vine, no razor, no dead body. A death beside him spoils the vow, and there is a way to begin again; at the end he brings a burnt offering, a sin offering and peace offerings. Then the LORD gives Aaron and his sons the blessing to say over Israel.",
+    "tags": [
+      "The vow of a Nazarite",
+      "The vine, the razor, the dead",
+      "A vow defiled",
+      "The days fulfilled",
+      "The blessing of Aaron",
+      "His name upon them"
+    ],
+    "url": "studies/numbers-06.html",
+    "overview": {
+      "where": "In the wilderness of Sinai, at the tabernacle of the congregation",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "people": [
+        "moses",
+        "aaron",
+        "nazarites"
+      ],
+      "places": [
+        "tabernacle",
+        "wilderness",
+        "israel"
+      ],
+      "story": [
+        "Either man or woman may vow a vow of a Nazarite, to separate themselves unto the LORD (1-2).",
+        "He shall abstain from wine, strong drink and everything of the vine, from the kernels to the husk (3-4).",
+        "No razor shall come upon his head; he shall let the locks grow, and he shall come at no dead body, not for father, mother, brother or sister (5-8).",
+        "If any man die very suddenly by him, he shaves his head on the seventh day and on the eighth brings two turtles or two young pigeons; he brings a lamb for a trespass offering, and the days that were before are lost (9-12).",
+        "When the days are fulfilled he brings a he lamb for a burnt offering, a ewe lamb for a sin offering and a ram for peace offerings, with a basket of unleavened bread (13-17).",
+        "He shaves his head at the door and puts the hair in the fire under the peace offerings; after that the Nazarite may drink wine (18-21).",
+        "The LORD tells Moses to say to Aaron and his sons: “The LORD bless thee, and keep thee…”, and they shall put his name upon the children of Israel (22-27)."
+      ],
+      "key": {
+        "ref": "Numbers 6:24-26",
+        "text": "The LORD bless thee, and keep thee: The LORD make his face shine upon thee, and be gracious unto thee: The LORD lift up his countenance upon thee, and give thee peace."
+      },
+      "big": "A Nazarite gave up what he could have had to be the LORD’s in a way anyone could see, and even a man who kept the vow brought a sin offering at the end, and a man whose vow was spoiled could begin again. Then the LORD himself gave the words to say over his people: his blessing, his face, his peace. The Lord Jesus lifted up his hands and blessed his own (Luke 24:50), and we have peace with God through him (Romans 5:1)."
+    }
+  },
+  {
+    "id": "numbers-07",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 7,
+    "date": "2026-11-13",
+    "title": "Numbers 7",
+    "sub": "Twelve princes, twelve days, one gift",
+    "about": "The princes of Israel bring six covered wagons and twelve oxen, which Moses gives to the Levites. Then, one prince a day for twelve days, each brings the very same offering for the dedicating of the altar. And when Moses goes into the tabernacle, he hears the voice of the LORD speaking from off the mercy seat.",
+    "tags": [
+      "The wagons",
+      "The twelve princes",
+      "The same gift",
+      "The sin offering",
+      "The dedication of the altar",
+      "The mercy seat"
+    ],
+    "url": "studies/numbers-07.html",
+    "overview": {
+      "where": "At the tabernacle in the wilderness of Sinai (7:1, 89)",
+      "when": "On the day that Moses had fully set up the tabernacle, the first day of the first month of the second year (7:1; Exodus 40:17); the twelve princes then offer on twelve days, one prince each day (7:11–12, 78). The numbering of chapter 1 is on the first day of the second month (1:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "nahshon",
+        "ahira",
+        "gershon-and-merari",
+        "kohath"
+      ],
+      "places": [
+        "tabernacle",
+        "mercy-seat",
+        "israel"
+      ],
+      "story": [
+        "The princes of Israel bring six covered wagons and twelve oxen before the tabernacle, a wagon for two princes and an ox for each (1-3).",
+        "The LORD tells Moses to give them to the Levites, every man according to his service: two wagons and four oxen to Gershon, four wagons and eight oxen to Merari, none to Kohath, who bear the holy things on their shoulders (4-9).",
+        "The LORD says each prince is to offer on his own day for the dedicating of the altar (10-11).",
+        "Nahshon of Judah offers on the first day: a silver charger of 130 shekels, a silver bowl of 70, a golden spoon of 10 shekels full of incense, a bullock, a ram and a lamb for a burnt offering, a kid for a sin offering, and two oxen, five rams, five he goats and five lambs for peace offerings (12-17).",
+        "The other eleven princes offer on the next eleven days, in the order of the camp, and the gift of each is the same, verse for verse: Nethaneel, Eliab, Elizur, Shelumiel, Eliasaph, Elishama, Gamaliel, Abidan, Ahiezer, Pagiel and Ahira of Naphtali on the twelfth day (18-83).",
+        "The sum of the dedication: 2,400 shekels of silver, 120 of gold, and the animals twelve and twelve and twelve, and twenty-four, sixty, sixty and sixty (84-88).",
+        "Moses goes into the tabernacle to speak with the LORD and hears his voice from off the mercy seat, from between the two cherubims (89)."
+      ],
+      "key": {
+        "ref": "Numbers 7:89",
+        "text": "then he heard the voice of one speaking unto him from off the mercy seat that was upon the ark of testimony, from between the two cherubims: and he spake unto him."
+      },
+      "big": "Twelve princes bring twelve gifts that are word for word the same, and the LORD does not rank one above another: Judah first, Naphtali last, a kid for sin from every one. At the end the LORD speaks to Moses from the mercy seat, as he promised (Exodus 25:22), and the way to that throne is now open to us through Christ (Hebrews 4:16)."
+    }
+  },
+  {
+    "id": "numbers-08",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 8,
+    "date": "2026-11-13",
+    "title": "Numbers 8",
+    "sub": "The lamps, and the Levites taken instead of the firstborn",
+    "about": "Aaron lights the seven lamps over against the candlestick, made of beaten gold after the pattern the LORD showed Moses. Then the Levites are cleansed with water, a razor and a sin offering, the people lay their hands on them, and they are offered before the LORD: his own, instead of the firstborn. They serve from twenty and five years old, and after fifty still keep the charge.",
+    "tags": [
+      "The seven lamps",
+      "The pattern",
+      "The cleansing of the Levites",
+      "The laying on of hands",
+      "The firstborn",
+      "Twenty-five to fifty"
+    ],
+    "url": "studies/numbers-08.html",
+    "overview": {
+      "where": "At the tabernacle in the wilderness of Sinai (8:2, 9)",
+      "when": "At Sinai, in the second year after they came out of Egypt, before the cloud is taken up on the twentieth day of the second month (10:11). No day is named for this chapter",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "egypt",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Aaron to light the lamps so that the seven lamps give light over against the candlestick; Aaron does so, and the candlestick is of beaten gold after the pattern the LORD showed Moses (1-4).",
+        "The LORD tells Moses to take the Levites and cleanse them: water of purifying sprinkled on them, all their flesh shaved, their clothes washed (5-7).",
+        "A young bullock with a meat offering, and another for a sin offering; the whole assembly gathers, and the children of Israel put their hands upon the Levites (8-10).",
+        "Aaron offers the Levites before the LORD for an offering, and they lay their hands on the bullocks, one for a sin offering, one for a burnt offering, to make an atonement for them (11-15).",
+        "The Levites are wholly given to the LORD instead of the firstborn of all Israel, whom he sanctified for himself the day he smote the firstborn in Egypt, a gift to Aaron and his sons, that there be no plague when Israel comes nigh the sanctuary (16-19).",
+        "Moses, Aaron and the congregation do all that the LORD commanded, and the Levites go in to their service (20-22).",
+        "A Levite goes in to wait upon the service from twenty and five years old; from fifty he ceases waiting but ministers with his brethren to keep the charge (23-26)."
+      ],
+      "key": {
+        "ref": "Numbers 8:14",
+        "text": "Thus shalt thou separate the Levites from among the children of Israel: and the Levites shall be mine."
+      },
+      "big": "The LORD cleanses first and then gives the work: water, razor, clean clothes and blood, and then the Levites go in. He takes them for himself in the place of the firstborn he had claimed in Egypt. We too have been bought and cleansed, and have boldness to enter the holiest by the blood of Jesus (Hebrews 10:19)."
+    }
+  },
+  {
+    "id": "numbers-09",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 9,
+    "date": "2026-11-13",
+    "title": "Numbers 9",
+    "sub": "The passover in the wilderness, a second month, and the cloud",
+    "about": "A year after Egypt the LORD tells Israel to keep the passover, and they keep it in the wilderness of Sinai. Men defiled by a dead body ask why they are kept back, and the LORD gives them, and those far off on a journey, a second month. And the cloud on the tabernacle tells Israel when to journey and when to rest, at the commandment of the LORD.",
+    "tags": [
+      "The passover",
+      "The men kept back",
+      "The second month",
+      "Cut off",
+      "The cloud and the fire",
+      "At the commandment of the LORD"
+    ],
+    "url": "studies/numbers-09.html",
+    "overview": {
+      "where": "In the wilderness of Sinai, at the tabernacle (9:1, 5)",
+      "when": "The first month of the second year after they were come out of the land of Egypt (9:1); the passover on the fourteenth day of the first month at even (9:3, 5), and the second passover on the fourteenth day of the second month (9:11). The cloud covers the tabernacle from the day it was reared up (9:15; Exodus 40:17) until it is taken up on the twentieth day of the second month (10:11)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "mount-sinai",
+        "wilderness",
+        "egypt",
+        "tabernacle"
+      ],
+      "story": [
+        "The LORD tells Moses, in the first month of the second year, to have Israel keep the passover at his appointed season, on the fourteenth day at even, according to all the rites and ceremonies (1-3).",
+        "They keep it on the fourteenth day of the first month in the wilderness of Sinai, as the LORD commanded (4-5).",
+        "Certain men, defiled by a dead body, come to Moses and Aaron and ask why they are kept back; Moses says, “Stand still, and I will hear what the LORD will command” (6-8).",
+        "The LORD answers: whoever is unclean by a dead body, or in a journey afar off, keeps the passover on the fourteenth day of the second month, with unleavened bread and bitter herbs, leaving none till the morning and breaking no bone (9-12).",
+        "The man who is clean, and not in a journey, and forbears to keep it, is cut off from his people and bears his sin; the stranger who will keep it has the same ordinance (13-14).",
+        "On the day the tabernacle was reared up the cloud covered it, and at even there was the appearance of fire until the morning, always (15-16).",
+        "When the cloud is taken up they journey, and where it abides they pitch, whether a night, a few days, a month or a year: at the commandment of the LORD (17-23)."
+      ],
+      "key": {
+        "ref": "Numbers 9:18",
+        "text": "At the commandment of the LORD the children of Israel journeyed, and at the commandment of the LORD they pitched: as long as the cloud abode upon the tabernacle they rested in their tents."
+      },
+      "big": "The LORD makes a way for the man who could not keep the feast on the day, and a second month for those far off, while the man who simply forbore is cut off. And he leads every step by the cloud: Israel moved and rested at his word. Christ is our passover (1 Corinthians 5:7), and those who were far off are made nigh by his blood (Ephesians 2:13)."
+    }
+  },
+  {
+    "id": "numbers-10",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 10,
+    "date": "2026-11-13",
+    "title": "Numbers 10",
+    "sub": "Silver trumpets and the road",
+    "about": "Two silver trumpets are made to call the assembly and to move the camps. On the twentieth day of the second month the cloud is taken up, and twelve tribes march out of the wilderness of Sinai in order, Judah first. Moses asks Hobab to be his eyes, and prays as the ark sets forward: “Rise up, LORD.”",
+    "tags": [
+      "The silver trumpets",
+      "The cloud taken up",
+      "The order of the march",
+      "Hobab",
+      "Rise up, LORD",
+      "Judah first"
+    ],
+    "url": "studies/numbers-10.html",
+    "overview": {
+      "where": "At Sinai, then out of the wilderness of Sinai, three days’ journey from the mount of the LORD, to the wilderness of Paran (10:12, 33)",
+      "when": "In the second year after they were come out of the land of Egypt: the cloud was taken up on the twentieth day of the second month (10:11), nineteen days after the people were numbered on the first day of that month (1:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "hobab",
+        "raguel",
+        "nahshon"
+      ],
+      "places": [
+        "mount-sinai",
+        "paran",
+        "midian",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to make two trumpets of silver, of a whole piece, for the calling of the assembly and the journeying of the camps (1-4).",
+        "An alarm sends the east camps forward, a second alarm the south; the sons of Aaron, the priests, blow them for ever (5-8).",
+        "The trumpets are also for war, when the LORD remembers them and saves them, and for the day of gladness over the offerings (9-10).",
+        "On the twentieth day of the second month, in the second year, the cloud is taken up and they journey out of the wilderness of Sinai; the cloud rests in the wilderness of Paran (11-13).",
+        "The camps march in order: Judah, Issachar and Zebulun; Gershon and Merari with the tabernacle; Reuben, Simeon and Gad; the Kohathites with the sanctuary; Ephraim, Manasseh and Benjamin; Dan, Asher and Naphtali as the rereward (14-28).",
+        "Moses asks Hobab the Midianite to come with them to be instead of eyes; Hobab says he will go to his own land and kindred (29-32).",
+        "They depart three days’ journey from the mount of the LORD, the ark going before them, and the cloud upon them by day; Moses prays, Rise up, LORD, when it sets forward and Return, O LORD, when it rests (33-36)."
+      ],
+      "key": {
+        "ref": "Numbers 10:35",
+        "text": "And it came to pass, when the ark set forward, that Moses said, Rise up, LORD, and let thine enemies be scattered; and let them that hate thee flee before thee."
+      },
+      "big": "The LORD gives his people a clear signal and a clear order, and goes before them himself. They move when the cloud is taken up, and the ark leads. Moses asks a brother for his eyes though he has the cloud, and prays at every start and stop. Judah marches first, and our Lord sprang out of Judah (Hebrews 7:14)."
+    }
+  },
+  {
+    "id": "numbers-11",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 11,
+    "date": "2026-11-13",
+    "title": "Numbers 11",
+    "sub": "“We remember the fish”",
+    "about": "The people complain and the fire of the LORD burns at the edge of the camp until Moses prays. Then the mixt multitude falls a lusting, and Israel weeps for the fish, the cucumbers and the garlick of Egypt. Moses cries that he cannot bear the people alone; the LORD puts his spirit on seventy elders, and gives the people the flesh they craved, and a plague with it.",
+    "tags": [
+      "Taberah",
+      "The mixt multitude",
+      "We remember the fish",
+      "Seventy elders",
+      "Eldad and Medad",
+      "Kibroth-hattaavah"
+    ],
+    "url": "studies/numbers-11.html",
+    "overview": {
+      "where": "On the road from Sinai toward Paran, at Taberah, then Kibroth-hattaavah, then Hazeroth (11:3, 34, 35)",
+      "when": "In the second year after they were come out of Egypt, soon after the cloud was taken up on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "people": [
+        "moses",
+        "joshua-son-of-nun",
+        "eldad",
+        "medad",
+        "seventy-elders"
+      ],
+      "places": [
+        "taberah",
+        "kibroth-hattaavah",
+        "hazeroth",
+        "egypt",
+        "israel"
+      ],
+      "story": [
+        "The people complain; the fire of the LORD burns in the uttermost parts of the camp, and when Moses prays the fire is quenched. The place is called Taberah (1-3).",
+        "The mixt multitude falls a lusting and Israel weeps: Who shall give us flesh to eat? We remember the fish, which we did eat in Egypt freely (4-6).",
+        "The manna is described, ground in mills and baked in pans; the people weep every man in the door of his tent, and the anger of the LORD is kindled (7-10).",
+        "Moses cries to the LORD: I am not able to bear all this people alone; kill me, I pray thee, out of hand (11-15).",
+        "The LORD tells him to gather seventy elders, and will put on them of the spirit which is upon Moses, that they bear the burden with him (16-17).",
+        "The people shall have flesh a whole month, until it come out at their nostrils, because they have despised the LORD among them; Moses doubts, and the LORD asks, Is the LORD’S hand waxed short? (18-23).",
+        "The spirit rests on the seventy and they prophesy; Eldad and Medad prophesy in the camp, Joshua says forbid them, and Moses answers, would God that all the LORD’S people were prophets (24-30).",
+        "A wind from the LORD brings quails; while the flesh is yet between their teeth the LORD smites the people with a very great plague, and the place is called Kibroth-hattaavah; they journey to Hazeroth (31-35)."
+      ],
+      "key": {
+        "ref": "Numbers 11:29",
+        "text": "And Moses said unto him, Enviest thou for my sake? would God that all the LORD’S people were prophets, and that the LORD would put his spirit upon them!"
+      },
+      "big": "A craving remembers the fish and forgets the bondage, and the LORD hears it. Moses is shown at the end of himself, and God neither scolds him nor leaves him alone: he shares the load among seventy and pours out his spirit. Getting what they craved did not satisfy them. The true bread from heaven is Christ (John 6:35, 50–51)."
+    }
+  },
+  {
+    "id": "numbers-12",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 12,
+    "date": "2026-11-13",
+    "title": "Numbers 12",
+    "sub": "Miriam, Aaron and the meekest man",
+    "about": "Miriam and Aaron speak against Moses and ask whether the LORD has spoken only by him. The LORD comes down in the pillar of the cloud, says Moses is faithful in all his house, and Miriam becomes leprous. Aaron confesses, Moses cries, “Heal her now, O God,” and the people do not journey until Miriam is brought in again.",
+    "tags": [
+      "Envy",
+      "Very meek",
+      "Faithful in all mine house",
+      "Leprous, white as snow",
+      "Heal her now, O God",
+      "Brought in again"
+    ],
+    "url": "studies/numbers-12.html",
+    "overview": {
+      "where": "In the camp, at the door of the tabernacle of the congregation; then from Hazeroth to the wilderness of Paran (12:5, 16)",
+      "when": "In the second year after they were come out of Egypt, after the journey from Sinai began (10:11); the chapter gives no day of its own",
+      "people": [
+        "moses",
+        "aaron",
+        "miriam"
+      ],
+      "places": [
+        "hazeroth",
+        "paran",
+        "israel"
+      ],
+      "story": [
+        "Miriam and Aaron speak against Moses because of the Ethiopian woman he had married, and ask whether the LORD has spoken only by him; and the LORD heard it (1-2).",
+        "Moses was very meek, above all the men upon the face of the earth (3).",
+        "The LORD speaks suddenly, calls the three to the tabernacle, and comes down in the pillar of the cloud (4-5).",
+        "To a prophet he makes himself known in a vision or a dream; with Moses he speaks mouth to mouth; Moses is faithful in all his house (6-8).",
+        "The anger of the LORD is kindled, the cloud departs, and Miriam becomes leprous, white as snow (9-10).",
+        "Aaron confesses that they have done foolishly and sinned; Moses cries, Heal her now, O God (11-13).",
+        "The LORD says she shall be shut out from the camp seven days and then received in again; the people journey not till she is brought in, and then pitch in the wilderness of Paran (14-16)."
+      ],
+      "key": {
+        "ref": "Numbers 12:3",
+        "text": "(Now the man Moses was very meek, above all the men which were upon the face of the earth.)"
+      },
+      "big": "Envy dresses itself up as a complaint, and the LORD hears it. The meekest man in the camp says nothing, and the LORD answers for him. Sin costs Miriam seven days outside the camp, and then the whole camp waits for her. Moses was faithful as a servant in God’s house; Christ is the Son over his own house (Hebrews 3:5–6)."
+    }
+  },
+  {
+    "id": "numbers-13",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 13,
+    "date": "2026-11-13",
+    "title": "Numbers 13",
+    "sub": "Twelve men, one cluster, and the giants",
+    "about": "The LORD sends twelve rulers, one from every tribe, to search the land he is giving. After forty days they bring back a cluster of grapes carried between two upon a staff, and a report: the land floweth with milk and honey, “Nevertheless the people be strong”. Caleb stills the people, “Let us go up at once”; the ten say, “We be not able”, and in their own sight they are as grasshoppers.",
+    "tags": [
+      "The twelve spies",
+      "Oshea named Jehoshua",
+      "The cluster of Eshcol",
+      "The evil report",
+      "Caleb",
+      "The sons of Anak"
+    ],
+    "url": "studies/numbers-13.html",
+    "overview": {
+      "where": "Sent from the wilderness of Paran (13:3); through the land from the wilderness of Zin to Rehob, as men come to Hamath, and to Hebron and the brook Eshcol (13:21–23); back to Kadesh in the wilderness of Paran (13:26)",
+      "when": "The second year after the coming out of Egypt, soon after the cloud lifted from Sinai on the twentieth day of the second month (10:11), “the time of the firstripe grapes” (13:20); the search took forty days (13:25)",
+      "people": [
+        "moses",
+        "aaron",
+        "caleb",
+        "joshua-son-of-nun",
+        "twelve-spies",
+        "children-of-anak"
+      ],
+      "places": [
+        "paran",
+        "wilderness-of-zin",
+        "rehob",
+        "hamath",
+        "hebron",
+        "brook-eshcol",
+        "kadesh",
+        "canaan"
+      ],
+      "story": [
+        "The LORD tells Moses to send men to search the land of Canaan, “which I give unto the children of Israel”, a ruler of every tribe (1–3).",
+        "The twelve are named; Caleb of Judah, and Oshea the son of Nun of Ephraim, whom Moses calls Jehoshua (4–16).",
+        "Moses sends them to see the land and its people, its cities and its soil, and to be of good courage and bring of the fruit (17–20).",
+        "They search from the wilderness of Zin unto Rehob, and come to Hebron, where the children of Anak were (21–22).",
+        "At the brook Eshcol they cut one cluster of grapes and bear it between two upon a staff, and return after forty days (23–25).",
+        "At Kadesh they show the fruit: the land floweth with milk and honey; nevertheless the people be strong and the cities walled (26–29).",
+        "Caleb stills the people, “Let us go up at once”; the others say, “We be not able”, bring up an evil report, and were in their own sight as grasshoppers (30–33)."
+      ],
+      "key": {
+        "ref": "Numbers 13:30",
+        "text": "And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it."
+      },
+      "big": "Twelve men saw the same land, the same fruit and the same giants. Ten measured the giants against themselves and brought an evil report; Caleb measured them against the LORD who had promised the land, and said, “we are well able to overcome it.” Faith does not shut its eyes to the walls; it puts God in the report (Romans 8:31; 1 John 4:4)."
+    }
+  },
+  {
+    "id": "numbers-14",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 14,
+    "date": "2026-11-13",
+    "title": "Numbers 14",
+    "sub": "The night they wept, and the forty years",
+    "about": "The congregation weeps all night and says, “Let us make a captain, and let us return into Egypt.” Joshua and Caleb plead, and the people bid stone them. Moses prays the LORD's own words back to him, and the LORD pardons; but that generation will die in the wilderness, forty years, a year for each day. Their little ones, and Caleb with another spirit, and Joshua, will go in. The next morning the people go up without the LORD and are beaten back to Hormah.",
+    "tags": [
+      "Back to Egypt",
+      "Joshua and Caleb",
+      "Moses intercedes",
+      "Another spirit",
+      "Forty years",
+      "Presumption",
+      "Hebrews 3–4"
+    ],
+    "url": "studies/numbers-14.html",
+    "overview": {
+      "where": "At Kadesh in the wilderness of Paran (13:26), before the tabernacle of the congregation (14:10); turned back into the wilderness by the way of the Red sea (14:25); beaten back unto Hormah (14:45)",
+      "when": "The second year after the coming out of Egypt, the night after the spies returned from forty days in the land (13:25; 14:1); the sentence of forty years, “each day for a year” (14:34), ending in the fortieth year (Deuteronomy 1:3), thirty and eight years from Kadesh-barnea to the brook Zered (Deuteronomy 2:14)",
+      "people": [
+        "moses",
+        "aaron",
+        "joshua-son-of-nun",
+        "caleb",
+        "twelve-spies",
+        "amalek",
+        "canaanites"
+      ],
+      "places": [
+        "kadesh",
+        "wilderness",
+        "egypt",
+        "red-sea",
+        "hormah",
+        "tabernacle"
+      ],
+      "story": [
+        "The congregation weeps that night, murmurs against Moses and Aaron, and says, “Let us make a captain, and let us return into Egypt” (1–4).",
+        "Moses and Aaron fall on their faces; Joshua and Caleb rend their clothes: the land is exceeding good, rebel not, fear not, “the LORD is with us” (5–9).",
+        "The congregation bids stone them, and the glory of the LORD appears in the tabernacle (10).",
+        "The LORD asks how long ere they believe him and offers to make of Moses a greater nation; Moses pleads for the LORD's name before the nations (11–16).",
+        "Moses prays, “The LORD is longsuffering, and of great mercy”; the LORD answers, “I have pardoned according to thy word”, but those who tempted him ten times shall not see the land (17–23).",
+        "Caleb, who had another spirit and followed fully, will be brought in; the rest turn into the wilderness by the way of the Red sea (24–25).",
+        "As they have spoken, so will he do: their carcases shall fall in the wilderness, save Caleb and Joshua; their little ones shall go in; forty years, each day for a year (26–35).",
+        "The men who brought up the evil report die by the plague; Joshua and Caleb live still (36–38).",
+        "The people mourn, then presume to go up without the ark and Moses, and are smitten unto Hormah (39–45)."
+      ],
+      "key": {
+        "ref": "Numbers 14:24",
+        "text": "But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it."
+      },
+      "big": "Unbelief, not giants, kept a generation out of the land: “they could not enter in because of unbelief” (Hebrews 3:19). Yet the LORD pardoned at Moses' prayer, carried them forty years, kept his word to Caleb, and brought their little ones in. Hebrews 3–4 preaches this chapter to us: To day, if ye will hear his voice, harden not your hearts; exhort one another daily; there remaineth a rest to the people of God, entered by believing."
+    }
+  },
+  {
+    "id": "numbers-15",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 15,
+    "date": "2026-11-13",
+    "title": "Numbers 15",
+    "sub": "“When ye be come into the land”",
+    "about": "The chapter after the refusal at Kadesh opens with a promise: what Israel will offer “when ye be come into the land”. One law for the stranger, forgiveness for sins of ignorance, no offering for the soul that sins presumptuously, the man who gathered sticks on the sabbath, and a ribband of blue on the fringes, to look upon and remember.",
+    "tags": [
+      "The land promised again",
+      "Meat and drink offerings",
+      "One law for the stranger",
+      "Sins of ignorance",
+      "Presumptuous sin",
+      "The sabbath",
+      "The fringes and the ribband of blue"
+    ],
+    "url": "studies/numbers-15.html",
+    "overview": {
+      "where": "In the wilderness (15:32), after the people turned back at Kadesh in the wilderness of Paran (13:26; 14)",
+      "when": "In the wandering years, after the sentence of forty years, “each day for a year” (14:34); Moses gives no day or month for these laws",
+      "people": [
+        "moses",
+        "aaron",
+        "stranger-in-the-land",
+        "sabbath-breaker"
+      ],
+      "places": [
+        "wilderness",
+        "without-the-camp",
+        "egypt"
+      ],
+      "story": [
+        "When ye be come into the land: the meat offering of flour and oil and the drink offering of wine that go with each burnt offering or sacrifice, more for a ram and more again for a bullock (1-12).",
+        "One law and one manner for those born in the land and for the stranger that sojourneth with them (13-16).",
+        "When they eat the bread of the land, a cake of the first of their dough as an heave offering (17-21).",
+        "If the whole congregation errs through ignorance, a bullock and a kid of the goats, and it shall be forgiven them; a single soul brings a she goat, and it shall be forgiven him (22-29).",
+        "The soul that doeth ought presumptuously reproacheth the LORD and despiseth his word; that soul shall be cut off (30-31).",
+        "A man gathering sticks on the sabbath is put in ward until the LORD declares what shall be done, and is stoned without the camp (32-36).",
+        "Fringes in the borders of their garments with a ribband of blue, that they may look upon it and remember all the commandments of the LORD, and not seek after their own heart and eyes (37-41)."
+      ],
+      "key": {
+        "ref": "Numbers 15:40",
+        "text": "That ye may remember, and do all my commandments, and be holy unto your God."
+      },
+      "big": "In the chapter right after the worst day in the wilderness, the LORD speaks of the land as good as theirs: the children will go in. He makes a way to forgive the sin of ignorance, and names the sin done presumptuously for what it is, which the law had no offering for and Christ alone covers (Acts 13:39). And he gives a blue cord to look at, so a man's eyes do not lead his heart away."
+    }
+  },
+  {
+    "id": "numbers-16",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 16,
+    "date": "2026-11-13",
+    "title": "Numbers 16",
+    "sub": "“Ye take too much upon you”",
+    "about": "Korah the Levite, with Dathan and Abiram of Reuben and two hundred and fifty princes, rises up against Moses and Aaron. The LORD shows whom he has chosen: the earth opens and swallows the rebels, and fire consumes the men with censers. The next day the whole congregation murmurs, the plague begins, and Aaron runs with a censer and stands between the dead and the living.",
+    "tags": [
+      "Korah's rebellion",
+      "Envy",
+      "Dathan and Abiram",
+      "The earth opened",
+      "The censers made plates for the altar",
+      "Murmuring",
+      "Aaron between the dead and the living"
+    ],
+    "url": "studies/numbers-16.html",
+    "overview": {
+      "where": "In the camp in the wilderness, at the door of the tabernacle of the congregation and at the tents of Korah, Dathan and Abiram (16:18, 27)",
+      "when": "In the wandering years after Kadesh; the text gives no date. The censers were offered “to morrow” (16:7, 16), and the murmuring came “on the morrow” after the earth opened (16:41)",
+      "people": [
+        "korah",
+        "dathan-and-abiram",
+        "on-son-of-peleth",
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "wilderness",
+        "tabernacle",
+        "altar"
+      ],
+      "story": [
+        "Korah, Dathan, Abiram and On, with two hundred and fifty princes, gather against Moses and Aaron: “Ye take too much upon you” (1-3).",
+        "Moses falls on his face and sets a test with censers before the LORD: “the LORD will shew who are his”; Korah and the Levites seek the priesthood also (4-11).",
+        "Dathan and Abiram will not come up, and call Egypt a land that floweth with milk and honey; Moses is very wroth and protests his innocence to the LORD (12-15).",
+        "The glory of the LORD appears; Moses and Aaron pray, “shall one man sin, and wilt thou be wroth with all the congregation?”, and the people depart from the tents of the wicked (16-27).",
+        "The earth opens her mouth and swallows Korah's men, Dathan and Abiram and their households, and fire from the LORD consumes the two hundred and fifty (28-35).",
+        "Eleazar makes the brasen censers into broad plates for the altar, a memorial that no stranger come near to offer incense (36-40).",
+        "On the morrow the congregation murmurs; the plague begins; Aaron runs with a censer, makes an atonement, and stands between the dead and the living; fourteen thousand and seven hundred die (41-50)."
+      ],
+      "key": {
+        "ref": "Numbers 16:48",
+        "text": "And he stood between the dead and the living; and the plague was stayed."
+      },
+      "big": "Korah took a half-truth, that all the congregation are holy, and used it to reach for what God had not given, out of envy (Psalm 106:16). God showed whom he had chosen to come near, and the warning was hammered into the altar. Then the high priest the people accused ran into the plague for them and stood between the dead and the living: a picture of the one mediator, who ever liveth to make intercession (1 Timothy 2:5; Hebrews 7:25). And the children of Korah died not (26:11)."
+    }
+  },
+  {
+    "id": "numbers-17",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 17,
+    "date": "2026-11-13",
+    "title": "Numbers 17",
+    "sub": "The rod that budded",
+    "about": "To end the murmuring, the LORD has a rod from each of the twelve princes laid up before the testimony, with Aaron's name on the rod of Levi. On the morrow Aaron's rod has budded, bloomed blossoms and yielded almonds. It is kept before the testimony as a token, “that they die not”, and the people cry, “we all perish”.",
+    "tags": [
+      "Twelve rods",
+      "Aaron's rod that budded",
+      "God's choice",
+      "A token against the rebels",
+      "From pride to despair"
+    ],
+    "url": "studies/numbers-17.html",
+    "overview": {
+      "where": "In the tabernacle of the congregation, before the testimony, in the wilderness (17:4, 7)",
+      "when": "Soon after Korah's rebellion and the plague (16); the rods were laid up one day and brought out “on the morrow” (17:8)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "testimony",
+        "aarons-rod"
+      ],
+      "story": [
+        "Twelve rods, one from the prince of each father's house, each with his name, and Aaron's name on the rod of Levi (1-3).",
+        "They are laid up before the testimony: the rod of the man the LORD chooses shall blossom, and the murmurings shall cease (4-7).",
+        "On the morrow Aaron's rod has budded, brought forth buds, bloomed blossoms and yielded almonds; every man takes his own rod (8-9).",
+        "Aaron's rod is kept before the testimony for a token against the rebels, that they die not; Moses does as the LORD commanded (10-11).",
+        "The people cry, “we die, we perish, we all perish”, afraid to come near the tabernacle (12-13)."
+      ],
+      "key": {
+        "ref": "Numbers 17:8",
+        "text": "And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds."
+      },
+      "big": "God ended the argument about who may come near not with another plague but with life out of a dead stick, kept in the ark for a token “that they die not” (Hebrews 9:4). The priest God chooses is shown by resurrection, as Christ was declared the Son of God with power by the resurrection from the dead (Romans 1:4). The people swung from “ye take too much upon you” to “we all perish”; the answer to both is the priest God gave, through whom we come boldly to the throne of grace (Hebrews 4:16)."
+    }
+  },
+  {
+    "id": "numbers-18",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 18,
+    "date": "2026-11-13",
+    "title": "Numbers 18",
+    "sub": "“I am thy part and thine inheritance”",
+    "about": "After the people cried “we die, we perish,” the LORD gives Aaron, his sons and the Levites the charge of the sanctuary, to bear its iniquity so that there be no wrath any more upon Israel. He gives the priests their portion from the altar, and tells Aaron he will have no land: “I am thy part and thine inheritance.” The Levites tithe the tithe.",
+    "tags": [
+      "The iniquity of the sanctuary",
+      "Priests and Levites",
+      "The priests’ portion",
+      "The firstborn redeemed",
+      "A covenant of salt",
+      "The LORD their inheritance",
+      "The tenth of the tithe"
+    ],
+    "url": "studies/numbers-18.html",
+    "overview": {
+      "where": "In the wilderness, round the tabernacle of the congregation (18:2, 22)",
+      "when": "In the wandering years, straight after Aaron’s rod budded and the people cried “we die, we perish” (17:8, 12); the chapter names no date",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Aaron that he, his sons and his father’s house shall bear the iniquity of the sanctuary and of their priesthood (1).",
+        "The Levites are joined to Aaron to keep the charge of the tabernacle, but not to come nigh the vessels or the altar, lest both die; the stranger shall not come nigh (2-4).",
+        "They keep the charge of the sanctuary and the altar, that there be no wrath any more upon Israel; the Levites are given as a gift for the LORD, and the priest’s office as a service of gift (5-7).",
+        "The priests are given the most holy things reserved from the fire, the heave and wave offerings, the best of the oil, the wine and the wheat, the firstfruits and every thing devoted (8-14).",
+        "The firstborn of man is redeemed for five shekels; the firstling of a cow, a sheep or a goat is not redeemed, but its blood is sprinkled and its fat burned; it is a covenant of salt for ever (15-19).",
+        "Aaron shall have no inheritance in the land: “I am thy part and thine inheritance among the children of Israel.” The Levites are given the tenth in Israel for their service (20-24).",
+        "The Levites give a tenth part of the tithe to Aaron the priest, of the best of it, and bear no sin if they do it (25-32)."
+      ],
+      "key": {
+        "ref": "Numbers 18:20",
+        "text": "And the LORD spake unto Aaron, Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Israel."
+      },
+      "big": "The LORD does not answer a frightened people with “stay away.” He gives them priests and Levites to stand between, to bear the iniquity of the sanctuary, and he keeps those men himself: they have no land, and he is their part and their inheritance. Christ is the high priest who bore our sins and the portion of every man who has lost his share (Isaiah 53:6; Lamentations 3:24)."
+    }
+  },
+  {
+    "id": "numbers-19",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 19,
+    "date": "2026-11-13",
+    "title": "Numbers 19",
+    "sub": "The red heifer, and the water of separation",
+    "about": "A red heifer without spot, never yoked, is slain and burned outside the camp, with cedar wood, hyssop and scarlet; her ashes, laid up in a clean place, are mixed with running water to cleanse the man who has touched the dead, on the third day and on the seventh. Hebrews 9:13-14 asks how much more the blood of Christ will purge the conscience.",
+    "tags": [
+      "The red heifer",
+      "Without the camp",
+      "The water of separation",
+      "Touching the dead",
+      "The third day and the seventh",
+      "Cut off from the congregation"
+    ],
+    "url": "studies/numbers-19.html",
+    "overview": {
+      "where": "In the wilderness, outside the camp and before the tabernacle (19:3-4)",
+      "when": "In the wandering years, in a camp where a generation was to fall in the wilderness (14:29); the chapter names no date",
+      "people": [
+        "moses",
+        "aaron",
+        "eleazar"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The LORD commands a red heifer without spot, with no blemish, never yoked, to be brought to Eleazar the priest and slain without the camp (1-3).",
+        "Eleazar sprinkles her blood seven times toward the tabernacle; she is burned whole, with cedar wood, hyssop and scarlet cast into the fire (4-6).",
+        "The priest and the man who burns her wash and are unclean until the even (7-8).",
+        "A clean man gathers the ashes and lays them up without the camp in a clean place, for the congregation, a water of separation, a purification for sin (9-10).",
+        "Whoever touches the dead is unclean seven days, and is purified on the third day and the seventh; if he will not, he defiles the tabernacle and is cut off (11-13).",
+        "The law for a man who dies in a tent, an open vessel, a man slain, a bone, a grave (14-16).",
+        "Running water is put to the ashes; a clean person sprinkles the unclean with hyssop on the third and seventh days, and he is clean at even (17-19).",
+        "The man who will not purify himself is cut off, for he has defiled the sanctuary; the one who sprinkles washes his clothes, and whoever touches the water is unclean until even (20-22)."
+      ],
+      "key": {
+        "ref": "Numbers 19:9",
+        "text": "And a man that is clean shall gather up the ashes of the heifer, and lay them up without the camp in a clean place, and it shall be kept for the congregation of the children of Israel for a water of separation: it is a purification for sin."
+      },
+      "big": "A death outside the camp makes a way back for the unclean, and the one who handles the ashes pays with a day of uncleanness. Hebrews names it: if the ashes of an heifer sanctified to the purifying of the flesh, how much more shall the blood of Christ, who offered himself without spot to God, purge the conscience from dead works (9:13-14). Only refusing the water kept a man unclean."
+    }
+  },
+  {
+    "id": "numbers-20",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 20,
+    "date": "2026-11-13",
+    "title": "Numbers 20",
+    "sub": "The rock struck twice, and Aaron’s last mountain",
+    "about": "Miriam dies at Kadesh and there is no water; the people chide, the LORD says to speak to the rock, and Moses strikes it twice and is told he will not bring the congregation into the land. Edom refuses passage and Israel turns away. Aaron dies on mount Hor, and his garments go to Eleazar.",
+    "tags": [
+      "Miriam",
+      "No water at Kadesh",
+      "Speak ye unto the rock",
+      "The rock struck twice",
+      "Meribah",
+      "Edom refuses",
+      "Mount Hor",
+      "Aaron’s death"
+    ],
+    "url": "studies/numbers-20.html",
+    "overview": {
+      "where": "The desert of Zin, at Kadesh (20:1); then mount Hor, in the edge of the land of Edom (20:22-23; 33:37)",
+      "when": "“In the first month” (20:1), the year not named; Aaron dies on mount Hor “in the fortieth year… in the first day of the fifth month,” a hundred and twenty-three years old (33:38-39)",
+      "people": [
+        "moses",
+        "aaron",
+        "miriam",
+        "eleazar"
+      ],
+      "places": [
+        "kadesh",
+        "wilderness-of-zin",
+        "edom",
+        "mount-hor",
+        "meribah-in-kadesh"
+      ],
+      "story": [
+        "The whole congregation comes into the desert of Zin in the first month; Miriam dies at Kadesh and is buried (1).",
+        "There is no water; the people chode with Moses and Aaron and wish they had died with their brethren (2-5).",
+        "Moses and Aaron fall on their faces at the tabernacle door, and the LORD says: take the rod, gather the assembly, and speak ye unto the rock (6-8).",
+        "Moses says, “Hear now, ye rebels; must we fetch you water out of this rock?” and smites the rock twice; the water comes out abundantly (9-11).",
+        "The LORD: “Because ye believed me not, to sanctify me,” Moses and Aaron shall not bring the congregation into the land; this is the water of Meribah (12-13).",
+        "Moses sends messengers to the king of Edom, “thy brother Israel,” asking to pass by the king’s high way; Edom refuses and comes out against him, and Israel turns away (14-21).",
+        "At mount Hor, by the coast of Edom, Aaron is stripped of his garments, which are put on Eleazar his son, and dies there in the top of the mount; the whole house of Israel mourns him thirty days (22-29)."
+      ],
+      "key": {
+        "ref": "Numbers 20:12",
+        "text": "And the LORD spake unto Moses and Aaron, Because ye believed me not, to sanctify me in the eyes of the children of Israel, therefore ye shall not bring this congregation into the land which I have given them."
+      },
+      "big": "Even the meekest man answers for one angry moment: Moses struck the rock twice, said “we,” and was shut out of the land, though the water still came and the LORD never let him go. A rock smitten once, and then spoken to, is a picture of Christ offered once and now asked (1 Corinthians 10:4; Hebrews 9:28; 4:16); and Aaron, “the saint of the LORD” (Psalm 106:16), dies as the priesthood passes to his son, while our high priest “continueth ever” (Hebrews 7:24)."
+    }
+  },
+  {
+    "id": "numbers-21",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 21,
+    "date": "2026-11-13",
+    "title": "Numbers 21",
+    "sub": "Look, and live",
+    "about": "Victory at Hormah, where Israel once ran. On the long road round Edom the people loathe the light bread, and fiery serpents bite them; they say “We have sinned”, Moses prays, and the LORD has him set a serpent of brass upon a pole: every bitten man who looks upon it lives, as the Son of man must be lifted up (John 3:14–15). Then the well at Beer and its song, and Sihon and Og fall.",
+    "tags": [
+      "Hormah",
+      "This light bread",
+      "We have sinned",
+      "The serpent of brass",
+      "Spring up, O well",
+      "Sihon and Og"
+    ],
+    "url": "studies/numbers-21.html",
+    "overview": {
+      "where": "From mount Hor by the way of the Red sea round Edom, up the east side of Moab, over the Arnon to the top of Pisgah, then through the land of Sihon and Og (21:4, 13, 20, 24, 33)",
+      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38); over the brook Zered “thirty and eight years” after Kadesh-barnea (Deuteronomy 2:14)",
+      "people": [
+        "moses",
+        "king-arad",
+        "canaanites",
+        "sihon",
+        "amorites",
+        "chemosh",
+        "og"
+      ],
+      "places": [
+        "hormah",
+        "mount-hor",
+        "red-sea",
+        "edom",
+        "zered",
+        "arnon",
+        "beer-the-well",
+        "pisgah",
+        "heshbon",
+        "jabbok",
+        "bashan"
+      ],
+      "story": [
+        "King Arad the Canaanite fights Israel; Israel vows to the LORD, the LORD hearkens, and the place is called Hormah (1-3).",
+        "Going round Edom, the people are discouraged and speak against God and Moses: our soul loatheth this light bread (4-5).",
+        "The LORD sends fiery serpents; the people say We have sinned, and Moses prays for them (6-7).",
+        "Moses makes a serpent of brass upon a pole, and every bitten man who beholds it lives (8-9).",
+        "Camp by camp to the Arnon; the book of the wars of the LORD (10-15).",
+        "At Beer the LORD gives water, and Israel sings: Spring up, O well; on to the top of Pisgah (16-20).",
+        "Sihon king of the Amorites refuses passage and falls; Israel takes his land from Arnon unto Jabbok, and the song of Heshbon (21-32).",
+        "Og king of Bashan comes out to battle at Edrei: Fear him not; and Israel possesses his land (33-35)."
+      ],
+      "key": {
+        "ref": "Numbers 21:8",
+        "text": "And the LORD said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live."
+      },
+      "big": "When the people despised the bread from heaven and were bitten, the LORD did not take the serpents away; he set up a remedy where every bitten man could see it, and a look was enough. Jesus said that serpent was about him: “as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up: That whosoever believeth in him should not perish, but have eternal life” (John 3:14–15). The same chapter shows the sons winning at Hormah where their fathers ran, singing at a well, and fearing no giant."
+    }
+  },
+  {
+    "id": "numbers-22",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 22,
+    "date": "2026-11-13",
+    "title": "Numbers 22",
+    "sub": "Balaam, and the ass that spoke",
+    "about": "Israel camps in the plains of Moab, and Balak king of Moab sends the rewards of divination to Balaam to curse them. God says, “thou shalt not curse the people: for they are blessed.” Balaam keeps the men overnight, asks again, and rides out, until the angel of the LORD stands in the way, and the LORD opens the mouth of his ass and then his eyes.",
+    "tags": [
+      "The plains of Moab",
+      "Balak and Balaam",
+      "The love of money",
+      "Asking God again",
+      "The ass that spoke",
+      "The angel of the LORD"
+    ],
+    "url": "studies/numbers-22.html",
+    "overview": {
+      "where": "The plains of Moab on the east side of Jordan by Jericho; Pethor by the river (the Euphrates); a city of Moab in the border of Arnon; Kirjath-huzoth and the high places of Baal (22:1, 5, 36, 39, 41)",
+      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "people": [
+        "balaam",
+        "balak",
+        "zippor",
+        "beor",
+        "angel-of-the-lord"
+      ],
+      "places": [
+        "plains-of-moab",
+        "jericho",
+        "moab",
+        "midian",
+        "pethor",
+        "arnon",
+        "kirjath-huzoth"
+      ],
+      "story": [
+        "Israel pitches in the plains of Moab, and Moab is sore afraid of them (1-4).",
+        "Balak sends the elders of Moab and Midian with the rewards of divination to Balaam at Pethor to curse Israel (5-7).",
+        "God tells Balaam: thou shalt not go, thou shalt not curse the people, for they are blessed; Balaam sends the princes home (8-14).",
+        "Balak sends more honourable princes; Balaam says silver and gold cannot move him, yet asks the LORD again (15-19).",
+        "God lets him go with the men, but only to speak his word; God’s anger is kindled because he went (20-22).",
+        "The angel of the LORD stands in the way three times; the ass turns aside, crushes Balaam’s foot, and falls down, and Balaam smites her (23-27).",
+        "The LORD opens the mouth of the ass, then Balaam’s eyes; Balaam says, I have sinned, and is sent on to speak only the angel’s word (28-35).",
+        "Balak meets Balaam at the border of Arnon, feasts him, and brings him up into the high places of Baal (36-41)."
+      ],
+      "key": {
+        "ref": "Numbers 22:12",
+        "text": "And God said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed."
+      },
+      "big": "No one can curse a people God has blessed, and no price can buy his word. Balaam knew God’s answer and loved the wages anyway (2 Peter 2:15); God stood in his road to stop him, and opened his eyes. God still narrows the road of a man going the wrong way, and the obstacles we beat at are often what keeps us alive."
+    }
+  },
+  {
+    "id": "numbers-23",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 23,
+    "date": "2026-11-13",
+    "title": "Numbers 23",
+    "sub": "How shall I curse, whom God hath not cursed?",
+    "about": "Seven altars on the high places of Baal, then on the top of Pisgah, then on the top of Peor, a bullock and a ram on every altar. Each time the LORD puts a word in Balaam’s mouth and a blessing comes out: “God is not a man, that he should lie”, “he hath blessed; and I cannot reverse it”, “He hath not beheld iniquity in Jacob”.",
+    "tags": [
+      "Seven altars",
+      "A word in his mouth",
+      "The curse causeless",
+      "The death of the righteous",
+      "God cannot lie",
+      "Sin covered"
+    ],
+    "url": "studies/numbers-23.html",
+    "overview": {
+      "where": "The high places of Baal; the field of Zophim on the top of Pisgah; the top of Peor that looketh toward Jeshimon, above the plains of Moab (22:41; 23:14, 28)",
+      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "people": [
+        "balaam",
+        "balak",
+        "zippor"
+      ],
+      "places": [
+        "moab",
+        "syria",
+        "zophim",
+        "pisgah",
+        "peor",
+        "jeshimon"
+      ],
+      "story": [
+        "Balaam has Balak build seven altars and offer a bullock and a ram on each, and goes to meet the LORD (1-6).",
+        "The first parable: how shall I curse whom God hath not cursed? The people shall dwell alone; let me die the death of the righteous (7-10).",
+        "Balak complains; Balaam must speak what the LORD puts in his mouth (11-12).",
+        "Balak takes him to the field of Zophim, to the top of Pisgah, to see only the utmost part of the people, and builds seven more altars (13-17).",
+        "The second parable: God is not a man, that he should lie; he hath blessed, and I cannot reverse it; he hath not beheld iniquity in Jacob; no enchantment against Jacob; What hath God wrought! (18-24).",
+        "Balak says, neither curse them at all, nor bless them at all, and brings Balaam to the top of Peor, with seven more altars (25-30)."
+      ],
+      "key": {
+        "ref": "Numbers 23:19",
+        "text": "God is not a man, that he should lie; neither the son of man, that he should repent: hath he said, and shall he not do it? or hath he spoken, and shall he not make it good?"
+      },
+      "big": "God’s word cannot be bought with sacrifices or changed by a new hilltop. What he has blessed no man can reverse, because God is not a man, that he should lie. He sees his forgiven people with their sin covered (Romans 4:7-8) and himself among them, and a curse he has not spoken has nowhere to land."
+    }
+  },
+  {
+    "id": "numbers-24",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 24,
+    "date": "2026-11-13",
+    "title": "Numbers 24",
+    "sub": "A Star out of Jacob",
+    "about": "Balaam stops seeking enchantments, sees Israel abiding in its tents by tribes, and the spirit of God comes upon him: “How goodly are thy tents, O Jacob”, “Blessed is he that blesseth thee”. Then, unasked, he sees a King far off: “there shall come a Star out of Jacob, and a Sceptre shall rise out of Israel”, and the end of Amalek, the Kenites and Asshur.",
+    "tags": [
+      "The camp by tribes",
+      "How goodly are thy tents",
+      "Bless and curse",
+      "The Star out of Jacob",
+      "The nations",
+      "The way of Balaam"
+    ],
+    "url": "studies/numbers-24.html",
+    "overview": {
+      "where": "The top of Peor, looking down on Israel in the plains of Moab (23:28; 24:1-2)",
+      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "people": [
+        "balaam",
+        "balak",
+        "beor",
+        "agag",
+        "amalek",
+        "kenites"
+      ],
+      "places": [
+        "peor",
+        "moab",
+        "edom",
+        "seir",
+        "assyria",
+        "chittim"
+      ],
+      "story": [
+        "Balaam seeks no enchantments, sees Israel abiding in tents by their tribes, and the spirit of God comes upon him (1-2).",
+        "The third parable: how goodly are thy tents; his king higher than Agag; blessed is he that blesseth thee, and cursed is he that curseth thee (3-9).",
+        "Balak smites his hands together: thou hast blessed them these three times; the LORD hath kept thee back from honour (10-11).",
+        "Balaam will tell Balak what Israel shall do to Moab in the latter days (12-14).",
+        "The fourth parable: I shall see him, but not now; a Star out of Jacob and a Sceptre out of Israel shall smite Moab, and Edom shall be a possession (15-19).",
+        "Sayings over Amalek, the Kenites, Asshur and the ships of Chittim: who shall live when God doeth this! (20-24).",
+        "Balaam returns to his place, and Balak goes his way (25)."
+      ],
+      "key": {
+        "ref": "Numbers 24:17",
+        "text": "I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Israel, and shall smite the corners of Moab, and destroy all the children of Sheth."
+      },
+      "big": "The man hired to curse ends by blessing three times and foretelling the King: the Star out of Jacob, whom the New Testament shows to be Christ, “the bright and morning star” (Revelation 22:16). Balaam would see him, but not nigh; his counsel later led Israel into sin at Peor and he died by the sword (Numbers 31:8, 16). Knowing the right words is not belonging to the Lord, and the same King is near to every man who will confess him (Romans 10:8-9)."
+    }
+  },
+  {
+    "id": "numbers-25",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 25,
+    "date": "2026-11-13",
+    "title": "Numbers 25",
+    "sub": "Peor, and the man who stood up",
+    "about": "In Shittim, Israel's last camp, the people sin with the daughters of Moab, eat of their sacrifices, bow to their gods and join themselves to Baal-peor: what no curse could do, Balaam's counsel did (31:16; Revelation 2:14). A plague breaks out; the congregation weeps at the door of the tabernacle, and Phinehas rises up and the plague is stayed. The LORD gives him his covenant of peace, and names Midian's wiles.",
+    "tags": [
+      "Shittim",
+      "Baal-peor",
+      "The counsel of Balaam",
+      "Phinehas",
+      "The covenant of peace",
+      "Wiles"
+    ],
+    "url": "studies/numbers-25.html",
+    "overview": {
+      "where": "Shittim, in the plains of Moab by Jordan, Israel's last camp before crossing (25:1; Joshua 3:1)",
+      "when": "In the fortieth year, after Balaam's blessings from the top of Peor (Numbers 23–24), and before the second numbering “after the plague” (26:1)",
+      "people": [
+        "moses",
+        "phinehas",
+        "eleazar",
+        "zimri-son-of-salu",
+        "cozbi",
+        "zur-of-midian",
+        "balaam",
+        "midianites"
+      ],
+      "places": [
+        "shittim",
+        "plains-of-moab",
+        "baal-peor",
+        "peor",
+        "moab",
+        "midian"
+      ],
+      "story": [
+        "Israel abides in Shittim and commits whoredom with the daughters of Moab, eats of their sacrifices, bows down to their gods, and joins himself unto Baal-peor (1-3).",
+        "The LORD commands judgment on the heads of the people; Moses tells the judges to slay their men that were joined unto Baal-peor (4-5).",
+        "While the congregation weeps at the door of the tabernacle, a man of Israel brings a Midianitish woman into the camp; Phinehas rises up, and the plague is stayed (6-8).",
+        "Twenty and four thousand die in the plague (9).",
+        "The LORD gives Phinehas his covenant of peace, an everlasting priesthood, because he was zealous for his God and made an atonement (10-13).",
+        "The names: Zimri the son of Salu, a prince of Simeon, and Cozbi the daughter of Zur of Midian (14-15).",
+        "Vex the Midianites, for they vex you with their wiles in the matter of Peor (16-18)."
+      ],
+      "key": {
+        "ref": "Numbers 25:11",
+        "text": "Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Israel, while he was zealous for my sake among them, that I consumed not the children of Israel in my jealousy."
+      },
+      "big": "No curse could touch Israel from the hilltops, so Balaam taught Balak to invite them down: a feast, a bow, and sexual sin joined to idolatry (Numbers 31:16; Revelation 2:14). Twenty and four thousand died, until Phinehas stood up and the plague was stayed; “that was counted unto him for righteousness” (Psalm 106:31). Paul wrote it down for us (1 Corinthians 10:8, 11, 13): flee, take the way to escape God makes, and remember that the wrath we deserved fell on Christ, who “is our peace” (Ephesians 2:14). “Such were some of you: but ye are washed.”"
+    }
+  },
+  {
+    "id": "numbers-26",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 26,
+    "date": "2026-11-13",
+    "title": "Numbers 26",
+    "sub": "Counted again in the plains of Moab",
+    "about": "After the plague at Peor the LORD says: take the sum again. The new generation is numbered, 601,730 men of war, the land is to be divided by number and by lot, the Levites are counted apart, and of the men numbered at Sinai there is “not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun.”",
+    "tags": [
+      "The second numbering",
+      "601,730",
+      "Korah's children died not",
+      "The land by lot",
+      "The daughters of Zelophehad",
+      "The Levites",
+      "Caleb and Joshua"
+    ],
+    "url": "studies/numbers-26.html",
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho (26:3)",
+      "when": "After the plague (25:9) and after Aaron died on mount Hor in the fortieth year (33:38); after the brook Zered, “thirty and eight years” from Kadesh-barnea (Deuteronomy 2:14); the first numbering was on the first day of the second month of the second year (Numbers 1:1)",
+      "people": [
+        "moses",
+        "eleazar",
+        "aaron",
+        "korah",
+        "dathan-and-abiram",
+        "zelophehad",
+        "daughters-of-zelophehad",
+        "caleb",
+        "joshua-son-of-nun"
+      ],
+      "places": [
+        "plains-of-moab",
+        "jordan",
+        "jericho",
+        "israel"
+      ],
+      "story": [
+        "After the plague the LORD tells Moses and Eleazar to take the sum of all that can go to war, from twenty years old and upward (1-4).",
+        "The tribes are numbered by their families: Reuben (43,730), with Dathan and Abiram swallowed up in the company of Korah, yet “the children of Korah died not”; Simeon (22,200); Gad (40,500); Judah (76,500) (5-22).",
+        "Issachar (64,300), Zebulun (60,500), Manasseh (52,700), Ephraim (32,500), Benjamin (45,600), Dan (64,400), Asher (53,400), Naphtali (45,400); Zelophehad of Manasseh had no sons, but five daughters, named (23-50).",
+        "The total is 601,730, and the land is to be divided for an inheritance by the number of names and by lot (51-56).",
+        "The Levites, from a month old and upward, are twenty and three thousand, counted apart because they have no inheritance; Aaron's sons Nadab and Abihu died for strange fire (57-62).",
+        "Not a man of the Sinai numbering is left, save Caleb and Joshua (63-65)."
+      ],
+      "key": {
+        "ref": "Numbers 26:65",
+        "text": "For the LORD had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun."
+      },
+      "big": "The first generation fell in the wilderness for unbelief, exactly as the LORD said, and the LORD kept his word to their children: a new generation stands counted at the edge of the land. God knows every man by name, writes down the failures honestly, spares the sons of Korah, and keeps those who wholly follow him (Numbers 32:12; Hebrews 3:17-19)."
+    }
+  },
+  {
+    "id": "numbers-27",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 27,
+    "date": "2026-11-13",
+    "title": "Numbers 27",
+    "sub": "Five sisters, a mountain, and a man to follow Moses",
+    "about": "The daughters of Zelophehad ask for their dead father's share, and the LORD says they speak right and makes it a statute of judgment. Moses is told to go up mount Abarim and see the land he will not enter, because of Meribah, and asks the LORD for a shepherd for the congregation: Joshua, on whom he lays his hands.",
+    "tags": [
+      "The daughters of Zelophehad",
+      "The law of inheritance",
+      "Mount Abarim",
+      "Meribah",
+      "A shepherd for the congregation",
+      "Joshua"
+    ],
+    "url": "studies/numbers-27.html",
+    "overview": {
+      "where": "By the door of the tabernacle of the congregation in the plains of Moab (27:2); mount Abarim, over against Jericho (27:12; Deuteronomy 32:49)",
+      "when": "In the fortieth year, after the second numbering (26:63); Moses is told he will be gathered to his people as Aaron was (27:13), and the book of Deuteronomy follows in the eleventh month (Deuteronomy 1:3)",
+      "people": [
+        "moses",
+        "eleazar",
+        "aaron",
+        "zelophehad",
+        "daughters-of-zelophehad",
+        "joshua-son-of-nun"
+      ],
+      "places": [
+        "mount-abarim",
+        "tabernacle",
+        "wilderness-of-zin",
+        "kadesh"
+      ],
+      "story": [
+        "The five daughters of Zelophehad stand before Moses, Eleazar, the princes and the congregation by the door of the tabernacle: their father died in his own sin and had no sons (1-4).",
+        "Moses brings their cause before the LORD, who says they speak right and gives their father's inheritance to them (5-7).",
+        "The statute of judgment: son, then daughter, then brethren, then father's brethren, then the next kinsman (8-11).",
+        "The LORD tells Moses to go up mount Abarim and see the land, and then be gathered to his people as Aaron was, because of the rebellion at the water of Meribah (12-14).",
+        "Moses asks the LORD to set a man over the congregation, that it be not as sheep which have no shepherd (15-17).",
+        "Joshua the son of Nun, a man in whom is the spirit, is set before Eleazar and all the congregation, and Moses lays his hands upon him and gives him a charge (18-23)."
+      ],
+      "key": {
+        "ref": "Numbers 27:17",
+        "text": "Which may go out before them, and which may go in before them, and which may lead them out, and which may bring them in; that the congregation of the LORD be not as sheep which have no shepherd."
+      },
+      "big": "A bold, honest request is heard and becomes law; even the meekest man answers for his anger, yet the LORD shows Moses the land and lets him name his successor; and Moses' last care is for the people, that they not be as sheep without a shepherd (Matthew 9:36)."
+    }
+  },
+  {
+    "id": "numbers-28",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 28,
+    "date": "2026-11-13",
+    "title": "Numbers 28",
+    "sub": "The offerings of every day",
+    "about": "The LORD sets in order what is to be offered every day, on the sabbath, on the first of the month, in the passover week and on the day of the firstfruits: two lambs a day, a lamb at the morning and a lamb at even, with more laid beside them on a feast, and a goat for a sin offering. Hebrews says the priests offered the same sacrifices daily, which could never take away sins, and that Christ offered one sacrifice for ever and sat down.",
+    "tags": [
+      "The continual burnt offering",
+      "The sabbath",
+      "The new month",
+      "The passover week",
+      "The day of the firstfruits",
+      "Once for all"
+    ],
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
+      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "The LORD says his offering and his bread are to be offered in their due season (1-2).",
+        "Two lambs of the first year without spot every day, one in the morning and the other at even, with flour, oil and wine: the continual burnt offering, ordained in mount Sinai (3-8).",
+        "On the sabbath day two more lambs beside the continual burnt offering (9-10).",
+        "In the beginnings of the months two young bullocks, one ram, seven lambs and a kid of the goats for a sin offering (11-15).",
+        "The passover on the fourteenth day of the first month; unleavened bread seven days from the fifteenth, with the same offering each day (16-25).",
+        "The day of the firstfruits, after the weeks are out, with the same offering (26-31)."
+      ],
+      "key": {
+        "ref": "Numbers 28:4",
+        "text": "The one lamb shalt thou offer in the morning, and the other lamb shalt thou offer at even;"
+      },
+      "big": "The LORD never leaves a day without an offering: a lamb at the morning, a lamb at even, and more beside them on the sabbath, the new month and the feasts, with a goat for sin. Hebrews 10:11-14 says why it was never finished: the priest standeth daily offering the same sacrifices, which can never take away sins, but Christ offered one sacrifice for sins for ever, and sat down."
+    },
+    "url": "studies/numbers-28.html"
+  },
+  {
+    "id": "numbers-29",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 29,
+    "date": "2026-11-13",
+    "title": "Numbers 29",
+    "sub": "The seventh month",
+    "about": "The offerings of the seventh month: the day of blowing the trumpets on the first, the day of atonement on the tenth, and the feast of seven days from the fifteenth, with thirteen bullocks on the first day and one fewer each day after, seventy in all, and one bullock on the eighth day, a solemn assembly. A goat for a sin offering on every one of the ten days. Moses told the children of Israel according to all that the LORD commanded him.",
+    "tags": [
+      "The trumpets",
+      "The day of atonement",
+      "The feast of seven days",
+      "The bullocks counted down",
+      "Beside your vows",
+      "Hebrews 10:4"
+    ],
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
+      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "The first day of the seventh month, a day of blowing the trumpets: one bullock, one ram, seven lambs and a kid of the goats for a sin offering (1-6).",
+        "The tenth day: an holy convocation, they afflict their souls and do no work; the same offering, beside the sin offering of atonement (7-11).",
+        "The fifteenth day, a feast of seven days: thirteen bullocks on the first day, twelve, eleven, ten, nine, eight, seven on the days after, with two rams, fourteen lambs and a goat each day (12-34).",
+        "The eighth day, a solemn assembly: one bullock, one ram, seven lambs and a goat (35-38).",
+        "These things in their set feasts, beside their vows and their freewill offerings; Moses told the children of Israel according to all that the LORD commanded him (39-40)."
+      ],
+      "key": {
+        "ref": "Numbers 29:40",
+        "text": "And Moses told the children of Israel according to all that the LORD commanded Moses."
+      },
+      "big": "The feast of joy stood on the heaviest altar of the year: seventy bullocks in the seven days and a goat for sin on every day. Hebrews 10:4 says it could not take away sins, and verse 14 says what did: one offering, which hath perfected for ever them that are sanctified. Romans 5:11 joins the two: we joy in God by whom we have now received the atonement."
+    },
+    "url": "studies/numbers-29.html"
+  },
+  {
+    "id": "numbers-30",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 30,
+    "date": "2026-11-13",
+    "title": "Numbers 30",
+    "sub": "“He shall not break his word”",
+    "about": "Moses gives the heads of the tribes the law of vows: a man who vows a vow to the LORD or swears an oath shall not break his word. A daughter in her father's house, and a wife in her husband's, may have her vow stopped by the one over her on the day he hears it, and the LORD shall forgive her; a widow's or a divorced woman's vow stands. A husband who waits and then makes it void shall bear her iniquity. Jesus says: let your yea be yea.",
+    "tags": [
+      "Vows",
+      "His word",
+      "A daughter's vow",
+      "A wife's vow",
+      "The LORD shall forgive her",
+      "Yea, yea"
+    ],
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
+      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "Moses speaks to the heads of the tribes: This is the thing which the LORD hath commanded (1).",
+        "A man who vows a vow or swears an oath shall not break his word; he shall do according to all that proceedeth out of his mouth (2).",
+        "A young woman in her father's house: if he holds his peace the vow stands; if he disallows it the day he hears, it does not, and the LORD shall forgive her (3-5).",
+        "A wife: the same, by her husband, on the day he hears it (6-8, 10-14).",
+        "The vow of a widow or of one divorced stands against her (9).",
+        "A husband who makes the vow void after he has heard it shall bear her iniquity (15); these are the statutes between a man and his wife, and a father and his daughter (16)."
+      ],
+      "key": {
+        "ref": "Numbers 30:2",
+        "text": "If a man vow a vow unto the LORD, or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth."
+      },
+      "big": "A man's word binds him. The LORD holds him to what he says, and Jesus takes it to the root: let your communication be, Yea, yea; Nay, nay (Matthew 5:37). The LORD forgives where a vow is rightly stopped, and for the man who has broken his word there is the way of Leviticus 5:4-6 and 1 John 1:9: know it, confess it, and he is faithful and just to forgive."
+    },
+    "url": "studies/numbers-30.html"
+  },
+  {
+    "id": "numbers-31",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 31,
+    "date": "2026-11-13",
+    "title": "Numbers 31",
+    "sub": "Not one man lacking",
+    "about": "Moses' last battle. The LORD sends a thousand men of every tribe, with Phinehas and the trumpets, against Midian for the snare at Peor. Balaam, whose counsel caused Israel's sin, is slain with the sword. The men of war are purified before they come back into the camp, the prey is divided between the fighters and the congregation with the LORD's part from each, and the captains count their men and find not one missing.",
+    "tags": [
+      "Avenge the LORD of Midian",
+      "Balaam slain",
+      "The counsel of Balaam",
+      "Through the fire, through the water",
+      "The prey divided",
+      "Not one man lacking"
+    ],
+    "url": "studies/numbers-31.html",
+    "overview": {
+      "where": "From the camp in the plains of Moab, by Jordan near Jericho, out against Midian and back (31:12)",
+      "when": "In the fortieth year, in the plains of Moab, after Aaron died on the first day of the fifth month (33:38) and before Moses spoke the words of Deuteronomy in the eleventh month (Deuteronomy 1:3): Moses' last work before he was gathered to his people (31:2)",
+      "people": [
+        "moses",
+        "eleazar",
+        "phinehas",
+        "balaam",
+        "beor",
+        "five-kings-of-midian",
+        "midianites"
+      ],
+      "places": [
+        "plains-of-moab",
+        "midian",
+        "peor",
+        "jordan",
+        "jericho",
+        "tabernacle"
+      ],
+      "story": [
+        "The LORD tells Moses to avenge Israel of the Midianites, and afterward he will be gathered to his people (1-2).",
+        "A thousand of every tribe, twelve thousand, go to the war with Phinehas, the holy instruments and the trumpets (3-6).",
+        "They slay the males, the five kings of Midian, and Balaam the son of Beor, burn the cities, and bring the captives and the spoil to the camp (7-12).",
+        "Moses is wroth that the women were kept alive: by Balaam's counsel they caused Israel's trespass at Peor. The women and the male children are put to death; the girls are spared (13-18).",
+        "The men of war abide without the camp seven days and are purified; metal goes through the fire and the water of separation, and all else through the water (19-24).",
+        "The prey is divided between the men of war and the congregation; one in five hundred of the soldiers' half goes to Eleazar, one in fifty of the people's half to the Levites (25-47).",
+        "The officers find that not one man is lacking and bring 16,750 shekels of gold as an oblation, which Moses lays up in the tabernacle for a memorial (48-54)."
+      ],
+      "key": {
+        "ref": "Numbers 31:49",
+        "text": "And they said unto Moses, Thy servants have taken the sum of the men of war which are under our charge, and there lacketh not one man of us."
+      },
+      "big": "The LORD judged Midian for the snare at Peor, where Balaam's counsel did by temptation what his curses could not (31:16; Revelation 2:14). God brought his people home clean, shared the spoil fairly with his own part from each, and kept every man: “there lacketh not one man of us”, as Christ says of his own, “Of them which thou gavest me have I lost none” (John 18:9)."
+    }
+  },
+  {
+    "id": "numbers-32",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 32,
+    "date": "2026-11-13",
+    "title": "Numbers 32",
+    "sub": "Be sure your sin will find you out",
+    "about": "The children of Reuben and Gad see the good grazing land east of the Jordan and ask to stay there. Moses hears their fathers at Kadesh in it: “Shall your brethren go to war, and shall ye sit here?” They promise to cross over armed before the LORD until every tribe has its land, and Moses warns them, “be sure your sin will find you out.” The kingdoms of Sihon and Og are given to Reuben, Gad and half the tribe of Manasseh.",
+    "tags": [
+      "A land for cattle",
+      "Shall ye sit here?",
+      "Wholly followed the LORD",
+      "Before the LORD",
+      "Be sure your sin will find you out",
+      "East of Jordan"
+    ],
+    "url": "studies/numbers-32.html",
+    "overview": {
+      "where": "The plains of Moab, and the land east of the Jordan taken from Sihon and Og: Jazer, Gilead, Heshbon, Dibon and Bashan (32:1-3, 33)",
+      "when": "In the fortieth year, in the plains of Moab, while Moses still lived (32:28; Deuteronomy 1:3), after the “thirty and eight years” from Kadesh-barnea to the brook Zered (32:8; Deuteronomy 2:14)",
+      "people": [
+        "moses",
+        "eleazar",
+        "joshua-son-of-nun",
+        "caleb",
+        "reuben",
+        "gad-tribe",
+        "manasseh-tribe",
+        "machir",
+        "jair",
+        "nobah",
+        "sihon",
+        "og",
+        "amorites"
+      ],
+      "places": [
+        "gilead",
+        "jaazer",
+        "heshbon",
+        "dibon",
+        "towns-of-gad-and-reuben",
+        "bashan",
+        "jordan",
+        "canaan",
+        "kadesh",
+        "brook-eshcol"
+      ],
+      "story": [
+        "Reuben and Gad, rich in cattle, ask for the land of Jazer and Gilead, and not to be brought over Jordan (1-5).",
+        "Moses asks if their brethren must go to war while they sit there, and reminds them how their fathers discouraged Israel from Kadesh-barnea (6-9).",
+        "The LORD swore that none but Caleb and Joshua, who wholly followed him, would see the land, and made Israel wander forty years; the sons are rising up in their fathers' stead (10-15).",
+        "They offer to build folds and cities, then go armed before Israel and not return until every man has his inheritance (16-19).",
+        "Moses agrees, if they go armed before the LORD; if not, “be sure your sin will find you out” (20-24).",
+        "They promise, and Moses commits the matter to Eleazar, Joshua and the heads of the tribes (25-32).",
+        "Moses gives the kingdoms of Sihon and Og to Gad, Reuben and half Manasseh; they build their towns, and Machir, Jair and Nobah take Gilead and its towns (33-42)."
+      ],
+      "key": {
+        "ref": "Numbers 32:23",
+        "text": "But if ye will not do so, behold, ye have sinned against the LORD: and be sure your sin will find you out."
+      },
+      "big": "A comfortable choice can sound like Kadesh all over again, and a promise left undone is sin that comes looking for a man. Reuben and Gad kept their word: they passed over armed and did not leave their brethren (Joshua 4:12; 22:2-3). The sons broke the fathers' pattern, as Christ redeems a man “from your vain conversation received by tradition from your fathers” (1 Peter 1:18)."
+    }
+  },
+  {
+    "id": "numbers-33",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 33,
+    "date": "2026-11-13",
+    "title": "Numbers 33",
+    "sub": "The journeys of Israel, written down",
+    "about": "Moses wrote down the journeys of Israel “by the commandment of the LORD”: forty-two names, from Rameses on the fifteenth day of the first month to the plains of Moab by Jordan near Jericho. The one date besides the first is Aaron's death on mount Hor, in the fortieth year, on the first day of the fifth month. Then the LORD tells Moses what Israel must do when they pass over Jordan: drive out the inhabitants and their idols, divide the land by lot, and not let any remain to be pricks in their eyes and thorns in their sides.",
+    "tags": [
+      "The journeys",
+      "Forty-two names",
+      "The sea",
+      "Aaron on mount Hor",
+      "The plains of Moab",
+      "Pricks in your eyes"
+    ],
+    "url": "studies/numbers-33.html",
+    "overview": {
+      "where": "Written as one list from Rameses in Egypt, through the sea, Sinai, Ezion-gaber, Kadesh and mount Hor, to the plains of Moab by Jordan near Jericho, where the LORD speaks to Moses (33:48-50)",
+      "when": "From the fifteenth day of the first month, the morrow after the passover (33:3), to the first day of the fifth month of the fortieth year, when Aaron died (33:38); the last camp is in the plains of Moab, before Deuteronomy 1:3 (the fortieth year, the eleventh month)",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "rameses",
+        "red-sea",
+        "mount-sinai",
+        "kibroth-hattaavah",
+        "hazeroth",
+        "ezion-gaber",
+        "wilderness-of-zin",
+        "kadesh",
+        "mount-hor",
+        "plains-of-moab",
+        "jordan",
+        "jericho"
+      ],
+      "story": [
+        "Moses wrote down the journeys of Israel by the commandment of the LORD (1-2).",
+        "They left Rameses on the fifteenth day of the first month, the morrow after the passover, with an high hand, while Egypt buried its firstborn and the LORD judged its gods (3-4).",
+        "Succoth, Etham, Pi-hahiroth, through the midst of the sea, then Marah, Elim, the Red sea, the wilderness of Sin, Dophkah, Alush, Rephidim and the wilderness of Sinai (5-15).",
+        "From Sinai, Kibroth-hattaavah, Hazeroth and seventeen camps more, to Ezion-gaber and the wilderness of Zin, which is Kadesh (16-36).",
+        "Mount Hor: Aaron went up at the commandment of the LORD and died there, an hundred and twenty and three years old, in the fortieth year, on the first day of the fifth month (37-39).",
+        "King Arad hears of their coming; the camps go on past Zalmonah, Punon and Oboth, by the border of Moab, to the plains of Moab by Jordan near Jericho (40-49).",
+        "The LORD commands Israel to drive out the inhabitants, destroy their idols, divide the land by lot, and warns that those left will be pricks in their eyes and thorns in their sides (50-56)."
+      ],
+      "key": {
+        "ref": "Numbers 33:2",
+        "text": "And Moses wrote their goings out according to their journeys by the commandment of the LORD: and these are their journeys according to their goings out."
+      },
+      "big": "The LORD had the whole road written down: the oasis, the dry place, the graves of lust, the last camp by Jordan. He leads through every camp, and after the worst one the next line is still “and they departed.” The warning at the end is that what a man leaves in place will not stay quiet."
+    }
+  },
+  {
+    "id": "numbers-34",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 34,
+    "date": "2026-11-13",
+    "title": "Numbers 34",
+    "sub": "The borders of the land, and the men who divide it",
+    "about": "Before Israel crosses Jordan, the LORD gives Moses the four borders of the land of Canaan: the south from the wilderness of Zin, the great sea on the west, the north by mount Hor and the entrance of Hamath, and the east down Jordan to the salt sea. Reuben, Gad and half of Manasseh have already received theirs across the river. Eleazar the priest and Joshua the son of Nun are to divide the land, with one prince from each of the other tribes, among them Caleb the son of Jephunneh.",
+    "tags": [
+      "The land of Canaan",
+      "The four borders",
+      "Nine and a half tribes",
+      "Two and a half tribes",
+      "Eleazar and Joshua",
+      "Caleb"
+    ],
+    "url": "studies/numbers-34.html",
+    "overview": {
+      "where": "In the plains of Moab by Jordan near Jericho (33:50), looking across the river to the land of Canaan",
+      "when": "The fortieth year, after the last camp is pitched in the plains of Moab (33:48-50) and before the book ends there (36:13)",
+      "people": [
+        "moses",
+        "eleazar",
+        "joshua-son-of-nun",
+        "caleb"
+      ],
+      "places": [
+        "canaan",
+        "salt-sea",
+        "great-sea",
+        "sea-of-chinnereth",
+        "hamath",
+        "jordan",
+        "jericho",
+        "kadesh"
+      ],
+      "story": [
+        "The land of Canaan with its coasts is to fall to Israel for an inheritance (1-2).",
+        "The south border: from the wilderness of Zin along the coast of Edom, from the outmost coast of the salt sea by the ascent of Akrabbim, Zin, Kadesh-barnea, Hazar-addar and Azmon to the river of Egypt and the sea (3-5).",
+        "The west border is the great sea; the north runs from the great sea by mount Hor, the entrance of Hamath, Zedad and Ziphron to Hazar-enan (6-9).",
+        "The east runs from Hazar-enan to Shepham and Riblah, down to the sea of Chinnereth, along Jordan to the salt sea (10-12).",
+        "The land is to be inherited by lot by the nine tribes and the half tribe, for Reuben, Gad and half of Manasseh have their inheritance east of Jordan near Jericho (13-15).",
+        "The men who divide it: Eleazar the priest and Joshua the son of Nun (16-17).",
+        "One prince of every tribe: Caleb of Judah, Shemuel, Elidad, Bukki, Hanniel, Kemuel, Elizaphan, Paltiel, Ahihud and Pedahel (18-29)."
+      ],
+      "key": {
+        "ref": "Numbers 34:2",
+        "text": "Command the children of Israel, and say unto them, When ye come into the land of Canaan; (this is the land that shall fall unto you for an inheritance, even the land of Canaan with the coasts thereof:)"
+      },
+      "big": "The land is a gift with its edges drawn, and the LORD names the men who will share it out before a foot is set in it. Moses draws the borders of a land he will not enter, and Caleb and Joshua, the two who came through the forty years, stand among those who divide it. The lot falls where the LORD places it: an inheritance, not wages."
+    }
+  },
+  {
+    "id": "numbers-35",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 35,
+    "date": "2026-11-13",
+    "title": "Numbers 35",
+    "sub": "Forty and eight cities, and six for refuge",
+    "about": "The Levites receive forty and eight cities among the tribes, with suburbs round them, and six of these are cities of refuge. A man who killed without meaning to may flee there from the avenger of blood and abide until the death of the high priest; a murderer is put to death. “Defile not therefore the land which ye shall inhabit, wherein I dwell.”",
+    "tags": [
+      "The Levites’ cities",
+      "Cities of refuge",
+      "The avenger of blood",
+      "Murderer and manslayer",
+      "The death of the high priest",
+      "The land defiled by blood"
+    ],
+    "url": "studies/numbers-35.html",
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho (35:1)",
+      "when": "In the plains of Moab, near the end of the forty years, with Deuteronomy to follow “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "plains-of-moab",
+        "jordan",
+        "jericho",
+        "canaan",
+        "city-of-refuge"
+      ],
+      "story": [
+        "The LORD tells Moses in the plains of Moab to give the Levites cities to dwell in, with suburbs for their cattle and goods (1-5).",
+        "Forty and eight cities in all, six of them cities for refuge, from each tribe according to its inheritance (6-8).",
+        "When they are come over Jordan: three cities on this side and three in Canaan, for the Israelite, the stranger and the sojourner who kills any person unawares (9-15).",
+        "A man who kills with iron, stone or wood, in hatred or by laying of wait, is a murderer and shall be put to death by the revenger of blood (16-21).",
+        "A man who kills suddenly, without enmity, is judged by the congregation and restored to his city of refuge (22-25).",
+        "He abides there until the death of the high priest; outside the border the revenger is not guilty of blood; after the high priest dies he returns home (25-28).",
+        "The statute: witnesses, no satisfaction for a murderer or to shorten the refuge, and the land not to be defiled, for the LORD dwells among the children of Israel (29-34)."
+      ],
+      "key": {
+        "ref": "Numbers 35:34",
+        "text": "Defile not therefore the land which ye shall inhabit, wherein I dwell: for I the LORD dwell among the children of Israel."
+      },
+      "big": "God gives his servants homes in every tribe and makes six of them a door open to any man who killed without meaning to. The slayer is safe if he stays inside until the high priest dies, and Hebrews 6:18 says of believers that they have “fled for refuge to lay hold upon the hope set before us”."
+    }
+  },
+  {
+    "id": "numbers-36",
+    "type": "chapter",
+    "book": "Numbers",
+    "ch": 36,
+    "date": "2026-11-13",
+    "title": "Numbers 36",
+    "sub": "The inheritance stays in the tribe, and the book ends",
+    "about": "The chief fathers of Gilead fear that the daughters of Zelophehad, marrying into another tribe, will carry their inheritance away. The LORD commands that they marry whom they think best, only within their father’s tribe, and they do so. Numbers closes in the plains of Moab by Jordan near Jericho.",
+    "tags": [
+      "The inheritance",
+      "The daughters of Zelophehad",
+      "Marrying in the tribe",
+      "The word of the LORD",
+      "Looking back over Numbers",
+      "On to Deuteronomy"
+    ],
+    "url": "studies/numbers-36.html",
+    "overview": {
+      "where": "The plains of Moab by Jordan near Jericho (36:13)",
+      "when": "In the plains of Moab, at the end of the forty years, with Deuteronomy beginning “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "people": [
+        "moses",
+        "machir",
+        "manasseh-son-of-joseph",
+        "zelophehad",
+        "daughters-of-zelophehad"
+      ],
+      "places": [
+        "gilead",
+        "plains-of-moab",
+        "jordan",
+        "jericho"
+      ],
+      "story": [
+        "The chief fathers of the children of Gilead, the son of Machir, the son of Manasseh, come before Moses and the princes (1).",
+        "They remind him that Zelophehad’s inheritance was given to his daughters, and fear that if they marry into another tribe it will be taken from their tribe, and at the jubile lost for good (2-4).",
+        "Moses commands according to the word of the LORD that the tribe of the sons of Joseph hath said well: the daughters may marry to whom they think best, only within the tribe of their father (5-9).",
+        "The daughters of Zelophehad do so, Mahlah, Tirzah, Hoglah, Milcah and Noah marrying their father’s brothers’ sons, and their inheritance remains in their father’s tribe (10-12).",
+        "“These are the commandments and the judgments, which the LORD commanded by the hand of Moses unto the children of Israel in the plains of Moab by Jordan near Jericho” (13)."
+      ],
+      "key": {
+        "ref": "Numbers 36:13",
+        "text": "These are the commandments and the judgments, which the LORD commanded by the hand of Moses unto the children of Israel in the plains of Moab by Jordan near Jericho."
+      },
+      "big": "What God gives a family stays where he puts it, and the daughters take their freedom and keep their inheritance in obedience. The book closes with a new generation counted and waiting in the plains of Moab, after the first fell in the wilderness through unbelief (1 Corinthians 10:5-11; Hebrews 3:19), with Deuteronomy ahead."
+    }
   }
 ];

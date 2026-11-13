@@ -1205,6 +1205,105 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 1, 34 ] ],
    [
+    "Numbers", 1,
+    [ 1, 17, 19, 44, 48, 54 ] ],
+   [
+    "Numbers", 2,
+    [ 1, 33, 34 ] ],
+   [
+    "Numbers", 3,
+    [ 1, 5, 11, 14, 16, 38, 39, 40, 42, 44, 49, 51 ] ],
+   [
+    "Numbers", 4,
+    [ 1, 17, 21, 34, 37, 41, 45, 46, 49 ] ],
+   [
+    "Numbers", 5,
+    [ 1, 4, 5, 11 ] ],
+   [
+    "Numbers", 6,
+    [ 1, 22 ] ],
+   [
+    "Numbers", 7,
+    [ 1, 4, 6, 11, 89 ] ],
+   [
+    "Numbers", 8,
+    [ 1, 3, 4, 5, 20, 22, 23 ] ],
+   [
+    "Numbers", 9,
+    [ 1, 4, 5, 6, 8, 9, 23 ] ],
+   [
+    "Numbers", 10,
+    [ 1, 13, 29, 35 ] ],
+   [
+    "Numbers", 11,
+    [ 2, 10, 11, 16, 21, 23, 24, 27, 28, 29, 30 ] ],
+   [
+    "Numbers", 12,
+    [ 1, 2, 3, 4, 7, 8, 11, 13, 14 ] ],
+   [
+    "Numbers", 13,
+    [ 1, 3, 16, 17, 26, 30 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 5, 11, 13, 26, 36, 39, 41, 44 ] ],
+   [
+    "Numbers", 15,
+    [ 1, 17, 22, 23, 33, 35, 36, 37 ] ],
+   [
+    "Numbers", 16,
+    [ 2, 3, 4, 8, 12, 15, 16, 18, 20, 23, 25, 28, 36, 40, 41, 42, 43, 44, 46, 47, 50 ] ],
+   [
+    "Numbers", 17,
+    [ 1, 6, 7, 8, 9, 10, 11, 12 ] ],
+   [
+    "Numbers", 18,
+    [ 25 ] ],
+   [
+    "Numbers", 19,
+    [ 1 ] ],
+   [
+    "Numbers", 20,
+    [ 2, 3, 6, 7, 9, 10, 11, 12, 14, 23, 27, 28 ] ],
+   [
+    "Numbers", 21,
+    [ 5, 7, 8, 9, 16, 32, 34 ] ],
+   [
+    "Numbers", 25,
+    [ 4, 5, 6, 10, 16 ] ],
+   [
+    "Numbers", 26,
+    [ 1, 3, 4, 9, 52, 59, 63, 64 ] ],
+   [
+    "Numbers", 27,
+    [ 2, 5, 6, 11, 12, 15, 18, 22, 23 ] ],
+   [
+    "Numbers", 28,
+    [ 1 ] ],
+   [
+    "Numbers", 29,
+    [ 40 ] ],
+   [
+    "Numbers", 30,
+    [ 1, 16 ] ],
+   [
+    "Numbers", 31,
+    [ 1, 3, 6, 7, 12, 13, 14, 15, 21, 25, 31, 41, 42, 47, 48, 49, 51, 54 ] ],
+   [
+    "Numbers", 32,
+    [ 2, 6, 20, 25, 28, 29, 33, 40 ] ],
+   [
+    "Numbers", 33,
+    [ 1, 2, 50 ] ],
+   [
+    "Numbers", 34,
+    [ 1, 13, 16 ] ],
+   [
+    "Numbers", 35,
+    [ 1, 9 ] ],
+   [
+    "Numbers", 36,
+    [ 1, 5, 10, 13 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -2492,6 +2591,33 @@ window.GLOSSARY = [
     "Leviticus", 25,
     [ 32, 33 ] ],
    [
+    "Numbers", 1,
+    [ 47, 50, 51, 53 ] ],
+   [
+    "Numbers", 2,
+    [ 17, 33 ] ],
+   [
+    "Numbers", 3,
+    [ 9, 12, 20, 32, 39, 41, 45, 46, 49 ] ],
+   [
+    "Numbers", 4,
+    [ 18, 46 ] ],
+   [
+    "Numbers", 7,
+    [ 5, 6 ] ],
+   [
+    "Numbers", 8,
+    [ 6, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 24, 26 ] ],
+   [
+    "Numbers", 18,
+    [ 6, 23, 24, 26, 30 ] ],
+   [
+    "Numbers", 26,
+    [ 57, 58 ] ],
+   [
+    "Numbers", 35,
+    [ 2, 4, 6, 7, 8 ] ],
+   [
     "Luke", 10,
     [ 32 ] ],
    [
@@ -3197,6 +3323,114 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 1, 2, 9, 11, 14, 16, 21, 22, 23, 26, 28, 30, 32, 34 ] ],
    [
+    "Numbers", 1,
+    [ 1, 19, 48, 54 ] ],
+   [
+    "Numbers", 2,
+    [ 1, 33, 34 ] ],
+   [
+    "Numbers", 3,
+    [ 1, 4, 5, 11, 13, 14, 16, 39, 40, 41, 42, 44, 45, 51 ] ],
+   [
+    "Numbers", 4,
+    [ 1, 17, 21, 37, 41, 45, 49 ] ],
+   [
+    "Numbers", 5,
+    [ 1, 4, 5, 6, 8, 11, 16, 18, 21, 25, 30 ] ],
+   [
+    "Numbers", 6,
+    [ 1, 2, 5, 6, 8, 12, 14, 16, 17, 20, 21, 22, 24, 25, 26 ] ],
+   [
+    "Numbers", 7,
+    [ 3, 4, 11 ] ],
+   [
+    "Numbers", 8,
+    [ 1, 3, 4, 5, 10, 11, 12, 13, 20, 21, 22, 23 ] ],
+   [
+    "Numbers", 9,
+    [ 1, 5, 7, 8, 9, 10, 13, 14, 18, 19, 20, 23 ] ],
+   [
+    "Numbers", 10,
+    [ 1, 9, 10, 13, 29, 32, 33, 34, 35, 36 ] ],
+   [
+    "Numbers", 11,
+    [ 1, 2, 3, 10, 11, 16, 18, 20, 23, 24, 25, 29, 31, 33 ] ],
+   [
+    "Numbers", 12,
+    [ 2, 4, 5, 6, 8, 9, 13, 14 ] ],
+   [
+    "Numbers", 13,
+    [ 1, 3 ] ],
+   [
+    "Numbers", 14,
+    [ 3, 8, 9, 10, 11, 13, 14, 16, 18, 20, 21, 26, 28, 35, 37, 40, 41, 42, 43, 44 ] ],
+   [
+    "Numbers", 15,
+    [ 1, 3, 4, 7, 8, 10, 13, 14, 15, 17, 19, 21, 22, 23, 24, 25, 28, 30, 31, 35, 36, 37, 39, 41 ] ],
+   [
+    "Numbers", 16,
+    [ 3, 5, 7, 9, 11, 15, 16, 17, 19, 20, 23, 28, 29, 30, 35, 36, 38, 40, 41, 42, 44, 46 ] ],
+   [
+    "Numbers", 17,
+    [ 1, 7, 9, 10, 11, 13 ] ],
+   [
+    "Numbers", 18,
+    [ 1, 6, 8, 12, 13, 15, 17, 19, 20, 24, 25, 26, 28, 29 ] ],
+   [
+    "Numbers", 19,
+    [ 1, 2, 13, 20 ] ],
+   [
+    "Numbers", 20,
+    [ 3, 4, 6, 7, 9, 12, 13, 16, 23, 27 ] ],
+   [
+    "Numbers", 21,
+    [ 2, 3, 6, 7, 8, 14, 16, 34 ] ],
+   [
+    "Numbers", 22,
+    [ 8, 13, 18, 19, 22, 23, 24, 25, 26, 27, 28, 31, 32, 34, 35 ] ],
+   [
+    "Numbers", 23,
+    [ 3, 5, 8, 12, 15, 16, 17, 21, 26 ] ],
+   [
+    "Numbers", 24,
+    [ 1, 6, 11, 13 ] ],
+   [
+    "Numbers", 25,
+    [ 3, 4, 10, 16 ] ],
+   [
+    "Numbers", 26,
+    [ 1, 4, 9, 52, 61, 65 ] ],
+   [
+    "Numbers", 27,
+    [ 3, 5, 6, 11, 12, 15, 16, 17, 18, 21, 22, 23 ] ],
+   [
+    "Numbers", 28,
+    [ 1, 3, 6, 7, 8, 11, 13, 15, 16, 19, 24, 26, 27 ] ],
+   [
+    "Numbers", 29,
+    [ 2, 6, 8, 12, 13, 36, 39, 40 ] ],
+   [
+    "Numbers", 30,
+    [ 1, 2, 3, 5, 8, 12, 16 ] ],
+   [
+    "Numbers", 31,
+    [ 1, 3, 7, 16, 21, 25, 28, 29, 30, 31, 37, 38, 39, 40, 41, 47, 50, 52, 54 ] ],
+   [
+    "Numbers", 32,
+    [ 4, 7, 9, 10, 12, 13, 14, 20, 21, 22, 23, 27, 29, 31, 32 ] ],
+   [
+    "Numbers", 33,
+    [ 2, 4, 38, 50 ] ],
+   [
+    "Numbers", 34,
+    [ 1, 13, 16, 29 ] ],
+   [
+    "Numbers", 35,
+    [ 1, 9, 34 ] ],
+   [
+    "Numbers", 36,
+    [ 2, 5, 6, 10, 13 ] ],
+   [
     "Proverbs", 1,
     [ 7, 29 ] ],
    [
@@ -3800,6 +4034,33 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 10, 11 ] ],
    [
+    "Numbers", 13,
+    [ 29 ] ],
+   [
+    "Numbers", 22,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 3, 63 ] ],
+   [
+    "Numbers", 31,
+    [ 12 ] ],
+   [
+    "Numbers", 32,
+    [ 5, 19, 21, 29, 32 ] ],
+   [
+    "Numbers", 33,
+    [ 48, 49, 50, 51 ] ],
+   [
+    "Numbers", 34,
+    [ 12, 15 ] ],
+   [
+    "Numbers", 35,
+    [ 1, 10, 14 ] ],
+   [
+    "Numbers", 36,
+    [ 13 ] ],
+   [
     "Zechariah", 11,
     [ 3 ] ],
    [
@@ -3898,6 +4159,57 @@ window.GLOSSARY = [
    [
     "Leviticus", 16,
     [ 10, 21, 22 ] ],
+   [
+    "Numbers", 1,
+    [ 1, 19 ] ],
+   [
+    "Numbers", 3,
+    [ 4, 14 ] ],
+   [
+    "Numbers", 9,
+    [ 1, 5 ] ],
+   [
+    "Numbers", 10,
+    [ 12, 31 ] ],
+   [
+    "Numbers", 12,
+    [ 16 ] ],
+   [
+    "Numbers", 13,
+    [ 3, 21, 26 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 16, 22, 25, 29, 32, 33, 35 ] ],
+   [
+    "Numbers", 15,
+    [ 32 ] ],
+   [
+    "Numbers", 16,
+    [ 13 ] ],
+   [
+    "Numbers", 20,
+    [ 4 ] ],
+   [
+    "Numbers", 21,
+    [ 5, 11, 13, 18, 23 ] ],
+   [
+    "Numbers", 24,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 64, 65 ] ],
+   [
+    "Numbers", 27,
+    [ 3, 14 ] ],
+   [
+    "Numbers", 32,
+    [ 13, 15 ] ],
+   [
+    "Numbers", 33,
+    [ 6, 8, 11, 12, 15, 36 ] ],
+   [
+    "Numbers", 34,
+    [ 3 ] ],
    [
     "Proverbs", 21,
     [ 19 ] ],
@@ -4633,6 +4945,111 @@ window.GLOSSARY = [
    [
     "Leviticus", 27,
     [ 2, 34 ] ],
+   [
+    "Numbers", 1,
+    [ 2, 3, 16, 20, 44, 45, 49, 52, 53, 54 ] ],
+   [
+    "Numbers", 2,
+    [ 2, 32, 33, 34 ] ],
+   [
+    "Numbers", 3,
+    [ 8, 9, 12, 13, 38, 40, 41, 42, 45, 46, 50 ] ],
+   [
+    "Numbers", 4,
+    [ 46 ] ],
+   [
+    "Numbers", 5,
+    [ 2, 4, 6, 9, 12 ] ],
+   [
+    "Numbers", 6,
+    [ 2, 23, 27 ] ],
+   [
+    "Numbers", 7,
+    [ 2, 84 ] ],
+   [
+    "Numbers", 8,
+    [ 6, 9, 10, 11, 14, 16, 17, 18, 19, 20 ] ],
+   [
+    "Numbers", 9,
+    [ 2, 4, 5, 7, 10, 17, 18, 19, 22 ] ],
+   [
+    "Numbers", 10,
+    [ 4, 12, 28, 29, 36 ] ],
+   [
+    "Numbers", 11,
+    [ 4, 16, 30 ] ],
+   [
+    "Numbers", 13,
+    [ 2, 3, 24, 26, 32 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 5, 7, 10, 27, 39 ] ],
+   [
+    "Numbers", 15,
+    [ 2, 18, 25, 26, 29, 32, 38 ] ],
+   [
+    "Numbers", 16,
+    [ 2, 9, 25, 34, 38, 40, 41 ] ],
+   [
+    "Numbers", 17,
+    [ 2, 5, 6, 9, 12 ] ],
+   [
+    "Numbers", 18,
+    [ 5, 6, 8, 11, 14, 19, 20, 21, 22, 23, 24, 26, 28, 32 ] ],
+   [
+    "Numbers", 19,
+    [ 2, 9, 10, 13 ] ],
+   [
+    "Numbers", 20,
+    [ 1, 12, 13, 14, 19, 21, 22, 24, 29 ] ],
+   [
+    "Numbers", 21,
+    [ 1, 2, 3, 6, 10, 17, 21, 23, 24, 25, 31 ] ],
+   [
+    "Numbers", 22,
+    [ 1, 2, 3 ] ],
+   [
+    "Numbers", 23,
+    [ 7, 10, 21, 23 ] ],
+   [
+    "Numbers", 24,
+    [ 1, 2, 5, 17, 18 ] ],
+   [
+    "Numbers", 25,
+    [ 1, 3, 4, 5, 6, 8, 11, 13 ] ],
+   [
+    "Numbers", 26,
+    [ 2, 4, 5, 51, 62, 63, 64 ] ],
+   [
+    "Numbers", 27,
+    [ 8, 11, 12, 20, 21 ] ],
+   [
+    "Numbers", 28,
+    [ 2 ] ],
+   [
+    "Numbers", 29,
+    [ 40 ] ],
+   [
+    "Numbers", 30,
+    [ 1 ] ],
+   [
+    "Numbers", 31,
+    [ 2, 4, 5, 9, 12, 16, 30, 42, 47, 54 ] ],
+   [
+    "Numbers", 32,
+    [ 4, 7, 9, 13, 14, 17, 18, 22, 28 ] ],
+   [
+    "Numbers", 33,
+    [ 1, 3, 5, 38, 40, 51 ] ],
+   [
+    "Numbers", 34,
+    [ 2, 13, 29 ] ],
+   [
+    "Numbers", 35,
+    [ 2, 8, 10, 15, 34 ] ],
+   [
+    "Numbers", 36,
+    [ 1, 2, 3, 4, 5, 7, 8, 9, 13 ] ],
    [
     "Proverbs", 1,
     [ 1 ] ],
@@ -5402,6 +5819,27 @@ window.GLOSSARY = [
     "Exodus", 38,
     [ 22 ] ],
    [
+    "Numbers", 1,
+    [ 7, 26, 27 ] ],
+   [
+    "Numbers", 2,
+    [ 3, 9 ] ],
+   [
+    "Numbers", 7,
+    [ 12 ] ],
+   [
+    "Numbers", 10,
+    [ 14 ] ],
+   [
+    "Numbers", 13,
+    [ 6 ] ],
+   [
+    "Numbers", 26,
+    [ 19, 20, 22 ] ],
+   [
+    "Numbers", 34,
+    [ 19 ] ],
+   [
     "Proverbs", 25,
     [ 1 ] ],
    [
@@ -5601,6 +6039,12 @@ window.GLOSSARY = [
     [ 8, 14, 28 ] ],
    [
     "Leviticus", 24,
+    [ 2 ] ],
+   [
+    "Numbers", 4,
+    [ 9, 16 ] ],
+   [
+    "Numbers", 8,
     [ 2 ] ],
    [
     "Proverbs", 4,
@@ -5965,6 +6409,9 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 9 ] ],
+   [
+    "Numbers", 32,
+    [ 5 ] ],
    [
     "Proverbs", 1,
     [ 9 ] ],
@@ -6482,6 +6929,15 @@ window.GLOSSARY = [
     "Leviticus", 9,
     [ 6, 23 ] ],
    [
+    "Numbers", 14,
+    [ 10, 21, 22 ] ],
+   [
+    "Numbers", 16,
+    [ 19, 42 ] ],
+   [
+    "Numbers", 20,
+    [ 6 ] ],
+   [
     "Proverbs", 3,
     [ 35 ] ],
    [
@@ -6877,6 +7333,21 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 22 ] ],
+   [
+    "Numbers", 5,
+    [ 29, 30 ] ],
+   [
+    "Numbers", 6,
+    [ 13, 21 ] ],
+   [
+    "Numbers", 15,
+    [ 16, 29 ] ],
+   [
+    "Numbers", 19,
+    [ 2, 14 ] ],
+   [
+    "Numbers", 31,
+    [ 21 ] ],
    [
     "Proverbs", 1,
     [ 8 ] ],
@@ -7949,6 +8420,12 @@ window.GLOSSARY = [
     "Exodus", 19,
     [ 9 ] ],
    [
+    "Numbers", 14,
+    [ 11 ] ],
+   [
+    "Numbers", 20,
+    [ 12 ] ],
+   [
     "Proverbs", 14,
     [ 15 ] ],
    [
@@ -8290,6 +8767,15 @@ window.GLOSSARY = [
    [
     "Exodus", 23,
     [ 1 ] ],
+   [
+    "Numbers", 5,
+    [ 13 ] ],
+   [
+    "Numbers", 17,
+    [ 7, 8 ] ],
+   [
+    "Numbers", 35,
+    [ 30 ] ],
    [
     "Proverbs", 6,
     [ 19 ] ],
@@ -8729,6 +9215,18 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 13 ] ],
    [
+    "Numbers", 6,
+    [ 3, 20 ] ],
+   [
+    "Numbers", 15,
+    [ 5, 7, 10 ] ],
+   [
+    "Numbers", 18,
+    [ 12 ] ],
+   [
+    "Numbers", 28,
+    [ 7, 14 ] ],
+   [
     "Proverbs", 3,
     [ 10 ] ],
    [
@@ -8906,6 +9404,9 @@ window.GLOSSARY = [
     "Leviticus", 12,
     [ 4, 5, 6 ] ],
    [
+    "Numbers", 8,
+    [ 7 ] ],
+   [
     "John", 2,
     [ 6 ] ],
    [
@@ -8941,6 +9442,12 @@ window.GLOSSARY = [
    [
     "Exodus", 13,
     [ 9 ] ],
+   [
+    "Numbers", 14,
+    [ 11, 22 ] ],
+   [
+    "Numbers", 16,
+    [ 38 ] ],
    [
     "Matthew", 12,
     [ 38, 39 ] ],
@@ -9085,6 +9592,15 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 5 ] ],
+   [
+    "Numbers", 9,
+    [ 2, 4, 5, 6, 10, 12, 13, 14 ] ],
+   [
+    "Numbers", 28,
+    [ 16 ] ],
+   [
+    "Numbers", 33,
+    [ 3 ] ],
    [
     "Matthew", 26,
     [ 2, 17, 18, 19 ] ],
@@ -9541,6 +10057,12 @@ window.GLOSSARY = [
    [
     "Exodus", 35,
     [ 31 ] ],
+   [
+    "Numbers", 15,
+    [ 24 ] ],
+   [
+    "Numbers", 24,
+    [ 16 ] ],
    [
     "Proverbs", 1,
     [ 4, 7, 22, 29 ] ],
@@ -10190,6 +10712,9 @@ window.GLOSSARY = [
     "Leviticus", 19,
     [ 15 ] ],
    [
+    "Numbers", 23,
+    [ 10 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -10532,6 +11057,9 @@ window.GLOSSARY = [
     "Leviticus", 20,
     [ 14, 17 ] ],
    [
+    "Numbers", 16,
+    [ 26 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -10798,6 +11326,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 16 ] ],
+   [
+    "Numbers", 15,
+    [ 39 ] ],
+   [
+    "Numbers", 32,
+    [ 7, 9 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -11147,6 +11681,9 @@ window.GLOSSARY = [
     "Exodus", 11,
     [ 7 ] ],
    [
+    "Numbers", 30,
+    [ 6, 8, 12 ] ],
+   [
     "Proverbs", 4,
     [ 24 ] ],
    [
@@ -11377,6 +11914,36 @@ window.GLOSSARY = [
    [
     "Leviticus", 10,
     [ 6, 16 ] ],
+   [
+    "Numbers", 1,
+    [ 53 ] ],
+   [
+    "Numbers", 11,
+    [ 1, 10, 33 ] ],
+   [
+    "Numbers", 12,
+    [ 9 ] ],
+   [
+    "Numbers", 16,
+    [ 15, 22, 46 ] ],
+   [
+    "Numbers", 18,
+    [ 5 ] ],
+   [
+    "Numbers", 22,
+    [ 22, 27 ] ],
+   [
+    "Numbers", 24,
+    [ 10 ] ],
+   [
+    "Numbers", 25,
+    [ 3, 4, 11 ] ],
+   [
+    "Numbers", 31,
+    [ 14 ] ],
+   [
+    "Numbers", 32,
+    [ 10, 13, 14 ] ],
    [
     "Proverbs", 11,
     [ 4, 23 ] ],
@@ -11812,6 +12379,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 10,
     [ 9 ] ],
+   [
+    "Numbers", 6,
+    [ 3 ] ],
    [
     "Proverbs", 20,
     [ 1 ] ],
@@ -12380,6 +12950,12 @@ window.GLOSSARY = [
     "Exodus", 18,
     [ 19 ] ],
    [
+    "Numbers", 27,
+    [ 21 ] ],
+   [
+    "Numbers", 31,
+    [ 16 ] ],
+   [
     "Proverbs", 1,
     [ 5, 25, 30 ] ],
    [
@@ -12553,6 +13129,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 10, 17, 20 ] ],
+   [
+    "Numbers", 18,
+    [ 12 ] ],
+   [
+    "Numbers", 28,
+    [ 26 ] ],
    [
     "Proverbs", 3,
     [ 9 ] ],
@@ -12875,6 +13457,12 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 32 ] ],
    [
+    "Numbers", 17,
+    [ 2, 3, 5, 6, 8, 9, 10 ] ],
+   [
+    "Numbers", 20,
+    [ 8, 9, 11 ] ],
+   [
     "Proverbs", 10,
     [ 13 ] ],
    [
@@ -13015,6 +13603,9 @@ window.GLOSSARY = [
    [
     "Genesis", 13,
     [ 7, 8 ] ],
+   [
+    "Numbers", 27,
+    [ 14 ] ],
    [
     "Proverbs", 13,
     [ 10 ] ],
@@ -13217,6 +13808,12 @@ window.GLOSSARY = [
     "Leviticus", 16,
     [ 10 ] ],
    [
+    "Numbers", 26,
+    [ 56 ] ],
+   [
+    "Numbers", 36,
+    [ 3 ] ],
+   [
     "Proverbs", 1,
     [ 14 ] ],
    [
@@ -13378,6 +13975,12 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 1 ] ],
+   [
+    "Numbers", 12,
+    [ 6 ] ],
+   [
+    "Numbers", 24,
+    [ 4, 16 ] ],
    [
     "Proverbs", 29,
     [ 18 ] ],
@@ -13549,6 +14152,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 2, 34, 35, 43 ] ],
+   [
+    "Numbers", 15,
+    [ 32 ] ],
+   [
+    "Numbers", 28,
+    [ 9, 10 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -14426,6 +15035,9 @@ window.GLOSSARY = [
     "Exodus", 16,
     [ 15, 33, 35 ] ],
    [
+    "Numbers", 11,
+    [ 6, 7, 9 ] ],
+   [
     "John", 6,
     [ 31, 49, 58 ] ],
    [
@@ -14440,6 +15052,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Barley loaves",
   "refs": [
+   [
+    "Numbers", 5,
+    [ 15 ] ],
    [
     "Hosea", 3,
     [ 2 ] ],
@@ -14650,6 +15265,15 @@ window.GLOSSARY = [
    [
     "Exodus", 17,
     [ 3 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 27, 29, 36 ] ],
+   [
+    "Numbers", 16,
+    [ 11, 41 ] ],
+   [
+    "Numbers", 17,
+    [ 5, 10 ] ],
    [
     "Matthew", 20,
     [ 11 ] ],
@@ -14863,6 +15487,9 @@ window.GLOSSARY = [
    [
     "Genesis", 20,
     [ 7 ] ],
+   [
+    "Numbers", 12,
+    [ 6 ] ],
    [
     "Matthew", 1,
     [ 22 ] ],
@@ -15572,6 +16199,21 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 14, 15, 16, 17, 18, 19, 22, 26 ] ],
    [
+    "Numbers", 7,
+    [ 1 ] ],
+   [
+    "Numbers", 8,
+    [ 17 ] ],
+   [
+    "Numbers", 11,
+    [ 18 ] ],
+   [
+    "Numbers", 20,
+    [ 12, 13 ] ],
+   [
+    "Numbers", 27,
+    [ 14 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -15658,6 +16300,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 14, 16, 23 ] ],
+   [
+    "Numbers", 15,
+    [ 35, 36 ] ],
    [
     "John", 10,
     [ 31, 32, 33 ] ],
@@ -16685,6 +17330,9 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 42 ] ],
    [
+    "Numbers", 32,
+    [ 11 ] ],
+   [
     "Micah", 7,
     [ 20 ] ],
    [
@@ -17336,6 +17984,9 @@ window.GLOSSARY = [
   "name": "The serpent lifted up in the wilderness",
   "refs": [
    [
+    "Numbers", 21,
+    [ 8, 9 ] ],
+   [
     "John", 3,
     [ 14 ] ] ]
  },
@@ -17593,6 +18244,15 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 42 ] ],
+   [
+    "Numbers", 23,
+    [ 7, 10, 21, 23 ] ],
+   [
+    "Numbers", 24,
+    [ 5, 17, 19 ] ],
+   [
+    "Numbers", 32,
+    [ 11 ] ],
    [
     "Hosea", 10,
     [ 11 ] ],
@@ -18142,6 +18802,9 @@ window.GLOSSARY = [
    [
     "Exodus", 14,
     [ 19 ] ],
+   [
+    "Numbers", 20,
+    [ 16 ] ],
    [
     "Matthew", 1,
     [ 20, 24 ] ],
@@ -18833,6 +19496,21 @@ window.GLOSSARY = [
     "Leviticus", 24,
     [ 12 ] ],
    [
+    "Numbers", 8,
+    [ 4 ] ],
+   [
+    "Numbers", 13,
+    [ 26 ] ],
+   [
+    "Numbers", 14,
+    [ 11 ] ],
+   [
+    "Numbers", 16,
+    [ 5 ] ],
+   [
+    "Numbers", 23,
+    [ 3 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -19148,6 +19826,12 @@ window.GLOSSARY = [
     "Exodus", 38,
     [ 1, 9, 11, 12, 13, 14, 15, 18 ] ],
    [
+    "Numbers", 11,
+    [ 31 ] ],
+   [
+    "Numbers", 35,
+    [ 4, 5 ] ],
+   [
     "Zechariah", 5,
     [ 2 ] ],
    [
@@ -19298,6 +19982,9 @@ window.GLOSSARY = [
     "Leviticus", 14,
     [ 8 ] ],
    [
+    "Numbers", 22,
+    [ 19 ] ],
+   [
     "Proverbs", 23,
     [ 30 ] ],
    [
@@ -19354,6 +20041,18 @@ window.GLOSSARY = [
    [
     "Leviticus", 16,
     [ 13 ] ],
+   [
+    "Numbers", 7,
+    [ 89 ] ],
+   [
+    "Numbers", 9,
+    [ 15 ] ],
+   [
+    "Numbers", 17,
+    [ 4, 10 ] ],
+   [
+    "Numbers", 35,
+    [ 30 ] ],
    [
     "Matthew", 8,
     [ 4 ] ],
@@ -19727,6 +20426,9 @@ window.GLOSSARY = [
     "Leviticus", 21,
     [ 10 ] ],
    [
+    "Numbers", 35,
+    [ 25, 28 ] ],
+   [
     "Haggai", 1,
     [ 1, 12, 14 ] ],
    [
@@ -20071,6 +20773,12 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 20 ] ],
+   [
+    "Numbers", 16,
+    [ 15 ] ],
+   [
+    "Numbers", 22,
+    [ 21, 22, 23, 25, 27, 28, 29, 30, 32, 33 ] ],
    [
     "Proverbs", 26,
     [ 3 ] ],
@@ -20459,6 +21167,15 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 35 ] ],
    [
+    "Numbers", 9,
+    [ 17, 18, 20, 21, 22 ] ],
+   [
+    "Numbers", 11,
+    [ 35 ] ],
+   [
+    "Numbers", 20,
+    [ 1 ] ],
+   [
     "John", 1,
     [ 32, 39 ] ],
    [
@@ -20710,6 +21427,9 @@ window.GLOSSARY = [
    [
     "Genesis", 44,
     [ 33 ] ],
+   [
+    "Numbers", 35,
+    [ 25 ] ],
    [
     "Matthew", 10,
     [ 11 ] ],
@@ -21488,6 +22208,9 @@ window.GLOSSARY = [
   "name": "Vinegar (sour wine)",
   "refs": [
    [
+    "Numbers", 6,
+    [ 3 ] ],
+   [
     "Proverbs", 10,
     [ 26 ] ],
    [
@@ -21517,6 +22240,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 14,
     [ 4, 6, 49, 51, 52 ] ],
+   [
+    "Numbers", 19,
+    [ 6, 18 ] ],
    [
     "John", 19,
     [ 29 ] ],
@@ -21704,6 +22430,39 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 8, 11, 12, 14, 18, 21, 23 ] ],
    [
+    "Numbers", 3,
+    [ 3, 4, 6, 10, 32 ] ],
+   [
+    "Numbers", 4,
+    [ 16, 28, 33 ] ],
+   [
+    "Numbers", 5,
+    [ 8, 9, 10, 15, 16, 17, 18, 19, 21, 23, 25, 26, 30 ] ],
+   [
+    "Numbers", 6,
+    [ 10, 11, 16, 17, 19, 20 ] ],
+   [
+    "Numbers", 10,
+    [ 8 ] ],
+   [
+    "Numbers", 15,
+    [ 25, 28 ] ],
+   [
+    "Numbers", 18,
+    [ 7, 28 ] ],
+   [
+    "Numbers", 19,
+    [ 3, 4, 6, 7 ] ],
+   [
+    "Numbers", 25,
+    [ 7, 11 ] ],
+   [
+    "Numbers", 26,
+    [ 1, 3, 63, 64 ] ],
+   [
+    "Numbers", 27,
+    [ 2, 19, 21, 22 ] ],
+   [
     "Hosea", 4,
     [ 4, 6, 9 ] ],
    [
@@ -21838,6 +22597,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 9,
     [ 1 ] ],
+   [
+    "Numbers", 11,
+    [ 16, 24, 25, 30 ] ],
+   [
+    "Numbers", 16,
+    [ 25 ] ],
    [
     "Joel", 1,
     [ 14 ] ],
@@ -22034,6 +22799,30 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 13, 16, 18, 37 ] ],
    [
+    "Numbers", 4,
+    [ 16 ] ],
+   [
+    "Numbers", 6,
+    [ 15, 17 ] ],
+   [
+    "Numbers", 7,
+    [ 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 87 ] ],
+   [
+    "Numbers", 8,
+    [ 8 ] ],
+   [
+    "Numbers", 15,
+    [ 4, 5, 6, 7, 9, 10, 24 ] ],
+   [
+    "Numbers", 18,
+    [ 9 ] ],
+   [
+    "Numbers", 28,
+    [ 5, 7, 8, 9, 10, 12, 13, 15, 20, 24, 26, 28, 31 ] ],
+   [
+    "Numbers", 29,
+    [ 3, 6, 9, 11, 14, 16, 18, 19, 21, 22, 24, 25, 27, 28, 30, 31, 33, 34, 37, 38 ] ],
+   [
     "Joel", 1,
     [ 9, 13 ] ],
    [
@@ -22135,6 +22924,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 36 ] ],
+   [
+    "Numbers", 29,
+    [ 35 ] ],
    [
     "Joel", 1,
     [ 14 ] ],
@@ -22384,6 +23176,9 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 14 ] ],
+   [
+    "Numbers", 5,
+    [ 14, 30 ] ],
    [
     "Joel", 2,
     [ 18 ] ],
@@ -22676,6 +23471,9 @@ window.GLOSSARY = [
   "name": "Recompence (payback)",
   "refs": [
    [
+    "Numbers", 5,
+    [ 7, 8 ] ],
+   [
     "Proverbs", 12,
     [ 14 ] ],
    [
@@ -22913,6 +23711,57 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 13, 45 ] ],
    [
+    "Numbers", 1,
+    [ 1 ] ],
+   [
+    "Numbers", 3,
+    [ 13 ] ],
+   [
+    "Numbers", 8,
+    [ 17 ] ],
+   [
+    "Numbers", 9,
+    [ 1 ] ],
+   [
+    "Numbers", 11,
+    [ 5, 18, 20 ] ],
+   [
+    "Numbers", 13,
+    [ 22 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 3, 4, 19, 22 ] ],
+   [
+    "Numbers", 15,
+    [ 41 ] ],
+   [
+    "Numbers", 20,
+    [ 5, 15, 16 ] ],
+   [
+    "Numbers", 21,
+    [ 5 ] ],
+   [
+    "Numbers", 22,
+    [ 5, 11 ] ],
+   [
+    "Numbers", 23,
+    [ 22 ] ],
+   [
+    "Numbers", 24,
+    [ 8 ] ],
+   [
+    "Numbers", 26,
+    [ 4, 59 ] ],
+   [
+    "Numbers", 32,
+    [ 11 ] ],
+   [
+    "Numbers", 33,
+    [ 1, 38 ] ],
+   [
+    "Numbers", 34,
+    [ 5 ] ],
+   [
     "Proverbs", 7,
     [ 16 ] ],
    [
@@ -23017,6 +23866,21 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 15 ] ],
+   [
+    "Numbers", 20,
+    [ 14, 18, 20, 21, 23 ] ],
+   [
+    "Numbers", 21,
+    [ 4 ] ],
+   [
+    "Numbers", 24,
+    [ 18 ] ],
+   [
+    "Numbers", 33,
+    [ 37 ] ],
+   [
+    "Numbers", 34,
+    [ 3 ] ],
    [
     "Joel", 3,
     [ 19 ] ],
@@ -23261,6 +24125,12 @@ window.GLOSSARY = [
     "Leviticus", 20,
     [ 5 ] ],
    [
+    "Numbers", 14,
+    [ 33 ] ],
+   [
+    "Numbers", 25,
+    [ 1 ] ],
+   [
     "Hosea", 1,
     [ 2 ] ],
    [
@@ -23323,6 +24193,9 @@ window.GLOSSARY = [
    [
     "Exodus", 37,
     [ 6, 7, 8, 9 ] ],
+   [
+    "Numbers", 14,
+    [ 18, 19 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -23507,6 +24380,12 @@ window.GLOSSARY = [
   "name": "Baal, Baalim (the Canaanite idol)",
   "refs": [
    [
+    "Numbers", 22,
+    [ 41 ] ],
+   [
+    "Numbers", 25,
+    [ 3, 5 ] ],
+   [
     "Hosea", 2,
     [ 8, 13, 17 ] ],
    [
@@ -23660,6 +24539,9 @@ window.GLOSSARY = [
   "name": "The latter days",
   "refs": [
    [
+    "Numbers", 24,
+    [ 14 ] ],
+   [
     "Hosea", 3,
     [ 5 ] ],
    [
@@ -23794,6 +24676,9 @@ window.GLOSSARY = [
    [
     "Genesis", 25,
     [ 18 ] ],
+   [
+    "Numbers", 24,
+    [ 22, 24 ] ],
    [
     "Hosea", 5,
     [ 13 ] ],
@@ -23930,6 +24815,15 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 30 ] ],
    [
+    "Numbers", 21,
+    [ 28 ] ],
+   [
+    "Numbers", 22,
+    [ 41 ] ],
+   [
+    "Numbers", 33,
+    [ 52 ] ],
+   [
     "Proverbs", 8,
     [ 2 ] ],
    [
@@ -23968,6 +24862,9 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 9 ] ],
+   [
+    "Numbers", 19,
+    [ 2, 5, 6, 9, 10, 17 ] ],
    [
     "Hosea", 4,
     [ 16 ] ],
@@ -24058,6 +24955,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 1 ] ],
+   [
+    "Numbers", 33,
+    [ 52 ] ],
    [
     "Hosea", 11,
     [ 2 ] ],
@@ -24221,6 +25121,12 @@ window.GLOSSARY = [
     "Genesis", 37,
     [ 25 ] ],
    [
+    "Numbers", 32,
+    [ 1, 26, 29, 39, 40 ] ],
+   [
+    "Numbers", 36,
+    [ 1 ] ],
+   [
     "Hosea", 6,
     [ 8 ] ],
    [
@@ -24244,6 +25150,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Syria (Aram)",
   "refs": [
+   [
+    "Numbers", 23,
+    [ 7 ] ],
    [
     "Hosea", 12,
     [ 12 ] ],
@@ -24365,6 +25274,9 @@ window.GLOSSARY = [
     "Exodus", 16,
     [ 13, 14 ] ],
    [
+    "Numbers", 11,
+    [ 9 ] ],
+   [
     "Proverbs", 3,
     [ 20 ] ],
    [
@@ -24481,6 +25393,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 27,
     [ 13, 15, 19, 20, 27, 31 ] ],
+   [
+    "Numbers", 18,
+    [ 15, 16, 17 ] ],
    [
     "Proverbs", 6,
     [ 35 ] ],
@@ -24607,6 +25522,27 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Benjamin (the tribe and its land)",
   "refs": [
+   [
+    "Numbers", 1,
+    [ 11, 36, 37 ] ],
+   [
+    "Numbers", 2,
+    [ 22 ] ],
+   [
+    "Numbers", 7,
+    [ 60 ] ],
+   [
+    "Numbers", 10,
+    [ 24 ] ],
+   [
+    "Numbers", 13,
+    [ 9 ] ],
+   [
+    "Numbers", 26,
+    [ 38, 41 ] ],
+   [
+    "Numbers", 34,
+    [ 21 ] ],
    [
     "Hosea", 5,
     [ 8 ] ],
@@ -24776,6 +25712,18 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 9, 15, 25, 42, 44, 45 ] ],
    [
+    "Numbers", 10,
+    [ 33 ] ],
+   [
+    "Numbers", 14,
+    [ 44 ] ],
+   [
+    "Numbers", 18,
+    [ 19 ] ],
+   [
+    "Numbers", 25,
+    [ 12, 13 ] ],
+   [
     "Proverbs", 2,
     [ 17 ] ],
    [
@@ -24896,6 +25844,9 @@ window.GLOSSARY = [
   "name": "The most High",
   "refs": [
    [
+    "Numbers", 24,
+    [ 16 ] ],
+   [
     "Hosea", 7,
     [ 16 ] ],
    [
@@ -24941,6 +25892,9 @@ window.GLOSSARY = [
   "name": "Fenced cities",
   "refs": [
    [
+    "Numbers", 32,
+    [ 17, 36 ] ],
+   [
     "Hosea", 8,
     [ 14 ] ],
    [
@@ -24961,6 +25915,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Baal-peor",
   "refs": [
+   [
+    "Numbers", 25,
+    [ 3, 5 ] ],
    [
     "Hosea", 9,
     [ 10 ] ] ]
@@ -25280,6 +26237,12 @@ window.GLOSSARY = [
     "Exodus", 12,
     [ 29 ] ],
    [
+    "Numbers", 21,
+    [ 29 ] ],
+   [
+    "Numbers", 24,
+    [ 22 ] ],
+   [
     "Hosea", 6,
     [ 11 ] ],
    [
@@ -25363,6 +26326,12 @@ window.GLOSSARY = [
    [
     "Genesis", 10,
     [ 18 ] ],
+   [
+    "Numbers", 13,
+    [ 21 ] ],
+   [
+    "Numbers", 34,
+    [ 8 ] ],
    [
     "Amos", 6,
     [ 2, 14 ] ],
@@ -25541,6 +26510,9 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 42 ] ],
    [
+    "Numbers", 32,
+    [ 11 ] ],
+   [
     "Amos", 7,
     [ 9, 16 ] ],
    [
@@ -25706,6 +26678,21 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 3, 4, 5, 6, 7, 16, 25 ] ],
    [
+    "Numbers", 3,
+    [ 47, 50 ] ],
+   [
+    "Numbers", 5,
+    [ 15 ] ],
+   [
+    "Numbers", 7,
+    [ 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85, 86 ] ],
+   [
+    "Numbers", 18,
+    [ 16 ] ],
+   [
+    "Numbers", 28,
+    [ 5 ] ],
+   [
     "Amos", 8,
     [ 5 ] ],
    [
@@ -25771,6 +26758,9 @@ window.GLOSSARY = [
    [
     "Genesis", 2,
     [ 13 ] ],
+   [
+    "Numbers", 12,
+    [ 1 ] ],
    [
     "Amos", 9,
     [ 7 ] ],
@@ -25991,6 +26981,9 @@ window.GLOSSARY = [
     "Genesis", 19,
     [ 38 ] ],
    [
+    "Numbers", 21,
+    [ 24 ] ],
+   [
     "Amos", 1,
     [ 13 ] ],
    [
@@ -26066,6 +27059,9 @@ window.GLOSSARY = [
   "name": "Nazarites",
   "refs": [
    [
+    "Numbers", 6,
+    [ 2, 13, 18, 19, 20, 21 ] ],
+   [
     "Amos", 2,
     [ 11, 12 ] ] ]
  },
@@ -26102,6 +27098,18 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 11 ] ],
    [
+    "Numbers", 13,
+    [ 29 ] ],
+   [
+    "Numbers", 21,
+    [ 13, 21, 25, 26, 29, 31, 32, 34 ] ],
+   [
+    "Numbers", 22,
+    [ 2 ] ],
+   [
+    "Numbers", 32,
+    [ 33, 39 ] ],
+   [
     "Amos", 2,
     [ 9, 10 ] ] ]
  },
@@ -26119,6 +27127,36 @@ window.GLOSSARY = [
    [
     "Exodus", 15,
     [ 15 ] ],
+   [
+    "Numbers", 21,
+    [ 11, 13, 15, 20, 26, 28, 29 ] ],
+   [
+    "Numbers", 22,
+    [ 1, 3, 4, 7, 8, 10, 14, 21, 36 ] ],
+   [
+    "Numbers", 23,
+    [ 6, 7, 17 ] ],
+   [
+    "Numbers", 24,
+    [ 17 ] ],
+   [
+    "Numbers", 25,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 3, 63 ] ],
+   [
+    "Numbers", 31,
+    [ 12 ] ],
+   [
+    "Numbers", 33,
+    [ 44, 48, 49, 50 ] ],
+   [
+    "Numbers", 35,
+    [ 1 ] ],
+   [
+    "Numbers", 36,
+    [ 13 ] ],
    [
     "Amos", 2,
     [ 1, 2 ] ],
@@ -26219,6 +27257,12 @@ window.GLOSSARY = [
   "name": "Bashan",
   "refs": [
    [
+    "Numbers", 21,
+    [ 33 ] ],
+   [
+    "Numbers", 32,
+    [ 33 ] ],
+   [
     "Amos", 4,
     [ 1 ] ],
    [
@@ -26311,6 +27355,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 27,
     [ 30, 31, 32 ] ],
+   [
+    "Numbers", 18,
+    [ 24, 26, 28 ] ],
    [
     "Amos", 4,
     [ 4 ] ],
@@ -26564,6 +27611,9 @@ window.GLOSSARY = [
   "name": "Woe (a cry of grief over coming disaster)",
   "refs": [
    [
+    "Numbers", 21,
+    [ 29 ] ],
+   [
     "Habakkuk", 2,
     [ 6, 9, 12, 15, 19 ] ],
    [
@@ -26675,6 +27725,15 @@ window.GLOSSARY = [
     "Genesis", 21,
     [ 21 ] ],
    [
+    "Numbers", 10,
+    [ 12 ] ],
+   [
+    "Numbers", 12,
+    [ 16 ] ],
+   [
+    "Numbers", 13,
+    [ 3, 26 ] ],
+   [
     "Habakkuk", 3,
     [ 3 ] ] ]
  },
@@ -26710,6 +27769,15 @@ window.GLOSSARY = [
    [
     "Exodus", 18,
     [ 1 ] ],
+   [
+    "Numbers", 22,
+    [ 4, 7 ] ],
+   [
+    "Numbers", 25,
+    [ 15, 18 ] ],
+   [
+    "Numbers", 31,
+    [ 3, 8, 9 ] ],
    [
     "Habakkuk", 3,
     [ 7 ] ],
@@ -27227,6 +28295,9 @@ window.GLOSSARY = [
   "name": "Strong hold (a fortress, a safe place)",
   "refs": [
    [
+    "Numbers", 13,
+    [ 19 ] ],
+   [
     "Micah", 4,
     [ 8 ] ],
    [
@@ -27268,6 +28339,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 13 ] ],
+   [
+    "Numbers", 19,
+    [ 2 ] ],
    [
     "Hosea", 11,
     [ 4 ] ],
@@ -27331,6 +28405,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Solemn feasts (the appointed feasts of the LORD)",
   "refs": [
+   [
+    "Numbers", 15,
+    [ 3 ] ],
    [
     "Hosea", 2,
     [ 11 ] ],
@@ -27779,6 +28856,72 @@ window.GLOSSARY = [
     "Leviticus", 24,
     [ 3, 9 ] ],
    [
+    "Numbers", 1,
+    [ 3, 17, 44 ] ],
+   [
+    "Numbers", 2,
+    [ 1 ] ],
+   [
+    "Numbers", 3,
+    [ 1, 2, 3, 4, 6, 9, 10, 32, 38, 39, 48, 51 ] ],
+   [
+    "Numbers", 4,
+    [ 1, 5, 15, 16, 17, 19, 27, 28, 33, 34, 37, 41, 45, 46 ] ],
+   [
+    "Numbers", 6,
+    [ 23 ] ],
+   [
+    "Numbers", 7,
+    [ 8 ] ],
+   [
+    "Numbers", 8,
+    [ 2, 3, 11, 13, 19, 20, 21, 22 ] ],
+   [
+    "Numbers", 9,
+    [ 6 ] ],
+   [
+    "Numbers", 10,
+    [ 8 ] ],
+   [
+    "Numbers", 12,
+    [ 1, 4, 5, 10, 11 ] ],
+   [
+    "Numbers", 13,
+    [ 26 ] ],
+   [
+    "Numbers", 14,
+    [ 2, 5, 26 ] ],
+   [
+    "Numbers", 15,
+    [ 33 ] ],
+   [
+    "Numbers", 16,
+    [ 3, 11, 16, 17, 18, 20, 37, 40, 41, 42, 43, 46, 47, 50 ] ],
+   [
+    "Numbers", 17,
+    [ 3, 6, 8, 10 ] ],
+   [
+    "Numbers", 18,
+    [ 1, 8, 20, 28 ] ],
+   [
+    "Numbers", 19,
+    [ 1 ] ],
+   [
+    "Numbers", 20,
+    [ 2, 6, 8, 10, 12, 23, 24, 25, 26, 28, 29 ] ],
+   [
+    "Numbers", 25,
+    [ 7, 11 ] ],
+   [
+    "Numbers", 26,
+    [ 1, 9, 59, 60, 64 ] ],
+   [
+    "Numbers", 27,
+    [ 13 ] ],
+   [
+    "Numbers", 33,
+    [ 1, 38, 39 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -27806,6 +28949,15 @@ window.GLOSSARY = [
     "Exodus", 15,
     [ 20, 21 ] ],
    [
+    "Numbers", 12,
+    [ 1, 4, 5, 10, 15 ] ],
+   [
+    "Numbers", 20,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 59 ] ],
+   [
     "Micah", 6,
     [ 4 ] ] ]
  },
@@ -27815,6 +28967,15 @@ window.GLOSSARY = [
   "name": "Balak, king of Moab",
   "refs": [
    [
+    "Numbers", 22,
+    [ 2, 4, 7, 10, 13, 14, 15, 16, 18, 35, 36, 37, 38, 39, 40, 41 ] ],
+   [
+    "Numbers", 23,
+    [ 1, 2, 3, 5, 7, 11, 13, 15, 16, 17, 18, 25, 26, 27, 28, 29, 30 ] ],
+   [
+    "Numbers", 24,
+    [ 10, 12, 13, 25 ] ],
+   [
     "Micah", 6,
     [ 5 ] ] ]
  },
@@ -27823,6 +28984,18 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Balaam, son of Beor (the prophet hired to curse Israel)",
   "refs": [
+   [
+    "Numbers", 22,
+    [ 5, 7, 8, 9, 10, 12, 13, 14, 16, 18, 20, 21, 23, 25, 27, 28, 29, 30, 31, 34, 35, 36, 37, 38, 39, 40, 41 ] ],
+   [
+    "Numbers", 23,
+    [ 1, 2, 3, 4, 5, 11, 16, 25, 26, 27, 28, 29, 30 ] ],
+   [
+    "Numbers", 24,
+    [ 1, 2, 3, 10, 12, 15, 25 ] ],
+   [
+    "Numbers", 31,
+    [ 8, 16 ] ],
    [
     "Micah", 6,
     [ 5 ] ],
@@ -27841,6 +29014,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Shittim (Israel's last camp before crossing the Jordan)",
   "refs": [
+   [
+    "Numbers", 25,
+    [ 1 ] ],
    [
     "Micah", 6,
     [ 5 ] ] ]
@@ -27946,6 +29122,30 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 12, 18, 37 ] ],
+   [
+    "Numbers", 6,
+    [ 11, 14, 16 ] ],
+   [
+    "Numbers", 7,
+    [ 15, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81, 87 ] ],
+   [
+    "Numbers", 8,
+    [ 12 ] ],
+   [
+    "Numbers", 10,
+    [ 10 ] ],
+   [
+    "Numbers", 15,
+    [ 3, 5, 8, 24 ] ],
+   [
+    "Numbers", 23,
+    [ 3, 15, 17 ] ],
+   [
+    "Numbers", 28,
+    [ 3, 6, 10, 11, 13, 14, 15, 19, 23, 24, 27, 31 ] ],
+   [
+    "Numbers", 29,
+    [ 2, 6, 8, 11, 13, 16, 19, 22, 25, 28, 31, 34, 36, 38, 39 ] ],
    [
     "Hosea", 6,
     [ 6 ] ],
@@ -28136,6 +29336,9 @@ window.GLOSSARY = [
   "name": "The river (the Euphrates)",
   "refs": [
    [
+    "Numbers", 22,
+    [ 5 ] ],
+   [
     "Micah", 7,
     [ 12 ] ] ]
  },
@@ -28162,6 +29365,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Pardoneth (forgives and lets go)",
   "refs": [
+   [
+    "Numbers", 14,
+    [ 19, 20 ] ],
    [
     "Micah", 7,
     [ 18 ] ] ]
@@ -28580,6 +29786,15 @@ window.GLOSSARY = [
     "Exodus", 23,
     [ 23, 28 ] ],
    [
+    "Numbers", 13,
+    [ 29 ] ],
+   [
+    "Numbers", 14,
+    [ 25, 43, 45 ] ],
+   [
+    "Numbers", 21,
+    [ 3 ] ],
+   [
     "Obadiah", 1,
     [ 20 ] ] ]
  },
@@ -28826,6 +30041,9 @@ window.GLOSSARY = [
   "name": "Meek, meekness (strength bowed to God)",
   "refs": [
    [
+    "Numbers", 12,
+    [ 3 ] ],
+   [
     "Amos", 2,
     [ 7 ] ],
    [
@@ -28969,6 +30187,24 @@ window.GLOSSARY = [
    [
     "Leviticus", 25,
     [ 38 ] ],
+   [
+    "Numbers", 13,
+    [ 2, 17 ] ],
+   [
+    "Numbers", 26,
+    [ 19 ] ],
+   [
+    "Numbers", 32,
+    [ 30, 32 ] ],
+   [
+    "Numbers", 33,
+    [ 40, 51 ] ],
+   [
+    "Numbers", 34,
+    [ 2, 29 ] ],
+   [
+    "Numbers", 35,
+    [ 10, 14 ] ],
    [
     "Zephaniah", 2,
     [ 5 ] ],
@@ -29312,6 +30548,9 @@ window.GLOSSARY = [
     "Exodus", 3,
     [ 2 ] ],
    [
+    "Numbers", 22,
+    [ 22, 23, 24, 25, 26, 27, 31, 32, 34, 35 ] ],
+   [
     "Zechariah", 1,
     [ 11, 12 ] ],
    [
@@ -29554,6 +30793,15 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 4 ] ],
+   [
+    "Numbers", 3,
+    [ 31 ] ],
+   [
+    "Numbers", 4,
+    [ 9 ] ],
+   [
+    "Numbers", 8,
+    [ 2, 3, 4 ] ],
    [
     "Zechariah", 4,
     [ 2, 11 ] ],
@@ -29927,6 +31175,15 @@ window.GLOSSARY = [
     "Leviticus", 24,
     [ 7 ] ],
    [
+    "Numbers", 5,
+    [ 15, 18, 26 ] ],
+   [
+    "Numbers", 16,
+    [ 40 ] ],
+   [
+    "Numbers", 31,
+    [ 54 ] ],
+   [
     "Zechariah", 6,
     [ 14 ] ] ]
  },
@@ -30013,6 +31270,9 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 11 ] ],
+   [
+    "Numbers", 13,
+    [ 29 ] ],
    [
     "Zechariah", 9,
     [ 7 ] ] ]
@@ -30272,6 +31532,24 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 26, 28 ] ],
    [
+    "Numbers", 1,
+    [ 49 ] ],
+   [
+    "Numbers", 3,
+    [ 6, 15, 17 ] ],
+   [
+    "Numbers", 4,
+    [ 2 ] ],
+   [
+    "Numbers", 16,
+    [ 7, 8, 10 ] ],
+   [
+    "Numbers", 17,
+    [ 3, 8 ] ],
+   [
+    "Numbers", 18,
+    [ 2, 21 ] ],
+   [
     "Zechariah", 12,
     [ 13 ] ],
    [
@@ -30509,6 +31787,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 11 ] ],
    [
+    "Numbers", 21,
+    [ 1 ] ],
+   [
     "Zechariah", 14,
     [ 21 ] ] ]
  },
@@ -30650,6 +31931,21 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 2, 8 ] ],
    [
+    "Numbers", 6,
+    [ 2, 5, 21 ] ],
+   [
+    "Numbers", 15,
+    [ 3, 8 ] ],
+   [
+    "Numbers", 21,
+    [ 2 ] ],
+   [
+    "Numbers", 29,
+    [ 39 ] ],
+   [
+    "Numbers", 30,
+    [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ] ],
+   [
     "Malachi", 1,
     [ 14 ] ],
    [
@@ -30670,6 +31966,9 @@ window.GLOSSARY = [
    [
     "Genesis", 4,
     [ 11 ] ],
+   [
+    "Numbers", 5,
+    [ 18, 19, 21, 22, 23, 24, 27 ] ],
    [
     "Malachi", 1,
     [ 14 ] ],
@@ -30853,6 +32152,18 @@ window.GLOSSARY = [
    [
     "Leviticus", 22,
     [ 9 ] ],
+   [
+    "Numbers", 9,
+    [ 12, 14 ] ],
+   [
+    "Numbers", 10,
+    [ 8 ] ],
+   [
+    "Numbers", 15,
+    [ 15 ] ],
+   [
+    "Numbers", 18,
+    [ 8 ] ],
    [
     "Malachi", 3,
     [ 7, 14 ] ],
@@ -31111,6 +32422,15 @@ window.GLOSSARY = [
    [
     "Leviticus", 16,
     [ 12, 13 ] ],
+   [
+    "Numbers", 4,
+    [ 16 ] ],
+   [
+    "Numbers", 7,
+    [ 14, 20, 26, 32, 38, 44, 50, 56, 62, 68, 74, 80, 86 ] ],
+   [
+    "Numbers", 16,
+    [ 7, 17, 18, 35, 40, 46, 47 ] ],
    [
     "Luke", 1,
     [ 9, 10, 11 ] ],
@@ -32153,6 +33473,12 @@ window.GLOSSARY = [
     "Leviticus", 22,
     [ 4 ] ],
    [
+    "Numbers", 5,
+    [ 2 ] ],
+   [
+    "Numbers", 12,
+    [ 10 ] ],
+   [
     "Matthew", 8,
     [ 2, 3 ] ],
    [
@@ -32371,6 +33697,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 19,
     [ 22 ] ],
+   [
+    "Numbers", 14,
+    [ 18, 19 ] ],
+   [
+    "Numbers", 15,
+    [ 25, 26, 28 ] ],
    [
     "Matthew", 6,
     [ 12, 14, 15 ] ],
@@ -32627,6 +33959,9 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 14 ] ],
    [
+    "Numbers", 18,
+    [ 27 ] ],
+   [
     "Matthew", 12,
     [ 1 ] ],
    [
@@ -32680,6 +34015,9 @@ window.GLOSSARY = [
    [
     "Exodus", 39,
     [ 36 ] ],
+   [
+    "Numbers", 4,
+    [ 7 ] ],
    [
     "Matthew", 12,
     [ 4 ] ],
@@ -32819,6 +34157,9 @@ window.GLOSSARY = [
     "Leviticus", 15,
     [ 14, 29 ] ],
    [
+    "Numbers", 6,
+    [ 10 ] ],
+   [
     "Luke", 2,
     [ 24 ] ] ]
  },
@@ -32900,6 +34241,12 @@ window.GLOSSARY = [
     "Exodus", 7,
     [ 7 ] ],
    [
+    "Numbers", 2,
+    [ 9 ] ],
+   [
+    "Numbers", 4,
+    [ 48 ] ],
+   [
     "Luke", 2,
     [ 37 ] ],
    [
@@ -32914,6 +34261,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 25,
     [ 24, 51, 52 ] ],
+   [
+    "Numbers", 3,
+    [ 49 ] ],
    [
     "Luke", 2,
     [ 38 ] ],
@@ -32968,6 +34318,9 @@ window.GLOSSARY = [
    [
     "Exodus", 32,
     [ 19 ] ],
+   [
+    "Numbers", 11,
+    [ 23 ] ],
    [
     "Matthew", 13,
     [ 15 ] ],
@@ -33031,6 +34384,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Stature (height, growth in body)",
   "refs": [
+   [
+    "Numbers", 13,
+    [ 32 ] ],
    [
     "Matthew", 6,
     [ 27 ] ],
@@ -33650,6 +35006,9 @@ window.GLOSSARY = [
   "name": "Sheep having no shepherd",
   "refs": [
    [
+    "Numbers", 27,
+    [ 17 ] ],
+   [
     "Matthew", 9,
     [ 36 ] ],
    [
@@ -34163,6 +35522,9 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 40 ] ],
    [
+    "Numbers", 5,
+    [ 7 ] ],
+   [
     "Matthew", 10,
     [ 32 ] ],
    [
@@ -34339,6 +35701,9 @@ window.GLOSSARY = [
    [
     "Exodus", 17,
     [ 2, 7 ] ],
+   [
+    "Numbers", 14,
+    [ 22 ] ],
    [
     "Matthew", 4,
     [ 1, 3, 7 ] ],
@@ -34934,6 +36299,21 @@ window.GLOSSARY = [
     "Leviticus", 22,
     [ 22 ] ],
    [
+    "Numbers", 4,
+    [ 13, 14, 26 ] ],
+   [
+    "Numbers", 5,
+    [ 25, 26 ] ],
+   [
+    "Numbers", 7,
+    [ 1, 10, 11, 84, 88 ] ],
+   [
+    "Numbers", 16,
+    [ 38, 39, 46 ] ],
+   [
+    "Numbers", 18,
+    [ 3, 5, 7, 17 ] ],
+   [
     "Matthew", 5,
     [ 23, 24 ] ],
    [
@@ -34988,6 +36368,9 @@ window.GLOSSARY = [
   "name": "Lust (desire for what is forbidden)",
   "refs": [
    [
+    "Numbers", 11,
+    [ 4, 34 ] ],
+   [
     "Matthew", 5,
     [ 28 ] ],
    [
@@ -35038,6 +36421,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 22,
     [ 13 ] ],
+   [
+    "Numbers", 30,
+    [ 9 ] ],
    [
     "Matthew", 5,
     [ 31, 32 ] ],
@@ -35161,6 +36547,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 19,
     [ 12 ] ],
+   [
+    "Numbers", 5,
+    [ 19, 21 ] ],
+   [
+    "Numbers", 30,
+    [ 2, 10, 13 ] ],
    [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
@@ -35371,6 +36763,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 25,
     [ 45 ] ],
+   [
+    "Numbers", 26,
+    [ 29, 58 ] ],
    [
     "Proverbs", 23,
     [ 22 ] ],
@@ -35627,6 +37022,9 @@ window.GLOSSARY = [
     "Leviticus", 24,
     [ 7 ] ],
    [
+    "Numbers", 5,
+    [ 15 ] ],
+   [
     "Matthew", 2,
     [ 11 ] ],
    [
@@ -35650,6 +37048,15 @@ window.GLOSSARY = [
    [
     "Exodus", 10,
     [ 4, 14, 19 ] ],
+   [
+    "Numbers", 21,
+    [ 13 ] ],
+   [
+    "Numbers", 32,
+    [ 33 ] ],
+   [
+    "Numbers", 34,
+    [ 2, 12 ] ],
    [
     "Matthew", 2,
     [ 16 ] ],
@@ -35930,6 +37337,9 @@ window.GLOSSARY = [
   "name": "Amen (so be it)",
   "refs": [
    [
+    "Numbers", 5,
+    [ 22 ] ],
+   [
     "Matthew", 6,
     [ 13 ] ],
    [
@@ -36145,6 +37555,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 11,
     [ 32 ] ],
+   [
+    "Numbers", 31,
+    [ 20 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -36782,6 +38195,21 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 21 ] ],
    [
+    "Numbers", 8,
+    [ 19 ] ],
+   [
+    "Numbers", 14,
+    [ 37 ] ],
+   [
+    "Numbers", 16,
+    [ 46, 47, 48, 49, 50 ] ],
+   [
+    "Numbers", 25,
+    [ 8, 9, 18 ] ],
+   [
+    "Numbers", 26,
+    [ 1 ] ],
+   [
     "Mark", 3,
     [ 10 ] ],
    [
@@ -36796,6 +38224,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ordained (appointed)",
   "refs": [
+   [
+    "Numbers", 28,
+    [ 6 ] ],
    [
     "Mark", 3,
     [ 14 ] ],
@@ -37553,6 +38984,9 @@ window.GLOSSARY = [
     "Exodus", 15,
     [ 9 ] ],
    [
+    "Numbers", 31,
+    [ 9, 11, 12, 53 ] ],
+   [
     "Matthew", 12,
     [ 29 ] ],
    [
@@ -37811,6 +39245,9 @@ window.GLOSSARY = [
   "name": "Unbelief",
   "refs": [
    [
+    "Numbers", 14,
+    [ 11 ] ],
+   [
     "Matthew", 13,
     [ 58 ] ],
    [
@@ -37915,6 +39352,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Charger (a large serving platter)",
   "refs": [
+   [
+    "Numbers", 7,
+    [ 13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85 ] ],
    [
     "Matthew", 14,
     [ 8, 11 ] ],
@@ -38227,6 +39667,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 2,
     [ 4 ] ],
+   [
+    "Numbers", 6,
+    [ 15 ] ],
    [
     "Mark", 6,
     [ 13 ] ],
@@ -38777,6 +40220,21 @@ window.GLOSSARY = [
     "Leviticus", 22,
     [ 8 ] ],
    [
+    "Numbers", 5,
+    [ 2, 3, 13, 14, 20, 27, 28, 29 ] ],
+   [
+    "Numbers", 6,
+    [ 9, 12 ] ],
+   [
+    "Numbers", 9,
+    [ 6, 7 ] ],
+   [
+    "Numbers", 19,
+    [ 13, 20 ] ],
+   [
+    "Numbers", 35,
+    [ 33 ] ],
+   [
     "Matthew", 15,
     [ 11, 18, 20 ] ],
    [
@@ -39242,6 +40700,9 @@ window.GLOSSARY = [
     "Leviticus", 6,
     [ 28 ] ],
    [
+    "Numbers", 16,
+    [ 39 ] ],
+   [
     "Mark", 7,
     [ 4 ] ] ]
  },
@@ -39632,6 +41093,27 @@ window.GLOSSARY = [
   "name": "Jericho",
   "refs": [
    [
+    "Numbers", 22,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 3, 63 ] ],
+   [
+    "Numbers", 31,
+    [ 12 ] ],
+   [
+    "Numbers", 33,
+    [ 48, 50 ] ],
+   [
+    "Numbers", 34,
+    [ 15 ] ],
+   [
+    "Numbers", 35,
+    [ 1 ] ],
+   [
+    "Numbers", 36,
+    [ 13 ] ],
+   [
     "Matthew", 20,
     [ 29 ] ],
    [
@@ -39676,6 +41158,9 @@ window.GLOSSARY = [
    [
     "Genesis", 7,
     [ 16 ] ],
+   [
+    "Numbers", 5,
+    [ 3 ] ],
    [
     "Matthew", 19,
     [ 4 ] ],
@@ -39811,6 +41296,24 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 13, 15 ] ],
+   [
+    "Numbers", 1,
+    [ 50 ] ],
+   [
+    "Numbers", 3,
+    [ 3, 4, 6, 31 ] ],
+   [
+    "Numbers", 4,
+    [ 9, 12, 14 ] ],
+   [
+    "Numbers", 8,
+    [ 26 ] ],
+   [
+    "Numbers", 16,
+    [ 9 ] ],
+   [
+    "Numbers", 18,
+    [ 2 ] ],
    [
     "Matthew", 20,
     [ 26, 28 ] ],
@@ -39967,6 +41470,12 @@ window.GLOSSARY = [
    [
     "Exodus", 37,
     [ 4, 5, 14, 15, 27, 28 ] ],
+   [
+    "Numbers", 4,
+    [ 6, 8, 11, 14 ] ],
+   [
+    "Numbers", 21,
+    [ 18 ] ],
    [
     "Matthew", 10,
     [ 10 ] ],
@@ -40327,6 +41836,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Winepress (a pit where grapes were trodden for juice)",
   "refs": [
+   [
+    "Numbers", 18,
+    [ 27, 30 ] ],
    [
     "Matthew", 21,
     [ 33 ] ],
@@ -40723,6 +42235,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Inheritance (a dead father's estate, split among his sons)",
   "refs": [
+   [
+    "Numbers", 26,
+    [ 53, 54, 62 ] ],
+   [
+    "Numbers", 27,
+    [ 7, 8, 9, 10, 11 ] ],
+   [
+    "Numbers", 34,
+    [ 2, 14, 15, 18, 29 ] ],
    [
     "Luke", 12,
     [ 13 ] ],
@@ -41690,6 +43211,18 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 19 ] ],
    [
+    "Numbers", 7,
+    [ 16, 22, 28, 34, 40, 46, 52, 58, 64, 70, 76, 82 ] ],
+   [
+    "Numbers", 15,
+    [ 11, 24 ] ],
+   [
+    "Numbers", 28,
+    [ 15, 30 ] ],
+   [
+    "Numbers", 29,
+    [ 5, 11, 16, 19, 25 ] ],
+   [
     "Luke", 15,
     [ 29 ] ] ]
  },
@@ -42083,6 +43616,12 @@ window.GLOSSARY = [
     "Exodus", 40,
     [ 4, 9, 25 ] ],
    [
+    "Numbers", 4,
+    [ 9, 16 ] ],
+   [
+    "Numbers", 8,
+    [ 2, 3, 8 ] ],
+   [
     "Matthew", 25,
     [ 1, 3, 4, 7, 8 ] ] ]
  },
@@ -42184,6 +43723,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 1,
     [ 10 ] ],
+   [
+    "Numbers", 28,
+    [ 15, 30 ] ],
+   [
+    "Numbers", 29,
+    [ 5, 11, 16, 19, 25 ] ],
    [
     "Matthew", 25,
     [ 32, 33 ] ] ]
@@ -42310,6 +43855,15 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 6 ] ],
+   [
+    "Numbers", 6,
+    [ 15, 17 ] ],
+   [
+    "Numbers", 9,
+    [ 11 ] ],
+   [
+    "Numbers", 28,
+    [ 17 ] ],
    [
     "Matthew", 26,
     [ 17 ] ],
@@ -42635,6 +44189,9 @@ window.GLOSSARY = [
   "name": "Borders of their garments (the tassels the law commanded)",
   "refs": [
    [
+    "Numbers", 15,
+    [ 38, 39 ] ],
+   [
     "Matthew", 23,
     [ 5 ] ] ]
  },
@@ -42943,6 +44500,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 25 ] ],
+   [
+    "Numbers", 31,
+    [ 2, 3 ] ],
    [
     "Luke", 18,
     [ 3, 5, 7, 8 ] ],
@@ -44744,6 +46304,9 @@ window.GLOSSARY = [
   "name": "Prophesy (speak for God)",
   "refs": [
    [
+    "Numbers", 11,
+    [ 25, 26, 27 ] ],
+   [
     "Acts", 2,
     [ 17, 18 ] ],
    [
@@ -44875,6 +46438,9 @@ window.GLOSSARY = [
    [
     "Exodus", 24,
     [ 1 ] ],
+   [
+    "Numbers", 9,
+    [ 10 ] ],
    [
     "Acts", 2,
     [ 39 ] ],
@@ -45017,6 +46583,9 @@ window.GLOSSARY = [
     "Genesis", 21,
     [ 26 ] ],
    [
+    "Numbers", 22,
+    [ 6 ] ],
+   [
     "Acts", 3,
     [ 17 ] ],
    [
@@ -45145,6 +46714,21 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 39, 40, 41, 43 ] ],
+   [
+    "Numbers", 5,
+    [ 15, 31 ] ],
+   [
+    "Numbers", 14,
+    [ 18, 19, 34 ] ],
+   [
+    "Numbers", 15,
+    [ 31 ] ],
+   [
+    "Numbers", 23,
+    [ 21 ] ],
+   [
+    "Numbers", 30,
+    [ 15 ] ],
    [
     "Acts", 1,
     [ 18 ] ],
@@ -45902,6 +47486,9 @@ window.GLOSSARY = [
   "name": "Trance (a vision that takes hold of a man)",
   "refs": [
    [
+    "Numbers", 24,
+    [ 4, 16 ] ],
+   [
     "Acts", 10,
     [ 10 ] ],
    [
@@ -45925,6 +47512,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 15,
     [ 2, 4, 5, 6, 7, 8, 9, 10, 11, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 33 ] ],
+   [
+    "Numbers", 19,
+    [ 7, 8, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22 ] ],
    [
     "Acts", 11,
     [ 8, 9 ] ] ]
@@ -46090,6 +47680,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 12 ] ],
+   [
+    "Numbers", 15,
+    [ 34 ] ],
    [
     "Acts", 12,
     [ 10 ] ] ]
@@ -46750,6 +48343,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Divination, soothsaying (fortune-telling through a spirit)",
   "refs": [
+   [
+    "Numbers", 22,
+    [ 7 ] ],
+   [
+    "Numbers", 23,
+    [ 23 ] ],
    [
     "Acts", 16,
     [ 16 ] ] ]
@@ -47492,6 +49091,15 @@ window.GLOSSARY = [
     "Exodus", 13,
     [ 19 ] ],
    [
+    "Numbers", 1,
+    [ 10, 32 ] ],
+   [
+    "Numbers", 26,
+    [ 28, 37 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ],
+   [
     "Acts", 7,
     [ 9, 13, 14, 18 ] ],
    [
@@ -47666,6 +49274,15 @@ window.GLOSSARY = [
     "Exodus", 23,
     [ 31 ] ],
    [
+    "Numbers", 14,
+    [ 25 ] ],
+   [
+    "Numbers", 21,
+    [ 4, 14 ] ],
+   [
+    "Numbers", 33,
+    [ 10, 11 ] ],
+   [
     "Acts", 7,
     [ 36 ] ],
    [
@@ -47780,6 +49397,69 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 11 ] ],
    [
+    "Numbers", 1,
+    [ 1, 50, 51, 53 ] ],
+   [
+    "Numbers", 2,
+    [ 2, 17 ] ],
+   [
+    "Numbers", 3,
+    [ 7, 8, 23, 25, 26, 29, 35, 36, 38 ] ],
+   [
+    "Numbers", 4,
+    [ 3, 4, 15, 16, 23, 25, 26, 28, 30, 31, 33, 35, 37, 39, 41, 43, 47 ] ],
+   [
+    "Numbers", 5,
+    [ 17 ] ],
+   [
+    "Numbers", 6,
+    [ 10, 13, 18 ] ],
+   [
+    "Numbers", 7,
+    [ 1, 3, 5, 89 ] ],
+   [
+    "Numbers", 8,
+    [ 9, 15, 19, 22, 24, 26 ] ],
+   [
+    "Numbers", 9,
+    [ 15, 17, 18, 19, 20, 22 ] ],
+   [
+    "Numbers", 10,
+    [ 3, 11, 17, 21 ] ],
+   [
+    "Numbers", 11,
+    [ 16, 24, 26 ] ],
+   [
+    "Numbers", 12,
+    [ 4, 5, 10 ] ],
+   [
+    "Numbers", 14,
+    [ 10 ] ],
+   [
+    "Numbers", 16,
+    [ 9, 18, 19, 42, 43, 50 ] ],
+   [
+    "Numbers", 17,
+    [ 4, 7, 8, 13 ] ],
+   [
+    "Numbers", 18,
+    [ 2, 3, 4, 6, 21, 22, 23, 31 ] ],
+   [
+    "Numbers", 19,
+    [ 4, 13 ] ],
+   [
+    "Numbers", 20,
+    [ 6 ] ],
+   [
+    "Numbers", 25,
+    [ 6 ] ],
+   [
+    "Numbers", 27,
+    [ 2 ] ],
+   [
+    "Numbers", 31,
+    [ 30, 47, 54 ] ],
+   [
     "Acts", 7,
     [ 43, 44, 46 ] ],
    [
@@ -47891,6 +49571,12 @@ window.GLOSSARY = [
     "Leviticus", 25,
     [ 45 ] ],
    [
+    "Numbers", 9,
+    [ 14 ] ],
+   [
+    "Numbers", 15,
+    [ 14 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -47917,6 +49603,24 @@ window.GLOSSARY = [
    [
     "Leviticus", 12,
     [ 5 ] ],
+   [
+    "Numbers", 1,
+    [ 27, 39 ] ],
+   [
+    "Numbers", 2,
+    [ 4, 26 ] ],
+   [
+    "Numbers", 3,
+    [ 43, 46, 50 ] ],
+   [
+    "Numbers", 26,
+    [ 22, 25, 27, 43 ] ],
+   [
+    "Numbers", 31,
+    [ 33, 34, 37, 38, 39 ] ],
+   [
+    "Numbers", 33,
+    [ 9 ] ],
    [
     "Acts", 7,
     [ 14 ] ],
@@ -47998,6 +49702,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 14, 18, 21, 27 ] ],
+   [
+    "Numbers", 23,
+    [ 18 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -48265,6 +49972,9 @@ window.GLOSSARY = [
    [
     "Exodus", 23,
     [ 31 ] ],
+   [
+    "Numbers", 20,
+    [ 1 ] ],
    [
     "Acts", 8,
     [ 26 ] ] ]
@@ -50240,6 +51950,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 6 ] ],
    [
+    "Numbers", 14,
+    [ 18 ] ],
+   [
     "Romans", 2,
     [ 4 ] ],
    [
@@ -50483,6 +52196,12 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 30 ] ],
    [
+    "Numbers", 22,
+    [ 6, 11 ] ],
+   [
+    "Numbers", 23,
+    [ 3, 27 ] ],
+   [
     "Romans", 5,
     [ 7 ] ],
    [
@@ -50600,6 +52319,33 @@ window.GLOSSARY = [
     "Leviticus", 25,
     [ 9 ] ],
    [
+    "Numbers", 5,
+    [ 8 ] ],
+   [
+    "Numbers", 6,
+    [ 11 ] ],
+   [
+    "Numbers", 8,
+    [ 12, 19, 21 ] ],
+   [
+    "Numbers", 15,
+    [ 25, 28 ] ],
+   [
+    "Numbers", 16,
+    [ 46, 47 ] ],
+   [
+    "Numbers", 25,
+    [ 13 ] ],
+   [
+    "Numbers", 28,
+    [ 22, 30 ] ],
+   [
+    "Numbers", 29,
+    [ 5, 11 ] ],
+   [
+    "Numbers", 31,
+    [ 50 ] ],
+   [
     "Romans", 5,
     [ 11 ] ] ]
  },
@@ -50626,6 +52372,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Similitude (likeness)",
   "refs": [
+   [
+    "Numbers", 12,
+    [ 8 ] ],
    [
     "Romans", 5,
     [ 14 ] ],
@@ -50795,6 +52544,9 @@ window.GLOSSARY = [
     "Genesis", 27,
     [ 40 ] ],
    [
+    "Numbers", 24,
+    [ 19 ] ],
+   [
     "Romans", 6,
     [ 9, 14 ] ],
    [
@@ -50932,6 +52684,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 22,
     [ 3, 5 ] ],
+   [
+    "Numbers", 5,
+    [ 19 ] ],
    [
     "Zechariah", 13,
     [ 1 ] ],
@@ -52052,6 +53807,9 @@ window.GLOSSARY = [
   "name": "An Israelite (a Jew, a son of Jacob, who was named Israel)",
   "refs": [
    [
+    "Numbers", 25,
+    [ 14 ] ],
+   [
     "John", 1,
     [ 47 ] ],
    [
@@ -52654,6 +54412,9 @@ window.GLOSSARY = [
    [
     "Genesis", 3,
     [ 15 ] ],
+   [
+    "Numbers", 35,
+    [ 21, 22 ] ],
    [
     "Luke", 23,
     [ 12 ] ],
@@ -54056,6 +55817,18 @@ window.GLOSSARY = [
     "Leviticus", 20,
     [ 24 ] ],
    [
+    "Numbers", 18,
+    [ 24 ] ],
+   [
+    "Numbers", 26,
+    [ 55 ] ],
+   [
+    "Numbers", 32,
+    [ 19 ] ],
+   [
+    "Numbers", 34,
+    [ 13 ] ],
+   [
     "1 Corinthians", 6,
     [ 9, 10 ] ],
    [
@@ -54715,6 +56488,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The fiery serpents (the snakes that struck the grumbling Israelites)",
   "refs": [
+   [
+    "Numbers", 21,
+    [ 6, 7 ] ],
    [
     "1 Corinthians", 10,
     [ 9 ] ] ]
@@ -55664,6 +57440,15 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 13, 18 ] ],
    [
+    "Numbers", 15,
+    [ 3, 7, 10, 13, 14, 24 ] ],
+   [
+    "Numbers", 28,
+    [ 2, 6, 8, 13, 24, 27 ] ],
+   [
+    "Numbers", 29,
+    [ 2, 6, 8, 13, 36 ] ],
+   [
     "2 Corinthians", 2,
     [ 14, 15, 16 ] ],
    [
@@ -55769,6 +57554,9 @@ window.GLOSSARY = [
   "name": "Done away (set aside, brought to an end)",
   "refs": [
    [
+    "Numbers", 27,
+    [ 4 ] ],
+   [
     "2 Corinthians", 3,
     [ 7, 11, 14 ] ] ]
  },
@@ -55810,6 +57598,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 3 ] ],
+   [
+    "Numbers", 4,
+    [ 5 ] ],
    [
     "2 Corinthians", 3,
     [ 13, 14, 15, 16 ] ] ]
@@ -56222,6 +58013,9 @@ window.GLOSSARY = [
     "Genesis", 29,
     [ 25 ] ],
    [
+    "Numbers", 25,
+    [ 18 ] ],
+   [
     "2 Corinthians", 11,
     [ 3 ] ] ]
  },
@@ -56498,6 +58292,9 @@ window.GLOSSARY = [
   "name": "Zealous (burning with zeal)",
   "refs": [
    [
+    "Numbers", 25,
+    [ 11, 13 ] ],
+   [
     "Galatians", 1,
     [ 14 ] ],
    [
@@ -56755,6 +58552,27 @@ window.GLOSSARY = [
    [
     "Leviticus", 27,
     [ 34 ] ],
+   [
+    "Numbers", 1,
+    [ 1, 19 ] ],
+   [
+    "Numbers", 3,
+    [ 1, 4, 14 ] ],
+   [
+    "Numbers", 9,
+    [ 1, 5 ] ],
+   [
+    "Numbers", 10,
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 64 ] ],
+   [
+    "Numbers", 28,
+    [ 6 ] ],
+   [
+    "Numbers", 33,
+    [ 15, 16 ] ],
    [
     "Galatians", 4,
     [ 24, 25 ] ],
@@ -58145,6 +59963,9 @@ window.GLOSSARY = [
   "name": "Hatred",
   "refs": [
    [
+    "Numbers", 35,
+    [ 20 ] ],
+   [
     "Proverbs", 10,
     [ 18 ] ],
    [
@@ -58291,6 +60112,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 4 ] ],
+   [
+    "Numbers", 28,
+    [ 2 ] ],
    [
     "Proverbs", 15,
     [ 23 ] ],
@@ -58694,6 +60518,9 @@ window.GLOSSARY = [
   "name": "Wiles (schemes, tricks)",
   "refs": [
    [
+    "Numbers", 25,
+    [ 18 ] ],
+   [
     "Ephesians", 6,
     [ 11 ] ] ]
  },
@@ -58897,6 +60724,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Discouraged (lose heart and give up trying)",
   "refs": [
+   [
+    "Numbers", 21,
+    [ 4 ] ],
+   [
+    "Numbers", 32,
+    [ 7, 9 ] ],
    [
     "Colossians", 3,
     [ 21 ] ] ]
@@ -61427,6 +63260,9 @@ window.GLOSSARY = [
   "name": "The provocation (Israel's rebellion against God in the wilderness)",
   "refs": [
    [
+    "Numbers", 14,
+    [ 11, 23 ] ],
+   [
     "Hebrews", 3,
     [ 8, 15, 16 ] ] ]
  },
@@ -61435,6 +63271,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Alway (always)",
   "refs": [
+   [
+    "Numbers", 9,
+    [ 16 ] ],
    [
     "Hebrews", 3,
     [ 10 ] ] ]
@@ -61480,6 +63319,12 @@ window.GLOSSARY = [
    [
     "Leviticus", 6,
     [ 5 ] ],
+   [
+    "Numbers", 14,
+    [ 16, 23, 30 ] ],
+   [
+    "Numbers", 32,
+    [ 10, 11 ] ],
    [
     "Amos", 4,
     [ 2 ] ],
@@ -61565,6 +63410,9 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 30 ] ],
    [
+    "Numbers", 14,
+    [ 29, 32, 33 ] ],
+   [
     "Nahum", 3,
     [ 3 ] ],
    [
@@ -61610,6 +63458,15 @@ window.GLOSSARY = [
     "Leviticus", 23,
     [ 3, 8 ] ],
    [
+    "Numbers", 6,
+    [ 9 ] ],
+   [
+    "Numbers", 28,
+    [ 25 ] ],
+   [
+    "Numbers", 29,
+    [ 32 ] ],
+   [
     "Hebrews", 4,
     [ 4 ] ] ]
  },
@@ -61627,6 +63484,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Quick (alive, living)",
   "refs": [
+   [
+    "Numbers", 16,
+    [ 30 ] ],
    [
     "Hebrews", 4,
     [ 12 ] ] ]
@@ -61681,6 +63541,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 21,
     [ 12 ] ],
+   [
+    "Numbers", 4,
+    [ 12, 15, 16 ] ],
    [
     "Hebrews", 9,
     [ 1, 2 ] ] ]
@@ -61748,6 +63611,15 @@ window.GLOSSARY = [
     "Exodus", 26,
     [ 33, 34 ] ],
    [
+    "Numbers", 3,
+    [ 31 ] ],
+   [
+    "Numbers", 10,
+    [ 33 ] ],
+   [
+    "Numbers", 14,
+    [ 44 ] ],
+   [
     "Hebrews", 9,
     [ 4 ] ] ]
  },
@@ -61784,6 +63656,9 @@ window.GLOSSARY = [
     "Leviticus", 16,
     [ 2, 13, 14, 15 ] ],
    [
+    "Numbers", 7,
+    [ 89 ] ],
+   [
     "Hebrews", 9,
     [ 5 ] ] ]
  },
@@ -61807,6 +63682,9 @@ window.GLOSSARY = [
    [
     "Exodus", 37,
     [ 7, 8, 9 ] ],
+   [
+    "Numbers", 7,
+    [ 89 ] ],
    [
     "Hebrews", 9,
     [ 5 ] ] ]
@@ -62095,6 +63973,18 @@ window.GLOSSARY = [
    [
     "Leviticus", 24,
     [ 14 ] ],
+   [
+    "Numbers", 5,
+    [ 3, 4 ] ],
+   [
+    "Numbers", 15,
+    [ 35, 36 ] ],
+   [
+    "Numbers", 19,
+    [ 3, 9 ] ],
+   [
+    "Numbers", 31,
+    [ 13, 19 ] ],
    [
     "Hebrews", 13,
     [ 11, 12, 13 ] ] ]
@@ -63212,6 +65102,9 @@ window.GLOSSARY = [
     "Leviticus", 27,
     [ 20, 27, 28, 29, 33 ] ],
    [
+    "Numbers", 3,
+    [ 46, 48, 49, 51 ] ],
+   [
     "1 Peter", 1,
     [ 18 ] ],
    [
@@ -63601,6 +65494,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Vexed (worn out and tormented)",
   "refs": [
+   [
+    "Numbers", 20,
+    [ 15 ] ],
    [
     "2 Peter", 2,
     [ 7, 8 ] ] ]
@@ -64358,6 +66254,33 @@ window.GLOSSARY = [
     "Exodus", 6,
     [ 14 ] ],
    [
+    "Numbers", 1,
+    [ 5, 20, 21 ] ],
+   [
+    "Numbers", 2,
+    [ 10, 16 ] ],
+   [
+    "Numbers", 7,
+    [ 30 ] ],
+   [
+    "Numbers", 10,
+    [ 18 ] ],
+   [
+    "Numbers", 13,
+    [ 4 ] ],
+   [
+    "Numbers", 16,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 5 ] ],
+   [
+    "Numbers", 32,
+    [ 1, 2, 6, 25, 29, 31, 33, 37 ] ],
+   [
+    "Numbers", 34,
+    [ 14 ] ],
+   [
     "Revelation", 7,
     [ 5 ] ] ]
  },
@@ -64366,6 +66289,30 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Gad (the tribe)",
   "refs": [
+   [
+    "Numbers", 1,
+    [ 14, 24, 25 ] ],
+   [
+    "Numbers", 2,
+    [ 14 ] ],
+   [
+    "Numbers", 7,
+    [ 42 ] ],
+   [
+    "Numbers", 10,
+    [ 20 ] ],
+   [
+    "Numbers", 13,
+    [ 15 ] ],
+   [
+    "Numbers", 26,
+    [ 15, 18 ] ],
+   [
+    "Numbers", 32,
+    [ 1, 2, 6, 25, 29, 31, 33, 34 ] ],
+   [
+    "Numbers", 34,
+    [ 14 ] ],
    [
     "Revelation", 7,
     [ 5 ] ] ]
@@ -64394,6 +66341,30 @@ window.GLOSSARY = [
   "name": "Simeon (the tribe)",
   "refs": [
    [
+    "Numbers", 1,
+    [ 6, 22, 23 ] ],
+   [
+    "Numbers", 2,
+    [ 12 ] ],
+   [
+    "Numbers", 7,
+    [ 36 ] ],
+   [
+    "Numbers", 10,
+    [ 19 ] ],
+   [
+    "Numbers", 13,
+    [ 5 ] ],
+   [
+    "Numbers", 25,
+    [ 14 ] ],
+   [
+    "Numbers", 26,
+    [ 12 ] ],
+   [
+    "Numbers", 34,
+    [ 20 ] ],
+   [
     "Revelation", 7,
     [ 7 ] ] ]
  },
@@ -64417,6 +66388,27 @@ window.GLOSSARY = [
    [
     "Exodus", 1,
     [ 3 ] ],
+   [
+    "Numbers", 1,
+    [ 8, 28, 29 ] ],
+   [
+    "Numbers", 2,
+    [ 5 ] ],
+   [
+    "Numbers", 7,
+    [ 18 ] ],
+   [
+    "Numbers", 10,
+    [ 15 ] ],
+   [
+    "Numbers", 13,
+    [ 7 ] ],
+   [
+    "Numbers", 26,
+    [ 23, 25 ] ],
+   [
+    "Numbers", 34,
+    [ 26 ] ],
    [
     "Revelation", 7,
     [ 7 ] ] ]
@@ -64516,6 +66508,9 @@ window.GLOSSARY = [
    [
     "Exodus", 40,
     [ 5, 26 ] ],
+   [
+    "Numbers", 4,
+    [ 11 ] ],
    [
     "Revelation", 8,
     [ 3, 5 ] ],
@@ -65779,6 +67774,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The temple of the tabernacle of the testimony (the holy place that held the ark with God's law, in heaven)",
   "refs": [
+   [
+    "Numbers", 10,
+    [ 11 ] ],
    [
     "Revelation", 15,
     [ 5 ] ] ]
@@ -67128,7 +69126,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 6,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Numbers", 13,
+    [ 33 ] ] ]
  },
  {
   "id": "fountains-of-the-deep",
@@ -67294,6 +69295,9 @@ window.GLOSSARY = [
    [
     "Genesis", 11,
     [ 14, 15, 16, 17 ] ],
+   [
+    "Numbers", 24,
+    [ 24 ] ],
    [
     "Luke", 3,
     [ 35 ] ] ]
@@ -67566,7 +69570,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Genesis", 37,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Numbers", 13,
+    [ 22 ] ] ]
  },
  {
   "id": "mamre",
@@ -67677,7 +69684,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 14,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Numbers", 34,
+    [ 3, 12 ] ] ]
  },
  {
   "id": "slimepits",
@@ -67893,7 +69903,25 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Genesis", 20,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 13,
+    [ 26 ] ],
+   [
+    "Numbers", 20,
+    [ 1, 14, 16, 22 ] ],
+   [
+    "Numbers", 27,
+    [ 14 ] ],
+   [
+    "Numbers", 32,
+    [ 8 ] ],
+   [
+    "Numbers", 33,
+    [ 36, 37 ] ],
+   [
+    "Numbers", 34,
+    [ 4 ] ] ]
  },
  {
   "id": "phichol",
@@ -68238,7 +70266,10 @@ window.GLOSSARY = [
     [ 14, 16 ] ],
    [
     "Genesis", 36,
-    [ 8, 9, 20, 21, 30 ] ] ]
+    [ 8, 9, 20, 21, 30 ] ],
+   [
+    "Numbers", 24,
+    [ 18 ] ] ]
  },
  {
   "id": "jabbok",
@@ -68247,7 +70278,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 32,
-    [ 22 ] ] ]
+    [ 22 ] ],
+   [
+    "Numbers", 21,
+    [ 24 ] ] ]
  },
  {
   "id": "peniel",
@@ -68556,7 +70590,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 37,
-    [ 28, 36 ] ] ]
+    [ 28, 36 ] ],
+   [
+    "Numbers", 10,
+    [ 29 ] ],
+   [
+    "Numbers", 25,
+    [ 6, 14, 15, 17 ] ],
+   [
+    "Numbers", 31,
+    [ 2, 3, 7 ] ] ]
  },
  {
   "id": "potiphar",
@@ -68607,7 +70650,10 @@ window.GLOSSARY = [
     [ 3, 6, 7 ] ],
    [
     "Genesis", 46,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 19 ] ] ]
  },
  {
   "id": "onan",
@@ -68619,7 +70665,10 @@ window.GLOSSARY = [
     [ 4, 8, 9 ] ],
    [
     "Genesis", 46,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 19 ] ] ]
  },
  {
   "id": "shelah-son-of-judah",
@@ -68631,7 +70680,10 @@ window.GLOSSARY = [
     [ 5, 11, 14, 26 ] ],
    [
     "Genesis", 46,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 20 ] ] ]
  },
  {
   "id": "pharez",
@@ -68643,7 +70695,10 @@ window.GLOSSARY = [
     [ 29 ] ],
    [
     "Genesis", 46,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 20, 21 ] ] ]
  },
  {
   "id": "zarah-son-of-judah",
@@ -68841,7 +70896,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Exodus", 6,
-    [ 16, 19 ] ] ]
+    [ 16, 19 ] ],
+   [
+    "Numbers", 16,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 59 ] ] ]
  },
  {
   "id": "judah-son-of-jacob",
@@ -69096,7 +71157,16 @@ window.GLOSSARY = [
     [ 1, 5, 13, 14, 17, 20 ] ],
    [
     "Genesis", 50,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ],
+   [
+    "Numbers", 32,
+    [ 33, 39, 40, 41 ] ],
+   [
+    "Numbers", 36,
+    [ 1, 12 ] ] ]
  },
  {
   "id": "ephraim-son-of-joseph",
@@ -69288,7 +71358,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Exodus", 12,
-    [ 37 ] ] ]
+    [ 37 ] ],
+   [
+    "Numbers", 33,
+    [ 3, 5 ] ] ]
  },
  {
   "id": "fifth-part",
@@ -69387,7 +71460,19 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 50,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Numbers", 26,
+    [ 29 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ],
+   [
+    "Numbers", 32,
+    [ 39, 40 ] ],
+   [
+    "Numbers", 36,
+    [ 1 ] ] ]
  },
  {
   "id": "pithom",
@@ -69546,7 +71631,13 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Leviticus", 23,
-    [ 40 ] ] ]
+    [ 40 ] ],
+   [
+    "Numbers", 24,
+    [ 5 ] ],
+   [
+    "Numbers", 31,
+    [ 10 ] ] ]
  },
  {
   "id": "stranger-in-a-strange-land",
@@ -69591,7 +71682,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Exodus", 34,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Numbers", 13,
+    [ 29 ] ] ]
  },
  {
   "id": "burning-bush",
@@ -69627,7 +71721,16 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Leviticus", 20,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Numbers", 13,
+    [ 27 ] ],
+   [
+    "Numbers", 14,
+    [ 8 ] ],
+   [
+    "Numbers", 16,
+    [ 13, 14 ] ] ]
  },
  {
   "id": "token",
@@ -69642,7 +71745,10 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Exodus", 13,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Numbers", 17,
+    [ 10 ] ] ]
  },
  {
   "id": "bricks-and-straw",
@@ -69669,7 +71775,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Leviticus", 26,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Numbers", 14,
+    [ 12 ] ] ]
  },
  {
   "id": "jehovah",
@@ -69687,7 +71796,22 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 16, 18 ] ] ]
+    [ 16, 18 ] ],
+   [
+    "Numbers", 3,
+    [ 17, 19, 27, 29, 30 ] ],
+   [
+    "Numbers", 4,
+    [ 2, 4, 15, 18, 34, 37 ] ],
+   [
+    "Numbers", 7,
+    [ 9 ] ],
+   [
+    "Numbers", 16,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 57, 58 ] ] ]
  },
  {
   "id": "gershon-and-merari",
@@ -69696,7 +71820,22 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 16, 17, 19 ] ] ]
+    [ 16, 17, 19 ] ],
+   [
+    "Numbers", 3,
+    [ 17, 18, 20, 21, 23, 24, 25, 33, 35, 36 ] ],
+   [
+    "Numbers", 4,
+    [ 22, 24, 27, 28, 29, 33, 38, 41, 42, 45 ] ],
+   [
+    "Numbers", 7,
+    [ 7, 8 ] ],
+   [
+    "Numbers", 10,
+    [ 17 ] ],
+   [
+    "Numbers", 26,
+    [ 57 ] ] ]
  },
  {
   "id": "amram",
@@ -69705,7 +71844,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 18, 20 ] ] ]
+    [ 18, 20 ] ],
+   [
+    "Numbers", 3,
+    [ 19 ] ],
+   [
+    "Numbers", 26,
+    [ 58, 59 ] ] ]
  },
  {
   "id": "jochebed",
@@ -69714,7 +71859,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Numbers", 26,
+    [ 59 ] ] ]
  },
  {
   "id": "korah",
@@ -69723,7 +71871,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 21, 24 ] ] ]
+    [ 21, 24 ] ],
+   [
+    "Numbers", 16,
+    [ 1, 5, 6, 8, 16, 19, 24, 27, 32, 40, 49 ] ],
+   [
+    "Numbers", 26,
+    [ 9, 10, 11 ] ] ]
  },
  {
   "id": "elisheba",
@@ -69753,7 +71907,19 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Leviticus", 10,
-    [ 6, 12, 16 ] ] ]
+    [ 6, 12, 16 ] ],
+   [
+    "Numbers", 3,
+    [ 2, 4 ] ],
+   [
+    "Numbers", 4,
+    [ 28, 33 ] ],
+   [
+    "Numbers", 7,
+    [ 8 ] ],
+   [
+    "Numbers", 26,
+    [ 60 ] ] ]
  },
  {
   "id": "phinehas",
@@ -69762,7 +71928,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Numbers", 25,
+    [ 7, 11 ] ],
+   [
+    "Numbers", 31,
+    [ 6 ] ] ]
  },
  {
   "id": "sons-of-reuben",
@@ -69771,7 +71943,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Numbers", 26,
+    [ 5, 6, 8 ] ] ]
  },
  {
   "id": "sons-of-simeon",
@@ -69780,7 +71955,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Numbers", 26,
+    [ 12, 13 ] ] ]
  },
  {
   "id": "grandsons-of-levi",
@@ -69792,7 +71970,13 @@ window.GLOSSARY = [
     [ 17, 18, 19, 21, 22, 24 ] ],
    [
     "Leviticus", 10,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Numbers", 3,
+    [ 18, 19, 20, 30 ] ],
+   [
+    "Numbers", 16,
+    [ 1 ] ] ]
  },
  {
   "id": "putiel-and-amminadab",
@@ -69801,7 +71985,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 6,
-    [ 23, 25 ] ] ]
+    [ 23, 25 ] ],
+   [
+    "Numbers", 1,
+    [ 7 ] ],
+   [
+    "Numbers", 2,
+    [ 3 ] ],
+   [
+    "Numbers", 10,
+    [ 14 ] ] ]
  },
  {
   "id": "murrain",
@@ -69870,7 +72063,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 12,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Numbers", 9,
+    [ 11 ] ] ]
  },
  {
   "id": "mixed-multitude",
@@ -69891,7 +72087,10 @@ window.GLOSSARY = [
     [ 37 ] ],
    [
     "Exodus", 13,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Numbers", 33,
+    [ 5, 6 ] ] ]
  },
  {
   "id": "etham",
@@ -69900,7 +72099,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 13,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Numbers", 33,
+    [ 6, 7, 8 ] ] ]
  },
  {
   "id": "firstborn-exodus",
@@ -69912,7 +72114,19 @@ window.GLOSSARY = [
     [ 2, 13, 15 ] ],
    [
     "Exodus", 34,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Numbers", 3,
+    [ 2, 12, 13, 40, 41, 42, 43, 45, 46, 50 ] ],
+   [
+    "Numbers", 8,
+    [ 16, 17, 18 ] ],
+   [
+    "Numbers", 18,
+    [ 15 ] ],
+   [
+    "Numbers", 33,
+    [ 4 ] ] ]
  },
  {
   "id": "matrix",
@@ -69924,7 +72138,13 @@ window.GLOSSARY = [
     [ 12, 15 ] ],
    [
     "Exodus", 34,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Numbers", 3,
+    [ 12 ] ],
+   [
+    "Numbers", 18,
+    [ 15 ] ] ]
  },
  {
   "id": "firstling",
@@ -69942,7 +72162,13 @@ window.GLOSSARY = [
     [ 19, 20 ] ],
    [
     "Leviticus", 27,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Numbers", 3,
+    [ 41 ] ],
+   [
+    "Numbers", 18,
+    [ 15, 17 ] ] ]
  },
  {
   "id": "frontlets",
@@ -69993,7 +72219,16 @@ window.GLOSSARY = [
     [ 9, 10 ] ],
    [
     "Exodus", 40,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Numbers", 9,
+    [ 15, 16, 17, 18, 19, 20, 21, 22 ] ],
+   [
+    "Numbers", 12,
+    [ 5 ] ],
+   [
+    "Numbers", 14,
+    [ 14 ] ] ]
  },
  {
   "id": "pi-hahiroth",
@@ -70002,7 +72237,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 14,
-    [ 2, 9 ] ] ]
+    [ 2, 9 ] ],
+   [
+    "Numbers", 33,
+    [ 7, 8 ] ] ]
  },
  {
   "id": "migdol",
@@ -70011,7 +72249,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 14,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Numbers", 33,
+    [ 7 ] ] ]
  },
  {
   "id": "baal-zephon",
@@ -70020,7 +72261,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 14,
-    [ 2, 9 ] ] ]
+    [ 2, 9 ] ],
+   [
+    "Numbers", 33,
+    [ 7 ] ] ]
  },
  {
   "id": "marah",
@@ -70029,7 +72273,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 15,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Numbers", 33,
+    [ 8, 9 ] ] ]
  },
  {
   "id": "elim",
@@ -70041,7 +72288,10 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Exodus", 16,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 33,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "timbrel",
@@ -70071,7 +72321,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Exodus", 17,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 33,
+    [ 11, 12 ] ] ]
  },
  {
   "id": "omer",
@@ -70089,7 +72342,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 16,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Numbers", 11,
+    [ 31, 32 ] ] ]
  },
  {
   "id": "flesh-pots",
@@ -70110,16 +72366,31 @@ window.GLOSSARY = [
     [ 1, 8 ] ],
    [
     "Exodus", 19,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Numbers", 33,
+    [ 14, 15 ] ] ]
  },
  {
   "id": "massah-and-meribah",
   "kind": "place",
-  "name": "Massah and Meribah (\"testing\" and \"quarrelling\", where Israel tempted the LORD)",
+  "name": "Massah and Meribah, where Israel tempted the LORD at Rephidim (Exodus 17:7)",
   "refs": [
    [
     "Exodus", 17,
     [ 7 ] ] ]
+ },
+ {
+  "id": "meribah-in-kadesh",
+  "kind": "place",
+  "name": "Meribah in Kadesh, where Israel strove with the LORD and Moses smote the rock twice (Numbers 20:13; 27:14)",
+  "refs": [
+   [
+    "Numbers", 20,
+    [ 13, 24 ] ],
+   [
+    "Numbers", 27,
+    [ 14 ] ] ]
  },
  {
   "id": "amalek",
@@ -70128,7 +72399,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 17,
-    [ 8, 9, 10, 11, 13, 14, 16 ] ] ]
+    [ 8, 9, 10, 11, 13, 14, 16 ] ],
+   [
+    "Numbers", 13,
+    [ 29 ] ],
+   [
+    "Numbers", 14,
+    [ 25, 43, 45 ] ],
+   [
+    "Numbers", 24,
+    [ 20 ] ] ]
  },
  {
   "id": "joshua-son-of-nun",
@@ -70146,7 +72426,28 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Exodus", 33,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Numbers", 11,
+    [ 28 ] ],
+   [
+    "Numbers", 13,
+    [ 8, 16 ] ],
+   [
+    "Numbers", 14,
+    [ 6, 30, 38 ] ],
+   [
+    "Numbers", 26,
+    [ 65 ] ],
+   [
+    "Numbers", 27,
+    [ 18, 22 ] ],
+   [
+    "Numbers", 32,
+    [ 12, 28 ] ],
+   [
+    "Numbers", 34,
+    [ 17 ] ] ]
  },
  {
   "id": "hur",
@@ -70245,7 +72546,16 @@ window.GLOSSARY = [
     [ 16, 22 ] ],
    [
     "Leviticus", 25,
-    [ 6, 23, 35, 45, 47 ] ] ]
+    [ 6, 23, 35, 45, 47 ] ],
+   [
+    "Numbers", 9,
+    [ 14 ] ],
+   [
+    "Numbers", 15,
+    [ 14, 15, 16, 26, 29, 30 ] ],
+   [
+    "Numbers", 35,
+    [ 15 ] ] ]
  },
  {
   "id": "widow-in-israel",
@@ -70257,7 +72567,10 @@ window.GLOSSARY = [
     [ 22, 24 ] ],
    [
     "Leviticus", 22,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Numbers", 30,
+    [ 9 ] ] ]
  },
  {
   "id": "dowry",
@@ -70320,7 +72633,13 @@ window.GLOSSARY = [
     [ 1, 9 ] ],
    [
     "Leviticus", 10,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 3,
+    [ 2, 4 ] ],
+   [
+    "Numbers", 26,
+    [ 60, 61 ] ] ]
  },
  {
   "id": "abihu",
@@ -70332,7 +72651,13 @@ window.GLOSSARY = [
     [ 1, 9 ] ],
    [
     "Leviticus", 10,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 3,
+    [ 2, 4 ] ],
+   [
+    "Numbers", 26,
+    [ 60, 61 ] ] ]
  },
  {
   "id": "blood-of-the-covenant",
@@ -70386,7 +72711,22 @@ window.GLOSSARY = [
     [ 21 ] ],
    [
     "Leviticus", 23,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Numbers", 6,
+    [ 14, 17, 18 ] ],
+   [
+    "Numbers", 7,
+    [ 17, 23, 29, 35, 41, 47, 53, 59, 65, 71, 77, 83, 88 ] ],
+   [
+    "Numbers", 10,
+    [ 10 ] ],
+   [
+    "Numbers", 15,
+    [ 8 ] ],
+   [
+    "Numbers", 29,
+    [ 39 ] ] ]
  },
  {
   "id": "sapphire",
@@ -70464,7 +72804,13 @@ window.GLOSSARY = [
     [ 40 ] ],
    [
     "Exodus", 40,
-    [ 8, 33 ] ] ]
+    [ 8, 33 ] ],
+   [
+    "Numbers", 3,
+    [ 26, 37 ] ],
+   [
+    "Numbers", 4,
+    [ 26, 32 ] ] ]
  },
  {
   "id": "urim-and-thummim",
@@ -70476,7 +72822,10 @@ window.GLOSSARY = [
     [ 30 ] ],
    [
     "Leviticus", 8,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Numbers", 27,
+    [ 21 ] ] ]
  },
  {
   "id": "breastplate-of-judgment",
@@ -70668,7 +73017,28 @@ window.GLOSSARY = [
     [ 3, 5, 6, 9, 11, 15, 25, 27 ] ],
    [
     "Leviticus", 23,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Numbers", 6,
+    [ 11, 14, 16 ] ],
+   [
+    "Numbers", 7,
+    [ 16, 22, 28, 34, 40, 46, 52, 58, 64, 70, 76, 82, 87 ] ],
+   [
+    "Numbers", 8,
+    [ 8, 12 ] ],
+   [
+    "Numbers", 15,
+    [ 24, 25, 27 ] ],
+   [
+    "Numbers", 18,
+    [ 9 ] ],
+   [
+    "Numbers", 28,
+    [ 15, 22 ] ],
+   [
+    "Numbers", 29,
+    [ 5, 11, 16, 19, 22, 25, 28, 31, 34, 38 ] ] ]
  },
  {
   "id": "wave-and-heave-offering",
@@ -70695,7 +73065,19 @@ window.GLOSSARY = [
     [ 12, 24 ] ],
    [
     "Leviticus", 23,
-    [ 15, 20 ] ] ]
+    [ 15, 20 ] ],
+   [
+    "Numbers", 6,
+    [ 20 ] ],
+   [
+    "Numbers", 15,
+    [ 19, 20, 21 ] ],
+   [
+    "Numbers", 18,
+    [ 11, 24, 26, 27, 28, 29 ] ],
+   [
+    "Numbers", 31,
+    [ 29, 41 ] ] ]
  },
  {
   "id": "bullock",
@@ -70725,7 +73107,25 @@ window.GLOSSARY = [
     [ 23, 27 ] ],
    [
     "Leviticus", 23,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Numbers", 7,
+    [ 15, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81 ] ],
+   [
+    "Numbers", 8,
+    [ 8 ] ],
+   [
+    "Numbers", 15,
+    [ 8, 9, 11, 24 ] ],
+   [
+    "Numbers", 23,
+    [ 2, 4, 14, 29, 30 ] ],
+   [
+    "Numbers", 28,
+    [ 12, 14, 20, 28 ] ],
+   [
+    "Numbers", 29,
+    [ 2, 3, 8, 9, 14, 36, 37 ] ] ]
  },
  {
   "id": "rams-of-consecration",
@@ -70776,7 +73176,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Leviticus", 21,
-    [ 10, 12 ] ] ]
+    [ 10, 12 ] ],
+   [
+    "Numbers", 4,
+    [ 16 ] ] ]
  },
  {
   "id": "hin-and-deal",
@@ -70800,7 +73203,16 @@ window.GLOSSARY = [
     [ 13, 17 ] ],
    [
     "Leviticus", 24,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Numbers", 15,
+    [ 4, 5, 6, 7, 9, 10 ] ],
+   [
+    "Numbers", 28,
+    [ 5, 7, 9, 12, 13, 14, 20, 21, 28, 29 ] ],
+   [
+    "Numbers", 29,
+    [ 3, 4, 9, 10, 14, 15 ] ] ]
  },
  {
   "id": "continual-burnt-offering",
@@ -70809,7 +73221,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 29,
-    [ 42 ] ] ]
+    [ 42 ] ],
+   [
+    "Numbers", 28,
+    [ 3, 6, 10, 15, 23, 24, 31 ] ],
+   [
+    "Numbers", 29,
+    [ 11, 16, 19, 22, 25, 28, 31, 34, 38 ] ] ]
  },
  {
   "id": "laver",
@@ -70983,7 +73401,10 @@ window.GLOSSARY = [
     [ 15, 16 ] ],
    [
     "Leviticus", 20,
-    [ 5, 6 ] ] ]
+    [ 5, 6 ] ],
+   [
+    "Numbers", 15,
+    [ 39 ] ] ]
  },
  {
   "id": "moses-face-shone",
@@ -71048,6 +73469,12 @@ window.GLOSSARY = [
     "Exodus", 39,
     [ 24, 25, 26 ] ],
    [
+    "Numbers", 13,
+    [ 23 ] ],
+   [
+    "Numbers", 20,
+    [ 5 ] ],
+   [
     "Joel", 1,
     [ 12 ] ],
    [
@@ -71076,7 +73503,13 @@ window.GLOSSARY = [
     [ 35 ] ],
    [
     "Exodus", 40,
-    [ 3, 5, 21 ] ] ]
+    [ 3, 5, 21 ] ],
+   [
+    "Numbers", 4,
+    [ 5 ] ],
+   [
+    "Numbers", 7,
+    [ 89 ] ] ]
  },
  {
   "id": "without-blemish",
@@ -71123,6 +73556,18 @@ window.GLOSSARY = [
     "Leviticus", 24,
     [ 19, 20 ] ],
    [
+    "Numbers", 6,
+    [ 14 ] ],
+   [
+    "Numbers", 19,
+    [ 2 ] ],
+   [
+    "Numbers", 28,
+    [ 19, 31 ] ],
+   [
+    "Numbers", 29,
+    [ 2, 8, 13, 20, 23, 29, 32, 36 ] ],
+   [
     "Ephesians", 5,
     [ 27 ] ],
    [
@@ -71160,7 +73605,13 @@ window.GLOSSARY = [
     [ 14, 29, 38 ] ],
    [
     "Leviticus", 22,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Numbers", 18,
+    [ 9 ] ],
+   [
+    "Numbers", 31,
+    [ 50 ] ] ]
  },
  {
   "id": "fryingpan",
@@ -71247,7 +73698,10 @@ window.GLOSSARY = [
     [ 2, 13, 22, 27 ] ],
    [
     "Leviticus", 5,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Numbers", 15,
+    [ 27, 29 ] ] ]
  },
  {
   "id": "priest-that-is-anointed",
@@ -71271,7 +73725,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Leviticus", 10,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Numbers", 19,
+    [ 9 ] ] ]
  },
  {
   "id": "common-people",
@@ -71301,7 +73758,13 @@ window.GLOSSARY = [
     [ 12, 13, 14, 17, 21, 24, 25, 28 ] ],
    [
     "Leviticus", 19,
-    [ 21, 22 ] ] ]
+    [ 21, 22 ] ],
+   [
+    "Numbers", 6,
+    [ 12 ] ],
+   [
+    "Numbers", 18,
+    [ 9 ] ] ]
  },
  {
   "id": "voice-of-swearing",
@@ -71358,7 +73821,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Leviticus", 27,
-    [ 13, 15, 19, 27, 31 ] ] ]
+    [ 13, 15, 19, 27, 31 ] ],
+   [
+    "Numbers", 5,
+    [ 7 ] ] ]
  },
  {
   "id": "delivered-to-keep",
@@ -71409,7 +73875,10 @@ window.GLOSSARY = [
     [ 9 ] ],
    [
     "Leviticus", 27,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Numbers", 18,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "thanksgiving-offering",
@@ -71451,7 +73920,16 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Leviticus", 23,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Numbers", 9,
+    [ 13 ] ],
+   [
+    "Numbers", 15,
+    [ 30, 31 ] ],
+   [
+    "Numbers", 19,
+    [ 13, 20 ] ] ]
  },
  {
   "id": "consecration",
@@ -71469,7 +73947,13 @@ window.GLOSSARY = [
     [ 32 ] ],
    [
     "Leviticus", 21,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Numbers", 3,
+    [ 3 ] ],
+   [
+    "Numbers", 6,
+    [ 7, 9, 12 ] ] ]
  },
  {
   "id": "holy-crown",
@@ -71502,7 +73986,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 10,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Numbers", 3,
+    [ 4 ] ],
+   [
+    "Numbers", 26,
+    [ 61 ] ] ]
  },
  {
   "id": "censer",
@@ -71514,7 +74004,13 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Leviticus", 16,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Numbers", 4,
+    [ 14 ] ],
+   [
+    "Numbers", 16,
+    [ 6, 17, 18, 37, 38, 39, 46 ] ] ]
  },
  {
   "id": "cud-and-hoof",
@@ -71559,7 +74055,10 @@ window.GLOSSARY = [
     [ 5, 6, 7, 8, 10, 11, 16, 17, 18, 19, 21, 22, 23, 27 ] ],
    [
     "Leviticus", 17,
-    [ 15 ] ] ]
+    [ 15 ] ],
+   [
+    "Numbers", 19,
+    [ 7, 8, 10 ] ] ]
  },
  {
   "id": "scall",
@@ -71613,7 +74112,10 @@ window.GLOSSARY = [
     [ 5, 6, 50, 51, 52 ] ],
    [
     "Leviticus", 15,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Numbers", 19,
+    [ 17 ] ] ]
  },
  {
   "id": "cedar-wood",
@@ -71622,7 +74124,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 14,
-    [ 4, 6, 49, 51, 52 ] ] ]
+    [ 4, 6, 49, 51, 52 ] ],
+   [
+    "Numbers", 19,
+    [ 6 ] ] ]
  },
  {
   "id": "scarlet-thread",
@@ -71631,7 +74136,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 14,
-    [ 4, 6, 49, 51, 52 ] ] ]
+    [ 4, 6, 49, 51, 52 ] ],
+   [
+    "Numbers", 19,
+    [ 6 ] ] ]
  },
  {
   "id": "strakes",
@@ -71667,7 +74175,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 15,
-    [ 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 15, 19, 25, 26, 28, 30, 32, 33 ] ] ]
+    [ 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 15, 19, 25, 26, 28, 30, 32, 33 ] ],
+   [
+    "Numbers", 5,
+    [ 2 ] ] ]
  },
  {
   "id": "scapegoat",
@@ -71838,7 +74349,13 @@ window.GLOSSARY = [
     [ 7, 18 ] ],
    [
     "Leviticus", 19,
-    [ 26 ] ] ]
+    [ 26 ] ],
+   [
+    "Numbers", 23,
+    [ 23 ] ],
+   [
+    "Numbers", 24,
+    [ 1 ] ] ]
  },
  {
   "id": "cuttings-for-the-dead",
@@ -71922,7 +74439,10 @@ window.GLOSSARY = [
     [ 2, 3, 4, 6, 7, 10, 12, 14, 15, 16 ] ],
    [
     "Leviticus", 27,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Numbers", 18,
+    [ 9, 19, 32 ] ] ]
  },
  {
   "id": "unwittingly",
@@ -71943,7 +74463,13 @@ window.GLOSSARY = [
     [ 18, 21, 23 ] ],
    [
     "Leviticus", 23,
-    [ 38 ] ] ]
+    [ 38 ] ],
+   [
+    "Numbers", 15,
+    [ 3 ] ],
+   [
+    "Numbers", 29,
+    [ 39 ] ] ]
  },
  {
   "id": "the-dam",
@@ -71970,7 +74496,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 22,
-    [ 19, 21 ] ] ]
+    [ 19, 21 ] ],
+   [
+    "Numbers", 31,
+    [ 28, 30, 33, 38, 44 ] ] ]
  },
  {
   "id": "holy-convocation",
@@ -71979,7 +74508,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 23,
-    [ 2, 3, 4, 7, 8, 21, 24, 27, 35, 36, 37 ] ] ]
+    [ 2, 3, 4, 7, 8, 21, 24, 27, 35, 36, 37 ] ],
+   [
+    "Numbers", 28,
+    [ 18, 25, 26 ] ],
+   [
+    "Numbers", 29,
+    [ 1, 7, 12 ] ] ]
  },
  {
   "id": "servile-work",
@@ -71988,7 +74523,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 23,
-    [ 7, 8, 21, 25, 35, 36 ] ] ]
+    [ 7, 8, 21, 25, 35, 36 ] ],
+   [
+    "Numbers", 28,
+    [ 18, 25, 26 ] ],
+   [
+    "Numbers", 29,
+    [ 1, 12, 35 ] ] ]
  },
  {
   "id": "feasts-of-the-lord",
@@ -72036,7 +74577,13 @@ window.GLOSSARY = [
     [ 29, 31 ] ],
    [
     "Leviticus", 23,
-    [ 27, 29, 32 ] ] ]
+    [ 27, 29, 32 ] ],
+   [
+    "Numbers", 29,
+    [ 7 ] ],
+   [
+    "Numbers", 30,
+    [ 13 ] ] ]
  },
  {
   "id": "booths",
@@ -72093,7 +74640,10 @@ window.GLOSSARY = [
     [ 9, 10, 11, 12, 13, 15, 28, 30, 31, 33, 40, 50, 52, 54 ] ],
    [
     "Leviticus", 27,
-    [ 17, 18, 21, 23, 24 ] ] ]
+    [ 17, 18, 21, 23, 24 ] ],
+   [
+    "Numbers", 36,
+    [ 4 ] ] ]
  },
  {
   "id": "kinsman-that-redeemeth",
@@ -72153,7 +74703,10 @@ window.GLOSSARY = [
     [ 6 ] ],
    [
     "Leviticus", 27,
-    [ 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 23, 27 ] ] ]
+    [ 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 23, 27 ] ],
+   [
+    "Numbers", 18,
+    [ 16 ] ] ]
  },
  {
   "id": "devoted-thing",
@@ -72162,7 +74715,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 27,
-    [ 21, 28, 29 ] ] ]
+    [ 21, 28, 29 ] ],
+   [
+    "Numbers", 18,
+    [ 14 ] ] ]
  },
  {
   "id": "gerah",
@@ -72174,6 +74730,2463 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Leviticus", 27,
+    [ 25 ] ],
+   [
+    "Numbers", 3,
+    [ 47 ] ],
+   [
+    "Numbers", 18,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "elizur",
+  "kind": "person",
+  "name": "Elizur, prince of Reuben",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 5 ] ],
+   [
+    "Numbers", 2,
+    [ 10 ] ],
+   [
+    "Numbers", 7,
+    [ 30, 35 ] ],
+   [
+    "Numbers", 10,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "shelumiel",
+  "kind": "person",
+  "name": "Shelumiel, prince of Simeon",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 6 ] ],
+   [
+    "Numbers", 2,
+    [ 12 ] ],
+   [
+    "Numbers", 7,
+    [ 36, 41 ] ],
+   [
+    "Numbers", 10,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "nahshon",
+  "kind": "person",
+  "name": "Nahshon, prince of Judah (in the line of Jesus)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 7 ] ],
+   [
+    "Numbers", 2,
+    [ 3 ] ],
+   [
+    "Numbers", 7,
+    [ 12, 17 ] ],
+   [
+    "Numbers", 10,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "nethaneel",
+  "kind": "person",
+  "name": "Nethaneel, prince of Issachar",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 8 ] ],
+   [
+    "Numbers", 2,
+    [ 5 ] ],
+   [
+    "Numbers", 7,
+    [ 18, 23 ] ],
+   [
+    "Numbers", 10,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "eliab-prince-of-zebulun",
+  "kind": "person",
+  "name": "Eliab, prince of Zebulun",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 9 ] ],
+   [
+    "Numbers", 2,
+    [ 7 ] ],
+   [
+    "Numbers", 7,
+    [ 24, 29 ] ],
+   [
+    "Numbers", 10,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "elishama-prince-of-ephraim",
+  "kind": "person",
+  "name": "Elishama, prince of Ephraim",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10 ] ],
+   [
+    "Numbers", 2,
+    [ 18 ] ],
+   [
+    "Numbers", 7,
+    [ 48, 53 ] ],
+   [
+    "Numbers", 10,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "gamaliel-prince-of-manasseh",
+  "kind": "person",
+  "name": "Gamaliel, prince of Manasseh",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10 ] ],
+   [
+    "Numbers", 2,
+    [ 20 ] ],
+   [
+    "Numbers", 7,
+    [ 54, 59 ] ],
+   [
+    "Numbers", 10,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "abidan",
+  "kind": "person",
+  "name": "Abidan, prince of Benjamin",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 11 ] ],
+   [
+    "Numbers", 2,
+    [ 22 ] ],
+   [
+    "Numbers", 7,
+    [ 60, 65 ] ],
+   [
+    "Numbers", 10,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "ahiezer",
+  "kind": "person",
+  "name": "Ahiezer, prince of Dan",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 12 ] ],
+   [
+    "Numbers", 2,
+    [ 25 ] ],
+   [
+    "Numbers", 7,
+    [ 66, 71 ] ],
+   [
+    "Numbers", 10,
     [ 25 ] ] ]
+ },
+ {
+  "id": "pagiel",
+  "kind": "person",
+  "name": "Pagiel, prince of Asher",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 13 ] ],
+   [
+    "Numbers", 2,
+    [ 27 ] ],
+   [
+    "Numbers", 7,
+    [ 72, 77 ] ],
+   [
+    "Numbers", 10,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "eliasaph-prince-of-gad",
+  "kind": "person",
+  "name": "Eliasaph, prince of Gad",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 14 ] ],
+   [
+    "Numbers", 2,
+    [ 14 ] ],
+   [
+    "Numbers", 7,
+    [ 42, 47 ] ],
+   [
+    "Numbers", 10,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "ahira",
+  "kind": "person",
+  "name": "Ahira, prince of Naphtali",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 15 ] ],
+   [
+    "Numbers", 2,
+    [ 29 ] ],
+   [
+    "Numbers", 7,
+    [ 78, 83 ] ],
+   [
+    "Numbers", 10,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "zebulun-tribe",
+  "kind": "person",
+  "name": "Zebulun (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 9, 30, 31 ] ],
+   [
+    "Numbers", 2,
+    [ 7 ] ],
+   [
+    "Numbers", 7,
+    [ 24 ] ],
+   [
+    "Numbers", 10,
+    [ 16 ] ],
+   [
+    "Numbers", 13,
+    [ 10 ] ],
+   [
+    "Numbers", 26,
+    [ 26 ] ],
+   [
+    "Numbers", 34,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "asher-tribe",
+  "kind": "person",
+  "name": "Asher (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 13, 40, 41 ] ],
+   [
+    "Numbers", 2,
+    [ 27 ] ],
+   [
+    "Numbers", 7,
+    [ 72 ] ],
+   [
+    "Numbers", 10,
+    [ 26 ] ],
+   [
+    "Numbers", 13,
+    [ 13 ] ],
+   [
+    "Numbers", 26,
+    [ 44, 46, 47 ] ],
+   [
+    "Numbers", 34,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "naphtali-tribe",
+  "kind": "person",
+  "name": "Naphtali (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 15, 42, 43 ] ],
+   [
+    "Numbers", 2,
+    [ 29 ] ],
+   [
+    "Numbers", 7,
+    [ 78 ] ],
+   [
+    "Numbers", 10,
+    [ 27 ] ],
+   [
+    "Numbers", 13,
+    [ 14 ] ],
+   [
+    "Numbers", 26,
+    [ 48, 50 ] ],
+   [
+    "Numbers", 34,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "dan-tribe",
+  "kind": "person",
+  "name": "Dan (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 12, 38, 39 ] ],
+   [
+    "Numbers", 2,
+    [ 25, 31 ] ],
+   [
+    "Numbers", 7,
+    [ 66 ] ],
+   [
+    "Numbers", 10,
+    [ 25 ] ],
+   [
+    "Numbers", 13,
+    [ 12 ] ],
+   [
+    "Numbers", 26,
+    [ 42 ] ],
+   [
+    "Numbers", 34,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "ephraim-tribe",
+  "kind": "person",
+  "name": "Ephraim (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10, 32, 33 ] ],
+   [
+    "Numbers", 2,
+    [ 18, 24 ] ],
+   [
+    "Numbers", 7,
+    [ 48 ] ],
+   [
+    "Numbers", 10,
+    [ 22 ] ],
+   [
+    "Numbers", 13,
+    [ 8 ] ],
+   [
+    "Numbers", 26,
+    [ 28, 35, 37 ] ],
+   [
+    "Numbers", 34,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "manasseh-tribe",
+  "kind": "person",
+  "name": "Manasseh (the tribe)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10, 34, 35 ] ],
+   [
+    "Numbers", 2,
+    [ 20 ] ],
+   [
+    "Numbers", 7,
+    [ 54 ] ],
+   [
+    "Numbers", 10,
+    [ 23 ] ],
+   [
+    "Numbers", 13,
+    [ 11 ] ],
+   [
+    "Numbers", 26,
+    [ 28, 29, 34 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ],
+   [
+    "Numbers", 32,
+    [ 33 ] ],
+   [
+    "Numbers", 34,
+    [ 14, 23 ] ],
+   [
+    "Numbers", 36,
+    [ 1, 12 ] ] ]
+ },
+ {
+  "id": "standard-and-ensign",
+  "kind": "term",
+  "name": "Standard and ensign (the banner a tribe camped under)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 52 ] ],
+   [
+    "Numbers", 2,
+    [ 2, 3, 10, 17, 18, 25, 31, 34 ] ],
+   [
+    "Numbers", 10,
+    [ 14, 18, 22, 25 ] ] ]
+ },
+ {
+  "id": "eliasaph-chief-of-the-gershonites",
+  "kind": "person",
+  "name": "Eliasaph, chief of the Gershonites",
+  "refs": [
+   [
+    "Numbers", 3,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "zuriel",
+  "kind": "person",
+  "name": "Zuriel, chief of the Merarites",
+  "refs": [
+   [
+    "Numbers", 3,
+    [ 35 ] ] ]
+ },
+ {
+  "id": "badgers-skins",
+  "kind": "term",
+  "name": "Badgers’ skins (the plain outer covering of the tabernacle and its furniture)",
+  "refs": [
+   [
+    "Exodus", 25,
+    [ 5 ] ],
+   [
+    "Exodus", 26,
+    [ 14 ] ],
+   [
+    "Exodus", 35,
+    [ 7, 23 ] ],
+   [
+    "Exodus", 36,
+    [ 19 ] ],
+   [
+    "Exodus", 39,
+    [ 34 ] ],
+   [
+    "Numbers", 4,
+    [ 6, 8, 10, 11, 12, 14, 25 ] ] ]
+ },
+ {
+  "id": "levites-service-age",
+  "kind": "term",
+  "name": "Thirty to fifty (the years a Levite did the work of carrying the tabernacle)",
+  "refs": [
+   [
+    "Numbers", 4,
+    [ 3, 23, 30, 35, 39, 43, 47 ] ] ]
+ },
+ {
+  "id": "law-of-jealousies",
+  "kind": "term",
+  "name": "The law of jealousies (a husband's suspicion with no witness, set before the LORD)",
+  "refs": [
+   [
+    "Numbers", 5,
+    [ 14, 15, 18, 25, 29, 30 ] ] ]
+ },
+ {
+  "id": "bitter-water",
+  "kind": "term",
+  "name": "The bitter water that causeth the curse (the water in the trial of jealousy)",
+  "refs": [
+   [
+    "Numbers", 5,
+    [ 18, 19, 23, 24 ] ] ]
+ },
+ {
+  "id": "blessing-of-aaron",
+  "kind": "term",
+  "name": "The blessing of Aaron (“The LORD bless thee, and keep thee”)",
+  "refs": [
+   [
+    "Numbers", 6,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "nazarite-separation",
+  "kind": "term",
+  "name": "Separate, separation (set apart to the LORD for a time by a Nazarite's vow)",
+  "refs": [
+   [
+    "Numbers", 6,
+    [ 2, 3, 4, 5, 6, 8, 12, 13, 18, 19, 21 ] ] ]
+ },
+ {
+  "id": "razor",
+  "kind": "term",
+  "name": "The razor (a Nazarite's hair was not to be cut until his days were fulfilled)",
+  "refs": [
+   [
+    "Numbers", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "princes-of-israel",
+  "kind": "person",
+  "name": "The princes of Israel (the twelve heads of the tribes, who brought their gifts)",
+  "refs": [
+   [
+    "Numbers", 7,
+    [ 2, 3, 10, 11, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84 ] ],
+   [
+    "Numbers", 34,
+    [ 18, 22, 23, 24, 25, 26, 27, 28 ] ] ]
+ },
+ {
+  "id": "dedication-of-the-altar",
+  "kind": "term",
+  "name": "The dedication of the altar (the twelve princes' offerings, one on each day)",
+  "refs": [
+   [
+    "Numbers", 7,
+    [ 10, 11, 84, 88 ] ] ]
+ },
+ {
+  "id": "princes-wagons",
+  "kind": "term",
+  "name": "Covered wagons (the six carts the princes gave to the Levites)",
+  "refs": [
+   [
+    "Numbers", 7,
+    [ 3, 6, 7, 8 ] ] ]
+ },
+ {
+  "id": "second-passover",
+  "kind": "term",
+  "name": "The second passover (the fourteenth day of the second month, for the unclean and those far off)",
+  "refs": [
+   [
+    "Numbers", 9,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "hobab",
+  "kind": "person",
+  "name": "Hobab (the Midianite, Moses' father in law, whom Moses asked to be his eyes in the wilderness)",
+  "refs": [
+   [
+    "Numbers", 10,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "raguel",
+  "kind": "person",
+  "name": "Raguel (the father of Hobab the Midianite)",
+  "refs": [
+   [
+    "Numbers", 10,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "zuar",
+  "kind": "person",
+  "name": "Zuar (father of Nethaneel of Issachar)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 8 ] ],
+   [
+    "Numbers", 2,
+    [ 5 ] ],
+   [
+    "Numbers", 7,
+    [ 18, 23 ] ],
+   [
+    "Numbers", 10,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "helon",
+  "kind": "person",
+  "name": "Helon (father of Eliab of Zebulun)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 9 ] ],
+   [
+    "Numbers", 2,
+    [ 7 ] ],
+   [
+    "Numbers", 7,
+    [ 24, 29 ] ],
+   [
+    "Numbers", 10,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "shedeur",
+  "kind": "person",
+  "name": "Shedeur (father of Elizur of Reuben)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 5 ] ],
+   [
+    "Numbers", 2,
+    [ 10 ] ],
+   [
+    "Numbers", 7,
+    [ 30, 35 ] ],
+   [
+    "Numbers", 10,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "zurishaddai",
+  "kind": "person",
+  "name": "Zurishaddai (father of Shelumiel of Simeon)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 6 ] ],
+   [
+    "Numbers", 2,
+    [ 12 ] ],
+   [
+    "Numbers", 7,
+    [ 36, 41 ] ],
+   [
+    "Numbers", 10,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "deuel",
+  "kind": "person",
+  "name": "Deuel (father of Eliasaph of Gad)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 14 ] ],
+   [
+    "Numbers", 7,
+    [ 42, 47 ] ],
+   [
+    "Numbers", 10,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "ammihud",
+  "kind": "person",
+  "name": "Ammihud (father of Elishama of Ephraim)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10 ] ],
+   [
+    "Numbers", 2,
+    [ 18 ] ],
+   [
+    "Numbers", 7,
+    [ 48, 53 ] ],
+   [
+    "Numbers", 10,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "pedahzur",
+  "kind": "person",
+  "name": "Pedahzur (father of Gamaliel of Manasseh)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 10 ] ],
+   [
+    "Numbers", 2,
+    [ 20 ] ],
+   [
+    "Numbers", 7,
+    [ 54, 59 ] ],
+   [
+    "Numbers", 10,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "gideoni",
+  "kind": "person",
+  "name": "Gideoni (father of Abidan of Benjamin)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 11 ] ],
+   [
+    "Numbers", 2,
+    [ 22 ] ],
+   [
+    "Numbers", 7,
+    [ 60, 65 ] ],
+   [
+    "Numbers", 10,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "ammishaddai",
+  "kind": "person",
+  "name": "Ammishaddai (father of Ahiezer of Dan)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 12 ] ],
+   [
+    "Numbers", 2,
+    [ 25 ] ],
+   [
+    "Numbers", 7,
+    [ 66, 71 ] ],
+   [
+    "Numbers", 10,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "ocran",
+  "kind": "person",
+  "name": "Ocran (father of Pagiel of Asher)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 13 ] ],
+   [
+    "Numbers", 2,
+    [ 27 ] ],
+   [
+    "Numbers", 7,
+    [ 72, 77 ] ],
+   [
+    "Numbers", 10,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "enan",
+  "kind": "person",
+  "name": "Enan (father of Ahira of Naphtali)",
+  "refs": [
+   [
+    "Numbers", 1,
+    [ 15 ] ],
+   [
+    "Numbers", 2,
+    [ 29 ] ],
+   [
+    "Numbers", 7,
+    [ 78, 83 ] ],
+   [
+    "Numbers", 10,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "kohathites",
+  "kind": "person",
+  "name": "The Kohathites (the sons of Kohath, who bore the holy things on their shoulders)",
+  "refs": [
+   [
+    "Numbers", 3,
+    [ 27, 30 ] ],
+   [
+    "Numbers", 4,
+    [ 18, 34, 37 ] ],
+   [
+    "Numbers", 10,
+    [ 21 ] ],
+   [
+    "Numbers", 26,
+    [ 57 ] ] ]
+ },
+ {
+  "id": "silver-trumpets",
+  "kind": "term",
+  "name": "The silver trumpets (two trumpets beaten from one piece of silver, blown by the priests)",
+  "refs": [
+   [
+    "Numbers", 10,
+    [ 2, 4, 8, 9, 10 ] ],
+   [
+    "Numbers", 29,
+    [ 1 ] ],
+   [
+    "Numbers", 31,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "alarm",
+  "kind": "term",
+  "name": "An alarm (a loud, broken trumpet blast: move out, or to war)",
+  "refs": [
+   [
+    "Numbers", 10,
+    [ 5, 6, 7, 9 ] ] ]
+ },
+ {
+  "id": "taberah",
+  "kind": "place",
+  "name": "Taberah (“a burning”, where the fire of the LORD burnt among them)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "kibroth-hattaavah",
+  "kind": "place",
+  "name": "Kibroth-hattaavah (“the graves of lust”, where they buried the people that lusted)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 34, 35 ] ],
+   [
+    "Numbers", 33,
+    [ 16, 17 ] ] ]
+ },
+ {
+  "id": "hazeroth",
+  "kind": "place",
+  "name": "Hazeroth (a stopping place on the road from Sinai to Paran)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 35 ] ],
+   [
+    "Numbers", 12,
+    [ 16 ] ],
+   [
+    "Numbers", 33,
+    [ 17, 18 ] ] ]
+ },
+ {
+  "id": "eldad",
+  "kind": "person",
+  "name": "Eldad (one of the two men who prophesied in the camp)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 26, 27 ] ] ]
+ },
+ {
+  "id": "medad",
+  "kind": "person",
+  "name": "Medad (one of the two men who prophesied in the camp)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 26, 27 ] ] ]
+ },
+ {
+  "id": "mixt-multitude",
+  "kind": "term",
+  "name": "The mixt (mixed) multitude (the crowd that came out of Egypt with Israel)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "seventy-elders",
+  "kind": "person",
+  "name": "The seventy elders (the helpers on whom the LORD put the spirit that was on Moses)",
+  "refs": [
+   [
+    "Numbers", 11,
+    [ 16, 24, 25 ] ] ]
+ },
+ {
+  "id": "caleb",
+  "kind": "person",
+  "name": "Caleb the son of Jephunneh, the spy of Judah who “followed the LORD fully”",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 6, 30 ] ],
+   [
+    "Numbers", 14,
+    [ 6, 24, 30, 38 ] ],
+   [
+    "Numbers", 26,
+    [ 65 ] ],
+   [
+    "Numbers", 32,
+    [ 12 ] ],
+   [
+    "Numbers", 34,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "twelve-spies",
+  "kind": "person",
+  "name": "The twelve men Moses sent to search the land (Shammua, Shaphat, Caleb, Igal, Oshea, Palti, Gaddiel, Gaddi, Ammiel, Sethur, Nahbi, Geuel)",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16 ] ],
+   [
+    "Numbers", 14,
+    [ 36, 37 ] ] ]
+ },
+ {
+  "id": "children-of-anak",
+  "kind": "person",
+  "name": "The children of Anak, the Anakims (the giants of Hebron: Ahiman, Sheshai and Talmai)",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 22, 28, 33 ] ] ]
+ },
+ {
+  "id": "brook-eshcol",
+  "kind": "place",
+  "name": "The brook Eshcol (named for the cluster of grapes the spies cut down there)",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 23, 24 ] ],
+   [
+    "Numbers", 32,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "wilderness-of-zin",
+  "kind": "place",
+  "name": "The wilderness of Zin (the desert on the south of Canaan)",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 21 ] ],
+   [
+    "Numbers", 20,
+    [ 1 ] ],
+   [
+    "Numbers", 27,
+    [ 14 ] ],
+   [
+    "Numbers", 33,
+    [ 36 ] ],
+   [
+    "Numbers", 34,
+    [ 3, 4 ] ] ]
+ },
+ {
+  "id": "rehob",
+  "kind": "place",
+  "name": "Rehob, at the north end of the land, “as men come to Hamath”",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "zoan",
+  "kind": "place",
+  "name": "Zoan, a city of Egypt",
+  "refs": [
+   [
+    "Numbers", 13,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "hormah",
+  "kind": "place",
+  "name": "Hormah, in the south of Canaan, where the Amalekites and Canaanites drove Israel back",
+  "refs": [
+   [
+    "Numbers", 14,
+    [ 45 ] ],
+   [
+    "Numbers", 21,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "another-spirit",
+  "kind": "term",
+  "name": "Another spirit (Caleb's different heart: he “followed me fully”)",
+  "refs": [
+   [
+    "Numbers", 14,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "forty-years-in-the-wilderness",
+  "kind": "term",
+  "name": "The forty years in the wilderness (“each day for a year”)",
+  "refs": [
+   [
+    "Numbers", 14,
+    [ 33, 34 ] ],
+   [
+    "Numbers", 32,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "presumptuous-sin",
+  "kind": "term",
+  "name": "Sinning presumptuously (doing wrong knowingly and boldly, despising the word of the LORD)",
+  "refs": [
+   [
+    "Numbers", 15,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "first-of-your-dough",
+  "kind": "term",
+  "name": "The first of your dough (a cake from the first batch, given to the LORD as an heave offering)",
+  "refs": [
+   [
+    "Numbers", 15,
+    [ 20, 21 ] ] ]
+ },
+ {
+  "id": "sabbath-breaker",
+  "kind": "person",
+  "name": "The man that gathered sticks upon the sabbath day",
+  "refs": [
+   [
+    "Numbers", 15,
+    [ 32, 33 ] ] ]
+ },
+ {
+  "id": "ribband-of-blue",
+  "kind": "term",
+  "name": "A ribband of blue (a blue cord on each fringe, to look upon and remember the LORD's commandments)",
+  "refs": [
+   [
+    "Numbers", 15,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "dathan-and-abiram",
+  "kind": "person",
+  "name": "Dathan and Abiram, sons of Eliab, of Reuben (who rose up with Korah)",
+  "refs": [
+   [
+    "Numbers", 16,
+    [ 1, 12, 24, 25, 27 ] ],
+   [
+    "Numbers", 26,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "on-son-of-peleth",
+  "kind": "person",
+  "name": "On, the son of Peleth, of Reuben (named once, with Korah)",
+  "refs": [
+   [
+    "Numbers", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "eliab-reubenite",
+  "kind": "person",
+  "name": "Eliab, a Reubenite, father of Dathan and Abiram",
+  "refs": [
+   [
+    "Numbers", 16,
+    [ 1, 12 ] ],
+   [
+    "Numbers", 26,
+    [ 8, 9 ] ] ]
+ },
+ {
+  "id": "between-the-dead-and-the-living",
+  "kind": "term",
+  "name": "Between the dead and the living (where Aaron stood with the censer, and the plague was stayed)",
+  "refs": [
+   [
+    "Numbers", 16,
+    [ 48 ] ] ]
+ },
+ {
+  "id": "aarons-rod",
+  "kind": "term",
+  "name": "Aaron's rod that budded (it blossomed and bore almonds overnight, and was kept before the testimony)",
+  "refs": [
+   [
+    "Numbers", 17,
+    [ 6, 8, 10 ] ],
+   [
+    "Hebrews", 9,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "levite-inheritance",
+  "kind": "term",
+  "name": "Inheritance, the Levites’ (no land, for the LORD himself was their part)",
+  "refs": [
+   [
+    "Numbers", 18,
+    [ 20, 21, 23, 24, 26 ] ] ]
+ },
+ {
+  "id": "bear-the-iniquity",
+  "kind": "term",
+  "name": "To bear the iniquity (to answer for the sin, to carry it)",
+  "refs": [
+   [
+    "Numbers", 18,
+    [ 1, 22, 23, 32 ] ] ]
+ },
+ {
+  "id": "covenant-of-salt",
+  "kind": "term",
+  "name": "A covenant of salt (a promise that does not spoil and does not end)",
+  "refs": [
+   [
+    "Numbers", 18,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "eleazar",
+  "kind": "person",
+  "name": "Eleazar, Aaron’s son (the priest who followed him)",
+  "refs": [
+   [
+    "Numbers", 3,
+    [ 2, 4, 32 ] ],
+   [
+    "Numbers", 4,
+    [ 16 ] ],
+   [
+    "Numbers", 16,
+    [ 37, 39 ] ],
+   [
+    "Numbers", 19,
+    [ 3, 4 ] ],
+   [
+    "Numbers", 20,
+    [ 25, 26, 28 ] ],
+   [
+    "Numbers", 25,
+    [ 7, 11 ] ],
+   [
+    "Numbers", 26,
+    [ 1, 3, 60, 63 ] ],
+   [
+    "Numbers", 27,
+    [ 2, 19, 21, 22 ] ],
+   [
+    "Numbers", 31,
+    [ 6, 12, 13, 21, 26, 29, 31, 41, 51, 54 ] ],
+   [
+    "Numbers", 32,
+    [ 2, 28 ] ],
+   [
+    "Numbers", 34,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "water-of-separation",
+  "kind": "term",
+  "name": "The water of separation (ashes of the red heifer in running water, to cleanse the unclean)",
+  "refs": [
+   [
+    "Numbers", 19,
+    [ 9, 13, 20, 21 ] ],
+   [
+    "Numbers", 31,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "purification-for-sin",
+  "kind": "term",
+  "name": "A purification for sin (what made the unclean man clean again)",
+  "refs": [
+   [
+    "Numbers", 19,
+    [ 9, 17 ] ] ]
+ },
+ {
+  "id": "heifer-ashes",
+  "kind": "term",
+  "name": "The ashes of the heifer (laid up without the camp, kept for the water of separation)",
+  "refs": [
+   [
+    "Numbers", 19,
+    [ 9, 10, 17 ] ] ]
+ },
+ {
+  "id": "mount-hor",
+  "kind": "place",
+  "name": "Mount Hor (where Aaron died, in the edge of the land of Edom)",
+  "refs": [
+   [
+    "Numbers", 20,
+    [ 22, 23, 25, 27 ] ],
+   [
+    "Numbers", 21,
+    [ 4 ] ],
+   [
+    "Numbers", 33,
+    [ 37, 38, 39, 41 ] ] ]
+ },
+ {
+  "id": "kings-high-way",
+  "kind": "term",
+  "name": "The king’s high way (the main road through a king’s country)",
+  "refs": [
+   [
+    "Numbers", 20,
+    [ 17, 19 ] ] ]
+ },
+ {
+  "id": "gathered-unto-his-people",
+  "kind": "term",
+  "name": "Gathered unto his people (died, and joined his fathers)",
+  "refs": [
+   [
+    "Numbers", 20,
+    [ 24, 26 ] ] ]
+ },
+ {
+  "id": "smote-the-rock",
+  "kind": "term",
+  "name": "The rock smitten twice (Moses at the water of Meribah)",
+  "refs": [
+   [
+    "Numbers", 20,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "zippor",
+  "kind": "person",
+  "name": "Zippor, father of Balak king of Moab",
+  "refs": [
+   [
+    "Numbers", 22,
+    [ 2, 4, 10, 16 ] ],
+   [
+    "Numbers", 23,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "beor",
+  "kind": "person",
+  "name": "Beor, father of Balaam",
+  "refs": [
+   [
+    "Numbers", 22,
+    [ 5 ] ],
+   [
+    "Numbers", 24,
+    [ 3, 15 ] ],
+   [
+    "Numbers", 31,
+    [ 8 ] ],
+   [
+    "Micah", 6,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "pethor",
+  "kind": "place",
+  "name": "Pethor (Balaam's home, by the river, in Mesopotamia)",
+  "refs": [
+   [
+    "Numbers", 22,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "plains-of-moab",
+  "kind": "place",
+  "name": "The plains of Moab (Israel's last camp, east of Jordan by Jericho)",
+  "refs": [
+   [
+    "Numbers", 22,
+    [ 1 ] ],
+   [
+    "Numbers", 26,
+    [ 3, 63 ] ],
+   [
+    "Numbers", 31,
+    [ 12 ] ],
+   [
+    "Numbers", 33,
+    [ 48, 49, 50 ] ],
+   [
+    "Numbers", 35,
+    [ 1 ] ],
+   [
+    "Numbers", 36,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "arnon",
+  "kind": "place",
+  "name": "The river Arnon (Moab's northern border)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 13, 14, 24, 26, 28 ] ],
+   [
+    "Numbers", 22,
+    [ 36 ] ] ]
+ },
+ {
+  "id": "kirjath-huzoth",
+  "kind": "place",
+  "name": "Kirjath-huzoth (a city of Moab)",
+  "refs": [
+   [
+    "Numbers", 22,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "took-up-his-parable",
+  "kind": "term",
+  "name": "Took up his parable (began a solemn prophetic saying)",
+  "refs": [
+   [
+    "Numbers", 23,
+    [ 7, 18 ] ],
+   [
+    "Numbers", 24,
+    [ 3, 15, 20, 21, 23 ] ] ]
+ },
+ {
+  "id": "zophim",
+  "kind": "place",
+  "name": "The field of Zophim (on the top of Pisgah)",
+  "refs": [
+   [
+    "Numbers", 23,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "pisgah",
+  "kind": "place",
+  "name": "Pisgah (the top of mount Nebo, over against Jericho)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 20 ] ],
+   [
+    "Numbers", 23,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "peor",
+  "kind": "place",
+  "name": "Peor (a mountain top in Moab; at its foot Israel sinned with Baal-peor)",
+  "refs": [
+   [
+    "Numbers", 23,
+    [ 28 ] ],
+   [
+    "Numbers", 25,
+    [ 18 ] ],
+   [
+    "Numbers", 31,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "jeshimon",
+  "kind": "place",
+  "name": "Jeshimon (the waste land that Pisgah and Peor look toward)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 20 ] ],
+   [
+    "Numbers", 23,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "unicorn",
+  "kind": "term",
+  "name": "Unicorn (a strong horned beast that no man could tame)",
+  "refs": [
+   [
+    "Numbers", 23,
+    [ 22 ] ],
+   [
+    "Numbers", 24,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "lign-aloes",
+  "kind": "term",
+  "name": "Lign aloes (aloe trees)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "agag",
+  "kind": "person",
+  "name": "Agag (the name of Amalek's king)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "star-out-of-jacob",
+  "kind": "term",
+  "name": "A Star out of Jacob (the King to come: Christ, the bright and morning star)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "sheth",
+  "kind": "person",
+  "name": "The children of Sheth (named with Moab in Balaam's prophecy)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "kenites",
+  "kind": "person",
+  "name": "The Kenites (a people whose nest was in a rock; Moses' father in law was a Kenite)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 21, 22 ] ] ]
+ },
+ {
+  "id": "chittim",
+  "kind": "place",
+  "name": "Chittim (a coast across the sea, and its ships)",
+  "refs": [
+   [
+    "Numbers", 24,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "king-arad",
+  "kind": "person",
+  "name": "King Arad the Canaanite (who dwelt in the south, and fought against Israel)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 1 ] ],
+   [
+    "Numbers", 33,
+    [ 40 ] ] ]
+ },
+ {
+  "id": "oboth",
+  "kind": "place",
+  "name": "Oboth (a camp of Israel after the brasen serpent)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 10, 11 ] ],
+   [
+    "Numbers", 33,
+    [ 43, 44 ] ] ]
+ },
+ {
+  "id": "ije-abarim",
+  "kind": "place",
+  "name": "Ije-abarim (a camp in the wilderness before Moab, toward the sunrising)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 11 ] ],
+   [
+    "Numbers", 33,
+    [ 44, 45 ] ] ]
+ },
+ {
+  "id": "zered",
+  "kind": "place",
+  "name": "The valley of Zared, the brook Zered (crossed thirty and eight years after Kadesh-barnea)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "ar-of-moab",
+  "kind": "place",
+  "name": "Ar (a city of Moab, given to the children of Lot)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 15, 28 ] ] ]
+ },
+ {
+  "id": "beer-the-well",
+  "kind": "place",
+  "name": "Beer (the well where the LORD gave water and Israel sang)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "mattanah",
+  "kind": "place",
+  "name": "Mattanah (a camp of Israel after the well)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 18, 19 ] ] ]
+ },
+ {
+  "id": "nahaliel",
+  "kind": "place",
+  "name": "Nahaliel (a camp of Israel on the way to Pisgah)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 19 ] ] ]
+ },
+ {
+  "id": "bamoth",
+  "kind": "place",
+  "name": "Bamoth (a camp in the valley in the country of Moab)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "book-of-the-wars",
+  "kind": "term",
+  "name": "The book of the wars of the LORD (a book Moses quotes)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "sihon",
+  "kind": "person",
+  "name": "Sihon (king of the Amorites, who dwelt at Heshbon)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 21, 23, 26, 27, 28, 29, 34 ] ],
+   [
+    "Numbers", 32,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "jahaz",
+  "kind": "place",
+  "name": "Jahaz (where Sihon fought against Israel)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "heshbon",
+  "kind": "place",
+  "name": "Heshbon (the city of Sihon king of the Amorites)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 25, 26, 27, 28, 30, 34 ] ],
+   [
+    "Numbers", 32,
+    [ 3, 37 ] ] ]
+ },
+ {
+  "id": "chemosh",
+  "kind": "person",
+  "name": "Chemosh (the god of Moab, “the abomination of Moab”)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "dibon",
+  "kind": "place",
+  "name": "Dibon (a town north of the Arnon)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 30 ] ],
+   [
+    "Numbers", 32,
+    [ 3, 34 ] ] ]
+ },
+ {
+  "id": "nophah",
+  "kind": "place",
+  "name": "Nophah (a place named in the song over Heshbon)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "medeba",
+  "kind": "place",
+  "name": "Medeba (a town of the Amorites' land)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "jaazer",
+  "kind": "place",
+  "name": "Jaazer, Jazer (a town of the Amorites that Moses spied out and took)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 32 ] ],
+   [
+    "Numbers", 32,
+    [ 1, 3, 35 ] ] ]
+ },
+ {
+  "id": "og",
+  "kind": "person",
+  "name": "Og king of Bashan (the last of the remnant of giants)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 33 ] ],
+   [
+    "Numbers", 32,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "edrei",
+  "kind": "place",
+  "name": "Edrei (where Og fought Israel and fell)",
+  "refs": [
+   [
+    "Numbers", 21,
+    [ 33 ] ] ]
+ },
+ {
+  "id": "zimri-son-of-salu",
+  "kind": "person",
+  "name": "Zimri the son of Salu (a prince of Simeon, slain at Peor)",
+  "refs": [
+   [
+    "Numbers", 25,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "salu",
+  "kind": "person",
+  "name": "Salu (father of Zimri, of a chief house of Simeon)",
+  "refs": [
+   [
+    "Numbers", 25,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "cozbi",
+  "kind": "person",
+  "name": "Cozbi (the daughter of Zur, a prince of Midian, slain at Peor)",
+  "refs": [
+   [
+    "Numbers", 25,
+    [ 15, 18 ] ] ]
+ },
+ {
+  "id": "zur-of-midian",
+  "kind": "person",
+  "name": "Zur (a prince of Midian, head over a people, father of Cozbi)",
+  "refs": [
+   [
+    "Numbers", 25,
+    [ 15 ] ],
+   [
+    "Numbers", 31,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "covenant-of-peace",
+  "kind": "term",
+  "name": "The covenant of peace (the everlasting priesthood given to Phinehas and his seed)",
+  "refs": [
+   [
+    "Numbers", 25,
+    [ 12 ] ] ]
+ },
+ {
+  "id": "zelophehad",
+  "kind": "person",
+  "name": "Zelophehad, of the tribe of Manasseh, who died in the wilderness with no sons",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 33 ] ],
+   [
+    "Numbers", 27,
+    [ 1, 7 ] ],
+   [
+    "Numbers", 36,
+    [ 2, 6, 10, 11 ] ] ]
+ },
+ {
+  "id": "daughters-of-zelophehad",
+  "kind": "person",
+  "name": "Mahlah, Noah, Hoglah, Milcah and Tirzah, the five daughters of Zelophehad",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 33 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ],
+   [
+    "Numbers", 36,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "gilead-son-of-machir",
+  "kind": "person",
+  "name": "Gilead, Machir's son (the father of the Gileadites, not the land)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 29, 30 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sons-of-gilead",
+  "kind": "person",
+  "name": "Gilead's sons: Jeezer, Helek, Asriel, Shechem, Shemida and Hepher (the father of Zelophehad)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 30, 31, 32, 33 ] ],
+   [
+    "Numbers", 27,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "sons-of-gad-moab",
+  "kind": "person",
+  "name": "Gad's sons: Zephon, Haggi, Shuni, Ozni, Eri, Arod and Areli",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 15, 16, 17 ] ] ]
+ },
+ {
+  "id": "sons-of-issachar",
+  "kind": "person",
+  "name": "Issachar's sons: Tola, Pua, Jashub and Shimron",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 23, 24 ] ] ]
+ },
+ {
+  "id": "sons-of-zebulun",
+  "kind": "person",
+  "name": "Zebulun's sons: Sered, Elon and Jahleel",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "sons-of-ephraim",
+  "kind": "person",
+  "name": "Ephraim's sons and grandsons: Shuthelah, Becher, Tahan and Eran",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 35, 36 ] ] ]
+ },
+ {
+  "id": "sons-of-benjamin",
+  "kind": "person",
+  "name": "Benjamin's sons and grandsons: Bela, Ashbel, Ahiram, Shupham, Hupham, Ard and Naaman",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 38, 39, 40 ] ] ]
+ },
+ {
+  "id": "shuham",
+  "kind": "person",
+  "name": "Shuham, Dan's son (the only son of Dan named in the list)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 42 ] ] ]
+ },
+ {
+  "id": "sons-of-asher",
+  "kind": "person",
+  "name": "Asher's sons and his daughter Sarah: Jimna, Jesui, Beriah, Heber, Malchiel",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 44, 45, 46 ] ] ]
+ },
+ {
+  "id": "sons-of-naphtali",
+  "kind": "person",
+  "name": "Naphtali's sons: Jahzeel, Guni, Jezer and Shillem",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 48, 49 ] ] ]
+ },
+ {
+  "id": "hamul",
+  "kind": "person",
+  "name": "Hamul, Pharez's son (with his brother Hezron, a family of Judah)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "levite-families",
+  "kind": "person",
+  "name": "The Levite families: Libnites, Hebronites, Mahlites, Mushites and Korathites (the line of Korah)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 58 ] ] ]
+ },
+ {
+  "id": "mount-abarim",
+  "kind": "place",
+  "name": "Mount Abarim (the mountain range east of the Jordan where Moses saw the land, with mount Nebo in it)",
+  "refs": [
+   [
+    "Numbers", 27,
+    [ 12 ] ],
+   [
+    "Numbers", 33,
+    [ 47, 48 ] ] ]
+ },
+ {
+  "id": "day-of-blowing-trumpets",
+  "kind": "term",
+  "name": "A day of blowing the trumpets (the first day of the seventh month)",
+  "refs": [
+   [
+    "Numbers", 29,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "set-feasts",
+  "kind": "term",
+  "name": "Set feasts (the feasts the LORD himself appointed, on fixed days)",
+  "refs": [
+   [
+    "Numbers", 29,
+    [ 39 ] ] ]
+ },
+ {
+  "id": "disallow",
+  "kind": "term",
+  "name": "Disallow (refuse to allow, forbid)",
+  "refs": [
+   [
+    "Numbers", 30,
+    [ 5, 8, 11 ] ],
+   [
+    "1 Peter", 2,
+    [ 4, 7 ] ] ]
+ },
+ {
+  "id": "hold-his-peace",
+  "kind": "term",
+  "name": "Hold his peace (keep quiet, say nothing)",
+  "refs": [
+   [
+    "Genesis", 24,
+    [ 21 ] ],
+   [
+    "Genesis", 34,
+    [ 5 ] ],
+   [
+    "Leviticus", 10,
+    [ 3 ] ],
+   [
+    "Numbers", 30,
+    [ 4, 7, 11, 14 ] ],
+   [
+    "Matthew", 26,
+    [ 63 ] ],
+   [
+    "Mark", 10,
+    [ 48 ] ],
+   [
+    "Mark", 14,
+    [ 61 ] ],
+   [
+    "Luke", 18,
+    [ 39 ] ],
+   [
+    "1 Corinthians", 14,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "five-kings-of-midian",
+  "kind": "person",
+  "name": "Evi, Rekem, Zur, Hur and Reba, the five kings of Midian slain with Balaam",
+  "refs": [
+   [
+    "Numbers", 31,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "jair",
+  "kind": "person",
+  "name": "Jair of Manasseh, who took the small towns of Gilead and called them Havoth-jair",
+  "refs": [
+   [
+    "Numbers", 32,
+    [ 41 ] ] ]
+ },
+ {
+  "id": "nobah",
+  "kind": "person",
+  "name": "Nobah, who took Kenath and called it by his own name",
+  "refs": [
+   [
+    "Numbers", 32,
+    [ 42 ] ] ]
+ },
+ {
+  "id": "towns-of-gad-and-reuben",
+  "kind": "place",
+  "name": "The towns Gad and Reuben built east of Jordan (Ataroth, Aroer, Beth-nimrah, Elealeh, Kirjathaim, Nebo, Baal-meon and others)",
+  "refs": [
+   [
+    "Numbers", 32,
+    [ 3, 34, 35, 36, 37, 38 ] ] ]
+ },
+ {
+  "id": "dophkah",
+  "kind": "place",
+  "name": "Dophkah (a camp in the wilderness, after the wilderness of Sin)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "alush",
+  "kind": "place",
+  "name": "Alush (a camp between Dophkah and Rephidim)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "rithmah",
+  "kind": "place",
+  "name": "Rithmah (a camp after Hazeroth)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 18, 19 ] ] ]
+ },
+ {
+  "id": "rimmon-parez",
+  "kind": "place",
+  "name": "Rimmon-parez (a camp after Rithmah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 19, 20 ] ] ]
+ },
+ {
+  "id": "libnah-camp",
+  "kind": "place",
+  "name": "Libnah (a camp in the wilderness, not the city of Canaan)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 20, 21 ] ] ]
+ },
+ {
+  "id": "rissah",
+  "kind": "place",
+  "name": "Rissah (a camp after Libnah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 21, 22 ] ] ]
+ },
+ {
+  "id": "kehelathah",
+  "kind": "place",
+  "name": "Kehelathah (a camp after Rissah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 22, 23 ] ] ]
+ },
+ {
+  "id": "mount-shapher",
+  "kind": "place",
+  "name": "Mount Shapher (a camp in the wilderness)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 23, 24 ] ] ]
+ },
+ {
+  "id": "haradah",
+  "kind": "place",
+  "name": "Haradah (a camp after mount Shapher)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 24, 25 ] ] ]
+ },
+ {
+  "id": "makheloth",
+  "kind": "place",
+  "name": "Makheloth (a camp after Haradah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 25, 26 ] ] ]
+ },
+ {
+  "id": "tahath-camp",
+  "kind": "place",
+  "name": "Tahath (a camp after Makheloth)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 26, 27 ] ] ]
+ },
+ {
+  "id": "tarah",
+  "kind": "place",
+  "name": "Tarah (a camp after Tahath)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 27, 28 ] ] ]
+ },
+ {
+  "id": "mithcah",
+  "kind": "place",
+  "name": "Mithcah (a camp after Tarah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 28, 29 ] ] ]
+ },
+ {
+  "id": "hashmonah",
+  "kind": "place",
+  "name": "Hashmonah (a camp after Mithcah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 29, 30 ] ] ]
+ },
+ {
+  "id": "moseroth",
+  "kind": "place",
+  "name": "Moseroth (a camp in the wilderness)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 30, 31 ] ] ]
+ },
+ {
+  "id": "bene-jaakan",
+  "kind": "place",
+  "name": "Bene-jaakan (a camp after Moseroth)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 31, 32 ] ] ]
+ },
+ {
+  "id": "hor-hagidgad",
+  "kind": "place",
+  "name": "Hor-hagidgad (a camp after Bene-jaakan)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 32, 33 ] ] ]
+ },
+ {
+  "id": "jotbathah",
+  "kind": "place",
+  "name": "Jotbathah (a camp after Hor-hagidgad)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 33, 34 ] ] ]
+ },
+ {
+  "id": "ebronah",
+  "kind": "place",
+  "name": "Ebronah (a camp before Ezion-gaber)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 34, 35 ] ] ]
+ },
+ {
+  "id": "ezion-gaber",
+  "kind": "place",
+  "name": "Ezion-gaber (beside Eloth, on the shore of the Red sea, in the land of Edom)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 35, 36 ] ] ]
+ },
+ {
+  "id": "zalmonah",
+  "kind": "place",
+  "name": "Zalmonah (a camp after mount Hor)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 41, 42 ] ] ]
+ },
+ {
+  "id": "punon",
+  "kind": "place",
+  "name": "Punon (a camp after Zalmonah)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 42, 43 ] ] ]
+ },
+ {
+  "id": "dibon-gad",
+  "kind": "place",
+  "name": "Dibon-gad (a camp in the border of Moab)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 45, 46 ] ] ]
+ },
+ {
+  "id": "almon-diblathaim",
+  "kind": "place",
+  "name": "Almon-diblathaim (a camp before the mountains of Abarim)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 46, 47 ] ] ]
+ },
+ {
+  "id": "beth-jesimoth",
+  "kind": "place",
+  "name": "Beth-jesimoth (where the last camp began, by Jordan)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 49 ] ] ]
+ },
+ {
+  "id": "abel-shittim",
+  "kind": "place",
+  "name": "Abel-shittim (where the last camp ended, by Jordan)",
+  "refs": [
+   [
+    "Numbers", 33,
+    [ 49 ] ] ]
+ },
+ {
+  "id": "akrabbim",
+  "kind": "place",
+  "name": "The ascent of Akrabbim (on the south border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "hazar-addar",
+  "kind": "place",
+  "name": "Hazar-addar (on the south border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "azmon",
+  "kind": "place",
+  "name": "Azmon (on the south border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 4, 5 ] ] ]
+ },
+ {
+  "id": "river-of-egypt",
+  "kind": "place",
+  "name": "The river of Egypt (where the south border turned to the sea)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "great-sea",
+  "kind": "place",
+  "name": "The great sea (the west border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 6, 7 ] ] ]
+ },
+ {
+  "id": "zedad",
+  "kind": "place",
+  "name": "Zedad (on the north border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "ziphron",
+  "kind": "place",
+  "name": "Ziphron (on the north border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "hazar-enan",
+  "kind": "place",
+  "name": "Hazar-enan (where the north border ended and the east began)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 9, 10 ] ] ]
+ },
+ {
+  "id": "shepham",
+  "kind": "place",
+  "name": "Shepham (on the east border of the land)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 10, 11 ] ] ]
+ },
+ {
+  "id": "riblah-border",
+  "kind": "place",
+  "name": "Riblah (on the east border, east of Ain)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "ain-border",
+  "kind": "place",
+  "name": "Ain (a place on the east border, by Riblah)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "sea-of-chinnereth",
+  "kind": "place",
+  "name": "The sea of Chinnereth (the lake the New Testament calls Gennesaret)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "shemuel-prince-of-simeon",
+  "kind": "person",
+  "name": "Shemuel, the prince of Simeon",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "elidad-prince-of-benjamin",
+  "kind": "person",
+  "name": "Elidad, the prince of Benjamin",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "bukki-prince-of-dan",
+  "kind": "person",
+  "name": "Bukki, the prince of Dan",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "hanniel-prince-of-manasseh",
+  "kind": "person",
+  "name": "Hanniel, the prince of Manasseh",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "kemuel-prince-of-ephraim",
+  "kind": "person",
+  "name": "Kemuel, the prince of Ephraim",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "elizaphan-prince-of-zebulun",
+  "kind": "person",
+  "name": "Elizaphan, the prince of Zebulun",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "paltiel-prince-of-issachar",
+  "kind": "person",
+  "name": "Paltiel, the prince of Issachar",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "ahihud-prince-of-asher",
+  "kind": "person",
+  "name": "Ahihud, the prince of Asher",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 27 ] ] ]
+ },
+ {
+  "id": "pedahel-prince-of-naphtali",
+  "kind": "person",
+  "name": "Pedahel, the prince of Naphtali",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "ammihud-father-of-two-princes",
+  "kind": "person",
+  "name": "Ammihud (two men of this name: the father of Shemuel of Simeon, and the father of Pedahel of Naphtali)",
+  "refs": [
+   [
+    "Numbers", 34,
+    [ 20, 28 ] ] ]
+ },
+ {
+  "id": "city-of-refuge",
+  "kind": "place",
+  "name": "City of refuge (one of six Levite cities where a man who killed without meaning to could flee from the avenger of blood)",
+  "refs": [
+   [
+    "Numbers", 35,
+    [ 6, 11, 12, 14, 25, 26, 27, 28, 32 ] ] ]
+ },
+ {
+  "id": "manslayer",
+  "kind": "term",
+  "name": "Manslayer, slayer (a man who has killed someone; the law asks whether he meant to)",
+  "refs": [
+   [
+    "Numbers", 35,
+    [ 6, 11, 12, 24, 25, 26, 27, 28 ] ] ]
+ },
+ {
+  "id": "avenger-of-blood",
+  "kind": "term",
+  "name": "Avenger, revenger of blood (the dead man's nearest kinsman, whose duty was to pursue the one who killed him)",
+  "refs": [
+   [
+    "Numbers", 35,
+    [ 12, 19, 21, 24, 25, 27 ] ] ]
+ },
+ {
+  "id": "murderer",
+  "kind": "term",
+  "name": "Murderer (a man who kills in hatred or by laying of wait)",
+  "refs": [
+   [
+    "Numbers", 35,
+    [ 16, 17, 18, 19, 21, 30, 31 ] ],
+   [
+    "Hosea", 9,
+    [ 13 ] ],
+   [
+    "Matthew", 22,
+    [ 7 ] ],
+   [
+    "John", 8,
+    [ 44 ] ],
+   [
+    "Acts", 3,
+    [ 14 ] ],
+   [
+    "Acts", 7,
+    [ 52 ] ],
+   [
+    "Acts", 21,
+    [ 38 ] ],
+   [
+    "Acts", 28,
+    [ 4 ] ],
+   [
+    "1 Timothy", 1,
+    [ 9 ] ],
+   [
+    "1 Peter", 4,
+    [ 15 ] ],
+   [
+    "1 John", 3,
+    [ 15 ] ],
+   [
+    "Revelation", 21,
+    [ 8 ] ],
+   [
+    "Revelation", 22,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "suburbs",
+  "kind": "term",
+  "name": "Suburbs (the open ground round a Levite city, for cattle and goods)",
+  "refs": [
+   [
+    "Leviticus", 25,
+    [ 34 ] ],
+   [
+    "Numbers", 35,
+    [ 2, 3, 4, 5, 7 ] ] ]
  }
 ];
