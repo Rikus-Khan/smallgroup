@@ -135,7 +135,19 @@
     ["frontlets", "a band worn on the forehead"], ["drave", "drove"], ["timbrel|timbrels", "hand drum, tambourine"],
     ["seethe", "boil"], ["hoar frost|hoarfrost", "white frost"], ["chide|chid", "quarrel, find fault"],
     ["discomfited", "routed, defeated"], ["nether", "lower"], ["graven", "carved"],
-    ["hallowed|hallow", "made holy, set apart"], ["aul", "awl, a pointed tool"], ["usurer", "moneylender charging interest"]
+    ["hallowed|hallow", "made holy, set apart"], ["aul", "awl, a pointed tool"], ["usurer", "moneylender charging interest"],
+    ["shittim", "acacia wood"], ["ephod", "the priest's vest"], ["shewbread", "the holy bread set before God"],
+    ["knops", "ornamental knobs"], ["snuffdishes|snuffers", "wick trays, wick trimmers"], ["staves", "staffs, poles"],
+    ["cherubims|cherub", "angels of God's throne"], ["taches", "clasps"], ["twined", "twisted together"],
+    ["fleshhooks", "meat forks"], ["firepans", "coal pans"], ["fillets", "bands joining pillars"],
+    ["foursquare", "square"], ["ouches", "gold settings for stones"], ["wreathen", "twisted"],
+    ["habergeon", "coat of mail"], ["ligure", "a precious stone"], ["broidered", "embroidered"],
+    ["mitre", "the high priest's turban"], ["caul", "the fat over the liver"], ["inwards", "inner parts"],
+    ["apothecary", "perfume maker"], ["stacte|onycha|galbanum", "incense spices"], ["hin", "about a gallon"],
+    ["gerah", "1/20 of a shekel"], ["cunning", "skilful"], ["chapiters", "tops of pillars"],
+    ["handbreadth", "a hand's width"], ["lookingglasses", "bronze mirrors"], ["bekah", "half a shekel"],
+    ["sardius", "a red stone"], ["carbuncle", "a red gem"], ["girdle|girdles", "belt, sash"],
+    ["bullock|bullocks", "young bull"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");

@@ -21089,5 +21089,753 @@ window.STUDIES = [
       },
       "big": "A people promises obedience it cannot keep, and God seals the covenant not with their promise but with blood: \"Behold the blood of the covenant.\" Jesus used the same words at the Last Supper. Under that blood the elders sat at God's table, and Moses went up to receive the pattern for a tent where God would live among them."
     }
+  },
+  {
+    "id": "exodus-25",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 25,
+    "date": "2026-11-12",
+    "title": "Exodus 25",
+    "sub": "That I may dwell among them",
+    "about": "God asks his people for a willing offering to build him a sanctuary, \"that I may dwell among them.\" He gives Moses the pattern for the ark with its mercy seat and cherubims, the table of shewbread, and the golden candlestick.",
+    "tags": [
+      "The offering",
+      "God dwelling with us",
+      "The mercy seat",
+      "Bread and light",
+      "The pattern"
+    ],
+    "url": "studies/exodus-25.html",
+    "overview": {
+      "where": "At Mount Sinai in Arabia, where the LORD speaks to Moses on the mount",
+      "when": "About 1446 BC, soon after the covenant of chapter 24, before the tabernacle is built",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "israel",
+        "tabernacle"
+      ],
+      "story": [
+        "The LORD tells Moses to take an offering of every man who gives it willingly with his heart: gold, silver, brass, cloth, skins, shittim wood, oil, spices and stones (1-7).",
+        "\"Let them make me a sanctuary; that I may dwell among them,\" after the pattern the LORD shows (8-9).",
+        "The ark of shittim wood overlaid with gold, with rings and staves, to hold the testimony (10-16).",
+        "The mercy seat of pure gold with two cherubims of beaten gold, where the LORD will meet and commune with Moses (17-22).",
+        "The table of pure gold for the shewbread, with its dishes, spoons, covers and bowls (23-30).",
+        "The candlestick of beaten gold, one stem with six branches and seven lamps, with tongs and snuffdishes, from a talent of gold (31-39).",
+        "\"Look that thou make them after their pattern, which was shewed thee in the mount\" (40)."
+      ],
+      "key": {
+        "ref": "Exodus 25:8",
+        "text": "And let them make me a sanctuary; that I may dwell among them."
+      },
+      "big": "God does not ask for a tax but for willing gifts, so that he can live in the middle of his people. The ark's mercy seat, the bread and the lamp are a shadow of heavenly things (Hebrews 8:5): Jesus, who dwelt among us (John 1:14), is the propitiation through faith in his blood (Romans 3:25), the bread of life and the light of the world."
+    }
+  },
+  {
+    "id": "exodus-26",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 26,
+    "date": "2026-11-12",
+    "title": "Exodus 26",
+    "sub": "The tent, and the vail",
+    "about": "The tabernacle itself: ten curtains of fine linen with cherubims, covered by goats' hair, red rams' skins and badgers' skins; boards of gold-covered wood standing in sockets of silver; and the vail that divides the holy place from the most holy.",
+    "tags": [
+      "The curtains",
+      "The coverings",
+      "Sockets of silver",
+      "The vail",
+      "The way in"
+    ],
+    "url": "studies/exodus-26.html",
+    "overview": {
+      "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern",
+      "when": "About 1446 BC, before the tabernacle is built",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "tabernacle",
+        "holiest-of-all"
+      ],
+      "story": [
+        "Ten curtains of fine twined linen, blue, purple and scarlet, with cherubims of cunning work, coupled by fifty loops and fifty taches of gold into one tabernacle (1-6).",
+        "Eleven curtains of goats' hair, coupled with taches of brass, for a covering over the tent (7-13).",
+        "A covering of rams' skins dyed red, and above it a covering of badgers' skins (14).",
+        "Boards of shittim wood, ten cubits high and a cubit and a half wide, twenty on each side and eight at the back, standing in sockets of silver (15-25).",
+        "Bars of shittim wood overlaid with gold, and the tabernacle reared up after the pattern shewed in the mount (26-30).",
+        "The vail of blue, purple, scarlet and fine linen with cherubims, hung on four gold-covered pillars to divide the holy place from the most holy, where the ark and mercy seat are set (31-34).",
+        "The table on the north side and the candlestick on the south, outside the vail (35).",
+        "A hanging for the door of the tent, on five pillars of shittim wood overlaid with gold, in sockets of brass (36-37)."
+      ],
+      "key": {
+        "ref": "Exodus 26:33",
+        "text": "And thou shalt hang up the vail under the taches, that thou mayest bring in thither within the vail the ark of the testimony: and the vail shall divide unto you between the holy place and the most holy."
+      },
+      "big": "Every layer of the tent is made as God showed Moses, plain outside and glorious within, standing on the silver of the ransom money. The vail kept sinful men out of the most holy place, and it was torn from the top to the bottom when Jesus died (Matthew 27:51), so that we have boldness to enter by the blood of Jesus (Hebrews 10:19-20)."
+    }
+  },
+  {
+    "id": "exodus-27",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 27,
+    "date": "2026-11-12",
+    "title": "Exodus 27",
+    "sub": "The altar, the court, and the lamp",
+    "about": "The brasen altar that stands first at the entrance, the court of fine linen hangings with its one gate, and the pure olive oil that keeps the lamp burning from evening to morning.",
+    "tags": [
+      "The altar",
+      "The court",
+      "The gate",
+      "The lamp",
+      "Aaron and his sons"
+    ],
+    "url": "studies/exodus-27.html",
+    "overview": {
+      "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern",
+      "when": "About 1446 BC, before the tabernacle is built",
+      "people": [
+        "aaron",
+        "moses"
+      ],
+      "places": [
+        "tabernacle",
+        "altar"
+      ],
+      "story": [
+        "An altar of shittim wood, five cubits square and three high, with horns on its four corners, overlaid with brass (1-2).",
+        "Its pans, shovels, basons, fleshhooks and firepans, all of brass, and a grate of network of brass (3-5).",
+        "Staves of shittim wood overlaid with brass to carry it; hollow with boards, as it was shewed in the mount (6-8).",
+        "The court: hangings of fine twined linen a hundred cubits on the south and north sides and fifty on the west and east, on pillars with sockets of brass and hooks and fillets of silver (9-15, 17-19).",
+        "The gate of the court, an hanging of twenty cubits of blue, purple, scarlet and fine linen, wrought with needlework, on four pillars (16).",
+        "The court is a hundred cubits long, fifty wide and five high (18).",
+        "The people bring pure oil olive beaten for the light, and Aaron and his sons keep the lamp burning from evening to morning before the LORD, a statute for ever (20-21)."
+      ],
+      "key": {
+        "ref": "Exodus 27:20",
+        "text": "And thou shalt command the children of Israel, that they bring thee pure oil olive beaten for the light, to cause the lamp to burn always."
+      },
+      "big": "The first thing a man meets at God's house is an altar, and the way in is by one wide gate of royal colours. Jesus was offered once for all (Hebrews 10:10), suffered without the gate (Hebrews 13:12), and says, \"I am the door\" (John 10:9). The lamp tended every night is a picture of a High Priest who ever lives to make intercession (Hebrews 7:25)."
+    }
+  },
+  {
+    "id": "exodus-28",
+    "type": "chapter",
+    "book": "Exodus",
+    "date": "2026-11-12",
+    "ch": 28,
+    "title": "Exodus 28",
+    "sub": "The man who carries the names",
+    "about": "God tells Moses to dress Aaron as high priest: twelve names on his shoulders and twelve stones over his heart, the Urim and the Thummim, a blue robe hung with bells, and a gold plate on his forehead, HOLINESS TO THE LORD.",
+    "tags": [
+      "The high priest",
+      "Names carried",
+      "Urim and Thummim",
+      "Holiness",
+      "Christ our priest"
+    ],
+    "url": "studies/exodus-28.html",
+    "overview": {
+      "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern for the priesthood",
+      "when": "About 1446 BC, in the first year after leaving Egypt, before the tabernacle is raised",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "mount-sinai",
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to take Aaron and his four sons for the priest's office, and to have the wise-hearted make holy garments \"for glory and for beauty\" (1-5).",
+        "The ephod of gold, blue, purple, scarlet and fine linen, with two onyx stones on the shoulders, each engraved with six names of the children of Israel, \"for a memorial\" (6-14).",
+        "The breastplate of judgment: four rows of three stones set in gold, one for each tribe, bound to the ephod by chains, rings and a lace of blue, borne on Aaron's heart (15-29).",
+        "The Urim and the Thummim are put in the breastplate; the Bible does not say how they were used (30).",
+        "The robe of the ephod, all of blue, with golden bells and pomegranates on the hem, so his sound is heard \"that he die not\" (31-35).",
+        "The gold plate engraved HOLINESS TO THE LORD on the mitre, so Aaron bears \"the iniquity of the holy things\" and the people are accepted (36-38).",
+        "Coats, girdles and bonnets for Aaron's sons, and linen breeches to cover them when they come near the altar, \"that they bear not iniquity, and die\" (39-43)."
+      ],
+      "key": {
+        "ref": "Exodus 28:12",
+        "text": "And thou shalt put the two stones upon the shoulders of the ephod for stones of memorial unto the children of Israel: and Aaron shall bear their names before the LORD upon his two shoulders for a memorial."
+      },
+      "big": "A priest who is himself a sinner is given the names of all twelve tribes, cut in stone and carried on his shoulders and over his heart, so that no one is forgotten before God. He wears the plate HOLINESS TO THE LORD and bears the iniquity of the people's very worship. It points to Jesus, the great high priest who ever lives to make intercession for us."
+    }
+  },
+  {
+    "id": "exodus-29",
+    "type": "chapter",
+    "book": "Exodus",
+    "date": "2026-11-12",
+    "ch": 29,
+    "title": "Exodus 29",
+    "sub": "Set apart by blood, and God comes to live among them",
+    "about": "Aaron and his sons are washed, dressed, anointed and covered with blood over seven days. Two lambs go on the altar every day, and the LORD says why He brought Israel out of Egypt: \"that I may dwell among them.\"",
+    "tags": [
+      "Consecration",
+      "Substitute",
+      "Blood",
+      "Daily offering",
+      "God dwelling with us"
+    ],
+    "url": "studies/exodus-29.html",
+    "overview": {
+      "where": "At Mount Sinai in Arabia, where the LORD gives Moses the order for consecrating the priests",
+      "when": "About 1446 BC, in the first year after leaving Egypt, before the tabernacle is raised",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "mount-sinai",
+        "tabernacle",
+        "israel",
+        "egypt"
+      ],
+      "story": [
+        "Take a young bullock, two rams without blemish, and unleavened bread, cakes and wafers (1-3).",
+        "Aaron and his sons are washed at the door, Aaron is dressed in the holy garments and anointed with oil, and his sons are clothed (4-9).",
+        "Hands are laid on the bullock for a sin offering, burned without the camp; one ram is a whole burnt offering, a sweet savour to the LORD (10-18).",
+        "The ram of consecration: its blood on the right ear, right thumb and right great toe of the priests, and sprinkled on them with the oil (19-21).",
+        "The wave offering and heave offering, lifted before the LORD: this time Moses' part, and after this Aaron's and his sons' for ever (22-28).",
+        "The holy garments pass to Aaron's sons; the priests eat the ram and the bread at the door, and what remains is burned (29-34).",
+        "Seven days of consecration, a bullock every day for atonement, and the altar made most holy (35-37).",
+        "Two lambs of the first year every day, one at morning and one at even, with flour, oil and wine, where the LORD will meet them (38-42).",
+        "The LORD will sanctify the tabernacle by His glory and \"dwell among the children of Israel, and will be their God\"; this is why He brought them out of Egypt (43-46)."
+      ],
+      "key": {
+        "ref": "Exodus 29:45",
+        "text": "And I will dwell among the children of Israel, and will be their God."
+      },
+      "big": "Priests cannot make themselves holy: they are washed, dressed, anointed and covered with blood by someone else, and a substitute dies in their place. The daily lamb keeps the sacrifice before the people morning and evening. And the whole point is the last verses: God did not bring Israel out of Egypt only to free them, but \"that I may dwell among them.\""
+    }
+  },
+  {
+    "id": "exodus-30",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 30,
+    "date": "2026-11-12",
+    "title": "Exodus 30",
+    "sub": "The same ransom for every man",
+    "about": "The altar of incense, where prayer goes up like sweet smoke. Half a shekel from every man, rich and poor alike, as a ransom for his soul. A basin to wash in, so that the priests \"die not.\" And the holy oil and incense that no one is to copy.",
+    "tags": [
+      "Prayer",
+      "Atonement",
+      "Ransom",
+      "Washing",
+      "Holiness"
+    ],
+    "url": "studies/exodus-30.html",
+    "overview": {
+      "where": "The tabernacle plan, given on Mount Sinai in Arabia",
+      "when": "About 1446 BC, during Moses' forty days on the mount",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to make a small golden altar of shittim wood, with horns, a crown and staves, to stand before the vail (1-6).",
+        "Aaron is to burn sweet incense on it every morning and evening, a perpetual incense; no strange incense, burnt sacrifice, meat offering or drink offering is to go on it, and once a year the blood of atonement goes on its horns (7-10).",
+        "When the people are numbered, every man twenty and older gives half a shekel as a ransom for his soul: the rich not more, the poor not less (11-16).",
+        "A laver of brass is set between the tent and the altar, so that Aaron and his sons wash their hands and feet, that they die not (17-21).",
+        "The holy anointing oil is made of myrrh, cinnamon, calamus, cassia and olive oil, to anoint the tabernacle, its furniture and the priests; it is never to be poured on man's flesh or copied (22-33).",
+        "The holy incense of stacte, onycha, galbanum and frankincense is to be put before the testimony, and not copied for private use (34-38)."
+      ],
+      "key": {
+        "ref": "Exodus 30:15",
+        "text": "The rich shall not give more, and the poor shall not give less than half a shekel, when they give an offering unto the LORD, to make an atonement for your souls."
+      },
+      "big": "Prayer goes up before God like sweet smoke, resting on the blood of atonement. Every man is counted, and every man pays the same ransom: the rich no more, the poor no less. Peter says the price that bought us was never silver or gold, but the precious blood of Christ. Wash daily, confess, and be cleansed."
+    }
+  },
+  {
+    "id": "exodus-31",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 31,
+    "date": "2026-11-12",
+    "title": "Exodus 31",
+    "sub": "Filled with the Spirit to work",
+    "about": "God calls two craftsmen by name and fills them with His Spirit for the work of their hands. Then He gives the sabbath as a sign between Himself and His people, and ends forty days on the mount by giving Moses two tables of stone, written with the finger of God.",
+    "tags": [
+      "The Spirit",
+      "Work",
+      "Sabbath",
+      "Rest",
+      "The law"
+    ],
+    "url": "studies/exodus-31.html",
+    "overview": {
+      "where": "On Mount Sinai in Arabia",
+      "when": "About 1446 BC, the end of Moses' forty days on the mount",
+      "people": [
+        "moses",
+        "bezaleel",
+        "aholiab",
+        "uri",
+        "hur",
+        "ahisamach"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "The LORD calls Bezaleel, the son of Uri, the son of Hur, of the tribe of Judah, by name (1-2).",
+        "He fills him with the spirit of God, in wisdom, understanding, knowledge and all manner of workmanship, to work in gold, silver, brass, stone and timber (3-5).",
+        "He gives Aholiab of the tribe of Dan to work with him, and puts wisdom in all the wise hearted, to make everything He has commanded: the tent, the ark, the furniture, the garments, the oil and the incense (6-11).",
+        "The sabbath is a sign between the LORD and Israel throughout their generations, so that they may know He is the LORD that sanctifies them; six days of work, and the seventh a rest (12-17).",
+        "When He had made an end of speaking with Moses on Mount Sinai, God gives him two tables of testimony, tables of stone, written with the finger of God (18)."
+      ],
+      "key": {
+        "ref": "Exodus 31:3",
+        "text": "And I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship,"
+      },
+      "big": "God fills ordinary working men with His Spirit for skilled work with their hands, and He calls them by name. The sabbath is His sign that He is the one who sets His people apart, and the rest He gave points to the rest we have in Christ. The forty days end with two tables of stone written by God's own finger."
+    }
+  },
+  {
+    "id": "exodus-32",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 32,
+    "date": "2026-11-12",
+    "title": "Exodus 32",
+    "sub": "The golden calf",
+    "about": "Weeks after promising to obey, the people make a calf of gold and dance before it. The LORD's wrath is turned by Moses' prayer, the tables are broken, Aaron makes excuses, the Levites stand on the LORD's side, and Moses offers to be blotted out of God's book for the people.",
+    "tags": [
+      "Idolatry",
+      "Relapse",
+      "Intercession",
+      "Excuses",
+      "Choosing sides",
+      "Atonement"
+    ],
+    "url": "studies/exodus-32.html",
+    "overview": {
+      "where": "The camp at the foot of Mount Sinai in Arabia, and the top of the mount",
+      "when": "About 1446 BC, while Moses was forty days on the mount",
+      "people": [
+        "moses",
+        "aaron",
+        "joshua-son-of-nun",
+        "levi",
+        "abraham",
+        "isaac",
+        "israel-the-man"
+      ],
+      "places": [
+        "mount-sinai",
+        "egypt"
+      ],
+      "story": [
+        "When Moses delays on the mount, the people say to Aaron, \"Up, make us gods\"; he melts their gold earrings into a calf, and they say, \"These be thy gods, O Israel\" (1-4).",
+        "Aaron builds an altar and proclaims \"a feast to the LORD\"; the people offer sacrifices, sit down to eat and drink, and rise up to play (5-6).",
+        "The LORD tells Moses the people have corrupted themselves, calls them stiffnecked, and says, \"let me alone\" that He may consume them (7-10).",
+        "Moses pleads for them by God's own people, name and promise to Abraham, Isaac and Israel, and the LORD repents of the evil (11-14).",
+        "Moses comes down with the two tables written by God; Joshua hears a noise of war, but it is singing (15-18).",
+        "Seeing the calf and the dancing, Moses breaks the tables, burns the calf, grinds it to powder and makes the people drink it (19-20).",
+        "Aaron blames the people: \"I cast it into the fire, and there came out this calf\" (21-24).",
+        "Moses stands in the gate: \"Who is on the LORD’S side?\" The sons of Levi come, and about three thousand men fall that day (25-29).",
+        "Moses goes back up to make atonement: \"if not, blot me, I pray thee, out of thy book\"; the LORD says each sinner answers for himself, sends them on with His Angel, and plagues the people (30-35)."
+      ],
+      "key": {
+        "ref": "Exodus 32:32",
+        "text": "Yet now, if thou wilt forgive their sin—; and if not, blot me, I pray thee, out of thy book which thou hast written."
+      },
+      "big": "A people freshly rescued fall into idolatry within weeks, and Aaron blames everyone but himself. Moses stands in the gap and offers his own name for theirs, but no sinner can pay for another. The hope is the one Mediator, Christ, who was made a curse for us and ever lives to make intercession."
+    }
+  },
+  {
+    "id": "exodus-33",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 33,
+    "date": "2026-11-12",
+    "title": "Exodus 33",
+    "sub": "My presence shall go with thee",
+    "about": "God offers the land without His presence, and the people mourn and put off their ornaments. Moses meets the LORD face to face in a tent outside the camp, asks that God's presence go with them, and is hidden in a cleft of the rock while His glory passes by.",
+    "tags": [
+      "God's presence",
+      "Godly sorrow",
+      "Friendship with God",
+      "Rest",
+      "Glory",
+      "Grace"
+    ],
+    "url": "studies/exodus-33.html",
+    "overview": {
+      "where": "The camp by Mount Horeb (Sinai), and a tent pitched outside it",
+      "when": "About 1446 BC, after the golden calf",
+      "people": [
+        "moses",
+        "joshua-son-of-nun",
+        "abraham",
+        "isaac",
+        "jacob",
+        "canaanite",
+        "amorites",
+        "hittites",
+        "perizzites",
+        "hivites",
+        "jebusite"
+      ],
+      "places": [
+        "horeb",
+        "tent-of-meeting",
+        "clift-of-the-rock"
+      ],
+      "story": [
+        "The LORD tells Moses to lead the people to the land and promises an angel, but \"I will not go up in the midst of thee\" (1-3).",
+        "The people mourn at the evil tidings and strip off their ornaments by mount Horeb (4-6).",
+        "Moses pitches the tabernacle of the congregation outside the camp; whoever seeks the LORD goes out to it, and the people watch from their tent doors (7-8).",
+        "The cloudy pillar stands at the door, and the LORD speaks to Moses face to face, as a man speaks to his friend; Joshua does not leave the tent (9-11).",
+        "Moses asks, \"shew me now thy way, that I may know thee\"; the LORD answers, \"My presence shall go with thee, and I will give thee rest\" (12-17).",
+        "Moses asks to see God's glory; the LORD will make His goodness pass by, hides Moses in a clift of the rock, covers him with His hand, and lets him see His back parts (18-23)."
+      ],
+      "key": {
+        "ref": "Exodus 33:14",
+        "text": "And he said, My presence shall go with thee, and I will give thee rest."
+      },
+      "big": "After the calf, God offers the land without Himself, and Moses refuses: \"If thy presence go not with me, carry us not up hence.\" Godly sorrow, a walk outside the camp, and a friend's prayer bring the promise back: \"My presence shall go with thee, and I will give thee rest.\" Hidden in the rock and covered by God's hand, Moses sees His goodness and lives."
+    }
+  },
+  {
+    "id": "exodus-34",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 34,
+    "date": "2026-11-12",
+    "title": "Exodus 34",
+    "sub": "Merciful and gracious",
+    "about": "Moses cuts two new tables and goes up the mountain, and the LORD passes by and proclaims His name: \"merciful and gracious, longsuffering.\" The covenant is made again, with warnings against the gods of the land and the feasts renewed, and Moses comes down with his face shining and puts a vail over it.",
+    "tags": [
+      "God's name",
+      "Mercy",
+      "Second chance",
+      "Covenant",
+      "Bad company",
+      "The vail"
+    ],
+    "url": "studies/exodus-34.html",
+    "overview": {
+      "where": "On the top of Mount Sinai in Arabia, and in the camp below",
+      "when": "About 1446 BC, after the golden calf",
+      "people": [
+        "moses",
+        "aaron",
+        "amorites",
+        "canaanite",
+        "hittites",
+        "perizzites",
+        "hivites",
+        "jebusite"
+      ],
+      "places": [
+        "mount-sinai",
+        "egypt"
+      ],
+      "story": [
+        "The LORD tells Moses to hew two tables like the first; He will write on them the words that were on the tables Moses broke (1-4).",
+        "The LORD descends in the cloud and proclaims His name: \"The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth\" (5-7).",
+        "Moses bows and worships and prays, \"pardon our iniquity and our sin, and take us for thine inheritance\" (8-9).",
+        "The LORD makes a covenant again, promises marvels, and warns them not to make covenants with the people of the land or follow their gods: \"Thou shalt make thee no molten gods\" (10-17).",
+        "He repeats the feast of unleavened bread, the redeeming of the firstborn, the sabbath, the three feasts and the firstfruits (18-26).",
+        "Moses writes the words and stays forty days and forty nights without bread or water; the ten commandments are written on the tables (27-28).",
+        "Moses comes down not knowing the skin of his face shone; the people are afraid, and after speaking to them he puts a vail on his face (29-35)."
+      ],
+      "key": {
+        "ref": "Exodus 34:6–7",
+        "text": "And the LORD passed by before him, and proclaimed, The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth, Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers upon the children, and upon the children’s children, unto the third and to the fourth generation."
+      },
+      "big": "God gives the same law again on new stones and tells Moses His own name: merciful, gracious, longsuffering, forgiving iniquity, and yet not clearing the guilty, which meet at the cross. The covenant broken at the calf is made again. Moses' face shines from being with God, and Paul says that in Christ the vail is taken away and we are changed from glory to glory."
+    }
+  },
+  {
+    "id": "exodus-35",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 35,
+    "date": "2026-11-12",
+    "title": "Exodus 35",
+    "sub": "A willing heart",
+    "about": "After the golden calf the people are asked for gold again, and this time they bring it gladly: men and women, rulers and spinners. Moses names the two craftsmen the LORD has filled with His Spirit to build the tent, Bezaleel and Aholiab.",
+    "tags": [
+      "Willing heart",
+      "Giving",
+      "The sabbath",
+      "Skill",
+      "The Holy Spirit"
+    ],
+    "url": "studies/exodus-35.html",
+    "overview": {
+      "where": "In the camp of Israel at Mount Sinai in Arabia",
+      "when": "About 1446 to 1445 BC, after the golden calf and the new tables",
+      "people": [
+        "moses",
+        "bezaleel",
+        "aholiab",
+        "uri",
+        "hur",
+        "ahisamach"
+      ],
+      "places": [
+        "israel",
+        "judah"
+      ],
+      "story": [
+        "Moses gathers the congregation and begins with the sabbath: six days of work, the seventh a sabbath of rest (1-3).",
+        "He asks for an offering from everyone of a willing heart: metals, cloth, skins, wood, oil, spices and stones (4-9).",
+        "Every wise hearted man is to come and make all that the LORD has commanded: the tent, the ark, the table, the candlestick, the altars, the court and the priests' clothes (10-19).",
+        "The people go home and return, every one whose heart stirred him up, men and women, with gold and jewels and goods (20-24).",
+        "The wise hearted women spin, and the rulers bring onyx stones, spice and oil (25-28).",
+        "The children of Israel bring a willing offering, every man and woman (29).",
+        "Moses says the LORD has called Bezaleel of Judah by name, filled him with the spirit of God, and given him and Aholiab of Dan the skill and the heart to teach (30-35)."
+      ],
+      "key": {
+        "ref": "Exodus 35:29",
+        "text": "The children of Israel brought a willing offering unto the LORD, every man and woman, whose heart made them willing to bring for all manner of work, which the LORD had commanded to be made by the hand of Moses."
+      },
+      "big": "The same people who gave their gold to a calf now give it, gladly and without being pressed, to the LORD's house. Rest comes before the work, every kind of skill is counted a gift, and the LORD fills ordinary craftsmen with His Spirit to build the place where He will live among them."
+    }
+  },
+  {
+    "id": "exodus-36",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 36,
+    "date": "2026-11-12",
+    "title": "Exodus 36",
+    "sub": "More than enough",
+    "about": "The people bring so much that the workmen tell Moses it is enough, and Moses has the camp told to stop giving. Then the ten curtains, the goats' hair tent, the coverings, the boards and sockets, the vail and the door hanging are made, exactly as commanded.",
+    "tags": [
+      "Generosity",
+      "Enough",
+      "Obedience",
+      "The tabernacle",
+      "The vail"
+    ],
+    "url": "studies/exodus-36.html",
+    "overview": {
+      "where": "In the camp of Israel at Mount Sinai in Arabia",
+      "when": "About 1446 to 1445 BC, in the months of building before the tabernacle was raised",
+      "people": [
+        "moses",
+        "bezaleel",
+        "aholiab"
+      ],
+      "places": [
+        "israel"
+      ],
+      "story": [
+        "Bezaleel, Aholiab and every wise hearted man set to work, with the LORD's wisdom in them (1-2).",
+        "They receive the offering, and the people keep bringing free offerings every morning (3-4).",
+        "The workmen tell Moses, \"The people bring much more than enough\" (5).",
+        "Moses has it proclaimed through the camp that no more is to be brought, and the people are restrained from bringing (6-7).",
+        "The ten curtains of fine twined linen with cherubims are made and coupled with fifty loops and gold taches (8-13).",
+        "The eleven goats' hair curtains, the brass taches, and the coverings of rams' skins and badgers' skins (14-19).",
+        "The boards of shittim wood, their tenons and silver sockets, and the bars (20-34).",
+        "The vail of blue, purple and scarlet with cherubims, and the hanging for the door (35-38)."
+      ],
+      "key": {
+        "ref": "Exodus 36:5",
+        "text": "And they spake unto Moses, saying, The people bring much more than enough for the service of the work, which the LORD commanded to make."
+      },
+      "big": "After the golden calf a forgiven people gives until Moses has to tell them to stop. The tent is made to the pattern, from curtains to boards that stand on silver sockets cast from the ransom money, with the vail hanging between the holy place and the most holy: grace that was \"much more\", and a house built on a ransom."
+    }
+  },
+  {
+    "id": "exodus-37",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 37,
+    "date": "2026-11-12",
+    "title": "Exodus 37",
+    "sub": "Made of gold, made as told",
+    "about": "Bezaleel makes the furniture of the tabernacle: the ark with its mercy seat and two cherubims, the table, the lampstand of beaten gold, and the altar of incense, with the holy oil and incense.",
+    "tags": [
+      "The mercy seat",
+      "Obedience",
+      "Bread and light",
+      "Prayer",
+      "The ark"
+    ],
+    "url": "studies/exodus-37.html",
+    "overview": {
+      "where": "In the camp of Israel at Mount Sinai in Arabia",
+      "when": "About 1446 to 1445 BC, in the months of building before the tabernacle was raised",
+      "people": [
+        "bezaleel"
+      ],
+      "places": [],
+      "story": [
+        "Bezaleel makes the ark of shittim wood, overlaid within and without with pure gold, with a crown, four rings and staves to bear it (1-5).",
+        "He makes the mercy seat of pure gold, and two cherubims beaten out of one piece, facing each other with wings spread over it (6-9).",
+        "He makes the table of shittim wood with its crown, border, rings, staves and vessels of pure gold (10-16).",
+        "He makes the candlestick of beaten pure gold, with six branches, almond-shaped bowls, knops, flowers and seven lamps, from a talent of gold (17-24).",
+        "He makes the incense altar, foursquare and two cubits high, overlaid with gold, with horns, rings and staves (25-28).",
+        "He makes the holy anointing oil and the pure incense of sweet spices (29)."
+      ],
+      "key": {
+        "ref": "Exodus 37:6",
+        "text": "And he made the mercy seat of pure gold: two cubits and a half was the length thereof, and one cubit and a half the breadth thereof."
+      },
+      "big": "Each piece is made exactly as it was commanded on the mount. The ark holds the law the people broke, and over it sits the gold mercy seat where blood is sprinkled and God meets His people. Paul calls Jesus \"a propitiation through faith in his blood\"."
+    }
+  },
+  {
+    "id": "exodus-38",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 38,
+    "date": "2026-11-12",
+    "title": "Exodus 38",
+    "sub": "The altar, the looking glasses, and the count",
+    "about": "The brasen altar is built at the door, the laver is cast from the women's looking glasses, the court is hung round with linen, and every talent and shekel of gold, silver and brass is counted.",
+    "tags": [
+      "The altar",
+      "The laver",
+      "The court",
+      "The count",
+      "Honest books"
+    ],
+    "url": "studies/exodus-38.html",
+    "overview": {
+      "where": "At the tabernacle in the camp at Mount Sinai, in Arabia",
+      "when": "About 1446 to 1445 BC, the year the tabernacle is finished",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons",
+        "bezaleel",
+        "aholiab",
+        "hur"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "Bezaleel makes the altar of burnt offering of shittim wood, overlaid with brass, with its grate, rings, staves and vessels (1-7).",
+        "The laver and its foot are made of brass, from the looking glasses of the women who assembled at the door of the tabernacle (8).",
+        "The court is hung round with fine twined linen, one hundred cubits on the south and north, fifty on the west, with pillars on sockets of brass and hooks and fillets of silver (9-17).",
+        "The gate of the court is needlework of blue, purple and scarlet, twenty cubits long; the pins of the tabernacle and the court are brass (18-20).",
+        "The sum of the tabernacle is counted by the hand of Ithamar; Bezaleel of Judah and Aholiab of Dan make all that the LORD commanded Moses (21-23).",
+        "The gold of the offering is twenty and nine talents and 730 shekels (24).",
+        "The silver of the numbered men is a hundred talents and 1,775 shekels, a bekah for each of 603,550 men; a hundred sockets are cast of it, a talent for a socket (25-28).",
+        "The brass is seventy talents and 2,400 shekels, made into the sockets, the brasen altar, its grate and vessels, and the pins of the court (29-31)."
+      ],
+      "key": {
+        "ref": "Exodus 38:22",
+        "text": "And Bezaleel the son of Uri, the son of Hur, of the tribe of Judah, made all that the LORD commanded Moses."
+      },
+      "big": "The first thing at the door of God's house is an altar, and the water to wash in is made from the mirrors women gave up. One gate, thirty feet wide, lets everyone in. And every half shekel of the ransom money that holds the house up is counted and used for what it was given for: the price of a soul was never silver, but the blood of Christ."
+    }
+  },
+  {
+    "id": "exodus-39",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 39,
+    "date": "2026-11-12",
+    "title": "Exodus 39",
+    "sub": "As the LORD commanded Moses",
+    "about": "The priests' garments are made, the ephod and breastplate with the twelve names, the bells and pomegranates, and the gold plate HOLINESS TO THE LORD. Everything is brought to Moses, he looks at all the work, and he blesses the people.",
+    "tags": [
+      "The priest's garments",
+      "Names on the heart",
+      "Holiness",
+      "As commanded",
+      "Moses blesses"
+    ],
+    "url": "studies/exodus-39.html",
+    "overview": {
+      "where": "At the tabernacle in the camp at Mount Sinai, in Arabia",
+      "when": "About 1446 to 1445 BC, just before the tabernacle is raised",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "tabernacle",
+        "israel"
+      ],
+      "story": [
+        "The cloths of service and the holy garments for Aaron are made of blue, purple and scarlet, \"as the LORD commanded Moses\" (1).",
+        "The ephod is made of gold, blue, purple, scarlet and fine linen, the gold beaten into plates and cut into wires; the curious girdle and shoulderpieces go with it (2-5).",
+        "Two onyx stones, graven with the names of the children of Israel, are set on the shoulders as a memorial (6-7).",
+        "The breastplate is made double, a span square, with four rows of twelve stones, each graven with the name of a tribe (8-14).",
+        "Wreathen chains of gold and rings fasten the breastplate to the ephod with a lace of blue so that it cannot be loosed (15-21).",
+        "The robe of the ephod is all of blue, with pomegranates and golden bells round the hem, to minister in (22-26).",
+        "Coats, a mitre, goodly bonnets, linen breeches and a girdle are made for Aaron and his sons (27-29).",
+        "The plate of the holy crown of pure gold is graven HOLINESS TO THE LORD and tied to the mitre with a lace of blue (30-31).",
+        "All the work is finished and brought to Moses, piece by piece: the tent, the ark, the table, the candlestick, the altars, the court and the garments (32-41).",
+        "The people did all according to all that the LORD commanded Moses; Moses looks upon all the work, and blesses them (42-43)."
+      ],
+      "key": {
+        "ref": "Exodus 39:43",
+        "text": "And Moses did look upon all the work, and, behold, they had done it as the LORD had commanded, even so had they done it: and Moses blessed them."
+      },
+      "big": "The priest carries the names of the tribes on his shoulders and over his heart, fastened so they cannot come loose, and wears HOLINESS TO THE LORD on his forehead to bear the sin of the holy things. Seven times the garments are finished \"as the LORD commanded Moses,\" and Moses looks at all the work and blesses the same people who made the golden calf."
+    }
+  },
+  {
+    "id": "exodus-40",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 40,
+    "date": "2026-11-12",
+    "title": "Exodus 40",
+    "sub": "The glory filled the tabernacle",
+    "about": "On the first day of the second year Moses raises the tabernacle piece by piece, as the LORD commanded. A cloud covers the tent, the glory of the LORD fills it, and the cloud leads Israel on all their journeys. The book of Exodus ends with God dwelling among his people.",
+    "tags": [
+      "The tabernacle raised",
+      "The glory",
+      "The cloud",
+      "God dwells among us",
+      "The end of Exodus"
+    ],
+    "url": "studies/exodus-40.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai, in Arabia",
+      "when": "The first day of the first month of the second year, about 1445 BC",
+      "people": [
+        "moses",
+        "aaron",
+        "aarons-sons"
+      ],
+      "places": [
+        "tabernacle",
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "The LORD tells Moses to set up the tabernacle on the first day of the first month, and the order to set up everything in it (1-8).",
+        "Moses is to anoint the tabernacle, the altar and the laver, wash and clothe Aaron and his sons and anoint them, for an everlasting priesthood; and he does so (9-16).",
+        "In the first month of the second year, on the first day, the tabernacle is reared up: the sockets, boards, bars, pillars and the covering of the tent (17-19).",
+        "He puts the testimony in the ark, sets the mercy seat on it and covers it with the vail (20-21).",
+        "He sets the table and the bread, the candlestick and lamps, the golden altar and incense, the hanging at the door, the altar of burnt offering and the laver, the court and its gate, \"as the LORD commanded Moses\" (22-33).",
+        "A cloud covers the tent of the congregation and the glory of the LORD fills the tabernacle; Moses is not able to enter (34-35).",
+        "When the cloud is taken up they journey; when it is not, they stay; the cloud is on the tabernacle by day and fire by night, in the sight of all Israel throughout all their journeys (36-38)."
+      ],
+      "key": {
+        "ref": "Exodus 40:34",
+        "text": "Then a cloud covered the tent of the congregation, and the glory of the LORD filled the tabernacle."
+      },
+      "big": "Exodus begins with slaves under hard bondage and ends with the glory of the LORD filling a tent in the middle of their camp: he brought them out so that he could dwell among them. Moses cannot go in, but the New Testament says the Word became flesh and dwelt among us, and that one day the tabernacle of God will be with men."
+    }
   }
 ];
