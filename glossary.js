@@ -19232,7 +19232,7 @@ window.GLOSSARY = [
  {
   "id": "council",
   "kind": "term",
-  "name": "The council (Sanhedrin)",
+  "name": "The council (the high court of the Jews)",
   "refs": [
    [
     "Matthew", 5,
@@ -31145,7 +31145,7 @@ window.GLOSSARY = [
  {
   "id": "devils",
   "kind": "term",
-  "name": "Devils (demons, evil spirits)",
+  "name": "Devils (evil spirits, unclean spirits)",
   "refs": [
    [
     "Matthew", 4,
@@ -35675,7 +35675,7 @@ window.GLOSSARY = [
  {
   "id": "before-the-time",
   "kind": "term",
-  "name": "“Before the time” (the demons' coming judgment)",
+  "name": "“Before the time” (the devils' coming judgment)",
   "refs": [
    [
     "Matthew", 8,
@@ -47210,7 +47210,7 @@ window.GLOSSARY = [
  {
   "id": "superstitious",
   "kind": "term",
-  "name": "Too superstitious (very religious, careful to honor every god)",
+  "name": "Too superstitious (very religious, careful to honour every god)",
   "refs": [
    [
     "Acts", 17,
@@ -48200,7 +48200,7 @@ window.GLOSSARY = [
  {
   "id": "evil-spirits",
   "kind": "term",
-  "name": "Evil spirits (demons)",
+  "name": "Evil spirits (devils)",
   "refs": [
    [
     "Acts", 19,

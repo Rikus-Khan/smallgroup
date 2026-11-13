@@ -19,6 +19,14 @@ How it looks comes from the shared files in `assets/`, so it works in every them
   - **The real world**: one concrete thing to do with this chapter today.
 
   Not every slide carries all five, but the study as a whole must.
+- **The text, the tradition, the spelling** (Rick's rulings, 2026-11-13):
+  - **Side with the KJV and traditional teaching, never with modern scholarship.** We hold to the Majority Text and the traditional reading. Never correct or second-guess the KJV: no "some translators read…", no "the Hebrew really says…", no Septuagint, "oldest manuscripts" or critical-text appeals, no "scholars think", no Josephus or historians cited as the authority. A KJV word, stone, animal or place is not "uncertain": badgers' skins are badgers' skins. A Hebrew or Greek note that *explains* the KJV is fine.
+  - **Authorship and dates as traditionally taught, stated plainly**: Moses wrote the Pentateuch, Isaiah all of Isaiah, Daniel wrote Daniel, Paul wrote Hebrews (the KJV title says so), Matthew is the first Gospel.
+  - **Traditional typology may be taught plainly** (the tabernacle, the sacrifices, the brasen serpent, Isaac on the altar point to Christ). Just don't claim a verse says what it doesn't: "this is a picture of the cross", not "the New Testament says this altar is the cross".
+  - **Biblical names only.** Use the name the Bible gives (Jannes and Jambres, 2 Timothy 3:8). If the Bible doesn't name a person or a god, leave them unnamed: no Heqet, Apis, Thutmose, Salome. A modern place name may stand only to say where a biblical place was (Nuweiba, Jabal al-Lawz).
+  - **KJV spelling and grammar in the teaching text too**: vail (Old Testament), cherubims, Saviour, honour, neighbour, devils (not demons), the council (not Sanhedrin), JEHOVAH (never YHWH or Yahweh). Pronouns for God are **lower case** (he, his, him), as the KJV prints them.
+  - **Counts are the Bible's own count**, counted from the KJV file with a script ("as the LORD commanded Moses": 7 times in Exodus 39 and 7 in Exodus 40), never estimated.
+  - Saying honestly what the text doesn't tell us is still right ("Moses doesn't say why"). The rule is against doubting Scripture, not against refusing to add to it.
 - **When a passage touches despair, suicide or a man at the end of himself** (Judas, the jailor, Jonah, "men shall seek death"), point him to his **brothers in Christ and his church leaders**: "call or text your brothers in Christ, and your pastor." Never give a hotline number (Rick's rule). Giving a man both a refuge and a purpose makes him part of a larger company of men fighting the same enemy, and that belonging lifts him up. Find them in the chapter itself; don't bolt them on.
 
 ## The shape of every study
@@ -129,6 +137,7 @@ Copy patterns from `studies/john-01.html` and `studies/john-02.html`. These are 
 | `svg.map[data-terrain="galilee"]`, `"jerusalem"`, `"nineveh"` | **Close-ups** on the same real relief (keep a Jerusalem crop at least about 450 units wide: closer than that, the elevation data has nothing more to show), each 1000 units wide with its **own places** (then OT_PLACES). `galilee`: the Sea of Galilee, its shoreline traced from the elevation itself, with Capernaum, Bethsaida, Chorazin, Magdala, Tiberias, Gergesa (Kursi, the country of the Gergesenes/Gadarenes), Hippos, Gadara and the Mount of Beatitudes (traditional); regions GALILEE, GENNESARET, DECAPOLIS, COUNTRY OF THE GADARENES. `jerusalem`: the city in Jesus' day (its walls and the temple platform drawn for you; `data-walls=""` hides them, e.g. for an Old Testament scene, where you draw your own), the Kidron and Hinnom valleys, the Mount of Olives, with Temple, Gethsemane, Bethphage, Bethany, Pool of Siloam, Pool of Bethesda, Upper room, High priest's house, Pilate's hall (the Antonia, by tradition), Herod's palace, Fish gate, Gihon spring, and **Golgotha and the Garden Tomb at Gordon's Calvary, north of the city (Rick's ruling)**. `nineveh`: the city walls, the Tigris and the Khosr, the mounds Kuyunjik and Nebi Yunus. Rebuild with `node tools/terrain.mjs galilee` (etc.) | — |
 | `svg[data-tabernacle]` | the tabernacle in its court, in 3D and to scale in cubits (Exodus 26–27): it builds itself in the order a priest meets it coming in from the east (gate, altar, laver, holy place, most holy place). `data-tabernacle="steps"` brings each piece on a click; `"inside"` shows the tent alone, roof off and near walls cut low, with the table of shewbread, the candlestick, the altar of incense, the vail and the ark (add `steps` to bring them in turn); `"nolabels"` drops the names | `mockups/ot-graphics.html` slides 5–6 |
 | `svg[data-temple]` | Solomon's temple in 3D, to scale (1 Kings 6–7, 2 Chronicles 3–4): the court, the brasen altar, the molten sea on its oxen, the ten lavers, Jachin and Boaz, the porch, the house with its side chambers and the oracle. Takes `steps` and `nolabels` like the tabernacle | `mockups/ot-graphics.html` slide 7 |
+| `div.done-pair` > `div.row.head` + `div.row` (`div.c`, `div.d`, `span.t`; `small` for a reference) | what was commanded beside what was done, row by row, with a tick: obedience checked against the word (Exodus 35–40, Numbers 8:20, Joshua 11:15) | Exodus 37 slides with "Commanded / Done" |
 | `ol.plagues > li` (`.done`, `.now`, `.later`; `b`, `span`, `small`, `em.self` / `em.lord`) + `p.plagues-key` | the ten plagues of Egypt in a 5×2 grid (2×5 on phones): past plagues `done`, this chapter’s `now`, the rest `later` (dim, no `em`). Each `em` says what the text says of Pharaoh’s heart: `self` (he hardened it himself, 8:15, 8:32, 9:34), `lord` (the LORD hardened it, 9:12 on), plain ("was hardened"). Copy the cells from Exodus 10 so every chapter agrees | Exodus 9 slide 3, Exodus 10 slide 11 |
 | `div.tree` > `ul` > `li` > `span` (nested `ul`; `span.hot`, `span.soft`, `small`, `data-icon`; `li.step`) | a family tree: Jacob's sons by their mothers, David's line, Abraham's sons. Each generation arrives in turn; up to about twelve names fit across. Put `small` inside a name for a note ("called Israel"), `data-icon` for an icon | `mockups/ot-graphics.html` slide 8 |
 | `[data-icon="tent"]` on any element | a small drawn icon before the text: `tent crown scroll staff ark altar star sheaf harp sword lamp tablets well ladder coat heart person rainbow cross water city` | the tree above |
@@ -166,6 +175,23 @@ You're encouraged to invent new ways to show an idea. A new graphic is another s
 - Give SVG gradient and clip ids a study prefix (`prv03-glow`), so they're unique.
 - Check it in all four themes.
 - List it in your report so it can be moved into `deck.css` for everyone.
+
+### Ready-made pictures to copy
+
+These drawn (SVG) graphics live in one study each, with their own markup. When your chapter needs the same picture, copy the SVG and its `<style>` lines from that study, give the classes and ids your own prefix, and change the labels. Don't draw a second version from scratch.
+
+| Picture | Use it for | Copy from |
+|---|---|---|
+| A door with blood on the two side posts and the lintel, and death passing over (`ex04-door`) | the Passover, the blood that shelters (Leviticus 17:11, Hebrews 11:28) | `exodus-12.html` |
+| The pillar of cloud by day and of fire by night (`ex13-pillar`, `ex14-between`) | God leading and guarding (Numbers 9, 14:14; Nehemiah 9:12) | `exodus-13.html`, `exodus-14.html` |
+| Walls of water and a dry path, the walls falling on a step (`ex14-sea`) | the Red sea, the Jordan (Joshua 3), Elijah and Elisha at Jordan (2 Kings 2) | `exodus-14.html` |
+| The vail tearing from the top (`ex26-tear`) | the day of atonement (Leviticus 16), Matthew 27:51, Hebrews 10:20 | `exodus-26.html` |
+| A man hidden in a cleft of the rock as the glory passes (`ex33-cleft`) | Elijah at Horeb (1 Kings 19), "hid with Christ" (Colossians 3:3) | `exodus-33.html` |
+| A shining face, vailed and unvailed (`ex34-face`) | 2 Corinthians 3, Stephen (Acts 6:15) | `exodus-34.html` |
+| Moses' hands held up by Aaron and Hur (`ex17-panels`) | holding up a tired brother | `exodus-17.html` |
+| The same half shekel paid by rich and poor (`ex30-pay`) | redemption price, equal for all (1 Peter 1:18–19) | `exodus-30.html` |
+| "Needed" against "brought", with a STOP (`ex36-gauge`) | more than enough (2 Corinthians 8–9) | `exodus-36.html` |
+| Three tiers up a mountain: the people, the elders, Moses alone (`ex24-mount`) | approaching God in order; Hebrews 12:18–24 | `exodus-24.html` |
 
 ## New Testament dates
 

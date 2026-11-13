@@ -23,7 +23,7 @@ window.STUDIES = [
     date: "2026-10-18",
     title: "John 1",
     sub: "The Word, the witness, and the Lamb",
-    about: "John the Baptist tells the world who Jesus is, and what He came to do.",
+    about: "John the Baptist tells the world who Jesus is, and what he came to do.",
     tags: ["Deity of Christ", "Salvation", "Witnessing", "Identity"],
     url: "studies/john-01.html",
     overview: {
@@ -32,14 +32,14 @@ window.STUDIES = [
       people: ["jesus", "john-the-baptist", "priests-and-levites", "the-jews", "andrew", "simon-peter", "philip", "nathanael"],
       places: ["bethabara", "jordan", "galilee", "bethsaida", "nazareth"],
       story: [
-        "Before anything was made, the Word was with God and was God. He made all things, and His light shines in the darkness (1–5).",
-        "The Word was made flesh and lived among us. Everyone who receives Him gets the right to become a child of God (6–18).",
+        "Before anything was made, the Word was with God and was God. He made all things, and his light shines in the darkness (1–5).",
+        "The Word was made flesh and lived among us. Everyone who receives him gets the right to become a child of God (6–18).",
         "John the Baptist tells the religious leaders he is not the Christ, only a voice preparing the way (19–28).",
         "John points to Jesus: “Behold the Lamb of God, which taketh away the sin of the world” (29–34).",
         "The first disciples follow Jesus, and each one goes and gets someone else: “Come and see” (35–51)."
       ],
       key: { ref: "John 1:14", text: "And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth." },
-      big: "Jesus is the eternal Word, God Himself made flesh, and the Lamb who takes away sin. Everyone who meets Him goes and tells someone."
+      big: "Jesus is the eternal Word, God himself made flesh, and the Lamb who takes away sin. Everyone who meets him goes and tells someone."
     }
   },
   {
@@ -50,7 +50,7 @@ window.STUDIES = [
     date: "2026-10-19",
     title: "John 2",
     sub: "New wine and a cleansed house",
-    about: "Jesus turns water into wine, then clears the merchants out of His Father's house.",
+    about: "Jesus turns water into wine, then clears the merchants out of his Father's house.",
     tags: ["Signs", "Obedience", "New life", "Worship", "Resurrection", "Faith"],
     url: "studies/john-02.html",
     overview: {
@@ -60,13 +60,13 @@ window.STUDIES = [
       places: ["cana", "galilee", "capernaum", "jerusalem", "temple"],
       story: [
         "At a wedding in Cana the wine runs out. Mary tells the servants, “Whatsoever he saith unto you, do it” (1–5).",
-        "Jesus turns six stone jars of water into the best wine of the feast, His first sign, and His disciples believe (6–12).",
-        "At Passover He drives the merchants out of the temple: “Make not my Father's house an house of merchandise” (13–17).",
-        "Asked for a sign, He answers, “Destroy this temple, and in three days I will raise it up,” speaking of His body (18–22).",
-        "Many believe because of the miracles, but Jesus doesn't trust Himself to them. He knows what is in every man (23–25)."
+        "Jesus turns six stone jars of water into the best wine of the feast, his first sign, and his disciples believe (6–12).",
+        "At Passover he drives the merchants out of the temple: “Make not my Father's house an house of merchandise” (13–17).",
+        "Asked for a sign, he answers, “Destroy this temple, and in three days I will raise it up,” speaking of his body (18–22).",
+        "Many believe because of the miracles, but Jesus doesn't trust himself to them. He knows what is in every man (23–25)."
       ],
       key: { ref: "John 2:11", text: "This beginning of miracles did Jesus in Cana of Galilee, and manifested forth his glory; and his disciples believed on him." },
-      big: "Jesus replaces empty religion with new life that shows His glory. He is looking for faith that trusts Him, not just people impressed by what He can do."
+      big: "Jesus replaces empty religion with new life that shows his glory. He is looking for faith that trusts him, not just people impressed by what he can do."
     }
   },
   {
@@ -114,7 +114,7 @@ window.STUDIES = [
         "ref": "John 3:16",
         "text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
       },
-      "big": "No one can fix himself. Every man needs a new birth from above, and God offers it to whosoever believes in His Son. Believers have everlasting life now."
+      "big": "No one can fix himself. Every man needs a new birth from above, and God offers it to whosoever believes in his Son. Believers have everlasting life now."
     }
   },
   {
@@ -157,17 +157,17 @@ window.STUDIES = [
         "capernaum"
       ],
       "story": [
-        "Jesus leaves Judaea and must go through Samaria. Tired from the road, He sits on Jacob's well at noon (1–6).",
+        "Jesus leaves Judaea and must go through Samaria. Tired from the road, he sits on Jacob's well at noon (1–6).",
         "He asks a Samaritan woman for a drink and offers her living water: whoever drinks it will never thirst again (7–15).",
         "He tells her about her five husbands, teaches that the Father seeks worship in spirit and in truth, and says, “I that speak unto thee am he” (16–26).",
-        "She leaves her waterpot and brings the town: “Come, see a man.” Many Samaritans believe He is the Saviour of the world (27–42).",
+        "She leaves her waterpot and brings the town: “Come, see a man.” Many Samaritans believe he is the Saviour of the world (27–42).",
         "Back in Cana, a nobleman begs Jesus to heal his dying son. “Go thy way; thy son liveth.” He believes, and the boy is healed that same hour (43–54)."
       ],
       "key": {
         "ref": "John 4:14",
         "text": "But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life."
       },
-      "big": "Jesus crosses every wall to reach thirsty, ashamed people, and gives them living water that never runs dry. Faith takes Him at His word."
+      "big": "Jesus crosses every wall to reach thirsty, ashamed people, and gives them living water that never runs dry. Faith takes him at his word."
     }
   },
   {
@@ -178,7 +178,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 5",
     "sub": "Wilt thou be made whole?",
-    "about": "Jesus heals a man who had been sick for thirty-eight years, then tells the leaders exactly who He is.",
+    "about": "Jesus heals a man who had been sick for thirty-eight years, then tells the leaders exactly who he is.",
     "tags": [
       "Healing",
       "Grace",
@@ -209,14 +209,14 @@ window.STUDIES = [
         "At the pool of Bethesda, Jesus finds a man who has been sick thirty-eight years and asks, “Wilt thou be made whole?” (1–7).",
         "Jesus says, “Rise, take up thy bed, and walk,” and the man is healed at once. But it is the sabbath, and the leaders object (8–13).",
         "Jesus finds the man in the temple: “Sin no more, lest a worse thing come unto thee.” The leaders begin to persecute Jesus (14–16).",
-        "Jesus calls God His Father, making Himself equal with God. The Son gives life and judges, and whoever believes has everlasting life (17–30).",
-        "Jesus names His witnesses: John, His works, the Father, the Scriptures, and Moses. Yet they will not come to Him for life (31–47)."
+        "Jesus calls God his Father, making himself equal with God. The Son gives life and judges, and whoever believes has everlasting life (17–30).",
+        "Jesus names his witnesses: John, his works, the Father, the Scriptures, and Moses. Yet they will not come to him for life (31–47)."
       ],
       "key": {
         "ref": "John 5:24",
         "text": "Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life."
       },
-      "big": "Jesus makes whole the man who could not help himself, and He claims to be equal with God. Whoever hears His word and believes has everlasting life now, and will never come into condemnation."
+      "big": "Jesus makes whole the man who could not help himself, and he claims to be equal with God. Whoever hears his word and believes has everlasting life now, and will never come into condemnation."
     }
   },
   {
@@ -227,7 +227,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 6",
     "sub": "The bread of life",
-    "about": "Jesus feeds five thousand, walks on a stormy sea, and tells the crowd He is the bread they've really been hungry for.",
+    "about": "Jesus feeds five thousand, walks on a stormy sea, and tells the crowd he is the bread they've really been hungry for.",
     "tags": [
       "Signs",
       "Provision",
@@ -259,16 +259,16 @@ window.STUDIES = [
       ],
       "story": [
         "With five barley loaves and two small fishes from a boy, Jesus feeds about five thousand men, and twelve baskets are left over (1–13).",
-        "The crowd wants to make Him king by force, so He goes up a mountain alone (14–15).",
+        "The crowd wants to make him king by force, so he goes up a mountain alone (14–15).",
         "In the dark, on a stormy sea, Jesus comes walking on the water: “It is I; be not afraid” (16–21).",
-        "The crowd follows for more bread. Jesus says, “I am the bread of life”: whoever comes to Him and believes on Him has everlasting life (22–59).",
+        "The crowd follows for more bread. Jesus says, “I am the bread of life”: whoever comes to him and believes on him has everlasting life (22–59).",
         "Many disciples walk away. Peter answers, “Lord, to whom shall we go? thou hast the words of eternal life” (60–71)."
       ],
       "key": {
         "ref": "John 6:35",
         "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
       },
-      "big": "Jesus is the bread that gives everlasting life. The work God asks is to believe on Him, and He will never cast out anyone who comes."
+      "big": "Jesus is the bread that gives everlasting life. The work God asks is to believe on him, and he will never cast out anyone who comes."
     }
   },
   {
@@ -279,7 +279,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 7",
     "sub": "Rivers of living water",
-    "about": "At the Feast of Tabernacles the crowd argues about who Jesus is, and on the last great day He calls out to anyone who is thirsty.",
+    "about": "At the Feast of Tabernacles the crowd argues about who Jesus is, and on the last great day he calls out to anyone who is thirsty.",
     "tags": [
       "Who Jesus is",
       "God's timing",
@@ -313,17 +313,17 @@ window.STUDIES = [
         "bethlehem"
       ],
       "story": [
-        "Jesus' own brothers, who don't believe in Him, dare Him to show Himself at the feast. He says, “My time is not yet come,” then goes up quietly (1–13).",
-        "Halfway through the feast He teaches in the temple: “If any man will do his will, he shall know of the doctrine” (14–24).",
-        "The crowd argues about where He came from. The leaders send officers to arrest Him, but “his hour was not yet come” (25–36).",
-        "On the last great day He cries out, “If any man thirst, let him come unto me, and drink,” promising rivers of living water, the Holy Spirit (37–39).",
-        "The people split over Him. The officers come back saying, “Never man spake like this man,” and Nicodemus speaks up for a fair hearing (40–53)."
+        "Jesus' own brothers, who don't believe in him, dare him to show himself at the feast. He says, “My time is not yet come,” then goes up quietly (1–13).",
+        "Halfway through the feast he teaches in the temple: “If any man will do his will, he shall know of the doctrine” (14–24).",
+        "The crowd argues about where he came from. The leaders send officers to arrest him, but “his hour was not yet come” (25–36).",
+        "On the last great day he cries out, “If any man thirst, let him come unto me, and drink,” promising rivers of living water, the Holy Spirit (37–39).",
+        "The people split over him. The officers come back saying, “Never man spake like this man,” and Nicodemus speaks up for a fair hearing (40–53)."
       ],
       "key": {
         "ref": "John 7:37",
         "text": "In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink."
       },
-      "big": "Jesus divides opinion, but His invitation is open to anyone: come to Him and drink, and the Holy Spirit will flow out of you like a river."
+      "big": "Jesus divides opinion, but his invitation is open to anyone: come to him and drink, and the Holy Spirit will flow out of you like a river."
     }
   },
   {
@@ -363,9 +363,9 @@ window.STUDIES = [
         "treasury"
       ],
       "story": [
-        "The scribes and Pharisees bring Jesus a woman taken in adultery to trap Him. He answers, “He that is without sin among you, let him first cast a stone at her” (1–9).",
+        "The scribes and Pharisees bring Jesus a woman taken in adultery to trap him. He answers, “He that is without sin among you, let him first cast a stone at her” (1–9).",
         "The accusers leave one by one, and Jesus tells her, “Neither do I condemn thee: go, and sin no more” (10–11).",
-        "In the treasury He says, “I am the light of the world,” and warns that whoever won't believe He is the I AM will die in his sins (12–30).",
+        "In the treasury he says, “I am the light of the world,” and warns that whoever won't believe he is the I AM will die in his sins (12–30).",
         "Jesus promises, “the truth shall make you free.” Whoever sins is sin's slave, but if the Son sets you free you are free indeed. The devil is a liar and a murderer (31–47).",
         "“Before Abraham was, I am.” They pick up stones, but Jesus walks out of the temple untouched (48–59)."
       ],
@@ -373,7 +373,7 @@ window.STUDIES = [
         "ref": "John 8:12",
         "text": "Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."
       },
-      "big": "Jesus is the light of the world and the great I AM. He doesn't condemn the sinner who comes to Him: He sets slaves free and gives a life that never sees death."
+      "big": "Jesus is the light of the world and the great I AM. He doesn't condemn the sinner who comes to him: he sets slaves free and gives a life that never sees death."
     }
   },
   {
@@ -415,13 +415,13 @@ window.STUDIES = [
         "He puts clay on the man's eyes and sends him to wash in the pool of Siloam. The man comes back seeing (6–12).",
         "It was the sabbath. The Pharisees question the man, then his frightened parents, and argue over who Jesus is (13–23).",
         "Pressed again, the man says, “One thing I know, that, whereas I was blind, now I see,” and they throw him out (24–34).",
-        "Jesus finds him. The man believes and worships Him, while the Pharisees who say “We see” stay blind (35–41)."
+        "Jesus finds him. The man believes and worships him, while the Pharisees who say “We see” stay blind (35–41)."
       ],
       "key": {
         "ref": "John 9:25",
         "text": "He answered and said, Whether he be a sinner or no, I know not: one thing I know, that, whereas I was blind, now I see."
       },
-      "big": "Jesus is the light of the world. He opens the eyes of anyone who admits he can't see, and when people throw you out for following Him, He comes looking for you."
+      "big": "Jesus is the light of the world. He opens the eyes of anyone who admits he can't see, and when people throw you out for following him, he comes looking for you."
     }
   },
   {
@@ -432,7 +432,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 10",
     "sub": "The Good Shepherd",
-    "about": "Jesus is the door to the fold and the Shepherd who lays down His life for the sheep. No one can pluck them out of His hand.",
+    "about": "Jesus is the door to the fold and the Shepherd who lays down his life for the sheep. No one can pluck them out of his hand.",
     "tags": [
       "The door",
       "His voice",
@@ -461,16 +461,16 @@ window.STUDIES = [
       ],
       "story": [
         "The true shepherd comes in by the door, calls his own sheep by name, and they follow because they know his voice (1–6).",
-        "Jesus says, “I am the door”: whoever enters by Him is saved. The thief comes to steal, kill, and destroy; He came to give abundant life (7–10).",
-        "“I am the good shepherd.” Unlike the hireling, He lays down His life for the sheep, and takes it again by His own power (11–21).",
-        "At the feast of the dedication He promises His sheep eternal life: no man can pluck them out of His hand or the Father's. “I and my Father are one” (22–30).",
-        "They take up stones for blasphemy. He points to His works, escapes, and goes beyond Jordan, where many believe on Him (31–42)."
+        "Jesus says, “I am the door”: whoever enters by him is saved. The thief comes to steal, kill, and destroy; he came to give abundant life (7–10).",
+        "“I am the good shepherd.” Unlike the hireling, he lays down his life for the sheep, and takes it again by his own power (11–21).",
+        "At the feast of the dedication he promises his sheep eternal life: no man can pluck them out of his hand or the Father's. “I and my Father are one” (22–30).",
+        "They take up stones for blasphemy. He points to his works, escapes, and goes beyond Jordan, where many believe on him (31–42)."
       ],
       "key": {
         "ref": "John 10:28",
         "text": "And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand."
       },
-      "big": "Jesus is the only door and the Good Shepherd who gave His life for His sheep. Whoever comes through Him is saved, and held so securely that no one can pluck him out of His hand."
+      "big": "Jesus is the only door and the Good Shepherd who gave his life for his sheep. Whoever comes through him is saved, and held so securely that no one can pluck him out of his hand."
     }
   },
   {
@@ -481,7 +481,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 11",
     "sub": "I am the resurrection",
-    "about": "Jesus waits, weeps at His friend's grave, and calls Lazarus out four days dead. The miracle sets the plot to kill Him in motion.",
+    "about": "Jesus waits, weeps at his friend's grave, and calls Lazarus out four days dead. The miracle sets the plot to kill him in motion.",
     "tags": [
       "Resurrection",
       "God's timing",
@@ -515,17 +515,17 @@ window.STUDIES = [
         "temple"
       ],
       "story": [
-        "Word comes that Lazarus is sick. Jesus loves the family, and so He waits two more days before going (1–16).",
+        "Word comes that Lazarus is sick. Jesus loves the family, and so he waits two more days before going (1–16).",
         "Lazarus has been in the grave four days. Jesus tells Martha, “I am the resurrection, and the life… Believest thou this?” (17–27).",
-        "Mary falls at His feet in tears, and “Jesus wept” (28–37).",
-        "At the tomb He says, “Lazarus, come forth.” The dead man walks out, and Jesus says, “Loose him, and let him go” (38–44).",
-        "Many believe, but the council plots His death. Caiaphas says one man should die for the people, more true than he knows (45–57)."
+        "Mary falls at his feet in tears, and “Jesus wept” (28–37).",
+        "At the tomb he says, “Lazarus, come forth.” The dead man walks out, and Jesus says, “Loose him, and let him go” (38–44).",
+        "Many believe, but the council plots his death. Caiaphas says one man should die for the people, more true than he knows (45–57)."
       ],
       "key": {
         "ref": "John 11:25",
         "text": "Jesus said unto her, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live:"
       },
-      "big": "Jesus doesn't just promise resurrection someday. He is the resurrection and the life, and no one is too far gone for His voice."
+      "big": "Jesus doesn't just promise resurrection someday. He is the resurrection and the life, and no one is too far gone for his voice."
     }
   },
   {
@@ -536,7 +536,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 12",
     "sub": "The hour is come",
-    "about": "Mary pours costly perfume on Jesus' feet, the crowds hail Him as King, and He explains why a seed has to die to bear fruit.",
+    "about": "Mary pours costly perfume on Jesus' feet, the crowds hail him as King, and he explains why a seed has to die to bear fruit.",
     "tags": [
       "Worship",
       "The heart",
@@ -573,15 +573,15 @@ window.STUDIES = [
       "story": [
         "At a supper in Bethany, Mary anoints Jesus' feet with a pound of costly spikenard. Judas complains, but he is a thief (1–11).",
         "Crowds wave palm branches and cry “Hosanna” as Jesus rides into Jerusalem on a young ass, as Zechariah foretold (12–19).",
-        "Greeks ask to see Jesus. He says His hour has come: “Except a corn of wheat fall into the ground and die, it abideth alone” (20–26).",
-        "A voice from heaven answers His prayer, and He says that, lifted up, He will draw all men to Himself (27–36).",
-        "Many still won't believe, and some rulers believe but keep quiet. Jesus makes His last public call to believe and live (37–50)."
+        "Greeks ask to see Jesus. He says his hour has come: “Except a corn of wheat fall into the ground and die, it abideth alone” (20–26).",
+        "A voice from heaven answers his prayer, and he says that, lifted up, he will draw all men to himself (27–36).",
+        "Many still won't believe, and some rulers believe but keep quiet. Jesus makes his last public call to believe and live (37–50)."
       ],
       "key": {
         "ref": "John 12:32",
         "text": "And I, if I be lifted up from the earth, will draw all men unto me."
       },
-      "big": "Jesus' death is the seed that brings a harvest of life. Lifted up on the cross, He calls everyone to come to Him and walk in the light."
+      "big": "Jesus' death is the seed that brings a harvest of life. Lifted up on the cross, he calls everyone to come to him and walk in the light."
     }
   },
   {
@@ -592,7 +592,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 13",
     "sub": "The towel and the night",
-    "about": "Jesus washes His disciples' feet, sends Judas out into the night, and gives a new commandment: love one another as I have loved you.",
+    "about": "Jesus washes his disciples' feet, sends Judas out into the night, and gives a new commandment: love one another as I have loved you.",
     "tags": [
       "Humility",
       "Cleansing",
@@ -619,17 +619,17 @@ window.STUDIES = [
         "jerusalem"
       ],
       "story": [
-        "Knowing His hour has come, Jesus rises from supper, takes a towel, and washes His disciples' feet (1–5).",
+        "Knowing his hour has come, Jesus rises from supper, takes a towel, and washes his disciples' feet (1–5).",
         "Peter refuses, then asks for a full bath. Jesus says a man who is washed needs only his feet washed: “ye are clean, but not all” (6–11).",
-        "Jesus tells them He has given them an example: “ye also ought to wash one another's feet” (12–17).",
-        "Troubled in spirit, He says one of them will betray Him. He hands the sop to Judas, who goes out: “and it was night” (18–30).",
-        "Jesus gives a new commandment: love one another as I have loved you. Peter vows to die for Him, and Jesus foretells his three denials (31–38)."
+        "Jesus tells them he has given them an example: “ye also ought to wash one another's feet” (12–17).",
+        "Troubled in spirit, he says one of them will betray him. He hands the sop to Judas, who goes out: “and it was night” (18–30).",
+        "Jesus gives a new commandment: love one another as I have loved you. Peter vows to die for him, and Jesus foretells his three denials (31–38)."
       ],
       "key": {
         "ref": "John 13:34",
         "text": "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another."
       },
-      "big": "The Lord of all took a towel and served His friends, even the one who betrayed Him. He calls us to love each other the same way, and He knows our failures before they happen and still plans our way back."
+      "big": "The Lord of all took a towel and served his friends, even the one who betrayed him. He calls us to love each other the same way, and he knows our failures before they happen and still plans our way back."
     }
   },
   {
@@ -640,7 +640,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 14",
     "sub": "Let not your heart be troubled",
-    "about": "The night before the cross, Jesus steadies frightened men: a place in His Father's house, the only way there, and a Comforter who will live inside them.",
+    "about": "The night before the cross, Jesus steadies frightened men: a place in his Father's house, the only way there, and a Comforter who will live inside them.",
     "tags": [
       "Peace",
       "Heaven",
@@ -668,17 +668,17 @@ window.STUDIES = [
         "heaven"
       ],
       "story": [
-        "“Let not your heart be troubled.” Jesus is going to prepare a place in His Father's house, and He will come again for them (1–4).",
+        "“Let not your heart be troubled.” Jesus is going to prepare a place in his Father's house, and he will come again for them (1–4).",
         "Thomas asks how they can know the way. Jesus answers, “I am the way, the truth, and the life” (5–7).",
-        "Philip asks to see the Father. Jesus says, “he that hath seen me hath seen the Father,” and promises greater works and answered prayer in His name (8–14).",
+        "Philip asks to see the Father. Jesus says, “he that hath seen me hath seen the Father,” and promises greater works and answered prayer in his name (8–14).",
         "He promises another Comforter, the Spirit of truth, who will live in them for ever. He will not leave them orphans (15–24).",
-        "He leaves them His peace, says the prince of this world has nothing in Him, and leads them out: “Arise, let us go hence” (25–31)."
+        "He leaves them his peace, says the prince of this world has nothing in him, and leads them out: “Arise, let us go hence” (25–31)."
       ],
       "key": {
         "ref": "John 14:6",
         "text": "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me."
       },
-      "big": "Jesus is the only way to the Father, and He shows us exactly what God is like. He gives His own peace, a place in His Father's house, and the Holy Spirit to live in every believer for ever."
+      "big": "Jesus is the only way to the Father, and he shows us exactly what God is like. He gives his own peace, a place in his Father's house, and the Holy Spirit to live in every believer for ever."
     }
   },
   {
@@ -689,7 +689,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 15",
     "sub": "The vine and the branches",
-    "about": "Jesus is the true vine. He tells His men to abide in Him, calls them friends, and warns them the world will hate them.",
+    "about": "Jesus is the true vine. He tells his men to abide in him, calls them friends, and warns them the world will hate them.",
     "tags": [
       "Abiding",
       "Fruit",
@@ -714,15 +714,15 @@ window.STUDIES = [
       "story": [
         "Jesus says, “I am the true vine,” and the Father is the husbandman who prunes every branch so it bears more fruit (1–3).",
         "A branch can only bear fruit by staying on the vine: “Without me ye can do nothing” (4–8).",
-        "He loves them as the Father loves Him, and commands them to love one another (9–12).",
+        "He loves them as the Father loves him, and commands them to love one another (9–12).",
         "“Greater love hath no man than this.” He calls them friends, not servants, and chose them to bear lasting fruit (13–17).",
-        "The world will hate them because it hated Him first, but the Comforter will testify of Him, and so will they (18–27)."
+        "The world will hate them because it hated him first, but the Comforter will testify of him, and so will they (18–27)."
       ],
       "key": {
         "ref": "John 15:5",
         "text": "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing."
       },
-      "big": "All the life a believer has comes from Jesus. We don't bear fruit by trying harder; we bear it by staying close to Him, held secure in His love."
+      "big": "All the life a believer has comes from Jesus. We don't bear fruit by trying harder; we bear it by staying close to him, held secure in his love."
     }
   },
   {
@@ -733,7 +733,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 16",
     "sub": "Sorrow turned to joy",
-    "about": "Jesus promises the Comforter, tells His men their sorrow will turn to joy, and says, “Be of good cheer; I have overcome the world.”",
+    "about": "Jesus promises the Comforter, tells his men their sorrow will turn to joy, and says, “Be of good cheer; I have overcome the world.”",
     "tags": [
       "Holy Spirit",
       "Conviction",
@@ -758,17 +758,17 @@ window.STUDIES = [
         "synagogue"
       ],
       "story": [
-        "Jesus warns that His followers will be put out of the synagogues and even killed, so they won't be caught off guard (1–4).",
-        "It's better that He goes away, because then He will send the Comforter, who will reprove the world of sin, righteousness, and judgment (5–11).",
+        "Jesus warns that his followers will be put out of the synagogues and even killed, so they won't be caught off guard (1–4).",
+        "It's better that he goes away, because then he will send the Comforter, who will reprove the world of sin, righteousness, and judgment (5–11).",
         "The Spirit of truth will guide them into all truth and glorify Jesus (12–15).",
         "“A little while”: they will weep while the world rejoices, but their sorrow will be turned into joy no man can take (16–24).",
-        "They will scatter and leave Him alone, but He is not alone: “Be of good cheer; I have overcome the world” (25–33)."
+        "They will scatter and leave him alone, but he is not alone: “Be of good cheer; I have overcome the world” (25–33)."
       ],
       "key": {
         "ref": "John 16:33",
         "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world."
       },
-      "big": "Jesus didn't promise His people an easy road. He promised the Comforter living in them, sorrow turned into joy, and peace in Him, because He has already overcome the world."
+      "big": "Jesus didn't promise his people an easy road. He promised the Comforter living in them, sorrow turned into joy, and peace in him, because he has already overcome the world."
     }
   },
   {
@@ -778,8 +778,8 @@ window.STUDIES = [
     "ch": 17,
     "date": "2026-10-29",
     "title": "John 17",
-    "sub": "Jesus prays for His own",
-    "about": "On the night before the cross, Jesus prays for Himself, for His disciples, and for everyone who would ever believe.",
+    "sub": "Jesus prays for his own",
+    "about": "On the night before the cross, Jesus prays for himself, for his disciples, and for everyone who would ever believe.",
     "tags": [
       "Prayer",
       "Eternal life",
@@ -803,17 +803,17 @@ window.STUDIES = [
         "jerusalem"
       ],
       "story": [
-        "Jesus lifts His eyes to heaven: “Father, the hour is come; glorify thy Son.” Eternal life is to know the only true God and Jesus Christ (1–3).",
-        "He has finished the work the Father gave Him, and asks for the glory He had before the world was (4–5).",
-        "He prays for His disciples: He kept them, none is lost but the son of perdition, and He asks the Father to keep them still (6–12).",
+        "Jesus lifts his eyes to heaven: “Father, the hour is come; glorify thy Son.” Eternal life is to know the only true God and Jesus Christ (1–3).",
+        "He has finished the work the Father gave him, and asks for the glory he had before the world was (4–5).",
+        "He prays for his disciples: he kept them, none is lost but the son of perdition, and he asks the Father to keep them still (6–12).",
         "He doesn't ask that they be taken out of the world, but kept from the evil and sanctified by the word, then sent into the world (13–19).",
-        "He prays for all who will believe through their word: that they may be one, so the world may believe, and be with Him where He is (20–26)."
+        "He prays for all who will believe through their word: that they may be one, so the world may believe, and be with him where he is (20–26)."
       ],
       "key": {
         "ref": "John 17:3",
         "text": "And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent."
       },
-      "big": "Hours before the cross, Jesus prayed for every believer who would ever live: that we'd know God, be kept safe, be set apart, be one, and be with Him forever. He still prays for us today."
+      "big": "Hours before the cross, Jesus prayed for every believer who would ever live: that we'd know God, be kept safe, be set apart, be one, and be with him forever. He still prays for us today."
     }
   },
   {
@@ -824,7 +824,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 18",
     "sub": "The King on trial",
-    "about": "Jesus walks out to meet the men who came to arrest Him, Peter denies Him three times at the wrong fire, and Pilate asks, “What is truth?”",
+    "about": "Jesus walks out to meet the men who came to arrest him, Peter denies him three times at the wrong fire, and Pilate asks, “What is truth?”",
     "tags": [
       "Who Jesus is",
       "His choice",
@@ -860,17 +860,17 @@ window.STUDIES = [
       ],
       "story": [
         "Judas brings soldiers and officers to the garden. Jesus steps out and says, “I am he,” and they fall to the ground (1–9).",
-        "Peter cuts off Malchus's ear. Jesus tells him to put up his sword and drinks the cup His Father gave Him (10–11).",
+        "Peter cuts off Malchus's ear. Jesus tells him to put up his sword and drinks the cup his Father gave him (10–11).",
         "Jesus is taken bound to Annas, then Caiaphas, and is struck for telling the truth (12–14, 19–24).",
-        "Out by a fire of coals, Peter denies Him three times, and the cock crows (15–18, 25–27).",
-        "Before Pilate, Jesus says, “My kingdom is not of this world.” Pilate asks, “What is truth?” and finds no fault in Him (28–38).",
+        "Out by a fire of coals, Peter denies him three times, and the cock crows (15–18, 25–27).",
+        "Before Pilate, Jesus says, “My kingdom is not of this world.” Pilate asks, “What is truth?” and finds no fault in him (28–38).",
         "Offered Jesus, the crowd chooses Barabbas, a robber, instead (39–40)."
       ],
       "key": {
         "ref": "John 18:37",
         "text": "Pilate therefore said unto him, Art thou a king then? Jesus answered, Thou sayest that I am a king. To this end was I born, and for this cause came I into the world, that I should bear witness unto the truth. Every one that is of the truth heareth my voice."
       },
-      "big": "Jesus wasn't caught. He gave Himself up, a King whose kingdom runs on truth, and He took the place of the guilty. Even Peter's worst failure wasn't the end of his story."
+      "big": "Jesus wasn't caught. He gave himself up, a King whose kingdom runs on truth, and he took the place of the guilty. Even Peter's worst failure wasn't the end of his story."
     }
   },
   {
@@ -881,7 +881,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 19",
     "sub": "It is finished",
-    "about": "Pilate finds no fault in Jesus and hands Him over anyway. Jesus is crucified at Golgotha, cries “It is finished,” and is laid in a garden tomb.",
+    "about": "Pilate finds no fault in Jesus and hands him over anyway. Jesus is crucified at Golgotha, cries “It is finished,” and is laid in a garden tomb.",
     "tags": [
       "In our place",
       "Who's in charge",
@@ -918,18 +918,18 @@ window.STUDIES = [
         "sepulchre"
       ],
       "story": [
-        "Pilate has Jesus scourged. The soldiers crown Him with thorns, and Pilate brings Him out: “Behold the man!” (1–6).",
-        "Pilate finds no fault in Him, but the crowd threatens, “Thou art not Caesar's friend,” and he hands Jesus over to be crucified (7–16).",
-        "Jesus carries His cross to Golgotha and is crucified between two others under the title “The King of the Jews” (17–22).",
-        "The soldiers cast lots for His coat, and from the cross Jesus gives His mother into the care of the disciple He loved (23–27).",
+        "Pilate has Jesus scourged. The soldiers crown him with thorns, and Pilate brings him out: “Behold the man!” (1–6).",
+        "Pilate finds no fault in him, but the crowd threatens, “Thou art not Caesar's friend,” and he hands Jesus over to be crucified (7–16).",
+        "Jesus carries his cross to Golgotha and is crucified between two others under the title “The King of the Jews” (17–22).",
+        "The soldiers cast lots for his coat, and from the cross Jesus gives his mother into the care of the disciple he loved (23–27).",
         "He says, “I thirst,” then “It is finished,” and gives up the ghost (28–30).",
-        "His legs are not broken, His side is pierced, and Joseph and Nicodemus bury Him in a new tomb in a garden (31–42)."
+        "His legs are not broken, his side is pierced, and Joseph and Nicodemus bury him in a new tomb in a garden (31–42)."
       ],
       "key": {
         "ref": "John 19:30",
         "text": "When Jesus therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost."
       },
-      "big": "The innocent Lamb of God died in our place, just as the Scriptures said. When He cried “It is finished,” the debt for our sin was paid in full."
+      "big": "The innocent Lamb of God died in our place, just as the Scriptures said. When he cried “It is finished,” the debt for our sin was paid in full."
     }
   },
   {
@@ -940,7 +940,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 20",
     "sub": "The empty tomb",
-    "about": "Mary finds the stone rolled away, meets the risen Lord in the garden, and a week later Thomas falls at His feet: “My Lord and my God.”",
+    "about": "Mary finds the stone rolled away, meets the risen Lord in the garden, and a week later Thomas falls at his feet: “My Lord and my God.”",
     "tags": [
       "Resurrection",
       "Your past",
@@ -971,16 +971,16 @@ window.STUDIES = [
       ],
       "story": [
         "Before dawn Mary Magdalene finds the stone taken away. Peter and John run to the tomb, see the linen clothes lying and the napkin by itself, and John believes (1–10).",
-        "Mary stays, weeping. Two angels speak to her, then Jesus calls her by name, “Mary,” and sends her to tell His brethren (11–18).",
-        "That evening He stands in the midst of the frightened disciples behind shut doors: “Peace be unto you.” He shows His hands and side, sends them out, and breathes on them (19–23).",
+        "Mary stays, weeping. Two angels speak to her, then Jesus calls her by name, “Mary,” and sends her to tell his brethren (11–18).",
+        "That evening he stands in the midst of the frightened disciples behind shut doors: “Peace be unto you.” He shows his hands and side, sends them out, and breathes on them (19–23).",
         "Thomas wasn't there and won't believe without touching the nail prints. Eight days later Jesus invites him to, and Thomas says, “My Lord and my God” (24–29).",
-        "John says why he wrote: that we might believe that Jesus is the Christ, the Son of God, and have life through His name (30–31)."
+        "John says why he wrote: that we might believe that Jesus is the Christ, the Son of God, and have life through his name (30–31)."
       ],
       "key": {
         "ref": "John 20:31",
         "text": "But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name."
       },
-      "big": "Jesus is risen. He meets a grieving woman with a past, frightened men behind a locked door, and an honest doubter, and gives each one what they need: His voice, His peace, and Himself. This book was written so that we would believe and have life."
+      "big": "Jesus is risen. He meets a grieving woman with a past, frightened men behind a locked door, and an honest doubter, and gives each one what they need: his voice, his peace, and himself. This book was written so that we would believe and have life."
     }
   },
   {
@@ -991,7 +991,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "John 21",
     "sub": "Follow thou me",
-    "about": "Breakfast on the shore. After a miraculous catch, Jesus asks Peter three times, “Lovest thou me?” and restores the man who denied Him three times.",
+    "about": "Breakfast on the shore. After a miraculous catch, Jesus asks Peter three times, “Lovest thou me?” and restores the man who denied him three times.",
     "tags": [
       "Going back",
       "Grace",
@@ -1003,7 +1003,7 @@ window.STUDIES = [
     "url": "studies/john-21.html",
     "overview": {
       "where": "The shore of the Sea of Tiberias (the Sea of Galilee)",
-      "when": "Some days after the resurrection, the third time Jesus showed Himself to His disciples",
+      "when": "Some days after the resurrection, the third time Jesus showed himself to his disciples",
       "people": [
         "jesus",
         "simon-peter",
@@ -1022,15 +1022,15 @@ window.STUDIES = [
       "story": [
         "Peter and six others go fishing and catch nothing all night. At dawn a man on the shore tells them to cast on the right side, and the net fills (1–6).",
         "John says, “It is the Lord.” Peter throws himself into the sea, and the others drag in the net: 153 great fish, and the net isn't broken (7–11).",
-        "Jesus has a fire of coals with fish and bread ready. “Come and dine.” He serves them Himself (12–14).",
-        "Three times He asks Peter, “Lovest thou me?” and three times gives him a charge: “Feed my sheep.” He tells Peter how he will die, and says, “Follow me” (15–19).",
+        "Jesus has a fire of coals with fish and bread ready. “Come and dine.” He serves them himself (12–14).",
+        "Three times he asks Peter, “Lovest thou me?” and three times gives him a charge: “Feed my sheep.” He tells Peter how he will die, and says, “Follow me” (15–19).",
         "Peter asks about John. “What is that to thee? follow thou me.” John closes: his testimony is true, and the world couldn't hold all the books (20–25)."
       ],
       "key": {
         "ref": "John 21:17",
         "text": "He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep."
       },
-      "big": "Failure isn't the end. Jesus meets the men who ran with breakfast, answers Peter's three denials with three questions, and hands him work to do. Then He says to every one of us, “Follow thou me.”"
+      "big": "Failure isn't the end. Jesus meets the men who ran with breakfast, answers Peter's three denials with three questions, and hands him work to do. Then he says to every one of us, “Follow thou me.”"
     }
   },
   {
@@ -1131,15 +1131,15 @@ window.STUDIES = [
     "ch": 3,
     "date": "2026-10-18",
     "title": "Proverbs 3",
-    "sub": "Lean your whole weight on Him",
-    "about": "A father teaches his son to trust the LORD, take His correction, prize wisdom above gold, and treat his neighbor right.",
+    "sub": "Lean your whole weight on him",
+    "about": "A father teaches his son to trust the LORD, take his correction, prize wisdom above gold, and treat his neighbour right.",
     "tags": [
       "trust",
       "wisdom",
       "God's correction",
       "giving",
       "peace",
-      "neighbors"
+      "neighbours"
     ],
     "url": "studies/proverbs-03.html",
     "overview": {
@@ -1149,23 +1149,23 @@ window.STUDIES = [
         "solomon",
         "the-lord",
         "A father and his son",
-        "The neighbor",
+        "The neighbour",
         "The oppressor"
       ],
       "places": [],
       "story": [
         "Keep God's commands and write mercy and truth on your heart (1–4)",
-        "Trust the LORD with all your heart, and He will direct your paths (5–8)",
-        "Honor Him with the firstfruits, and don't despise His fatherly correction (9–12)",
+        "Trust the LORD with all your heart, and he will direct your paths (5–8)",
+        "Honour him with the firstfruits, and don't despise his fatherly correction (9–12)",
         "Wisdom is worth more than rubies; she is a tree of life, the wisdom God used to make the world (13–20)",
         "Keep wisdom close, and you can walk safely and sleep in peace (21–26)",
-        "Do good to your neighbor today, and don't envy the oppressor; God gives grace to the lowly (27–35)"
+        "Do good to your neighbour today, and don't envy the oppressor; God gives grace to the lowly (27–35)"
       ],
       "key": {
         "ref": "Proverbs 3:5",
         "text": "Trust in the LORD with all thine heart; and lean not unto thine own understanding."
       },
-      "big": "Lean your whole weight on the LORD instead of your own understanding. He corrects His sons because He loves them, His wisdom is worth more than anything, and it shows in how we treat our neighbor."
+      "big": "Lean your whole weight on the LORD instead of your own understanding. He corrects his sons because he loves them, his wisdom is worth more than anything, and it shows in how we treat our neighbour."
     }
   },
   {
@@ -1242,7 +1242,7 @@ window.STUDIES = [
       "places": [],
       "story": [
         "A father asks his son to listen, then warns that the strange woman's honey turns to wormwood and her road goes down to death (1–6).",
-        "Stay far from her door: she takes a man's honor, years, wealth, and health, and leaves him regretting that he never listened (7–14).",
+        "Stay far from her door: she takes a man's honour, years, wealth, and health, and leaves him regretting that he never listened (7–14).",
         "Drink from your own well: God gives desire a home in marriage, so rejoice with the wife of your youth (15–20).",
         "The LORD sees every road, and sin ties a man up with his own cords (21–23)."
       ],
@@ -1371,14 +1371,14 @@ window.STUDIES = [
         "Wisdom stands on the hilltops, at the crossroads, and at the city gates, calling to everyone, even the simple and the fools (1–5).",
         "Her words are right and true, and she is worth more than silver, gold, or rubies (6–11).",
         "The fear of the LORD is to hate evil; wisdom gives good counsel and lasting riches to those who seek her early (12–21).",
-        "God possessed wisdom from everlasting, before the depths, mountains, earth, and heavens; she rejoiced in His work and in the sons of men (22–31).",
+        "God possessed wisdom from everlasting, before the depths, mountains, earth, and heavens; she rejoiced in his work and in the sons of men (22–31).",
         "Blessed is the man who waits daily at her doors: whoever finds her finds life, and whoever hates her loves death (32–36)."
       ],
       "key": {
         "ref": "Proverbs 8:35",
         "text": "For whoso findeth me findeth life, and shall obtain favour of the LORD."
       },
-      "big": "God's wisdom calls out to everyone and is worth more than any treasure. God has always had His wisdom, and Christ is that wisdom in person and the Creator of all things; whoever finds Him finds life."
+      "big": "God's wisdom calls out to everyone and is worth more than any treasure. God has always had his wisdom, and Christ is that wisdom in person and the Creator of all things; whoever finds him finds life."
     }
   },
   {
@@ -1593,7 +1593,7 @@ window.STUDIES = [
         "Hope put off makes the heart sick, but the desire fulfilled is a tree of life (12).",
         "God's teaching is a fountain of life, and the road of the transgressor is hard (13–19).",
         "We become like the men we walk with, and a good man leaves an inheritance to his grandchildren (20–23).",
-        "Love corrects a son early and carefully, as the heavenly Father corrects His own (24–25)."
+        "Love corrects a son early and carefully, as the heavenly Father corrects his own (24–25)."
       ],
       "key": {
         "ref": "Proverbs 13:20",
@@ -1640,7 +1640,7 @@ window.STUDIES = [
         "A way can seem right to a man and still end in death; laughter can hide a sorrowful heart (12–13).",
         "The simple believe every word and the backslider is filled with his own ways, while the prudent watch their steps (14–22).",
         "Work beats talk, and the fear of the LORD gives strong confidence and a fountain of life (23–28).",
-        "Slow wrath is great understanding, mercy to the poor honors their Maker, and the righteous have hope even in death (29–35)."
+        "Slow wrath is great understanding, mercy to the poor honours their Maker, and the righteous have hope even in death (29–35)."
       ],
       "key": {
         "ref": "Proverbs 14:12",
@@ -1682,7 +1682,7 @@ window.STUDIES = [
       "places": [],
       "story": [
         "A soft answer turns away wrath, and the eyes of the LORD are in every place, seeing the evil and the good (1–5).",
-        "God hates religious show from the wicked but delights in the prayer of the upright; even the grave lies open before Him (6–11).",
+        "God hates religious show from the wicked but delights in the prayer of the upright; even the grave lies open before him (6–11).",
         "A merry heart is a continual feast, and a little with the fear of the LORD beats great treasure with trouble (12–17).",
         "The lazy man's road is a hedge of thorns, and plans succeed with many counsellors (18–23).",
         "The LORD tears down the proud, guards the widow's border, and hears the prayer of the righteous (24–30).",
@@ -1692,7 +1692,7 @@ window.STUDIES = [
         "ref": "Proverbs 15:1",
         "text": "A soft answer turneth away wrath: but grievous words stir up anger."
       },
-      "big": "God sees everything and hears the honest prayer of the upright. Gentle words, a contented heart, good counsel, and humility are the road He blesses."
+      "big": "God sees everything and hears the honest prayer of the upright. Gentle words, a contented heart, good counsel, and humility are the road he blesses."
     }
   },
   {
@@ -1727,7 +1727,7 @@ window.STUDIES = [
       ],
       "places": [],
       "story": [
-        "Our ways look clean to us, but the LORD weighs the spirit; roll your works onto Him and your plans will stand (1–3).",
+        "Our ways look clean to us, but the LORD weighs the spirit; roll your works onto him and your plans will stand (1–3).",
         "Everything serves God's purpose, sin is purged by mercy and truth, and while a man plans his way, the LORD directs his steps (4–9).",
         "Honest weights belong to the LORD, and a righteous king rules by justice and favour (10–15).",
         "Wisdom is better than gold, and pride goes before destruction (16–20).",
@@ -1738,7 +1738,7 @@ window.STUDIES = [
         "ref": "Proverbs 16:9",
         "text": "A man’s heart deviseth his way: but the LORD directeth his steps."
       },
-      "big": "We make our plans, but the LORD directs the steps and has the final word. Trust Him with your works, stay humble, rule your own spirit by His Spirit, and use your words to heal."
+      "big": "We make our plans, but the LORD directs the steps and has the final word. Trust him with your works, stay humble, rule your own spirit by his Spirit, and use your words to heal."
     }
   },
   {
@@ -1861,7 +1861,7 @@ window.STUDIES = [
         "ref": "Proverbs 19:21",
         "text": "There are many devices in a man’s heart; nevertheless the counsel of the LORD, that shall stand."
       },
-      "big": "A wise man owns his choices, tells the truth, lengthens his fuse, and is kind to the poor. Our plans come and go, but the LORD's purpose stands, and listening to His counsel leads to life."
+      "big": "A wise man owns his choices, tells the truth, lengthens his fuse, and is kind to the poor. Our plans come and go, but the LORD's purpose stands, and listening to his counsel leads to life."
     }
   },
   {
@@ -1949,7 +1949,7 @@ window.STUDIES = [
         "ref": "Proverbs 21:2",
         "text": "Every way of a man is right in his own eyes: but the LORD pondereth the hearts."
       },
-      "big": "We always look right to ourselves, but the LORD weighs the heart and rules over all. Do right, show mercy, work faithfully, and trust Him for the outcome."
+      "big": "We always look right to ourselves, but the LORD weighs the heart and rules over all. Do right, show mercy, work faithfully, and trust him for the outcome."
     }
   },
   {
@@ -2038,14 +2038,14 @@ window.STUDIES = [
         "Don't wear yourself out to be rich; riches fly away like an eagle (4–8)",
         "God is the mighty Redeemer of the fatherless; correct a child in love (9–14)",
         "Don't envy sinners, for surely there is an end; stay away from drunkards and gluttons (15–21)",
-        "Buy the truth, honor your parents, and give God your heart (22–28)",
+        "Buy the truth, honour your parents, and give God your heart (22–28)",
         "Who hath woe? The drunkard's cycle: it looks good, it bites, and he seeks it yet again (29–35)"
       ],
       "key": {
         "ref": "Proverbs 23:26",
         "text": "My son, give me thine heart, and let thine eyes observe my ways."
       },
-      "big": "Every craving has a hook in it, and the drunkard's cycle is real. God asks for our heart, and in Christ the cycle can be broken with the Lord, His people, and real help."
+      "big": "Every craving has a hook in it, and the drunkard's cycle is real. God asks for our heart, and in Christ the cycle can be broken with the Lord, his people, and real help."
     }
   },
   {
@@ -2292,14 +2292,14 @@ window.STUDIES = [
         "Righteous leaders make people rejoice; bribes, flattery, and scoffers set snares for a whole land (2–8).",
         "A fool says everything he feels, a ruler who listens to lies corrupts his servants, and a child left to himself brings shame (9–17).",
         "Where God's Word isn't heard, people run wild; the man who keeps it is happy (18–21).",
-        "Anger stirs up strife and pride brings a man low, but the humble are honored (22–24).",
+        "Anger stirs up strife and pride brings a man low, but the humble are honoured (22–24).",
         "The fear of man is a trap; the man who trusts the LORD is set safe on high (25–27)."
       ],
       "key": {
         "ref": "Proverbs 29:25",
         "text": "The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe."
       },
-      "big": "God warns a stubborn man again and again, so bend while you can still hear Him. Living for people's approval is a snare; trusting the LORD puts a man somewhere it can't reach."
+      "big": "God warns a stubborn man again and again, so bend while you can still hear him. Living for people's approval is a snare; trusting the LORD puts a man somewhere it can't reach."
     }
   },
   {
@@ -2334,7 +2334,7 @@ window.STUDIES = [
         "heaven"
       ],
       "story": [
-        "Agur admits how little he knows and asks who made the world, and what is His Son's name (1–4).",
+        "Agur admits how little he knows and asks who made the world, and what is his Son's name (1–4).",
         "Every word of God is pure, so don't add to it; Agur prays for honesty and for neither poverty nor riches (5–9).",
         "He describes proud, self-righteous, greedy people and appetites that never say “It is enough” (10–17).",
         "Four things leave no trace, and neither does the adulteress who wipes her mouth and claims innocence (18–20).",
@@ -2345,7 +2345,7 @@ window.STUDIES = [
         "ref": "Proverbs 30:5",
         "text": "Every word of God is pure: he is a shield unto them that put their trust in him."
       },
-      "big": "Wisdom starts with admitting we don't know, and trusting the God whose Word is pure and whose Son came down from heaven. Ask Him for daily bread, and don't feed cravings that are never satisfied."
+      "big": "Wisdom starts with admitting we don't know, and trusting the God whose Word is pure and whose Son came down from heaven. Ask him for daily bread, and don't feed cravings that are never satisfied."
     }
   },
   {
@@ -2362,7 +2362,7 @@ window.STUDIES = [
       "Justice",
       "Mothers",
       "Marriage",
-      "Honoring women",
+      "Honouring women",
       "Character",
       "Fear of the LORD"
     ],
@@ -2388,7 +2388,7 @@ window.STUDIES = [
         "ref": "Proverbs 31:30",
         "text": "Favour is deceitful, and beauty is vain: but a woman that feareth the LORD, she shall be praised."
       },
-      "big": "A leader keeps a clear head so he can do justice for people who have no voice. Proverbs ends where it began: the fear of the LORD is the heart of a strong and honorable life."
+      "big": "A leader keeps a clear head so he can do justice for people who have no voice. Proverbs ends where it began: the fear of the LORD is the heart of a strong and honourable life."
     }
   },
   {
@@ -2425,7 +2425,7 @@ window.STUDIES = [
         "Wisdom (Hebrew chokmah) is skill for living, and it starts with the fear of the LORD, who gives it as a gift (1:2–7, 9:10, 2:6, 30:3–4)",
         "Wisdom is pictured as a woman calling the simple and the fools in the streets, and a father urges his son to make her the principal thing (1:20, 8:1–14, 4:5–7, 5:1)",
         "Wisdom is worth more than gold, silver and rubies, and money can't buy it for a man with no heart for it (3:13, 8:11, 16:16, 17:16, 23:23)",
-        "God made the world by wisdom; Proverbs 8 is poetry about His eternal wisdom, not proof that Jesus was created, and Christ is the wisdom of God and the Creator (3:19, 8:22–31; 1 Corinthians 1:24, 30; Colossians 2:3; John 1:3)",
+        "God made the world by wisdom; Proverbs 8 is poetry about his eternal wisdom, not proof that Jesus was created, and Christ is the wisdom of God and the Creator (3:19, 8:22–31; 1 Corinthians 1:24, 30; Colossians 2:3; John 1:3)",
         "Wisdom's house and folly's house call the same man with the same words, but one ends in life and the other in death (9:1–6, 9:16–18)",
         "Wisdom shows up in the mouth, in humility, in where a man's eyes are, in staying close to others, and in money, and God gives it to anyone who asks (10:21, 11:2, 17:24, 18:1, 23:4; James 1:5)"
       ],
@@ -2444,7 +2444,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 1",
     "sub": "A marriage that preached",
-    "about": "God tells a prophet to marry a woman who will break his heart, so a whole nation can see what its sin has done to God, and how far His mercy reaches.",
+    "about": "God tells a prophet to marry a woman who will break his heart, so a whole nation can see what its sin has done to God, and how far his mercy reaches.",
     "tags": [
       "God's heart",
       "Sin",
@@ -2488,7 +2488,7 @@ window.STUDIES = [
         "ref": "Hosea 1:10",
         "text": "Yet the number of the children of Israel shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living God."
       },
-      "big": "Sin is unfaithfulness to a God who loves us like a husband. His judgment is real, and He keeps His word, but His last word is “Yet”: those who were “not my people” can be called the sons of the living God."
+      "big": "Sin is unfaithfulness to a God who loves us like a husband. His judgment is real, and he keeps his word, but his last word is “Yet”: those who were “not my people” can be called the sons of the living God."
     }
   },
   {
@@ -2499,7 +2499,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 2",
     "sub": "A door of hope",
-    "about": "God takes His unfaithful wife to court, strips away everything she trusted, and then leads her into the wilderness to speak to her heart.",
+    "about": "God takes his unfaithful wife to court, strips away everything she trusted, and then leads her into the wilderness to speak to her heart.",
     "tags": [
       "Sin's lies",
       "God's provision",
@@ -2526,15 +2526,15 @@ window.STUDIES = [
       "story": [
         "The children are told to plead with their mother to put away her unfaithfulness before she is left bare and dry (1–5).",
         "She says her lovers give her bread and water. God hedges her way with thorns until she says, “I will go and return to my first husband” (5–7).",
-        "She never knew it was God who gave her corn, wine and oil. He takes His gifts back and ends her feasts, because she forgot Him (8–13).",
-        "“Therefore, behold, I will allure her.” In the wilderness He speaks to her heart and makes the valley of Achor a door of hope (14–15).",
-        "She will call Him Ishi, not Baali. He betroths her for ever in faithfulness, and says to those who were not His people, “Thou art my people” (16–23)."
+        "She never knew it was God who gave her corn, wine and oil. He takes his gifts back and ends her feasts, because she forgot him (8–13).",
+        "“Therefore, behold, I will allure her.” In the wilderness he speaks to her heart and makes the valley of Achor a door of hope (14–15).",
+        "She will call him Ishi, not Baali. He betroths her for ever in faithfulness, and says to those who were not his people, “Thou art my people” (16–23)."
       ],
       "key": {
         "ref": "Hosea 2:15",
         "text": "And I will give her her vineyards from thence, and the valley of Achor for a door of hope: and she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt."
       },
-      "big": "Sin takes the credit for what God gave, then takes everything else. God's hedge of thorns is mercy that turns us toward home, and He meets us in the valley of trouble with a door of hope and a love that is for ever."
+      "big": "Sin takes the credit for what God gave, then takes everything else. God's hedge of thorns is mercy that turns us toward home, and he meets us in the valley of trouble with a door of hope and a love that is for ever."
     }
   },
   {
@@ -2577,7 +2577,7 @@ window.STUDIES = [
         "ref": "Hosea 3:1",
         "text": "Then said the LORD unto me, Go yet, love a woman beloved of her friend, yet an adulteress, according to the love of the LORD toward the children of Israel, who look to other gods, and love flagons of wine."
       },
-      "big": "Sin promises freedom and ends in slavery. God loves us while we are still running, and in Christ He paid the price to buy us back and bring us home."
+      "big": "Sin promises freedom and ends in slavery. God loves us while we are still running, and in Christ he paid the price to buy us back and bring us home."
     }
   },
   {
@@ -2588,7 +2588,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 4",
     "sub": "The LORD's case against Israel",
-    "about": "Hosea moves from his own home to the courtroom. God brings charges against a nation that has forgotten Him, starting with the men who were supposed to teach it.",
+    "about": "Hosea moves from his own home to the courtroom. God brings charges against a nation that has forgotten him, starting with the men who were supposed to teach it.",
     "tags": [
       "Knowing God",
       "Sin's spread",
@@ -2633,7 +2633,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 5",
     "sub": "Till they seek my face",
-    "about": "God calls out Israel's priests and kings, sounds the alarm of war, and then steps back and waits for His people to come home.",
+    "about": "God calls out Israel's priests and kings, sounds the alarm of war, and then steps back and waits for his people to come home.",
     "tags": [
       "God sees",
       "Bondage",
@@ -2665,7 +2665,7 @@ window.STUDIES = [
       "story": [
         "God calls out the priests, the people and the king's house: they have been a snare on Mizpah and a net on Tabor (1–2).",
         "“I know Ephraim.” The spirit of whoredoms has them, and they will not frame their doings to turn to God (3–5).",
-        "They come with flocks and herds to seek the LORD, but He has withdrawn Himself from them (6–7).",
+        "They come with flocks and herds to seek the LORD, but he has withdrawn himself from them (6–7).",
         "Sound the alarm in Gibeah, Ramah and Beth-aven. God will be to Ephraim as a moth and to Judah as rottenness (8–12).",
         "Sick and wounded, Ephraim goes to Assyria, who cannot heal. God will tear like a lion, then wait “till they acknowledge their offence, and seek my face” (13–15)."
       ],
@@ -2673,7 +2673,7 @@ window.STUDIES = [
         "ref": "Hosea 5:15",
         "text": "I will go and return to my place, till they acknowledge their offence, and seek my face: in their affliction they will seek me early."
       },
-      "big": "Sin becomes a master, and no false cure can heal its wound. God's discipline is real and comes after many warnings, but its purpose is to bring His people home. He is waiting for us to own what we did and seek His face."
+      "big": "Sin becomes a master, and no false cure can heal its wound. God's discipline is real and comes after many warnings, but its purpose is to bring his people home. He is waiting for us to own what we did and seek his face."
     }
   },
   {
@@ -2708,16 +2708,16 @@ window.STUDIES = [
       ],
       "story": [
         "“Come, and let us return unto the LORD: for he hath torn, and he will heal us” (1–2).",
-        "If we follow on to know the LORD, He will come as surely as the morning and the rain (3).",
+        "If we follow on to know the LORD, he will come as surely as the morning and the rain (3).",
         "But Israel's goodness is like a morning cloud and the early dew. It goes away (4–5).",
         "“For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings” (6).",
-        "They broke the covenant. Gilead is stained with blood, and the priests murder on the road like robbers. Yet God will one day return the captivity of His people (7–11)."
+        "They broke the covenant. Gilead is stained with blood, and the priests murder on the road like robbers. Yet God will one day return the captivity of his people (7–11)."
       ],
       "key": {
         "ref": "Hosea 6:6",
         "text": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings."
       },
-      "big": "God wants a real turning and a loyal heart, not ritual and feelings that burn off by noon. The hand that wounds is the hand that heals, and He comes as surely as sunrise to those who keep seeking Him."
+      "big": "God wants a real turning and a loyal heart, not ritual and feelings that burn off by noon. The hand that wounds is the hand that heals, and he comes as surely as sunrise to those who keep seeking him."
     }
   },
   {
@@ -2751,11 +2751,11 @@ window.STUDIES = [
         "assyria"
       ],
       "story": [
-        "When God would have healed Israel, their sin came to light. They forget that He remembers it all (1–2).",
+        "When God would have healed Israel, their sin came to light. They forget that he remembers it all (1–2).",
         "The princes are hot as a baker's oven, plotting all night. They make the king sick with wine, and their kings fall one by one. None calls on God (3–7).",
         "Ephraim is a cake not turned. Strangers devour his strength, and gray hairs come, yet he knows it not (8–10).",
-        "Like a silly dove, Ephraim calls to Egypt and runs to Assyria, and God spreads His net (11–12).",
-        "God redeemed them, but they howl on their beds instead of crying to Him with their heart. They return, but not to the most High, like a deceitful bow (13–16)."
+        "Like a silly dove, Ephraim calls to Egypt and runs to Assyria, and God spreads his net (11–12).",
+        "God redeemed them, but they howl on their beds instead of crying to him with their heart. They return, but not to the most High, like a deceitful bow (13–16)."
       ],
       "key": {
         "ref": "Hosea 7:9",
@@ -2817,7 +2817,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 9",
     "sub": "Rejoice not",
-    "about": "The party is over. Israel will be carried off, the feasts will stop, and the people named “fruitful” will bear no fruit. Yet God remembers when He first found them, like grapes in the wilderness.",
+    "about": "The party is over. Israel will be carried off, the feasts will stop, and the people named “fruitful” will bear no fruit. Yet God remembers when he first found them, like grapes in the wilderness.",
     "tags": [
       "False joy",
       "Exile",
@@ -2855,7 +2855,7 @@ window.STUDIES = [
         "ref": "Hosea 9:10",
         "text": "I found Israel like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baal-peor, and separated themselves unto that shame; and their abominations were according as they loved."
       },
-      "big": "A party that leaves God out always runs dry, and a people cut off from Him bears no fruit. Judgment on Israel was real. But God's first thought of His people was delight, and Hosea's book ends with “I will love them freely.”"
+      "big": "A party that leaves God out always runs dry, and a people cut off from him bears no fruit. Judgment on Israel was real. But God's first thought of his people was delight, and Hosea's book ends with “I will love them freely.”"
     }
   },
   {
@@ -2907,7 +2907,7 @@ window.STUDIES = [
         "ref": "Hosea 10:12",
         "text": "Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you."
       },
-      "big": "What we sow comes up. A heart split between God and idols ends up empty, but even a field gone hard can be broken open. It is time to seek the LORD, and He sends mercy and righteousness like rain."
+      "big": "What we sow comes up. A heart split between God and idols ends up empty, but even a field gone hard can be broken open. It is time to seek the LORD, and he sends mercy and righteousness like rain."
     }
   },
   {
@@ -2918,7 +2918,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Hosea 11",
     "sub": "How shall I give thee up?",
-    "about": "God remembers Israel as a little boy He taught to walk. The boy ran off. But the Father's heart will not let him go.",
+    "about": "God remembers Israel as a little boy he taught to walk. The boy ran off. But the Father's heart will not let him go.",
     "tags": [
       "A Father's love",
       "Christ in Hosea",
@@ -2947,14 +2947,14 @@ window.STUDIES = [
         "God taught Ephraim to walk, held them by the arms, healed them, and drew them with cords of love (3–4).",
         "They refused to return, so Assyria will rule them. God's people are bent to backsliding (5–7).",
         "“How shall I give thee up, Ephraim?” God will not destroy them like Admah and Zeboim: “for I am God, and not man” (8–9).",
-        "The LORD will roar like a lion, and His children will come trembling home from Egypt and Assyria (10–11).",
+        "The LORD will roar like a lion, and his children will come trembling home from Egypt and Assyria (10–11).",
         "Ephraim surrounds God with lies, while Judah still rules with God (12)."
       ],
       "key": {
         "ref": "Hosea 11:8",
         "text": "How shall I give thee up, Ephraim? how shall I deliver thee, Israel? how shall I make thee as Admah? how shall I set thee as Zeboim? mine heart is turned within me, my repentings are kindled together."
       },
-      "big": "God loves like a father. Israel kept running, and judgment was real, but His mercy is greater because He is God and not man. Matthew shows that Hosea 11:1 is fulfilled in Jesus, the Son who walked Israel's road without failing."
+      "big": "God loves like a father. Israel kept running, and judgment was real, but his mercy is greater because he is God and not man. Matthew shows that Hosea 11:1 is fulfilled in Jesus, the Son who walked Israel's road without failing."
     }
   },
   {
@@ -3003,7 +3003,7 @@ window.STUDIES = [
         "ref": "Hosea 12:6",
         "text": "Therefore turn thou to thy God: keep mercy and judgment, and wait on thy God continually."
       },
-      "big": "Schemes and double deals are wind: they never fill a man. Jacob was changed when he held on to God and asked for a blessing. God asks His people to turn, deal fairly, and keep waiting on Him."
+      "big": "Schemes and double deals are wind: they never fill a man. Jacob was changed when he held on to God and asked for a blessing. God asks his people to turn, deal fairly, and keep waiting on him."
     }
   },
   {
@@ -3040,8 +3040,8 @@ window.STUDIES = [
       "story": [
         "Ephraim was once respected, but turned to Baal and died. Men melt down silver into idols and kiss the calves (1–2).",
         "So they will pass away like morning cloud, early dew, chaff, and smoke (3).",
-        "God fed them in the wilderness, but when they were filled, they grew proud and forgot Him. There is no saviour beside Him (4–6).",
-        "Now He will meet them like a lion, a leopard, and a bear robbed of her cubs (7–8).",
+        "God fed them in the wilderness, but when they were filled, they grew proud and forgot him. There is no saviour beside him (4–6).",
+        "Now he will meet them like a lion, a leopard, and a bear robbed of her cubs (7–8).",
         "“O Israel, thou hast destroyed thyself; but in me is thine help.” Their kings could not save them, and their sin is stored up (9–13).",
         "“I will ransom them from the power of the grave … O death, I will be thy plagues.” But Samaria will fall to the sword (14–16)."
       ],
@@ -3049,7 +3049,7 @@ window.STUDIES = [
         "ref": "Hosea 13:9",
         "text": "O Israel, thou hast destroyed thyself; but in me is thine help."
       },
-      "big": "Full men forget God, and idols always fail. Israel destroyed itself, yet God was still its help. In the darkest chapter God promises to ransom His people from death, and Paul shows that Jesus kept that promise when He rose (1 Corinthians 15:55)."
+      "big": "Full men forget God, and idols always fail. Israel destroyed itself, yet God was still its help. In the darkest chapter God promises to ransom his people from death, and Paul shows that Jesus kept that promise when he rose (1 Corinthians 15:55)."
     }
   },
   {
@@ -3093,7 +3093,7 @@ window.STUDIES = [
         "ref": "Hosea 14:4",
         "text": "I will heal their backsliding, I will love them freely: for mine anger is turned away from him."
       },
-      "big": "However far a man has fallen, the way back is the same: return to the LORD with honest words. God heals backsliding and loves freely, and the life He grows lasts. The God of Hosea goes after His people and brings them home."
+      "big": "However far a man has fallen, the way back is the same: return to the LORD with honest words. God heals backsliding and loves freely, and the life he grows lasts. The God of Hosea goes after his people and brings them home."
     }
   },
   {
@@ -3140,7 +3140,7 @@ window.STUDIES = [
         "ref": "Joel 1:19",
         "text": "O LORD, to thee will I cry: for the fire hath devoured the pastures of the wilderness, and the flame hath burned all the trees of the field."
       },
-      "big": "God sometimes lets what we lean on be stripped away to wake us up. A disaster can be a warning, and the right answer is to get low before God, together, and cry out to Him."
+      "big": "God sometimes lets what we lean on be stripped away to wake us up. A disaster can be a warning, and the right answer is to get low before God, together, and cry out to him."
     }
   },
   {
@@ -3151,7 +3151,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Joel 2",
     "sub": "I will restore",
-    "about": "The locusts march like an army, God calls His people to turn, and He promises to give back the years the locust ate and to pour out His Spirit.",
+    "about": "The locusts march like an army, God calls his people to turn, and he promises to give back the years the locust ate and to pour out his Spirit.",
     "tags": [
       "God's warnings",
       "Repentance",
@@ -3178,16 +3178,16 @@ window.STUDIES = [
       ],
       "story": [
         "Blow the trumpet in Zion: the locusts come like a disciplined army, and the LORD leads it. “Who can abide it?” (1–11).",
-        "“Therefore also now” turn to the LORD with all your heart. Rend your heart, not your garments, for He is gracious and merciful (12–14).",
+        "“Therefore also now” turn to the LORD with all your heart. Rend your heart, not your garments, for he is gracious and merciful (12–14).",
         "Gather everyone, from elders to babies to newlyweds, and let the priests weep and pray, “Spare thy people” (15–17).",
-        "The LORD pities His people, drives off the northern army, sends the rain, and promises: “I will restore to you the years that the locust hath eaten” (18–27).",
-        "Afterward He will pour out His Spirit on all flesh, and whosoever calls on the name of the LORD will be delivered. Peter quotes it at Pentecost (28–32)."
+        "The LORD pities his people, drives off the northern army, sends the rain, and promises: “I will restore to you the years that the locust hath eaten” (18–27).",
+        "Afterward he will pour out his Spirit on all flesh, and whosoever calls on the name of the LORD will be delivered. Peter quotes it at Pentecost (28–32)."
       ],
       "key": {
         "ref": "Joel 2:25",
         "text": "And I will restore to you the years that the locust hath eaten, the cankerworm, and the caterpiller, and the palmerworm, my great army which I sent among you."
       },
-      "big": "It isn't too late to turn. God is gracious and slow to anger, He restores what was lost, and He gives His Spirit to everyone who calls on the name of the Lord."
+      "big": "It isn't too late to turn. God is gracious and slow to anger, he restores what was lost, and he gives his Spirit to everyone who calls on the name of the Lord."
     }
   },
   {
@@ -3198,7 +3198,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Joel 3",
     "sub": "The valley of decision",
-    "about": "God calls the nations to account for how they treated His people, and the book ends with a fountain, and the LORD at home in Zion.",
+    "about": "God calls the nations to account for how they treated his people, and the book ends with a fountain, and the LORD at home in Zion.",
     "tags": [
       "God's justice",
       "Payback",
@@ -3230,17 +3230,17 @@ window.STUDIES = [
         "edom"
       ],
       "story": [
-        "God will bring His people home and gather the nations in the valley of Jehoshaphat, for they scattered His people and sold boys and girls for a harlot and a drink (1–3).",
-        "Tyre, Zidon, and the Philistines sold Judah's children to the Greeks. God will raise His people up and turn their payback on their own heads (4–8).",
+        "God will bring his people home and gather the nations in the valley of Jehoshaphat, for they scattered his people and sold boys and girls for a harlot and a drink (1–3).",
+        "Tyre, Zidon, and the Philistines sold Judah's children to the Greeks. God will raise his people up and turn their payback on their own heads (4–8).",
         "The nations are dared to beat their plowshares into swords and come. The harvest is ripe, and multitudes stand in the valley of decision (9–15).",
-        "The LORD roars from Zion and heaven and earth shake, but He is the hope of His people (16–17).",
+        "The LORD roars from Zion and heaven and earth shake, but he is the hope of his people (16–17).",
         "The hills drip with new wine, a fountain flows from the house of the LORD, Judah dwells for ever, “for the LORD dwelleth in Zion” (18–21)."
       ],
       "key": {
         "ref": "Joel 3:16",
         "text": "The LORD also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but the LORD will be the hope of his people, and the strength of the children of Israel."
       },
-      "big": "God sees every wrong done to His people and will settle it Himself. His patience is long, but His verdict is coming, and those who trust Him are safe. The story ends with God living among His people."
+      "big": "God sees every wrong done to his people and will settle it himself. His patience is long, but his verdict is coming, and those who trust him are safe. The story ends with God living among his people."
     }
   },
   {
@@ -3251,7 +3251,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Amos 1",
     "sub": "The lion roars",
-    "about": "A herdman from the hills of Judah walks north with a message from God, and starts with the neighbors everyone already hates.",
+    "about": "A herdman from the hills of Judah walks north with a message from God, and starts with the neighbours everyone already hates.",
     "tags": [
       "God's call",
       "God's patience",
@@ -3297,7 +3297,7 @@ window.STUDIES = [
         "ref": "Amos 1:2",
         "text": "And he said, The LORD will roar from Zion, and utter his voice from Jerusalem; and the habitations of the shepherds shall mourn, and the top of Carmel shall wither."
       },
-      "big": "God is patient, but He is not silent. He sees every cruelty, even among nations that never had His law, and He calls ordinary men to speak for Him."
+      "big": "God is patient, but he is not silent. He sees every cruelty, even among nations that never had his law, and he calls ordinary men to speak for him."
     },
     "url": "studies/amos-01.html"
   },
@@ -3340,14 +3340,14 @@ window.STUDIES = [
         "Moab burned the bones of Edom's king to lime; fire will fall on Kirioth (1–3).",
         "Judah despised the law of the LORD and followed the lies their fathers walked after; fire will devour Jerusalem's palaces (4–5).",
         "Then Israel: they sold the righteous for silver and the poor for a pair of shoes, used a servant girl, and lounged at the altar on poor men's coats (6–8).",
-        "God reminds them He destroyed the Amorite, brought them out of Egypt, and raised up prophets and Nazarites; but they gave the Nazarites wine and told the prophets, “Prophesy not” (9–12).",
+        "God reminds them he destroyed the Amorite, brought them out of Egypt, and raised up prophets and Nazarites; but they gave the Nazarites wine and told the prophets, “Prophesy not” (9–12).",
         "Their sin weighs on God like an overloaded cart. In that day not even the swift, the strong, or the brave will escape (13–16)."
       ],
       "key": {
         "ref": "Amos 2:6",
         "text": "Thus saith the LORD; For three transgressions of Israel, and for four, I will not turn away the punishment thereof; because they sold the righteous for silver, and the poor for a pair of shoes;"
       },
-      "big": "It's easy to cheer when God judges other people's sins. God's word always comes around to us, and the more of it we've been given, the more He expects."
+      "big": "It's easy to cheer when God judges other people's sins. God's word always comes around to us, and the more of it we've been given, the more he expects."
     },
     "url": "studies/amos-02.html"
   },
@@ -3359,7 +3359,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Amos 3",
     "sub": "The lion hath roared",
-    "about": "Why God is speaking, why His own people are on trial, and why He always warns before He acts.",
+    "about": "Why God is speaking, why his own people are on trial, and why he always warns before he acts.",
     "tags": [
       "Privilege",
       "Walking with God",
@@ -3385,9 +3385,9 @@ window.STUDIES = [
         "bethel"
       ],
       "story": [
-        "God speaks to the family He brought out of Egypt: “You only have I known … therefore I will punish you” (1–2).",
+        "God speaks to the family he brought out of Egypt: “You only have I known … therefore I will punish you” (1–2).",
         "A string of questions: two walking together, a lion's roar, a bird in a snare, a trumpet in the city. Nothing happens without a cause (3–6).",
-        "God reveals His plans to His prophets first. The lion has roared; who can keep from prophesying? (7–8).",
+        "God reveals his plans to his prophets first. The lion has roared; who can keep from prophesying? (7–8).",
         "Ashdod and Egypt are called to the hills of Samaria to see the violence and robbery stored in its palaces (9–10).",
         "An enemy will surround the land. Like a shepherd pulling two legs or a piece of an ear from a lion's mouth, only scraps will be rescued (11–12).",
         "God will cut off the horns of Bethel's altar and tear down the winter houses, summer houses, and houses of ivory (13–15)."
@@ -3396,7 +3396,7 @@ window.STUDIES = [
         "ref": "Amos 3:2",
         "text": "You only have I known of all the families of the earth: therefore I will punish you for all your iniquities."
       },
-      "big": "Being close to God is a privilege, not a pass. He warns long and plainly before He judges, and only He is a safe refuge."
+      "big": "Being close to God is a privilege, not a pass. He warns long and plainly before he judges, and only he is a safe refuge."
     },
     "url": "studies/amos-03.html"
   },
@@ -3408,7 +3408,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Amos 4",
     "sub": "Prepare to meet thy God",
-    "about": "Five times God tried to get Israel's attention. Five times He had to say, “Yet have ye not returned unto me.”",
+    "about": "Five times God tried to get Israel's attention. Five times he had to say, “Yet have ye not returned unto me.”",
     "tags": [
       "Comfort",
       "Empty religion",
@@ -3444,7 +3444,7 @@ window.STUDIES = [
         "ref": "Amos 4:12",
         "text": "Therefore thus will I do unto thee, O Israel: and because I will do this unto thee, prepare to meet thy God, O Israel."
       },
-      "big": "God uses hard things to call us home, not to destroy us. Every man will meet God; the way to meet Him in peace is to return to Him now, through Christ."
+      "big": "God uses hard things to call us home, not to destroy us. Every man will meet God; the way to meet him in peace is to return to him now, through Christ."
     },
     "url": "studies/amos-04.html"
   },
@@ -3492,7 +3492,7 @@ window.STUDIES = [
         "ref": "Amos 5:4",
         "text": "For thus saith the LORD unto the house of Israel, Seek ye me, and ye shall live:"
       },
-      "big": "God's judgment was coming, but His first word after the funeral song was “live.” He wants us to seek Him, not religious places or rituals, and to let right living flow like a stream that never runs dry."
+      "big": "God's judgment was coming, but his first word after the funeral song was “live.” He wants us to seek him, not religious places or rituals, and to let right living flow like a stream that never runs dry."
     }
   },
   {
@@ -3532,14 +3532,14 @@ window.STUDIES = [
         "Woe to the comfortable leaders in Zion and Samaria. Look at Calneh, Hamath, and Gath: are you better than they were? (1–2).",
         "They push the evil day away while they lounge on ivory beds, feast, sing, drink wine by the bowlful, and feel nothing for the ruin of their people (3–6).",
         "They will go captive first, and the party will end (7).",
-        "God swears by Himself that He hates Israel's pride. When the city falls, the survivors will be afraid to say His name (8–11).",
+        "God swears by himself that he hates Israel's pride. When the city falls, the survivors will be afraid to say his name (8–11).",
         "They have turned justice into poison and bragged about their own strength. God will raise up a nation against them (12–14)."
       ],
       "key": {
         "ref": "Amos 6:1",
         "text": "Woe to them that are at ease in Zion, and trust in the mountain of Samaria, which are named chief of the nations, to whom the house of Israel came!"
       },
-      "big": "Comfort can make a man careless, numb, and proud. God wants men who stay awake, who still grieve for people who are hurting, and who know their strength comes from Him."
+      "big": "Comfort can make a man careless, numb, and proud. God wants men who stay awake, who still grieve for people who are hurting, and who know their strength comes from him."
     }
   },
   {
@@ -3577,7 +3577,7 @@ window.STUDIES = [
       "story": [
         "God shows Amos locusts eating the land. Amos prays, “forgive,” and the LORD holds back (1–3).",
         "God shows him a fire eating up the deep. Amos prays, “cease,” and the LORD holds back again (4–6).",
-        "God stands on a wall with a plumbline: Israel is out of true, and He will not pass them by any more (7–9).",
+        "God stands on a wall with a plumbline: Israel is out of true, and he will not pass them by any more (7–9).",
         "Amaziah, the priest of Bethel, reports Amos to King Jeroboam and tells him to go home to Judah (10–13).",
         "Amos answers: I was a herdman and a fig picker, and the LORD sent me. He gives Amaziah God's word anyway (14–17)."
       ],
@@ -3585,7 +3585,7 @@ window.STUDIES = [
         "ref": "Amos 7:8",
         "text": "And the LORD said unto me, Amos, what seest thou? And I said, A plumbline. Then said the Lord, Behold, I will set a plumbline in the midst of my people Israel: I will not again pass by them any more:"
       },
-      "big": "God listens when we pray for others, and His patience is long, but He measures us by His own straight line. He still calls ordinary men, and no one can silence His word."
+      "big": "God listens when we pray for others, and his patience is long, but he measures us by his own straight line. He still calls ordinary men, and no one can silence his word."
     }
   },
   {
@@ -3622,15 +3622,15 @@ window.STUDIES = [
       "story": [
         "God shows Amos a basket of summer fruit: the end has come for Israel (1–3).",
         "Merchants wait for the holy days to end so they can cheat with small measures and false scales, and sell the poor for a pair of shoes (4–6).",
-        "God swears He will never forget it. The land will heave like the Nile, the sun will set at noon, and feasts will turn to mourning (7–10).",
-        "God will send a famine, not of bread, but of hearing His words. People will search from sea to sea and not find it (11–12).",
+        "God swears he will never forget it. The land will heave like the Nile, the sun will set at noon, and feasts will turn to mourning (7–10).",
+        "God will send a famine, not of bread, but of hearing his words. People will search from sea to sea and not find it (11–12).",
         "Those who swear by the idols of Samaria, Dan, and Beer-sheba will fall and never rise again (13–14)."
       ],
       "key": {
         "ref": "Amos 8:11",
         "text": "Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of the LORD:"
       },
-      "big": "God sees cheating and cruelty toward the poor, and unrepented sin stays on His books. The worst famine is a silent heaven, so feed on His Word while it's in your hand."
+      "big": "God sees cheating and cruelty toward the poor, and unrepented sin stays on his books. The worst famine is a silent heaven, so feed on his Word while it's in your hand."
     }
   },
   {
@@ -3641,7 +3641,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Amos 9",
     "sub": "I will raise up",
-    "about": "Nobody can hide from God's judgment, but He will not utterly destroy. The book that opened with a lion's roar ends with a fallen house rebuilt and a harvest too big to bring in.",
+    "about": "Nobody can hide from God's judgment, but he will not utterly destroy. The book that opened with a lion's roar ends with a fallen house rebuilt and a harvest too big to bring in.",
     "tags": [
       "God sees",
       "Who God is",
@@ -3670,17 +3670,17 @@ window.STUDIES = [
         "edom"
       ],
       "story": [
-        "Amos sees the LORD by the altar. No one can escape His judgment, not in the grave, the sky, Carmel, or the sea (1–4).",
+        "Amos sees the LORD by the altar. No one can escape his judgment, not in the grave, the sky, Carmel, or the sea (1–4).",
         "The LORD of hosts touches the land and it melts: “The LORD is his name” (5–6).",
         "Israel is no more safe than any other nation, yet God will not utterly destroy the house of Jacob. He will sift them, and not the least grain will be lost (7–10).",
-        "God will raise up the fallen tabernacle of David, and the nations will be called by His name. James quotes this in Acts 15 (11–12).",
-        "The plowman will overtake the reaper. God will bring His people home and plant them, never to be pulled up again (13–15)."
+        "God will raise up the fallen tabernacle of David, and the nations will be called by his name. James quotes this in Acts 15 (11–12).",
+        "The plowman will overtake the reaper. God will bring his people home and plant them, never to be pulled up again (13–15)."
       ],
       "key": {
         "ref": "Amos 9:11",
         "text": "In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old:"
       },
-      "big": "God's judgment is real, but His mercy has the last word. He raised up David's fallen house in Jesus, called the nations by His name, and keeps every promise He makes."
+      "big": "God's judgment is real, but his mercy has the last word. He raised up David's fallen house in Jesus, called the nations by his name, and keeps every promise he makes."
     }
   },
   {
@@ -3732,7 +3732,7 @@ window.STUDIES = [
         "ref": "Obadiah 1:3",
         "text": "The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?"
       },
-      "big": "Pride lies to the man who has it, and God brings the high down. He sees how we treat a brother who is falling, and He keeps His word: deliverance is found with Him, and the last word is His."
+      "big": "Pride lies to the man who has it, and God brings the high down. He sees how we treat a brother who is falling, and he keeps his word: deliverance is found with him, and the last word is his."
     }
   },
   {
@@ -3770,7 +3770,7 @@ window.STUDIES = [
       "story": [
         "The word of the LORD tells Jonah to go and cry against Nineveh, that great city. Jonah flees the other way, down to Joppa and onto a ship for Tarshish (1–3).",
         "The LORD sends a great storm. The sailors pray to their gods and throw cargo overboard, while Jonah sleeps below until the shipmaster wakes him (4–6).",
-        "The lot falls on Jonah. He tells them he is a Hebrew who fears the LORD, the God who made the sea, and that he is running from Him (7–10).",
+        "The lot falls on Jonah. He tells them he is a Hebrew who fears the LORD, the God who made the sea, and that he is running from him (7–10).",
         "Jonah tells them to throw him overboard. They row hard but can't reach land, so they pray to the LORD and cast him in, and the sea goes calm (11–15).",
         "The sailors fear the LORD and offer sacrifice. The LORD has prepared a great fish, and Jonah is in its belly three days and three nights (16–17)."
       ],
@@ -3778,7 +3778,7 @@ window.STUDIES = [
         "ref": "Jonah 1:3",
         "text": "But Jonah rose up to flee unto Tarshish from the presence of the LORD, and went down to Joppa; and he found a ship going to Tarshish: so he paid the fare thereof, and went down into it, to go with them unto Tarshish from the presence of the LORD."
       },
-      "big": "No man can outrun God. Running only takes a man lower, but God's storms are His love coming after a runaway, and His mercy reaches even the people we ran from. Jesus called Jonah's three days in the fish the sign of His own death and resurrection."
+      "big": "No man can outrun God. Running only takes a man lower, but God's storms are his love coming after a runaway, and his mercy reaches even the people we ran from. Jesus called Jonah's three days in the fish the sign of his own death and resurrection."
     }
   },
   {
@@ -3820,7 +3820,7 @@ window.STUDIES = [
         "ref": "Jonah 2:9",
         "text": "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD."
       },
-      "big": "No place is too low to pray from. Idols promise and leak dry, but God hears a man at the bottom and brings him up. Salvation is God's gift, not something we earn, and He rescues a man to give him a new start."
+      "big": "No place is too low to pray from. Idols promise and leak dry, but God hears a man at the bottom and brings him up. Salvation is God's gift, not something we earn, and he rescues a man to give him a new start."
     }
   },
   {
@@ -3856,13 +3856,13 @@ window.STUDIES = [
         "A day's walk into that great city he cries, “Yet forty days, and Nineveh shall be overthrown” (4).",
         "The people believe God, fast, and put on sackcloth, from the greatest to the least. The king leaves his throne and sits in ashes (5–6).",
         "The king orders man and beast to fast, cry to God, and turn from evil and violence: “Who can tell if God will turn?” (7–9).",
-        "God sees that they turn from their evil way, and He relents from the disaster He had warned of (10)."
+        "God sees that they turn from their evil way, and he relents from the disaster he had warned of (10)."
       ],
       "key": {
         "ref": "Jonah 3:10",
         "text": "And God saw their works, that they turned from their evil way; and God repented of the evil, that he had said that he would do unto them; and he did it not."
       },
-      "big": "God gives a failed man the same call again. When His word is believed, even a violent city turns, and God spares those who turn. Jesus said the men of Nineveh repented at Jonah's preaching, and a greater than Jonah has come."
+      "big": "God gives a failed man the same call again. When his word is believed, even a violent city turns, and God spares those who turn. Jesus said the men of Nineveh repented at Jonah's preaching, and a greater than Jonah has come."
     }
   },
   {
@@ -3873,7 +3873,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Jonah 4",
     "sub": "Angry at mercy",
-    "about": "Nineveh is spared, and Jonah is furious. God answers His angry prophet with a plant, a worm, a hot wind, and a question.",
+    "about": "Nineveh is spared, and Jonah is furious. God answers his angry prophet with a plant, a worm, a hot wind, and a question.",
     "tags": [
       "Anger",
       "God's character",
@@ -3904,7 +3904,7 @@ window.STUDIES = [
         "ref": "Jonah 4:2",
         "text": "And he prayed unto the LORD, and said, I pray thee, O LORD, was not this my saying, when I was yet in my country? Therefore I fled before unto Tarshish: for I knew that thou art a gracious God, and merciful, slow to anger, and of great kindness, and repentest thee of the evil."
       },
-      "big": "God is gracious and merciful to anyone who turns, even our enemies. He meets an angry, despairing man with patience and a question. Self-pity shrinks the world to our comfort, but God's heart is for lost people, and He wants all men to be saved."
+      "big": "God is gracious and merciful to anyone who turns, even our enemies. He meets an angry, despairing man with patience and a question. Self-pity shrinks the world to our comfort, but God's heart is for lost people, and he wants all men to be saved."
     }
   },
   {
@@ -3915,7 +3915,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Micah 1",
     "sub": "The LORD comes down",
-    "about": "A country preacher sees the LORD step out of heaven to judge His own people, and he weeps over every town on the road.",
+    "about": "A country preacher sees the LORD step out of heaven to judge his own people, and he weeps over every town on the road.",
     "tags": [
       "God's holiness",
       "Sin",
@@ -3947,7 +3947,7 @@ window.STUDIES = [
       ],
       "story": [
         "The word of the LORD comes to Micah of Moresheth about Samaria and Jerusalem, in the days of Jotham, Ahaz and Hezekiah (1).",
-        "The LORD comes out of His holy temple as a witness against His people. The mountains melt under Him like wax (2–4).",
+        "The LORD comes out of his holy temple as a witness against his people. The mountains melt under him like wax (2–4).",
         "Samaria, Israel's capital, is the root of its sin, and it will become a heap of stones. Its idols, bought with a harlot's hire, will go back to the same use (5–7).",
         "Micah wails and goes stripped like a captive, because the wound has reached Judah, even the gate of Jerusalem (8–9).",
         "Town by town, with a play on each name, Micah mourns the cities of the low hills as the enemy comes, and their children go into captivity (10–16)."
@@ -3956,7 +3956,7 @@ window.STUDIES = [
         "ref": "Micah 1:3",
         "text": "For, behold, the LORD cometh forth out of his place, and will come down, and tread upon the high places of the earth."
       },
-      "big": "God is holy, and He judges sin even among His own people, but only after long patience. His prophets grieve over judgment, and even rock bottom can be the place a man meets the King."
+      "big": "God is holy, and he judges sin even among his own people, but only after long patience. His prophets grieve over judgment, and even rock bottom can be the place a man meets the King."
     }
   },
   {
@@ -3967,7 +3967,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Micah 2",
     "sub": "Plotting in the dark",
-    "about": "Powerful men lie awake planning how to take their neighbors' land, and they want a preacher who will tell them it's fine. God has a word for them, and a promise for His flock.",
+    "about": "Powerful men lie awake planning how to take their neighbours' land, and they want a preacher who will tell them it's fine. God has a word for them, and a promise for his flock.",
     "tags": [
       "Temptation",
       "Greed",
@@ -3989,8 +3989,8 @@ window.STUDIES = [
       ],
       "story": [
         "Woe to the men who plan evil on their beds and do it at dawn, taking fields and houses by force (1–2).",
-        "So the LORD plans a disaster against them: their own fields will be divided up, and they will have no share among His people (3–5).",
-        "The people tell the prophets to stop preaching. God answers that His words do good to the man who walks uprightly (6–7).",
+        "So the LORD plans a disaster against them: their own fields will be divided up, and they will have no share among his people (3–5).",
+        "The people tell the prophets to stop preaching. God answers that his words do good to the man who walks uprightly (6–7).",
         "His people rob peaceful travelers and throw widows out of their homes. This land is not their rest (8–10).",
         "They would gladly follow a lying prophet who promised wine and strong drink (11).",
         "Yet God promises to gather the remnant of Israel like a flock. The breaker goes before them, their king passes before them, and the LORD is at their head (12–13)."
@@ -3999,7 +3999,7 @@ window.STUDIES = [
         "ref": "Micah 2:13",
         "text": "The breaker is come up before them: they have broken up, and have passed through the gate, and are gone out by it: and their king shall pass before them, and the LORD on the head of them."
       },
-      "big": "Sin is planned in the dark before the hands move, and a man reaps what he sows. God's word does good to the upright, and the Shepherd goes ahead of His scattered flock to open the way home."
+      "big": "Sin is planned in the dark before the hands move, and a man reaps what he sows. God's word does good to the upright, and the Shepherd goes ahead of his scattered flock to open the way home."
     }
   },
   {
@@ -4036,7 +4036,7 @@ window.STUDIES = [
       ],
       "story": [
         "Micah calls out the heads of Jacob. They should know justice, but they hate good and treat the people like meat for the pot (1–3).",
-        "When trouble comes they will cry to the LORD, but He will hide His face, because of what they have done (4).",
+        "When trouble comes they will cry to the LORD, but he will hide his face, because of what they have done (4).",
         "The prophets cry “Peace” to whoever feeds them and declare war on whoever doesn't. Night will fall on them, with no answer from God (5–7).",
         "But Micah is full of power by the Spirit of the LORD, to tell Israel its sin (8).",
         "Rulers judge for bribes, priests teach for hire, prophets divine for money, and still they say the LORD is among them (9–11).",
@@ -4046,7 +4046,7 @@ window.STUDIES = [
         "ref": "Micah 3:8",
         "text": "But truly I am full of power by the spirit of the LORD, and of judgment, and of might, to declare unto Jacob his transgression, and to Israel his sin."
       },
-      "big": "God holds leaders to account and won't be used by men who want rescue without repentance. Real courage comes from His Spirit, and His warnings are an open door to turn."
+      "big": "God holds leaders to account and won't be used by men who want rescue without repentance. Real courage comes from his Spirit, and his warnings are an open door to turn."
     }
   },
   {
@@ -4057,7 +4057,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Micah 4",
     "sub": "Swords into plowshares",
-    "about": "Right after the ruins of chapter 3, God shows Micah where history is headed: a mountain the nations climb to learn His ways, and a limping people made strong.",
+    "about": "Right after the ruins of chapter 3, God shows Micah where history is headed: a mountain the nations climb to learn his ways, and a limping people made strong.",
     "tags": [
       "God's plan",
       "God's word",
@@ -4080,18 +4080,18 @@ window.STUDIES = [
         "babylon"
       ],
       "story": [
-        "In the last days the mountain of the LORD's house will stand above all, and many nations will come up to learn His ways (1–2).",
+        "In the last days the mountain of the LORD's house will stand above all, and many nations will come up to learn his ways (1–2).",
         "He will judge among the nations. They will beat their swords into plowshares, and every man will sit under his vine and fig tree, unafraid (3–4).",
         "Others walk in the names of their gods, but “we will walk in the name of the LORD our God for ever and ever” (5).",
         "The LORD will gather the lame and the outcast, make them a strong nation, and reign over them in mount Zion for ever. The kingdom will come back to the tower of the flock (6–8).",
-        "Like a woman in labor, Zion will go out to Babylon, and there the LORD will redeem her (9–10).",
+        "Like a woman in labour, Zion will go out to Babylon, and there the LORD will redeem her (9–10).",
         "The nations gather to gloat over Zion, not knowing God is gathering them like sheaves to the threshing floor (11–13)."
       ],
       "key": {
         "ref": "Micah 4:3",
         "text": "And he shall judge among many people, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more."
       },
-      "big": "History is headed for the LORD's reign. He teaches the nations His ways, turns weapons into tools, gathers the limping, and redeems His people even in the place of their captivity."
+      "big": "History is headed for the LORD's reign. He teaches the nations his ways, turns weapons into tools, gathers the limping, and redeems his people even in the place of their captivity."
     }
   },
   {
@@ -4132,16 +4132,16 @@ window.STUDIES = [
       "story": [
         "Jerusalem, the “daughter of troops,” is besieged, and her ruler, the judge of Israel, is struck on the cheek (1).",
         "But out of little Bethlehem Ephratah will come a Ruler in Israel “whose goings forth have been from of old, from everlasting” (2). Matthew 2:6 shows it was fulfilled in Jesus.",
-        "God gives His people up until she that travails brings forth; then the Ruler stands and feeds His flock in the LORD's strength, great to the ends of the earth (3–4).",
+        "God gives his people up until she that travails brings forth; then the Ruler stands and feeds his flock in the LORD's strength, great to the ends of the earth (3–4).",
         "“This man shall be the peace” when the Assyrian comes; seven shepherds and eight principal men will be raised up (5–6).",
         "The remnant of Jacob will be like dew from the LORD and like a lion among the nations (7–9).",
-        "In that day God will cut off horses, chariots, strongholds, witchcraft, idols and groves, and bring judgment on the nations that refuse Him (10–15)."
+        "In that day God will cut off horses, chariots, strongholds, witchcraft, idols and groves, and bring judgment on the nations that refuse him (10–15)."
       ],
       "key": {
         "ref": "Micah 5:2",
         "text": "But thou, Bethlehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting."
       },
-      "big": "God picked the little town over the palace. The Ruler born in Bethlehem had no beginning, rules like a shepherd, and is Himself our peace, and He clears away everything we lean on in His place."
+      "big": "God picked the little town over the palace. The Ruler born in Bethlehem had no beginning, rules like a shepherd, and is himself our peace, and he clears away everything we lean on in his place."
     }
   },
   {
@@ -4152,7 +4152,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Micah 6",
     "sub": "What doth the LORD require?",
-    "about": "God takes His people to court with the mountains as witnesses, and then tells them, plainly, what He has wanted all along.",
+    "about": "God takes his people to court with the mountains as witnesses, and then tells them, plainly, what he has wanted all along.",
     "tags": [
       "God's faithfulness",
       "Remembering",
@@ -4183,8 +4183,8 @@ window.STUDIES = [
         "israel"
       ],
       "story": [
-        "The LORD brings a lawsuit against His people and calls the mountains to hear it (1–2).",
-        "“O my people, what have I done unto thee?” He reminds them how He redeemed them from Egypt, led them, and turned Balaam's curse into a blessing (3–5).",
+        "The LORD brings a lawsuit against his people and calls the mountains to hear it (1–2).",
+        "“O my people, what have I done unto thee?” He reminds them how he redeemed them from Egypt, led them, and turned Balaam's curse into a blessing (3–5).",
         "A man asks what he can bring to God: calves, rams, rivers of oil, even his firstborn (6–7).",
         "God has already shown him: “to do justly, and to love mercy, and to walk humbly with thy God” (8).",
         "The city is full of crooked scales, violence and lies, so God's rod will fall: they will eat and not be satisfied, sow and not reap (9–15).",
@@ -4194,7 +4194,7 @@ window.STUDIES = [
         "ref": "Micah 6:8",
         "text": "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"
       },
-      "big": "God has never done His people wrong, and His favor can't be bought. Having redeemed us, He asks us to do justly, love mercy, and walk humbly with Him, because sin's crooked gains never satisfy."
+      "big": "God has never done his people wrong, and his favour can't be bought. Having redeemed us, he asks us to do justly, love mercy, and walk humbly with him, because sin's crooked gains never satisfy."
     }
   },
   {
@@ -4238,14 +4238,14 @@ window.STUDIES = [
         "Rulers and judges take bribes and wrap it up together; no friend can be trusted, and a man's enemies are in his own house (3–6).",
         "“Therefore I will look unto the LORD … my God will hear me.” “When I fall, I shall arise; when I sit in darkness, the LORD shall be a light unto me” (7–8).",
         "He bears God's indignation because he has sinned, until God pleads his cause and brings him to the light; the gloating enemy is shamed (9–10).",
-        "A day of building comes: people stream in from Assyria to the river, from sea to sea; Micah prays for God to shepherd His flock, and God promises wonders like the Exodus (11–17).",
-        "“Who is a God like unto thee, that pardoneth iniquity?” He delights in mercy, casts all their sins into the depths of the sea, and keeps His oath to Abraham and Jacob (18–20)."
+        "A day of building comes: people stream in from Assyria to the river, from sea to sea; Micah prays for God to shepherd his flock, and God promises wonders like the Exodus (11–17).",
+        "“Who is a God like unto thee, that pardoneth iniquity?” He delights in mercy, casts all their sins into the depths of the sea, and keeps his oath to Abraham and Jacob (18–20)."
       ],
       "key": {
         "ref": "Micah 7:18",
         "text": "Who is a God like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy."
       },
-      "big": "When people fail us and we fail God, we look up. A fall is not the end for God's people: the LORD is our light, He pleads our cause, and He casts forgiven sins into the depths of the sea. No one is like Him."
+      "big": "When people fail us and we fail God, we look up. A fall is not the end for God's people: the LORD is our light, he pleads our cause, and he casts forgiven sins into the depths of the sea. No one is like him."
     }
   },
   {
@@ -4256,7 +4256,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Nahum 1",
     "sub": "A strong hold in the day of trouble",
-    "about": "More than a hundred years after Nineveh repented at Jonah's preaching, it has gone back to its cruelty. God's patience is long, but it has an end, and so does the yoke Assyria laid on His people.",
+    "about": "More than a hundred years after Nineveh repented at Jonah's preaching, it has gone back to its cruelty. God's patience is long, but it has an end, and so does the yoke Assyria laid on his people.",
     "tags": [
       "Who God is",
       "Patience",
@@ -4283,9 +4283,9 @@ window.STUDIES = [
       ],
       "story": [
         "“The burden of Nineveh”: a vision given to Nahum, whose name means comfort (1).",
-        "The LORD is jealous and avenges; He is slow to anger and great in power, and will not at all acquit the wicked (2–3).",
-        "The sea, the rivers, Bashan, Carmel, Lebanon and the mountains all shake and wither before Him: who can stand? (4–6).",
-        "The LORD is good, a strong hold in the day of trouble, and He knows those who trust Him; His enemies He overruns like a flood (7–8).",
+        "The LORD is jealous and avenges; he is slow to anger and great in power, and will not at all acquit the wicked (2–3).",
+        "The sea, the rivers, Bashan, Carmel, Lebanon and the mountains all shake and wither before him: who can stand? (4–6).",
+        "The LORD is good, a strong hold in the day of trouble, and he knows those who trust him; his enemies he overruns like a flood (7–8).",
         "Affliction will not rise a second time; the plotters against the LORD are tangled thorns and dry stubble (9–11).",
         "God will break Assyria's yoke off Judah, cut off Nineveh's name and idols, and make its grave (12–14).",
         "Behold on the mountains the feet of him that brings good tidings: Judah, keep your feasts and your vows (15)."
@@ -4294,7 +4294,7 @@ window.STUDIES = [
         "ref": "Nahum 1:7",
         "text": "The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him."
       },
-      "big": "God is jealous and just, and slow to anger, but slow is not never. To His enemies He is a flood; to those who trust Him He is good, a strong hold in the day of trouble, and He breaks yokes His people cannot break."
+      "big": "God is jealous and just, and slow to anger, but slow is not never. To his enemies he is a flood; to those who trust him he is good, a strong hold in the day of trouble, and he breaks yokes his people cannot break."
     }
   },
   {
@@ -4339,7 +4339,7 @@ window.STUDIES = [
         "ref": "Nahum 2:13",
         "text": "Behold, I am against thee, saith the LORD of hosts, and I will burn her chariots in the smoke, and the sword shall devour thy young lions: and I will cut off thy prey from the earth, and the voice of thy messengers shall no more be heard."
       },
-      "big": "When the LORD of hosts says “I am against thee,” no wall, river, army or treasure can stand. He takes up the cause of His robbed people, and the God who was against proud Nineveh is for those who trust Him."
+      "big": "When the LORD of hosts says “I am against thee,” no wall, river, army or treasure can stand. He takes up the cause of his robbed people, and the God who was against proud Nineveh is for those who trust him."
     }
   },
   {
@@ -4388,7 +4388,7 @@ window.STUDIES = [
         "ref": "Nahum 3:1",
         "text": "Woe to the bloody city! it is all full of lies and robbery; the prey departeth not;"
       },
-      "big": "God judged Nineveh for real blood, lies and robbery, after giving it every chance since Jonah. Hidden sin comes out, no preparation saves a man from God, and the world's shepherds sleep, but the Good Shepherd never does, and by His stripes we can be healed."
+      "big": "God judged Nineveh for real blood, lies and robbery, after giving it every chance since Jonah. Hidden sin comes out, no preparation saves a man from God, and the world's shepherds sleep, but the Good Shepherd never does, and by his stripes we can be healed."
     }
   },
   {
@@ -4399,7 +4399,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Habakkuk 1",
     "sub": "How long, LORD?",
-    "about": "A prophet looks at the wrong all around him and asks God why He does nothing. God's answer is harder than the question.",
+    "about": "A prophet looks at the wrong all around him and asks God why he does nothing. God's answer is harder than the question.",
     "tags": [
       "Honest prayer",
       "God's silence",
@@ -4425,15 +4425,15 @@ window.STUDIES = [
       ],
       "story": [
         "Habakkuk cries out: how long will God let violence, strife, and crooked justice go on in Judah (1–4)?",
-        "God answers: He is already at work. He is raising up the Chaldeans of Babylon, a fierce and fast nation, to judge Judah (5–11).",
+        "God answers: he is already at work. He is raising up the Chaldeans of Babylon, a fierce and fast nation, to judge Judah (5–11).",
         "Habakkuk holds on to who God is: everlasting, holy, “my God.” Judah will not die; Babylon is sent for correction (12).",
-        "But he asks again: how can a holy God use men worse than the ones He judges, who catch nations like fish and worship their own net (13–17)?"
+        "But he asks again: how can a holy God use men worse than the ones he judges, who catch nations like fish and worship their own net (13–17)?"
       ],
       "key": {
         "ref": "Habakkuk 1:2",
         "text": "O LORD, how long shall I cry, and thou wilt not hear! even cry out unto thee of violence, and thou wilt not save!"
       },
-      "big": "God welcomes honest questions. He may answer in ways we don't expect, but when we can't see what He is doing, we can stand on who He is."
+      "big": "God welcomes honest questions. He may answer in ways we don't expect, but when we can't see what he is doing, we can stand on who he is."
     }
   },
   {
@@ -4472,7 +4472,7 @@ window.STUDIES = [
         "God says to write the vision plainly. It has an appointed time: though it tarry, wait for it (2–3).",
         "The proud man is not upright, but the just shall live by his faith. The proud man's appetite, like the grave, is never satisfied (4–5).",
         "The nations Babylon crushed sing five woes over it: for plunder, greed, a city built with blood, getting a neighbour drunk to shame him, and dumb idols (6–19).",
-        "The earth will be filled with the knowledge of the glory of the LORD. The LORD is in His holy temple; let all the earth keep silence (14, 20)."
+        "The earth will be filled with the knowledge of the glory of the LORD. The LORD is in his holy temple; let all the earth keep silence (14, 20)."
       ],
       "key": {
         "ref": "Habakkuk 2:4",
@@ -4516,7 +4516,7 @@ window.STUDIES = [
       "story": [
         "Habakkuk has heard God's answer and is afraid. He prays: revive Your work, and in wrath remember mercy (1–2).",
         "He remembers God coming from Teman and Paran in blazing glory, shaking the mountains and the nations (3–7).",
-        "He retells the sea, the rivers, the trembling mountains, and the sun and moon standing still: God went out for the salvation of His people (8–15).",
+        "He retells the sea, the rivers, the trembling mountains, and the sun and moon standing still: God went out for the salvation of his people (8–15).",
         "He trembles at the coming invasion, but chooses to rest in the day of trouble (16).",
         "Even if the fig tree, vine, olive, fields, flock, and herd all fail, “yet I will rejoice in the LORD.” The LORD is his strength (17–19)."
       ],
@@ -4524,7 +4524,7 @@ window.STUDIES = [
         "ref": "Habakkuk 3:18",
         "text": "Yet I will rejoice in the LORD, I will joy in the God of my salvation."
       },
-      "big": "Joy in the Lord doesn't depend on circumstances. Remember what God has done, ask for mercy, rest in Him when afraid, and choose to rejoice in the God of your salvation."
+      "big": "Joy in the Lord doesn't depend on circumstances. Remember what God has done, ask for mercy, rest in him when afraid, and choose to rejoice in the God of your salvation."
     }
   },
   {
@@ -4569,14 +4569,14 @@ window.STUDIES = [
         "The word of the LORD comes to Zephaniah, four generations down from Hizkiah, in the days of King Josiah (1).",
         "God will sweep the land like the flood, then names what's in Jerusalem: Baal, the idol priests, rooftop star worship, men who swear by the LORD and by Malcham, and men who turned back (2–6).",
         "Hush: the day of the LORD is at hand. God has prepared a sacrifice, and Judah is it. He will punish the princes, the foreign fashions, and the violent (7–9).",
-        "A cry rises from the fish gate to the market. God will search Jerusalem with candles for the men settled on their lees who say He won't do anything (10–13).",
+        "A cry rises from the fish gate to the market. God will search Jerusalem with candles for the men settled on their lees who say he won't do anything (10–13).",
         "The great day is near: a day of wrath, darkness, and the trumpet. Neither silver nor gold will deliver them (14–18)."
       ],
       "key": {
         "ref": "Zephaniah 1:14",
         "text": "The great day of the LORD is near, it is near, and hasteth greatly, even the voice of the day of the LORD: the mighty man shall cry there bitterly."
       },
-      "big": "The day of the LORD is real, and nothing a man owns can buy him out of it. God won't share a divided heart, and He isn't asleep. The only safe place is in Him, through the blood of Christ."
+      "big": "The day of the LORD is real, and nothing a man owns can buy him out of it. God won't share a divided heart, and he isn't asleep. The only safe place is in him, through the blood of Christ."
     }
   },
   {
@@ -4587,7 +4587,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zephaniah 2",
     "sub": "Seek ye the LORD",
-    "about": "Before the day comes, God calls the humble to come and hide in Him. Then He turns to the nations on every side of Judah.",
+    "about": "Before the day comes, God calls the humble to come and hide in him. Then he turns to the nations on every side of Judah.",
     "tags": [
       "Seeking God",
       "Meekness",
@@ -4623,8 +4623,8 @@ window.STUDIES = [
       "story": [
         "Gather together before the day passes like chaff. Seek the LORD, seek righteousness, seek meekness: it may be ye shall be hid (1–3).",
         "West: the Philistine cities will be emptied, and the coast will become pasture for the remnant of Judah, whose captivity God will turn (4–7).",
-        "East: God has heard Moab and Ammon mock His people. They will become like Sodom and Gomorrah (8–10).",
-        "God will starve every idol, and men will worship Him from every place. South: the Ethiopians fall by His sword (11–12).",
+        "East: God has heard Moab and Ammon mock his people. They will become like Sodom and Gomorrah (8–10).",
+        "God will starve every idol, and men will worship him from every place. South: the Ethiopians fall by his sword (11–12).",
         "North: Assyria will be destroyed and proud Nineveh, which said “I am, and there is none beside me,” left to the birds and beasts (13–15)."
       ],
       "key": {
@@ -4642,7 +4642,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zephaniah 3",
     "sub": "He will joy over thee with singing",
-    "about": "The city that wouldn't listen hears one more hard word. Then comes one of the most tender promises in the Bible: God Himself, singing over His people.",
+    "about": "The city that wouldn't listen hears one more hard word. Then comes one of the most tender promises in the Bible: God himself, singing over his people.",
     "tags": [
       "Correction",
       "God's faithfulness",
@@ -4670,15 +4670,15 @@ window.STUDIES = [
       "story": [
         "Woe to the oppressing city: she wouldn't obey, take correction, trust, or draw near. Her leaders are lions and wolves (1–4).",
         "The just LORD is in her midst and never fails, every morning. He warned her by the fall of nations, but she rose early to sin (5–7).",
-        "After the fire on the nations, God gives the peoples a pure language to call on His name, even from beyond the rivers of Ethiopia (8–10).",
-        "He takes away shame and pride, and leaves an afflicted and poor people who trust in His name, with none to make them afraid (11–13).",
-        "Sing, O daughter of Zion! The LORD has taken away her judgments. He will rejoice over her with singing, save the lame, and bring His people home (14–20)."
+        "After the fire on the nations, God gives the peoples a pure language to call on his name, even from beyond the rivers of Ethiopia (8–10).",
+        "He takes away shame and pride, and leaves an afflicted and poor people who trust in his name, with none to make them afraid (11–13).",
+        "Sing, O daughter of Zion! The LORD has taken away her judgments. He will rejoice over her with singing, save the lame, and bring his people home (14–20)."
       ],
       "key": {
         "ref": "Zephaniah 3:17",
         "text": "The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing."
       },
-      "big": "God's judgment is real, but it isn't His last word. He takes away shame, keeps the humble, gathers the limping, and rejoices over His people with singing."
+      "big": "God's judgment is real, but it isn't his last word. He takes away shame, keeps the humble, gathers the limping, and rejoices over his people with singing."
     }
   },
   {
@@ -4689,7 +4689,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Haggai 1",
     "sub": "Consider your ways",
-    "about": "God's people came home from exile, roofed their own houses, and left His house in rubble. God tells them to stop and look at where that has got them.",
+    "about": "God's people came home from exile, roofed their own houses, and left his house in rubble. God tells them to stop and look at where that has got them.",
     "tags": [
       "Priorities",
       "Taking stock",
@@ -4717,14 +4717,14 @@ window.STUDIES = [
         "In about 520 BC, Haggai brings God's word to Zerubbabel the governor and Joshua the high priest. The people say it isn't time to build the LORD's house (1–2).",
         "God asks: is it time for you to live in panelled houses while My house lies waste (3–4)?",
         "“Consider your ways.” They sow much and reap little, and earn wages into a bag with holes (5–7).",
-        "Go up, bring wood, and build, and God will take pleasure in it. The drought came because they ran to their own houses and left His in ruins (8–11).",
+        "Go up, bring wood, and build, and God will take pleasure in it. The drought came because they ran to their own houses and left his in ruins (8–11).",
         "The leaders and the remnant obey and fear the LORD. God says, “I am with you,” stirs up their spirits, and in 23 days the work begins (12–15)."
       ],
       "key": {
         "ref": "Haggai 1:5",
         "text": "Now therefore thus saith the LORD of hosts; Consider your ways."
       },
-      "big": "Take an honest look at the road you're on and put God first. When His people turn back and obey, He meets them at once: “I am with you.”"
+      "big": "Take an honest look at the road you're on and put God first. When his people turn back and obey, he meets them at once: “I am with you.”"
     }
   },
   {
@@ -4735,7 +4735,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Haggai 2",
     "sub": "Be strong, and work",
-    "about": "The new temple looks like nothing next to the old one. God tells the builders to keep going: He is with them, and the best is still to come.",
+    "about": "The new temple looks like nothing next to the old one. God tells the builders to keep going: he is with them, and the best is still to come.",
     "tags": [
       "Small beginnings",
       "Courage",
@@ -4761,16 +4761,16 @@ window.STUDIES = [
       ],
       "story": [
         "The old men think the new house is nothing next to Solomon's. God says: be strong, and work, for I am with you, and My Spirit remains among you (1–5).",
-        "God will shake heaven, earth and the nations. The silver and gold are His, and the glory of this latter house will be greater than the former (6–9).",
+        "God will shake heaven, earth and the nations. The silver and gold are his, and the glory of this latter house will be greater than the former (6–9).",
         "Haggai asks the priests: holiness doesn't spread by touch, but uncleanness does. So the people's offerings were unclean (10–14).",
         "Their harvests had come up half or less, and still they didn't turn. But from the day the foundation was laid, God will bless them (15–19).",
-        "God will overthrow the thrones of kingdoms, and He will make Zerubbabel as a signet, for He has chosen him (20–23)."
+        "God will overthrow the thrones of kingdoms, and he will make Zerubbabel as a signet, for he has chosen him (20–23)."
       ],
       "key": {
         "ref": "Haggai 2:4",
         "text": "Yet now be strong, O Zerubbabel, saith the LORD; and be strong, O Joshua, son of Josedech, the high priest; and be strong, all ye people of the land, saith the LORD, and work: for I am with you, saith the LORD of hosts:"
       },
-      "big": "Don't despise a small start. The strength to keep going comes from the God who is with us, His blessing begins the day we turn back, and He keeps His promises, as He did in Jesus."
+      "big": "Don't despise a small start. The strength to keep going comes from the God who is with us, his blessing begins the day we turn back, and he keeps his promises, as he did in Jesus."
     }
   },
   {
@@ -4781,7 +4781,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 1",
     "sub": "Turn ye unto me",
-    "about": "God calls His people to turn back to Him. Then, in the night, a prophet sees horsemen among the myrtle trees, and hears God say He has come back to Jerusalem with mercy.",
+    "about": "God calls his people to turn back to him. Then, in the night, a prophet sees horsemen among the myrtle trees, and hears God say he has come back to Jerusalem with mercy.",
     "tags": [
       "Turning back",
       "The past",
@@ -4810,7 +4810,7 @@ window.STUDIES = [
       ],
       "story": [
         "God tells Zechariah to call the people back: “Turn ye unto me, and I will turn unto you.” Don't be like your fathers, who would not listen (1–4).",
-        "The fathers and the prophets are gone, but God's words took hold of them, just as He said (5–6).",
+        "The fathers and the prophets are gone, but God's words took hold of them, just as he said (5–6).",
         "In a night vision, a man on a red horse stands among the myrtle trees. His riders report that all the earth is at rest (7–11).",
         "The angel of the LORD pleads: how long, after seventy years, before You have mercy on Jerusalem? God answers with comfortable words (12–13).",
         "God is jealous for Jerusalem, angry with the nations that made her suffering worse, and has returned to her with mercies. He will yet comfort Zion and choose Jerusalem (14–17).",
@@ -4820,7 +4820,7 @@ window.STUDIES = [
         "ref": "Zechariah 1:3",
         "text": "Therefore say thou unto them, Thus saith the LORD of hosts; Turn ye unto me, saith the LORD of hosts, and I will turn unto you, saith the LORD of hosts."
       },
-      "big": "God calls His people to turn back, and He turns toward them. His word stands, His correction ends, and He comes back to His people with mercy."
+      "big": "God calls his people to turn back, and he turns toward them. His word stands, his correction ends, and he comes back to his people with mercy."
     }
   },
   {
@@ -4831,7 +4831,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 2",
     "sub": "A wall of fire",
-    "about": "A young man sets out to measure Jerusalem's walls. God says the city will overflow its walls, and He Himself will be the wall around it.",
+    "about": "A young man sets out to measure Jerusalem's walls. God says the city will overflow its walls, and he himself will be the wall around it.",
     "tags": [
       "Protection",
       "God's presence",
@@ -4861,15 +4861,15 @@ window.STUDIES = [
       "story": [
         "A man with a measuring line goes to measure Jerusalem (1–2).",
         "An angel runs to say Jerusalem will spill out like towns without walls, and the LORD will be a wall of fire around her and the glory in her midst (3–5).",
-        "God calls His people to flee from Babylon, the land of the north. Whoever touches them touches the apple of His eye (6–9).",
-        "Sing and rejoice: the LORD is coming to dwell among His people, and many nations will be joined to Him (10–11).",
-        "The LORD will inherit Judah as His portion in the holy land and choose Jerusalem again. Be silent, all flesh, before the LORD (12–13)."
+        "God calls his people to flee from Babylon, the land of the north. Whoever touches them touches the apple of his eye (6–9).",
+        "Sing and rejoice: the LORD is coming to dwell among his people, and many nations will be joined to him (10–11).",
+        "The LORD will inherit Judah as his portion in the holy land and choose Jerusalem again. Be silent, all flesh, before the LORD (12–13)."
       ],
       "key": {
         "ref": "Zechariah 2:5",
         "text": "For I, saith the LORD, will be unto her a wall of fire round about, and will be the glory in the midst of her."
       },
-      "big": "God Himself is the wall around His people and the glory in their midst. He calls us out of the old life, treasures us as the apple of His eye, and opens His door to every nation."
+      "big": "God himself is the wall around his people and the glory in their midst. He calls us out of the old life, treasures us as the apple of his eye, and opens his door to every nation."
     }
   },
   {
@@ -4909,13 +4909,13 @@ window.STUDIES = [
         "The LORD rebukes Satan: Joshua is a brand plucked out of the fire (2).",
         "Joshua's filthy garments are taken away, his iniquity is made to pass from him, and he is clothed with change of raiment and a fair mitre (3–5).",
         "The angel of the LORD charges him: if he walks in God's ways, he will keep God's house and have a place among those that stand by (6–7).",
-        "Joshua and his fellows are a sign: God will bring forth His servant the BRANCH, remove the iniquity of the land in one day, and bring peace under the vine and fig tree (8–10)."
+        "Joshua and his fellows are a sign: God will bring forth his servant the BRANCH, remove the iniquity of the land in one day, and bring peace under the vine and fig tree (8–10)."
       ],
       "key": {
         "ref": "Zechariah 3:4",
         "text": "And he answered and spake unto those that stood before him, saying, Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment."
       },
-      "big": "God answers the accuser, takes away our filth, and clothes us clean, before we have done a thing. Then He calls us to walk in His ways. It all points to the BRANCH, who would take sin away in one day."
+      "big": "God answers the accuser, takes away our filth, and clothes us clean, before we have done a thing. Then he calls us to walk in his ways. It all points to the BRANCH, who would take sin away in one day."
     }
   },
   {
@@ -4959,7 +4959,7 @@ window.STUDIES = [
         "ref": "Zechariah 4:6",
         "text": "Then he answered and spake unto me, saying, This is the word of the LORD unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith the LORD of hosts."
       },
-      "big": "God's work is done by His Spirit, not by human strength. He finishes what He starts, it is grace from first to last, and no beginning is too small for Him."
+      "big": "God's work is done by his Spirit, not by human strength. He finishes what he starts, it is grace from first to last, and no beginning is too small for him."
     }
   },
   {
@@ -5001,7 +5001,7 @@ window.STUDIES = [
         "ref": "Zechariah 5:4",
         "text": "I will bring it forth, saith the LORD of hosts, and it shall enter into the house of the thief, and into the house of him that sweareth falsely by my name: and it shall remain in the midst of his house, and shall consume it with the timber thereof and the stones thereof."
       },
-      "big": "Sin hidden at home doesn't stay hidden, and God's law pronounces a curse on it. But God also removes wickedness from His people, and in Christ, who became a curse for us, the guilty are set free."
+      "big": "Sin hidden at home doesn't stay hidden, and God's law pronounces a curse on it. But God also removes wickedness from his people, and in Christ, who became a curse for us, the guilty are set free."
     }
   },
   {
@@ -5053,7 +5053,7 @@ window.STUDIES = [
         "ref": "Zechariah 6:13",
         "text": "Even he shall build the temple of the LORD; and he shall bear the glory, and shall sit and rule upon his throne; and he shall be a priest upon his throne: and the counsel of peace shall be between them both."
       },
-      "big": "God rules all the earth and deals fully with evil. The BRANCH, Jesus, is both Priest and King: He offered Himself for us and now reigns, and He brings the far-off near."
+      "big": "God rules all the earth and deals fully with evil. The BRANCH, Jesus, is both Priest and King: he offered himself for us and now reigns, and he brings the far-off near."
     }
   },
   {
@@ -5064,7 +5064,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 7",
     "sub": "Did ye at all fast unto me?",
-    "about": "Men come asking whether to keep an old fast. God answers with a better question: who was it all for? And He reminds them what He wanted all along.",
+    "about": "Men come asking whether to keep an old fast. God answers with a better question: who was it all for? And he reminds them what he wanted all along.",
     "tags": [
       "The heart",
       "For whom?",
@@ -5094,13 +5094,13 @@ window.STUDIES = [
         "The former prophets had already said it, back when Jerusalem was full and prosperous (7).",
         "God's word was always: judge truly, show mercy, don't oppress the widow, the fatherless, the stranger or the poor, and don't plot evil in your heart (8–10).",
         "Their fathers refused, shrugged, stopped their ears, and made their hearts as an adamant stone, so great wrath came (11–12).",
-        "As they would not hear God, He would not hear them. He scattered them with a whirlwind, and the pleasant land was left desolate (13–14)."
+        "As they would not hear God, he would not hear them. He scattered them with a whirlwind, and the pleasant land was left desolate (13–14)."
       ],
       "key": {
         "ref": "Zechariah 7:5",
         "text": "Speak unto all the people of the land, and to the priests, saying, When ye fasted and mourned in the fifth and seventh month, even those seventy years, did ye at all fast unto me, even to me?"
       },
-      "big": "God wants our hearts, not empty rituals: mercy and justice toward people, and ears that listen to Him. A heart hardens one \"no\" at a time, but God still calls, and He can give a new heart."
+      "big": "God wants our hearts, not empty rituals: mercy and justice toward people, and ears that listen to him. A heart hardens one \"no\" at a time, but God still calls, and he can give a new heart."
     }
   },
   {
@@ -5139,9 +5139,9 @@ window.STUDIES = [
       "story": [
         "God is jealous for Zion with great jealousy. He returns to dwell in Jerusalem, the city of truth (1–3).",
         "Old men and women will sit in the streets, and boys and girls will play there. What seems marvellous to the remnant is not too hard for God (4–6).",
-        "He will gather His people from east and west: they shall be His people, and He their God (7–8).",
+        "He will gather his people from east and west: they shall be his people, and he their God (7–8).",
         "Let your hands be strong. Before the foundation was laid there was no wage and no peace, but now the seed will prosper (9–12).",
-        "As they were a curse among the nations, they will be a blessing. As God kept His word to punish, He will keep it to do good: fear not (13–15).",
+        "As they were a curse among the nations, they will be a blessing. As God kept his word to punish, he will keep it to do good: fear not (13–15).",
         "Speak the truth, judge with truth and peace, plot no evil, love no false oath (16–17).",
         "The four fasts will become joy, gladness and cheerful feasts (18–19).",
         "Many nations will come to seek the LORD in Jerusalem. Ten men will take hold of a Jew's robe: “We will go with you: for we have heard that God is with you” (20–23)."
@@ -5150,7 +5150,7 @@ window.STUDIES = [
         "ref": "Zechariah 8:3",
         "text": "Thus saith the LORD; I am returned unto Zion, and will dwell in the midst of Jerusalem: and Jerusalem shall be called a city of truth; and the mountain of the LORD of hosts the holy mountain."
       },
-      "big": "God loves His people with a fierce, faithful love. Nothing is too hard for Him: He turns a curse into a blessing and mourning into joy, and He calls us to build on truth."
+      "big": "God loves his people with a fierce, faithful love. Nothing is too hard for him: he turns a curse into a blessing and mourning into joy, and he calls us to build on truth."
     }
   },
   {
@@ -5195,18 +5195,18 @@ window.STUDIES = [
       "story": [
         "The burden of the LORD falls on Hadrach, Damascus and Hamath, and on rich Tyre and Zidon. Tyre's strong hold and silver cannot save her (1–4).",
         "The Philistine cities will fear and fall, yet a remnant of them will belong to God, like the Jebusites (5–7).",
-        "God will encamp about His house, so that no oppressor passes through (8).",
+        "God will encamp about his house, so that no oppressor passes through (8).",
         "Rejoice, daughter of Zion: your King comes, just and having salvation, lowly and riding upon an ass (9; Matthew 21:5, John 12:15).",
-        "He will cut off the chariot and the war horse and speak peace to the nations; His rule will reach to the ends of the earth (10).",
+        "He will cut off the chariot and the war horse and speak peace to the nations; his rule will reach to the ends of the earth (10).",
         "By the blood of the covenant God frees prisoners from the waterless pit: “Turn you to the strong hold, ye prisoners of hope” (11–12).",
-        "God will use Judah and Ephraim like a bow against the sons of Greece, and He will defend and save His people (13–15).",
-        "They will be like the stones of a crown on His land. How great is His goodness, and how great is His beauty (16–17)."
+        "God will use Judah and Ephraim like a bow against the sons of Greece, and he will defend and save his people (13–15).",
+        "They will be like the stones of a crown on his land. How great is his goodness, and how great is his beauty (16–17)."
       ],
       "key": {
         "ref": "Zechariah 9:9",
         "text": "Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass."
       },
-      "big": "Walls and riches can't save, but God guards His own. Jesus is the just, saving, lowly King who rode into Jerusalem as Zechariah foretold, and He calls men in the pit “prisoners of hope.”"
+      "big": "Walls and riches can't save, but God guards his own. Jesus is the just, saving, lowly King who rode into Jerusalem as Zechariah foretold, and he calls men in the pit “prisoners of hope.”"
     }
   },
   {
@@ -5217,7 +5217,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 10",
     "sub": "I will bring them again",
-    "about": "Sheep without a shepherd, scattered to far countries. God whistles for them, gathers them, and brings them home as though He had never cast them off.",
+    "about": "Sheep without a shepherd, scattered to far countries. God whistles for them, gathers them, and brings them home as though he had never cast them off.",
     "tags": [
       "Prayer",
       "False comfort",
@@ -5243,19 +5243,19 @@ window.STUDIES = [
         "lebanon"
       ],
       "story": [
-        "Ask the LORD for rain in the time of the latter rain; He sends the showers (1).",
+        "Ask the LORD for rain in the time of the latter rain; he sends the showers (1).",
         "Idols and diviners comfort in vain, so the people wandered like sheep with no shepherd (2).",
-        "God is angry with the bad shepherds. He visits His flock and makes Judah His goodly horse. From Judah come the corner, the nail, the battle bow and every ruler (3–5).",
-        "God will strengthen Judah and save Joseph. They will be as though He had not cast them off, for He has mercy on them, and Ephraim's heart will rejoice in the LORD (6–7).",
-        "He will hiss for them and gather them, for He has redeemed them. Scattered far, they will remember Him and turn again (8–9).",
+        "God is angry with the bad shepherds. He visits his flock and makes Judah his goodly horse. From Judah come the corner, the nail, the battle bow and every ruler (3–5).",
+        "God will strengthen Judah and save Joseph. They will be as though he had not cast them off, for he has mercy on them, and Ephraim's heart will rejoice in the LORD (6–7).",
+        "He will hiss for them and gather them, for he has redeemed them. Scattered far, they will remember him and turn again (8–9).",
         "He will bring them out of Egypt and Assyria into Gilead and Lebanon, through the sea of affliction, and bring down the pride of their oppressors (10–11).",
-        "He will strengthen them in the LORD, and they will walk up and down in His name (12)."
+        "He will strengthen them in the LORD, and they will walk up and down in his name (12)."
       ],
       "key": {
         "ref": "Zechariah 10:6",
         "text": "And I will strengthen the house of Judah, and I will save the house of Joseph, and I will bring them again to place them; for I have mercy upon them: and they shall be as though I had not cast them off: for I am the LORD their God, and will hear them."
       },
-      "big": "False comfort leaves men scattered like sheep, but God is the Shepherd who calls, gathers and restores, as though He had never cast them off. However far a man has gone, he can remember God and turn again."
+      "big": "False comfort leaves men scattered like sheep, but God is the Shepherd who calls, gathers and restores, as though he had never cast them off. However far a man has gone, he can remember God and turn again."
     }
   },
   {
@@ -5266,7 +5266,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 11",
     "sub": "Thirty pieces of silver",
-    "about": "God sends a true shepherd to a flock that is being sold for slaughter. They pay Him off with the price of a slave.",
+    "about": "God sends a true shepherd to a flock that is being sold for slaughter. They pay him off with the price of a slave.",
     "tags": [
       "Shepherds",
       "God's name",
@@ -5306,7 +5306,7 @@ window.STUDIES = [
         "ref": "Zechariah 11:12",
         "text": "And I said unto them, If ye think good, give me my price; and if not, forbear. So they weighed for my price thirty pieces of silver."
       },
-      "big": "God sent His people a true Shepherd, and they valued Him at the price of a dead slave. Jesus was sold for those very thirty pieces. The world's shepherds use the sheep and leave; the Good Shepherd seeks the lost, heals the broken, and gives His life for the sheep."
+      "big": "God sent his people a true Shepherd, and they valued him at the price of a dead slave. Jesus was sold for those very thirty pieces. The world's shepherds use the sheep and leave; the Good Shepherd seeks the lost, heals the broken, and gives his life for the sheep."
     }
   },
   {
@@ -5317,7 +5317,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 12",
     "sub": "They shall look upon me",
-    "about": "The nations gather against Jerusalem, and God defends her. Then He pours out grace, and His people look on the One they pierced and weep.",
+    "about": "The nations gather against Jerusalem, and God defends her. Then he pours out grace, and his people look on the One they pierced and weep.",
     "tags": [
       "Who God is",
       "Protection",
@@ -5357,7 +5357,7 @@ window.STUDIES = [
         "ref": "Zechariah 12:10",
         "text": "And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn."
       },
-      "big": "God defends His people and makes the feeble strong. Then He pours out grace first, and they look on the One they pierced: Jesus, the LORD Himself. True sorrow for sin flows from grace, and every man must look to the cross for himself."
+      "big": "God defends his people and makes the feeble strong. Then he pours out grace first, and they look on the One they pierced: Jesus, the LORD Himself. True sorrow for sin flows from grace, and every man must look to the cross for himself."
     }
   },
   {
@@ -5368,7 +5368,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 13",
     "sub": "A fountain opened",
-    "about": "God opens a fountain to wash away sin and uncleanness, clears out the idols and the liars, and strikes His own Shepherd so that His people can be refined and brought home.",
+    "about": "God opens a fountain to wash away sin and uncleanness, clears out the idols and the liars, and strikes his own Shepherd so that his people can be refined and brought home.",
     "tags": [
       "Cleansing",
       "Idols",
@@ -5395,14 +5395,14 @@ window.STUDIES = [
         "The LORD cuts off the names of the idols and drives out the false prophets and the unclean spirit (2).",
         "Even a false prophet's own parents will not cover for his lies (3).",
         "False prophets are ashamed, drop their rough garments, claim to be farmers, and explain away the wounds in their hands (4–6).",
-        "The LORD calls the sword against His Shepherd, the man who is His fellow: smite the shepherd, and the sheep shall be scattered (7).",
+        "The LORD calls the sword against his Shepherd, the man who is his fellow: smite the shepherd, and the sheep shall be scattered (7).",
         "Two parts are cut off, and the third is brought through the fire and refined: “It is my people … The LORD is my God” (8–9)."
       ],
       "key": {
         "ref": "Zechariah 13:1",
         "text": "In that day there shall be a fountain opened to the house of David and to the inhabitants of Jerusalem for sin and for uncleanness."
       },
-      "big": "God opens a fountain that never runs dry for sin and for uncleanness. He clears out the idols and the lies, and He struck His own Shepherd, Jesus, so that His people could be refined, not destroyed, and hear Him say, “It is my people.”"
+      "big": "God opens a fountain that never runs dry for sin and for uncleanness. He clears out the idols and the lies, and he struck his own Shepherd, Jesus, so that his people could be refined, not destroyed, and hear him say, “It is my people.”"
     }
   },
   {
@@ -5413,7 +5413,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Zechariah 14",
     "sub": "King over all the earth",
-    "about": "The day of the LORD comes. In Jerusalem's darkest hour the LORD Himself stands on the Mount of Olives, living water flows, and He reigns as King over all the earth.",
+    "about": "The day of the LORD comes. In Jerusalem's darkest hour the LORD Himself stands on the Mount of Olives, living water flows, and he reigns as King over all the earth.",
     "tags": [
       "The day of the LORD",
       "His coming",
@@ -5448,7 +5448,7 @@ window.STUDIES = [
       ],
       "story": [
         "The day of the LORD comes: all nations gather against Jerusalem, and the city is taken (1–2).",
-        "Then the LORD goes out to fight; His feet stand on the Mount of Olives, and it splits to open a great valley of escape (3–5).",
+        "Then the LORD goes out to fight; his feet stand on the Mount of Olives, and it splits to open a great valley of escape (3–5).",
         "A day like no other: not day, nor night, but at evening time it shall be light (6–7).",
         "Living waters flow from Jerusalem east and west, summer and winter, and the LORD is King over all the earth (8–9).",
         "The land is leveled, Jerusalem is lifted up, and it will be safely inhabited with no more utter destruction (10–11).",
@@ -5471,7 +5471,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Malachi 1",
     "sub": "I have loved you",
-    "about": "God tells His people He loves them. They answer “Wherein?”, then bring Him blind, lame, and sick sacrifices.",
+    "about": "God tells his people he loves them. They answer “Wherein?”, then bring him blind, lame, and sick sacrifices.",
     "tags": [
       "God's love",
       "Jacob and Esau",
@@ -5501,7 +5501,7 @@ window.STUDIES = [
       "story": [
         "The burden of the LORD by Malachi: “I have loved you.” The people answer, “Wherein hast thou loved us?” (1–2).",
         "God points to Jacob and Esau: Edom's land lies waste and will not be rebuilt, but the LORD will be magnified from the border of Israel (2–5).",
-        "A son honours his father. Where is God's honour? The priests despise His name and offer polluted bread on His altar (6–7).",
+        "A son honours his father. Where is God's honour? The priests despise his name and offer polluted bread on his altar (6–7).",
         "They bring the blind, the lame, and the sick. They would never offer that to the governor. Better to shut the temple doors (8–10).",
         "God's name will be great among the Gentiles, from the rising of the sun to its going down. But the priests sniff, “What a weariness,” and the deceiver keeps his best for himself (11–14)."
       ],
@@ -5509,7 +5509,7 @@ window.STUDIES = [
         "ref": "Malachi 1:2",
         "text": "I have loved you, saith the LORD. Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith the LORD: yet I loved Jacob,"
       },
-      "big": "God loves His people, and the cross proves it. A man who knows he is loved gives God his first and best, not his leftovers."
+      "big": "God loves his people, and the cross proves it. A man who knows he is loved gives God his first and best, not his leftovers."
     }
   },
   {
@@ -5549,14 +5549,14 @@ window.STUDIES = [
         "God's covenant with Levi was life and peace. The law of truth was in his mouth, and he turned many from iniquity (5–7).",
         "These priests have left the way, caused many to stumble, and been partial in the law (8–9).",
         "One Father, one God, yet Judah deals treacherously and marries the daughter of a strange god (10–12).",
-        "They weep at the altar, but God won't accept their offerings, because He witnessed their covenant with the wife of their youth. He hates putting away (13–16).",
+        "They weep at the altar, but God won't accept their offerings, because he witnessed their covenant with the wife of their youth. He hates putting away (13–16).",
         "They weary the LORD by saying evil is good, and asking, “Where is the God of judgment?” (17)."
       ],
       "key": {
         "ref": "Malachi 2:10",
         "text": "Have we not all one father? hath not one God created us? why do we deal treacherously every man against his brother, by profaning the covenant of our fathers?"
       },
-      "big": "God keeps His covenants and expects His people to keep theirs, with Him, with each other, and in marriage. Where faith has been broken, He forgives those who confess and helps them keep faith from here."
+      "big": "God keeps his covenants and expects his people to keep theirs, with him, with each other, and in marriage. Where faith has been broken, he forgives those who confess and helps them keep faith from here."
     }
   },
   {
@@ -5567,7 +5567,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Malachi 3",
     "sub": "I change not",
-    "about": "God promises a messenger and then the Lord Himself, coming like a refiner's fire, and calls His people to return.",
+    "about": "God promises a messenger and then the Lord himself, coming like a refiner's fire, and calls his people to return.",
     "tags": [
       "The messenger",
       "The refiner",
@@ -5594,18 +5594,18 @@ window.STUDIES = [
         "jerusalem"
       ],
       "story": [
-        "“Behold, I will send my messenger.” Then the Lord will suddenly come to His temple, the messenger of the covenant (1). Jesus said the messenger was John the Baptist.",
-        "Who can stand when He appears? He is like a refiner's fire and fullers' sope. He will purify the sons of Levi (2–4).",
+        "“Behold, I will send my messenger.” Then the Lord will suddenly come to his temple, the messenger of the covenant (1). Jesus said the messenger was John the Baptist.",
+        "Who can stand when he appears? He is like a refiner's fire and fullers' sope. He will purify the sons of Levi (2–4).",
         "He will be a swift witness against sorcerers, adulterers, liars, and those who cheat workers and crush the widow, the fatherless, and the stranger (5).",
         "“I am the LORD, I change not.” Return unto Me, and I will return unto you. But they have robbed God in tithes and offerings (6–9).",
         "Bring the tithes into the storehouse, and God will open the windows of heaven and rebuke the devourer (10–12).",
-        "Some say, “It is vain to serve God.” Those who fear the LORD speak often to one another, and God writes a book of remembrance: they shall be His jewels (13–18)."
+        "Some say, “It is vain to serve God.” Those who fear the LORD speak often to one another, and God writes a book of remembrance: they shall be his jewels (13–18)."
       ],
       "key": {
         "ref": "Malachi 3:6",
         "text": "For I am the LORD, I change not; therefore ye sons of Jacob are not consumed."
       },
-      "big": "God never changes. That is why His people are not consumed. He purifies those He loves, calls them back, and remembers every man who fears Him."
+      "big": "God never changes. That is why his people are not consumed. He purifies those he loves, calls them back, and remembers every man who fears him."
     }
   },
   {
@@ -5616,7 +5616,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Malachi 4",
     "sub": "The Sun of righteousness",
-    "about": "The last chapter of the Old Testament: the day of the LORD, the Sun of righteousness with healing in His wings, and Elijah sent first.",
+    "about": "The last chapter of the Old Testament: the day of the LORD, the Sun of righteousness with healing in his wings, and Elijah sent first.",
     "tags": [
       "The day",
       "Healing",
@@ -5641,7 +5641,7 @@ window.STUDIES = [
       ],
       "story": [
         "The day is coming that will burn like an oven. The proud and the wicked will be stubble, with neither root nor branch (1).",
-        "But to those who fear His name, the Sun of righteousness will rise with healing in His wings, and they will go out like calves from the stall (2–3).",
+        "But to those who fear his name, the Sun of righteousness will rise with healing in his wings, and they will go out like calves from the stall (2–3).",
         "Remember the law of Moses, given at Horeb (4).",
         "God will send Elijah the prophet before the great and dreadful day of the LORD, to turn the hearts of fathers and children to each other (5–6). Jesus said John the Baptist was that Elias (Matthew 11:14).",
         "The Old Testament ends with the word “curse.” After about four hundred quiet years, John the Baptist comes preaching, and points to the Lamb of God (Matthew 3, John 1)."
@@ -5650,7 +5650,7 @@ window.STUDIES = [
         "ref": "Malachi 4:2",
         "text": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall."
       },
-      "big": "God will set all things right. For those who fear Him, that day is a sunrise. The Old Testament ends with a curse and a promise, and Jesus, who took the curse on Himself, keeps the promise."
+      "big": "God will set all things right. For those who fear him, that day is a sunrise. The Old Testament ends with a curse and a promise, and Jesus, who took the curse on himself, keeps the promise."
     }
   },
   {
@@ -5701,7 +5701,7 @@ window.STUDIES = [
         "ref": "Matthew 1:21",
         "text": "And she shall bring forth a son, and thou shalt call his name JESUS: for he shall save his people from their sins."
       },
-      "big": "Jesus is the promised King, born into real history and a family full of sinners and outsiders. His name says why He came: to save His people from their sins. In Him, God is with us."
+      "big": "Jesus is the promised King, born into real history and a family full of sinners and outsiders. His name says why he came: to save his people from their sins. In him, God is with us."
     }
   },
   {
@@ -5712,7 +5712,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 2",
     "sub": "Born King of the Jews",
-    "about": "Wise men travel far to worship the young King, Herod plots to kill Him, and God guards His Son all the way to Egypt and home to Nazareth.",
+    "about": "Wise men travel far to worship the young King, Herod plots to kill him, and God guards his Son all the way to Egypt and home to Nazareth.",
     "tags": [
       "Seeking Jesus",
       "Worship",
@@ -5749,7 +5749,7 @@ window.STUDIES = [
         "Wise men from the east come to Jerusalem asking, “Where is he that is born King of the Jews?” Herod is troubled (1–3).",
         "The chief priests and scribes know the answer from Micah: Bethlehem. Herod sends the wise men there, pretending he wants to worship too (4–8).",
         "The star leads them to the house. They fall down, worship the young child, and give gold, frankincense, and myrrh, then go home another way (9–12).",
-        "Warned in a dream, Joseph takes the child and His mother by night into Egypt: “Out of Egypt have I called my son” (13–15).",
+        "Warned in a dream, Joseph takes the child and his mother by night into Egypt: “Out of Egypt have I called my son” (13–15).",
         "Herod, furious, kills the little boys of Bethlehem, and Rachel weeps for her children, as Jeremiah said (16–18).",
         "After Herod dies, God brings the family back. Avoiding Archelaus in Judaea, they settle in Nazareth: “He shall be called a Nazarene” (19–23)."
       ],
@@ -5757,7 +5757,7 @@ window.STUDIES = [
         "ref": "Matthew 2:11",
         "text": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh."
       },
-      "big": "Outsiders came a long way to worship Jesus while the insiders stayed home. No king could touch God's Son before His time. God keeps His word, sees the suffering of the innocent, and leads those who obey Him one step at a time."
+      "big": "Outsiders came a long way to worship Jesus while the insiders stayed home. No king could touch God's Son before his time. God keeps his word, sees the suffering of the innocent, and leads those who obey him one step at a time."
     }
   },
   {
@@ -5809,7 +5809,7 @@ window.STUDIES = [
         "ref": "Matthew 3:17",
         "text": "And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased."
       },
-      "big": "Repentance means turning from sin to God, and a turned heart shows its fruit. No family line or religion can save. Jesus, the mightier One, stood in the sinners' place, and the Father declared His love for His Son."
+      "big": "Repentance means turning from sin to God, and a turned heart shows its fruit. No family line or religion can save. Jesus, the mightier One, stood in the sinners' place, and the Father declared his love for his Son."
     }
   },
   {
@@ -5820,7 +5820,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 4",
     "sub": "Tested, then sent",
-    "about": "Jesus answers the devil's three temptations with the Word of God, brings light to dark Galilee, and calls four fishermen to follow Him.",
+    "about": "Jesus answers the devil's three temptations with the Word of God, brings light to dark Galilee, and calls four fishermen to follow him.",
     "tags": [
       "Temptation",
       "The Word of God",
@@ -5860,17 +5860,17 @@ window.STUDIES = [
         "beyond-jordan"
       ],
       "story": [
-        "The Spirit leads Jesus into the wilderness. After forty days without food, the devil tells Him to turn stones into bread. Jesus answers, “It is written” (1–4).",
-        "On the pinnacle of the temple the devil quotes a psalm, and on a high mountain he offers all the kingdoms of the world for one act of worship. Jesus answers from Scripture each time and sends him away, and angels minister to Him (5–11).",
+        "The Spirit leads Jesus into the wilderness. After forty days without food, the devil tells him to turn stones into bread. Jesus answers, “It is written” (1–4).",
+        "On the pinnacle of the temple the devil quotes a psalm, and on a high mountain he offers all the kingdoms of the world for one act of worship. Jesus answers from Scripture each time and sends him away, and angels minister to him (5–11).",
         "When John is put in prison, Jesus leaves Nazareth for Capernaum. Isaiah's promise comes true: the people in darkness see a great light. Jesus begins to preach, “Repent” (12–17).",
         "By the Sea of Galilee, Jesus calls Simon Peter, Andrew, James and John: “Follow me, and I will make you fishers of men.” They leave their nets at once (18–22).",
-        "Jesus teaches, preaches and heals all through Galilee, and great crowds follow Him from every direction (23–25)."
+        "Jesus teaches, preaches and heals all through Galilee, and great crowds follow him from every direction (23–25)."
       ],
       "key": {
         "ref": "Matthew 4:4",
         "text": "But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God."
       },
-      "big": "Jesus beat temptation where we fall, with the Word of God, and He was tempted without sin. He brings light to the darkest places, and He calls ordinary men to follow Him and makes them into something new."
+      "big": "Jesus beat temptation where we fall, with the Word of God, and he was tempted without sin. He brings light to the darkest places, and he calls ordinary men to follow him and makes them into something new."
     }
   },
   {
@@ -5881,7 +5881,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 5",
     "sub": "The Sermon on the Mount",
-    "about": "On a hillside by the lake, Jesus tells who is truly blessed, calls His people salt and light, and shows that God's law reaches all the way down into the heart.",
+    "about": "On a hillside by the lake, Jesus tells who is truly blessed, calls his people salt and light, and shows that God's law reaches all the way down into the heart.",
     "tags": [
       "Blessed",
       "Humility",
@@ -5894,7 +5894,7 @@ window.STUDIES = [
     "url": "studies/matthew-05.html",
     "overview": {
       "where": "A hillside in Galilee, near Capernaum on the Sea of Galilee",
-      "when": "Early in Jesus' Galilean ministry, soon after He called His first disciples (about A.D. 28)",
+      "when": "Early in Jesus' Galilean ministry, soon after he called his first disciples (about A.D. 28)",
       "people": [
         "jesus",
         "disciples",
@@ -5911,17 +5911,17 @@ window.STUDIES = [
         "hell"
       ],
       "story": [
-        "Jesus goes up a mountain, sits down, and teaches His disciples. He calls blessed the poor in spirit, the mourners, the meek, the hungry for righteousness, the merciful, the pure in heart, the peacemakers, and the persecuted (1–12).",
+        "Jesus goes up a mountain, sits down, and teaches his disciples. He calls blessed the poor in spirit, the mourners, the meek, the hungry for righteousness, the merciful, the pure in heart, the peacemakers, and the persecuted (1–12).",
         "His people are the salt of the earth and the light of the world. Their good works should shine so that men glorify the Father (13–16).",
         "Jesus came not to destroy the law and the prophets but to fulfil them, and the righteousness that enters the kingdom must exceed that of the scribes and Pharisees (17–20).",
-        "Six times He says, “Ye have heard… But I say unto you”: anger is the root of murder, lust is adultery in the heart, marriage is meant to last, a man's plain word should be good, and he should not take revenge (21–42).",
+        "Six times he says, “Ye have heard… But I say unto you”: anger is the root of murder, lust is adultery in the heart, marriage is meant to last, a man's plain word should be good, and he should not take revenge (21–42).",
         "Love your enemies and pray for them, as the Father sends sun and rain on the evil and the good. “Be ye therefore perfect” (43–48)."
       ],
       "key": {
         "ref": "Matthew 5:3",
         "text": "Blessed are the poor in spirit: for theirs is the kingdom of heaven."
       },
-      "big": "God's blessing rests on men who know they need Him. Jesus looks past the outside to the heart, and no man's own righteousness is enough; the righteousness that saves is God's gift through faith in Christ, and it shows in mercy, honesty, peacemaking, and love for enemies."
+      "big": "God's blessing rests on men who know they need him. Jesus looks past the outside to the heart, and no man's own righteousness is enough; the righteousness that saves is God's gift through faith in Christ, and it shows in mercy, honesty, peacemaking, and love for enemies."
     }
   },
   {
@@ -5966,7 +5966,7 @@ window.STUDIES = [
         "Pray simply, without vain repetitions. Jesus gives the pattern: “Our Father which art in heaven” (7–13).",
         "Forgive others, as we ask God to forgive us (14–15).",
         "Lay up treasure in heaven, keep a single eye, and serve one master: “Ye cannot serve God and mammon” (19–24).",
-        "Take no thought for food or clothes. The Father feeds the birds and dresses the lilies. Seek His kingdom first, and live one day at a time (25–34)."
+        "Take no thought for food or clothes. The Father feeds the birds and dresses the lilies. Seek his kingdom first, and live one day at a time (25–34)."
       ],
       "big": "The Christian life is lived before the Father's eyes. He sees what's done in secret, forgives the forgiving, and knows what we need, so we can stop performing, stop hoarding, and stop worrying.",
       "key": {
@@ -6012,10 +6012,10 @@ window.STUDIES = [
         "Judge not: get the beam out of your own eye before the mote in your brother's. Don't cast pearls before swine (1–6).",
         "Ask, seek, knock. If sinful fathers give good gifts, how much more the Father in heaven. Do to others what you'd want done to you (7–12).",
         "Enter the strait gate. Many take the broad way to destruction; few find the narrow way to life (13–14).",
-        "Beware of false prophets; you'll know them by their fruits. Not everyone who says “Lord, Lord” enters; to some He'll say, “I never knew you” (15–23).",
-        "The wise man hears and does, and his house on the rock stands; the foolish man's house on the sand falls. The people are astonished at His authority (24–29)."
+        "Beware of false prophets; you'll know them by their fruits. Not everyone who says “Lord, Lord” enters; to some he'll say, “I never knew you” (15–23).",
+        "The wise man hears and does, and his house on the rock stands; the foolish man's house on the sand falls. The people are astonished at his authority (24–29)."
       ],
-      "big": "Hearing Jesus isn't enough. The way to life is narrow and runs through Him alone, and the life built on Him, hearing and doing His words, stands when the storm comes.",
+      "big": "Hearing Jesus isn't enough. The way to life is narrow and runs through him alone, and the life built on him, hearing and doing his words, stands when the storm comes.",
       "key": {
         "ref": "Matthew 7:24",
         "text": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:"
@@ -6030,7 +6030,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 8",
     "sub": "What manner of man is this?",
-    "about": "Jesus comes down the mountain and shows His authority over leprosy, sickness, the wind and the sea, and demons.",
+    "about": "Jesus comes down the mountain and shows his authority over leprosy, sickness, the wind and the sea, and devils.",
     "tags": [
       "Compassion",
       "Faith",
@@ -6068,11 +6068,11 @@ window.STUDIES = [
         "Coming down the mountain, Jesus touches a leper and makes him clean (1–4).",
         "A Roman centurion asks Jesus only to speak the word. Jesus marvels at his faith, and the servant is healed that same hour (5–13).",
         "Jesus heals Peter's wife's mother and many more that evening, fulfilling Isaiah: “Himself took our infirmities” (14–17).",
-        "Two would-be followers learn the cost: the Son of man has nowhere to lay His head, and He comes first (18–22).",
+        "Two would-be followers learn the cost: the Son of man has nowhere to lay his head, and he comes first (18–22).",
         "Jesus sleeps through a great tempest, then rebukes the wind and the sea: “What manner of man is this” (23–27).",
-        "Among the tombs of the Gergesenes, He sends the devils out of two men into a herd of swine, and the city begs Him to leave (28–34)."
+        "Among the tombs of the Gergesenes, he sends the devils out of two men into a herd of swine, and the city begs him to leave (28–34)."
       ],
-      "big": "Jesus has authority over sickness, nature, and demons, and He uses it with compassion. No one is too unclean, too foreign, or too far gone for His word and His touch.",
+      "big": "Jesus has authority over sickness, nature, and devils, and he uses it with compassion. No one is too unclean, too foreign, or too far gone for his word and his touch.",
       "key": {
         "ref": "Matthew 8:27",
         "text": "But the men marvelled, saying, What manner of man is this, that even the winds and the sea obey him!"
@@ -6118,18 +6118,18 @@ window.STUDIES = [
         "israel"
       ],
       "story": [
-        "Back in Capernaum, friends carry a paralyzed man to Jesus. He forgives the man's sins, then proves His authority by telling him to walk (1–8).",
+        "Back in Capernaum, friends carry a paralyzed man to Jesus. He forgives the man's sins, then proves his authority by telling him to walk (1–8).",
         "Jesus calls Matthew from his tax booth and eats with publicans and sinners: “They that be whole need not a physician” (9–13).",
-        "Asked why His disciples don't fast, He calls Himself the bridegroom and says new wine needs new bottles (14–17).",
-        "A ruler's daughter dies. On the way, a woman sick for twelve years touches His hem and is made whole. Jesus takes the girl by the hand, and she arises (18–26).",
-        "Two blind men call Him the Son of David and see; a dumb man speaks. The crowds marvel, but the Pharisees blame the prince of the devils (27–34).",
-        "Moved with compassion for people scattered like sheep with no shepherd, Jesus tells His disciples to pray for labourers (35–38)."
+        "Asked why his disciples don't fast, he calls himself the bridegroom and says new wine needs new bottles (14–17).",
+        "A ruler's daughter dies. On the way, a woman sick for twelve years touches his hem and is made whole. Jesus takes the girl by the hand, and she arises (18–26).",
+        "Two blind men call him the Son of David and see; a dumb man speaks. The crowds marvel, but the Pharisees blame the prince of the devils (27–34).",
+        "Moved with compassion for people scattered like sheep with no shepherd, Jesus tells his disciples to pray for labourers (35–38)."
       ],
       "key": {
         "ref": "Matthew 9:12",
         "text": "But when Jesus heard that, he said unto them, They that be whole need not a physician, but they that are sick."
       },
-      "big": "Jesus came for the sick, not the healthy. He has authority to forgive every sin, He makes new men instead of patching old ones, and He looks at hurting people with compassion."
+      "big": "Jesus came for the sick, not the healthy. He has authority to forgive every sin, he makes new men instead of patching old ones, and he looks at hurting people with compassion."
     }
   },
   {
@@ -6140,7 +6140,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 10",
     "sub": "Sent out",
-    "about": "Jesus names twelve ordinary men, gives them His power, and sends them out like sheep among wolves, with a Father who counts every hair.",
+    "about": "Jesus names twelve ordinary men, gives them his power, and sends them out like sheep among wolves, with a Father who counts every hair.",
     "tags": [
       "Calling",
       "Grace",
@@ -6174,17 +6174,17 @@ window.STUDIES = [
         "sodom-and-gomorrah"
       ],
       "story": [
-        "Jesus gives His twelve disciples power over unclean spirits and every sickness. Their names: fishermen, a publican, a zealot, and Judas Iscariot (1–4).",
+        "Jesus gives his twelve disciples power over unclean spirits and every sickness. Their names: fishermen, a publican, a zealot, and Judas Iscariot (1–4).",
         "He sends them to the lost sheep of Israel to preach and heal: “freely ye have received, freely give.” They travel light and offer peace to every house (5–15).",
         "Sheep among wolves: they will face councils, scourging, and divided families, but the Spirit of their Father will give them words, and he that endureth to the end shall be saved (16–25).",
         "Fear not: not one sparrow falls without the Father, and the hairs of their heads are all numbered (26–31).",
-        "Confess Him before men. He brings a sword that can divide a home. Take up the cross, lose your life for Him and find it. Not even a cup of cold water goes unrewarded (32–42)."
+        "Confess him before men. He brings a sword that can divide a home. Take up the cross, lose your life for him and find it. Not even a cup of cold water goes unrewarded (32–42)."
       ],
       "key": {
         "ref": "Matthew 10:31",
         "text": "Fear ye not therefore, ye are of more value than many sparrows."
       },
-      "big": "Jesus sends ordinary men out with His power and His message. It will cost them, but the Father watches over every hair, and whoever loses his life for Christ finds it."
+      "big": "Jesus sends ordinary men out with his power and his message. It will cost them, but the Father watches over every hair, and whoever loses his life for Christ finds it."
     }
   },
   {
@@ -6195,7 +6195,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 11",
     "sub": "Come unto me",
-    "about": "John doubts in Herod's prison, Jesus defends him, the crowds and three favored towns won't repent, and Jesus invites every weary man to come and find rest.",
+    "about": "John doubts in Herod's prison, Jesus defends him, the crowds and three favoured towns won't repent, and Jesus invites every weary man to come and find rest.",
     "tags": [
       "Doubt",
       "John the Baptist",
@@ -6230,14 +6230,14 @@ window.STUDIES = [
         "John, in prison, sends two disciples to ask, “Art thou he that should come?” Jesus answers with what they see: the blind see, the lame walk, the poor hear the gospel (2–6).",
         "Jesus tells the crowds John is more than a prophet: the messenger Malachi promised, the Elias who was to come (7–15).",
         "This generation is like children who won't play: John was too strict for them, and Jesus, the friend of publicans and sinners, too loose (16–19).",
-        "Jesus grieves over Chorazin, Bethsaida, and Capernaum, which saw His mighty works and repented not (20–24).",
-        "He thanks the Father for revealing these things to babes, and invites all who labour and are heavy laden to come to Him for rest (25–30)."
+        "Jesus grieves over Chorazin, Bethsaida, and Capernaum, which saw his mighty works and repented not (20–24).",
+        "He thanks the Father for revealing these things to babes, and invites all who labour and are heavy laden to come to him for rest (25–30)."
       ],
       "key": {
         "ref": "Matthew 11:28",
         "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
       },
-      "big": "Jesus meets honest doubt with evidence, not scolding. Seeing much and not repenting is dangerous, but the door is open to every humble, weary man: come to Him, take His yoke, and find rest for your soul."
+      "big": "Jesus meets honest doubt with evidence, not scolding. Seeing much and not repenting is dangerous, but the door is open to every humble, weary man: come to him, take his yoke, and find rest for your soul."
     }
   },
   {
@@ -6248,7 +6248,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 12",
     "sub": "A greater is here",
-    "about": "The Pharisees fight Jesus over the sabbath and say His power is from the devil. He shows Himself the merciful Lord of the sabbath, the gentle Servant, the One stronger than Satan, and the head of a new family.",
+    "about": "The Pharisees fight Jesus over the sabbath and say his power is from the devil. He shows himself the merciful Lord of the sabbath, the gentle Servant, the One stronger than Satan, and the head of a new family.",
     "tags": [
       "Mercy",
       "The sabbath",
@@ -6288,11 +6288,11 @@ window.STUDIES = [
       ],
       "story": [
         "The disciples pluck grain on the sabbath. Jesus answers the Pharisees with David and the shewbread, the priests in the temple, and Hosea: “I will have mercy, and not sacrifice.” He is Lord of the sabbath (1–8).",
-        "In the synagogue Jesus heals a man's withered hand on the sabbath. The Pharisees go out and plot to destroy Him (9–14).",
+        "In the synagogue Jesus heals a man's withered hand on the sabbath. The Pharisees go out and plot to destroy him (9–14).",
         "Jesus withdraws and heals them all quietly, fulfilling Isaiah: “A bruised reed shall he not break” (15–21).",
-        "He heals a blind and dumb man held by a devil. The Pharisees say He works by Beelzebub. Jesus answers: a divided kingdom can't stand, and He has bound the strong man (22–30).",
+        "He heals a blind and dumb man held by a devil. The Pharisees say he works by Beelzebub. Jesus answers: a divided kingdom can't stand, and he has bound the strong man (22–30).",
         "All manner of sin can be forgiven, but not blasphemy against the Holy Ghost. A tree is known by its fruit, and words show the heart (31–37).",
-        "Asked for a sign, Jesus gives the sign of Jonas. He warns of the house swept and left empty, and names as His family whoever does the will of His Father (38–50)."
+        "Asked for a sign, Jesus gives the sign of Jonas. He warns of the house swept and left empty, and names as his family whoever does the will of his Father (38–50)."
       ],
       "key": {
         "ref": "Matthew 12:20",
@@ -6309,7 +6309,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 13",
     "sub": "Treasure hid in a field",
-    "about": "From a boat by the lake, Jesus tells seven stories of the kingdom of heaven, from a sower's seed to a net full of fish. Then His hometown can't see past the carpenter's son.",
+    "about": "From a boat by the lake, Jesus tells seven stories of the kingdom of heaven, from a sower's seed to a net full of fish. Then his hometown can't see past the carpenter's son.",
     "tags": [
       "Hearing",
       "Parables",
@@ -6320,7 +6320,7 @@ window.STUDIES = [
     ],
     "url": "studies/matthew-13.html",
     "overview": {
-      "where": "By the Sea of Galilee, most likely near Capernaum, then Nazareth, His own country",
+      "where": "By the Sea of Galilee, most likely near Capernaum, then Nazareth, his own country",
       "when": "The same day as Matthew 12, in Jesus' work in Galilee, about AD 28",
       "people": [
         "jesus",
@@ -6335,10 +6335,10 @@ window.STUDIES = [
         "synagogue"
       ],
       "story": [
-        "From a boat, Jesus tells the crowd of a sower whose seed falls on the way side, stony places, thorns, and good ground. He tells His disciples why He speaks in parables, as Isaiah foretold, and explains the four kinds of hearers (1–23).",
+        "From a boat, Jesus tells the crowd of a sower whose seed falls on the way side, stony places, thorns, and good ground. He tells his disciples why he speaks in parables, as Isaiah foretold, and explains the four kinds of hearers (1–23).",
         "An enemy sows tares among the wheat, and the owner lets both grow until the harvest. A mustard seed becomes a tree, and a little leaven works through the whole batch (24–35).",
         "In the house Jesus explains the tares: the field is the world, the enemy is the devil, and the angels will sort at the end. Then three more: a treasure hid in a field, a pearl of great price, and a net that is sorted on the shore (36–52).",
-        "In His own country the people are astonished but offended: “Is not this the carpenter's son?” He did not many mighty works there because of their unbelief (53–58)."
+        "In his own country the people are astonished but offended: “Is not this the carpenter's son?” He did not many mighty works there because of their unbelief (53–58)."
       ],
       "key": {
         "ref": "Matthew 13:44",
@@ -6386,15 +6386,15 @@ window.STUDIES = [
       ],
       "story": [
         "Herod the tetrarch hears of Jesus and fears John the Baptist has risen. Herod had jailed John for saying he could not have his brother Philip's wife. At Herod's birthday, a rash oath and a girl's request cost John his head (1–12).",
-        "Jesus withdraws by ship to a desert place, but the crowds follow on foot. Moved with compassion, He heals them, then feeds about five thousand men, besides women and children, with five loaves and two fishes, and twelve baskets are left over (13–21).",
-        "He sends the disciples across the lake and prays alone on a mountain. In the fourth watch He comes walking on the sea: “It is I; be not afraid.” Peter walks on the water, sinks when he sees the wind, and cries, “Lord, save me.” Jesus catches him, and they worship Him as the Son of God (22–33).",
-        "At Gennesaret the sick are brought from all around, and as many as touch the hem of His garment are made perfectly whole (34–36)."
+        "Jesus withdraws by ship to a desert place, but the crowds follow on foot. Moved with compassion, he heals them, then feeds about five thousand men, besides women and children, with five loaves and two fishes, and twelve baskets are left over (13–21).",
+        "He sends the disciples across the lake and prays alone on a mountain. In the fourth watch he comes walking on the sea: “It is I; be not afraid.” Peter walks on the water, sinks when he sees the wind, and cries, “Lord, save me.” Jesus catches him, and they worship him as the Son of God (22–33).",
+        "At Gennesaret the sick are brought from all around, and as many as touch the hem of his garment are made perfectly whole (34–36)."
       ],
       "key": {
         "ref": "Matthew 14:27",
         "text": "But straightway Jesus spake unto them, saying, Be of good cheer; it is I; be not afraid."
       },
-      "big": "A king who feared men killed a prophet, but Jesus, moved with compassion, feeds the hungry from almost nothing and walks on the storm to reach His men. When a sinking man cries out to Him, He reaches out immediately."
+      "big": "A king who feared men killed a prophet, but Jesus, moved with compassion, feeds the hungry from almost nothing and walks on the storm to reach his men. When a sinking man cries out to him, he reaches out immediately."
     }
   },
   {
@@ -6439,14 +6439,14 @@ window.STUDIES = [
         "What goes into the mouth doesn't defile a man; what comes out of the heart does. The Pharisees are blind leaders of the blind (10–20).",
         "In the coasts of Tyre and Sidon a woman of Canaan begs mercy for her daughter. Met with silence and hard words, she asks for the crumbs (21–27).",
         "“O woman, great is thy faith”: her daughter is healed from that very hour (28).",
-        "By the Sea of Galilee He heals the lame, blind, dumb and maimed, and the crowds glorify the God of Israel (29–31).",
-        "Moved with compassion, He feeds four thousand men, besides women and children, with seven loaves and a few fishes; seven baskets are left (32–39)."
+        "By the Sea of Galilee he heals the lame, blind, dumb and maimed, and the crowds glorify the God of Israel (29–31).",
+        "Moved with compassion, he feeds four thousand men, besides women and children, with seven loaves and a few fishes; seven baskets are left (32–39)."
       ],
       "key": {
         "ref": "Matthew 15:18",
         "text": "But those things which proceed out of the mouth come forth from the heart; and they defile the man."
       },
-      "big": "God looks at the heart. Rules and rituals can't make a man clean, because sin comes from inside, and only God can give a new heart. That mercy is open to outsiders too: whoever comes to Jesus humbly, asking for mercy, finds Him more than willing."
+      "big": "God looks at the heart. Rules and rituals can't make a man clean, because sin comes from inside, and only God can give a new heart. That mercy is open to outsiders too: whoever comes to Jesus humbly, asking for mercy, finds him more than willing."
     }
   },
   {
@@ -6457,7 +6457,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 16",
     "sub": "Thou art the Christ",
-    "about": "Far north at Caesarea Philippi, Peter confesses Jesus as the Christ, the Son of the living God, and Jesus begins to show His disciples the cross ahead and what it means to follow Him.",
+    "about": "Far north at Caesarea Philippi, Peter confesses Jesus as the Christ, the Son of the living God, and Jesus begins to show his disciples the cross ahead and what it means to follow him.",
     "tags": [
       "Who Jesus is",
       "False teaching",
@@ -6469,7 +6469,7 @@ window.STUDIES = [
     "url": "studies/matthew-16.html",
     "overview": {
       "where": "By the Sea of Galilee, then north to the coasts of Caesarea Philippi, below Mount Hermon",
-      "when": "Late in Jesus' work in Galilee, about AD 29, as He turns toward Jerusalem and the cross",
+      "when": "Late in Jesus' work in Galilee, about AD 29, as he turns toward Jerusalem and the cross",
       "people": [
         "jesus",
         "pharisees",
@@ -6488,17 +6488,17 @@ window.STUDIES = [
       ],
       "story": [
         "Pharisees and Sadducees demand a sign from heaven. They can read the sky but not the times; they'll get only the sign of Jonas (1–4).",
-        "The disciples forget bread and misunderstand His warning. Jesus reminds them of the five thousand and the four thousand: beware the doctrine of the Pharisees and Sadducees (5–12).",
-        "At Caesarea Philippi He asks, “Whom say ye that I am?” Peter answers, “Thou art the Christ, the Son of the living God” (13–17).",
-        "On this rock Jesus will build His church, and the gates of hell won't prevail; He gives Peter the keys of the kingdom (18–20).",
-        "From that time He shows them He must suffer, be killed, and rise the third day. Peter rebukes Him and is told, “Get thee behind me, Satan” (21–23).",
-        "Whoever follows Him must deny himself and take up his cross. What profit is the whole world if a man loses his soul? (24–28)"
+        "The disciples forget bread and misunderstand his warning. Jesus reminds them of the five thousand and the four thousand: beware the doctrine of the Pharisees and Sadducees (5–12).",
+        "At Caesarea Philippi he asks, “Whom say ye that I am?” Peter answers, “Thou art the Christ, the Son of the living God” (13–17).",
+        "On this rock Jesus will build his church, and the gates of hell won't prevail; he gives Peter the keys of the kingdom (18–20).",
+        "From that time he shows them he must suffer, be killed, and rise the third day. Peter rebukes him and is told, “Get thee behind me, Satan” (21–23).",
+        "Whoever follows him must deny himself and take up his cross. What profit is the whole world if a man loses his soul? (24–28)"
       ],
       "key": {
         "ref": "Matthew 16:16",
         "text": "And Simon Peter answered and said, Thou art the Christ, the Son of the living God."
       },
-      "big": "Every man has to answer who Jesus is. He is the Christ, the Son of the living God, and He builds His church on that rock. But He is a Messiah who goes by way of the cross, and those who follow Him give up running their own lives, because one soul is worth more than the whole world."
+      "big": "Every man has to answer who Jesus is. He is the Christ, the Son of the living God, and he builds his church on that rock. But he is a Messiah who goes by way of the cross, and those who follow him give up running their own lives, because one soul is worth more than the whole world."
     }
   },
   {
@@ -6509,7 +6509,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 17",
     "sub": "Jesus only",
-    "about": "On a high mountain Peter, James and John see Jesus transfigured in glory and hear the Father say, “hear ye him”; below, Jesus frees a boy His disciples couldn't help, and provides the temple tax from a fish.",
+    "about": "On a high mountain Peter, James and John see Jesus transfigured in glory and hear the Father say, “hear ye him”; below, Jesus frees a boy his disciples couldn't help, and provides the temple tax from a fish.",
     "tags": [
       "Who Jesus is",
       "Listening to Jesus",
@@ -6537,20 +6537,20 @@ window.STUDIES = [
         "capernaum"
       ],
       "story": [
-        "Jesus takes Peter, James and John up an high mountain and is transfigured: His face shines as the sun (1–2).",
-        "Moses and Elias talk with Him. Peter offers to build three tabernacles (3–4).",
+        "Jesus takes Peter, James and John up an high mountain and is transfigured: his face shines as the sun (1–2).",
+        "Moses and Elias talk with him. Peter offers to build three tabernacles (3–4).",
         "A bright cloud overshadows them and the Father says, “This is my beloved Son … hear ye him.” Jesus touches the frightened men; they see no man, save Jesus only (5–8).",
         "Coming down, Jesus explains that Elias has already come, in John the Baptist, and that the Son of man will suffer too (9–13).",
         "A father brings his lunatick son, whom the disciples couldn't cure. Jesus rebukes the devil and the child is cured (14–18).",
         "Their failure came from unbelief: faith as a grain of mustard seed can move a mountain; this kind goes out only by prayer and fasting (19–21).",
-        "In Galilee He foretells again His betrayal, death, and rising (22–23).",
-        "At Capernaum, though the King's children are free, He has Peter pay the temple tax with a coin from a fish's mouth (24–27)."
+        "In Galilee he foretells again his betrayal, death, and rising (22–23).",
+        "At Capernaum, though the King's children are free, he has Peter pay the temple tax with a coin from a fish's mouth (24–27)."
       ],
       "key": {
         "ref": "Matthew 17:5",
         "text": "While he yet spake, behold, a bright cloud overshadowed them: and behold a voice out of the cloud, which said, This is my beloved Son, in whom I am well pleased; hear ye him."
       },
-      "big": "Jesus is the beloved Son of God, greater than the law and the prophets, and the Father's command is simple: hear Him. He lifts up the afraid, frees those no one else can help, and asks for faith in Him, not in ourselves. He is headed to the cross, and He pays what His people owe."
+      "big": "Jesus is the beloved Son of God, greater than the law and the prophets, and the Father's command is simple: hear him. He lifts up the afraid, frees those no one else can help, and asks for faith in him, not in ourselves. He is headed to the cross, and he pays what his people owe."
     }
   },
   {
@@ -6588,7 +6588,7 @@ window.STUDIES = [
         "The disciples ask who is greatest in the kingdom of heaven. Jesus sets a little child among them: except ye be converted, and become as little children, ye shall not enter in (1–5).",
         "Whoever causes one of these little ones to fall would be better off drowned with a millstone. Cut off whatever makes you fall: better to enter life maimed than be cast into hell fire (6–9).",
         "Despise not the little ones. The Son of man came to save the lost, and a shepherd leaves the ninety and nine to seek the one gone astray (10–14).",
-        "If a brother trespasses, go to him alone, then with one or two witnesses, then tell the church. Where two or three gather in His name, He is in the midst (15–20).",
+        "If a brother trespasses, go to him alone, then with one or two witnesses, then tell the church. Where two or three gather in his name, he is in the midst (15–20).",
         "Peter asks if seven times is enough to forgive. Jesus says, “Until seventy times seven” (21–22).",
         "A king forgives a servant ten thousand talents. That servant chokes a fellowservant over a hundred pence, and the king hands him to the tormentors. So forgive from the heart (23–35)."
       ],
@@ -6607,7 +6607,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 19",
     "sub": "With God all things are possible",
-    "about": "Jesus leaves Galilee for Judaea beyond Jordan. He answers the Pharisees about divorce from God's plan in the beginning, blesses little children, and tells a rich young man to sell all and follow Him.",
+    "about": "Jesus leaves Galilee for Judaea beyond Jordan. He answers the Pharisees about divorce from God's plan in the beginning, blesses little children, and tells a rich young man to sell all and follow him.",
     "tags": [
       "Marriage",
       "Divorce",
@@ -6635,18 +6635,18 @@ window.STUDIES = [
         "jordan"
       ],
       "story": [
-        "Jesus leaves Galilee for the coasts of Judaea beyond Jordan, and great multitudes follow Him to be healed (1–2).",
-        "Pharisees test Him: may a man put away his wife for every cause? Jesus points to the beginning: male and female, one flesh. What God hath joined, let not man put asunder (3–6).",
+        "Jesus leaves Galilee for the coasts of Judaea beyond Jordan, and great multitudes follow him to be healed (1–2).",
+        "Pharisees test him: may a man put away his wife for every cause? Jesus points to the beginning: male and female, one flesh. What God hath joined, let not man put asunder (3–6).",
         "Moses allowed divorce because of the hardness of their hearts, but from the beginning it was not so. Jesus names fornication as the exception, and speaks of some who stay unmarried for the kingdom (7–12).",
-        "The disciples turn away little children. Jesus says, “Suffer little children… to come unto me,” and lays His hands on them (13–15).",
+        "The disciples turn away little children. Jesus says, “Suffer little children… to come unto me,” and lays his hands on them (13–15).",
         "A rich young man asks what good thing he must do for eternal life. Told to sell all and follow Jesus, he goes away sorrowful, for he had great possessions (16–22).",
-        "A camel goes through a needle's eye more easily than a rich man enters the kingdom. With men it is impossible, but with God all things are possible. Those who leave all for Him receive an hundredfold and everlasting life (23–30)."
+        "A camel goes through a needle's eye more easily than a rich man enters the kingdom. With men it is impossible, but with God all things are possible. Those who leave all for him receive an hundredfold and everlasting life (23–30)."
       ],
       "key": {
         "ref": "Matthew 19:26",
         "text": "But Jesus beheld them, and said unto them, With men this is impossible; but with God all things are possible."
       },
-      "big": "God made marriage one man and one woman, joined by Him for life, and His grace covers our failures. Jesus welcomes the small and the helpless. No one can save himself by money or rule-keeping, but with God all things are possible, and nothing given up to follow Jesus is lost."
+      "big": "God made marriage one man and one woman, joined by him for life, and his grace covers our failures. Jesus welcomes the small and the helpless. No one can save himself by money or rule-keeping, but with God all things are possible, and nothing given up to follow Jesus is lost."
     }
   },
   {
@@ -6669,7 +6669,7 @@ window.STUDIES = [
     "url": "studies/matthew-20.html",
     "overview": {
       "where": "A vineyard in Jesus' story, then the road from beyond the Jordan up to Jerusalem, by way of Jericho",
-      "when": "The last journey to Jerusalem, shortly before His final Passover (about AD 30 or 33)",
+      "when": "The last journey to Jerusalem, shortly before his final Passover (about AD 30 or 33)",
       "people": [
         "jesus",
         "householder",
@@ -6687,15 +6687,15 @@ window.STUDIES = [
       "story": [
         "A householder hires labourers all day long, the last at the eleventh hour, and pays every man a penny, starting with the last (1–10).",
         "The first men grumble. The owner did them no wrong; he is simply good. “So the last shall be first, and the first last” (11–16).",
-        "Going up to Jerusalem, Jesus tells the twelve for the third time that He will be betrayed, condemned, mocked, scourged and crucified, and rise the third day (17–19).",
-        "The mother of Zebedee's children asks for her sons to sit at His right hand and left. Jesus speaks of His cup, and teaches that the great must serve, as He came to give His life a ransom for many (20–28).",
-        "Leaving Jericho, two blind men cry, “Have mercy on us, O Lord, thou Son of David.” The crowd hushes them; they cry the more. Jesus stands still, touches their eyes, and they follow Him (29–34)."
+        "Going up to Jerusalem, Jesus tells the twelve for the third time that he will be betrayed, condemned, mocked, scourged and crucified, and rise the third day (17–19).",
+        "The mother of Zebedee's children asks for her sons to sit at his right hand and left. Jesus speaks of his cup, and teaches that the great must serve, as he came to give his life a ransom for many (20–28).",
+        "Leaving Jericho, two blind men cry, “Have mercy on us, O Lord, thou Son of David.” The crowd hushes them; they cry the more. Jesus stands still, touches their eyes, and they follow him (29–34)."
       ],
       "key": {
         "ref": "Matthew 20:28",
         "text": "Even as the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many."
       },
-      "big": "Salvation is a gift of grace, not wages, and it's offered to the last as freely as the first. In His kingdom greatness means serving, because the Son of man came to serve and to give His life a ransom."
+      "big": "Salvation is a gift of grace, not wages, and it's offered to the last as freely as the first. In his kingdom greatness means serving, because the Son of man came to serve and to give his life a ransom."
     }
   },
   {
@@ -6718,7 +6718,7 @@ window.STUDIES = [
     "url": "studies/matthew-21.html",
     "overview": {
       "where": "Bethphage and the Mount of Olives, then Jerusalem and the temple, with nights at Bethany",
-      "when": "The first days of the last week, from the Sunday He rode in (about AD 30 or 33)",
+      "when": "The first days of the last week, from the Sunday he rode in (about AD 30 or 33)",
       "people": [
         "jesus",
         "disciples",
@@ -6739,10 +6739,10 @@ window.STUDIES = [
       ],
       "story": [
         "Jesus sends for an ass and her colt and rides into Jerusalem, as Zechariah foretold. The crowds spread their garments and cry, “Hosanna to the Son of David” (1–11).",
-        "He casts out the traders and overturns the moneychangers' tables: “My house shall be called the house of prayer.” He heals the blind and lame, and children sing His praise (12–17).",
-        "A fig tree with leaves but no fruit withers at His word. Faith that doubts not can move a mountain; ask in prayer, believing (18–22).",
-        "The chief priests and elders demand His authority. He asks about John's baptism, and they won't answer. Two sons: the one who refused but repented did his father's will (23–32).",
-        "Wicked husbandmen beat the owner's servants and kill his son. The stone the builders rejected becomes the head of the corner. The leaders know He means them (33–46)."
+        "He casts out the traders and overturns the moneychangers' tables: “My house shall be called the house of prayer.” He heals the blind and lame, and children sing his praise (12–17).",
+        "A fig tree with leaves but no fruit withers at his word. Faith that doubts not can move a mountain; ask in prayer, believing (18–22).",
+        "The chief priests and elders demand his authority. He asks about John's baptism, and they won't answer. Two sons: the one who refused but repented did his father's will (23–32).",
+        "Wicked husbandmen beat the owner's servants and kill his son. The stone the builders rejected becomes the head of the corner. The leaders know he means them (33–46)."
       ],
       "key": {
         "ref": "Matthew 21:5",
@@ -6759,7 +6759,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 22",
     "sub": "What think ye of Christ?",
-    "about": "In the temple days before the cross, Jesus tells of a king's wedding feast. Then Pharisees, Herodians, Sadducees, and a lawyer each try to trap Him, until His own question about David's Lord silences them all.",
+    "about": "In the temple days before the cross, Jesus tells of a king's wedding feast. Then Pharisees, Herodians, Sadducees, and a lawyer each try to trap him, until his own question about David's Lord silences them all.",
     "tags": [
       "Invitation",
       "Righteousness",
@@ -6793,13 +6793,13 @@ window.STUDIES = [
         "Pharisees and Herodians ask whether to pay tribute to Caesar. Shown a penny with Caesar's image, Jesus says, “Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s” (15–22).",
         "Sadducees, who deny the resurrection, tell of seven brothers and one wife. Jesus says they know neither the scriptures nor the power of God: God is “the God of Abraham,” not of the dead but of the living (23–33).",
         "A lawyer asks for the great commandment. Love God with all thy heart, soul, and mind, and thy neighbour as thyself; on these two hang all the law and the prophets (34–40).",
-        "Jesus asks whose son the Christ is. If David calls Him Lord in Psalm 110, how is He his son? No man could answer, and none dared ask Him more (41–46)."
+        "Jesus asks whose son the Christ is. If David calls him Lord in Psalm 110, how is he his son? No man could answer, and none dared ask him more (41–46)."
       ],
       "key": {
         "ref": "Matthew 22:37",
         "text": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."
       },
-      "big": "God invites everyone to His Son's wedding, bad and good, but we come clothed in the righteousness He gives, not our own. We give Caesar his coin and give God ourselves, made in His image. God is the God of the living, so His people will rise. Love for God and neighbour holds up the whole law, and Jesus is both David's son and David's Lord."
+      "big": "God invites everyone to his Son's wedding, bad and good, but we come clothed in the righteousness he gives, not our own. We give Caesar his coin and give God ourselves, made in his image. God is the God of the living, so his people will rise. Love for God and neighbour holds up the whole law, and Jesus is both David's son and David's Lord."
     }
   },
   {
@@ -6850,7 +6850,7 @@ window.STUDIES = [
         "ref": "Matthew 23:37",
         "text": "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!"
       },
-      "big": "God looks on the heart. Religion done for show, heavy rules without mercy, and a polished outside over a dirty inside are what Jesus condemned most sharply. The way up is down: the greatest serves. And behind the woes is a Saviour who longs to gather us under His wings. He never forces anyone, and His arms are still open."
+      "big": "God looks on the heart. Religion done for show, heavy rules without mercy, and a polished outside over a dirty inside are what Jesus condemned most sharply. The way up is down: the greatest serves. And behind the woes is a Saviour who longs to gather us under his wings. He never forces anyone, and his arms are still open."
     }
   },
   {
@@ -6861,7 +6861,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 24",
     "sub": "Watch therefore",
-    "about": "On the Mount of Olives, Jesus foretells the fall of the temple, warns His disciples not to be deceived, promises He will come again in the clouds with power and great glory, and tells them that since no man knows the day or hour, they must watch and be ready.",
+    "about": "On the Mount of Olives, Jesus foretells the fall of the temple, warns his disciples not to be deceived, promises he will come again in the clouds with power and great glory, and tells them that since no man knows the day or hour, they must watch and be ready.",
     "tags": [
       "Deception",
       "Troubles",
@@ -6889,10 +6889,10 @@ window.STUDIES = [
         "heaven"
       ],
       "story": [
-        "As Jesus leaves the temple, He tells His disciples that not one stone will be left upon another. On the Mount of Olives they ask when, and what will be the sign of His coming and of the end of the world (1–3).",
+        "As Jesus leaves the temple, he tells his disciples that not one stone will be left upon another. On the Mount of Olives they ask when, and what will be the sign of his coming and of the end of the world (1–3).",
         "He warns them first: let no man deceive you. Wars, famines and earthquakes are only the beginning of sorrows. Many will be offended and love will wax cold, but he that endures to the end will be saved, and the gospel will be preached in all the world (4–14).",
         "When they see the abomination of desolation spoken of by Daniel, those in Judaea must flee to the mountains. Great tribulation will come, but for the elect's sake those days will be shortened. False Christs will show signs; believe them not (15–28).",
-        "After that tribulation the sun will be darkened, and all shall see the Son of man coming in the clouds of heaven with power and great glory. He will send His angels to gather His elect. Learn from the fig tree: His words shall not pass away (29–35).",
+        "After that tribulation the sun will be darkened, and all shall see the Son of man coming in the clouds of heaven with power and great glory. He will send his angels to gather his elect. Learn from the fig tree: his words shall not pass away (29–35).",
         "No man knows the day and hour, but the Father only. As in the days of Noe, people will go on with life until it is too late; one shall be taken and the other left. Watch therefore, and be ready (36–44).",
         "The faithful and wise servant is found feeding his lord's household when he comes. The evil servant who says, “My lord delayeth his coming,” and turns to cruelty and drink is caught unready (45–51)."
       ],
@@ -6900,7 +6900,7 @@ window.STUDIES = [
         "ref": "Matthew 24:42",
         "text": "Watch therefore: for ye know not what hour your Lord doth come."
       },
-      "big": "Jesus is coming back, in person and in glory, and every eye will see Him. Good teachers differ on the details of this chapter, but He told us plainly not to be deceived, not to panic, and not to set dates, because no man knows the hour. Our job is to stay faithful and be found doing His work when He comes."
+      "big": "Jesus is coming back, in person and in glory, and every eye will see him. Good teachers differ on the details of this chapter, but he told us plainly not to be deceived, not to panic, and not to set dates, because no man knows the hour. Our job is to stay faithful and be found doing his work when he comes."
     }
   },
   {
@@ -6943,13 +6943,13 @@ window.STUDIES = [
         "A man travelling into a far country gives his servants five talents, two, and one, each according to his ability. Two trade and double their money; the third digs in the earth and hides his (14–18).",
         "After a long time the lord returns. To both faithful servants he says the same: “Well done, good and faithful servant… enter thou into the joy of thy lord” (19–23).",
         "The third, afraid of a “hard man,” gives back only what he hid. Called wicked and slothful, he loses his talent and is cast into outer darkness (24–30).",
-        "The Son of man sits on the throne of His glory and divides all nations as a shepherd divides sheep from goats. Whatever was done for the hungry, the stranger, the sick and the prisoner, the least of His brethren, was done to Him. The righteous go into life eternal, the others into everlasting punishment (31–46)."
+        "The Son of man sits on the throne of his glory and divides all nations as a shepherd divides sheep from goats. Whatever was done for the hungry, the stranger, the sick and the prisoner, the least of his brethren, was done to him. The righteous go into life eternal, the others into everlasting punishment (31–46)."
       ],
       "key": {
         "ref": "Matthew 25:40",
         "text": "And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me."
       },
-      "big": "Be ready, because readiness can't be borrowed at the last minute. Be faithful with what God has put in your hands, however small, and don't let fear make you bury it. And love the least, because Jesus counts it as done to Him. Hell was prepared for the devil, not for men, and the door to the feast is open today to whosoever will come."
+      "big": "Be ready, because readiness can't be borrowed at the last minute. Be faithful with what God has put in your hands, however small, and don't let fear make you bury it. And love the least, because Jesus counts it as done to him. Hell was prepared for the devil, not for men, and the door to the feast is open today to whosoever will come."
     }
   },
   {
@@ -6960,7 +6960,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 26",
     "sub": "Not as I will",
-    "about": "A woman pours out her best, a friend sells Jesus for silver, the Lord gives His men the bread and the cup, prays alone in Gethsemane, and is arrested, while Peter falls in the courtyard.",
+    "about": "A woman pours out her best, a friend sells Jesus for silver, the Lord gives his men the bread and the cup, prays alone in Gethsemane, and is arrested, while Peter falls in the courtyard.",
     "tags": [
       "The Lord's Supper",
       "Surrender",
@@ -6994,19 +6994,19 @@ window.STUDIES = [
       ],
       "story": [
         "Two days before the Passover, the chief priests and elders meet at Caiaphas' palace to take Jesus by stealth, but not on the feast day (1–5).",
-        "At Bethany a woman pours very precious ointment on His head. The disciples call it waste; Jesus calls it a good work, done for His burial (6–13).",
-        "Judas goes to the chief priests and sells Him for thirty pieces of silver (14–16).",
-        "At the Passover Jesus says one of the twelve will betray Him. He gives them the bread, His body, and the cup, His blood of the new testament, shed for the remission of sins (17–30).",
-        "Jesus warns that all will stumble and Peter will deny Him thrice; He promises to go before them into Galilee (31–35).",
-        "In Gethsemane He prays three times, “not as I will, but as thou wilt,” while the disciples sleep. Judas betrays Him with a kiss, and all the disciples flee (36–56).",
-        "Before Caiaphas, false witnesses fail. Put under oath, Jesus says He is the Christ, the Son of God, and is condemned and beaten (57–68).",
-        "In the courtyard Peter denies Him three times. The cock crows, and Peter goes out and weeps bitterly (69–75)."
+        "At Bethany a woman pours very precious ointment on his head. The disciples call it waste; Jesus calls it a good work, done for his burial (6–13).",
+        "Judas goes to the chief priests and sells him for thirty pieces of silver (14–16).",
+        "At the Passover Jesus says one of the twelve will betray him. He gives them the bread, his body, and the cup, his blood of the new testament, shed for the remission of sins (17–30).",
+        "Jesus warns that all will stumble and Peter will deny him thrice; he promises to go before them into Galilee (31–35).",
+        "In Gethsemane he prays three times, “not as I will, but as thou wilt,” while the disciples sleep. Judas betrays him with a kiss, and all the disciples flee (36–56).",
+        "Before Caiaphas, false witnesses fail. Put under oath, Jesus says he is the Christ, the Son of God, and is condemned and beaten (57–68).",
+        "In the courtyard Peter denies him three times. The cock crows, and Peter goes out and weeps bitterly (69–75)."
       ],
       "key": {
         "ref": "Matthew 26:39",
         "text": "And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt."
       },
-      "big": "Jesus went to the cross on purpose, giving His will to the Father and His body and blood for our sins. Men fail Him, even His friends, but a man who falls can weep, come back, and be restored."
+      "big": "Jesus went to the cross on purpose, giving his will to the Father and his body and blood for our sins. Men fail him, even his friends, but a man who falls can weep, come back, and be restored."
     }
   },
   {
@@ -7017,7 +7017,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 27",
     "sub": "Truly this was the Son of God",
-    "about": "Judas comes to a dark end, Barabbas walks free, and Jesus is crucified. The sky goes dark, the veil tears, and a Roman soldier confesses who He is.",
+    "about": "Judas comes to a dark end, Barabbas walks free, and Jesus is crucified. The sky goes dark, the veil tears, and a Roman soldier confesses who he is.",
     "tags": [
       "The cross",
       "Substitution",
@@ -7056,15 +7056,15 @@ window.STUDIES = [
       "story": [
         "At dawn the council sends Jesus bound to Pilate. Judas, sick with regret, throws the silver into the temple and hangs himself; the priests buy the potter's field (1–10).",
         "Jesus stays silent before Pilate. Pilate's wife warns him, but the crowd chooses Barabbas. Pilate washes his hands and hands Jesus over (11–26).",
-        "The soldiers mock Him with a scarlet robe and a crown of thorns. Simon of Cyrene carries the cross to Golgotha, where Jesus is crucified between two thieves and mocked: “He saved others; himself he cannot save” (27–44).",
+        "The soldiers mock him with a scarlet robe and a crown of thorns. Simon of Cyrene carries the cross to Golgotha, where Jesus is crucified between two thieves and mocked: “He saved others; himself he cannot save” (27–44).",
         "Darkness covers the land from the sixth hour to the ninth. Jesus cries, “My God, my God, why hast thou forsaken me?” and yields up the ghost. The veil tears from top to bottom, and the centurion says, “Truly this was the Son of God” (45–56).",
-        "Joseph of Arimathaea lays Him in his own new tomb. The chief priests have the stone sealed and a watch set (57–66)."
+        "Joseph of Arimathaea lays him in his own new tomb. The chief priests have the stone sealed and a watch set (57–66)."
       ],
       "key": {
         "ref": "Matthew 27:54",
         "text": "Now when the centurion, and they that were with him, watching Jesus, saw the earthquake, and those things that were done, they feared greatly, saying, Truly this was the Son of God."
       },
-      "big": "The innocent One died in the place of the guilty. He stayed on the cross and was forsaken so that whosoever comes to God through Him is never forsaken, and the torn veil says the way in is open."
+      "big": "The innocent One died in the place of the guilty. He stayed on the cross and was forsaken so that whosoever comes to God through him is never forsaken, and the torn veil says the way in is open."
     }
   },
   {
@@ -7075,10 +7075,10 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Matthew 28",
     "sub": "He is risen, as he said",
-    "about": "The stone rolls away, the risen Jesus calls His runaway disciples “my brethren,” and He sends them to all nations with a promise: I am with you alway.",
+    "about": "The stone rolls away, the risen Jesus calls his runaway disciples “my brethren,” and he sends them to all nations with a promise: I am with you alway.",
     "tags": [
       "Resurrection",
-      "God keeps His word",
+      "God keeps his word",
       "Restoration",
       "Doubt",
       "The Great Commission",
@@ -7108,13 +7108,13 @@ window.STUDIES = [
         "At dawn on the first day of the week, two Marys come to the tomb. An earthquake, an angel rolls back the stone and sits on it, and the guards become as dead men (1–4).",
         "“Fear not … He is not here: for he is risen, as he said.” The women run with fear and great joy, and Jesus meets them: “go tell my brethren” (5–10).",
         "The guards report to the chief priests, who pay them large money to say the disciples stole the body while they slept (11–15).",
-        "On a mountain in Galilee the eleven worship Him, though some doubt. Jesus says all power is His: go, teach all nations, baptizing and teaching them, “and, lo, I am with you alway” (16–20)."
+        "On a mountain in Galilee the eleven worship him, though some doubt. Jesus says all power is his: go, teach all nations, baptizing and teaching them, “and, lo, I am with you alway” (16–20)."
       ],
       "key": {
         "ref": "Matthew 28:6",
         "text": "He is not here: for he is risen, as he said. Come, see the place where the Lord lay."
       },
-      "big": "Jesus rose, just as He said. He welcomes back the men who ran, comes toward those who doubt, and sends every believer out to make disciples, with His promise to be with us every day."
+      "big": "Jesus rose, just as he said. He welcomes back the men who ran, comes toward those who doubt, and sends every believer out to make disciples, with his promise to be with us every day."
     }
   },
   {
@@ -7165,9 +7165,9 @@ window.STUDIES = [
       "story": [
         "The beginning of the gospel: John the Baptist, the messenger the prophets promised, preaches repentance and baptizes in the Jordan (1–8).",
         "Jesus is baptized. The heavens open, the Spirit comes down like a dove, and the Father says, “Thou art my beloved Son” (9–11).",
-        "The Spirit drives Him into the wilderness for forty days, tempted of Satan, and angels minister to Him (12–13).",
-        "In Galilee He preaches, “repent ye, and believe the gospel,” and calls Simon, Andrew, James and John to become fishers of men (14–20).",
-        "In Capernaum's synagogue He teaches with authority and casts out an unclean spirit. He heals Simon's wife's mother, and at sunset the whole city comes to the door (21–34).",
+        "The Spirit drives him into the wilderness for forty days, tempted of Satan, and angels minister to him (12–13).",
+        "In Galilee he preaches, “repent ye, and believe the gospel,” and calls Simon, Andrew, James and John to become fishers of men (14–20).",
+        "In Capernaum's synagogue he teaches with authority and casts out an unclean spirit. He heals Simon's wife's mother, and at sunset the whole city comes to the door (21–34).",
         "He rises before day to pray, then goes on to preach in the next towns (35–39).",
         "A leper begs, “If thou wilt, thou canst make me clean.” Jesus touches him and says, “I will.” Then Jesus is the one left outside in desert places (40–45)."
       ],
@@ -7175,7 +7175,7 @@ window.STUDIES = [
         "ref": "Mark 1:15",
         "text": "And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel."
       },
-      "big": "Jesus is the Son of God, and He moves fast: He calls men to turn and believe, makes fishermen into fishers of men, drives out evil with a word, and is willing to touch the man everyone else keeps away from."
+      "big": "Jesus is the Son of God, and he moves fast: he calls men to turn and believe, makes fishermen into fishers of men, drives out evil with a word, and is willing to touch the man everyone else keeps away from."
     }
   },
   {
@@ -7186,7 +7186,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 2",
     "sub": "Not the righteous, but sinners",
-    "about": "Four friends tear open a roof, a tax man gets up from his table, and Jesus says He came for the sick, not the healthy.",
+    "about": "Four friends tear open a roof, a tax man gets up from his table, and Jesus says he came for the sick, not the healthy.",
     "tags": [
       "Friends",
       "Forgiveness",
@@ -7222,14 +7222,14 @@ window.STUDIES = [
         "Jesus sees their faith and says, “Son, thy sins be forgiven thee.” The scribes think, “who can forgive sins but God only?” (5–7).",
         "To show the Son of man has power on earth to forgive sins, Jesus tells the man to take up his bed and walk, and he does (8–12).",
         "Jesus calls Levi from the tax booth and eats with publicans and sinners: “I came not to call the righteous, but sinners to repentance” (13–17).",
-        "Asked why His disciples don't fast, He speaks of the bridegroom, new cloth, and new wine in new bottles (18–22).",
+        "Asked why his disciples don't fast, he speaks of the bridegroom, new cloth, and new wine in new bottles (18–22).",
         "His disciples pluck grain on the sabbath. Jesus answers with David and the shewbread: “The sabbath was made for man,” and the Son of man is its Lord (23–28)."
       ],
       "key": {
         "ref": "Mark 2:17",
         "text": "When Jesus heard it, he saith unto them, They that are whole have no need of the physician, but they that are sick: I came not to call the righteous, but sinners to repentance."
       },
-      "big": "Jesus has God's own power to forgive sins, and He came for people who know they're sick. He doesn't patch up an old life; He makes a new one, and He is Lord even of the sabbath."
+      "big": "Jesus has God's own power to forgive sins, and he came for people who know they're sick. He doesn't patch up an old life; he makes a new one, and he is Lord even of the sabbath."
     }
   },
   {
@@ -7289,17 +7289,17 @@ window.STUDIES = [
       ],
       "story": [
         "On the sabbath the Pharisees watch to see if Jesus will heal a man with a withered hand. He asks whether it is lawful to do good or evil, then tells the man, “Stretch forth thine hand,” and it is made whole (1–5).",
-        "The Pharisees and the Herodians begin to plot how they might destroy Him (6).",
-        "Crowds come from Galilee, Judaea, Jerusalem, Idumaea, beyond Jordan, and Tyre and Sidon. Unclean spirits cry out that He is the Son of God, and He orders them silent (7–12).",
-        "On a mountain Jesus ordains twelve, that they should be with Him and be sent to preach. He names Simon Peter, and James and John Boanerges (13–19).",
-        "His family says He is beside Himself. Scribes from Jerusalem say He casts out devils by Beelzebub. Jesus answers that Satan can't cast out Satan, that the strong man must first be bound, and that all sins can be forgiven except blasphemy against the Holy Ghost (20–30).",
-        "His mother and brethren call for Him from outside. Looking at those around Him, He says whosoever does the will of God is His brother, sister and mother (31–35)."
+        "The Pharisees and the Herodians begin to plot how they might destroy him (6).",
+        "Crowds come from Galilee, Judaea, Jerusalem, Idumaea, beyond Jordan, and Tyre and Sidon. Unclean spirits cry out that he is the Son of God, and he orders them silent (7–12).",
+        "On a mountain Jesus ordains twelve, that they should be with him and be sent to preach. He names Simon Peter, and James and John Boanerges (13–19).",
+        "His family says he is beside himself. Scribes from Jerusalem say he casts out devils by Beelzebub. Jesus answers that Satan can't cast out Satan, that the strong man must first be bound, and that all sins can be forgiven except blasphemy against the Holy Ghost (20–30).",
+        "His mother and brethren call for him from outside. Looking at those around him, he says whosoever does the will of God is his brother, sister and mother (31–35)."
       ],
       "key": {
         "ref": "Mark 3:35",
         "text": "For whosoever shall do the will of God, the same is my brother, and my sister, and mother."
       },
-      "big": "Jesus is stronger than the strong man. He heals, He calls ordinary men to be with Him, He forgives every sin of the man who comes, and He makes whosoever trusts Him part of His family."
+      "big": "Jesus is stronger than the strong man. He heals, he calls ordinary men to be with him, he forgives every sin of the man who comes, and he makes whosoever trusts him part of his family."
     }
   },
   {
@@ -7310,7 +7310,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 4",
     "sub": "Seed, soil, and a storm",
-    "about": "Jesus teaches from a boat about a sower and his seed, then sleeps through a storm that only He can stop.",
+    "about": "Jesus teaches from a boat about a sower and his seed, then sleeps through a storm that only he can stop.",
     "tags": [
       "Hearing the word",
       "Temptation",
@@ -7334,10 +7334,10 @@ window.STUDIES = [
       ],
       "story": [
         "The crowd is so large that Jesus teaches from a boat. He tells of a sower whose seed falls by the way side, on stony ground, among thorns, and on good ground (1–9).",
-        "Alone with those about Him, He explains: the seed is the word. Satan takes it from some, some have no root, some are choked by cares, riches and lusts, and some bear fruit thirty, sixty and a hundredfold (10–20).",
+        "Alone with those about him, he explains: the seed is the word. Satan takes it from some, some have no root, some are choked by cares, riches and lusts, and some bear fruit thirty, sixty and a hundredfold (10–20).",
         "A candle is set on a candlestick, not hidden under a bushel. With what measure ye mete, it shall be measured to you (21–25).",
         "The kingdom of God is like seed that grows while the farmer sleeps, “he knoweth not how,” and like a mustard seed that grows greater than all herbs (26–34).",
-        "Crossing the lake at evening, a great storm fills the boat while Jesus sleeps. They wake Him: “carest thou not that we perish?” He says to the sea, “Peace, be still,” and there is a great calm (35–41)."
+        "Crossing the lake at evening, a great storm fills the boat while Jesus sleeps. They wake him: “carest thou not that we perish?” He says to the sea, “Peace, be still,” and there is a great calm (35–41)."
       ],
       "key": {
         "ref": "Mark 4:39",
@@ -7366,7 +7366,7 @@ window.STUDIES = [
     "url": "studies/mark-05.html",
     "overview": {
       "where": "The country of the Gadarenes on the east shore of the Sea of Galilee, then back across the lake to the crowd, the road, and Jairus' house",
-      "when": "About AD 28, in Jesus' ministry in Galilee, right after He stilled the storm (4:35–41)",
+      "when": "About AD 28, in Jesus' ministry in Galilee, right after he stilled the storm (4:35–41)",
       "people": [
         "jesus",
         "legion",
@@ -7388,14 +7388,14 @@ window.STUDIES = [
         "He runs to Jesus. The spirits call themselves Legion, “for we are many,” and beg to go into a herd of about two thousand swine, which rush into the sea (6–13).",
         "The town finds the man “sitting, and clothed, and in his right mind,” and begs Jesus to leave. Jesus sends the man home to tell what the Lord has done for him, and he preaches in Decapolis (14–20).",
         "Back across the lake, Jairus, a ruler of the synagogue, falls at Jesus' feet: his little daughter is dying (21–24).",
-        "On the way, a woman who has bled for twelve years and spent all she had touches His clothes and is healed. Jesus calls her “Daughter” and sends her away in peace (25–34).",
+        "On the way, a woman who has bled for twelve years and spent all she had touches his clothes and is healed. Jesus calls her “Daughter” and sends her away in peace (25–34).",
         "News comes that the girl is dead. Jesus says, “Be not afraid, only believe,” takes her by the hand, says “Talitha cumi,” and she gets up and walks (35–43)."
       ],
       "key": {
         "ref": "Mark 5:36",
         "text": "As soon as Jesus heard the word that was spoken, he saith unto the ruler of the synagogue, Be not afraid, only believe."
       },
-      "big": "No bondage is too strong, no trouble too long, and no case too late for Jesus. He sets the captive free, makes the outcast whole, and speaks life over death, and He sends the ones He frees to tell what He has done."
+      "big": "No bondage is too strong, no trouble too long, and no case too late for Jesus. He sets the captive free, makes the outcast whole, and speaks life over death, and he sends the ones he frees to tell what he has done."
     }
   },
   {
@@ -7406,7 +7406,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 6",
     "sub": "It is I; be not afraid",
-    "about": "His hometown won't believe, the twelve are sent out, a king kills a prophet to save face, five thousand eat, and Jesus walks out to His men on a stormy sea.",
+    "about": "His hometown won't believe, the twelve are sent out, a king kills a prophet to save face, five thousand eat, and Jesus walks out to his men on a stormy sea.",
     "tags": [
       "Unbelief",
       "Conscience",
@@ -7442,18 +7442,18 @@ window.STUDIES = [
         "gennesaret"
       ],
       "story": [
-        "In Nazareth, His hometown asks, “Is not this the carpenter?” and stumbles over Him. He does few mighty works there and marvels at their unbelief (1–6).",
+        "In Nazareth, his hometown asks, “Is not this the carpenter?” and stumbles over him. He does few mighty works there and marvels at their unbelief (1–6).",
         "He sends the twelve out two by two with nothing but a staff, sandals, and power over unclean spirits. They preach that men should repent (7–13).",
         "Herod hears of Jesus and says, “It is John, whom I beheaded.” Mark tells how John rebuked Herod's marriage to Herodias, and how a rash oath at a birthday feast cost John his head (14–29).",
-        "The apostles come back, and Jesus takes them apart to rest. The crowd gets there first, and He has compassion on them “as sheep not having a shepherd” (30–34).",
-        "With five loaves and two fishes He feeds about five thousand men. Twelve baskets of pieces are left over (35–44).",
-        "That night He comes to His men walking on the sea in the fourth watch: “Be of good cheer: it is I; be not afraid.” The wind stops. At Gennesaret all who touch Him are made whole (45–56)."
+        "The apostles come back, and Jesus takes them apart to rest. The crowd gets there first, and he has compassion on them “as sheep not having a shepherd” (30–34).",
+        "With five loaves and two fishes he feeds about five thousand men. Twelve baskets of pieces are left over (35–44).",
+        "That night he comes to his men walking on the sea in the fourth watch: “Be of good cheer: it is I; be not afraid.” The wind stops. At Gennesaret all who touch him are made whole (45–56)."
       ],
       "key": {
         "ref": "Mark 6:50",
         "text": "For they all saw him, and were troubled. And immediately he talked with them, and saith unto them, Be of good cheer: it is I; be not afraid."
       },
-      "big": "People who knew Jesus best missed Him, and a king who heard the truth gladly still chose his pride. But to all who come, Jesus is the compassionate Shepherd who feeds the hungry with little, sees His men rowing in the dark, and comes to them saying, “It is I; be not afraid.”"
+      "big": "People who knew Jesus best missed him, and a king who heard the truth gladly still chose his pride. But to all who come, Jesus is the compassionate Shepherd who feeds the hungry with little, sees his men rowing in the dark, and comes to them saying, “It is I; be not afraid.”"
     }
   },
   {
@@ -7464,7 +7464,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 7",
     "sub": "From within",
-    "about": "Religious men fuss over washed hands. Jesus points to the heart, then a Gentile mother and a deaf man find Him.",
+    "about": "Religious men fuss over washed hands. Jesus points to the heart, then a Gentile mother and a deaf man find him.",
     "tags": [
       "The heart",
       "Worship",
@@ -7497,9 +7497,9 @@ window.STUDIES = [
         "Pharisees and scribes from Jerusalem find fault: some of Jesus' disciples eat with unwashen hands, against the tradition of the elders (1–5).",
         "Jesus quotes Esaias: “This people honoureth me with their lips, but their heart is far from me.” With “Corban” they set aside God's command to honour father and mother (6–13).",
         "He calls the people: nothing that goes into a man can defile him; what comes out of him does (14–16).",
-        "In the house He explains: food goes to the belly, but evil thoughts, adulteries, thefts, pride and more come from within, out of the heart (17–23).",
-        "In the borders of Tyre and Sidon, a Greek woman begs Him to free her daughter: “Yes, Lord: yet the dogs under the table eat of the children’s crumbs.” She goes home and finds the devil gone (24–30).",
-        "In the Decapolis He takes a deaf man aside, touches his ears and tongue, and says, “Ephphatha, that is, Be opened.” The people say, “He hath done all things well” (31–37)."
+        "In the house he explains: food goes to the belly, but evil thoughts, adulteries, thefts, pride and more come from within, out of the heart (17–23).",
+        "In the borders of Tyre and Sidon, a Greek woman begs him to free her daughter: “Yes, Lord: yet the dogs under the table eat of the children’s crumbs.” She goes home and finds the devil gone (24–30).",
+        "In the Decapolis he takes a deaf man aside, touches his ears and tongue, and says, “Ephphatha, that is, Be opened.” The people say, “He hath done all things well” (31–37)."
       ],
       "key": {
         "ref": "Mark 7:15",
@@ -7516,7 +7516,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 8",
     "sub": "Whom say ye that I am?",
-    "about": "Seven loaves feed four thousand, a blind man sees in two touches, and Peter says it: Thou art the Christ. Then Jesus tells them what following Him will cost.",
+    "about": "Seven loaves feed four thousand, a blind man sees in two touches, and Peter says it: Thou art the Christ. Then Jesus tells them what following him will cost.",
     "tags": [
       "Compassion",
       "Remembering",
@@ -7528,7 +7528,7 @@ window.STUDIES = [
     "url": "studies/mark-08.html",
     "overview": {
       "where": "The Decapolis, across the lake to Dalmanutha and Bethsaida, then north to the towns of Caesarea Philippi",
-      "when": "About AD 29, about a year before the cross, when Jesus first tells His disciples plainly that He must die and rise again",
+      "when": "About AD 29, about a year before the cross, when Jesus first tells his disciples plainly that he must die and rise again",
       "people": [
         "jesus",
         "disciples",
@@ -7551,17 +7551,17 @@ window.STUDIES = [
       ],
       "story": [
         "Three days into the wilderness, a great crowd has nothing to eat. Jesus has compassion and feeds about four thousand with seven loaves and a few small fishes, and seven baskets are left (1–9).",
-        "At Dalmanutha the Pharisees demand a sign from heaven. He sighs deeply in His spirit and refuses (10–13).",
-        "In the ship He warns, “beware of the leaven of the Pharisees, and of the leaven of Herod.” They think He means bread, and He reminds them of the twelve baskets and the seven (14–21).",
-        "At Bethsaida He leads a blind man out of town. After one touch he sees “men as trees, walking”; after a second he sees every man clearly (22–26).",
-        "Near Caesarea Philippi He asks, “But whom say ye that I am?” Peter answers, “Thou art the Christ.” Jesus teaches that He must suffer, be killed, and rise again, and rebukes Peter: “Get thee behind me, Satan” (27–33).",
+        "At Dalmanutha the Pharisees demand a sign from heaven. He sighs deeply in his spirit and refuses (10–13).",
+        "In the ship he warns, “beware of the leaven of the Pharisees, and of the leaven of Herod.” They think he means bread, and he reminds them of the twelve baskets and the seven (14–21).",
+        "At Bethsaida he leads a blind man out of town. After one touch he sees “men as trees, walking”; after a second he sees every man clearly (22–26).",
+        "Near Caesarea Philippi he asks, “But whom say ye that I am?” Peter answers, “Thou art the Christ.” Jesus teaches that he must suffer, be killed, and rise again, and rebukes Peter: “Get thee behind me, Satan” (27–33).",
         "“Whosoever will come after me, let him deny himself, and take up his cross, and follow me.” What does the whole world profit a man who loses his own soul? (34–38)"
       ],
       "key": {
         "ref": "Mark 8:29",
         "text": "And he saith unto them, But whom say ye that I am? And Peter answereth and saith unto him, Thou art the Christ."
       },
-      "big": "Jesus is the Christ, the promised King, and He came to suffer, die and rise again. He feeds the hungry, finishes what He starts, and calls every man to deny himself, take up his cross, and follow Him, because one soul is worth more than the whole world."
+      "big": "Jesus is the Christ, the promised King, and he came to suffer, die and rise again. He feeds the hungry, finishes what he starts, and calls every man to deny himself, take up his cross, and follow him, because one soul is worth more than the whole world."
     }
   },
   {
@@ -7601,17 +7601,17 @@ window.STUDIES = [
         "capernaum"
       ],
       "story": [
-        "Jesus takes Peter, James and John up a high mountain and is transfigured. Moses and Elias talk with Him, and the Father says, “This is my beloved Son: hear him” (1–8).",
+        "Jesus takes Peter, James and John up a high mountain and is transfigured. Moses and Elias talk with him, and the Father says, “This is my beloved Son: hear him” (1–8).",
         "Coming down, Jesus tells them Elias has already come (John the Baptist), and that the Son of man must suffer (9–13).",
         "At the bottom the disciples can't help a boy with a dumb spirit. His father cries, “Lord, I believe; help thou mine unbelief,” and Jesus casts it out: “This kind can come forth by nothing, but by prayer and fasting” (14–29).",
-        "Jesus again foretells His death and rising. The twelve argue about who is greatest, and He sets a child among them: the first must be servant of all (30–41).",
+        "Jesus again foretells his death and rising. The twelve argue about who is greatest, and he sets a child among them: the first must be servant of all (30–41).",
         "Cut off whatever causes you to stumble: better to enter life maimed than be cast into hell. “Have salt in yourselves, and have peace one with another” (42–50)."
       ],
       "key": {
         "ref": "Mark 9:24",
         "text": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief."
       },
-      "big": "Jesus is God's beloved Son, and the Father tells us to hear Him. He doesn't turn away weak faith that's honest; He helps it. In His kingdom the greatest is the servant, and sin is to be dealt with ruthlessly."
+      "big": "Jesus is God's beloved Son, and the Father tells us to hear him. He doesn't turn away weak faith that's honest; he helps it. In his kingdom the greatest is the servant, and sin is to be dealt with ruthlessly."
     }
   },
   {
@@ -7622,7 +7622,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 10",
     "sub": "The road up to Jerusalem",
-    "about": "On the way to the cross, Jesus teaches about marriage, blesses little children, loves a rich man who walks away, gives His life a ransom, and stops for a blind beggar who won't keep quiet.",
+    "about": "On the way to the cross, Jesus teaches about marriage, blesses little children, loves a rich man who walks away, gives his life a ransom, and stops for a blind beggar who won't keep quiet.",
     "tags": [
       "Marriage",
       "Childlike faith",
@@ -7657,14 +7657,14 @@ window.STUDIES = [
         "Pharisees test Jesus about divorce. He goes back to the beginning: God made them male and female, the two become one flesh, and “What therefore God hath joined together, let not man put asunder” (1–12).",
         "Jesus is displeased when the disciples turn children away: “Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein” (13–16).",
         "A rich man asks how to inherit eternal life. Jesus loves him and says, “One thing thou lackest,” but he goes away grieved. It is easier for a camel to go through the eye of a needle, but with God all things are possible (17–31).",
-        "Going up to Jerusalem, Jesus tells the twelve a third time that He will die and rise. James and John ask for the best seats; Jesus came “to give his life a ransom for many” (32–45).",
+        "Going up to Jerusalem, Jesus tells the twelve a third time that he will die and rise. James and John ask for the best seats; Jesus came “to give his life a ransom for many” (32–45).",
         "At Jericho blind Bartimaeus cries, “Jesus, thou Son of David, have mercy on me,” receives his sight, and follows Jesus in the way (46–52)."
       ],
       "key": {
         "ref": "Mark 10:45",
         "text": "For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many."
       },
-      "big": "Jesus walked toward the cross on purpose, to serve and to pay the ransom for our freedom. Nobody can save himself, but with God all things are possible. Whoever comes to Him as a child, or cries out to Him like a blind beggar, is received."
+      "big": "Jesus walked toward the cross on purpose, to serve and to pay the ransom for our freedom. Nobody can save himself, but with God all things are possible. Whoever comes to him as a child, or cries out to him like a blind beggar, is received."
     }
   },
   {
@@ -7675,7 +7675,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 11",
     "sub": "Have faith in God",
-    "about": "Jesus rides into Jerusalem on a colt, finds a fig tree with nothing but leaves, clears the temple, teaches His men to pray believing and forgiving, and turns the leaders' question back on them.",
+    "about": "Jesus rides into Jerusalem on a colt, finds a fig tree with nothing but leaves, clears the temple, teaches his men to pray believing and forgiving, and turns the leaders' question back on them.",
     "tags": [
       "The King",
       "Fruit",
@@ -7708,18 +7708,18 @@ window.STUDIES = [
         "temple"
       ],
       "story": [
-        "Near Bethphage and Bethany, Jesus sends two disciples for a colt no man has ridden. Everything happens just as He said (1–6).",
+        "Near Bethphage and Bethany, Jesus sends two disciples for a colt no man has ridden. Everything happens just as he said (1–6).",
         "He rides into Jerusalem over garments and branches while the crowd cries, “Hosanna; Blessed is he that cometh in the name of the Lord.” He looks round the temple and goes back to Bethany (7–11).",
-        "Next morning He finds a fig tree with nothing but leaves and says no man will eat fruit of it again (12–14).",
-        "In the temple He overturns the tables of the moneychangers: “My house shall be called of all nations the house of prayer? but ye have made it a den of thieves.” The leaders seek to destroy Him (15–19).",
-        "The fig tree is dried up from the roots. Jesus says, “Have faith in God,” teaches His men to pray believing, and to forgive when they stand praying (20–26).",
-        "The chief priests, scribes and elders demand His authority. He asks them about John's baptism, and when they won't answer, neither does He (27–33)."
+        "Next morning he finds a fig tree with nothing but leaves and says no man will eat fruit of it again (12–14).",
+        "In the temple he overturns the tables of the moneychangers: “My house shall be called of all nations the house of prayer? but ye have made it a den of thieves.” The leaders seek to destroy him (15–19).",
+        "The fig tree is dried up from the roots. Jesus says, “Have faith in God,” teaches his men to pray believing, and to forgive when they stand praying (20–26).",
+        "The chief priests, scribes and elders demand his authority. He asks them about John's baptism, and when they won't answer, neither does he (27–33)."
       ],
       "key": {
         "ref": "Mark 11:22",
         "text": "And Jesus answering saith unto them, Have faith in God."
       },
-      "big": "Jesus came to Jerusalem as the lowly King who saves, riding toward His cross on purpose. He looks past the leaves for real fruit, clears out whatever blocks the way to God, and calls His people to pray with faith in God, to forgive as they've been forgiven, and to seek what is true, not what is safe."
+      "big": "Jesus came to Jerusalem as the lowly King who saves, riding toward his cross on purpose. He looks past the leaves for real fruit, clears out whatever blocks the way to God, and calls his people to pray with faith in God, to forgive as they've been forgiven, and to seek what is true, not what is safe."
     }
   },
   {
@@ -7730,7 +7730,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 12",
     "sub": "Render to God the things that are God's",
-    "about": "In the temple, Jesus tells of a vineyard and a murdered son, answers three hard questions, asks one of His own, warns about showy religion, and praises a poor widow's two mites.",
+    "about": "In the temple, Jesus tells of a vineyard and a murdered son, answers three hard questions, asks one of his own, warns about showy religion, and praises a poor widow's two mites.",
     "tags": [
       "Rejection",
       "Caesar and God",
@@ -7770,14 +7770,14 @@ window.STUDIES = [
         "Pharisees and Herodians ask whether to pay tribute to Caesar. He asks for a penny: “Render to Caesar the things that are Caesar’s, and to God the things that are God’s” (13–17).",
         "Sadducees, who deny the resurrection, bring a riddle about seven brothers and one wife. Jesus answers from Moses at the bush: God “is not the God of the dead, but the God of the living” (18–27).",
         "A scribe asks which commandment is first. Love the Lord thy God with all thy heart, soul, mind and strength, and thy neighbour as thyself. “Thou art not far from the kingdom of God” (28–34).",
-        "Jesus asks how the Christ can be David's son when David calls Him Lord, and warns against scribes who love long robes, chief seats, and long prayers for a pretence (35–40).",
+        "Jesus asks how the Christ can be David's son when David calls him Lord, and warns against scribes who love long robes, chief seats, and long prayers for a pretence (35–40).",
         "At the treasury a poor widow throws in two mites. Jesus says she has given more than all the rich, for she gave all her living (41–44)."
       ],
       "key": {
         "ref": "Mark 12:17",
         "text": "And Jesus answering said unto them, Render to Caesar the things that are Caesar’s, and to God the things that are God’s. And they marvelled at him."
       },
-      "big": "God sent prophet after prophet, and last of all His beloved Son, whom men rejected and God made the cornerstone. We bear God's image, so we owe Him ourselves: a love for Him with all we are, and for our neighbour as ourselves. He is the God of the living, the Christ is David's Lord, and He sees the gift nobody else notices."
+      "big": "God sent prophet after prophet, and last of all his beloved Son, whom men rejected and God made the cornerstone. We bear God's image, so we owe him ourselves: a love for him with all we are, and for our neighbour as ourselves. He is the God of the living, the Christ is David's Lord, and he sees the gift nobody else notices."
     }
   },
   {
@@ -7788,7 +7788,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 13",
     "sub": "Watch",
-    "about": "Sitting on the Mount of Olives across from the temple, Jesus tells four of His men that it will be thrown down, warns them of deceivers and hard days ahead, promises He will come in glory, and gives one command to everyone: watch.",
+    "about": "Sitting on the Mount of Olives across from the temple, Jesus tells four of his men that it will be thrown down, warns them of deceivers and hard days ahead, promises he will come in glory, and gives one command to everyone: watch.",
     "tags": [
       "The temple",
       "Deception",
@@ -7822,14 +7822,14 @@ window.STUDIES = [
         "Peter, James, John and Andrew ask when, and what sign. Jesus warns, “Take heed lest any man deceive you.” Wars, earthquakes and famines are only “the beginnings of sorrows” (3–8).",
         "His men will be handed over, beaten and hated, but the gospel must go to all nations, and the Holy Ghost will give them words. “He that shall endure unto the end, the same shall be saved” (9–13).",
         "When the abomination of desolation stands where it ought not, those in Judaea must flee. False Christs will come with signs and wonders: “believe him not” (14–23).",
-        "After that tribulation the Son of man will come in the clouds with great power and glory and gather His elect from the four winds. Like a fig tree in leaf, the signs show He is near, and His words will not pass away (24–31).",
+        "After that tribulation the Son of man will come in the clouds with great power and glory and gather his elect from the four winds. Like a fig tree in leaf, the signs show he is near, and his words will not pass away (24–31).",
         "No man knows the day or the hour, not even the angels. Like servants left with their work and a porter at the door, “What I say unto you I say unto all, Watch” (32–37)."
       ],
       "key": {
         "ref": "Mark 13:37",
         "text": "And what I say unto you I say unto all, Watch."
       },
-      "big": "Jesus didn't give His followers a date or a chart. He told them plainly what was coming, promised to return in glory for all His people, and gave them one command: take heed, and watch. His words will outlast heaven and earth."
+      "big": "Jesus didn't give his followers a date or a chart. He told them plainly what was coming, promised to return in glory for all his people, and gave them one command: take heed, and watch. His words will outlast heaven and earth."
     }
   },
   {
@@ -7840,7 +7840,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 14",
     "sub": "Not what I will",
-    "about": "A woman pours out costly ointment on Jesus, Judas sells Him, and at the Passover Jesus gives His men the bread and the cup. In Gethsemane He prays “not what I will,” is betrayed with a kiss, confesses “I am” before the high priest, and Peter denies Him three times.",
+    "about": "A woman pours out costly ointment on Jesus, Judas sells him, and at the Passover Jesus gives his men the bread and the cup. In Gethsemane he prays “not what I will,” is betrayed with a kiss, confesses “I am” before the high priest, and Peter denies him three times.",
     "tags": [
       "Devotion",
       "The Lord's Supper",
@@ -7876,19 +7876,19 @@ window.STUDIES = [
         "galilee"
       ],
       "story": [
-        "The chief priests plot to take Jesus by craft. At Bethany a woman breaks an alabaster box of spikenard over His head. Some call it waste, but Jesus says, “She hath done what she could” (1–9).",
-        "Judas Iscariot, one of the twelve, goes to the chief priests to betray Him for money (10–11).",
-        "In a large upper room Jesus eats the Passover with the twelve and says one of them will betray Him. He takes bread, “this is my body,” and the cup, “my blood of the new testament, which is shed for many” (12–26).",
-        "On the way to the Mount of Olives He says they will all be scattered, but He will go before them into Galilee. Peter boasts he will never deny Him; Jesus says he will, three times, before the cock crows twice (27–31).",
-        "In Gethsemane Jesus prays, “Abba, Father … not what I will, but what thou wilt,” while His men sleep: “Watch ye and pray, lest ye enter into temptation” (32–42).",
-        "Judas comes with a crowd and betrays Him with a kiss. All the disciples forsake Him and flee, even a young man who leaves his linen cloth behind (43–52).",
-        "False witnesses can't agree. Asked if He is the Christ, Jesus says, “I am,” and is condemned. Below in the palace Peter denies Him three times, hears the cock crow the second time, and weeps (53–72)."
+        "The chief priests plot to take Jesus by craft. At Bethany a woman breaks an alabaster box of spikenard over his head. Some call it waste, but Jesus says, “She hath done what she could” (1–9).",
+        "Judas Iscariot, one of the twelve, goes to the chief priests to betray him for money (10–11).",
+        "In a large upper room Jesus eats the Passover with the twelve and says one of them will betray him. He takes bread, “this is my body,” and the cup, “my blood of the new testament, which is shed for many” (12–26).",
+        "On the way to the Mount of Olives he says they will all be scattered, but he will go before them into Galilee. Peter boasts he will never deny him; Jesus says he will, three times, before the cock crows twice (27–31).",
+        "In Gethsemane Jesus prays, “Abba, Father … not what I will, but what thou wilt,” while his men sleep: “Watch ye and pray, lest ye enter into temptation” (32–42).",
+        "Judas comes with a crowd and betrays him with a kiss. All the disciples forsake him and flee, even a young man who leaves his linen cloth behind (43–52).",
+        "False witnesses can't agree. Asked if he is the Christ, Jesus says, “I am,” and is condemned. Below in the palace Peter denies him three times, hears the cock crow the second time, and weeps (53–72)."
       ],
       "key": {
         "ref": "Mark 14:36",
         "text": "And he said, Abba, Father, all things are possible unto thee; take away this cup from me: nevertheless not what I will, but what thou wilt."
       },
-      "big": "Jesus went to the cross knowing everything ahead of time, and surrendered to His Father's will for us. The bread and the cup remember His body and blood given for many. Peter's fall shows that a willing heart isn't enough, but his tears show the way back."
+      "big": "Jesus went to the cross knowing everything ahead of time, and surrendered to his Father's will for us. The bread and the cup remember his body and blood given for many. Peter's fall shows that a willing heart isn't enough, but his tears show the way back."
     }
   },
   {
@@ -7934,16 +7934,16 @@ window.STUDIES = [
       "story": [
         "At daybreak the council hands Jesus to Pilate. He answers nothing to their charges, and Pilate marvels (1–5).",
         "Pilate knows the priests acted from envy, but to content the people he releases Barabbas, a murderer, and gives Jesus to be crucified (6–15).",
-        "Soldiers mock Him as a king. Simon of Cyrene is made to carry His cross to Golgotha, and Jesus refuses the wine mingled with myrrh (16–23).",
-        "At the third hour He is crucified between two thieves, under the charge THE KING OF THE JEWS, while everyone mocks: “He saved others; himself he cannot save” (24–32).",
-        "Darkness falls from noon until three. Jesus cries, “Eloi, Eloi, lama sabachthani?” and gives up the ghost. The temple veil tears from top to bottom, and the centurion confesses Him the Son of God (33–41).",
-        "Joseph of Arimathaea boldly asks Pilate for the body, wraps it in linen, and lays it in a rock tomb, while two women watch where He is laid (42–47)."
+        "Soldiers mock him as a king. Simon of Cyrene is made to carry his cross to Golgotha, and Jesus refuses the wine mingled with myrrh (16–23).",
+        "At the third hour he is crucified between two thieves, under the charge THE KING OF THE JEWS, while everyone mocks: “He saved others; himself he cannot save” (24–32).",
+        "Darkness falls from noon until three. Jesus cries, “Eloi, Eloi, lama sabachthani?” and gives up the ghost. The temple veil tears from top to bottom, and the centurion confesses him the Son of God (33–41).",
+        "Joseph of Arimathaea boldly asks Pilate for the body, wraps it in linen, and lays it in a rock tomb, while two women watch where he is laid (42–47)."
       ],
       "key": {
         "ref": "Mark 15:39",
         "text": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of God."
       },
-      "big": "The innocent King took the guilty man's cross. He would not save Himself, so that He could save us, and His death tore open the way to God for whosoever comes."
+      "big": "The innocent King took the guilty man's cross. He would not save himself, so that he could save us, and his death tore open the way to God for whosoever comes."
     }
   },
   {
@@ -7954,7 +7954,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Mark 16",
     "sub": "He is risen",
-    "about": "Three women find the stone rolled away, the risen Lord appears first to a woman He set free, and He sends His doubting men into all the world.",
+    "about": "Three women find the stone rolled away, the risen Lord appears first to a woman he set free, and he sends his doubting men into all the world.",
     "tags": [
       "Resurrection",
       "Restoration",
@@ -7966,7 +7966,7 @@ window.STUDIES = [
     "url": "studies/mark-16.html",
     "overview": {
       "where": "The tomb outside Jerusalem, the road into the country, the room where the eleven ate, and then heaven",
-      "when": "The first day of the week after the crucifixion, about A.D. 30, and the days after it until He was received up",
+      "when": "The first day of the week after the crucifixion, about A.D. 30, and the days after it until he was received up",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -7985,8 +7985,8 @@ window.STUDIES = [
       ],
       "story": [
         "After the sabbath, three women bring sweet spices to the tomb at sunrise, wondering who will roll away the great stone. It is already rolled away (1–4).",
-        "A young man in white tells them, “he is risen; he is not here,” and sends word to the disciples “and Peter” that He goes before them into Galilee. They flee, trembling (5–8).",
-        "Jesus appears first to Mary Magdalene, out of whom He had cast seven devils, then to two in the country, but the others believe not (9–13).",
+        "A young man in white tells them, “he is risen; he is not here,” and sends word to the disciples “and Peter” that he goes before them into Galilee. They flee, trembling (5–8).",
+        "Jesus appears first to Mary Magdalene, out of whom he had cast seven devils, then to two in the country, but the others believe not (9–13).",
         "He appears to the eleven at meat and rebukes their unbelief, then sends them: “Go ye into all the world, and preach the gospel to every creature.” He that believeth shall be saved; he that believeth not shall be damned (14–16).",
         "Signs will follow them that believe. He is received up into heaven and sits at God's right hand, and they preach everywhere, the Lord working with them (17–20)."
       ],
@@ -8047,7 +8047,7 @@ window.STUDIES = [
         "ref": "Luke 1:37",
         "text": "For with God nothing shall be impossible."
       },
-      "big": "God keeps every promise, even after long silence and long waiting. Nothing is too hard for Him, and He sent His Son to send our sins away and bring light to men sitting in darkness."
+      "big": "God keeps every promise, even after long silence and long waiting. Nothing is too hard for him, and he sent his Son to send our sins away and bring light to men sitting in darkness."
     }
   },
   {
@@ -8058,7 +8058,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 2",
     "sub": "Unto you is born a Saviour",
-    "about": "Jesus is born in Bethlehem and laid in a manger. Shepherds hear the news first, Simeon and Anna see God's promise in a baby, and at twelve Jesus is found in His Father's house.",
+    "about": "Jesus is born in Bethlehem and laid in a manger. Shepherds hear the news first, Simeon and Anna see God's promise in a baby, and at twelve Jesus is found in his Father's house.",
     "tags": [
       "The birth of Jesus",
       "Good news",
@@ -8070,7 +8070,7 @@ window.STUDIES = [
     "url": "studies/luke-02.html",
     "overview": {
       "where": "From Nazareth to Bethlehem, the fields outside Bethlehem, the temple in Jerusalem, and home to Nazareth",
-      "when": "About 5 BC, when Jesus was born, to about AD 7, when He was twelve",
+      "when": "About 5 BC, when Jesus was born, to about AD 7, when he was twelve",
       "people": [
         "jesus",
         "mary",
@@ -8096,15 +8096,15 @@ window.STUDIES = [
         "Caesar Augustus orders a census, and Joseph takes Mary, great with child, from Nazareth to Bethlehem, the city of David. Jesus is born and laid in a manger, because there is no room in the inn (1–7).",
         "An angel tells shepherds keeping watch by night: “Unto you is born this day in the city of David a Saviour, which is Christ the Lord.” A heavenly host praises God (8–14).",
         "The shepherds hurry to Bethlehem, find the babe, and spread the word. Mary keeps all these things in her heart (15–20).",
-        "Jesus is circumcised and named, then presented at the temple with the poor family's offering. Simeon takes Him in his arms: “Mine eyes have seen thy salvation” (21–35).",
+        "Jesus is circumcised and named, then presented at the temple with the poor family's offering. Simeon takes him in his arms: “Mine eyes have seen thy salvation” (21–35).",
         "Anna, a widowed prophetess, gives thanks and tells all who looked for redemption. The family goes home to Nazareth, and the child grows strong (36–40).",
-        "At twelve, Jesus stays behind at the Passover. After three days His parents find Him in the temple: “Wist ye not that I must be about my Father’s business?” He grows in wisdom and stature (41–52)."
+        "At twelve, Jesus stays behind at the Passover. After three days his parents find him in the temple: “Wist ye not that I must be about my Father’s business?” He grows in wisdom and stature (41–52)."
       ],
       "key": {
         "ref": "Luke 2:11",
         "text": "For unto you is born this day in the city of David a Saviour, which is Christ the Lord."
       },
-      "big": "God's Son came as a baby in a feed trough, and the good news went first to working men in the dark. He is the Saviour, the Christ, and the Lord, and His salvation is for all people."
+      "big": "God's Son came as a baby in a feed trough, and the good news went first to working men in the dark. He is the Saviour, the Christ, and the Lord, and his salvation is for all people."
     }
   },
   {
@@ -8158,13 +8158,13 @@ window.STUDIES = [
         "He warns the crowds that being Abraham's children won't save them. When the people, publicans, and soldiers ask, “What shall we do?”, he gives each a plain answer (7–14).",
         "John points to One mightier than he, who will baptize with the Holy Ghost and with fire. Herod shuts John up in prison for rebuking him over Herodias (15–20).",
         "Jesus is baptized and praying; the heaven opens, the Holy Ghost descends like a dove, and the Father says, “Thou art my beloved Son” (21–22).",
-        "Jesus begins His work at about thirty. Luke traces His line back through David and Abraham to Adam, “which was the son of God” (23–38)."
+        "Jesus begins his work at about thirty. Luke traces his line back through David and Abraham to Adam, “which was the son of God” (23–38)."
       ],
       "key": {
         "ref": "Luke 3:22",
         "text": "And the Holy Ghost descended in a bodily shape like a dove upon him, and a voice came from heaven, which said, Thou art my beloved Son; in thee I am well pleased."
       },
-      "big": "Repentance is a turned heart that shows up in a changed life, and no family name can stand in for it. Jesus is the Father's beloved Son, and He came as a son of Adam for every man."
+      "big": "Repentance is a turned heart that shows up in a changed life, and no family name can stand in for it. Jesus is the Father's beloved Son, and he came as a son of Adam for every man."
     }
   },
   {
@@ -8175,7 +8175,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 4",
     "sub": "The Spirit of the Lord is upon me",
-    "about": "Jesus beats the devil with the word of God, is thrown out of His hometown, and sets people free in Capernaum.",
+    "about": "Jesus beats the devil with the word of God, is thrown out of his hometown, and sets people free in Capernaum.",
     "tags": [
       "Temptation",
       "God's word",
@@ -8187,7 +8187,7 @@ window.STUDIES = [
     "url": "studies/luke-04.html",
     "overview": {
       "where": "The wilderness of Judaea and the temple in Jerusalem, then Galilee: the synagogue at Nazareth, and Capernaum by the lake",
-      "when": "Right after His baptism, at the start of His ministry, about AD 27–29",
+      "when": "Right after his baptism, at the start of his ministry, about AD 27–29",
       "people": [
         "jesus",
         "holy-spirit",
@@ -8212,17 +8212,17 @@ window.STUDIES = [
         "capernaum"
       ],
       "story": [
-        "Full of the Holy Ghost, Jesus is led into the wilderness and tempted by the devil for forty days. Three times He answers, “It is written,” and the devil leaves Him for a season (1–13).",
+        "Full of the Holy Ghost, Jesus is led into the wilderness and tempted by the devil for forty days. Three times he answers, “It is written,” and the devil leaves him for a season (1–13).",
         "Back in Galilee, Jesus reads Isaiah in the synagogue at Nazareth: “The Spirit of the Lord is upon me.” He says, “This day is this scripture fulfilled” (14–21).",
-        "His hometown wonders at Him but asks, “Is not this Joseph’s son?” He reminds them of the widow of Sarepta and Naaman the Syrian, and they try to throw Him off a cliff. He walks through the middle of them (22–30).",
-        "In Capernaum His word has power. He casts an unclean devil out of a man in the synagogue and heals Simon’s wife’s mother of a great fever (31–39).",
-        "At sunset He lays His hands on every sick person brought to Him. At daybreak He goes to a desert place, and won’t be kept: He must preach the kingdom of God to other cities also (40–44)."
+        "His hometown wonders at him but asks, “Is not this Joseph’s son?” He reminds them of the widow of Sarepta and Naaman the Syrian, and they try to throw him off a cliff. He walks through the middle of them (22–30).",
+        "In Capernaum his word has power. He casts an unclean devil out of a man in the synagogue and heals Simon’s wife’s mother of a great fever (31–39).",
+        "At sunset he lays his hands on every sick person brought to him. At daybreak he goes to a desert place, and won’t be kept: he must preach the kingdom of God to other cities also (40–44)."
       ],
       "key": {
         "ref": "Luke 4:18",
         "text": "The Spirit of the Lord is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised,"
       },
-      "big": "Jesus beat temptation with the word of God, and He came for the poor, the brokenhearted, the captive, the blind, and the bruised. He still sets captives free, one man at a time."
+      "big": "Jesus beat temptation with the word of God, and he came for the poor, the brokenhearted, the captive, the blind, and the bruised. He still sets captives free, one man at a time."
     }
   },
   {
@@ -8269,9 +8269,9 @@ window.STUDIES = [
       ],
       "story": [
         "Jesus teaches from Simon’s boat, then tells him to launch out into the deep. After a night of catching nothing, Simon obeys: “nevertheless at thy word.” The nets break and two boats nearly sink (1–7).",
-        "Simon falls at Jesus’ knees: “Depart from me; for I am a sinful man, O Lord.” Jesus says, “Fear not; from henceforth thou shalt catch men,” and they forsake all to follow Him (8–11).",
-        "A man full of leprosy says, “If thou wilt, thou canst make me clean.” Jesus touches him: “I will: be thou clean.” Then He withdraws into the wilderness to pray (12–16).",
-        "Friends let a paralyzed man down through the roof. Jesus forgives his sins, and to prove He has that power, tells him to rise. He walks home carrying his bed, glorifying God (17–26).",
+        "Simon falls at Jesus’ knees: “Depart from me; for I am a sinful man, O Lord.” Jesus says, “Fear not; from henceforth thou shalt catch men,” and they forsake all to follow him (8–11).",
+        "A man full of leprosy says, “If thou wilt, thou canst make me clean.” Jesus touches him: “I will: be thou clean.” Then he withdraws into the wilderness to pray (12–16).",
+        "Friends let a paralyzed man down through the roof. Jesus forgives his sins, and to prove he has that power, tells him to rise. He walks home carrying his bed, glorifying God (17–26).",
         "Levi the publican leaves all to follow Jesus and throws a feast. To the grumbling Pharisees Jesus says the sick need a physician, and new wine must go into new bottles (27–39)."
       ],
       "key": {
@@ -8331,9 +8331,9 @@ window.STUDIES = [
       ],
       "story": [
         "His disciples pick grain on the sabbath. Jesus answers the Pharisees with David and the shewbread: “The Son of man is Lord also of the sabbath” (1–5).",
-        "On another sabbath, with the scribes and Pharisees watching, He heals a man's withered hand. They are filled with madness (6–11).",
+        "On another sabbath, with the scribes and Pharisees watching, he heals a man's withered hand. They are filled with madness (6–11).",
         "Jesus prays all night on a mountain, then chooses twelve and names them apostles (12–16).",
-        "On a level place, crowds from Judaea, Jerusalem, Tyre and Sidon come to hear Him and be healed (17–19).",
+        "On a level place, crowds from Judaea, Jerusalem, Tyre and Sidon come to hear him and be healed (17–19).",
         "He blesses the poor, the hungry, the weeping and the hated, and warns the rich and the full (20–26).",
         "Love your enemies, do as you would be done by, be merciful as your Father is merciful, judge not, forgive, and give (27–38).",
         "Blind guides, the mote and the beam, trees known by their fruit, and two houses: one dug deep to the rock, one with no foundation (39–49)."
@@ -8342,7 +8342,7 @@ window.STUDIES = [
         "ref": "Luke 6:46",
         "text": "And why call ye me, Lord, Lord, and do not the things which I say?"
       },
-      "big": "Calling Jesus Lord means doing what He says. He meets people at the bottom, teaches us to love as God loved us when we were His enemies, and a life built on His word stands when the flood comes."
+      "big": "Calling Jesus Lord means doing what he says. He meets people at the bottom, teaches us to love as God loved us when we were his enemies, and a life built on his word stands when the flood comes."
     }
   },
   {
@@ -8392,13 +8392,13 @@ window.STUDIES = [
         "John, in prison, sends two disciples to ask, “Art thou he that should come?” Jesus heals many and sends back what they have seen and heard (18–23).",
         "Jesus calls John more than a prophet, and says this generation is like children who won't play: they said John had a devil, and called Jesus a glutton and a friend of sinners (24–35).",
         "At Simon the Pharisee's table, a woman who was a sinner washes Jesus' feet with her tears. He tells of two debtors, both forgiven (36–43).",
-        "Simon gave Him no water, no kiss, no oil. She loved much. “Thy sins are forgiven… Thy faith hath saved thee; go in peace” (44–50)."
+        "Simon gave him no water, no kiss, no oil. She loved much. “Thy sins are forgiven… Thy faith hath saved thee; go in peace” (44–50)."
       ],
       "key": {
         "ref": "Luke 7:50",
         "text": "And he said to the woman, Thy faith hath saved thee; go in peace."
       },
-      "big": "Jesus' word is enough. He sees grief nobody brings to Him, answers honest doubt with evidence, and is the friend of sinners. Faith in Him saves, and those forgiven much love much."
+      "big": "Jesus' word is enough. He sees grief nobody brings to him, answers honest doubt with evidence, and is the friend of sinners. Faith in him saves, and those forgiven much love much."
     }
   },
   {
@@ -8446,12 +8446,12 @@ window.STUDIES = [
         "the-deep"
       ],
       "story": [
-        "Jesus preaches from town to town with the twelve and a group of women He has healed, Mary Magdalene, Joanna and Susanna among them, who support Him from their own means (1–3).",
+        "Jesus preaches from town to town with the twelve and a group of women he has healed, Mary Magdalene, Joanna and Susanna among them, who support him from their own means (1–3).",
         "He tells the parable of the sower: the seed is the word of God, and it falls on the way side, on rock, among thorns, and on good ground that brings forth fruit with patience. “Take heed therefore how ye hear” (4–18).",
-        "His mother and brethren can't reach Him for the crowd. “My mother and my brethren are these which hear the word of God, and do it” (19–21).",
+        "His mother and brethren can't reach him for the crowd. “My mother and my brethren are these which hear the word of God, and do it” (19–21).",
         "A storm nearly swamps the boat while Jesus sleeps. He rebukes the wind and the water: “Where is your faith?” (22–25).",
         "Among the tombs of the Gadarenes, a man possessed by Legion is set free. The town finds him “sitting at the feet of Jesus, clothed, and in his right mind,” and Jesus sends him home to tell how great things God has done (26–39).",
-        "A woman who has bled for twelve years touches the border of His garment and is healed: “Daughter, be of good comfort.” Word comes that Jairus's daughter has died. “Fear not: believe only.” Jesus takes her by the hand: “Maid, arise” (40–56)."
+        "A woman who has bled for twelve years touches the border of his garment and is healed: “Daughter, be of good comfort.” Word comes that Jairus's daughter has died. “Fear not: believe only.” Jesus takes her by the hand: “Maid, arise” (40–56)."
       ],
       "key": {
         "ref": "Luke 8:50",
@@ -8468,19 +8468,19 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 9",
     "sub": "Take up his cross daily",
-    "about": "Twelve men sent out with nothing, five thousand fed, Peter names the Christ, glory on the mountain, and Jesus sets His face toward Jerusalem.",
+    "about": "Twelve men sent out with nothing, five thousand fed, Peter names the Christ, glory on the mountain, and Jesus sets his face toward Jerusalem.",
     "tags": [
       "Sent out",
       "Provision",
       "Who Jesus is",
       "Following daily",
-      "Hear Him",
+      "Hear him",
       "No looking back"
     ],
     "url": "studies/luke-09.html",
     "overview": {
       "where": "The towns of Galilee, a desert place near Bethsaida, a mountain where Jesus prayed, and the road south through a Samaritan village toward Jerusalem",
-      "when": "Near the end of Jesus' ministry in Galilee, as He turns toward Jerusalem and the cross",
+      "when": "Near the end of Jesus' ministry in Galilee, as he turns toward Jerusalem and the cross",
       "people": [
         "jesus",
         "the-twelve",
@@ -8503,15 +8503,15 @@ window.STUDIES = [
         "Jesus gives the twelve power and authority and sends them out to preach and heal, taking nothing for the journey (1–6).",
         "Herod the tetrarch is perplexed: “John have I beheaded: but who is this?” (7–9).",
         "With five loaves and two fishes Jesus feeds about five thousand men, and twelve baskets of fragments are left over (10–17).",
-        "Peter answers, “The Christ of God.” Jesus says the Son of man must suffer, be slain, and be raised the third day, and whoever will come after Him must deny himself and take up his cross daily (18–27).",
-        "On a mountain His face and clothes shine; Moses and Elias speak of His decease at Jerusalem, and a voice from the cloud says, “This is my beloved Son: hear him.” Below, He heals a father's only son (28–45).",
-        "The disciples argue over who is greatest. Jesus stedfastly sets His face to go to Jerusalem, rebukes James and John for wanting fire on a Samaritan village, and tells would-be followers that no man who looks back from the plough is fit for the kingdom of God (46–62)."
+        "Peter answers, “The Christ of God.” Jesus says the Son of man must suffer, be slain, and be raised the third day, and whoever will come after him must deny himself and take up his cross daily (18–27).",
+        "On a mountain his face and clothes shine; Moses and Elias speak of his decease at Jerusalem, and a voice from the cloud says, “This is my beloved Son: hear him.” Below, he heals a father's only son (28–45).",
+        "The disciples argue over who is greatest. Jesus stedfastly sets his face to go to Jerusalem, rebukes James and John for wanting fire on a Samaritan village, and tells would-be followers that no man who looks back from the plough is fit for the kingdom of God (46–62)."
       ],
       "key": {
         "ref": "Luke 9:23",
         "text": "And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me."
       },
-      "big": "Jesus is the Christ of God, who went to the cross on purpose. Salvation is His free gift; following Him means saying no to self and taking up the cross one day at a time, listening to Him, and not looking back."
+      "big": "Jesus is the Christ of God, who went to the cross on purpose. Salvation is his free gift; following him means saying no to self and taking up the cross one day at a time, listening to him, and not looking back."
     }
   },
   {
@@ -8562,10 +8562,10 @@ window.STUDIES = [
         "heaven"
       ],
       "story": [
-        "Jesus sends seventy more men ahead of Him two by two. The harvest is great and the labourers few, so they are to pray for more, travel light, bring peace, heal the sick, and say, “The kingdom of God is come nigh unto you” (1–12).",
-        "He pronounces woe on Chorazin, Bethsaida and Capernaum, towns that saw His mighty works and didn't repent (13–16).",
+        "Jesus sends seventy more men ahead of him two by two. The harvest is great and the labourers few, so they are to pray for more, travel light, bring peace, heal the sick, and say, “The kingdom of God is come nigh unto you” (1–12).",
+        "He pronounces woe on Chorazin, Bethsaida and Capernaum, towns that saw his mighty works and didn't repent (13–16).",
         "The seventy return with joy because devils obeyed them. Jesus saw Satan fall like lightning, but tells them to rejoice rather that their names are written in heaven (17–20).",
-        "Jesus rejoices that the Father has hidden these things from the wise and revealed them to babes, and tells His disciples they see what prophets and kings longed to see (21–24).",
+        "Jesus rejoices that the Father has hidden these things from the wise and revealed them to babes, and tells his disciples they see what prophets and kings longed to see (21–24).",
         "A lawyer asks how to inherit eternal life, answers with love for God and neighbour, and then asks, “Who is my neighbour?” Jesus tells of a man beaten on the Jericho road: a priest and a Levite pass by, but a Samaritan has compassion and pays for his care. “Go, and do thou likewise” (25–37).",
         "In Martha's house, Mary sits at Jesus' feet while Martha is cumbered with serving. Jesus tells her one thing is needful, and Mary has chosen that good part (38–42)."
       ],
@@ -8573,7 +8573,7 @@ window.STUDIES = [
         "ref": "Luke 10:27",
         "text": "And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself."
       },
-      "big": "Jesus sends ordinary men out with His peace and tells them their greatest joy is a name written in heaven. Eternal life can't be earned by keeping the law; it is God's gift. Those who receive His mercy learn to show it to anyone in need, and the one thing needful is time at His feet."
+      "big": "Jesus sends ordinary men out with his peace and tells them their greatest joy is a name written in heaven. Eternal life can't be earned by keeping the law; it is God's gift. Those who receive his mercy learn to show it to anyone in need, and the one thing needful is time at his feet."
     }
   },
   {
@@ -8584,7 +8584,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 11",
     "sub": "Lord, teach us to pray",
-    "about": "Jesus teaches His men to pray and to keep on asking, drives out a devil and is accused of working for Beelzebub, warns about a house swept clean and left empty, and tells the Pharisees the inside of the cup is what counts.",
+    "about": "Jesus teaches his men to pray and to keep on asking, drives out a devil and is accused of working for Beelzebub, warns about a house swept clean and left empty, and tells the Pharisees the inside of the cup is what counts.",
     "tags": [
       "Prayer",
       "Keep asking",
@@ -8622,18 +8622,18 @@ window.STUDIES = [
         "altar"
       ],
       "story": [
-        "After watching Jesus pray, a disciple asks Him to teach them. He gives them the Lord's prayer: our Father, His name, His kingdom and will, daily bread, forgiveness, and protection from temptation (1–4).",
+        "After watching Jesus pray, a disciple asks him to teach them. He gives them the Lord's prayer: our Father, his name, his kingdom and will, daily bread, forgiveness, and protection from temptation (1–4).",
         "He tells of a friend knocking at midnight who gets bread because he won't quit, and promises: ask, seek, knock. If evil fathers give good gifts, how much more will the Father give the Holy Spirit to them that ask (5–13).",
-        "Jesus casts out a dumb devil. Some say He does it by Beelzebub; He answers that a divided kingdom falls, that He works by the finger of God, and that a stronger man has come to overpower the strong man (14–23).",
-        "He warns that an unclean spirit returns to a house swept and garnished but empty, bringing seven worse. A woman blesses His mother; He says, rather, blessed are they that hear the word of God and keep it (24–28).",
-        "To a crowd demanding a sign, He offers only the sign of Jonas. The queen of the south and the men of Nineveh will condemn this generation, for a greater than Solomon and Jonas is here. He warns them to let the light in (29–36).",
-        "At a Pharisee's table He exposes clean cups that are filthy inside, tithing herbs while neglecting justice and the love of God, heavy burdens, and the blood of the prophets from Abel to Zacharias. The scribes and Pharisees begin to lie in wait for Him (37–54)."
+        "Jesus casts out a dumb devil. Some say he does it by Beelzebub; he answers that a divided kingdom falls, that he works by the finger of God, and that a stronger man has come to overpower the strong man (14–23).",
+        "He warns that an unclean spirit returns to a house swept and garnished but empty, bringing seven worse. A woman blesses his mother; he says, rather, blessed are they that hear the word of God and keep it (24–28).",
+        "To a crowd demanding a sign, he offers only the sign of Jonas. The queen of the south and the men of Nineveh will condemn this generation, for a greater than Solomon and Jonas is here. He warns them to let the light in (29–36).",
+        "At a Pharisee's table he exposes clean cups that are filthy inside, tithing herbs while neglecting justice and the love of God, heavy burdens, and the blood of the prophets from Abel to Zacharias. The scribes and Pharisees begin to lie in wait for him (37–54)."
       ],
       "key": {
         "ref": "Luke 11:9",
         "text": "And I say unto you, Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
       },
-      "big": "Prayer starts with our Father and keeps on asking, because He is good and gives His best gift, the Holy Spirit. Jesus is stronger than the strong man, but a life that is only swept clean and left empty falls back worse; it must be filled. God isn't fooled by a clean outside. He looks at the heart, and blesses whoever hears His word and keeps it."
+      "big": "Prayer starts with our Father and keeps on asking, because he is good and gives his best gift, the Holy Spirit. Jesus is stronger than the strong man, but a life that is only swept clean and left empty falls back worse; it must be filled. God isn't fooled by a clean outside. He looks at the heart, and blesses whoever hears his word and keeps it."
     }
   },
   {
@@ -8644,7 +8644,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 12",
     "sub": "Rich toward God",
-    "about": "Before a crowd of thousands, Jesus warns against masks and greed, tells worried men to look at the ravens, and calls His servants to be ready when He comes.",
+    "about": "Before a crowd of thousands, Jesus warns against masks and greed, tells worried men to look at the ravens, and calls his servants to be ready when he comes.",
     "tags": [
       "Hypocrisy",
       "Worth",
@@ -8674,17 +8674,17 @@ window.STUDIES = [
         "hell"
       ],
       "story": [
-        "With thousands pressing in, Jesus warns His disciples about the leaven of the Pharisees, which is hypocrisy: nothing covered will stay hidden. Fear God, not men, because God doesn't forget even a sparrow, and the hairs of your head are numbered (1–12).",
+        "With thousands pressing in, Jesus warns his disciples about the leaven of the Pharisees, which is hypocrisy: nothing covered will stay hidden. Fear God, not men, because God doesn't forget even a sparrow, and the hairs of your head are numbered (1–12).",
         "A man wants Jesus to make his brother split the inheritance. Jesus warns against covetousness and tells of a rich man who built bigger barns and planned for many years, but God said, “Thou fool, this night thy soul shall be required of thee” (13–21).",
-        "Don't be eaten up with worry. God feeds the ravens and clothes the lilies, and your Father knows what you need. Seek His kingdom, give, and keep your treasure in heaven, for where your treasure is, there will your heart be (22–34).",
+        "Don't be eaten up with worry. God feeds the ravens and clothes the lilies, and your Father knows what you need. Seek his kingdom, give, and keep your treasure in heaven, for where your treasure is, there will your heart be (22–34).",
         "Be ready, like servants waiting up for their lord with lamps lit. He will gird himself and serve them. The faithful steward is blessed; the one who says “My lord delayeth” and turns cruel and drunken is judged. To whom much is given, much is required (35–48).",
-        "Jesus has a baptism of suffering ahead of Him, and He will divide even families. People can read the weather but not the time they're living in. Settle with your adversary while you're still on the way (49–59)."
+        "Jesus has a baptism of suffering ahead of him, and he will divide even families. People can read the weather but not the time they're living in. Settle with your adversary while you're still on the way (49–59)."
       ],
       "key": {
         "ref": "Luke 12:34",
         "text": "For where your treasure is, there will your heart be also."
       },
-      "big": "A man's life isn't in what he owns. The Father who feeds the ravens knows what we need, so we can stop worrying, be rich toward God, and live ready for the Lord who comes to serve His servants."
+      "big": "A man's life isn't in what he owns. The Father who feeds the ravens knows what we need, so we can stop worrying, be rich toward God, and live ready for the Lord who comes to serve his servants."
     }
   },
   {
@@ -8730,15 +8730,15 @@ window.STUDIES = [
       "story": [
         "People tell Jesus about Galilaeans Pilate killed at their sacrifices. Jesus says they weren't worse sinners than anyone, nor were the eighteen killed by the tower in Siloam: “except ye repent, ye shall all likewise perish” (1–5).",
         "A fig tree has borne nothing for three years. The dresser pleads, “Let it alone this year also,” and promises to dig about it and dung it. If it bears fruit, well; if not, it will be cut down (6–9).",
-        "On the sabbath Jesus sees a woman bowed together for eighteen years and says, “Woman, thou art loosed.” She stands straight and glorifies God. To the angry synagogue ruler He says this daughter of Abraham deserves more than an ox led to water (10–17).",
+        "On the sabbath Jesus sees a woman bowed together for eighteen years and says, “Woman, thou art loosed.” She stands straight and glorifies God. To the angry synagogue ruler he says this daughter of Abraham deserves more than an ox led to water (10–17).",
         "The kingdom of God is like a mustard seed that grows into a tree, and like leaven that works through the whole batch. Asked if few are saved, Jesus says, “Strive to enter in at the strait gate,” before the door is shut. Many will come from every direction and sit down in the kingdom (18–30).",
-        "Warned that Herod wants to kill Him, Jesus calls him “that fox” and keeps walking toward Jerusalem. He grieves over the city: “how often would I have gathered thy children together, as a hen doth gather her brood under her wings, and ye would not!” (31–35)."
+        "Warned that Herod wants to kill him, Jesus calls him “that fox” and keeps walking toward Jerusalem. He grieves over the city: “how often would I have gathered thy children together, as a hen doth gather her brood under her wings, and ye would not!” (31–35)."
       ],
       "key": {
         "ref": "Luke 13:3",
         "text": "I tell you, Nay: but, except ye repent, ye shall all likewise perish."
       },
-      "big": "Disaster is not a scorecard; everyone needs to repent. God gives time and works the soil, Jesus looses those Satan has bound, and His arms are open. The only thing that keeps a man out is that he would not come."
+      "big": "Disaster is not a scorecard; everyone needs to repent. God gives time and works the soil, Jesus looses those Satan has bound, and his arms are open. The only thing that keeps a man out is that he would not come."
     }
   },
   {
@@ -8749,7 +8749,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 14",
     "sub": "Come; for all things are now ready",
-    "about": "At a chief Pharisee's sabbath dinner, Jesus heals a man with the dropsy, tells guests to take the lowest seat, invites the poor, tells of a great supper the invited guests skipped, and warns the crowds to count the cost of following Him.",
+    "about": "At a chief Pharisee's sabbath dinner, Jesus heals a man with the dropsy, tells guests to take the lowest seat, invites the poor, tells of a great supper the invited guests skipped, and warns the crowds to count the cost of following him.",
     "tags": [
       "Mercy",
       "Humility",
@@ -8761,7 +8761,7 @@ window.STUDIES = [
     "url": "studies/luke-14.html",
     "overview": {
       "where": "The house of a chief Pharisee, somewhere on Jesus' last journey to Jerusalem, probably in Galilee or Perea; then on the road with great crowds",
-      "when": "Late in Jesus' ministry, on His last journey toward Jerusalem, a few months before the cross",
+      "when": "Late in Jesus' ministry, on his last journey toward Jerusalem, a few months before the cross",
       "people": [
         "jesus",
         "pharisees",
@@ -8773,7 +8773,7 @@ window.STUDIES = [
       ],
       "story": [
         "On the sabbath, at a chief Pharisee's house, they watch Jesus. He heals a man with the dropsy and asks who wouldn't pull an ox out of a pit on the sabbath. They can't answer (1–6).",
-        "Seeing guests grab the best seats, He tells them to take the lowest room: “whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted” (7–11).",
+        "Seeing guests grab the best seats, he tells them to take the lowest room: “whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted” (7–11).",
         "He tells the host to invite the poor, the maimed, the lame and the blind, who can't repay him; he will be repaid at the resurrection of the just (12–14).",
         "A great supper: the invited guests all make excuses, so the master sends for the poor and the lame, then out to the highways and hedges. “Yet there is room” (15–24).",
         "To the crowds: a disciple puts Christ before family and life itself and bears his cross. Count the cost, like a man building a tower or a king facing a bigger army (25–33).",
@@ -8794,7 +8794,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 15",
     "sub": "Lost, and found",
-    "about": "When the Pharisees grumble that Jesus receives sinners, He tells of a lost sheep, a lost coin and a lost son: a shepherd who searches, a woman who sweeps, and a father who runs, with joy in heaven over one sinner that repenteth.",
+    "about": "When the Pharisees grumble that Jesus receives sinners, he tells of a lost sheep, a lost coin and a lost son: a shepherd who searches, a woman who sweeps, and a father who runs, with joy in heaven over one sinner that repenteth.",
     "tags": [
       "Grace",
       "Repentance",
@@ -8857,7 +8857,7 @@ window.STUDIES = [
     ],
     "url": "studies/luke-16.html",
     "overview": {
-      "where": "On Jesus' last journey toward Jerusalem, teaching His disciples while the Pharisees listen",
+      "where": "On Jesus' last journey toward Jerusalem, teaching his disciples while the Pharisees listen",
       "when": "Late in Jesus' ministry, the same day as Luke 15, a few months before the cross",
       "people": [
         "jesus",
@@ -8887,7 +8887,7 @@ window.STUDIES = [
         "ref": "Luke 16:13",
         "text": "No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
       },
-      "big": "Money is a tool, not a master. Use it now for what lasts, be faithful in little things, and serve God alone. Death fixes a man's place forever, and God has already spoken in His Word, so the time to hear and turn is today."
+      "big": "Money is a tool, not a master. Use it now for what lasts, be faithful in little things, and serve God alone. Death fixes a man's place forever, and God has already spoken in his Word, so the time to hear and turn is today."
     }
   },
   {
@@ -8909,7 +8909,7 @@ window.STUDIES = [
     ],
     "url": "studies/luke-17.html",
     "overview": {
-      "where": "On the road to Jerusalem, along the border between Samaria and Galilee, at a village where ten lepers met Him",
+      "where": "On the road to Jerusalem, along the border between Samaria and Galilee, at a village where ten lepers met him",
       "when": "About AD 29–30, on Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
       "people": [
         "jesus",
@@ -8933,13 +8933,13 @@ window.STUDIES = [
         "The apostles ask, “Increase our faith.” Faith like a grain of mustard seed could uproot a tree. And a servant who does all he's told has only done his duty (5–10).",
         "Ten lepers cry, “Jesus, Master, have mercy on us,” and are cleansed on their way to the priests. Only one, a Samaritan, turns back to give thanks: “Where are the nine?” (11–19).",
         "The Pharisees ask when the kingdom of God will come. It doesn't come with signs to watch for: “the kingdom of God is within you” (20–21).",
-        "The Son of man will come like lightning, but first He must suffer. Life will go on as in the days of Noe and Lot until judgment falls. “Remember Lot’s wife.” One shall be taken, and the other left (22–37)."
+        "The Son of man will come like lightning, but first he must suffer. Life will go on as in the days of Noe and Lot until judgment falls. “Remember Lot’s wife.” One shall be taken, and the other left (22–37)."
       ],
       "key": {
         "ref": "Luke 17:17",
         "text": "And Jesus answering said, Were there not ten cleansed? but where are the nine?"
       },
-      "big": "Forgive freely, trust God with even a small faith, and never take His gifts and forget the Giver. The Son of man is coming suddenly, so be ready now and don't look back at the life He brought you out of."
+      "big": "Forgive freely, trust God with even a small faith, and never take his gifts and forget the Giver. The Son of man is coming suddenly, so be ready now and don't look back at the life he brought you out of."
     }
   },
   {
@@ -8982,11 +8982,11 @@ window.STUDIES = [
         "nazareth"
       ],
       "story": [
-        "Men ought always to pray and not to faint. A widow keeps coming to an unjust judge until he gives her justice. How much more will God hear His own (1–8).",
+        "Men ought always to pray and not to faint. A widow keeps coming to an unjust judge until he gives her justice. How much more will God hear his own (1–8).",
         "A Pharisee prays about himself; a publican, standing afar off, prays, “God be merciful to me a sinner.” The publican goes home justified (9–14).",
         "Jesus welcomes the infants the disciples turned away. Whoever won't receive the kingdom as a little child can't enter it (15–17).",
         "A rich ruler has kept the commandments but lacks one thing. Told to sell all and follow Jesus, he goes away very sorrowful. What is impossible with men is possible with God (18–30).",
-        "Jesus tells the twelve He will be mocked, scourged and killed, and rise the third day; they don't understand. Near Jericho a blind beggar cries, “Thou Son of David, have mercy on me,” receives his sight, and follows Him (31–43)."
+        "Jesus tells the twelve he will be mocked, scourged and killed, and rise the third day; they don't understand. Near Jericho a blind beggar cries, “Thou Son of David, have mercy on me,” receives his sight, and follows him (31–43)."
       ],
       "key": {
         "ref": "Luke 18:13",
@@ -9036,17 +9036,17 @@ window.STUDIES = [
         "temple"
       ],
       "story": [
-        "In Jericho, Zacchaeus, the rich chief of the publicans, is too short to see over the crowd, so he climbs a sycomore tree. Jesus stops, calls him by name, and says, “to day I must abide at thy house.” He comes down and receives Him joyfully (1–6).",
+        "In Jericho, Zacchaeus, the rich chief of the publicans, is too short to see over the crowd, so he climbs a sycomore tree. Jesus stops, calls him by name, and says, “to day I must abide at thy house.” He comes down and receives him joyfully (1–6).",
         "The crowd murmurs that Jesus is the guest of a sinner. Zacchaeus stands and gives half his goods to the poor and restores fourfold to anyone he cheated. Jesus says, “This day is salvation come to this house… For the Son of man is come to seek and to save that which was lost” (7–10).",
         "Because the people think the kingdom will appear at once, Jesus tells of a nobleman who goes to a far country to receive a kingdom. He gives ten servants a pound each: “Occupy till I come.” The faithful are set over cities; the servant who hid his pound in a napkin loses it; the citizens who would not have him reign are judged (11–27).",
         "Jesus climbs to the mount of Olives, sends for a colt never ridden, and rides down toward the city. The disciples spread their clothes and shout, “Blessed be the King that cometh in the name of the Lord.” If they were silent, the stones would cry out (28–40).",
-        "Seeing the city, Jesus weeps over it: it did not know the things belonging to its peace, and enemies would one day lay it even with the ground. In the temple He casts out the sellers, “ye have made it a den of thieves,” and teaches daily while the people hang on His words (41–48)."
+        "Seeing the city, Jesus weeps over it: it did not know the things belonging to its peace, and enemies would one day lay it even with the ground. In the temple he casts out the sellers, “ye have made it a den of thieves,” and teaches daily while the people hang on his words (41–48)."
       ],
       "key": {
         "ref": "Luke 19:10",
         "text": "For the Son of man is come to seek and to save that which was lost."
       },
-      "big": "Jesus came looking for the lost and called a crook by name before he changed; making things right followed grace, it didn't buy it. His servants are to be faithful with what He gives until He returns. He came as a King of peace, and He wept over those who missed their day."
+      "big": "Jesus came looking for the lost and called a crook by name before he changed; making things right followed grace, it didn't buy it. His servants are to be faithful with what he gives until he returns. He came as a King of peace, and he wept over those who missed their day."
     }
   },
   {
@@ -9057,7 +9057,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 20",
     "sub": "By what authority?",
-    "about": "One trap after another in the temple courts: priests, spies and Sadducees try to catch Jesus in His words, and every one of them walks away silent.",
+    "about": "One trap after another in the temple courts: priests, spies and Sadducees try to catch Jesus in his words, and every one of them walks away silent.",
     "tags": [
       "Jesus' authority",
       "Rejection",
@@ -9094,17 +9094,17 @@ window.STUDIES = [
         "synagogue"
       ],
       "story": [
-        "The chief priests, scribes and elders demand to know by what authority Jesus acts. He asks whether the baptism of John was from heaven or of men. Trapped either way, they say they cannot tell, and He does not tell them either (1–8).",
+        "The chief priests, scribes and elders demand to know by what authority Jesus acts. He asks whether the baptism of John was from heaven or of men. Trapped either way, they say they cannot tell, and he does not tell them either (1–8).",
         "Jesus tells of husbandmen who beat the owner's servants and then kill his beloved son, the heir, to keep the vineyard. The owner will destroy them and give it to others. “The stone which the builders rejected, the same is become the head of the corner” (9–19).",
         "Spies pretending to be honest ask if it is lawful to pay tribute to Caesar. Jesus asks whose image is on a penny: “Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s” (20–26).",
-        "Sadducees, who deny the resurrection, ask whose wife a woman married to seven brothers will be. Jesus answers that the children of the resurrection neither marry nor die, and that God at the bush called Himself the God of Abraham, Isaac and Jacob: “not a God of the dead, but of the living” (27–40).",
-        "Jesus asks how the Christ can be David's son when David calls him Lord in the Psalms, then warns His disciples against scribes who love long robes and the best seats, devour widows' houses, and make long prayers for a show (41–47)."
+        "Sadducees, who deny the resurrection, ask whose wife a woman married to seven brothers will be. Jesus answers that the children of the resurrection neither marry nor die, and that God at the bush called himself the God of Abraham, Isaac and Jacob: “not a God of the dead, but of the living” (27–40).",
+        "Jesus asks how the Christ can be David's son when David calls him Lord in the Psalms, then warns his disciples against scribes who love long robes and the best seats, devour widows' houses, and make long prayers for a show (41–47)."
       ],
       "key": {
         "ref": "Luke 20:25",
         "text": "And he said unto them, Render therefore unto Caesar the things which be Caesar’s, and unto God the things which be God’s."
       },
-      "big": "Jesus answers every trap and silences every critic. The Son whom men rejected is God's cornerstone; give Caesar his coin and give God yourself, since you bear His image; and God is the God of the living, so the resurrection is real. Beware of religion that is only a show."
+      "big": "Jesus answers every trap and silences every critic. The Son whom men rejected is God's cornerstone; give Caesar his coin and give God yourself, since you bear his image; and God is the God of the living, so the resurrection is real. Beware of religion that is only a show."
     }
   },
   {
@@ -9115,7 +9115,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 21",
     "sub": "Watch ye therefore, and pray always",
-    "about": "A poor widow gives everything. Then Jesus tells His men what is coming, the fall of Jerusalem and His own return, and how to be ready.",
+    "about": "A poor widow gives everything. Then Jesus tells his men what is coming, the fall of Jerusalem and his own return, and how to be ready.",
     "tags": [
       "Giving",
       "Deception",
@@ -9142,16 +9142,16 @@ window.STUDIES = [
       "story": [
         "Rich men drop gifts into the treasury. A poor widow casts in two mites, all she has, and Jesus says she gave more than they all (1–4).",
         "The men admire the temple's goodly stones. Jesus says not one will be left on another, and warns them first not to be deceived or terrified (5–11).",
-        "Before the end, His people will be hated and dragged before kings, but He will give them a mouth and wisdom; in patience they possess their souls (12–19).",
+        "Before the end, his people will be hated and dragged before kings, but he will give them a mouth and wisdom; in patience they possess their souls (12–19).",
         "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was in A.D. 70 (20–24).",
         "Signs in the heavens, nations in distress, and the Son of man coming in a cloud: look up, for your redemption draweth nigh (25–33).",
-        "Don't let surfeiting, drunkenness and the cares of this life weigh your heart down. Watch, and pray always. By day He teaches in the temple (34–38)."
+        "Don't let surfeiting, drunkenness and the cares of this life weigh your heart down. Watch, and pray always. By day he teaches in the temple (34–38)."
       ],
       "key": {
         "ref": "Luke 21:36",
         "text": "Watch ye therefore, and pray always, that ye may be accounted worthy to escape all these things that shall come to pass, and to stand before the Son of man."
       },
-      "big": "Jesus never gave a date. He gave a warning and a hope: don't be fooled, don't be afraid, and don't let anything make your heart heavy. Look up, watch, and pray always, because He is coming."
+      "big": "Jesus never gave a date. He gave a warning and a hope: don't be fooled, don't be afraid, and don't let anything make your heart heavy. Look up, watch, and pray always, because he is coming."
     }
   },
   {
@@ -9198,14 +9198,14 @@ window.STUDIES = [
         "Peter and John follow a man with a pitcher of water to a large upper room. There Jesus gives the bread and the cup: “this do in remembrance of me” (7–23).",
         "The disciples argue over who is greatest. Jesus: “I am among you as he that serveth.” He warns Simon that Satan will sift him, but “I have prayed for thee” (24–38).",
         "On the mount of Olives Jesus prays, “not my will, but thine,” in an agony, while the disciples sleep. Judas comes with a kiss; Jesus heals the servant's ear (39–53).",
-        "In the high priest's house Peter denies Him three times. The cock crows, the Lord turns and looks upon Peter, and he weeps bitterly (54–62).",
+        "In the high priest's house Peter denies him three times. The cock crows, the Lord turns and looks upon Peter, and he weeps bitterly (54–62).",
         "The guards mock and beat Jesus. At daybreak the council asks, “Art thou the Son of God?” He answers, “Ye say that I am” (63–71)."
       ],
       "key": {
         "ref": "Luke 22:32",
         "text": "But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren."
       },
-      "big": "Jesus knew every failure that was coming that night, and He loved His men through all of it. He prays for His own, turns them back when they fall, and gives them work: strengthen thy brethren."
+      "big": "Jesus knew every failure that was coming that night, and he loved his men through all of it. He prays for his own, turns them back when they fall, and gives them work: strengthen thy brethren."
     }
   },
   {
@@ -9216,7 +9216,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 23",
     "sub": "To day in paradise",
-    "about": "Pilate and Herod both find no fault in Jesus, yet He is crucified in the place of Barabbas. On the cross He prays “Father, forgive them,” promises a dying thief paradise, and is laid in Joseph's new tomb.",
+    "about": "Pilate and Herod both find no fault in Jesus, yet he is crucified in the place of Barabbas. On the cross he prays “Father, forgive them,” promises a dying thief paradise, and is laid in Joseph's new tomb.",
     "tags": [
       "The cross",
       "Substitution",
@@ -9252,18 +9252,18 @@ window.STUDIES = [
         "sepulchre"
       ],
       "story": [
-        "The council brings Jesus to Pilate with three charges. Pilate finds no fault in Him, hears He is from Galilee, and sends Him to Herod, who mocks Him when He won't perform a miracle (1–12).",
-        "Pilate says three times that Jesus has done nothing worthy of death, but the crowd shouts “Crucify him,” and Pilate releases Barabbas, a man in prison for sedition and murder, in His place (13–25).",
+        "The council brings Jesus to Pilate with three charges. Pilate finds no fault in him, hears he is from Galilee, and sends him to Herod, who mocks him when he won't perform a miracle (1–12).",
+        "Pilate says three times that Jesus has done nothing worthy of death, but the crowd shouts “Crucify him,” and Pilate releases Barabbas, a man in prison for sedition and murder, in his place (13–25).",
         "Simon of Cyrene carries the cross after Jesus. Jesus tells the weeping women to weep for themselves, and is crucified at Calvary between two criminals, praying “Father, forgive them; for they know not what they do” (26–38).",
-        "One criminal rails on Him. The other confesses his guilt and asks, “Lord, remember me.” Jesus answers, “To day shalt thou be with me in paradise” (39–43).",
-        "Darkness falls from the sixth hour to the ninth, the veil of the temple is torn, and Jesus commends His spirit to the Father and dies. The centurion says, “Certainly this was a righteous man” (44–49).",
-        "Joseph of Arimathaea, a council member who didn't consent to their verdict, asks Pilate for the body and lays it in a new tomb. The women from Galilee see where He is laid and rest on the sabbath (50–56)."
+        "One criminal rails on him. The other confesses his guilt and asks, “Lord, remember me.” Jesus answers, “To day shalt thou be with me in paradise” (39–43).",
+        "Darkness falls from the sixth hour to the ninth, the veil of the temple is torn, and Jesus commends his spirit to the Father and dies. The centurion says, “Certainly this was a righteous man” (44–49).",
+        "Joseph of Arimathaea, a council member who didn't consent to their verdict, asks Pilate for the body and lays it in a new tomb. The women from Galilee see where he is laid and rest on the sabbath (50–56)."
       ],
       "key": {
         "ref": "Luke 23:43",
         "text": "And Jesus said unto him, Verily I say unto thee, To day shalt thou be with me in paradise."
       },
-      "big": "The innocent One died in the place of the guilty. Jesus prayed for His enemies, opened the way to God by tearing the veil, and promised paradise to a dying criminal who brought nothing but faith. It's never too late to call on Him."
+      "big": "The innocent One died in the place of the guilty. Jesus prayed for his enemies, opened the way to God by tearing the veil, and promised paradise to a dying criminal who brought nothing but faith. It's never too late to call on him."
     }
   },
   {
@@ -9274,7 +9274,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 24",
     "sub": "He is risen",
-    "about": "The women find the tomb empty, two sad disciples meet the risen Jesus on the road to Emmaus, and He shows the eleven His hands and feet, eats with them, opens the Scriptures, and is carried up into heaven.",
+    "about": "The women find the tomb empty, two sad disciples meet the risen Jesus on the road to Emmaus, and he shows the eleven his hands and feet, eats with them, opens the Scriptures, and is carried up into heaven.",
     "tags": [
       "Resurrection",
       "Doubt",
@@ -9307,16 +9307,16 @@ window.STUDIES = [
       "story": [
         "Very early on the first day of the week the women find the stone rolled away and no body. Two men in shining garments ask, “Why seek ye the living among the dead? He is not here, but is risen” (1–8).",
         "The women tell the eleven, who think it idle tales. Peter runs to the tomb and sees the linen clothes lying by themselves (9–12).",
-        "On the road to Emmaus, Jesus joins two sad disciples who don't recognize Him. Beginning at Moses and all the prophets, He shows them the things concerning Himself (13–27).",
-        "They urge Him to stay. As He breaks bread their eyes are opened, and He vanishes. They hurry back to Jerusalem: “The Lord is risen indeed, and hath appeared to Simon” (28–35).",
-        "Jesus stands among the disciples and says, “Peace be unto you.” He shows His hands and feet, tells them to handle Him, and eats broiled fish before them (36–43).",
+        "On the road to Emmaus, Jesus joins two sad disciples who don't recognize him. Beginning at Moses and all the prophets, he shows them the things concerning himself (13–27).",
+        "They urge him to stay. As he breaks bread their eyes are opened, and he vanishes. They hurry back to Jerusalem: “The Lord is risen indeed, and hath appeared to Simon” (28–35).",
+        "Jesus stands among the disciples and says, “Peace be unto you.” He shows his hands and feet, tells them to handle him, and eats broiled fish before them (36–43).",
         "He opens their understanding of the Scriptures, sends them to preach repentance and remission of sins to all nations, promises power from on high, and is carried up into heaven from near Bethany. They return with great joy (44–53)."
       ],
       "key": {
         "ref": "Luke 24:6",
         "text": "He is not here, but is risen: remember how he spake unto you when he was yet in Galilee,"
       },
-      "big": "Jesus rose bodily from the dead, just as He and the Scriptures said. He met doubters patiently, restored the man who had denied Him, and sent His followers to tell every nation that sins can be forgiven in His name."
+      "big": "Jesus rose bodily from the dead, just as he and the Scriptures said. He met doubters patiently, restored the man who had denied him, and sent his followers to tell every nation that sins can be forgiven in his name."
     }
   },
   {
@@ -9327,7 +9327,7 @@ window.STUDIES = [
     "date": "2026-10-30",
     "title": "Acts 1",
     "sub": "Wait for the promise",
-    "about": "Jesus goes back to heaven and leaves His followers a promise and a job. The men He leaves behind are the same ones who ran from Him, and He is not done with them.",
+    "about": "Jesus goes back to heaven and leaves his followers a promise and a job. The men he leaves behind are the same ones who ran from him, and he is not done with them.",
     "tags": [
       "The resurrection",
       "The Holy Spirit",
@@ -9372,17 +9372,17 @@ window.STUDIES = [
         "aceldama"
       ],
       "story": [
-        "Luke writes to Theophilus. For forty days the risen Jesus showed Himself alive by many infallible proofs, and told His followers to wait in Jerusalem for the promise of the Father (1–5).",
-        "They ask whether He will now restore the kingdom to Israel. He says the timing is not theirs to know, but they will receive power and be His witnesses in Jerusalem, Judaea, Samaria, and to the uttermost part of the earth (6–8).",
+        "Luke writes to Theophilus. For forty days the risen Jesus showed himself alive by many infallible proofs, and told his followers to wait in Jerusalem for the promise of the Father (1–5).",
+        "They ask whether he will now restore the kingdom to Israel. He says the timing is not theirs to know, but they will receive power and be his witnesses in Jerusalem, Judaea, Samaria, and to the uttermost part of the earth (6–8).",
         "Jesus is taken up in a cloud. Two men in white ask why they stand gazing, and promise that this same Jesus will come back the same way (9–11).",
-        "Back in Jerusalem, the eleven, the women, Mary, and the brothers of Jesus, who once did not believe in Him, pray together in an upper room (12–14).",
+        "Back in Jerusalem, the eleven, the women, Mary, and the brothers of Jesus, who once did not believe in him, pray together in an upper room (12–14).",
         "About a hundred and twenty believers gather. Peter explains the end of Judas, who betrayed Jesus and fell, and they pray and choose Matthias to take his place among the twelve (15–26)."
       ],
       "key": {
         "ref": "Acts 1:8",
         "text": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth."
       },
-      "big": "Jesus gives His people a promise and a job: wait for the Spirit, then tell what you have seen, starting right where you are. He starts with failures who came back, and Judas shows that the difference is whether a man takes his failure back to Jesus."
+      "big": "Jesus gives his people a promise and a job: wait for the Spirit, then tell what you have seen, starting right where you are. He starts with failures who came back, and Judas shows that the difference is whether a man takes his failure back to Jesus."
     }
   },
   {
@@ -9393,7 +9393,7 @@ window.STUDIES = [
     "date": "2026-10-30",
     "title": "Acts 2",
     "sub": "The day the Spirit came",
-    "about": "Fifty days after the cross, the Holy Ghost comes, and Peter, who swore he never knew Jesus, stands up and says His name to thousands.",
+    "about": "Fifty days after the cross, the Holy Ghost comes, and Peter, who swore he never knew Jesus, stands up and says his name to thousands.",
     "tags": [
       "The Holy Spirit",
       "Salvation",
@@ -9437,7 +9437,7 @@ window.STUDIES = [
         "On the day of Pentecost the believers are together. A sound like a rushing mighty wind fills the house, flames sit on each of them, and they speak in other languages as the Spirit gives them utterance (1–4).",
         "Jews from every nation hear the wonderful works of God, each in his own language. Some are amazed, and others mock and say they are full of new wine (5–13).",
         "Peter stands up with the eleven. It is only the third hour, so they are not drunk. This is what Joel prophesied: the Spirit poured out on all flesh, and whosoever calls on the name of the Lord shall be saved (14–21).",
-        "Peter preaches Jesus: a man approved of God, crucified by wicked hands according to God's plan, and raised up. David's tomb is still there, but Jesus' tomb is empty, and God has made Him both Lord and Christ (22–36).",
+        "Peter preaches Jesus: a man approved of God, crucified by wicked hands according to God's plan, and raised up. David's tomb is still there, but Jesus' tomb is empty, and God has made him both Lord and Christ (22–36).",
         "The crowd is pricked in the heart and asks what to do. Peter tells them to repent and be baptized, and about three thousand gladly receive the word and are baptized (37–41).",
         "The new believers keep to the apostles' teaching, fellowship, the breaking of bread, and prayer. They meet daily, look after one another, and the Lord adds to them daily (42–47)."
       ],
@@ -9488,7 +9488,7 @@ window.STUDIES = [
         "“Silver and gold have I none; but such as I have give I thee.” In the name of Jesus Christ of Nazareth, Peter lifts him up and he walks, leaps and praises God (4–8).",
         "The crowd runs to Solomon's porch, amazed. Peter says it was not their power, but Jesus, whom they denied and killed and whom God raised (9–16).",
         "Peter calls them brethren: they acted in ignorance, and God foretold it all. “Repent ye therefore, and be converted, that your sins may be blotted out” (17–21).",
-        "Moses promised a prophet like himself, and Abraham a blessing for all the families of the earth. God sent His Son first to them, “in turning away every one of you from his iniquities” (22–26)."
+        "Moses promised a prophet like himself, and Abraham a blessing for all the families of the earth. God sent his Son first to them, “in turning away every one of you from his iniquities” (22–26)."
       ],
       "key": {
         "ref": "Acts 3:19",
@@ -9544,7 +9544,7 @@ window.STUDIES = [
         "ref": "Acts 4:12",
         "text": "Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved."
       },
-      "big": "There is one Savior and one name, offered to every man. Men with no polish can stand up for Him if they have been with Jesus, and a family of believers stands with them."
+      "big": "There is one Saviour and one name, offered to every man. Men with no polish can stand up for him if they have been with Jesus, and a family of believers stands with them."
     }
   },
   {
@@ -9587,7 +9587,7 @@ window.STUDIES = [
       "story": [
         "Ananias and Sapphira sell a field, keep back part of the money, and let the church think they gave it all. Peter says they lied to the Holy Ghost, and both die. Great fear falls on the church (1–11).",
         "Signs and wonders continue, and the sick are brought in from the towns round about. The jealous high priest jails the apostles, but an angel opens the prison doors by night and sends them back to teach (12–26).",
-        "Peter tells the council, “We ought to obey God rather than men.” Gamaliel advises them to leave the apostles alone. They are beaten and let go, rejoicing that they were counted worthy to suffer shame for His name (27–42)."
+        "Peter tells the council, “We ought to obey God rather than men.” Gamaliel advises them to leave the apostles alone. They are beaten and let go, rejoicing that they were counted worthy to suffer shame for his name (27–42)."
       ],
       "key": {
         "ref": "Acts 5:29",
@@ -9694,7 +9694,7 @@ window.STUDIES = [
         "ref": "Acts 7:60",
         "text": "And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep."
       },
-      "big": "God sends a deliverer, Israel pushes him away, and God raises him up anyway: Joseph, Moses, and Jesus. God is too big for any building and lives in His people. And a man can forgive even while he is being hurt, because Jesus is standing for him."
+      "big": "God sends a deliverer, Israel pushes him away, and God raises him up anyway: Joseph, Moses, and Jesus. God is too big for any building and lives in his people. And a man can forgive even while he is being hurt, because Jesus is standing for him."
     }
   },
   {
@@ -9801,7 +9801,7 @@ window.STUDIES = [
         "ref": "Acts 9:15",
         "text": "But the Lord said unto him, Go thy way: for he is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Israel:"
       },
-      "big": "No sin is too big for Jesus to stop and turn around, and a changed man needs a friend like Barnabas to stand with him. God also uses ordinary hands, like Dorcas's, and nothing done for Him is forgotten."
+      "big": "No sin is too big for Jesus to stop and turn around, and a changed man needs a friend like Barnabas to stand with him. God also uses ordinary hands, like Dorcas's, and nothing done for him is forgotten."
     }
   },
   {
@@ -9903,7 +9903,7 @@ window.STUDIES = [
         "ref": "Acts 11:18",
         "text": "When they heard these things, they held their peace, and glorified God, saying, Then hath God also to the Gentiles granted repentance unto life."
       },
-      "big": "God opened the door of life to the outsiders, and the church had to stop arguing and praise Him. In Antioch the disciples were first called Christians, and they lived up to it by encouraging, finding the lost, and giving."
+      "big": "God opened the door of life to the outsiders, and the church had to stop arguing and praise him. In Antioch the disciples were first called Christians, and they lived up to it by encouraging, finding the lost, and giving."
     }
   },
   {
@@ -10066,7 +10066,7 @@ window.STUDIES = [
         "At Lystra Paul heals a man who had never walked. The crowd calls them gods, and the two men tear their clothes and tell the people to turn to the living God (8–18).",
         "Jews from Antioch and Iconium turn the crowd. They stone Paul and drag him out of the city, but he rises up, goes back in, and leaves for Derbe the next day (19–20).",
         "They go back through Lystra, Iconium and Antioch, strengthening the new believers: “we must through much tribulation enter into the kingdom of God.” They appoint elders (21–23).",
-        "They sail home to Antioch and tell the church all that God had done, and how He had opened the door of faith to the Gentiles (24–28)."
+        "They sail home to Antioch and tell the church all that God had done, and how he had opened the door of faith to the Gentiles (24–28)."
       ],
       "key": {
         "ref": "Acts 14:22",
@@ -10227,14 +10227,14 @@ window.STUDIES = [
         "In Thessalonica Paul reasons from the Scriptures for three sabbaths that the Christ had to suffer and rise. Some believe, but envious men start a riot and drag Jason before the rulers, shouting that these men have “turned the world upside down” (1–9).",
         "Paul and Silas slip away by night to Berea, where the people receive the word eagerly and search the Scriptures daily to see whether it is so. Many believe, until the Thessalonian Jews arrive and Paul is sent south to Athens (10–15).",
         "Waiting in Athens, Paul is stirred by a city full of idols and argues in the market. Philosophers bring him to the Areopagus, Mars’ hill (16–21).",
-        "Paul starts from an altar “TO THE UNKNOWN GOD.” The God who made the world needs nothing, is not far from any of us, and now commands everyone everywhere to repent, because He has set a day to judge the world by the Man He raised from the dead (22–31).",
+        "Paul starts from an altar “TO THE UNKNOWN GOD.” The God who made the world needs nothing, is not far from any of us, and now commands everyone everywhere to repent, because he has set a day to judge the world by the Man he raised from the dead (22–31).",
         "Some mock, some say “we will hear thee again,” and some believe, among them Dionysius and a woman named Damaris (32–34)."
       ],
       "key": {
         "ref": "Acts 17:11",
         "text": "These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so."
       },
-      "big": "Check what you hear against the Bible, every day. The God who made everything is near to anyone who is groping for Him, and He calls every man to turn around now, because the Judge is the Jesus who rose from the dead."
+      "big": "Check what you hear against the Bible, every day. The God who made everything is near to anyone who is groping for him, and he calls every man to turn around now, because the Judge is the Jesus who rose from the dead."
     }
   },
   {
@@ -10293,7 +10293,7 @@ window.STUDIES = [
         "ref": "Acts 18:9–10",
         "text": "Then spake the Lord to Paul in the night by a vision, Be not afraid, but speak, and hold not thy peace: For I am with thee, and no man shall set on thee to hurt thee: for I have much people in this city."
       },
-      "big": "When you are afraid, the Lord says what He told Paul: I am with thee, and I already have people here. Do honest work, accept a quiet correction, and keep going. It is grace from the beginning."
+      "big": "When you are afraid, the Lord says what he told Paul: I am with thee, and I already have people here. Do honest work, accept a quiet correction, and keep going. It is grace from the beginning."
     }
   },
   {
@@ -10387,7 +10387,7 @@ window.STUDIES = [
         "On the first day of the week the church meets in an upper room. Paul talks until midnight, and Eutychus falls asleep, falls from the third loft, and is taken up dead. Paul embraces him, and he is brought up alive (7–12).",
         "Paul walks to Assos and sails past Ephesus, hurrying to be at Jerusalem by Pentecost (13–16).",
         "At Miletus he calls the Ephesian elders. He reminds them of his tears, of repentance toward God and faith toward Jesus, and of the gospel of the grace of God (17–27).",
-        "He warns them of wolves from outside and within, commends them to God and the word of His grace, quotes Jesus' words, \"It is more blessed to give than to receive,\" and prays with them as they weep (28–38)."
+        "He warns them of wolves from outside and within, commends them to God and the word of his grace, quotes Jesus' words, \"It is more blessed to give than to receive,\" and prays with them as they weep (28–38)."
       ],
       "key": {
         "ref": "Acts 20:24",
@@ -10551,7 +10551,7 @@ window.STUDIES = [
         "ref": "Acts 23:11",
         "text": "And the night following the Lord stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome."
       },
-      "big": "God is not stopped by angry councils or forty men's oaths. He stands beside His man in the worst night, and He still has the next chapter planned."
+      "big": "God is not stopped by angry councils or forty men's oaths. He stands beside his man in the worst night, and he still has the next chapter planned."
     }
   },
   {
@@ -10598,7 +10598,7 @@ window.STUDIES = [
         "ref": "Acts 24:25",
         "text": "And as he reasoned of righteousness, temperance, and judgment to come Felix trembled, and answered, Go thy way for this time; when I have a convenient season, I will call for thee."
       },
-      "big": "Being afraid of God is not the same as coming to Him. There is no convenient season. Now is the day to believe."
+      "big": "Being afraid of God is not the same as coming to him. There is no convenient season. Now is the day to believe."
     }
   },
   {
@@ -10647,7 +10647,7 @@ window.STUDIES = [
         "ref": "Acts 25:12",
         "text": "Then Festus, when he had conferred with the council, answered, Hast thou appealed unto Caesar? unto Caesar shalt thou go."
       },
-      "big": "Paul's enemies still wanted him dead, but he used the law that protected him, and God used the appeal to carry out His promise that Paul would bear witness in Rome. The whole dispute came down to one question, whether Jesus is alive, and a king came to hear it."
+      "big": "Paul's enemies still wanted him dead, but he used the law that protected him, and God used the appeal to carry out his promise that Paul would bear witness in Rome. The whole dispute came down to one question, whether Jesus is alive, and a king came to hear it."
     }
   },
   {
@@ -10753,7 +10753,7 @@ window.STUDIES = [
         "ref": "Acts 27:22",
         "text": "And now I exhort you to be of good cheer: for there shall be no loss of any man’s life among you, but of the ship."
       },
-      "big": "God didn't promise Paul a smooth trip. He promised to bring every man through, and He did, even the men who ignored the warning. The ship was lost and not one life was."
+      "big": "God didn't promise Paul a smooth trip. He promised to bring every man through, and he did, even the men who ignored the warning. The ship was lost and not one life was."
     }
   },
   {
@@ -10846,14 +10846,14 @@ window.STUDIES = [
         "Paul, once a persecutor, introduces himself as a servant of Jesus Christ, set apart for the gospel about God's Son: born in David's line, and declared the Son of God by the resurrection (1–7).",
         "He thanks God for the believers in Rome, whose faith is talked about everywhere, and tells them how long he has wanted to come and preach to them (8–15).",
         "“I am not ashamed of the gospel of Christ.” It is God's power to save every one who believes, and in it God gives a righteousness received by faith (16–17).",
-        "God's wrath is revealed against men who hold down the truth that creation shows them. They would not thank Him, and they traded His glory for idols (18–23).",
+        "God's wrath is revealed against men who hold down the truth that creation shows them. They would not thank him, and they traded his glory for idols (18–23).",
         "So God gave them up: to their lusts, to shameful passions, and to a reprobate mind full of every sin, from murder to gossip (24–32)."
       ],
       "key": {
         "ref": "Romans 1:16",
         "text": "For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek."
       },
-      "big": "The gospel is God's power to save anyone who believes. Chapter 1 shows why we need it: men who know God and won't thank Him slide into the dark, and God gives them what they insist on."
+      "big": "The gospel is God's power to save anyone who believes. Chapter 1 shows why we need it: men who know God and won't thank him slide into the dark, and God gives them what they insist on."
     }
   },
   {
@@ -10893,7 +10893,7 @@ window.STUDIES = [
         "ref": "Romans 2:4",
         "text": "Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of God leadeth thee to repentance?"
       },
-      "big": "The decent, religious man is no better off than the wild one. God plays no favorites. His kindness is meant to turn us around, and what He wants is a changed heart, not an outward show."
+      "big": "The decent, religious man is no better off than the wild one. God plays no favorites. His kindness is meant to turn us around, and what he wants is a changed heart, not an outward show."
     }
   },
   {
@@ -10904,7 +10904,7 @@ window.STUDIES = [
     "date": "2026-10-30",
     "title": "Romans 3",
     "sub": "None righteous, freely justified",
-    "about": "The court finds the whole world guilty, Jew and Gentile alike. Then, in the very next breath, God justifies the guilty freely by His grace through Christ.",
+    "about": "The court finds the whole world guilty, Jew and Gentile alike. Then, in the very next breath, God justifies the guilty freely by his grace through Christ.",
     "tags": [
       "Sin",
       "Justification",
@@ -10926,10 +10926,10 @@ window.STUDIES = [
         "rome"
       ],
       "story": [
-        "The Jews had a real advantage: God trusted them with His Word. Their unbelief can’t make God unfaithful, and our sin is no excuse to do evil that good may come (1–8).",
+        "The Jews had a real advantage: God trusted them with his Word. Their unbelief can’t make God unfaithful, and our sin is no excuse to do evil that good may come (1–8).",
         "Paul strings together quotes from the Psalms and Isaiah: “There is none righteous, no, not one.” Every mouth is stopped and all the world is guilty; the law shows sin but can’t justify (9–20).",
-        "“But now” God’s righteousness comes by faith in Jesus Christ to all who believe. All have sinned, and all who believe are justified freely by His grace through the redemption in Christ (21–24).",
-        "God set Christ forth as a propitiation through faith in His blood, so He is just and the justifier of the one who believes. Boasting is shut out; Jew and Gentile come by faith, and the law is upheld (25–31)."
+        "“But now” God’s righteousness comes by faith in Jesus Christ to all who believe. All have sinned, and all who believe are justified freely by his grace through the redemption in Christ (21–24).",
+        "God set Christ forth as a propitiation through faith in his blood, so he is just and the justifier of the one who believes. Boasting is shut out; Jew and Gentile come by faith, and the law is upheld (25–31)."
       ],
       "key": {
         "ref": "Romans 3:23–24",
@@ -10980,7 +10980,7 @@ window.STUDIES = [
         "ref": "Romans 4:3",
         "text": "For what saith the scripture? Abraham believed God, and it was counted unto him for righteousness."
       },
-      "big": "God counts righteousness to anyone who believes Him, without works, and the man whose sins are covered is blessed."
+      "big": "God counts righteousness to anyone who believes him, without works, and the man whose sins are covered is blessed."
     }
   },
   {
@@ -11015,9 +11015,9 @@ window.STUDIES = [
         "rome"
       ],
       "story": [
-        "Justified by faith, we have peace with God, access into His grace, and hope of His glory (1–2).",
+        "Justified by faith, we have peace with God, access into his grace, and hope of his glory (1–2).",
         "We glory in tribulations too: tribulation works patience, patience experience, experience hope, and that hope never shames us (3–5).",
-        "While we were without strength, ungodly, sinners, even enemies, Christ died for us. Much more, now reconciled, we shall be saved by His life (6–11).",
+        "While we were without strength, ungodly, sinners, even enemies, Christ died for us. Much more, now reconciled, we shall be saved by his life (6–11).",
         "By one man, Adam, sin and death entered the world and reigned over all, even before the law of Moses (12–14).",
         "The free gift is not like the offence: by one man's obedience, Jesus Christ, many are made righteous. Where sin abounded, grace did much more abound (15–21)."
       ],
@@ -11036,7 +11036,7 @@ window.STUDIES = [
     "date": "2026-10-30",
     "title": "Romans 6",
     "sub": "Dead to sin, alive unto God",
-    "about": "If grace covers everything, why not keep sinning? Because you died with Christ, rose with Him, and have a new Master.",
+    "about": "If grace covers everything, why not keep sinning? Because you died with Christ, rose with him, and have a new Master.",
     "tags": [
       "Freedom from sin",
       "Baptism",
@@ -11059,7 +11059,7 @@ window.STUDIES = [
       ],
       "story": [
         "Shall we continue in sin, that grace may abound? God forbid. We are dead to sin (1–2).",
-        "Baptism pictures it: buried with Christ into death, raised to walk in newness of life. Our old man is crucified with Him (3–7).",
+        "Baptism pictures it: buried with Christ into death, raised to walk in newness of life. Our old man is crucified with him (3–7).",
         "Christ died unto sin once and dies no more. So reckon yourselves dead indeed unto sin, but alive unto God (8–11).",
         "Don't let sin reign. Yield yourselves and your members to God: sin shall not have dominion over you, for you are under grace (12–14).",
         "Whomever you yield to, his servant you are. Made free from sin, become servants to God: the wages of sin is death, but the gift of God is eternal life (15–23)."
@@ -11068,7 +11068,7 @@ window.STUDIES = [
         "ref": "Romans 6:23",
         "text": "For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."
       },
-      "big": "A believer died with Christ and rose with Him. Sin no longer owns him. He counts that true, hands himself to God each day, and holds a gift of eternal life he could never earn and will never lose."
+      "big": "A believer died with Christ and rose with him. Sin no longer owns him. He counts that true, hands himself to God each day, and holds a gift of eternal life he could never earn and will never lose."
     }
   },
   {
@@ -11101,7 +11101,7 @@ window.STUDIES = [
         "rome"
       ],
       "story": [
-        "A marriage lasts until death. When Christ died, we died to the law, and now we belong to Him who was raised from the dead (1–6).",
+        "A marriage lasts until death. When Christ died, we died to the law, and now we belong to him who was raised from the dead (1–6).",
         "Is the law sin? God forbid. The commandment “Thou shalt not covet” showed Paul his sin, and sin used that good commandment to deceive him and kill him (7–13).",
         "The war inside: “what I would, that do I not; but what I hate, that do I.” In the flesh dwells no good thing, and willpower alone can't win (14–20).",
         "Two laws fight in one man: the law of his mind, which delights in God's law, and the law of sin in his members (21–23).",
@@ -11146,11 +11146,11 @@ window.STUDIES = [
         "rome"
       ],
       "story": [
-        "No condemnation for those in Christ Jesus. The law of the Spirit of life has set us free, and God condemned sin in the flesh of His own Son (1–4).",
-        "The mind set on the flesh is death; the mind set on the Spirit is life and peace. Every man who belongs to Christ has His Spirit living in him (5–11).",
+        "No condemnation for those in Christ Jesus. The law of the Spirit of life has set us free, and God condemned sin in the flesh of his own Son (1–4).",
+        "The mind set on the flesh is death; the mind set on the Spirit is life and peace. Every man who belongs to Christ has his Spirit living in him (5–11).",
         "We owe the flesh nothing. Led by the Spirit, we are sons of God, not slaves; we cry “Abba, Father,” and we are heirs with Christ (12–17).",
-        "Today's sufferings are nothing next to the glory coming. All creation groans like a woman in labor, we groan too, and the Spirit prays for us when we have no words (18–27).",
-        "God works all things together for good for those who love Him. If God be for us, who can be against us? Nothing can separate us from the love of God in Christ Jesus our Lord (28–39)."
+        "Today's sufferings are nothing next to the glory coming. All creation groans like a woman in labour, we groan too, and the Spirit prays for us when we have no words (18–27).",
+        "God works all things together for good for those who love him. If God be for us, who can be against us? Nothing can separate us from the love of God in Christ Jesus our Lord (28–39)."
       ],
       "key": {
         "ref": "Romans 8:1",
@@ -11166,8 +11166,8 @@ window.STUDIES = [
     "ch": 9,
     "date": "2026-10-30",
     "title": "Romans 9",
-    "sub": "Mercy on His own terms",
-    "about": "Paul grieves for Israel, and shows that God has always given mercy His way: not by birth, not by works, but by faith.",
+    "sub": "Mercy on his own terms",
+    "about": "Paul grieves for Israel, and shows that God has always given mercy his way: not by birth, not by works, but by faith.",
     "tags": [
       "Israel",
       "Mercy",
@@ -11201,8 +11201,8 @@ window.STUDIES = [
       "story": [
         "Paul grieves for his own people, the Israelites. He could wish himself accursed from Christ for them (1–5).",
         "God's word hasn't failed: they are not all Israel, which are of Israel. The children of the promise, like Isaac, are counted for the seed (6–9).",
-        "Before the twins were born, God said, “The elder shall serve the younger.” He chose which nation would carry the promise, by His call and not by works (10–13).",
-        "God shows mercy on His own terms, as He told Moses after the golden calf. He hardened Pharaoh, who had first hardened his own heart (14–18).",
+        "Before the twins were born, God said, “The elder shall serve the younger.” He chose which nation would carry the promise, by his call and not by works (10–13).",
+        "God shows mercy on his own terms, as he told Moses after the golden calf. He hardened Pharaoh, who had first hardened his own heart (14–18).",
         "The potter has power over the clay. God endured the vessels of wrath with much longsuffering, and called vessels of mercy from Jews and Gentiles (19–29).",
         "The Gentiles found righteousness by faith. Israel missed it, because they sought it not by faith but by works, and stumbled at the stumblingstone (30–33)."
       ],
@@ -11210,7 +11210,7 @@ window.STUDIES = [
         "ref": "Romans 9:33",
         "text": "As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed."
       },
-      "big": "God has every right to show mercy on His own terms, and His terms are faith. Israel missed righteousness by trying to earn it. Whosoever believes on Christ shall not be ashamed."
+      "big": "God has every right to show mercy on his own terms, and his terms are faith. Israel missed righteousness by trying to earn it. Whosoever believes on Christ shall not be ashamed."
     }
   },
   {
@@ -11248,16 +11248,16 @@ window.STUDIES = [
         "Paul's heart's desire and prayer is that Israel might be saved. They have a zeal of God, but not according to knowledge (1–3).",
         "Christ is the end of the law for righteousness to every one that believeth (4–5).",
         "No one has to bring Christ down from heaven or up from the dead: the word is nigh thee, in thy mouth and in thy heart (6–8).",
-        "Confess with thy mouth the Lord Jesus, believe in thine heart that God raised Him from the dead, and thou shalt be saved (9–10).",
+        "Confess with thy mouth the Lord Jesus, believe in thine heart that God raised him from the dead, and thou shalt be saved (9–10).",
         "There is no difference between the Jew and the Greek: whosoever shall call upon the name of the Lord shall be saved (11–13).",
         "How shall they call, believe, hear or preach unless someone is sent? Faith cometh by hearing, and hearing by the word of God (14–17).",
-        "Israel has heard. God was found by Gentiles who sought Him not, and all day long He stretches out His hands to Israel (18–21)."
+        "Israel has heard. God was found by Gentiles who sought him not, and all day long he stretches out his hands to Israel (18–21)."
       ],
       "key": {
         "ref": "Romans 10:13",
         "text": "For whosoever shall call upon the name of the Lord shall be saved."
       },
-      "big": "Salvation isn't far away, and it isn't earned. Whosoever believes in his heart that God raised Jesus, and calls on Him as Lord, shall be saved. And somebody has to be sent to tell him."
+      "big": "Salvation isn't far away, and it isn't earned. Whosoever believes in his heart that God raised Jesus, and calls on him as Lord, shall be saved. And somebody has to be sent to tell him."
     }
   },
   {
@@ -11295,18 +11295,18 @@ window.STUDIES = [
         "sion"
       ],
       "story": [
-        "Has God cast away His people? God forbid. Paul, an Israelite of Benjamin, is proof; and as in Elijah's day, when God kept seven thousand who never bowed to Baal, there is a remnant saved by grace, not works (1–6).",
+        "Has God cast away his people? God forbid. Paul, an Israelite of Benjamin, is proof; and as in Elijah's day, when God kept seven thousand who never bowed to Baal, there is a remnant saved by grace, not works (1–6).",
         "Israel sought to be right with God and didn't obtain it; those who took it by faith did, and the rest were blinded, as Moses, Isaiah and David had written (7–10).",
         "Israel stumbled, but did not fall for good. Their fall brought salvation to the Gentiles, and Paul, the apostle of the Gentiles, hopes it will stir his people to want it back (11–15).",
         "The olive tree: natural branches broken off because of unbelief, a wild branch grafted in that stands by faith. Don't boast; God is able to graft them in again (16–24).",
-        "Blindness in part has come on Israel until the fulness of the Gentiles comes in, and so all Israel shall be saved. God's gifts and calling are without repentance, and He shut all men up in unbelief that He might have mercy upon all (25–32).",
-        "“O the depth of the riches both of the wisdom and knowledge of God!” Of Him, through Him and to Him are all things (33–36)."
+        "Blindness in part has come on Israel until the fulness of the Gentiles comes in, and so all Israel shall be saved. God's gifts and calling are without repentance, and he shut all men up in unbelief that he might have mercy upon all (25–32).",
+        "“O the depth of the riches both of the wisdom and knowledge of God!” Of him, through him and to him are all things (33–36)."
       ],
       "key": {
         "ref": "Romans 11:32",
         "text": "For God hath concluded them all in unbelief, that he might have mercy upon all."
       },
-      "big": "God has not given up on Israel, and He will not take back what He has promised. Every man, Jew or Gentile, is shut up in the same unbelief, and the only way out is the mercy God offers to all, received by faith."
+      "big": "God has not given up on Israel, and he will not take back what he has promised. Every man, Jew or Gentile, is shut up in the same unbelief, and the only way out is the mercy God offers to all, received by faith."
     }
   },
   {
@@ -11446,7 +11446,7 @@ window.STUDIES = [
     "date": "2026-10-30",
     "title": "Romans 15",
     "sub": "The God of hope",
-    "about": "The strong carry the weak, the old Scriptures give hope, and Paul plans a trip to Rome and Spain that God will keep in His own way.",
+    "about": "The strong carry the weak, the old Scriptures give hope, and Paul plans a trip to Rome and Spain that God will keep in his own way.",
     "tags": [
       "Strong and weak",
       "Scripture",
@@ -11489,7 +11489,7 @@ window.STUDIES = [
         "ref": "Romans 15:13",
         "text": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."
       },
-      "big": "Strength is for carrying the weak, the way Christ carried us. Hope doesn't come from inside us; the God of hope fills us by His Spirit and His Word. We make our plans, and God keeps His purpose, even when He changes the route."
+      "big": "Strength is for carrying the weak, the way Christ carried us. Hope doesn't come from inside us; the God of hope fills us by his Spirit and his Word. We make our plans, and God keeps his purpose, even when he changes the route."
     }
   },
   {
@@ -11585,7 +11585,7 @@ window.STUDIES = [
         "corinth"
       ],
       "story": [
-        "Paul and Sosthenes greet the church at Corinth as saints, and thank God for the grace and gifts He has given them (1–9).",
+        "Paul and Sosthenes greet the church at Corinth as saints, and thank God for the grace and gifts he has given them (1–9).",
         "Chloe's household has told Paul the church is splitting into teams: Paul, Apollos, Cephas, Christ. “Is Christ divided?” (10–17).",
         "The message of the cross is foolishness to those who perish but the power of God to those who are saved. Jews want signs and Greeks want wisdom; Paul preaches Christ crucified (18–25).",
         "God has chosen the foolish, the weak, the base and the despised, so that no flesh should glory. Christ is made unto us wisdom, righteousness, sanctification and redemption (26–31)."
@@ -11627,7 +11627,7 @@ window.STUDIES = [
         "Paul came to Corinth without fancy speech or clever wisdom, determined to know only Jesus Christ and him crucified (1–2).",
         "He came in weakness, in fear and in much trembling, so that their faith would rest on God's power, not on a man's skill (3–5).",
         "The hidden wisdom of God, planned before the world, was missed by the rulers who crucified the Lord of glory (6–8).",
-        "“Eye hath not seen, nor ear heard.” God has revealed what He has prepared by His Spirit, who knows the deep things of God (9–11).",
+        "“Eye hath not seen, nor ear heard.” God has revealed what he has prepared by his Spirit, who knows the deep things of God (9–11).",
         "Every believer has received the Spirit. The natural man can't take in the things of God, but the spiritual man can. “We have the mind of Christ” (12–16)."
       ],
       "key": {
@@ -11726,7 +11726,7 @@ window.STUDIES = [
         "ref": "1 Corinthians 4:2",
         "text": "Moreover it is required in stewards, that a man be found faithful."
       },
-      "big": "God asks His servants for faithfulness, not show. The Lord alone judges, everything we have is a gift, and the church needs fathers, men who walk with others and live the power, not just the talk."
+      "big": "God asks his servants for faithfulness, not show. The Lord alone judges, everything we have is a gift, and the church needs fathers, men who walk with others and live the power, not just the talk."
     }
   },
   {
@@ -11827,7 +11827,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Corinthians 7",
     "sub": "Married, single, or somewhere hard",
-    "about": "The Corinthians asked Paul about marriage. He answers with honesty and grace: keep yourself pure, love the one you have, and follow Christ right where He found you.",
+    "about": "The Corinthians asked Paul about marriage. He answers with honesty and grace: keep yourself pure, love the one you have, and follow Christ right where he found you.",
     "tags": [
       "Marriage",
       "Singleness",
@@ -11862,7 +11862,7 @@ window.STUDIES = [
         "ref": "1 Corinthians 7:24",
         "text": "Brethren, let every man, wherein he is called, therein abide with God."
       },
-      "big": "God made marriage as the good place for a man's desire, and made single life a gift. Whatever your situation, you don't have to fix it first: follow Christ right where He found you, take the hard questions to your pastor, and live as one bought with a price."
+      "big": "God made marriage as the good place for a man's desire, and made single life a gift. Whatever your situation, you don't have to fix it first: follow Christ right where he found you, take the hard questions to your pastor, and live as one bought with a price."
     }
   },
   {
@@ -11897,7 +11897,7 @@ window.STUDIES = [
         "ephesus"
       ],
       "story": [
-        "Now as touching things offered unto idols: we all have knowledge, but knowledge puffeth up, and charity edifieth. The man who loves God is known of Him (1–3).",
+        "Now as touching things offered unto idols: we all have knowledge, but knowledge puffeth up, and charity edifieth. The man who loves God is known of him (1–3).",
         "An idol is nothing. There are gods many and lords many, but to us there is one God, the Father, and one Lord Jesus Christ (4–6).",
         "Not every man knows it. Some still eat with conscience of the idol, and their weak conscience is defiled. Meat does not commend us to God (7–8).",
         "Take heed lest your liberty become a stumblingblock. A weak brother who sees you at meat in the idol's temple may be emboldened to eat, and perish, a brother for whom Christ died (9–11).",
@@ -11989,7 +11989,7 @@ window.STUDIES = [
       "story": [
         "Israel's fathers were under the cloud, through the sea, fed with manna and given water from the Rock, who was Christ. Yet most of them fell in the wilderness (1–5).",
         "Their failures are examples: craving evil things, idolatry, fornication, tempting Christ, and murmuring. They are written for our warning (6–11).",
-        "“Let him that thinketh he standeth take heed lest he fall.” But no temptation is more than common to man, God is faithful, and with every temptation He makes a way to escape (12–13).",
+        "“Let him that thinketh he standeth take heed lest he fall.” But no temptation is more than common to man, God is faithful, and with every temptation he makes a way to escape (12–13).",
         "Flee from idolatry. The cup and the bread are a sharing in Christ's blood and body, and you cannot sit at the Lord's table and the table of devils (14–22).",
         "All things are lawful but not all things help or build up. Eat what is sold in the market, but give up what would trip another man's conscience. Whether you eat or drink or whatsoever you do, do all to the glory of God (23–33)."
       ],
@@ -11997,7 +11997,7 @@ window.STUDIES = [
         "ref": "1 Corinthians 10:13",
         "text": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it."
       },
-      "big": "No temptation is too big or too strange: it's common to man, God is faithful, He limits it, and with it He makes a way out. Flee the old table, take the way out, and live every ordinary hour to God's glory."
+      "big": "No temptation is too big or too strange: it's common to man, God is faithful, he limits it, and with it he makes a way out. Flee the old table, take the way out, and live every ordinary hour to God's glory."
     }
   },
   {
@@ -12031,13 +12031,13 @@ window.STUDIES = [
         "A hard text on head coverings: a Corinthian custom, with the plain points of order, honour, and “neither is the man without the woman, neither the woman without the man, in the Lord” (3–16).",
         "The church supper has become a scandal: the rich eat and drink first, and the poor go hungry (17–22).",
         "Paul hands on what he received of the Lord: the bread and the cup, “this do in remembrance of me,” shown “till he come” (23–26).",
-        "“Let a man examine himself”: to eat unworthily is to come in an unworthy manner, and the Lord disciplines His own as sons. “Tarry one for another” (27–34)."
+        "“Let a man examine himself”: to eat unworthily is to come in an unworthy manner, and the Lord disciplines his own as sons. “Tarry one for another” (27–34)."
       ],
       "key": {
         "ref": "1 Corinthians 11:24",
         "text": "And when he had given thanks, he brake it, and said, Take, eat: this is my body, which is broken for you: this do in remembrance of me."
       },
-      "big": "The Lord's table is a memorial of Christ's death for forgiven sinners, not a prize for the worthy. Come honestly, remember Him, and make room for the brother beside you."
+      "big": "The Lord's table is a memorial of Christ's death for forgiven sinners, not a prize for the worthy. Come honestly, remember him, and make room for the brother beside you."
     }
   },
   {
@@ -12075,7 +12075,7 @@ window.STUDIES = [
       "story": [
         "Now concerning spiritual gifts: once they were carried away to dumb idols, but no man can say that Jesus is the Lord, but by the Holy Ghost (1–3).",
         "Diversities of gifts, but the same Spirit, the same Lord, the same God. The manifestation of the Spirit is given to every man to profit withal: wisdom, knowledge, faith, healing, miracles, prophecy, discerning of spirits, tongues and their interpretation, divided to every man as the Spirit will (4–11).",
-        "By one Spirit are we all baptized into one body, Jews or Gentiles, bond or free. The foot cannot quit because it is not the hand, nor the ear because it is not the eye; God set every member in the body as it pleased Him (12–20).",
+        "By one Spirit are we all baptized into one body, Jews or Gentiles, bond or free. The foot cannot quit because it is not the hand, nor the ear because it is not the eye; God set every member in the body as it pleased him (12–20).",
         "The eye cannot say to the hand, I have no need of thee. The members that seem more feeble are necessary, so there is no schism: when one member suffers, all suffer; when one is honoured, all rejoice (21–27).",
         "God has set apostles, prophets, teachers, helps and governments in the church, and not all have the same gift. Covet the best gifts, and yet there is a more excellent way (28–31)."
       ],
@@ -12181,7 +12181,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Corinthians 15",
     "sub": "Raised, and so shall we be",
-    "about": "Jesus really rose, so death is not the end, a past can be made new by grace, and nothing done for Him is wasted.",
+    "about": "Jesus really rose, so death is not the end, a past can be made new by grace, and nothing done for him is wasted.",
     "tags": [
       "Resurrection",
       "The gospel",
@@ -12218,7 +12218,7 @@ window.STUDIES = [
         "ref": "1 Corinthians 15:57",
         "text": "But thanks be to God, which giveth us the victory through our Lord Jesus Christ."
       },
-      "big": "Jesus rose, so death has lost its sting, and the sin that was behind it is paid for. Your past is not your last word, and your work for Him is never wasted."
+      "big": "Jesus rose, so death has lost its sting, and the sin that was behind it is paid for. Your past is not your last word, and your work for him is never wasted."
     }
   },
   {
@@ -12320,7 +12320,7 @@ window.STUDIES = [
         "ref": "2 Corinthians 1:4",
         "text": "Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God."
       },
-      "big": "The comfort God gives you is not only for you. He comforts us in every trouble so that we can comfort the next man, and every promise He has made is answered yes in Jesus."
+      "big": "The comfort God gives you is not only for you. He comforts us in every trouble so that we can comfort the next man, and every promise he has made is answered yes in Jesus."
     }
   },
   {
@@ -12419,7 +12419,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "2 Corinthians 4",
     "sub": "Treasure in clay jars",
-    "about": "Paul is beaten up and worn out, and still standing. He says God keeps His treasure in cracked clay jars on purpose, so the power is plainly God's.",
+    "about": "Paul is beaten up and worn out, and still standing. He says God keeps his treasure in cracked clay jars on purpose, so the power is plainly God's.",
     "tags": [
       "Weakness",
       "Perseverance",
@@ -12450,7 +12450,7 @@ window.STUDIES = [
         "ref": "2 Corinthians 4:7",
         "text": "But we have this treasure in earthen vessels, that the excellency of the power may be of God, and not of us."
       },
-      "big": "God puts His light in cracked clay jars on purpose. A man can be knocked down and worn out and still not be destroyed, because the inside is being renewed every day and the glory outweighs the trouble."
+      "big": "God puts his light in cracked clay jars on purpose. A man can be knocked down and worn out and still not be destroyed, because the inside is being renewed every day and the glory outweighs the trouble."
     }
   },
   {
@@ -12529,7 +12529,7 @@ window.STUDIES = [
         "Deceivers yet true, dying yet living, poor yet making many rich, having nothing yet possessing all things (8–10).",
         "His heart is open to them, and he asks them to open theirs (11–13).",
         "Do not be unequally yoked with unbelievers: righteousness and unrighteousness, light and darkness, Christ and Belial have nothing in common, and believers are the temple of the living God (14–16).",
-        "Come out, be separate, and God will receive you and be a Father to you, and you will be His sons and daughters (17–18)."
+        "Come out, be separate, and God will receive you and be a Father to you, and you will be his sons and daughters (17–18)."
       ],
       "key": {
         "ref": "2 Corinthians 6:10",
@@ -12795,7 +12795,7 @@ window.STUDIES = [
         "ref": "2 Corinthians 12:9",
         "text": "And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me."
       },
-      "big": "God does not always take the thorn away. He gives grace enough for today, and His power shows up most where ours has run out."
+      "big": "God does not always take the thorn away. He gives grace enough for today, and his power shows up most where ours has run out."
     }
   },
   {
@@ -12831,7 +12831,7 @@ window.STUDIES = [
       ],
       "story": [
         "Paul is coming a third time. He warns them first, by the rule of two or three witnesses (1–2).",
-        "Christ was crucified through weakness yet lives by the power of God, and we are weak in Him too (3–4).",
+        "Christ was crucified through weakness yet lives by the power of God, and we are weak in him too (3–4).",
         "Examine yourselves, whether ye be in the faith. Jesus Christ is in you, unless you fail the test (5–7).",
         "Paul's prayer is for their good and their perfection, so that he can build up and not tear down (8–10).",
         "Be perfect, be of good comfort, be of one mind, live in peace. The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all (11–14)."
@@ -12885,14 +12885,14 @@ window.STUDIES = [
         "Paul greets the churches of Galatia with the gospel in one line: Christ “gave himself for our sins, that he might deliver us from this present evil world” (1–5).",
         "He marvels that they are so soon turning to “another gospel: which is not another.” Anyone who preaches a different gospel, even an angel, is accursed (6–9).",
         "Paul isn't out to please men. His gospel came not from any man but “by the revelation of Jesus Christ” (10–12).",
-        "He tells his past: he persecuted the church of God and wasted it, zealous for the traditions of his fathers. Then God “called me by his grace” and revealed His Son in him (13–17).",
+        "He tells his past: he persecuted the church of God and wasted it, zealous for the traditions of his fathers. Then God “called me by his grace” and revealed his Son in him (13–17).",
         "Arabia, Damascus, fifteen days in Jerusalem with Peter after three years, then Syria and Cilicia. The churches of Judaea heard that their old persecutor now preached the faith, “And they glorified God in me” (18–24)."
       ],
       "key": {
         "ref": "Galatians 1:4",
         "text": "Who gave himself for our sins, that he might deliver us from this present evil world, according to the will of God and our Father:"
       },
-      "big": "There is only one gospel: Jesus gave Himself for our sins, and grace saves, with nothing added. Paul's own story proves it: God called the worst enemy the church had, by His grace, and people glorified God for it."
+      "big": "There is only one gospel: Jesus gave himself for our sins, and grace saves, with nothing added. Paul's own story proves it: God called the worst enemy the church had, by his grace, and people glorified God for it."
     }
   },
   {
@@ -12940,7 +12940,7 @@ window.STUDIES = [
         "ref": "Galatians 2:20",
         "text": "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me."
       },
-      "big": "A man is made right with God by faith in Christ, not by keeping rules, and even a great leader can slip back into fear of men. The believer's old self died with Christ; now Christ lives in him, and he lives by faith in the Son of God who loved him and gave Himself for him."
+      "big": "A man is made right with God by faith in Christ, not by keeping rules, and even a great leader can slip back into fear of men. The believer's old self died with Christ; now Christ lives in him, and he lives by faith in the Son of God who loved him and gave himself for him."
     }
   },
   {
@@ -12951,7 +12951,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Galatians 3",
     "sub": "Begun in the Spirit",
-    "about": "You can't finish by your own effort what grace started. Abraham believed God, Christ became a curse for us, the law was the slave who walked us to Christ, and in Him we are all sons of God.",
+    "about": "You can't finish by your own effort what grace started. Abraham believed God, Christ became a curse for us, the law was the slave who walked us to Christ, and in him we are all sons of God.",
     "tags": [
       "Grace",
       "Faith",
@@ -12984,7 +12984,7 @@ window.STUDIES = [
         "ref": "Galatians 3:13",
         "text": "Christ hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree:"
       },
-      "big": "What grace began, grace finishes: Christ took the curse, the law led us to Him, and every believer is a son of God."
+      "big": "What grace began, grace finishes: Christ took the curse, the law led us to him, and every believer is a son of God."
     }
   },
   {
@@ -12995,7 +12995,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Galatians 4",
     "sub": "No more a servant, but a son",
-    "about": "God sent His Son to redeem us and His Spirit into our hearts to cry “Abba, Father.” Paul pleads with free sons not to go back to the old chains, and pictures bondage and freedom in Hagar and Sarah.",
+    "about": "God sent his Son to redeem us and his Spirit into our hearts to cry “Abba, Father.” Paul pleads with free sons not to go back to the old chains, and pictures bondage and freedom in Hagar and Sarah.",
     "tags": [
       "Adoption",
       "God as Father",
@@ -13026,8 +13026,8 @@ window.STUDIES = [
         "jerusalem-above"
       ],
       "story": [
-        "An heir who is still a child is no different from a servant until the day his father sets. When the fulness of the time came, God sent His Son to redeem those under the law, that we might be adopted as sons (1–5).",
-        "God sent the Spirit of His Son into our hearts, crying “Abba, Father.” You are no more a servant, but a son, and an heir of God through Christ (6–7).",
+        "An heir who is still a child is no different from a servant until the day his father sets. When the fulness of the time came, God sent his Son to redeem those under the law, that we might be adopted as sons (1–5).",
+        "God sent the Spirit of his Son into our hearts, crying “Abba, Father.” You are no more a servant, but a son, and an heir of God through Christ (6–7).",
         "Why turn back to weak and beggarly elements and want to be in bondage again? Paul remembers how they welcomed him when he came sick, asks if he is now their enemy for telling the truth, and calls them his little children, in labour until Christ be formed in them (8–20).",
         "Abraham had two sons, one by a bondmaid, born after the flesh, one by a freewoman, by promise. They picture two covenants: Sinai and bondage, and the Jerusalem above, which is free. We are children of promise: cast out the bondwoman (21–31)."
       ],
@@ -13079,7 +13079,7 @@ window.STUDIES = [
         "ref": "Galatians 5:16",
         "text": "This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh."
       },
-      "big": "Christ set us free, so don't go back under the law and don't use freedom to feed the flesh. A man doesn't beat the flesh by willpower but by walking with the Spirit, who grows His fruit in him."
+      "big": "Christ set us free, so don't go back under the law and don't use freedom to feed the flesh. A man doesn't beat the flesh by willpower but by walking with the Spirit, who grows his fruit in him."
     }
   },
   {
@@ -13160,10 +13160,10 @@ window.STUDIES = [
       ],
       "story": [
         "Paul greets the saints at Ephesus, the city where he had taught for about three years (1–2).",
-        "He blesses God, who has given believers every spiritual blessing in Christ: chosen in Him before the world began to be holy, adopted as sons, and accepted in the beloved (3–6).",
-        "In Christ we have redemption through His blood, the forgiveness of sins, according to the riches of His grace; and God's plan is to gather all things together in Christ (7–12).",
+        "He blesses God, who has given believers every spiritual blessing in Christ: chosen in him before the world began to be holy, adopted as sons, and accepted in the beloved (3–6).",
+        "In Christ we have redemption through his blood, the forgiveness of sins, according to the riches of his grace; and God's plan is to gather all things together in Christ (7–12).",
         "Those who heard the gospel and believed were sealed with the Holy Spirit of promise, the earnest, or down payment, of all that is coming (13–14).",
-        "Paul prays that their eyes would be opened to see their hope, God's inheritance in His people, and the power that raised Christ from the dead and set Him over all things as head of the church (15–23)."
+        "Paul prays that their eyes would be opened to see their hope, God's inheritance in his people, and the power that raised Christ from the dead and set him over all things as head of the church (15–23)."
       ],
       "key": {
         "ref": "Ephesians 1:3",
@@ -13208,10 +13208,10 @@ window.STUDIES = [
       ],
       "story": [
         "Without Christ we were dead in trespasses and sins, following the world, the devil and the flesh, by nature children of wrath, all of us alike (1–3).",
-        "But God, rich in mercy, made us alive with Christ, raised us up and seated us with Him, to show the riches of His grace for ages to come (4–7).",
-        "We are saved by grace through faith, the gift of God, not of works; and we are His workmanship, made for the good works He prepared (8–10).",
+        "But God, rich in mercy, made us alive with Christ, raised us up and seated us with him, to show the riches of his grace for ages to come (4–7).",
+        "We are saved by grace through faith, the gift of God, not of works; and we are his workmanship, made for the good works he prepared (8–10).",
         "Gentiles who were once far off, without hope and without God, are made near by the blood of Christ, who broke down the middle wall and made Jew and Gentile one new man (11–18).",
-        "Now they are no more strangers but fellowcitizens and family, built on the foundation of the apostles and prophets, with Christ the chief corner stone, into a temple where God lives by His Spirit (19–22)."
+        "Now they are no more strangers but fellowcitizens and family, built on the foundation of the apostles and prophets, with Christ the chief corner stone, into a temple where God lives by his Spirit (19–22)."
       ],
       "key": {
         "ref": "Ephesians 2:8",
@@ -13258,16 +13258,16 @@ window.STUDIES = [
         "Paul, “the prisoner of Jesus Christ for you Gentiles,” starts to pray, then stops to explain the grace given to him (1–4).",
         "The mystery hidden for ages is now revealed: the Gentiles are fellowheirs, of the same body, and partakers of God's promise in Christ by the gospel (5–7).",
         "To Paul, “less than the least of all saints,” God gave the grace to preach the unsearchable riches of Christ (8–9).",
-        "Through the church, God shows His manifold wisdom to the powers in heavenly places. In Christ we have boldness and access with confidence (10–13).",
+        "Through the church, God shows his manifold wisdom to the powers in heavenly places. In Christ we have boldness and access with confidence (10–13).",
         "Paul bows his knees and prays: strength by the Spirit in the inner man, Christ dwelling in their hearts, rooted and grounded in love (14–17).",
         "He prays they would know the breadth, length, depth and height of the love of Christ, which passeth knowledge (18–19).",
-        "Glory to Him who is able to do exceeding abundantly above all that we ask or think (20–21)."
+        "Glory to him who is able to do exceeding abundantly above all that we ask or think (20–21)."
       ],
       "key": {
         "ref": "Ephesians 3:19",
         "text": "And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fulness of God."
       },
-      "big": "God's grace reached the worst of men and made outsiders full heirs. His love in Christ is wider, longer, deeper and higher than anyone can measure, and His power at work in believers can do far more than they ask or think."
+      "big": "God's grace reached the worst of men and made outsiders full heirs. His love in Christ is wider, longer, deeper and higher than anyone can measure, and his power at work in believers can do far more than they ask or think."
     }
   },
   {
@@ -13307,7 +13307,7 @@ window.STUDIES = [
       "story": [
         "“The prisoner of the Lord” begs them to walk worthy of their calling, with lowliness, meekness and patience, keeping the unity of the Spirit (1–3).",
         "One body, one Spirit, one hope, one Lord, one faith, one baptism, one God and Father of all (4–6).",
-        "The risen Christ, who first came down to the lower parts of the earth, gives gifts to His people (7–10).",
+        "The risen Christ, who first came down to the lower parts of the earth, gives gifts to his people (7–10).",
         "He gives apostles, prophets, evangelists, pastors and teachers to equip the saints for the work of the ministry, until all grow up to a perfect man (11–13).",
         "No more children tossed by every wind of doctrine: speaking the truth in love, the whole body grows up into Christ (14–16).",
         "Walk no more like the Gentiles, darkened, past feeling, given over to greediness (17–19).",
@@ -13355,11 +13355,11 @@ window.STUDIES = [
         "ephesus"
       ],
       "story": [
-        "Be followers of God, as dear children, and walk in love, as Christ loved us and gave Himself for us (1–2).",
+        "Be followers of God, as dear children, and walk in love, as Christ loved us and gave himself for us (1–2).",
         "Fornication, uncleanness and covetousness must not be once named among saints; give thanks instead. Don't be deceived by vain words (3–7).",
         "Ye were sometimes darkness, but now are ye light in the Lord: walk as children of light, and bring the hidden things into the light. Awake thou that sleepest (8–14).",
         "Walk circumspectly, redeeming the time. Be not drunk with wine, but be filled with the Spirit, singing, giving thanks, and submitting one to another (15–21).",
-        "Wives, submit to your own husbands as unto the Lord. Husbands, love your wives even as Christ loved the church and gave Himself for it. This is a great mystery: Christ and the church (22–33)."
+        "Wives, submit to your own husbands as unto the Lord. Husbands, love your wives even as Christ loved the church and gave himself for it. This is a great mystery: Christ and the church (22–33)."
       ],
       "key": {
         "ref": "Ephesians 5:2",
@@ -13413,7 +13413,7 @@ window.STUDIES = [
         "ref": "Ephesians 6:10",
         "text": "Finally, my brethren, be strong in the Lord, and in the power of his might."
       },
-      "big": "Our fight is not with people but with the devil's schemes, and we don't fight it in our own strength. God gives us His own armour and the line of prayer, so that, having done all, we stand."
+      "big": "Our fight is not with people but with the devil's schemes, and we don't fight it in our own strength. God gives us his own armour and the line of prayer, so that, having done all, we stand."
     }
   },
   {
@@ -13424,7 +13424,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Philippians 1",
     "sub": "The letter of joy, written in chains",
-    "about": "Paul writes from a Roman house arrest, chained to a guard, and the first thing he says is thank you. God finishes what He starts, and even a prison can spread the gospel.",
+    "about": "Paul writes from a Roman house arrest, chained to a guard, and the first thing he says is thank you. God finishes what he starts, and even a prison can spread the gospel.",
     "tags": [
       "God finishes the work",
       "Hard circumstances",
@@ -13452,13 +13452,13 @@ window.STUDIES = [
         "Paul is chained to a soldier in Rome, but his chains have spread the gospel through the palace guard and made the other believers bolder (12–14).",
         "Some preach Christ out of envy and some out of love. Paul rejoices that Christ is preached either way (15–18).",
         "Paul expects to be set free through their prayers. For him to live is Christ and to die is gain, but he knows the Philippians still need him (19–26).",
-        "Live as it becometh the gospel, stand fast together, and don't be terrified. It is given to believe, and also to suffer for His sake (27–30)."
+        "Live as it becometh the gospel, stand fast together, and don't be terrified. It is given to believe, and also to suffer for his sake (27–30)."
       ],
       "key": {
         "ref": "Philippians 1:6",
         "text": "Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:"
       },
-      "big": "God finishes what He starts. The man who began a good work in you will carry it on until the day of Jesus Christ, whatever your chains, and whatever happened yesterday."
+      "big": "God finishes what he starts. The man who began a good work in you will carry it on until the day of Jesus Christ, whatever your chains, and whatever happened yesterday."
     }
   },
   {
@@ -13494,8 +13494,8 @@ window.STUDIES = [
       ],
       "story": [
         "Paul begs the Philippians to be of one mind, to do nothing through strife or vainglory, and to look out for others (1–4).",
-        "Let this mind be in you, which was also in Christ Jesus: God by nature, He emptied Himself, became a servant, and died on a cross (5–8).",
-        "God highly exalted Him, and every knee will bow and every tongue confess that Jesus Christ is Lord (9–11).",
+        "Let this mind be in you, which was also in Christ Jesus: God by nature, he emptied himself, became a servant, and died on a cross (5–8).",
+        "God highly exalted him, and every knee will bow and every tongue confess that Jesus Christ is Lord (9–11).",
         "Work out your own salvation, for it is God which worketh in you. Do all things without murmurings, and shine as lights in a crooked world (12–18).",
         "Paul hopes to send Timothy, who really cares, and sends Epaphroditus, who nearly died for the work of Christ. Receive him with gladness (19–30)."
       ],
@@ -13503,7 +13503,7 @@ window.STUDIES = [
         "ref": "Philippians 2:5",
         "text": "Let this mind be in you, which was also in Christ Jesus:"
       },
-      "big": "Jesus went all the way down to the cross for us, and God raised Him to the highest place. We follow the same road: humble service now, with God doing the lifting, and God at work in us both to will and to do."
+      "big": "Jesus went all the way down to the cross for us, and God raised him to the highest place. We follow the same road: humble service now, with God doing the lifting, and God at work in us both to will and to do."
     }
   },
   {
@@ -13596,7 +13596,7 @@ window.STUDIES = [
         "ref": "Philippians 4:6–7",
         "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."
       },
-      "big": "Worry has an answer: tell God everything, with thanks, and His peace stands guard. Contentment is learned in Christ, who is enough in want and in plenty."
+      "big": "Worry has an answer: tell God everything, with thanks, and his peace stands guard. Contentment is learned in Christ, who is enough in want and in plenty."
     }
   },
   {
@@ -13642,7 +13642,7 @@ window.STUDIES = [
         "ref": "Colossians 1:13–14",
         "text": "Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: In whom we have redemption through his blood, even the forgiveness of sins:"
       },
-      "big": "Jesus is over everything, and everything that ever had a hold on you has lost it: God has moved you into His Son's kingdom, forgiven you, and put Christ himself in you as your hope of glory."
+      "big": "Jesus is over everything, and everything that ever had a hold on you has lost it: God has moved you into his Son's kingdom, forgiven you, and put Christ himself in you as your hope of glory."
     }
   },
   {
@@ -13653,7 +13653,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Colossians 2",
     "sub": "Complete in him",
-    "about": "Christ is enough: the record of debt was nailed to the cross, and no list of rules can add to Him.",
+    "about": "Christ is enough: the record of debt was nailed to the cross, and no list of rules can add to him.",
     "tags": [
       "Christ is enough",
       "False teaching",
@@ -13719,14 +13719,14 @@ window.STUDIES = [
         "Put to death what belongs to the old life: sexual sin, uncleanness, evil desire and covetousness, which is idolatry. God's wrath is coming on disobedience (5–7).",
         "Take off anger, malice, filthy talk and lies, like old clothes. Put on the new man, where Christ is all and in all (8–11).",
         "Put on mercy, kindness, humility, meekness and patience. Forgive as Christ forgave you, and let love bind it all together (12–14).",
-        "Let Christ's peace rule, let His word dwell in you richly, and do everything in the name of the Lord Jesus (15–17).",
+        "Let Christ's peace rule, let his word dwell in you richly, and do everything in the name of the Lord Jesus (15–17).",
         "In the home and at work: wives, husbands, children, fathers, servants. Whatever you do, do it heartily, as to the Lord (18–25)."
       ],
       "key": {
         "ref": "Colossians 3:13",
         "text": "Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye."
       },
-      "big": "In Christ the old man is already off and the new man already on. So look up, put off the old clothes, put on mercy and love, and wear them at home and on the job as if the Lord is watching, because He is."
+      "big": "In Christ the old man is already off and the new man already on. So look up, put off the old clothes, put on mercy and love, and wear them at home and on the job as if the Lord is watching, because he is."
     }
   },
   {
@@ -13792,7 +13792,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Thessalonians 1",
     "sub": "Turned to God",
-    "about": "Paul writes one of his very first letters to a church only weeks old, and finds the whole new life in two verses: they turned from idols to serve the living God, and wait for His Son.",
+    "about": "Paul writes one of his very first letters to a church only weeks old, and finds the whole new life in two verses: they turned from idols to serve the living God, and wait for his Son.",
     "tags": [
       "Faith, love, hope",
       "The gospel's power",
@@ -13823,13 +13823,13 @@ window.STUDIES = [
         "Paul remembers their work of faith, labour of love and patience of hope, and sees God's hand on them (3–4).",
         "The gospel came with power and the Holy Ghost. They received it in much affliction, with joy, and followed Paul and the Lord (5–6).",
         "Their faith became an example across Macedonia and Achaia: the word of the Lord sounded out from them (7–8).",
-        "They turned to God from idols to serve the living and true God, and to wait for His Son from heaven, Jesus, who delivered us from the wrath to come (9–10)."
+        "They turned to God from idols to serve the living and true God, and to wait for his Son from heaven, Jesus, who delivered us from the wrath to come (9–10)."
       ],
       "key": {
         "ref": "1 Thessalonians 1:9",
         "text": "For they themselves shew of us what manner of entering in we had unto you, and how ye turned to God from idols to serve the living and true God;"
       },
-      "big": "A changed life has a shape: turn from the old thing, turn to the living God, serve Him, and wait for Jesus. They did it in hard times, only weeks after hearing the gospel, and the whole region heard about it."
+      "big": "A changed life has a shape: turn from the old thing, turn to the living God, serve him, and wait for Jesus. They did it in hard times, only weeks after hearing the gospel, and the whole region heard about it."
     },
     "url": "studies/1-thessalonians-01.html"
   },
@@ -13921,7 +13921,7 @@ window.STUDIES = [
         "ref": "1 Thessalonians 3:8",
         "text": "For now we live, if ye stand fast in the Lord."
       },
-      "big": "A mentor's joy rides on whether his men are standing. Hard times are expected, the tempter is real, and God Himself grows our love and steadies our hearts. Your standing gives life to the men who love you."
+      "big": "A mentor's joy rides on whether his men are standing. Hard times are expected, the tempter is real, and God himself grows our love and steadies our hearts. Your standing gives life to the men who love you."
     },
     "url": "studies/1-thessalonians-03.html"
   },
@@ -13934,7 +13934,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Thessalonians 4",
     "sub": "Clean, quiet, and comforted",
-    "about": "God's will for your body, an honest working life that outsiders can read, and real hope for the believers we have buried: the Lord Himself is coming, and the dead in Christ will rise first.",
+    "about": "God's will for your body, an honest working life that outsiders can read, and real hope for the believers we have buried: the Lord himself is coming, and the dead in Christ will rise first.",
     "tags": [
       "Sexual purity",
       "Self-control",
@@ -13960,16 +13960,16 @@ window.STUDIES = [
       "story": [
         "Paul urges them to keep walking to please God, more and more (1–2).",
         "This is the will of God, your sanctification: abstain from fornication, and learn to possess your vessel in sanctification and honour, not in lust like those who don't know God (3–5).",
-        "Sexual sin defrauds a brother. God has called us to holiness, and He has given us His holy Spirit (6–8).",
+        "Sexual sin defrauds a brother. God has called us to holiness, and he has given us his holy Spirit (6–8).",
         "They already love one another; love more. Make it your ambition to be quiet, mind your own business, and work with your own hands, so outsiders see an honest life (9–12).",
-        "Don't sorrow like those who have no hope. Because Jesus died and rose again, God will bring with Him those who sleep in Jesus (13–14).",
-        "The Lord Himself will descend with a shout. The dead in Christ rise first, then the living are caught up together with them to meet the Lord, and so shall we ever be with the Lord. Comfort one another with these words (15–18)."
+        "Don't sorrow like those who have no hope. Because Jesus died and rose again, God will bring with him those who sleep in Jesus (13–14).",
+        "The Lord himself will descend with a shout. The dead in Christ rise first, then the living are caught up together with them to meet the Lord, and so shall we ever be with the Lord. Comfort one another with these words (15–18)."
       ],
       "key": {
         "ref": "1 Thessalonians 4:17–18",
         "text": "Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord. Wherefore comfort one another with these words."
       },
-      "big": "God's will is a holy life, and self-control can be learned with the Spirit's help. Work quietly and honestly. And grieve with hope: the Lord is coming, the dead in Christ are not lost, and we will be together with Him for ever."
+      "big": "God's will is a holy life, and self-control can be learned with the Spirit's help. Work quietly and honestly. And grieve with hope: the Lord is coming, the dead in Christ are not lost, and we will be together with him for ever."
     }
   },
   {
@@ -13981,7 +13981,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Thessalonians 5",
     "sub": "Children of the day",
-    "about": "The day of the Lord comes like a thief, but not for men who are awake, sober and dressed in faith, love and hope. Then a pocket checklist for life together, and a promise: He who calls you will do it.",
+    "about": "The day of the Lord comes like a thief, but not for men who are awake, sober and dressed in faith, love and hope. Then a pocket checklist for life together, and a promise: he who calls you will do it.",
     "tags": [
       "His coming",
       "Sobriety",
@@ -14006,16 +14006,16 @@ window.STUDIES = [
       "story": [
         "No one needs a date: the day of the Lord comes as a thief in the night, suddenly, while people say “Peace and safety” (1–3).",
         "But believers are children of light and of the day, so let us watch and be sober, wearing the breastplate of faith and love and the helmet of the hope of salvation (4–8).",
-        "God has not appointed us to wrath but to salvation by Jesus, who died for us, so that awake or asleep we live together with Him. Comfort and build one another up (9–11).",
+        "God has not appointed us to wrath but to salvation by Jesus, who died for us, so that awake or asleep we live together with him. Comfort and build one another up (9–11).",
         "Honour those who lead you and be at peace. Warn the unruly, comfort the feebleminded, support the weak, be patient with all, and never render evil for evil (12–15).",
         "Rejoice evermore, pray without ceasing, in every thing give thanks. Quench not the Spirit, prove all things, hold fast the good, abstain from every form of evil (16–22).",
-        "The God of peace will sanctify you wholly: faithful is He that calls you, who also will do it. Pray for us, greet all with an holy kiss, read this letter to all. Grace be with you (23–28)."
+        "The God of peace will sanctify you wholly: faithful is he that calls you, who also will do it. Pray for us, greet all with an holy kiss, read this letter to all. Grace be with you (23–28)."
       ],
       "key": {
         "ref": "1 Thessalonians 5:23–24",
         "text": "And the very God of peace sanctify you wholly; and I pray God your whole spirit and soul and body be preserved blameless unto the coming of our Lord Jesus Christ. Faithful is he that calleth you, who also will do it."
       },
-      "big": "You don't need a date; you need to be ready. Live as a child of the day: awake, sober, armed with faith, love and hope, looking after your brothers, and thankful in every thing. God will finish what He started in you."
+      "big": "You don't need a date; you need to be ready. Live as a child of the day: awake, sober, armed with faith, love and hope, looking after your brothers, and thankful in every thing. God will finish what he started in you."
     }
   },
   {
@@ -14055,7 +14055,7 @@ window.STUDIES = [
       "story": [
         "Paul, Silvanus and Timotheus greet the church of the Thessalonians with grace and peace (1–2).",
         "Their faith grows exceedingly and their love for each other abounds, right in the middle of persecution; Paul boasts about them to other churches (3–4).",
-        "God's judgment is righteous: He will repay trouble to the troublers and give rest to the troubled when the Lord Jesus is revealed from heaven (5–7).",
+        "God's judgment is righteous: he will repay trouble to the troublers and give rest to the troubled when the Lord Jesus is revealed from heaven (5–7).",
         "Those who know not God and obey not the gospel will be punished with everlasting destruction from the presence of the Lord; Christ will be admired in all who believe (8–10).",
         "Paul prays that God would count them worthy of this calling and fulfil the work of faith with power, by grace (11–12)."
       ],
@@ -14063,7 +14063,7 @@ window.STUDIES = [
         "ref": "2 Thessalonians 1:7",
         "text": "And to you who are troubled rest with us, when the Lord Jesus shall be revealed from heaven with his mighty angels,"
       },
-      "big": "Pressure can be where faith grows most. God sees every wrong and will set it right when Jesus comes, so payback is His job, not ours. Hell is real and sober, but whoever believes the gospel is safe and will give Christ glory."
+      "big": "Pressure can be where faith grows most. God sees every wrong and will set it right when Jesus comes, so payback is his job, not ours. Hell is real and sober, but whoever believes the gospel is safe and will give Christ glory."
     }
   },
   {
@@ -14103,7 +14103,7 @@ window.STUDIES = [
       "story": [
         "Paul begs them not to be shaken or troubled by any spirit, word or letter claiming the day of Christ had already come (1–2).",
         "That day won't come until a falling away comes first and the man of sin, the son of perdition, is revealed: a man who sets himself above God (3–5).",
-        "The mystery of iniquity is already at work, but it is held back until the restrainer is taken out of the way; then the Lord will consume that Wicked with the spirit of His mouth (6–8).",
+        "The mystery of iniquity is already at work, but it is held back until the restrainer is taken out of the way; then the Lord will consume that Wicked with the spirit of his mouth (6–8).",
         "His coming is with lying wonders; those who received not the love of the truth are given over to strong delusion (9–12).",
         "But God chose the Thessalonians to salvation through the Spirit's work and belief of the truth, called by the gospel. Stand fast; God has given everlasting consolation and good hope through grace (13–17)."
       ],
@@ -14202,7 +14202,7 @@ window.STUDIES = [
         "ref": "1 Timothy 1:15",
         "text": "This is a faithful saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief."
       },
-      "big": "Christ Jesus came to save sinners, and the worst of them, Paul, was made the pattern of His mercy. No one is too far gone. Hold on to faith and a good conscience, and keep going."
+      "big": "Christ Jesus came to save sinners, and the worst of them, Paul, was made the pattern of his mercy. No one is too far gone. Hold on to faith and a good conscience, and keep going."
     }
   },
   {
@@ -14213,7 +14213,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Timothy 2",
     "sub": "Pray for all men",
-    "about": "Paul asks that the church begin with prayer for all men, even kings, because God wants every man saved and Christ gave Himself a ransom for all. Then he sets out how men and women serve in God's house.",
+    "about": "Paul asks that the church begin with prayer for all men, even kings, because God wants every man saved and Christ gave himself a ransom for all. Then he sets out how men and women serve in God's house.",
     "tags": [
       "Prayer",
       "God's heart for all",
@@ -14235,7 +14235,7 @@ window.STUDIES = [
       "places": [],
       "story": [
         "First of all, pray for all men, and for kings and everyone in authority, so the church can live a quiet and peaceable life (1–3).",
-        "God our Saviour wants all men to be saved and to know the truth. There is one God and one mediator, the man Christ Jesus, who gave Himself a ransom for all (4–7).",
+        "God our Saviour wants all men to be saved and to know the truth. There is one God and one mediator, the man Christ Jesus, who gave himself a ransom for all (4–7).",
         "Men are to pray everywhere, lifting up holy hands, without wrath and doubting (8).",
         "Women are to adorn themselves with modest dress and good works (9–10).",
         "A hard passage on men and women in the church's teaching and leading, resting on creation and the fall. Baptists hold that the pastor's office is for men, and good teachers differ on how far the rest reaches. “Saved in childbearing” is explained several ways (11–15)."
@@ -14244,7 +14244,7 @@ window.STUDIES = [
         "ref": "1 Timothy 2:4",
         "text": "Who will have all men to be saved, and to come unto the knowledge of the truth."
       },
-      "big": "God wants every man saved, and there is one bridge between God and men, Jesus, who gave Himself a ransom for all. Pray for everyone, pray without anger, and take hard texts slowly and humbly."
+      "big": "God wants every man saved, and there is one bridge between God and men, Jesus, who gave himself a ransom for all. Pray for everyone, pray without anger, and take hard texts slowly and humbly."
     }
   },
   {
@@ -14423,7 +14423,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "2 Timothy 1",
     "sub": "A father's last words",
-    "about": "Paul, in a Roman prison and expecting to die, tells the young man he loves like a son: don't be afraid, don't be ashamed, and trust the One who keeps what you give Him.",
+    "about": "Paul, in a Roman prison and expecting to die, tells the young man he loves like a son: don't be afraid, don't be ashamed, and trust the One who keeps what you give him.",
     "tags": [
       "Fear and shame",
       "Faith handed down",
@@ -14455,14 +14455,14 @@ window.STUDIES = [
         "Paul, an apostle, writes to Timothy, his dearly beloved son. He prays for him night and day and remembers his tears (1–4).",
         "He recalls the unfeigned faith that dwelt first in Timothy's grandmother Lois and mother Eunice, and tells him to stir up the gift of God that is in him (5–6).",
         "God has not given a spirit of fear, but of power, love and a sound mind. Timothy is not to be ashamed of the Lord or of Paul his prisoner (7–8).",
-        "God saved us by His own purpose and grace, not our works. Paul is not ashamed, for he knows whom he has believed and is sure He can keep what he has committed to Him (9–12).",
+        "God saved us by his own purpose and grace, not our works. Paul is not ashamed, for he knows whom he has believed and is sure he can keep what he has committed to him (9–12).",
         "Hold fast the sound words and guard the good thing by the Holy Spirit. Everyone in Asia turned from Paul, but Onesiphorus often refreshed him, was not ashamed of his chain, and searched Rome until he found him (13–18)."
       ],
       "key": {
         "ref": "2 Timothy 1:7",
         "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."
       },
-      "big": "Fear and shame are not from God. He gives power, love and a sound mind, and He keeps everything a man hands over to Him. A believer is held by Christ, not by his own grip."
+      "big": "Fear and shame are not from God. He gives power, love and a sound mind, and he keeps everything a man hands over to him. A believer is held by Christ, not by his own grip."
     }
   },
   {
@@ -14498,7 +14498,7 @@ window.STUDIES = [
       "story": [
         "Paul tells Timothy to be strong in grace and to commit what he heard to faithful men who will teach others also (1–2).",
         "Three pictures of staying power: a soldier who stays free of entanglements, an athlete who competes by the rules, and a farmer who works before he eats (3–7).",
-        "Paul is chained like an evildoer, but the word of God is not bound. A faithful saying: if we die with Him we live, if we suffer we reign, and if we believe not, He abideth faithful (8–13).",
+        "Paul is chained like an evildoer, but the word of God is not bound. A faithful saying: if we die with him we live, if we suffer we reign, and if we believe not, he abideth faithful (8–13).",
         "Study to shew thyself approved, a workman rightly dividing the word of truth. Hymenaeus and Philetus spread error like a canker, but the foundation of God stands sure (14–19).",
         "In a great house are vessels to honour and dishonour; a man who purges himself becomes fit for the Master's use. Flee youthful lusts, follow righteousness with others who call on the Lord, and teach the stubborn gently (20–26)."
       ],
@@ -14506,7 +14506,7 @@ window.STUDIES = [
         "ref": "2 Timothy 2:2",
         "text": "And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also."
       },
-      "big": "Faith is meant to be handed on, man to man. Stay clean and keep working, because any man can become useful to the Master, and He stays faithful even when we don't."
+      "big": "Faith is meant to be handed on, man to man. Stay clean and keep working, because any man can become useful to the Master, and he stays faithful even when we don't."
     }
   },
   {
@@ -14606,7 +14606,7 @@ window.STUDIES = [
         "ref": "2 Timothy 4:7",
         "text": "I have fought a good fight, I have finished my course, I have kept the faith:"
       },
-      "big": "A man can finish well, and a finish is made of ordinary days. People will fail you, some will quit and some will come back, but the Lord stands with you, brings you through, and gives the crown to everyone who loves His appearing."
+      "big": "A man can finish well, and a finish is made of ordinary days. People will fail you, some will quit and some will come back, but the Lord stands with you, brings you through, and gives the crown to everyone who loves his appearing."
     }
   },
   {
@@ -14643,7 +14643,7 @@ window.STUDIES = [
         "An elder must be a man whose life backs up what he says: a faithful husband and father, not angry, not a drinker or a striker, not greedy, with an open door and a hold on the faithful word (6–9).",
         "Many unruly talkers are leading whole households astray. One of their own prophets calls the Cretians liars, evil beasts and slow bellies, and Paul says the witness is true (10–13).",
         "So rebuke them sharply, so that they may be sound. Stop the fables and the made-up rules (13–14).",
-        "“Unto the pure all things are pure.” The trouble is inside. Men who say they know God but deny Him in their works are no use for anything good (15–16)."
+        "“Unto the pure all things are pure.” The trouble is inside. Men who say they know God but deny him in their works are no use for anything good (15–16)."
       ],
       "key": {
         "ref": "Titus 1:13",
@@ -14682,7 +14682,7 @@ window.STUDIES = [
         "Older women teach the younger women, and each age has its part. The point is that the word of God is not mocked (3–5).",
         "Young men are to be sober minded, and Titus himself a pattern of good works, with speech nobody can fault (6–8).",
         "Servants are to be faithful and honest, so that they adorn the teaching of God our Saviour in all things (9–10).",
-        "“The grace of God that bringeth salvation hath appeared to all men,” and it teaches us to say no to ungodliness and to live soberly, righteously and godly, looking for the blessed hope. Jesus gave Himself to redeem us and make us His own people (11–15)."
+        "“The grace of God that bringeth salvation hath appeared to all men,” and it teaches us to say no to ungodliness and to live soberly, righteously and godly, looking for the blessed hope. Jesus gave himself to redeem us and make us his own people (11–15)."
       ],
       "key": {
         "ref": "Titus 2:11–12",
@@ -14699,7 +14699,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Titus 3",
     "sub": "Saved by mercy, sent to do good",
-    "about": "Paul reminds Crete who they were, what God did by His mercy, and how a saved man treats his neighbours.",
+    "about": "Paul reminds Crete who they were, what God did by his mercy, and how a saved man treats his neighbours.",
     "tags": [
       "Good citizens",
       "Who we were",
@@ -14725,7 +14725,7 @@ window.STUDIES = [
       "story": [
         "Obey rulers, be ready to every good work, speak evil of no man, be gentle with everyone (1–2).",
         "“We ourselves also were sometimes foolish, disobedient, deceived, serving divers lusts and pleasures” (3).",
-        "“But after that the kindness and love of God our Saviour toward man appeared.” Not by our works but by His mercy He saved us, by the washing of regeneration and the Holy Ghost, so that we are justified and made heirs of eternal life (4–7).",
+        "“But after that the kindness and love of God our Saviour toward man appeared.” Not by our works but by his mercy he saved us, by the washing of regeneration and the Holy Ghost, so that we are justified and made heirs of eternal life (4–7).",
         "Those who have believed should be careful to maintain good works. Skip the foolish arguments, and step back from a divider after two warnings (8–11).",
         "Paul's plans: Titus to join him at Nicopolis, help for Zenas and Apollos, and a last word that our people learn to do good for real needs (12–15)."
       ],
@@ -14733,7 +14733,7 @@ window.STUDIES = [
         "ref": "Titus 3:5",
         "text": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;"
       },
-      "big": "Salvation is not earned. We were the men in verse 3, and God saved us by His mercy and the new birth, so we can be kind to everyone and careful to do good."
+      "big": "Salvation is not earned. We were the men in verse 3, and God saved us by his mercy and the new birth, so we can be kind to everyone and careful to do good."
     }
   },
   {
@@ -14796,8 +14796,8 @@ window.STUDIES = [
     "ch": 1,
     "date": "2026-10-31",
     "title": "Hebrews 1",
-    "sub": "God Has Spoken by His Son",
-    "about": "No greeting and no name, just God speaking. The letter opens with the biggest picture of Jesus in the Bible: the Maker of the worlds and the shining of God's glory, who washed away our sins Himself, then sat down, far above the angels.",
+    "sub": "God Has Spoken by his Son",
+    "about": "No greeting and no name, just God speaking. The letter opens with the biggest picture of Jesus in the Bible: the Maker of the worlds and the shining of God's glory, who washed away our sins himself, then sat down, far above the angels.",
     "tags": [
       "God speaks",
       "Who Jesus is",
@@ -14820,18 +14820,18 @@ window.STUDIES = [
         "temple"
       ],
       "story": [
-        "God spoke in the past through the prophets, a piece at a time and in many ways; in these last days He has spoken by His Son (1–2).",
-        "The Son is heir of all things and Maker of the worlds, the brightness of God's glory and the express image of His person. He upholds all things, purged our sins by Himself, and sat down at the right hand of the Majesty on high (2–3).",
-        "He is better than the angels: God never called an angel His Son, and the angels worship Him (4–6).",
+        "God spoke in the past through the prophets, a piece at a time and in many ways; in these last days he has spoken by his Son (1–2).",
+        "The Son is heir of all things and Maker of the worlds, the brightness of God's glory and the express image of his person. He upholds all things, purged our sins by himself, and sat down at the right hand of the Majesty on high (2–3).",
+        "He is better than the angels: God never called an angel his Son, and the angels worship him (4–6).",
         "The angels are servants, quick as wind and fire; but the Son is called God, with a throne for ever and the oil of gladness (7–9).",
-        "He laid the foundation of the earth; the heavens will wear out like a coat, but He remains the same (10–12).",
-        "He sits at God's right hand till His enemies are His footstool, while the angels are sent to serve the heirs of salvation (13–14)."
+        "He laid the foundation of the earth; the heavens will wear out like a coat, but he remains the same (10–12).",
+        "He sits at God's right hand till his enemies are his footstool, while the angels are sent to serve the heirs of salvation (13–14)."
       ],
       "key": {
         "ref": "Hebrews 1:3",
         "text": "Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;"
       },
-      "big": "Everything God said before was true but partial. Jesus is God's last and full Word: God Himself shown to us, the One who holds the world together, who washed our sins away by Himself and sat down because the work was finished. Nothing, not even angels, comes close."
+      "big": "Everything God said before was true but partial. Jesus is God's last and full Word: God himself shown to us, the One who holds the world together, who washed our sins away by himself and sat down because the work was finished. Nothing, not even angels, comes close."
     },
     "url": "studies/hebrews-01.html"
   },
@@ -14867,11 +14867,11 @@ window.STUDIES = [
       ],
       "story": [
         "So hold on tight to what we have heard, or we will drift away from it like a boat slipping its mooring (1).",
-        "If the law spoken by angels held firm, how shall we escape if we neglect a salvation spoken by the Lord, passed on by those who heard Him, and confirmed by God with signs and gifts of the Holy Ghost? (2–4)",
-        "God made man to rule His world (Psalm 8), but we do not see that yet. But we see Jesus, made a little lower than the angels to suffer death, now crowned with glory and honour; by God's grace He tasted death for every man (5–9).",
+        "If the law spoken by angels held firm, how shall we escape if we neglect a salvation spoken by the Lord, passed on by those who heard him, and confirmed by God with signs and gifts of the Holy Ghost? (2–4)",
+        "God made man to rule his world (Psalm 8), but we do not see that yet. But we see Jesus, made a little lower than the angels to suffer death, now crowned with glory and honour; by God's grace he tasted death for every man (5–9).",
         "God brings many sons to glory through the Captain of their salvation, made perfect through sufferings. He is not ashamed to call them brethren (10–13).",
-        "He took on flesh and blood so that through death He might destroy the devil, who had the power of death, and set free those who lived all their lives in fear of death (14–15).",
-        "He became like His brethren in all things, to be a merciful and faithful high priest who makes reconciliation for sins; because He was tempted, He is able to help those who are tempted (16–18)."
+        "He took on flesh and blood so that through death he might destroy the devil, who had the power of death, and set free those who lived all their lives in fear of death (14–15).",
+        "He became like his brethren in all things, to be a merciful and faithful high priest who makes reconciliation for sins; because he was tempted, he is able to help those who are tempted (16–18)."
       ],
       "key": {
         "ref": "Hebrews 2:18",
@@ -14915,16 +14915,16 @@ window.STUDIES = [
         "canaan"
       ],
       "story": [
-        "“Holy brethren … consider the Apostle and High Priest of our profession, Christ Jesus.” Moses was faithful in God's house as a servant; Christ is a Son over His own house, and He built it: “whose house are we” (1–6).",
-        "The Holy Ghost still says, “To day if ye will hear his voice, harden not your hearts,” as Israel did in the wilderness, where they saw God's works forty years and He swore they would not enter His rest (7–11).",
+        "“Holy brethren … consider the Apostle and High Priest of our profession, Christ Jesus.” Moses was faithful in God's house as a servant; Christ is a Son over his own house, and he built it: “whose house are we” (1–6).",
+        "The Holy Ghost still says, “To day if ye will hear his voice, harden not your hearts,” as Israel did in the wilderness, where they saw God's works forty years and he swore they would not enter his rest (7–11).",
         "“Take heed, brethren,” against an evil heart of unbelief. “Exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.” We are partakers of Christ if we hold fast to the end (12–15).",
-        "Who provoked God? Those He brought out of Egypt. Whose carcases fell in the wilderness? Those who sinned. Who could not enter? Those who believed not. “They could not enter in because of unbelief” (16–19)."
+        "Who provoked God? Those he brought out of Egypt. Whose carcases fell in the wilderness? Those who sinned. Who could not enter? Those who believed not. “They could not enter in because of unbelief” (16–19)."
       ],
       "key": {
         "ref": "Hebrews 3:13",
         "text": "But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin."
       },
-      "big": "Keep your eyes on Jesus, who is greater than Moses. Unbelief kept a rescued generation out of the land, and sin hardens a heart one lie at a time. God's answer is today: hear His voice now, and keep each other close, every day."
+      "big": "Keep your eyes on Jesus, who is greater than Moses. Unbelief kept a rescued generation out of the land, and sin hardens a heart one lie at a time. God's answer is today: hear his voice now, and keep each other close, every day."
     }
   },
   {
@@ -14961,7 +14961,7 @@ window.STUDIES = [
       "story": [
         "A promise of entering God's rest is still left. Israel heard the good news too, but it did not profit them, “not being mixed with faith.” “We which have believed do enter into rest,” the rest of God's finished work on the seventh day (1–5).",
         "Joshua (“Jesus” in the Greek) brought them into Canaan, yet long after, David still said “To day.” So “there remaineth therefore a rest to the people of God”: he that enters it has ceased from his own works. Let us labour to enter it (6–11).",
-        "“The word of God is quick, and powerful, and sharper than any twoedged sword,” a discerner of the thoughts and intents of the heart. All things are naked and opened to Him (12–13).",
+        "“The word of God is quick, and powerful, and sharper than any twoedged sword,” a discerner of the thoughts and intents of the heart. All things are naked and opened to him (12–13).",
         "We have a great high priest, Jesus the Son of God, “touched with the feeling of our infirmities,” tempted in all points like us, yet without sin. “Let us therefore come boldly unto the throne of grace” (14–16)."
       ],
       "key": {
@@ -15003,7 +15003,7 @@ window.STUDIES = [
       "story": [
         "Every high priest is taken from among men to offer gifts and sacrifices, and can have compassion on the ignorant and on them that are out of the way (1–3).",
         "No man takes the honour to himself. Christ was called by the Father: “Thou art a priest for ever after the order of Melchisedec” (4–6).",
-        "In the days of His flesh He prayed with strong crying and tears and was heard. He learned obedience by suffering and became the author of eternal salvation (7–10).",
+        "In the days of his flesh he prayed with strong crying and tears and was heard. He learned obedience by suffering and became the author of eternal salvation (7–10).",
         "The writer has hard things to say, but his readers are dull of hearing. They ought to be teachers and still need milk (11–12).",
         "Milk is for babes; strong meat is for the full-grown, whose senses are exercised by use to discern good and evil (13–14)."
       ],
@@ -15011,7 +15011,7 @@ window.STUDIES = [
         "ref": "Hebrews 5:9",
         "text": "And being made perfect, he became the author of eternal salvation unto all them that obey him;"
       },
-      "big": "Jesus is the high priest every man needs: called by God, tempted like us, and heard in His tears. He is the source of a salvation that lasts for ever. And He means for His people to grow up by using what they hear."
+      "big": "Jesus is the high priest every man needs: called by God, tempted like us, and heard in his tears. He is the source of a salvation that lasts for ever. And he means for his people to grow up by using what they hear."
     }
   },
   {
@@ -15047,7 +15047,7 @@ window.STUDIES = [
         "It is impossible, if those once enlightened fall away, to renew them to repentance, for they would crucify the Son of God afresh. Real believers are kept; the warning shakes loose those who only came near (4–6).",
         "The same rain falls on two fields: one brings forth herbs and is blessed, the other thorns and briers (7–8).",
         "“But, beloved, we are persuaded better things of you.” God will not forget their labour of love. Be diligent, with faith and patience (9–12).",
-        "God promised Abraham and swore by Himself. By two immutable things we have strong consolation: a hope that is an anchor of the soul, fastened within the veil, where Jesus our forerunner has entered (13–20)."
+        "God promised Abraham and swore by himself. By two immutable things we have strong consolation: a hope that is an anchor of the soul, fastened within the veil, where Jesus our forerunner has entered (13–20)."
       ],
       "key": {
         "ref": "Hebrews 6:19",
@@ -15093,15 +15093,15 @@ window.STUDIES = [
         "Melchisedec, king of Salem and priest of the most high God, met Abraham coming back from the slaughter of the kings, blessed him, and received a tenth of the spoils. His name means King of righteousness, and Salem means peace. Scripture gives him no father, mother, birth or death, so he is made like unto the Son of God (1–3).",
         "He was greater than Abraham, since the less is blessed of the better. Even Levi, still in the loins of Abraham, paid tithes to him through his forefather (4–10).",
         "If the Levitical priesthood could have made men perfect, God would not have promised another priest after the order of Melchisedec. Jesus came from Judah, not Levi, and is priest by the power of an endless life. The law made nothing perfect, but a better hope brings us near to God (11–19).",
-        "God swore an oath that His Son is a priest for ever, so Jesus is the surety of a better testament (20–22).",
-        "The old priests died and were replaced, but Jesus continueth ever. He is able to save to the uttermost all who come to God by Him, because He ever liveth to make intercession for them (23–25).",
-        "He is holy and undefiled, and needs no daily sacrifice. He offered Himself once, and the Son is consecrated for evermore (26–28)."
+        "God swore an oath that his Son is a priest for ever, so Jesus is the surety of a better testament (20–22).",
+        "The old priests died and were replaced, but Jesus continueth ever. He is able to save to the uttermost all who come to God by him, because he ever liveth to make intercession for them (23–25).",
+        "He is holy and undefiled, and needs no daily sacrifice. He offered himself once, and the Son is consecrated for evermore (26–28)."
       ],
       "key": {
         "ref": "Hebrews 7:25",
         "text": "Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them."
       },
-      "big": "Jesus is the Priest who never dies. He saves all the way, He is praying for His people right now, and because He lives for ever, they are kept for ever."
+      "big": "Jesus is the Priest who never dies. He saves all the way, he is praying for his people right now, and because he lives for ever, they are kept for ever."
     }
   },
   {
@@ -15112,7 +15112,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Hebrews 8",
     "sub": "A better covenant",
-    "about": "The tent in the desert was only a copy. Jesus serves in the real one, under a new covenant where God writes His law on the heart and remembers our sins no more.",
+    "about": "The tent in the desert was only a copy. Jesus serves in the real one, under a new covenant where God writes his law on the heart and remembers our sins no more.",
     "tags": [
       "The new covenant",
       "Jesus our High Priest",
@@ -15139,14 +15139,14 @@ window.STUDIES = [
         "The sum of it all: we have a High Priest seated at the right hand of the throne of the Majesty in the heavens, serving in the true tabernacle, which the Lord pitched, and not man (1–2).",
         "The earthly priests served in the example and shadow of heavenly things, a tabernacle built to the pattern God showed Moses in the mount (3–5).",
         "Jesus has a more excellent ministry, as Mediator of a better covenant built on better promises. The first covenant failed because the people did not continue in it (6–9).",
-        "God promised a new covenant: His laws put into their mind and written in their hearts, all knowing Him from the least to the greatest, and their sins and iniquities remembered no more (10–12).",
+        "God promised a new covenant: his laws put into their mind and written in their hearts, all knowing him from the least to the greatest, and their sins and iniquities remembered no more (10–12).",
         "By calling it new, God made the first old, and what is old is ready to vanish away (13)."
       ],
       "key": {
         "ref": "Hebrews 8:12",
         "text": "For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more."
       },
-      "big": "The new covenant rests on God's \"I will,\" not on our promises. He writes His law on the heart, and He chooses to remember forgiven sins no more."
+      "big": "The new covenant rests on God's \"I will,\" not on our promises. He writes his law on the heart, and he chooses to remember forgiven sins no more."
     }
   },
   {
@@ -15157,7 +15157,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Hebrews 9",
     "sub": "By his own blood",
-    "about": "A walk through the old tabernacle, room by room, to the veil only the high priest could pass, once a year, with blood. Jesus went into heaven itself with His own blood, once, and cleans the conscience.",
+    "about": "A walk through the old tabernacle, room by room, to the veil only the high priest could pass, once a year, with blood. Jesus went into heaven itself with his own blood, once, and cleans the conscience.",
     "tags": [
       "The tabernacle",
       "The blood of Christ",
@@ -15186,9 +15186,9 @@ window.STUDIES = [
       "story": [
         "The first tabernacle: the sanctuary with the candlestick, the table and the shewbread; behind the second veil, the holiest of all with the golden censer and the ark under the mercy seat (1–5).",
         "Priests served daily in the first room, but only the high priest went into the second, once a year, never without blood. The way in was not yet open, and the old gifts could not cleanse the conscience (6–10).",
-        "Christ came as High Priest and entered once into the holy place by His own blood, obtaining eternal redemption. How much more shall His blood purge your conscience from dead works (11–14).",
+        "Christ came as High Priest and entered once into the holy place by his own blood, obtaining eternal redemption. How much more shall his blood purge your conscience from dead works (11–14).",
         "Like a will, the new testament took force at a death. Moses sprinkled the book, the people and the tabernacle with blood: without shedding of blood is no remission (15–22).",
-        "Christ entered heaven itself to appear before God for us, offered Himself once to put away sin, and will appear the second time unto salvation to those who look for Him (23–28)."
+        "Christ entered heaven itself to appear before God for us, offered himself once to put away sin, and will appear the second time unto salvation to those who look for him (23–28)."
       ],
       "key": {
         "ref": "Hebrews 9:14",
@@ -15234,16 +15234,16 @@ window.STUDIES = [
       ],
       "story": [
         "The law was a shadow. Its sacrifices, repeated year by year, only reminded men of their sins; the blood of bulls and goats could never take sins away (1–4).",
-        "Christ came to do God's will in a body prepared for Him. By that will we are sanctified through the offering of His body once for all (5–10).",
+        "Christ came to do God's will in a body prepared for him. By that will we are sanctified through the offering of his body once for all (5–10).",
         "Every priest stood daily offering the same sacrifices; Christ offered one sacrifice for sins for ever and sat down. God says, “their sins and iniquities will I remember no more” (11–18).",
-        "So, brethren, enter the holiest boldly by the blood of Jesus, through the veil, His flesh. Draw near, hold fast, stir one another up, and don't forsake meeting together (19–25).",
+        "So, brethren, enter the holiest boldly by the blood of Jesus, through the veil, his flesh. Draw near, hold fast, stir one another up, and don't forsake meeting together (19–25).",
         "A solemn warning to anyone who tramples the Son of God: no other sacrifice remains. Remember the former days, cast not away your confidence; we are not of them who draw back (26–39)."
       ],
       "key": {
         "ref": "Hebrews 10:12",
         "text": "But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;"
       },
-      "big": "Christ's one sacrifice finished the work, so He sat down. Believers can come to God boldly, need each other to keep going, and are not of them who draw back."
+      "big": "Christ's one sacrifice finished the work, so he sat down. Believers can come to God boldly, need each other to keep going, and are not of them who draw back."
     }
   },
   {
@@ -15254,7 +15254,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Hebrews 11",
     "sub": "By faith",
-    "about": "The hall of faith: ordinary, flawed people from across the whole Old Testament who took God at His word, and one frame still open for us.",
+    "about": "The hall of faith: ordinary, flawed people from across the whole Old Testament who took God at his word, and one frame still open for us.",
     "tags": [
       "Faith",
       "Hope",
@@ -15304,7 +15304,7 @@ window.STUDIES = [
         "ref": "Hebrews 11:6",
         "text": "But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him."
       },
-      "big": "Faith takes God at His word before it sees the promise. God fills His hall with forgiven, flawed people, records their faith rather than their sins, and keeps a place in the line for us."
+      "big": "Faith takes God at his word before it sees the promise. God fills his hall with forgiven, flawed people, records their faith rather than their sins, and keeps a place in the line for us."
     }
   },
   {
@@ -15352,7 +15352,7 @@ window.STUDIES = [
         "ref": "Hebrews 12:2",
         "text": "Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God."
       },
-      "big": "Run the long race with your eyes on Jesus. God's discipline is a Father's love, not rejection. Don't trade your future for one moment, and serve Him with thanks and reverence, secure in a kingdom that cannot be moved."
+      "big": "Run the long race with your eyes on Jesus. God's discipline is a Father's love, not rejection. Don't trade your future for one moment, and serve him with thanks and reverence, secure in a kingdom that cannot be moved."
     }
   },
   {
@@ -15392,9 +15392,9 @@ window.STUDIES = [
       "story": [
         "Let brotherly love continue. Welcome strangers, remember prisoners as if bound with them, honour marriage, and be content, for God has said, “I will never leave thee, nor forsake thee” (1–6).",
         "Remember the leaders who taught you and follow their faith. Jesus Christ is the same yesterday, to day, and for ever; let grace, not food rules, steady your heart (7–10).",
-        "The sin offering was burned outside the camp, and Jesus suffered outside the gate. So go out to Him, bearing His reproach, for here we have no continuing city (11–14).",
+        "The sin offering was burned outside the camp, and Jesus suffered outside the gate. So go out to him, bearing his reproach, for here we have no continuing city (11–14).",
         "Offer the sacrifice of praise, do good and share. Obey the leaders who watch for your souls, and pray for the writer (15–19).",
-        "The God of peace, who raised the great Shepherd, mends His people to do His will. Timothy is set free, Italy sends greetings, and “Grace be with you all” (20–25)."
+        "The God of peace, who raised the great Shepherd, mends his people to do his will. Timothy is set free, Italy sends greetings, and “Grace be with you all” (20–25)."
       ],
       "key": {
         "ref": "Hebrews 13:5",
@@ -15442,7 +15442,7 @@ window.STUDIES = [
         "ref": "James 1:22",
         "text": "But be ye doers of the word, and not hearers only, deceiving your own selves."
       },
-      "big": "Real faith is not only hearing: it does what it hears. God never tempts, He gives good gifts freely, and a man who breaks the chain of desire early finds the way out."
+      "big": "Real faith is not only hearing: it does what it hears. God never tempts, he gives good gifts freely, and a man who breaks the chain of desire early finds the way out."
     }
   },
   {
@@ -15460,7 +15460,7 @@ window.STUDIES = [
       "The royal law",
       "Mercy",
       "Dead faith",
-      "Demons",
+      "Devils",
       "Abraham and Rahab"
     ],
     "overview": {
@@ -15515,7 +15515,7 @@ window.STUDIES = [
       "story": [
         "Be not many masters: teachers are judged more strictly, and in many things we all offend (1–2).",
         "A bit turns a horse and a small helm turns a ship, and the little tongue boasts great things. It is a fire, a world of iniquity, that no man can tame (3–8).",
-        "With the same mouth we bless God and curse men made in His likeness. A fountain does not send out sweet water and bitter (9–12).",
+        "With the same mouth we bless God and curse men made in his likeness. A fountain does not send out sweet water and bitter (9–12).",
         "Earthly wisdom is bitter envy and strife and grows confusion. The wisdom from above is first pure, then peaceable, gentle, full of mercy, and the fruit of righteousness is sown in peace (13–18)."
       ],
       "key": {
@@ -15553,14 +15553,14 @@ window.STUDIES = [
       "story": [
         "James asks where wars and fightings come from, and answers: from the cravings that war inside us. We want, we fight, we still have not. We do not ask, or we ask wrongly (1–3).",
         "Friendship with the world, a way of living that leaves God out, makes us God's enemy. But God gives more grace, and gives it to the humble (4–6).",
-        "Submit to God, resist the devil and he will flee, draw nigh to God and He will draw nigh to you. Mourn honestly over sin, and humble yourself, and He will lift you up (7–10).",
+        "Submit to God, resist the devil and he will flee, draw nigh to God and he will draw nigh to you. Mourn honestly over sin, and humble yourself, and he will lift you up (7–10).",
         "Do not speak evil of a brother or sit in the judge's seat. Hold plans with an open hand, because life is a vapour: “If the Lord will.” To know the good and not do it is sin (11–17)."
       ],
       "key": {
         "ref": "James 4:7-8",
         "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you. Draw nigh to God, and he will draw nigh to you."
       },
-      "big": "The fight is inside, and God gives more grace to the humble. When temptation comes: submit to God, resist, and draw near to Him and to your brothers. He will not leave you alone in it."
+      "big": "The fight is inside, and God gives more grace to the humble. When temptation comes: submit to God, resist, and draw near to him and to your brothers. He will not leave you alone in it."
     }
   },
   {
@@ -15612,7 +15612,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 Peter 1",
     "sub": "A living hope for strangers",
-    "about": "The man who denied Jesus three times writes to believers suffering for Him, and starts with a hope that cannot die, an inheritance that cannot spoil, and a price that was already paid.",
+    "about": "The man who denied Jesus three times writes to believers suffering for him, and starts with a hope that cannot die, an inheritance that cannot spoil, and a price that was already paid.",
     "tags": [
       "Hope",
       "Security",
@@ -15641,7 +15641,7 @@ window.STUDIES = [
         "Peter, an apostle, writes to scattered strangers who are chosen by the Father, set apart by the Spirit, and covered by the blood of Jesus (1–2).",
         "God has begotten us again to a living hope by the resurrection. The inheritance is kept in heaven, and the believers are kept by God's power (3–5).",
         "Their faith is tried by fire like gold, and it ends in praise and joy unspeakable. Prophets and angels long to look into this salvation (6–12).",
-        "Be ye holy, for He is holy. Live as obedient children in awe of the Father, not following the old lusts (13–17).",
+        "Be ye holy, for he is holy. Live as obedient children in awe of the Father, not following the old lusts (13–17).",
         "You were redeemed from the empty way of life handed down from your fathers, not with silver and gold, but with the precious blood of Christ, the spotless Lamb (18–21).",
         "Love one another fervently. You were born again of incorruptible seed, the word of God, which lives and abides for ever (22–25)."
       ],
@@ -15684,14 +15684,14 @@ window.STUDIES = [
         "Christ is the living stone, rejected by men and chosen by God. Believers are living stones built into a spiritual house and a holy priesthood (4–8).",
         "Chosen generation, royal priesthood, holy nation: once not a people, now the people of God; once without mercy, now with it (9–10).",
         "Strangers and pilgrims: abstain from fleshly lusts, live honestly among the Gentiles, submit to rulers, and take unfair treatment as before God (11–20).",
-        "Christ suffered for us, leaving an example. He bore our sins on the tree, and by His stripes we were healed (21–24).",
+        "Christ suffered for us, leaving an example. He bore our sins on the tree, and by his stripes we were healed (21–24).",
         "We were as sheep going astray, but are now returned to the Shepherd and Bishop of our souls (25)."
       ],
       "key": {
         "ref": "1 Peter 2:10",
         "text": "Which in time past were not a people, but are now the people of God: which had not obtained mercy, but now have obtained mercy."
       },
-      "big": "A believer belongs to God: a living stone in His house, one of His own people. Christ carried his sins and is his Shepherd, so he can live honestly among people who are watching."
+      "big": "A believer belongs to God: a living stone in his house, one of his own people. Christ carried his sins and is his Shepherd, so he can live honestly among people who are watching."
     }
   },
   {
@@ -15783,7 +15783,7 @@ window.STUDIES = [
     "ch": 5,
     "date": "2026-10-31",
     "title": "1 Peter 5",
-    "sub": "Cast it all on Him",
+    "sub": "Cast it all on him",
     "about": "Peter, who once denied Jesus, tells the shepherds to feed the flock and every man to be humble, awake and to cast all his care on God. The letter ends in peace.",
     "tags": [
       "Leadership",
@@ -15808,7 +15808,7 @@ window.STUDIES = [
       ],
       "story": [
         "Peter, a fellow elder and witness of Christ's sufferings, tells the elders to feed the flock willingly, not for money and not as lords, but as examples. The chief Shepherd will give a crown that fades not away (1–4).",
-        "Younger men, submit to the elders, and all be clothed with humility. God resists the proud and gives grace to the humble. Cast all your care on Him, for He cares for you (5–7).",
+        "Younger men, submit to the elders, and all be clothed with humility. God resists the proud and gives grace to the humble. Cast all your care on him, for he cares for you (5–7).",
         "Be sober and vigilant: the devil walks about like a roaring lion. Resist him steadfast in the faith, knowing your brothers suffer the same (8–9).",
         "After you have suffered a while, the God of all grace will make you perfect, stablish, strengthen and settle you (10–11).",
         "Peter writes by Silvanus, sends greetings from the church at Babylon and from Marcus his son, and ends with peace to all in Christ Jesus (12–14)."
@@ -15873,7 +15873,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "2 Peter 2",
     "sub": "Promised freedom, delivered chains",
-    "about": "Peter warns of false teachers who sell religion for money and promise liberty while enslaved themselves, and of a God who knows how to deliver His own.",
+    "about": "Peter warns of false teachers who sell religion for money and promise liberty while enslaved themselves, and of a God who knows how to deliver his own.",
     "tags": [
       "False teachers",
       "Temptation",
@@ -15908,7 +15908,7 @@ window.STUDIES = [
         "ref": "2 Peter 2:9",
         "text": "The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished:"
       },
-      "big": "Smooth teachers sell freedom and deliver chains, but the Lord knows how to deliver His own out of temptation. Christ died for all, and a son who slips gets up and goes home to a Father who runs to meet him."
+      "big": "Smooth teachers sell freedom and deliver chains, but the Lord knows how to deliver his own out of temptation. Christ died for all, and a son who slips gets up and goes home to a Father who runs to meet him."
     }
   },
   {
@@ -15949,7 +15949,7 @@ window.STUDIES = [
         "ref": "2 Peter 3:9",
         "text": "The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance."
       },
-      "big": "The Lord's delay is mercy: He wants all to come to repentance, and every day is another day to turn. He is coming, so live ready, hold to the hope of a new earth, and keep growing in grace."
+      "big": "The Lord's delay is mercy: he wants all to come to repentance, and every day is another day to turn. He is coming, so live ready, hold to the hope of a new earth, and keep growing in grace."
     }
   },
   {
@@ -15984,16 +15984,16 @@ window.STUDIES = [
       ],
       "story": [
         "John writes as an eyewitness: what he heard, saw, looked upon and handled of the Word of life (1–2).",
-        "He writes so we can share fellowship with the Father, His Son and each other, and so our joy may be full (3–4).",
-        "The message: God is light, with no darkness at all. Saying we know Him while walking in darkness is a lie (5–6).",
+        "He writes so we can share fellowship with the Father, his Son and each other, and so our joy may be full (3–4).",
+        "The message: God is light, with no darkness at all. Saying we know him while walking in darkness is a lie (5–6).",
         "Walking in the light, we have fellowship with one another, and the blood of Jesus keeps cleansing us from all sin (7).",
-        "Saying we have no sin, or have not sinned, deceives us; but if we confess, He is faithful and just to forgive and cleanse (8–10)."
+        "Saying we have no sin, or have not sinned, deceives us; but if we confess, he is faithful and just to forgive and cleanse (8–10)."
       ],
       "key": {
         "ref": "1 John 1:9",
         "text": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."
       },
-      "big": "God is pure light, and He doesn't ask us to pretend. Believers still sin, but when we bring it into the light and confess it, He forgives and cleanses, every time, because the blood of Jesus has already paid."
+      "big": "God is pure light, and he doesn't ask us to pretend. Believers still sin, but when we bring it into the light and confess it, he forgives and cleanses, every time, because the blood of Jesus has already paid."
     }
   },
   {
@@ -16008,7 +16008,7 @@ window.STUDIES = [
     "tags": [
       "Our advocate",
       "The whole world",
-      "Knowing Him",
+      "Knowing him",
       "Light and love",
       "Love not the world",
       "The anointing"
@@ -16029,17 +16029,17 @@ window.STUDIES = [
       ],
       "story": [
         "John writes that we sin not; but if any man sin, Jesus Christ the righteous is our advocate and the propitiation for the sins of the whole world (1–2).",
-        "We know that we know Him if we keep His commandments and walk as He walked (3–6).",
+        "We know that we know him if we keep his commandments and walk as he walked (3–6).",
         "The old command to love shines new; whoever hates his brother walks blind in darkness (7–11).",
-        "John writes to little children, young men and fathers: forgiven, strong in the Word, knowing Him (12–14).",
+        "John writes to little children, young men and fathers: forgiven, strong in the Word, knowing him (12–14).",
         "Love not the world: the lust of the flesh, the lust of the eyes and the pride of life are passing away (15–17).",
-        "Antichrists went out from the church denying Jesus is the Christ; believers have the anointing and are to abide in Him until He comes (18–29)."
+        "Antichrists went out from the church denying Jesus is the Christ; believers have the anointing and are to abide in him until he comes (18–29)."
       ],
       "key": {
         "ref": "1 John 2:1",
         "text": "My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:"
       },
-      "big": "God's aim is that we not sin, but when a believer does, Jesus stands beside him before the Father, pointing to a payment big enough for the whole world. Real faith shows its pulse in obedience, love and staying close to Him."
+      "big": "God's aim is that we not sin, but when a believer does, Jesus stands beside him before the Father, pointing to a payment big enough for the whole world. Real faith shows its pulse in obedience, love and staying close to him."
     }
   },
   {
@@ -16050,12 +16050,12 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "1 John 3",
     "sub": "Sons of God",
-    "about": "Look what kind of love this is: God calls us His sons, now. A son of God doesn't live in sin as his way of life, and when your own heart condemns you, God is greater than your heart.",
+    "about": "Look what kind of love this is: God calls us his sons, now. A son of God doesn't live in sin as his way of life, and when your own heart condemns you, God is greater than your heart.",
     "tags": [
       "Sons of God",
-      "Like Him",
+      "Like him",
       "Born of God",
-      "Why He came",
+      "Why he came",
       "Love in deed",
       "A condemning heart"
     ],
@@ -16076,18 +16076,18 @@ window.STUDIES = [
         "asia"
       ],
       "story": [
-        "Behold what love: we are called the sons of God now, and when He appears we shall be like Him; that hope makes us pure (1–3).",
+        "Behold what love: we are called the sons of God now, and when he appears we shall be like him; that hope makes us pure (1–3).",
         "Jesus came to take away our sins and to destroy the works of the devil (4–8).",
         "Whoever is born of God does not keep on living in sin, for God's seed remains in him (9–10).",
         "Love one another, not like Cain, who killed his brother; loving the brethren shows we have passed from death to life (11–15).",
-        "Jesus laid down His life for us, so we love in deed and in truth, meeting a brother's need (16–18).",
-        "If our heart condemns us, God is greater than our heart; His command is to believe on Jesus and love one another, and His Spirit lives in us (19–24)."
+        "Jesus laid down his life for us, so we love in deed and in truth, meeting a brother's need (16–18).",
+        "If our heart condemns us, God is greater than our heart; his command is to believe on Jesus and love one another, and his Spirit lives in us (19–24)."
       ],
       "key": {
         "ref": "1 John 3:20",
         "text": "For if our heart condemn us, God is greater than our heart, and knoweth all things."
       },
-      "big": "The Father's love has made us His sons. A son doesn't make his home in sin; he fights, confesses and gets up. He loves with his hands, and when his own heart condemns him, he trusts God, who is greater and knows all things."
+      "big": "The Father's love has made us his sons. A son doesn't make his home in sin; he fights, confesses and gets up. He loves with his hands, and when his own heart condemns him, he trusts God, who is greater and knows all things."
     }
   },
   {
@@ -16123,16 +16123,16 @@ window.STUDIES = [
       ],
       "story": [
         "Believe not every spirit: try them. A spirit that confesses Jesus Christ come in the flesh is of God; one that does not is the spirit of antichrist (1–3).",
-        "Ye have overcome them, little children, because greater is He that is in you than he that is in the world (4–6).",
-        "Love is of God, for God is love. He showed it by sending His only begotten Son to be the propitiation for our sins (7–10).",
-        "No man has seen God, but if we love one another, God dwells in us. The Father sent the Son to be the Saviour of the world, and whosoever confesses Him dwells in God (11–16).",
-        "There is no fear in love: perfect love casts out fear. We love Him because He first loved us, and the man who loves God must love his brother too (17–21)."
+        "Ye have overcome them, little children, because greater is he that is in you than he that is in the world (4–6).",
+        "Love is of God, for God is love. He showed it by sending his only begotten Son to be the propitiation for our sins (7–10).",
+        "No man has seen God, but if we love one another, God dwells in us. The Father sent the Son to be the Saviour of the world, and whosoever confesses him dwells in God (11–16).",
+        "There is no fear in love: perfect love casts out fear. We love him because he first loved us, and the man who loves God must love his brother too (17–21)."
       ],
       "key": {
         "ref": "1 John 4:10",
         "text": "Herein is love, not that we loved God, but that he loved us, and sent his Son to be the propitiation for our sins."
       },
-      "big": "God is love, and He moved first: He sent His Son to take the punishment our sins deserved. A man who knows that love can stop living afraid of God, and can love the brother in front of him."
+      "big": "God is love, and he moved first: he sent his Son to take the punishment our sins deserved. A man who knows that love can stop living afraid of God, and can love the brother in front of him."
     }
   },
   {
@@ -16171,8 +16171,8 @@ window.STUDIES = [
         "Whosoever believes that Jesus is the Christ is born of God, and loves God's children. His commandments are not grievous (1–3).",
         "Whatever is born of God overcomes the world, and the victory is our faith: believing that Jesus is the Son of God (4–5).",
         "Jesus came by water and blood. The Father, the Word and the Holy Ghost bear record in heaven; the spirit, the water and the blood in earth. God's witness is greater (6–10).",
-        "God has given us eternal life, and this life is in His Son. He that hath the Son hath life. John wrote so that believers may know they have eternal life (11–13).",
-        "We can pray with confidence according to His will, and pray for a brother who sins. The one born of God is kept from the wicked one. Little children, keep yourselves from idols (14–21)."
+        "God has given us eternal life, and this life is in his Son. He that hath the Son hath life. John wrote so that believers may know they have eternal life (11–13).",
+        "We can pray with confidence according to his will, and pray for a brother who sins. The one born of God is kept from the wicked one. Little children, keep yourselves from idols (14–21)."
       ],
       "key": {
         "ref": "1 John 5:13",
@@ -16271,7 +16271,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Jude 1",
     "sub": "Contend, and be kept",
-    "about": "The Lord's own brother writes a fierce warning against false teachers, and ends with the promise that He is able to keep you from falling.",
+    "about": "The Lord's own brother writes a fierce warning against false teachers, and ends with the promise that he is able to keep you from falling.",
     "tags": [
       "Jude the servant",
       "Contend",
@@ -16302,7 +16302,7 @@ window.STUDIES = [
         "Jude, a servant of Jesus Christ and brother of James, greets the called, sanctified and preserved (1–2).",
         "He urges them to earnestly contend for the faith once delivered, because ungodly men have crept in and turn grace into lasciviousness (3–4).",
         "Six warnings: Israel in the wilderness, the angels, Sodom and Gomorrha, Cain, Balaam and Core. Michael and the body of Moses, and Enoch's prophecy (5–16).",
-        "Remember what the apostles said, and build up yourselves, pray, keep yourselves in the love of God and look for His mercy (17–21).",
+        "Remember what the apostles said, and build up yourselves, pray, keep yourselves in the love of God and look for his mercy (17–21).",
         "Have compassion on some, pull others from the fire (22–23).",
         "He is able to keep you from falling and present you faultless with exceeding joy (24–25)."
       ],
@@ -16310,7 +16310,7 @@ window.STUDIES = [
         "ref": "Jude 1:24",
         "text": "Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,"
       },
-      "big": "Hold on to the faith, build yourself up, and pull a slipping brother out of the fire. And remember who holds you: He is able to keep you from falling and to present you faultless with exceeding joy."
+      "big": "Hold on to the faith, build yourself up, and pull a slipping brother out of the fire. And remember who holds you: he is able to keep you from falling and to present you faultless with exceeding joy."
     }
   },
   {
@@ -16321,7 +16321,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 1",
     "sub": "Alive for Evermore",
-    "about": "An old man in exile on Patmos sees Jesus as he has never seen Him: shining, strong, walking among His churches. John falls down as dead, and Jesus lays His hand on him and says, “Fear not.”",
+    "about": "An old man in exile on Patmos sees Jesus as he has never seen him: shining, strong, walking among his churches. John falls down as dead, and Jesus lays his hand on him and says, “Fear not.”",
     "tags": [
       "The unveiling",
       "Loved and washed",
@@ -16350,19 +16350,19 @@ window.STUDIES = [
         "laodicea"
       ],
       "story": [
-        "The Revelation of Jesus Christ: God gave it to Jesus, who sent it by His angel to John, with a blessing on all who read, hear and keep it (1–3).",
-        "John greets the seven churches with grace and peace and praises Jesus, who loved us, washed us from our sins in His own blood, and made us kings and priests (4–6).",
-        "Jesus is coming with clouds, and every eye shall see Him. He is Alpha and Omega, the Almighty (7–8).",
+        "The Revelation of Jesus Christ: God gave it to Jesus, who sent it by his angel to John, with a blessing on all who read, hear and keep it (1–3).",
+        "John greets the seven churches with grace and peace and praises Jesus, who loved us, washed us from our sins in his own blood, and made us kings and priests (4–6).",
+        "Jesus is coming with clouds, and every eye shall see him. He is Alpha and Omega, the Almighty (7–8).",
         "John, exiled on Patmos for the word of God, is in the Spirit on the Lord's day and hears a voice like a trumpet: write, and send it to the seven churches (9–11).",
-        "He turns and sees the Son of man among seven golden candlesticks: hair white as snow, eyes as fire, feet like fine brass, a voice as many waters, seven stars in His hand, a sharp twoedged sword, a face like the sun (12–16).",
-        "John falls at His feet as dead. Jesus lays His right hand on him: “Fear not … I am alive for evermore … and have the keys of hell and of death” (17–18).",
+        "He turns and sees the Son of man among seven golden candlesticks: hair white as snow, eyes as fire, feet like fine brass, a voice as many waters, seven stars in his hand, a sharp twoedged sword, a face like the sun (12–16).",
+        "John falls at his feet as dead. Jesus lays his right hand on him: “Fear not … I am alive for evermore … and have the keys of hell and of death” (17–18).",
         "Jesus tells John what to write and explains the stars and candlesticks: the angels of the churches, and the churches (19–20)."
       ],
       "key": {
         "ref": "Revelation 1:18",
         "text": "I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death."
       },
-      "big": "Revelation is the unveiling of Jesus, not a puzzle. Before any judgment, it shows who He is: the One who loved us and washed us, who is coming again, who walks among His churches in glory, and who holds the keys of death. When we fall at His feet, He lays His hand on us and says, “Fear not.”"
+      "big": "Revelation is the unveiling of Jesus, not a puzzle. Before any judgment, it shows who he is: the One who loved us and washed us, who is coming again, who walks among his churches in glory, and who holds the keys of death. When we fall at his feet, he lays his hand on us and says, “Fear not.”"
     },
     "url": "studies/revelation-01.html"
   },
@@ -16374,7 +16374,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 2",
     "sub": "I Know Thy Works",
-    "about": "Four letters from the risen Jesus to four real churches: one that lost its first love, one that was poor and hunted, one that made deals with the world, and one that let a false teacher stay. To each He says, “I know.”",
+    "about": "Four letters from the risen Jesus to four real churches: one that lost its first love, one that was poor and hunted, one that made deals with the world, and one that let a false teacher stay. To each he says, “I know.”",
     "tags": [
       "First love",
       "Poor but rich",
@@ -16406,7 +16406,7 @@ window.STUDIES = [
       "story": [
         "To Ephesus: Jesus knows their hard work and sound doctrine, but they have left their first love. Remember, repent, and do the first works, or their candlestick will be removed (1–7).",
         "To Smyrna: poor and slandered, but rich. No rebuke. Some will go to prison; be faithful unto death, and Jesus will give a crown of life (8–11).",
-        "To Pergamos: they hold fast His name where Satan's seat is, even after Antipas was killed, but some hold the doctrine of Balaam and of the Nicolaitanes. Repent. The overcomer gets the hidden manna and a white stone with a new name (12–17).",
+        "To Pergamos: they hold fast his name where Satan's seat is, even after Antipas was killed, but some hold the doctrine of Balaam and of the Nicolaitanes. Repent. The overcomer gets the hidden manna and a white stone with a new name (12–17).",
         "To Thyatira: their love and service are growing, but they put up with Jezebel, a false prophetess. Jesus gave her space to repent, and she would not (18–23).",
         "To the faithful in Thyatira: no other burden; hold fast till I come. The overcomer will rule with Christ and receive the morning star (24–29)."
       ],
@@ -16414,7 +16414,7 @@ window.STUDIES = [
         "ref": "Revelation 2:10",
         "text": "Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life."
       },
-      "big": "Jesus knows every church and every man: the hard work, the suffering, the slow cooling, the compromises. He praises what is right, names what is wrong, and calls us back with a promise. He gives space to repent, a new name to men with a bad one, and Himself, the morning star, to all who hold fast."
+      "big": "Jesus knows every church and every man: the hard work, the suffering, the slow cooling, the compromises. He praises what is right, names what is wrong, and calls us back with a promise. He gives space to repent, a new name to men with a bad one, and himself, the morning star, to all who hold fast."
     },
     "url": "studies/revelation-02.html"
   },
@@ -16454,16 +16454,16 @@ window.STUDIES = [
       ],
       "story": [
         "To Sardis: “thou hast a name that thou livest, and art dead.” Wake up, strengthen what remains, remember and repent. A few have kept their garments clean, and Christ will not blot out the overcomer's name (1–6).",
-        "To Philadelphia: Christ holds the key of David and sets before them an open door no man can shut. They have a little strength and have kept His word; not one word of rebuke (7–8).",
-        "Their enemies will know He loved them. He will keep them from the hour of temptation, and make the overcomer a pillar in God's temple, never to go out (9–13).",
-        "To Laodicea: neither cold nor hot, lukewarm. They say “I am rich” and don't know they are wretched, poor, blind and naked. Christ counsels them to buy of Him gold, white raiment and eyesalve (14–18).",
-        "“As many as I love, I rebuke and chasten.” Christ stands at the door and knocks: if any man opens, He will come in and sup with him. The overcomer will sit with Him in His throne (19–22)."
+        "To Philadelphia: Christ holds the key of David and sets before them an open door no man can shut. They have a little strength and have kept his word; not one word of rebuke (7–8).",
+        "Their enemies will know he loved them. He will keep them from the hour of temptation, and make the overcomer a pillar in God's temple, never to go out (9–13).",
+        "To Laodicea: neither cold nor hot, lukewarm. They say “I am rich” and don't know they are wretched, poor, blind and naked. Christ counsels them to buy of him gold, white raiment and eyesalve (14–18).",
+        "“As many as I love, I rebuke and chasten.” Christ stands at the door and knocks: if any man opens, he will come in and sup with him. The overcomer will sit with him in his throne (19–22)."
       ],
       "key": {
         "ref": "Revelation 3:20",
         "text": "Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me."
       },
-      "big": "Christ sees past a church's reputation and tells the truth because He loves us. A little strength is enough when He opens the door, denial is the real danger, and He knocks for any man who will open."
+      "big": "Christ sees past a church's reputation and tells the truth because he loves us. A little strength is enough when he opens the door, denial is the real danger, and he knocks for any man who will open."
     }
   },
   {
@@ -16543,7 +16543,7 @@ window.STUDIES = [
         "heaven"
       ],
       "story": [
-        "In the right hand of Him on the throne John sees a book sealed with seven seals. A strong angel asks, “Who is worthy to open the book?” (1–2).",
+        "In the right hand of him on the throne John sees a book sealed with seven seals. A strong angel asks, “Who is worthy to open the book?” (1–2).",
         "No man in heaven, on earth, or under the earth is able to open it, and John weeps much (3–4).",
         "An elder says, “Weep not”: the Lion of the tribe of Juda has prevailed. John looks and sees a Lamb as it had been slain, and the Lamb takes the book (5–7).",
         "The beasts and elders fall down with harps and golden vials of prayers and sing a new song: “thou wast slain, and hast redeemed us to God by thy blood” (8–10).",
@@ -16553,7 +16553,7 @@ window.STUDIES = [
         "ref": "Revelation 5:12",
         "text": "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing."
       },
-      "big": "No man is worthy, but the Lamb is. Jesus conquered by dying for sinners, bought men of every kind back to God with His blood, and all creation will praise Him."
+      "big": "No man is worthy, but the Lamb is. Jesus conquered by dying for sinners, bought men of every kind back to God with his blood, and all creation will praise him."
     }
   },
   {
@@ -16564,7 +16564,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 6",
     "sub": "The Lamb opens the seals",
-    "about": "Four horsemen ride, the martyrs cry “How long?”, and men run from the wrath of the Lamb. Every seal is broken by His hand.",
+    "about": "Four horsemen ride, the martyrs cry “How long?”, and men run from the wrath of the Lamb. Every seal is broken by his hand.",
     "tags": [
       "Judgment",
       "God's control",
@@ -16599,7 +16599,7 @@ window.STUDIES = [
         "ref": "Revelation 6:17",
         "text": "For the great day of his wrath is come; and who shall be able to stand?"
       },
-      "big": "Nothing happens outside the Lamb's hand: He opens every seal and limits every rider. He sees and comforts His martyrs, and the only shelter from the wrath of the Lamb is the Lamb Himself."
+      "big": "Nothing happens outside the Lamb's hand: he opens every seal and limits every rider. He sees and comforts his martyrs, and the only shelter from the wrath of the Lamb is the Lamb himself."
     }
   },
   {
@@ -16610,7 +16610,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 7",
     "sub": "Every tear",
-    "about": "Before the seventh seal opens, God holds back the storm and seals His servants. Then John sees a crowd no one can count, in robes washed white in the blood of the Lamb, and God wipes away every tear.",
+    "about": "Before the seventh seal opens, God holds back the storm and seals his servants. Then John sees a crowd no one can count, in robes washed white in the blood of the Lamb, and God wipes away every tear.",
     "tags": [
       "Sealed",
       "The 144,000",
@@ -16645,7 +16645,7 @@ window.STUDIES = [
         "ref": "Revelation 7:17",
         "text": "For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes."
       },
-      "big": "God marks His own before the storm and loses none of them. Heaven will be full of people no one could count, from every nation, who came in stained robes and were washed white in the Lamb's blood. The Lamb will shepherd them, and God Himself will wipe away every tear."
+      "big": "God marks his own before the storm and loses none of them. Heaven will be full of people no one could count, from every nation, who came in stained robes and were washed white in the Lamb's blood. The Lamb will shepherd them, and God himself will wipe away every tear."
     }
   },
   {
@@ -16689,7 +16689,7 @@ window.STUDIES = [
         "ref": "Revelation 8:4",
         "text": "And the smoke of the incense, which came with the prayers of the saints, ascended up before God out of the angel’s hand."
       },
-      "big": "Heaven goes silent before God acts, and the first thing it hears is His people's prayers, kept like incense and answered from the same altar. The trumpets are warnings with limits: a third struck, two thirds spared, so men will turn while there is time."
+      "big": "Heaven goes silent before God acts, and the first thing it hears is his people's prayers, kept like incense and answered from the same altar. The trumpets are warnings with limits: a third struck, two thirds spared, so men will turn while there is time."
     }
   },
   {
@@ -16736,7 +16736,7 @@ window.STUDIES = [
         "ref": "Revelation 9:20",
         "text": "And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:"
       },
-      "big": "Evil is real, but it is on God's leash: the key is given, the time is set, and His sealed people are kept. Pain alone does not change a heart; men can run back to the very things that are killing them. The trumpets are warnings, and the door to turn to Jesus is open today."
+      "big": "Evil is real, but it is on God's leash: the key is given, the time is set, and his sealed people are kept. Pain alone does not change a heart; men can run back to the very things that are killing them. The trumpets are warnings, and the door to turn to Jesus is open today."
     }
   },
   {
@@ -16779,7 +16779,7 @@ window.STUDIES = [
         "ref": "Revelation 10:10",
         "text": "And I took the little book out of the angel’s hand, and ate it up; and it was in my mouth sweet as honey: and as soon as I had eaten it, my belly was bitter."
       },
-      "big": "God keeps His promises even in judgment, and He will not be late. Some things are His alone to know, but He has given us His word to take in whole: sweet because it is His, and hard to carry because it is true. And He is not finished with His servants, however old or far gone they feel."
+      "big": "God keeps his promises even in judgment, and he will not be late. Some things are his alone to know, but he has given us his word to take in whole: sweet because it is his, and hard to carry because it is true. And he is not finished with his servants, however old or far gone they feel."
     }
   },
   {
@@ -16790,7 +16790,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 11",
     "sub": "He shall reign for ever",
-    "about": "God measures what is His. Two witnesses preach, are killed, lie in the street while the world celebrates, and are raised and called up to heaven. Then the seventh trumpet sounds: the kingdoms of this world are become the kingdoms of our Lord.",
+    "about": "God measures what is his. Two witnesses preach, are killed, lie in the street while the world celebrates, and are raised and called up to heaven. Then the seventh trumpet sounds: the kingdoms of this world are become the kingdoms of our Lord.",
     "tags": [
       "Witness",
       "The Spirit's power",
@@ -16827,7 +16827,7 @@ window.STUDIES = [
         "ref": "Revelation 11:15",
         "text": "And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever."
       },
-      "big": "God keeps what He has measured, and nothing can touch His witnesses until their work is done. The world may celebrate when they fall, but God stands them up and calls them home. Every kingdom of this world is coming down; Christ will reign for ever, and at the center of heaven is the mercy seat."
+      "big": "God keeps what he has measured, and nothing can touch his witnesses until their work is done. The world may celebrate when they fall, but God stands them up and calls them home. Every kingdom of this world is coming down; Christ will reign for ever, and at the center of heaven is the mercy seat."
     }
   },
   {
@@ -16864,9 +16864,9 @@ window.STUDIES = [
         "wilderness"
       ],
       "story": [
-        "A great wonder in heaven: a woman clothed with the sun, the moon under her feet and a crown of twelve stars, crying out in labor (1–2).",
+        "A great wonder in heaven: a woman clothed with the sun, the moon under her feet and a crown of twelve stars, crying out in labour (1–2).",
         "A great red dragon with seven heads, ten horns and seven crowns sweeps down a third of the stars and waits to devour her child (3–4).",
-        "She bears a man child who will rule all nations with a rod of iron, and he is caught up to God and His throne. She flees to a place God prepared in the wilderness (5–6).",
+        "She bears a man child who will rule all nations with a rod of iron, and he is caught up to God and his throne. She flees to a place God prepared in the wilderness (5–6).",
         "War in heaven: Michael and his angels fight the dragon, that old serpent, the Devil and Satan. He loses and is cast out to the earth with his angels (7–9).",
         "Heaven rejoices: the accuser of the brethren is cast down, and they overcame him by the blood of the Lamb and the word of their testimony. The devil comes down in great wrath, knowing his time is short (10–12).",
         "The dragon persecutes the woman, but she is given eagle's wings and nourished in the wilderness. The earth swallows his flood, and he goes to make war on the rest of her children, who keep God's commandments and have the testimony of Jesus Christ (13–17)."
@@ -16875,7 +16875,7 @@ window.STUDIES = [
         "ref": "Revelation 12:11",
         "text": "And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death."
       },
-      "big": "Behind every battle is one old war between the serpent and the woman's Seed, and Christ has already won it. Satan accuses believers day and night, but the blood of the Lamb answers every charge, and a believer's own story, told out loud, takes away his power. The devil is angry because his time is short, and God carries His people through."
+      "big": "Behind every battle is one old war between the serpent and the woman's Seed, and Christ has already won it. Satan accuses believers day and night, but the blood of the Lamb answers every charge, and a believer's own story, told out loud, takes away his power. The devil is angry because his time is short, and God carries his people through."
     }
   },
   {
@@ -16960,7 +16960,7 @@ window.STUDIES = [
         "temple"
       ],
       "story": [
-        "The Lamb stands on mount Sion with the 144,000, His Father's name on their foreheads. They sing a new song, redeemed from among men, without fault (1–5).",
+        "The Lamb stands on mount Sion with the 144,000, his Father's name on their foreheads. They sing a new song, redeemed from among men, without fault (1–5).",
         "One angel flies with the everlasting gospel for every nation, kindred, tongue and people: “Fear God, and give glory to him” (6–7).",
         "A second angel cries, “Babylon is fallen, is fallen.” A third warns that whoever worships the beast and takes his mark will drink God's wrath without mixture (8–11).",
         "“Here is the patience of the saints.” A voice from heaven: “Blessed are the dead which die in the Lord… they may rest from their labours” (12–13).",
@@ -16993,7 +16993,7 @@ window.STUDIES = [
     ],
     "url": "studies/revelation-15.html",
     "overview": {
-      "where": "Heaven, before God's throne and His temple, in John's vision on Patmos",
+      "where": "Heaven, before God's throne and his temple, in John's vision on Patmos",
       "when": "About AD 95; the calm just before the seven last plagues",
       "people": [
         "seven-angels-with-plagues",
@@ -17013,13 +17013,13 @@ window.STUDIES = [
         "Those who got the victory over the beast stand on a sea of glass mingled with fire, holding the harps of God (2).",
         "They sing the song of Moses and the song of the Lamb: “Great and marvellous are thy works … just and true are thy ways” (3–4).",
         "The temple of the tabernacle of the testimony in heaven opens, and the seven angels come out in pure white linen with golden girdles (5–6).",
-        "One of the four beasts gives them seven golden vials full of God's wrath, and the temple fills with smoke from His glory; no man can enter till the plagues are done (7–8)."
+        "One of the four beasts gives them seven golden vials full of God's wrath, and the temple fills with smoke from his glory; no man can enter till the plagues are done (7–8)."
       ],
       "key": {
         "ref": "Revelation 15:3",
         "text": "And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints."
       },
-      "big": "God's people always end on the far shore, singing about Him. His judgments are just and true, the man in Christ is saved from wrath, and today the way into God's presence is still open."
+      "big": "God's people always end on the far shore, singing about him. His judgments are just and true, the man in Christ is saved from wrath, and today the way into God's presence is still open."
     }
   },
   {
@@ -17071,7 +17071,7 @@ window.STUDIES = [
         "ref": "Revelation 16:7",
         "text": "And I heard another out of the altar say, Even so, Lord God Almighty, true and righteous are thy judgments."
       },
-      "big": "God's judgment is just, and pain alone never softens a hard heart. Jesus is coming like a thief, so stay awake and keep the garments He gave you. Evil will be finished: it is done."
+      "big": "God's judgment is just, and pain alone never softens a hard heart. Jesus is coming like a thief, so stay awake and keep the garments he gave you. Evil will be finished: it is done."
     }
   },
   {
@@ -17115,14 +17115,14 @@ window.STUDIES = [
         "In the wilderness John sees her riding a scarlet beast with seven heads and ten horns, dressed in purple and scarlet, holding a golden cup full of abominations (3–4).",
         "On her forehead: “MYSTERY, BABYLON THE GREAT.” She is drunk with the blood of the saints, and John wonders at her (5–6).",
         "The angel explains: the beast was, and is not, and goes into perdition. The seven heads are seven mountains and seven kings; the ten horns are ten kings who reign one hour (7–13).",
-        "They make war with the Lamb, and the Lamb overcomes them, for He is Lord of lords and King of kings; with Him are the called, chosen and faithful (14).",
-        "The ten horns turn on the whore and burn her, because God put it in their hearts to fulfil His will. The woman is that great city (15–18)."
+        "They make war with the Lamb, and the Lamb overcomes them, for he is Lord of lords and King of kings; with him are the called, chosen and faithful (14).",
+        "The ten horns turn on the whore and burn her, because God put it in their hearts to fulfil his will. The woman is that great city (15–18)."
       ],
       "key": {
         "ref": "Revelation 17:14",
         "text": "These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful."
       },
-      "big": "The world's way of life looks like gold and is full of poison, and it turns on the people who drink it. Teachers differ on who Babylon is, but the end is plain: the Lamb overcomes, and those with Him are called, chosen and faithful."
+      "big": "The world's way of life looks like gold and is full of poison, and it turns on the people who drink it. Teachers differ on who Babylon is, but the end is plain: the Lamb overcomes, and those with him are called, chosen and faithful."
     }
   },
   {
@@ -17164,14 +17164,14 @@ window.STUDIES = [
         "Another voice from heaven: “Come out of her, my people.” Her sins have reached heaven; she said, “I sit a queen … and shall see no sorrow,” but her plagues come in one day (4–8).",
         "The kings who lived deliciously with her stand afar off and cry, “Alas, alas … in one hour is thy judgment come” (9–10).",
         "The merchants weep, because no one buys their cargo any more: gold, cloth, spice, food, horses, “and slaves, and souls of men” (11–16).",
-        "Shipmasters and sailors stand afar off, cast dust on their heads, and cry, “in one hour is she made desolate.” Heaven is told to rejoice: God has avenged His people (17–20).",
+        "Shipmasters and sailors stand afar off, cast dust on their heads, and cry, “in one hour is she made desolate.” Heaven is told to rejoice: God has avenged his people (17–20).",
         "A mighty angel throws a great millstone into the sea: so Babylon will be found no more at all. No music, work, light or weddings in her again, for by her sorceries all nations were deceived (21–24)."
       ],
       "key": {
         "ref": "Revelation 18:4",
         "text": "And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues."
       },
-      "big": "Everything the world sells, even people, is gone in one hour, and those who got rich off it weep for what they lost, not for what they did. God calls His people to come out of her now, and the One who bought us with His blood promises a city with no more tears."
+      "big": "Everything the world sells, even people, is gone in one hour, and those who got rich off it weep for what they lost, not for what they did. God calls his people to come out of her now, and the One who bought us with his blood promises a city with no more tears."
     }
   },
   {
@@ -17212,18 +17212,18 @@ window.STUDIES = [
         "lake-of-fire"
       ],
       "story": [
-        "A great multitude in heaven cries “Alleluia”: God's judgments are true and righteous, and He has judged the great whore (1–3).",
-        "The elders and beasts worship, a voice from the throne calls all His servants, small and great, to praise, and the multitude roars, “Alleluia: for the Lord God omnipotent reigneth” (4–6).",
+        "A great multitude in heaven cries “Alleluia”: God's judgments are true and righteous, and he has judged the great whore (1–3).",
+        "The elders and beasts worship, a voice from the throne calls all his servants, small and great, to praise, and the multitude roars, “Alleluia: for the Lord God omnipotent reigneth” (4–6).",
         "The marriage of the Lamb is come. His wife is granted fine linen, clean and white, the righteousness of saints, and blessed are they which are called to the marriage supper (7–9).",
         "John falls at the angel's feet, and the angel stops him: “See thou do it not… worship God” (10).",
-        "Heaven opens on a white horse. Its Rider is Faithful and True, the Word of God, with eyes as fire, many crowns, a vesture dipped in blood, the armies of heaven behind Him, and the name KING OF KINGS, AND LORD OF LORDS (11–16).",
-        "An angel calls the birds to the supper of the great God. The beast and the kings of the earth gather to war, but the beast and the false prophet are taken and cast alive into the lake of fire, and the rest fall by the sword of His mouth (17–21)."
+        "Heaven opens on a white horse. Its Rider is Faithful and True, the Word of God, with eyes as fire, many crowns, a vesture dipped in blood, the armies of heaven behind him, and the name KING OF KINGS, AND LORD OF LORDS (11–16).",
+        "An angel calls the birds to the supper of the great God. The beast and the kings of the earth gather to war, but the beast and the false prophet are taken and cast alive into the lake of fire, and the rest fall by the sword of his mouth (17–21)."
       ],
       "key": {
         "ref": "Revelation 19:16",
         "text": "And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS."
       },
-      "big": "Jesus is coming back, Faithful and True, as King of kings. His bride is dressed in a robe she was given, the invitation to His wedding supper is open to whosoever will, and evil is finished by one word from His mouth."
+      "big": "Jesus is coming back, Faithful and True, as King of kings. His bride is dressed in a robe she was given, the invitation to his wedding supper is open to whosoever will, and evil is finished by one word from his mouth."
     }
   },
   {
@@ -17288,7 +17288,7 @@ window.STUDIES = [
     "date": "2026-10-31",
     "title": "Revelation 21",
     "sub": "All things new",
-    "about": "A new heaven, a new earth, and a city coming down from God. No more tears, no more death, and God Himself living with His people.",
+    "about": "A new heaven, a new earth, and a city coming down from God. No more tears, no more death, and God himself living with his people.",
     "tags": [
       "Heaven",
       "Hope",
@@ -17315,7 +17315,7 @@ window.STUDIES = [
       "story": [
         "John sees a new heaven and a new earth, with no more sea, and the holy city, new Jerusalem, coming down from God, prepared as a bride (1–2).",
         "A great voice: the tabernacle of God is with men. God will wipe away all tears; there will be no more death, sorrow, crying or pain (3–4).",
-        "He on the throne says, “Behold, I make all things new.” He gives the water of life freely to the thirsty; the overcomer will be His son, but the unbelieving and all liars have their part in the second death (5–8).",
+        "He on the throne says, “Behold, I make all things new.” He gives the water of life freely to the thirsty; the overcomer will be his son, but the unbelieving and all liars have their part in the second death (5–8).",
         "An angel carries John to a high mountain to see the bride, the Lamb's wife: a city with twelve gates named for Israel's tribes and twelve foundations named for the apostles (9–14).",
         "The city is measured: foursquare, twelve thousand furlongs, its wall jasper, its foundations twelve precious stones, its gates pearls, its street pure gold like glass (15–21).",
         "There is no temple, for God and the Lamb are its temple, and no sun, for the Lamb is its light. Its gates never shut, and only those written in the Lamb's book of life enter (22–27)."
@@ -17324,7 +17324,7 @@ window.STUDIES = [
         "ref": "Revelation 21:4",
         "text": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."
       },
-      "big": "God will make all things new and live with His people for ever. He will wipe away every tear, and the water of life is free to anyone who is thirsty. The way into His city isn't being clean; it's being written in the Lamb's book of life."
+      "big": "God will make all things new and live with his people for ever. He will wipe away every tear, and the water of life is free to anyone who is thirsty. The way into his city isn't being clean; it's being written in the Lamb's book of life."
     }
   },
   {
@@ -17362,9 +17362,9 @@ window.STUDIES = [
       ],
       "story": [
         "A pure river of water of life flows from the throne of God and of the Lamb, and the tree of life grows on both sides, bearing fruit every month, its leaves for the healing of the nations (1–2).",
-        "There is no more curse. God's servants serve Him, see His face, bear His name, and reign for ever in His light (3–5).",
+        "There is no more curse. God's servants serve him, see his face, bear his name, and reign for ever in his light (3–5).",
         "“Behold, I come quickly.” John falls to worship the angel again and is told, “See thou do it not… worship God.” The book is not to be sealed, for the time is at hand (6–11).",
-        "Jesus will come with His reward. Those who do His commandments have right to the tree of life and enter the city; the dogs, sorcerers, murderers and liars are without (12–15).",
+        "Jesus will come with his reward. Those who do his commandments have right to the tree of life and enter the city; the dogs, sorcerers, murderers and liars are without (12–15).",
         "“I Jesus… am the root and the offspring of David, and the bright and morning star.” The Spirit and the bride say, Come; whosoever will, let him take the water of life freely (16–17).",
         "A warning against adding to or taking from the book; “Surely I come quickly. Amen. Even so, come, Lord Jesus”; and the Bible's last words: grace (18–21)."
       ],
@@ -17372,7 +17372,7 @@ window.STUDIES = [
         "ref": "Revelation 22:17",
         "text": "And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely."
       },
-      "big": "What was lost in Eden is given back: the tree of life, no more curse, and God's face. Jesus is coming quickly, and until He does, the Bible's last invitation stands open to every man: whosoever will, come and take the water of life freely."
+      "big": "What was lost in Eden is given back: the tree of life, no more curse, and God's face. Jesus is coming quickly, and until he does, the Bible's last invitation stands open to every man: whosoever will, come and take the water of life freely."
     }
   },
   {
@@ -17383,7 +17383,7 @@ window.STUDIES = [
     "date": "2026-11-10",
     "title": "Genesis 1",
     "sub": "In the beginning God",
-    "about": "Before there was anything, there was God. He spoke, and light, land, life and man came out of nothing, and He called it very good.",
+    "about": "Before there was anything, there was God. He spoke, and light, land, life and man came out of nothing, and he called it very good.",
     "tags": [
       "The Creator",
       "God's word",
@@ -17409,14 +17409,14 @@ window.STUDIES = [
         "Day two: the firmament, the sky, between the waters below and the waters above (6–8). Day three: the dry land and the seas, and the earth brings forth grass, plants and fruit trees, each after his kind (9–13).",
         "Day four: the sun, the moon and the stars, set in the sky to give light and to mark days, seasons and years (14–19).",
         "Day five: the sea creatures and the birds, and God's first blessing: “Be fruitful, and multiply” (20–23). Day six: the land animals, each after his kind (24–25).",
-        "Then God says, “Let us make man in our image.” He creates man, male and female, in His own image, blesses them, and gives them the earth to fill, rule and care for (26–28).",
-        "God gives every plant and tree for food. He sees everything He has made, and behold, it is very good: the sixth day (29–31)."
+        "Then God says, “Let us make man in our image.” He creates man, male and female, in his own image, blesses them, and gives them the earth to fill, rule and care for (26–28).",
+        "God gives every plant and tree for food. He sees everything he has made, and behold, it is very good: the sixth day (29–31)."
       ],
       "key": {
         "ref": "Genesis 1:1",
         "text": "In the beginning God created the heaven and the earth."
       },
-      "big": "God made everything there is, out of nothing, by His word, and called it very good. Man alone was made in His image. The mess in the world came later, from sin, not from God, and the God who spoke light into the dark can make any man new."
+      "big": "God made everything there is, out of nothing, by his word, and called it very good. Man alone was made in his image. The mess in the world came later, from sin, not from God, and the God who spoke light into the dark can make any man new."
     }
   },
   {
@@ -17427,7 +17427,7 @@ window.STUDIES = [
     "date": "2026-11-10",
     "title": "Genesis 2",
     "sub": "Dust, breath, and a garden",
-    "about": "God rests from His work. Then He forms a man out of the dust, breathes life into him, gives him a garden, a job, one command, and a wife.",
+    "about": "God rests from his work. Then he forms a man out of the dust, breathes life into him, gives him a garden, a job, one command, and a wife.",
     "tags": [
       "Rest",
       "Man",
@@ -17454,7 +17454,7 @@ window.STUDIES = [
         "assyria"
       ],
       "story": [
-        "The heavens and the earth are finished. On the seventh day God rests from all His work, and He blesses the day and sanctifies it (1–3).",
+        "The heavens and the earth are finished. On the seventh day God rests from all his work, and he blesses the day and sanctifies it (1–3).",
         "The account of the heavens and the earth: before any plant grew or rain fell, a mist watered the ground. The LORD God forms man of the dust of the ground and breathes into his nostrils the breath of life, and man becomes a living soul (4–7).",
         "The LORD God plants a garden eastward in Eden, full of good trees, with the tree of life and the tree of knowledge of good and evil in the midst (8–9).",
         "A river goes out of Eden and parts into four: Pison, by Havilah's gold; Gihon, around Ethiopia; Hiddekel, east of Assyria; and Euphrates (10–14).",
@@ -17565,7 +17565,7 @@ window.STUDIES = [
         "The LORD asks why he is angry: if he does well he will be accepted, but sin lies at the door and desires him, and he must rule over it (6–7).",
         "Cain talks with Abel, and in the field he rises up and kills him (8).",
         "“Where is Abel thy brother?” “Am I my brother’s keeper?” Abel’s blood cries from the ground. Cain is cursed to be a fugitive and a vagabond (9–12).",
-        "Cain says his punishment is more than he can bear. The LORD sets a mark on him so no one will kill him, and Cain goes out from His presence to the land of Nod (13–16).",
+        "Cain says his punishment is more than he can bear. The LORD sets a mark on him so no one will kill him, and Cain goes out from his presence to the land of Nod (13–16).",
         "Cain builds a city named for his son Enoch. Five generations later Lamech takes two wives; his sons Jabal, Jubal and Tubal-cain father herding, music and metalwork. Lamech boasts of killing a man and of seventy-sevenfold revenge (17–24).",
         "Eve bears Seth, “another seed instead of Abel.” Seth’s son is Enos, and then men begin to call upon the name of the LORD (25–26)."
       ],
@@ -17573,7 +17573,7 @@ window.STUDIES = [
         "ref": "Genesis 4:7",
         "text": "If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him."
       },
-      "big": "God warned an angry man before he sinned and showed him mercy after. Sin crouches at every man’s door, but we can rule over it; we are our brothers’ keepers; and Christ’s blood speaks better things than Abel’s. Even after a murder, God kept His promise going through Seth, and men began to call on His name."
+      "big": "God warned an angry man before he sinned and showed him mercy after. Sin crouches at every man’s door, but we can rule over it; we are our brothers’ keepers; and Christ’s blood speaks better things than Abel’s. Even after a murder, God kept his promise going through Seth, and men began to call on his name."
     }
   },
   {
@@ -17614,7 +17614,7 @@ window.STUDIES = [
       ],
       "places": [],
       "story": [
-        "“The book of the generations of Adam”: God made man in His likeness, male and female, and blessed them. Adam's son Seth is born in Adam's own likeness, and Adam dies at 930 (1–5).",
+        "“The book of the generations of Adam”: God made man in his likeness, male and female, and blessed them. Adam's son Seth is born in Adam's own likeness, and Adam dies at 930 (1–5).",
         "Seth, Enos, Cainan, Mahalaleel and Jared each live, beget sons and daughters, and die, in the same three lines, after hundreds of years (6–20).",
         "Enoch walks with God for three hundred years after Methuselah is born, “and he was not; for God took him.” He is the only man in the list who doesn't end “and he died” (21–24).",
         "Methuselah lives 969 years, the oldest man in the Bible; by the numbers he dies in the year of the flood (25–27).",
@@ -17635,7 +17635,7 @@ window.STUDIES = [
     "date": "2026-11-10",
     "title": "Genesis 6",
     "sub": "But Noah found grace",
-    "about": "The earth fills with violence and every thought of man's heart is only evil, and it grieves God at His heart. But Noah finds grace, and God tells him to build an ark.",
+    "about": "The earth fills with violence and every thought of man's heart is only evil, and it grieves God at his heart. But Noah finds grace, and God tells him to build an ark.",
     "tags": [
       "Sin",
       "God's heart",
@@ -17657,18 +17657,18 @@ window.STUDIES = [
       ],
       "places": [],
       "story": [
-        "As men multiply, “the sons of God” take wives of the daughters of men, “of all which they chose.” The LORD says His spirit shall not always strive with man: his days shall be 120 years. There were giants in those days, mighty men of renown (1–4).",
-        "God sees that every imagination of man's heart is only evil continually. It repents the LORD that He made man, it grieves Him at His heart, and He resolves to destroy man from the earth (5–7).",
+        "As men multiply, “the sons of God” take wives of the daughters of men, “of all which they chose.” The LORD says his spirit shall not always strive with man: his days shall be 120 years. There were giants in those days, mighty men of renown (1–4).",
+        "God sees that every imagination of man's heart is only evil continually. It repents the LORD that he made man, it grieves him at his heart, and he resolves to destroy man from the earth (5–7).",
         "“But Noah found grace in the eyes of the LORD.” Noah is a just man, perfect in his generations, and walks with God; he has three sons, Shem, Ham and Japheth (8–10).",
-        "The earth is corrupt and filled with violence. God tells Noah the end of all flesh has come before Him (11–13).",
+        "The earth is corrupt and filled with violence. God tells Noah the end of all flesh has come before him (11–13).",
         "God tells Noah to make an ark of gopher wood, pitched within and without, 300 cubits by 50 by 30, with a window, a door in the side, and three stories (14–16).",
-        "God will bring a flood of waters, but He will establish His covenant with Noah: Noah, his wife, his sons and their wives will come into the ark, with two of every sort of living thing and food for all. “Thus did Noah; according to all that God commanded him, so did he” (17–22)."
+        "God will bring a flood of waters, but he will establish his covenant with Noah: Noah, his wife, his sons and their wives will come into the ark, with two of every sort of living thing and food for all. “Thus did Noah; according to all that God commanded him, so did he” (17–22)."
       ],
       "key": {
         "ref": "Genesis 6:8",
         "text": "But Noah found grace in the eyes of the LORD."
       },
-      "big": "Sin starts in the heart and fills the earth, and it grieves God. But grace comes first: Noah found grace he didn't earn, then walked with God and did all God said. God warns before He judges, and He gives one way through: an ark with one door, a picture of Jesus, the one way to be saved."
+      "big": "Sin starts in the heart and fills the earth, and it grieves God. But grace comes first: Noah found grace he didn't earn, then walked with God and did all God said. God warns before he judges, and he gives one way through: an ark with one door, a picture of Jesus, the one way to be saved."
     }
   },
   {
@@ -17679,7 +17679,7 @@ window.STUDIES = [
     "date": "2026-11-10",
     "title": "Genesis 7",
     "sub": "The LORD shut him in",
-    "about": "God calls Noah and his family into the ark, waits seven more days, and shuts the door Himself. The waters rise over the mountains, and only those in the ark live.",
+    "about": "God calls Noah and his family into the ark, waits seven more days, and shuts the door himself. The waters rise over the mountains, and only those in the ark live.",
     "tags": [
       "The flood",
       "The ark",
@@ -17711,7 +17711,7 @@ window.STUDIES = [
         "ref": "Genesis 7:16",
         "text": "And they that went in, went in male and female of all flesh, as God had commanded him: and the LORD shut him in."
       },
-      "big": "God was patient right up to the last seven days, and then His judgment was real. Noah lived because he was inside the ark, and the LORD Himself shut the door. Christ is that door now, it is open today, and the man inside Him is kept by God's hand, not his own grip."
+      "big": "God was patient right up to the last seven days, and then his judgment was real. Noah lived because he was inside the ark, and the LORD Himself shut the door. Christ is that door now, it is open today, and the man inside him is kept by God's hand, not his own grip."
     }
   },
   {
@@ -17753,7 +17753,7 @@ window.STUDIES = [
         "ref": "Genesis 8:22",
         "text": "While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease."
       },
-      "big": "God remembered Noah, and when God remembers, He acts. Noah waited for God's word to come out, and the first thing he built was an altar. The flood did not change man's heart, but God answered the sacrifice with mercy, and every morning since is a promise He has kept."
+      "big": "God remembered Noah, and when God remembers, he acts. Noah waited for God's word to come out, and the first thing he built was an altar. The flood did not change man's heart, but God answered the sacrifice with mercy, and every morning since is a promise he has kept."
     }
   },
   {
@@ -17787,10 +17787,10 @@ window.STUDIES = [
       ],
       "places": [],
       "story": [
-        "God blesses Noah and his sons with the words He spoke to Adam: be fruitful, multiply, and fill the earth. Animals may now be eaten, but not with the blood, for the life is in the blood (1–4).",
-        "God will require a man's life of whoever takes it, for in the image of God made He man (5–7).",
+        "God blesses Noah and his sons with the words he spoke to Adam: be fruitful, multiply, and fill the earth. Animals may now be eaten, but not with the blood, for the life is in the blood (1–4).",
+        "God will require a man's life of whoever takes it, for in the image of God made he man (5–7).",
         "God makes a covenant with Noah, his seed and every living creature: never again will a flood destroy the earth. Noah is given no conditions (8–11).",
-        "The token of the covenant is God's bow in the cloud. When it is seen, God will remember His everlasting covenant (12–17).",
+        "The token of the covenant is God's bow in the cloud. When it is seen, God will remember his everlasting covenant (12–17).",
         "Noah becomes a farmer, plants a vineyard, drinks the wine and lies drunk and uncovered in his tent (18–21).",
         "Ham sees and tells his brothers; Shem and Japheth walk in backward and cover their father (22–24).",
         "Noah speaks of what is coming: Canaan will be a servant, the LORD God of Shem is blessed, and Japheth will be enlarged and dwell in the tents of Shem. Noah dies at 950 (25–29)."
@@ -17799,7 +17799,7 @@ window.STUDIES = [
         "ref": "Genesis 9:13",
         "text": "I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth."
       },
-      "big": "God's covenant with Noah rests entirely on God: He makes it, He keeps it, and He hangs a sign of it in the storm clouds. Every man bears God's image and is precious to Him. Even a godly man can fall to drink right after a great victory, and when a brother falls, the right thing is to cover his shame and help him up, not spread it."
+      "big": "God's covenant with Noah rests entirely on God: he makes it, he keeps it, and he hangs a sign of it in the storm clouds. Every man bears God's image and is precious to him. Even a godly man can fall to drink right after a great victory, and when a brother falls, the right thing is to cover his shame and help him up, not spread it."
     }
   },
   {
@@ -17919,7 +17919,7 @@ window.STUDIES = [
         "ref": "Genesis 11:4",
         "text": "And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth."
       },
-      "big": "No man can build his way up to God; the LORD has to come down, and in Jesus He did. Babel grabbed for a name and lost it. Out of the scattered nations God picks one man with no son and a family that served idols, and promises to give him a name. Where man's line runs out, God's promise begins."
+      "big": "No man can build his way up to God; the LORD has to come down, and in Jesus he did. Babel grabbed for a name and lost it. Out of the scattered nations God picks one man with no son and a family that served idols, and promises to give him a name. Where man's line runs out, God's promise begins."
     }
   },
   {
@@ -17930,7 +17930,7 @@ window.STUDIES = [
     "date": "2026-11-10",
     "title": "Genesis 12",
     "sub": "Get thee out",
-    "about": "God calls a seventy-five-year-old man to leave everything he knows and promises to bless every family on earth through him. Then Abram gets scared and lies in Egypt, and God keeps His promise anyway.",
+    "about": "God calls a seventy-five-year-old man to leave everything he knows and promises to bless every family on earth through him. Then Abram gets scared and lies in Egypt, and God keeps his promise anyway.",
     "tags": [
       "God's call",
       "Faith",
@@ -18127,7 +18127,7 @@ window.STUDIES = [
         "ref": "Genesis 15:6",
         "text": "And he believed in the LORD; and he counted it to him for righteousness."
       },
-      "big": "A man is made right with God by believing Him, not by earning it, and the promise rests on God, who walked the covenant lane alone while Abram slept. God's patience across four hundred years is never the same as being late."
+      "big": "A man is made right with God by believing him, not by earning it, and the promise rests on God, who walked the covenant lane alone while Abram slept. God's patience across four hundred years is never the same as being late."
     }
   },
   {
@@ -18224,7 +18224,7 @@ window.STUDIES = [
         "ref": "Genesis 17:1",
         "text": "And when Abram was ninety years old and nine, the LORD appeared to Abram, and said unto him, I am the Almighty God; walk before me, and be thou perfect."
       },
-      "big": "God comes back after the mistake and does not scold. He gives His servant a new name by what he will be, binds Himself with an everlasting covenant, and promises a child to a hundred-year-old man. The sign comes after faith and never replaces it, and even the child of a mistake is heard and blessed."
+      "big": "God comes back after the mistake and does not scold. He gives his servant a new name by what he will be, binds himself with an everlasting covenant, and promises a child to a hundred-year-old man. The sign comes after faith and never replaces it, and even the child of a mistake is heard and blessed."
     }
   },
   {
@@ -18262,17 +18262,17 @@ window.STUDIES = [
       "story": [
         "In the heat of the day the LORD appears to Abraham at Mamre in the form of three men. Abraham runs to meet them, bows, and hurries to give them water, bread, curds, milk and a tender calf (1–8).",
         "They ask for Sarah, and the LORD promises that she will have a son at the time of life (9–10).",
-        "Sarah, listening behind the tent door, laughs to herself. The LORD asks why she laughed, and says, “Is any thing too hard for the LORD?” Sarah denies it, afraid, and He answers, “Nay; but thou didst laugh” (11–15).",
+        "Sarah, listening behind the tent door, laughs to herself. The LORD asks why she laughed, and says, “Is any thing too hard for the LORD?” Sarah denies it, afraid, and he answers, “Nay; but thou didst laugh” (11–15).",
         "The men look toward Sodom. The LORD asks, “Shall I hide from Abraham that thing which I do?” and gives the reason: Abraham will teach his household the way of the LORD. He tells him the cry of Sodom and Gomorrah is great (16–21).",
         "The two men go on toward Sodom while Abraham stands before the LORD (22).",
         "Abraham pleads: “Shall not the Judge of all the earth do right?” He brings the number down from fifty to ten, and each time the LORD agrees to spare the city (23–32).",
-        "The LORD goes His way, and Abraham returns to his place (33)."
+        "The LORD goes his way, and Abraham returns to his place (33)."
       ],
       "key": {
         "ref": "Genesis 18:14",
         "text": "Is any thing too hard for the LORD? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son."
       },
-      "big": "God comes to a tent for a meal and keeps His promise in plain words. A laugh of doubt and a lie of fear don't change it. He lets His friend in on what He is about to do, and Abraham learns to pray boldly and humbly, on the strength of who the Judge of all the earth is."
+      "big": "God comes to a tent for a meal and keeps his promise in plain words. A laugh of doubt and a lie of fear don't change it. He lets his friend in on what he is about to do, and Abraham learns to pray boldly and humbly, on the strength of who the Judge of all the earth is."
     }
   },
   {
@@ -18365,7 +18365,7 @@ window.STUDIES = [
         "Abimelech tells his men, and they are sore afraid. He rebukes Abraham: “thou hast done deeds unto me that ought not to be done” (8–10).",
         "Abraham says he thought the fear of God was not in the place, and that Sarah is also his half-sister (11–13).",
         "Abimelech gives Abraham sheep, oxen, servants, Sarah and a thousand pieces of silver, and tells him to live wherever he pleases (14–16).",
-        "Abraham prays, and God heals Abimelech's household, whose wombs He had closed because of Sarah (17–18)."
+        "Abraham prays, and God heals Abimelech's household, whose wombs he had closed because of Sarah (17–18)."
       ],
       "key": {
         "ref": "Genesis 20:6",
@@ -18411,9 +18411,9 @@ window.STUDIES = [
         "egypt"
       ],
       "story": [
-        "The LORD visits Sarah as He had said. She bears Isaac at the set time, Abraham names him and circumcises him on the eighth day, and Sarah says, “God hath made me to laugh” (1–7).",
+        "The LORD visits Sarah as he had said. She bears Isaac at the set time, Abraham names him and circumcises him on the eighth day, and Sarah says, “God hath made me to laugh” (1–7).",
         "Abraham makes a great feast the day Isaac is weaned. Sarah sees Hagar's son mocking and says, “Cast out this bondwoman and her son”, and it is very grievous to Abraham (8–11).",
-        "God tells Abraham to listen to Sarah: the line goes through Isaac, but He will make a nation of the other son too. Abraham sends Hagar and the boy away with bread and a bottle of water (12–14).",
+        "God tells Abraham to listen to Sarah: the line goes through Isaac, but he will make a nation of the other son too. Abraham sends Hagar and the boy away with bread and a bottle of water (12–14).",
         "In the wilderness the water is spent. Hagar sits a bowshot away and weeps. God hears the voice of the lad, an angel calls to her from heaven, and God opens her eyes to a well (15–19).",
         "God is with the boy, and he grows up in the wilderness of Paran and becomes an archer. His mother finds him a wife in Egypt (20–21).",
         "Abimelech and Phichol see that God is with Abraham and ask him for a covenant. Abraham reproves him over a stolen well, they swear an oath at Beer-sheba, and Abraham plants a tree and calls on “the everlasting God” (22–34)."
@@ -18422,7 +18422,7 @@ window.STUDIES = [
         "ref": "Genesis 21:17",
         "text": "And God heard the voice of the lad; and the angel of God called to Hagar out of heaven, and said unto her, What aileth thee, Hagar? fear not; for God hath heard the voice of the lad where he is."
       },
-      "big": "God keeps His word to the day, and He also hears the child that a family mistake sent away. A shortcut from long ago still cost people, but a woman at the end of her water was heard, and her eyes were opened to a well that was there. Nobody is too far out in the wilderness; when a man is there, he can call or text his brothers in Christ and his pastor."
+      "big": "God keeps his word to the day, and he also hears the child that a family mistake sent away. A shortcut from long ago still cost people, but a woman at the end of her water was heard, and her eyes were opened to a well that was there. Nobody is too far out in the wilderness; when a man is there, he can call or text his brothers in Christ and his pastor."
     }
   },
   {
@@ -18467,14 +18467,14 @@ window.STUDIES = [
         "Isaac carries the wood and asks, “where is the lamb for a burnt offering?” Abraham answers, “God will provide himself a lamb” (6–8).",
         "Abraham builds the altar, binds Isaac and takes up the knife. The angel of the LORD calls from heaven, “Lay not thine hand upon the lad”, and Abraham finds a ram caught in a thicket and offers it in his son's place (9–13).",
         "Abraham names the place Jehovah-jireh: “In the mount of the LORD it shall be seen” (14).",
-        "The angel calls a second time. God swears by Himself to bless Abraham, multiply his seed like the stars and the sand, and bless all nations in his Seed (15–18).",
+        "The angel calls a second time. God swears by himself to bless Abraham, multiply his seed like the stars and the sand, and bless all nations in his Seed (15–18).",
         "Abraham goes home to Beer-sheba, and word comes that Milcah has borne eight sons to Nahor, among them Bethuel, who begat Rebekah (19–24)."
       ],
       "key": {
         "ref": "Genesis 22:8",
         "text": "And Abraham said, My son, God will provide himself a lamb for a burnt offering: so they went both of them together."
       },
-      "big": "The whole mountain is a picture of the gospel. A father and his only son, wood on a back, a question about the lamb, and then God Himself provides a substitute. Isaac was spared; God's own Son was not, for us. Jehovah-jireh means the LORD sees ahead, and what we need is already provided, so no man has to walk his hard road alone."
+      "big": "The whole mountain is a picture of the gospel. A father and his only son, wood on a back, a question about the lamb, and then God himself provides a substitute. Isaac was spared; God's own Son was not, for us. Jehovah-jireh means the LORD sees ahead, and what we need is already provided, so no man has to walk his hard road alone."
     }
   },
   {
@@ -18522,7 +18522,7 @@ window.STUDIES = [
         "ref": "Genesis 23:4",
         "text": "I am a stranger and a sojourner with you: give me a possession of a buryingplace with you, that I may bury my dead out of my sight."
       },
-      "big": "A man of faith weeps, and then does the next honest thing. Abraham pays full price in public, treats his neighbours with courtesy, and buries his wife in the land God promised, though he owns only the grave. Grief and hope go together, because the One who promised the land keeps His word even past the grave."
+      "big": "A man of faith weeps, and then does the next honest thing. Abraham pays full price in public, treats his neighbours with courtesy, and buries his wife in the land God promised, though he owns only the grave. Grief and hope go together, because the One who promised the land keeps his word even past the grave."
     }
   },
   {
@@ -18569,13 +18569,13 @@ window.STUDIES = [
         "Before he finishes praying, Rebekah, Bethuel's daughter and Abraham's great-niece, comes with her jar. She gives him a drink and draws water for all ten camels. The servant bows and worships: “I being in the way, the LORD led me” (15–27).",
         "Her brother Laban brings him into the house. The servant will not eat until he has told his errand, and tells the whole story. Laban and Bethuel answer, “The thing proceedeth from the LORD” (28–51).",
         "The servant worships again and gives gifts. The family wants ten days, but the servant says “Hinder me not”. They ask Rebekah, “Wilt thou go with this man?” and she answers, “I will go.” They bless her and send her off (52–61).",
-        "Isaac is walking in the field at evening. Rebekah sees him, covers herself with a veil, and he brings her into his mother Sarah's tent. “He loved her: and Isaac was comforted after his mother's death” (62–67)."
+        "Isaac is walking in the field at evening. Rebekah sees him, covers herself with a vail, and he brings her into his mother Sarah's tent. “He loved her: and Isaac was comforted after his mother's death” (62–67)."
       ],
       "key": {
         "ref": "Genesis 24:27",
         "text": "And he said, Blessed be the LORD God of my master Abraham, who hath not left destitute my master of his mercy and his truth: I being in the way, the LORD led me to the house of my master’s brethren."
       },
-      "big": "God leads a man who is on the road He sent him down. The servant prayed, did the next right thing, and watched God answer before he finished praying; and Rebekah's own “I will go” shows that God invites and does not drag. A man who has left an old life does not go back to it, and grief is met with God's comfort, often through a person."
+      "big": "God leads a man who is on the road he sent him down. The servant prayed, did the next right thing, and watched God answer before he finished praying; and Rebekah's own “I will go” shows that God invites and does not drag. A man who has left an old life does not go back to it, and grief is met with God's comfort, often through a person."
     }
   },
   {
@@ -18630,7 +18630,7 @@ window.STUDIES = [
         "ref": "Genesis 25:34",
         "text": "Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright."
       },
-      "big": "The promise passes from Abraham to Isaac, and God keeps His word to Ishmael too, down to the twelve princes. Isaac, unlike his father, waits and prays. And Esau shows how a man hungry and in a hurry can trade a whole future for a bowl of stew; Hebrews uses him as a warning, and Jesus says that the man who comes to Him He will in no wise cast out."
+      "big": "The promise passes from Abraham to Isaac, and God keeps his word to Ishmael too, down to the twelve princes. Isaac, unlike his father, waits and prays. And Esau shows how a man hungry and in a hurry can trade a whole future for a bowl of stew; Hebrews uses him as a warning, and Jesus says that the man who comes to him he will in no wise cast out."
     }
   },
   {
@@ -18688,7 +18688,7 @@ window.STUDIES = [
         "ref": "Genesis 26:24",
         "text": "And the LORD appeared unto him the same night, and said, I am the God of Abraham thy father: fear not, for I am with thee, and will bless thee, and multiply thy seed for my servant Abraham’s sake."
       },
-      "big": "The LORD tells a frightened man where to stand in the famine and keeps His promise even after the man lies out of fear, for Abraham's sake (and for ours, for Christ's sake). A man who gives way instead of fighting finds room, and enemies can end up asking for peace."
+      "big": "The LORD tells a frightened man where to stand in the famine and keeps his promise even after the man lies out of fear, for Abraham's sake (and for ours, for Christ's sake). A man who gives way instead of fighting finds room, and enemies can end up asking for peace."
     }
   },
   {
@@ -18735,7 +18735,7 @@ window.STUDIES = [
         "ref": "Genesis 27:33",
         "text": "And Isaac trembled very exceedingly, and said, Who? where is he that hath taken venison, and brought it me, and I have eaten of all before thou camest, and have blessed him? yea, and he shall be blessed."
       },
-      "big": "Everyone in the chapter sins, and God's word stands anyway; the lie did not make His plan happen, it only added pain. Esau weeps over the loss, not toward God, and his grudge grows in secret until it becomes a murder plan. Say it to a brother in Christ before it grows."
+      "big": "Everyone in the chapter sins, and God's word stands anyway; the lie did not make his plan happen, it only added pain. Esau weeps over the loss, not toward God, and his grudge grows in secret until it becomes a murder plan. Say it to a brother in Christ before it grows."
     }
   },
   {
@@ -18781,7 +18781,7 @@ window.STUDIES = [
         "Isaac calls Jacob, charges him not to take a Canaanite wife, sends him to Laban in Padan-aram, and blesses him with the blessing of Abraham (1–5).",
         "Esau sees that his father dislikes the Canaanite wives, and takes Mahalath, Ishmael's daughter, as another wife (6–9).",
         "Jacob leaves Beer-sheba, and at nightfall lies down at a certain place with a stone for a pillow (10–11).",
-        "He dreams of a ladder set on the earth with its top in heaven, angels going up and down, and the LORD above it, who promises him the land, a seed like the dust, blessing for all the families of the earth, and His own presence and keeping (12–15).",
+        "He dreams of a ladder set on the earth with its top in heaven, angels going up and down, and the LORD above it, who promises him the land, a seed like the dust, blessing for all the families of the earth, and his own presence and keeping (12–15).",
         "Jacob wakes: “Surely the LORD is in this place; and I knew it not.” He sets up the stone as a pillar, pours oil on it, and calls the place Bethel, once called Luz (16–19).",
         "He vows that if God keeps him and brings him home in peace, the LORD will be his God and he will give God a tenth (20–22)."
       ],
@@ -18789,7 +18789,7 @@ window.STUDIES = [
         "ref": "Genesis 28:15",
         "text": "And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of."
       },
-      "big": "God meets a runaway on the ground, before he has said a word, and promises His presence with no “if” on it. The ladder is God coming down to man, and Jesus tells Nathanael it points to Himself. Jacob's bargaining vow is a beginner's prayer, and God keeps every promise anyway."
+      "big": "God meets a runaway on the ground, before he has said a word, and promises his presence with no “if” on it. The ladder is God coming down to man, and Jesus tells Nathanael it points to himself. Jacob's bargaining vow is a beginner's prayer, and God keeps every promise anyway."
     }
   },
   {
@@ -18951,7 +18951,7 @@ window.STUDIES = [
         "ref": "Genesis 31:49",
         "text": "And Mizpah; for he said, The LORD watch between me and thee, when we are absent one from another."
       },
-      "big": "Jacob and his household are all grabbing: Laban the wages, Jacob a secret escape, Rachel her father's gods. God sees the labour, guards the road, and puts a witness between two men who cannot trust each other. A god you have to carry cannot carry you; the LORD does, and He sees when no one else does."
+      "big": "Jacob and his household are all grabbing: Laban the wages, Jacob a secret escape, Rachel her father's gods. God sees the labour, guards the road, and puts a witness between two men who cannot trust each other. A god you have to carry cannot carry you; the LORD does, and he sees when no one else does."
     }
   },
   {
@@ -19104,7 +19104,7 @@ window.STUDIES = [
         "ref": "Genesis 34:7",
         "text": "And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Israel in lying with Jacob’s daughter; which thing ought not to be done."
       },
-      "big": "A real wrong done to Dinah is answered with a lie wearing God’s sign and a massacre, one justified step at a time. Anger at an evil is not the sin; revenge is. No one in the chapter asks God, and the next chapter opens with Him speaking first. A man with anger he is carrying can take it to his brothers in Christ and his pastor before it grows a plan."
+      "big": "A real wrong done to Dinah is answered with a lie wearing God’s sign and a massacre, one justified step at a time. Anger at an evil is not the sin; revenge is. No one in the chapter asks God, and the next chapter opens with him speaking first. A man with anger he is carrying can take it to his brothers in Christ and his pastor before it grows a plan."
     }
   },
   {
@@ -19213,7 +19213,7 @@ window.STUDIES = [
         "ref": "Genesis 36:7",
         "text": "For their riches were more than that they might dwell together; and the land wherein they were strangers could not bear them because of their cattle."
       },
-      "big": "God keeps a full family for the brother who lost the blessing, and He knows every name in it. Esau steps aside instead of fighting, which shows that peace sometimes means making room. God knows His own by name, forgotten men included."
+      "big": "God keeps a full family for the brother who lost the blessing, and he knows every name in it. Esau steps aside instead of fighting, which shows that peace sometimes means making room. God knows his own by name, forgotten men included."
     }
   },
   {
@@ -19314,7 +19314,7 @@ window.STUDIES = [
         "Judah goes down from his brothers, settles near Adullam, marries a Canaanite woman, and has three sons: Er, Onan and Shelah (1–5).",
         "Er marries Tamar and is \"wicked in the sight of the LORD\"; the LORD slays him. Onan refuses his duty to raise up seed for his brother, and the LORD slays him too (6–10).",
         "Judah sends Tamar home as a widow, promising Shelah when he is grown, but fear keeps him from keeping his word (11).",
-        "Judah's wife dies. Tamar sees that Shelah is grown and she has not been given to him, veils herself by the road to Timnath, and Judah, taking her for a prostitute, goes in to her and leaves his signet, bracelets and staff as a pledge (12–18).",
+        "Judah's wife dies. Tamar sees that Shelah is grown and she has not been given to him, vails herself by the road to Timnath, and Judah, taking her for a prostitute, goes in to her and leaves his signet, bracelets and staff as a pledge (12–18).",
         "The pledge cannot be found. Three months later Judah hears Tamar is with child and says, \"Bring her forth, and let her be burnt\" (19–24).",
         "Tamar sends him the signet, bracelets and staff. Judah acknowledges them: \"She hath been more righteous than I\". Twins are born, Pharez and Zarah (25–30)."
       ],
@@ -19806,7 +19806,7 @@ window.STUDIES = [
         "ref": "Genesis 48:16",
         "text": "The Angel which redeemed me from all evil, bless the lads; and let my name be named on them, and the name of my fathers Abraham and Isaac; and let them grow into a multitude in the midst of the earth."
       },
-      "big": "A dying man talks about what God did, not what he did, and calls Him the Angel who redeemed him from all evil. He crosses his hands on purpose: the blessing goes by God's mercy, not by birth, and a father spends his last strength blessing the boys left behind. His last words are for the family: \"I die: but God shall be with you.\""
+      "big": "A dying man talks about what God did, not what he did, and calls him the Angel who redeemed him from all evil. He crosses his hands on purpose: the blessing goes by God's mercy, not by birth, and a father spends his last strength blessing the boys left behind. His last words are for the family: \"I die: but God shall be with you.\""
     }
   },
   {
@@ -19867,7 +19867,7 @@ window.STUDIES = [
         "ref": "Genesis 49:18",
         "text": "I have waited for thy salvation, O LORD."
       },
-      "big": "A father tells each son the truth: the sin and the cost, the anger and the scattering, and the King who comes from Judah. In the middle he stops and prays, \"I have waited for thy salvation, O LORD\", the word that gives Jesus His name. Every word is called a blessing, and the last wish is a grave in the land of the promise."
+      "big": "A father tells each son the truth: the sin and the cost, the anger and the scattering, and the King who comes from Judah. In the middle he stops and prays, \"I have waited for thy salvation, O LORD\", the word that gives Jesus his name. Every word is called a blessing, and the last wish is a grave in the land of the promise."
     }
   },
   {
@@ -20020,13 +20020,13 @@ window.STUDIES = [
         "Grown, Moses sees an Egyptian beating a Hebrew, looks this way and that, kills him and hides him in the sand (11-12).",
         "The next day a Hebrew asks, \"Who made thee a prince and a judge over us?\" Moses fears; Pharaoh seeks to slay him, and Moses flees to Midian (13-15).",
         "At a well he helps the seven daughters of the priest of Midian; Reuel gives him Zipporah, and she bears Gershom (16-22).",
-        "The king of Egypt dies; Israel groans; God hears, remembers His covenant, looks on them and has respect unto them (23-25)."
+        "The king of Egypt dies; Israel groans; God hears, remembers his covenant, looks on them and has respect unto them (23-25)."
       ],
       "key": {
         "ref": "Exodus 2:24",
         "text": "And God heard their groaning, and God remembered his covenant with Abraham, with Isaac, and with Jacob."
       },
-      "big": "A baby in a basket is drawn out of the river by Pharaoh's own daughter. Forty years later the prince kills a man in anger, hides it, and runs, and ends up a shepherd, a stranger in a strange land. His past is real, and God is not finished with him: He hears Israel's groaning and remembers His covenant."
+      "big": "A baby in a basket is drawn out of the river by Pharaoh's own daughter. Forty years later the prince kills a man in anger, hides it, and runs, and ends up a shepherd, a stranger in a strange land. His past is real, and God is not finished with him: he hears Israel's groaning and remembers his covenant."
     }
   },
   {
@@ -20037,7 +20037,7 @@ window.STUDIES = [
     "date": "2026-11-12",
     "title": "Exodus 3",
     "sub": "I AM THAT I AM",
-    "about": "Moses, eighty and keeping Jethro's flock, sees a bush burning and not consumed at Horeb, the mountain of God. God calls him by name, tells him to take off his shoes, says He has seen, heard and known His people's sorrows, and sends him to Pharaoh. Moses asks, \"Who am I?\" and God answers, \"Certainly I will be with thee,\" and gives His name: I AM THAT I AM.",
+    "about": "Moses, eighty and keeping Jethro's flock, sees a bush burning and not consumed at Horeb, the mountain of God. God calls him by name, tells him to take off his shoes, says he has seen, heard and known his people's sorrows, and sends him to Pharaoh. Moses asks, \"Who am I?\" and God answers, \"Certainly I will be with thee,\" and gives his name: I AM THAT I AM.",
     "tags": [
       "Holiness",
       "God's call",
@@ -20071,17 +20071,17 @@ window.STUDIES = [
       "story": [
         "Moses keeps the flock of Jethro, his father in law, and comes to Horeb, the mountain of God (1).",
         "The angel of the LORD appears in a flame of fire out of a bush that burns and is not consumed; Moses turns aside to see (2-3).",
-        "God calls \"Moses, Moses\"; he answers \"Here am I\". He is to put off his shoes, for it is holy ground. God says He is the God of his fathers, and Moses hides his face (4-6).",
-        "The LORD has seen the affliction of His people, heard their cry, and knows their sorrows; He has come down to deliver them to a good land flowing with milk and honey, and sends Moses to Pharaoh (7-10).",
+        "God calls \"Moses, Moses\"; he answers \"Here am I\". He is to put off his shoes, for it is holy ground. God says he is the God of his fathers, and Moses hides his face (4-6).",
+        "The LORD has seen the affliction of his people, heard their cry, and knows their sorrows; he has come down to deliver them to a good land flowing with milk and honey, and sends Moses to Pharaoh (7-10).",
         "Moses: \"Who am I?\" God: \"Certainly I will be with thee\", and the sign will be that they serve God on this mountain (11-12).",
-        "Asked His name, God says \"I AM THAT I AM\", \"I AM hath sent me unto you\", the LORD God of your fathers, \"my name for ever\" (13-15).",
-        "The plan: gather the elders; ask for three days' journey; Pharaoh will refuse until God stretches out His hand; Israel will go out with silver, gold and raiment (16-22)."
+        "Asked his name, God says \"I AM THAT I AM\", \"I AM hath sent me unto you\", the LORD God of your fathers, \"my name for ever\" (13-15).",
+        "The plan: gather the elders; ask for three days' journey; Pharaoh will refuse until God stretches out his hand; Israel will go out with silver, gold and raiment (16-22)."
       ],
       "key": {
         "ref": "Exodus 3:14",
         "text": "And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you."
       },
-      "big": "A man who killed and ran, now an old shepherd, is called by name out of a burning bush. God has seen, heard and known; He comes down. To \"Who am I?\" God answers, \"I will be with thee,\" and gives His own name, I AM THAT I AM, the name Jesus takes in John 8:58."
+      "big": "A man who killed and ran, now an old shepherd, is called by name out of a burning bush. God has seen, heard and known; he comes down. To \"Who am I?\" God answers, \"I will be with thee,\" and gives his own name, I AM THAT I AM, the name Jesus takes in John 8:58."
     }
   },
   {
@@ -20134,7 +20134,7 @@ window.STUDIES = [
         "ref": "Exodus 4:12",
         "text": "Now therefore go, and I will be with thy mouth, and teach thee what thou shalt say."
       },
-      "big": "A man with five excuses is given a rod, a sign, a brother and a promise. Every excuse gets the same answer: I will be with you. God is patient, and He still corrects His own: the hard words at the inn say that a man sent to lead must not leave God's plain word undone at home. Then the people hear that God has seen their affliction, and they bow."
+      "big": "A man with five excuses is given a rod, a sign, a brother and a promise. Every excuse gets the same answer: I will be with you. God is patient, and he still corrects his own: the hard words at the inn say that a man sent to lead must not leave God's plain word undone at home. Then the people hear that God has seen their affliction, and they bow."
     }
   },
   {
@@ -20240,7 +20240,7 @@ window.STUDIES = [
         "ref": "Exodus 6:6",
         "text": "Wherefore say unto the children of Israel, I am the LORD, and I will bring you out from under the burdens of the Egyptians, and I will rid you out of their bondage, and I will redeem you with a stretched out arm, and with great judgments:"
       },
-      "big": "Moses is discouraged, and the people are too crushed to hear. God does not scold either. He says who He is, and then makes seven promises, every one beginning \"I will\": the rescue is all His. In the middle is a list of names, and out of the line of angry Levi come the two brothers God chose. God knows every name."
+      "big": "Moses is discouraged, and the people are too crushed to hear. God does not scold either. He says who he is, and then makes seven promises, every one beginning \"I will\": the rescue is all his. In the middle is a list of names, and out of the line of angry Levi come the two brothers God chose. God knows every name."
     }
   },
   {
@@ -20273,7 +20273,7 @@ window.STUDIES = [
         "egypt"
       ],
       "story": [
-        "The LORD makes Moses \"a god to Pharaoh\" and Aaron his prophet. He says beforehand, \"I will harden Pharaoh's heart\", so that Egypt shall know that He is the LORD. Moses is eighty and Aaron eighty-three (1-7).",
+        "The LORD makes Moses \"a god to Pharaoh\" and Aaron his prophet. He says beforehand, \"I will harden Pharaoh's heart\", so that Egypt shall know that he is the LORD. Moses is eighty and Aaron eighty-three (1-7).",
         "Aaron casts down his rod and it becomes a serpent. The magicians do the same with their enchantments, but Aaron's rod swallows up theirs. Pharaoh's heart is hardened, as the LORD had said (8-13).",
         "In the morning Moses meets Pharaoh at the river and tells him the LORD will smite the water: \"In this thou shalt know that I am the LORD\" (14-18).",
         "Aaron stretches out the rod, and all the water of Egypt turns to blood, in rivers, streams, ponds and vessels. The fish die and the river stinks. The magicians do the same, and Pharaoh turns and goes into his house (19-23).",
@@ -20364,7 +20364,7 @@ window.STUDIES = [
       "story": [
         "A murrain on the cattle in the field: all the cattle of Egypt die, and of the cattle of Israel not one. Pharaoh sends and sees it, and his heart is hardened (1-7).",
         "Ashes of the furnace, thrown toward heaven, become boils with blains on man and beast. The magicians cannot stand before Moses, and the LORD hardened the heart of Pharaoh (8-12).",
-        "The LORD tells Pharaoh he will send all his plagues upon his heart, and that for this cause He has raised him up, to show His power and declare His name in all the earth (13-17).",
+        "The LORD tells Pharaoh he will send all his plagues upon his heart, and that for this cause he has raised him up, to show his power and declare his name in all the earth (13-17).",
         "He warns of hail and bids them gather their cattle. He that feared the word of the LORD made his servants and cattle flee into the houses, and he that regarded not left them in the field (18-21).",
         "Thunder, hail and fire fall on all Egypt, but not on Goshen (22-26).",
         "Pharaoh says, \"I have sinned this time: the LORD is righteous, and I and my people are wicked.\" Moses prays and the hail stops, and Pharaoh sins yet more and hardens his heart, he and his servants (27-35)."
@@ -20373,7 +20373,7 @@ window.STUDIES = [
         "ref": "Exodus 9:16",
         "text": "And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth."
       },
-      "big": "God shows His power over Egypt's cattle, skin and sky while His people in Goshen are untouched. The hard heart is traced in order: Pharaoh refuses five times before the text says the LORD hardened it, and when the hail falls he says the right words and does not turn. A warning is a mercy to the man who takes it, and the door is held open to the end."
+      "big": "God shows his power over Egypt's cattle, skin and sky while his people in Goshen are untouched. The hard heart is traced in order: Pharaoh refuses five times before the text says the LORD hardened it, and when the hail falls he says the right words and does not turn. A warning is a mercy to the man who takes it, and the door is held open to the end."
     }
   },
   {
@@ -20695,8 +20695,8 @@ window.STUDIES = [
       ],
       "story": [
         "Israel comes to the wilderness of Sin a month after leaving Egypt, and the whole congregation murmurs against Moses and Aaron: \"Would to God we had died by the hand of the LORD in the land of Egypt, when we sat by the flesh pots\" (1-3).",
-        "The LORD promises to rain bread from heaven, a certain rate every day, to prove whether they will walk in His law; on the sixth day they are to prepare twice as much (4-5).",
-        "Moses and Aaron tell them their murmurings are against the LORD, not against them. The glory of the LORD appears in the cloud, and He says, \"I have heard the murmurings of the children of Israel\" (6-12).",
+        "The LORD promises to rain bread from heaven, a certain rate every day, to prove whether they will walk in his law; on the sixth day they are to prepare twice as much (4-5).",
+        "Moses and Aaron tell them their murmurings are against the LORD, not against them. The glory of the LORD appears in the cloud, and he says, \"I have heard the murmurings of the children of Israel\" (6-12).",
         "At even the quails cover the camp, and in the morning a small round thing like hoar frost lies on the ground. \"It is manna\": what is it? \"This is the bread which the LORD hath given you to eat\" (13-15).",
         "An omer for every man: he that gathered much had nothing over, and he that gathered little had no lack. What is kept until morning breeds worms and stinks, and Moses is wroth; in the heat it melts (16-21).",
         "On the sixth day they gather two omers, and what is kept over does not spoil. The seventh day is a sabbath, a gift of the LORD; some go out to gather and find none, and the LORD asks, \"How long refuse ye to keep my commandments and my laws?\" (22-30).",
@@ -20706,7 +20706,7 @@ window.STUDIES = [
         "ref": "Exodus 16:4",
         "text": "Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no."
       },
-      "big": "God answers grumbling with bread. He gives enough for today, every day, so that His people learn to trust Him one day at a time: what is hoarded spoils, and the sabbath is a gift. The manna is a picture of the true bread from heaven, the Lord Jesus, who says, \"he that cometh to me shall never hunger.\""
+      "big": "God answers grumbling with bread. He gives enough for today, every day, so that his people learn to trust him one day at a time: what is hoarded spoils, and the sabbath is a gift. The manna is a picture of the true bread from heaven, the Lord Jesus, who says, \"he that cometh to me shall never hunger.\""
     }
   },
   {
@@ -20749,13 +20749,13 @@ window.STUDIES = [
         "He calls the place Massah and Meribah, because of the chiding and because they tempted the LORD, saying, \"Is the LORD among us, or not?\" (7).",
         "Amalek comes and fights Israel in Rephidim. Moses tells Joshua to choose men and fight, while he stands on the top of the hill with the rod of God in his hand, with Aaron and Hur (8-10).",
         "While Moses holds up his hand Israel prevails; when he lets it down Amalek prevails. His hands grow heavy; they put a stone under him, and Aaron and Hur stay up his hands, one on each side, until sundown. Joshua discomfits Amalek with the edge of the sword (11-13).",
-        "The LORD tells Moses to write this for a memorial in a book and rehearse it in the ears of Joshua, for He will utterly put out the remembrance of Amalek. Moses builds an altar, Jehovah-nissi, and says the LORD will have war with Amalek from generation to generation (14-16)."
+        "The LORD tells Moses to write this for a memorial in a book and rehearse it in the ears of Joshua, for he will utterly put out the remembrance of Amalek. Moses builds an altar, Jehovah-nissi, and says the LORD will have war with Amalek from generation to generation (14-16)."
       ],
       "key": {
         "ref": "Exodus 17:6",
         "text": "Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink."
       },
-      "big": "God leads His people into a dry place and stands on the rock Himself: the water comes from where He stands, and Paul says that Rock was Christ. Then the weary are attacked, and the battle is won by a fighter in the valley, a praying leader on the hill, and two friends who hold up a tired man's hands. The victory is named for the LORD: Jehovah-nissi, the LORD is my banner."
+      "big": "God leads his people into a dry place and stands on the rock himself: the water comes from where he stands, and Paul says that Rock was Christ. Then the weary are attacked, and the battle is won by a fighter in the valley, a praying leader on the hill, and two friends who hold up a tired man's hands. The victory is named for the LORD: Jehovah-nissi, the LORD is my banner."
     }
   },
   {
@@ -21275,7 +21275,7 @@ window.STUDIES = [
     "ch": 29,
     "title": "Exodus 29",
     "sub": "Set apart by blood, and God comes to live among them",
-    "about": "Aaron and his sons are washed, dressed, anointed and covered with blood over seven days. Two lambs go on the altar every day, and the LORD says why He brought Israel out of Egypt: \"that I may dwell among them.\"",
+    "about": "Aaron and his sons are washed, dressed, anointed and covered with blood over seven days. Two lambs go on the altar every day, and the LORD says why he brought Israel out of Egypt: \"that I may dwell among them.\"",
     "tags": [
       "Consecration",
       "Substitute",
@@ -21307,7 +21307,7 @@ window.STUDIES = [
         "The holy garments pass to Aaron's sons; the priests eat the ram and the bread at the door, and what remains is burned (29-34).",
         "Seven days of consecration, a bullock every day for atonement, and the altar made most holy (35-37).",
         "Two lambs of the first year every day, one at morning and one at even, with flour, oil and wine, where the LORD will meet them (38-42).",
-        "The LORD will sanctify the tabernacle by His glory and \"dwell among the children of Israel, and will be their God\"; this is why He brought them out of Egypt (43-46)."
+        "The LORD will sanctify the tabernacle by his glory and \"dwell among the children of Israel, and will be their God\"; this is why he brought them out of Egypt (43-46)."
       ],
       "key": {
         "ref": "Exodus 29:45",
@@ -21367,7 +21367,7 @@ window.STUDIES = [
     "date": "2026-11-12",
     "title": "Exodus 31",
     "sub": "Filled with the Spirit to work",
-    "about": "God calls two craftsmen by name and fills them with His Spirit for the work of their hands. Then He gives the sabbath as a sign between Himself and His people, and ends forty days on the mount by giving Moses two tables of stone, written with the finger of God.",
+    "about": "God calls two craftsmen by name and fills them with his Spirit for the work of their hands. Then he gives the sabbath as a sign between himself and his people, and ends forty days on the mount by giving Moses two tables of stone, written with the finger of God.",
     "tags": [
       "The Spirit",
       "Work",
@@ -21394,15 +21394,15 @@ window.STUDIES = [
       "story": [
         "The LORD calls Bezaleel, the son of Uri, the son of Hur, of the tribe of Judah, by name (1-2).",
         "He fills him with the spirit of God, in wisdom, understanding, knowledge and all manner of workmanship, to work in gold, silver, brass, stone and timber (3-5).",
-        "He gives Aholiab of the tribe of Dan to work with him, and puts wisdom in all the wise hearted, to make everything He has commanded: the tent, the ark, the furniture, the garments, the oil and the incense (6-11).",
-        "The sabbath is a sign between the LORD and Israel throughout their generations, so that they may know He is the LORD that sanctifies them; six days of work, and the seventh a rest (12-17).",
-        "When He had made an end of speaking with Moses on Mount Sinai, God gives him two tables of testimony, tables of stone, written with the finger of God (18)."
+        "He gives Aholiab of the tribe of Dan to work with him, and puts wisdom in all the wise hearted, to make everything he has commanded: the tent, the ark, the furniture, the garments, the oil and the incense (6-11).",
+        "The sabbath is a sign between the LORD and Israel throughout their generations, so that they may know he is the LORD that sanctifies them; six days of work, and the seventh a rest (12-17).",
+        "When he had made an end of speaking with Moses on Mount Sinai, God gives him two tables of testimony, tables of stone, written with the finger of God (18)."
       ],
       "key": {
         "ref": "Exodus 31:3",
         "text": "And I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship,"
       },
-      "big": "God fills ordinary working men with His Spirit for skilled work with their hands, and He calls them by name. The sabbath is His sign that He is the one who sets His people apart, and the rest He gave points to the rest we have in Christ. The forty days end with two tables of stone written by God's own finger."
+      "big": "God fills ordinary working men with his Spirit for skilled work with their hands, and he calls them by name. The sabbath is his sign that he is the one who sets his people apart, and the rest he gave points to the rest we have in Christ. The forty days end with two tables of stone written by God's own finger."
     }
   },
   {
@@ -21442,13 +21442,13 @@ window.STUDIES = [
       "story": [
         "When Moses delays on the mount, the people say to Aaron, \"Up, make us gods\"; he melts their gold earrings into a calf, and they say, \"These be thy gods, O Israel\" (1-4).",
         "Aaron builds an altar and proclaims \"a feast to the LORD\"; the people offer sacrifices, sit down to eat and drink, and rise up to play (5-6).",
-        "The LORD tells Moses the people have corrupted themselves, calls them stiffnecked, and says, \"let me alone\" that He may consume them (7-10).",
+        "The LORD tells Moses the people have corrupted themselves, calls them stiffnecked, and says, \"let me alone\" that he may consume them (7-10).",
         "Moses pleads for them by God's own people, name and promise to Abraham, Isaac and Israel, and the LORD repents of the evil (11-14).",
         "Moses comes down with the two tables written by God; Joshua hears a noise of war, but it is singing (15-18).",
         "Seeing the calf and the dancing, Moses breaks the tables, burns the calf, grinds it to powder and makes the people drink it (19-20).",
         "Aaron blames the people: \"I cast it into the fire, and there came out this calf\" (21-24).",
         "Moses stands in the gate: \"Who is on the LORD’S side?\" The sons of Levi come, and about three thousand men fall that day (25-29).",
-        "Moses goes back up to make atonement: \"if not, blot me, I pray thee, out of thy book\"; the LORD says each sinner answers for himself, sends them on with His Angel, and plagues the people (30-35)."
+        "Moses goes back up to make atonement: \"if not, blot me, I pray thee, out of thy book\"; the LORD says each sinner answers for himself, sends them on with his Angel, and plagues the people (30-35)."
       ],
       "key": {
         "ref": "Exodus 32:32",
@@ -21465,7 +21465,7 @@ window.STUDIES = [
     "date": "2026-11-12",
     "title": "Exodus 33",
     "sub": "My presence shall go with thee",
-    "about": "God offers the land without His presence, and the people mourn and put off their ornaments. Moses meets the LORD face to face in a tent outside the camp, asks that God's presence go with them, and is hidden in a cleft of the rock while His glory passes by.",
+    "about": "God offers the land without his presence, and the people mourn and put off their ornaments. Moses meets the LORD face to face in a tent outside the camp, asks that God's presence go with them, and is hidden in a cleft of the rock while his glory passes by.",
     "tags": [
       "God's presence",
       "Godly sorrow",
@@ -21502,13 +21502,13 @@ window.STUDIES = [
         "Moses pitches the tabernacle of the congregation outside the camp; whoever seeks the LORD goes out to it, and the people watch from their tent doors (7-8).",
         "The cloudy pillar stands at the door, and the LORD speaks to Moses face to face, as a man speaks to his friend; Joshua does not leave the tent (9-11).",
         "Moses asks, \"shew me now thy way, that I may know thee\"; the LORD answers, \"My presence shall go with thee, and I will give thee rest\" (12-17).",
-        "Moses asks to see God's glory; the LORD will make His goodness pass by, hides Moses in a clift of the rock, covers him with His hand, and lets him see His back parts (18-23)."
+        "Moses asks to see God's glory; the LORD will make his goodness pass by, hides Moses in a clift of the rock, covers him with his hand, and lets him see his back parts (18-23)."
       ],
       "key": {
         "ref": "Exodus 33:14",
         "text": "And he said, My presence shall go with thee, and I will give thee rest."
       },
-      "big": "After the calf, God offers the land without Himself, and Moses refuses: \"If thy presence go not with me, carry us not up hence.\" Godly sorrow, a walk outside the camp, and a friend's prayer bring the promise back: \"My presence shall go with thee, and I will give thee rest.\" Hidden in the rock and covered by God's hand, Moses sees His goodness and lives."
+      "big": "After the calf, God offers the land without himself, and Moses refuses: \"If thy presence go not with me, carry us not up hence.\" Godly sorrow, a walk outside the camp, and a friend's prayer bring the promise back: \"My presence shall go with thee, and I will give thee rest.\" Hidden in the rock and covered by God's hand, Moses sees his goodness and lives."
     }
   },
   {
@@ -21519,7 +21519,7 @@ window.STUDIES = [
     "date": "2026-11-12",
     "title": "Exodus 34",
     "sub": "Merciful and gracious",
-    "about": "Moses cuts two new tables and goes up the mountain, and the LORD passes by and proclaims His name: \"merciful and gracious, longsuffering.\" The covenant is made again, with warnings against the gods of the land and the feasts renewed, and Moses comes down with his face shining and puts a vail over it.",
+    "about": "Moses cuts two new tables and goes up the mountain, and the LORD passes by and proclaims his name: \"merciful and gracious, longsuffering.\" The covenant is made again, with warnings against the gods of the land and the feasts renewed, and Moses comes down with his face shining and puts a vail over it.",
     "tags": [
       "God's name",
       "Mercy",
@@ -21547,8 +21547,8 @@ window.STUDIES = [
         "egypt"
       ],
       "story": [
-        "The LORD tells Moses to hew two tables like the first; He will write on them the words that were on the tables Moses broke (1-4).",
-        "The LORD descends in the cloud and proclaims His name: \"The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth\" (5-7).",
+        "The LORD tells Moses to hew two tables like the first; he will write on them the words that were on the tables Moses broke (1-4).",
+        "The LORD descends in the cloud and proclaims his name: \"The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth\" (5-7).",
         "Moses bows and worships and prays, \"pardon our iniquity and our sin, and take us for thine inheritance\" (8-9).",
         "The LORD makes a covenant again, promises marvels, and warns them not to make covenants with the people of the land or follow their gods: \"Thou shalt make thee no molten gods\" (10-17).",
         "He repeats the feast of unleavened bread, the redeeming of the firstborn, the sabbath, the three feasts and the firstfruits (18-26).",
@@ -21559,7 +21559,7 @@ window.STUDIES = [
         "ref": "Exodus 34:6–7",
         "text": "And the LORD passed by before him, and proclaimed, The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth, Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers upon the children, and upon the children’s children, unto the third and to the fourth generation."
       },
-      "big": "God gives the same law again on new stones and tells Moses His own name: merciful, gracious, longsuffering, forgiving iniquity, and yet not clearing the guilty, which meet at the cross. The covenant broken at the calf is made again. Moses' face shines from being with God, and Paul says that in Christ the vail is taken away and we are changed from glory to glory."
+      "big": "God gives the same law again on new stones and tells Moses his own name: merciful, gracious, longsuffering, forgiving iniquity, and yet not clearing the guilty, which meet at the cross. The covenant broken at the calf is made again. Moses' face shines from being with God, and Paul says that in Christ the vail is taken away and we are changed from glory to glory."
     }
   },
   {
@@ -21570,7 +21570,7 @@ window.STUDIES = [
     "date": "2026-11-12",
     "title": "Exodus 35",
     "sub": "A willing heart",
-    "about": "After the golden calf the people are asked for gold again, and this time they bring it gladly: men and women, rulers and spinners. Moses names the two craftsmen the LORD has filled with His Spirit to build the tent, Bezaleel and Aholiab.",
+    "about": "After the golden calf the people are asked for gold again, and this time they bring it gladly: men and women, rulers and spinners. Moses names the two craftsmen the LORD has filled with his Spirit to build the tent, Bezaleel and Aholiab.",
     "tags": [
       "Willing heart",
       "Giving",
@@ -21607,7 +21607,7 @@ window.STUDIES = [
         "ref": "Exodus 35:29",
         "text": "The children of Israel brought a willing offering unto the LORD, every man and woman, whose heart made them willing to bring for all manner of work, which the LORD had commanded to be made by the hand of Moses."
       },
-      "big": "The same people who gave their gold to a calf now give it, gladly and without being pressed, to the LORD's house. Rest comes before the work, every kind of skill is counted a gift, and the LORD fills ordinary craftsmen with His Spirit to build the place where He will live among them."
+      "big": "The same people who gave their gold to a calf now give it, gladly and without being pressed, to the LORD's house. Rest comes before the work, every kind of skill is counted a gift, and the LORD fills ordinary craftsmen with his Spirit to build the place where he will live among them."
     }
   },
   {
@@ -21691,7 +21691,7 @@ window.STUDIES = [
         "ref": "Exodus 37:6",
         "text": "And he made the mercy seat of pure gold: two cubits and a half was the length thereof, and one cubit and a half the breadth thereof."
       },
-      "big": "Each piece is made exactly as it was commanded on the mount. The ark holds the law the people broke, and over it sits the gold mercy seat where blood is sprinkled and God meets His people. Paul calls Jesus \"a propitiation through faith in his blood\"."
+      "big": "Each piece is made exactly as it was commanded on the mount. The ark holds the law the people broke, and over it sits the gold mercy seat where blood is sprinkled and God meets his people. Paul calls Jesus \"a propitiation through faith in his blood\"."
     }
   },
   {
