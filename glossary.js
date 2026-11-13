@@ -1037,6 +1037,66 @@ window.GLOSSARY = [
   "name": "Moses",
   "refs": [
    [
+    "Exodus", 2,
+    [ 10, 11, 14, 15, 17, 21 ] ],
+   [
+    "Exodus", 3,
+    [ 1, 3, 4, 6, 11, 13, 14, 15 ] ],
+   [
+    "Exodus", 4,
+    [ 1, 3, 4, 10, 14, 18, 19, 20, 21, 27, 28, 29, 30 ] ],
+   [
+    "Exodus", 5,
+    [ 1, 4, 20, 22 ] ],
+   [
+    "Exodus", 6,
+    [ 1, 2, 9, 10, 12, 13, 20, 26, 27, 28, 29, 30 ] ],
+   [
+    "Exodus", 7,
+    [ 1, 6, 7, 8, 10, 14, 19, 20 ] ],
+   [
+    "Exodus", 8,
+    [ 1, 5, 8, 9, 12, 13, 16, 20, 25, 26, 29, 30, 31 ] ],
+   [
+    "Exodus", 9,
+    [ 1, 8, 10, 11, 12, 13, 22, 23, 27, 29, 33, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 3, 8, 9, 12, 13, 16, 21, 22, 24, 25, 29 ] ],
+   [
+    "Exodus", 11,
+    [ 1, 3, 4, 9, 10 ] ],
+   [
+    "Exodus", 12,
+    [ 1, 21, 28, 31, 35, 43, 50 ] ],
+   [
+    "Exodus", 13,
+    [ 1, 3, 19 ] ],
+   [
+    "Exodus", 14,
+    [ 1, 11, 13, 15, 21, 26, 27, 31 ] ],
+   [
+    "Exodus", 15,
+    [ 1, 22, 24 ] ],
+   [
+    "Exodus", 16,
+    [ 2, 4, 6, 8, 9, 11, 15, 19, 20, 22, 24, 25, 28, 32, 33, 34 ] ],
+   [
+    "Exodus", 17,
+    [ 2, 3, 4, 5, 6, 9, 10, 11, 12, 14, 15 ] ],
+   [
+    "Exodus", 18,
+    [ 1, 2, 5, 6, 7, 8, 12, 13, 14, 15, 17, 24, 25, 26, 27 ] ],
+   [
+    "Exodus", 19,
+    [ 3, 7, 8, 9, 10, 14, 17, 19, 20, 21, 23, 25 ] ],
+   [
+    "Exodus", 20,
+    [ 19, 20, 21, 22 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 2, 3, 4, 6, 8, 9, 12, 13, 15, 16, 18 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -2315,6 +2375,12 @@ window.GLOSSARY = [
   "name": "Priests and Levites",
   "refs": [
    [
+    "Exodus", 4,
+    [ 14 ] ],
+   [
+    "Exodus", 6,
+    [ 25 ] ],
+   [
     "Luke", 10,
     [ 32 ] ],
    [
@@ -2833,6 +2899,69 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 18 ] ],
+   [
+    "Exodus", 3,
+    [ 2, 4, 7, 15, 16, 18 ] ],
+   [
+    "Exodus", 4,
+    [ 1, 2, 4, 5, 6, 10, 11, 14, 19, 21, 22, 24, 27, 28, 30, 31 ] ],
+   [
+    "Exodus", 5,
+    [ 1, 2, 3, 17, 21, 22 ] ],
+   [
+    "Exodus", 6,
+    [ 1, 2, 6, 7, 8, 10, 12, 13, 26, 28, 29, 30 ] ],
+   [
+    "Exodus", 7,
+    [ 1, 5, 6, 8, 10, 13, 14, 16, 17, 19, 20, 22, 25 ] ],
+   [
+    "Exodus", 8,
+    [ 1, 5, 8, 10, 12, 13, 15, 16, 19, 20, 22, 24, 26, 27, 28, 29, 30, 31 ] ],
+   [
+    "Exodus", 9,
+    [ 1, 3, 4, 5, 6, 8, 12, 13, 20, 21, 22, 23, 27, 28, 29, 30, 33, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27 ] ],
+   [
+    "Exodus", 11,
+    [ 1, 3, 4, 7, 9, 10 ] ],
+   [
+    "Exodus", 12,
+    [ 1, 11, 12, 14, 23, 25, 27, 28, 29, 31, 36, 41, 42, 43, 48, 50, 51 ] ],
+   [
+    "Exodus", 13,
+    [ 1, 3, 5, 6, 8, 9, 11, 12, 14, 15, 16, 21 ] ],
+   [
+    "Exodus", 14,
+    [ 1, 4, 8, 10, 13, 14, 15, 18, 21, 24, 25, 26, 27, 30, 31 ] ],
+   [
+    "Exodus", 15,
+    [ 1, 2, 3, 6, 11, 16, 17, 18, 19, 21, 25, 26 ] ],
+   [
+    "Exodus", 16,
+    [ 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 16, 23, 25, 28, 29, 32, 33, 34 ] ],
+   [
+    "Exodus", 17,
+    [ 1, 2, 4, 5, 7, 14, 16 ] ],
+   [
+    "Exodus", 18,
+    [ 1, 8, 9, 10, 11 ] ],
+   [
+    "Exodus", 19,
+    [ 3, 7, 8, 9, 10, 11, 18, 20, 21, 22, 23, 24 ] ],
+   [
+    "Exodus", 20,
+    [ 2, 5, 7, 10, 11, 12, 22 ] ],
+   [
+    "Exodus", 22,
+    [ 11, 20 ] ],
+   [
+    "Exodus", 23,
+    [ 19, 25 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 2, 3, 4, 5, 7, 8, 12, 16, 17 ] ],
    [
     "Proverbs", 1,
     [ 7, 29 ] ],
@@ -3494,6 +3623,42 @@ window.GLOSSARY = [
     "Genesis", 37,
     [ 22 ] ],
    [
+    "Exodus", 3,
+    [ 18 ] ],
+   [
+    "Exodus", 4,
+    [ 27 ] ],
+   [
+    "Exodus", 5,
+    [ 1 ] ],
+   [
+    "Exodus", 7,
+    [ 16 ] ],
+   [
+    "Exodus", 8,
+    [ 27, 28 ] ],
+   [
+    "Exodus", 13,
+    [ 18, 20 ] ],
+   [
+    "Exodus", 14,
+    [ 3, 11, 12 ] ],
+   [
+    "Exodus", 15,
+    [ 22 ] ],
+   [
+    "Exodus", 16,
+    [ 1, 2, 3, 10, 14, 32 ] ],
+   [
+    "Exodus", 17,
+    [ 1 ] ],
+   [
+    "Exodus", 18,
+    [ 5 ] ],
+   [
+    "Exodus", 19,
+    [ 1, 2 ] ],
+   [
     "Proverbs", 21,
     [ 19 ] ],
    [
@@ -4070,6 +4235,66 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 25 ] ],
    [
+    "Exodus", 1,
+    [ 1, 7, 9, 12, 13 ] ],
+   [
+    "Exodus", 2,
+    [ 23, 25 ] ],
+   [
+    "Exodus", 3,
+    [ 9, 10, 11, 13, 14, 15, 16, 18 ] ],
+   [
+    "Exodus", 4,
+    [ 22, 29, 31 ] ],
+   [
+    "Exodus", 5,
+    [ 1, 2, 14, 15, 19 ] ],
+   [
+    "Exodus", 6,
+    [ 5, 6, 9, 11, 12, 13, 14, 26, 27 ] ],
+   [
+    "Exodus", 7,
+    [ 2, 4, 5 ] ],
+   [
+    "Exodus", 9,
+    [ 4, 6, 26, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 20, 23 ] ],
+   [
+    "Exodus", 11,
+    [ 7, 10 ] ],
+   [
+    "Exodus", 12,
+    [ 3, 6, 15, 19, 21, 27, 28, 31, 35, 37, 40, 42, 47, 50, 51 ] ],
+   [
+    "Exodus", 13,
+    [ 2, 18, 19 ] ],
+   [
+    "Exodus", 14,
+    [ 2, 3, 5, 8, 10, 15, 16, 19, 20, 22, 25, 29, 30, 31 ] ],
+   [
+    "Exodus", 15,
+    [ 1, 19, 22 ] ],
+   [
+    "Exodus", 16,
+    [ 1, 2, 3, 6, 9, 10, 12, 15, 17, 31, 35 ] ],
+   [
+    "Exodus", 17,
+    [ 1, 5, 6, 7, 8, 11 ] ],
+   [
+    "Exodus", 18,
+    [ 1, 8, 9, 12, 25 ] ],
+   [
+    "Exodus", 19,
+    [ 1, 2, 3, 6 ] ],
+   [
+    "Exodus", 20,
+    [ 22 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 4, 5, 9, 10, 11, 17 ] ],
+   [
     "Proverbs", 1,
     [ 1 ] ],
    [
@@ -4363,6 +4588,24 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 25 ] ],
+   [
+    "Exodus", 9,
+    [ 8, 10, 22, 23 ] ],
+   [
+    "Exodus", 10,
+    [ 21, 22 ] ],
+   [
+    "Exodus", 16,
+    [ 4 ] ],
+   [
+    "Exodus", 17,
+    [ 14 ] ],
+   [
+    "Exodus", 20,
+    [ 4, 11, 22 ] ],
+   [
+    "Exodus", 24,
+    [ 10 ] ],
    [
     "Proverbs", 23,
     [ 5 ] ],
@@ -4985,6 +5228,15 @@ window.GLOSSARY = [
     "Genesis", 1,
     [ 3, 4, 5, 15, 16, 17, 18 ] ],
    [
+    "Exodus", 10,
+    [ 23 ] ],
+   [
+    "Exodus", 13,
+    [ 21 ] ],
+   [
+    "Exodus", 14,
+    [ 20 ] ],
+   [
     "Proverbs", 4,
     [ 18 ] ],
    [
@@ -5167,6 +5419,15 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 12 ] ],
+   [
+    "Exodus", 10,
+    [ 21, 22 ] ],
+   [
+    "Exodus", 14,
+    [ 20 ] ],
+   [
+    "Exodus", 20,
+    [ 21 ] ],
    [
     "Proverbs", 2,
     [ 13 ] ],
@@ -5567,6 +5828,9 @@ window.GLOSSARY = [
     "Genesis", 42,
     [ 16 ] ],
    [
+    "Exodus", 18,
+    [ 21 ] ],
+   [
     "Proverbs", 3,
     [ 3 ] ],
    [
@@ -5821,6 +6085,12 @@ window.GLOSSARY = [
    [
     "Genesis", 45,
     [ 13 ] ],
+   [
+    "Exodus", 16,
+    [ 7, 10 ] ],
+   [
+    "Exodus", 24,
+    [ 16, 17 ] ],
    [
     "Proverbs", 3,
     [ 35 ] ],
@@ -6184,6 +6454,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The law",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 49 ] ],
+   [
+    "Exodus", 13,
+    [ 9 ] ],
+   [
+    "Exodus", 16,
+    [ 4 ] ],
+   [
+    "Exodus", 24,
+    [ 12 ] ],
    [
     "Proverbs", 1,
     [ 8 ] ],
@@ -7247,6 +7529,15 @@ window.GLOSSARY = [
     "Genesis", 45,
     [ 26 ] ],
    [
+    "Exodus", 4,
+    [ 1, 5, 8, 9, 31 ] ],
+   [
+    "Exodus", 14,
+    [ 31 ] ],
+   [
+    "Exodus", 19,
+    [ 9 ] ],
+   [
     "Proverbs", 14,
     [ 15 ] ],
    [
@@ -7579,6 +7870,15 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 44, 48, 50, 52 ] ],
+   [
+    "Exodus", 20,
+    [ 16, 24 ] ],
+   [
+    "Exodus", 22,
+    [ 13 ] ],
+   [
+    "Exodus", 23,
+    [ 1 ] ],
    [
     "Proverbs", 6,
     [ 19 ] ],
@@ -7949,6 +8249,9 @@ window.GLOSSARY = [
   "name": "Guile",
   "refs": [
    [
+    "Exodus", 21,
+    [ 14 ] ],
+   [
     "John", 1,
     [ 47 ] ],
    [
@@ -8201,6 +8504,21 @@ window.GLOSSARY = [
   "name": "Sign (miracle)",
   "refs": [
    [
+    "Exodus", 4,
+    [ 8, 9, 17, 28, 30 ] ],
+   [
+    "Exodus", 7,
+    [ 3, 9 ] ],
+   [
+    "Exodus", 8,
+    [ 23 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 2 ] ],
+   [
+    "Exodus", 13,
+    [ 9 ] ],
+   [
     "Matthew", 12,
     [ 38, 39 ] ],
    [
@@ -8335,6 +8653,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Passover",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 11, 21, 27, 43, 48 ] ],
    [
     "Matthew", 26,
     [ 2, 17, 18, 19 ] ],
@@ -9401,6 +9722,12 @@ window.GLOSSARY = [
     "Genesis", 38,
     [ 26 ] ],
    [
+    "Exodus", 9,
+    [ 27 ] ],
+   [
+    "Exodus", 23,
+    [ 7, 8 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -9728,6 +10055,12 @@ window.GLOSSARY = [
     "Genesis", 39,
     [ 9 ] ],
    [
+    "Exodus", 9,
+    [ 27 ] ],
+   [
+    "Exodus", 23,
+    [ 1, 7 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -9949,6 +10282,33 @@ window.GLOSSARY = [
    [
     "Genesis", 45,
     [ 26 ] ],
+   [
+    "Exodus", 4,
+    [ 14, 21 ] ],
+   [
+    "Exodus", 7,
+    [ 3, 13, 14, 22, 23 ] ],
+   [
+    "Exodus", 8,
+    [ 15, 19, 32 ] ],
+   [
+    "Exodus", 9,
+    [ 7, 12, 14, 34, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 20, 27 ] ],
+   [
+    "Exodus", 11,
+    [ 10 ] ],
+   [
+    "Exodus", 14,
+    [ 4, 5, 8 ] ],
+   [
+    "Exodus", 15,
+    [ 8 ] ],
+   [
+    "Exodus", 23,
+    [ 9 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -10289,6 +10649,15 @@ window.GLOSSARY = [
   "name": "Tongue and lips",
   "refs": [
    [
+    "Exodus", 4,
+    [ 10 ] ],
+   [
+    "Exodus", 6,
+    [ 12, 30 ] ],
+   [
+    "Exodus", 11,
+    [ 7 ] ],
+   [
     "Proverbs", 4,
     [ 24 ] ],
    [
@@ -10498,6 +10867,21 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 6, 7 ] ],
+   [
+    "Exodus", 4,
+    [ 14 ] ],
+   [
+    "Exodus", 11,
+    [ 8 ] ],
+   [
+    "Exodus", 15,
+    [ 7 ] ],
+   [
+    "Exodus", 16,
+    [ 20 ] ],
+   [
+    "Exodus", 22,
+    [ 24 ] ],
    [
     "Proverbs", 11,
     [ 4, 23 ] ],
@@ -10840,6 +11224,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Humility",
   "refs": [
+   [
+    "Exodus", 10,
+    [ 3 ] ],
    [
     "Proverbs", 6,
     [ 3 ] ],
@@ -11216,6 +11603,9 @@ window.GLOSSARY = [
     "Genesis", 46,
     [ 34 ] ],
    [
+    "Exodus", 8,
+    [ 26 ] ],
+   [
     "Proverbs", 3,
     [ 32 ] ],
    [
@@ -11290,6 +11680,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Adultery",
   "refs": [
+   [
+    "Exodus", 20,
+    [ 14 ] ],
    [
     "Proverbs", 6,
     [ 26, 32 ] ],
@@ -11456,6 +11849,9 @@ window.GLOSSARY = [
   "name": "Counsel, counsellors",
   "refs": [
    [
+    "Exodus", 18,
+    [ 19 ] ],
+   [
     "Proverbs", 1,
     [ 5, 25, 30 ] ],
    [
@@ -11603,6 +11999,9 @@ window.GLOSSARY = [
   "name": "Entice",
   "refs": [
    [
+    "Exodus", 22,
+    [ 16 ] ],
+   [
     "Proverbs", 1,
     [ 10 ] ],
    [
@@ -11614,6 +12013,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Firstfruits",
   "refs": [
+   [
+    "Exodus", 23,
+    [ 16, 19 ] ],
    [
     "Proverbs", 3,
     [ 9 ] ],
@@ -11909,6 +12311,30 @@ window.GLOSSARY = [
   "name": "The rod",
   "refs": [
    [
+    "Exodus", 4,
+    [ 2, 4, 17, 20 ] ],
+   [
+    "Exodus", 7,
+    [ 9, 10, 12, 15, 17, 19, 20 ] ],
+   [
+    "Exodus", 8,
+    [ 5, 16, 17 ] ],
+   [
+    "Exodus", 9,
+    [ 23 ] ],
+   [
+    "Exodus", 10,
+    [ 13 ] ],
+   [
+    "Exodus", 14,
+    [ 16 ] ],
+   [
+    "Exodus", 17,
+    [ 5, 9 ] ],
+   [
+    "Exodus", 21,
+    [ 20 ] ],
+   [
     "Proverbs", 10,
     [ 13 ] ],
    [
@@ -11962,6 +12388,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Snare",
   "refs": [
+   [
+    "Exodus", 10,
+    [ 7 ] ],
+   [
+    "Exodus", 23,
+    [ 33 ] ],
    [
     "Proverbs", 6,
     [ 2 ] ],
@@ -12293,6 +12725,9 @@ window.GLOSSARY = [
     "Genesis", 20,
     [ 5, 6 ] ],
    [
+    "Exodus", 15,
+    [ 8 ] ],
+   [
     "Proverbs", 2,
     [ 7, 13, 21 ] ],
    [
@@ -12355,6 +12790,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Usury",
   "refs": [
+   [
+    "Exodus", 22,
+    [ 25 ] ],
    [
     "Proverbs", 28,
     [ 8 ] ],
@@ -12524,6 +12962,12 @@ window.GLOSSARY = [
   "name": "Sabbath",
   "refs": [
    [
+    "Exodus", 16,
+    [ 23, 25, 26, 29 ] ],
+   [
+    "Exodus", 20,
+    [ 8, 10, 11 ] ],
+   [
     "Amos", 8,
     [ 5 ] ],
    [
@@ -12667,6 +13111,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wist (knew)",
   "refs": [
+   [
+    "Exodus", 16,
+    [ 15 ] ],
    [
     "Mark", 9,
     [ 6 ] ],
@@ -12865,6 +13312,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Judgment",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 12 ] ],
+   [
+    "Exodus", 21,
+    [ 1, 31 ] ],
    [
     "Matthew", 5,
     [ 21, 22 ] ],
@@ -13382,6 +13835,9 @@ window.GLOSSARY = [
   "name": "Manna",
   "refs": [
    [
+    "Exodus", 16,
+    [ 15, 33, 35 ] ],
+   [
     "John", 6,
     [ 31, 49, 58 ] ],
    [
@@ -13588,6 +14044,15 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Murmur (grumble)",
   "refs": [
+   [
+    "Exodus", 15,
+    [ 24 ] ],
+   [
+    "Exodus", 16,
+    [ 2, 7, 8, 9, 12 ] ],
+   [
+    "Exodus", 17,
+    [ 3 ] ],
    [
     "Matthew", 20,
     [ 11 ] ],
@@ -13931,6 +14396,9 @@ window.GLOSSARY = [
   "name": "Revile (insult, abuse)",
   "refs": [
    [
+    "Exodus", 22,
+    [ 28 ] ],
+   [
     "Matthew", 5,
     [ 11 ] ],
    [
@@ -13963,6 +14431,15 @@ window.GLOSSARY = [
    [
     "Genesis", 24,
     [ 26, 48, 52 ] ],
+   [
+    "Exodus", 4,
+    [ 31 ] ],
+   [
+    "Exodus", 12,
+    [ 27 ] ],
+   [
+    "Exodus", 24,
+    [ 1 ] ],
    [
     "Micah", 5,
     [ 13 ] ],
@@ -14444,6 +14921,12 @@ window.GLOSSARY = [
     "Genesis", 2,
     [ 3 ] ],
    [
+    "Exodus", 13,
+    [ 2 ] ],
+   [
+    "Exodus", 19,
+    [ 10, 14, 22, 23 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -14521,6 +15004,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Stoning",
   "refs": [
+   [
+    "Exodus", 17,
+    [ 4 ] ],
    [
     "John", 10,
     [ 31, 32, 33 ] ],
@@ -14827,6 +15313,12 @@ window.GLOSSARY = [
    [
     "Genesis", 34,
     [ 15, 17, 22, 24 ] ],
+   [
+    "Exodus", 4,
+    [ 26 ] ],
+   [
+    "Exodus", 12,
+    [ 44, 48 ] ],
    [
     "Luke", 1,
     [ 59 ] ],
@@ -15512,6 +16004,18 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 13, 24 ] ],
    [
+    "Exodus", 2,
+    [ 24 ] ],
+   [
+    "Exodus", 3,
+    [ 6, 15, 16 ] ],
+   [
+    "Exodus", 4,
+    [ 5 ] ],
+   [
+    "Exodus", 6,
+    [ 3, 8 ] ],
+   [
     "Micah", 7,
     [ 20 ] ],
    [
@@ -15686,6 +16190,9 @@ window.GLOSSARY = [
   "name": "Condemn",
   "refs": [
    [
+    "Exodus", 22,
+    [ 9 ] ],
+   [
     "Proverbs", 12,
     [ 2 ] ],
    [
@@ -15830,6 +16337,9 @@ window.GLOSSARY = [
   "name": "“I am” (the name of God)",
   "refs": [
    [
+    "Exodus", 3,
+    [ 14 ] ],
+   [
     "Mark", 6,
     [ 50 ] ],
    [
@@ -15865,6 +16375,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Free, made free",
   "refs": [
+   [
+    "Exodus", 21,
+    [ 2, 5, 11, 26, 27 ] ],
    [
     "John", 8,
     [ 32, 33, 36 ] ],
@@ -15904,6 +16417,21 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Bondage",
   "refs": [
+   [
+    "Exodus", 1,
+    [ 14 ] ],
+   [
+    "Exodus", 2,
+    [ 23 ] ],
+   [
+    "Exodus", 6,
+    [ 5, 6, 9 ] ],
+   [
+    "Exodus", 13,
+    [ 3, 14 ] ],
+   [
+    "Exodus", 20,
+    [ 2 ] ],
    [
     "John", 8,
     [ 33 ] ],
@@ -16373,6 +16901,24 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 24 ] ],
    [
+    "Exodus", 1,
+    [ 1, 5 ] ],
+   [
+    "Exodus", 2,
+    [ 24 ] ],
+   [
+    "Exodus", 3,
+    [ 6, 15, 16 ] ],
+   [
+    "Exodus", 4,
+    [ 5 ] ],
+   [
+    "Exodus", 6,
+    [ 3, 8 ] ],
+   [
+    "Exodus", 19,
+    [ 3 ] ],
+   [
     "Hosea", 10,
     [ 11 ] ],
    [
@@ -16597,6 +17143,12 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 18 ] ],
+   [
+    "Exodus", 14,
+    [ 13 ] ],
+   [
+    "Exodus", 15,
+    [ 2 ] ],
    [
     "Micah", 7,
     [ 7 ] ],
@@ -16906,6 +17458,9 @@ window.GLOSSARY = [
    [
     "Genesis", 32,
     [ 1 ] ],
+   [
+    "Exodus", 14,
+    [ 19 ] ],
    [
     "Matthew", 1,
     [ 20, 24 ] ],
@@ -17561,6 +18116,24 @@ window.GLOSSARY = [
     "Genesis", 48,
     [ 11 ] ],
    [
+    "Exodus", 9,
+    [ 16 ] ],
+   [
+    "Exodus", 10,
+    [ 1 ] ],
+   [
+    "Exodus", 13,
+    [ 8 ] ],
+   [
+    "Exodus", 14,
+    [ 13 ] ],
+   [
+    "Exodus", 15,
+    [ 25 ] ],
+   [
+    "Exodus", 18,
+    [ 20 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -17921,6 +18494,9 @@ window.GLOSSARY = [
   "name": "Gird, girt (tie a belt or garment on)",
   "refs": [
    [
+    "Exodus", 12,
+    [ 11 ] ],
+   [
     "Proverbs", 31,
     [ 17, 24 ] ],
    [
@@ -17980,6 +18556,9 @@ window.GLOSSARY = [
    [
     "Genesis", 45,
     [ 9 ] ],
+   [
+    "Exodus", 12,
+    [ 39 ] ],
    [
     "Proverbs", 23,
     [ 30 ] ],
@@ -18695,6 +19274,9 @@ window.GLOSSARY = [
   "name": "Palm branches",
   "refs": [
    [
+    "Exodus", 15,
+    [ 27 ] ],
+   [
     "John", 12,
     [ 13 ] ],
    [
@@ -18718,6 +19300,24 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 11, 14 ] ],
+   [
+    "Exodus", 4,
+    [ 20 ] ],
+   [
+    "Exodus", 13,
+    [ 13 ] ],
+   [
+    "Exodus", 20,
+    [ 17 ] ],
+   [
+    "Exodus", 21,
+    [ 33 ] ],
+   [
+    "Exodus", 22,
+    [ 4, 9, 10 ] ],
+   [
+    "Exodus", 23,
+    [ 4, 5, 12 ] ],
    [
     "Proverbs", 26,
     [ 3 ] ],
@@ -18880,6 +19480,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Bason (basin)",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 22 ] ],
    [
     "John", 13,
     [ 5 ] ] ]
@@ -19096,6 +19699,9 @@ window.GLOSSARY = [
    [
     "Genesis", 29,
     [ 14 ] ],
+   [
+    "Exodus", 24,
+    [ 16 ] ],
    [
     "John", 1,
     [ 32, 39 ] ],
@@ -19501,6 +20107,9 @@ window.GLOSSARY = [
    [
     "Genesis", 38,
     [ 27 ] ],
+   [
+    "Exodus", 18,
+    [ 8 ] ],
    [
     "Micah", 4,
     [ 9, 10 ] ],
@@ -20144,6 +20753,9 @@ window.GLOSSARY = [
   "name": "Hyssop",
   "refs": [
    [
+    "Exodus", 12,
+    [ 22 ] ],
+   [
     "John", 19,
     [ 29 ] ],
    [
@@ -20254,6 +20866,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "The priests (the LORD's ministers)",
   "refs": [
+   [
+    "Exodus", 19,
+    [ 6, 22, 24 ] ],
    [
     "Hosea", 4,
     [ 4, 6, 9 ] ],
@@ -20366,6 +20981,24 @@ window.GLOSSARY = [
   "name": "The elders",
   "refs": [
    [
+    "Exodus", 3,
+    [ 16, 18 ] ],
+   [
+    "Exodus", 4,
+    [ 29 ] ],
+   [
+    "Exodus", 17,
+    [ 5, 6 ] ],
+   [
+    "Exodus", 18,
+    [ 12 ] ],
+   [
+    "Exodus", 19,
+    [ 7 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 9, 14 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -20470,6 +21103,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Locusts (palmerworm, locust, cankerworm, caterpiller)",
   "refs": [
+   [
+    "Exodus", 10,
+    [ 4, 12, 13, 14, 19 ] ],
    [
     "Joel", 1,
     [ 4 ] ],
@@ -20699,6 +21335,12 @@ window.GLOSSARY = [
   "name": "Trumpet (the shofar, a ram's horn)",
   "refs": [
    [
+    "Exodus", 19,
+    [ 13, 16, 19 ] ],
+   [
+    "Exodus", 20,
+    [ 18 ] ],
+   [
     "Hosea", 5,
     [ 8 ] ],
    [
@@ -20845,6 +21487,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Jealous (God's protective love)",
   "refs": [
+   [
+    "Exodus", 20,
+    [ 5 ] ],
    [
     "Joel", 2,
     [ 18 ] ],
@@ -21101,6 +21746,9 @@ window.GLOSSARY = [
   "name": "Palestine (the Philistine coast)",
   "refs": [
    [
+    "Exodus", 15,
+    [ 14 ] ],
+   [
     "Joel", 3,
     [ 4 ] ] ]
  },
@@ -21275,6 +21923,69 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 7, 14, 22, 26 ] ],
    [
+    "Exodus", 1,
+    [ 1, 5, 8, 15, 17, 18 ] ],
+   [
+    "Exodus", 2,
+    [ 23 ] ],
+   [
+    "Exodus", 3,
+    [ 7, 10, 11, 12, 16, 17, 18, 19, 20 ] ],
+   [
+    "Exodus", 4,
+    [ 18, 19, 20, 21 ] ],
+   [
+    "Exodus", 5,
+    [ 4, 12 ] ],
+   [
+    "Exodus", 6,
+    [ 11, 13, 26, 27, 28, 29 ] ],
+   [
+    "Exodus", 7,
+    [ 3, 4, 5, 11, 19, 21, 22 ] ],
+   [
+    "Exodus", 8,
+    [ 5, 6, 7, 16, 17, 24 ] ],
+   [
+    "Exodus", 9,
+    [ 4, 6, 9, 18, 22, 23, 24, 25 ] ],
+   [
+    "Exodus", 10,
+    [ 2, 7, 12, 13, 14, 15, 19, 21, 22 ] ],
+   [
+    "Exodus", 11,
+    [ 1, 3, 4, 5, 6, 9 ] ],
+   [
+    "Exodus", 12,
+    [ 1, 12, 13, 17, 27, 29, 30, 39, 40, 41, 42, 51 ] ],
+   [
+    "Exodus", 13,
+    [ 3, 8, 9, 14, 15, 16, 17, 18 ] ],
+   [
+    "Exodus", 14,
+    [ 5, 7, 8, 11, 12 ] ],
+   [
+    "Exodus", 16,
+    [ 1, 3, 6, 32 ] ],
+   [
+    "Exodus", 17,
+    [ 3 ] ],
+   [
+    "Exodus", 18,
+    [ 1 ] ],
+   [
+    "Exodus", 19,
+    [ 1 ] ],
+   [
+    "Exodus", 20,
+    [ 2 ] ],
+   [
+    "Exodus", 22,
+    [ 21 ] ],
+   [
+    "Exodus", 23,
+    [ 9, 15 ] ],
+   [
     "Proverbs", 7,
     [ 16 ] ],
    [
@@ -21376,6 +22087,9 @@ window.GLOSSARY = [
    [
     "Genesis", 36,
     [ 1, 8, 16, 17, 19, 21, 31, 32, 43 ] ],
+   [
+    "Exodus", 15,
+    [ 15 ] ],
    [
     "Joel", 3,
     [ 19 ] ],
@@ -21658,6 +22372,12 @@ window.GLOSSARY = [
    [
     "Genesis", 43,
     [ 14 ] ],
+   [
+    "Exodus", 15,
+    [ 13 ] ],
+   [
+    "Exodus", 20,
+    [ 6 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -22358,6 +23078,9 @@ window.GLOSSARY = [
   "name": "Graven and molten images (idols)",
   "refs": [
    [
+    "Exodus", 20,
+    [ 4 ] ],
+   [
     "Hosea", 11,
     [ 2 ] ],
    [
@@ -22426,6 +23149,12 @@ window.GLOSSARY = [
    [
     "Genesis", 41,
     [ 6, 23, 27 ] ],
+   [
+    "Exodus", 10,
+    [ 13 ] ],
+   [
+    "Exodus", 14,
+    [ 21 ] ],
    [
     "Hosea", 12,
     [ 1 ] ],
@@ -22649,6 +23378,9 @@ window.GLOSSARY = [
     "Genesis", 27,
     [ 28, 39 ] ],
    [
+    "Exodus", 16,
+    [ 13, 14 ] ],
+   [
     "Proverbs", 3,
     [ 20 ] ],
    [
@@ -22745,6 +23477,15 @@ window.GLOSSARY = [
   "name": "Ransom, redeem (buy back)",
   "refs": [
    [
+    "Exodus", 6,
+    [ 6 ] ],
+   [
+    "Exodus", 13,
+    [ 13, 15 ] ],
+   [
+    "Exodus", 21,
+    [ 30 ] ],
+   [
     "Proverbs", 6,
     [ 35 ] ],
    [
@@ -22801,6 +23542,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Fatherless",
   "refs": [
+   [
+    "Exodus", 22,
+    [ 22, 24 ] ],
    [
     "Proverbs", 23,
     [ 10 ] ],
@@ -23002,6 +23746,21 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 44 ] ],
+   [
+    "Exodus", 2,
+    [ 24 ] ],
+   [
+    "Exodus", 6,
+    [ 4, 5 ] ],
+   [
+    "Exodus", 19,
+    [ 5 ] ],
+   [
+    "Exodus", 23,
+    [ 32 ] ],
+   [
+    "Exodus", 24,
+    [ 7, 8 ] ],
    [
     "Proverbs", 2,
     [ 17 ] ],
@@ -23492,6 +24251,9 @@ window.GLOSSARY = [
     "Genesis", 34,
     [ 29 ] ],
    [
+    "Exodus", 12,
+    [ 29 ] ],
+   [
     "Hosea", 6,
     [ 11 ] ],
    [
@@ -23609,6 +24371,12 @@ window.GLOSSARY = [
     "Genesis", 26,
     [ 1, 8, 14, 15, 18 ] ],
    [
+    "Exodus", 13,
+    [ 17 ] ],
+   [
+    "Exodus", 23,
+    [ 31 ] ],
+   [
     "Amos", 1,
     [ 8 ] ],
    [
@@ -23725,6 +24493,18 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 24 ] ],
+   [
+    "Exodus", 2,
+    [ 24 ] ],
+   [
+    "Exodus", 3,
+    [ 6, 15, 16 ] ],
+   [
+    "Exodus", 4,
+    [ 5 ] ],
+   [
+    "Exodus", 6,
+    [ 3, 8 ] ],
    [
     "Amos", 7,
     [ 9, 16 ] ],
@@ -23869,6 +24649,9 @@ window.GLOSSARY = [
    [
     "Genesis", 24,
     [ 22 ] ],
+   [
+    "Exodus", 16,
+    [ 36 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -24251,6 +25034,15 @@ window.GLOSSARY = [
     "Genesis", 48,
     [ 22 ] ],
    [
+    "Exodus", 3,
+    [ 8, 17 ] ],
+   [
+    "Exodus", 13,
+    [ 5 ] ],
+   [
+    "Exodus", 23,
+    [ 23 ] ],
+   [
     "Amos", 2,
     [ 9, 10 ] ] ]
  },
@@ -24265,6 +25057,9 @@ window.GLOSSARY = [
    [
     "Genesis", 36,
     [ 35 ] ],
+   [
+    "Exodus", 15,
+    [ 15 ] ],
    [
     "Amos", 2,
     [ 1, 2 ] ],
@@ -24292,6 +25087,9 @@ window.GLOSSARY = [
    [
     "Genesis", 38,
     [ 17, 18, 20 ] ],
+   [
+    "Exodus", 22,
+    [ 26 ] ],
    [
     "Proverbs", 20,
     [ 16 ] ],
@@ -24460,6 +25258,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Leaven",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 15, 19 ] ],
+   [
+    "Exodus", 13,
+    [ 7 ] ],
    [
     "Amos", 4,
     [ 5 ] ],
@@ -24800,6 +25604,18 @@ window.GLOSSARY = [
     "Genesis", 36,
     [ 35 ] ],
    [
+    "Exodus", 2,
+    [ 15, 16 ] ],
+   [
+    "Exodus", 3,
+    [ 1 ] ],
+   [
+    "Exodus", 4,
+    [ 19 ] ],
+   [
+    "Exodus", 18,
+    [ 1 ] ],
+   [
     "Habakkuk", 3,
     [ 7 ] ],
    [
@@ -24965,6 +25781,9 @@ window.GLOSSARY = [
   "name": "Covet (want what belongs to another)",
   "refs": [
    [
+    "Exodus", 20,
+    [ 17 ] ],
+   [
     "Micah", 2,
     [ 2 ] ],
    [
@@ -24997,6 +25816,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Heritage (a family's God-given land)",
   "refs": [
+   [
+    "Exodus", 6,
+    [ 8 ] ],
    [
     "Micah", 2,
     [ 2 ] ],
@@ -25057,6 +25879,9 @@ window.GLOSSARY = [
    [
     "Genesis", 18,
     [ 19 ] ],
+   [
+    "Exodus", 23,
+    [ 2, 6 ] ],
    [
     "Micah", 3,
     [ 1, 8, 9 ] ],
@@ -25565,6 +26390,9 @@ window.GLOSSARY = [
     "Genesis", 11,
     [ 3 ] ],
    [
+    "Exodus", 1,
+    [ 14 ] ],
+   [
     "Nahum", 3,
     [ 14 ] ] ]
  },
@@ -25658,6 +26486,12 @@ window.GLOSSARY = [
   "name": "Horses and chariots (an army's strength)",
   "refs": [
    [
+    "Exodus", 14,
+    [ 7, 9, 17, 18, 23, 26, 28 ] ],
+   [
+    "Exodus", 15,
+    [ 4, 19 ] ],
+   [
     "Micah", 5,
     [ 10 ] ] ]
  },
@@ -25709,6 +26543,51 @@ window.GLOSSARY = [
   "name": "Aaron, brother of Moses (the first high priest)",
   "refs": [
    [
+    "Exodus", 4,
+    [ 14, 27, 28, 29, 30 ] ],
+   [
+    "Exodus", 5,
+    [ 1, 4, 20 ] ],
+   [
+    "Exodus", 6,
+    [ 13, 20, 23, 25, 26, 27 ] ],
+   [
+    "Exodus", 7,
+    [ 1, 2, 6, 7, 8, 9, 10, 12, 19, 20 ] ],
+   [
+    "Exodus", 8,
+    [ 5, 6, 8, 12, 16, 17, 25 ] ],
+   [
+    "Exodus", 9,
+    [ 8, 27 ] ],
+   [
+    "Exodus", 10,
+    [ 3, 8, 16 ] ],
+   [
+    "Exodus", 11,
+    [ 10 ] ],
+   [
+    "Exodus", 12,
+    [ 1, 28, 31, 43, 50 ] ],
+   [
+    "Exodus", 15,
+    [ 20 ] ],
+   [
+    "Exodus", 16,
+    [ 2, 6, 9, 10, 33, 34 ] ],
+   [
+    "Exodus", 17,
+    [ 10, 12 ] ],
+   [
+    "Exodus", 18,
+    [ 12 ] ],
+   [
+    "Exodus", 19,
+    [ 24 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 9, 14 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -25732,6 +26611,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Miriam, sister of Moses (a prophetess)",
   "refs": [
+   [
+    "Exodus", 15,
+    [ 20, 21 ] ],
    [
     "Micah", 6,
     [ 4 ] ] ]
@@ -25792,6 +26674,18 @@ window.GLOSSARY = [
    [
     "Genesis", 22,
     [ 2, 3, 6, 7, 8, 13 ] ],
+   [
+    "Exodus", 10,
+    [ 25 ] ],
+   [
+    "Exodus", 18,
+    [ 12 ] ],
+   [
+    "Exodus", 20,
+    [ 24 ] ],
+   [
+    "Exodus", 24,
+    [ 5 ] ],
    [
     "Hosea", 6,
     [ 6 ] ],
@@ -26108,6 +27002,15 @@ window.GLOSSARY = [
     "Genesis", 43,
     [ 32 ] ],
    [
+    "Exodus", 1,
+    [ 15, 16, 19 ] ],
+   [
+    "Exodus", 2,
+    [ 7, 11 ] ],
+   [
+    "Exodus", 21,
+    [ 2 ] ],
+   [
     "Jonah", 1,
     [ 9 ] ],
    [
@@ -26407,6 +27310,15 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 11 ] ],
+   [
+    "Exodus", 3,
+    [ 8, 17 ] ],
+   [
+    "Exodus", 13,
+    [ 5, 11 ] ],
+   [
+    "Exodus", 23,
+    [ 23, 28 ] ],
    [
     "Obadiah", 1,
     [ 20 ] ] ]
@@ -26780,6 +27692,15 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 5, 13 ] ],
    [
+    "Exodus", 6,
+    [ 4 ] ],
+   [
+    "Exodus", 15,
+    [ 15 ] ],
+   [
+    "Exodus", 16,
+    [ 35 ] ],
+   [
     "Zephaniah", 2,
     [ 5 ] ],
    [
@@ -27109,6 +28030,9 @@ window.GLOSSARY = [
    [
     "Genesis", 22,
     [ 11, 15 ] ],
+   [
+    "Exodus", 3,
+    [ 2 ] ],
    [
     "Zechariah", 1,
     [ 11, 12 ] ],
@@ -27467,6 +28391,9 @@ window.GLOSSARY = [
   "name": "Stealeth, the thief",
   "refs": [
    [
+    "Exodus", 21,
+    [ 16 ] ],
+   [
     "Zechariah", 5,
     [ 3, 4 ] ] ]
  },
@@ -27728,6 +28655,15 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 21 ] ],
    [
+    "Exodus", 3,
+    [ 8, 17 ] ],
+   [
+    "Exodus", 13,
+    [ 5 ] ],
+   [
+    "Exodus", 23,
+    [ 23 ] ],
+   [
     "Zechariah", 9,
     [ 7 ] ] ]
  },
@@ -27980,6 +28916,9 @@ window.GLOSSARY = [
   "name": "Levi (the priestly tribe)",
   "refs": [
    [
+    "Exodus", 2,
+    [ 1 ] ],
+   [
     "Zechariah", 12,
     [ 13 ] ],
    [
@@ -28216,6 +29155,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Seethe (boil, cook)",
   "refs": [
+   [
+    "Exodus", 16,
+    [ 23 ] ],
+   [
+    "Exodus", 23,
+    [ 19 ] ],
    [
     "Zechariah", 14,
     [ 21 ] ] ]
@@ -28469,6 +29414,9 @@ window.GLOSSARY = [
   "name": "Sorcerers (those who deal in spells and spirits)",
   "refs": [
    [
+    "Exodus", 7,
+    [ 11 ] ],
+   [
     "Malachi", 3,
     [ 5 ] ],
    [
@@ -28501,6 +29449,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Ordinances (God's commands)",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 14, 17, 24, 43 ] ],
+   [
+    "Exodus", 13,
+    [ 10 ] ],
+   [
+    "Exodus", 15,
+    [ 25 ] ],
+   [
+    "Exodus", 18,
+    [ 20 ] ],
    [
     "Malachi", 3,
     [ 7, 14 ] ],
@@ -28589,6 +29549,12 @@ window.GLOSSARY = [
   "name": "Horeb (Mount Sinai)",
   "refs": [
    [
+    "Exodus", 3,
+    [ 1 ] ],
+   [
+    "Exodus", 17,
+    [ 6 ] ],
+   [
     "Malachi", 4,
     [ 4 ] ] ]
  },
@@ -28597,6 +29563,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Stubble (dry stalks left after harvest)",
   "refs": [
+   [
+    "Exodus", 5,
+    [ 12 ] ],
+   [
+    "Exodus", 15,
+    [ 7 ] ],
    [
     "Malachi", 4,
     [ 1 ] ] ]
@@ -28736,6 +29708,9 @@ window.GLOSSARY = [
     "Genesis", 29,
     [ 31 ] ],
    [
+    "Exodus", 23,
+    [ 26 ] ],
+   [
     "Luke", 1,
     [ 7, 36 ] ],
    [
@@ -28759,6 +29734,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Dumb, speechless (unable to speak)",
   "refs": [
+   [
+    "Exodus", 4,
+    [ 11 ] ],
    [
     "Matthew", 9,
     [ 32, 33 ] ],
@@ -28898,6 +29876,9 @@ window.GLOSSARY = [
     "Genesis", 35,
     [ 25, 26 ] ],
    [
+    "Exodus", 23,
+    [ 12 ] ],
+   [
     "Luke", 1,
     [ 38, 48 ] ],
    [
@@ -29032,6 +30013,12 @@ window.GLOSSARY = [
    [
     "Genesis", 21,
     [ 1 ] ],
+   [
+    "Exodus", 3,
+    [ 16 ] ],
+   [
+    "Exodus", 4,
+    [ 31 ] ],
    [
     "Matthew", 25,
     [ 36, 43 ] ],
@@ -29657,6 +30644,9 @@ window.GLOSSARY = [
   "name": "Compassion",
   "refs": [
    [
+    "Exodus", 2,
+    [ 6 ] ],
+   [
     "Matthew", 9,
     [ 36 ] ],
    [
@@ -29719,6 +30709,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Leper, leprosy",
   "refs": [
+   [
+    "Exodus", 4,
+    [ 6 ] ],
    [
     "Matthew", 8,
     [ 2, 3 ] ],
@@ -29928,6 +30921,9 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 50,
+    [ 17 ] ],
+   [
+    "Exodus", 10,
     [ 17 ] ],
    [
     "Matthew", 6,
@@ -30176,6 +31172,9 @@ window.GLOSSARY = [
     "Genesis", 47,
     [ 14 ] ],
    [
+    "Exodus", 22,
+    [ 6 ] ],
+   [
     "Matthew", 12,
     [ 1 ] ],
    [
@@ -30302,6 +31301,9 @@ window.GLOSSARY = [
     "Genesis", 43,
     [ 21 ] ],
    [
+    "Exodus", 4,
+    [ 24 ] ],
+   [
     "Luke", 2,
     [ 7 ] ],
    [
@@ -30398,6 +31400,9 @@ window.GLOSSARY = [
   "name": "Prophetess",
   "refs": [
    [
+    "Exodus", 15,
+    [ 20 ] ],
+   [
     "Luke", 2,
     [ 36 ] ],
    [
@@ -30415,6 +31420,9 @@ window.GLOSSARY = [
    [
     "Genesis", 35,
     [ 28 ] ],
+   [
+    "Exodus", 7,
+    [ 7 ] ],
    [
     "Luke", 2,
     [ 37 ] ],
@@ -30469,6 +31477,15 @@ window.GLOSSARY = [
    [
     "Genesis", 41,
     [ 56 ] ],
+   [
+    "Exodus", 1,
+    [ 7, 20 ] ],
+   [
+    "Exodus", 16,
+    [ 21 ] ],
+   [
+    "Exodus", 19,
+    [ 19 ] ],
    [
     "Matthew", 13,
     [ 15 ] ],
@@ -31832,6 +32849,9 @@ window.GLOSSARY = [
     "Genesis", 22,
     [ 1 ] ],
    [
+    "Exodus", 17,
+    [ 2, 7 ] ],
+   [
     "Matthew", 4,
     [ 1, 3, 7 ] ],
    [
@@ -32345,6 +33365,12 @@ window.GLOSSARY = [
   "name": "The altar (where offerings were given at the temple)",
   "refs": [
    [
+    "Exodus", 20,
+    [ 24, 25, 26 ] ],
+   [
+    "Exodus", 21,
+    [ 14 ] ],
+   [
     "Matthew", 5,
     [ 23, 24 ] ],
    [
@@ -32557,6 +33583,12 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 5, 6, 25 ] ],
+   [
+    "Exodus", 6,
+    [ 8 ] ],
+   [
+    "Exodus", 22,
+    [ 11 ] ],
    [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
@@ -33019,6 +34051,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Coasts (borders, the country around)",
   "refs": [
+   [
+    "Exodus", 10,
+    [ 4, 14, 19 ] ],
    [
     "Matthew", 2,
     [ 16 ] ],
@@ -33499,6 +34534,18 @@ window.GLOSSARY = [
    [
     "Genesis", 45,
     [ 22 ] ],
+   [
+    "Exodus", 3,
+    [ 22 ] ],
+   [
+    "Exodus", 12,
+    [ 35 ] ],
+   [
+    "Exodus", 21,
+    [ 10 ] ],
+   [
+    "Exodus", 22,
+    [ 9, 26, 27 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -34115,6 +35162,15 @@ window.GLOSSARY = [
     "Genesis", 12,
     [ 17 ] ],
    [
+    "Exodus", 9,
+    [ 14 ] ],
+   [
+    "Exodus", 11,
+    [ 1 ] ],
+   [
+    "Exodus", 12,
+    [ 13 ] ],
+   [
     "Mark", 3,
     [ 10 ] ],
    [
@@ -34474,6 +35530,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Mete (measure out)",
   "refs": [
+   [
+    "Exodus", 16,
+    [ 18 ] ],
    [
     "Matthew", 7,
     [ 2 ] ],
@@ -34861,6 +35920,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Spoil (plunder, carry off the goods)",
   "refs": [
+   [
+    "Exodus", 3,
+    [ 22 ] ],
+   [
+    "Exodus", 15,
+    [ 9 ] ],
    [
     "Matthew", 12,
     [ 29 ] ],
@@ -35888,6 +36953,9 @@ window.GLOSSARY = [
   "name": "The commandments (the Ten Commandments)",
   "refs": [
    [
+    "Exodus", 20,
+    [ 12 ] ],
+   [
     "Matthew", 15,
     [ 4 ] ],
    [
@@ -36539,6 +37607,9 @@ window.GLOSSARY = [
   "name": "Not meet (not fitting, not right)",
   "refs": [
    [
+    "Exodus", 8,
+    [ 26 ] ],
+   [
     "Matthew", 15,
     [ 26 ] ],
    [
@@ -37048,6 +38119,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Minister (a servant who waits on others)",
   "refs": [
+   [
+    "Exodus", 24,
+    [ 13 ] ],
    [
     "Matthew", 20,
     [ 26, 28 ] ],
@@ -37676,6 +38750,12 @@ window.GLOSSARY = [
   "name": "Neighbour (whoever is near you in need)",
   "refs": [
    [
+    "Exodus", 20,
+    [ 16, 17 ] ],
+   [
+    "Exodus", 21,
+    [ 14 ] ],
+   [
     "Matthew", 5,
     [ 43 ] ],
    [
@@ -37777,6 +38857,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The finger of God (God's own power)",
   "refs": [
+   [
+    "Exodus", 8,
+    [ 19 ] ],
    [
     "Luke", 11,
     [ 20 ] ] ]
@@ -38867,6 +39950,9 @@ window.GLOSSARY = [
     "Genesis", 38,
     [ 17, 20, 23 ] ],
    [
+    "Exodus", 23,
+    [ 19 ] ],
+   [
     "Luke", 15,
     [ 29 ] ] ]
  },
@@ -39452,6 +40538,15 @@ window.GLOSSARY = [
   "name": "Unleavened bread (bread made without yeast; the feast after Passover)",
   "refs": [
    [
+    "Exodus", 12,
+    [ 8, 15, 17, 18, 20, 39 ] ],
+   [
+    "Exodus", 13,
+    [ 6 ] ],
+   [
+    "Exodus", 23,
+    [ 15 ] ],
+   [
     "Matthew", 26,
     [ 17 ] ],
    [
@@ -39721,6 +40816,12 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 42, 53 ] ],
+   [
+    "Exodus", 3,
+    [ 6, 15, 16 ] ],
+   [
+    "Exodus", 4,
+    [ 5 ] ],
    [
     "Matthew", 22,
     [ 32 ] ],
@@ -41999,6 +43100,9 @@ window.GLOSSARY = [
     "Genesis", 22,
     [ 4 ] ],
    [
+    "Exodus", 24,
+    [ 1 ] ],
+   [
     "Acts", 2,
     [ 39 ] ],
    [
@@ -42230,6 +43334,9 @@ window.GLOSSARY = [
     "Genesis", 44,
     [ 16 ] ],
    [
+    "Exodus", 20,
+    [ 5 ] ],
+   [
     "Acts", 1,
     [ 18 ] ],
    [
@@ -42379,6 +43486,9 @@ window.GLOSSARY = [
    [
     "Genesis", 43,
     [ 7 ] ],
+   [
+    "Exodus", 13,
+    [ 19 ] ],
    [
     "Acts", 4,
     [ 17 ] ],
@@ -43367,6 +44477,9 @@ window.GLOSSARY = [
   "name": "The residue (the rest, the remainder)",
   "refs": [
    [
+    "Exodus", 10,
+    [ 5 ] ],
+   [
     "Acts", 15,
     [ 17 ] ] ]
  },
@@ -43864,6 +44977,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Midnight (the middle of the night)",
   "refs": [
+   [
+    "Exodus", 11,
+    [ 4 ] ],
+   [
+    "Exodus", 12,
+    [ 29 ] ],
    [
     "Acts", 16,
     [ 25 ] ] ]
@@ -44543,6 +45662,12 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 1, 2, 4, 7, 8, 14, 15, 16, 17, 19, 22, 23, 24, 25, 26 ] ],
    [
+    "Exodus", 1,
+    [ 5, 6, 8 ] ],
+   [
+    "Exodus", 13,
+    [ 19 ] ],
+   [
     "Acts", 7,
     [ 9, 13, 14, 18 ] ],
    [
@@ -44633,6 +45758,54 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 4, 6, 7 ] ],
    [
+    "Exodus", 1,
+    [ 11, 19, 22 ] ],
+   [
+    "Exodus", 2,
+    [ 5, 7, 8, 9, 10, 15 ] ],
+   [
+    "Exodus", 3,
+    [ 10, 11 ] ],
+   [
+    "Exodus", 4,
+    [ 21, 22 ] ],
+   [
+    "Exodus", 5,
+    [ 1, 2, 5, 6, 10, 14, 15, 20, 21, 23 ] ],
+   [
+    "Exodus", 6,
+    [ 1, 11, 12, 13, 27, 29, 30 ] ],
+   [
+    "Exodus", 7,
+    [ 1, 2, 3, 4, 7, 9, 10, 11, 13, 14, 15, 20, 22, 23 ] ],
+   [
+    "Exodus", 8,
+    [ 1, 8, 9, 12, 15, 19, 20, 24, 25, 28, 29, 30, 31, 32 ] ],
+   [
+    "Exodus", 9,
+    [ 1, 7, 8, 10, 12, 13, 20, 27, 33, 34, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 3, 6, 7, 8, 11, 16, 18, 20, 24, 27, 28 ] ],
+   [
+    "Exodus", 11,
+    [ 1, 3, 5, 8, 9, 10 ] ],
+   [
+    "Exodus", 12,
+    [ 29, 30 ] ],
+   [
+    "Exodus", 13,
+    [ 15, 17 ] ],
+   [
+    "Exodus", 14,
+    [ 3, 4, 5, 8, 9, 10, 17, 18, 23, 28 ] ],
+   [
+    "Exodus", 15,
+    [ 4, 19 ] ],
+   [
+    "Exodus", 18,
+    [ 4, 8, 10 ] ],
+   [
     "Acts", 7,
     [ 10, 13, 21 ] ],
    [
@@ -44656,6 +45829,18 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "The Red sea",
   "refs": [
+   [
+    "Exodus", 10,
+    [ 19 ] ],
+   [
+    "Exodus", 13,
+    [ 18 ] ],
+   [
+    "Exodus", 15,
+    [ 4, 22 ] ],
+   [
+    "Exodus", 23,
+    [ 31 ] ],
    [
     "Acts", 7,
     [ 36 ] ],
@@ -44732,6 +45917,9 @@ window.GLOSSARY = [
     "Genesis", 34,
     [ 14 ] ],
    [
+    "Exodus", 6,
+    [ 12, 30 ] ],
+   [
     "Acts", 7,
     [ 51 ] ] ]
  },
@@ -44740,6 +45928,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Entreat evil (treat cruelly)",
   "refs": [
+   [
+    "Exodus", 5,
+    [ 22 ] ],
    [
     "Acts", 7,
     [ 6, 19 ] ] ]
@@ -44765,6 +45956,9 @@ window.GLOSSARY = [
     "Genesis", 47,
     [ 4 ] ],
    [
+    "Exodus", 12,
+    [ 40, 48, 49 ] ],
+   [
     "Acts", 7,
     [ 6 ] ],
    [
@@ -44782,6 +45976,9 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 3 ] ],
+   [
+    "Exodus", 15,
+    [ 27 ] ],
    [
     "Acts", 7,
     [ 14 ] ],
@@ -44842,6 +46039,24 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 2 ] ],
+   [
+    "Exodus", 3,
+    [ 18 ] ],
+   [
+    "Exodus", 4,
+    [ 1, 8, 9 ] ],
+   [
+    "Exodus", 6,
+    [ 30 ] ],
+   [
+    "Exodus", 7,
+    [ 4, 22 ] ],
+   [
+    "Exodus", 11,
+    [ 9 ] ],
+   [
+    "Exodus", 15,
+    [ 26 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -45038,6 +46253,9 @@ window.GLOSSARY = [
     "Genesis", 25,
     [ 10 ] ],
    [
+    "Exodus", 15,
+    [ 16 ] ],
+   [
     "Acts", 8,
     [ 20 ] ],
    [
@@ -45094,6 +46312,18 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Desert (empty, dry country)",
   "refs": [
+   [
+    "Exodus", 3,
+    [ 1 ] ],
+   [
+    "Exodus", 5,
+    [ 3 ] ],
+   [
+    "Exodus", 19,
+    [ 2 ] ],
+   [
+    "Exodus", 23,
+    [ 31 ] ],
    [
     "Acts", 8,
     [ 26 ] ] ]
@@ -45632,6 +46862,9 @@ window.GLOSSARY = [
   "name": "Drave (drove, forced away)",
   "refs": [
    [
+    "Exodus", 14,
+    [ 25 ] ],
+   [
     "Acts", 7,
     [ 45 ] ],
    [
@@ -45652,6 +46885,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Eloquent (a gifted, powerful speaker)",
   "refs": [
+   [
+    "Exodus", 4,
+    [ 10 ] ],
    [
     "Acts", 18,
     [ 24 ] ] ]
@@ -46826,6 +48062,9 @@ window.GLOSSARY = [
     "Genesis", 23,
     [ 10, 13, 16 ] ],
    [
+    "Exodus", 24,
+    [ 7 ] ],
+   [
     "Acts", 22,
     [ 22 ] ] ]
  },
@@ -47270,6 +48509,9 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 15 ] ],
    [
+    "Exodus", 13,
+    [ 17 ] ],
+   [
     "Romans", 5,
     [ 7 ] ],
    [
@@ -47428,6 +48670,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Reign (rule like a king)",
   "refs": [
+   [
+    "Exodus", 15,
+    [ 18 ] ],
    [
     "Romans", 5,
     [ 14, 17, 21 ] ],
@@ -47678,6 +48923,9 @@ window.GLOSSARY = [
   "name": "Holiness (set apart for God)",
   "refs": [
    [
+    "Exodus", 15,
+    [ 11 ] ],
+   [
     "Romans", 6,
     [ 19, 22 ] ],
    [
@@ -47710,6 +48958,9 @@ window.GLOSSARY = [
    [
     "Genesis", 31,
     [ 7, 8, 41 ] ],
+   [
+    "Exodus", 2,
+    [ 9 ] ],
    [
     "Romans", 6,
     [ 23 ] ],
@@ -49403,6 +50654,9 @@ window.GLOSSARY = [
     "Genesis", 24,
     [ 21 ] ],
    [
+    "Exodus", 2,
+    [ 4 ] ],
+   [
     "Romans", 8,
     [ 23 ] ] ]
  },
@@ -49708,6 +50962,27 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Harden (make a heart stubborn; Pharaoh hardened his own heart first)",
   "refs": [
+   [
+    "Exodus", 4,
+    [ 21 ] ],
+   [
+    "Exodus", 7,
+    [ 3, 13, 14, 22 ] ],
+   [
+    "Exodus", 8,
+    [ 15, 19, 32 ] ],
+   [
+    "Exodus", 9,
+    [ 7, 12, 34, 35 ] ],
+   [
+    "Exodus", 10,
+    [ 1, 20, 27 ] ],
+   [
+    "Exodus", 11,
+    [ 10 ] ],
+   [
+    "Exodus", 14,
+    [ 4, 8, 17 ] ],
    [
     "Romans", 9,
     [ 18 ] ],
@@ -50708,6 +51983,9 @@ window.GLOSSARY = [
     "Genesis", 15,
     [ 7, 8 ] ],
    [
+    "Exodus", 23,
+    [ 30 ] ],
+   [
     "1 Corinthians", 6,
     [ 9, 10 ] ],
    [
@@ -50998,6 +52276,9 @@ window.GLOSSARY = [
    [
     "Genesis", 24,
     [ 16, 43 ] ],
+   [
+    "Exodus", 22,
+    [ 17 ] ],
    [
     "1 Corinthians", 7,
     [ 25, 28, 34, 36, 37 ] ] ]
@@ -51370,6 +52651,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The destroyer (the angel God sent in judgment)",
   "refs": [
+   [
+    "Exodus", 12,
+    [ 23 ] ],
    [
     "1 Corinthians", 10,
     [ 10 ] ] ]
@@ -52244,6 +53528,9 @@ window.GLOSSARY = [
     "Genesis", 42,
     [ 21 ] ],
    [
+    "Exodus", 6,
+    [ 9 ] ],
+   [
     "2 Corinthians", 2,
     [ 4 ] ] ]
  },
@@ -52348,6 +53635,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Tables of stone (the Ten Commandments), and tables of the heart",
   "refs": [
+   [
+    "Exodus", 24,
+    [ 12 ] ],
    [
     "2 Corinthians", 3,
     [ 3 ] ] ]
@@ -53299,6 +54589,15 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Mount Sinai (where God gave the law, in Arabia)",
   "refs": [
+   [
+    "Exodus", 16,
+    [ 1 ] ],
+   [
+    "Exodus", 19,
+    [ 1, 2, 11, 18, 20, 23 ] ],
+   [
+    "Exodus", 24,
+    [ 16 ] ],
    [
     "Galatians", 4,
     [ 24, 25 ] ],
@@ -54259,6 +55558,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Firstborn (first in rank, the heir; not the first one made)",
   "refs": [
+   [
+    "Exodus", 4,
+    [ 22, 23 ] ],
    [
     "Colossians", 1,
     [ 15, 18 ] ],
@@ -56597,6 +57899,12 @@ window.GLOSSARY = [
     "Genesis", 23,
     [ 8 ] ],
    [
+    "Exodus", 8,
+    [ 9, 28, 29 ] ],
+   [
+    "Exodus", 10,
+    [ 17, 18 ] ],
+   [
     "1 Timothy", 5,
     [ 1 ] ] ]
  },
@@ -56750,6 +58058,15 @@ window.GLOSSARY = [
   "name": "Jannes and Jambres (the Egyptian magicians who copied Moses, by Jewish tradition)",
   "refs": [
    [
+    "Exodus", 7,
+    [ 11, 22 ] ],
+   [
+    "Exodus", 8,
+    [ 7, 18, 19 ] ],
+   [
+    "Exodus", 9,
+    [ 11 ] ],
+   [
     "2 Timothy", 3,
     [ 8 ] ] ]
  },
@@ -56812,6 +58129,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wax (an old word for grow)",
   "refs": [
+   [
+    "Exodus", 22,
+    [ 24 ] ],
    [
     "2 Timothy", 3,
     [ 13 ] ],
@@ -57968,6 +59288,12 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 24 ] ],
    [
+    "Exodus", 13,
+    [ 5, 11, 19 ] ],
+   [
+    "Exodus", 17,
+    [ 16 ] ],
+   [
     "Amos", 4,
     [ 2 ] ],
    [
@@ -58054,6 +59380,24 @@ window.GLOSSARY = [
    [
     "Genesis", 2,
     [ 2, 3 ] ],
+   [
+    "Exodus", 12,
+    [ 15, 16 ] ],
+   [
+    "Exodus", 13,
+    [ 6 ] ],
+   [
+    "Exodus", 16,
+    [ 26, 27, 29, 30 ] ],
+   [
+    "Exodus", 20,
+    [ 10, 11 ] ],
+   [
+    "Exodus", 23,
+    [ 12 ] ],
+   [
+    "Exodus", 24,
+    [ 16 ] ],
    [
     "Hebrews", 4,
     [ 4 ] ] ]
@@ -58543,6 +59887,9 @@ window.GLOSSARY = [
   "kind": "person",
   "name": "Pharaoh's daughter (who drew baby Moses out of the Nile and raised him)",
   "refs": [
+   [
+    "Exodus", 2,
+    [ 7, 8, 9, 10 ] ],
    [
     "Acts", 7,
     [ 21 ] ],
@@ -59363,6 +60710,15 @@ window.GLOSSARY = [
     "Genesis", 50,
     [ 11 ] ],
    [
+    "Exodus", 8,
+    [ 24 ] ],
+   [
+    "Exodus", 9,
+    [ 3, 18, 24 ] ],
+   [
+    "Exodus", 10,
+    [ 14 ] ],
+   [
     "1 John", 5,
     [ 3 ] ] ]
  },
@@ -59483,6 +60839,9 @@ window.GLOSSARY = [
   "name": "Lively (old word for living, alive)",
   "refs": [
    [
+    "Exodus", 1,
+    [ 19 ] ],
+   [
     "1 Peter", 1,
     [ 3 ] ],
    [
@@ -59530,6 +60889,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Redeemed (bought back, set free by a price)",
   "refs": [
+   [
+    "Exodus", 15,
+    [ 13 ] ],
+   [
+    "Exodus", 21,
+    [ 8 ] ],
    [
     "1 Peter", 1,
     [ 18 ] ],
@@ -59608,6 +60973,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "A chosen generation, an holy nation (God's own family)",
   "refs": [
+   [
+    "Exodus", 19,
+    [ 6 ] ],
    [
     "1 Peter", 2,
     [ 9 ] ] ]
@@ -60061,6 +61429,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Wrest (twist and wrench until it says what the reader wants)",
   "refs": [
+   [
+    "Exodus", 23,
+    [ 2, 6 ] ],
    [
     "2 Peter", 3,
     [ 16 ] ] ]
@@ -60659,6 +62030,12 @@ window.GLOSSARY = [
     "Genesis", 49,
     [ 3 ] ],
    [
+    "Exodus", 1,
+    [ 2 ] ],
+   [
+    "Exodus", 6,
+    [ 14 ] ],
+   [
     "Revelation", 7,
     [ 5 ] ] ]
  },
@@ -60715,6 +62092,9 @@ window.GLOSSARY = [
    [
     "Genesis", 49,
     [ 14 ] ],
+   [
+    "Exodus", 1,
+    [ 3 ] ],
    [
     "Revelation", 7,
     [ 7 ] ] ]
@@ -62194,6 +63574,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "A great hail (hailstones about a talent each, like the hail on Egypt)",
   "refs": [
+   [
+    "Exodus", 9,
+    [ 18, 19, 22, 23, 24, 25, 26, 28, 29, 33, 34 ] ],
    [
     "Revelation", 16,
     [ 21 ] ] ]
@@ -63849,7 +65232,10 @@ window.GLOSSARY = [
     [ 7 ] ],
    [
     "Genesis", 34,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Exodus", 23,
+    [ 23 ] ] ]
  },
  {
   "id": "chedorlaomer",
@@ -64011,7 +65397,10 @@ window.GLOSSARY = [
     [ 1 ] ],
    [
     "Genesis", 25,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Exodus", 15,
+    [ 22 ] ] ]
  },
  {
   "id": "beer-lahai-roi",
@@ -64056,6 +65445,9 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Genesis", 48,
+    [ 3 ] ],
+   [
+    "Exodus", 6,
     [ 3 ] ] ]
  },
  {
@@ -64578,7 +65970,13 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Genesis", 36,
-    [ 2 ] ] ]
+    [ 2 ] ],
+   [
+    "Exodus", 13,
+    [ 5 ] ],
+   [
+    "Exodus", 23,
+    [ 23, 28 ] ] ]
  },
  {
   "id": "deborah-rebekahs-nurse",
@@ -64641,7 +66039,10 @@ window.GLOSSARY = [
     [ 19, 21 ] ],
    [
     "Genesis", 49,
-    [ 27 ] ] ]
+    [ 27 ] ],
+   [
+    "Exodus", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "rachels-pillar",
@@ -64731,7 +66132,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 36,
-    [ 15, 16, 17, 18, 19, 21, 29, 30, 40, 41, 42, 43 ] ] ]
+    [ 15, 16, 17, 18, 19, 21, 29, 30, 40, 41, 42, 43 ] ],
+   [
+    "Exodus", 15,
+    [ 15 ] ] ]
  },
  {
   "id": "dothan",
@@ -65013,7 +66417,13 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Genesis", 49,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Exodus", 1,
+    [ 2 ] ],
+   [
+    "Exodus", 6,
+    [ 15 ] ] ]
  },
  {
   "id": "levi-son-of-jacob",
@@ -65034,7 +66444,13 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Genesis", 49,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Exodus", 1,
+    [ 2 ] ],
+   [
+    "Exodus", 6,
+    [ 16, 19 ] ] ]
  },
  {
   "id": "judah-son-of-jacob",
@@ -65064,7 +66480,10 @@ window.GLOSSARY = [
     [ 12, 28 ] ],
    [
     "Genesis", 49,
-    [ 8, 9, 10 ] ] ]
+    [ 8, 9, 10 ] ],
+   [
+    "Exodus", 1,
+    [ 2 ] ] ]
  },
  {
   "id": "dan-son-of-jacob",
@@ -65082,7 +66501,10 @@ window.GLOSSARY = [
     [ 23 ] ],
    [
     "Genesis", 49,
-    [ 16, 17 ] ] ]
+    [ 16, 17 ] ],
+   [
+    "Exodus", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "naphtali",
@@ -65100,7 +66522,10 @@ window.GLOSSARY = [
     [ 24 ] ],
    [
     "Genesis", 49,
-    [ 21 ] ] ]
+    [ 21 ] ],
+   [
+    "Exodus", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "gad",
@@ -65118,7 +66543,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Genesis", 49,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Exodus", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "asher",
@@ -65136,7 +66564,10 @@ window.GLOSSARY = [
     [ 17 ] ],
    [
     "Genesis", 49,
-    [ 20 ] ] ]
+    [ 20 ] ],
+   [
+    "Exodus", 1,
+    [ 4 ] ] ]
  },
  {
   "id": "zebulun",
@@ -65154,7 +66585,10 @@ window.GLOSSARY = [
     [ 14 ] ],
    [
     "Genesis", 49,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Exodus", 1,
+    [ 3 ] ] ]
  },
  {
   "id": "dinah",
@@ -65373,7 +66807,13 @@ window.GLOSSARY = [
     [ 1, 4, 6, 27 ] ],
    [
     "Genesis", 50,
-    [ 8 ] ] ]
+    [ 8 ] ],
+   [
+    "Exodus", 8,
+    [ 22 ] ],
+   [
+    "Exodus", 9,
+    [ 26 ] ] ]
  },
  {
   "id": "wagons",
@@ -65433,7 +66873,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 47,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Exodus", 1,
+    [ 11 ] ],
+   [
+    "Exodus", 12,
+    [ 37 ] ] ]
  },
  {
   "id": "fifth-part",
@@ -65460,7 +66906,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 47,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Exodus", 6,
+    [ 4 ] ] ]
  },
  {
   "id": "hand-under-the-thigh",
@@ -65517,7 +66966,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 50,
-    [ 25 ] ] ]
+    [ 25 ] ],
+   [
+    "Exodus", 13,
+    [ 19 ] ] ]
  },
  {
   "id": "machir",
@@ -65527,5 +66979,869 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 23 ] ] ]
+ },
+ {
+  "id": "pithom",
+  "kind": "place",
+  "name": "Pithom (a store city Israel built for Pharaoh)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "shiphrah",
+  "kind": "person",
+  "name": "Shiphrah (a Hebrew midwife who feared God)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "puah",
+  "kind": "person",
+  "name": "Puah (a Hebrew midwife who feared God)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "hebrew-midwives",
+  "kind": "person",
+  "name": "The Hebrew midwives (who feared God and saved the baby boys)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 15, 17, 18, 19, 20, 21 ] ] ]
+ },
+ {
+  "id": "taskmasters",
+  "kind": "term",
+  "name": "Taskmasters (slave drivers set over Israel in Egypt)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 11 ] ],
+   [
+    "Exodus", 3,
+    [ 7 ] ],
+   [
+    "Exodus", 5,
+    [ 6, 10, 13, 14 ] ] ]
+ },
+ {
+  "id": "rigour",
+  "kind": "term",
+  "name": "Rigour (harsh, merciless severity)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 13, 14 ] ] ]
+ },
+ {
+  "id": "treasure-cities",
+  "kind": "term",
+  "name": "Treasure cities (store cities for Pharaoh's grain and supplies)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 11 ] ] ]
+ },
+ {
+  "id": "birthstools",
+  "kind": "term",
+  "name": "The stools (the low seat a Hebrew woman sat on to give birth)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "reuel",
+  "kind": "person",
+  "name": "Reuel (another name for Jethro, the priest of Midian)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "zipporah",
+  "kind": "person",
+  "name": "Zipporah (Jethro's daughter, Moses' wife)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 21 ] ],
+   [
+    "Exodus", 4,
+    [ 25 ] ],
+   [
+    "Exodus", 18,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "gershom",
+  "kind": "person",
+  "name": "Gershom (Moses' son: \"a stranger there\")",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 22 ] ],
+   [
+    "Exodus", 18,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "ark-of-bulrushes",
+  "kind": "term",
+  "name": "The ark of bulrushes (the little basket-boat that carried baby Moses)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "flags",
+  "kind": "term",
+  "name": "Flags (reeds growing in the river's shallows)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 3, 5 ] ] ]
+ },
+ {
+  "id": "slime-and-pitch",
+  "kind": "term",
+  "name": "Slime and pitch (tar, to make the basket waterproof)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "goodly",
+  "kind": "term",
+  "name": "Goodly (fine, good-looking)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "stranger-in-a-strange-land",
+  "kind": "term",
+  "name": "A stranger in a strange land (Moses' words, and Gershom's name)",
+  "refs": [
+   [
+    "Exodus", 2,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "jethro",
+  "kind": "person",
+  "name": "Jethro (the priest of Midian, Moses' father in law)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 1 ] ],
+   [
+    "Exodus", 4,
+    [ 18 ] ],
+   [
+    "Exodus", 18,
+    [ 1, 2, 5, 6, 9, 10, 12 ] ] ]
+ },
+ {
+  "id": "hittites",
+  "kind": "person",
+  "name": "The Hittites (one of the peoples of Canaan)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 8, 17 ] ],
+   [
+    "Exodus", 13,
+    [ 5 ] ],
+   [
+    "Exodus", 23,
+    [ 23, 28 ] ] ]
+ },
+ {
+  "id": "burning-bush",
+  "kind": "term",
+  "name": "The burning bush (the bush that burned and was not consumed)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 2, 3, 4 ] ] ]
+ },
+ {
+  "id": "holy-ground",
+  "kind": "term",
+  "name": "Holy ground (the place where God was)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "milk-and-honey",
+  "kind": "term",
+  "name": "A land flowing with milk and honey (a good, rich land)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 8, 17 ] ],
+   [
+    "Exodus", 13,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "token",
+  "kind": "term",
+  "name": "Token (a sign, a proof)",
+  "refs": [
+   [
+    "Exodus", 3,
+    [ 12 ] ],
+   [
+    "Exodus", 12,
+    [ 13 ] ],
+   [
+    "Exodus", 13,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "bricks-and-straw",
+  "kind": "term",
+  "name": "Bricks and straw (the slaves' work in Egypt: mud bricks mixed with chopped straw)",
+  "refs": [
+   [
+    "Exodus", 1,
+    [ 14 ] ],
+   [
+    "Exodus", 5,
+    [ 7, 8, 10, 11, 12, 13, 14, 16, 18, 19 ] ] ]
+ },
+ {
+  "id": "pestilence",
+  "kind": "term",
+  "name": "Pestilence (a deadly disease that spreads)",
+  "refs": [
+   [
+    "Exodus", 5,
+    [ 3 ] ],
+   [
+    "Exodus", 9,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "jehovah",
+  "kind": "term",
+  "name": "JEHOVAH (the name of God that the KJV usually prints as the LORD; from \"I AM\")",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "kohath",
+  "kind": "person",
+  "name": "Kohath, Levi's second son, grandfather of Moses and Aaron",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 16, 18 ] ] ]
+ },
+ {
+  "id": "gershon-and-merari",
+  "kind": "person",
+  "name": "Gershon and Merari, Levi's other sons",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 16, 17, 19 ] ] ]
+ },
+ {
+  "id": "amram",
+  "kind": "person",
+  "name": "Amram, Kohath's son, the father of Aaron and Moses",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 18, 20 ] ] ]
+ },
+ {
+  "id": "jochebed",
+  "kind": "person",
+  "name": "Jochebed, Amram's wife and the mother of Aaron and Moses",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "korah",
+  "kind": "person",
+  "name": "Korah, Izhar's son, and the Korhites (his family)",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 21, 24 ] ] ]
+ },
+ {
+  "id": "elisheba",
+  "kind": "person",
+  "name": "Elisheba, Aaron's wife, sister of Naashon (Nahshon) of Judah",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "aarons-sons",
+  "kind": "person",
+  "name": "Nadab, Abihu, Eleazar and Ithamar, the sons of Aaron",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 23, 25 ] ],
+   [
+    "Exodus", 24,
+    [ 1, 9 ] ] ]
+ },
+ {
+  "id": "phinehas",
+  "kind": "person",
+  "name": "Phinehas, Eleazar's son, Aaron's grandson",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 25 ] ] ]
+ },
+ {
+  "id": "sons-of-reuben",
+  "kind": "person",
+  "name": "Reuben's sons: Hanoch, Pallu, Hezron and Carmi",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "sons-of-simeon",
+  "kind": "person",
+  "name": "Simeon's sons: Jemuel, Jamin, Ohad, Jachin, Zohar and Shaul",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "grandsons-of-levi",
+  "kind": "person",
+  "name": "Levi's grandsons and great-grandsons: Libni, Shimi, Izhar, Hebron, Uzziel, Mahali, Mushi, Nepheg, Zichri, Mishael, Elzaphan, Zithri, Assir, Elkanah, Abiasaph",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 17, 18, 19, 21, 22, 24 ] ] ]
+ },
+ {
+  "id": "putiel-and-amminadab",
+  "kind": "person",
+  "name": "Putiel and Amminadab, fathers of the wives of Eleazar and Aaron",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 23, 25 ] ] ]
+ },
+ {
+  "id": "murrain",
+  "kind": "term",
+  "name": "Murrain (a deadly plague that kills farm animals)",
+  "refs": [
+   [
+    "Exodus", 9,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "blains",
+  "kind": "term",
+  "name": "Blains (blisters, sores that break open; the boils of Egypt)",
+  "refs": [
+   [
+    "Exodus", 9,
+    [ 9, 10 ] ] ]
+ },
+ {
+  "id": "firstborn-passover",
+  "kind": "term",
+  "name": "The firstborn (the first son born, who held the family's place; the one the LORD struck at midnight)",
+  "refs": [
+   [
+    "Exodus", 4,
+    [ 22, 23 ] ],
+   [
+    "Exodus", 6,
+    [ 14 ] ],
+   [
+    "Exodus", 11,
+    [ 5 ] ],
+   [
+    "Exodus", 12,
+    [ 12, 29 ] ],
+   [
+    "Exodus", 13,
+    [ 2, 13, 15 ] ],
+   [
+    "Exodus", 22,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "passover-lamb",
+  "kind": "term",
+  "name": "The passover lamb (a lamb without blemish, killed in the firstborn's place)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 3, 4, 5, 21 ] ] ]
+ },
+ {
+  "id": "lintel-and-posts",
+  "kind": "term",
+  "name": "The lintel and the side posts (the door frame where the blood was struck)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 7, 22, 23 ] ] ]
+ },
+ {
+  "id": "bitter-herbs",
+  "kind": "term",
+  "name": "Bitter herbs (eaten with the lamb, to remember the bitter bondage)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "mixed-multitude",
+  "kind": "term",
+  "name": "A mixed multitude (people who were not Israelites, who went out of Egypt with them)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 38 ] ] ]
+ },
+ {
+  "id": "succoth-exodus",
+  "kind": "place",
+  "name": "Succoth (the first stop after Rameses, on the way out of Egypt)",
+  "refs": [
+   [
+    "Exodus", 12,
+    [ 37 ] ],
+   [
+    "Exodus", 13,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "etham",
+  "kind": "place",
+  "name": "Etham (the camp at the edge of the wilderness)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "firstborn-exodus",
+  "kind": "term",
+  "name": "Firstborn (the first son, who belonged to the LORD)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 2, 13, 15 ] ] ]
+ },
+ {
+  "id": "matrix",
+  "kind": "term",
+  "name": "Matrix (the womb)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 12, 15 ] ] ]
+ },
+ {
+  "id": "firstling",
+  "kind": "term",
+  "name": "Firstling (the first young one born to an animal)",
+  "refs": [
+   [
+    "Genesis", 4,
+    [ 4 ] ],
+   [
+    "Exodus", 13,
+    [ 12, 13 ] ] ]
+ },
+ {
+  "id": "frontlets",
+  "kind": "term",
+  "name": "Frontlets (a reminder worn between the eyes)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "harnessed",
+  "kind": "term",
+  "name": "Harnessed (armed and in ranks)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "abib",
+  "kind": "term",
+  "name": "Abib (the month of green ears of barley, later Nisan)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 4 ] ],
+   [
+    "Exodus", 23,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "pillar-of-cloud-and-fire",
+  "kind": "term",
+  "name": "The pillar of cloud and of fire (the LORD going before Israel)",
+  "refs": [
+   [
+    "Exodus", 13,
+    [ 21, 22 ] ],
+   [
+    "Exodus", 14,
+    [ 19, 24 ] ] ]
+ },
+ {
+  "id": "pi-hahiroth",
+  "kind": "place",
+  "name": "Pi-hahiroth (where Israel camped by the sea)",
+  "refs": [
+   [
+    "Exodus", 14,
+    [ 2, 9 ] ] ]
+ },
+ {
+  "id": "migdol",
+  "kind": "place",
+  "name": "Migdol (a place by the sea, beside Pi-hahiroth)",
+  "refs": [
+   [
+    "Exodus", 14,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "baal-zephon",
+  "kind": "place",
+  "name": "Baal-zephon (a place across from Israel's camp by the sea)",
+  "refs": [
+   [
+    "Exodus", 14,
+    [ 2, 9 ] ] ]
+ },
+ {
+  "id": "marah",
+  "kind": "place",
+  "name": "Marah (\"bitter\"), where the water was bitter",
+  "refs": [
+   [
+    "Exodus", 15,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "elim",
+  "kind": "place",
+  "name": "Elim (the oasis with twelve wells and seventy palm trees)",
+  "refs": [
+   [
+    "Exodus", 15,
+    [ 27 ] ],
+   [
+    "Exodus", 16,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "timbrel",
+  "kind": "term",
+  "name": "Timbrel (a hand drum)",
+  "refs": [
+   [
+    "Exodus", 15,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "congealed",
+  "kind": "term",
+  "name": "Congealed (made solid)",
+  "refs": [
+   [
+    "Exodus", 15,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "wilderness-of-sin",
+  "kind": "place",
+  "name": "The wilderness of Sin (between Elim and Sinai; the name has nothing to do with wrongdoing)",
+  "refs": [
+   [
+    "Exodus", 16,
+    [ 1 ] ],
+   [
+    "Exodus", 17,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "omer",
+  "kind": "term",
+  "name": "Omer (a dry measure, about two quarts: a tenth of an ephah)",
+  "refs": [
+   [
+    "Exodus", 16,
+    [ 16, 18, 22, 32, 33, 36 ] ] ]
+ },
+ {
+  "id": "quails",
+  "kind": "term",
+  "name": "Quails (the small birds the LORD sent into the camp)",
+  "refs": [
+   [
+    "Exodus", 16,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "flesh-pots",
+  "kind": "term",
+  "name": "The flesh pots (Egypt's meat pots, remembered kindly)",
+  "refs": [
+   [
+    "Exodus", 16,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "rephidim",
+  "kind": "place",
+  "name": "Rephidim (where there was no water, and where Amalek fought Israel)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 1, 8 ] ],
+   [
+    "Exodus", 19,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "massah-and-meribah",
+  "kind": "place",
+  "name": "Massah and Meribah (\"testing\" and \"quarrelling\", where Israel tempted the LORD)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "amalek",
+  "kind": "person",
+  "name": "Amalek, the Amalekites (the desert raiders who attacked Israel at Rephidim)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 8, 9, 10, 11, 13, 14, 16 ] ] ]
+ },
+ {
+  "id": "joshua-son-of-nun",
+  "kind": "person",
+  "name": "Joshua (Moses' young helper, who led Israel's fighting men and later the nation)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 9, 10, 13, 14 ] ],
+   [
+    "Exodus", 24,
+    [ 13 ] ] ]
+ },
+ {
+  "id": "hur",
+  "kind": "person",
+  "name": "Hur (who held up Moses' hands with Aaron)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 10, 12 ] ],
+   [
+    "Exodus", 24,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "jehovah-nissi",
+  "kind": "term",
+  "name": "Jehovah-nissi (\"the LORD is my banner\", the altar Moses built)",
+  "refs": [
+   [
+    "Exodus", 17,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "eliezer-son-of-moses",
+  "kind": "person",
+  "name": "Eliezer (Moses' second son: \"my God is help\")",
+  "refs": [
+   [
+    "Exodus", 18,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "restitution",
+  "kind": "term",
+  "name": "Restitution (paying back what you took, and more)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 1, 3, 4, 5, 6, 12 ] ] ]
+ },
+ {
+  "id": "witch",
+  "kind": "term",
+  "name": "A witch (one who deals with spirits and spells; a capital crime in Israel's law)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 18 ] ] ]
+ },
+ {
+  "id": "stranger-in-the-land",
+  "kind": "person",
+  "name": "The stranger (a foreigner living among Israel, under God's protection)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 21 ] ],
+   [
+    "Exodus", 23,
+    [ 9, 12 ] ] ]
+ },
+ {
+  "id": "widow-in-israel",
+  "kind": "person",
+  "name": "The widow (a woman with no husband, under God's special care)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 22, 24 ] ] ]
+ },
+ {
+  "id": "dowry",
+  "kind": "term",
+  "name": "Dowry, endow (the bride-price a man paid)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 16, 17 ] ] ]
+ },
+ {
+  "id": "gods-as-judges",
+  "kind": "term",
+  "name": "“The gods” (here, the judges and rulers who speak with the law's authority)",
+  "refs": [
+   [
+    "Exodus", 22,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "angel-before-israel",
+  "kind": "person",
+  "name": "The Angel God sent before Israel (“my name is in him”)",
+  "refs": [
+   [
+    "Exodus", 23,
+    [ 20, 23 ] ] ]
+ },
+ {
+  "id": "hornets",
+  "kind": "term",
+  "name": "Hornets (the terror God sent ahead of Israel)",
+  "refs": [
+   [
+    "Exodus", 23,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "three-feasts",
+  "kind": "term",
+  "name": "The three feasts (unleavened bread, harvest, ingathering)",
+  "refs": [
+   [
+    "Exodus", 23,
+    [ 14, 15, 16 ] ] ]
+ },
+ {
+  "id": "nadab",
+  "kind": "person",
+  "name": "Nadab, Aaron's eldest son",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 1, 9 ] ] ]
+ },
+ {
+  "id": "abihu",
+  "kind": "person",
+  "name": "Abihu, Aaron's second son",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 1, 9 ] ] ]
+ },
+ {
+  "id": "blood-of-the-covenant",
+  "kind": "term",
+  "name": "The blood of the covenant (sprinkled on the people; Jesus used the words at the Last Supper)",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "peace-offerings",
+  "kind": "term",
+  "name": "Peace offerings (sacrifices shared as a meal with God)",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 5 ] ] ]
+ },
+ {
+  "id": "sapphire",
+  "kind": "term",
+  "name": "Sapphire (a deep blue stone, like the sky)",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "forty-days-on-sinai",
+  "kind": "term",
+  "name": "Forty days and forty nights (Moses on the mount)",
+  "refs": [
+   [
+    "Exodus", 24,
+    [ 18 ] ] ]
  }
 ];

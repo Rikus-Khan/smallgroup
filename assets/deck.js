@@ -126,7 +126,16 @@
     ["bade", "told, commanded"], ["messes", "portions of food"], ["earing", "ploughing"],
     ["wittingly", "knowingly"], ["begettest", "you become the father of"], ["whelp|whelps", "a cub, a young lion"],
     ["couched|coucheth", "crouched, lay down"], ["ravin", "tear prey"], ["progenitors", "ancestors"],
-    ["dainties", "delicacies, rich food"], ["threshingfloor", "flat ground where grain is beaten out"], ["requite|requited", "pay back"]
+    ["dainties", "delicacies, rich food"], ["threshingfloor", "flat ground where grain is beaten out"], ["requite|requited", "pay back"],
+    ["goodly", "fine, handsome"], ["heretofore", "until now, before this"], ["wherewith", "with which"],
+    ["minish|minished", "make less, cut down"], ["lothe|lothed", "loathe, find too foul to touch"], ["kneadingtroughs", "bowls where bread dough is kneaded"],
+    ["murrain", "a deadly cattle plague"], ["blains", "blisters, open sores"], ["bolled", "in the seed pod, nearly ripe"],
+    ["rie", "rye, a grain"], ["wrought", "made, worked, did"], ["purtenance", "the inner parts"],
+    ["bason|basons", "basin, bowl"], ["victual", "food, provisions"], ["firstling|firstlings", "firstborn young of an animal"],
+    ["frontlets", "a band worn on the forehead"], ["drave", "drove"], ["timbrel|timbrels", "hand drum, tambourine"],
+    ["seethe", "boil"], ["hoar frost|hoarfrost", "white frost"], ["chide|chid", "quarrel, find fault"],
+    ["discomfited", "routed, defeated"], ["nether", "lower"], ["graven", "carved"],
+    ["hallowed|hallow", "made holy, set apart"], ["aul", "awl, a pointed tool"], ["usurer", "moneylender charging interest"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
@@ -289,7 +298,7 @@
       defaults: "EGYPT, CANAAN, MESOPOTAMIA, ARAM, ARABIAN DESERT",
       waters: [[30.5, 33.6, "the Great Sea"], [36.9, 24.6, "Red sea", 58], [42.45, 34.3, "Euphrates", 30, "r"], [44.05, 35.3, "Tigris", 62, "r"], [31.0, 26.9, "Nile", 78, "r"], [48.8, 28.9, "the Gulf", 40]] },
     sinai: { box: [29.5, 37, 26.8, 32.2], h: 827,
-      regions: { EGYPT: [30.45, 29.0], GOSHEN: [31.55, 30.42], "WILDERNESS OF SHUR": [33.4, 30.85], "WILDERNESS OF PARAN": [34.2, 30.05], "WILDERNESS OF SIN": [33.5, 28.9], SINAI: [33.9, 29.1],
+      regions: { EGYPT: [30.45, 29.0], GOSHEN: [31.55, 30.42], "WILDERNESS OF SHUR": [33.4, 30.85], "WILDERNESS OF PARAN": [34.2, 30.05], "WILDERNESS OF SIN": [35.1, 28.25], SINAI: [33.9, 29.1],
         MIDIAN: [36.1, 27.95], EDOM: [35.75, 30.4], MOAB: [35.95, 31.35], CANAAN: [35.05, 31.6], ARABIA: [36.3, 29.2], NEGEV: [34.75, 30.8] },
       defaults: "EGYPT, GOSHEN, MIDIAN, EDOM, CANAAN",
       waters: [[31.6, 31.85, "the Great Sea"], [34.35, 27.15, "Red sea", 60], [33.05, 28.95, "Gulf of Suez", 62], [34.47, 28.42, "Gulf of Aqaba", -74], [31.15, 29.2, "Nile", 82, "r"]] },

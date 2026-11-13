@@ -19924,5 +19924,1170 @@ window.STUDIES = [
       },
       "big": "A man lets his tears fall, keeps his word to bury his father, and then forgives the brothers who sold him: evil was evil, but God meant it for good, to save many alive. He dies holding a promise, with a coffin in Egypt and the words \"God will surely visit you\". Genesis ends with the sin of the garden still in the world, and the promise that begins to answer it."
     }
+  },
+  {
+    "id": "exodus-01",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 1,
+    "date": "2026-11-12",
+    "title": "Exodus 1",
+    "sub": "A new king, and a people in chains",
+    "about": "Exodus opens where Genesis stopped: seventy souls of Jacob's family in Egypt, now a great and growing people. A new king who knew not Joseph makes them slaves, then orders the baby boys killed. Two midwives who fear God refuse, and Pharaoh's plan begins to fail.",
+    "tags": [
+      "Slavery",
+      "Fear of God",
+      "Courage",
+      "Promise",
+      "Providence",
+      "Hope"
+    ],
+    "url": "studies/exodus-01.html",
+    "overview": {
+      "where": "Egypt; the land of Goshen; the store cities of Pithom and Raamses (Rameses)",
+      "when": "About 1876 BC (Jacob's family goes down); about 1805 BC (Joseph dies); the slavery that follows",
+      "people": [
+        "jacob",
+        "joseph-son-of-jacob",
+        "levi-son-of-jacob",
+        "judah-son-of-jacob",
+        "pharaoh",
+        "shiphrah",
+        "puah"
+      ],
+      "places": [
+        "egypt",
+        "rameses",
+        "pithom"
+      ],
+      "story": [
+        "The names of Jacob's sons who came into Egypt: seventy souls in all, with Joseph already there (1-5).",
+        "Joseph dies, and all his brothers, and that generation; Israel is fruitful, multiplies and fills the land (6-7).",
+        "A new king, who knew not Joseph, fears the people will join Egypt's enemies, and says, \"let us deal wisely with them\" (8-10).",
+        "Taskmasters afflict them; they build the treasure cities Pithom and Raamses; the more they are afflicted, the more they grow, and their lives are made bitter with hard bondage (11-14).",
+        "Pharaoh tells the Hebrew midwives, Shiphrah and Puah, to kill every son at birth. They fear God and save the boys alive; they tell the king the Hebrew women are lively (15-19).",
+        "God deals well with the midwives and gives them houses; the people multiply. Pharaoh orders every son cast into the river (20-22)."
+      ],
+      "key": {
+        "ref": "Exodus 1:17",
+        "text": "But the midwives feared God, and did not as the king of Egypt commanded them, but saved the men children alive."
+      },
+      "big": "Centuries after the promise, God's people are slaves, and a king tries to end them. Fear gets cruel and calls it wise, but a master who is never satisfied cannot stop what God has planned. Two women with no power fear God more than Pharaoh, and the people only grow."
+    }
+  },
+  {
+    "id": "exodus-02",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 2,
+    "date": "2026-11-12",
+    "title": "Exodus 2",
+    "sub": "Drawn out of the water",
+    "about": "A Levite mother hides her baby three months, then sets him afloat in a basket, and Pharaoh's own daughter draws him out and has him nursed by his mother. At forty Moses kills an Egyptian in anger, hides the body, and flees to Midian. There he marries, has a son, and waits forty years while Israel groans, and God hears.",
+    "tags": [
+      "Providence",
+      "Faith",
+      "Anger",
+      "Regret",
+      "God hears",
+      "Hope"
+    ],
+    "url": "studies/exodus-02.html",
+    "overview": {
+      "where": "The Nile and Pharaoh's house in Egypt; the land of Midian, at a well",
+      "when": "About 1526 BC (Moses born); about 1486 BC (Moses flees to Midian)",
+      "people": [
+        "moses",
+        "levi",
+        "pharaohs-daughter",
+        "pharaoh",
+        "reuel",
+        "zipporah",
+        "gershom",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "egypt",
+        "midian"
+      ],
+      "story": [
+        "A man and a woman of Levi have a son; she hides him three months (1-2).",
+        "She makes an ark of bulrushes, daubs it with slime and pitch, and lays it in the flags by the river; his sister watches from afar (3-4).",
+        "Pharaoh's daughter comes to bathe, sees the ark, opens it, and has compassion on the weeping babe (5-6).",
+        "His sister offers a Hebrew nurse; the baby's own mother is paid to nurse him. He grows, becomes the princess's son, and is named Moses, \"drawn out\" (7-10).",
+        "Grown, Moses sees an Egyptian beating a Hebrew, looks this way and that, kills him and hides him in the sand (11-12).",
+        "The next day a Hebrew asks, \"Who made thee a prince and a judge over us?\" Moses fears; Pharaoh seeks to slay him, and Moses flees to Midian (13-15).",
+        "At a well he helps the seven daughters of the priest of Midian; Reuel gives him Zipporah, and she bears Gershom (16-22).",
+        "The king of Egypt dies; Israel groans; God hears, remembers His covenant, looks on them and has respect unto them (23-25)."
+      ],
+      "key": {
+        "ref": "Exodus 2:24",
+        "text": "And God heard their groaning, and God remembered his covenant with Abraham, with Isaac, and with Jacob."
+      },
+      "big": "A baby in a basket is drawn out of the river by Pharaoh's own daughter. Forty years later the prince kills a man in anger, hides it, and runs, and ends up a shepherd, a stranger in a strange land. His past is real, and God is not finished with him: He hears Israel's groaning and remembers His covenant."
+    }
+  },
+  {
+    "id": "exodus-03",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 3,
+    "date": "2026-11-12",
+    "title": "Exodus 3",
+    "sub": "I AM THAT I AM",
+    "about": "Moses, eighty and keeping Jethro's flock, sees a bush burning and not consumed at Horeb, the mountain of God. God calls him by name, tells him to take off his shoes, says He has seen, heard and known His people's sorrows, and sends him to Pharaoh. Moses asks, \"Who am I?\" and God answers, \"Certainly I will be with thee,\" and gives His name: I AM THAT I AM.",
+    "tags": [
+      "Holiness",
+      "God's call",
+      "I AM",
+      "Excuses",
+      "God with us",
+      "Christ"
+    ],
+    "url": "studies/exodus-03.html",
+    "overview": {
+      "where": "The backside of the desert in Midian; Horeb, the mountain of God",
+      "when": "About 1446 BC (Moses is eighty)",
+      "people": [
+        "moses",
+        "jethro",
+        "angel-of-the-lord",
+        "the-lord",
+        "god-of-abraham",
+        "abraham",
+        "isaac",
+        "jacob",
+        "pharaoh",
+        "elders"
+      ],
+      "places": [
+        "midian",
+        "horeb",
+        "egypt",
+        "wilderness"
+      ],
+      "story": [
+        "Moses keeps the flock of Jethro, his father in law, and comes to Horeb, the mountain of God (1).",
+        "The angel of the LORD appears in a flame of fire out of a bush that burns and is not consumed; Moses turns aside to see (2-3).",
+        "God calls \"Moses, Moses\"; he answers \"Here am I\". He is to put off his shoes, for it is holy ground. God says He is the God of his fathers, and Moses hides his face (4-6).",
+        "The LORD has seen the affliction of His people, heard their cry, and knows their sorrows; He has come down to deliver them to a good land flowing with milk and honey, and sends Moses to Pharaoh (7-10).",
+        "Moses: \"Who am I?\" God: \"Certainly I will be with thee\", and the sign will be that they serve God on this mountain (11-12).",
+        "Asked His name, God says \"I AM THAT I AM\", \"I AM hath sent me unto you\", the LORD God of your fathers, \"my name for ever\" (13-15).",
+        "The plan: gather the elders; ask for three days' journey; Pharaoh will refuse until God stretches out His hand; Israel will go out with silver, gold and raiment (16-22)."
+      ],
+      "key": {
+        "ref": "Exodus 3:14",
+        "text": "And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you."
+      },
+      "big": "A man who killed and ran, now an old shepherd, is called by name out of a burning bush. God has seen, heard and known; He comes down. To \"Who am I?\" God answers, \"I will be with thee,\" and gives His own name, I AM THAT I AM, the name Jesus takes in John 8:58."
+    }
+  },
+  {
+    "id": "exodus-04",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 4,
+    "date": "2026-11-12",
+    "title": "Exodus 4",
+    "sub": "I will be with thy mouth",
+    "about": "Moses says Israel will not believe him, and the LORD gives him three signs: a rod, a leprous hand, and water that becomes blood. Moses pleads that he cannot speak, and the LORD sends Aaron to be his spokesman. Moses goes back to Egypt, is met at an inn where the LORD seeks to kill him until his son is circumcised, and the people believe and worship.",
+    "tags": [
+      "Excuses",
+      "Calling",
+      "Signs",
+      "Obedience",
+      "Brotherhood",
+      "Faith"
+    ],
+    "url": "studies/exodus-04.html",
+    "overview": {
+      "where": "Midian; the road to Egypt, and an inn on the way; the mount of God; Egypt",
+      "when": "About 1446 BC (Moses is eighty, 7:7)",
+      "people": [
+        "moses",
+        "aaron",
+        "jethro",
+        "zipporah",
+        "pharaoh",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "midian",
+        "horeb",
+        "egypt"
+      ],
+      "story": [
+        "Moses answers, \"they will not believe me.\" The LORD asks, \"What is that in thine hand?\" and the rod becomes a serpent and a rod again, that they may believe (1-5).",
+        "A hand put into his bosom comes out leprous as snow, and is made whole again. If they still do not believe, water from the river will turn to blood on the dry land (6-9).",
+        "Moses says he is not eloquent. The LORD answers, \"Who hath made man’s mouth? ... I will be with thy mouth, and teach thee what thou shalt say\" (10-12).",
+        "Moses asks God to send someone else. The anger of the LORD is kindled, and he names Aaron the Levite, already on his way to meet Moses, to be his spokesman. Moses will be \"instead of God\" to him (13-17).",
+        "Moses asks Jethro's leave, and the LORD tells him in Midian that all the men who sought his life are dead. He takes his wife and sons and the rod of God, and goes (18-20).",
+        "The LORD tells him what Pharaoh will do: \"I will harden his heart.\" Moses is to say, \"Israel is my son, even my firstborn. Let my son go\" (21-23).",
+        "At an inn the LORD meets him and seeks to kill him. Zipporah circumcises their son, and he lets him go (24-26).",
+        "Aaron meets Moses at the mount of God. Moses tells him everything, and they gather the elders. The people believe, and bow their heads and worship (27-31)."
+      ],
+      "key": {
+        "ref": "Exodus 4:12",
+        "text": "Now therefore go, and I will be with thy mouth, and teach thee what thou shalt say."
+      },
+      "big": "A man with five excuses is given a rod, a sign, a brother and a promise. Every excuse gets the same answer: I will be with you. God is patient, and He still corrects His own: the hard words at the inn say that a man sent to lead must not leave God's plain word undone at home. Then the people hear that God has seen their affliction, and they bow."
+    }
+  },
+  {
+    "id": "exodus-05",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 5,
+    "date": "2026-11-12",
+    "title": "Exodus 5",
+    "sub": "Who is the LORD?",
+    "about": "Moses and Aaron ask Pharaoh to let Israel go three days into the desert, and Pharaoh answers, \"I know not the LORD.\" He takes away the straw and keeps the bricks the same, the Israelite officers are beaten, and the people blame Moses. Moses takes his complaint to the LORD: \"why is it that thou hast sent me?\"",
+    "tags": [
+      "Oppression",
+      "Obedience",
+      "Discouragement",
+      "Prayer",
+      "Doubt",
+      "Pharaoh"
+    ],
+    "url": "studies/exodus-05.html",
+    "overview": {
+      "where": "Egypt: Pharaoh's court and the brickyards",
+      "when": "About 1446 BC",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "Moses and Aaron tell Pharaoh, \"Let my people go, that they may hold a feast unto me in the wilderness.\" Pharaoh says, \"Who is the LORD, that I should obey his voice? I know not the LORD\" (1-2).",
+        "They ask three days' journey to sacrifice, lest the LORD fall on them with pestilence or the sword. Pharaoh tells them to get back to their burdens (3-5).",
+        "Pharaoh orders no more straw for the bricks, and the same number to be made. The people scatter through Egypt to gather stubble (6-12).",
+        "The taskmasters hasten them, and the Israelite officers are beaten for the shortfall (13-14).",
+        "The officers appeal to Pharaoh, who says, \"Ye are idle, ye are idle,\" and the work stands (15-19).",
+        "Coming out, they meet Moses and Aaron and say, \"The LORD look upon you, and judge\" (20-21).",
+        "Moses returns to the LORD: \"wherefore hast thou so evil entreated this people? why is it that thou hast sent me?\" (22-23)."
+      ],
+      "key": {
+        "ref": "Exodus 5:22",
+        "text": "And Moses returned unto the LORD, and said, Lord, wherefore hast thou so evil entreated this people? why is it that thou hast sent me?"
+      },
+      "big": "Pharaoh says he does not know the LORD, and answers the first request by making the slavery heavier: the same bricks, no straw. The officers are beaten and called idle, and the people turn on Moses. Moses does the right thing with it: he takes his hardest question straight to God. The answer is already waiting in the next chapter."
+    }
+  },
+  {
+    "id": "exodus-06",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 6,
+    "date": "2026-11-12",
+    "title": "Exodus 6",
+    "sub": "I am the LORD",
+    "about": "The LORD answers Moses with seven promises, each beginning \"I will\": bring out, rid, redeem, take, be your God, bring in, give. The people are too crushed to listen, and Moses says again that he has uncircumcised lips. The chapter stops to list the heads of Reuben, Simeon and Levi, and the line of Levi down to Moses and Aaron.",
+    "tags": [
+      "God's name",
+      "Promise",
+      "Redemption",
+      "Discouragement",
+      "Family",
+      "Covenant"
+    ],
+    "url": "studies/exodus-06.html",
+    "overview": {
+      "where": "Egypt; the land of Canaan, promised to Abraham, Isaac and Jacob",
+      "when": "About 1446 BC (Moses is eighty, Aaron eighty-three, 7:7)",
+      "people": [
+        "moses",
+        "aaron",
+        "abraham",
+        "isaac",
+        "jacob",
+        "reuben",
+        "simeon-son-of-jacob",
+        "levi-son-of-jacob",
+        "kohath",
+        "amram",
+        "jochebed",
+        "korah",
+        "elisheba",
+        "aarons-sons",
+        "phinehas"
+      ],
+      "places": [
+        "egypt",
+        "canaan"
+      ],
+      "story": [
+        "The LORD says, \"Now shalt thou see what I will do to Pharaoh.\" He is the LORD. He appeared to Abraham, Isaac and Jacob as God Almighty, but by his name JEHOVAH was he not known to them (1-3).",
+        "He established his covenant to give them Canaan. He has heard the groaning of Israel, and remembered his covenant (4-5).",
+        "Seven \"I will\"s: bring you out, rid you, redeem you with a stretched out arm, take you for a people, be to you a God, bring you in, give it you for an heritage (6-8).",
+        "Moses speaks to Israel, but they do not hearken for anguish of spirit and cruel bondage (9).",
+        "The LORD sends Moses to Pharaoh again. Moses says, \"how then shall Pharaoh hear me, who am of uncircumcised lips?\" and the LORD gives Moses and Aaron a charge (10-13).",
+        "The heads of their fathers' houses: the sons of Reuben and of Simeon, then Levi, with the years of Levi (137) and Kohath (133) (14-19).",
+        "Amram took Jochebed, and she bare him Aaron and Moses. Amram lived 137 years. The sons of Izhar and Uzziel follow (20-22).",
+        "Aaron took Elisheba, sister of Naashon, and she bare him Nadab, Abihu, Eleazar and Ithamar. Korah's sons, and Eleazar's son Phinehas (23-25).",
+        "\"These are that Aaron and Moses\": the two who spoke to Pharaoh to bring Israel out (26-27).",
+        "The story resumes. The LORD says, \"I am the LORD: speak thou unto Pharaoh,\" and Moses answers that he is of uncircumcised lips (28-30)."
+      ],
+      "key": {
+        "ref": "Exodus 6:6",
+        "text": "Wherefore say unto the children of Israel, I am the LORD, and I will bring you out from under the burdens of the Egyptians, and I will rid you out of their bondage, and I will redeem you with a stretched out arm, and with great judgments:"
+      },
+      "big": "Moses is discouraged, and the people are too crushed to hear. God does not scold either. He says who He is, and then makes seven promises, every one beginning \"I will\": the rescue is all His. In the middle is a list of names, and out of the line of angry Levi come the two brothers God chose. God knows every name."
+    }
+  },
+  {
+    "id": "exodus-07",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 7,
+    "date": "2026-11-12",
+    "title": "Exodus 7",
+    "sub": "The rod, and the river of blood",
+    "about": "Moses is eighty and Aaron eighty-three when the LORD sends them to Pharaoh, and tells them beforehand that Pharaoh will not hearken. Aaron's rod swallows the magicians' rods, Pharaoh's heart is hardened, and the first plague turns the river of Egypt to blood.",
+    "tags": [
+      "The plagues",
+      "Hard heart",
+      "Calling",
+      "God's power",
+      "Warning"
+    ],
+    "url": "studies/exodus-07.html",
+    "overview": {
+      "where": "Egypt: Pharaoh's court and the river (the Nile)",
+      "when": "About 1446 BC (Moses is eighty, Aaron eighty-three)",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "jannes-and-jambres"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "The LORD makes Moses \"a god to Pharaoh\" and Aaron his prophet. He says beforehand, \"I will harden Pharaoh's heart\", so that Egypt shall know that He is the LORD. Moses is eighty and Aaron eighty-three (1-7).",
+        "Aaron casts down his rod and it becomes a serpent. The magicians do the same with their enchantments, but Aaron's rod swallows up theirs. Pharaoh's heart is hardened, as the LORD had said (8-13).",
+        "In the morning Moses meets Pharaoh at the river and tells him the LORD will smite the water: \"In this thou shalt know that I am the LORD\" (14-18).",
+        "Aaron stretches out the rod, and all the water of Egypt turns to blood, in rivers, streams, ponds and vessels. The fish die and the river stinks. The magicians do the same, and Pharaoh turns and goes into his house (19-23).",
+        "The Egyptians dig round about the river for water to drink. Seven days are fulfilled after the LORD had smitten the river (24-25)."
+      ],
+      "key": {
+        "ref": "Exodus 7:5",
+        "text": "And the Egyptians shall know that I am the LORD, when I stretch forth mine hand upon Egypt, and bring out the children of Israel from among them."
+      },
+      "big": "God sends two old men to a hard king and tells them beforehand that he will not listen, so they will not lose heart. The sign of the rod is swallowed by God's rod, the magicians can copy but not conquer, and the river that Egypt lived by turns to blood. The point of it all is that Egypt shall know who the LORD is, and Pharaoh turns and goes into his house."
+    }
+  },
+  {
+    "id": "exodus-08",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 8,
+    "date": "2026-11-12",
+    "title": "Exodus 8",
+    "sub": "Frogs, lice and flies: \"To morrow\"",
+    "about": "Frogs cover Egypt and Pharaoh begs for prayer, saying \"To morrow\", then hardens his heart when the frogs are gone. Lice come out of the dust and the magicians say, \"This is the finger of God.\" A swarm of flies fills Egypt but not Goshen, and Pharaoh begins to bargain.",
+    "tags": [
+      "The plagues",
+      "Hard heart",
+      "Procrastination",
+      "The finger of God",
+      "Compromise"
+    ],
+    "url": "studies/exodus-08.html",
+    "overview": {
+      "where": "Egypt, and the land of Goshen",
+      "when": "About 1446 BC",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "jannes-and-jambres"
+      ],
+      "places": [
+        "egypt",
+        "goshen"
+      ],
+      "story": [
+        "The LORD sends Moses to Pharaoh: \"Let my people go, that they may serve me.\" He threatens frogs in every house, bed, oven and kneadingtrough. Aaron stretches out his rod and the frogs cover Egypt, and the magicians bring up more frogs (1-7).",
+        "Pharaoh asks Moses to intreat the LORD and promises to let the people go. Moses lets him name the time, and he says, \"To morrow.\" The frogs die in heaps and the land stinks (8-14).",
+        "\"When Pharaoh saw that there was respite, he hardened his heart\" (15).",
+        "Aaron smites the dust and it becomes lice on man and beast. The magicians cannot do it and say, \"This is the finger of God\", yet Pharaoh's heart is hardened (16-19).",
+        "The LORD threatens swarms of flies and severs Goshen: \"I will put a division between my people and thy people.\" The swarm comes into Pharaoh's house and all the land (20-24).",
+        "Pharaoh says, sacrifice in the land, and then, \"only ye shall not go very far away.\" Moses holds to a three days' journey. The flies are removed, and Pharaoh hardens his heart at this time also (25-32)."
+      ],
+      "key": {
+        "ref": "Exodus 8:19",
+        "text": "Then the magicians said unto Pharaoh, This is the finger of God: and Pharaoh’s heart was hardened, and he hearkened not unto them; as the LORD had said."
+      },
+      "big": "Pharaoh learns to say \"To morrow\" and to harden his heart the moment the pain stops, while his own magicians tell him it is the finger of God. The LORD draws a line between Goshen and the rest of Egypt, and Pharaoh offers half-measures: worship here, or go but not far. A heart hardens one \"not yet\" at a time."
+    }
+  },
+  {
+    "id": "exodus-09",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 9,
+    "date": "2026-11-12",
+    "title": "Exodus 9",
+    "sub": "Cattle, boils and hail: \"I have sinned this time\"",
+    "about": "The cattle of Egypt die and of Israel's not one. Boils break out on man and beast and the magicians cannot stand before Moses. The LORD tells Pharaoh why he has been raised up, a great hail falls, and Pharaoh says, \"I have sinned this time\", and hardens his heart again.",
+    "tags": [
+      "The plagues",
+      "Hard heart",
+      "God's patience",
+      "Repentance",
+      "Warning"
+    ],
+    "url": "studies/exodus-09.html",
+    "overview": {
+      "where": "Egypt, and the land of Goshen",
+      "when": "About 1446 BC",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "jannes-and-jambres"
+      ],
+      "places": [
+        "egypt",
+        "goshen"
+      ],
+      "story": [
+        "A murrain on the cattle in the field: all the cattle of Egypt die, and of the cattle of Israel not one. Pharaoh sends and sees it, and his heart is hardened (1-7).",
+        "Ashes of the furnace, thrown toward heaven, become boils with blains on man and beast. The magicians cannot stand before Moses, and the LORD hardened the heart of Pharaoh (8-12).",
+        "The LORD tells Pharaoh he will send all his plagues upon his heart, and that for this cause He has raised him up, to show His power and declare His name in all the earth (13-17).",
+        "He warns of hail and bids them gather their cattle. He that feared the word of the LORD made his servants and cattle flee into the houses, and he that regarded not left them in the field (18-21).",
+        "Thunder, hail and fire fall on all Egypt, but not on Goshen (22-26).",
+        "Pharaoh says, \"I have sinned this time: the LORD is righteous, and I and my people are wicked.\" Moses prays and the hail stops, and Pharaoh sins yet more and hardens his heart, he and his servants (27-35)."
+      ],
+      "key": {
+        "ref": "Exodus 9:16",
+        "text": "And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth."
+      },
+      "big": "God shows His power over Egypt's cattle, skin and sky while His people in Goshen are untouched. The hard heart is traced in order: Pharaoh refuses five times before the text says the LORD hardened it, and when the hail falls he says the right words and does not turn. A warning is a mercy to the man who takes it, and the door is held open to the end."
+    }
+  },
+  {
+    "id": "exodus-10",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 10,
+    "date": "2026-11-12",
+    "title": "Exodus 10",
+    "sub": "Locusts, and a darkness that could be felt",
+    "about": "The LORD asks Pharaoh, \"How long wilt thou refuse to humble thyself before me?\" The locusts strip Egypt bare, Pharaoh says \"I have sinned\" and goes right back, and a thick darkness falls for three days while Israel has light in their dwellings.",
+    "tags": [
+      "Pride",
+      "Hard heart",
+      "Repentance",
+      "Light",
+      "Compromise"
+    ],
+    "url": "studies/exodus-10.html",
+    "overview": {
+      "where": "Egypt: Pharaoh's court; the whole land under the locusts and the darkness; the Red sea",
+      "when": "About 1446 BC (the eighth and ninth plagues, the year of the Exodus)",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "israel"
+      ],
+      "places": [
+        "egypt",
+        "red-sea"
+      ],
+      "story": [
+        "The LORD tells Moses he has hardened Pharaoh's heart so that the signs may be told to sons and grandsons (1-2).",
+        "Moses and Aaron ask, \"How long wilt thou refuse to humble thyself before me?\" and warn of locusts. Pharaoh's servants say, \"knowest thou not yet that Egypt is destroyed?\" (3-7).",
+        "Pharaoh will let only the men go, and drives them out (8-11).",
+        "An east wind brings the locusts, which eat everything the hail left, and the land is darkened (12-15).",
+        "Pharaoh says \"I have sinned,\" asks forgiveness \"only this once,\" and when a west wind carries the locusts into the Red sea, the LORD hardens his heart (16-20).",
+        "Darkness which may be felt covers Egypt for three days, while Israel has light in their dwellings (21-23).",
+        "Pharaoh offers to let them go if the flocks stay. Moses answers that not a hoof will be left behind. Pharaoh drives him out: \"see my face no more\" (24-29)."
+      ],
+      "key": {
+        "ref": "Exodus 10:3",
+        "text": "And Moses and Aaron came in unto Pharaoh, and said unto him, Thus saith the LORD God of the Hebrews, How long wilt thou refuse to humble thyself before me? let my people go, that they may serve me."
+      },
+      "big": "Pharaoh hardens his own heart again and again, and the LORD at last confirms him in it, while still asking, \"How long?\" He bargains (only the men, leave the flocks), says \"I have sinned\" because it hurts and not because it is wrong, and the locusts, the darkness and the God who puts light in Israel's houses keep showing who the LORD is."
+    }
+  },
+  {
+    "id": "exodus-11",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 11,
+    "date": "2026-11-12",
+    "title": "Exodus 11",
+    "sub": "One plague more",
+    "about": "The LORD tells Moses of one plague more, after which Pharaoh will thrust Israel out. About midnight every firstborn in Egypt will die, but not a dog will move his tongue against Israel: the LORD puts a difference between Egypt and Israel.",
+    "tags": [
+      "Judgment",
+      "God's promises",
+      "Hard heart",
+      "Favour",
+      "Justice"
+    ],
+    "url": "studies/exodus-11.html",
+    "overview": {
+      "where": "Egypt: Pharaoh's presence; the houses of the Egyptians and of Israel",
+      "when": "About 1446 BC (the night before the Passover)",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "israel"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "The LORD says one plague more will make Pharaoh thrust Israel out altogether (1).",
+        "The people are to ask their neighbours for jewels of silver and gold, and the LORD gives them favour; Moses is very great in Egypt (2-3).",
+        "Moses tells Pharaoh that about midnight the LORD will go out into Egypt and every firstborn will die, from Pharaoh's throne to the maidservant behind the mill (4-6).",
+        "Against Israel not a dog will move his tongue, that they may know the LORD puts a difference (7).",
+        "Pharaoh's servants will bow to Moses, who goes out from Pharaoh in a great anger (8).",
+        "The LORD says Pharaoh will not hearken, that his wonders may be multiplied; the LORD hardens Pharaoh's heart (9-10)."
+      ],
+      "key": {
+        "ref": "Exodus 11:7",
+        "text": "But against any of the children of Israel shall not a dog move his tongue, against man or beast: that ye may know how that the LORD doth put a difference between the Egyptians and Israel."
+      },
+      "big": "God warned of the firstborn before Moses ever reached Egypt, waited through nine plagues, and now says exactly what will happen at midnight. The difference between Egypt and Israel is not that Israel was better: it is what God provides, which the next chapter shows."
+    }
+  },
+  {
+    "id": "exodus-12",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 12,
+    "date": "2026-11-12",
+    "title": "Exodus 12",
+    "sub": "The Passover, and the going out",
+    "about": "Every house takes a lamb without blemish and strikes its blood on the door. At midnight the LORD smites the firstborn of Egypt and passes over every house with the blood. Pharaoh drives Israel out, after four hundred and thirty years, and the LORD sets the Passover and the unleavened bread as a memorial.",
+    "tags": [
+      "Passover",
+      "The blood",
+      "Salvation",
+      "Judgment",
+      "The Lamb of God",
+      "Hope"
+    ],
+    "url": "studies/exodus-12.html",
+    "overview": {
+      "where": "Egypt: the houses of Israel and of the Egyptians; Rameses; Succoth",
+      "when": "About 1446 BC (the fourteenth and fifteenth days of the first month)",
+      "people": [
+        "moses",
+        "aaron",
+        "pharaoh",
+        "israel"
+      ],
+      "places": [
+        "egypt",
+        "rameses",
+        "succoth-exodus"
+      ],
+      "story": [
+        "The LORD makes this month the beginning of months, and tells Israel to take a lamb on the tenth day, without blemish, a male of the first year (1-6).",
+        "They kill it at evening, strike the blood on the two side posts and the lintel, and eat it roast with unleavened bread and bitter herbs, dressed for the road (7-11).",
+        "\"When I see the blood, I will pass over you\"; against all the gods of Egypt the LORD will execute judgment (12-13).",
+        "The feast of unleavened bread is a memorial for ever; no leaven is to be found in their houses (14-20).",
+        "Moses tells the elders to strike the lintel and posts with hyssop, and stay inside until morning; the children are to be told what it means (21-28).",
+        "At midnight the LORD smites every firstborn in Egypt; there is a great cry; Pharaoh sends Israel out and asks, \"bless me also\" (29-33).",
+        "Israel takes dough, silver, gold and raiment, and about six hundred thousand men on foot, with a mixed multitude, go from Rameses to Succoth after four hundred and thirty years (34-42).",
+        "The ordinance of the Passover: who may eat, one law for the stranger, and no bone of the lamb broken (43-51)."
+      ],
+      "key": {
+        "ref": "Exodus 12:13",
+        "text": "And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt."
+      },
+      "big": "A lamb without blemish dies in the place of the firstborn, and wherever the LORD sees the blood on the door he passes over. It is the blood, not the family's goodness, that saves. Christ our passover is sacrificed for us, and not a bone of him was broken."
+    }
+  },
+  {
+    "id": "exodus-13",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 13,
+    "date": "2026-11-12",
+    "title": "Exodus 13",
+    "sub": "Remember this day",
+    "about": "God claims the firstborn and tells Israel to keep the feast of unleavened bread and tell their sons what he did. He leads them the long way, not by the land of the Philistines. Moses takes the bones of Joseph, and the LORD goes before them in a pillar of cloud by day and a pillar of fire by night.",
+    "tags": [
+      "Redemption",
+      "Remembering",
+      "Guidance",
+      "Promise",
+      "Grace",
+      "Firstborn"
+    ],
+    "url": "studies/exodus-13.html",
+    "overview": {
+      "where": "Out of Egypt: Succoth, then Etham at the edge of the wilderness, on the way to the Red sea",
+      "when": "About 1446 BC (the Exodus)",
+      "people": [
+        "moses",
+        "joseph-son-of-jacob",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt",
+        "succoth-exodus",
+        "etham",
+        "red-sea"
+      ],
+      "story": [
+        "The LORD tells Moses to sanctify to him all the firstborn of man and beast: \"it is mine\" (1-2).",
+        "Moses tells the people to remember the day they came out of Egypt in the month Abib, and to eat unleavened bread seven days, and to tell their sons what the LORD did (3-10).",
+        "When they come into Canaan every firstling is the LORD's and every firstborn son is redeemed; a lamb stands in for a donkey. The son who asks \"What is this?\" is told that the LORD slew Egypt's firstborn and brought Israel out \"by strength of hand\" (11-16).",
+        "God leads them the long way, through the wilderness of the Red sea, not by the road through the Philistines, lest they see war and return to Egypt (17-18).",
+        "Moses takes the bones of Joseph, as Joseph made Israel swear (19).",
+        "They journey from Succoth and encamp in Etham, and the LORD goes before them by day in a pillar of cloud and by night in a pillar of fire (20-22)."
+      ],
+      "key": {
+        "ref": "Exodus 13:21",
+        "text": "And the LORD went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:"
+      },
+      "big": "The people who were slaves are told to remember the day, bring up their sons in the story, and bring back every firstborn with a price. God leads them the long way because they are not ready for war, and goes in front of them, day and night, in a pillar of cloud and of fire. The rescue is by strength of his hand, and the road is by his leading."
+    }
+  },
+  {
+    "id": "exodus-14",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 14,
+    "date": "2026-11-12",
+    "title": "Exodus 14",
+    "sub": "Stand still, and see the salvation of the LORD",
+    "about": "God leads Israel to camp by the sea so that Pharaoh will chase them. The people are afraid, and Moses says, \"Fear ye not, stand still, and see the salvation of the LORD.\" The sea is divided by an east wind, Israel crosses on dry ground, and the waters return on the Egyptians.",
+    "tags": [
+      "Fear",
+      "Salvation",
+      "Faith",
+      "Deliverance",
+      "Hard heart",
+      "Baptism"
+    ],
+    "url": "studies/exodus-14.html",
+    "overview": {
+      "where": "The shore of the Red sea (the Gulf of Aqaba) at Nuweiba, by Pi-hahiroth, Migdol and Baal-zephon; the crossing to Arabia",
+      "when": "About 1446 BC (the Exodus)",
+      "people": [
+        "moses",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt",
+        "pi-hahiroth",
+        "migdol",
+        "baal-zephon",
+        "red-sea"
+      ],
+      "story": [
+        "The LORD tells Israel to turn and camp by the sea before Pi-hahiroth, between Migdol and the sea, over against Baal-zephon. Pharaoh will think they are entangled, and the LORD will be honoured upon Pharaoh (1-4).",
+        "Pharaoh changes his mind, takes six hundred chosen chariots and all the chariots of Egypt, and overtakes Israel by the sea (5-9).",
+        "The people are sore afraid, cry out to the LORD, and say it would have been better to serve the Egyptians (10-12).",
+        "Moses says, \"Fear ye not, stand still, and see the salvation of the LORD... The LORD shall fight for you.\" The LORD tells Moses to lift his rod and divide the sea (13-18).",
+        "The pillar of cloud moves behind Israel, darkness to the Egyptians and light to Israel. A strong east wind drives the sea back all night, and Israel goes through on dry ground with a wall of water on each hand (19-22).",
+        "The Egyptians follow, the LORD troubles them and takes off their chariot wheels, and the sea returns at Moses' word. Not one remains (23-28).",
+        "Israel sees the Egyptians dead on the shore, and the people fear the LORD, and believe the LORD and his servant Moses (29-31)."
+      ],
+      "key": {
+        "ref": "Exodus 14:13",
+        "text": "And Moses said unto the people, Fear ye not, stand still, and see the salvation of the LORD, which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever."
+      },
+      "big": "A people with the sea in front and the army behind are told to stand still, and the LORD fights for them. He divides the sea, they cross on dry ground, and the army that chased them is covered. The enemy that held them is gone, and they believe him."
+    }
+  },
+  {
+    "id": "exodus-15",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 15,
+    "date": "2026-11-12",
+    "title": "Exodus 15",
+    "sub": "The song of Moses, and the bitter water",
+    "about": "Moses and Israel sing to the LORD for the victory at the sea, and Miriam leads the women with timbrels. Three days into the wilderness the water at Marah is bitter and the people murmur. The LORD shows Moses a tree, the water is made sweet, and they come to Elim, where there are twelve wells and seventy palm trees.",
+    "tags": [
+      "Praise",
+      "Salvation",
+      "Healing",
+      "Trust",
+      "Hope",
+      "God's character"
+    ],
+    "url": "studies/exodus-15.html",
+    "overview": {
+      "where": "The far shore of the Red sea; the wilderness of Shur; Marah; Elim (all in Arabia, on the way to Mount Sinai)",
+      "when": "About 1446 BC (the Exodus)",
+      "people": [
+        "moses",
+        "miriam",
+        "aaron",
+        "pharaoh"
+      ],
+      "places": [
+        "red-sea",
+        "shur",
+        "marah",
+        "elim",
+        "edom",
+        "moab",
+        "canaan"
+      ],
+      "story": [
+        "Moses and Israel sing to the LORD: \"he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.\" The LORD is their strength, song and salvation, a man of war (1-5).",
+        "His right hand dashed the enemy in pieces; with the blast of his nostrils the waters stood as an heap. The enemy said, \"I will pursue, I will overtake,\" and the sea covered them like lead (6-10).",
+        "\"Who is like unto thee, O LORD, among the gods?\" (11-12).",
+        "He led out the people he redeemed in mercy; the nations of Palestina, Edom, Moab and Canaan will tremble till his people pass over. He will bring them in and plant them in the mountain of his inheritance: \"The LORD shall reign for ever and ever\" (13-18).",
+        "Miriam the prophetess takes a timbrel and all the women follow her, answering, \"Sing ye to the LORD\" (19-21).",
+        "Three days in the wilderness of Shur with no water. At Marah the water is bitter and the people murmur. Moses cries to the LORD, who shows him a tree that makes it sweet, and says, \"I am the LORD that healeth thee\" (22-26).",
+        "They come to Elim, with twelve wells of water and threescore and ten palm trees, and camp by the waters (27)."
+      ],
+      "key": {
+        "ref": "Exodus 15:11",
+        "text": "Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?"
+      },
+      "big": "Israel sings to the LORD for what he did at the sea, then three days later is thirsty and complaining at a bitter spring. The LORD answers a cry with a cure, calls himself the one who heals, and leads them on to wells and palm trees. A man can sing on Sunday and be bitter by Wednesday, and God does not walk away from either."
+    }
+  },
+  {
+    "id": "exodus-16",
+    "type": "chapter",
+    "book": "Exodus",
+    "date": "2026-11-12",
+    "ch": 16,
+    "title": "Exodus 16",
+    "sub": "Bread for today",
+    "about": "A month out of Egypt the people murmur for the flesh pots, and the LORD rains bread from heaven: an omer for each man each day, nothing kept over, a double portion on the sixth day and none on the sabbath. Aaron lays up a pot of manna, and the people eat it forty years. Jesus is the true bread from heaven.",
+    "tags": [
+      "Daily bread",
+      "Grumbling",
+      "Trust",
+      "Sabbath",
+      "Provision",
+      "Christ"
+    ],
+    "url": "studies/exodus-16.html",
+    "overview": {
+      "where": "The wilderness of Sin, between Elim and Sinai, in Arabia",
+      "when": "About 1446 BC: the fifteenth day of the second month after leaving Egypt; the manna lasts forty years",
+      "people": [
+        "moses",
+        "aaron"
+      ],
+      "places": [
+        "wilderness-of-sin",
+        "egypt",
+        "mount-sinai",
+        "canaan"
+      ],
+      "story": [
+        "Israel comes to the wilderness of Sin a month after leaving Egypt, and the whole congregation murmurs against Moses and Aaron: \"Would to God we had died by the hand of the LORD in the land of Egypt, when we sat by the flesh pots\" (1-3).",
+        "The LORD promises to rain bread from heaven, a certain rate every day, to prove whether they will walk in His law; on the sixth day they are to prepare twice as much (4-5).",
+        "Moses and Aaron tell them their murmurings are against the LORD, not against them. The glory of the LORD appears in the cloud, and He says, \"I have heard the murmurings of the children of Israel\" (6-12).",
+        "At even the quails cover the camp, and in the morning a small round thing like hoar frost lies on the ground. \"It is manna\": what is it? \"This is the bread which the LORD hath given you to eat\" (13-15).",
+        "An omer for every man: he that gathered much had nothing over, and he that gathered little had no lack. What is kept until morning breeds worms and stinks, and Moses is wroth; in the heat it melts (16-21).",
+        "On the sixth day they gather two omers, and what is kept over does not spoil. The seventh day is a sabbath, a gift of the LORD; some go out to gather and find none, and the LORD asks, \"How long refuse ye to keep my commandments and my laws?\" (22-30).",
+        "The manna is like coriander seed, white, and tastes like wafers made with honey. Aaron lays up an omer in a pot before the Testimony for the generations, and Israel eats manna forty years, until the borders of Canaan (31-36)."
+      ],
+      "key": {
+        "ref": "Exodus 16:4",
+        "text": "Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no."
+      },
+      "big": "God answers grumbling with bread. He gives enough for today, every day, so that His people learn to trust Him one day at a time: what is hoarded spoils, and the sabbath is a gift. The manna is a picture of the true bread from heaven, the Lord Jesus, who says, \"he that cometh to me shall never hunger.\""
+    }
+  },
+  {
+    "id": "exodus-17",
+    "type": "chapter",
+    "book": "Exodus",
+    "date": "2026-11-12",
+    "ch": 17,
+    "title": "Exodus 17",
+    "sub": "The rock, and the raised hands",
+    "about": "At Rephidim there is no water, and the people quarrel and tempt the LORD: \"Is the LORD among us, or not?\" Moses strikes the rock in Horeb and water comes out. Amalek attacks, Joshua fights, and Israel prevails while Moses' hands are held up by Aaron and Hur. Moses builds an altar, Jehovah-nissi.",
+    "tags": [
+      "Thirst",
+      "Doubt",
+      "Christ the Rock",
+      "Spiritual warfare",
+      "Brotherhood",
+      "Prayer"
+    ],
+    "url": "studies/exodus-17.html",
+    "overview": {
+      "where": "Rephidim, in the wilderness of Arabia, near Horeb, the mountain of God",
+      "when": "About 1446 BC, in the weeks between leaving the wilderness of Sin and reaching Sinai (19:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "hur",
+        "joshua-son-of-nun",
+        "amalek"
+      ],
+      "places": [
+        "rephidim",
+        "massah-and-meribah",
+        "horeb",
+        "wilderness-of-sin"
+      ],
+      "story": [
+        "The congregation pitches in Rephidim, \"according to the commandment of the LORD\", and there is no water. The people chide with Moses and say he has brought them out to kill them with thirst; Moses cries to the LORD, \"they be almost ready to stone me\" (1-4).",
+        "The LORD tells Moses to take the elders and his rod and go on before the people: \"I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it.\" Moses does so before the elders (5-6).",
+        "He calls the place Massah and Meribah, because of the chiding and because they tempted the LORD, saying, \"Is the LORD among us, or not?\" (7).",
+        "Amalek comes and fights Israel in Rephidim. Moses tells Joshua to choose men and fight, while he stands on the top of the hill with the rod of God in his hand, with Aaron and Hur (8-10).",
+        "While Moses holds up his hand Israel prevails; when he lets it down Amalek prevails. His hands grow heavy; they put a stone under him, and Aaron and Hur stay up his hands, one on each side, until sundown. Joshua discomfits Amalek with the edge of the sword (11-13).",
+        "The LORD tells Moses to write this for a memorial in a book and rehearse it in the ears of Joshua, for He will utterly put out the remembrance of Amalek. Moses builds an altar, Jehovah-nissi, and says the LORD will have war with Amalek from generation to generation (14-16)."
+      ],
+      "key": {
+        "ref": "Exodus 17:6",
+        "text": "Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink."
+      },
+      "big": "God leads His people into a dry place and stands on the rock Himself: the water comes from where He stands, and Paul says that Rock was Christ. Then the weary are attacked, and the battle is won by a fighter in the valley, a praying leader on the hill, and two friends who hold up a tired man's hands. The victory is named for the LORD: Jehovah-nissi, the LORD is my banner."
+    }
+  },
+  {
+    "id": "exodus-18",
+    "type": "chapter",
+    "book": "Exodus",
+    "date": "2026-11-12",
+    "ch": 18,
+    "title": "Exodus 18",
+    "sub": "Jethro's counsel",
+    "about": "Jethro, priest of Midian, brings Zipporah and her two sons to Moses at the mount of God, rejoices in all the LORD has done and offers sacrifice. The next day he sees Moses judging the people from morning to evening and says, \"The thing that thou doest is not good\". He counsels able men over thousands, hundreds, fifties and tens, and Moses hearkens.",
+    "tags": [
+      "Counsel",
+      "Humility",
+      "Testimony",
+      "Burnout",
+      "Leadership",
+      "Family"
+    ],
+    "url": "studies/exodus-18.html",
+    "overview": {
+      "where": "The mount of God in the wilderness of Arabia, in the land of Midian",
+      "when": "About 1446 BC, after Rephidim and before the giving of the law (19:1)",
+      "people": [
+        "moses",
+        "jethro",
+        "zipporah",
+        "gershom",
+        "eliezer-son-of-moses",
+        "aaron"
+      ],
+      "places": [
+        "midian",
+        "horeb",
+        "egypt"
+      ],
+      "story": [
+        "Jethro, the priest of Midian, hears all that God has done for Moses and Israel, and brings Moses' wife Zipporah and her two sons, Gershom (\"I have been an alien in a strange land\") and Eliezer (\"the God of my father... was mine help\"), to the mount of God (1-6).",
+        "Moses goes out to meet his father in law, does obeisance and kisses him; they ask of each other's welfare and go into the tent (7).",
+        "Moses tells him all that the LORD did to Pharaoh and the Egyptians, and the travail by the way. Jethro rejoices: \"Blessed be the LORD... Now I know that the LORD is greater than all gods\", and brings a burnt offering; Aaron and the elders eat bread with him before God (8-12).",
+        "On the morrow Moses sits to judge the people from morning to evening. Jethro asks why he sits alone, and Moses says the people come to enquire of God (13-16).",
+        "Jethro: \"The thing that thou doest is not good. Thou wilt surely wear away... thou art not able to perform it thyself alone\" (17-18).",
+        "His counsel: be for the people to God-ward, teach them the laws, and provide able men, such as fear God, men of truth, hating covetousness, rulers of thousands, hundreds, fifties and tens, to judge the small matters; \"so shall it be easier for thyself, and they shall bear the burden with thee\" (19-23).",
+        "Moses hearkens, does all that was said, chooses able men and makes them heads over the people, and lets his father in law depart to his own land (24-27)."
+      ],
+      "key": {
+        "ref": "Exodus 18:18",
+        "text": "Thou wilt surely wear away, both thou, and this people that is with thee: for this thing is too heavy for thee; thou art not able to perform it thyself alone."
+      },
+      "big": "The greatest man in Israel is doing a good work in a way that will wear him out, and a wise outsider tells him so, kindly. Moses listens and does it. The load is shared with able, honest men, and only the great matters come to him. Nobody is meant to carry it alone, and a man close to God is a man who can be told."
+    }
+  },
+  {
+    "id": "exodus-19",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 19,
+    "date": "2026-11-12",
+    "title": "Exodus 19",
+    "sub": "Israel at Mount Sinai",
+    "about": "Six weeks out of Egypt, Israel camps before Mount Sinai in Arabia. God reminds them how he bore them on eagles' wings, calls them his own treasure and a kingdom of priests, and they answer, \"All that the LORD hath spoken we will do.\" Bounds are set round the mountain, and the LORD comes down in fire. The people cannot come up, and Moses goes between.",
+    "tags": [
+      "Grace",
+      "Holiness",
+      "Covenant",
+      "Calling",
+      "Mediator",
+      "Fear of the LORD"
+    ],
+    "url": "studies/exodus-19.html",
+    "overview": {
+      "where": "The wilderness of Sinai, before the mount (Mount Sinai in Midian, Arabia), after Rephidim",
+      "when": "About 1446 BC: the third month after the Exodus (19:1)",
+      "people": [
+        "moses",
+        "aaron",
+        "jacob"
+      ],
+      "places": [
+        "mount-sinai",
+        "rephidim",
+        "wilderness",
+        "egypt",
+        "israel"
+      ],
+      "story": [
+        "In the third month Israel comes into the wilderness of Sinai from Rephidim and camps before the mount (1-2).",
+        "The LORD calls Moses: \"Ye have seen what I did unto the Egyptians, and how I bare you on eagles' wings, and brought you unto myself.\" If they obey and keep his covenant they will be his peculiar treasure, a kingdom of priests and an holy nation (3-6).",
+        "Moses lays the words before the elders, and all the people answer together, \"All that the LORD hath spoken we will do\" (7-8).",
+        "The LORD will come in a thick cloud on the third day. The people wash their clothes and sanctify themselves, and bounds are set round the mount on pain of death (9-15).",
+        "On the third day there are thunders, lightnings, a thick cloud and a loud trumpet; all the people tremble. The mount is on a smoke and quakes greatly, and the LORD comes down in fire (16-20).",
+        "The LORD sends Moses down to charge the people not to break through to gaze, and calls him up again with Aaron (21-25)."
+      ],
+      "key": {
+        "ref": "Exodus 19:4",
+        "text": "Ye have seen what I did unto the Egyptians, and how I bare you on eagles’ wings, and brought you unto myself."
+      },
+      "big": "Before one command is given, God says what he has already done: he carried them to himself. He calls a nation of slaves his own treasure, and they promise, sincerely, to do it all. Then he comes down in fire, a fence is set round the mountain, and the people cannot come up. They need a go-between, and the New Testament names him: Jesus, the one mediator."
+    }
+  },
+  {
+    "id": "exodus-20",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 20,
+    "date": "2026-11-12",
+    "title": "Exodus 20",
+    "sub": "The ten commandments",
+    "about": "God speaks from the mountain, beginning with \"I am the LORD thy God, which have brought thee out of the land of Egypt\", and gives the ten commandments: four toward God, six toward people. They show every man his need and lead to Christ. The people stand afar off in fear, and God gives a plain way to come to him by an altar.",
+    "tags": [
+      "Ten Commandments",
+      "Law",
+      "Sin",
+      "Grace",
+      "Idols",
+      "Sabbath",
+      "Fear of the LORD"
+    ],
+    "url": "studies/exodus-20.html",
+    "overview": {
+      "where": "Mount Sinai, in the wilderness of Sinai, Arabia",
+      "when": "About 1446 BC, soon after the people came to Sinai (19:1)",
+      "people": [
+        "moses",
+        "israel",
+        "the-lord"
+      ],
+      "places": [
+        "mount-sinai",
+        "egypt"
+      ],
+      "story": [
+        "God speaks all these words, beginning: \"I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage\" (1-2).",
+        "The first four commandments: no other gods; no graven image, for he is a jealous God who shows mercy to thousands that love him; his name is not to be taken in vain; the sabbath, six days of work and the seventh a rest, for all in the household and the stranger (3-11).",
+        "The last six: honour father and mother; do not kill; do not commit adultery; do not steal; do not bear false witness; do not covet (12-17).",
+        "All the people see the thunderings, the lightnings and the smoking mountain, remove and stand afar off, and ask Moses to speak to them, \"lest we die\". Moses answers, \"Fear not: for God is come to prove you, and that his fear may be before your faces, that ye sin not\", and draws near the thick darkness (18-21).",
+        "God tells them: no gods of silver or gold. An altar of earth, or of unhewn stone with no steps, where he will record his name, and come and bless (22-26)."
+      ],
+      "key": {
+        "ref": "Exodus 20:2",
+        "text": "I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage."
+      },
+      "big": "God begins with what he has done, then gives ten words that show every man he has failed: toward God and toward his neighbour, in act and in heart. They are not a ladder to climb or a list to try harder at, but a mirror and a schoolmaster to bring us to Christ, who kept them all and paid for the ones we broke. The people draw back in fear, and God gives a plain way to come near."
+    }
+  },
+  {
+    "id": "exodus-21",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 21,
+    "date": "2026-11-12",
+    "title": "Exodus 21",
+    "sub": "The first judgments",
+    "about": "After the ten commandments, God gives Israel's courts their first judgments: a Hebrew servant goes free in the seventh year, or stays for love; a life is a life, with a place to flee for an accident; eye for eye limits revenge; the weak are protected; and he who is careless makes it good. A ransom stands behind them.",
+    "tags": [
+      "Justice",
+      "Servants",
+      "Freedom",
+      "Ransom",
+      "Restitution",
+      "Mercy"
+    ],
+    "url": "studies/exodus-21.html",
+    "overview": {
+      "where": "Mount Sinai, in the wilderness of Sinai, Arabia",
+      "when": "About 1446 BC, at Sinai (the judgments run through chapter 23)",
+      "people": [
+        "hebrew"
+      ],
+      "places": [
+        "mount-sinai"
+      ],
+      "story": [
+        "These are the judgments to set before the people (1).",
+        "A Hebrew servant serves six years and goes out free in the seventh. If he loves his master, his wife and children and will not go out, his ear is bored with an aul and he serves for ever. A daughter sold as a maidservant may not be sold to strangers, and is owed her food, raiment and marriage rights or she goes out free (2-11).",
+        "He that smites a man so that he die is put to death. If it was not planned, God will appoint a place to flee; if with guile, not even the altar shelters him. Striking or cursing a parent, and stealing a man, are death penalties (12-17).",
+        "A man who hurts another in a fight pays for his lost time and his healing. A servant killed by his master brings punishment; a servant whose eye or tooth is lost goes free (18-21, 26-27).",
+        "Life for life, eye for eye, tooth for tooth: the measure of the court, no more than the harm (22-25).",
+        "An ox known to gore, and left unpenned, costs its owner his life or a ransom; a servant killed costs thirty shekels of silver; an open pit must be made good (28-36)."
+      ],
+      "key": {
+        "ref": "Exodus 21:30",
+        "text": "If there be laid on him a sum of money, then he shall give for the ransom of his life whatsoever is laid upon him."
+      },
+      "big": "God turns the ten words into the daily law of a free people: a servant is freed, or stays by love; a life is a life; revenge is limited to the harm done; the weak are protected; and careless harm is to be made good. Behind it is the ransom: a forfeited life bought back, which Jesus did with his own life."
+    }
+  },
+  {
+    "id": "exodus-22",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 22,
+    "date": "2026-11-12",
+    "title": "Exodus 22",
+    "sub": "Make it right",
+    "about": "God's judgments for a people just freed from slavery: pay back what you took, answer for what you were trusted with, and never crush the stranger, the widow or the fatherless. \"If they cry at all unto me, I will surely hear their cry... for I am gracious.\"",
+    "tags": [
+      "Restitution",
+      "Responsibility",
+      "Mercy",
+      "Debt",
+      "Holiness",
+      "Amends"
+    ],
+    "url": "studies/exodus-22.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai in Arabia (the judgments given to Moses)",
+      "when": "About 1446 BC, in the third month after leaving Egypt",
+      "people": [
+        "widow-in-israel",
+        "stranger-in-the-land"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "A thief restores five oxen for an ox and four sheep for a sheep, double if the beast is found alive in his hand, and if he has nothing he is sold for his theft (1-4).",
+        "A man whose beast or fire damages his neighbour's field must make restitution from the best of his own (5-6).",
+        "Goods left in keeping and stolen or lost: the thief pays double; if no thief is found, the keeper goes before the judges or swears an oath of the LORD; a borrowed beast must be made good (7-15).",
+        "A man who entices a maid not betrothed must endow her to be his wife, or pay the dowry if her father refuses (16-17).",
+        "Hard laws for a nation under God: a witch, lying with a beast, and sacrificing to any god but the LORD (18-20).",
+        "No vexing the stranger (\"ye were strangers in the land of Egypt\"), no afflicting the widow or fatherless: God will hear their cry and his wrath will wax hot (21-24).",
+        "No usury on a poor neighbour; a pledged cloak returned by sundown, for \"I am gracious\" (25-27).",
+        "Do not revile the gods or curse the ruler; give the first of the fruits and the firstborn; \"ye shall be holy men unto me\" (28-31)."
+      ],
+      "key": {
+        "ref": "Exodus 22:27",
+        "text": "For that is his covering only, it is his raiment for his skin: wherein shall he sleep? and it shall come to pass, when he crieth unto me, that I will hear; for I am gracious."
+      },
+      "big": "The first laws of daily life show what a holy people looks like: honest about what they owe, responsible for what they were trusted with, and kind to those with no one. Under it all stands a God who hears the poor man's cry because he is gracious. For a man making amends, it is the oldest pattern in the Bible, and Zacchaeus followed it."
+    }
+  },
+  {
+    "id": "exodus-23",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 23,
+    "date": "2026-11-12",
+    "title": "Exodus 23",
+    "sub": "Mine Angel shall go before thee",
+    "about": "Tell the truth, do not follow the crowd, and bring back your enemy's ox. Rest the seventh day and the seventh year, keep three feasts, and then the promise: God sends his Angel before them to bring them into the land, driving out its peoples \"by little and little.\"",
+    "tags": [
+      "Justice",
+      "Enemies",
+      "Rest",
+      "Feasts",
+      "The Angel",
+      "Little by little"
+    ],
+    "url": "studies/exodus-23.html",
+    "overview": {
+      "where": "At the foot of Mount Sinai in Arabia; looking ahead to the land from the Red sea to the Euphrates",
+      "when": "About 1446 BC, in the third month after leaving Egypt",
+      "people": [
+        "angel-before-israel",
+        "amorites",
+        "hittites",
+        "perizzites",
+        "canaanites",
+        "hivites",
+        "jebusite",
+        "stranger-in-the-land"
+      ],
+      "places": [
+        "egypt",
+        "red-sea"
+      ],
+      "story": [
+        "No false report, no following a multitude to do evil, no favouring a poor man in his cause, and no wresting the judgment of the poor (1-3, 6-8).",
+        "Bring back your enemy's ox, and help his donkey that lies under its burden (4-5).",
+        "Do not oppress a stranger: \"ye know the heart of a stranger\" (9).",
+        "Six years sow, and the seventh let the land rest, for the poor; six days work, and the seventh rest, that ox, ass, servant and stranger may be refreshed (10-13).",
+        "Three feasts in the year: unleavened bread in Abib, harvest, and ingathering; none shall appear before the LORD empty (14-19).",
+        "God sends an Angel before them, with his name in him, to keep them in the way and bring them to the place prepared; obey his voice, provoke him not (20-23).",
+        "Serve the LORD and he will bless their bread and water and take sickness away; he sends his fear and hornets, and drives the peoples out by little and little (24-30).",
+        "The bounds: from the Red sea to the sea of the Philistines, and from the desert to the river. No covenant with them or their gods, for it will be a snare (31-33)."
+      ],
+      "key": {
+        "ref": "Exodus 23:20",
+        "text": "Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared."
+      },
+      "big": "A chapter of fairness and rest ends with a promise: God goes ahead of his people in the person of an Angel who carries his name, and gives the land by little and little. The warning is the snare of the old gods and old ways, and the hope is a God who prepares the place and keeps his people on the way."
+    }
+  },
+  {
+    "id": "exodus-24",
+    "type": "chapter",
+    "book": "Exodus",
+    "ch": 24,
+    "date": "2026-11-12",
+    "title": "Exodus 24",
+    "sub": "The blood of the covenant",
+    "about": "The people say, \"All that the LORD hath said will we do.\" Moses seals the covenant with the blood of the altar, seventy elders see the God of Israel and eat and drink, and Moses goes up into the cloud for forty days and forty nights.",
+    "tags": [
+      "Covenant",
+      "Blood",
+      "The promise",
+      "Seeing God",
+      "Waiting"
+    ],
+    "url": "studies/exodus-24.html",
+    "overview": {
+      "where": "At the foot and on the side of Mount Sinai in Arabia",
+      "when": "About 1446 BC, in the third month after leaving Egypt",
+      "people": [
+        "moses",
+        "aaron",
+        "nadab",
+        "abihu",
+        "elders",
+        "hur",
+        "joshua-son-of-nun"
+      ],
+      "places": [
+        "mount-sinai",
+        "israel"
+      ],
+      "story": [
+        "The LORD calls Moses, Aaron, Nadab, Abihu and seventy elders to worship afar off; Moses alone is to come near (1-2).",
+        "Moses tells the people all the words and judgments, and they answer with one voice, \"All the words which the LORD hath said will we do\" (3).",
+        "Moses writes the words, builds an altar under the hill with twelve pillars, and young men offer burnt offerings and peace offerings (4-5).",
+        "He sprinkles half the blood on the altar, reads the book of the covenant, and the people say, \"will we do, and be obedient\" (6-7).",
+        "Moses sprinkles the blood on the people: \"Behold the blood of the covenant\" (8).",
+        "Moses, Aaron, Nadab, Abihu and the seventy go up and see the God of Israel, with a sapphire pavement under his feet; he lays not his hand on them, and they eat and drink (9-11).",
+        "The LORD calls Moses up for the tables of stone; Moses and Joshua go up and the elders tarry with Aaron and Hur (12-14).",
+        "The cloud covers the mount six days, the glory looks like devouring fire, and Moses is in the mount forty days and forty nights (15-18)."
+      ],
+      "key": {
+        "ref": "Exodus 24:8",
+        "text": "And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which the LORD hath made with you concerning all these words."
+      },
+      "big": "A people promises obedience it cannot keep, and God seals the covenant not with their promise but with blood: \"Behold the blood of the covenant.\" Jesus used the same words at the Last Supper. Under that blood the elders sat at God's table, and Moses went up to receive the pattern for a tent where God would live among them."
+    }
   }
 ];

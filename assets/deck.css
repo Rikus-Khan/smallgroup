@@ -1057,3 +1057,23 @@ svg.kings { width: 100%; height: auto; display: block; font-family: var(--sans);
   .parallel > p:last-child { margin-bottom: 0; }
   .parallel > p:not(:first-of-type) b::before { display: none; }
 }
+
+/* .plagues: the ten plagues of Egypt in a 5×2 grid (2×5 on phones). li.done / li.now / li.later; each li holds b (number), span (name), small (verses),
+   em (what the text says of Pharaoh's heart: em.self = he hardened it himself, em.lord = the LORD hardened it, plain = "was hardened"). p.plagues-key explains the colors. Exodus 7–11 */
+.plagues { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; list-style: none; padding: 0; margin: 1em 0 .6em; }
+.plagues li { border: 1.5px solid var(--line); border-radius: 10px; padding: .5em .6em .55em; background: var(--surface); color: var(--ink-soft); display: flex; flex-direction: column; gap: .12em; min-width: 0; }
+.plagues b { font: 700 clamp(.7rem, .62rem + .35vw, .95rem) var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.plagues span { font-family: var(--serif); font-size: clamp(1.05rem, .8rem + 1vw, 1.7rem); line-height: 1.1; color: var(--ink); }
+.plagues small { font-size: clamp(.72rem, .66rem + .3vw, .95rem); }
+.plagues em { font-style: normal; font-size: clamp(.72rem, .66rem + .3vw, .95rem); line-height: 1.25; margin-top: .35em; padding-top: .35em; border-top: 1px dashed var(--line-strong); color: var(--ink-soft); }
+.plagues em.self { color: var(--danger); font-weight: 700; }
+.plagues em.lord { color: var(--cool); font-weight: 700; }
+.plagues .later { border-style: dashed; opacity: .6; }
+.plagues .done { background: color-mix(in srgb, var(--ink) 5%, var(--surface)); }
+.plagues .now { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.plagues .now b { color: var(--accent-hot); }
+.plagues-key { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: clamp(.75rem, .68rem + .3vw, .95rem); color: var(--ink-soft); margin: 0 0 .6em; }
+.plagues-key i { font-style: normal; font-weight: 700; }
+.plagues-key .self i { color: var(--danger); }
+.plagues-key .lord i { color: var(--cool); }
+@media (max-width: 640px) { .plagues { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

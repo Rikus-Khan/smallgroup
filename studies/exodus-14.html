@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en" data-theme="scribe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exodus 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/deck.css">
+<link rel="stylesheet" href="../assets/themes.css">
+<style>
+/* ex14-between: the pillar standing between the camps by night (14:19-20): darkness to the Egyptians, light to Israel.
+   Night is --on-glow with --glow ink in every theme. */
+.ex14-between { width: 100%; height: auto; max-height: 50vh; display: block; }
+.ex14-sky { fill: var(--on-glow); }
+.ex14-ground { fill: color-mix(in srgb, var(--glow) 12%, var(--on-glow)); }
+.ex14-dark { fill: color-mix(in srgb, var(--on-glow) 70%, var(--glow)); }
+.ex14-lit { fill: var(--glow); }
+.ex14-pil-d { fill: color-mix(in srgb, var(--glow) 10%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 40%, var(--on-glow)); stroke-width: 2; }
+.ex14-pil-l { fill: color-mix(in srgb, var(--glow) 80%, var(--warm)); }
+.ex14-tent { fill: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); }
+.ex14-chariot { fill: color-mix(in srgb, var(--glow) 28%, var(--on-glow)); stroke: color-mix(in srgb, var(--glow) 45%, var(--on-glow)); stroke-width: 2; }
+.ex14-label { fill: var(--glow); font-weight: 700; font-size: 17px; }
+.ex14-between .ex14-pulse { animation: ex14-pulse 2.6s ease-in-out infinite alternate; }
+@keyframes ex14-pulse { from { opacity: .82; } to { opacity: 1; } }
+
+/* ex14-sea: the way through the sea. Walls of water rise on open, Israel walks the dry floor, then (a .ex14-fall step on the slide)
+   the walls come together. .ex14-end starts with Israel across and the walls up, for the slide where the waters return. */
+.ex14-sea { width: 100%; height: auto; max-height: 52vh; display: block; }
+.ex14-sea .ex14-bg { fill: var(--surface-2); }
+.ex14-sea .ex14-wall { fill: color-mix(in srgb, var(--cool) 72%, var(--surface)); stroke: color-mix(in srgb, var(--cool) 45%, var(--ink)); stroke-width: 2; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.08); transition: transform 2.2s ease .3s; }
+.ex14-sea .ex14-foam { stroke: color-mix(in srgb, var(--surface) 70%, var(--cool)); stroke-width: 3; fill: none; opacity: .8; }
+.ex14-sea .ex14-floor { fill: color-mix(in srgb, var(--warm) 38%, var(--surface-2)); transition: fill 1.6s ease .6s; }
+.ex14-sea .ex14-shore { fill: color-mix(in srgb, var(--warm) 38%, var(--surface-2)); }
+.ex14-sea .ex14-folk, .ex14-sea .ex14-chase { transform-box: fill-box; transform-origin: 50% 50%; }
+.ex14-sea .ex14-folk circle { fill: var(--accent-hot); }
+.ex14-sea .ex14-chase rect { fill: var(--ink); }
+.ex14-sea .ex14-chase circle { fill: none; stroke: var(--ink); stroke-width: 2; }
+.ex14-sea .ex14-chase { opacity: 0; }
+.ex14-sea .ex14-t { fill: var(--ink-soft); font-size: 15px; font-weight: 700; }
+.slide.active .ex14-sea .ex14-wall { transform: scaleY(1); }
+.slide.active .ex14-sea .ex14-folk { animation: ex14-walk 8s linear 1.8s both; }
+.slide.active .ex14-sea .ex14-chase { animation: ex14-chase 7s ease-in 9s both; }
+@keyframes ex14-walk { from { transform: none; } to { transform: translateY(-175px) scale(.4); } }
+@keyframes ex14-chase { 0% { opacity: 0; transform: none; } 12% { opacity: 1; } 100% { opacity: 1; transform: translateY(-110px) scale(.6); } }
+.ex14-sea.ex14-end .ex14-wall { transform: scaleY(1); transition: transform 2.4s ease .2s, opacity 2.4s ease .6s; }
+.slide.active .ex14-sea.ex14-end .ex14-folk, .ex14-sea.ex14-end .ex14-folk { animation: none; transform: translateY(-175px) scale(.4); }
+.slide.active .ex14-sea.ex14-end .ex14-chase, .ex14-sea.ex14-end .ex14-chase { animation: none; opacity: 1; transform: translateY(-110px) scale(.6); transition: opacity 1.6s ease 1.2s, transform 2s ease .6s; }
+.slide:has(.ex14-fall.on) .ex14-sea.ex14-end .ex14-wall.l { transform: scaleY(.14); }
+.slide:has(.ex14-fall.on) .ex14-sea.ex14-end .ex14-wall.r { transform: scaleY(.14); }
+.slide:has(.ex14-fall.on) .ex14-sea.ex14-end .ex14-floor { fill: color-mix(in srgb, var(--cool) 72%, var(--surface)); }
+.slide:has(.ex14-fall.on) .ex14-sea.ex14-end .ex14-chase { opacity: 0; transform: translateY(-90px) scale(.6); }
+@media (prefers-reduced-motion: reduce) {
+  .slide.active .ex14-sea .ex14-folk, .slide.active .ex14-sea .ex14-chase { animation: none; }
+  .ex14-sea .ex14-wall { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h1 class="rise" style="--d:1">Exodus 14</h1>
+    <p class="sub rise" style="--d:3">Stand still, and see the salvation of the LORD</p>
+    <p class="tag rise" style="--d:5">The sea in front, Pharaoh's army behind, and nowhere to go. God has led them here on purpose. Then he divides the sea, and the people who were slaves walk across on dry ground.</p>
+  </div>
+</section>
+
+<section class="slide watch">
+  <div class="inner">
+    <h2 class="rise">Things to watch for</h2>
+    <p class="lede rise" style="--d:1">Keep these questions in the back of your mind as we read. We'll come back to every one of them at the end.</p>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's plan</span><span class="seed-q">Why did the LORD lead Israel to camp by the sea?</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">What did the people say when they saw Pharaoh coming?</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">What did Moses tell them to do, and what would the LORD do?</span></li>
+      <li class="step"><span class="topic">The way through</span><span class="seed-q">How did Israel cross the sea?</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">What happened to the Egyptians who followed?</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">What did the people do when they saw the great work?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part one</p>
+    <h2 class="rise" style="--d:1">“Encamp before Pi-hahiroth”</h2>
+    <p class="range rise" style="--d:2">Verses 1–9</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">God turns his people toward a dead end, and tells them why before they get there.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="1-2" data-hl="turn and encamp before Pi-hahiroth|between Migdol and the sea|over against Baal-zephon"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-terrain="sinai" viewBox="260 160 560 440" style="max-height:62vh" data-regions="EGYPT, GOSHEN, ARABIA" data-towns="Rameses:l, Succoth:b, Nuweiba*:l, Mount Sinai:r" role="img" aria-label="A map of the road from Rameses and Succoth in Egypt across the Sinai to the beach at Nuweiba on the Gulf of Aqaba, with Mount Sinai in Arabia on the far side of the water.">
+          <path class="map-route" data-journey="exodus"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Down to the sea</h2>
+        <p class="note rise" style="--d:2">At the end of a long wadi the road comes out on the beach at Nuweiba, on the Gulf of Aqaba. The map follows the route as Ron Wyatt draws it. Pi-hahiroth, Migdol and Baal-zephon are the names of the places at the shore. Hills behind, water in front.</p>
+        <p class="note step">Across the water is Arabia, the land of Midian, and Mount Sinai: the mountain where Moses met the burning bush. God was bringing them to the place he had promised (3:12).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide verse" data-v="3-4" data-hl="They are entangled in the land|I will harden Pharaoh’s heart|I will be honoured upon Pharaoh|that the Egyptians may know that I am the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">On purpose</h2>
+    <div class="columns">
+      <div class="col law step">
+        <p class="who">What Pharaoh will think</p>
+        <h3>“Entangled”</h3>
+        <p>“They are entangled in the land, the wilderness hath shut them in.” <em>Entangled</em> means hemmed in, trapped, like a net. A people with the sea in front and hills on the sides.</p>
+      </div>
+      <div class="col grace step">
+        <p class="who">What the LORD is doing</p>
+        <h3>“I will be honoured”</h3>
+        <p><em>Honoured</em> here means glorified: he will show who he is. “That the Egyptians may know that I am the LORD.”</p>
+      </div>
+    </div>
+    <p class="note step">Israel is not lost. They are exactly where God put them. If you have ever found yourself at a dead end, nowhere to turn, with the old trouble coming up behind you, remember that a dead end is where a man learns whether God is able. This one was a trap that God had set for Pharaoh, not for them.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“I will harden Pharaoh’s heart”</h2>
+    <p class="note rise" style="--d:2">Read these in the order the book gives them. God said it beforehand, but Pharaoh's own choices come first, again and again, and then God confirms him in what he chose.</p>
+    <ol class="timeline rise" style="--d:3" aria-label="The hardening of Pharaoh's heart in order: foretold in 4:21; Pharaoh hardens his own heart in 8:15 and 8:32; the LORD hardens it in 9:12; Pharaoh sins yet more in 9:34; the LORD hardens it in 10:20 and 14:8.">
+      <li style="--k:0"><b>4:21</b><span>God says it will come</span><small>“I will harden his heart”</small></li>
+      <li style="--k:1"><b>8:15</b><span>Pharaoh hardens it</span><small>when he saw there was respite</small></li>
+      <li style="--k:2"><b>8:32</b><span>Pharaoh again</span><small>“at this time also”</small></li>
+      <li class="lit" style="--k:3"><b>9:12</b><span>The LORD hardens it</span><small>after Pharaoh's choice</small></li>
+      <li style="--k:4"><b>9:34</b><span>Pharaoh, once more</span><small>“he sinned yet more”</small></li>
+      <li class="lit" style="--k:5"><b>10:20</b><span>The LORD hardens it</span><small>and again in 14:8</small></li>
+    </ol>
+    <blockquote class="quote step"><p>“But when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as the LORD had said.”</p><cite>Exodus 8:15</cite></blockquote>
+    <p class="note step">A heart does not harden all at once. It hardens one “not yet” at a time: the pressure lifts, and the man goes back on what he said. Each time it is easier. That is the warning for every man in this room. When God is speaking, do not put it off: today is the day to listen.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="5-7" data-hl="Why have we done this, that we have let Israel go from serving us|six hundred chosen chariots"></section>
+
+<section class="slide verse" data-v="8-9" data-hl="the children of Israel went out with an high hand|overtook them encamping by the sea"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The old master gives chase</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>host</b>an army</li>
+      <li><b>chosen</b>picked: the best chariots and captains</li>
+      <li><b>an high hand</b>boldly, openly, with nothing to hide</li>
+      <li><b>overtook</b>caught up with</li>
+    </ul>
+    <p class="note step">Pharaoh had let them go, and then he changed his mind: <em>why have we done this?</em> He wanted his slaves back. He took six hundred of his best chariots and all the rest.</p>
+    <p class="note step">If you have been set free from a habit, you know this. The old master does not take it well. It gets its men out and comes after you, usually when you are tired, and usually when you have your back to the sea. But look: Israel went out with an <em>high hand.</em> They were not sneaking out. God had freed them in front of everybody.</p>
+    <blockquote class="quote step"><p>“Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: In whom we have redemption through his blood, even the forgiveness of sins:”</p><cite>Colossians 1:13–14</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part two</p>
+    <h2 class="rise" style="--d:1">“Fear ye not, stand still”</h2>
+    <p class="range rise" style="--d:2">Verses 10–18</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">They cry out to God, and then turn on Moses. Moses gives them four words, and God gives them one more.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="10-11" data-hl="they were sore afraid|Because there were no graves in Egypt, hast thou taken us away to die in the wilderness"></section>
+
+<section class="slide verse" data-v="12" data-hl="it had been better for us to serve the Egyptians"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“Sore afraid”</h2>
+    <p class="note rise" style="--d:2"><em>Sore</em> here means very. The cry in verse 10 was right: “the children of Israel cried out unto the LORD.” That was the right thing to do with fear. Then the cry turned sour.</p>
+    <div class="talk">
+      <p class="rise" style="--d:2"><small>the people</small>Because there were no graves in Egypt, hast thou taken us away to die in the wilderness?</p>
+      <p class="reply step"><small>the people, a moment later</small>It had been better for us to serve the Egyptians, than that we should die in the wilderness.<br><span class="flag">the old chains, remembered kindly</span></p>
+    </div>
+    <p class="note step">Egypt had whips and burdens and murdered children (1:22). But when the army appeared, slavery began to look like home. Every man who has quit something knows that voice. Do not trust a memory that comes only when you are scared. Call a brother in Christ instead.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">They would say it again</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“And they said one to another, Let us make a captain, and let us return into Egypt.”</p><cite>Numbers 14:4</cite></blockquote>
+    <blockquote class="quote step"><p>“Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer.”</p><cite>1 Corinthians 10:10</cite></blockquote>
+    <p class="note step">Here at the sea the people were only afraid. About a year later, at Kadesh, they would say it again, this time as a decision, and it cost a whole generation the land. A wish to go back is a thing to take to God and to your brothers, while it is still only a wish.</p>
+    <blockquote class="quote step"><p>“There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.”</p><cite>1 Corinthians 10:13</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="13-14" data-hl="Fear ye not, stand still, and see the salvation of the LORD|ye shall see them again no more for ever|The LORD shall fight for you, and ye shall hold your peace"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Four words from Moses</h2>
+    <p class="saying rise" style="--d:2"><em>Fear not. Stand still.</em></p>
+    <ul class="signs step">
+      <li><b>Fear ye not</b>they were right to be afraid, and told not to be ruled by it</li>
+      <li><b>Stand still</b>do not run, do not turn back, do not fight it yourself</li>
+      <li><b>See</b>“the salvation of the LORD”: watch him do it</li>
+      <li><b>Hold your peace</b>be quiet: stop the complaining</li>
+    </ul>
+    <p class="note step">“The LORD shall fight for you.” The one thing the people could not do was save themselves, and they were told so. This is what grace looks like: the work belongs to him.</p>
+    <blockquote class="quote step"><p>“Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.”</p><cite>Psalm 46:10</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="15-16" data-hl="Wherefore criest thou unto me? speak unto the children of Israel, that they go forward|lift thou up thy rod, and stretch out thine hand over the sea|on dry ground through the midst of the sea"></section>
+
+<section class="slide verse" data-v="17-18" data-hl="I will harden the hearts of the Egyptians|the Egyptians shall know that I am the LORD"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Stand still, and then go forward</h2>
+    <div class="ifthen rise" style="--d:2">
+      <div class="if"><small>First</small>Stand still. See the LORD act.</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="then"><small>then</small>Go forward. Lift the rod.</div>
+    </div>
+    <p class="note step">Moses had just told the people to stand still. Now God says, <em>wherefore criest thou unto me? speak unto the children of Israel, that they go forward.</em> Praying is right, and the time comes to move. They were to walk toward the water before it opened.</p>
+    <p class="note step">The rod was only a shepherd's staff, the one from the burning bush (4:2–4). God would use what Moses already held. The sea was divided by God, not by wood, but Moses had to lift it. A man who has prayed about the call he needs to make, the meeting he must attend or the apology he owes, may have to lift the rod. Do the next thing, and let God divide the sea.</p>
+  </div>
+</section>
+
+<section class="slide part">
+  <div class="inner">
+    <p class="part-n rise">Part three</p>
+    <h2 class="rise" style="--d:1">“The waters were a wall unto them”</h2>
+    <p class="range rise" style="--d:2">Verses 19–31</p>
+    <div class="rule"></div>
+    <p class="hook rise" style="--d:4">A night between two armies, a road through the sea, and a morning with nothing behind them.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="19-20" data-hl="the pillar of the cloud went from before their face, and stood behind them|it was a cloud and darkness to them, but it gave light by night to these|the one came not near the other all the night"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Between the camps</h2>
+    <svg class="ex14-between" viewBox="0 0 640 250" role="img" aria-label="A night scene. On the left, the Egyptian camp with chariots, in the dark. In the middle, the pillar, dark on the Egyptian side and bright on the Israelite side. On the right, the tents of Israel in its light.">
+      <rect class="ex14-sky" x="0" y="0" width="640" height="250" rx="8"/>
+      <rect class="ex14-ground" x="0" y="200" width="640" height="50"/>
+      <rect class="ex14-pil-d" x="290" y="20" width="30" height="190" rx="14"/>
+      <rect class="ex14-pil-l ex14-pulse" x="320" y="20" width="30" height="190" rx="14"/>
+      <g class="ex14-chariot">
+        <rect x="40" y="170" width="52" height="26" rx="4"/><circle cx="52" cy="198" r="10"/><circle cx="82" cy="198" r="10"/>
+        <rect x="120" y="170" width="52" height="26" rx="4"/><circle cx="132" cy="198" r="10"/><circle cx="162" cy="198" r="10"/>
+        <rect x="200" y="170" width="52" height="26" rx="4"/><circle cx="212" cy="198" r="10"/><circle cx="242" cy="198" r="10"/>
+      </g>
+      <path class="ex14-tent" d="M390 205 L425 160 L460 205 Z M470 205 L505 160 L540 205 Z M550 205 L585 160 L620 205 Z"/>
+      <text class="ex14-label" x="150" y="238" text-anchor="middle">Darkness to them</text>
+      <text class="ex14-label" x="505" y="238" text-anchor="middle">Light to these</text>
+    </svg>
+    <p class="note step">The pillar that had led them from in front now moved behind them and stood between. To the Egyptians it was cloud and darkness. To Israel it gave light. “So that the one came not near the other all the night.” Pharaoh's army could not take one step closer.</p>
+    <p class="note step">The same LORD stands between the believer and what is chasing him. He is both the light and the wall. Nothing gets to you that has not first got past him.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="21-22" data-hl="the LORD caused the sea to go back by a strong east wind all that night|and made the sea dry land|the waters were a wall unto them on their right hand, and on their left"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <div class="split">
+      <div class="stage">
+        <svg data-terrain="sinai" viewBox="580 400 300 220" style="max-height:62vh" data-regions="ARABIA" data-towns="Nuweiba*:l, Mount Sinai:r" role="img" aria-label="A close map of the beach at Nuweiba on the Gulf of Aqaba. On opening, the route draws from the beach across the gulf to the Arabian shore and Mount Sinai.">
+          <path class="map-route" data-via="Nuweiba, @34.83 28.9, @35.05 28.78, Mount Sinai"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="rise" style="--d:1">Across the sea</h2>
+        <p class="note rise" style="--d:2">All that night the LORD sent a strong east wind and the water went back. By morning Israel was on the other side, in Arabia. This is a deep sea, and it was crossed on a road God made. Nobody on that beach did it by their own strength.</p>
+        <p class="note step">Notice the time: “all that night.” The sea did not open in a flash. They had hours of waiting, with the wind in their faces and the wall of water on both sides, and they had to keep walking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">On dry ground, in the midst of the sea</h2>
+    <svg class="ex14-sea" viewBox="0 0 640 280" role="img" aria-label="Looking down a road through the sea. On both sides a wall of water rises. In the middle is a dry floor that runs far ahead to a shore. The people of Israel walk away along it, and later the Egyptian chariots follow.">
+      <rect class="ex14-bg" x="0" y="0" width="640" height="280" rx="8"/>
+      <polygon class="ex14-shore" points="290,36 350,36 350,70 290,70"/>
+      <polygon class="ex14-floor" points="120,262 520,262 350,70 290,70"/>
+      <polygon class="ex14-wall l" points="40,0 290,36 290,70 120,262 40,262"/>
+      <polygon class="ex14-wall r" points="600,0 350,36 350,70 520,262 600,262"/>
+      <path class="ex14-foam" d="M60 40 Q120 60 180 55 T280 70 M60 110 Q110 130 160 125 M60 180 Q100 195 140 190 M580 40 Q520 60 460 55 T360 70 M580 110 Q530 130 480 125 M580 180 Q540 195 500 190"/>
+      <g class="ex14-folk"><circle cx="290" cy="244" r="6"/><circle cx="312" cy="252" r="6"/><circle cx="334" cy="244" r="6"/><circle cx="356" cy="252" r="6"/><circle cx="300" cy="258" r="6"/><circle cx="345" cy="259" r="6"/></g>
+      <g class="ex14-chase"><rect x="270" y="236" width="40" height="18" rx="3"/><circle cx="278" cy="258" r="7"/><circle cx="302" cy="258" r="7"/><rect x="340" y="240" width="40" height="18" rx="3"/><circle cx="348" cy="262" r="7"/><circle cx="372" cy="262" r="7"/></g>
+      <text class="ex14-t" x="320" y="26" text-anchor="middle">Arabia, the far shore</text>
+    </svg>
+    <p class="note step">“The waters were a wall unto them on their right hand, and on their left.” A wall on each side, and between them a floor of dry ground. Israel walked the whole way.</p>
+    <blockquote class="quote step"><p>“By faith they passed through the Red sea as by dry land: which the Egyptians assaying to do were drowned.”</p><cite>Hebrews 11:29</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide verse" data-v="23-25" data-hl="in the morning watch the LORD looked unto the host of the Egyptians|took off their chariot wheels, that they drave them heavily|the LORD fighteth for them against the Egyptians"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“The LORD fighteth for them”</h2>
+    <ul class="signs rise" style="--d:2">
+      <li><b>morning watch</b>the last part of the night, before dawn</li>
+      <li><b>troubled</b>threw them into confusion</li>
+      <li><b>drave</b>drove: “they drave them heavily” means the chariots dragged and jammed</li>
+      <li><b>fighteth</b>fights</li>
+    </ul>
+    <p class="note step">Only now, with the sea open and the host in the middle of it, does the LORD look out through the pillar. The chariots that were their pride jammed in the soft ground. The Egyptians did not need a prophet to tell them what was happening. They said it themselves: <em>Let us flee from the face of Israel; for the LORD fighteth for them.</em></p>
+    <p class="note step">Even Pharaoh's men could see it. The people who had hardened themselves against every sign finally spoke the truth, and too late. Do not wait for the water to come back before you admit who is fighting for you.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="26-28" data-hl="the sea returned to his strength when the morning appeared|the LORD overthrew the Egyptians in the midst of the sea|there remained not so much as one of them"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">The waters return</h2>
+    <svg class="ex14-sea ex14-end" viewBox="0 0 640 280" role="img" aria-label="The road through the sea again. The people of Israel are far ahead on the shore. The Egyptian chariots are still on the sea floor between the walls of water. On a step, the walls fall in and cover them.">
+      <rect class="ex14-bg" x="0" y="0" width="640" height="280" rx="8"/>
+      <polygon class="ex14-shore" points="290,36 350,36 350,70 290,70"/>
+      <polygon class="ex14-floor" points="120,262 520,262 350,70 290,70"/>
+      <polygon class="ex14-wall l" points="40,0 290,36 290,70 120,262 40,262"/>
+      <polygon class="ex14-wall r" points="600,0 350,36 350,70 520,262 600,262"/>
+      <path class="ex14-foam" d="M60 40 Q120 60 180 55 T280 70 M60 110 Q110 130 160 125 M60 180 Q100 195 140 190 M580 40 Q520 60 460 55 T360 70 M580 110 Q530 130 480 125 M580 180 Q540 195 500 190"/>
+      <g class="ex14-folk"><circle cx="290" cy="244" r="6"/><circle cx="312" cy="252" r="6"/><circle cx="334" cy="244" r="6"/><circle cx="356" cy="252" r="6"/><circle cx="300" cy="258" r="6"/><circle cx="345" cy="259" r="6"/></g>
+      <g class="ex14-chase"><rect x="270" y="236" width="40" height="18" rx="3"/><circle cx="278" cy="258" r="7"/><circle cx="302" cy="258" r="7"/><rect x="340" y="240" width="40" height="18" rx="3"/><circle cx="348" cy="262" r="7"/><circle cx="372" cy="262" r="7"/></g>
+    </svg>
+    <p class="note step ex14-fall">At Moses' word the sea “returned to his strength when the morning appeared.” The walls came together, and the host of Pharaoh that had come in after Israel was covered.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Hard to read, and just</h2>
+    <p class="note rise" style="--d:2">This is hard to read, and it should be. These were men, and each one had a family. But it is also justice. This was the army of Egypt, the nation that had thrown Israel's baby boys into the river, at a king's order:</p>
+    <blockquote class="quote step"><p>“And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.”</p><cite>Exodus 1:22</cite></blockquote>
+    <p class="note step">God had been patient through every plague, and Pharaoh had refused every time. The sea closed on the army that was chasing a people it meant to bring back in chains.</p>
+  </div>
+</section>
+
+<section class="slide verse" data-v="29-31" data-hl="the children of Israel walked upon dry land in the midst of the sea|Thus the LORD saved Israel that day out of the hand of the Egyptians|Israel saw the Egyptians dead upon the sea shore|the people feared the LORD, and believed the LORD, and his servant Moses"></section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">“Thus the LORD saved Israel that day”</h2>
+    <p class="note rise" style="--d:2">Israel saw the Egyptians dead on the shore. The enemy that had been behind them for four hundred years was not there anymore. They had not fought. The LORD had.</p>
+    <blockquote class="quote step"><p>“And deliver them who through fear of death were all their lifetime subject to bondage.”</p><cite>Hebrews 2:15</cite></blockquote>
+    <p class="note step">That is what the cross does for a man. The one who held us in bondage is beaten, and the chains do not belong to us anymore. The old master may still shout from the shore, but he cannot cross the water.</p>
+    <p class="note step">And then: “the people feared the LORD, and believed the LORD, and his servant Moses.” <em>Feared</em> means respected, stood in awe. It took the sea to make them believe, and a man's belief often starts with what he has seen God do.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Baptized in the cloud and in the sea</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea; And were all baptized unto Moses in the cloud and in the sea;”</p><cite>1 Corinthians 10:1–2</cite></blockquote>
+    <p class="note step">Paul reads the crossing as a baptism. Under the cloud, through the sea, and the old life stayed on the other side. It joined the people to Moses, their rescuer and leader.</p>
+    <blockquote class="quote step"><p>“Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.”</p><cite>Romans 6:4</cite></blockquote>
+    <p class="note step">A believer goes down into the water and comes up on the other side. The old life is buried, and a new walk begins. If you have been baptized, that is what it meant. If you have not, talk to your pastor.</p>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">Real world: after the sea</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.”</p><cite>Isaiah 43:2</cite></blockquote>
+    <p class="note step">Israel's story today is yours. You will have a day when the sea is in front and the old trouble is behind, and your back is to the wall. Then:</p>
+    <ul class="signs step">
+      <li><b>Cry out</b>to the LORD, and call your brothers in Christ and your pastor</li>
+      <li><b>Do not go back</b>the old life only looks kind when you are afraid</li>
+      <li><b>Stand still</b>and let him do what only he can do</li>
+      <li><b>Go forward</b>and take the next step he shows you</li>
+    </ul>
+    <blockquote class="quote step"><p>“What shall we then say to these things? If God be for us, who can be against us?”</p><cite>Romans 8:31</cite></blockquote>
+  </div>
+</section>
+
+<section class="slide ex">
+  <div class="inner">
+    <h2 class="rise" style="--d:1">One warning, for the shore</h2>
+    <blockquote class="quote rise" style="--d:2"><p>“Then believed they his words; they sang his praise. They soon forgat his works; they waited not for his counsel:”</p><cite>Psalm 106:12–13</cite></blockquote>
+    <p class="note step">The very next chapter, Israel sings. And within three days they are complaining about the water. A man can stand on the far shore and swear he will never doubt God again, and the next week he is back to murmuring. That is not the end of the story, and God does not walk away from them. But it is a warning to keep remembering, just as chapter 13 said.</p>
+    <p class="note step">If you have forgotten, and you have fallen since the day you were set free, the sea does not close on you. The one who parted the water is the one who forgives (1 John 1:9). Come back.</p>
+  </div>
+</section>
+
+<section class="slide remember">
+  <div class="inner">
+    <h2 class="rise">Points to remember</h2>
+    <ol class="seeds">
+      <li class="step"><span class="topic">God's plan</span><span class="seed-q">“I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am the LORD” <cite>14:4</cite></span><span class="take">The dead end was God's doing. He leads us there to show who he is.</span></li>
+      <li class="step"><span class="topic">Fear</span><span class="seed-q">“It had been better for us to serve the Egyptians, than that we should die in the wilderness” <cite>14:12</cite></span><span class="take">Fear makes the old chains look kind. Do not trust it.</span></li>
+      <li class="step"><span class="topic">Grace</span><span class="seed-q">“Fear ye not, stand still, and see the salvation of the LORD” <cite>14:13</cite></span><span class="take">The LORD fights for you. Stand still, then go forward.</span></li>
+      <li class="step"><span class="topic">The way through</span><span class="seed-q">“the children of Israel went into the midst of the sea upon the dry ground” <cite>14:22</cite></span><span class="take">God makes a road where there was none, and we walk it by faith.</span></li>
+      <li class="step"><span class="topic">Justice</span><span class="seed-q">“there remained not so much as one of them” <cite>14:28</cite></span><span class="take">The enemy that held Israel was gone, and God's patience with Pharaoh had a limit.</span></li>
+      <li class="step"><span class="topic">Faith</span><span class="seed-q">“the people feared the LORD, and believed the LORD, and his servant Moses” <cite>14:31</cite></span><span class="take">They saw, and they believed. Keep remembering what you have seen him do.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 1 of 6</p>
+      <span class="topic">God's plan</span>
+      <h2>Why did the LORD lead Israel to camp by the sea?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="2" data-hl="turn and encamp before Pi-hahiroth, between Migdol and the sea"></blockquote>
+      <blockquote class="quote step" data-q="4" data-hl="I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am the LORD"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>So that Pharaoh would follow, and the LORD would be honoured: “that the Egyptians may know that I am the LORD.” Israel was not lost. They were exactly where God put them. If you feel stuck at a dead end, he knows where you are.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 2 of 6</p>
+      <span class="topic">Fear</span>
+      <h2>What did the people say when they saw Pharaoh coming?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="10" data-hl="they were sore afraid: and the children of Israel cried out unto the LORD"></blockquote>
+      <blockquote class="quote step" data-q="12" data-hl="it had been better for us to serve the Egyptians"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They cried to the LORD, which was right, then blamed Moses and wished they were back in slavery. Fear can make old chains look like home. When it does, call your brothers in Christ instead of going back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 3 of 6</p>
+      <span class="topic">Grace</span>
+      <h2>What did Moses tell them to do, and what would the LORD do?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="13" data-hl="Fear ye not, stand still, and see the salvation of the LORD"></blockquote>
+      <blockquote class="quote step" data-q="14" data-hl="The LORD shall fight for you, and ye shall hold your peace"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>Fear not, stand still, and see: the LORD would fight for them. Then, when God said so, they went forward. We cannot save ourselves. The work is his, and then he asks us to take the next step.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 4 of 6</p>
+      <span class="topic">The way through</span>
+      <h2>How did Israel cross the sea?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="21" data-hl="the LORD caused the sea to go back by a strong east wind all that night"></blockquote>
+      <blockquote class="quote step" data-q="22" data-hl="the waters were a wall unto them on their right hand, and on their left"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>On dry ground, through the midst of the sea, with a wall of water on each side. The LORD opened it with a strong east wind, and Israel walked through by faith. God can make a road where there is no road.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 5 of 6</p>
+      <span class="topic">Justice</span>
+      <h2>What happened to the Egyptians who followed?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="25" data-hl="the LORD fighteth for them against the Egyptians"></blockquote>
+      <blockquote class="quote step" data-q="28" data-hl="there remained not so much as one of them"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>God troubled their host, and the sea came back and covered them. It is hard to read, but it is justice on the army of the nation that had drowned Israel's sons. The enemy that held Israel was gone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide qa">
+  <div class="inner">
+    <div class="qa-left">
+      <p class="counter">Question 6 of 6</p>
+      <span class="topic">Faith</span>
+      <h2>What did the people do when they saw the great work?</h2>
+      <p class="ask-line">What verses tell us about this?</p>
+      <button class="reveal" type="button">Show a verse</button>
+    </div>
+    <div class="qa-right">
+      <blockquote class="quote step" data-q="30" data-hl="Thus the LORD saved Israel that day out of the hand of the Egyptians"></blockquote>
+      <blockquote class="quote step" data-q="31" data-hl="the people feared the LORD, and believed the LORD, and his servant Moses"></blockquote>
+      <div class="answer step"><h3>Answer</h3><p>They feared the LORD and believed him and his servant Moses. They saw what he did, and they trusted him. Keep what you have seen him do in front of you for the next hard day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide prayer">
+  <div class="inner">
+    <div class="emblem rise"></div>
+    <h2 class="rise" style="--d:1">Prayer requests</h2>
+    <p class="ask-line rise" style="--d:2">What can we pray about for you today?</p>
+    <blockquote class="quote rise" style="--d:4" data-q="13" data-hl="Fear ye not, stand still, and see the salvation of the LORD"></blockquote>
+  </div>
+</section>
+
+</main>
+
+<script>
+// King James Version, Exodus chapter 14
+const V = {
+  1: "And the LORD spake unto Moses, saying,",
+  2: "Speak unto the children of Israel, that they turn and encamp before Pi-hahiroth, between Migdol and the sea, over against Baal-zephon: before it shall ye encamp by the sea.",
+  3: "For Pharaoh will say of the children of Israel, They are entangled in the land, the wilderness hath shut them in.",
+  4: "And I will harden Pharaoh’s heart, that he shall follow after them; and I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am the LORD. And they did so.",
+  5: "And it was told the king of Egypt that the people fled: and the heart of Pharaoh and of his servants was turned against the people, and they said, Why have we done this, that we have let Israel go from serving us?",
+  6: "And he made ready his chariot, and took his people with him:",
+  7: "And he took six hundred chosen chariots, and all the chariots of Egypt, and captains over every one of them.",
+  8: "And the LORD hardened the heart of Pharaoh king of Egypt, and he pursued after the children of Israel: and the children of Israel went out with an high hand.",
+  9: "But the Egyptians pursued after them, all the horses and chariots of Pharaoh, and his horsemen, and his army, and overtook them encamping by the sea, beside Pi-hahiroth, before Baal-zephon.",
+  10: "And when Pharaoh drew nigh, the children of Israel lifted up their eyes, and, behold, the Egyptians marched after them; and they were sore afraid: and the children of Israel cried out unto the LORD.",
+  11: "And they said unto Moses, Because there were no graves in Egypt, hast thou taken us away to die in the wilderness? wherefore hast thou dealt thus with us, to carry us forth out of Egypt?",
+  12: "Is not this the word that we did tell thee in Egypt, saying, Let us alone, that we may serve the Egyptians? For it had been better for us to serve the Egyptians, than that we should die in the wilderness.",
+  13: "And Moses said unto the people, Fear ye not, stand still, and see the salvation of the LORD, which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.",
+  14: "The LORD shall fight for you, and ye shall hold your peace.",
+  15: "And the LORD said unto Moses, Wherefore criest thou unto me? speak unto the children of Israel, that they go forward:",
+  16: "But lift thou up thy rod, and stretch out thine hand over the sea, and divide it: and the children of Israel shall go on dry ground through the midst of the sea.",
+  17: "And I, behold, I will harden the hearts of the Egyptians, and they shall follow them: and I will get me honour upon Pharaoh, and upon all his host, upon his chariots, and upon his horsemen.",
+  18: "And the Egyptians shall know that I am the LORD, when I have gotten me honour upon Pharaoh, upon his chariots, and upon his horsemen.",
+  19: "And the angel of God, which went before the camp of Israel, removed and went behind them; and the pillar of the cloud went from before their face, and stood behind them:",
+  20: "And it came between the camp of the Egyptians and the camp of Israel; and it was a cloud and darkness to them, but it gave light by night to these: so that the one came not near the other all the night.",
+  21: "And Moses stretched out his hand over the sea; and the LORD caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.",
+  22: "And the children of Israel went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left.",
+  23: "And the Egyptians pursued, and went in after them to the midst of the sea, even all Pharaoh’s horses, his chariots, and his horsemen.",
+  24: "And it came to pass, that in the morning watch the LORD looked unto the host of the Egyptians through the pillar of fire and of the cloud, and troubled the host of the Egyptians,",
+  25: "And took off their chariot wheels, that they drave them heavily: so that the Egyptians said, Let us flee from the face of Israel; for the LORD fighteth for them against the Egyptians.",
+  26: "And the LORD said unto Moses, Stretch out thine hand over the sea, that the waters may come again upon the Egyptians, upon their chariots, and upon their horsemen.",
+  27: "And Moses stretched forth his hand over the sea, and the sea returned to his strength when the morning appeared; and the Egyptians fled against it; and the LORD overthrew the Egyptians in the midst of the sea.",
+  28: "And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.",
+  29: "But the children of Israel walked upon dry land in the midst of the sea; and the waters were a wall unto them on their right hand, and on their left.",
+  30: "Thus the LORD saved Israel that day out of the hand of the Egyptians; and Israel saw the Egyptians dead upon the sea shore.",
+  31: "And Israel saw that great work which the LORD did upon the Egyptians: and the people feared the LORD, and believed the LORD, and his servant Moses.",
+};
+const BOOK = "Exodus 14";
+</script>
+<script src="../assets/deck.js"></script>
+</body>
+</html>
