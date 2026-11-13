@@ -328,7 +328,7 @@
     "Ur": [46.10, 30.96, "r"], "Erech": [45.64, 31.32, "r"], "Babel": [44.42, 32.54, "r"], "Babylon": [44.42, 32.54, "r"], "Nineveh": [43.15, 36.36, "r"],
     "Calah": [43.33, 36.10, "r"], "Asshur": [43.26, 35.46, "r"], "Mari": [40.89, 34.55, "r"], "Haran": [39.03, 36.86, "t"], "Carchemish": [38.01, 36.83, "l"],
     "Gozan": [40.04, 36.84, "t"], "Tadmor": [38.27, 34.55, "b"], "Hamath": [36.75, 35.13, "r"], "Riblah": [36.55, 34.45, "r"], "Damascus": [36.29, 33.51, "r"],
-    "Shushan": [48.25, 32.19, "l"], "Achmetha": [48.52, 34.80, "l"], "Ararat": [44.234, 39.441, "l", "m"], // where the ark rested "upon the mountains of Ararat" (Genesis 8:4): Durupinar, after Ron Wyatt (Rick's ruling)
+    "Shushan": [48.25, 32.19, "l"], "Achmetha": [48.52, 34.80, "l"], "Ararat": [44.234, 39.441, "l", "m"], // where Noah's ark rested "upon the mountains of Ararat" (Genesis 8:4): Durupinar, after Ron Wyatt (Rick's ruling)
     "Tyre": [35.20, 33.27, "l"], "Sidon": [35.37, 33.56, "l"], "Zarephath": [35.30, 33.46, "l"], "Accho": [35.07, 32.92, "l"],
     "Memphis": [31.25, 29.85, "l"], "On": [31.31, 30.13, "l"], "Zoan": [31.88, 30.98, "l"], "Rameses": [31.82, 30.80, "l"], "Pithom": [31.96, 30.55, "l"],
     "Succoth": [32.10, 30.55, "r"], "No (Thebes)": [32.65, 25.70, "r"],
