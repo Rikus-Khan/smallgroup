@@ -183,7 +183,17 @@
     ["scarceness", "scarcity, running short"], ["stiffnecked", "like an ox that locks its neck and will not turn when the driver pulls; stubborn"], ["champaign", "open, level country"],
     ["roebuck", "a kind of deer"], ["hart", "a male deer"], ["lusteth", "desires strongly"],
     ["nought", "nothing"], ["pygarg", "a wild grazing beast; the name means 'white rump'"], ["glede", "a bird of prey of the kite kind"],
-    ["wrest", "to twist, to bend out of shape"], ["evilfavouredness", "anything ugly or faulty about an animal"], ["in any wise", "by all means, without fail"]
+    ["wrest", "to twist, to bend out of shape"], ["evilfavouredness", "anything ugly or faulty about an animal"], ["in any wise", "by all means, without fail"],
+    ["maw", "the stomach of a beast"], ["patrimony", "what came down to a man from his father's house"], ["observer of times", "one who keeps lucky and unlucky days"],
+    ["familiar spirits", "spirits a medium calls on for answers"], ["succeedest", "take the place of (thou succeedest them)"], ["tributaries", "people who pay tribute to another nation and serve it"],
+    ["bulwarks", "siege works built up against a city's walls"], ["eared", "ploughed"], ["bewail", "weep aloud over"],
+    ["amerce", "fine, make him pay a penalty"], ["chanceth", "happens"], ["liketh", "pleases"],
+    ["forbear", "hold back, refrain"], ["privy", "private, hidden"], ["avouched", "declared openly as one's own, owned before witnesses"],
+    ["terribleness", "awesome, fearful deeds that make men tremble"], ["perverteth", "twists, bends out of its straight course"], ["setteth light by", "makes light of, despises"],
+    ["botch", "a boil, an angry sore"], ["emerods", "painful swellings"], ["fray", "frighten off"],
+    ["straitness", "a squeeze: no way out, no food"], ["blasting", "a scorching wind that withers the crop"], ["solemnity", "a set time kept with ceremony"],
+    ["distil", "fall in drops, like dew"], ["mischiefs", "harms, disasters"], ["suckling", "a nursing baby"],
+    ["unmindful", "forgetful"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");

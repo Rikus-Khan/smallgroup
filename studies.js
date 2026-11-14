@@ -25739,5 +25739,841 @@ window.STUDIES = [
       },
       "big": "God sets limits on those with power: the best for the LORD, no man condemned on one witness, hard cases taken to those who know the law, and a king under the book. Solomon did all three of the things he was told not to do (1 Kings 10-11), and “his wives turned away his heart”: the heart turns first. The way to keep it is the Word, read every day."
     }
+  },
+  {
+    "id": "deuteronomy-18",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 18,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 18",
+    "sub": "No fortune-tellers: a Prophet like unto Moses",
+    "about": "The priests the Levites have no inheritance in the land, for the LORD is their inheritance; they live of the offerings, and a Levite who comes up with all the desire of his mind eats like portions with his brethren. Israel is not to learn the abominations of the nations: no son or daughter passed through the fire, no divination, observer of times, enchanter, witch, charmer, consulter with familiar spirits, wizard or necromancer. Instead the LORD will raise up a Prophet like unto Moses and put his words in his mouth; Peter names him as Jesus (Acts 3:22). And a prophet whose word does not come to pass has spoken presumptuously.",
+    "tags": [
+      "The Levites’ portion",
+      "Witchcraft and the occult",
+      "Perfect with the LORD",
+      "The Prophet like unto Moses",
+      "Hear ye him",
+      "The test of a prophet"
+    ],
+    "url": "studies/deuteronomy-18.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking back to “Horeb in the day of the assembly” (18:16)",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When thou art come into the land” (18:9)",
+      "people": [
+        "moses",
+        "priests-and-levites"
+      ],
+      "places": [
+        "horeb"
+      ],
+      "story": [
+        "The priests the Levites have no part nor inheritance with Israel: the LORD is their inheritance (1-2).",
+        "The priest’s due: the shoulder, the two cheeks and the maw, the firstfruit of corn, wine and oil, and the first of the fleece (3-5).",
+        "A Levite who comes from any of the gates with all the desire of his mind ministers and eats like portions with his brethren (6-8).",
+        "Israel must not learn the abominations of the nations: passing children through the fire, divination, observers of times, enchanters, witches, charmers, consulters with familiar spirits, wizards and necromancers (9-11).",
+        "For these abominations the LORD drives the nations out; Israel is to be perfect with the LORD (12-14).",
+        "The LORD will raise up a Prophet like unto Moses, as the people asked at Horeb; he will speak God’s words, and God will require it of whoever will not hearken (15-19).",
+        "The prophet who speaks presumptuously in God’s name, or in the name of other gods, shall die; if his word does not come to pass, the LORD has not spoken it (20-22)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 18:15",
+        "text": "The LORD thy God will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;"
+      },
+      "big": "The nations went to diviners, mediums and the dead for answers; God shut every one of those doors, because he had something better. He would raise up a Prophet like unto Moses, from among their brethren, with God’s own words in his mouth. Peter and Stephen name Moses as the speaker, and Peter says the Prophet is Jesus (Acts 3:22-23; 7:37). Even King Manasseh, who did these things, was heard when he humbled himself (2 Chronicles 33:12-13). Hear him, and test every other voice by his Word."
+    }
+  },
+  {
+    "id": "deuteronomy-19",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 19,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 19",
+    "sub": "Three cities and a road, the landmark, and the false witness",
+    "about": "Three cities of refuge are to be set apart in the land, the land divided into three parts and a way prepared, so that the man who killed his neighbour ignorantly can flee before the avenger of blood, “while his heart is hot”, overtakes him; three more if the LORD enlarges their coast. The man who killed in hate is fetched out by the elders of his own city. No one is to remove his neighbour’s landmark. One witness is not enough for any sin; and the false witness is given the very sentence he wanted for his brother: life for life, eye for eye.",
+    "tags": [
+      "Cities of refuge",
+      "The way prepared",
+      "No refuge for hate",
+      "The landmark",
+      "Two or three witnesses",
+      "The false witness",
+      "Eye for eye"
+    ],
+    "url": "studies/deuteronomy-19.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking ahead to the land, divided “into three parts” (19:3)",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When the LORD thy God hath cut off the nations” (19:1); Joshua names the three cities in Joshua 20:7",
+      "people": [
+        "moses",
+        "elders"
+      ],
+      "places": [
+        "city-of-refuge"
+      ],
+      "story": [
+        "When they dwell in the land, Israel is to separate three cities, divide the land into three parts and prepare a way, that every slayer may flee there (1-3).",
+        "The slayer who killed his neighbour ignorantly, like the axe head that slips from the helve, flees and lives, lest the avenger of blood overtake him while his heart is hot, because the way is long (4-7).",
+        "If the LORD enlarges their coast, they are to add three cities more, that innocent blood be not shed in the land (8-10).",
+        "The man who hated his neighbour and lay in wait for him is fetched out of the city by his elders and given to the avenger of blood (11-13).",
+        "No man is to remove his neighbour’s landmark, set of old time (14).",
+        "One witness shall not rise up against a man for any sin; at the mouth of two or three witnesses the matter is established (15).",
+        "A false witness, found out by diligent inquisition, receives what he had thought to do to his brother: life for life, eye for eye, tooth for tooth (16-21)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 19:3",
+        "text": "Thou shalt prepare thee a way, and divide the coasts of thy land, which the LORD thy God giveth thee to inherit, into three parts, that every slayer may flee thither."
+      },
+      "big": "God made a refuge near enough to reach and a road ready to it, that every slayer might flee thither; and Jesus says, “him that cometh to me I will in no wise cast out” (John 6:37). The city did not hide hate, but where no city could take David in, God forgave him (2 Samuel 12:13). God guards what is a man’s own (the landmark) and his good name (two or three witnesses), and he turns the false witness’s lie back on him. Jesus, condemned by false witnesses (Matthew 26:59-60), did not pay them back, and tells his followers to leave vengeance to God (Matthew 5:38-39; Romans 12:19)."
+    }
+  },
+  {
+    "id": "deuteronomy-20",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 20,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 20",
+    "sub": "Be not afraid: the LORD goes with you to fight for you",
+    "about": "Going out to battle against horses, chariots and a bigger army, Israel is not to be afraid, for the LORD who brought them out of Egypt is with them; the priest tells them so before the battle. The officers send home the man with a new house not dedicated, a vineyard not yet eaten of, a wife betrothed and not taken, and the fearful and fainthearted, lest his brethren’s heart faint. Peace is proclaimed to a city before a siege; the nations of the land are utterly destroyed, that they teach Israel not their abominations; and the fruit trees are spared, for the tree of the field is man’s life.",
+    "tags": [
+      "Be not afraid",
+      "The priest before battle",
+      "Sent home",
+      "The fearful and fainthearted",
+      "Peace first",
+      "The nations of the land",
+      "The fruit trees"
+    ],
+    "url": "studies/deuteronomy-20.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking ahead to the wars in the land, and against cities “very far off” (20:15)",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When thou goest out to battle against thine enemies” (20:1); Gideon keeps the law of the fearful in Judges 7:3",
+      "people": [
+        "moses",
+        "priests",
+        "officers-of-israel",
+        "hittites",
+        "amorites",
+        "canaanites",
+        "perizzites",
+        "hivites",
+        "jebusite"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "When Israel sees horses, chariots and a people more than they, they are not to be afraid, for the LORD who brought them out of Egypt is with them (1).",
+        "Before the battle the priest says: Hear, O Israel, fear not, for the LORD your God goes with you to fight for you and to save you (2-4).",
+        "The officers send home the man with a new house not dedicated, a vineyard not yet eaten of, and a wife betrothed and not yet taken (5-7).",
+        "The fearful and fainthearted man goes home too, lest his brethren’s heart faint as well; then captains are made over the people (8-9).",
+        "Peace is proclaimed to a city first; if it opens, its people serve as tributaries; if it makes war, it is besieged (10-15).",
+        "The cities of the six nations in the land are utterly destroyed, that they teach Israel not to do after their abominations (16-18).",
+        "In a long siege the trees for meat are not to be cut down, for the tree of the field is man’s life; only other trees may be cut for bulwarks (19-20)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 20:4",
+        "text": "For the LORD your God is he that goeth with you, to fight for you against your enemies, to save you."
+      },
+      "big": "Fear is answered by one fact: “the LORD your God is he that goeth with you, to fight for you”. God cared for a man’s house, vineyard and bride even in war, sent the fearful home without shame because fear spreads, offered peace before judgment, judged the nations of the land so that they would not teach Israel their abominations, and spared the fruit trees. Our fight is not against flesh and blood (Ephesians 6:12), and “greater is he that is in you, than he that is in the world” (1 John 4:4)."
+    }
+  },
+  {
+    "id": "deuteronomy-21",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 21,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 21",
+    "sub": "Innocent blood, the son of the hated wife, and the man hanged on a tree",
+    "about": "A man is found slain in the field and no one knows who did it: the elders of the nearest city wash their hands over a heifer and pray, “Be merciful, O LORD”. A captive woman taken to wife is given a month to mourn and is never to be sold. The firstborn of the hated wife keeps his double portion. A stubborn and rebellious son, “a glutton, and a drunkard”, is brought to the elders at the gate. And a man hanged on a tree is buried that day, “for he that is hanged is accursed of God”: the words Paul uses of Christ, “made a curse for us” (Galatians 3:13).",
+    "tags": [
+      "The unknown slain",
+      "The heifer in the valley",
+      "The captive wife",
+      "The firstborn’s double portion",
+      "The rebellious son",
+      "Hanged on a tree"
+    ],
+    "url": "studies/deuteronomy-21.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the laws look ahead to the land, its fields, cities and gates",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "people": [
+        "moses"
+      ],
+      "places": [],
+      "story": [
+        "When a man is found slain in the field and no one knows who killed him, the elders and judges measure to the nearest city (1-2).",
+        "That city’s elders bring a heifer that never drew in the yoke down to a rough valley, and the priests the sons of Levi come near (3-5).",
+        "The elders wash their hands over the heifer and say, Our hands have not shed this blood; they pray, Be merciful, O LORD, and the blood is forgiven (6-9).",
+        "A captive woman taken to wife mourns her father and mother a full month; if he has no delight in her, she goes free and is never sold (10-14).",
+        "The son of the hated wife, if he is the firstborn, keeps the double portion: the right of the firstborn is his (15-17).",
+        "A stubborn and rebellious son, a glutton and a drunkard, is brought by his father and mother to the elders of his city, and stoned, that all Israel may hear and fear (18-21).",
+        "A man hanged on a tree is not to remain there all night but is buried that day, for he that is hanged is accursed of God (22-23)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 21:23",
+        "text": "His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of God;) that thy land be not defiled, which the LORD thy God giveth thee for an inheritance."
+      },
+      "big": "God does not let innocent blood be shrugged off, and he speaks for those with no power: the captive, the son of the wife loved less. He takes rebellion and drink seriously, and the Father still runs to the son who comes home (Luke 15:20). The law that the hanged man is “accursed of God” is the law Paul quotes of the cross: “Christ hath redeemed us from the curse of the law, being made a curse for us” (Galatians 3:13), and at the cross the bodies were taken down before the sabbath (John 19:31)."
+    }
+  },
+  {
+    "id": "deuteronomy-22",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 22,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 22",
+    "sub": "Thy brother’s ox, a wall on the roof, and marriage kept honourable",
+    "about": "Don’t hide yourself from your brother’s lost ox or sheep: bring it back, and help him lift up his fallen ass. Men and women are not to dress as the other. Let the mother bird go. Build a battlement round your roof. Don’t plow with an ox and an ass together, or mix seeds or cloth; put fringes on your cloak. Then laws that guard marriage: a wife slandered by her husband is defended, both the man and the woman are judged in adultery, and the betrothed damsel who cried in the field, with none to save her, is innocent.",
+    "tags": [
+      "Thou mayest not hide thyself",
+      "The mother bird",
+      "The battlement",
+      "An ox and an ass",
+      "The fringes",
+      "A wife’s good name",
+      "None to save her"
+    ],
+    "url": "studies/deuteronomy-22.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the laws look ahead to houses, fields, vineyards and city gates in the land",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "people": [
+        "moses"
+      ],
+      "places": [],
+      "story": [
+        "A man who sees his brother’s ox, sheep, ass or any lost thing go astray is not to hide himself, but bring it back, or keep it until his brother seeks it (1-3).",
+        "He shall surely help his brother lift up an ass or ox fallen by the way (4).",
+        "A woman is not to wear what pertains to a man, nor a man a woman’s garment (5).",
+        "From a bird’s nest he may take the young but must let the dam go, that it may be well with him (6-7).",
+        "A new house must have a battlement round the roof, that no blood come upon it if any man fall (8).",
+        "No divers seeds in the vineyard, no ox and ass plowing together, no wool and linen woven together; fringes on the four quarters of the vesture (9-12).",
+        "A man who brings up an evil name on his wife is chastised, fined an hundred shekels, and may not put her away all his days; if the charge is true, she dies (13-21).",
+        "A man and a married woman taken together both die; so with a betrothed damsel in the city (22-24).",
+        "In the field, where the betrothed damsel cried and there was none to save her, the man only dies (25-27).",
+        "A man who lies with a virgin not betrothed pays her father fifty shekels, she becomes his wife, and he may not put her away; no man shall take his father’s wife (28-30)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 22:4",
+        "text": "Thou shalt not see thy brother’s ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again."
+      },
+      "big": "God’s law reaches into everyday life: the brother’s lost ox, the mother bird, the roof without a wall, the yoke. Love for a neighbour doesn’t look away, and it builds the battlement before anyone falls. God guards marriage and the woman in it, judges both the man and the woman, and will not blame the one who cried with none to save her. For the man who has fallen, the word is “Flee fornication” and “ye are washed” (1 Corinthians 6:11, 18), and Jesus’ “Neither do I condemn thee: go, and sin no more” (John 8:11)."
+    }
+  },
+  {
+    "id": "deuteronomy-23",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 23,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 23",
+    "sub": "The congregation, the curse turned to a blessing, and the LORD in the midst of the camp",
+    "about": "Who may and may not enter the congregation of the LORD. Ammon and Moab are kept out because they met Israel without bread and water and hired Balaam to curse them, but “the LORD thy God turned the curse into a blessing unto thee, because the LORD thy God loved thee”. The Edomite is a brother, and Israel was a stranger in the Egyptian’s land. The camp is kept clean, “for the LORD thy God walketh in the midst of thy camp”. A runaway servant is not handed back. No whore’s hire for a vow, no usury from a brother, a vow once spoken must be paid, and a hungry man may eat from his neighbour’s vineyard and field but not carry it off.",
+    "tags": [
+      "The congregation of the LORD",
+      "The curse turned into a blessing",
+      "Edom and Egypt",
+      "The clean camp",
+      "The escaped servant",
+      "Usury and vows",
+      "The neighbour’s corn"
+    ],
+    "url": "studies/deuteronomy-23.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking back to the way out of Egypt, and Balaam of Pethor of Mesopotamia",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "people": [
+        "moses",
+        "balaam",
+        "beor"
+      ],
+      "places": [
+        "egypt",
+        "ammon",
+        "moab",
+        "edom",
+        "mesopotamia",
+        "pethor"
+      ],
+      "story": [
+        "A man wounded so he cannot father children, and a bastard, shall not enter into the congregation of the LORD (1-2).",
+        "An Ammonite or Moabite shall not enter, even to the tenth generation, because they met Israel not with bread and water and hired Balaam to curse them (3-4).",
+        "The LORD would not hearken unto Balaam, but turned the curse into a blessing, because he loved Israel (5-6).",
+        "Israel is not to abhor the Edomite, for he is a brother, nor the Egyptian, because Israel was a stranger in his land; their children enter in the third generation (7-8).",
+        "When the host goes out, the camp is kept clean: the unclean man goes out and washes, and a place without the camp is kept for the body (9-13).",
+        "For the LORD walks in the midst of the camp to deliver them; therefore it shall be holy (14).",
+        "A servant escaped from his master is not handed back, but dwells where he chooses, unoppressed (15-16).",
+        "No whore or sodomite in Israel, and no hire of a whore or price of a dog brought to the house of the LORD for a vow (17-18).",
+        "No usury to a brother, though to a stranger they may lend upon usury (19-20).",
+        "A vow to the LORD must be paid without slacking; not vowing is no sin; what has gone out of the lips must be kept (21-23).",
+        "In a neighbour’s vineyard or field a man may eat his fill, but not put any in his vessel or put a sickle to the corn (24-25)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 23:5",
+        "text": "Nevertheless the LORD thy God would not hearken unto Balaam; but the LORD thy God turned the curse into a blessing unto thee, because the LORD thy God loved thee."
+      },
+      "big": "The LORD turned Balaam’s curse into a blessing “because the LORD thy God loved thee”, and he walks in the midst of his people’s camp, so even ordinary things are kept clean. The law kept some out of the congregation, but the door of faith was open: the eunuch was welcomed (Isaiah 56:3-5; Acts 8:27-39), and Ruth the Moabitess is named in the line of Christ (Matthew 1:5). God gives the runaway a home, wants clean money and an honest hand, and asks that a word spoken to him be kept."
+    }
+  },
+  {
+    "id": "deuteronomy-24",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 24,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 24",
+    "sub": "The bill of divorcement, the poor man's coat, and the sheaf left in the field",
+    "about": "Moses limits divorce with a written bill and forbids taking back a wife who has been another man's, a law Jesus says was given for the hardness of men's hearts (Matthew 19:8). A new husband stays home a year to cheer his wife. No millstone is taken in pledge, the man-stealer dies, the poor man's coat goes back at sundown, the hired servant is paid before the sun goes down, every man dies for his own sin, and the forgotten sheaf is left for the stranger, the fatherless and the widow.",
+    "tags": [
+      "Divorce",
+      "The new husband",
+      "The pledge",
+      "The hired servant",
+      "Every man for his own sin",
+      "The forgotten sheaf"
+    ],
+    "url": "studies/deuteronomy-24.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5)",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "people": [
+        "moses",
+        "miriam",
+        "stranger-in-the-land",
+        "widow-in-israel",
+        "priests"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "If a man puts away his wife, he must write her a bill of divorcement and give it in her hand; she may be another man's wife, and the first husband may not take her again after she is defiled (1-4).",
+        "A new husband shall not go out to war or be charged with business, but be free at home one year and cheer up his wife (5).",
+        "No man shall take the nether or the upper millstone to pledge, for that is a man's life; the man who steals and sells a brother shall die (6-7).",
+        "In the plague of leprosy Israel is to do as the priests teach, and remember what the LORD did unto Miriam by the way (8-9).",
+        "The lender stands outside and lets the borrower bring out his pledge; the poor man's raiment goes back at sundown, that he may sleep in it and bless thee (10-13).",
+        "The poor hired servant, brother or stranger, is to be paid his hire on the same day, before the sun goes down, lest he cry unto the LORD (14-15).",
+        "The fathers shall not be put to death for the children, nor the children for the fathers: every man for his own sin (16).",
+        "The judgment of the stranger and the fatherless is not to be perverted, nor the widow's raiment taken to pledge, for Israel was a bondman in Egypt (17-18).",
+        "The forgotten sheaf, the olives left on the boughs and the grapes left in the vineyard are for the stranger, the fatherless and the widow (19-22)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 24:16",
+        "text": "The fathers shall not be put to death for the children, neither shall the children be put to death for the fathers: every man shall be put to death for his own sin."
+      },
+      "big": "God's law guards those who cannot guard themselves: the wife sent away, the poor man with his millstone and his coat, the day labourer, the stranger, the fatherless and the widow. Jesus reads the bill of divorcement as a fence around hard hearts and points back to what God joined (Matthew 19:3-9), and the law that every man dies for his own sin makes plain what Christ did when he suffered, the just for the unjust (1 Peter 3:18)."
+    }
+  },
+  {
+    "id": "deuteronomy-25",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 25,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 25",
+    "sub": "Forty stripes, the ox at the threshing floor, a name for the dead, and honest weights",
+    "about": "The guilty man may be beaten, but never above forty stripes, lest his brother seem vile. The ox is not muzzled as he treads out the corn, a law Paul says was written for our sakes (1 Corinthians 9:9-10). A man is to raise up a name for his brother who died childless, or be shamed at the gate. Israel is to keep one just weight and measure, and to remember Amalek, who struck the feeble at the back.",
+    "tags": [
+      "Forty stripes",
+      "The ox",
+      "The husband's brother",
+      "Just weights",
+      "Amalek"
+    ],
+    "url": "studies/deuteronomy-25.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5)",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "people": [
+        "moses",
+        "elders",
+        "amalek"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "In a controversy the judges justify the righteous and condemn the wicked; the guilty may be beaten before the judge according to his fault, forty stripes and not more, lest thy brother seem vile unto thee (1-3).",
+        "Thou shalt not muzzle the ox when he treadeth out the corn (4).",
+        "If a brother dies with no child, his brother shall take the widow to wife, and the firstborn shall succeed in the name of the dead, that his name be not put out of Israel (5-6).",
+        "If he will not, the widow goes to the elders at the gate, looses his shoe and spits in his face, and his house is called The house of him that hath his shoe loosed (7-10).",
+        "A wife who, to deliver her husband in a fight, takes the other man shamefully shall lose her hand (11-12).",
+        "Israel shall not have divers weights and measures, a great and a small, but a perfect and just weight and measure, for all that do unrighteously are an abomination unto the LORD (13-16).",
+        "Remember Amalek, who smote the hindmost, the feeble and weary, and feared not God; when Israel has rest, the remembrance of Amalek is to be blotted out (17-19)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 25:15",
+        "text": "But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land which the LORD thy God giveth thee."
+      },
+      "big": "Justice in Israel had limits and a heart: the guilty man was still a brother, the working ox was fed, the dead man's name was kept, and the scales were honest. Paul read the ox as written for our sakes (1 Corinthians 9:9-10; 1 Timothy 5:18), Boaz kept the duty of the kinsman and raised up the name of the dead (Ruth 4:10), and in this the near kinsman is a picture of Christ, who took part of our flesh and blood and is not ashamed to call us brethren (Hebrews 2:11, 14)."
+    }
+  },
+  {
+    "id": "deuteronomy-26",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 26,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 26",
+    "sub": "The basket of firstfruits, and “A Syrian ready to perish was my father”",
+    "about": "In the land, each Israelite is to bring the first of his fruit in a basket to the place the LORD shall choose, and confess before the LORD how his father Jacob went down into Egypt, how they cried, and how the LORD brought them out and gave them the land. After the third year's tithe he declares that he has given it as commanded and prays for God's blessing on Israel. Israel avouches the LORD as their God, and the LORD avouches Israel as his peculiar people.",
+    "tags": [
+      "The basket",
+      "The Syrian",
+      "The cry",
+      "Rejoicing",
+      "The third year",
+      "Avouched"
+    ],
+    "url": "studies/deuteronomy-26.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5)",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "people": [
+        "moses",
+        "jacob",
+        "priests",
+        "stranger-in-the-land",
+        "widow-in-israel"
+      ],
+      "places": [
+        "place-the-lord-shall-choose",
+        "egypt"
+      ],
+      "story": [
+        "When Israel possesses the land, a man shall put the first of all the fruit in a basket and bring it to the place the LORD shall choose, and profess to the priest that he is come into the land the LORD sware to give (1-3).",
+        "The priest sets the basket before the altar, and the man says, A Syrian ready to perish was my father, who went down into Egypt with a few and became a great nation (4-5).",
+        "The Egyptians afflicted them; they cried unto the LORD, who heard, and brought them out with a mighty hand and an outstretched arm, and gave them a land that floweth with milk and honey (6-9).",
+        "He sets down the firstfruits, worships, and rejoices in every good thing with the Levite and the stranger (10-11).",
+        "In the third year, the year of tithing, after giving the tithe to the Levite, the stranger, the fatherless and the widow, he declares he has done all that was commanded and asks the LORD to look down from heaven and bless Israel (12-15).",
+        "Israel has avouched the LORD this day to be their God, and the LORD has avouched them to be his peculiar people, high in praise, name and honour, an holy people unto the LORD (16-19)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 26:5",
+        "text": "And thou shalt speak and say before the LORD thy God, A Syrian ready to perish was my father, and he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous:"
+      },
+      "big": "Every Israelite told the same story before the LORD: where his family came from, how they cried, and what God did, and only then, “I have brought the firstfruits”. The believer has the same confession (Ephesians 2:12-13; Psalm 107:2), the same Firstfruits risen from the dead (1 Corinthians 15:20), and the same name: “a peculiar people” (1 Peter 2:9; Titus 2:14)."
+    }
+  },
+  {
+    "id": "deuteronomy-27",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 27,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 27",
+    "sub": "Two mountains, twelve curses, and one Amen",
+    "about": "When Israel crosses Jordan, Moses commands that great stones be set up on mount Ebal, plastered, with all the words of the law written on them very plainly, and an altar of whole stones built there for burnt offerings and peace offerings. Six tribes are to stand on mount Gerizim to bless and six on mount Ebal to curse, and the Levites speak twelve curses, each answered by all the people with Amen. The last curse falls on every man who does not confirm all the words of this law to do them.",
+    "tags": [
+      "The great stones on mount Ebal",
+      "The altar of whole stones",
+      "Gerizim and Ebal",
+      "The twelve curses",
+      "Amen",
+      "Cursed be he that confirmeth not all the words",
+      "Galatians 3:10–13"
+    ],
+    "url": "studies/deuteronomy-27.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), looking across to mount Ebal and mount Gerizim on the other side (11:29–30; 27:4, 12–13)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3); the stones and the mounts are for “the day when ye shall pass over Jordan” (27:2). Joshua kept it (Joshua 8:30–35)",
+      "people": [
+        "moses",
+        "levi"
+      ],
+      "places": [
+        "jordan",
+        "mount-ebal",
+        "gerizim"
+      ],
+      "story": [
+        "Moses with the elders of Israel commands the people to keep all the commandments (1).",
+        "When they have passed over Jordan they are to set up great stones, plaister them, and write on them all the words of this law, in mount Ebal (2–4, 8).",
+        "There they are to build an altar of whole stones, with no iron tool lifted on it, and offer burnt offerings and peace offerings, and rejoice before the LORD (5–7).",
+        "Moses and the priests the Levites tell Israel: “this day thou art become the people of the LORD thy God”; obey his voice (9–10).",
+        "Simeon, Levi, Judah, Issachar, Joseph and Benjamin are to stand on mount Gerizim to bless; Reuben, Gad, Asher, Zebulun, Dan and Naphtali on mount Ebal to curse (11–13).",
+        "The Levites speak twelve curses with a loud voice, on idols, a father or mother made light of, the landmark, the blind, the stranger, fatherless and widow, sins against purity, a neighbour smitten secretly, a reward taken to slay the innocent, and last, whoever confirmeth not all the words of this law; after each, all the people say Amen (14–26)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 27:26",
+        "text": "Cursed be he that confirmeth not all the words of this law to do them. And all the people shall say, Amen."
+      },
+      "big": "The law stands in the open and every man says Amen to its curse, and the last curse catches us all: “Cursed be he that confirmeth not all the words of this law to do them.” Paul quotes it (Galatians 3:10) and then gives the answer: “Christ hath redeemed us from the curse of the law, being made a curse for us” (Galatians 3:13)."
+    }
+  },
+  {
+    "id": "deuteronomy-28",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 28,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 28",
+    "sub": "The blessing and the curse",
+    "about": "If Israel hearken diligently to the voice of the LORD, all these blessings shall come on them in the land: in the city and the field, the body, the ground and the cattle, the basket and the store, coming in and going out. If they will not, all these curses shall overtake them, from sickness, a heaven of brass and defeat, to captivity, a siege, and scattering among all people, because they served not the LORD with joyfulness and gladness of heart for the abundance of all things.",
+    "tags": [
+      "Blessings for hearkening",
+      "Curses for not hearkening",
+      "Joyfulness and gladness of heart",
+      "The siege and the scattering",
+      "Not a promise of riches",
+      "Christ bore the curse (Galatians 3:13)",
+      "2 Kings 17 and 25"
+    ],
+    "url": "studies/deuteronomy-28.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5): the blessing and the curse spoken out, as set on mount Gerizim and mount Ebal (11:29; 27:12–13)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3). The Bible shows the curses come to pass: Samaria taken in the ninth year of Hoshea (2 Kings 17:6), Jerusalem burned in the nineteenth year of Nebuchadnezzar (2 Kings 25:8)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "If Israel hearken diligently to the voice of the LORD and do all his commandments, he will set them on high above all nations and all these blessings shall come on them and overtake them (1–2).",
+        "Blessed in the city and the field, in body, ground and cattle, basket and store, coming in and going out; enemies flee seven ways; the LORD commands the blessing and makes them an holy people, plenteous in goods, the head and not the tail, if they go not aside to other gods (3–14).",
+        "But if they will not hearken, all these curses shall come on them: the same places cursed, then pestilence, fever, a heaven of brass, defeat, the botch of Egypt, madness and blindness, work lost to others (15–44).",
+        "The cause: “Because thou servedst not the LORD thy God with joyfulness, and with gladness of heart, for the abundance of all things” (47). A nation from far shall besiege them in all their gates, until their high and fenced walls come down (45–57).",
+        "Plagues of long continuance, few left where they were as the stars of heaven, plucked from the land and scattered among all people, with a trembling heart and no rest, and Egypt again (58–68).",
+        "The Bible records it: Israel carried to Assyria (2 Kings 17:6), Jerusalem besieged and burned (2 Kings 25), Jesus’ own warning in Luke 21:20–24. And Christ hath redeemed us from the curse of the law, being made a curse for us (Galatians 3:13)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 28:47",
+        "text": "Because thou servedst not the LORD thy God with joyfulness, and with gladness of heart, for the abundance of all things;"
+      },
+      "big": "The blessings and curses are the covenant of the LORD with Israel in the land, not a promise of money or health for obedience; no man kept it, and Christ bore the curse for us, so that we are blessed “with all spiritual blessings in heavenly places in Christ” (Ephesians 1:3). The root named is not a crime but a heart that had plenty and did not serve the LORD gladly."
+    }
+  },
+  {
+    "id": "deuteronomy-29",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 29,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 29",
+    "sub": "The covenant in Moab, the root of bitterness, and the secret things",
+    "about": "Moses brings the new generation into covenant with the LORD in the land of Moab, beside the covenant of Horeb: the captains and the stranger who draws the water, and him that is not here. He reminds them of forty years in which their clothes did not wax old, warns of the root that bears gall and wormwood and the man who blesses himself in his heart, foretells the land left like Sodom, and says: the secret things belong to the LORD.",
+    "tags": [
+      "The covenant in Moab",
+      "Forty years, nothing worn out",
+      "Him that is not here",
+      "The root of bitterness",
+      "The land like Sodom",
+      "The secret things"
+    ],
+    "url": "studies/deuteronomy-29.html",
+    "overview": {
+      "where": "The land of Moab, on this side Jordan (29:1)",
+      "when": "In the fortieth year, in Moses’ last days, after forty years in the wilderness (29:5; 1:3)",
+      "people": [
+        "moses",
+        "israel",
+        "sihon",
+        "og",
+        "reubenites-gadites-manassites",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "moab",
+        "horeb",
+        "heshbon",
+        "bashan",
+        "egypt",
+        "sodom-and-gomorrah",
+        "admah-and-zeboim"
+      ],
+      "story": [
+        "Moses speaks the words of the covenant which the LORD commanded to make in the land of Moab, beside the covenant made in Horeb (1).",
+        "He reminds Israel of the signs and great miracles they have seen, though the LORD has not yet given them a heart to perceive; forty years in the wilderness, their clothes and shoes not waxen old, no bread, wine or strong drink, and Sihon and Og smitten (2-8).",
+        "All stand before the LORD, from the captains to the hewer of wood and the drawer of water, with their little ones, wives and strangers, and the covenant is made also with him that is not here (9-15).",
+        "A warning against the heart that turns away, the root that beareth gall and wormwood, and the man who blesses himself, \"I shall have peace, though I walk in the imagination of mine heart, to add drunkenness to thirst\" (16-21).",
+        "The land will be left like Sodom, and the nations will ask why; the answer is that they forsook the covenant (22-28). \"The secret things belong unto the LORD our God\" (29)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 29:29",
+        "text": "The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law."
+      },
+      "big": "The LORD makes his covenant with every generation, keeps his people for forty years, and warns the man who hears the curse and tells himself he is safe (Hebrews 12:15). What he has not told us belongs to him, and what he has told us is ours to do."
+    }
+  },
+  {
+    "id": "deuteronomy-30",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 30,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 30",
+    "sub": "Return, the word is very nigh, and choose life",
+    "about": "Moses foretells that when Israel, scattered, calls the blessing and the curse to mind and returns with all the heart, the LORD will gather them and circumcise their heart to love him. The commandment is not far off but in the mouth and the heart (Romans 10:6-8). Moses sets life and death before them and says: therefore choose life.",
+    "tags": [
+      "Return and be gathered",
+      "The circumcised heart",
+      "The word is very nigh",
+      "Life and good, death and evil",
+      "Choose life",
+      "He is thy life"
+    ],
+    "url": "studies/deuteronomy-30.html",
+    "overview": {
+      "where": "The land of Moab, on this side Jordan (29:1; 30:18)",
+      "when": "Moses’ last words to Israel in the fortieth year, looking ahead to a return from far (30:1-5)",
+      "people": [
+        "moses",
+        "israel",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "jordan",
+        "moab"
+      ],
+      "story": [
+        "When the blessing and the curse come on them and they call them to mind among the nations and return with all their heart, the LORD will turn their captivity, have compassion, and gather them from the outmost parts of heaven (1-5).",
+        "The LORD will circumcise their heart and the heart of their seed, to love him that they may live, and will rejoice over them for good (6-10).",
+        "The commandment is not hidden or far off, not in heaven nor beyond the sea: the word is very nigh in the mouth and in the heart (11-14).",
+        "Moses sets before them life and good, and death and evil (15-18).",
+        "He calls heaven and earth to record, and says: therefore choose life; for the LORD is thy life, and the length of thy days (19-20)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 30:19",
+        "text": "I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:"
+      },
+      "big": "The way back is already written before the failure: return, and the LORD himself gathers and changes the heart. The word of faith is near (Romans 10:8), and the choice of life is a real one, set before every man: life is the LORD himself."
+    }
+  },
+  {
+    "id": "deuteronomy-31",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 31,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 31",
+    "sub": "Be strong, the law written, and a song for a witness",
+    "about": "Moses, an hundred and twenty years old, tells Israel that the LORD will go over before them and charges Joshua: be strong and of a good courage, he will not fail thee nor forsake thee (Hebrews 13:5). He writes the law, gives it to the priests, and commands it be read every seven years at the feast of tabernacles. The LORD foretells that the people will turn away, so Moses writes a song as a witness, and the book of the law is put in the side of the ark.",
+    "tags": [
+      "Moses an hundred and twenty",
+      "Be strong and of a good courage",
+      "Moses wrote this law",
+      "The reading every seven years",
+      "The people will turn",
+      "The song for a witness"
+    ],
+    "url": "studies/deuteronomy-31.html",
+    "overview": {
+      "where": "The land of Moab on this side Jordan, and the tabernacle of the congregation (31:14)",
+      "when": "The same fortieth year: Moses an hundred and twenty years old \"this day\" (31:2)",
+      "people": [
+        "moses",
+        "joshua-son-of-nun",
+        "israel",
+        "sihon",
+        "og",
+        "moses-song-witness"
+      ],
+      "places": [
+        "jordan",
+        "tabernacle",
+        "ark-of-the-covenant",
+        "feast-of-tabernacles",
+        "year-of-release",
+        "place-the-lord-shall-choose",
+        "reading-of-the-law-every-seven-years"
+      ],
+      "story": [
+        "Moses, an hundred and twenty years old, says he can no more go out and come in, and the LORD has said he shall not go over Jordan; the LORD will go over before them, and Joshua (1-5).",
+        "Moses charges Israel and Joshua: be strong and of a good courage, the LORD will not fail thee, nor forsake thee (6-8).",
+        "Moses writes the law and gives it to the priests and elders, to be read before all Israel every seven years in the year of release, at the feast of tabernacles (9-13).",
+        "The LORD calls Moses and Joshua to the tabernacle, appears in the pillar of a cloud, and tells Moses the people will go a whoring after other gods; Moses is to write a song as a witness, and Joshua is charged (14-23).",
+        "Moses finishes writing the law, tells the Levites to put it in the side of the ark for a witness against them, speaks of their rebellion, and speaks the words of the song to all the congregation (24-30)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 31:6",
+        "text": "Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."
+      },
+      "big": "The LORD goes before his people and will not fail nor forsake them, and the same promise is made to every believer. The law is written and read aloud as a witness, and the LORD warns ahead of time, with a song, that his people will turn."
+    }
+  },
+  {
+    "id": "deuteronomy-32",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 32,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 32",
+    "sub": "The song of Moses: “He is the Rock”",
+    "about": "Moses speaks the song the LORD told him to write and teach Israel. The Rock, whose work is perfect, found Jacob in a waste howling wilderness and bore him as an eagle bears her young; but Jeshurun waxed fat and kicked, forsook God and sacrificed unto devils. The LORD will hide his face, move them to jealousy with a foolish nation and spend his arrows on them, yet he longs that they would consider their latter end. Vengeance belongs to him; he kills and makes alive, wounds and heals; and the song ends calling the nations to rejoice with his people. Moses tells Israel the words are their life, and that same day the LORD sends him up mount Nebo to see the land and die, as Aaron died in mount Hor.",
+    "tags": [
+      "The song of Moses",
+      "He is the Rock",
+      "As an eagle stirreth up her nest",
+      "Jeshurun waxed fat",
+      "To me belongeth vengeance",
+      "I wound, and I heal",
+      "It is your life"
+    ],
+    "url": "studies/deuteronomy-32.html",
+    "overview": {
+      "where": "In the plains of Moab, then up into the mountain Abarim, unto mount Nebo, in the land of Moab over against Jericho (32:49)",
+      "when": "In Moses’ last days, in the fortieth year (1:3); the LORD spake to him “that selfsame day” he finished the song (32:48)",
+      "people": [
+        "moses",
+        "joshua-son-of-nun",
+        "aaron",
+        "the-rock",
+        "jeshurun"
+      ],
+      "places": [
+        "mount-nebo",
+        "mount-abarim",
+        "moab",
+        "jericho",
+        "canaan",
+        "mount-hor",
+        "meribah-in-kadesh",
+        "wilderness-of-zin",
+        "bashan",
+        "sodom-and-gomorrah"
+      ],
+      "story": [
+        "Moses calls heaven and earth to hear, and publishes the name of the LORD: “He is the Rock, his work is perfect” (1–4).",
+        "A perverse generation has badly requited the Father who bought them; the LORD’S portion is his people, whom he found in the wilderness, kept as the apple of his eye, bore as an eagle bears her young, and fed with the best of the land (5–14).",
+        "But Jeshurun waxed fat and kicked, forsook the Rock of his salvation and sacrificed unto devils; the LORD will hide his face, move them to jealousy with those which are not a people, and spend his arrows on them (15–25).",
+        "He holds back lest their enemies boast, longing that they would consider their latter end; the enemies’ rock is not as our Rock, and their wine is the poison of dragons (26–33).",
+        "Vengeance and recompence belong to the LORD; he will judge his people and turn to his servants when their power is gone, for he kills and makes alive, wounds and heals, and the nations are called to rejoice with his people (34–43).",
+        "Moses and Hoshea speak the song to the people, and Moses charges them to set their hearts on these words, for it is their life (44–47).",
+        "That selfsame day the LORD sends Moses up mount Nebo to behold the land of Canaan and die, as Aaron died in mount Hor, because at Meribah-Kadesh he sanctified him not; yet he shall see the land (48–52)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 32:4",
+        "text": "He is the Rock, his work is perfect: for all his ways are judgment: a God of truth and without iniquity, just and right is he."
+      },
+      "big": "The song tells Israel’s whole story ahead of time: a perfect Rock, a people carried on eagles’ wings, a people who grew fat and forgot him, and a God who judges, yet heals and calls the nations to rejoice. That Rock was Christ (1 Corinthians 10:4); vengeance is his, not ours (Romans 12:19); and his words are not a vain thing, but our life."
+    }
+  },
+  {
+    "id": "deuteronomy-33",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 33,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 33",
+    "sub": "Moses blesses the tribes: “underneath are the everlasting arms”",
+    "about": "Before his death, Moses the man of God blesses the children of Israel. The LORD came from Sinai, rose up from Seir and shined forth from mount Paran, with a fiery law from his right hand, and he loved the people. Moses blesses Reuben, Judah, Levi, Benjamin, Joseph with Ephraim and Manasseh, Zebulun and Issachar, Gad, Dan, Naphtali and Asher: Levi for keeping the covenant, Benjamin dwelling between the LORD’s shoulders, Joseph with the good will of him that dwelt in the bush, Asher with “as thy days, so shall thy strength be”. He ends with the God of Jeshurun: “The eternal God is thy refuge, and underneath are the everlasting arms”, and a people saved by the LORD.",
+    "tags": [
+      "The LORD came from Sinai",
+      "He loved the people",
+      "The tribes blessed",
+      "As thy days, so shall thy strength be",
+      "The everlasting arms",
+      "Saved by the LORD"
+    ],
+    "url": "studies/deuteronomy-33.html",
+    "overview": {
+      "where": "In the plains of Moab, before Moses’ death; the blessing looks back to Sinai, Seir and mount Paran (33:2) and on to each tribe’s land",
+      "when": "“Before his death” (33:1), in the fortieth year (1:3)",
+      "people": [
+        "moses",
+        "jeshurun",
+        "reuben",
+        "judah",
+        "levi",
+        "benjamin",
+        "joseph-son-of-jacob",
+        "ephraim-tribe",
+        "manasseh-tribe",
+        "zebulun-tribe",
+        "issachar",
+        "gad-tribe",
+        "dan-tribe",
+        "naphtali-tribe",
+        "asher-tribe"
+      ],
+      "places": [
+        "mount-sinai",
+        "seir",
+        "paran",
+        "massah-and-meribah",
+        "bashan"
+      ],
+      "story": [
+        "Moses the man of God blesses Israel before his death: the LORD came from Sinai with a fiery law, and he loved the people, who sat at his feet; Moses commanded them a law, the inheritance of Jacob (1–5).",
+        "Let Reuben live, and not die; hear, LORD, the voice of Judah (6–7).",
+        "Levi, proved at Massah, kept the LORD’s word above father and mother, and shall teach Jacob his judgments and serve at his altar (8–11).",
+        "Benjamin, the beloved of the LORD, dwells in safety between his shoulders; Joseph’s land is blessed with precious things and the good will of him that dwelt in the bush, with the ten thousands of Ephraim and the thousands of Manasseh (12–17).",
+        "Zebulun rejoices in going out and Issachar in his tents; Gad is enlarged and executed the justice of the LORD; Dan is a lion’s whelp; Naphtali is satisfied with favour; Asher is blessed with children, and as his days, so shall his strength be (18–25).",
+        "There is none like the God of Jeshurun: the eternal God is thy refuge, underneath are the everlasting arms; happy is Israel, a people saved by the LORD (26–29)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 33:27",
+        "text": "The eternal God is thy refuge, and underneath are the everlasting arms: and he shall thrust out the enemy from before thee; and shall say, Destroy them."
+      },
+      "big": "Moses’ last blessing begins and ends with God himself: the LORD who came from Sinai loved his people, carries the beloved between his shoulders, gives strength for each day as the day is, and holds his people with everlasting arms beneath them. A people saved by the LORD is a happy people (Ephesians 1:3; John 10:28–29)."
+    }
+  },
+  {
+    "id": "deuteronomy-34",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 34,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 34",
+    "sub": "Moses sees the land, and dies on the mountain",
+    "about": "Moses goes up from the plains of Moab to the top of Pisgah, over against Jericho, and the LORD shows him all the land he sware to Abraham, Isaac and Jacob, from Gilead unto Dan, to the utmost sea and Zoar, but he shall not go over. Moses the servant of the LORD dies there according to the word of the LORD, and the LORD buries him in a valley in Moab, but no man knows his sepulchre. He was an hundred and twenty, his eye not dim. Israel weeps thirty days; Joshua, full of the spirit of wisdom, leads on; and there arose not a prophet since in Israel like unto Moses, whom the LORD knew face to face.",
+    "tags": [
+      "The top of Pisgah",
+      "All the land",
+      "He buried him",
+      "His eye was not dim",
+      "Joshua full of wisdom",
+      "Face to face",
+      "The Prophet like unto Moses"
+    ],
+    "url": "studies/deuteronomy-34.html",
+    "overview": {
+      "where": "From the plains of Moab up to the top of Pisgah on the mountain of Nebo, over against Jericho (34:1); buried in a valley in the land of Moab, over against Beth-peor (34:6)",
+      "when": "Moses an hundred and twenty years old (34:7; 31:2), in the fortieth year (1:3); Israel wept thirty days in the plains of Moab (34:8), and afterward came up out of Jordan on the tenth day of the first month (Joshua 4:19)",
+      "people": [
+        "moses",
+        "joshua-son-of-nun",
+        "abraham",
+        "isaac",
+        "jacob"
+      ],
+      "places": [
+        "plains-of-moab",
+        "mount-nebo",
+        "pisgah",
+        "jericho",
+        "gilead",
+        "dan",
+        "uttermost-sea",
+        "zoar",
+        "moab",
+        "beth-peor"
+      ],
+      "story": [
+        "Moses goes up to the top of Pisgah, and the LORD shows him all the land: Gilead unto Dan, Naphtali, Ephraim, Manasseh, Judah unto the utmost sea, the south, and the plain of Jericho unto Zoar (1–3).",
+        "This is the land the LORD sware to Abraham, Isaac and Jacob; Moses sees it with his eyes but shall not go over (4).",
+        "Moses the servant of the LORD dies there according to the word of the LORD, and the LORD buries him in a valley in Moab; no man knows his sepulchre (5–6).",
+        "He was an hundred and twenty years old, his eye not dim nor his natural force abated, and Israel wept for him thirty days (7–8).",
+        "Joshua, full of the spirit of wisdom because Moses had laid his hands upon him, is obeyed by the people (9).",
+        "There arose not a prophet since in Israel like unto Moses, whom the LORD knew face to face, in all the signs and wonders and the mighty hand he shewed (10–12)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 34:10",
+        "text": "And there arose not a prophet since in Israel like unto Moses, whom the LORD knew face to face,"
+      },
+      "big": "The greatest prophet of the old covenant dies outside the land for one sin, yet the LORD shows him the land, buries him himself, and later brings him into the land to stand with Christ (Matthew 17:3). None arose like Moses until the Prophet he promised came: Moses was faithful as a servant; Christ is the Son over his own house (Deuteronomy 18:15; Acts 3:22; Hebrews 3:5–6)."
+    }
   }
 ];
