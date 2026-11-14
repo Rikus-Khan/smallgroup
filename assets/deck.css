@@ -1087,3 +1087,34 @@ svg.kings { width: 100%; height: auto; display: block; font-family: var(--sans);
 .done-pair .d { border-color: var(--accent); }
 .done-pair small { display: block; color: var(--ink-soft); font-size: .82em; }
 .done-pair .t { display: flex; align-items: center; justify-content: center; color: var(--accent-hot); font-weight: 800; font-size: 1.3em; }
+
+/* ---- Pictures (from John 1). ----
+   figure.art: a public-domain painting or engraving in assets/art/, framed, with a slow push-in and a credit caption.
+     <figure class="art rise" style="--d:1;--kb:40% 30%"><span class="art-frame"><img src="../assets/art/x.jpg" width=".." height=".." alt=".."></span>
+     <figcaption>Artist, <i>Title</i></figcaption></figure>
+   .split.art-narrow gives a painting beside text a little less room than the text.
+   svg.pic: a drawn "picture card", a framed scene with its own sky painted from --on-glow (night) and --glow (day),
+     sized by its own aspect ratio: <svg class="pic" style="--ar:1.6" viewBox="0 0 640 400">. .pic-lab is its label text. */
+.art { margin: 0; text-align: center; }
+.art .art-frame { display: inline-block; position: relative; overflow: hidden; border-radius: 6px; line-height: 0; max-width: 100%;
+  box-shadow: 0 22px 50px -24px color-mix(in srgb, var(--on-glow) 90%, transparent), 0 0 0 1px var(--line-strong); }
+.art img { display: block; max-width: 100%; max-height: 52vh; width: auto; height: auto; transform-origin: var(--kb, 50% 50%); transform: scale(1.1); }
+.slide.active .art img { animation: art-kb 16s cubic-bezier(.2,.6,.3,1) forwards; }
+@keyframes art-kb { from { transform: scale(1.1); } to { transform: scale(1); } }
+.art img[src*="dore-"] { filter: sepia(.35) contrast(1.18) brightness(.9); }
+.art figcaption { font-size: clamp(.78rem, .72rem + .25vw, .95rem); color: var(--ink-soft); margin-top: .55em; line-height: 1.35; }
+.art figcaption i { font-style: italic; }
+.art .art-crop { display: block; position: relative; overflow: hidden; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split .art img { max-height: 58vh; } .split.art-narrow { grid-template-columns: .78fr 1.22fr; } }
+.stage svg.pic { --mh: 50vh; overflow: hidden; border-radius: 10px; max-height: none; width: min(100%, calc(var(--mh) * var(--ar)));
+  box-shadow: 0 22px 50px -26px color-mix(in srgb, var(--on-glow) 85%, transparent), 0 0 0 1px var(--line); }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split .stage svg.pic { --mh: 56vh; max-height: none; } }
+.pic-lab { font-family: var(--serif); font-style: italic; font-size: 17px; fill: var(--glow);
+  paint-order: stroke; stroke: color-mix(in srgb, var(--on-glow) 55%, transparent); stroke-width: 3px; stroke-linejoin: round; }
+.pic-lab.dark { fill: var(--on-glow); stroke: none; font-weight: 600; }
+.pic-lab.soft { opacity: .75; font-size: 15px; }
+.pic-lab.ink { fill: var(--on-glow); stroke: color-mix(in srgb, var(--glow) 60%, transparent); font-style: normal; font-family: var(--sans); font-size: 16px; }
+.pic-lab.b { font-weight: 700; font-size: 21px; }
+.pic-lab.plain { font-style: normal; font-family: var(--sans); font-size: 15px; opacity: .85; }
+.pic-lab.big { font-size: 24px; font-weight: 700; font-style: normal; }
+@media (prefers-reduced-motion: reduce) { .art img { animation: none !important; transform: none; } }

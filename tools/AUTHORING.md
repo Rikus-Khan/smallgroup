@@ -201,7 +201,14 @@ These drawn (SVG) graphics live in one study each, with their own markup. When y
 | A sandal in the dust, its latchet lit (`jn01-sandal`) | Mark 1:7, Luke 3:16, washing feet (John 13) | `john-01.html` |
 | The sun's arc from sunrise to sunset, with the hours marked and the sky turning gold (`jn01-hour`) | the hours of the day (Matthew 20, John 4:6, John 19:14, Acts 3:1) | `john-01.html` |
 
-**Classic art.** For the great story moments, a public-domain painting or engraving can carry more than a drawing: `figure.jn01-art` (copy its `<style>` lines from `john-01.html` with your own prefix) frames the picture, pushes in slowly, and credits the artist under it. The files live in `assets/art/`, kept to about 400 KB or less. Use only art that is public domain (Gustave Doré, James Tissot, Julius Schnorr von Carolsfeld, the old masters), name the artist and the work in the caption, and never anything that teaches past the text. Keep drawing (SVG) for teaching ideas, where the motion teaches. Already in `assets/art/`: Zurbarán's *Agnus Dei*, Doré's *Jacob's Dream*, and Tissot's *Saint John the Baptist Sees Jesus from Afar* and *Nathanael Under the Fig Tree*.
+**Classic art comes first.** Rick: "I like the old paintings. use those where ever you can in our site." Wherever a story moment (something that happened) has a fitting public-domain painting or engraving, use it: `figure.art` (styled in `deck.css`) frames it, pushes in slowly, and credits the artist under it:
+
+```html
+<figure class="art rise" style="--d:1;--kb:40% 30%"><span class="art-frame"><img src="../assets/art/tissot-the-marriage-at-cana.jpg" width="1000" height="640" alt="What the picture shows, in plain words"></span>
+  <figcaption>James Tissot, <i>The Marriage at Cana</i></figcaption></figure>
+```
+
+`--kb` is the point the push-in moves toward (put it on the faces). Beside text, use `<div class="split art-narrow">` so the text keeps the larger column. Files live in `assets/art/` as `artist-short-title.jpg`, 1200 px or less on the long side and about 400 KB or less. Use only public-domain art (Gustave Doré, James Tissot, Carl Bloch, Julius Schnorr von Carolsfeld, Rembrandt, Caravaggio, the old masters), never nudity, never a picture that teaches past the text or makes Mary or a saint the object of devotion. Name the artist and the work in the caption. Keep drawing for teaching ideas, where no painting can show the idea and the motion teaches: those are `svg.pic` picture cards (also in `deck.css`; label text is `.pic-lab`). A drawing must stay true to its idea in every detail (in John 1, all created things belong inside the circle of creation, so no stars outside it).
 
 ## New Testament dates
 
