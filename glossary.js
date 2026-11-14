@@ -1304,6 +1304,15 @@ window.GLOSSARY = [
     "Numbers", 36,
     [ 1, 5, 10, 13 ] ],
    [
+    "Deuteronomy", 1,
+    [ 1, 3, 5 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 41, 44, 45, 46 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 1 ] ],
+   [
     "Micah", 6,
     [ 4 ] ],
    [
@@ -2618,6 +2627,15 @@ window.GLOSSARY = [
     "Numbers", 35,
     [ 2, 4, 6, 7, 8 ] ],
    [
+    "Deuteronomy", 12,
+    [ 12, 18, 19 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 27, 29 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 9, 18 ] ],
+   [
     "Luke", 10,
     [ 32 ] ],
    [
@@ -3431,6 +3449,57 @@ window.GLOSSARY = [
     "Numbers", 36,
     [ 2, 5, 6, 10, 13 ] ],
    [
+    "Deuteronomy", 1,
+    [ 3, 6, 8, 10, 11, 19, 20, 21, 25, 26, 27, 30, 31, 32, 34, 36, 37, 41, 42, 43, 45 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 1, 2, 7, 9, 12, 14, 15, 17, 21, 29, 30, 31, 33, 36, 37 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 2, 3, 18, 20, 21, 22, 23, 26 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 1, 2, 3, 4, 5, 7, 10, 12, 14, 15, 19, 20, 21, 23, 24, 25, 27, 29, 30, 31, 34, 35, 39, 40 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 2, 3, 4, 5, 6, 9, 11, 12, 14, 15, 16, 22, 24, 25, 27, 28, 32, 33 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 1, 2, 3, 4, 5, 10, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1, 2, 4, 6, 7, 8, 9, 12, 15, 16, 18, 19, 20, 21, 22, 23, 25 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 1, 2, 3, 5, 6, 7, 10, 11, 14, 18, 19, 20 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 18, 19, 20, 22, 23, 24, 25, 26, 28 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 1, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 17, 20, 22 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 1, 2, 4, 7, 9, 12, 13, 17, 21, 22, 23, 25, 27, 28, 29, 31 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 1, 4, 5, 7, 9, 10, 11, 12, 14, 15, 18, 20, 21, 25, 26, 27, 28, 29, 31 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 3, 4, 5, 10, 12, 16, 17, 18 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 1, 2, 21, 23, 24, 25, 26, 29 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 2, 4, 5, 6, 7, 9, 10, 14, 15, 18, 19, 20, 21 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 1, 2, 5, 6, 7, 8, 10, 11, 15, 16, 17, 18, 20, 21, 22 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 1, 2, 8, 10, 12, 14, 15, 16, 19 ] ],
+   [
     "Proverbs", 1,
     [ 7, 29 ] ],
    [
@@ -4061,6 +4130,27 @@ window.GLOSSARY = [
     "Numbers", 36,
     [ 13 ] ],
    [
+    "Deuteronomy", 1,
+    [ 1, 5 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 8, 17, 20, 25, 27 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 21, 22, 26, 41, 46, 47, 49 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 30, 31 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 10 ] ],
+   [
     "Zechariah", 11,
     [ 3 ] ],
    [
@@ -4210,6 +4300,24 @@ window.GLOSSARY = [
    [
     "Numbers", 34,
     [ 3 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 1, 19, 31, 40 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 1, 7, 8, 26 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 2, 15, 16 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 7, 28 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 5, 24 ] ],
    [
     "Proverbs", 21,
     [ 19 ] ],
@@ -5051,6 +5159,39 @@ window.GLOSSARY = [
     "Numbers", 36,
     [ 1, 2, 3, 4, 5, 7, 8, 9, 13 ] ],
    [
+    "Deuteronomy", 1,
+    [ 1, 3, 38 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 1, 44, 45, 46 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 3, 4 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 6, 12 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 11 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 4, 12, 20 ] ],
+   [
     "Proverbs", 1,
     [ 1 ] ],
    [
@@ -5371,6 +5512,36 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 19 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 10, 28 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 25 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 11, 19, 26, 32, 36, 39 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 1, 14 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 14, 22 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 11, 17, 21 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 3 ] ],
    [
     "Proverbs", 23,
     [ 5 ] ],
@@ -5972,6 +6143,15 @@ window.GLOSSARY = [
     "Genesis", 34,
     [ 20, 24 ] ],
    [
+    "Deuteronomy", 15,
+    [ 7, 22 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 5, 11, 14, 18 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 2, 5, 8 ] ],
+   [
     "Proverbs", 1,
     [ 21 ] ],
    [
@@ -6238,6 +6418,12 @@ window.GLOSSARY = [
    [
     "Exodus", 20,
     [ 21 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 11 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 22, 23 ] ],
    [
     "Proverbs", 2,
     [ 13 ] ],
@@ -6653,6 +6839,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 6 ] ],
    [
+    "Deuteronomy", 13,
+    [ 14 ] ],
+   [
     "Proverbs", 3,
     [ 3 ] ],
    [
@@ -6937,6 +7126,9 @@ window.GLOSSARY = [
    [
     "Numbers", 20,
     [ 6 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 24 ] ],
    [
     "Proverbs", 3,
     [ 35 ] ],
@@ -7348,6 +7540,15 @@ window.GLOSSARY = [
    [
     "Numbers", 31,
     [ 21 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 8, 44 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 11, 18, 19 ] ],
    [
     "Proverbs", 1,
     [ 8 ] ],
@@ -8426,6 +8627,12 @@ window.GLOSSARY = [
     "Numbers", 20,
     [ 12 ] ],
    [
+    "Deuteronomy", 1,
+    [ 32 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 23 ] ],
+   [
     "Proverbs", 14,
     [ 15 ] ],
    [
@@ -8776,6 +8983,15 @@ window.GLOSSARY = [
    [
     "Numbers", 35,
     [ 30 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 26 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 20 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 6 ] ],
    [
     "Proverbs", 6,
     [ 19 ] ],
@@ -9227,6 +9443,21 @@ window.GLOSSARY = [
     "Numbers", 28,
     [ 7, 14 ] ],
    [
+    "Deuteronomy", 7,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 23, 26 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 13 ] ],
+   [
     "Proverbs", 3,
     [ 10 ] ],
    [
@@ -9449,6 +9680,21 @@ window.GLOSSARY = [
     "Numbers", 16,
     [ 38 ] ],
    [
+    "Deuteronomy", 4,
+    [ 34 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 8, 22 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 3, 18 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 1, 2 ] ],
+   [
     "Matthew", 12,
     [ 38, 39 ] ],
    [
@@ -9602,6 +9848,9 @@ window.GLOSSARY = [
     "Numbers", 33,
     [ 3 ] ],
    [
+    "Deuteronomy", 16,
+    [ 1, 2, 5, 6 ] ],
+   [
     "Matthew", 26,
     [ 2, 17, 18, 19 ] ],
    [
@@ -9724,6 +9973,9 @@ window.GLOSSARY = [
    [
     "Exodus", 36,
     [ 1, 2 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 6 ] ],
    [
     "Proverbs", 1,
     [ 2, 3, 7, 20 ] ],
@@ -9905,6 +10157,12 @@ window.GLOSSARY = [
     "Exodus", 36,
     [ 1 ] ],
    [
+    "Deuteronomy", 1,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 6 ] ],
+   [
     "Proverbs", 1,
     [ 2, 5 ] ],
    [
@@ -10063,6 +10321,9 @@ window.GLOSSARY = [
    [
     "Numbers", 24,
     [ 16 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 39 ] ],
    [
     "Proverbs", 1,
     [ 4, 7, 22, 29 ] ],
@@ -10321,6 +10582,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The fear of the LORD",
   "refs": [
+   [
+    "Deuteronomy", 6,
+    [ 2, 13, 24 ] ],
    [
     "Proverbs", 1,
     [ 7, 29 ] ],
@@ -10715,6 +10979,18 @@ window.GLOSSARY = [
     "Numbers", 23,
     [ 10 ] ],
    [
+    "Deuteronomy", 4,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 25 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 4, 5, 6 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 19 ] ],
+   [
     "Proverbs", 2,
     [ 7, 9, 20 ] ],
    [
@@ -11060,6 +11336,18 @@ window.GLOSSARY = [
     "Numbers", 16,
     [ 26 ] ],
    [
+    "Deuteronomy", 9,
+    [ 4, 5, 27 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 11 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 9 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 2, 5 ] ],
+   [
     "Proverbs", 2,
     [ 14, 22 ] ],
    [
@@ -11332,6 +11620,45 @@ window.GLOSSARY = [
    [
     "Numbers", 32,
     [ 7, 9 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 28 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 30 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 9, 29, 39 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 5, 6 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 2, 5, 14, 17 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 4, 5 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 12, 16 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 13, 16, 18 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 3 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 7, 9, 10 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 17, 20 ] ],
    [
     "Proverbs", 2,
     [ 2, 10 ] ],
@@ -11945,6 +12272,30 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 10, 13, 14 ] ],
    [
+    "Deuteronomy", 1,
+    [ 34, 37 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 26 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 21, 25 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 15 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 7, 8, 18, 19, 20, 22 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 17 ] ],
+   [
     "Proverbs", 11,
     [ 4, 23 ] ],
    [
@@ -12293,6 +12644,9 @@ window.GLOSSARY = [
     "Exodus", 10,
     [ 3 ] ],
    [
+    "Deuteronomy", 8,
+    [ 2, 16 ] ],
+   [
     "Proverbs", 6,
     [ 3 ] ],
    [
@@ -12382,6 +12736,9 @@ window.GLOSSARY = [
    [
     "Numbers", 6,
     [ 3 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 26 ] ],
    [
     "Proverbs", 20,
     [ 1 ] ],
@@ -12572,6 +12929,9 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 11 ] ],
    [
+    "Deuteronomy", 13,
+    [ 6 ] ],
+   [
     "Proverbs", 6,
     [ 1, 3 ] ],
    [
@@ -12695,6 +13055,18 @@ window.GLOSSARY = [
     "Leviticus", 20,
     [ 13 ] ],
    [
+    "Deuteronomy", 7,
+    [ 25, 26 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 31 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 1, 4 ] ],
+   [
     "Proverbs", 3,
     [ 32 ] ],
    [
@@ -12775,6 +13147,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 20,
     [ 10 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 18 ] ],
    [
     "Proverbs", 6,
     [ 26, 32 ] ],
@@ -12895,6 +13270,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Chastening",
   "refs": [
+   [
+    "Deuteronomy", 8,
+    [ 5 ] ],
    [
     "Proverbs", 3,
     [ 11 ] ],
@@ -13105,6 +13483,9 @@ window.GLOSSARY = [
    [
     "Exodus", 22,
     [ 16 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 6 ] ],
    [
     "Proverbs", 1,
     [ 10 ] ],
@@ -13526,6 +13907,12 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 12 ] ],
    [
+    "Deuteronomy", 7,
+    [ 16, 25 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 30 ] ],
+   [
     "Proverbs", 6,
     [ 2 ] ],
    [
@@ -13606,6 +13993,9 @@ window.GLOSSARY = [
    [
     "Numbers", 27,
     [ 14 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 12 ] ],
    [
     "Proverbs", 13,
     [ 10 ] ],
@@ -13876,6 +14266,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 13 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 5 ] ],
    [
     "Proverbs", 2,
     [ 7, 13, 21 ] ],
@@ -14158,6 +14551,9 @@ window.GLOSSARY = [
    [
     "Numbers", 28,
     [ 9, 10 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 12, 14, 15 ] ],
    [
     "Amos", 8,
     [ 5 ] ],
@@ -15038,6 +15434,9 @@ window.GLOSSARY = [
     "Numbers", 11,
     [ 6, 7, 9 ] ],
    [
+    "Deuteronomy", 8,
+    [ 3, 16 ] ],
+   [
     "John", 6,
     [ 31, 49, 58 ] ],
    [
@@ -15148,6 +15547,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 25,
     [ 6, 7 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 6, 28 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -15274,6 +15676,9 @@ window.GLOSSARY = [
    [
     "Numbers", 17,
     [ 5, 10 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 27 ] ],
    [
     "Matthew", 20,
     [ 11 ] ],
@@ -15673,6 +16078,18 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 8, 14 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 16 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 3 ] ],
    [
     "Micah", 5,
     [ 13 ] ],
@@ -16214,6 +16631,12 @@ window.GLOSSARY = [
     "Numbers", 27,
     [ 14 ] ],
    [
+    "Deuteronomy", 5,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 19 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -16303,6 +16726,9 @@ window.GLOSSARY = [
    [
     "Numbers", 15,
     [ 35, 36 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 10 ] ],
    [
     "John", 10,
     [ 31, 32, 33 ] ],
@@ -16591,6 +17017,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 23,
     [ 34 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 13, 16 ] ],
    [
     "Zechariah", 14,
     [ 16, 18, 19 ] ],
@@ -17333,6 +17762,15 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 11 ] ],
    [
+    "Deuteronomy", 1,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 10 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 5, 27 ] ],
+   [
     "Micah", 7,
     [ 20 ] ],
    [
@@ -17696,6 +18134,9 @@ window.GLOSSARY = [
     "Exodus", 21,
     [ 2, 5, 11, 26, 27 ] ],
    [
+    "Deuteronomy", 15,
+    [ 12, 13, 18 ] ],
+   [
     "John", 8,
     [ 32, 33, 36 ] ],
    [
@@ -17749,6 +18190,18 @@ window.GLOSSARY = [
    [
     "Exodus", 20,
     [ 2 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 5, 10 ] ],
    [
     "John", 8,
     [ 33 ] ],
@@ -18254,6 +18707,15 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 11 ] ],
    [
+    "Deuteronomy", 1,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 10 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 5, 27 ] ],
+   [
     "Hosea", 10,
     [ 11 ] ],
    [
@@ -18460,6 +18922,15 @@ window.GLOSSARY = [
    [
     "John", 4,
     [ 20, 21 ] ] ]
+ },
+ {
+  "id": "gerizim",
+  "kind": "place",
+  "name": "Mount Gerizim (the mount of blessing, over against mount Ebal)",
+  "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 29 ] ] ]
  },
  {
   "id": "spirit-and-truth",
@@ -18676,6 +19147,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Signs and wonders",
   "refs": [
+   [
+    "Deuteronomy", 6,
+    [ 22 ] ],
    [
     "Matthew", 24,
     [ 24 ] ],
@@ -19511,6 +19985,30 @@ window.GLOSSARY = [
     "Numbers", 23,
     [ 3 ] ],
    [
+    "Deuteronomy", 1,
+    [ 33 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 35, 36 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 5, 24 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 22 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 2 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 9, 10, 11 ] ],
+   [
     "Proverbs", 12,
     [ 17 ] ],
    [
@@ -19832,6 +20330,9 @@ window.GLOSSARY = [
     "Numbers", 35,
     [ 4, 5 ] ],
    [
+    "Deuteronomy", 3,
+    [ 11 ] ],
+   [
     "Zechariah", 5,
     [ 2 ] ],
    [
@@ -19915,6 +20416,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 16,
     [ 4 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 41 ] ],
    [
     "Proverbs", 31,
     [ 17, 24 ] ],
@@ -20780,6 +21284,9 @@ window.GLOSSARY = [
     "Numbers", 22,
     [ 21, 22, 23, 25, 27, 28, 29, 30, 32, 33 ] ],
    [
+    "Deuteronomy", 5,
+    [ 14, 21 ] ],
+   [
     "Proverbs", 26,
     [ 3 ] ],
    [
@@ -20953,6 +21460,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Every whit (completely)",
   "refs": [
+   [
+    "Deuteronomy", 13,
+    [ 16 ] ],
    [
     "John", 7,
     [ 23 ] ],
@@ -21175,6 +21685,15 @@ window.GLOSSARY = [
    [
     "Numbers", 20,
     [ 1 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 46 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 9 ] ],
    [
     "John", 1,
     [ 32, 39 ] ],
@@ -21431,6 +21950,9 @@ window.GLOSSARY = [
     "Numbers", 35,
     [ 25 ] ],
    [
+    "Deuteronomy", 3,
+    [ 19 ] ],
+   [
     "Matthew", 10,
     [ 11 ] ],
    [
@@ -21610,6 +22132,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Tribulation (pressure, trouble)",
   "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 30 ] ],
    [
     "Matthew", 13,
     [ 21 ] ],
@@ -22463,6 +22988,9 @@ window.GLOSSARY = [
     "Numbers", 27,
     [ 2, 19, 21, 22 ] ],
    [
+    "Deuteronomy", 17,
+    [ 9, 12, 18 ] ],
+   [
     "Hosea", 4,
     [ 4, 6, 9 ] ],
    [
@@ -22603,6 +23131,9 @@ window.GLOSSARY = [
    [
     "Numbers", 16,
     [ 25 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 23 ] ],
    [
     "Joel", 1,
     [ 14 ] ],
@@ -22928,6 +23459,9 @@ window.GLOSSARY = [
     "Numbers", 29,
     [ 35 ] ],
    [
+    "Deuteronomy", 16,
+    [ 8 ] ],
+   [
     "Joel", 1,
     [ 14 ] ],
    [
@@ -23102,6 +23636,9 @@ window.GLOSSARY = [
     "Leviticus", 26,
     [ 33, 38, 45 ] ],
    [
+    "Deuteronomy", 4,
+    [ 27 ] ],
+   [
     "Joel", 2,
     [ 17, 19 ] ],
    [
@@ -23180,6 +23717,15 @@ window.GLOSSARY = [
     "Numbers", 5,
     [ 14, 30 ] ],
    [
+    "Deuteronomy", 4,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 9 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 15 ] ],
+   [
     "Joel", 2,
     [ 18 ] ],
    [
@@ -23209,6 +23755,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The former and latter rain",
   "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 14 ] ],
    [
     "Proverbs", 16,
     [ 15 ] ],
@@ -23245,6 +23794,9 @@ window.GLOSSARY = [
    [
     "Genesis", 50,
     [ 11 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 14 ] ],
    [
     "Hosea", 9,
     [ 2 ] ],
@@ -23299,6 +23851,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The remnant",
   "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 11 ] ],
    [
     "Joel", 2,
     [ 32 ] ],
@@ -23531,6 +24086,9 @@ window.GLOSSARY = [
   "name": "Sickle (harvest knife)",
   "refs": [
    [
+    "Deuteronomy", 16,
+    [ 9 ] ],
+   [
     "Joel", 3,
     [ 13 ] ],
    [
@@ -23761,6 +24319,45 @@ window.GLOSSARY = [
    [
     "Numbers", 34,
     [ 5 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 27, 30 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 20, 34, 37, 45, 46 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 6, 15 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 12, 21, 22 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 8, 15, 18 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 7, 12, 26 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 19, 22 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 3, 4, 10 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 5, 10 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 15 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 1, 3, 6, 12 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 16 ] ],
    [
     "Proverbs", 7,
     [ 16 ] ],
@@ -24065,6 +24662,9 @@ window.GLOSSARY = [
   "name": "The living God",
   "refs": [
    [
+    "Deuteronomy", 5,
+    [ 26 ] ],
+   [
     "Hosea", 1,
     [ 10 ] ],
    [
@@ -24196,6 +24796,15 @@ window.GLOSSARY = [
    [
     "Numbers", 14,
     [ 18, 19 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 10 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 2, 9, 12 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 17 ] ],
    [
     "Proverbs", 3,
     [ 3 ] ],
@@ -24386,6 +24995,9 @@ window.GLOSSARY = [
     "Numbers", 25,
     [ 3, 5 ] ],
    [
+    "Deuteronomy", 4,
+    [ 3 ] ],
+   [
     "Hosea", 2,
     [ 8, 13, 17 ] ],
    [
@@ -24542,6 +25154,9 @@ window.GLOSSARY = [
     "Numbers", 24,
     [ 14 ] ],
    [
+    "Deuteronomy", 4,
+    [ 30 ] ],
+   [
     "Hosea", 3,
     [ 5 ] ],
    [
@@ -24598,6 +25213,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Gilgal",
   "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 30 ] ],
    [
     "Hosea", 4,
     [ 15 ] ],
@@ -24794,6 +25412,9 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 4, 8, 19, 20, 24, 35 ] ],
    [
+    "Deuteronomy", 9,
+    [ 16, 21 ] ],
+   [
     "Hosea", 8,
     [ 5, 6 ] ],
    [
@@ -24958,6 +25579,21 @@ window.GLOSSARY = [
    [
     "Numbers", 33,
     [ 52 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 16, 23, 25 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 5, 25 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 3 ] ],
    [
     "Hosea", 11,
     [ 2 ] ],
@@ -25126,6 +25762,15 @@ window.GLOSSARY = [
    [
     "Numbers", 36,
     [ 1 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 36 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 10, 12, 13, 15, 16 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ],
    [
     "Hosea", 6,
     [ 8 ] ],
@@ -25457,6 +26102,15 @@ window.GLOSSARY = [
     "Exodus", 22,
     [ 22, 24 ] ],
    [
+    "Deuteronomy", 10,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 11, 14 ] ],
+   [
     "Proverbs", 23,
     [ 10 ] ],
    [
@@ -25492,6 +26146,15 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Lebanon",
   "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 25 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 24 ] ],
    [
     "Hosea", 14,
     [ 5, 6, 7 ] ],
@@ -25637,6 +26300,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 4 ] ],
    [
+    "Deuteronomy", 10,
+    [ 1, 3 ] ],
+   [
     "Hosea", 6,
     [ 5 ] ] ]
  },
@@ -25723,6 +26389,27 @@ window.GLOSSARY = [
    [
     "Numbers", 25,
     [ 12, 13 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 13, 23, 31 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 2, 3 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 2, 9, 12 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 9, 11, 15 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 2 ] ],
    [
     "Proverbs", 2,
     [ 17 ] ],
@@ -25918,6 +26605,9 @@ window.GLOSSARY = [
    [
     "Numbers", 25,
     [ 3, 5 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 3 ] ],
    [
     "Hosea", 9,
     [ 10 ] ] ]
@@ -26513,6 +27203,15 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 11 ] ],
    [
+    "Deuteronomy", 1,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 10 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 5, 27 ] ],
+   [
     "Amos", 7,
     [ 9, 16 ] ],
    [
@@ -26735,6 +27434,9 @@ window.GLOSSARY = [
     "Genesis", 10,
     [ 14 ] ],
    [
+    "Deuteronomy", 2,
+    [ 23 ] ],
+   [
     "Amos", 9,
     [ 7 ] ] ]
  },
@@ -26876,6 +27578,9 @@ window.GLOSSARY = [
     "Genesis", 10,
     [ 19 ] ],
    [
+    "Deuteronomy", 2,
+    [ 23 ] ],
+   [
     "Amos", 1,
     [ 6, 7 ] ],
    [
@@ -26984,6 +27689,12 @@ window.GLOSSARY = [
     "Numbers", 21,
     [ 24 ] ],
    [
+    "Deuteronomy", 2,
+    [ 19, 20, 37 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 11, 16 ] ],
+   [
     "Amos", 1,
     [ 13 ] ],
    [
@@ -26995,6 +27706,9 @@ window.GLOSSARY = [
   "kind": "place",
   "name": "Rabbah",
   "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 11 ] ],
    [
     "Amos", 1,
     [ 14 ] ] ]
@@ -27110,6 +27824,21 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 33, 39 ] ],
    [
+    "Deuteronomy", 1,
+    [ 4, 7, 19, 20, 27, 44 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 2, 8, 9 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 46, 47 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ],
+   [
     "Amos", 2,
     [ 9, 10 ] ] ]
  },
@@ -27157,6 +27886,12 @@ window.GLOSSARY = [
    [
     "Numbers", 36,
     [ 13 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 8, 9, 11, 18, 29 ] ],
    [
     "Amos", 2,
     [ 1, 2 ] ],
@@ -27263,6 +27998,15 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 33 ] ],
    [
+    "Deuteronomy", 1,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 1, 3, 4, 10, 11, 13, 14 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 43, 47 ] ],
+   [
     "Amos", 4,
     [ 1 ] ],
    [
@@ -27341,6 +28085,9 @@ window.GLOSSARY = [
     "Genesis", 41,
     [ 2, 3, 4, 18, 19, 20, 26, 27 ] ],
    [
+    "Deuteronomy", 7,
+    [ 13 ] ],
+   [
     "Amos", 4,
     [ 1 ] ] ]
  },
@@ -27358,6 +28105,12 @@ window.GLOSSARY = [
    [
     "Numbers", 18,
     [ 24, 26, 28 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 6, 11, 17 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 22, 23, 28 ] ],
    [
     "Amos", 4,
     [ 4 ] ],
@@ -27734,6 +28487,9 @@ window.GLOSSARY = [
     "Numbers", 13,
     [ 3, 26 ] ],
    [
+    "Deuteronomy", 1,
+    [ 1 ] ],
+   [
     "Habakkuk", 3,
     [ 3 ] ] ]
  },
@@ -27947,6 +28703,9 @@ window.GLOSSARY = [
     "Exodus", 20,
     [ 17 ] ],
    [
+    "Deuteronomy", 5,
+    [ 21 ] ],
+   [
     "Micah", 2,
     [ 2 ] ],
    [
@@ -28048,6 +28807,18 @@ window.GLOSSARY = [
    [
     "Leviticus", 19,
     [ 15, 35 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 18, 19 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 8, 9, 11 ] ],
    [
     "Micah", 3,
     [ 1, 8, 9 ] ],
@@ -28670,6 +29441,9 @@ window.GLOSSARY = [
     "Exodus", 15,
     [ 4, 19 ] ],
    [
+    "Deuteronomy", 17,
+    [ 16 ] ],
+   [
     "Micah", 5,
     [ 10 ] ] ]
  },
@@ -28712,11 +29486,17 @@ window.GLOSSARY = [
  {
   "id": "groves",
   "kind": "term",
-  "name": "Groves (wooden poles for the goddess Asherah)",
+  "name": "Groves (wooden idols set up for the worship of false gods)",
   "refs": [
    [
     "Exodus", 34,
     [ 13 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 3 ] ],
    [
     "Micah", 5,
     [ 14 ] ] ]
@@ -28921,6 +29701,12 @@ window.GLOSSARY = [
    [
     "Numbers", 33,
     [ 1, 38, 39 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 20 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 6 ] ],
    [
     "Micah", 6,
     [ 4 ] ],
@@ -29147,6 +29933,9 @@ window.GLOSSARY = [
     "Numbers", 29,
     [ 2, 6, 8, 11, 13, 16, 19, 22, 25, 28, 31, 34, 36, 38, 39 ] ],
    [
+    "Deuteronomy", 12,
+    [ 6, 11, 13, 14, 27 ] ],
+   [
     "Hosea", 6,
     [ 6 ] ],
    [
@@ -29230,6 +30019,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Reward (a bribe)",
   "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 17 ] ],
    [
     "Micah", 3,
     [ 11 ] ],
@@ -29476,6 +30268,9 @@ window.GLOSSARY = [
    [
     "Exodus", 21,
     [ 2 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 12 ] ],
    [
     "Jonah", 1,
     [ 9 ] ],
@@ -29726,6 +30521,9 @@ window.GLOSSARY = [
     "Genesis", 36,
     [ 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 40, 43 ] ],
    [
+    "Deuteronomy", 2,
+    [ 4, 5, 8, 12, 22, 29 ] ],
+   [
     "Obadiah", 1,
     [ 6, 8, 9, 18, 19, 21 ] ],
    [
@@ -29794,6 +30592,15 @@ window.GLOSSARY = [
    [
     "Numbers", 21,
     [ 3 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 30 ] ],
    [
     "Obadiah", 1,
     [ 20 ] ] ]
@@ -29953,6 +30760,12 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The host of heaven (sun, moon and stars worshipped as gods)",
   "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 3 ] ],
    [
     "Zephaniah", 1,
     [ 5 ] ],
@@ -30358,6 +31171,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Consider (set your heart on it)",
   "refs": [
+   [
+    "Deuteronomy", 8,
+    [ 5 ] ],
    [
     "Haggai", 1,
     [ 5, 7 ] ],
@@ -30896,6 +31712,12 @@ window.GLOSSARY = [
     "Genesis", 6,
     [ 8 ] ],
    [
+    "Deuteronomy", 11,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 18 ] ],
+   [
     "Proverbs", 5,
     [ 21 ] ],
    [
@@ -31000,6 +31822,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 11,
     [ 19 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 18 ] ],
    [
     "Zechariah", 5,
     [ 9 ] ] ]
@@ -31273,6 +32098,9 @@ window.GLOSSARY = [
    [
     "Numbers", 13,
     [ 29 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ],
    [
     "Zechariah", 9,
     [ 7 ] ] ]
@@ -31550,6 +32378,9 @@ window.GLOSSARY = [
     "Numbers", 18,
     [ 2, 21 ] ],
    [
+    "Deuteronomy", 10,
+    [ 8, 9 ] ],
+   [
     "Zechariah", 12,
     [ 13 ] ],
    [
@@ -31811,6 +32642,9 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 26 ] ],
    [
+    "Deuteronomy", 14,
+    [ 21 ] ],
+   [
     "Zechariah", 14,
     [ 21 ] ] ]
  },
@@ -31895,6 +32729,9 @@ window.GLOSSARY = [
     "Leviticus", 22,
     [ 22 ] ],
    [
+    "Deuteronomy", 15,
+    [ 21 ] ],
+   [
     "Malachi", 1,
     [ 8, 13 ] ] ]
  },
@@ -31946,6 +32783,9 @@ window.GLOSSARY = [
     "Numbers", 30,
     [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ] ],
    [
+    "Deuteronomy", 12,
+    [ 6, 11, 17, 26 ] ],
+   [
     "Malachi", 1,
     [ 14 ] ],
    [
@@ -31969,6 +32809,9 @@ window.GLOSSARY = [
    [
     "Numbers", 5,
     [ 18, 19, 21, 22, 23, 24, 27 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 26, 28, 29 ] ],
    [
     "Malachi", 1,
     [ 14 ] ],
@@ -32261,6 +33104,18 @@ window.GLOSSARY = [
     "Exodus", 33,
     [ 6 ] ],
    [
+    "Deuteronomy", 1,
+    [ 2, 6, 19 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 10, 15 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 2 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 8 ] ],
+   [
     "Malachi", 4,
     [ 4 ] ] ]
  },
@@ -32305,6 +33160,21 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 46 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 5, 8, 14 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 1, 31 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 1, 20 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 32 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 1 ] ],
    [
     "Malachi", 4,
     [ 4 ] ] ]
@@ -32455,6 +33325,9 @@ window.GLOSSARY = [
    [
     "Exodus", 23,
     [ 26 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 14 ] ],
    [
     "Luke", 1,
     [ 7, 36 ] ],
@@ -33398,6 +34271,9 @@ window.GLOSSARY = [
     "Exodus", 2,
     [ 6 ] ],
    [
+    "Deuteronomy", 13,
+    [ 17 ] ],
+   [
     "Matthew", 9,
     [ 36 ] ],
    [
@@ -33962,6 +34838,21 @@ window.GLOSSARY = [
     "Numbers", 18,
     [ 27 ] ],
    [
+    "Deuteronomy", 7,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 17 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 23 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 9, 13 ] ],
+   [
     "Matthew", 12,
     [ 1 ] ],
    [
@@ -34322,6 +35213,9 @@ window.GLOSSARY = [
     "Numbers", 11,
     [ 23 ] ],
    [
+    "Deuteronomy", 8,
+    [ 4 ] ],
+   [
     "Matthew", 13,
     [ 15 ] ],
    [
@@ -34537,6 +35431,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Exact (demand payment)",
   "refs": [
+   [
+    "Deuteronomy", 15,
+    [ 2, 3 ] ],
    [
     "Luke", 3,
     [ 13 ] ] ]
@@ -35705,6 +36602,9 @@ window.GLOSSARY = [
     "Numbers", 14,
     [ 22 ] ],
    [
+    "Deuteronomy", 6,
+    [ 16 ] ],
+   [
     "Matthew", 4,
     [ 1, 3, 7 ] ],
    [
@@ -36314,6 +37214,9 @@ window.GLOSSARY = [
     "Numbers", 18,
     [ 3, 5, 7, 17 ] ],
    [
+    "Deuteronomy", 12,
+    [ 27 ] ],
+   [
     "Matthew", 5,
     [ 23, 24 ] ],
    [
@@ -36553,6 +37456,15 @@ window.GLOSSARY = [
    [
     "Numbers", 30,
     [ 2, 10, 13 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 20 ] ],
    [
     "Matthew", 5,
     [ 33, 34, 36 ] ],
@@ -37058,6 +37970,9 @@ window.GLOSSARY = [
     "Numbers", 34,
     [ 2, 12 ] ],
    [
+    "Deuteronomy", 3,
+    [ 14 ] ],
+   [
     "Matthew", 2,
     [ 16 ] ],
    [
@@ -37481,6 +38396,9 @@ window.GLOSSARY = [
   "name": "A single eye, an evil eye",
   "refs": [
    [
+    "Deuteronomy", 15,
+    [ 9 ] ],
+   [
     "Matthew", 6,
     [ 22, 23 ] ],
    [
@@ -37558,6 +38476,12 @@ window.GLOSSARY = [
    [
     "Numbers", 31,
     [ 20 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 18 ] ],
    [
     "Matthew", 3,
     [ 4 ] ],
@@ -38077,6 +39001,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 11,
     [ 7 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 8 ] ],
    [
     "Matthew", 7,
     [ 6 ] ],
@@ -38986,6 +39913,15 @@ window.GLOSSARY = [
    [
     "Numbers", 31,
     [ 9, 11, 12, 53 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 35 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 16 ] ],
    [
     "Matthew", 12,
     [ 29 ] ],
@@ -40039,6 +40975,12 @@ window.GLOSSARY = [
    [
     "Exodus", 20,
     [ 12 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 16 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 17 ] ],
    [
     "Matthew", 15,
     [ 4 ] ],
@@ -41177,6 +42119,18 @@ window.GLOSSARY = [
     "Genesis", 2,
     [ 24 ] ],
    [
+    "Deuteronomy", 4,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 20 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 22 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 4, 17 ] ],
+   [
     "Matthew", 19,
     [ 5 ] ],
    [
@@ -41314,6 +42268,12 @@ window.GLOSSARY = [
    [
     "Numbers", 18,
     [ 2 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 6, 8 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 12 ] ],
    [
     "Matthew", 20,
     [ 26, 28 ] ],
@@ -41840,6 +42800,9 @@ window.GLOSSARY = [
     "Numbers", 18,
     [ 27, 30 ] ],
    [
+    "Deuteronomy", 15,
+    [ 14 ] ],
+   [
     "Matthew", 21,
     [ 33 ] ],
    [
@@ -41981,6 +42944,15 @@ window.GLOSSARY = [
     "Leviticus", 25,
     [ 14, 15 ] ],
    [
+    "Deuteronomy", 4,
+    [ 42 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 20, 21 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 2 ] ],
+   [
     "Matthew", 5,
     [ 43 ] ],
    [
@@ -42088,6 +43060,9 @@ window.GLOSSARY = [
    [
     "Exodus", 31,
     [ 18 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 10 ] ],
    [
     "Luke", 11,
     [ 20 ] ] ]
@@ -42845,6 +43820,12 @@ window.GLOSSARY = [
   "name": "Hear, O Israel (the Shema, Deuteronomy 6:4)",
   "refs": [
    [
+    "Deuteronomy", 5,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 4 ] ],
+   [
     "Mark", 12,
     [ 29 ] ] ]
  },
@@ -43222,6 +44203,9 @@ window.GLOSSARY = [
    [
     "Numbers", 29,
     [ 5, 11, 16, 19, 25 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 21 ] ],
    [
     "Luke", 15,
     [ 29 ] ] ]
@@ -43865,6 +44849,9 @@ window.GLOSSARY = [
     "Numbers", 28,
     [ 17 ] ],
    [
+    "Deuteronomy", 16,
+    [ 3, 8, 16 ] ],
+   [
     "Matthew", 26,
     [ 17 ] ],
    [
@@ -44347,6 +45334,9 @@ window.GLOSSARY = [
    [
     "Genesis", 19,
     [ 1, 5, 6, 9, 10, 12, 14, 15, 18, 23, 29, 30, 36 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 9, 19 ] ],
    [
     "Luke", 17,
     [ 28, 29, 32 ] ],
@@ -46730,6 +47720,9 @@ window.GLOSSARY = [
     "Numbers", 30,
     [ 15 ] ],
    [
+    "Deuteronomy", 5,
+    [ 9 ] ],
+   [
     "Acts", 1,
     [ 18 ] ],
    [
@@ -47515,6 +48508,9 @@ window.GLOSSARY = [
    [
     "Numbers", 19,
     [ 7, 8, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 7, 8, 10, 19 ] ],
    [
     "Acts", 11,
     [ 8, 9 ] ] ]
@@ -48307,6 +49303,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Assayed (tried, attempted)",
   "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 34 ] ],
    [
     "Acts", 9,
     [ 26 ] ],
@@ -49238,6 +50237,15 @@ window.GLOSSARY = [
     "Exodus", 18,
     [ 4, 8, 10 ] ],
    [
+    "Deuteronomy", 6,
+    [ 21, 22 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 8, 18 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 3 ] ],
+   [
     "Acts", 7,
     [ 10, 13, 21 ] ],
    [
@@ -49282,6 +50290,15 @@ window.GLOSSARY = [
    [
     "Numbers", 33,
     [ 10, 11 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 1, 40 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 4 ] ],
    [
     "Acts", 7,
     [ 36 ] ],
@@ -49499,6 +50516,12 @@ window.GLOSSARY = [
     "Exodus", 34,
     [ 9 ] ],
    [
+    "Deuteronomy", 9,
+    [ 6, 13 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 16 ] ],
+   [
     "Acts", 7,
     [ 51 ] ] ]
  },
@@ -49622,6 +50645,12 @@ window.GLOSSARY = [
     "Numbers", 33,
     [ 9 ] ],
    [
+    "Deuteronomy", 3,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 22 ] ],
+   [
     "Acts", 7,
     [ 14 ] ],
    [
@@ -49705,6 +50734,27 @@ window.GLOSSARY = [
    [
     "Numbers", 23,
     [ 18 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 45 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 1 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 3, 8, 18 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 12 ] ],
    [
     "Proverbs", 8,
     [ 32 ] ],
@@ -52376,6 +53426,9 @@ window.GLOSSARY = [
     "Numbers", 12,
     [ 8 ] ],
    [
+    "Deuteronomy", 4,
+    [ 12, 15, 16 ] ],
+   [
     "Romans", 5,
     [ 14 ] ],
    [
@@ -52462,6 +53515,9 @@ window.GLOSSARY = [
    [
     "Leviticus", 26,
     [ 17 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 6 ] ],
    [
     "Romans", 5,
     [ 14, 17, 21 ] ],
@@ -54803,6 +55859,12 @@ window.GLOSSARY = [
     "Exodus", 14,
     [ 4, 8, 17 ] ],
    [
+    "Deuteronomy", 2,
+    [ 30 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 7 ] ],
+   [
     "Romans", 9,
     [ 18 ] ],
    [
@@ -55829,6 +56891,18 @@ window.GLOSSARY = [
     "Numbers", 34,
     [ 13 ] ],
    [
+    "Deuteronomy", 1,
+    [ 38 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 31 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 28 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 20 ] ],
+   [
     "1 Corinthians", 6,
     [ 9, 10 ] ],
    [
@@ -56491,6 +57565,9 @@ window.GLOSSARY = [
    [
     "Numbers", 21,
     [ 6, 7 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 15 ] ],
    [
     "1 Corinthians", 10,
     [ 9 ] ] ]
@@ -57470,6 +58547,9 @@ window.GLOSSARY = [
   "name": "Sufficient (enough, able)",
   "refs": [
    [
+    "Deuteronomy", 15,
+    [ 8 ] ],
+   [
     "2 Corinthians", 2,
     [ 6, 16 ] ],
    [
@@ -57526,6 +58606,18 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 1, 4, 28, 29 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 22 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 9, 10, 11 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 1, 3 ] ],
    [
     "2 Corinthians", 3,
     [ 3 ] ] ]
@@ -57782,6 +58874,9 @@ window.GLOSSARY = [
   "name": "Belial (worthlessness, lawlessness: a name for the evil one)",
   "refs": [
    [
+    "Deuteronomy", 13,
+    [ 13 ] ],
+   [
     "2 Corinthians", 6,
     [ 15 ] ] ]
  },
@@ -57922,6 +59017,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Two or three witnesses (the law's rule of fairness, Deuteronomy 19:15)",
   "refs": [
+   [
+    "Deuteronomy", 17,
+    [ 6 ] ],
    [
     "2 Corinthians", 13,
     [ 1 ] ],
@@ -58411,6 +59509,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Mediator (a go-between who stands between two parties)",
   "refs": [
+   [
+    "Deuteronomy", 5,
+    [ 5 ] ],
    [
     "Galatians", 3,
     [ 19, 20 ] ],
@@ -59504,6 +60605,9 @@ window.GLOSSARY = [
     "Genesis", 2,
     [ 18, 20 ] ],
    [
+    "Deuteronomy", 3,
+    [ 18 ] ],
+   [
     "Colossians", 1,
     [ 12 ] ],
    [
@@ -60115,6 +61219,9 @@ window.GLOSSARY = [
    [
     "Numbers", 28,
     [ 2 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 14 ] ],
    [
     "Proverbs", 15,
     [ 23 ] ],
@@ -60731,6 +61838,9 @@ window.GLOSSARY = [
     "Numbers", 32,
     [ 7, 9 ] ],
    [
+    "Deuteronomy", 1,
+    [ 21, 28 ] ],
+   [
     "Colossians", 3,
     [ 21 ] ] ]
  },
@@ -60865,6 +61975,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Affliction (pressure, hard times, trouble for the faith)",
   "refs": [
+   [
+    "Deuteronomy", 16,
+    [ 3 ] ],
    [
     "1 Thessalonians", 1,
     [ 6 ] ],
@@ -62618,6 +63731,9 @@ window.GLOSSARY = [
   "name": "A peculiar people (a people who belong to Him, His own treasure)",
   "refs": [
    [
+    "Deuteronomy", 14,
+    [ 2 ] ],
+   [
     "Titus", 2,
     [ 14 ] ],
    [
@@ -62972,6 +64088,9 @@ window.GLOSSARY = [
     "Exodus", 32,
     [ 8 ] ],
    [
+    "Deuteronomy", 9,
+    [ 12, 16 ] ],
+   [
     "Hebrews", 5,
     [ 2 ] ] ]
  },
@@ -63263,6 +64382,9 @@ window.GLOSSARY = [
     "Numbers", 14,
     [ 11, 23 ] ],
    [
+    "Deuteronomy", 9,
+    [ 7, 8, 18, 22 ] ],
+   [
     "Hebrews", 3,
     [ 8, 15, 16 ] ] ]
  },
@@ -63274,6 +64396,9 @@ window.GLOSSARY = [
    [
     "Numbers", 9,
     [ 16 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 1 ] ],
    [
     "Hebrews", 3,
     [ 10 ] ] ]
@@ -63325,6 +64450,36 @@ window.GLOSSARY = [
    [
     "Numbers", 32,
     [ 10, 11 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 8, 34, 35 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 21, 31 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 10, 18, 23 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 8, 12, 13 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 1, 18 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 11 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 9, 21 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 17 ] ],
    [
     "Amos", 4,
     [ 2 ] ],
@@ -63379,6 +64534,12 @@ window.GLOSSARY = [
    [
     "Exodus", 34,
     [ 21 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 9, 10 ] ],
    [
     "Hebrews", 3,
     [ 11, 18 ] ],
@@ -63466,6 +64627,9 @@ window.GLOSSARY = [
    [
     "Numbers", 29,
     [ 32 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 14 ] ],
    [
     "Hebrews", 4,
     [ 4 ] ] ]
@@ -63620,6 +64784,9 @@ window.GLOSSARY = [
     "Numbers", 14,
     [ 44 ] ],
    [
+    "Deuteronomy", 10,
+    [ 8 ] ],
+   [
     "Hebrews", 9,
     [ 4 ] ] ]
  },
@@ -63694,6 +64861,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "The tables of the covenant (the stone tablets of the Ten Commandments)",
   "refs": [
+   [
+    "Deuteronomy", 9,
+    [ 9, 11, 15 ] ],
    [
     "Hebrews", 9,
     [ 4 ] ] ]
@@ -64313,6 +65483,12 @@ window.GLOSSARY = [
   "name": "A consuming fire (God's holiness, which burns up what is false)",
   "refs": [
    [
+    "Deuteronomy", 4,
+    [ 24 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 3 ] ],
+   [
     "Hebrews", 12,
     [ 29 ] ] ]
  },
@@ -64342,6 +65518,9 @@ window.GLOSSARY = [
   "kind": "term",
   "name": "Liberally (with an open hand)",
   "refs": [
+   [
+    "Deuteronomy", 15,
+    [ 14 ] ],
    [
     "James", 1,
     [ 5 ] ] ]
@@ -65105,6 +66284,18 @@ window.GLOSSARY = [
     "Numbers", 3,
     [ 46, 48, 49, 51 ] ],
    [
+    "Deuteronomy", 7,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 26 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 15 ] ],
+   [
     "1 Peter", 1,
     [ 18 ] ],
    [
@@ -65591,6 +66782,9 @@ window.GLOSSARY = [
   "name": "Slack, slackness (slow, late)",
   "refs": [
    [
+    "Deuteronomy", 7,
+    [ 10 ] ],
+   [
     "2 Peter", 3,
     [ 9 ] ] ]
  },
@@ -65644,6 +66838,9 @@ window.GLOSSARY = [
    [
     "Exodus", 23,
     [ 2, 6 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 19 ] ],
    [
     "2 Peter", 3,
     [ 16 ] ] ]
@@ -66206,6 +67403,12 @@ window.GLOSSARY = [
     "Leviticus", 25,
     [ 39, 42, 44, 46 ] ],
    [
+    "Deuteronomy", 15,
+    [ 15 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 12 ] ],
+   [
     "Revelation", 6,
     [ 15 ] ] ]
  },
@@ -66280,6 +67483,9 @@ window.GLOSSARY = [
    [
     "Numbers", 34,
     [ 14 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 6 ] ],
    [
     "Revelation", 7,
     [ 5 ] ] ]
@@ -67340,6 +68546,9 @@ window.GLOSSARY = [
   "name": "Scorpion (a creature whose sting is agony but seldom kills)",
   "refs": [
    [
+    "Deuteronomy", 8,
+    [ 15 ] ],
+   [
     "Revelation", 9,
     [ 3, 5, 10 ] ] ]
  },
@@ -67354,6 +68563,12 @@ window.GLOSSARY = [
    [
     "Genesis", 15,
     [ 18 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 24 ] ],
    [
     "Revelation", 9,
     [ 14 ] ],
@@ -68763,7 +69978,10 @@ window.GLOSSARY = [
     [ 1, 2 ] ],
    [
     "Genesis", 6,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 32 ] ] ]
  },
  {
   "id": "firmament",
@@ -69129,7 +70347,10 @@ window.GLOSSARY = [
     [ 4 ] ],
    [
     "Numbers", 13,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 11, 13 ] ] ]
  },
  {
   "id": "fountains-of-the-deep",
@@ -69498,7 +70719,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 12,
-    [ 6 ] ] ]
+    [ 6 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 30 ] ] ]
  },
  {
   "id": "hai",
@@ -69537,7 +70761,10 @@ window.GLOSSARY = [
     [ 10, 11, 12 ] ],
    [
     "Genesis", 19,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 10 ] ] ]
  },
  {
   "id": "zoar",
@@ -69624,7 +70851,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Exodus", 34,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ] ]
  },
  {
   "id": "chedorlaomer",
@@ -69666,7 +70896,10 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Genesis", 36,
-    [ 21, 29 ] ] ]
+    [ 21, 29 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 10, 11 ] ] ]
  },
  {
   "id": "vale-of-siddim",
@@ -69687,7 +70920,10 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Numbers", 34,
-    [ 3, 12 ] ] ]
+    [ 3, 12 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 17 ] ] ]
  },
  {
   "id": "slimepits",
@@ -69921,7 +71157,16 @@ window.GLOSSARY = [
     [ 36, 37 ] ],
    [
     "Numbers", 34,
-    [ 4 ] ] ]
+    [ 4 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 2, 19, 46 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 23 ] ] ]
  },
  {
   "id": "phichol",
@@ -70269,7 +71514,13 @@ window.GLOSSARY = [
     [ 8, 9, 20, 21, 30 ] ],
    [
     "Numbers", 24,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 2, 44 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 1, 4, 5, 8, 12, 22, 29 ] ] ]
  },
  {
   "id": "jabbok",
@@ -70281,7 +71532,13 @@ window.GLOSSARY = [
     [ 22 ] ],
    [
     "Numbers", 21,
-    [ 24 ] ] ]
+    [ 24 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 37 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 16 ] ] ]
  },
  {
   "id": "peniel",
@@ -70401,7 +71658,10 @@ window.GLOSSARY = [
     [ 2 ] ],
    [
     "Exodus", 34,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ] ]
  },
  {
   "id": "deborah-rebekahs-nurse",
@@ -71322,7 +72582,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Genesis", 46,
-    [ 26, 27 ] ] ]
+    [ 26, 27 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 22 ] ] ]
  },
  {
   "id": "serah",
@@ -71472,7 +72735,10 @@ window.GLOSSARY = [
     [ 39, 40 ] ],
    [
     "Numbers", 36,
-    [ 1 ] ] ]
+    [ 1 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 15 ] ] ]
  },
  {
   "id": "pithom",
@@ -71637,7 +72903,16 @@ window.GLOSSARY = [
     [ 5 ] ],
    [
     "Numbers", 31,
-    [ 10 ] ] ]
+    [ 10 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 25 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 10 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 12 ] ] ]
  },
  {
   "id": "stranger-in-a-strange-land",
@@ -71685,7 +72960,10 @@ window.GLOSSARY = [
     [ 11 ] ],
    [
     "Numbers", 13,
-    [ 29 ] ] ]
+    [ 29 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ] ]
  },
  {
   "id": "burning-bush",
@@ -71730,7 +73008,13 @@ window.GLOSSARY = [
     [ 8 ] ],
    [
     "Numbers", 16,
-    [ 13, 14 ] ] ]
+    [ 13, 14 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 3 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 9 ] ] ]
  },
  {
   "id": "token",
@@ -72168,7 +73452,16 @@ window.GLOSSARY = [
     [ 41 ] ],
    [
     "Numbers", 18,
-    [ 15, 17 ] ] ]
+    [ 15, 17 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 6, 17 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 23 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 19 ] ] ]
  },
  {
   "id": "frontlets",
@@ -72177,7 +73470,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 13,
-    [ 16 ] ] ]
+    [ 16 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 18 ] ] ]
  },
  {
   "id": "harnessed",
@@ -72201,7 +73500,10 @@ window.GLOSSARY = [
     [ 15 ] ],
    [
     "Exodus", 34,
-    [ 18 ] ] ]
+    [ 18 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 1 ] ] ]
  },
  {
   "id": "pillar-of-cloud-and-fire",
@@ -72378,7 +73680,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 17,
-    [ 7 ] ] ]
+    [ 7 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 16 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 22 ] ] ]
  },
  {
   "id": "meribah-in-kadesh",
@@ -72447,7 +73755,13 @@ window.GLOSSARY = [
     [ 12, 28 ] ],
    [
     "Numbers", 34,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 38 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 21, 28 ] ] ]
  },
  {
   "id": "hur",
@@ -72555,6 +73869,24 @@ window.GLOSSARY = [
     [ 14, 15, 16, 26, 29, 30 ] ],
    [
     "Numbers", 35,
+    [ 15 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 16 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 14 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 18, 19 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 21, 29 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 11, 14 ] ],
+   [
+    "Deuteronomy", 17,
     [ 15 ] ] ]
  },
  {
@@ -72570,7 +73902,16 @@ window.GLOSSARY = [
     [ 13 ] ],
    [
     "Numbers", 30,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 11, 14 ] ] ]
  },
  {
   "id": "dowry",
@@ -72609,7 +73950,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Exodus", 23,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 20 ] ] ]
  },
  {
   "id": "three-feasts",
@@ -72621,7 +73965,10 @@ window.GLOSSARY = [
     [ 14, 15, 16 ] ],
    [
     "Exodus", 34,
-    [ 18, 22 ] ] ]
+    [ 18, 22 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 16 ] ] ]
  },
  {
   "id": "nadab",
@@ -72753,7 +74100,13 @@ window.GLOSSARY = [
     [ 18 ] ],
    [
     "Exodus", 34,
-    [ 28 ] ] ]
+    [ 28 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 9, 11, 18, 25 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 10 ] ] ]
  },
  {
   "id": "shittim-wood",
@@ -72783,7 +74136,10 @@ window.GLOSSARY = [
     [ 1, 4, 10, 15, 25, 28 ] ],
    [
     "Exodus", 38,
-    [ 1, 6 ] ] ]
+    [ 1, 6 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 3 ] ] ]
  },
  {
   "id": "court-of-the-tabernacle",
@@ -73077,7 +74433,10 @@ window.GLOSSARY = [
     [ 11, 24, 26, 27, 28, 29 ] ],
    [
     "Numbers", 31,
-    [ 29, 41 ] ] ]
+    [ 29, 41 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 11, 17 ] ] ]
  },
  {
   "id": "bullock",
@@ -73125,7 +74484,13 @@ window.GLOSSARY = [
     [ 12, 14, 20, 28 ] ],
    [
     "Numbers", 29,
-    [ 2, 3, 8, 9, 14, 36, 37 ] ] ]
+    [ 2, 3, 8, 9, 14, 36, 37 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 1 ] ] ]
  },
  {
   "id": "rams-of-consecration",
@@ -73475,6 +74840,9 @@ window.GLOSSARY = [
     "Numbers", 20,
     [ 5 ] ],
    [
+    "Deuteronomy", 8,
+    [ 8 ] ],
+   [
     "Joel", 1,
     [ 12 ] ],
    [
@@ -73567,6 +74935,12 @@ window.GLOSSARY = [
    [
     "Numbers", 29,
     [ 2, 8, 13, 20, 23, 29, 32, 36 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 21 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 1 ] ],
    [
     "Ephesians", 5,
     [ 27 ] ],
@@ -74019,7 +75393,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 11,
-    [ 3, 4, 5, 6, 7, 26 ] ] ]
+    [ 3, 4, 5, 6, 7, 26 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 6, 7, 8 ] ] ]
  },
  {
   "id": "fins-and-scales",
@@ -74028,7 +75405,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 11,
-    [ 9, 10, 12 ] ] ]
+    [ 9, 10, 12 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 9, 10 ] ] ]
  },
  {
   "id": "unclean-fowls",
@@ -74037,7 +75417,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Leviticus", 11,
-    [ 13, 16, 18, 19 ] ] ]
+    [ 13, 16, 18, 19 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 12, 15, 17, 18 ] ] ]
  },
  {
   "id": "until-the-even",
@@ -74235,7 +75618,13 @@ window.GLOSSARY = [
     [ 27 ] ],
    [
     "Leviticus", 17,
-    [ 10, 12, 14 ] ] ]
+    [ 10, 12, 14 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 16, 23 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 23 ] ] ]
  },
  {
   "id": "open-field",
@@ -74367,7 +75756,10 @@ window.GLOSSARY = [
     [ 28 ] ],
    [
     "Leviticus", 21,
-    [ 5 ] ] ]
+    [ 5 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 1 ] ] ]
  },
  {
   "id": "familiar-spirits",
@@ -74469,7 +75861,13 @@ window.GLOSSARY = [
     [ 3 ] ],
    [
     "Numbers", 29,
-    [ 39 ] ] ]
+    [ 39 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 6, 17 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 10 ] ] ]
  },
  {
   "id": "the-dam",
@@ -75123,7 +76521,10 @@ window.GLOSSARY = [
     [ 14, 23 ] ],
    [
     "Numbers", 36,
-    [ 1, 12 ] ] ]
+    [ 1, 12 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 13 ] ] ]
  },
  {
   "id": "standard-and-ensign",
@@ -75537,7 +76938,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 11,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 22 ] ] ]
  },
  {
   "id": "kibroth-hattaavah",
@@ -75549,7 +76953,10 @@ window.GLOSSARY = [
     [ 34, 35 ] ],
    [
     "Numbers", 33,
-    [ 16, 17 ] ] ]
+    [ 16, 17 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 22 ] ] ]
  },
  {
   "id": "hazeroth",
@@ -75564,7 +76971,10 @@ window.GLOSSARY = [
     [ 16 ] ],
    [
     "Numbers", 33,
-    [ 17, 18 ] ] ]
+    [ 17, 18 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 1 ] ] ]
  },
  {
   "id": "eldad",
@@ -75621,7 +77031,10 @@ window.GLOSSARY = [
     [ 12 ] ],
    [
     "Numbers", 34,
-    [ 19 ] ] ]
+    [ 19 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 36 ] ] ]
  },
  {
   "id": "twelve-spies",
@@ -75642,7 +77055,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 13,
-    [ 22, 28, 33 ] ] ]
+    [ 22, 28, 33 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 28 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 10, 11, 21 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 2 ] ] ]
  },
  {
   "id": "brook-eshcol",
@@ -75654,7 +77076,10 @@ window.GLOSSARY = [
     [ 23, 24 ] ],
    [
     "Numbers", 32,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 24 ] ] ]
  },
  {
   "id": "wilderness-of-zin",
@@ -75705,7 +77130,10 @@ window.GLOSSARY = [
     [ 45 ] ],
    [
     "Numbers", 21,
-    [ 3 ] ] ]
+    [ 3 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 44 ] ] ]
  },
  {
   "id": "another-spirit",
@@ -75726,7 +77154,13 @@ window.GLOSSARY = [
     [ 33, 34 ] ],
    [
     "Numbers", 32,
-    [ 13 ] ] ]
+    [ 13 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 2, 4 ] ] ]
  },
  {
   "id": "presumptuous-sin",
@@ -75735,7 +77169,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 15,
-    [ 30 ] ] ]
+    [ 30 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 43 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 12, 13 ] ] ]
  },
  {
   "id": "first-of-your-dough",
@@ -75774,7 +77214,10 @@ window.GLOSSARY = [
     [ 1, 12, 24, 25, 27 ] ],
    [
     "Numbers", 26,
-    [ 9 ] ] ]
+    [ 9 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 6 ] ] ]
  },
  {
   "id": "on-son-of-peleth",
@@ -75795,7 +77238,10 @@ window.GLOSSARY = [
     [ 1, 12 ] ],
    [
     "Numbers", 26,
-    [ 8, 9 ] ] ]
+    [ 8, 9 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 6 ] ] ]
  },
  {
   "id": "between-the-dead-and-the-living",
@@ -75825,7 +77271,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 18,
-    [ 20, 21, 23, 24, 26 ] ] ]
+    [ 20, 21, 23, 24, 26 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 9 ] ],
+   [
+    "Deuteronomy", 12,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 27, 29 ] ] ]
  },
  {
   "id": "bear-the-iniquity",
@@ -75882,7 +77337,10 @@ window.GLOSSARY = [
     [ 2, 28 ] ],
    [
     "Numbers", 34,
-    [ 17 ] ] ]
+    [ 17 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 6 ] ] ]
  },
  {
   "id": "water-of-separation",
@@ -75936,7 +77394,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 20,
-    [ 17, 19 ] ] ]
+    [ 17, 19 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 27 ] ] ]
  },
  {
   "id": "gathered-unto-his-people",
@@ -76029,7 +77490,16 @@ window.GLOSSARY = [
     [ 13, 14, 24, 26, 28 ] ],
    [
     "Numbers", 22,
-    [ 36 ] ] ]
+    [ 36 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 24, 36 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 8, 12, 16 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 48 ] ] ]
  },
  {
   "id": "kirjath-huzoth",
@@ -76071,7 +77541,13 @@ window.GLOSSARY = [
     [ 20 ] ],
    [
     "Numbers", 23,
-    [ 14 ] ] ]
+    [ 14 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 27 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 49 ] ] ]
  },
  {
   "id": "peor",
@@ -76209,7 +77685,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 21,
-    [ 12 ] ] ]
+    [ 12 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 13, 14 ] ] ]
  },
  {
   "id": "ar-of-moab",
@@ -76218,7 +77697,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 21,
-    [ 15, 28 ] ] ]
+    [ 15, 28 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 9, 18, 29 ] ] ]
  },
  {
   "id": "beer-the-well",
@@ -76275,7 +77757,19 @@ window.GLOSSARY = [
     [ 21, 23, 26, 27, 28, 29, 34 ] ],
    [
     "Numbers", 32,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 24, 26, 30, 31, 32 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 2, 6 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 46 ] ] ]
  },
  {
   "id": "jahaz",
@@ -76284,7 +77778,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 21,
-    [ 23 ] ] ]
+    [ 23 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 32 ] ] ]
  },
  {
   "id": "heshbon",
@@ -76296,7 +77793,19 @@ window.GLOSSARY = [
     [ 25, 26, 27, 28, 30, 34 ] ],
    [
     "Numbers", 32,
-    [ 3, 37 ] ] ]
+    [ 3, 37 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 24, 26, 30 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 2, 6 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 46 ] ] ]
  },
  {
   "id": "chemosh",
@@ -76359,7 +77868,16 @@ window.GLOSSARY = [
     [ 33 ] ],
    [
     "Numbers", 32,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 1, 3, 4, 10, 11, 13 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 47 ] ] ]
  },
  {
   "id": "edrei",
@@ -76368,7 +77886,13 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 21,
-    [ 33 ] ] ]
+    [ 33 ] ],
+   [
+    "Deuteronomy", 1,
+    [ 4 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 1, 10 ] ] ]
  },
  {
   "id": "zimri-son-of-salu",
@@ -76653,7 +78177,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 32,
-    [ 41 ] ] ]
+    [ 41 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 14 ] ] ]
  },
  {
   "id": "nobah",
@@ -76671,7 +78198,16 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 32,
-    [ 3, 34, 35, 36, 37, 38 ] ] ]
+    [ 3, 34, 35, 36, 37, 38 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 36 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 12 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 48 ] ] ]
  },
  {
   "id": "dophkah",
@@ -76851,7 +78387,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 33,
-    [ 35, 36 ] ] ]
+    [ 35, 36 ] ],
+   [
+    "Deuteronomy", 2,
+    [ 8 ] ] ]
  },
  {
   "id": "zalmonah",
@@ -77013,7 +78552,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 34,
-    [ 11 ] ] ]
+    [ 11 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 17 ] ] ]
  },
  {
   "id": "shemuel-prince-of-simeon",
@@ -77112,7 +78654,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 35,
-    [ 6, 11, 12, 14, 25, 26, 27, 28, 32 ] ] ]
+    [ 6, 11, 12, 14, 25, 26, 27, 28, 32 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 41 ] ] ]
  },
  {
   "id": "manslayer",
@@ -77121,7 +78666,10 @@ window.GLOSSARY = [
   "refs": [
    [
     "Numbers", 35,
-    [ 6, 11, 12, 24, 25, 26, 27, 28 ] ] ]
+    [ 6, 11, 12, 24, 25, 26, 27, 28 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 42 ] ] ]
  },
  {
   "id": "avenger-of-blood",
@@ -77188,5 +78736,587 @@ window.GLOSSARY = [
    [
     "Numbers", 35,
     [ 2, 3, 4, 5, 7 ] ] ]
+ },
+ {
+  "id": "tophel",
+  "kind": "place",
+  "name": "Tophel (one of the places named at the opening of Deuteronomy)",
+  "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "dizahab",
+  "kind": "place",
+  "name": "Dizahab (one of the places named at the opening of Deuteronomy)",
+  "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "laban-place",
+  "kind": "place",
+  "name": "Laban (a place named with Tophel and Hazeroth, not Rebekah's brother)",
+  "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "astaroth",
+  "kind": "place",
+  "name": "Astaroth (where Og king of Bashan dwelt, at Edrei)",
+  "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "horims",
+  "kind": "person",
+  "name": "The Horims (the people who lived in Seir before Esau's children)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 12, 22 ] ] ]
+ },
+ {
+  "id": "zamzummims",
+  "kind": "person",
+  "name": "The Zamzummims (the Ammonites' name for the giants of their land, tall as the Anakims)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "avims",
+  "kind": "person",
+  "name": "The Avims (a people of Hazerim, destroyed by the Caphtorims)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "caphtorims",
+  "kind": "person",
+  "name": "The Caphtorims (who came forth out of Caphtor and dwelt in the Avims' stead)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "hazerim",
+  "kind": "place",
+  "name": "Hazerim (the villages of the Avims, as far as Azzah)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 23 ] ] ]
+ },
+ {
+  "id": "kedemoth",
+  "kind": "place",
+  "name": "The wilderness of Kedemoth (where Moses sent words of peace to Sihon)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 26 ] ] ]
+ },
+ {
+  "id": "elath",
+  "kind": "place",
+  "name": "Elath (Eloth, beside Ezion-gaber)",
+  "refs": [
+   [
+    "Deuteronomy", 2,
+    [ 8 ] ] ]
+ },
+ {
+  "id": "hermon",
+  "kind": "place",
+  "name": "Mount Hermon (the high mountain at the north end of the land east of Jordan; also called Sirion, Shenir and Sion)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 8, 9 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 48 ] ] ]
+ },
+ {
+  "id": "argob",
+  "kind": "place",
+  "name": "Argob (a region of Bashan with threescore fenced cities)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 4, 13, 14 ] ] ]
+ },
+ {
+  "id": "geshurites-and-maachathites",
+  "kind": "person",
+  "name": "Geshuri and Maachathi (the Geshurites and Maachathites, peoples on Bashan's northern border)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 14 ] ] ]
+ },
+ {
+  "id": "salchah",
+  "kind": "place",
+  "name": "Salchah (a city at the edge of Bashan)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 10 ] ] ]
+ },
+ {
+  "id": "beth-peor",
+  "kind": "place",
+  "name": "Beth-peor (in Moab; Israel camped in the valley over against it, and there the LORD buried Moses)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 46 ] ] ]
+ },
+ {
+  "id": "ashdoth-pisgah",
+  "kind": "place",
+  "name": "Ashdoth-pisgah (the springs of Pisgah, at the foot of the mount)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "sidonians",
+  "kind": "person",
+  "name": "The Sidonians (the people of Sidon)",
+  "refs": [
+   [
+    "Deuteronomy", 3,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "reubenites-gadites-manassites",
+  "kind": "person",
+  "name": "The Reubenites, Gadites and Manassites (the men of the tribes that took their land east of Jordan)",
+  "refs": [
+   [
+    "Numbers", 26,
+    [ 7 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 12, 16 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ] ]
+ },
+ {
+  "id": "bezer",
+  "kind": "place",
+  "name": "Bezer in the wilderness (a city of refuge in Reuben, east of Jordan)",
+  "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ] ]
+ },
+ {
+  "id": "ramoth-in-gilead",
+  "kind": "place",
+  "name": "Ramoth in Gilead (a city of refuge in Gad, east of Jordan)",
+  "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ] ]
+ },
+ {
+  "id": "golan",
+  "kind": "place",
+  "name": "Golan in Bashan (a city of refuge in Manasseh, east of Jordan)",
+  "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 43 ] ] ]
+ },
+ {
+  "id": "iron-furnace",
+  "kind": "term",
+  "name": "The iron furnace (Egypt, the hard bondage God brought Israel out of)",
+  "refs": [
+   [
+    "Deuteronomy", 4,
+    [ 20 ] ] ]
+ },
+ {
+  "id": "stretched-out-arm",
+  "kind": "term",
+  "name": "A mighty hand and a stretched out arm (the LORD's power reaching in to save)",
+  "refs": [
+   [
+    "Exodus", 6,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 34 ] ],
+   [
+    "Deuteronomy", 5,
+    [ 15 ] ],
+   [
+    "Deuteronomy", 7,
+    [ 19 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 29 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 2 ] ] ]
+ },
+ {
+  "id": "girgashites",
+  "kind": "person",
+  "name": "The Girgashites (a people of Canaan)",
+  "refs": [
+   [
+    "Deuteronomy", 7,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "special-people",
+  "kind": "term",
+  "name": "A special people (God's own people, his treasure among the nations)",
+  "refs": [
+   [
+    "Deuteronomy", 7,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "faithful-god-thousand-generations",
+  "kind": "term",
+  "name": "The faithful God (keeping covenant and mercy to a thousand generations)",
+  "refs": [
+   [
+    "Deuteronomy", 7,
+    [ 9 ] ] ]
+ },
+ {
+  "id": "rock-of-flint",
+  "kind": "term",
+  "name": "Water out of the rock of flint (the rock in the wilderness: “that Rock was Christ”, 1 Corinthians 10:4)",
+  "refs": [
+   [
+    "Deuteronomy", 8,
+    [ 15 ] ] ]
+ },
+ {
+  "id": "good-land",
+  "kind": "term",
+  "name": "The good land (the land God gave Israel)",
+  "refs": [
+   [
+    "Deuteronomy", 1,
+    [ 25, 35 ] ],
+   [
+    "Deuteronomy", 3,
+    [ 25 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 21, 22 ] ],
+   [
+    "Deuteronomy", 6,
+    [ 18 ] ],
+   [
+    "Deuteronomy", 8,
+    [ 7, 10 ] ],
+   [
+    "Deuteronomy", 9,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 11,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "ten-commandments",
+  "kind": "term",
+  "name": "The ten commandments (the words God wrote on the two tables of stone)",
+  "refs": [
+   [
+    "Exodus", 34,
+    [ 28 ] ],
+   [
+    "Deuteronomy", 4,
+    [ 13 ] ],
+   [
+    "Deuteronomy", 10,
+    [ 4 ] ] ]
+ },
+ {
+  "id": "ark-of-wood",
+  "kind": "term",
+  "name": "The ark of shittim wood (the chest Moses made for the second tables)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 1, 2, 3, 5 ] ] ]
+ },
+ {
+  "id": "beeroth-of-jaakan",
+  "kind": "place",
+  "name": "Beeroth of the children of Jaakan (a stage of the march in the fortieth year)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "mosera",
+  "kind": "place",
+  "name": "Mosera (where Aaron died and was buried, as Moses names it in 10:6)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 6 ] ] ]
+ },
+ {
+  "id": "gudgodah",
+  "kind": "place",
+  "name": "Gudgodah (a stage of the march after Mosera)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "jotbath",
+  "kind": "place",
+  "name": "Jotbath (a land of rivers of waters)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 7 ] ] ]
+ },
+ {
+  "id": "foreskin-of-the-heart",
+  "kind": "term",
+  "name": "The foreskin of the heart (the covering that keeps a heart shut to God)",
+  "refs": [
+   [
+    "Deuteronomy", 10,
+    [ 16 ] ] ]
+ },
+ {
+  "id": "mount-ebal",
+  "kind": "place",
+  "name": "Mount Ebal (the mountain where the curse was to be put)",
+  "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 29 ] ] ]
+ },
+ {
+  "id": "champaign",
+  "kind": "term",
+  "name": "Champaign (open, level country)",
+  "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 30 ] ] ]
+ },
+ {
+  "id": "uttermost-sea",
+  "kind": "place",
+  "name": "The uttermost sea (the great sea, the western edge of the land)",
+  "refs": [
+   [
+    "Deuteronomy", 11,
+    [ 24 ] ] ]
+ },
+ {
+  "id": "roebuck-and-hart",
+  "kind": "term",
+  "name": "Roebuck and hart (two kinds of deer, clean game for the table)",
+  "refs": [
+   [
+    "Deuteronomy", 12,
+    [ 15, 22 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 22 ] ] ]
+ },
+ {
+  "id": "prophet-or-dreamer",
+  "kind": "person",
+  "name": "A prophet, or a dreamer of dreams (one whose sign comes to pass, but who calls men after other gods)",
+  "refs": [
+   [
+    "Deuteronomy", 13,
+    [ 1, 3, 5 ] ] ]
+ },
+ {
+  "id": "put-away-evil",
+  "kind": "term",
+  "name": "Put the evil away from the midst of thee (purge it out of Israel; Paul uses the words for the church, 1 Corinthians 5:13)",
+  "refs": [
+   [
+    "Deuteronomy", 13,
+    [ 5 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 7, 12 ] ] ]
+ },
+ {
+  "id": "cursed-thing",
+  "kind": "term",
+  "name": "The cursed thing (what was given over to destruction, and must not be kept)",
+  "refs": [
+   [
+    "Deuteronomy", 7,
+    [ 26 ] ],
+   [
+    "Deuteronomy", 13,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "holy-people",
+  "kind": "term",
+  "name": "An holy people (set apart to the LORD, belonging to him)",
+  "refs": [
+   [
+    "Deuteronomy", 7,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 2, 21 ] ] ]
+ },
+ {
+  "id": "dieth-of-itself",
+  "kind": "term",
+  "name": "That which dieth of itself (a beast found dead, never killed and bled)",
+  "refs": [
+   [
+    "Leviticus", 7,
+    [ 24 ] ],
+   [
+    "Leviticus", 22,
+    [ 8 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "place-the-lord-shall-choose",
+  "kind": "place",
+  "name": "The place which the LORD shall choose (where he set his name: Shiloh at the first, then Jerusalem)",
+  "refs": [
+   [
+    "Deuteronomy", 12,
+    [ 5, 11, 14, 18, 26 ] ],
+   [
+    "Deuteronomy", 14,
+    [ 23, 24, 25 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 20 ] ],
+   [
+    "Deuteronomy", 16,
+    [ 2, 6, 7, 15, 16 ] ],
+   [
+    "Deuteronomy", 17,
+    [ 8, 10 ] ] ]
+ },
+ {
+  "id": "third-year-tithe",
+  "kind": "term",
+  "name": "The tithe of the third year (laid up within the gates for the Levite, the stranger, the fatherless and the widow)",
+  "refs": [
+   [
+    "Deuteronomy", 14,
+    [ 28 ] ] ]
+ },
+ {
+  "id": "year-of-release",
+  "kind": "term",
+  "name": "The year of release (every seventh year, debts to a brother let go)",
+  "refs": [
+   [
+    "Deuteronomy", 15,
+    [ 1, 2, 3, 9 ] ] ]
+ },
+ {
+  "id": "aul",
+  "kind": "term",
+  "name": "Aul (an awl, a sharp tool for piercing)",
+  "refs": [
+   [
+    "Exodus", 21,
+    [ 6 ] ],
+   [
+    "Deuteronomy", 15,
+    [ 17 ] ] ]
+ },
+ {
+  "id": "bread-of-affliction",
+  "kind": "term",
+  "name": "The bread of affliction (unleavened bread, for the haste out of Egypt)",
+  "refs": [
+   [
+    "Deuteronomy", 16,
+    [ 3 ] ] ]
+ },
+ {
+  "id": "feast-of-weeks",
+  "kind": "term",
+  "name": "Feast of weeks (seven weeks from the sickle to the corn; Pentecost)",
+  "refs": [
+   [
+    "Deuteronomy", 16,
+    [ 9, 10, 16 ] ] ]
+ },
+ {
+  "id": "grove",
+  "kind": "term",
+  "name": "Grove (a planted grove set up for idol worship)",
+  "refs": [
+   [
+    "Deuteronomy", 16,
+    [ 21 ] ] ]
+ },
+ {
+  "id": "evilfavouredness",
+  "kind": "term",
+  "name": "Evilfavouredness (anything ugly or faulty about an animal)",
+  "refs": [
+   [
+    "Deuteronomy", 17,
+    [ 1 ] ] ]
+ },
+ {
+  "id": "law-of-the-king",
+  "kind": "person",
+  "name": "The king (the man the LORD would choose from among his brethren)",
+  "refs": [
+   [
+    "Deuteronomy", 17,
+    [ 14, 15 ] ] ]
+ },
+ {
+  "id": "copy-of-the-law",
+  "kind": "term",
+  "name": "A copy of this law (the king's own copy, written by hand)",
+  "refs": [
+   [
+    "Deuteronomy", 17,
+    [ 18 ] ] ]
  }
 ];

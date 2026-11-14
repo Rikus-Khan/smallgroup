@@ -24909,5 +24909,835 @@ window.STUDIES = [
       },
       "big": "What God gives a family stays where he puts it, and the daughters take their freedom and keep their inheritance in obedience. The book closes with a new generation counted and waiting in the plains of Moab, after the first fell in the wilderness through unbelief (1 Corinthians 10:5-11; Hebrews 3:19), with Deuteronomy ahead."
     }
+  },
+  {
+    "id": "deuteronomy-01",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 1,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 1",
+    "sub": "Moses looks back from Horeb to Kadesh-barnea",
+    "about": "In the fortieth year, in the eleventh month, on the first day of the month, on this side Jordan in the land of Moab, Moses begins to declare the law to the new generation. He goes back to Horeb: the LORD says they have dwelt long enough in the mount, Moses cannot bear the people alone and sets captains and judges over them, and at Kadesh-barnea the people will not go up, murmuring in their tents that the LORD hated them. The LORD swears that none of that generation will see the land but Caleb, shuts Moses out, and promises the little ones the land. Israel mourns and goes up on its own, and is chased as bees do to Hormah.",
+    "tags": [
+      "The setting of Deuteronomy",
+      "Not alone",
+      "The judgment is God’s",
+      "What they said in their tents",
+      "He bare thee",
+      "Caleb, Joshua and the little ones"
+    ],
+    "url": "studies/deuteronomy-01.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab, looking back to Horeb and Kadesh-barnea (1:1–5)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), after Sihon and Og were slain (1:4); looking back to the departure from Horeb and the refusal at Kadesh-barnea",
+      "people": [
+        "moses",
+        "caleb",
+        "joshua-son-of-nun",
+        "sihon",
+        "og"
+      ],
+      "places": [
+        "horeb",
+        "kadesh",
+        "moab",
+        "jordan",
+        "red-sea",
+        "heshbon",
+        "seir",
+        "hormah"
+      ],
+      "story": [
+        "“These be the words which Moses spake unto all Israel on this side Jordan”: in the fortieth year, in the eleventh month, on the first day, Moses begins to declare the law in the land of Moab, after the slaying of Sihon and Og (1–5).",
+        "The LORD said at Horeb, “Ye have dwelt long enough in this mount”, and set the land before them, which he sware to Abraham, Isaac and Jacob (6–8).",
+        "Moses could not bear the people alone, so he took wise men, known among the tribes, as captains of thousands, hundreds, fifties and tens, and charged the judges to respect no persons, “for the judgment is God’s” (9–18).",
+        "At Kadesh-barnea twelve men searched out the land and brought back its fruit, but the people would not go up, murmuring in their tents, “Because the LORD hated us”, though he had borne them as a man doth bear his son (19–33).",
+        "The LORD sware that not one of that evil generation would see the land, save Caleb, who wholly followed him; Moses too was shut out, Joshua was to go in, and the little ones would possess it (34–40).",
+        "The people said “We have sinned” and went up presumptuously against the LORD’s word, and the Amorites chased them as bees do, unto Hormah; they wept, but the LORD would not hearken, and they abode in Kadesh many days (41–46)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 1:31",
+        "text": "And in the wilderness, where thou hast seen how that the LORD thy God bare thee, as a man doth bear his son, in all the way that ye went, until ye came into this place."
+      },
+      "big": "God had borne his people as a man bears his son, yet they believed him not and said in their tents that he hated them. Unbelief, not giants, kept the fathers out, and sorrow that goes its own way is no repentance. But Caleb who wholly followed the LORD went in, and so did the little ones, the children Moses is now speaking to (Hebrews 3:19; 2 Corinthians 7:10)."
+    }
+  },
+  {
+    "id": "deuteronomy-02",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 2,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 2",
+    "sub": "Thirty and eight years, Edom, Moab and Ammon left alone, and Sihon",
+    "about": "After many days compassing mount Seir, the LORD tells Moses, “turn you northward”. Israel is to leave Esau’s children in Seir alone, not a foot breadth of their land, and buy food and water for money; likewise Moab and Ammon, the children of Lot, whose lands the LORD had cleared of the giants before them. From Kadesh-barnea to the brook Zered was thirty and eight years, until all the men of war were wasted out. Then the LORD gives Sihon king of Heshbon into their hand: Moses sends words of peace, Sihon refuses, and the LORD delivers him, with all his cities.",
+    "tags": [
+      "Turn northward",
+      "Not a foot breadth",
+      "Thou hast lacked nothing",
+      "Thirty and eight years",
+      "Giants before",
+      "Words of peace to Sihon"
+    ],
+    "url": "studies/deuteronomy-02.html",
+    "overview": {
+      "where": "Round mount Seir, past Edom and Moab and Ammon, to the river Arnon and the land of Sihon king of Heshbon",
+      "when": "Many days round mount Seir; thirty and eight years from Kadesh-barnea until they crossed the brook Zered (2:14), then in the fortieth year Sihon is defeated",
+      "people": [
+        "moses",
+        "esau",
+        "lot",
+        "sihon"
+      ],
+      "places": [
+        "seir",
+        "moab",
+        "ammon",
+        "ar-of-moab",
+        "zered",
+        "arnon",
+        "heshbon",
+        "jahaz",
+        "ezion-gaber"
+      ],
+      "story": [
+        "After they compassed mount Seir many days, the LORD says, “Ye have compassed this mountain long enough: turn you northward” (1–3).",
+        "They are to pass through the coast of their brethren the children of Esau, not meddling with them, not taking so much as a foot breadth, and buying meat and water for money, for the LORD has blessed them these forty years and they have lacked nothing (4–8).",
+        "They are not to distress Moab or Ammon, for the LORD has given Ar and the land of Ammon to the children of Lot, having destroyed the Emims and Zamzummims, giants as the Anakims, before them (9–12, 18–23).",
+        "From Kadesh-barnea until they crossed the brook Zered was thirty and eight years, until the generation of the men of war was wasted out, as the LORD sware (13–17).",
+        "The LORD bids them pass over the river Arnon and begin to possess the land of Sihon the Amorite, king of Heshbon (24–25).",
+        "Moses sends words of peace; Sihon would not let them pass, for the LORD hardened his spirit; he comes out to fight at Jahaz, and the LORD delivers him and his cities, but Israel does not touch the land of Ammon or whatever the LORD forbad (26–37)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 2:7",
+        "text": "For the LORD thy God hath blessed thee in all the works of thy hand: he knoweth thy walking through this great wilderness: these forty years the LORD thy God hath been with thee; thou hast lacked nothing."
+      },
+      "big": "God’s word comes in two shapes: leave this land alone, for I gave it to another, and take that land, for I have given it to you. Even the thirty and eight years of the sentence were years in which he was with them and they lacked nothing, and the same God who cleared giants out of the way for others was clearing the way for them (Hebrews 13:5)."
+    }
+  },
+  {
+    "id": "deuteronomy-03",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 3,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 3",
+    "sub": "Og falls, the land east of Jordan is given, and “Let it suffice thee”",
+    "about": "Moses tells how the LORD delivered Og king of Bashan, the last of the remnant of giants, with threescore fenced cities, and how he gave the land from Arnon to Hermon to Reuben, Gad and half Manasseh, who must still go over armed before their brethren. Moses charges Joshua not to fear, and asks to go over Jordan; the LORD answers, “Let it suffice thee”, and tells him to see the land from Pisgah and to strengthen Joshua.",
+    "tags": [
+      "Og king of Bashan",
+      "“Fear him not”",
+      "Threescore fenced cities",
+      "The land east of Jordan",
+      "Pass over before your brethren",
+      "Moses’ prayer and the LORD’s no",
+      "Charge Joshua"
+    ],
+    "url": "studies/deuteronomy-03.html",
+    "overview": {
+      "where": "On this side Jordan, from the river Arnon to mount Hermon; Israel abode in the valley over against Beth-peor (3:8, 29)",
+      "when": "In the fortieth year, Moses speaking in the land of Moab (1:3, 5), retelling the conquest of Og after Sihon",
+      "people": [
+        "moses",
+        "og",
+        "joshua-son-of-nun",
+        "reubenites-gadites-manassites",
+        "machir",
+        "jair",
+        "sihon"
+      ],
+      "places": [
+        "bashan",
+        "edrei",
+        "argob",
+        "gilead",
+        "hermon",
+        "arnon",
+        "jabbok",
+        "heshbon",
+        "pisgah",
+        "beth-peor"
+      ],
+      "story": [
+        "Og king of Bashan comes out to battle at Edrei; the LORD says, Fear him not, and delivers him and all his people (1-3).",
+        "Israel takes all his cities, threescore fenced cities in Argob, with high walls, gates and bars, and utterly destroys them, taking the cattle and spoil (4-7).",
+        "The land of the two kings of the Amorites, from Arnon unto mount Hermon, is taken; Og alone remained of the remnant of giants, and his iron bedstead is in Rabbath (8-11).",
+        "Moses gives the land to the Reubenites and Gadites, and Bashan and the rest of Gilead to the half tribe of Manasseh; Jair takes Argob and Machir Gilead (12-17).",
+        "The two and a half tribes must leave their families and cattle and pass over armed before their brethren until the LORD gives them rest (18-20).",
+        "Moses charges Joshua: thine eyes have seen what the LORD did to these two kings; ye shall not fear, for the LORD shall fight for you (21-22).",
+        "Moses beseeches the LORD to let him go over; the LORD says, Let it suffice thee, tells him to look from the top of Pisgah, and to charge, encourage and strengthen Joshua (23-29)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 3:22",
+        "text": "Ye shall not fear them: for the LORD your God he shall fight for you."
+      },
+      "big": "The giants the fathers ran from fell to the sons who went up on God’s word, and the men who were settled first had to fight on until their brethren had rest. Moses asked to go over and heard no; he took it, looked from Pisgah, and spent himself strengthening the man who would go, and he stood in the land with Christ at last (Matthew 17:3)."
+    }
+  },
+  {
+    "id": "deuteronomy-04",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 4,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 4",
+    "sub": "“Take heed to thyself”: no image, a consuming fire, and a way back",
+    "about": "Moses charges Israel to hearken and keep the word whole, adding nothing and taking nothing away. They heard God’s voice at Horeb but saw no similitude, so they must make no graven image of any kind, for the LORD is a consuming fire, a jealous God. If they fall and are scattered, they will find him when they seek him with all their heart, for he is a merciful God. There is none else beside him. Moses then severs three cities of refuge east of Jordan.",
+    "tags": [
+      "Add not, diminish not",
+      "Take heed, lest thou forget",
+      "No similitude at Horeb",
+      "No graven image",
+      "A consuming fire",
+      "Seek him with all thy heart",
+      "There is none else",
+      "Three cities of refuge"
+    ],
+    "url": "studies/deuteronomy-04.html",
+    "overview": {
+      "where": "On this side Jordan, in the valley over against Beth-peor, in the land of Sihon king of the Amorites (4:46)",
+      "when": "In the fortieth year, in the eleventh month (1:3), after they came forth out of Egypt (4:45)",
+      "people": [
+        "moses",
+        "israel"
+      ],
+      "places": [
+        "horeb",
+        "baal-peor",
+        "egypt",
+        "bezer",
+        "ramoth-in-gilead",
+        "golan",
+        "beth-peor",
+        "heshbon",
+        "hermon",
+        "pisgah"
+      ],
+      "story": [
+        "Moses calls Israel to hearken to the statutes and judgments, adding nothing and diminishing nothing; those who followed Baal-peor perished, but those who cleaved to the LORD are alive (1-4).",
+        "These laws are Israel’s wisdom before the nations, for no nation has God so nigh or laws so righteous (5-8).",
+        "Take heed, lest thou forget the day at Horeb, and teach it to thy sons and thy sons’ sons (9-10).",
+        "The mountain burned with fire; they heard the voice of the words but saw no similitude, and he declared his covenant, the ten commandments, on two tables of stone (11-14).",
+        "Since they saw no manner of similitude, they must make no graven image of man, beast, fowl, creeping thing or fish, nor worship the host of heaven, for the LORD brought them out of the iron furnace (15-20).",
+        "Moses must die on this side Jordan; they must not forget the covenant, for the LORD thy God is a consuming fire, even a jealous God (21-24).",
+        "If they make images in the land they will be scattered among the nations to serve gods of wood and stone; but from thence, if they seek the LORD with all their heart, they shall find him, for he is a merciful God (25-31).",
+        "No people ever heard God’s voice out of the fire and lived, or saw a nation taken out of another by such signs; the LORD he is God, there is none else (32-40).",
+        "Moses severs three cities of refuge on this side Jordan: Bezer, Ramoth in Gilead and Golan (41-43).",
+        "The heading of the law Moses set before Israel in the valley over against Beth-peor, in the land of Sihon and Og (44-49)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 4:29",
+        "text": "But if from thence thou shalt seek the LORD thy God, thou shalt find him, if thou seek him with all thy heart and with all thy soul."
+      },
+      "big": "God spoke from the fire and showed no shape, so Israel must take his word whole and bow to no image, for he is a consuming fire. Yet the same chapter gives the way home: from the far country, the man who seeks him with all his heart will find a merciful God who does not forget his covenant (Jeremiah 29:13; Luke 15:20). He loved first, and there is none else."
+    }
+  },
+  {
+    "id": "deuteronomy-05",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 5,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 5",
+    "sub": "The ten commandments, given again to the children",
+    "about": "In the land of Moab, Moses tells the new generation that the covenant made in Horeb was made “with us, even us, who are all of us here alive this day”. He repeats the ten commandments, giving a new reason for the sabbath, “remember that thou wast a servant in the land of Egypt”, and recalls how the people, afraid of the fire, asked him to go near for them, and how the LORD said, “O that there were such an heart in them”.",
+    "tags": [
+      "The ten commandments",
+      "With us, even us",
+      "The man between",
+      "The sabbath and the slave",
+      "The Prophet like unto Moses",
+      "A new heart",
+      "Not to the right hand or the left"
+    ],
+    "url": "studies/deuteronomy-05.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), looking back to the mount in Horeb (5:2)",
+      "when": "In the fortieth year, in the eleventh month (1:3), looking back to the day the LORD spoke at Horeb (5:2–4)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "horeb",
+        "egypt",
+        "plains-of-moab"
+      ],
+      "story": [
+        "Moses calls all Israel to hear the statutes and judgments: the LORD made the covenant in Horeb “not… with our fathers, but with us, even us, who are all of us here alive this day” (1-3).",
+        "The LORD talked with them face to face out of the fire, and Moses stood between, because they were afraid (4-5).",
+        "Moses repeats the ten commandments (6-21). The sabbath is to be kept so that the servants may rest too, remembering that Israel was a servant in Egypt and the LORD brought them out (12-15).",
+        "The LORD spoke these words with a great voice and added no more, and wrote them on two tables of stone (22).",
+        "The heads of the tribes and the elders, afraid of the fire, asked Moses to go near and hear for them, promising “we will hear it, and do it”; the LORD said they had well said, and longed, “O that there were such an heart in them” (23-29).",
+        "The people go to their tents, Moses stands by the LORD to receive the rest, and Israel is told to turn neither to the right hand nor to the left, that they may live (30-33)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 5:29",
+        "text": "O that there were such an heart in them, that they would fear me, and keep all my commandments always, that it might be well with them, and with their children for ever!"
+      },
+      "big": "The covenant is not an old story about dead men: God speaks to whoever is alive and listening today. The ten words are the same as at Horeb, and Moses adds the slave's reason for rest. The people rightly asked for a go-between, and God answered with the promise of the Prophet like Moses (18:15-18; Acts 3:22). What God longed for, a heart that loves him, he later promised to give (Ezekiel 36:26; Hebrews 8:10)."
+    }
+  },
+  {
+    "id": "deuteronomy-06",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 6,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 6",
+    "sub": "Hear, O Israel: love the LORD, and do not forget him",
+    "about": "“Hear, O Israel: The LORD our God is one LORD: And thou shalt love the LORD thy God with all thine heart”, the words Jesus called the first of all the commandments. The words are to be in the heart, taught to the children all day long, and bound on hand and house. When Israel is full in the land, they must beware lest they forget the LORD. Jesus answered the devil from verses 13 and 16. When a son asks what the commandments mean, his father tells him how the LORD brought them out.",
+    "tags": [
+      "Hear, O Israel",
+      "The great commandment",
+      "Teaching the children",
+      "Beware lest thou forget",
+      "Massah",
+      "Jesus' answers to the devil",
+      "Out, to bring us in"
+    ],
+    "url": "studies/deuteronomy-06.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), before Israel goes over to possess the land (6:1)",
+      "when": "In the fortieth year, in the eleventh month (1:3), as Moses gives the commandments again before they go in",
+      "people": [
+        "abraham",
+        "isaac",
+        "jacob",
+        "pharaoh"
+      ],
+      "places": [
+        "egypt",
+        "massah-and-meribah"
+      ],
+      "story": [
+        "These are the commandments to be kept in the land, by father, son and son’s son, that it may be well with them (1-3).",
+        "“Hear, O Israel: The LORD our God is one LORD: And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might” (4-5).",
+        "The words are to be in the heart, taught diligently to the children at home and on the road, at night and in the morning, bound on the hand, between the eyes, and written on the posts and gates (6-9).",
+        "When the LORD gives them cities they did not build, houses they did not fill, wells and vineyards they did not dig or plant, and they are full, they must beware lest they forget the LORD (10-12).",
+        "They are to fear and serve the LORD, go after no other gods, and not tempt him as at Massah, but keep his commandments and do what is right and good (13-19).",
+        "When a son asks what the commandments mean, his father is to tell him: “We were Pharaoh’s bondmen in Egypt; and the LORD brought us out”, that he might bring us in, and commanded these things for our good always (20-25)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 6:5",
+        "text": "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might."
+      },
+      "big": "One LORD, and all of a man's love: Jesus called it the first of all the commandments (Mark 12:29-30), and we love him because he first loved us (1 John 4:19). The words go into the heart first and then out to the children and the home. The dangerous day is the full one, when a man forgets who brought him out. Jesus answered the devil from this chapter (Matthew 4:7, 10). The righteousness of doing all the law (6:25; Romans 10:5) no one has, but Christ is the end of the law for righteousness to every one that believeth (Romans 10:4)."
+    }
+  },
+  {
+    "id": "deuteronomy-07",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 7,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 7",
+    "sub": "Because the LORD loved you",
+    "about": "Moses tells Israel to utterly destroy the seven nations of Canaan, to make no marriages with them and to burn their idols. God chose Israel not because they were many, but because he loved them and kept his oath; he is the faithful God, and he will put the nations out by little and little.",
+    "tags": [
+      "The seven nations",
+      "No marriages with them",
+      "Burn their idols",
+      "Because the LORD loved you",
+      "The faithful God",
+      "By little and little"
+    ],
+    "url": "studies/deuteronomy-07.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), as Moses speaks to Israel before they cross",
+      "when": "In the fortieth year, in the eleventh month (1:3), before Israel goes over Jordan",
+      "people": [
+        "moses",
+        "hittites",
+        "girgashites",
+        "amorites",
+        "canaanites",
+        "perizzites",
+        "hivites",
+        "jebusite",
+        "pharaoh"
+      ],
+      "places": [
+        "canaan",
+        "egypt"
+      ],
+      "story": [
+        "When the LORD brings Israel into the land and casts out seven nations greater and mightier than they, Israel is to utterly destroy them and make no covenant with them (1-2).",
+        "No marriages with them, for they would turn Israel's sons away to serve other gods; their altars, images, groves and graven images are to be destroyed and burned (3-5).",
+        "Israel is an holy and special people, chosen not because they were many, for they were the fewest of all people, but because the LORD loved them and kept the oath sworn to their fathers (6-8).",
+        "The LORD is the faithful God, keeping covenant and mercy to a thousand generations of them that love him, and repaying them that hate him to their face (9-11).",
+        "If they hearken, he will love, bless and multiply them in the land, and take away the diseases of Egypt; but they must not serve the nations' gods, which would be a snare (12-16).",
+        "They are not to fear the nations, but to remember what the LORD did to Pharaoh; he will send the hornet, and put the nations out by little and little, lest the beasts of the field increase (17-24).",
+        "The graven images are to be burned, and the silver and gold on them not desired or brought into the house, for it is an abomination and a cursed thing (25-26)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 7:8",
+        "text": "But because the LORD loved you, and because he would keep the oath which he had sworn unto your fathers, hath the LORD brought you out with a mighty hand, and redeemed you out of the house of bondmen, from the hand of Pharaoh king of Egypt."
+      },
+      "big": "God set his love on Israel because he loved them, not because they were many or good, and that same unearned love reached the world in Christ (John 3:16; Romans 5:8). A people loved like that breaks the idols and keeps away from what would turn the heart, and trusts the faithful God to give the victory by little and little."
+    }
+  },
+  {
+    "id": "deuteronomy-08",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 8,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 8",
+    "sub": "Remember all the way",
+    "about": "Moses tells Israel to remember the forty years: God humbled and proved them, fed them with manna to teach that man doth not live by bread only, kept their clothes from waxing old, and chastened them as a father. In the good land ahead, they must beware lest, eaten and full, they forget the LORD and say their own power got them their wealth.",
+    "tags": [
+      "Remember all the way",
+      "Not by bread only",
+      "Raiment that waxed not old",
+      "Chastened as a son",
+      "The good land",
+      "Beware lest thou forget",
+      "Power to get wealth"
+    ],
+    "url": "studies/deuteronomy-08.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), looking back on the wilderness and ahead to the good land",
+      "when": "In the fortieth year, in the eleventh month (1:3), at the end of the forty years in the wilderness (8:2)",
+      "people": [
+        "moses",
+        "pharaoh"
+      ],
+      "places": [
+        "wilderness",
+        "egypt",
+        "canaan"
+      ],
+      "story": [
+        "Israel is to keep the commandments and remember all the way the LORD led them forty years in the wilderness, to humble them, to prove them, and to know what was in their heart (1-2).",
+        "He let them hunger and fed them with manna, to teach that man doth not live by bread only, but by every word out of the mouth of the LORD; their raiment waxed not old, nor did their feet swell (3-4).",
+        "As a man chasteneth his son, so the LORD chastens them; therefore they are to walk in his ways and fear him (5-6).",
+        "He is bringing them into a good land of brooks and fountains, of wheat, barley, vines, figs, pomegranates, oil olive and honey, of iron and brass; when they have eaten and are full, they are to bless the LORD (7-10).",
+        "They must beware lest, with houses built and silver and gold multiplied, their heart be lifted up and they forget the LORD who led them through the terrible wilderness, gave them water out of the rock of flint, and fed them with manna to do them good at their latter end (11-16).",
+        "They must not say, My power hath gotten me this wealth, but remember that it is the LORD that giveth power to get wealth; if they forget him and serve other gods, they shall perish as the nations (17-20)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 8:3",
+        "text": "And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live."
+      },
+      "big": "God used forty hard years to humble, test and feed his people, and he chastened them as a father does a son (Hebrews 12:6-11). Jesus answered the devil with this chapter (Matthew 4:4). The greater danger comes when life is good: a full man must still remember that every good thing, the strength to earn it too, is given by God."
+    }
+  },
+  {
+    "id": "deuteronomy-09",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 9,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 9",
+    "sub": "Not for thy righteousness",
+    "about": "Moses tells the new generation that the land is not theirs for their righteousness: the LORD goes over before them as a consuming fire to drive out nations for their wickedness, and to keep the oath to Abraham, Isaac and Jacob. He reads out Israel's record, from the golden calf at Horeb to Kadesh-barnea, and tells how he fell down before the LORD forty days and forty nights for them.",
+    "tags": [
+      "Not for thy righteousness",
+      "A stiffnecked people",
+      "The golden calf remembered",
+      "The tables broken",
+      "Forty days and forty nights",
+      "Moses' intercession",
+      "Taberah, Massah, Kibroth-hattaavah",
+      "Kadesh-barnea"
+    ],
+    "url": "studies/deuteronomy-09.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), with Moses looking back to Horeb",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), with Moses looking back to his forty days and forty nights in the mount at Horeb (9:9, 18)",
+      "people": [
+        "moses",
+        "aaron",
+        "abraham",
+        "isaac",
+        "jacob",
+        "children-of-anak"
+      ],
+      "places": [
+        "jordan",
+        "horeb",
+        "massah-and-meribah",
+        "taberah",
+        "kibroth-hattaavah",
+        "kadesh"
+      ],
+      "story": [
+        "Moses tells Israel they are about to pass over Jordan to possess nations greater and mightier, with cities fenced up to heaven and the children of the Anakims; the LORD goeth over before them as a consuming fire (1-3).",
+        "They are not to say in their heart that it is for their righteousness: it is for the wickedness of these nations and to perform the word the LORD sware to Abraham, Isaac and Jacob, for Israel is a stiffnecked people (4-6).",
+        "Moses bids them remember how they provoked the LORD from the day they left Egypt, and at Horeb: the forty days and forty nights in the mount, the two tables written with the finger of God, the molten calf, and the tables broken before their eyes (7-17).",
+        "He fell down before the LORD forty days and forty nights, prayed for Aaron also, and burnt the calf, ground it as small as dust and cast it into the brook; and they provoked the LORD at Taberah, Massah, Kibroth-hattaavah and Kadesh-barnea (18-24).",
+        "In his prayer Moses pleaded that they were the LORD's people and inheritance, the oath to Abraham, Isaac and Jacob, and the LORD's name among the nations (25-29)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 9:5",
+        "text": "Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but for the wickedness of these nations the LORD thy God doth drive them out from before thee, and that he may perform the word which the LORD sware unto thy fathers, Abraham, Isaac, and Jacob."
+      },
+      "big": "The land is a gift of the LORD's judgment and promise, and not a wage for Israel's goodness; a stiffnecked people kept alive by a mediator's prayer that pleaded the oath and the LORD's own name. For us the same: not of works (Ephesians 2:8-9), with Christ ever living to make intercession (Hebrews 7:25)."
+    }
+  },
+  {
+    "id": "deuteronomy-10",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 10,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 10",
+    "sub": "What doth the LORD thy God require of thee?",
+    "about": "The LORD has Moses hew two new tables and make an ark, writes the ten commandments on them again, and Moses puts them in the ark. The tribe of Levi is separated, the LORD being their inheritance. Moses asks what the LORD requires, bids Israel circumcise the foreskin of their heart, and tells them the LORD regardeth not persons and loveth the stranger.",
+    "tags": [
+      "The second tables in the ark",
+      "Aaron dies, Eleazar ministers",
+      "The Levites, the LORD their inheritance",
+      "What doth the LORD require",
+      "Circumcise the foreskin of your heart",
+      "The LORD regardeth not persons",
+      "Love the stranger",
+      "Seventy souls, now as the stars"
+    ],
+    "url": "studies/deuteronomy-10.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), with Moses looking back to the mount and to the journeys of verses 6 and 7",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), looking back to “that time” after the first tables were broken (10:1), and to Aaron's death in the fortieth year, on the first day of the fifth month (Numbers 33:38)",
+      "people": [
+        "moses",
+        "aaron",
+        "eleazar",
+        "levi"
+      ],
+      "places": [
+        "beeroth-of-jaakan",
+        "mosera",
+        "gudgodah",
+        "jotbath"
+      ],
+      "story": [
+        "The LORD tells Moses to hew two tables of stone like the first and make an ark of wood; he writes on them the ten commandments, and Moses puts them in the ark (1-5).",
+        "The children of Israel journey from Beeroth of the children of Jaakan to Mosera, where Aaron died and was buried, and Eleazar his son ministered in the priest's office in his stead; then to Gudgodah and Jotbath, a land of rivers of waters (6-7).",
+        "The LORD separates the tribe of Levi to bear the ark of the covenant, to stand before him, to minister and to bless; the LORD is their inheritance. Moses stays in the mount forty days and forty nights, the LORD hearkens, and bids him arise and take his journey (8-11).",
+        "Moses asks what the LORD requires: to fear, walk in his ways, love and serve him with all the heart and soul, and keep his commandments for their good; the heaven and the earth are the LORD's, yet he delighted in their fathers (12-15).",
+        "Circumcise the foreskin of your heart and be no more stiffnecked. The LORD is God of gods and Lord of lords, regardeth not persons, executes judgment for the fatherless and widow, and loveth the stranger; Israel, once strangers in Egypt, went down seventy and is now as the stars of heaven for multitude (16-22)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 10:12-13",
+        "text": "And now, Israel, what doth the LORD thy God require of thee, but to fear the LORD thy God, to walk in all his ways, and to love him, and to serve the LORD thy God with all thy heart and with all thy soul, To keep the commandments of the LORD, and his statutes, which I command thee this day for thy good?"
+      },
+      "big": "The law is kept in the ark, and the God who requires everything is the God who delights in the fewest of all people and loves the stranger. What he asks, a circumcised heart, he promises to give (Deuteronomy 30:6; Romans 2:28-29; Colossians 2:11)."
+    }
+  },
+  {
+    "id": "deuteronomy-11",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 11,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 11",
+    "sub": "Remember what he did, lay up his words, and choose the blessing",
+    "about": "Moses reminds Israel of what their own eyes have seen, from Pharaoh and the Red sea to Dathan and Abiram, and tells them the land ahead is not like Egypt: it drinks the rain of heaven. The words of the LORD are to be laid up in the heart and taught to the children, and Moses sets before them a blessing and a curse, to be put on mount Gerizim and mount Ebal.",
+    "tags": [
+      "Remember what he did",
+      "Dathan and Abiram",
+      "Not like Egypt",
+      "The rain of heaven",
+      "The words in the heart",
+      "Blessing and curse",
+      "Gerizim and Ebal"
+    ],
+    "url": "studies/deuteronomy-11.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (1:1, 5), looking across to mount Gerizim and mount Ebal, over against Gilgal, beside the plains of Moreh (11:29-30)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), with the Jordan still to cross (11:31)",
+      "people": [
+        "pharaoh",
+        "dathan-and-abiram",
+        "eliab-reubenite",
+        "reuben"
+      ],
+      "places": [
+        "egypt",
+        "red-sea",
+        "gerizim",
+        "mount-ebal",
+        "gilgal",
+        "moreh",
+        "jordan",
+        "lebanon",
+        "euphrates"
+      ],
+      "story": [
+        "Moses tells them to love the LORD and keep his charge, for their own eyes have seen his acts: Egypt and Pharaoh, the Red sea, the wilderness, and Dathan and Abiram swallowed by the earth (1-7).",
+        "They are to keep the commandments that they may be strong, go in and possess the land, and prolong their days in it (8-9).",
+        "The land is not as the land of Egypt, where they watered with the foot: it is a land of hills and valleys that drinks the rain of heaven, and the eyes of the LORD are always upon it (10-12).",
+        "If they love and serve him, he gives the first rain and the latter rain; if their heart is deceived and they serve other gods, he shuts up the heaven (13-17).",
+        "They are to lay up his words in heart and soul, bind them on the hand and between the eyes, teach the children all day long, and write them on the door posts and gates (18-21).",
+        "If they keep them and cleave to the LORD, he will drive out the nations, and every place the soles of their feet tread will be theirs (22-25).",
+        "Moses sets before them a blessing and a curse, the blessing to be put on mount Gerizim and the curse on mount Ebal, over against Gilgal, beside the plains of Moreh (26-32)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 11:26-27",
+        "text": "Behold, I set before you this day a blessing and a curse; A blessing, if ye obey the commandments of the LORD your God, which I command you this day:"
+      },
+      "big": "Love the LORD by remembering what he did, lay his words up in the heart and teach them all day long, and know that the choice is set before you today. The land drinks the rain of heaven, so it is a life lived by asking, and Christ has borne the curse for those who believe (Galatians 3:13)."
+    }
+  },
+  {
+    "id": "deuteronomy-12",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 12,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 12",
+    "sub": "One place to worship, and no way of their own",
+    "about": "The statutes and judgments begin: Israel is to destroy every place where the nations served their gods and to bring its offerings only to the place the LORD shall choose, rejoicing there with the household and the Levite. Flesh may be eaten at home, but never the blood, and Israel is warned not to enquire how the nations served their gods, and not to add to his word or take from it.",
+    "tags": [
+      "Destroy the high places",
+      "The place the LORD shall choose",
+      "Right in his own eyes",
+      "The Levite",
+      "Eat flesh, not the blood",
+      "Enquire not after their gods",
+      "Add not, diminish not"
+    ],
+    "url": "studies/deuteronomy-12.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (1:1, 5), looking ahead to the land and to the place the LORD shall choose to put his name there (12:5)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), before they go over Jordan (12:10)",
+      "people": [
+        "priests-and-levites"
+      ],
+      "places": [
+        "jordan"
+      ],
+      "story": [
+        "Moses begins the statutes and judgments: Israel must utterly destroy all the places where the nations served their gods, overthrowing altars, breaking pillars, burning groves and hewing down images (1-4).",
+        "They are to seek the place the LORD shall choose, and bring their offerings, tithes and vows there, eating before the LORD and rejoicing (5-7).",
+        "They are not to do as every man does now, right in his own eyes, for they have not yet come to the rest; in the land the LORD will choose a place, and they are to rejoice with their households and the Levite (8-14).",
+        "Flesh may be killed and eaten in all their gates, clean and unclean alike, as the roebuck and the hart, but they must not eat the blood, which is poured on the earth as water, for the blood is the life; the holy things go to the place (15-28).",
+        "They are warned not to be snared by enquiring how the nations served their gods, which they did even to burning their sons and daughters (29-31).",
+        "Whatever the LORD commands they are to do; they must not add to it or diminish from it (32)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 12:32",
+        "text": "What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it."
+      },
+      "big": "Tear down the places of the old worship, go where the LORD says and be glad there, and take his word whole. The altar blood pointed to the blood of Christ (Hebrews 9:22; 1 Peter 1:18-19), and the true place of worship is the Father, in spirit and in truth (John 4:20-24)."
+    }
+  },
+  {
+    "id": "deuteronomy-13",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 13,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 13",
+    "sub": "Though the sign come to pass",
+    "about": "A prophet or a dreamer of dreams whose sign comes to pass, a brother, wife or friend who entices secretly, and a city drawn away by the children of Belial all say “Let us go after other gods”. Israel must not hearken, for the LORD proveth them, to know whether they love him with all their heart; they must walk after him and cleave unto him, and keep nothing of the cursed thing.",
+    "tags": [
+      "False prophets",
+      "Other gods",
+      "The LORD proveth you",
+      "Cleave unto him",
+      "Enticed secretly",
+      "Put the evil away"
+    ],
+    "url": "studies/deuteronomy-13.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab, as Moses gives the law again (1:5)",
+      "when": "In the fortieth year, in the eleventh month (1:3), as Moses speaks to the new generation before they go in",
+      "people": [
+        "moses",
+        "prophet-or-dreamer"
+      ],
+      "places": [
+        "egypt",
+        "plains-of-moab"
+      ],
+      "story": [
+        "If a prophet or a dreamer of dreams gives a sign that comes to pass, and says, Let us go after other gods, Israel must not hearken, for the LORD their God proveth them, to know whether they love him with all their heart and soul (1-3).",
+        "They are to walk after the LORD, fear him, keep his commandments, obey his voice, serve him and cleave unto him; the prophet who would turn them from the God who redeemed them out of Egypt shall be put to death (4-5).",
+        "If a brother, a son or daughter, the wife of his bosom or a friend as his own soul entice a man secretly to serve other gods, he must not consent nor hearken nor conceal him, and all Israel shall hear and fear (6-11).",
+        "If it is said that the children of Belial have drawn away a city to serve other gods, Israel must enquire, make search and ask diligently; if it be true, the city is to be destroyed and left an heap for ever (12-16).",
+        "Nothing of the cursed thing is to cleave to their hand, that the LORD may turn from his anger and shew them mercy and compassion, when they hearken to his voice (17-18)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 13:3",
+        "text": "Thou shalt not hearken unto the words of that prophet, or that dreamer of dreams: for the LORD your God proveth you, to know whether ye love the LORD your God with all your heart and with all your soul."
+      },
+      "big": "A sign that comes true does not make a true prophet: anyone who calls men after other gods, however close to them, is judged by the word, as the New Testament also teaches (Galatians 1:8; 1 John 4:1). Such tests show whether we love the LORD with all our heart, and the man who holds fast to him and keeps nothing back finds mercy and compassion."
+    }
+  },
+  {
+    "id": "deuteronomy-14",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 14,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 14",
+    "sub": "An holy people, at the LORD's table",
+    "about": "As the children of the LORD, Israel must not cut themselves or make baldness for the dead, for they are an holy people and a peculiar people unto him. Moses repeats the clean and unclean meats, then commands a yearly tithe eaten with rejoicing before the LORD in the place he shall choose, and every third year a tithe laid up for the Levite, the stranger, the fatherless and the widow.",
+    "tags": [
+      "Children of the LORD",
+      "A peculiar people",
+      "Clean and unclean",
+      "The tithe",
+      "Rejoicing before the LORD",
+      "The fatherless and the widow"
+    ],
+    "url": "studies/deuteronomy-14.html",
+    "overview": {
+      "where": "On this side Jordan, in the land of Moab (1:5), looking ahead to “the place which he shall choose to place his name there” (14:23)",
+      "when": "In the fortieth year, in the eleventh month (1:3), as Moses speaks to the new generation before they go in",
+      "people": [
+        "moses",
+        "priests-and-levites",
+        "stranger-in-the-land",
+        "widow-in-israel"
+      ],
+      "places": [
+        "place-the-lord-shall-choose",
+        "plains-of-moab"
+      ],
+      "story": [
+        "Israel are the children of the LORD their God: they must not cut themselves nor make baldness between their eyes for the dead, for they are an holy people, chosen to be a peculiar people unto himself (1-2).",
+        "They may eat the ox, the sheep and the goat, and wild beasts such as the hart, the roebuck and the chamois, every beast that parts the hoof and chews the cud; not the camel, the hare, the coney or the swine (3-8).",
+        "In the waters they may eat what has fins and scales; of the fowls, not the eagle, the ossifrage, the glede and the rest; flying creeping things are unclean (9-20).",
+        "They must not eat what dies of itself, for they are an holy people, nor seethe a kid in his mother’s milk (21).",
+        "They are to tithe all their increase year by year and eat it before the LORD in the place he shall choose, to learn to fear him always; if the way is too long, they may turn it into money and buy there whatever they desire, and rejoice with their household, not forsaking the Levite (22-27).",
+        "At the end of three years the whole tithe is laid up within their gates, and the Levite, the stranger, the fatherless and the widow come and eat and are satisfied, that the LORD may bless them (28-29)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 14:2",
+        "text": "For thou art an holy people unto the LORD thy God, and the LORD hath chosen thee to be a peculiar people unto himself, above all the nations that are upon the earth."
+      },
+      "big": "Who Israel were came before what they did: the LORD's children, an holy and a peculiar people, so they mourned and ate and gave as his. The food laws are fulfilled in Christ (Mark 7:19; Acts 10:15), but the holiness they pictured now lives in the heart, and the tithe teaches that the fear of the LORD is learned at a feast before him, with a place at the table for those who have nothing."
+    }
+  },
+  {
+    "id": "deuteronomy-15",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 15,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 15",
+    "sub": "The year of release, the open hand, and the servant set free",
+    "about": "Every seventh year a brother’s debt is let go, “the LORD’S release”, and a poor brother is never turned away: “thou shalt open thine hand wide”. A Hebrew servant goes free in the seventh year, and not empty, for Israel was once a bondman in Egypt; the servant who loves his master may stay, with his ear marked at the door. The firstlings are eaten before the LORD.",
+    "tags": [
+      "The year of release",
+      "The open hand",
+      "The poor shall never cease",
+      "Remember the bondman",
+      "The servant who stays",
+      "The firstlings"
+    ],
+    "url": "studies/deuteronomy-15.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), where Moses speaks to the new generation",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), before Israel goes over Jordan into the land",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "At the end of every seven years a creditor is not to exact what he lent his brother: “the LORD’S release”; a foreigner may be asked again (1-3).",
+        "If Israel hearkens, there will be no poor among them, and they will lend to many nations and borrow of none (4-6).",
+        "Moses commands an open hand to a poor brother, and warns against the wicked thought that the seventh year is at hand (7-10).",
+        "“The poor shall never cease out of the land”: therefore open thine hand wide (11).",
+        "A Hebrew servant goes free in the seventh year, furnished liberally and not empty, because Israel was a bondman in Egypt and the LORD redeemed them (12-15).",
+        "The servant who loves his master and will not go away has his ear thrust through with an aul at the door, and serves for ever (16-18).",
+        "The firstling males are sanctified to the LORD and eaten before him; a blemished one is eaten at home, and the blood is poured out as water (19-23)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 15:11",
+        "text": "For the poor shall never cease out of the land: therefore I command thee, saying, Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land."
+      },
+      "big": "God deals with the heart before the hand: an open hand to the poor brother, a servant sent out free and full-handed, and all of it because “thou wast a bondman in the land of Egypt, and the LORD thy God redeemed thee”. Jesus took the words about the poor (Matthew 26:11), and the servant who stays for love points to the Lord who took the form of a servant (Hebrews 10:5-7; Philippians 2:7-8)."
+    }
+  },
+  {
+    "id": "deuteronomy-16",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 16,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 16",
+    "sub": "Three feasts, the place the LORD shall choose, and judges who take no gift",
+    "about": "Moses repeats the passover, now kept in the place the LORD shall choose, the feast of weeks and the feast of tabernacles. All the males appear three times a year, not empty, and the whole household, with the Levite, the stranger, the fatherless and the widow, rejoice before the LORD. Judges are to take no gift: “that which is altogether just shalt thou follow”.",
+    "tags": [
+      "The passover",
+      "The bread of affliction",
+      "Rejoice before the LORD",
+      "Not empty",
+      "The judges and the gift",
+      "Altogether just"
+    ],
+    "url": "studies/deuteronomy-16.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the feasts are for “the place which the LORD thy God shall choose”, which Moses does not name",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3); the feasts fall in “the month of Abib” (16:1), seven weeks after the sickle is put to the corn (16:9), and when the corn and wine are gathered in (16:13)",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "Keep the passover in the month of Abib, in the place the LORD shall choose, at even, at the going down of the sun, with the bread of affliction seven days (1-8).",
+        "Seven weeks from the sickle to the corn, keep the feast of weeks with a freewill offering, and rejoice with the whole household, the Levite, the stranger, the fatherless and the widow (9-12).",
+        "Seven days keep the feast of tabernacles, and surely rejoice (13-15).",
+        "Three times in a year all the males appear before the LORD, not empty, every man as he is able (16-17).",
+        "Judges and officers in all the gates take no gift, for a gift blinds the wise (18-19).",
+        "“That which is altogether just shalt thou follow”; no grove near the altar, and no image (20-22)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 16:20",
+        "text": "That which is altogether just shalt thou follow, that thou mayest live, and inherit the land which the LORD thy God giveth thee."
+      },
+      "big": "God asks his people to remember the day they came out of Egypt, to rejoice before him with a table that has room for the stranger, the fatherless and the widow, to come with what they are able to give, and to keep their courts honest. Christ is “our passover” (1 Corinthians 5:7), and the Spirit came at the feast of weeks (Acts 2:1)."
+    }
+  },
+  {
+    "id": "deuteronomy-17",
+    "type": "chapter",
+    "book": "Deuteronomy",
+    "ch": 17,
+    "date": "2026-11-14",
+    "title": "Deuteronomy 17",
+    "sub": "No blemish, two or three witnesses, and a king who must read the law",
+    "about": "No blemished sacrifice to the LORD. No man is put to death on one witness: two or three are needed, and the witnesses’ hands are first. A matter too hard for the local judges goes up to the priests the Levites and the judge. And when Israel says, “I will set a king over me, like as all the nations”, the king is not to multiply horses, wives or silver and gold, and he is to write himself a copy of this law and read it all the days of his life.",
+    "tags": [
+      "No blemish",
+      "Two or three witnesses",
+      "The hard case",
+      "The law of the king",
+      "Horses, wives and silver",
+      "A copy of the law"
+    ],
+    "url": "studies/deuteronomy-17.html",
+    "overview": {
+      "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); hard cases go to “the place which the LORD thy God shall choose”",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “when thou art come unto the land” and say, I will set a king over me (17:14); the kings come in 1 Samuel 8 and 1 Kings 10-11",
+      "people": [
+        "moses"
+      ],
+      "places": [
+        "egypt"
+      ],
+      "story": [
+        "No bullock or sheep with a blemish is to be sacrificed to the LORD, for that is an abomination (1).",
+        "A man or woman who serves other gods, even the sun, moon or host of heaven, is brought to the gates when it is told, heard, diligently enquired, true and certain, and stoned (2-5).",
+        "No one is put to death at the mouth of one witness; two or three are needed, and the hands of the witnesses are first (6-7).",
+        "A matter too hard for the local judges goes up to the priests the Levites and the judge, and their sentence is to be done; the presumptuous man shall die (8-13).",
+        "When Israel says, I will set a king over me, the LORD shall choose him, one from among their brethren (14-15).",
+        "The king is not to multiply horses, wives, or silver and gold (16-17).",
+        "He is to write himself a copy of this law, read it all his days, and not be lifted up above his brethren (18-20)."
+      ],
+      "key": {
+        "ref": "Deuteronomy 17:19",
+        "text": "And it shall be with him, and he shall read therein all the days of his life: that he may learn to fear the LORD his God, to keep all the words of this law and these statutes, to do them:"
+      },
+      "big": "God sets limits on those with power: the best for the LORD, no man condemned on one witness, hard cases taken to those who know the law, and a king under the book. Solomon did all three of the things he was told not to do (1 Kings 10-11), and “his wives turned away his heart”: the heart turns first. The way to keep it is the Word, read every day."
+    }
   }
 ];

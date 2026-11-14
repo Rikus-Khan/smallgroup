@@ -176,7 +176,14 @@
     ["disallow|disallowed", "refuse to allow, forbid"], ["pricks", "sharp points, goads"], ["molten", "melted and cast in a mould"],
     ["goings out", "the places where a journey or a border ends or turns"], ["outmost", "outermost, the farthest edge"], ["suburbs", "the open ground round a city, for cattle and goods"],
     ["revenger", "one who takes revenge: the dead man's nearest kinsman (the avenger of blood)"], ["manslayer", "a man who has killed someone"], ["laying of wait", "lying in ambush"],
-    ["helve", "the handle of an axe"]
+    ["helve", "the handle of an axe"],
+    ["cumbrance", "a heavy load, a burden that weighs a man down"], ["beforetime", "in the days before, long ago"], ["bedstead", "a bed frame"],
+    ["assayed", "tried, attempted"], ["buildedst", "you built (thou buildedst)"], ["filledst", "you filled (thou filledst)"],
+    ["diggedst", "you dug (thou diggedst)"], ["plantedst", "you planted (thou plantedst)"], ["affrighted", "frightened, terrified"],
+    ["scarceness", "scarcity, running short"], ["stiffnecked", "like an ox that locks its neck and will not turn when the driver pulls; stubborn"], ["champaign", "open, level country"],
+    ["roebuck", "a kind of deer"], ["hart", "a male deer"], ["lusteth", "desires strongly"],
+    ["nought", "nothing"], ["pygarg", "a wild grazing beast; the name means 'white rump'"], ["glede", "a bird of prey of the kite kind"],
+    ["wrest", "to twist, to bend out of shape"], ["evilfavouredness", "anything ugly or faulty about an animal"], ["in any wise", "by all means, without fail"]
   ].map(([forms, means]) => ({ re: new RegExp(`\\b(${forms})\\b`, "i"), word: forms.split("|")[0], means }));
   const oldWords = text => OLD_WORDS.filter(o => o.re.test(text)).slice(0, 4)
     .map(o => `<span><b>${o.word}</b> = ${o.means}</span>`).join("");
