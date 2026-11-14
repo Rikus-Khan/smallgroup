@@ -193,6 +193,15 @@ These drawn (SVG) graphics live in one study each, with their own markup. When y
 | The same half shekel paid by rich and poor (`ex30-pay`) | redemption price, equal for all (1 Peter 1:18–19) | `exodus-30.html` |
 | "Needed" against "brought", with a STOP (`ex36-gauge`) | more than enough (2 Corinthians 8–9) | `exodus-36.html` |
 | Three tiers up a mountain: the people, the elders, Moses alone (`ex24-mount`) | approaching God in order; Hebrews 12:18–24 | `exodus-24.html` |
+| The baptism at Jordan: heaven opens, the dove comes down and stays on Jesus, John on the bank (`jn01-bap`) | Matthew 3, Mark 1, Luke 3; the Spirit "abode upon him" | `john-01.html` |
+| An oil lamp in a dark room; the dark closes in, then the flame drives it back (`jn01-lamp`) | light and darkness (Psalm 119:105, Proverbs 20:27, Matthew 5:15) | `john-01.html` |
+| Israel's camp at dusk around the tabernacle, the pillar of cloud resting on it; the glory fills it on a `.jn01-glory-go` step (`jn01-camp`) | Exodus 40:34–38, Numbers 9:15–23, 1 Kings 8:10–11 | `john-01.html` |
+| The night sky of creation inside one circle, with the Word outside it as the light that made it all (`jn01-cre`) | Colossians 1:16–17, Hebrews 1:2–3, Genesis 1 | `john-01.html` |
+| A dawn road: hills brought low, pits filled, one straight way, and a light travelling it (`jn01-road`) | Isaiah 40:3–4, Luke 3:4–6 | `john-01.html` |
+| A sandal in the dust, its latchet lit (`jn01-sandal`) | Mark 1:7, Luke 3:16, washing feet (John 13) | `john-01.html` |
+| The sun's arc from sunrise to sunset, with the hours marked and the sky turning gold (`jn01-hour`) | the hours of the day (Matthew 20, John 4:6, John 19:14, Acts 3:1) | `john-01.html` |
+
+**Classic art.** For the great story moments, a public-domain painting or engraving can carry more than a drawing: `figure.jn01-art` (copy its `<style>` lines from `john-01.html` with your own prefix) frames the picture, pushes in slowly, and credits the artist under it. The files live in `assets/art/`, kept to about 400 KB or less. Use only art that is public domain (Gustave Doré, James Tissot, Julius Schnorr von Carolsfeld, the old masters), name the artist and the work in the caption, and never anything that teaches past the text. Keep drawing (SVG) for teaching ideas, where the motion teaches. Already in `assets/art/`: Zurbarán's *Agnus Dei*, Doré's *Jacob's Dream*, and Tissot's *Saint John the Baptist Sees Jesus from Afar* and *Nathanael Under the Fig Tree*.
 
 ## New Testament dates
 
