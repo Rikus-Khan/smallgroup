@@ -25,7 +25,7 @@ How it looks comes from the shared files in `assets/`, so it works in every them
   - **Traditional typology may be taught plainly** (the tabernacle, the sacrifices, the brasen serpent, Isaac on the altar point to Christ). Just don't claim a verse says what it doesn't: "this is a picture of the cross", not "the New Testament says this altar is the cross".
   - **Biblical names only.** Use the name the Bible gives (Jannes and Jambres, 2 Timothy 3:8). If the Bible doesn't name a person or a god, leave them unnamed: no Heqet, Apis, Thutmose, Salome. A modern place name may stand only to say where a biblical place was (Nuweiba, Jabal al-Lawz).
   - **KJV spelling and grammar in the teaching text too**: vail (Old Testament), cherubims, Saviour, honour, neighbour, devils (not demons), the council (not Sanhedrin), JEHOVAH (never YHWH or Yahweh). Pronouns for God are **lower case** (he, his, him), as the KJV prints them.
-  - **Dates and places by exegesis**: take them from what the text says ("the mountains of Ararat", "in the days of Uzziah", "the 480th year"), never from a chronologist's or an atlas-maker's guess (see "Old Testament dates"). The one outside source Rick accepts is **Ron Wyatt's** research, because it never contradicts the Bible, only the "experts" who make its miracles "more digestible": the Red sea crossing at Nuweiba, Mount Sinai at Jabal al-Lawz in Arabia, Golgotha and the Garden Tomb north of the Damascus Gate, and Noah's ark at Durupinar in the mountains of Ararat. The maps already follow him. Wyatt is **biblical archaeology, not biblical theology**: use him only to place what the Bible itself names (a crossing, a mountain, a landing site), against scholars who treat those accounts as myth. Never build teaching on his findings; leave out his ark-of-the-covenant claim (the chamber beneath Calvary, the blood on the mercy seat). The mercy seat is taught from Exodus, Leviticus 16, Romans 3 and Hebrews 9 alone.
+  - **Dates and places by exegesis**: take them from what the text says ("the mountains of Ararat", "in the days of Uzziah", "the 480th year"), never from an atlas-maker's guess. Calendar dates may follow the Bible's marker, but only as the rules in "Dates: the rule for both Testaments" allow, and never against a number the Bible gives. The one outside source Rick accepts is **Ron Wyatt's** research, because it never contradicts the Bible, only the "experts" who make its miracles "more digestible": the Red sea crossing at Nuweiba, Mount Sinai at Jabal al-Lawz in Arabia, Golgotha and the Garden Tomb north of the Damascus Gate, and Noah's ark at Durupinar in the mountains of Ararat. The maps already follow him. Wyatt is **biblical archaeology, not biblical theology**: use him only to place what the Bible itself names (a crossing, a mountain, a landing site), against scholars who treat those accounts as myth. Never build teaching on his findings; leave out his ark-of-the-covenant claim (the chamber beneath Calvary, the blood on the mercy seat). The mercy seat is taught from Exodus, Leviticus 16, Romans 3 and Hebrews 9 alone.
   - **Counts are the Bible's own count**, counted from the KJV file with a script ("as the LORD commanded Moses": 7 times in Exodus 39 and 7 in Exodus 40), never estimated.
   - Saying honestly what the text doesn't tell us is still right ("Moses doesn't say why"). The rule is against doubting Scripture, not against refusing to add to it.
 - **When a passage touches despair, suicide or a man at the end of himself** (Judas, the jailor, Jonah, "men shall seek death"), point him to his **brothers in Christ and his church leaders**: "call or text your brothers in Christ, and your pastor." Never give a hotline number (Rick's rule). Giving a man both a refuge and a purpose makes him part of a larger company of men fighting the same enemy, and that belonging lifts him up. Find them in the chapter itself; don't bolt them on.
@@ -210,80 +210,128 @@ These drawn (SVG) graphics live in one study each, with their own markup. When y
 
 `--kb` is the point the push-in moves toward (put it on the faces). Beside text, use `<div class="split art-narrow">` so the text keeps the larger column. Files live in `assets/art/` as `artist-short-title.jpg`, 1200 px or less on the long side and about 400 KB or less. Use only public-domain art (Gustave Doré, James Tissot, Carl Bloch, Julius Schnorr von Carolsfeld, Rembrandt, Caravaggio, the old masters), never nudity, never a picture that teaches past the text or makes Mary or a saint the object of devotion. Name the artist and the work in the caption. Keep drawing for teaching ideas, where no painting can show the idea and the motion teaches: those are `svg.pic` picture cards (also in `deck.css`; label text is `.pic-lab`). A drawing must stay true to its idea in every detail (in John 1, all created things belong inside the circle of creation, so no stars outside it).
 
-## New Testament dates
+## Dates: the rule for both Testaments
 
-**Rick's ruling (2026-11-14), the same as for the Old Testament: "If the Bible gives a date, use that."**
+**Rick's ruling, refined on 2026-11-14:**
 
-- **No AD or BC years anywhere.** That covers the text, timelines, labels, alt text, `studies.js` and `book-info.js`.
-- **No outside year counts either**, such as "some sixty years later" or "seven hundred years before".
-- **Date events the way the New Testament dates them**, and quote the reference.
-- **Spans the Bible states are fine**: "about thirty years of age", "two whole years", "after three years".
-- **Outside history** (an emperor, the burning of the temple) may be named when it helps, but without a year.
-- **Tradition stays labeled as tradition.**
+> "We can use modern dates where we know for sure, or use a range like when we know a named person lived/rules. Otherwise, just use 'approximately' or 'believed to be around' or 'around 450 years before'. We'll use biblical dates where possible… Then, we never never never contradict the dates given in the bible using reverse dating methods using the ages of patriarchs."
 
-| Event | The Bible's own marker |
-|---|---|
-| Jesus born | "in the days of Herod the king" (Matthew 2:1), when Caesar Augustus taxed the world and Cyrenius was governor of Syria (Luke 2:1–2) |
-| John the Baptist begins | "in the fifteenth year of the reign of Tiberius Caesar", Pontius Pilate governor of Judaea (Luke 3:1) |
-| Jesus begins his ministry | "about thirty years of age" (Luke 3:23); the temple "forty and six years in building" (John 2:20) |
-| The length of his ministry | John names three Passovers (John 2:13; 6:4; 11:55) and another feast (5:1) |
-| The cross, the empty tomb, the ascension, Pentecost | at the Passover (John 19:14); "the third day" (1 Corinthians 15:4); "forty days" (Acts 1:3); "the day of Pentecost" (Acts 2:1) |
-| Saul converted, then his first visits | Acts 9; "after three years I went up to Jerusalem" (Galatians 1:18); "fourteen years after" (Galatians 2:1) |
-| The famine and Herod's death | "in the days of Claudius Caesar" (Acts 11:28); Acts 12:20–23 |
-| First journey: Cyprus and Galatia | Acts 13–14 |
-| Galatians written | to the churches of that first journey, soon after (Galatians 1:6, "so soon removed") |
-| The Jerusalem council | Acts 15 |
-| Second journey: Philippi, Thessalonica, Athens, Corinth | Acts 15:36–18:22; Claudius had driven the Jews from Rome (Acts 18:2); Gallio deputy of Achaia (Acts 18:12); "a year and six months" at Corinth (Acts 18:11) |
-| 1 and 2 Thessalonians | from Corinth, after Timothy came back from Thessalonica (1 Thessalonians 3:6; Acts 18:5) |
-| James | to "the twelve tribes which are scattered abroad" (James 1:1); the letter names no date, so say so |
-| Third journey: Ephesus, then Macedonia and Greece | Acts 18:23–21:16; "the space of two years" and "three years" at Ephesus (Acts 19:10; 20:31) |
-| 1 Corinthians | from Ephesus, before Pentecost (1 Corinthians 16:8) |
-| 2 Corinthians | from Macedonia (2 Corinthians 7:5; 8:1) |
-| Romans | from Corinth, as Paul takes the gift to Jerusalem (Romans 15:25–26; 16:23) |
-| Arrest and prison at Caesarea | Acts 21–26; "after two years" Festus followed Felix (Acts 24:27) |
-| Voyage, shipwreck, Rome | Acts 27–28; "two whole years in his own hired house" (Acts 28:30) |
-| Ephesians, Philippians, Colossians, Philemon | written in bonds (Ephesians 6:20; Philippians 1:13; Colossians 4:18; Philemon 9) |
-| Acts ends | with Paul still in Rome, preaching (Acts 28:30–31) |
-| 1 Timothy and Titus | after Paul is free to travel again (1 Timothy 1:3; Titus 1:5; 3:12) |
-| 1 Peter | from "Babylon" (1 Peter 5:13) |
-| Hebrews | Timothy "set at liberty"; "they of Italy salute you" (Hebrews 13:23–24) |
-| 2 Peter | "shortly I must put off this my tabernacle" (2 Peter 1:14) |
-| 2 Timothy, Paul's last letter | in bonds again; "the time of my departure is at hand" (2 Timothy 1:8; 4:6) |
-| Peter's death | foretold by Jesus (John 21:18–19); that it was in Rome is tradition |
-| Jerusalem and the temple thrown down | foretold by Jesus (Matthew 24:2; Luke 19:43–44; 21:20); no year |
-| John's Gospel and letters | late; John is "the elder" (2 John 1; 3 John 1) |
-| Revelation | John "in the isle that is called Patmos" (Revelation 1:9) |
+1. **The Bible's own marker comes first, with its reference.** Examples: "Abram was 75 (Genesis 12:4)", "the fifteenth year of Tiberius Caesar (Luke 3:1)", "the 480th year (1 Kings 6:1)".
+2. **Then a calendar date, when it helps the reader.**
+   - **Firm dates are given plainly.** These are dates outside history fixes for certain: 586 BC, AD 70, 1611, 1844.
+   - **Reigns and lives of named people are given as ranges.** Examples: "Claudius (AD 41–54)", "Nebuchadnezzar (605–562 BC)".
+   - **Every other date is approximate.** Mark it "about", "approximately" or "believed to be around". The same goes for spans: "around 450 years before".
+3. **No date may ever contradict a number the Bible gives.** The ages of the patriarchs (Genesis 5 and 11), the 430 years (Exodus 12:40), the 480th year (1 Kings 6:1) and the reigns all stand. A modern date that disagrees with them is left out. A count the Bible gives is never "corrected".
+4. **Before Abraham, count from creation.** Use the ages in Genesis 5 and 11 ("the flood came 1,656 years after creation"), not BC years. The BC figure for those events depends on how Terah's age is read (Genesis 11:26; 12:4; Acts 7:4), and the Bible does not settle it.
+5. **Kings of Israel and Judah: give reign ranges only for Saul, David and Solomon.**
+   - For the later kings, date the firm events in the table instead.
+   - A BC range for each later king needs an overlap-guessing scheme, and some schemes contradict the Bible's own synchronisms (2 Kings 18:10 against 18:13).
+   - `div[data-kings]` in deck.js still draws such a scheme, so don't use it.
+6. **Where the Bible gives no date, say so.** You may add what most believe, marked as such. Examples: "James names no date; it is believed to be one of the earliest letters, around AD 45–50."
 
 ## Old Testament dates
 
-**Rick's ruling (2026-11-13): "If the Bible gives a date, use that."** No BC dates from any chronologist (Thiele, Ussher or anyone else): they are interpretations, and some contradict the Bible's own counts. Date every Old Testament event the way the Bible dates it, and quote the reference. Plain Bible arithmetic is fine (Isaac was born 25 years after the call: Abram was 75, Abraham 100). Don't join verses into a number the Bible doesn't state when they can be read more than one way. `div[data-lives]` counts years from creation by the ages in Genesis 5 and 11, which is the Bible's own count.
+| Event | The Bible's marker | Calendar date |
+|---|---|---|
+| The flood | Noah's six hundredth year (Genesis 7:6, 11); 1,656 years after creation by Genesis 5 | no BC year (rule 4) |
+| Abram called out of Haran | at 75 (Genesis 12:4) | about 2091 BC |
+| Isaac born | Abraham 100 (Genesis 21:5) | about 2066 BC |
+| Jacob and Esau born | Isaac 60 (Genesis 25:26) | about 2006 BC |
+| Joseph sold; before Pharaoh | at 17 (37:2); at 30 (41:46) | about 1898 BC; about 1885 BC |
+| Jacob goes down to Egypt | at 130 (Genesis 47:9) | about 1876 BC |
+| Jacob dies; Joseph dies | at 147 (47:28); at 110 (50:26) | about 1859 BC; about 1805 BC |
+| The sojourning | "four hundred and thirty years… even the selfsame day" (Exodus 12:40–41); the law "four hundred and thirty years after" the covenant (Galatians 3:17) | about 1876 to 1446 BC |
+| Moses born; dies | 80 before Pharaoh (Exodus 7:7); 120 at his death (Deuteronomy 34:7) | about 1526 BC; about 1406 BC |
+| Out of Egypt; at Sinai | the 15th day of the first month (Numbers 33:3); the third month (Exodus 19:1) | about 1446 BC |
+| The tabernacle reared up | first day, first month, second year (Exodus 40:17) | about 1445 BC |
+| Forty years in the wilderness; into Canaan | Numbers 14:33; Deuteronomy 1:3; Joshua 4:19 | about 1446 to 1406 BC |
+| Saul; David; Solomon | each reigned forty years (Acts 13:21; 1 Kings 2:11; 11:42) | about 1050–1010, 1010–970 and 970–930 BC |
+| Solomon begins the temple | the 480th year after the Exodus, his fourth year (1 Kings 6:1) | about 966 BC |
+| The kingdom divides | 1 Kings 12 | about 930 BC |
+| Jonah; Amos; Hosea | Jeroboam the son of Joash (2 Kings 14:25); Amos 1:1; Hosea 1:1 | believed to be around 780 BC; around 760 BC; around 755 to 715 BC |
+| Isaiah; Micah | Isaiah 1:1; Micah 1:1 | around 740 to 700 BC; around 735 to 700 BC |
+| Samaria taken; Israel carried away | the ninth year of Hoshea, the sixth year of Hezekiah (2 Kings 17:6; 18:10) | 722 BC |
+| Sennacherib comes against Jerusalem | the fourteenth year of Hezekiah (2 Kings 18:13) | 701 BC |
+| No (Thebes) falls; Nahum looks back on it | Nahum 3:8 | 663 BC; Nahum after that and before 612 |
+| Zephaniah | in the days of Josiah (Zephaniah 1:1) | around 630 BC |
+| Nineveh falls | Nahum; Zephaniah 2:13 | 612 BC |
+| Josiah dies at Megiddo | 2 Kings 23:29 | 609 BC |
+| The first captives to Babylon (Daniel) | the third year of Jehoiakim (Daniel 1:1) | 605 BC |
+| Habakkuk | the Chaldeans rising (Habakkuk 1:6) | around 605 BC |
+| Jehoiachin carried away (Ezekiel) | 2 Kings 24:12 | 597 BC |
+| Jerusalem burned | the nineteenth year of Nebuchadnezzar, the eleventh year of Zedekiah (2 Kings 25:2, 8) | 586 BC (some reckon 587) |
+| The captivity | seventy years (Jeremiah 25:11; Daniel 9:2) | from 605 BC |
+| Babylon falls; the return | Daniel 5:30–31; the first year of Cyrus (Ezra 1:1) | 539 BC; 538 BC |
+| Haggai; Zechariah | the second year of Darius (Haggai 1:1; Zechariah 1:1) | 520 BC |
+| The second temple finished | the sixth year of Darius (Ezra 6:15) | 516 BC |
+| Esther | Ahasuerus (Esther 1:1) | Xerxes reigned 486–465 BC |
+| Ezra; Nehemiah | the seventh year of Artaxerxes (Ezra 7:7); the twentieth (Nehemiah 2:1) | 458 BC; 445 BC |
+| Malachi | names no king | believed to be around 430 BC |
+| Joel; Obadiah | name no king | no settled date; give the views as views |
 
-| Event | The Bible's own date |
-|---|---|
-| The flood | Noah's six hundredth year (Genesis 7:6, 11) |
-| Abram called out of Haran | at 75 (Genesis 12:4) |
-| Isaac born | Abraham 100 (Genesis 21:5) |
-| Jacob and Esau born | Isaac 60 (Genesis 25:26) |
-| Joseph sold; stands before Pharaoh | at 17 (37:2); at 30 (41:46) |
-| Jacob goes down to Egypt | at 130 (Genesis 47:9), in the second year of the famine (45:6) |
-| Jacob dies; Joseph dies | at 147 (47:28); at 110 (50:26) |
-| The affliction | "four hundred years" (Genesis 15:13; Acts 7:6) |
-| The sojourning; the law | "four hundred and thirty years… even the selfsame day" (Exodus 12:40–41); the law "four hundred and thirty years after" the covenant (Galatians 3:17) |
-| Moses | 40 when he went out to his brethren (Acts 7:23); 80, and Aaron 83, before Pharaoh (Exodus 7:7); 120 at his death (Deuteronomy 34:7) |
-| Out of Egypt; at Sinai | the 15th day of the first month (Numbers 33:3); the third month (Exodus 19:1) |
-| The tabernacle reared up | the first day of the first month of the second year (Exodus 40:17) |
-| Forty years in the wilderness | Numbers 14:33; Deuteronomy 1:3 (the fortieth year) |
-| Solomon begins the temple | the 480th year after the Exodus, the fourth year of Solomon (1 Kings 6:1) |
-| The kings | by their reigns as the Bible gives them ("David… reigned forty years", 1 Kings 2:11; "Uzziah… reigned fifty and two years", 2 Chronicles 26:3) |
-| The prophets | by the kings in their first verse (Hosea 1:1; Amos 1:1, "two years before the earthquake"; Micah 1:1; Zephaniah 1:1; Haggai 1:1, "the second year of Darius the king"; Zechariah 1:1). Jonah: the days of Jeroboam the son of Joash (2 Kings 14:25). A book that names no king doesn't date itself: say so |
-| Samaria taken; Israel carried away | the ninth year of Hoshea, the sixth year of Hezekiah (2 Kings 17:6; 18:10) |
-| Jerusalem burned | the nineteenth year of Nebuchadnezzar, the eleventh year of Zedekiah (2 Kings 25:2, 8) |
-| The captivity | seventy years (Jeremiah 25:11; Daniel 9:2) |
-| The return | the first year of Cyrus king of Persia (Ezra 1:1) |
-| The second temple finished | the sixth year of Darius the king (Ezra 6:15) |
-| Ezra; Nehemiah | the seventh year of Artaxerxes (Ezra 7:7); the twentieth year (Nehemiah 2:1) |
+**Reigns of named foreign kings:**
+- Nebuchadnezzar, 605–562 BC.
+- Cyrus, over Babylon from 539 BC.
+- Darius the Persian, 522–486 BC.
+- Artaxerxes, 465–424 BC.
 
-`div[data-kings]` in deck.js still draws a BC scale from a modern chronology. It must be redrawn on the Bible's own reigns before it is used (1–2 Kings, 1–2 Chronicles).
+## New Testament dates
+
+| Event | The Bible's marker | Calendar date |
+|---|---|---|
+| Jesus born | "in the days of Herod the king" (Matthew 2:1); Caesar Augustus, Cyrenius (Luke 2:1–2) | about 6–4 BC (Herod died in 4 BC) |
+| John the Baptist begins | "the fifteenth year of the reign of Tiberius Caesar" (Luke 3:1) | about AD 26–29 |
+| Jesus begins his ministry | "about thirty years of age" (Luke 3:23); the temple "forty and six years in building" (John 2:20) | about AD 27 |
+| The length of his ministry | three Passovers (John 2:13; 6:4; 11:55) and another feast (5:1) | about three years |
+| The cross, the empty tomb, the ascension, Pentecost | at the Passover (John 19:14); "the third day"; "forty days" (Acts 1:3); "the day of Pentecost" (Acts 2:1) | AD 30 or 33 |
+| Saul converted; first visit | Acts 9; "after three years" (Galatians 1:18) | about AD 34–35; about AD 37 |
+| The famine; Herod's death | "in the days of Claudius Caesar" (Acts 11:28); Acts 12:20–23 | about AD 45–46; AD 44 |
+| First journey | Acts 13–14 | about AD 46–48 |
+| Galatians | "so soon removed" (Galatians 1:6) | about AD 48–49 |
+| The Jerusalem council | Acts 15; "fourteen years after" (Galatians 2:1) | about AD 49 |
+| Second journey | Acts 15:36–18:22; Claudius expels the Jews (18:2); Gallio deputy (18:12) | about AD 49–52 |
+| 1 and 2 Thessalonians | from Corinth (1 Thessalonians 3:6; Acts 18:5) | about AD 50–51 |
+| James | names no date (James 1:1) | believed to be around AD 45–50 |
+| Third journey | Acts 18:23–21:16; "three years" at Ephesus (20:31) | about AD 53–57 |
+| 1 Corinthians | from Ephesus, before Pentecost (16:8) | about AD 55 |
+| 2 Corinthians | from Macedonia (7:5) | about AD 56 |
+| Romans | from Corinth, taking the gift to Jerusalem (15:25–26) | about AD 57 |
+| Prison at Caesarea | Acts 21–26; "after two years" (24:27) | about AD 57–59 |
+| Voyage, shipwreck, Rome | Acts 27–28; "two whole years" (28:30) | about AD 59–62 |
+| Ephesians, Philippians, Colossians, Philemon | in bonds (Ephesians 6:20; Philippians 1:13; Colossians 4:18; Philemon 9) | about AD 60–62 |
+| Matthew written | names no date; after the cross, “unto this day” (27:8) | believed to be around AD 50–70 |
+| Mark written | names no date | believed to be around AD 55–65 |
+| Luke written | before Acts, his “former treatise” (Acts 1:1) | believed to be around AD 60 |
+| Acts ends | Paul still preaching in Rome (28:30–31) | about AD 62 |
+| 1 Timothy; Titus | Paul free to travel again (1 Timothy 1:3; Titus 1:5) | about AD 62–64 |
+| 1 Peter | from "Babylon" (5:13) | about AD 62–64 |
+| Rome burns; Nero turns on the Christians | outside the Bible | AD 64 |
+| Hebrews | Timothy "set at liberty" (13:23) | about AD 64–68 |
+| 2 Peter; Jude | "shortly I must put off this my tabernacle" (2 Peter 1:14); Jude names no date | about AD 64–68 |
+| 2 Timothy | "the time of my departure is at hand" (4:6) | about AD 66–67 |
+| Peter and Paul put to death | foretold for Peter (John 21:18–19); Rome by tradition | about AD 67–68 |
+| Jerusalem and the temple destroyed | foretold (Matthew 24:2; Luke 19:43–44; 21:20) | AD 70 |
+| John's Gospel and letters | late; "the elder" (2 John 1) | about AD 85–95 |
+| Revelation | "the isle that is called Patmos" (1:9) | about AD 95 |
+
+**Reigns and terms of named people:**
+- **Emperors:**
+  - Augustus, 27 BC–AD 14.
+  - Tiberius, AD 14–37.
+  - Claudius, AD 41–54.
+  - Nero, AD 54–68.
+  - Domitian, AD 81–96.
+- **Herods:**
+  - Herod the king, 37–4 BC.
+  - Archelaus, 4 BC–AD 6.
+  - Herod the tetrarch, 4 BC–AD 39.
+  - Herod Agrippa I, AD 41–44.
+- **Officials in Judaea and Achaia:**
+  - Pilate, AD 26–36.
+  - Caiaphas, high priest AD 18–36.
+  - Gallio, AD 51–52.
+  - Felix, about AD 52–59.
+  - Festus, about AD 59–62.
 
 ## Proverbs notes
 

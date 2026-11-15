@@ -1053,7 +1053,7 @@ window.STUDIES = [
     "url": "studies/proverbs-01.html",
     "overview": {
       "where": "Israel, in the court of King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "david",
@@ -1100,7 +1100,7 @@ window.STUDIES = [
     "url": "studies/proverbs-02.html",
     "overview": {
       "where": "Israel, in the court of King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1144,7 +1144,7 @@ window.STUDIES = [
     "url": "studies/proverbs-03.html",
     "overview": {
       "where": "Israel, in the court of King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1188,7 +1188,7 @@ window.STUDIES = [
     "url": "studies/proverbs-04.html",
     "overview": {
       "where": "Israel, in the court of King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "david",
@@ -1232,7 +1232,7 @@ window.STUDIES = [
     "url": "studies/proverbs-05.html",
     "overview": {
       "where": "The father's talks to his son in Proverbs 1–9, collected under King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1275,7 +1275,7 @@ window.STUDIES = [
     "url": "studies/proverbs-06.html",
     "overview": {
       "where": "The father's talks to his son in Proverbs 1–9, collected under King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1318,7 +1318,7 @@ window.STUDIES = [
     "url": "studies/proverbs-07.html",
     "overview": {
       "where": "The father's talks to his son in Proverbs 1–9, collected under King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "The young man void of understanding",
@@ -1361,7 +1361,7 @@ window.STUDIES = [
     "url": "studies/proverbs-08.html",
     "overview": {
       "where": "The father's talks to his son in Proverbs 1–9, collected under King Solomon in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "the-lord",
         "Wisdom (personified)"
@@ -1400,7 +1400,7 @@ window.STUDIES = [
     "url": "studies/proverbs-09.html",
     "overview": {
       "where": "A word picture: two houses on the high places of a city",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1445,7 +1445,7 @@ window.STUDIES = [
     "url": "studies/proverbs-10.html",
     "overview": {
       "where": "Solomon's sayings, collected in Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1488,7 +1488,7 @@ window.STUDIES = [
     "url": "studies/proverbs-11.html",
     "overview": {
       "where": "Solomon's sayings, set in the marketplace, the town, and the home",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1532,7 +1532,7 @@ window.STUDIES = [
     "url": "studies/proverbs-12.html",
     "overview": {
       "where": "Solomon's sayings, set in the home, the field, and the hunt",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1577,7 +1577,7 @@ window.STUDIES = [
     "url": "studies/proverbs-13.html",
     "overview": {
       "where": "Israel, in the court of King Solomon at Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1623,7 +1623,7 @@ window.STUDIES = [
     "url": "studies/proverbs-14.html",
     "overview": {
       "where": "Israel, in the court of King Solomon at Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1670,7 +1670,7 @@ window.STUDIES = [
     "url": "studies/proverbs-15.html",
     "overview": {
       "where": "Israel, in the court of King Solomon at Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1716,7 +1716,7 @@ window.STUDIES = [
     "url": "studies/proverbs-16.html",
     "overview": {
       "where": "Israel, in the court of King Solomon at Jerusalem",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1761,7 +1761,7 @@ window.STUDIES = [
     "url": "studies/proverbs-17.html",
     "overview": {
       "where": "Israel. Part of the collection headed “The proverbs of Solomon” (10:1 to 22:16).",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord"
@@ -1802,7 +1802,7 @@ window.STUDIES = [
     "url": "studies/proverbs-18.html",
     "overview": {
       "where": "Israel. Part of the collection headed “The proverbs of Solomon” (10:1 to 22:16).",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord"
@@ -1843,7 +1843,7 @@ window.STUDIES = [
     "url": "studies/proverbs-19.html",
     "overview": {
       "where": "Israel. Part of the collection headed “The proverbs of Solomon” (10:1 to 22:16).",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord"
@@ -1884,7 +1884,7 @@ window.STUDIES = [
     "url": "studies/proverbs-20.html",
     "overview": {
       "where": "Israel. Part of the collection headed “The proverbs of Solomon” (10:1 to 22:16).",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord"
@@ -1926,7 +1926,7 @@ window.STUDIES = [
     "url": "studies/proverbs-21.html",
     "overview": {
       "where": "Israel, in the court of King Solomon",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42)",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -1974,7 +1974,7 @@ window.STUDIES = [
     "url": "studies/proverbs-22.html",
     "overview": {
       "where": "Israel, in the court of King Solomon",
-      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42). From 22:17 on, “the words of the wise,” whose writers aren't named.",
+      "when": "Solomon's reign: forty years in Jerusalem over all Israel (1 Kings 11:42), about 970–930 BC. From 22:17 on, “the words of the wise,” whose writers aren't named.",
       "people": [
         "solomon",
         "the-lord",
@@ -2114,7 +2114,7 @@ window.STUDIES = [
     "url": "studies/proverbs-25.html",
     "overview": {
       "where": "The royal court of Judah in Jerusalem, where Hezekiah's scribes gathered Solomon's sayings",
-      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32); copied out by “the men of Hezekiah king of Judah” (25:1)",
+      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32), about 970–930 BC; copied out by “the men of Hezekiah king of Judah” (25:1), around 700 BC",
       "people": [
         "solomon",
         "hezekiah",
@@ -2155,7 +2155,7 @@ window.STUDIES = [
     "url": "studies/proverbs-26.html",
     "overview": {
       "where": "Part of the collection of Solomon's proverbs copied out by Hezekiah's men (25:1)",
-      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32); copied out by “the men of Hezekiah king of Judah” (25:1)",
+      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32), about 970–930 BC; copied out by “the men of Hezekiah king of Judah” (25:1), around 700 BC",
       "people": [
         "solomon",
         "hezekiah"
@@ -2195,7 +2195,7 @@ window.STUDIES = [
     "url": "studies/proverbs-27.html",
     "overview": {
       "where": "Part of the collection of Solomon's proverbs copied out by Hezekiah's men (25:1)",
-      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32); copied out by “the men of Hezekiah king of Judah” (25:1)",
+      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32), about 970–930 BC; copied out by “the men of Hezekiah king of Judah” (25:1), around 700 BC",
       "people": [
         "solomon",
         "hezekiah"
@@ -2235,7 +2235,7 @@ window.STUDIES = [
     "url": "studies/proverbs-28.html",
     "overview": {
       "where": "Part of the collection of Solomon's proverbs copied out by Hezekiah's men (25:1)",
-      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32); copied out by “the men of Hezekiah king of Judah” (25:1)",
+      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32), about 970–930 BC; copied out by “the men of Hezekiah king of Judah” (25:1), around 700 BC",
       "people": [
         "solomon",
         "hezekiah",
@@ -2278,7 +2278,7 @@ window.STUDIES = [
     "url": "studies/proverbs-29.html",
     "overview": {
       "where": "Jerusalem, in Solomon's court; copied out later by King Hezekiah's men (25:1)",
-      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32); copied out by “the men of Hezekiah king of Judah” (25:1)",
+      "when": "Spoken by Solomon, who “spake three thousand proverbs” (1 Kings 4:32), about 970–930 BC; copied out by “the men of Hezekiah king of Judah” (25:1), around 700 BC",
       "people": [
         "solomon",
         "hezekiah",
@@ -2412,7 +2412,7 @@ window.STUDIES = [
     "url": "studies/topic-wisdom-proverbs.html",
     "overview": {
       "where": "All through the book of Proverbs",
-      "when": "Mostly from Solomon's reign (1 Kings 4:32), with more gathered by the men of Hezekiah king of Judah (Proverbs 25:1)",
+      "when": "Mostly from Solomon's reign (1 Kings 4:32), about 970–930 BC, with more gathered by the men of Hezekiah king of Judah (Proverbs 25:1), around 700 BC",
       "people": [
         "solomon",
         "the-lord",
@@ -2456,7 +2456,7 @@ window.STUDIES = [
     "url": "studies/hosea-01.html",
     "overview": {
       "where": "Israel, the northern kingdom, with its capital at Samaria",
-      "when": "In the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and of Jeroboam the son of Joash, king of Israel (Hosea 1:1), before Assyria carried the north into exile",
+      "when": "In the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and of Jeroboam the son of Joash, king of Israel (Hosea 1:1), around 755 to 715 BC, before Assyria carried the north into exile",
       "people": [
         "hosea",
         "beeri",
@@ -2511,7 +2511,7 @@ window.STUDIES = [
     "url": "studies/hosea-02.html",
     "overview": {
       "where": "Israel, the northern kingdom, pictured as Hosea's unfaithful wife",
-      "when": "In the days of Jeroboam the son of Joash, king of Israel (Hosea 1:1), before Assyria carried the north into exile",
+      "when": "In the days of Jeroboam the son of Joash, king of Israel (Hosea 1:1), around 755 BC, before Assyria carried the north into exile",
       "people": [
         "lo-ammi",
         "lo-ruhamah",
@@ -2557,7 +2557,7 @@ window.STUDIES = [
     "url": "studies/hosea-03.html",
     "overview": {
       "where": "Israel, the northern kingdom",
-      "when": "In Hosea's day (Hosea 1:1), before the Assyrian exile; looking ahead to “the latter days”",
+      "when": "In Hosea's day (Hosea 1:1), around 755 to 715 BC, before the Assyrian exile; looking ahead to “the latter days”",
       "people": [
         "hosea",
         "gomer",
@@ -2600,7 +2600,7 @@ window.STUDIES = [
     "url": "studies/hosea-04.html",
     "overview": {
       "where": "Israel, the northern kingdom, with a warning to Judah; the idol shrines at Gilgal and Bethel (Beth-aven)",
-      "when": "In Hosea's day (Hosea 1:1), in Israel's last years before Assyria",
+      "when": "In Hosea's day (Hosea 1:1), around 755 to 715 BC, in Israel's last years before Assyria",
       "people": [
         "priests",
         "ephraim-kingdom"
@@ -2829,7 +2829,7 @@ window.STUDIES = [
     "url": "studies/hosea-09.html",
     "overview": {
       "where": "Israel at harvest time, with exile ahead in Assyria and Egypt; memories of Gibeah, Baal-peor and Gilgal",
-      "when": "Shortly before Samaria fell to Assyria in the ninth year of Hoshea (2 Kings 17:6)",
+      "when": "Shortly before Samaria fell to Assyria in the ninth year of Hoshea, 722 BC (2 Kings 17:6)",
       "people": [
         "ephraim-kingdom",
         "baal"
@@ -3025,7 +3025,7 @@ window.STUDIES = [
     "url": "studies/hosea-13.html",
     "overview": {
       "where": "The northern kingdom of Israel (Ephraim) and its capital, Samaria",
-      "when": "Just before Assyria took Samaria in the ninth year of Hoshea (2 Kings 17:6)",
+      "when": "Just before Assyria took Samaria in the ninth year of Hoshea, 722 BC (2 Kings 17:6)",
       "people": [
         "the-lord",
         "baal"
@@ -3116,7 +3116,7 @@ window.STUDIES = [
     "url": "studies/joel-01.html",
     "overview": {
       "where": "Judah and Jerusalem, the southern kingdom, with its fields and vineyards stripped bare",
-      "when": "The book gives no date and names no king; the priests and elders lead, and the temple stands (Joel 1:9, 14)",
+      "when": "The book gives no date and names no king; the priests and elders lead, and the temple stands (Joel 1:9, 14). Some believe it is around 835 BC; others put it after the exile",
       "people": [
         "joel",
         "pethuel",
@@ -3261,7 +3261,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Preached at Bethel in Israel, the northern kingdom, by a man from Tekoa in Judah; the oracles range over the nations around Israel",
-      "when": "In the days of Uzziah king of Judah and of Jeroboam the son of Joash king of Israel, two years before the earthquake (Amos 1:1), before the exile",
+      "when": "In the days of Uzziah king of Judah and of Jeroboam the son of Joash king of Israel, two years before the earthquake (Amos 1:1), around 760 BC, before the exile",
       "people": [
         "amos",
         "uzziah",
@@ -3319,7 +3319,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Bethel in Israel; the oracles name Moab, Judah, and finally Israel",
-      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), before the exile, while Israel was rich under Jeroboam the son of Joash",
+      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), around 760 BC, before the exile, while Israel was rich under Jeroboam the son of Joash",
       "people": [
         "amos",
         "nazarites",
@@ -3370,7 +3370,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Bethel and Samaria, in Israel, the northern kingdom",
-      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), before the exile and before Assyria took Samaria",
+      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), around 760 BC, before the exile and before Assyria took Samaria",
       "people": [
         "amos",
         "the-lord",
@@ -3419,7 +3419,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Samaria, and the shrines at Bethel and Gilgal, in Israel",
-      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), before the exile, in Israel's boom years under Jeroboam the son of Joash",
+      "when": "In the days of Uzziah and Jeroboam (Amos 1:1), around 760 BC, before the exile, in Israel's boom years under Jeroboam the son of Joash",
       "people": [
         "amos",
         "the-lord"
@@ -3468,7 +3468,7 @@ window.STUDIES = [
     "url": "studies/amos-05.html",
     "overview": {
       "where": "Spoken to the northern kingdom of Israel, likely at Bethel",
-      "when": "Under Jeroboam the son of Joash (Amos 1:1), before Assyria carried Israel away in the ninth year of Hoshea",
+      "when": "Under Jeroboam the son of Joash (Amos 1:1), around 760 BC, before Assyria carried Israel away in the ninth year of Hoshea (722 BC)",
       "people": [
         "amos"
       ],
@@ -3514,7 +3514,7 @@ window.STUDIES = [
     "url": "studies/amos-06.html",
     "overview": {
       "where": "Spoken to the leaders of Samaria, and of Zion too",
-      "when": "Under Jeroboam the son of Joash (Amos 1:1), before Assyria carried Israel away in the ninth year of Hoshea",
+      "when": "Under Jeroboam the son of Joash (Amos 1:1), around 760 BC, before Assyria carried Israel away in the ninth year of Hoshea (722 BC)",
       "people": [
         "amos",
         "jacob",
@@ -3561,7 +3561,7 @@ window.STUDIES = [
     "url": "studies/amos-07.html",
     "overview": {
       "where": "Bethel, the king's shrine in the northern kingdom of Israel",
-      "when": "Under Jeroboam the son of Joash (Amos 1:1), before Assyria carried Israel away in the ninth year of Hoshea",
+      "when": "Under Jeroboam the son of Joash (Amos 1:1), around 760 BC, before Assyria carried Israel away in the ninth year of Hoshea (722 BC)",
       "people": [
         "amos",
         "amaziah",
@@ -3608,7 +3608,7 @@ window.STUDIES = [
     "url": "studies/amos-08.html",
     "overview": {
       "where": "Spoken to the northern kingdom of Israel",
-      "when": "Under Jeroboam the son of Joash (Amos 1:1), before Assyria carried Israel away in the ninth year of Hoshea",
+      "when": "Under Jeroboam the son of Joash (Amos 1:1), around 760 BC, before Assyria carried Israel away in the ninth year of Hoshea (722 BC)",
       "people": [
         "amos"
       ],
@@ -3653,7 +3653,7 @@ window.STUDIES = [
     "url": "studies/amos-09.html",
     "overview": {
       "where": "Amos's last vision, at the altar, likely at Bethel",
-      "when": "Under Jeroboam the son of Joash (Amos 1:1), before Assyria carried Israel away in the ninth year of Hoshea",
+      "when": "Under Jeroboam the son of Joash (Amos 1:1), around 760 BC, before Assyria carried Israel away in the ninth year of Hoshea (722 BC)",
       "people": [
         "amos",
         "david",
@@ -3702,7 +3702,7 @@ window.STUDIES = [
     "url": "studies/obadiah-01.html",
     "overview": {
       "where": "Edom, the mountain country south and east of the Dead Sea, and Jerusalem in Judah",
-      "when": "The book gives no date; verses 11–14 sound like the day Babylon burned Jerusalem, in the nineteenth year of Nebuchadnezzar (2 Kings 25:8)",
+      "when": "The book gives no date; verses 11–14 sound like the day Babylon burned Jerusalem, in the nineteenth year of Nebuchadnezzar (2 Kings 25:8), 586 BC",
       "people": [
         "obadiah",
         "esau",
@@ -3755,7 +3755,7 @@ window.STUDIES = [
     "url": "studies/jonah-01.html",
     "overview": {
       "where": "Joppa on the coast of Israel, then a ship on the Great Sea bound for Tarshish",
-      "when": "In the days of Jeroboam the son of Joash, king of Israel (2 Kings 14:25), when Assyria was the great power",
+      "when": "In the days of Jeroboam the son of Joash, king of Israel (2 Kings 14:25), believed to be around 780 BC, when Assyria was the great power",
       "people": [
         "jonah",
         "amittai",
@@ -3801,7 +3801,7 @@ window.STUDIES = [
     "url": "studies/jonah-02.html",
     "overview": {
       "where": "In the belly of a great fish, in the depths of the sea",
-      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), during Jonah's three days and three nights in the fish",
+      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), believed to be around 780 BC, during Jonah's three days and three nights in the fish",
       "people": [
         "jonah"
       ],
@@ -3843,7 +3843,7 @@ window.STUDIES = [
     "url": "studies/jonah-03.html",
     "overview": {
       "where": "Nineveh, the great city of Assyria, on the Tigris River",
-      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), after Jonah's rescue from the fish",
+      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), believed to be around 780 BC, after Jonah's rescue from the fish",
       "people": [
         "jonah",
         "king-of-nineveh"
@@ -3885,7 +3885,7 @@ window.STUDIES = [
     "url": "studies/jonah-04.html",
     "overview": {
       "where": "Outside Nineveh, on the east side of the city",
-      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), after God spared Nineveh",
+      "when": "In the days of Jeroboam the son of Joash (2 Kings 14:25), believed to be around 780 BC, after God spared Nineveh",
       "people": [
         "jonah"
       ],
@@ -3926,7 +3926,7 @@ window.STUDIES = [
     "url": "studies/micah-01.html",
     "overview": {
       "where": "Judah and Israel: Samaria, Jerusalem, and the towns of Judah's low hills around Micah's home, Moresheth-gath",
-      "when": "In the days of Jotham, Ahaz, and Hezekiah, kings of Judah (Micah 1:1), before the exile, as Assyria rose to power",
+      "when": "In the days of Jotham, Ahaz, and Hezekiah, kings of Judah (Micah 1:1), around 735 to 700 BC, before the exile, as Assyria rose to power",
       "people": [
         "micah",
         "jotham",
@@ -3978,7 +3978,7 @@ window.STUDIES = [
     "url": "studies/micah-02.html",
     "overview": {
       "where": "Judah, among the farms and homes of ordinary families",
-      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), before the exile, while Assyria threatened the land",
+      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), around 735 to 700 BC, before the exile, while Assyria threatened the land",
       "people": [
         "micah",
         "jacob"
@@ -4021,7 +4021,7 @@ window.STUDIES = [
     "url": "studies/micah-03.html",
     "overview": {
       "where": "Jerusalem (Zion), before the rulers, priests and prophets of Judah",
-      "when": "In the days of King Hezekiah (Jeremiah 26:18), before the exile",
+      "when": "In the days of King Hezekiah (Jeremiah 26:18), around 700 BC, before the exile",
       "people": [
         "micah",
         "heads-of-jacob",
@@ -4068,7 +4068,7 @@ window.STUDIES = [
     "url": "studies/micah-04.html",
     "overview": {
       "where": "Zion and Jerusalem, looking ahead to the exile in Babylon and to the last days",
-      "when": "Spoken in the days of Jotham, Ahaz, and Hezekiah (Micah 1:1). It looks ahead to Babylon, the return in the first year of Cyrus (Ezra 1:1), and the last days",
+      "when": "Spoken in the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), around 735 to 700 BC. It looks ahead to Babylon, the return in the first year of Cyrus (Ezra 1:1), 538 BC, and the last days",
       "people": [
         "micah",
         "jacob"
@@ -4114,7 +4114,7 @@ window.STUDIES = [
     "url": "studies/micah-05.html",
     "overview": {
       "where": "Judah, the southern kingdom, with Jerusalem under siege and little Bethlehem a few miles south",
-      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), while Assyria threatened Judah, before the Babylonian exile",
+      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), around 735 to 700 BC, while Assyria threatened Judah, before the Babylonian exile",
       "people": [
         "ruler-in-israel",
         "judge-of-israel",
@@ -4164,7 +4164,7 @@ window.STUDIES = [
     "url": "studies/micah-06.html",
     "overview": {
       "where": "Judah and Jerusalem, “the city,” pictured as a court with the mountains as witnesses",
-      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), while Assyria was the great power and before the Babylonian exile",
+      "when": "In the days of Jotham, Ahaz, and Hezekiah (Micah 1:1), around 735 to 700 BC, while Assyria was the great power and before the Babylonian exile",
       "people": [
         "the-lord",
         "moses",
@@ -4217,7 +4217,7 @@ window.STUDIES = [
     "url": "studies/micah-07.html",
     "overview": {
       "where": "Judah and Jerusalem, looking ahead to ruin and then to walls rebuilt",
-      "when": "In Micah's day (Micah 1:1), looking past the Babylonian exile to the return and beyond",
+      "when": "In Micah's day (Micah 1:1), around 735 to 700 BC, looking past the Babylonian exile to the return and beyond",
       "people": [
         "micah",
         "the-lord",
@@ -4268,7 +4268,7 @@ window.STUDIES = [
     "url": "studies/nahum-01.html",
     "overview": {
       "where": "Nineveh, the capital of Assyria, on the Tigris; the message is carried to Judah, the southern kingdom",
-      "when": "The book names no king. After No (Thebes) had fallen (3:8) and before Nineveh fell; before the exile, after Assyria had carried off the northern kingdom “in the ninth year of Hoshea” (2 Kings 17:6), and long after Jonah preached to Nineveh",
+      "when": "The book names no king. After No (Thebes) had fallen (3:8) and before Nineveh fell, so between 663 and 612 BC; before the exile, after Assyria had carried off the northern kingdom “in the ninth year of Hoshea” (2 Kings 17:6), and long after Jonah preached to Nineveh",
       "people": [
         "nahum",
         "the-lord"
@@ -4316,7 +4316,7 @@ window.STUDIES = [
     "url": "studies/nahum-02.html",
     "overview": {
       "where": "Nineveh, the capital of Assyria, on the Tigris, under siege",
-      "when": "Written after No (Thebes) had fallen (3:8) and before Nineveh fell; it describes Nineveh's fall to the Babylonians and Medes",
+      "when": "Written after No (Thebes) had fallen (3:8) and before Nineveh fell, between 663 and 612 BC; it describes Nineveh's fall to the Babylonians and Medes",
       "people": [
         "huzzab",
         "jacob",
@@ -4362,7 +4362,7 @@ window.STUDIES = [
     "url": "studies/nahum-03.html",
     "overview": {
       "where": "Nineveh, the capital of Assyria; with a look back at No (Thebes) in Egypt",
-      "when": "After No (Thebes) had fallen (3:8) and before Nineveh fell; the book names no king",
+      "when": "After No (Thebes) had fallen (3:8) and before Nineveh fell, between 663 and 612 BC; the book names no king",
       "people": [
         "the-lord"
       ],
@@ -4411,7 +4411,7 @@ window.STUDIES = [
     "url": "studies/habakkuk-01.html",
     "overview": {
       "where": "Judah and Jerusalem, the southern kingdom, with Babylon rising far to the east",
-      "when": "The book names no king. Before the exile, as God raised up the Chaldeans (1:6)",
+      "when": "The book names no king; it is believed to be around 605 BC. Before the exile, as God raised up the Chaldeans (1:6)",
       "people": [
         "habakkuk",
         "the-lord",
@@ -4456,7 +4456,7 @@ window.STUDIES = [
     "url": "studies/habakkuk-02.html",
     "overview": {
       "where": "Judah, with Habakkuk on his watchtower; the woes are aimed at Babylon",
-      "when": "The book names no king. Before the exile, with Babylon on the rise (1:6)",
+      "when": "The book names no king; it is believed to be around 605 BC. Before the exile, with Babylon on the rise (1:6)",
       "people": [
         "habakkuk",
         "the-lord",
@@ -4501,7 +4501,7 @@ window.STUDIES = [
     "url": "studies/habakkuk-03.html",
     "overview": {
       "where": "Judah, looking back to God's march from Sinai, Teman, and Paran, and the Red Sea and the Jordan",
-      "when": "The book names no king. Before the exile, as Babylon's invasion drew near (3:16)",
+      "when": "The book names no king; it is believed to be around 605 BC. Before the exile, as Babylon's invasion drew near (3:16)",
       "people": [
         "habakkuk",
         "the-lord",
@@ -4547,7 +4547,7 @@ window.STUDIES = [
     "url": "studies/zephaniah-01.html",
     "overview": {
       "where": "Judah and Jerusalem, the southern kingdom",
-      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), before the exile",
+      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), around 630 BC, before the exile",
       "people": [
         "zephaniah",
         "hizkiah",
@@ -4599,7 +4599,7 @@ window.STUDIES = [
     "url": "studies/zephaniah-02.html",
     "overview": {
       "where": "Judah, and the nations around it: Philistia, Moab, Ammon, Ethiopia, and Assyria",
-      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), before Nineveh fell",
+      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), around 630 BC, before Nineveh fell",
       "people": [
         "zephaniah",
         "the-lord",
@@ -4654,7 +4654,7 @@ window.STUDIES = [
     "url": "studies/zephaniah-03.html",
     "overview": {
       "where": "Jerusalem",
-      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), looking ahead past the exile",
+      "when": "“In the days of Josiah the son of Amon, king of Judah” (1:1), around 630 BC, looking ahead past the exile",
       "people": [
         "zephaniah",
         "the-lord",
@@ -4701,7 +4701,7 @@ window.STUDIES = [
     "url": "studies/haggai-01.html",
     "overview": {
       "where": "Jerusalem and Judah, a small Persian province, where the temple lay in ruins",
-      "when": "“In the second year of Darius the king, in the sixth month, in the first day” (1:1), after the exile, Darius king of Persia",
+      "when": "“In the second year of Darius the king, in the sixth month, in the first day” (1:1), 520 BC, after the exile, Darius king of Persia",
       "people": [
         "haggai",
         "the-lord",
@@ -4714,7 +4714,7 @@ window.STUDIES = [
         "jerusalem"
       ],
       "story": [
-        "In the second year of Darius, Haggai brings God's word to Zerubbabel the governor and Joshua the high priest. The people say it isn't time to build the LORD's house (1–2).",
+        "In the second year of Darius, 520 BC, Haggai brings God's word to Zerubbabel the governor and Joshua the high priest. The people say it isn't time to build the LORD's house (1–2).",
         "God asks: is it time for you to live in panelled houses while My house lies waste (3–4)?",
         "“Consider your ways.” They sow much and reap little, and earn wages into a bag with holes (5–7).",
         "Go up, bring wood, and build, and God will take pleasure in it. The drought came because they ran to their own houses and left his in ruins (8–11).",
@@ -4747,7 +4747,7 @@ window.STUDIES = [
     "url": "studies/haggai-02.html",
     "overview": {
       "where": "Jerusalem, at the half-built second temple",
-      "when": "In the second year of Darius, from the seventh month to the ninth (2:1, 10, 20), after the exile",
+      "when": "In the second year of Darius, 520 BC, from the seventh month to the ninth (2:1, 10, 20), after the exile",
       "people": [
         "haggai",
         "the-lord",
@@ -4793,7 +4793,7 @@ window.STUDIES = [
     "url": "studies/zechariah-01.html",
     "overview": {
       "where": "Jerusalem and Judah, being rebuilt after the exile; the visions look out over the whole earth",
-      "when": "“In the eighth month, in the second year of Darius” (1:1), after the exile, alongside Haggai",
+      "when": "“In the eighth month, in the second year of Darius” (1:1), 520 BC, after the exile, alongside Haggai",
       "people": [
         "zechariah",
         "berechiah-and-iddo",
@@ -4843,7 +4843,7 @@ window.STUDIES = [
     "url": "studies/zechariah-02.html",
     "overview": {
       "where": "Jerusalem, still without walls, and Babylon, “the land of the north”",
-      "when": "The four and twentieth day of the eleventh month, in the second year of Darius (1:7), after the exile, in Zechariah's night visions",
+      "when": "The four and twentieth day of the eleventh month, in the second year of Darius (1:7), early in 519 BC, after the exile, in Zechariah's night visions",
       "people": [
         "zechariah",
         "angel-that-talked-with-me",
@@ -4892,7 +4892,7 @@ window.STUDIES = [
     "url": "studies/zechariah-03.html",
     "overview": {
       "where": "Jerusalem, in a vision of God's courtroom",
-      "when": "In the second year of Darius (1:7), after the exile, under Persian rule, while the temple was being rebuilt",
+      "when": "In the second year of Darius (1:7), about 519 BC, after the exile, under Persian rule, while the temple was being rebuilt",
       "people": [
         "zechariah",
         "joshua-the-high-priest",
@@ -4938,7 +4938,7 @@ window.STUDIES = [
     "url": "studies/zechariah-04.html",
     "overview": {
       "where": "Jerusalem, where the temple stood half built",
-      "when": "In the second year of Darius (1:7), after the exile, under Persian rule",
+      "when": "In the second year of Darius (1:7), about 519 BC, after the exile, under Persian rule",
       "people": [
         "zechariah",
         "angel-that-talked-with-me",
@@ -4982,7 +4982,7 @@ window.STUDIES = [
     "url": "studies/zechariah-05.html",
     "overview": {
       "where": "Jerusalem, in two visions that reach out to Shinar",
-      "when": "In the second year of Darius (1:7), after the exile, under Persian rule",
+      "when": "In the second year of Darius (1:7), about 519 BC, after the exile, under Persian rule",
       "people": [
         "zechariah",
         "angel-that-talked-with-me",
@@ -5024,7 +5024,7 @@ window.STUDIES = [
     "url": "studies/zechariah-06.html",
     "overview": {
       "where": "Jerusalem, with God's chariots going out to the north and south countries",
-      "when": "In the second year of Darius (1:7), after the exile, under Persian rule",
+      "when": "In the second year of Darius (1:7), about 519 BC, after the exile, under Persian rule",
       "people": [
         "zechariah",
         "angel-that-talked-with-me",
@@ -5076,7 +5076,7 @@ window.STUDIES = [
     "url": "studies/zechariah-07.html",
     "overview": {
       "where": "Jerusalem, where the temple is being rebuilt; men are sent to ask the priests and prophets",
-      "when": "“In the fourth year of king Darius… in the fourth day of the ninth month, even in Chisleu” (7:1), after the exile",
+      "when": "“In the fourth year of king Darius… in the fourth day of the ninth month, even in Chisleu” (7:1), about 518 BC, after the exile",
       "people": [
         "zechariah",
         "darius",
@@ -5123,7 +5123,7 @@ window.STUDIES = [
     "url": "studies/zechariah-08.html",
     "overview": {
       "where": "Jerusalem and Zion, half rebuilt, with God's people still scattered east and west",
-      "when": "In the fourth year of Darius (7:1), under Persia, after the exile, while the temple was being rebuilt",
+      "when": "In the fourth year of Darius (7:1), about 518 BC, under Persia, after the exile, while the temple was being rebuilt",
       "people": [
         "zechariah",
         "the-lord",
@@ -5173,7 +5173,7 @@ window.STUDIES = [
     "url": "studies/zechariah-09.html",
     "overview": {
       "where": "The lands around Israel, from Hadrach, Hamath and Damascus in Syria to Tyre, Zidon and the Philistine cities, with Jerusalem at the center",
-      "when": "Undated, after the exile (Zechariah preached in the days of Darius king of Persia), looking ahead to the first king of Grecia (Daniel 8:21), the wars with the Greeks, and the coming King",
+      "when": "Undated, after the exile (Zechariah preached in the days of Darius king of Persia, about 520–518 BC), looking ahead to the first king of Grecia (Daniel 8:21) in 332 BC, the wars with the Greeks, and the coming King",
       "people": [
         "the-lord",
         "philistines",
@@ -5229,7 +5229,7 @@ window.STUDIES = [
     "url": "studies/zechariah-10.html",
     "overview": {
       "where": "Judah and the scattered northern tribes (the house of Joseph, Ephraim), called home from Egypt and Assyria to Gilead and Lebanon",
-      "when": "Undated, after the exile (Zechariah preached in the days of Darius king of Persia), looking ahead to a full gathering of God's people",
+      "when": "Undated, after the exile (Zechariah preached in the days of Darius king of Persia, about 520–518 BC), looking ahead to a full gathering of God's people",
       "people": [
         "the-lord",
         "house-of-joseph",
@@ -5278,7 +5278,7 @@ window.STUDIES = [
     "url": "studies/zechariah-11.html",
     "overview": {
       "where": "Judah and Jerusalem after the exile; the picture sweeps from Lebanon and Bashan down to the Jordan",
-      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius (520 BC), when the Jews were back from Babylon under Persian rule. It looks far ahead.",
       "people": [
         "zechariah",
         "the-lord",
@@ -5329,7 +5329,7 @@ window.STUDIES = [
     "url": "studies/zechariah-12.html",
     "overview": {
       "where": "Jerusalem and Judah, with the nations gathered around; a look back at Megiddo",
-      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius (520 BC), when the Jews were back from Babylon under Persian rule. It looks far ahead.",
       "people": [
         "zechariah",
         "the-lord",
@@ -5380,7 +5380,7 @@ window.STUDIES = [
     "url": "studies/zechariah-13.html",
     "overview": {
       "where": "Jerusalem and the land of Judah",
-      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius (520 BC), when the Jews were back from Babylon under Persian rule. It looks far ahead.",
       "people": [
         "zechariah",
         "the-lord",
@@ -5425,7 +5425,7 @@ window.STUDIES = [
     "url": "studies/zechariah-14.html",
     "overview": {
       "where": "Jerusalem, the Mount of Olives, and all the nations of the earth",
-      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius, when the Jews were back from Babylon under Persian rule. It looks far ahead.",
+      "when": "Undated; probably later in Zechariah's ministry, after the second year of Darius (520 BC), when the Jews were back from Babylon under Persian rule. It looks far ahead.",
       "people": [
         "zechariah",
         "the-lord",
@@ -5483,7 +5483,7 @@ window.STUDIES = [
     "url": "studies/malachi-01.html",
     "overview": {
       "where": "Jerusalem and the temple, in the Persian province of Judah; Edom to the south-east",
-      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah",
+      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah, believed to be around 430 BC",
       "people": [
         "the-lord",
         "malachi",
@@ -5532,7 +5532,7 @@ window.STUDIES = [
     "url": "studies/malachi-02.html",
     "overview": {
       "where": "Jerusalem and the temple, in the Persian province of Judah",
-      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah",
+      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah, believed to be around 430 BC",
       "people": [
         "priests",
         "levi",
@@ -5579,7 +5579,7 @@ window.STUDIES = [
     "url": "studies/malachi-03.html",
     "overview": {
       "where": "Jerusalem and the temple, in the Persian province of Judah",
-      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah",
+      "when": "The book names no king. After the exile, with the temple standing again (1:7–10), around the time of Nehemiah, believed to be around 430 BC",
       "people": [
         "the-lord",
         "my-messenger",
@@ -5628,7 +5628,7 @@ window.STUDIES = [
     "url": "studies/malachi-04.html",
     "overview": {
       "where": "Spoken to Judah and Jerusalem; looking back to Horeb and ahead to the coming day",
-      "when": "The book names no king. After the exile, around the time of Nehemiah. Silence follows until John the Baptist (Luke 16:16)",
+      "when": "The book names no king. After the exile, around the time of Nehemiah, believed to be around 430 BC. Silence follows for about four hundred years, until John the Baptist (Luke 16:16)",
       "people": [
         "the-lord",
         "moses",
@@ -5673,7 +5673,7 @@ window.STUDIES = [
     "url": "studies/matthew-01.html",
     "overview": {
       "where": "Bethlehem in Judaea, through Joseph's family line back to Abraham",
-      "when": "Just before Jesus is born, in the days of Herod the king (2:1)",
+      "when": "Just before Jesus is born, in the days of Herod the king (2:1), about 6–4 BC",
       "people": [
         "jesus",
         "abraham",
@@ -5724,7 +5724,7 @@ window.STUDIES = [
     "url": "studies/matthew-02.html",
     "overview": {
       "where": "Jerusalem and Bethlehem in Judaea, then Egypt, then Nazareth in Galilee",
-      "when": "In the last days of Herod the king (2:1, 19)",
+      "when": "In the last days of Herod the king (2:1, 19), who died in 4 BC",
       "people": [
         "jesus",
         "herod-the-great",
@@ -5780,7 +5780,7 @@ window.STUDIES = [
     "url": "studies/matthew-03.html",
     "overview": {
       "where": "The wilderness of Judaea and the Jordan River",
-      "when": "In the fifteenth year of Tiberius Caesar (Luke 3:1), when Jesus was about thirty (Luke 3:23)",
+      "when": "In the fifteenth year of Tiberius Caesar (Luke 3:1), when Jesus was about thirty (Luke 3:23), about AD 27",
       "people": [
         "john-the-baptist",
         "jesus",
@@ -5832,7 +5832,7 @@ window.STUDIES = [
     "url": "studies/matthew-04.html",
     "overview": {
       "where": "The wilderness of Judaea and the temple in Jerusalem, then Capernaum by the Sea of Galilee",
-      "when": "Right after Jesus' baptism; then, after John the Baptist was put in prison (4:12)",
+      "when": "Right after Jesus' baptism; then, after John the Baptist was put in prison (4:12), about AD 27–28",
       "people": [
         "jesus",
         "holy-spirit",
@@ -5894,7 +5894,7 @@ window.STUDIES = [
     "url": "studies/matthew-05.html",
     "overview": {
       "where": "A hillside in Galilee, near Capernaum on the Sea of Galilee",
-      "when": "Early in Jesus' Galilean ministry, soon after he called his first disciples (4:18–22)",
+      "when": "Early in Jesus' Galilean ministry, soon after he called his first disciples (4:18–22), about AD 28",
       "people": [
         "jesus",
         "disciples",
@@ -5944,7 +5944,7 @@ window.STUDIES = [
     "url": "studies/matthew-06.html",
     "overview": {
       "where": "On a mountain in Galilee near Capernaum, in the middle of the Sermon on the Mount",
-      "when": "Early in Jesus' ministry, the same sermon as chapter 5",
+      "when": "Early in Jesus' ministry, the same sermon as chapter 5, about AD 28",
       "people": [
         "jesus",
         "disciples",
@@ -5995,7 +5995,7 @@ window.STUDIES = [
     "url": "studies/matthew-07.html",
     "overview": {
       "where": "The mountain near Capernaum, at the end of the Sermon on the Mount",
-      "when": "Early in Jesus' ministry, the end of the sermon begun in chapter 5",
+      "when": "Early in Jesus' ministry, the end of the sermon begun in chapter 5, about AD 28",
       "people": [
         "jesus",
         "the-father",
@@ -6042,7 +6042,7 @@ window.STUDIES = [
     "url": "studies/matthew-08.html",
     "overview": {
       "where": "Capernaum, the Sea of Galilee, and the country of the Gergesenes on the east shore",
-      "when": "Early in Jesus' ministry, as he comes down from the mountain (8:1)",
+      "when": "Early in Jesus' ministry, as he comes down from the mountain (8:1), about AD 28",
       "people": [
         "jesus",
         "the-leper",
@@ -6099,7 +6099,7 @@ window.STUDIES = [
     "url": "studies/matthew-09.html",
     "overview": {
       "where": "Capernaum, Jesus' own city on the Sea of Galilee, then the towns and villages of Galilee",
-      "when": "Early in Jesus' work in Galilee",
+      "when": "Early in Jesus' work in Galilee, about AD 28",
       "people": [
         "jesus",
         "scribes",
@@ -6152,7 +6152,7 @@ window.STUDIES = [
     "url": "studies/matthew-10.html",
     "overview": {
       "where": "Galilee, as Jesus sends the twelve out to the towns of Israel",
-      "when": "Right after Matthew 9, in Jesus' work in Galilee",
+      "when": "Right after Matthew 9, in Jesus' work in Galilee, about AD 28",
       "people": [
         "jesus",
         "the-twelve",
@@ -6207,7 +6207,7 @@ window.STUDIES = [
     "url": "studies/matthew-11.html",
     "overview": {
       "where": "The towns of Galilee around the Sea of Galilee; John in Herod's prison",
-      "when": "During Jesus' work in Galilee, while John the Baptist is in prison (11:2)",
+      "when": "During Jesus' work in Galilee, while John the Baptist is in prison (11:2), about AD 28",
       "people": [
         "jesus",
         "john-the-baptist",
@@ -6261,7 +6261,7 @@ window.STUDIES = [
     "url": "studies/matthew-12.html",
     "overview": {
       "where": "The grainfields and a synagogue in Galilee",
-      "when": "During Jesus' work in Galilee",
+      "when": "During Jesus' work in Galilee, about AD 28",
       "people": [
         "jesus",
         "disciples",
@@ -6321,7 +6321,7 @@ window.STUDIES = [
     "url": "studies/matthew-13.html",
     "overview": {
       "where": "By the Sea of Galilee, most likely near Capernaum, then Nazareth, his own country",
-      "when": "The same day as Matthew 12, in Jesus' work in Galilee (13:1)",
+      "when": "The same day as Matthew 12, in Jesus' work in Galilee (13:1), about AD 28",
       "people": [
         "jesus",
         "disciples",
@@ -6367,7 +6367,7 @@ window.STUDIES = [
     "url": "studies/matthew-14.html",
     "overview": {
       "where": "Herod Antipas' court; a lonely place near Bethsaida; the Sea of Galilee at night; the land of Gennesaret",
-      "when": "In the spring, with the Passover near (John 6:4), soon after John the Baptist was killed",
+      "when": "In the spring, with the Passover near (John 6:4), soon after John the Baptist was killed, about a year before the cross (about AD 29 or 32)",
       "people": [
         "jesus",
         "herod-antipas",
@@ -6417,7 +6417,7 @@ window.STUDIES = [
     "url": "studies/matthew-15.html",
     "overview": {
       "where": "By the Sea of Galilee, then north in the coasts of Tyre and Sidon, then back to the lake and across to Magdala",
-      "when": "Late in Jesus' work in Galilee",
+      "when": "Late in Jesus' work in Galilee, about AD 29 or 32",
       "people": [
         "jesus",
         "scribes",
@@ -6469,7 +6469,7 @@ window.STUDIES = [
     "url": "studies/matthew-16.html",
     "overview": {
       "where": "By the Sea of Galilee, then north to the coasts of Caesarea Philippi, below Mount Hermon",
-      "when": "Late in Jesus' work in Galilee, as he turns toward Jerusalem and the cross (16:21)",
+      "when": "Late in Jesus' work in Galilee, as he turns toward Jerusalem and the cross (16:21), about AD 29 or 32",
       "people": [
         "jesus",
         "pharisees",
@@ -6521,7 +6521,7 @@ window.STUDIES = [
     "url": "studies/matthew-17.html",
     "overview": {
       "where": "A high mountain (perhaps Hermon, near Caesarea Philippi, or Tabor), then Galilee and Capernaum",
-      "when": "Six days after Peter's confession (17:1)",
+      "when": "Six days after Peter's confession (17:1), about AD 29 or 32",
       "people": [
         "jesus",
         "simon-peter",
@@ -6573,7 +6573,7 @@ window.STUDIES = [
     "url": "studies/matthew-18.html",
     "overview": {
       "where": "Capernaum, in a house, back from the road (17:24; Mark 9:33)",
-      "when": "Late in Jesus' ministry in Galilee",
+      "when": "Late in Jesus' ministry in Galilee, about AD 29 or 32",
       "people": [
         "jesus",
         "disciples",
@@ -6619,7 +6619,7 @@ window.STUDIES = [
     "url": "studies/matthew-19.html",
     "overview": {
       "where": "Judaea beyond Jordan (Perea), east of the Jordan River, on the way to Jerusalem",
-      "when": "On the way to Jerusalem, after Jesus leaves Galilee (19:1)",
+      "when": "On the way to Jerusalem, after Jesus leaves Galilee (19:1), in the months before the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "pharisees",
@@ -6669,7 +6669,7 @@ window.STUDIES = [
     "url": "studies/matthew-20.html",
     "overview": {
       "where": "A vineyard in Jesus' story, then the road from beyond the Jordan up to Jerusalem, by way of Jericho",
-      "when": "The last journey to Jerusalem, shortly before his final Passover",
+      "when": "The last journey to Jerusalem, shortly before his final Passover (AD 30 or 33)",
       "people": [
         "jesus",
         "householder",
@@ -6718,7 +6718,7 @@ window.STUDIES = [
     "url": "studies/matthew-21.html",
     "overview": {
       "where": "Bethphage and the Mount of Olives, then Jerusalem and the temple, with nights at Bethany",
-      "when": "The first days of the last week, from the Sunday he rode in",
+      "when": "The first days of the last week, from the Sunday he rode in (AD 30 or 33)",
       "people": [
         "jesus",
         "disciples",
@@ -6771,7 +6771,7 @@ window.STUDIES = [
     "url": "studies/matthew-22.html",
     "overview": {
       "where": "The temple courts in Jerusalem",
-      "when": "Probably the Tuesday of the last week before the cross",
+      "when": "Probably the Tuesday of the last week before the cross, AD 30 or 33",
       "people": [
         "jesus",
         "pharisees",
@@ -6822,7 +6822,7 @@ window.STUDIES = [
     "url": "studies/matthew-23.html",
     "overview": {
       "where": "The temple courts in Jerusalem",
-      "when": "The same day as chapter 22, days before the cross",
+      "when": "The same day as chapter 22, days before the cross, AD 30 or 33",
       "people": [
         "jesus",
         "scribes",
@@ -6873,7 +6873,7 @@ window.STUDIES = [
     "url": "studies/matthew-24.html",
     "overview": {
       "where": "The temple in Jerusalem, then the Mount of Olives across the Kidron valley, looking back at the temple",
-      "when": "In the last week before the cross, two days before the Passover (26:2)",
+      "when": "In the last week before the cross, two days before the Passover (26:2), AD 30 or 33",
       "people": [
         "jesus",
         "disciples",
@@ -6923,7 +6923,7 @@ window.STUDIES = [
     "url": "studies/matthew-25.html",
     "overview": {
       "where": "The Mount of Olives, across from the temple in Jerusalem, the same evening as chapter 24",
-      "when": "In the last week before the cross, two days before the Passover (26:2)",
+      "when": "In the last week before the cross, two days before the Passover (26:2), AD 30 or 33",
       "people": [
         "ten-virgins",
         "bridegroom",
@@ -6972,7 +6972,7 @@ window.STUDIES = [
     "url": "studies/matthew-26.html",
     "overview": {
       "where": "Bethany, an upper room in Jerusalem, the garden of Gethsemane on the Mount of Olives, and the high priest's palace",
-      "when": "The last week: two days before the Passover (26:2), then the Thursday night of the Passover",
+      "when": "The last week, AD 30 or 33: two days before the Passover (26:2), then the Thursday night of the Passover",
       "people": [
         "jesus",
         "disciples",
@@ -7029,7 +7029,7 @@ window.STUDIES = [
     "url": "studies/matthew-27.html",
     "overview": {
       "where": "Jerusalem: the temple, Pilate's hall, Golgotha outside the city, and Joseph's tomb in the rock",
-      "when": "The Friday of Passover week, from dawn to evening, and the sabbath after",
+      "when": "The Friday of Passover week, AD 30 or 33, from dawn to evening, and the sabbath after",
       "people": [
         "jesus",
         "judas-iscariot",
@@ -7087,7 +7087,7 @@ window.STUDIES = [
     "url": "studies/matthew-28.html",
     "overview": {
       "where": "The tomb outside Jerusalem, then a mountain in Galilee",
-      "when": "The first day of the week, at dawn, after the crucifixion (28:1), and some days later in Galilee",
+      "when": "The first day of the week, at dawn, after the crucifixion (28:1), AD 30 or 33, and some days later in Galilee",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -7137,7 +7137,7 @@ window.STUDIES = [
     "url": "studies/mark-01.html",
     "overview": {
       "where": "The Jordan River and the wilderness, then Galilee: the lakeshore, Capernaum's synagogue and Simon's house, and the towns around",
-      "when": "At the start of Jesus' ministry, in the fifteenth year of Tiberius Caesar (Luke 3:1)",
+      "when": "At the start of Jesus' ministry, in the fifteenth year of Tiberius Caesar (Luke 3:1), about AD 27",
       "people": [
         "jesus",
         "john-the-baptist",
@@ -7198,7 +7198,7 @@ window.STUDIES = [
     "url": "studies/mark-02.html",
     "overview": {
       "where": "Capernaum: a crowded house, Levi's tax booth and his table, then the grain fields on a sabbath",
-      "when": "Early in Jesus' ministry in Galilee",
+      "when": "Early in Jesus' ministry in Galilee, about AD 27 or 28",
       "people": [
         "jesus",
         "sick-of-the-palsy",
@@ -7252,7 +7252,7 @@ window.STUDIES = [
     "url": "studies/mark-03.html",
     "overview": {
       "where": "A synagogue in Galilee, the shore of the Sea of Galilee, a mountain, and a crowded house",
-      "when": "Early in Jesus' ministry in Galilee, after he called the first disciples",
+      "when": "Early in Jesus' ministry in Galilee, after he called the first disciples, about AD 28",
       "people": [
         "jesus",
         "withered-hand",
@@ -7322,7 +7322,7 @@ window.STUDIES = [
     "url": "studies/mark-04.html",
     "overview": {
       "where": "On and beside the Sea of Galilee: Jesus teaches from a boat, then crosses to the other side",
-      "when": "During Jesus' ministry in Galilee. The storm comes that same evening (4:35)",
+      "when": "During Jesus' ministry in Galilee, about AD 28. The storm comes that same evening (4:35)",
       "people": [
         "jesus",
         "disciples",
@@ -7366,7 +7366,7 @@ window.STUDIES = [
     "url": "studies/mark-05.html",
     "overview": {
       "where": "The country of the Gadarenes on the east shore of the Sea of Galilee, then back across the lake to the crowd, the road, and Jairus' house",
-      "when": "In Jesus' ministry in Galilee, right after he stilled the storm (4:35–41)",
+      "when": "In Jesus' ministry in Galilee, about AD 28, right after he stilled the storm (4:35–41)",
       "people": [
         "jesus",
         "legion",
@@ -7418,7 +7418,7 @@ window.STUDIES = [
     "url": "studies/mark-06.html",
     "overview": {
       "where": "Nazareth, the villages of Galilee, Herod's court and prison, a lonely place near Bethsaida, the Sea of Galilee at night, and the plain of Gennesaret",
-      "when": "Near a Passover (John 6:4), in Jesus' ministry in Galilee, while Herod the tetrarch ruled Galilee and Perea for Rome",
+      "when": "Near a Passover (John 6:4), about AD 29 or 32, in Jesus' ministry in Galilee, while Herod the tetrarch ruled Galilee and Perea for Rome (4 BC–AD 39)",
       "people": [
         "jesus",
         "mary",
@@ -7476,7 +7476,7 @@ window.STUDIES = [
     "url": "studies/mark-07.html",
     "overview": {
       "where": "Galilee by the lake, then the borders of Tyre and Sidon, then the Decapolis on the far side of the Sea of Galilee",
-      "when": "The summer after the feeding of the five thousand, about a year before the cross",
+      "when": "The summer after the feeding of the five thousand, about a year before the cross (about AD 29 or 32)",
       "people": [
         "jesus",
         "pharisees",
@@ -7528,7 +7528,7 @@ window.STUDIES = [
     "url": "studies/mark-08.html",
     "overview": {
       "where": "The Decapolis, across the lake to Dalmanutha and Bethsaida, then north to the towns of Caesarea Philippi",
-      "when": "About a year before the cross, when Jesus first tells his disciples plainly that he must die and rise again",
+      "when": "About a year before the cross (about AD 29 or 32), when Jesus first tells his disciples plainly that he must die and rise again",
       "people": [
         "jesus",
         "disciples",
@@ -7687,7 +7687,7 @@ window.STUDIES = [
     "url": "studies/mark-11.html",
     "overview": {
       "where": "Bethphage and Bethany on the Mount of Olives, the road into Jerusalem, and the temple courts",
-      "when": "The first three days of Jesus' last week before the Passover, while Pilate governed Judaea for Rome",
+      "when": "The first three days of Jesus' last week before the Passover, AD 30 or 33, while Pilate governed Judaea for Rome (AD 26–36)",
       "people": [
         "jesus",
         "disciples",
@@ -7742,7 +7742,7 @@ window.STUDIES = [
     "url": "studies/mark-12.html",
     "overview": {
       "where": "The temple courts in Jerusalem, and at the end the treasury in the Court of the Women",
-      "when": "The third day of Jesus' last week, a few days before the Passover and the cross",
+      "when": "The third day of Jesus' last week, a few days before the Passover and the cross, AD 30 or 33",
       "people": [
         "jesus",
         "the-heir",
@@ -7800,7 +7800,7 @@ window.STUDIES = [
     "url": "studies/mark-13.html",
     "overview": {
       "where": "Leaving the temple in Jerusalem, then sitting on the Mount of Olives over against it",
-      "when": "The last week before the cross, a day or two before the Passover (14:1)",
+      "when": "The last week before the cross, AD 30 or 33, a day or two before the Passover (14:1)",
       "people": [
         "jesus",
         "disciples",
@@ -7852,7 +7852,7 @@ window.STUDIES = [
     "url": "studies/mark-14.html",
     "overview": {
       "where": "Bethany, an upper room in Jerusalem, Gethsemane on the Mount of Olives, and the high priest's palace",
-      "when": "Two days before the Passover (14:1), then the Passover night itself",
+      "when": "Two days before the Passover (14:1), then the Passover night itself, AD 30 or 33",
       "people": [
         "jesus",
         "simon-the-leper",
@@ -7911,7 +7911,7 @@ window.STUDIES = [
     "url": "studies/mark-15.html",
     "overview": {
       "where": "Jerusalem: Pilate's Praetorium, then Golgotha outside the city, then a rock tomb nearby",
-      "when": "The Friday of Passover week, the day before the sabbath (15:42), from early morning to sundown",
+      "when": "The Friday of Passover week, AD 30 or 33, the day before the sabbath (15:42), from early morning to sundown",
       "people": [
         "jesus",
         "pilate",
@@ -7966,7 +7966,7 @@ window.STUDIES = [
     "url": "studies/mark-16.html",
     "overview": {
       "where": "The tomb outside Jerusalem, the road into the country, the room where the eleven ate, and then heaven",
-      "when": "The first day of the week after the crucifixion, and the days after it until he was received up",
+      "when": "The first day of the week after the crucifixion, AD 30 or 33, and the days after it until he was received up",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -8005,7 +8005,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 1",
     "sub": "Nothing shall be impossible",
-    "about": "After long, quiet years God speaks again: an old priest is promised a son, and a virgin in Nazareth is told she will bear the Son of God.",
+    "about": "After about four hundred quiet years God speaks again: an old priest is promised a son, and a virgin in Nazareth is told she will bear the Son of God.",
     "tags": [
       "God's Word",
       "Prayer",
@@ -8017,7 +8017,7 @@ window.STUDIES = [
     "url": "studies/luke-01.html",
     "overview": {
       "where": "The temple in Jerusalem, Nazareth in Galilee, and a town in the hill country of Judaea",
-      "when": "“In the days of Herod, the king of Judaea” (1:5)",
+      "when": "“In the days of Herod, the king of Judaea” (1:5), about 7–5 BC",
       "people": [
         "theophilus",
         "zacharias",
@@ -8070,7 +8070,7 @@ window.STUDIES = [
     "url": "studies/luke-02.html",
     "overview": {
       "where": "From Nazareth to Bethlehem, the fields outside Bethlehem, the temple in Jerusalem, and home to Nazareth",
-      "when": "From the taxing under Caesar Augustus, when Jesus was born (2:1–7), to when he was twelve (2:42)",
+      "when": "From the taxing under Caesar Augustus, when Jesus was born (2:1–7), about 6–4 BC, to when he was twelve (2:42), about AD 7–9",
       "people": [
         "jesus",
         "mary",
@@ -8127,7 +8127,7 @@ window.STUDIES = [
     "url": "studies/luke-03.html",
     "overview": {
       "where": "The wilderness and the country along the Jordan River",
-      "when": "“The fifteenth year of the reign of Tiberius Caesar” (3:1)",
+      "when": "“The fifteenth year of the reign of Tiberius Caesar” (3:1), about AD 26–29",
       "people": [
         "john-the-baptist",
         "jesus",
@@ -8187,7 +8187,7 @@ window.STUDIES = [
     "url": "studies/luke-04.html",
     "overview": {
       "where": "The wilderness of Judaea and the temple in Jerusalem, then Galilee: the synagogue at Nazareth, and Capernaum by the lake",
-      "when": "Right after his baptism, at the start of his ministry, when he was about thirty (3:23)",
+      "when": "Right after his baptism, at the start of his ministry, when he was about thirty (3:23), about AD 27",
       "people": [
         "jesus",
         "holy-spirit",
@@ -8534,7 +8534,7 @@ window.STUDIES = [
     "url": "studies/luke-10.html",
     "overview": {
       "where": "On the road toward Jerusalem; the towns ahead of Jesus, the north shore of the Sea of Galilee, the Jerusalem–Jericho road in the story, and Martha's house in Bethany",
-      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "the-seventy",
@@ -8596,7 +8596,7 @@ window.STUDIES = [
     "url": "studies/luke-11.html",
     "overview": {
       "where": "On the road toward Jerusalem, in “a certain place” where Jesus prayed, among the gathering crowds, and at dinner in a Pharisee's house",
-      "when": "On Jesus' last journey to Jerusalem, in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem, in the last months before the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "disciples",
@@ -8707,7 +8707,7 @@ window.STUDIES = [
     "url": "studies/luke-13.html",
     "overview": {
       "where": "A synagogue on the sabbath, and the towns and villages along the road toward Jerusalem, likely in Herod's lands",
-      "when": "On Jesus' last journey to Jerusalem, while Pilate governed Judaea and Herod the tetrarch ruled Galilee and Perea (13:1, 31)",
+      "when": "On Jesus' last journey to Jerusalem, while Pilate governed Judaea and Herod the tetrarch ruled Galilee and Perea (13:1, 31), shortly before the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "galilaeans",
@@ -8910,7 +8910,7 @@ window.STUDIES = [
     "url": "studies/luke-17.html",
     "overview": {
       "where": "On the road to Jerusalem, along the border between Samaria and Galilee, at a village where ten lepers met him",
-      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "disciples",
@@ -8962,7 +8962,7 @@ window.STUDIES = [
     "url": "studies/luke-18.html",
     "overview": {
       "where": "On the road toward Jerusalem; the temple in the parable; then near Jericho, the last town before the climb up to Jerusalem",
-      "when": "Near the end of Jesus' last journey to Jerusalem, shortly before the Passover of the cross",
+      "when": "Near the end of Jesus' last journey to Jerusalem, shortly before the Passover of the cross (AD 30 or 33)",
       "people": [
         "jesus",
         "unjust-judge",
@@ -9015,7 +9015,7 @@ window.STUDIES = [
     "url": "studies/luke-19.html",
     "overview": {
       "where": "Jericho, the road climbing to Jerusalem, Bethphage and Bethany on the mount of Olives, and the temple",
-      "when": "The last days before the Passover at which Jesus was crucified, while Pilate governed Judaea",
+      "when": "The last days before the Passover at which Jesus was crucified (AD 30 or 33), while Pilate governed Judaea",
       "people": [
         "jesus",
         "zacchaeus",
@@ -9069,7 +9069,7 @@ window.STUDIES = [
     "url": "studies/luke-20.html",
     "overview": {
       "where": "The temple in Jerusalem, where Jesus taught the people each day",
-      "when": "The last week before the cross, while Tiberius was Caesar and Pilate governed Judaea",
+      "when": "The last week before the cross (AD 30 or 33), while Tiberius was Caesar and Pilate governed Judaea",
       "people": [
         "jesus",
         "chief-priests",
@@ -9127,7 +9127,7 @@ window.STUDIES = [
     "url": "studies/luke-21.html",
     "overview": {
       "where": "The temple in Jerusalem by day, and the mount of Olives by night",
-      "when": "Jesus' last days of teaching in the temple, just before the Passover (22:1)",
+      "when": "Jesus' last days of teaching in the temple, just before the Passover (22:1), AD 30 or 33",
       "people": [
         "jesus",
         "poor-widow"
@@ -9143,7 +9143,7 @@ window.STUDIES = [
         "Rich men drop gifts into the treasury. A poor widow casts in two mites, all she has, and Jesus says she gave more than they all (1–4).",
         "The men admire the temple's goodly stones. Jesus says not one will be left on another, and warns them first not to be deceived or terrified (5–11).",
         "Before the end, his people will be hated and dragged before kings, but he will give them a mouth and wisdom; in patience they possess their souls (12–19).",
-        "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was when Rome took it (20–24).",
+        "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was when Rome took it in AD 70 (20–24).",
         "Signs in the heavens, nations in distress, and the Son of man coming in a cloud: look up, for your redemption draweth nigh (25–33).",
         "Don't let surfeiting, drunkenness and the cares of this life weigh your heart down. Watch, and pray always. By day he teaches in the temple (34–38)."
       ],
@@ -9174,7 +9174,7 @@ window.STUDIES = [
     "url": "studies/luke-22.html",
     "overview": {
       "where": "An upper room in Jerusalem, the mount of Olives, then the high priest's house and the council",
-      "when": "The Passover night and the next morning, the night before the cross",
+      "when": "The Passover night and the next morning, the night before the cross, AD 30 or 33",
       "people": [
         "jesus",
         "judas-iscariot",
@@ -9228,7 +9228,7 @@ window.STUDIES = [
     "url": "studies/luke-23.html",
     "overview": {
       "where": "Jerusalem: before Pilate, then Herod, then Pilate again; out to Calvary just outside the city; then a new tomb nearby",
-      "when": "Friday of Passover week, from early morning to just before the sabbath began at sundown",
+      "when": "Friday of Passover week, AD 30 or 33, from early morning to just before the sabbath began at sundown",
       "people": [
         "jesus",
         "pilate",
@@ -9286,7 +9286,7 @@ window.STUDIES = [
     "url": "studies/luke-24.html",
     "overview": {
       "where": "The empty tomb outside Jerusalem; the road to Emmaus, about seven miles away, and back; a room in Jerusalem; then out toward Bethany",
-      "when": "Sunday, the third day after the cross, from very early morning into the night; then the ascension, forty days later (Acts 1:3)",
+      "when": "Sunday, the third day after the cross, AD 30 or 33, from very early morning into the night; then the ascension, forty days later (Acts 1:3)",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -9339,7 +9339,7 @@ window.STUDIES = [
     "url": "studies/acts-01.html",
     "overview": {
       "where": "Jerusalem: the Mount of Olives, and an upper room in the city",
-      "when": "The forty days after the resurrection (1:3) and the days before Pentecost",
+      "when": "The forty days after the resurrection (1:3) and the days before Pentecost, AD 30 or 33",
       "people": [
         "jesus",
         "theophilus",
@@ -9405,7 +9405,7 @@ window.STUDIES = [
     "url": "studies/acts-02.html",
     "overview": {
       "where": "Jerusalem, at the feast of Pentecost",
-      "when": "“When the day of Pentecost was fully come” (2:1), fifty days after the resurrection",
+      "when": "“When the day of Pentecost was fully come” (2:1), fifty days after the resurrection, AD 30 or 33",
       "people": [
         "jesus",
         "simon-peter",
@@ -9468,7 +9468,7 @@ window.STUDIES = [
     "url": "studies/acts-03.html",
     "overview": {
       "where": "The temple in Jerusalem: the Beautiful gate, then Solomon's porch",
-      "when": "Soon after Pentecost, at the ninth hour (about 3 p.m.)",
+      "when": "Soon after Pentecost (AD 30 or 33), at the ninth hour (about 3 p.m.)",
       "people": [
         "simon-peter",
         "john-the-apostle",
@@ -9517,7 +9517,7 @@ window.STUDIES = [
     "url": "studies/acts-04.html",
     "overview": {
       "where": "The temple court, the council chamber in Jerusalem, then the believers' meeting place",
-      "when": "The day after the healing in Acts 3 (4:3, 5)",
+      "when": "The day after the healing in Acts 3 (4:3, 5), soon after Pentecost (AD 30 or 33)",
       "people": [
         "simon-peter",
         "john-the-apostle",
@@ -9567,7 +9567,7 @@ window.STUDIES = [
     "url": "studies/acts-05.html",
     "overview": {
       "where": "Jerusalem: the temple courts, Solomon's porch, the common prison and the council chamber",
-      "when": "Soon after Acts 4, while the church in Jerusalem is still young",
+      "when": "Soon after Acts 4, while the church in Jerusalem is still young, before Stephen's death (about AD 34)",
       "people": [
         "ananias",
         "sapphira",
@@ -9616,7 +9616,7 @@ window.STUDIES = [
     "url": "studies/acts-06.html",
     "overview": {
       "where": "Jerusalem: the church's daily food for the widows, a synagogue, and the council chamber",
-      "when": "Soon after Acts 5, “when the number of the disciples was multiplied” (6:1)",
+      "when": "Soon after Acts 5, “when the number of the disciples was multiplied” (6:1), about AD 33–34",
       "people": [
         "grecian-jews",
         "hebrews-of-jerusalem",
@@ -9663,7 +9663,7 @@ window.STUDIES = [
     "url": "studies/acts-07.html",
     "overview": {
       "where": "Jerusalem, before the council; Stephen's story reaches Mesopotamia, Haran, Egypt, Midian and Sinai",
-      "when": "Right after Stephen is seized in Acts 6",
+      "when": "Right after Stephen is seized in Acts 6, about AD 34",
       "people": [
         "stephen",
         "abraham",
@@ -9717,7 +9717,7 @@ window.STUDIES = [
     "url": "studies/acts-08.html",
     "overview": {
       "where": "Jerusalem, Samaria, and the desert road from Jerusalem to Gaza, then Azotus and Caesarea",
-      "when": "Right after Stephen's death, “at that time” (8:1)",
+      "when": "Right after Stephen's death, “at that time” (8:1), about AD 34–35",
       "people": [
         "philip-the-evangelist",
         "simon-the-sorcerer",
@@ -9769,7 +9769,7 @@ window.STUDIES = [
     "url": "studies/acts-09.html",
     "overview": {
       "where": "The road to Damascus and the city, then Jerusalem, Caesarea and Tarsus; Peter at Lydda and Joppa",
-      "when": "Saul's conversion and the years right after it; “after three years” he went up to Jerusalem (Galatians 1:18)",
+      "when": "Saul's conversion, about AD 34–35, and the years right after it; “after three years” he went up to Jerusalem (Galatians 1:18), about AD 37",
       "people": [
         "jesus",
         "saul",
@@ -9824,7 +9824,7 @@ window.STUDIES = [
     "url": "studies/acts-10.html",
     "overview": {
       "where": "Caesarea and Joppa on the coast of Judaea, about thirty miles apart",
-      "when": "In the years after Saul's conversion, while Peter stays “many days in Joppa” (9:43)",
+      "when": "In the years after Saul's conversion, while Peter stays “many days in Joppa” (9:43); believed to be around AD 40",
       "people": [
         "cornelius",
         "simon-peter",
@@ -9871,7 +9871,7 @@ window.STUDIES = [
     "url": "studies/acts-11.html",
     "overview": {
       "where": "Jerusalem, then Antioch in Syria, Tarsus, and the road south to Judaea",
-      "when": "Soon after Cornelius; the famine comes “in the days of Claudius Caesar” (11:28)",
+      "when": "Soon after Cornelius; the famine comes “in the days of Claudius Caesar” (11:28), about AD 45–46",
       "people": [
         "simon-peter",
         "barnabas",
@@ -9926,7 +9926,7 @@ window.STUDIES = [
     "url": "studies/acts-12.html",
     "overview": {
       "where": "Jerusalem (the prison and Mary’s house), then Caesarea",
-      "when": "“About that time” (12:1), in the days of unleavened bread (12:3)",
+      "when": "“About that time” (12:1), in the days of unleavened bread (12:3); Herod dies in AD 44",
       "people": [
         "herod-agrippa",
         "james-brother-of-john",
@@ -9981,7 +9981,7 @@ window.STUDIES = [
     "url": "studies/acts-13.html",
     "overview": {
       "where": "Antioch in Syria, the island of Cyprus, then Antioch in Pisidia",
-      "when": "The start of Paul's first missionary journey",
+      "when": "The start of Paul's first missionary journey, about AD 46",
       "people": [
         "paul",
         "barnabas",
@@ -10040,7 +10040,7 @@ window.STUDIES = [
     "url": "studies/acts-14.html",
     "overview": {
       "where": "Iconium, Lystra and Derbe, then back through Pisidia and home to Antioch in Syria",
-      "when": "The first missionary journey, and the return to Antioch",
+      "when": "The first missionary journey, and the return to Antioch, about AD 46–48",
       "people": [
         "paul",
         "barnabas",
@@ -10095,7 +10095,7 @@ window.STUDIES = [
     "url": "studies/acts-15.html",
     "overview": {
       "where": "Antioch in Syria, the road to Jerusalem, the council at Jerusalem, and back to Antioch",
-      "when": "After the first journey and before the second",
+      "when": "After the first journey and before the second, about AD 49",
       "people": [
         "paul",
         "barnabas",
@@ -10149,7 +10149,7 @@ window.STUDIES = [
     "url": "studies/acts-16.html",
     "overview": {
       "where": "Lystra, across Asia Minor to Troas, then Philippi in Macedonia",
-      "when": "The second journey",
+      "when": "The second journey, about AD 49–52",
       "people": [
         "paul",
         "silas",
@@ -10202,7 +10202,7 @@ window.STUDIES = [
     "url": "studies/acts-17.html",
     "overview": {
       "where": "Thessalonica, Berea and Athens, on the second journey",
-      "when": "On the second journey",
+      "when": "On the second journey, about AD 50",
       "people": [
         "paul",
         "silas",
@@ -10257,7 +10257,7 @@ window.STUDIES = [
     "url": "studies/acts-18.html",
     "overview": {
       "where": "Corinth in Achaia, then home by Ephesus, Caesarea and Antioch; Apollos at Ephesus",
-      "when": "The end of the second journey: “a year and six months” at Corinth (18:11), “when Gallio was the deputy of Achaia” (18:12)",
+      "when": "The end of the second journey: “a year and six months” at Corinth (18:11), “when Gallio was the deputy of Achaia” (18:12); about AD 50–52, with Gallio in office AD 51–52",
       "people": [
         "paul",
         "aquila",
@@ -10316,7 +10316,7 @@ window.STUDIES = [
     "url": "studies/acts-19.html",
     "overview": {
       "where": "Ephesus, the chief city of Roman Asia, on the coast of what is now Turkey",
-      "when": "Paul's third journey: “the space of two years” at Ephesus (19:10)",
+      "when": "Paul's third journey: “the space of two years” at Ephesus (19:10), about AD 53–56",
       "people": [
         "paul",
         "disciples",
@@ -10366,7 +10366,7 @@ window.STUDIES = [
     "url": "studies/acts-20.html",
     "overview": {
       "where": "Greece, Troas and Miletus, on the coast of the Aegean Sea",
-      "when": "The end of Paul's third journey",
+      "when": "The end of Paul's third journey, about AD 57",
       "people": [
         "paul",
         "timothy",
@@ -10416,7 +10416,7 @@ window.STUDIES = [
     "url": "studies/acts-21.html",
     "overview": {
       "where": "The end of the third journey by sea (Miletus, Coos, Rhodes, Patara, Tyre, Ptolemais, Caesarea), then Jerusalem and the temple",
-      "when": "At the time of Pentecost (20:16), the end of Paul's third journey",
+      "when": "At the time of Pentecost (20:16), the end of Paul's third journey, about AD 57",
       "people": [
         "paul",
         "philip-the-evangelist",
@@ -10473,7 +10473,7 @@ window.STUDIES = [
     "url": "studies/acts-22.html",
     "overview": {
       "where": "The stairs of the Roman fortress beside the temple in Jerusalem, and in his story, the road to Damascus",
-      "when": "Right after the temple riot of Acts 21; Paul looks back to the Damascus road of Acts 9",
+      "when": "Right after the temple riot of Acts 21 (about AD 57); Paul looks back to the Damascus road of Acts 9 (about AD 34–35)",
       "people": [
         "paul",
         "jesus",
@@ -10523,7 +10523,7 @@ window.STUDIES = [
     "url": "studies/acts-23.html",
     "overview": {
       "where": "The council chamber and the Roman castle in Jerusalem, then by night to Antipatris and Caesarea",
-      "when": "Just after Paul's arrest in Jerusalem",
+      "when": "Just after Paul's arrest in Jerusalem, about AD 57",
       "people": [
         "paul",
         "ananias-high-priest",
@@ -10574,7 +10574,7 @@ window.STUDIES = [
     "url": "studies/acts-24.html",
     "overview": {
       "where": "The governor's headquarters at Caesarea",
-      "when": "The trial five days after the night ride (24:1), then two years in custody (24:27)",
+      "when": "The trial five days after the night ride (24:1), then two years in custody (24:27), about AD 57–59",
       "people": [
         "paul",
         "ananias-high-priest",
@@ -10620,7 +10620,7 @@ window.STUDIES = [
     "url": "studies/acts-25.html",
     "overview": {
       "where": "Caesarea, the Roman capital on the coast of Judaea, with Jerusalem about sixty miles away",
-      "when": "Two years after Paul's arrest, when Festus followed Felix (24:27)",
+      "when": "Two years after Paul's arrest, when Festus followed Felix (24:27), about AD 59",
       "people": [
         "paul",
         "festus",
@@ -10670,7 +10670,7 @@ window.STUDIES = [
     "url": "studies/acts-26.html",
     "overview": {
       "where": "The hearing room at Caesarea, and the Damascus road in Paul's story",
-      "when": "Soon after Festus comes (25:13); Paul looks back to the Damascus road of Acts 9",
+      "when": "Soon after Festus comes (25:13), about AD 59; Paul looks back to the Damascus road of Acts 9 (about AD 34–35)",
       "people": [
         "paul",
         "agrippa-ii",
@@ -10724,7 +10724,7 @@ window.STUDIES = [
     "url": "studies/acts-27.html",
     "overview": {
       "where": "From Caesarea by sea to Fair Havens on Crete, then fourteen days adrift in the Adria, ending on a beach on Malta",
-      "when": "Autumn, “because the fast was now already past” (27:9)",
+      "when": "Autumn, “because the fast was now already past” (27:9), about AD 59",
       "people": [
         "paul",
         "julius",
@@ -10776,7 +10776,7 @@ window.STUDIES = [
     "url": "studies/acts-28.html",
     "overview": {
       "where": "Melita (Malta), then Syracuse, Rhegium, Puteoli, Appii Forum and Rome",
-      "when": "Winter into spring, “after three months” (28:11), then “two whole years” in Rome (28:30)",
+      "when": "Winter into spring, “after three months” (28:11), then “two whole years” in Rome (28:30), about AD 60–62",
       "people": [
         "paul",
         "publius",
@@ -10830,7 +10830,7 @@ window.STUDIES = [
     "url": "studies/romans-01.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "jesus",
@@ -10876,7 +10876,7 @@ window.STUDIES = [
     "url": "studies/romans-02.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "jesus",
         "the-jews"
@@ -10916,7 +10916,7 @@ window.STUDIES = [
     "url": "studies/romans-03.html",
     "overview": {
       "where": "Paul’s letter to the church at Rome, written from Corinth",
-      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26)",
+      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "the-jews",
@@ -10958,7 +10958,7 @@ window.STUDIES = [
     "url": "studies/romans-04.html",
     "overview": {
       "where": "Paul’s letter to the church at Rome, looking back to Abraham in Canaan",
-      "when": "Written as Paul takes the gift to Jerusalem (15:25–26); the law came 430 years after the promise to Abraham (Galatians 3:17)",
+      "when": "Written as Paul takes the gift to Jerusalem (15:25–26), about AD 57; the law came 430 years after the promise to Abraham (Galatians 3:17)",
       "people": [
         "abraham",
         "david",
@@ -11004,7 +11004,7 @@ window.STUDIES = [
     "url": "studies/romans-05.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "jesus",
         "holy-spirit",
@@ -11049,7 +11049,7 @@ window.STUDIES = [
     "url": "studies/romans-06.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "jesus",
         "the-father"
@@ -11091,7 +11091,7 @@ window.STUDIES = [
     "url": "studies/romans-07.html",
     "overview": {
       "where": "A letter written from Corinth to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "jesus"
@@ -11134,7 +11134,7 @@ window.STUDIES = [
     "url": "studies/romans-08.html",
     "overview": {
       "where": "A letter written from Corinth to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "jesus",
@@ -11179,7 +11179,7 @@ window.STUDIES = [
     "url": "studies/romans-09.html",
     "overview": {
       "where": "Written from Corinth to the church at Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "abraham",
@@ -11233,7 +11233,7 @@ window.STUDIES = [
     "url": "studies/romans-10.html",
     "overview": {
       "where": "Written from Corinth to the church at Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "moses",
@@ -11280,7 +11280,7 @@ window.STUDIES = [
     "url": "studies/romans-11.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "elijah",
@@ -11329,7 +11329,7 @@ window.STUDIES = [
     "url": "studies/romans-12.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "Near the end of Paul's third journey, before Nero turned on the Christians in Rome",
+      "when": "Near the end of Paul's third journey, about AD 57, some seven years before Nero turned on the Christians in Rome",
       "people": [
         "paul",
         "saints-believers"
@@ -11371,7 +11371,7 @@ window.STUDIES = [
     "url": "studies/romans-13.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome, the emperor's own city",
-      "when": "Near the end of Paul's third journey, early in Nero's reign",
+      "when": "Near the end of Paul's third journey, about AD 57, early in Nero's reign (AD 54–68)",
       "people": [
         "paul",
         "jesus"
@@ -11414,7 +11414,7 @@ window.STUDIES = [
     "url": "studies/romans-14.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome, a church of Jewish and Gentile believers",
-      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26)",
+      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "jesus",
@@ -11458,7 +11458,7 @@ window.STUDIES = [
     "url": "studies/romans-15.html",
     "overview": {
       "where": "Paul writes from Corinth to the believers in Rome, looking back over his work from Jerusalem to Illyricum",
-      "when": "Just before Paul carries the gift to Jerusalem (15:25–26)",
+      "when": "Just before Paul carries the gift to Jerusalem (15:25–26), about AD 57",
       "people": [
         "paul",
         "jesus",
@@ -11512,7 +11512,7 @@ window.STUDIES = [
     "url": "studies/romans-16.html",
     "overview": {
       "where": "Written in Corinth, carried by Phebe from nearby Cenchrea to the churches in Rome",
-      "when": "The close of the letter, from Corinth (16:1, 23)",
+      "when": "The close of the letter, from Corinth (16:1, 23), about AD 57",
       "people": [
         "paul",
         "phebe",
@@ -11569,7 +11569,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-01.html",
     "overview": {
       "where": "Written from Ephesus, in Asia; sent to the church at Corinth, on the isthmus of Greece",
-      "when": "From Ephesus, before Pentecost (16:8); Paul had started the church on his second journey (Acts 18)",
+      "when": "From Ephesus, before Pentecost (16:8), about AD 55; Paul had started the church on his second journey (Acts 18)",
       "people": [
         "paul",
         "sosthenes",
@@ -11617,7 +11617,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-02.html",
     "overview": {
       "where": "Written from Ephesus to the church at Corinth, looking back on Paul's first visit",
-      "when": "From Ephesus (16:8), looking back on Paul's year and six months at Corinth (Acts 18:11)",
+      "when": "From Ephesus (16:8), looking back on Paul's year and six months at Corinth (Acts 18:11), about AD 50–52",
       "people": [
         "jesus",
         "holy-spirit"
@@ -11657,7 +11657,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-03.html",
     "overview": {
       "where": "Corinth, the church Paul planted, written from Ephesus",
-      "when": "From Ephesus (16:8), after Paul had planted and Apollos had watered (3:6; Acts 18:24–28)",
+      "when": "From Ephesus (16:8), about AD 55, after Paul had planted and Apollos had watered (3:6; Acts 18:24–28)",
       "people": [
         "paul",
         "apollos",
@@ -11705,7 +11705,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-04.html",
     "overview": {
       "where": "Corinth, the church Paul planted, written from Ephesus",
-      "when": "From Ephesus, before Pentecost (16:8)",
+      "when": "From Ephesus, before Pentecost (16:8), about AD 55",
       "people": [
         "paul",
         "apollos",
@@ -11750,7 +11750,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-05.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, in Greece",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "satan",
         "jesus"
@@ -11794,7 +11794,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-06.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, in Greece",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "saints-believers",
         "angels",
@@ -11839,7 +11839,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-07.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "paul",
         "jesus",
@@ -11885,7 +11885,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-08.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, a city of temples",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "paul",
         "the-father",
@@ -11930,7 +11930,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "A letter from Ephesus to the church in Corinth, the Greek port city beside the Isthmian games",
-      "when": "From Ephesus, before Pentecost (16:8)",
+      "when": "From Ephesus, before Pentecost (16:8), about AD 55",
       "people": [
         "paul",
         "barnabas",
@@ -11975,7 +11975,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "A letter from Ephesus to the church in Corinth, looking back to Israel in the wilderness",
-      "when": "From Ephesus, before Pentecost (16:8)",
+      "when": "From Ephesus, before Pentecost (16:8), about AD 55",
       "people": [
         "paul",
         "moses",
@@ -12020,7 +12020,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The church meeting in a house in Corinth, written to from Ephesus",
-      "when": "From Ephesus, before Pentecost (16:8)",
+      "when": "From Ephesus, before Pentecost (16:8), about AD 55",
       "people": [
         "jesus",
         "christ"
@@ -12060,7 +12060,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-12.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "paul",
         "holy-spirit",
@@ -12106,7 +12106,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-13.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "paul",
         "angels"
@@ -12148,7 +12148,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-14.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8), about AD 55",
       "people": [
         "paul",
         "brethren-believers",
@@ -12193,7 +12193,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-15.html",
     "overview": {
       "where": "Ephesus, where Paul wrote to the church in Corinth",
-      "when": "From Ephesus, on Paul's third journey (16:8; Acts 19)",
+      "when": "From Ephesus, on Paul's third journey (16:8; Acts 19), about AD 55",
       "people": [
         "jesus",
         "paul",
@@ -12241,7 +12241,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-16.html",
     "overview": {
       "where": "Ephesus, where Paul wrote; Corinth, Macedonia and Jerusalem in his plans",
-      "when": "From Ephesus, before Pentecost the next spring (16:8)",
+      "when": "From Ephesus, before Pentecost the next spring (16:8), about AD 55",
       "people": [
         "paul",
         "timothy",
@@ -12295,7 +12295,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-01.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth, with a look back at trouble in Asia and a changed travel plan",
-      "when": "From Macedonia (7:5), after 1 Corinthians, a painful visit and a letter written with tears",
+      "when": "From Macedonia (7:5), about AD 56, after 1 Corinthians, a painful visit and a letter written with tears",
       "people": [
         "paul",
         "timothy",
@@ -12343,7 +12343,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-02.html",
     "overview": {
       "where": "Written from Macedonia, looking back at Troas and Corinth",
-      "when": "From Macedonia (7:5); Paul recalls his painful visit and the letter written with many tears",
+      "when": "From Macedonia (7:5), about AD 56; Paul recalls his painful visit and the letter written with many tears",
       "people": [
         "paul",
         "titus",
@@ -12387,7 +12387,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-03.html",
     "overview": {
       "where": "Written from Macedonia to Corinth, looking back at Moses on Sinai",
-      "when": "From Macedonia (7:5); Moses and the old covenant long before, at Sinai",
+      "when": "From Macedonia (7:5), about AD 56; Moses and the old covenant at Sinai, about 1,500 years earlier",
       "people": [
         "paul",
         "moses",
@@ -12431,7 +12431,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-04.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "From Macedonia (7:5), near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), about AD 56, near the end of Paul's third journey",
       "people": [
         "jesus"
       ],
@@ -12473,7 +12473,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-05.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "From Macedonia (7:5), near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), about AD 56, near the end of Paul's third journey",
       "people": [
         "jesus",
         "holy-spirit"
@@ -12515,7 +12515,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-06.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "From Macedonia (7:5), near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), about AD 56, near the end of Paul's third journey",
       "people": [
         "corinthians",
         "holy-spirit"
@@ -12558,7 +12558,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, where Paul waits for news from Corinth",
-      "when": "From Macedonia (7:5), on Paul's third journey",
+      "when": "From Macedonia (7:5), about AD 56, on Paul's third journey",
       "people": [
         "titus"
       ],
@@ -12598,7 +12598,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, with the gift bound for Jerusalem",
-      "when": "From Macedonia (8:1), on Paul's third journey",
+      "when": "From Macedonia (8:1), about AD 56, on Paul's third journey",
       "people": [
         "titus",
         "saints-of-jerusalem"
@@ -12640,7 +12640,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, with the gift bound for Jerusalem",
-      "when": "From Macedonia (9:2), on Paul's third journey",
+      "when": "From Macedonia (9:2), about AD 56, on Paul's third journey",
       "people": [
         "saints-of-jerusalem"
       ],
@@ -12682,7 +12682,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, where Paul writes to the church at Corinth in Achaia",
-      "when": "From Macedonia, after 1 Corinthians, on Paul's third journey",
+      "when": "From Macedonia, a year after 1 Corinthians, about AD 56, on Paul's third journey",
       "people": [
         "paul",
         "christ"
@@ -12724,7 +12724,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, writing to Corinth; Damascus, Philippi and Lystra in his list",
-      "when": "From Macedonia, on Paul's third journey",
+      "when": "From Macedonia, on Paul's third journey, about AD 56",
       "people": [
         "paul",
         "christ",
@@ -12771,7 +12771,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-12.html",
     "overview": {
       "where": "Paul writing from Macedonia, looking back to a heavenly vision and ahead to Corinth",
-      "when": "From Macedonia, on Paul's third journey; the vision was “above fourteen years ago” (12:2)",
+      "when": "From Macedonia, on Paul's third journey, about AD 56; the vision was “above fourteen years ago” (12:2), about AD 42",
       "people": [
         "paul",
         "jesus",
@@ -12818,7 +12818,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-13.html",
     "overview": {
       "where": "Paul in Macedonia, about to make his third visit to Corinth",
-      "when": "From Macedonia, before Paul's third visit to Corinth (13:1)",
+      "when": "From Macedonia, before Paul's third visit to Corinth (13:1), about AD 56",
       "people": [
         "paul",
         "jesus",
@@ -12863,7 +12863,7 @@ window.STUDIES = [
     "url": "studies/galatians-01.html",
     "overview": {
       "where": "Written, many think, from Antioch in Syria to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe)",
-      "when": "Soon after Paul's first journey (“so soon removed,” 1:6), and just before the Jerusalem council",
+      "when": "Soon after Paul's first journey (“so soon removed,” 1:6), about AD 48–49, and just before the Jerusalem council",
       "people": [
         "paul",
         "jesus",
@@ -12915,7 +12915,7 @@ window.STUDIES = [
     "url": "studies/galatians-02.html",
     "overview": {
       "where": "Jerusalem, then Antioch in Syria",
-      "when": "Fourteen years after Paul came to Christ (2:1); written soon after the first journey",
+      "when": "Fourteen years after Paul came to Christ (2:1); written soon after the first journey, about AD 48–49",
       "people": [
         "paul",
         "barnabas",
@@ -12963,7 +12963,7 @@ window.STUDIES = [
     "url": "studies/galatians-03.html",
     "overview": {
       "where": "Paul’s letter to the churches of Galatia, the towns of his first journey",
-      "when": "Written soon after Paul's first journey; the law came 430 years after the promise to Abraham (3:17)",
+      "when": "Written soon after Paul's first journey, about AD 48–49; the law came 430 years after the promise to Abraham (3:17)",
       "people": [
         "paul",
         "abraham",
@@ -13007,7 +13007,7 @@ window.STUDIES = [
     "url": "studies/galatians-04.html",
     "overview": {
       "where": "Paul’s letter to the churches of Galatia, looking back to his first visit and to Abraham’s family",
-      "when": "Written soon after Paul's first journey; Christ was born “when the fulness of the time was come” (4:4), in the days of Herod the king",
+      "when": "Written soon after Paul's first journey, about AD 48–49; Christ was born “when the fulness of the time was come” (4:4), in the days of Herod the king, about 6–4 BC",
       "people": [
         "paul",
         "jesus",
@@ -13058,7 +13058,7 @@ window.STUDIES = [
     "url": "studies/galatians-05.html",
     "overview": {
       "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
-      "when": "Soon after Paul's first journey; chapter 5 opens the letter's last part: how a free man lives",
+      "when": "Soon after Paul's first journey, about AD 48–49; chapter 5 opens the letter's last part: how a free man lives",
       "people": [
         "paul",
         "jesus",
@@ -13102,7 +13102,7 @@ window.STUDIES = [
     "url": "studies/galatians-06.html",
     "overview": {
       "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
-      "when": "Soon after Paul's first journey; the letter's last chapter, which Paul finishes in his own hand",
+      "when": "Soon after Paul's first journey, about AD 48–49; the letter's last chapter, which Paul finishes in his own hand",
       "people": [
         "paul",
         "jesus",
@@ -13146,7 +13146,7 @@ window.STUDIES = [
     "url": "studies/ephesians-01.html",
     "overview": {
       "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13192,7 +13192,7 @@ window.STUDIES = [
     "url": "studies/ephesians-02.html",
     "overview": {
       "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "jesus",
         "the-father",
@@ -13240,7 +13240,7 @@ window.STUDIES = [
     "url": "studies/ephesians-03.html",
     "overview": {
       "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13290,7 +13290,7 @@ window.STUDIES = [
     "url": "studies/ephesians-04.html",
     "overview": {
       "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13342,7 +13342,7 @@ window.STUDIES = [
     "url": "studies/ephesians-05.html",
     "overview": {
       "where": "Paul, a prisoner in Rome, writing to the believers at Ephesus",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13388,7 +13388,7 @@ window.STUDIES = [
     "url": "studies/ephesians-06.html",
     "overview": {
       "where": "Paul, chained to a Roman soldier in Rome, writing to the believers at Ephesus; Tychicus carries the letter",
-      "when": "In bonds (6:20), during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13436,7 +13436,7 @@ window.STUDIES = [
     "url": "studies/philippians-01.html",
     "overview": {
       "where": "Rome, where Paul is under house arrest; the letter goes to Philippi in Macedonia",
-      "when": "In bonds (1:13), in Paul's first Roman imprisonment",
+      "when": "In bonds (1:13), in Paul's first Roman imprisonment, about AD 60–62",
       "people": [
         "paul",
         "timothy",
@@ -13481,7 +13481,7 @@ window.STUDIES = [
     "url": "studies/philippians-02.html",
     "overview": {
       "where": "Rome, where Paul writes; Philippi, where the letter is read",
-      "when": "In bonds (1:13), during Paul's house arrest in Rome",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13526,7 +13526,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
-      "when": "In bonds (1:13), during Paul's house arrest in Rome",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "jesus",
         "pharisees"
@@ -13570,7 +13570,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
-      "when": "In bonds (1:13), during Paul's house arrest in Rome",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "jesus",
         "euodias",
@@ -13619,7 +13619,7 @@ window.STUDIES = [
     "url": "studies/colossians-01.html",
     "overview": {
       "where": "Written from Rome, where Paul was under house arrest, to the church at Colosse in the Lycus valley in Asia (now Turkey)",
-      "when": "In bonds (4:18), in the years Paul was held in Rome",
+      "when": "In bonds (4:18), in the years Paul was held in Rome, about AD 60–62",
       "people": [
         "paul",
         "timothy",
@@ -13665,7 +13665,7 @@ window.STUDIES = [
     "url": "studies/colossians-02.html",
     "overview": {
       "where": "Written from Rome to the church at Colosse, with a thought for Laodicea nearby",
-      "when": "In bonds (4:18), during Paul's house arrest in Rome",
+      "when": "In bonds (4:18), during Paul's house arrest in Rome, about AD 60–62",
       "people": [
         "paul",
         "jesus",
@@ -13708,7 +13708,7 @@ window.STUDIES = [
     "url": "studies/colossians-03.html",
     "overview": {
       "where": "Paul writes from a house in Rome, to the church at Colosse in Asia (now Turkey)",
-      "when": "In bonds (4:18), while Paul was under house arrest in Rome",
+      "when": "In bonds (4:18), while Paul was under house arrest in Rome, about AD 60–62",
       "people": [
         "jesus",
         "the-father"
@@ -13749,7 +13749,7 @@ window.STUDIES = [
     "url": "studies/colossians-04.html",
     "overview": {
       "where": "Paul in Rome, writing to Colosse, with greetings from his friends and a note about Laodicea and Hierapolis nearby",
-      "when": "In bonds (4:18), in Paul's first Roman imprisonment",
+      "when": "In bonds (4:18), in Paul's first Roman imprisonment, about AD 60–62",
       "people": [
         "tychicus",
         "onesimus",
@@ -13803,7 +13803,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written from Corinth to the church in Thessalonica, the capital of Macedonia (northern Greece)",
-      "when": "From Corinth, after Timothy came back with good news from Thessalonica (1 Thessalonians 3:6; Acts 18:5), on Paul's second journey",
+      "when": "From Corinth, after Timothy came back with good news from Thessalonica (1 Thessalonians 3:6; Acts 18:5), on Paul's second journey, about AD 50–51",
       "people": [
         "paul",
         "silvanus",
@@ -13852,7 +13852,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written from Corinth to Thessalonica. Paul looks back at his time among them, with Philippi and Judaea in the background",
-      "when": "From Corinth, only “a short time” after Paul was taken from them (2:17)",
+      "when": "From Corinth, only “a short time” after Paul was taken from them (2:17), about AD 50–51",
       "people": [
         "paul",
         "jesus",
@@ -13898,7 +13898,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Paul alone in Athens, then at Corinth; Timothy sent to Thessalonica and back",
-      "when": "From Corinth, just after Timothy came back from Thessalonica (3:6; Acts 18:5)",
+      "when": "From Corinth, just after Timothy came back from Thessalonica (3:6; Acts 18:5), about AD 50–51",
       "people": [
         "paul",
         "timothy",
@@ -13945,7 +13945,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Corinth, where Paul writes after Timothy's report, to the young church at Thessalonica in Macedonia",
-      "when": "From Corinth, after Timothy's report (3:6), on Paul's second journey (Acts 18:5)",
+      "when": "From Corinth, after Timothy's report (3:6), on Paul's second journey (Acts 18:5), about AD 50–51",
       "people": [
         "paul",
         "jesus",
@@ -13992,7 +13992,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Corinth, where Paul writes to the young church at Thessalonica",
-      "when": "From Corinth, after Timothy's report (3:6); Paul had been driven out of Thessalonica (Acts 17:10)",
+      "when": "From Corinth, after Timothy's report (3:6); Paul had been driven out of Thessalonica (Acts 17:10), about AD 50–51",
       "people": [
         "paul",
         "jesus",
@@ -14038,7 +14038,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-01.html",
     "overview": {
       "where": "Written from Corinth to the church at Thessalonica, the capital and chief port of Macedonia (northern Greece)",
-      "when": "Soon after 1 Thessalonians, still at Corinth with Silvanus and Timotheus (1:1; Acts 18:5), on Paul's second journey",
+      "when": "Soon after 1 Thessalonians, still at Corinth with Silvanus and Timotheus (1:1; Acts 18:5), on Paul's second journey, about AD 50–51",
       "people": [
         "paul",
         "silvanus",
@@ -14087,7 +14087,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-02.html",
     "overview": {
       "where": "Written from Corinth to the church at Thessalonica in Macedonia",
-      "when": "Soon after a rumor or a forged letter said “the day of Christ is at hand” (2:2)",
+      "when": "Soon after a rumor or a forged letter said “the day of Christ is at hand” (2:2), about AD 50–51",
       "people": [
         "paul",
         "jesus",
@@ -14134,7 +14134,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-03.html",
     "overview": {
       "where": "Written from Corinth, where Paul worked as a tentmaker, to the church at Thessalonica",
-      "when": "Soon after 1 Thessalonians, from Corinth; the end of the letter",
+      "when": "Soon after 1 Thessalonians, from Corinth; the end of the letter, about AD 50–51",
       "people": [
         "paul",
         "jesus",
@@ -14178,7 +14178,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-01.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "After Paul was released from his first imprisonment in Rome, when he went into Macedonia and left Timothy at Ephesus (1:3)",
+      "when": "After Paul was released from his first imprisonment in Rome, when he went into Macedonia and left Timothy at Ephesus (1:3), about AD 62–64",
       "people": [
         "paul",
         "timothy",
@@ -14225,7 +14225,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-02.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "After Paul was free to travel again (1:3)",
+      "when": "After Paul was free to travel again (1:3), about AD 62–64",
       "people": [
         "paul",
         "timothy",
@@ -14267,7 +14267,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-03.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "After Paul was free to travel again; he hoped to come to Timothy shortly (3:14)",
+      "when": "After Paul was free to travel again; he hoped to come to Timothy shortly (3:14), about AD 62–64",
       "people": [
         "paul",
         "timothy"
@@ -14306,7 +14306,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, where Paul had left Timothy in charge of the church",
-      "when": "After Paul was freed from his Roman house arrest (Acts 28:30; 1 Timothy 1:3)",
+      "when": "After Paul was freed from his Roman house arrest (Acts 28:30; 1 Timothy 1:3), about AD 62–64",
       "people": [
         "Paul",
         "Timothy"
@@ -14348,7 +14348,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, in the church Timothy was leading",
-      "when": "After Paul's release, with Timothy left at Ephesus (1:3)",
+      "when": "After Paul's release, with Timothy left at Ephesus (1:3), about AD 62–64",
       "people": [
         "Paul",
         "Timothy",
@@ -14391,7 +14391,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, in the church Timothy was leading",
-      "when": "After Paul's release, while Timothy led the church at Ephesus (1:3)",
+      "when": "After Paul's release, while Timothy led the church at Ephesus (1:3), about AD 62–64",
       "people": [
         "Paul",
         "timothy",
@@ -14435,7 +14435,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-01.html",
     "overview": {
       "where": "A prison in Rome, with the letter going to Timothy, most likely at Ephesus",
-      "when": "In bonds again in Rome (1:8, 17); Paul's last letter",
+      "when": "In bonds again in Rome (1:8, 17); Paul's last letter, about AD 66–67",
       "people": [
         "paul",
         "timothy",
@@ -14486,7 +14486,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-02.html",
     "overview": {
       "where": "Paul's prison cell in Rome, with the letter going to Timothy, most likely at Ephesus",
-      "when": "Suffering “as an evil doer, even unto bonds” (2:9); Paul's last letter",
+      "when": "Suffering “as an evil doer, even unto bonds” (2:9); Paul's last letter, about AD 66–67",
       "people": [
         "paul",
         "timothy",
@@ -14529,7 +14529,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-03.html",
     "overview": {
       "where": "Written from a Roman prison, to Timothy at Ephesus; Paul's old trouble spots, Antioch in Pisidia, Iconium and Lystra, are remembered",
-      "when": "Near the end of Paul's life; Paul recalls his first journey (3:11; Acts 13–14)",
+      "when": "Near the end of Paul's life, about AD 66–67; Paul recalls his first journey (3:11; Acts 13–14), about AD 46–48",
       "people": [
         "paul",
         "timothy",
@@ -14575,7 +14575,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-04.html",
     "overview": {
       "where": "Written from a prison in Rome to Timothy at Ephesus, with friends named in Thessalonica, Galatia, Dalmatia, Troas and Corinth",
-      "when": "Paul's last letter: “the time of my departure is at hand” (4:6); by tradition he was put to death in Rome soon after",
+      "when": "Paul's last letter: “the time of my departure is at hand” (4:6), about AD 66–67; by tradition he was put to death in Rome soon after, about AD 67–68",
       "people": [
         "paul",
         "timothy",
@@ -14629,7 +14629,7 @@ window.STUDIES = [
     "url": "studies/titus-01.html",
     "overview": {
       "where": "The island of Crete, where Paul left Titus; Paul himself is on the road, a free man again",
-      "when": "After Paul's release from house arrest in Rome (Acts 28:30), when he left Titus in Crete (1:5)",
+      "when": "After Paul's release from house arrest in Rome (Acts 28:30), when he left Titus in Crete (1:5), about AD 62–64",
       "people": [
         "paul",
         "titus",
@@ -14672,7 +14672,7 @@ window.STUDIES = [
     "url": "studies/titus-02.html",
     "overview": {
       "where": "The churches of Crete, in homes and at work",
-      "when": "After Paul was free to travel again, with Titus left in Crete (1:5)",
+      "when": "After Paul was free to travel again, with Titus left in Crete (1:5), about AD 62–64",
       "people": [
         "jesus"
       ],
@@ -14711,7 +14711,7 @@ window.STUDIES = [
     "url": "studies/titus-03.html",
     "overview": {
       "where": "Crete, with Paul planning to winter at Nicopolis",
-      "when": "After Paul was free again, planning to winter at Nicopolis (3:12)",
+      "when": "After Paul was free again, planning to winter at Nicopolis (3:12), about AD 62–64",
       "people": [
         "jesus",
         "artemas",
@@ -14756,7 +14756,7 @@ window.STUDIES = [
     "url": "studies/philemon-01.html",
     "overview": {
       "where": "Written from Paul's rented house in Rome, to Philemon's house at Colosse, a small town in Asia",
-      "when": "Written in bonds (verses 1, 9), the same time as Colossians and Ephesians",
+      "when": "Written in bonds (verses 1, 9), about AD 60–62, the same time as Colossians and Ephesians",
       "people": [
         "paul",
         "timothy",
@@ -14808,7 +14808,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Sent to Jewish believers in Jesus; the letter has friends in Italy (“They of Italy salute you,” 13:24), and the temple in Jerusalem still stands",
-      "when": "After Timothy was “set at liberty” (13:23), while the temple still stood, before Rome destroyed Jerusalem as Jesus foretold (Matthew 24:2)",
+      "when": "After Timothy was “set at liberty” (13:23), about AD 64–68, while the temple still stood, before Rome destroyed Jerusalem in AD 70 as Jesus foretold (Matthew 24:2)",
       "people": [
         "jesus",
         "the-father",
@@ -14854,7 +14854,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Sent to Jewish believers in Jesus who were tempted to drift back to the old system; the letter has friends in Italy (13:24)",
-      "when": "While the temple in Jerusalem was still standing and its priests still offered gifts (8:4)",
+      "when": "While the temple in Jerusalem was still standing and its priests still offered gifts (8:4), about AD 64–68",
       "people": [
         "jesus",
         "angels",
@@ -14901,7 +14901,7 @@ window.STUDIES = [
     "url": "studies/hebrews-03.html",
     "overview": {
       "where": "A letter to Jewish believers tempted to slip back into the old religion; the chapter looks back to Israel's forty years in the wilderness between Egypt and Canaan",
-      "when": "Written while the temple still stood; it looks back to the wilderness (Numbers 14) and to David's Psalm 95 (4:7)",
+      "when": "Written while the temple still stood, about AD 64–68; it looks back to the wilderness (Numbers 14), about 1445 BC, and to David's Psalm 95 (4:7)",
       "people": [
         "jesus",
         "moses",
@@ -14947,7 +14947,7 @@ window.STUDIES = [
     "url": "studies/hebrews-04.html",
     "overview": {
       "where": "A letter to Jewish believers; the chapter moves from the wilderness and Canaan to the throne of God in heaven",
-      "when": "Written while the temple still stood, looking back to creation's seventh day, Joshua, and David's Psalm 95",
+      "when": "Written while the temple still stood, about AD 64–68, looking back to creation's seventh day, Joshua, and David's Psalm 95",
       "people": [
         "jesus",
         "joshua-called-jesus",
@@ -14991,7 +14991,7 @@ window.STUDIES = [
     "url": "studies/hebrews-05.html",
     "overview": {
       "where": "A letter to Hebrew believers; the writer and the place are not named",
-      "when": "While the priests still offered in the temple (8:4), before it fell",
+      "when": "While the priests still offered in the temple (8:4), about AD 64–68, before it fell in AD 70",
       "people": [
         "jesus",
         "aaron",
@@ -15034,7 +15034,7 @@ window.STUDIES = [
     "url": "studies/hebrews-06.html",
     "overview": {
       "where": "A letter to Hebrew believers; the writer and the place are not named",
-      "when": "Before the temple fell; Timothy had been “set at liberty” (13:23)",
+      "when": "Before the temple fell in AD 70; Timothy had been “set at liberty” (13:23), about AD 64–68",
       "people": [
         "jesus",
         "holy-spirit",
@@ -15076,7 +15076,7 @@ window.STUDIES = [
     "url": "studies/hebrews-07.html",
     "overview": {
       "where": "A letter to Jewish believers tempted to go back to the temple; it looks back to Salem (Jerusalem) in Genesis 14",
-      "when": "Written while the priests of Levi still served (8:4); Melchisedec met Abraham in Genesis 14",
+      "when": "Written while the priests of Levi still served (8:4), about AD 64–68; Melchisedec met Abraham in Genesis 14, about 2085 BC",
       "people": [
         "melchisedec",
         "abraham",
@@ -15124,7 +15124,7 @@ window.STUDIES = [
     "url": "studies/hebrews-08.html",
     "overview": {
       "where": "A letter to Jewish believers; it looks back to the tabernacle at Mount Sinai and the promise in Jeremiah 31",
-      "when": "Written while the old covenant was “ready to vanish away” (8:13), before the temple fell",
+      "when": "Written while the old covenant was “ready to vanish away” (8:13), about AD 64–68, before the temple fell in AD 70",
       "people": [
         "jesus",
         "moses"
@@ -15169,7 +15169,7 @@ window.STUDIES = [
     "url": "studies/hebrews-09.html",
     "overview": {
       "where": "The tabernacle of Moses' day, and heaven itself; written to Hebrew believers while the temple in Jerusalem still stood",
-      "when": "Written while the priests still went in daily (9:6), before the temple fell",
+      "when": "Written while the priests still went in daily (9:6), about AD 64–68, before the temple fell in AD 70",
       "people": [
         "jesus",
         "moses",
@@ -15217,7 +15217,7 @@ window.STUDIES = [
     "url": "studies/hebrews-10.html",
     "overview": {
       "where": "Written to Hebrew believers tempted to go back to the temple sacrifices",
-      "when": "Written while the priests still stood “daily ministering” (10:11), before the temple fell",
+      "when": "Written while the priests still stood “daily ministering” (10:11), about AD 64–68, before the temple fell in AD 70",
       "people": [
         "jesus",
         "holy-spirit",
@@ -15266,7 +15266,7 @@ window.STUDIES = [
     "url": "studies/hebrews-11.html",
     "overview": {
       "where": "A letter to Jewish believers; its stories run from Ur and Canaan down to Egypt, through the Red sea, and in at Jericho",
-      "when": "Written while the temple still stood; the stories reach from Abel to the years before Christ",
+      "when": "Written while the temple still stood, about AD 64–68; the stories reach from Abel to the years before Christ",
       "people": [
         "abel",
         "cain",
@@ -15327,7 +15327,7 @@ window.STUDIES = [
     "url": "studies/hebrews-12.html",
     "overview": {
       "where": "A letter to Jewish believers; its pictures move from a stadium to mount Sinai and mount Sion, the heavenly Jerusalem",
-      "when": "Written while the temple still stood, to believers tempted to give up",
+      "when": "Written while the temple still stood, to believers tempted to give up, about AD 64–68",
       "people": [
         "jesus",
         "cloud-of-witnesses",
@@ -15375,7 +15375,7 @@ window.STUDIES = [
     "url": "studies/hebrews-13.html",
     "overview": {
       "where": "Written to Jewish believers under pressure; greetings come from “they of Italy”",
-      "when": "Before Rome destroyed the temple; Timothy had been “set at liberty” (13:23)",
+      "when": "Before Rome destroyed the temple in AD 70; Timothy had been “set at liberty” (13:23), about AD 64–68",
       "people": [
         "jesus",
         "rulers-over-you",
@@ -15423,7 +15423,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Jerusalem, where James led the church, writing to Jewish believers scattered across the Roman world",
-      "when": "James names no date; he writes to “the twelve tribes which are scattered abroad” (1:1)",
+      "when": "James names no date; he writes to “the twelve tribes which are scattered abroad” (1:1). It is believed to be one of the earliest letters, around AD 45–50",
       "people": [
         "james",
         "jesus"
@@ -15465,7 +15465,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The church assembly at Jerusalem, and the stories of Abraham and Rahab",
-      "when": "James names no date",
+      "when": "James names no date; believed to be around AD 45–50",
       "people": [
         "abraham",
         "isaac",
@@ -15507,7 +15507,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The churches of the scattered believers, with pictures from stables, ships and forests",
-      "when": "James names no date",
+      "when": "James names no date; believed to be around AD 45–50",
       "people": [
         "the-father"
       ],
@@ -15545,7 +15545,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
-      "when": "James names no date; he writes to the believers scattered abroad (1:1)",
+      "when": "James names no date; he writes to the believers scattered abroad (1:1); believed to be around AD 45–50",
       "people": [
         "devil"
       ],
@@ -15583,7 +15583,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
-      "when": "James names no date; he writes to the believers scattered abroad (1:1)",
+      "when": "James names no date; he writes to the believers scattered abroad (1:1); believed to be around AD 45–50",
       "people": [
         "job",
         "elijah",
@@ -15624,7 +15624,7 @@ window.STUDIES = [
     "url": "studies/1-peter-01.html",
     "overview": {
       "where": "Written from “Babylon” (Rome) to believers scattered across what is now Turkey",
-      "when": "Written from “Babylon” (5:13)",
+      "when": "Written from “Babylon” (5:13), about AD 62–64, just before Nero (AD 54–68) turned on the Christians",
       "people": [
         "simon-peter",
         "jesus",
@@ -15672,7 +15672,7 @@ window.STUDIES = [
     "url": "studies/1-peter-02.html",
     "overview": {
       "where": "Believers scattered across Asia Minor, living among unbelieving neighbours",
-      "when": "Written from “Babylon” (5:13), under kings and governors (2:13–14)",
+      "when": "Written from “Babylon” (5:13), about AD 62–64, under kings and governors (2:13–14); the emperor was Nero (AD 54–68)",
       "people": [
         "jesus"
       ],
@@ -15714,7 +15714,7 @@ window.STUDIES = [
     "url": "studies/1-peter-03.html",
     "overview": {
       "where": "Believers' homes and workplaces across Asia Minor",
-      "when": "Written from “Babylon” (5:13)",
+      "when": "Written from “Babylon” (5:13), about AD 62–64",
       "people": [
         "jesus",
         "noah",
@@ -15757,7 +15757,7 @@ window.STUDIES = [
     "url": "studies/1-peter-04.html",
     "overview": {
       "where": "Rome (“Babylon”), writing to believers scattered across Asia Minor",
-      "when": "Written from “Babylon” (5:13), as “the fiery trial” comes on (4:12)",
+      "when": "Written from “Babylon” (5:13), about AD 62–64, as “the fiery trial” comes on (4:12); Rome burned in AD 64",
       "people": [
         "christ",
         "gentiles"
@@ -15796,7 +15796,7 @@ window.STUDIES = [
     "url": "studies/1-peter-05.html",
     "overview": {
       "where": "Rome (“Babylon”), the letter carried by Silvanus to believers in Asia Minor",
-      "when": "Written from “Babylon” (5:13)",
+      "when": "Written from “Babylon” (5:13), about AD 62–64",
       "people": [
         "elders",
         "silvanus",
@@ -15840,7 +15840,7 @@ window.STUDIES = [
     "url": "studies/2-peter-01.html",
     "overview": {
       "where": "Rome, most likely, and the scattered churches of what is now Turkey",
-      "when": "Peter's last letter: “shortly I must put off this my tabernacle” (1:14)",
+      "when": "Peter's last letter: “shortly I must put off this my tabernacle” (1:14); about AD 64–68, in the last years of Nero (AD 54–68)",
       "people": [
         "simon-peter",
         "jesus",
@@ -15885,7 +15885,7 @@ window.STUDIES = [
     "url": "studies/2-peter-02.html",
     "overview": {
       "where": "The scattered churches of what is now Turkey, with Old Testament scenes: the flood, Sodom and Balaam's road",
-      "when": "In Peter's last letter (1:14)",
+      "when": "In Peter's last letter (1:14), about AD 64–68",
       "people": [
         "noah",
         "lot",
@@ -15931,7 +15931,7 @@ window.STUDIES = [
     "url": "studies/2-peter-03.html",
     "overview": {
       "where": "The scattered churches of what is now Turkey, from Peter in Rome",
-      "when": "Peter's last letter, shortly before his death (1:14)",
+      "when": "Peter's last letter, shortly before his death (1:14); about AD 64–68",
       "people": [
         "jesus",
         "paul",
@@ -15972,7 +15972,7 @@ window.STUDIES = [
     "url": "studies/1-john-01.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus, most likely to the churches of Asia around it",
-      "when": "Late in John's life, when he calls his readers “my little children” (2:1)",
+      "when": "Late in John's life, when he calls his readers “my little children” (2:1); about AD 85–95, before Revelation (about AD 95)",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16016,7 +16016,7 @@ window.STUDIES = [
     "url": "studies/1-john-02.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
-      "when": "Late in John's life",
+      "when": "Late in John's life, about AD 85–95",
       "people": [
         "jesus",
         "the-father",
@@ -16062,7 +16062,7 @@ window.STUDIES = [
     "url": "studies/1-john-03.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
-      "when": "Late in John's life",
+      "when": "Late in John's life, about AD 85–95",
       "people": [
         "the-father",
         "jesus",
@@ -16110,7 +16110,7 @@ window.STUDIES = [
     "url": "studies/1-john-04.html",
     "overview": {
       "where": "Written by John from Ephesus, likely to the churches of Asia around it",
-      "when": "Late in John's life, when he was an old man",
+      "when": "Late in John's life, when he was an old man; about AD 85–95",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16155,7 +16155,7 @@ window.STUDIES = [
     "url": "studies/1-john-05.html",
     "overview": {
       "where": "Written by John from Ephesus, likely to the churches of Asia around it",
-      "when": "Late in John's life, at the end of his letter",
+      "when": "Late in John's life, about AD 85–95, at the end of his letter",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16200,7 +16200,7 @@ window.STUDIES = [
     "url": "studies/2-john-01.html",
     "overview": {
       "where": "A church or household in Asia, written from Ephesus by tradition",
-      "when": "Late in John's life; he calls himself “the elder” (1)",
+      "when": "Late in John's life; he calls himself “the elder” (1); about AD 85–95",
       "people": [
         "the-elder",
         "elect-lady",
@@ -16241,7 +16241,7 @@ window.STUDIES = [
     "url": "studies/3-john-01.html",
     "overview": {
       "where": "A church in Asia, written from Ephesus by tradition",
-      "when": "Late in John's life; he calls himself “the elder” (1)",
+      "when": "Late in John's life; he calls himself “the elder” (1); about AD 85–95",
       "people": [
         "the-elder",
         "gaius-of-3-john",
@@ -16283,7 +16283,7 @@ window.STUDIES = [
     "url": "studies/jude-01.html",
     "overview": {
       "where": "Not said. Probably the region of Jerusalem, where his brother James led the church",
-      "when": "Jude names no date",
+      "when": "Jude names no date; believed to be around AD 64–68, near the time of 2 Peter",
       "people": [
         "jude",
         "james-the-lords-brother",
@@ -16332,7 +16332,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The island of Patmos, off the coast of Asia, writing to seven churches on the mainland: Ephesus, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia and Laodicea",
-      "when": "John names no year; he is on the isle of Patmos, “in tribulation” for the word of God (1:9)",
+      "when": "John names no year; he is on the isle of Patmos, “in tribulation” for the word of God (1:9); believed to be about AD 95, under the emperor Domitian (AD 81–96)",
       "people": [
         "jesus",
         "john-the-apostle",
@@ -16385,7 +16385,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Letters sent from Patmos to four churches of Asia: Ephesus, Smyrna, Pergamos and Thyatira",
-      "when": "John “in the isle that is called Patmos” (1:9), by tradition the last of the apostles still living",
+      "when": "John “in the isle that is called Patmos” (1:9), about AD 95, by tradition the last of the apostles still living",
       "people": [
         "jesus",
         "angel-of-the-church",
@@ -16438,7 +16438,7 @@ window.STUDIES = [
     "url": "studies/revelation-03.html",
     "overview": {
       "where": "Letters sent from Patmos to three churches of Asia: Sardis, Philadelphia and Laodicea",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "jesus",
         "holy-spirit",
@@ -16486,7 +16486,7 @@ window.STUDIES = [
     "url": "studies/revelation-04.html",
     "overview": {
       "where": "A vision of the throne room of heaven, seen by John on Patmos",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "lord-god-almighty",
         "twenty-four-elders",
@@ -16531,7 +16531,7 @@ window.STUDIES = [
     "url": "studies/revelation-05.html",
     "overview": {
       "where": "Heaven, before the throne of God, in John's vision on Patmos",
-      "when": "On Patmos (1:9), the same vision as chapter 4",
+      "when": "On Patmos (1:9), about AD 95, the same vision as chapter 4",
       "people": [
         "the-lamb",
         "john-the-apostle",
@@ -16576,7 +16576,7 @@ window.STUDIES = [
     "url": "studies/revelation-06.html",
     "overview": {
       "where": "Heaven's throne room, and the earth below, in John's vision on Patmos",
-      "when": "On Patmos (1:9); teachers read the seals as past, all through history, or still to come",
+      "when": "On Patmos (1:9), about AD 95; teachers read the seals as past, all through history, or still to come",
       "people": [
         "the-lamb",
         "four-beasts",
@@ -16622,7 +16622,7 @@ window.STUDIES = [
     "url": "studies/revelation-07.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "the-lamb",
         "angels",
@@ -16668,7 +16668,7 @@ window.STUDIES = [
     "url": "studies/revelation-08.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "angels",
         "saints-believers",
@@ -16712,7 +16712,7 @@ window.STUDIES = [
     "url": "studies/revelation-09.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the vision reaches the bottomless pit and the river Euphrates",
-      "when": "On Patmos (1:9); teachers read the trumpets as past, all through history, or still to come",
+      "when": "On Patmos (1:9), about AD 95, under Domitian; teachers read the trumpets as past, all through history, or still to come",
       "people": [
         "angels",
         "abaddon",
@@ -16759,7 +16759,7 @@ window.STUDIES = [
     "url": "studies/revelation-10.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the angel stands on the sea and the earth",
-      "when": "On Patmos (1:9); a pause between the sixth and seventh trumpets",
+      "when": "On Patmos (1:9), about AD 95, under Domitian; a pause between the sixth and seventh trumpets",
       "people": [
         "mighty-angel",
         "angels",
@@ -16802,7 +16802,7 @@ window.STUDIES = [
     "url": "studies/revelation-11.html",
     "overview": {
       "where": "Patmos, where John sees the temple measured, \"the great city\" where the witnesses fall, and the temple of God opened in heaven",
-      "when": "On Patmos (1:9); the seventh trumpet looks ahead to Christ's reign",
+      "when": "On Patmos (1:9), about AD 95, under Domitian; the seventh trumpet looks ahead to Christ's reign",
       "people": [
         "two-witnesses",
         "the-beast",
@@ -16850,7 +16850,7 @@ window.STUDIES = [
     "url": "studies/revelation-12.html",
     "overview": {
       "where": "Patmos, where John sees signs in heaven, a war there, and the woman kept in the wilderness",
-      "when": "On Patmos (1:9); the vision reaches back to Christ's birth and ascension",
+      "when": "On Patmos (1:9), about AD 95, under Domitian; the vision reaches back to Christ's birth and ascension",
       "people": [
         "woman-clothed-with-the-sun",
         "the-dragon",
@@ -16898,7 +16898,7 @@ window.STUDIES = [
     "url": "studies/revelation-13.html",
     "overview": {
       "where": "A vision John saw on Patmos: the shore of the sea, then the whole earth",
-      "when": "Written from Patmos to struggling churches; teachers differ on when these things are fulfilled",
+      "when": "Written from Patmos about AD 95 to struggling churches; teachers differ on when these things are fulfilled",
       "people": [
         "the-dragon",
         "the-beast",
@@ -16944,7 +16944,7 @@ window.STUDIES = [
     "url": "studies/revelation-14.html",
     "overview": {
       "where": "A vision John saw on Patmos: mount Sion, the sky over the earth, and the harvest fields",
-      "when": "Written from Patmos; a look ahead to the end, just before the last seven plagues",
+      "when": "Written from Patmos about AD 95; a look ahead to the end, just before the last seven plagues",
       "people": [
         "the-lamb",
         "the-father",
@@ -16994,7 +16994,7 @@ window.STUDIES = [
     "url": "studies/revelation-15.html",
     "overview": {
       "where": "Heaven, before God's throne and his temple, in John's vision on Patmos",
-      "when": "On Patmos (1:9); the calm just before the seven last plagues",
+      "when": "On Patmos (1:9), about AD 95; the calm just before the seven last plagues",
       "people": [
         "seven-angels-with-plagues",
         "the-lamb",
@@ -17042,7 +17042,7 @@ window.STUDIES = [
     "url": "studies/revelation-16.html",
     "overview": {
       "where": "The temple in heaven, and the whole earth below: the sea, the rivers, the Euphrates, and a place called Armageddon",
-      "when": "On Patmos, in John's vision; Bible teachers differ on when, and how literally, the bowls are poured",
+      "when": "On Patmos, about AD 95, in John's vision; Bible teachers differ on when, and how literally, the bowls are poured",
       "people": [
         "seven-angels-with-plagues",
         "angel-of-the-waters",
@@ -17094,7 +17094,7 @@ window.STUDIES = [
     "url": "studies/revelation-17.html",
     "overview": {
       "where": "In John's vision on Patmos: carried away in the spirit into the wilderness",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "john-the-apostle",
         "angels",
@@ -17145,7 +17145,7 @@ window.STUDIES = [
     "url": "studies/revelation-18.html",
     "overview": {
       "where": "In John's vision on Patmos: heaven, and the burning city seen from afar",
-      "when": "On Patmos (1:9)",
+      "when": "On Patmos (1:9), about AD 95, under Domitian",
       "people": [
         "angels",
         "merchants-of-the-earth",
@@ -17194,7 +17194,7 @@ window.STUDIES = [
     "url": "studies/revelation-19.html",
     "overview": {
       "where": "Heaven, then heaven opened over the earth, in John's vision on Patmos",
-      "when": "On Patmos (1:9); in the vision, after Babylon's fall (chapters 17–18)",
+      "when": "On Patmos (1:9), about AD 95; in the vision, after Babylon's fall (chapters 17–18)",
       "people": [
         "jesus",
         "the-lamb",
@@ -17246,7 +17246,7 @@ window.STUDIES = [
     "url": "studies/revelation-20.html",
     "overview": {
       "where": "The bottomless pit, the earth, and the great white throne, in John's vision on Patmos",
-      "when": "On Patmos (1:9); in the vision, after Christ's return in chapter 19",
+      "when": "On Patmos (1:9), about AD 95; in the vision, after Christ's return in chapter 19",
       "people": [
         "satan",
         "the-dragon",
@@ -17300,7 +17300,7 @@ window.STUDIES = [
     "url": "studies/revelation-21.html",
     "overview": {
       "where": "The new heaven and new earth, and the holy city, new Jerusalem, in John's vision on Patmos",
-      "when": "On Patmos (1:9); the vision looks ahead to the end, after the last judgment",
+      "when": "On Patmos (1:9), about AD 95; the vision looks ahead to the end, after the last judgment",
       "people": [
         "the-lamb",
         "john-the-apostle",
@@ -17347,7 +17347,7 @@ window.STUDIES = [
     "url": "studies/revelation-22.html",
     "overview": {
       "where": "Inside the holy city, new Jerusalem, by the river and the throne, in John's vision on Patmos",
-      "when": "On Patmos (1:9); the last chapter of the Bible, looking ahead to Christ's return",
+      "when": "On Patmos (1:9), about AD 95; the last chapter of the Bible, looking ahead to Christ's return",
       "people": [
         "jesus",
         "the-lamb",
@@ -17395,7 +17395,7 @@ window.STUDIES = [
     "url": "studies/genesis-01.html",
     "overview": {
       "where": "The whole world, from nothing to a finished earth; Moses wrote it down for Israel in the wilderness",
-      "when": "In the beginning; written by Moses in the forty years in the wilderness",
+      "when": "In the beginning; written by Moses in the forty years in the wilderness, about 1446 to 1406 BC",
       "people": [
         "god-the-creator",
         "holy-spirit"
@@ -17884,7 +17884,7 @@ window.STUDIES = [
     "url": "studies/genesis-11.html",
     "overview": {
       "where": "The plain of Shinar (later Babylonia) where Babel was built; then Ur of the Chaldees, and Haran far up the Euphrates",
-      "when": "Some time after the flood (no date is given); then about 350 years of names from the flood to Abram's birth; Abram leaves Haran at seventy-five (12:4)",
+      "when": "Some time after the flood (no date is given); then about 350 years of names from the flood to Abram's birth; Abram leaves Haran at seventy-five (12:4), about 2091 BC",
       "people": [
         "the-lord",
         "shem",
@@ -17942,7 +17942,7 @@ window.STUDIES = [
     "url": "studies/genesis-12.html",
     "overview": {
       "where": "Haran, then the land of Canaan (Shechem, Bethel), then down to Egypt",
-      "when": "When Abram is seventy-five (12:4)",
+      "when": "When Abram is seventy-five (12:4), about 2091 BC",
       "people": [
         "abraham",
         "sarah",
@@ -17993,7 +17993,7 @@ window.STUDIES = [
     "url": "studies/genesis-13.html",
     "overview": {
       "where": "Between Bethel and Hai, the plain of Jordan, and Hebron",
-      "when": "Soon after Egypt, in Abram's lifetime as a tent-dweller in Canaan",
+      "when": "Soon after Egypt, in Abram's lifetime as a tent-dweller in Canaan, where he came about 2091 BC",
       "people": [
         "abraham",
         "lot",
@@ -18045,7 +18045,7 @@ window.STUDIES = [
     "url": "studies/genesis-14.html",
     "overview": {
       "where": "The vale of Siddim by the Salt Sea, then north to Dan and Damascus, and back to the valley of Shaveh near Salem",
-      "when": "Some years after Abram came to Canaan at seventy-five (12:4)",
+      "when": "Some years after Abram came to Canaan at seventy-five (12:4), about 2091 BC",
       "people": [
         "abraham",
         "lot",
@@ -18099,7 +18099,7 @@ window.STUDIES = [
     "url": "studies/genesis-15.html",
     "overview": {
       "where": "Abram's camp in Canaan (the text does not name the spot); the promise stretches from the river of Egypt to the Euphrates",
-      "when": "In Abram's first ten years in Canaan, before Ishmael is born (16:3)",
+      "when": "In Abram's first ten years in Canaan, before Ishmael is born (16:3), about 2091 to 2081 BC",
       "people": [
         "abraham",
         "the-lord",
@@ -18150,7 +18150,7 @@ window.STUDIES = [
     "url": "studies/genesis-16.html",
     "overview": {
       "where": "Abram's camp in Canaan, and a spring in the wilderness of Shur on the road to Egypt",
-      "when": "After Abram had lived ten years in Canaan (16:3); Ishmael is born when Abram is eighty-six (16:16)",
+      "when": "After Abram had lived ten years in Canaan (16:3), about 2081 BC; Ishmael is born when Abram is eighty-six (16:16), about 2080 BC",
       "people": [
         "sarah",
         "abraham",
@@ -18200,7 +18200,7 @@ window.STUDIES = [
     "url": "studies/genesis-17.html",
     "overview": {
       "where": "Abram's camp in Canaan (the text does not name the spot; the next chapter finds him at Mamre)",
-      "when": "Abram is ninety-nine and Ishmael thirteen (17:24–25); Isaac is born the next year",
+      "when": "Abram is ninety-nine and Ishmael thirteen (17:24–25), about 2067 BC; Isaac is born the next year",
       "people": [
         "abraham",
         "sarah",
@@ -18247,7 +18247,7 @@ window.STUDIES = [
     "url": "studies/genesis-18.html",
     "overview": {
       "where": "Abraham's tent in the plains of Mamre, by Hebron; the men then look toward Sodom",
-      "when": "Abraham is ninety-nine, Sarah eighty-nine, and Isaac is promised for the next year",
+      "when": "Abraham is ninety-nine and Sarah eighty-nine, about 2067 BC, and Isaac is promised for the next year",
       "people": [
         "abraham",
         "sarah",
@@ -18295,7 +18295,7 @@ window.STUDIES = [
     "url": "studies/genesis-19.html",
     "overview": {
       "where": "Sodom, then Zoar, then a cave in the mountain east of the Dead Sea; Abraham watches from near Hebron",
-      "when": "The evening and morning after Genesis 18, when Abraham is ninety-nine",
+      "when": "The evening and morning after Genesis 18, when Abraham is ninety-nine, about 2067 BC",
       "people": [
         "lot",
         "lots-wife",
@@ -18346,7 +18346,7 @@ window.STUDIES = [
     "url": "studies/genesis-20.html",
     "overview": {
       "where": "Gerar, in the south of Canaan, between Kadesh and Shur",
-      "when": "Shortly before Isaac is born; the same lie as in Egypt, soon after God called Abram (12:10–13)",
+      "when": "Shortly before Isaac is born, about 2067 BC; the same lie as in Egypt, soon after God called Abram (12:10–13), about 2091 BC",
       "people": [
         "abraham",
         "sarah",
@@ -18394,7 +18394,7 @@ window.STUDIES = [
     "url": "studies/genesis-21.html",
     "overview": {
       "where": "Abraham's camp in the south of Canaan, in the Philistines' land around Gerar and Beer-sheba; Hagar goes out into the wilderness of Beer-sheba, and Ishmael grows up in the wilderness of Paran",
-      "when": "When Isaac is born and Abraham is a hundred (21:5); the feast is a few years later, when Isaac is weaned",
+      "when": "When Isaac is born and Abraham is a hundred (21:5), about 2066 BC; the feast is a few years later, when Isaac is weaned",
       "people": [
         "abraham",
         "sarah",
@@ -18445,7 +18445,7 @@ window.STUDIES = [
     "url": "studies/genesis-22.html",
     "overview": {
       "where": "From Beer-sheba to “the land of Moriah”, three days' journey, to one of its mountains (2 Chronicles 3:1 puts the temple on Mount Moriah at Jerusalem)",
-      "when": "Some years after Isaac's birth (the text does not give his age; he is old enough to carry the wood)",
+      "when": "Some years after Isaac's birth about 2066 BC (the text does not give his age; he is old enough to carry the wood)",
       "people": [
         "abraham",
         "isaac",
@@ -18497,7 +18497,7 @@ window.STUDIES = [
     "url": "studies/genesis-23.html",
     "overview": {
       "where": "Hebron (Kirjath-arba), in Canaan, by Mamre",
-      "when": "Sarah is 127, Abraham 137 and Isaac 37 (17:17; 23:1)",
+      "when": "Sarah is 127, Abraham 137 and Isaac 37 (17:17; 23:1), about 2029 BC",
       "people": [
         "abraham",
         "sarah",
@@ -18545,7 +18545,7 @@ window.STUDIES = [
     "url": "studies/genesis-24.html",
     "overview": {
       "where": "From Abraham's camp in southern Canaan to the city of Nahor in Mesopotamia, near Haran, and home again to Isaac at Beer-lahai-roi",
-      "when": "Isaac is forty (25:20) and Abraham 140, three years after Sarah's death",
+      "when": "Isaac is forty (25:20) and Abraham 140, about 2026 BC, three years after Sarah's death",
       "people": [
         "abraham",
         "abrahams-servant",
@@ -18598,7 +18598,7 @@ window.STUDIES = [
     "url": "studies/genesis-25.html",
     "overview": {
       "where": "Canaan: the cave of Machpelah near Mamre, Beer-lahai-roi in the south country, and the wilderness from Havilah to Shur",
-      "when": "From Isaac's marriage at forty (25:20) to Abraham's death at 175 (25:7); the twins are born when Isaac is sixty (25:26)",
+      "when": "From Isaac's marriage at forty (25:20), about 2026 BC, to Abraham's death at 175 (25:7), about 1991 BC; the twins are born when Isaac is sixty (25:26), about 2006 BC",
       "people": [
         "abraham",
         "keturah",
@@ -18653,7 +18653,7 @@ window.STUDIES = [
     "url": "studies/genesis-26.html",
     "overview": {
       "where": "Gerar and its valley in Philistine country, then up to Beer-sheba in the south of Canaan",
-      "when": "After Abraham's death, in Isaac's middle years; Esau is forty at the end of the chapter (26:34)",
+      "when": "After Abraham's death (about 1991 BC), in Isaac's middle years; Esau is forty at the end of the chapter (26:34), about 1966 BC",
       "people": [
         "isaac",
         "rebecca",
@@ -18711,7 +18711,7 @@ window.STUDIES = [
     "url": "studies/genesis-27.html",
     "overview": {
       "where": "Isaac's tent, probably at Beer-sheba; Jacob flees toward Haran",
-      "when": "Isaac is old and nearly blind; Esau and Jacob are grown men (the text gives no exact date)",
+      "when": "Isaac is old and nearly blind; Esau and Jacob are grown men (the text gives no exact date; counting from Joseph's ages, Jacob is believed to be about seventy-seven, around 1929 BC)",
       "people": [
         "isaac",
         "rebecca",
@@ -18758,7 +18758,7 @@ window.STUDIES = [
     "url": "studies/genesis-28.html",
     "overview": {
       "where": "The road from Beer-sheba north toward Haran, and a night's camp at Luz, which Jacob names Bethel",
-      "when": "Jacob is about seventy-seven, leaving home after chapter 27. His stay with Laban will last twenty years",
+      "when": "Jacob is about seventy-seven (around 1929 BC), leaving home after chapter 27. His stay with Laban will last twenty years",
       "people": [
         "jacob",
         "isaac",
@@ -18812,7 +18812,7 @@ window.STUDIES = [
     "url": "studies/genesis-29.html",
     "overview": {
       "where": "The well and the household of Laban near Haran, in Padan-aram",
-      "when": "Jacob serves seven years for Rachel, and Leah's first four sons are born in the years that follow",
+      "when": "Jacob serves seven years for Rachel (about 1929 to 1922 BC), and Leah's first four sons are born in the years that follow",
       "people": [
         "jacob",
         "rachel",
@@ -18864,7 +18864,7 @@ window.STUDIES = [
     "url": "studies/genesis-30.html",
     "overview": {
       "where": "Laban's household and pastures, near Haran in Padan-aram",
-      "when": "The second seven years of Jacob's service, ending with Joseph's birth; then the first of six more years for the flocks",
+      "when": "The second seven years of Jacob's service, ending with Joseph's birth about 1915 BC; then the first of six more years for the flocks",
       "people": [
         "jacob",
         "rachel",
@@ -18921,7 +18921,7 @@ window.STUDIES = [
     "url": "studies/genesis-31.html",
     "overview": {
       "where": "From Haran (Padan-aram) to the hill country of Gilead, east of the Jordan",
-      "when": "Jacob has served Laban twenty years (verse 41)",
+      "when": "Jacob has served Laban twenty years (verse 41), about 1909 BC",
       "people": [
         "jacob",
         "laban",
@@ -18974,7 +18974,7 @@ window.STUDIES = [
     "url": "studies/genesis-32.html",
     "overview": {
       "where": "East of the Jordan: Mahanaim in Gilead, and the ford of the river Jabbok at Peniel",
-      "when": "The night before Jacob meets Esau after twenty years",
+      "when": "The night before Jacob meets Esau after twenty years, about 1909 BC",
       "people": [
         "jacob",
         "esau",
@@ -19025,7 +19025,7 @@ window.STUDIES = [
     "url": "studies/genesis-33.html",
     "overview": {
       "where": "East of the Jordan, then Succoth, and Shechem in Canaan",
-      "when": "The morning after the Jabbok",
+      "when": "The morning after the Jabbok, about 1909 BC",
       "people": [
         "jacob",
         "esau",
@@ -19078,7 +19078,7 @@ window.STUDIES = [
     "url": "studies/genesis-34.html",
     "overview": {
       "where": "Shechem, in the hill country of Canaan, where Jacob had bought a field (33:18–19)",
-      "when": "Some years after Jacob came home from Haran; Jacob is near a hundred",
+      "when": "Some years after Jacob came home from Haran (about 1909 BC); Jacob is near a hundred",
       "people": [
         "jacob",
         "leah",
@@ -19127,7 +19127,7 @@ window.STUDIES = [
     "url": "studies/genesis-35.html",
     "overview": {
       "where": "From Shechem to Bethel, then Ephrath (Bethlehem), and on to Hebron in the hill country of Canaan",
-      "when": "Isaac dies at a hundred and eighty (35:28), when Jacob is a hundred and twenty",
+      "when": "Isaac dies at a hundred and eighty (35:28), about 1886 BC, when Jacob is a hundred and twenty",
       "people": [
         "jacob",
         "israel-the-man",
@@ -19183,7 +19183,7 @@ window.STUDIES = [
     "url": "studies/genesis-36.html",
     "overview": {
       "where": "Mount Seir, the mountain country south-east of the Dead Sea (Edom)",
-      "when": "Esau’s move comes after Jacob returns; the list of kings reaches long after, “before there reigned any king over the children of Israel” (36:31)",
+      "when": "Esau’s move comes after Jacob returns; the list of kings reaches long after, “before there reigned any king over the children of Israel” (36:31), that is, before Saul (about 1050 BC)",
       "people": [
         "esau",
         "adah-wife-of-esau",
@@ -19236,7 +19236,7 @@ window.STUDIES = [
     "url": "studies/genesis-37.html",
     "overview": {
       "where": "Hebron, Shechem and Dothan in Canaan; the traders carry Joseph down to Egypt",
-      "when": "Joseph is seventeen (37:2)",
+      "when": "Joseph is seventeen (37:2), about 1898 BC",
       "people": [
         "joseph-son-of-jacob",
         "jacob",
@@ -19291,7 +19291,7 @@ window.STUDIES = [
     "url": "studies/genesis-38.html",
     "overview": {
       "where": "The hill country of Judah: Adullam, Chezib and Timnath",
-      "when": "Over the years Joseph is in Egypt, from the time he is sold at seventeen",
+      "when": "Over the years Joseph is in Egypt, from the time he is sold at seventeen (about 1898 BC)",
       "people": [
         "judah-son-of-jacob",
         "thamar",
@@ -19345,7 +19345,7 @@ window.STUDIES = [
     "url": "studies/genesis-39.html",
     "overview": {
       "where": "Potiphar's house, then the king's prison, in Egypt",
-      "when": "From the time Joseph is sold at seventeen; he is a young man",
+      "when": "From the time Joseph is sold at seventeen, about 1898 BC; he is a young man",
       "people": [
         "joseph-son-of-jacob",
         "potiphar",
@@ -19390,7 +19390,7 @@ window.STUDIES = [
     "url": "studies/genesis-40.html",
     "overview": {
       "where": "The prison in the house of the captain of the guard, in Egypt",
-      "when": "Joseph is about twenty-eight, two years before he stands before Pharaoh at thirty (41:1, 46)",
+      "when": "Joseph is about twenty-eight, around 1887 BC, two years before he stands before Pharaoh at thirty (41:1, 46)",
       "people": [
         "joseph-son-of-jacob",
         "pharaoh",
@@ -19434,7 +19434,7 @@ window.STUDIES = [
     "url": "studies/genesis-41.html",
     "overview": {
       "where": "Pharaoh's court in Egypt, and the whole land as Joseph goes through it",
-      "when": "Joseph is thirty when he stands before Pharaoh (41:46). Seven years of plenty follow, then the famine",
+      "when": "Joseph is thirty when he stands before Pharaoh (41:46), about 1885 BC. Seven years of plenty follow, then the famine",
       "people": [
         "joseph-son-of-jacob",
         "pharaoh",
@@ -19486,7 +19486,7 @@ window.STUDIES = [
     "url": "studies/genesis-42.html",
     "overview": {
       "where": "Hebron in Canaan, and Egypt (the road between, and the lodging inn on the way back)",
-      "when": "In the first years of the famine; about twenty years after Joseph was sold",
+      "when": "In the first years of the famine, around 1877 BC; about twenty years after Joseph was sold",
       "people": [
         "jacob",
         "joseph-son-of-jacob",
@@ -19536,7 +19536,7 @@ window.STUDIES = [
     "url": "studies/genesis-43.html",
     "overview": {
       "where": "Jacob’s camp in Canaan, then Joseph’s house in Egypt",
-      "when": "The second year of the famine (45:6), a few months after the first journey",
+      "when": "The second year of the famine (45:6), about 1876 BC, a few months after the first journey",
       "people": [
         "israel-the-man",
         "judah-son-of-jacob",
@@ -19585,7 +19585,7 @@ window.STUDIES = [
     "url": "studies/genesis-44.html",
     "overview": {
       "where": "On the road out of Egypt, then Joseph’s house",
-      "when": "The morning after the feast of chapter 43",
+      "when": "The morning after the feast of chapter 43, about 1876 BC",
       "people": [
         "joseph-son-of-jacob",
         "judah-son-of-jacob",
@@ -19629,7 +19629,7 @@ window.STUDIES = [
     "url": "studies/genesis-45.html",
     "overview": {
       "where": "Joseph's house in Egypt; then the road back to Canaan, to Jacob",
-      "when": "Joseph is thirty-nine, two years into the famine (45:6), twenty-two years after he was sold",
+      "when": "Joseph is thirty-nine, two years into the famine (45:6), twenty-two years after he was sold, about 1876 BC",
       "people": [
         "joseph-son-of-jacob",
         "benjamin-son-of-jacob",
@@ -19676,7 +19676,7 @@ window.STUDIES = [
     "url": "studies/genesis-46.html",
     "overview": {
       "where": "Beer-sheba, the last town in Canaan; then the land of Goshen in Egypt",
-      "when": "When Jacob is a hundred and thirty (47:9); Israel's family comes down to dwell in Egypt (Exodus 12:40)",
+      "when": "When Jacob is a hundred and thirty (47:9), about 1876 BC; Israel's family comes down to dwell in Egypt (Exodus 12:40)",
       "people": [
         "jacob",
         "israel-the-man",
@@ -19725,7 +19725,7 @@ window.STUDIES = [
     "url": "studies/genesis-47.html",
     "overview": {
       "where": "Pharaoh's court; the land of Goshen (the land of Rameses) in Egypt",
-      "when": "Jacob's first seventeen years in Egypt; he is a hundred and thirty when he stands before Pharaoh (47:9) and dies at a hundred and forty-seven (47:28)",
+      "when": "Jacob's first seventeen years in Egypt; he is a hundred and thirty when he stands before Pharaoh (47:9), about 1876 BC, and dies at a hundred and forty-seven (47:28), about 1859 BC",
       "people": [
         "jacob",
         "israel-the-man",
@@ -19773,7 +19773,7 @@ window.STUDIES = [
     "url": "studies/genesis-48.html",
     "overview": {
       "where": "Jacob's bed in Goshen, Egypt",
-      "when": "Jacob has lived in Egypt seventeen years and is close to 147 (47:28)",
+      "when": "Jacob has lived in Egypt seventeen years and is close to 147 (47:28), about 1859 BC",
       "people": [
         "jacob",
         "joseph-son-of-jacob",
@@ -19829,7 +19829,7 @@ window.STUDIES = [
     "url": "studies/genesis-49.html",
     "overview": {
       "where": "Jacob's bed in Egypt; the cave of Machpelah, near Mamre in Canaan, is named",
-      "when": "As Jacob dies at 147 (47:28)",
+      "when": "As Jacob dies at 147 (47:28), about 1859 BC",
       "people": [
         "jacob",
         "reuben",
@@ -19890,7 +19890,7 @@ window.STUDIES = [
     "url": "studies/genesis-50.html",
     "overview": {
       "where": "Egypt; Goshen; the threshingfloor of Atad; the cave of Machpelah in Canaan",
-      "when": "Jacob's burial, after he dies at 147 (47:28); then Joseph dies at 110 (50:26)",
+      "when": "Jacob's burial, after he dies at 147 (47:28), about 1859 BC; then Joseph dies at 110 (50:26), about 1805 BC",
       "people": [
         "joseph-son-of-jacob",
         "jacob",
@@ -19945,7 +19945,7 @@ window.STUDIES = [
     "url": "studies/exodus-01.html",
     "overview": {
       "where": "Egypt; the land of Goshen; the store cities of Pithom and Raamses (Rameses)",
-      "when": "Jacob's family goes down into Egypt, Jacob 130 (Genesis 47:9); Joseph dies at 110 (Genesis 50:26); the slavery that follows",
+      "when": "Jacob's family goes down into Egypt, Jacob 130 (Genesis 47:9), about 1876 BC; Joseph dies at 110 (Genesis 50:26), about 1805 BC; the slavery that follows",
       "people": [
         "jacob",
         "joseph-son-of-jacob",
@@ -19995,7 +19995,7 @@ window.STUDIES = [
     "url": "studies/exodus-02.html",
     "overview": {
       "where": "The Nile and Pharaoh's house in Egypt; the land of Midian, at a well",
-      "when": "Moses' birth, and his flight to Midian at forty (Acts 7:23)",
+      "when": "Moses' birth, about 1526 BC, and his flight to Midian at forty (Acts 7:23), about 1486 BC",
       "people": [
         "moses",
         "levi",
@@ -20049,7 +20049,7 @@ window.STUDIES = [
     "url": "studies/exodus-03.html",
     "overview": {
       "where": "The backside of the desert in Midian; Horeb, the mountain of God",
-      "when": "Moses is eighty (7:7), at the end of forty years in Midian (Acts 7:30)",
+      "when": "Moses is eighty (7:7), at the end of forty years in Midian (Acts 7:30), about 1446 BC",
       "people": [
         "moses",
         "jethro",
@@ -20104,7 +20104,7 @@ window.STUDIES = [
     "url": "studies/exodus-04.html",
     "overview": {
       "where": "Midian; the road to Egypt, and an inn on the way; the mount of God; Egypt",
-      "when": "Moses is eighty (7:7)",
+      "when": "Moses is eighty (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20157,7 +20157,7 @@ window.STUDIES = [
     "url": "studies/exodus-05.html",
     "overview": {
       "where": "Egypt: Pharaoh's court and the brickyards",
-      "when": "The year of the Exodus; Moses is eighty (7:7)",
+      "when": "The year of the Exodus; Moses is eighty (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20202,7 +20202,7 @@ window.STUDIES = [
     "url": "studies/exodus-06.html",
     "overview": {
       "where": "Egypt; the land of Canaan, promised to Abraham, Isaac and Jacob",
-      "when": "Moses is eighty, Aaron eighty-three (7:7)",
+      "when": "Moses is eighty, Aaron eighty-three (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20262,7 +20262,7 @@ window.STUDIES = [
     "url": "studies/exodus-07.html",
     "overview": {
       "where": "Egypt: Pharaoh's court and the river (the Nile)",
-      "when": "Moses is eighty, Aaron eighty-three (7:7)",
+      "when": "Moses is eighty, Aaron eighty-three (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20305,7 +20305,7 @@ window.STUDIES = [
     "url": "studies/exodus-08.html",
     "overview": {
       "where": "Egypt, and the land of Goshen",
-      "when": "The year of the Exodus; Moses is eighty (7:7)",
+      "when": "The year of the Exodus; Moses is eighty (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20350,7 +20350,7 @@ window.STUDIES = [
     "url": "studies/exodus-09.html",
     "overview": {
       "where": "Egypt, and the land of Goshen",
-      "when": "The year of the Exodus; Moses is eighty (7:7)",
+      "when": "The year of the Exodus; Moses is eighty (7:7), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20395,7 +20395,7 @@ window.STUDIES = [
     "url": "studies/exodus-10.html",
     "overview": {
       "where": "Egypt: Pharaoh's court; the whole land under the locusts and the darkness; the Red sea",
-      "when": "The year of the Exodus (the eighth and ninth plagues)",
+      "when": "The year of the Exodus (the eighth and ninth plagues), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20441,7 +20441,7 @@ window.STUDIES = [
     "url": "studies/exodus-11.html",
     "overview": {
       "where": "Egypt: Pharaoh's presence; the houses of the Egyptians and of Israel",
-      "when": "The night before the Passover, in the first month (12:2)",
+      "when": "The night before the Passover, in the first month (12:2), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20486,7 +20486,7 @@ window.STUDIES = [
     "url": "studies/exodus-12.html",
     "overview": {
       "where": "Egypt: the houses of Israel and of the Egyptians; Rameses; Succoth",
-      "when": "The fourteenth and fifteenth days of the first month (12:2, 6; Numbers 33:3)",
+      "when": "The fourteenth and fifteenth days of the first month (12:2, 6; Numbers 33:3), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20535,7 +20535,7 @@ window.STUDIES = [
     "url": "studies/exodus-13.html",
     "overview": {
       "where": "Out of Egypt: Succoth, then Etham at the edge of the wilderness, on the way to the Red sea",
-      "when": "The Exodus: the fifteenth day of the first month (Numbers 33:3)",
+      "when": "The Exodus: the fifteenth day of the first month (Numbers 33:3), about 1446 BC",
       "people": [
         "moses",
         "joseph-son-of-jacob",
@@ -20582,7 +20582,7 @@ window.STUDIES = [
     "url": "studies/exodus-14.html",
     "overview": {
       "where": "The shore of the Red sea (the Gulf of Aqaba) at Nuweiba, by Pi-hahiroth, Migdol and Baal-zephon; the crossing to Arabia",
-      "when": "The Exodus, in the first month (Numbers 33:3)",
+      "when": "The Exodus, in the first month (Numbers 33:3), about 1446 BC",
       "people": [
         "moses",
         "pharaoh"
@@ -20630,7 +20630,7 @@ window.STUDIES = [
     "url": "studies/exodus-15.html",
     "overview": {
       "where": "The far shore of the Red sea; the wilderness of Shur; Marah; Elim (all in Arabia, on the way to Mount Sinai)",
-      "when": "Just after the crossing, in the first month (Numbers 33:3)",
+      "when": "Just after the crossing, in the first month (Numbers 33:3), about 1446 BC",
       "people": [
         "moses",
         "miriam",
@@ -20682,7 +20682,7 @@ window.STUDIES = [
     "url": "studies/exodus-16.html",
     "overview": {
       "where": "The wilderness of Sin, between Elim and Sinai, in Arabia",
-      "when": "The fifteenth day of the second month after leaving Egypt (16:1); the manna lasts forty years (16:35)",
+      "when": "The fifteenth day of the second month after leaving Egypt (16:1), about 1446 BC; the manna lasts forty years (16:35)",
       "people": [
         "moses",
         "aaron"
@@ -20729,7 +20729,7 @@ window.STUDIES = [
     "url": "studies/exodus-17.html",
     "overview": {
       "where": "Rephidim, in the wilderness of Arabia, near Horeb, the mountain of God",
-      "when": "In the weeks between leaving the wilderness of Sin and reaching Sinai (19:1)",
+      "when": "In the weeks between leaving the wilderness of Sin and reaching Sinai (19:1), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20778,7 +20778,7 @@ window.STUDIES = [
     "url": "studies/exodus-18.html",
     "overview": {
       "where": "The mount of God in the wilderness of Arabia, in the land of Midian",
-      "when": "After Rephidim and before the giving of the law (19:1)",
+      "when": "After Rephidim and before the giving of the law (19:1), about 1446 BC",
       "people": [
         "moses",
         "jethro",
@@ -20828,7 +20828,7 @@ window.STUDIES = [
     "url": "studies/exodus-19.html",
     "overview": {
       "where": "The wilderness of Sinai, before the mount (Mount Sinai in Midian, Arabia), after Rephidim",
-      "when": "The third month after the Exodus (19:1)",
+      "when": "The third month after the Exodus (19:1), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -20877,7 +20877,7 @@ window.STUDIES = [
     "url": "studies/exodus-20.html",
     "overview": {
       "where": "Mount Sinai, in the wilderness of Sinai, Arabia",
-      "when": "Soon after the people came to Sinai, in the third month (19:1)",
+      "when": "Soon after the people came to Sinai, in the third month (19:1), about 1446 BC",
       "people": [
         "moses",
         "israel",
@@ -20921,7 +20921,7 @@ window.STUDIES = [
     "url": "studies/exodus-21.html",
     "overview": {
       "where": "Mount Sinai, in the wilderness of Sinai, Arabia",
-      "when": "At Sinai, in the third month after leaving Egypt (19:1); the judgments run through chapter 23",
+      "when": "At Sinai, in the third month after leaving Egypt (19:1), about 1446 BC; the judgments run through chapter 23",
       "people": [
         "hebrew"
       ],
@@ -20963,7 +20963,7 @@ window.STUDIES = [
     "url": "studies/exodus-22.html",
     "overview": {
       "where": "At the foot of Mount Sinai in Arabia (the judgments given to Moses)",
-      "when": "In the third month after leaving Egypt (19:1)",
+      "when": "In the third month after leaving Egypt (19:1), about 1446 BC",
       "people": [
         "widow-in-israel",
         "stranger-in-the-land"
@@ -21008,7 +21008,7 @@ window.STUDIES = [
     "url": "studies/exodus-23.html",
     "overview": {
       "where": "At the foot of Mount Sinai in Arabia; looking ahead to the land from the Red sea to the Euphrates",
-      "when": "In the third month after leaving Egypt (19:1)",
+      "when": "In the third month after leaving Egypt (19:1), about 1446 BC",
       "people": [
         "angel-before-israel",
         "amorites",
@@ -21059,7 +21059,7 @@ window.STUDIES = [
     "url": "studies/exodus-24.html",
     "overview": {
       "where": "At the foot and on the side of Mount Sinai in Arabia",
-      "when": "In the third month after leaving Egypt (19:1)",
+      "when": "In the third month after leaving Egypt (19:1), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -21109,7 +21109,7 @@ window.STUDIES = [
     "url": "studies/exodus-25.html",
     "overview": {
       "where": "At Mount Sinai in Arabia, where the LORD speaks to Moses on the mount",
-      "when": "At Sinai, soon after the covenant of chapter 24, before the tabernacle is built",
+      "when": "At Sinai, soon after the covenant of chapter 24, before the tabernacle is built, about 1446 BC",
       "people": [
         "moses"
       ],
@@ -21152,7 +21152,7 @@ window.STUDIES = [
     "url": "studies/exodus-26.html",
     "overview": {
       "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern",
-      "when": "At Sinai, before the tabernacle is built",
+      "when": "At Sinai, before the tabernacle is built, about 1446 BC",
       "people": [
         "moses"
       ],
@@ -21196,7 +21196,7 @@ window.STUDIES = [
     "url": "studies/exodus-27.html",
     "overview": {
       "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern",
-      "when": "At Sinai, before the tabernacle is built",
+      "when": "At Sinai, before the tabernacle is built, about 1446 BC",
       "people": [
         "aaron",
         "moses"
@@ -21240,7 +21240,7 @@ window.STUDIES = [
     "url": "studies/exodus-28.html",
     "overview": {
       "where": "At Mount Sinai in Arabia, where the LORD gives Moses the pattern for the priesthood",
-      "when": "In the first year after leaving Egypt, before the tabernacle is raised (40:17)",
+      "when": "In the first year after leaving Egypt, before the tabernacle is raised (40:17), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -21286,7 +21286,7 @@ window.STUDIES = [
     "url": "studies/exodus-29.html",
     "overview": {
       "where": "At Mount Sinai in Arabia, where the LORD gives Moses the order for consecrating the priests",
-      "when": "In the first year after leaving Egypt, before the tabernacle is raised (40:17)",
+      "when": "In the first year after leaving Egypt, before the tabernacle is raised (40:17), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -21335,7 +21335,7 @@ window.STUDIES = [
     "url": "studies/exodus-30.html",
     "overview": {
       "where": "The tabernacle plan, given on Mount Sinai in Arabia",
-      "when": "During Moses' forty days on the mount (24:18)",
+      "when": "During Moses' forty days on the mount (24:18), about 1446 BC",
       "people": [
         "moses",
         "aaron"
@@ -21378,7 +21378,7 @@ window.STUDIES = [
     "url": "studies/exodus-31.html",
     "overview": {
       "where": "On Mount Sinai in Arabia",
-      "when": "The end of Moses' forty days on the mount (24:18)",
+      "when": "The end of Moses' forty days on the mount (24:18), about 1446 BC",
       "people": [
         "moses",
         "bezaleel",
@@ -21425,7 +21425,7 @@ window.STUDIES = [
     "url": "studies/exodus-32.html",
     "overview": {
       "where": "The camp at the foot of Mount Sinai in Arabia, and the top of the mount",
-      "when": "While Moses was forty days on the mount (24:18)",
+      "when": "While Moses was forty days on the mount (24:18), about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -21477,7 +21477,7 @@ window.STUDIES = [
     "url": "studies/exodus-33.html",
     "overview": {
       "where": "The camp by Mount Horeb (Sinai), and a tent pitched outside it",
-      "when": "At Sinai, after the golden calf",
+      "when": "At Sinai, after the golden calf, about 1446 BC",
       "people": [
         "moses",
         "joshua-son-of-nun",
@@ -21531,7 +21531,7 @@ window.STUDIES = [
     "url": "studies/exodus-34.html",
     "overview": {
       "where": "On the top of Mount Sinai in Arabia, and in the camp below",
-      "when": "At Sinai, after the golden calf",
+      "when": "At Sinai, after the golden calf, about 1446 BC",
       "people": [
         "moses",
         "aaron",
@@ -21581,7 +21581,7 @@ window.STUDIES = [
     "url": "studies/exodus-35.html",
     "overview": {
       "where": "In the camp of Israel at Mount Sinai in Arabia",
-      "when": "After the golden calf and the new tables, in the first year out of Egypt",
+      "when": "After the golden calf and the new tables, in the first year out of Egypt, about 1446 to 1445 BC",
       "people": [
         "moses",
         "bezaleel",
@@ -21629,7 +21629,7 @@ window.STUDIES = [
     "url": "studies/exodus-36.html",
     "overview": {
       "where": "In the camp of Israel at Mount Sinai in Arabia",
-      "when": "In the months of building before the tabernacle was raised (40:17)",
+      "when": "In the months of building before the tabernacle was raised (40:17), about 1446 to 1445 BC",
       "people": [
         "moses",
         "bezaleel",
@@ -21674,7 +21674,7 @@ window.STUDIES = [
     "url": "studies/exodus-37.html",
     "overview": {
       "where": "In the camp of Israel at Mount Sinai in Arabia",
-      "when": "In the months of building before the tabernacle was raised (40:17)",
+      "when": "In the months of building before the tabernacle was raised (40:17), about 1446 to 1445 BC",
       "people": [
         "bezaleel"
       ],
@@ -21713,7 +21713,7 @@ window.STUDIES = [
     "url": "studies/exodus-38.html",
     "overview": {
       "where": "At the tabernacle in the camp at Mount Sinai, in Arabia",
-      "when": "The first year out of Egypt, as the tabernacle is finished (40:17)",
+      "when": "The first year out of Egypt, as the tabernacle is finished (40:17), about 1446 to 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -21763,7 +21763,7 @@ window.STUDIES = [
     "url": "studies/exodus-39.html",
     "overview": {
       "where": "At the tabernacle in the camp at Mount Sinai, in Arabia",
-      "when": "Just before the tabernacle is raised (40:17)",
+      "when": "Just before the tabernacle is raised (40:17), about 1446 to 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -21811,7 +21811,7 @@ window.STUDIES = [
     "url": "studies/exodus-40.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "The first day of the first month of the second year (40:17)",
+      "when": "The first day of the first month of the second year (40:17), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -21858,7 +21858,7 @@ window.STUDIES = [
     "url": "studies/leviticus-01.html",
     "overview": {
       "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -21906,7 +21906,7 @@ window.STUDIES = [
     "url": "studies/leviticus-02.html",
     "overview": {
       "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "aaron",
         "priests"
@@ -21950,7 +21950,7 @@ window.STUDIES = [
     "url": "studies/leviticus-03.html",
     "overview": {
       "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1)",
+      "when": "The LORD speaks out of the tabernacle in the second year, between the first day of the first month (Exodus 40:17) and the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "aaron",
         "priests"
@@ -21994,7 +21994,7 @@ window.STUDIES = [
     "url": "studies/leviticus-04.html",
     "overview": {
       "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17), about 1445 BC",
       "people": [
         "moses",
         "priest-that-is-anointed",
@@ -22043,7 +22043,7 @@ window.STUDIES = [
     "url": "studies/leviticus-05.html",
     "overview": {
       "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17), about 1445 BC",
       "people": [
         "moses",
         "priests"
@@ -22089,7 +22089,7 @@ window.STUDIES = [
     "url": "studies/leviticus-06.html",
     "overview": {
       "where": "At the tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17)",
+      "when": "About a month before the numbering (Numbers 1:1), after the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -22136,7 +22136,7 @@ window.STUDIES = [
     "url": "studies/leviticus-07.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "In mount Sinai, in the wilderness of Sinai (7:38): the month between the tabernacle reared up (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "when": "In mount Sinai, in the wilderness of Sinai (7:38): the month between the tabernacle reared up (Exodus 40:17) and the numbering (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22182,7 +22182,7 @@ window.STUDIES = [
     "url": "studies/leviticus-08.html",
     "overview": {
       "where": "At the door of the tabernacle, at the foot of Mount Sinai",
-      "when": "After the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17); the consecration lasts seven days (8:33)",
+      "when": "After the tabernacle was reared up on the first day of the first month of the second year (Exodus 40:17), about 1445 BC; the consecration lasts seven days (8:33)",
       "people": [
         "moses",
         "aaron",
@@ -22229,7 +22229,7 @@ window.STUDIES = [
     "url": "studies/leviticus-09.html",
     "overview": {
       "where": "At the altar before the tabernacle, at the foot of Mount Sinai",
-      "when": "The eighth day, after the seven days of consecration (9:1; 8:33)",
+      "when": "The eighth day, after the seven days of consecration (9:1; 8:33), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -22272,7 +22272,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "The eighth day, after the seven days of the priests' consecration (8:33; 9:1), soon after the tabernacle was reared up (Exodus 40:17); the same day as chapter 9 (10:19)",
+      "when": "The eighth day, after the seven days of the priests' consecration (8:33; 9:1), soon after the tabernacle was reared up (Exodus 40:17), about 1445 BC; the same day as chapter 9 (10:19)",
       "people": [
         "moses",
         "aaron",
@@ -22320,7 +22320,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22365,7 +22365,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "when": "At Sinai, between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "priests"
@@ -22409,7 +22409,7 @@ window.STUDIES = [
     "url": "studies/leviticus-13.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22453,7 +22453,7 @@ window.STUDIES = [
     "url": "studies/leviticus-14.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22499,7 +22499,7 @@ window.STUDIES = [
     "url": "studies/leviticus-15.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1)",
+      "when": "In the one month at Sinai between the tabernacle's rearing up, the first day of the first month of the second year (Exodus 40:17), and the numbering, the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22543,7 +22543,7 @@ window.STUDIES = [
     "url": "studies/leviticus-16.html",
     "overview": {
       "where": "The tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "After the death of Nadab and Abihu (16:1), in the first weeks after the tabernacle was reared up (Exodus 40:17); the day itself kept every year in the seventh month, on the tenth day (16:29)",
+      "when": "After the death of Nadab and Abihu (16:1), in the first weeks after the tabernacle was reared up (Exodus 40:17), about 1445 BC; the day itself kept every year in the seventh month, on the tenth day (16:29)",
       "people": [
         "moses",
         "aaron",
@@ -22594,7 +22594,7 @@ window.STUDIES = [
     "url": "studies/leviticus-17.html",
     "overview": {
       "where": "The camp and the tabernacle at the foot of Mount Sinai, in Arabia",
-      "when": "At Sinai, in the month between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1)",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle (Exodus 40:17) and the numbering (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -22641,7 +22641,7 @@ window.STUDIES = [
     "url": "studies/leviticus-18.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "molech"
@@ -22686,7 +22686,7 @@ window.STUDIES = [
     "url": "studies/leviticus-19.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses"
       ],
@@ -22732,7 +22732,7 @@ window.STUDIES = [
     "url": "studies/leviticus-20.html",
     "overview": {
       "where": "At the foot of Mount Sinai, in Arabia",
-      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "At Sinai, in the month between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "molech"
@@ -22776,7 +22776,7 @@ window.STUDIES = [
     "url": "studies/leviticus-21.html",
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22820,7 +22820,7 @@ window.STUDIES = [
     "url": "studies/leviticus-22.html",
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron"
@@ -22867,7 +22867,7 @@ window.STUDIES = [
     "url": "studies/leviticus-23.html",
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses"
       ],
@@ -22912,7 +22912,7 @@ window.STUDIES = [
     "url": "studies/leviticus-24.html",
     "overview": {
       "where": "At the tabernacle, at the foot of Mount Sinai in Arabia",
-      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1)",
+      "when": "In the second year at Sinai, in the month after the tabernacle was reared up on the first day of the first month (Exodus 40:17) and before the numbering on the first day of the second month (Numbers 1:1), about 1445 BC",
       "people": [
         "moses",
         "aaron",
@@ -22960,7 +22960,7 @@ window.STUDIES = [
     "url": "studies/leviticus-25.html",
     "overview": {
       "where": "In mount Sinai, with the tabernacle newly reared up (25:1)",
-      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC: about one month",
       "people": [
         "moses"
       ],
@@ -23007,7 +23007,7 @@ window.STUDIES = [
     "url": "studies/leviticus-26.html",
     "overview": {
       "where": "In mount Sinai, with the tabernacle newly reared up (26:46)",
-      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC: about one month",
       "people": [
         "moses",
         "abraham",
@@ -23056,7 +23056,7 @@ window.STUDIES = [
     "url": "studies/leviticus-27.html",
     "overview": {
       "where": "In mount Sinai, with the tabernacle newly reared up (27:34)",
-      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1): about one month",
+      "when": "At Sinai, between the rearing up of the tabernacle on the first day of the first month of the second year (Exodus 40:17) and the numbering on the first day of the second month (Numbers 1:1), about 1445 BC: about one month",
       "people": [
         "moses"
       ],
@@ -23101,7 +23101,7 @@ window.STUDIES = [
     "url": "studies/numbers-01.html",
     "overview": {
       "where": "In the wilderness of Sinai, in the tabernacle of the congregation (1:1)",
-      "when": "On the first day of the second month, in the second year after Israel came out of the land of Egypt (1:1), a month after the tabernacle was reared up (Exodus 40:17)",
+      "when": "On the first day of the second month, in the second year after Israel came out of the land of Egypt (1:1), about 1445 BC, a month after the tabernacle was reared up (Exodus 40:17)",
       "people": [
         "moses",
         "aaron",
@@ -23160,7 +23160,7 @@ window.STUDIES = [
     "url": "studies/numbers-02.html",
     "overview": {
       "where": "The camp of Israel round the tabernacle, in the wilderness of Sinai",
-      "when": "In the second year after Israel came out of Egypt, soon after the first day of the second month (1:1) and before they set forward on the twentieth day (10:11)",
+      "when": "In the second year after Israel came out of Egypt, about 1445 BC, soon after the first day of the second month (1:1) and before they set forward on the twentieth day (10:11)",
       "people": [
         "moses",
         "aaron",
@@ -23219,7 +23219,7 @@ window.STUDIES = [
     "url": "studies/numbers-03.html",
     "overview": {
       "where": "In mount Sinai (3:1), in the wilderness of Sinai (3:14), round the tabernacle",
-      "when": "In the second year after Israel came out of Egypt, the second month (1:1), at Sinai, before they set forward on the twentieth day (10:11)",
+      "when": "In the second year after Israel came out of Egypt, about 1445 BC, the second month (1:1), at Sinai, before they set forward on the twentieth day (10:11)",
       "people": [
         "moses",
         "aaron",
@@ -23273,7 +23273,7 @@ window.STUDIES = [
     "url": "studies/numbers-04.html",
     "overview": {
       "where": "In the wilderness of Sinai, round the tabernacle of the congregation (1:1)",
-      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), after the numbering of the tribes and before the march begins on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), about 1445 BC, after the numbering of the tribes and before the march begins on the twentieth day of the second month (10:11); the chapter gives no day of its own",
       "people": [
         "moses",
         "aaron",
@@ -23323,7 +23323,7 @@ window.STUDIES = [
     "url": "studies/numbers-05.html",
     "overview": {
       "where": "In the wilderness of Sinai, in the camp round the tabernacle",
-      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), about 1445 BC, before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
       "people": [
         "moses",
         "priests"
@@ -23369,7 +23369,7 @@ window.STUDIES = [
     "url": "studies/numbers-06.html",
     "overview": {
       "where": "In the wilderness of Sinai, at the tabernacle of the congregation",
-      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "when": "At Sinai, in the second year after they were come out of the land of Egypt (1:1), about 1445 BC, before they leave on the twentieth day of the second month (10:11); the chapter gives no day of its own",
       "people": [
         "moses",
         "aaron",
@@ -23416,7 +23416,7 @@ window.STUDIES = [
     "url": "studies/numbers-07.html",
     "overview": {
       "where": "At the tabernacle in the wilderness of Sinai (7:1, 89)",
-      "when": "On the day that Moses had fully set up the tabernacle, the first day of the first month of the second year (7:1; Exodus 40:17); the twelve princes then offer on twelve days, one prince each day (7:11–12, 78). The numbering of chapter 1 is on the first day of the second month (1:1)",
+      "when": "On the day that Moses had fully set up the tabernacle, the first day of the first month of the second year (7:1; Exodus 40:17), about 1445 BC; the twelve princes then offer on twelve days, one prince each day (7:11–12, 78). The numbering of chapter 1 is on the first day of the second month (1:1)",
       "people": [
         "moses",
         "aaron",
@@ -23466,7 +23466,7 @@ window.STUDIES = [
     "url": "studies/numbers-08.html",
     "overview": {
       "where": "At the tabernacle in the wilderness of Sinai (8:2, 9)",
-      "when": "At Sinai, in the second year after they came out of Egypt, before the cloud is taken up on the twentieth day of the second month (10:11). No day is named for this chapter",
+      "when": "At Sinai, in the second year after they came out of Egypt, about 1445 BC, before the cloud is taken up on the twentieth day of the second month (10:11). No day is named for this chapter",
       "people": [
         "moses",
         "aaron"
@@ -23512,7 +23512,7 @@ window.STUDIES = [
     "url": "studies/numbers-09.html",
     "overview": {
       "where": "In the wilderness of Sinai, at the tabernacle (9:1, 5)",
-      "when": "The first month of the second year after they were come out of the land of Egypt (9:1); the passover on the fourteenth day of the first month at even (9:3, 5), and the second passover on the fourteenth day of the second month (9:11). The cloud covers the tabernacle from the day it was reared up (9:15; Exodus 40:17) until it is taken up on the twentieth day of the second month (10:11)",
+      "when": "The first month of the second year after they were come out of the land of Egypt (9:1), about 1445 BC; the passover on the fourteenth day of the first month at even (9:3, 5), and the second passover on the fourteenth day of the second month (9:11). The cloud covers the tabernacle from the day it was reared up (9:15; Exodus 40:17) until it is taken up on the twentieth day of the second month (10:11)",
       "people": [
         "moses",
         "aaron"
@@ -23559,7 +23559,7 @@ window.STUDIES = [
     "url": "studies/numbers-10.html",
     "overview": {
       "where": "At Sinai, then out of the wilderness of Sinai, three days’ journey from the mount of the LORD, to the wilderness of Paran (10:12, 33)",
-      "when": "In the second year after they were come out of the land of Egypt: the cloud was taken up on the twentieth day of the second month (10:11), nineteen days after the people were numbered on the first day of that month (1:1)",
+      "when": "In the second year after they were come out of the land of Egypt, about 1445 BC: the cloud was taken up on the twentieth day of the second month (10:11), nineteen days after the people were numbered on the first day of that month (1:1)",
       "people": [
         "moses",
         "aaron",
@@ -23609,7 +23609,7 @@ window.STUDIES = [
     "url": "studies/numbers-11.html",
     "overview": {
       "where": "On the road from Sinai toward Paran, at Taberah, then Kibroth-hattaavah, then Hazeroth (11:3, 34, 35)",
-      "when": "In the second year after they were come out of Egypt, soon after the cloud was taken up on the twentieth day of the second month (10:11); the chapter gives no day of its own",
+      "when": "In the second year after they were come out of Egypt, about 1445 BC, soon after the cloud was taken up on the twentieth day of the second month (10:11); the chapter gives no day of its own",
       "people": [
         "moses",
         "joshua-son-of-nun",
@@ -23661,7 +23661,7 @@ window.STUDIES = [
     "url": "studies/numbers-12.html",
     "overview": {
       "where": "In the camp, at the door of the tabernacle of the congregation; then from Hazeroth to the wilderness of Paran (12:5, 16)",
-      "when": "In the second year after they were come out of Egypt, after the journey from Sinai began (10:11); the chapter gives no day of its own",
+      "when": "In the second year after they were come out of Egypt, about 1445 BC, after the journey from Sinai began (10:11); the chapter gives no day of its own",
       "people": [
         "moses",
         "aaron",
@@ -23708,7 +23708,7 @@ window.STUDIES = [
     "url": "studies/numbers-13.html",
     "overview": {
       "where": "Sent from the wilderness of Paran (13:3); through the land from the wilderness of Zin to Rehob, as men come to Hamath, and to Hebron and the brook Eshcol (13:21–23); back to Kadesh in the wilderness of Paran (13:26)",
-      "when": "The second year after the coming out of Egypt, soon after the cloud lifted from Sinai on the twentieth day of the second month (10:11), “the time of the firstripe grapes” (13:20); the search took forty days (13:25)",
+      "when": "The second year after the coming out of Egypt, about 1445 BC, soon after the cloud lifted from Sinai on the twentieth day of the second month (10:11), “the time of the firstripe grapes” (13:20); the search took forty days (13:25)",
       "people": [
         "moses",
         "aaron",
@@ -23764,7 +23764,7 @@ window.STUDIES = [
     "url": "studies/numbers-14.html",
     "overview": {
       "where": "At Kadesh in the wilderness of Paran (13:26), before the tabernacle of the congregation (14:10); turned back into the wilderness by the way of the Red sea (14:25); beaten back unto Hormah (14:45)",
-      "when": "The second year after the coming out of Egypt, the night after the spies returned from forty days in the land (13:25; 14:1); the sentence of forty years, “each day for a year” (14:34), ending in the fortieth year (Deuteronomy 1:3), thirty and eight years from Kadesh-barnea to the brook Zered (Deuteronomy 2:14)",
+      "when": "The second year after the coming out of Egypt, about 1445 BC, the night after the spies returned from forty days in the land (13:25; 14:1); the sentence of forty years, “each day for a year” (14:34), ending in the fortieth year (Deuteronomy 1:3), thirty and eight years from Kadesh-barnea to the brook Zered (Deuteronomy 2:14)",
       "people": [
         "moses",
         "aaron",
@@ -23821,7 +23821,7 @@ window.STUDIES = [
     "url": "studies/numbers-15.html",
     "overview": {
       "where": "In the wilderness (15:32), after the people turned back at Kadesh in the wilderness of Paran (13:26; 14)",
-      "when": "In the wandering years, after the sentence of forty years, “each day for a year” (14:34); Moses gives no day or month for these laws",
+      "when": "In the wandering years, after the sentence of forty years, “each day for a year” (14:34); Moses gives no day or month for these laws; it falls between about 1445 and 1406 BC",
       "people": [
         "moses",
         "aaron",
@@ -23870,7 +23870,7 @@ window.STUDIES = [
     "url": "studies/numbers-16.html",
     "overview": {
       "where": "In the camp in the wilderness, at the door of the tabernacle of the congregation and at the tents of Korah, Dathan and Abiram (16:18, 27)",
-      "when": "In the wandering years after Kadesh; the text gives no date. The censers were offered “to morrow” (16:7, 16), and the murmuring came “on the morrow” after the earth opened (16:41)",
+      "when": "In the wandering years after Kadesh; the text gives no date; it falls between about 1445 and 1406 BC. The censers were offered “to morrow” (16:7, 16), and the murmuring came “on the morrow” after the earth opened (16:41)",
       "people": [
         "korah",
         "dathan-and-abiram",
@@ -23919,7 +23919,7 @@ window.STUDIES = [
     "url": "studies/numbers-17.html",
     "overview": {
       "where": "In the tabernacle of the congregation, before the testimony, in the wilderness (17:4, 7)",
-      "when": "Soon after Korah's rebellion and the plague (16); the rods were laid up one day and brought out “on the morrow” (17:8)",
+      "when": "Soon after Korah's rebellion and the plague (16); the rods were laid up one day and brought out “on the morrow” (17:8); it falls between about 1445 and 1406 BC",
       "people": [
         "moses",
         "aaron"
@@ -23964,7 +23964,7 @@ window.STUDIES = [
     "url": "studies/numbers-18.html",
     "overview": {
       "where": "In the wilderness, round the tabernacle of the congregation (18:2, 22)",
-      "when": "In the wandering years, straight after Aaron’s rod budded and the people cried “we die, we perish” (17:8, 12); the chapter names no date",
+      "when": "In the wandering years, straight after Aaron’s rod budded and the people cried “we die, we perish” (17:8, 12); the chapter names no date; it falls between about 1445 and 1406 BC",
       "people": [
         "moses",
         "aaron"
@@ -24009,7 +24009,7 @@ window.STUDIES = [
     "url": "studies/numbers-19.html",
     "overview": {
       "where": "In the wilderness, outside the camp and before the tabernacle (19:3-4)",
-      "when": "In the wandering years, in a camp where a generation was to fall in the wilderness (14:29); the chapter names no date",
+      "when": "In the wandering years, in a camp where a generation was to fall in the wilderness (14:29); the chapter names no date; it falls between about 1445 and 1406 BC",
       "people": [
         "moses",
         "aaron",
@@ -24058,7 +24058,7 @@ window.STUDIES = [
     "url": "studies/numbers-20.html",
     "overview": {
       "where": "The desert of Zin, at Kadesh (20:1); then mount Hor, in the edge of the land of Edom (20:22-23; 33:37)",
-      "when": "“In the first month” (20:1), the year not named; Aaron dies on mount Hor “in the fortieth year… in the first day of the fifth month,” a hundred and twenty-three years old (33:38-39)",
+      "when": "“In the first month” (20:1), the year not named, but believed to be the fortieth, about 1406 BC; Aaron dies on mount Hor “in the fortieth year… in the first day of the fifth month,” a hundred and twenty-three years old (33:38-39)",
       "people": [
         "moses",
         "aaron",
@@ -24108,7 +24108,7 @@ window.STUDIES = [
     "url": "studies/numbers-21.html",
     "overview": {
       "where": "From mount Hor by the way of the Red sea round Edom, up the east side of Moab, over the Arnon to the top of Pisgah, then through the land of Sihon and Og (21:4, 13, 20, 24, 33)",
-      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38); over the brook Zered “thirty and eight years” after Kadesh-barnea (Deuteronomy 2:14)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38); over the brook Zered “thirty and eight years” after Kadesh-barnea (Deuteronomy 2:14)",
       "people": [
         "moses",
         "king-arad",
@@ -24168,7 +24168,7 @@ window.STUDIES = [
     "url": "studies/numbers-22.html",
     "overview": {
       "where": "The plains of Moab on the east side of Jordan by Jericho; Pethor by the river (the Euphrates); a city of Moab in the border of Arnon; Kirjath-huzoth and the high places of Baal (22:1, 5, 36, 39, 41)",
-      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
       "people": [
         "balaam",
         "balak",
@@ -24222,7 +24222,7 @@ window.STUDIES = [
     "url": "studies/numbers-23.html",
     "overview": {
       "where": "The high places of Baal; the field of Zophim on the top of Pisgah; the top of Peor that looketh toward Jeshimon, above the plains of Moab (22:41; 23:14, 28)",
-      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
       "people": [
         "balaam",
         "balak",
@@ -24271,7 +24271,7 @@ window.STUDIES = [
     "url": "studies/numbers-24.html",
     "overview": {
       "where": "The top of Peor, looking down on Israel in the plains of Moab (23:28; 24:1-2)",
-      "when": "In the fortieth year, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in mount Hor on the first day of the fifth month (Numbers 33:38), and before Moses spoke to Israel in the eleventh month (Deuteronomy 1:3)",
       "people": [
         "balaam",
         "balak",
@@ -24324,7 +24324,7 @@ window.STUDIES = [
     "url": "studies/numbers-25.html",
     "overview": {
       "where": "Shittim, in the plains of Moab by Jordan, Israel's last camp before crossing (25:1; Joshua 3:1)",
-      "when": "In the fortieth year, after Balaam's blessings from the top of Peor (Numbers 23–24), and before the second numbering “after the plague” (26:1)",
+      "when": "In the fortieth year, about 1406 BC, after Balaam's blessings from the top of Peor (Numbers 23–24), and before the second numbering “after the plague” (26:1)",
       "people": [
         "moses",
         "phinehas",
@@ -24380,7 +24380,7 @@ window.STUDIES = [
     "url": "studies/numbers-26.html",
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho (26:3)",
-      "when": "After the plague (25:9) and after Aaron died on mount Hor in the fortieth year (33:38); after the brook Zered, “thirty and eight years” from Kadesh-barnea (Deuteronomy 2:14); the first numbering was on the first day of the second month of the second year (Numbers 1:1)",
+      "when": "After the plague (25:9) and after Aaron died on mount Hor in the fortieth year (33:38), about 1406 BC; after the brook Zered, “thirty and eight years” from Kadesh-barnea (Deuteronomy 2:14); the first numbering was on the first day of the second month of the second year (Numbers 1:1)",
       "people": [
         "moses",
         "eleazar",
@@ -24433,7 +24433,7 @@ window.STUDIES = [
     "url": "studies/numbers-27.html",
     "overview": {
       "where": "By the door of the tabernacle of the congregation in the plains of Moab (27:2); mount Abarim, over against Jericho (27:12; Deuteronomy 32:49)",
-      "when": "In the fortieth year, after the second numbering (26:63); Moses is told he will be gathered to his people as Aaron was (27:13), and the book of Deuteronomy follows in the eleventh month (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after the second numbering (26:63); Moses is told he will be gathered to his people as Aaron was (27:13), and the book of Deuteronomy follows in the eleventh month (Deuteronomy 1:3)",
       "people": [
         "moses",
         "eleazar",
@@ -24482,7 +24482,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
-      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
       "people": [
         "moses"
       ],
@@ -24525,7 +24525,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
-      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
       "people": [
         "moses"
       ],
@@ -24566,7 +24566,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho, where the book ends (36:13); the chapter itself names no place",
-      "when": "In the fortieth year, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "when": "In the fortieth year, about 1406 BC, after Aaron died in the first day of the fifth month (33:38), the second numbering (26) and the appointing of Joshua (27:18-23); Deuteronomy follows “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
       "people": [
         "moses"
       ],
@@ -24609,7 +24609,7 @@ window.STUDIES = [
     "url": "studies/numbers-31.html",
     "overview": {
       "where": "From the camp in the plains of Moab, by Jordan near Jericho, out against Midian and back (31:12)",
-      "when": "In the fortieth year, in the plains of Moab, after Aaron died on the first day of the fifth month (33:38) and before Moses spoke the words of Deuteronomy in the eleventh month (Deuteronomy 1:3): Moses' last work before he was gathered to his people (31:2)",
+      "when": "In the fortieth year, about 1406 BC, in the plains of Moab, after Aaron died on the first day of the fifth month (33:38) and before Moses spoke the words of Deuteronomy in the eleventh month (Deuteronomy 1:3): Moses' last work before he was gathered to his people (31:2)",
       "people": [
         "moses",
         "eleazar",
@@ -24663,7 +24663,7 @@ window.STUDIES = [
     "url": "studies/numbers-32.html",
     "overview": {
       "where": "The plains of Moab, and the land east of the Jordan taken from Sihon and Og: Jazer, Gilead, Heshbon, Dibon and Bashan (32:1-3, 33)",
-      "when": "In the fortieth year, in the plains of Moab, while Moses still lived (32:28; Deuteronomy 1:3), after the “thirty and eight years” from Kadesh-barnea to the brook Zered (32:8; Deuteronomy 2:14)",
+      "when": "In the fortieth year, about 1406 BC, in the plains of Moab, while Moses still lived (32:28; Deuteronomy 1:3), after the “thirty and eight years” from Kadesh-barnea to the brook Zered (32:8; Deuteronomy 2:14)",
       "people": [
         "moses",
         "eleazar",
@@ -24727,7 +24727,7 @@ window.STUDIES = [
     "url": "studies/numbers-33.html",
     "overview": {
       "where": "Written as one list from Rameses in Egypt, through the sea, Sinai, Ezion-gaber, Kadesh and mount Hor, to the plains of Moab by Jordan near Jericho, where the LORD speaks to Moses (33:48-50)",
-      "when": "From the fifteenth day of the first month, the morrow after the passover (33:3), to the first day of the fifth month of the fortieth year, when Aaron died (33:38); the last camp is in the plains of Moab, before Deuteronomy 1:3 (the fortieth year, the eleventh month)",
+      "when": "From the fifteenth day of the first month, the morrow after the passover (33:3), about 1446 BC, to the first day of the fifth month of the fortieth year, when Aaron died (33:38), about 1406 BC; the last camp is in the plains of Moab, before Deuteronomy 1:3 (the fortieth year, the eleventh month)",
       "people": [
         "moses",
         "aaron"
@@ -24782,7 +24782,7 @@ window.STUDIES = [
     "url": "studies/numbers-34.html",
     "overview": {
       "where": "In the plains of Moab by Jordan near Jericho (33:50), looking across the river to the land of Canaan",
-      "when": "The fortieth year, after the last camp is pitched in the plains of Moab (33:48-50) and before the book ends there (36:13)",
+      "when": "The fortieth year, about 1406 BC, after the last camp is pitched in the plains of Moab (33:48-50) and before the book ends there (36:13)",
       "people": [
         "moses",
         "eleazar",
@@ -24835,7 +24835,7 @@ window.STUDIES = [
     "url": "studies/numbers-35.html",
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho (35:1)",
-      "when": "In the plains of Moab, near the end of the forty years, with Deuteronomy to follow “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "when": "In the plains of Moab, near the end of the forty years, about 1406 BC, with Deuteronomy to follow “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
       "people": [
         "moses"
       ],
@@ -24882,7 +24882,7 @@ window.STUDIES = [
     "url": "studies/numbers-36.html",
     "overview": {
       "where": "The plains of Moab by Jordan near Jericho (36:13)",
-      "when": "In the plains of Moab, at the end of the forty years, with Deuteronomy beginning “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
+      "when": "In the plains of Moab, at the end of the forty years, about 1406 BC, with Deuteronomy beginning “in the fortieth year, in the eleventh month” (Deuteronomy 1:3)",
       "people": [
         "moses",
         "machir",
@@ -24930,7 +24930,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-01.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab, looking back to Horeb and Kadesh-barnea (1:1–5)",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), after Sihon and Og were slain (1:4); looking back to the departure from Horeb and the refusal at Kadesh-barnea",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), about 1406 BC, after Sihon and Og were slain (1:4); looking back to the departure from Horeb and the refusal at Kadesh-barnea",
       "people": [
         "moses",
         "caleb",
@@ -24983,7 +24983,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-02.html",
     "overview": {
       "where": "Round mount Seir, past Edom and Moab and Ammon, to the river Arnon and the land of Sihon king of Heshbon",
-      "when": "Many days round mount Seir; thirty and eight years from Kadesh-barnea until they crossed the brook Zered (2:14), then in the fortieth year Sihon is defeated",
+      "when": "Many days round mount Seir; thirty and eight years from Kadesh-barnea until they crossed the brook Zered (2:14), then in the fortieth year Sihon is defeated, about 1406 BC",
       "people": [
         "moses",
         "esau",
@@ -25037,7 +25037,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-03.html",
     "overview": {
       "where": "On this side Jordan, from the river Arnon to mount Hermon; Israel abode in the valley over against Beth-peor (3:8, 29)",
-      "when": "In the fortieth year, Moses speaking in the land of Moab (1:3, 5), retelling the conquest of Og after Sihon",
+      "when": "In the fortieth year, about 1406 BC, Moses speaking in the land of Moab (1:3, 5), retelling the conquest of Og after Sihon",
       "people": [
         "moses",
         "og",
@@ -25097,7 +25097,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-04.html",
     "overview": {
       "where": "On this side Jordan, in the valley over against Beth-peor, in the land of Sihon king of the Amorites (4:46)",
-      "when": "In the fortieth year, in the eleventh month (1:3), after they came forth out of Egypt (4:45)",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, after they came forth out of Egypt (4:45)",
       "people": [
         "moses",
         "israel"
@@ -25154,7 +25154,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-05.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), looking back to the mount in Horeb (5:2)",
-      "when": "In the fortieth year, in the eleventh month (1:3), looking back to the day the LORD spoke at Horeb (5:2–4)",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, looking back to the day the LORD spoke at Horeb (5:2–4)",
       "people": [
         "moses"
       ],
@@ -25199,7 +25199,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-06.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), before Israel goes over to possess the land (6:1)",
-      "when": "In the fortieth year, in the eleventh month (1:3), as Moses gives the commandments again before they go in",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses gives the commandments again before they go in",
       "people": [
         "abraham",
         "isaac",
@@ -25245,7 +25245,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-07.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), as Moses speaks to Israel before they cross",
-      "when": "In the fortieth year, in the eleventh month (1:3), before Israel goes over Jordan",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, before Israel goes over Jordan",
       "people": [
         "moses",
         "hittites",
@@ -25298,7 +25298,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-08.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), looking back on the wilderness and ahead to the good land",
-      "when": "In the fortieth year, in the eleventh month (1:3), at the end of the forty years in the wilderness (8:2)",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, at the end of the forty years in the wilderness (8:2)",
       "people": [
         "moses",
         "pharaoh"
@@ -25345,7 +25345,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-09.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), with Moses looking back to Horeb",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), with Moses looking back to his forty days and forty nights in the mount at Horeb (9:9, 18)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), about 1406 BC, with Moses looking back to his forty days and forty nights in the mount at Horeb (9:9, 18)",
       "people": [
         "moses",
         "aaron",
@@ -25398,7 +25398,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-10.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), with Moses looking back to the mount and to the journeys of verses 6 and 7",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), looking back to “that time” after the first tables were broken (10:1), and to Aaron's death in the fortieth year, on the first day of the fifth month (Numbers 33:38)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (Deuteronomy 1:3), about 1406 BC, looking back to “that time” after the first tables were broken (10:1), and to Aaron's death in the fortieth year, on the first day of the fifth month (Numbers 33:38)",
       "people": [
         "moses",
         "aaron",
@@ -25446,7 +25446,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-11.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (1:1, 5), looking across to mount Gerizim and mount Ebal, over against Gilgal, beside the plains of Moreh (11:29-30)",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), with the Jordan still to cross (11:31)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), about 1406 BC, with the Jordan still to cross (11:31)",
       "people": [
         "pharaoh",
         "dathan-and-abiram",
@@ -25501,7 +25501,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-12.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (1:1, 5), looking ahead to the land and to the place the LORD shall choose to put his name there (12:5)",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), before they go over Jordan (12:10)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), about 1406 BC, before they go over Jordan (12:10)",
       "people": [
         "priests-and-levites"
       ],
@@ -25543,7 +25543,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-13.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab, as Moses gives the law again (1:5)",
-      "when": "In the fortieth year, in the eleventh month (1:3), as Moses speaks to the new generation before they go in",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses speaks to the new generation before they go in",
       "people": [
         "moses",
         "prophet-or-dreamer"
@@ -25586,7 +25586,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-14.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), looking ahead to “the place which he shall choose to place his name there” (14:23)",
-      "when": "In the fortieth year, in the eleventh month (1:3), as Moses speaks to the new generation before they go in",
+      "when": "In the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses speaks to the new generation before they go in",
       "people": [
         "moses",
         "priests-and-levites",
@@ -25632,7 +25632,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-15.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5), where Moses speaks to the new generation",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), before Israel goes over Jordan into the land",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, before Israel goes over Jordan into the land",
       "people": [
         "moses"
       ],
@@ -25675,7 +25675,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-16.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the feasts are for “the place which the LORD thy God shall choose”, which Moses does not name",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3); the feasts fall in “the month of Abib” (16:1), seven weeks after the sickle is put to the corn (16:9), and when the corn and wine are gathered in (16:13)",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC; the feasts fall in “the month of Abib” (16:1), seven weeks after the sickle is put to the corn (16:9), and when the corn and wine are gathered in (16:13)",
       "people": [
         "moses"
       ],
@@ -25717,7 +25717,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-17.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); hard cases go to “the place which the LORD thy God shall choose”",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “when thou art come unto the land” and say, I will set a king over me (17:14); the kings come in 1 Samuel 8 and 1 Kings 10-11",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, looking ahead to “when thou art come unto the land” and say, I will set a king over me (17:14); the kings come in 1 Samuel 8 and 1 Kings 10-11",
       "people": [
         "moses"
       ],
@@ -25760,7 +25760,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-18.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking back to “Horeb in the day of the assembly” (18:16)",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When thou art come into the land” (18:9)",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, looking ahead to “When thou art come into the land” (18:9)",
       "people": [
         "moses",
         "priests-and-levites"
@@ -25805,7 +25805,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-19.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking ahead to the land, divided “into three parts” (19:3)",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When the LORD thy God hath cut off the nations” (19:1); Joshua names the three cities in Joshua 20:7",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, looking ahead to “When the LORD thy God hath cut off the nations” (19:1); Joshua names the three cities in Joshua 20:7",
       "people": [
         "moses",
         "elders"
@@ -25850,7 +25850,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-20.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking ahead to the wars in the land, and against cities “very far off” (20:15)",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), looking ahead to “When thou goest out to battle against thine enemies” (20:1); Gideon keeps the law of the fearful in Judges 7:3",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, looking ahead to “When thou goest out to battle against thine enemies” (20:1); Gideon keeps the law of the fearful in Judges 7:3",
       "people": [
         "moses",
         "priests",
@@ -25901,7 +25901,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-21.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the laws look ahead to the land, its fields, cities and gates",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, in the plains of Moab, before Israel went over Jordan",
       "people": [
         "moses"
       ],
@@ -25943,7 +25943,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-22.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); the laws look ahead to houses, fields, vineyards and city gates in the land",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, in the plains of Moab, before Israel went over Jordan",
       "people": [
         "moses"
       ],
@@ -25988,7 +25988,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-23.html",
     "overview": {
       "where": "The plains of Moab, on this side Jordan (Deuteronomy 1:1, 5); looking back to the way out of Egypt, and Balaam of Pethor of Mesopotamia",
-      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), in the plains of Moab, before Israel went over Jordan",
+      "when": "“In the fortieth year, in the eleventh month, on the first day of the month” (Deuteronomy 1:3), about 1406 BC, in the plains of Moab, before Israel went over Jordan",
       "people": [
         "moses",
         "balaam",
@@ -26042,7 +26042,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-24.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5)",
-      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses gives the law again before Israel goes over Jordan",
       "people": [
         "moses",
         "miriam",
@@ -26090,7 +26090,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-25.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5)",
-      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses gives the law again before Israel goes over Jordan",
       "people": [
         "moses",
         "elders",
@@ -26135,7 +26135,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-26.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5)",
-      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), as Moses gives the law again before Israel goes over Jordan",
+      "when": "In the plains of Moab, in the fortieth year, in the eleventh month (1:3), about 1406 BC, as Moses gives the law again before Israel goes over Jordan",
       "people": [
         "moses",
         "jacob",
@@ -26183,7 +26183,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-27.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5), looking across to mount Ebal and mount Gerizim on the other side (11:29–30; 27:4, 12–13)",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3); the stones and the mounts are for “the day when ye shall pass over Jordan” (27:2). Joshua kept it (Joshua 8:30–35)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), about 1406 BC; the stones and the mounts are for “the day when ye shall pass over Jordan” (27:2). Joshua kept it (Joshua 8:30–35)",
       "people": [
         "moses",
         "levi"
@@ -26229,7 +26229,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-28.html",
     "overview": {
       "where": "On this side Jordan, in the land of Moab (1:5): the blessing and the curse spoken out, as set on mount Gerizim and mount Ebal (11:29; 27:12–13)",
-      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3). The Bible shows the curses come to pass: Samaria taken in the ninth year of Hoshea (2 Kings 17:6), Jerusalem burned in the nineteenth year of Nebuchadnezzar (2 Kings 25:8)",
+      "when": "In the fortieth year, in the eleventh month, on the first day of the month (1:3), about 1406 BC. The Bible shows the curses come to pass: Samaria taken in the ninth year of Hoshea (2 Kings 17:6), 722 BC, Jerusalem burned in the nineteenth year of Nebuchadnezzar (2 Kings 25:8), 586 BC",
       "people": [
         "moses"
       ],
@@ -26271,7 +26271,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-29.html",
     "overview": {
       "where": "The land of Moab, on this side Jordan (29:1)",
-      "when": "In the fortieth year, in Moses’ last days, after forty years in the wilderness (29:5; 1:3)",
+      "when": "In the fortieth year, in Moses’ last days, after forty years in the wilderness (29:5; 1:3), about 1406 BC",
       "people": [
         "moses",
         "israel",
@@ -26325,7 +26325,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-30.html",
     "overview": {
       "where": "The land of Moab, on this side Jordan (29:1; 30:18)",
-      "when": "Moses’ last words to Israel in the fortieth year, looking ahead to a return from far (30:1-5)",
+      "when": "Moses’ last words to Israel in the fortieth year, about 1406 BC, looking ahead to a return from far (30:1-5)",
       "people": [
         "moses",
         "israel",
@@ -26371,7 +26371,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-31.html",
     "overview": {
       "where": "The land of Moab on this side Jordan, and the tabernacle of the congregation (31:14)",
-      "when": "The same fortieth year: Moses an hundred and twenty years old \"this day\" (31:2)",
+      "when": "The same fortieth year, about 1406 BC: Moses an hundred and twenty years old \"this day\" (31:2)",
       "people": [
         "moses",
         "joshua-son-of-nun",
@@ -26424,7 +26424,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-32.html",
     "overview": {
       "where": "In the plains of Moab, then up into the mountain Abarim, unto mount Nebo, in the land of Moab over against Jericho (32:49)",
-      "when": "In Moses’ last days, in the fortieth year (1:3); the LORD spake to him “that selfsame day” he finished the song (32:48)",
+      "when": "In Moses’ last days, in the fortieth year (1:3), about 1406 BC; the LORD spake to him “that selfsame day” he finished the song (32:48)",
       "people": [
         "moses",
         "joshua-son-of-nun",
@@ -26480,7 +26480,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-33.html",
     "overview": {
       "where": "In the plains of Moab, before Moses’ death; the blessing looks back to Sinai, Seir and mount Paran (33:2) and on to each tribe’s land",
-      "when": "“Before his death” (33:1), in the fortieth year (1:3)",
+      "when": "“Before his death” (33:1), in the fortieth year (1:3), about 1406 BC",
       "people": [
         "moses",
         "jeshurun",
@@ -26541,7 +26541,7 @@ window.STUDIES = [
     "url": "studies/deuteronomy-34.html",
     "overview": {
       "where": "From the plains of Moab up to the top of Pisgah on the mountain of Nebo, over against Jericho (34:1); buried in a valley in the land of Moab, over against Beth-peor (34:6)",
-      "when": "Moses an hundred and twenty years old (34:7; 31:2), in the fortieth year (1:3); Israel wept thirty days in the plains of Moab (34:8), and afterward came up out of Jordan on the tenth day of the first month (Joshua 4:19)",
+      "when": "Moses an hundred and twenty years old (34:7; 31:2), in the fortieth year (1:3), about 1406 BC; Israel wept thirty days in the plains of Moab (34:8), and afterward came up out of Jordan on the tenth day of the first month (Joshua 4:19)",
       "people": [
         "moses",
         "joshua-son-of-nun",

@@ -47438,7 +47438,7 @@ window.GLOSSARY = [
  {
   "id": "jerusalem-compassed",
   "kind": "term",
-  "name": "Jerusalem compassed with armies (the siege Jesus foretold)",
+  "name": "Jerusalem compassed with armies (the siege Jesus foretold, AD 70)",
   "refs": [
    [
     "Luke", 21,
@@ -49364,7 +49364,7 @@ window.GLOSSARY = [
  {
   "id": "claudius",
   "kind": "person",
-  "name": "Claudius, Roman emperor (Acts 11:28; 18:2)",
+  "name": "Claudius, Roman emperor (AD 41–54; Acts 11:28; 18:2)",
   "refs": [
    [
     "Acts", 11,
@@ -49571,7 +49571,7 @@ window.GLOSSARY = [
  {
   "id": "herod-agrippa",
   "kind": "person",
-  "name": "Herod Agrippa I, king over the Jews, who killed James (Acts 12)",
+  "name": "Herod Agrippa I, king over the Jews (AD 41–44), who killed James (Acts 12)",
   "refs": [
    [
     "Acts", 12,
@@ -52547,7 +52547,7 @@ window.GLOSSARY = [
  {
   "id": "gallio",
   "kind": "person",
-  "name": "Gallio (the Roman deputy of Achaia, Acts 18:12)",
+  "name": "Gallio (the Roman deputy of Achaia, AD 51–52; Acts 18:12)",
   "refs": [
    [
     "Acts", 18,
@@ -52661,7 +52661,7 @@ window.GLOSSARY = [
  {
   "id": "festus",
   "kind": "person",
-  "name": "Festus (Porcius Festus, Roman governor of Judaea after Felix, Acts 24:27)",
+  "name": "Festus (Porcius Festus, Roman governor of Judaea after Felix, about AD 59–62; Acts 24:27)",
   "refs": [
    [
     "Acts", 24,
