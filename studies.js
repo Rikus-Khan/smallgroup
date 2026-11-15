@@ -2412,7 +2412,7 @@ window.STUDIES = [
     "url": "studies/topic-wisdom-proverbs.html",
     "overview": {
       "where": "All through the book of Proverbs",
-      "when": "Mostly from Solomon's reign (about 970–930 B.C.), gathered into the book by about 700 B.C. (Proverbs 25:1)",
+      "when": "Mostly from Solomon's reign (1 Kings 4:32), with more gathered by the men of Hezekiah king of Judah (Proverbs 25:1)",
       "people": [
         "solomon",
         "the-lord",
