@@ -212,35 +212,47 @@ These drawn (SVG) graphics live in one study each, with their own markup. When y
 
 ## New Testament dates
 
-Use these, always with "about", so every study agrees. They are the common conservative dates.
+**Rick's ruling (2026-11-14), the same as for the Old Testament: "If the Bible gives a date, use that."**
 
-| Event | About |
+- **No AD or BC years anywhere.** That covers the text, timelines, labels, alt text, `studies.js` and `book-info.js`.
+- **No outside year counts either**, such as "some sixty years later" or "seven hundred years before".
+- **Date events the way the New Testament dates them**, and quote the reference.
+- **Spans the Bible states are fine**: "about thirty years of age", "two whole years", "after three years".
+- **Outside history** (an emperor, the burning of the temple) may be named when it helps, but without a year.
+- **Tradition stays labeled as tradition.**
+
+| Event | The Bible's own marker |
 |---|---|
-| Jesus crucified, risen, ascended; Pentecost (Acts 1–2) | AD 30 to 33 |
-| Saul converted on the Damascus road (Acts 9) | AD 34 to 35 |
-| First missionary journey: Cyprus and Galatia (Acts 13–14) | AD 46 to 48 |
-| Galatians written, to the churches of that first journey | AD 48 to 49 |
-| The Jerusalem council (Acts 15) | AD 49 |
-| Second journey: Philippi, Thessalonica, Athens, Corinth (Acts 15:36–18:22) | AD 49 to 52 |
-| 1 and 2 Thessalonians written, from Corinth | AD 50 to 51 |
-| James written (the earliest letter, by some counts) | AD 45 to 50 |
-| Third journey: three years at Ephesus, then Macedonia and Greece (Acts 18:23–21:16) | AD 53 to 57 |
-| 1 Corinthians, from Ephesus | AD 55 |
-| 2 Corinthians, from Macedonia | AD 56 |
-| Romans, from Corinth | AD 57 |
-| Paul arrested in Jerusalem; two years in prison at Caesarea (Acts 21–26) | AD 57 to 59 |
-| The voyage and shipwreck; Rome (Acts 27–28) | AD 59 to 60 |
-| Under house arrest in Rome: Ephesians, Philippians, Colossians, Philemon | AD 60 to 62 |
-| Acts finished by Luke | AD 62 |
-| 1 Peter, from "Babylon" (Rome) | AD 62 to 64 |
-| Paul released: 1 Timothy and Titus | AD 62 to 64 |
-| Rome burns; Nero turns on the Christians | AD 64 |
-| 2 Peter; Hebrews; Jude | AD 64 to 68 |
-| 2 Timothy, Paul's last letter, from a Roman prison | AD 66 to 67 |
-| Paul and Peter put to death in Rome, by tradition | AD 67 to 68 |
-| Rome destroys Jerusalem and the temple | AD 70 |
-| John's letters, from Ephesus | AD 85 to 95 |
-| Revelation, from Patmos, under Domitian | AD 95 |
+| Jesus born | "in the days of Herod the king" (Matthew 2:1), when Caesar Augustus taxed the world and Cyrenius was governor of Syria (Luke 2:1–2) |
+| John the Baptist begins | "in the fifteenth year of the reign of Tiberius Caesar", Pontius Pilate governor of Judaea (Luke 3:1) |
+| Jesus begins his ministry | "about thirty years of age" (Luke 3:23); the temple "forty and six years in building" (John 2:20) |
+| The length of his ministry | John names three Passovers (John 2:13; 6:4; 11:55) and another feast (5:1) |
+| The cross, the empty tomb, the ascension, Pentecost | at the Passover (John 19:14); "the third day" (1 Corinthians 15:4); "forty days" (Acts 1:3); "the day of Pentecost" (Acts 2:1) |
+| Saul converted, then his first visits | Acts 9; "after three years I went up to Jerusalem" (Galatians 1:18); "fourteen years after" (Galatians 2:1) |
+| The famine and Herod's death | "in the days of Claudius Caesar" (Acts 11:28); Acts 12:20–23 |
+| First journey: Cyprus and Galatia | Acts 13–14 |
+| Galatians written | to the churches of that first journey, soon after (Galatians 1:6, "so soon removed") |
+| The Jerusalem council | Acts 15 |
+| Second journey: Philippi, Thessalonica, Athens, Corinth | Acts 15:36–18:22; Claudius had driven the Jews from Rome (Acts 18:2); Gallio deputy of Achaia (Acts 18:12); "a year and six months" at Corinth (Acts 18:11) |
+| 1 and 2 Thessalonians | from Corinth, after Timothy came back from Thessalonica (1 Thessalonians 3:6; Acts 18:5) |
+| James | to "the twelve tribes which are scattered abroad" (James 1:1); the letter names no date, so say so |
+| Third journey: Ephesus, then Macedonia and Greece | Acts 18:23–21:16; "the space of two years" and "three years" at Ephesus (Acts 19:10; 20:31) |
+| 1 Corinthians | from Ephesus, before Pentecost (1 Corinthians 16:8) |
+| 2 Corinthians | from Macedonia (2 Corinthians 7:5; 8:1) |
+| Romans | from Corinth, as Paul takes the gift to Jerusalem (Romans 15:25–26; 16:23) |
+| Arrest and prison at Caesarea | Acts 21–26; "after two years" Festus followed Felix (Acts 24:27) |
+| Voyage, shipwreck, Rome | Acts 27–28; "two whole years in his own hired house" (Acts 28:30) |
+| Ephesians, Philippians, Colossians, Philemon | written in bonds (Ephesians 6:20; Philippians 1:13; Colossians 4:18; Philemon 9) |
+| Acts ends | with Paul still in Rome, preaching (Acts 28:30–31) |
+| 1 Timothy and Titus | after Paul is free to travel again (1 Timothy 1:3; Titus 1:5; 3:12) |
+| 1 Peter | from "Babylon" (1 Peter 5:13) |
+| Hebrews | Timothy "set at liberty"; "they of Italy salute you" (Hebrews 13:23–24) |
+| 2 Peter | "shortly I must put off this my tabernacle" (2 Peter 1:14) |
+| 2 Timothy, Paul's last letter | in bonds again; "the time of my departure is at hand" (2 Timothy 1:8; 4:6) |
+| Peter's death | foretold by Jesus (John 21:18–19); that it was in Rome is tradition |
+| Jerusalem and the temple thrown down | foretold by Jesus (Matthew 24:2; Luke 19:43–44; 21:20); no year |
+| John's Gospel and letters | late; John is "the elder" (2 John 1; 3 John 1) |
+| Revelation | John "in the isle that is called Patmos" (Revelation 1:9) |
 
 ## Old Testament dates
 

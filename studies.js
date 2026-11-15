@@ -5673,7 +5673,7 @@ window.STUDIES = [
     "url": "studies/matthew-01.html",
     "overview": {
       "where": "Bethlehem in Judaea, through Joseph's family line back to Abraham",
-      "when": "About 5 BC, just before Jesus is born",
+      "when": "Just before Jesus is born, in the days of Herod the king (2:1)",
       "people": [
         "jesus",
         "abraham",
@@ -5724,7 +5724,7 @@ window.STUDIES = [
     "url": "studies/matthew-02.html",
     "overview": {
       "where": "Jerusalem and Bethlehem in Judaea, then Egypt, then Nazareth in Galilee",
-      "when": "About 5 to 4 BC, in the last days of Herod the king",
+      "when": "In the last days of Herod the king (2:1, 19)",
       "people": [
         "jesus",
         "herod-the-great",
@@ -5780,7 +5780,7 @@ window.STUDIES = [
     "url": "studies/matthew-03.html",
     "overview": {
       "where": "The wilderness of Judaea and the Jordan River",
-      "when": "About AD 27, some thirty years after Jesus' birth",
+      "when": "In the fifteenth year of Tiberius Caesar (Luke 3:1), when Jesus was about thirty (Luke 3:23)",
       "people": [
         "john-the-baptist",
         "jesus",
@@ -5832,7 +5832,7 @@ window.STUDIES = [
     "url": "studies/matthew-04.html",
     "overview": {
       "where": "The wilderness of Judaea and the temple in Jerusalem, then Capernaum by the Sea of Galilee",
-      "when": "Right after Jesus' baptism; then, some months later, when John the Baptist was put in prison (about A.D. 27–28)",
+      "when": "Right after Jesus' baptism; then, after John the Baptist was put in prison (4:12)",
       "people": [
         "jesus",
         "holy-spirit",
@@ -5894,7 +5894,7 @@ window.STUDIES = [
     "url": "studies/matthew-05.html",
     "overview": {
       "where": "A hillside in Galilee, near Capernaum on the Sea of Galilee",
-      "when": "Early in Jesus' Galilean ministry, soon after he called his first disciples (about A.D. 28)",
+      "when": "Early in Jesus' Galilean ministry, soon after he called his first disciples (4:18–22)",
       "people": [
         "jesus",
         "disciples",
@@ -5944,7 +5944,7 @@ window.STUDIES = [
     "url": "studies/matthew-06.html",
     "overview": {
       "where": "On a mountain in Galilee near Capernaum, in the middle of the Sermon on the Mount",
-      "when": "Early in Jesus' ministry, about AD 28",
+      "when": "Early in Jesus' ministry, the same sermon as chapter 5",
       "people": [
         "jesus",
         "disciples",
@@ -5995,7 +5995,7 @@ window.STUDIES = [
     "url": "studies/matthew-07.html",
     "overview": {
       "where": "The mountain near Capernaum, at the end of the Sermon on the Mount",
-      "when": "Early in Jesus' ministry, about AD 28",
+      "when": "Early in Jesus' ministry, the end of the sermon begun in chapter 5",
       "people": [
         "jesus",
         "the-father",
@@ -6042,7 +6042,7 @@ window.STUDIES = [
     "url": "studies/matthew-08.html",
     "overview": {
       "where": "Capernaum, the Sea of Galilee, and the country of the Gergesenes on the east shore",
-      "when": "Early in Jesus' ministry, about AD 28",
+      "when": "Early in Jesus' ministry, as he comes down from the mountain (8:1)",
       "people": [
         "jesus",
         "the-leper",
@@ -6099,7 +6099,7 @@ window.STUDIES = [
     "url": "studies/matthew-09.html",
     "overview": {
       "where": "Capernaum, Jesus' own city on the Sea of Galilee, then the towns and villages of Galilee",
-      "when": "Early in Jesus' work in Galilee, about AD 28",
+      "when": "Early in Jesus' work in Galilee",
       "people": [
         "jesus",
         "scribes",
@@ -6152,7 +6152,7 @@ window.STUDIES = [
     "url": "studies/matthew-10.html",
     "overview": {
       "where": "Galilee, as Jesus sends the twelve out to the towns of Israel",
-      "when": "Right after Matthew 9, in Jesus' work in Galilee, about AD 28",
+      "when": "Right after Matthew 9, in Jesus' work in Galilee",
       "people": [
         "jesus",
         "the-twelve",
@@ -6207,7 +6207,7 @@ window.STUDIES = [
     "url": "studies/matthew-11.html",
     "overview": {
       "where": "The towns of Galilee around the Sea of Galilee; John in Herod's prison",
-      "when": "About A.D. 28, during Jesus' work in Galilee",
+      "when": "During Jesus' work in Galilee, while John the Baptist is in prison (11:2)",
       "people": [
         "jesus",
         "john-the-baptist",
@@ -6261,7 +6261,7 @@ window.STUDIES = [
     "url": "studies/matthew-12.html",
     "overview": {
       "where": "The grainfields and a synagogue in Galilee",
-      "when": "About A.D. 28, during Jesus' work in Galilee",
+      "when": "During Jesus' work in Galilee",
       "people": [
         "jesus",
         "disciples",
@@ -6321,7 +6321,7 @@ window.STUDIES = [
     "url": "studies/matthew-13.html",
     "overview": {
       "where": "By the Sea of Galilee, most likely near Capernaum, then Nazareth, his own country",
-      "when": "The same day as Matthew 12, in Jesus' work in Galilee, about AD 28",
+      "when": "The same day as Matthew 12, in Jesus' work in Galilee (13:1)",
       "people": [
         "jesus",
         "disciples",
@@ -6367,7 +6367,7 @@ window.STUDIES = [
     "url": "studies/matthew-14.html",
     "overview": {
       "where": "Herod Antipas' court; a lonely place near Bethsaida; the Sea of Galilee at night; the land of Gennesaret",
-      "when": "About AD 29, in the spring, with the Passover near (John 6:4), soon after John the Baptist was killed",
+      "when": "In the spring, with the Passover near (John 6:4), soon after John the Baptist was killed",
       "people": [
         "jesus",
         "herod-antipas",
@@ -6417,7 +6417,7 @@ window.STUDIES = [
     "url": "studies/matthew-15.html",
     "overview": {
       "where": "By the Sea of Galilee, then north in the coasts of Tyre and Sidon, then back to the lake and across to Magdala",
-      "when": "Late in Jesus' work in Galilee, about AD 29",
+      "when": "Late in Jesus' work in Galilee",
       "people": [
         "jesus",
         "scribes",
@@ -6469,7 +6469,7 @@ window.STUDIES = [
     "url": "studies/matthew-16.html",
     "overview": {
       "where": "By the Sea of Galilee, then north to the coasts of Caesarea Philippi, below Mount Hermon",
-      "when": "Late in Jesus' work in Galilee, about AD 29, as he turns toward Jerusalem and the cross",
+      "when": "Late in Jesus' work in Galilee, as he turns toward Jerusalem and the cross (16:21)",
       "people": [
         "jesus",
         "pharisees",
@@ -6521,7 +6521,7 @@ window.STUDIES = [
     "url": "studies/matthew-17.html",
     "overview": {
       "where": "A high mountain (perhaps Hermon, near Caesarea Philippi, or Tabor), then Galilee and Capernaum",
-      "when": "Six days after Peter's confession, about AD 29",
+      "when": "Six days after Peter's confession (17:1)",
       "people": [
         "jesus",
         "simon-peter",
@@ -6573,7 +6573,7 @@ window.STUDIES = [
     "url": "studies/matthew-18.html",
     "overview": {
       "where": "Capernaum, in a house, back from the road (17:24; Mark 9:33)",
-      "when": "About AD 29, late in Jesus' ministry in Galilee",
+      "when": "Late in Jesus' ministry in Galilee",
       "people": [
         "jesus",
         "disciples",
@@ -6619,7 +6619,7 @@ window.STUDIES = [
     "url": "studies/matthew-19.html",
     "overview": {
       "where": "Judaea beyond Jordan (Perea), east of the Jordan River, on the way to Jerusalem",
-      "when": "About AD 30, in the months before the cross",
+      "when": "On the way to Jerusalem, after Jesus leaves Galilee (19:1)",
       "people": [
         "jesus",
         "pharisees",
@@ -6669,7 +6669,7 @@ window.STUDIES = [
     "url": "studies/matthew-20.html",
     "overview": {
       "where": "A vineyard in Jesus' story, then the road from beyond the Jordan up to Jerusalem, by way of Jericho",
-      "when": "The last journey to Jerusalem, shortly before his final Passover (about AD 30 or 33)",
+      "when": "The last journey to Jerusalem, shortly before his final Passover",
       "people": [
         "jesus",
         "householder",
@@ -6718,7 +6718,7 @@ window.STUDIES = [
     "url": "studies/matthew-21.html",
     "overview": {
       "where": "Bethphage and the Mount of Olives, then Jerusalem and the temple, with nights at Bethany",
-      "when": "The first days of the last week, from the Sunday he rode in (about AD 30 or 33)",
+      "when": "The first days of the last week, from the Sunday he rode in",
       "people": [
         "jesus",
         "disciples",
@@ -6771,7 +6771,7 @@ window.STUDIES = [
     "url": "studies/matthew-22.html",
     "overview": {
       "where": "The temple courts in Jerusalem",
-      "when": "About AD 30, probably the Tuesday of the last week before the cross",
+      "when": "Probably the Tuesday of the last week before the cross",
       "people": [
         "jesus",
         "pharisees",
@@ -6822,7 +6822,7 @@ window.STUDIES = [
     "url": "studies/matthew-23.html",
     "overview": {
       "where": "The temple courts in Jerusalem",
-      "when": "About AD 30, the same day as chapter 22, days before the cross",
+      "when": "The same day as chapter 22, days before the cross",
       "people": [
         "jesus",
         "scribes",
@@ -6873,7 +6873,7 @@ window.STUDIES = [
     "url": "studies/matthew-24.html",
     "overview": {
       "where": "The temple in Jerusalem, then the Mount of Olives across the Kidron valley, looking back at the temple",
-      "when": "About AD 30, in the last week before the cross, two days before the Passover",
+      "when": "In the last week before the cross, two days before the Passover (26:2)",
       "people": [
         "jesus",
         "disciples",
@@ -6923,7 +6923,7 @@ window.STUDIES = [
     "url": "studies/matthew-25.html",
     "overview": {
       "where": "The Mount of Olives, across from the temple in Jerusalem, the same evening as chapter 24",
-      "when": "About AD 30, in the last week before the cross, two days before the Passover",
+      "when": "In the last week before the cross, two days before the Passover (26:2)",
       "people": [
         "ten-virgins",
         "bridegroom",
@@ -6972,7 +6972,7 @@ window.STUDIES = [
     "url": "studies/matthew-26.html",
     "overview": {
       "where": "Bethany, an upper room in Jerusalem, the garden of Gethsemane on the Mount of Olives, and the high priest's palace",
-      "when": "The last week, about AD 30 or 33: two days before the Passover, then the Thursday night of the Passover",
+      "when": "The last week: two days before the Passover (26:2), then the Thursday night of the Passover",
       "people": [
         "jesus",
         "disciples",
@@ -7029,7 +7029,7 @@ window.STUDIES = [
     "url": "studies/matthew-27.html",
     "overview": {
       "where": "Jerusalem: the temple, Pilate's hall, Golgotha outside the city, and Joseph's tomb in the rock",
-      "when": "The Friday of Passover week, about A.D. 30, from dawn to evening, and the sabbath after",
+      "when": "The Friday of Passover week, from dawn to evening, and the sabbath after",
       "people": [
         "jesus",
         "judas-iscariot",
@@ -7087,7 +7087,7 @@ window.STUDIES = [
     "url": "studies/matthew-28.html",
     "overview": {
       "where": "The tomb outside Jerusalem, then a mountain in Galilee",
-      "when": "The first day of the week, at dawn, after the crucifixion (about A.D. 30), and some days later in Galilee",
+      "when": "The first day of the week, at dawn, after the crucifixion (28:1), and some days later in Galilee",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -7137,7 +7137,7 @@ window.STUDIES = [
     "url": "studies/mark-01.html",
     "overview": {
       "where": "The Jordan River and the wilderness, then Galilee: the lakeshore, Capernaum's synagogue and Simon's house, and the towns around",
-      "when": "About AD 27, at the start of Jesus' ministry",
+      "when": "At the start of Jesus' ministry, in the fifteenth year of Tiberius Caesar (Luke 3:1)",
       "people": [
         "jesus",
         "john-the-baptist",
@@ -7198,7 +7198,7 @@ window.STUDIES = [
     "url": "studies/mark-02.html",
     "overview": {
       "where": "Capernaum: a crowded house, Levi's tax booth and his table, then the grain fields on a sabbath",
-      "when": "About AD 27 or 28, early in Jesus' ministry in Galilee",
+      "when": "Early in Jesus' ministry in Galilee",
       "people": [
         "jesus",
         "sick-of-the-palsy",
@@ -7252,7 +7252,7 @@ window.STUDIES = [
     "url": "studies/mark-03.html",
     "overview": {
       "where": "A synagogue in Galilee, the shore of the Sea of Galilee, a mountain, and a crowded house",
-      "when": "Early in Jesus' ministry in Galilee, about A.D. 28",
+      "when": "Early in Jesus' ministry in Galilee, after he called the first disciples",
       "people": [
         "jesus",
         "withered-hand",
@@ -7322,7 +7322,7 @@ window.STUDIES = [
     "url": "studies/mark-04.html",
     "overview": {
       "where": "On and beside the Sea of Galilee: Jesus teaches from a boat, then crosses to the other side",
-      "when": "During Jesus' ministry in Galilee, about A.D. 28. The storm comes that same evening",
+      "when": "During Jesus' ministry in Galilee. The storm comes that same evening (4:35)",
       "people": [
         "jesus",
         "disciples",
@@ -7366,7 +7366,7 @@ window.STUDIES = [
     "url": "studies/mark-05.html",
     "overview": {
       "where": "The country of the Gadarenes on the east shore of the Sea of Galilee, then back across the lake to the crowd, the road, and Jairus' house",
-      "when": "About AD 28, in Jesus' ministry in Galilee, right after he stilled the storm (4:35–41)",
+      "when": "In Jesus' ministry in Galilee, right after he stilled the storm (4:35–41)",
       "people": [
         "jesus",
         "legion",
@@ -7418,7 +7418,7 @@ window.STUDIES = [
     "url": "studies/mark-06.html",
     "overview": {
       "where": "Nazareth, the villages of Galilee, Herod's court and prison, a lonely place near Bethsaida, the Sea of Galilee at night, and the plain of Gennesaret",
-      "when": "About AD 29, near Passover, in Jesus' ministry in Galilee, while Herod Antipas ruled Galilee and Perea for Rome",
+      "when": "Near a Passover (John 6:4), in Jesus' ministry in Galilee, while Herod the tetrarch ruled Galilee and Perea for Rome",
       "people": [
         "jesus",
         "mary",
@@ -7476,7 +7476,7 @@ window.STUDIES = [
     "url": "studies/mark-07.html",
     "overview": {
       "where": "Galilee by the lake, then the borders of Tyre and Sidon, then the Decapolis on the far side of the Sea of Galilee",
-      "when": "About AD 29, the summer after the feeding of the five thousand, about a year before the cross",
+      "when": "The summer after the feeding of the five thousand, about a year before the cross",
       "people": [
         "jesus",
         "pharisees",
@@ -7528,7 +7528,7 @@ window.STUDIES = [
     "url": "studies/mark-08.html",
     "overview": {
       "where": "The Decapolis, across the lake to Dalmanutha and Bethsaida, then north to the towns of Caesarea Philippi",
-      "when": "About AD 29, about a year before the cross, when Jesus first tells his disciples plainly that he must die and rise again",
+      "when": "About a year before the cross, when Jesus first tells his disciples plainly that he must die and rise again",
       "people": [
         "jesus",
         "disciples",
@@ -7687,7 +7687,7 @@ window.STUDIES = [
     "url": "studies/mark-11.html",
     "overview": {
       "where": "Bethphage and Bethany on the Mount of Olives, the road into Jerusalem, and the temple courts",
-      "when": "About AD 30, the first three days of Jesus' last week before the Passover, while Pilate governed Judaea for Rome",
+      "when": "The first three days of Jesus' last week before the Passover, while Pilate governed Judaea for Rome",
       "people": [
         "jesus",
         "disciples",
@@ -7742,7 +7742,7 @@ window.STUDIES = [
     "url": "studies/mark-12.html",
     "overview": {
       "where": "The temple courts in Jerusalem, and at the end the treasury in the Court of the Women",
-      "when": "About AD 30, the third day of Jesus' last week, a few days before the Passover and the cross",
+      "when": "The third day of Jesus' last week, a few days before the Passover and the cross",
       "people": [
         "jesus",
         "the-heir",
@@ -7800,7 +7800,7 @@ window.STUDIES = [
     "url": "studies/mark-13.html",
     "overview": {
       "where": "Leaving the temple in Jerusalem, then sitting on the Mount of Olives over against it",
-      "when": "The last week before the cross, about A.D. 30, a day or two before the Passover",
+      "when": "The last week before the cross, a day or two before the Passover (14:1)",
       "people": [
         "jesus",
         "disciples",
@@ -7818,7 +7818,7 @@ window.STUDIES = [
         "judaea"
       ],
       "story": [
-        "A disciple admires the temple's great stones. Jesus says, “There shall not be left one stone upon another, that shall not be thrown down.” About forty years later Rome destroyed it (1–2).",
+        "A disciple admires the temple's great stones. Jesus says, “There shall not be left one stone upon another, that shall not be thrown down.” Not many years later Rome destroyed it, as he said (1–2).",
         "Peter, James, John and Andrew ask when, and what sign. Jesus warns, “Take heed lest any man deceive you.” Wars, earthquakes and famines are only “the beginnings of sorrows” (3–8).",
         "His men will be handed over, beaten and hated, but the gospel must go to all nations, and the Holy Ghost will give them words. “He that shall endure unto the end, the same shall be saved” (9–13).",
         "When the abomination of desolation stands where it ought not, those in Judaea must flee. False Christs will come with signs and wonders: “believe him not” (14–23).",
@@ -7852,7 +7852,7 @@ window.STUDIES = [
     "url": "studies/mark-14.html",
     "overview": {
       "where": "Bethany, an upper room in Jerusalem, Gethsemane on the Mount of Olives, and the high priest's palace",
-      "when": "Two days before the Passover, then the Passover night itself, about A.D. 30",
+      "when": "Two days before the Passover (14:1), then the Passover night itself",
       "people": [
         "jesus",
         "simon-the-leper",
@@ -7911,7 +7911,7 @@ window.STUDIES = [
     "url": "studies/mark-15.html",
     "overview": {
       "where": "Jerusalem: Pilate's Praetorium, then Golgotha outside the city, then a rock tomb nearby",
-      "when": "The Friday of Passover week, about A.D. 30, from early morning to sundown",
+      "when": "The Friday of Passover week, the day before the sabbath (15:42), from early morning to sundown",
       "people": [
         "jesus",
         "pilate",
@@ -7966,7 +7966,7 @@ window.STUDIES = [
     "url": "studies/mark-16.html",
     "overview": {
       "where": "The tomb outside Jerusalem, the road into the country, the room where the eleven ate, and then heaven",
-      "when": "The first day of the week after the crucifixion, about A.D. 30, and the days after it until he was received up",
+      "when": "The first day of the week after the crucifixion, and the days after it until he was received up",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -8005,7 +8005,7 @@ window.STUDIES = [
     "date": "2026-10-29",
     "title": "Luke 1",
     "sub": "Nothing shall be impossible",
-    "about": "After four hundred quiet years God speaks again: an old priest is promised a son, and a virgin in Nazareth is told she will bear the Son of God.",
+    "about": "After long, quiet years God speaks again: an old priest is promised a son, and a virgin in Nazareth is told she will bear the Son of God.",
     "tags": [
       "God's Word",
       "Prayer",
@@ -8017,7 +8017,7 @@ window.STUDIES = [
     "url": "studies/luke-01.html",
     "overview": {
       "where": "The temple in Jerusalem, Nazareth in Galilee, and a town in the hill country of Judaea",
-      "when": "About 6 to 5 BC, in the days of Herod the Great",
+      "when": "“In the days of Herod, the king of Judaea” (1:5)",
       "people": [
         "theophilus",
         "zacharias",
@@ -8070,7 +8070,7 @@ window.STUDIES = [
     "url": "studies/luke-02.html",
     "overview": {
       "where": "From Nazareth to Bethlehem, the fields outside Bethlehem, the temple in Jerusalem, and home to Nazareth",
-      "when": "About 5 BC, when Jesus was born, to about AD 7, when he was twelve",
+      "when": "From the taxing under Caesar Augustus, when Jesus was born (2:1–7), to when he was twelve (2:42)",
       "people": [
         "jesus",
         "mary",
@@ -8127,7 +8127,7 @@ window.STUDIES = [
     "url": "studies/luke-03.html",
     "overview": {
       "where": "The wilderness and the country along the Jordan River",
-      "when": "About AD 27–29, the fifteenth year of Tiberius Caesar",
+      "when": "“The fifteenth year of the reign of Tiberius Caesar” (3:1)",
       "people": [
         "john-the-baptist",
         "jesus",
@@ -8187,7 +8187,7 @@ window.STUDIES = [
     "url": "studies/luke-04.html",
     "overview": {
       "where": "The wilderness of Judaea and the temple in Jerusalem, then Galilee: the synagogue at Nazareth, and Capernaum by the lake",
-      "when": "Right after his baptism, at the start of his ministry, about AD 27–29",
+      "when": "Right after his baptism, at the start of his ministry, when he was about thirty (3:23)",
       "people": [
         "jesus",
         "holy-spirit",
@@ -8301,7 +8301,7 @@ window.STUDIES = [
     "url": "studies/luke-06.html",
     "overview": {
       "where": "Galilee: grain fields and a synagogue on two sabbaths, a mountain where Jesus prayed, then a level place, probably near Capernaum, with crowds from Judaea, Jerusalem, Tyre and Sidon",
-      "when": "Early in Jesus' work in Galilee, about AD 28",
+      "when": "Early in Jesus' work in Galilee",
       "people": [
         "jesus",
         "pharisees",
@@ -8365,7 +8365,7 @@ window.STUDIES = [
     "url": "studies/luke-07.html",
     "overview": {
       "where": "Capernaum, then the gate of Nain in lower Galilee, and a Pharisee's house; John the Baptist sends word from Herod's prison",
-      "when": "Soon after the teaching on the plain, about AD 28",
+      "when": "Soon after the teaching on the plain (6:17)",
       "people": [
         "jesus",
         "centurion",
@@ -8534,7 +8534,7 @@ window.STUDIES = [
     "url": "studies/luke-10.html",
     "overview": {
       "where": "On the road toward Jerusalem; the towns ahead of Jesus, the north shore of the Sea of Galilee, the Jerusalem–Jericho road in the story, and Martha's house in Bethany",
-      "when": "About AD 29–30, on Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
       "people": [
         "jesus",
         "the-seventy",
@@ -8596,7 +8596,7 @@ window.STUDIES = [
     "url": "studies/luke-11.html",
     "overview": {
       "where": "On the road toward Jerusalem, in “a certain place” where Jesus prayed, among the gathering crowds, and at dinner in a Pharisee's house",
-      "when": "About AD 29–30, on Jesus' last journey to Jerusalem, in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem, in the last months before the cross",
       "people": [
         "jesus",
         "disciples",
@@ -8707,7 +8707,7 @@ window.STUDIES = [
     "url": "studies/luke-13.html",
     "overview": {
       "where": "A synagogue on the sabbath, and the towns and villages along the road toward Jerusalem, likely in Herod's lands",
-      "when": "On Jesus' last journey to Jerusalem, while Pilate governed Judaea and Herod Antipas ruled Galilee and Perea (about AD 30)",
+      "when": "On Jesus' last journey to Jerusalem, while Pilate governed Judaea and Herod the tetrarch ruled Galilee and Perea (13:1, 31)",
       "people": [
         "jesus",
         "galilaeans",
@@ -8910,7 +8910,7 @@ window.STUDIES = [
     "url": "studies/luke-17.html",
     "overview": {
       "where": "On the road to Jerusalem, along the border between Samaria and Galilee, at a village where ten lepers met him",
-      "when": "About AD 29–30, on Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
+      "when": "On Jesus' last journey to Jerusalem (9:51–19:28), in the last months before the cross",
       "people": [
         "jesus",
         "disciples",
@@ -8962,7 +8962,7 @@ window.STUDIES = [
     "url": "studies/luke-18.html",
     "overview": {
       "where": "On the road toward Jerusalem; the temple in the parable; then near Jericho, the last town before the climb up to Jerusalem",
-      "when": "About AD 29–30, near the end of Jesus' last journey to Jerusalem, shortly before the Passover of the cross",
+      "when": "Near the end of Jesus' last journey to Jerusalem, shortly before the Passover of the cross",
       "people": [
         "jesus",
         "unjust-judge",
@@ -9015,7 +9015,7 @@ window.STUDIES = [
     "url": "studies/luke-19.html",
     "overview": {
       "where": "Jericho, the road climbing to Jerusalem, Bethphage and Bethany on the mount of Olives, and the temple",
-      "when": "The last days before the Passover at which Jesus was crucified, while Pilate governed Judaea (about AD 30)",
+      "when": "The last days before the Passover at which Jesus was crucified, while Pilate governed Judaea",
       "people": [
         "jesus",
         "zacchaeus",
@@ -9069,7 +9069,7 @@ window.STUDIES = [
     "url": "studies/luke-20.html",
     "overview": {
       "where": "The temple in Jerusalem, where Jesus taught the people each day",
-      "when": "The last week before the cross, while Tiberius was Caesar and Pilate governed Judaea (about AD 30)",
+      "when": "The last week before the cross, while Tiberius was Caesar and Pilate governed Judaea",
       "people": [
         "jesus",
         "chief-priests",
@@ -9127,7 +9127,7 @@ window.STUDIES = [
     "url": "studies/luke-21.html",
     "overview": {
       "where": "The temple in Jerusalem by day, and the mount of Olives by night",
-      "when": "Jesus' last days of teaching in the temple, just before the Passover, about A.D. 30",
+      "when": "Jesus' last days of teaching in the temple, just before the Passover (22:1)",
       "people": [
         "jesus",
         "poor-widow"
@@ -9143,7 +9143,7 @@ window.STUDIES = [
         "Rich men drop gifts into the treasury. A poor widow casts in two mites, all she has, and Jesus says she gave more than they all (1–4).",
         "The men admire the temple's goodly stones. Jesus says not one will be left on another, and warns them first not to be deceived or terrified (5–11).",
         "Before the end, his people will be hated and dragged before kings, but he will give them a mouth and wisdom; in patience they possess their souls (12–19).",
-        "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was in A.D. 70 (20–24).",
+        "When Jerusalem is compassed with armies, flee. The city will be trodden down of the Gentiles, as it was when Rome took it (20–24).",
         "Signs in the heavens, nations in distress, and the Son of man coming in a cloud: look up, for your redemption draweth nigh (25–33).",
         "Don't let surfeiting, drunkenness and the cares of this life weigh your heart down. Watch, and pray always. By day he teaches in the temple (34–38)."
       ],
@@ -9174,7 +9174,7 @@ window.STUDIES = [
     "url": "studies/luke-22.html",
     "overview": {
       "where": "An upper room in Jerusalem, the mount of Olives, then the high priest's house and the council",
-      "when": "The Passover night and the next morning, the night before the cross, about A.D. 30",
+      "when": "The Passover night and the next morning, the night before the cross",
       "people": [
         "jesus",
         "judas-iscariot",
@@ -9228,7 +9228,7 @@ window.STUDIES = [
     "url": "studies/luke-23.html",
     "overview": {
       "where": "Jerusalem: before Pilate, then Herod, then Pilate again; out to Calvary just outside the city; then a new tomb nearby",
-      "when": "Friday of Passover week, about AD 30 (some say 33), from early morning to just before the sabbath began at sundown",
+      "when": "Friday of Passover week, from early morning to just before the sabbath began at sundown",
       "people": [
         "jesus",
         "pilate",
@@ -9286,7 +9286,7 @@ window.STUDIES = [
     "url": "studies/luke-24.html",
     "overview": {
       "where": "The empty tomb outside Jerusalem; the road to Emmaus, about seven miles away, and back; a room in Jerusalem; then out toward Bethany",
-      "when": "Sunday, the third day after the cross, about AD 30, from very early morning into the night; then the ascension, forty days later (Acts 1:3)",
+      "when": "Sunday, the third day after the cross, from very early morning into the night; then the ascension, forty days later (Acts 1:3)",
       "people": [
         "jesus",
         "mary-magdalene",
@@ -9339,7 +9339,7 @@ window.STUDIES = [
     "url": "studies/acts-01.html",
     "overview": {
       "where": "Jerusalem: the Mount of Olives, and an upper room in the city",
-      "when": "About AD 30 to 33, the forty days after the resurrection and the days before Pentecost",
+      "when": "The forty days after the resurrection (1:3) and the days before Pentecost",
       "people": [
         "jesus",
         "theophilus",
@@ -9405,7 +9405,7 @@ window.STUDIES = [
     "url": "studies/acts-02.html",
     "overview": {
       "where": "Jerusalem, at the feast of Pentecost",
-      "when": "About AD 30 to 33, fifty days after the resurrection",
+      "when": "“When the day of Pentecost was fully come” (2:1), fifty days after the resurrection",
       "people": [
         "jesus",
         "simon-peter",
@@ -9468,7 +9468,7 @@ window.STUDIES = [
     "url": "studies/acts-03.html",
     "overview": {
       "where": "The temple in Jerusalem: the Beautiful gate, then Solomon's porch",
-      "when": "Soon after Pentecost, at the ninth hour (about 3 p.m.), about AD 30 to 33",
+      "when": "Soon after Pentecost, at the ninth hour (about 3 p.m.)",
       "people": [
         "simon-peter",
         "john-the-apostle",
@@ -9517,7 +9517,7 @@ window.STUDIES = [
     "url": "studies/acts-04.html",
     "overview": {
       "where": "The temple court, the council chamber in Jerusalem, then the believers' meeting place",
-      "when": "The day after the healing in Acts 3, about AD 30 to 33",
+      "when": "The day after the healing in Acts 3 (4:3, 5)",
       "people": [
         "simon-peter",
         "john-the-apostle",
@@ -9567,7 +9567,7 @@ window.STUDIES = [
     "url": "studies/acts-05.html",
     "overview": {
       "where": "Jerusalem: the temple courts, Solomon's porch, the common prison and the council chamber",
-      "when": "A few years after Pentecost (about AD 31 to 33)",
+      "when": "Soon after Acts 4, while the church in Jerusalem is still young",
       "people": [
         "ananias",
         "sapphira",
@@ -9616,7 +9616,7 @@ window.STUDIES = [
     "url": "studies/acts-06.html",
     "overview": {
       "where": "Jerusalem: the church's daily food for the widows, a synagogue, and the council chamber",
-      "when": "Soon after Acts 5, a few years after Pentecost (about AD 33 to 34)",
+      "when": "Soon after Acts 5, “when the number of the disciples was multiplied” (6:1)",
       "people": [
         "grecian-jews",
         "hebrews-of-jerusalem",
@@ -9663,7 +9663,7 @@ window.STUDIES = [
     "url": "studies/acts-07.html",
     "overview": {
       "where": "Jerusalem, before the council; Stephen's story reaches Mesopotamia, Haran, Egypt, Midian and Sinai",
-      "when": "Soon after Pentecost, about AD 34",
+      "when": "Right after Stephen is seized in Acts 6",
       "people": [
         "stephen",
         "abraham",
@@ -9717,7 +9717,7 @@ window.STUDIES = [
     "url": "studies/acts-08.html",
     "overview": {
       "where": "Jerusalem, Samaria, and the desert road from Jerusalem to Gaza, then Azotus and Caesarea",
-      "when": "Right after Stephen's death, about AD 34 to 35",
+      "when": "Right after Stephen's death, “at that time” (8:1)",
       "people": [
         "philip-the-evangelist",
         "simon-the-sorcerer",
@@ -9769,7 +9769,7 @@ window.STUDIES = [
     "url": "studies/acts-09.html",
     "overview": {
       "where": "The road to Damascus and the city, then Jerusalem, Caesarea and Tarsus; Peter at Lydda and Joppa",
-      "when": "About AD 34 to 35, the years right after Saul's conversion",
+      "when": "Saul's conversion and the years right after it; “after three years” he went up to Jerusalem (Galatians 1:18)",
       "people": [
         "jesus",
         "saul",
@@ -9824,7 +9824,7 @@ window.STUDIES = [
     "url": "studies/acts-10.html",
     "overview": {
       "where": "Caesarea and Joppa on the coast of Judaea, about thirty miles apart",
-      "when": "About AD 40, in the years after Saul's conversion",
+      "when": "In the years after Saul's conversion, while Peter stays “many days in Joppa” (9:43)",
       "people": [
         "cornelius",
         "simon-peter",
@@ -9871,7 +9871,7 @@ window.STUDIES = [
     "url": "studies/acts-11.html",
     "overview": {
       "where": "Jerusalem, then Antioch in Syria, Tarsus, and the road south to Judaea",
-      "when": "About AD 40 to 46, soon after Cornelius",
+      "when": "Soon after Cornelius; the famine comes “in the days of Claudius Caesar” (11:28)",
       "people": [
         "simon-peter",
         "barnabas",
@@ -9926,7 +9926,7 @@ window.STUDIES = [
     "url": "studies/acts-12.html",
     "overview": {
       "where": "Jerusalem (the prison and Mary’s house), then Caesarea",
-      "when": "About AD 44, in the days of unleavened bread",
+      "when": "“About that time” (12:1), in the days of unleavened bread (12:3)",
       "people": [
         "herod-agrippa",
         "james-brother-of-john",
@@ -9981,7 +9981,7 @@ window.STUDIES = [
     "url": "studies/acts-13.html",
     "overview": {
       "where": "Antioch in Syria, the island of Cyprus, then Antioch in Pisidia",
-      "when": "About AD 46, the start of Paul's first missionary journey",
+      "when": "The start of Paul's first missionary journey",
       "people": [
         "paul",
         "barnabas",
@@ -10040,7 +10040,7 @@ window.STUDIES = [
     "url": "studies/acts-14.html",
     "overview": {
       "where": "Iconium, Lystra and Derbe, then back through Pisidia and home to Antioch in Syria",
-      "when": "About AD 46 to 48, the first missionary journey",
+      "when": "The first missionary journey, and the return to Antioch",
       "people": [
         "paul",
         "barnabas",
@@ -10095,7 +10095,7 @@ window.STUDIES = [
     "url": "studies/acts-15.html",
     "overview": {
       "where": "Antioch in Syria, the road to Jerusalem, the council at Jerusalem, and back to Antioch",
-      "when": "About AD 49, after the first journey and before the second",
+      "when": "After the first journey and before the second",
       "people": [
         "paul",
         "barnabas",
@@ -10149,7 +10149,7 @@ window.STUDIES = [
     "url": "studies/acts-16.html",
     "overview": {
       "where": "Lystra, across Asia Minor to Troas, then Philippi in Macedonia",
-      "when": "About AD 49 to 52, the second journey",
+      "when": "The second journey",
       "people": [
         "paul",
         "silas",
@@ -10202,7 +10202,7 @@ window.STUDIES = [
     "url": "studies/acts-17.html",
     "overview": {
       "where": "Thessalonica, Berea and Athens, on the second journey",
-      "when": "About AD 50, on the second journey (about AD 49 to 52)",
+      "when": "On the second journey",
       "people": [
         "paul",
         "silas",
@@ -10257,7 +10257,7 @@ window.STUDIES = [
     "url": "studies/acts-18.html",
     "overview": {
       "where": "Corinth in Achaia, then home by Ephesus, Caesarea and Antioch; Apollos at Ephesus",
-      "when": "About AD 50 to 52, the end of the second journey; Gallio was proconsul about AD 51 to 52",
+      "when": "The end of the second journey: “a year and six months” at Corinth (18:11), “when Gallio was the deputy of Achaia” (18:12)",
       "people": [
         "paul",
         "aquila",
@@ -10316,7 +10316,7 @@ window.STUDIES = [
     "url": "studies/acts-19.html",
     "overview": {
       "where": "Ephesus, the chief city of Roman Asia, on the coast of what is now Turkey",
-      "when": "About AD 53 to 56, during Paul's third journey",
+      "when": "Paul's third journey: “the space of two years” at Ephesus (19:10)",
       "people": [
         "paul",
         "disciples",
@@ -10366,7 +10366,7 @@ window.STUDIES = [
     "url": "studies/acts-20.html",
     "overview": {
       "where": "Greece, Troas and Miletus, on the coast of the Aegean Sea",
-      "when": "About AD 57, at the end of Paul's third journey",
+      "when": "The end of Paul's third journey",
       "people": [
         "paul",
         "timothy",
@@ -10416,7 +10416,7 @@ window.STUDIES = [
     "url": "studies/acts-21.html",
     "overview": {
       "where": "The end of the third journey by sea (Miletus, Coos, Rhodes, Patara, Tyre, Ptolemais, Caesarea), then Jerusalem and the temple",
-      "when": "About AD 57, at the time of Pentecost, the end of Paul's third journey",
+      "when": "At the time of Pentecost (20:16), the end of Paul's third journey",
       "people": [
         "paul",
         "philip-the-evangelist",
@@ -10473,7 +10473,7 @@ window.STUDIES = [
     "url": "studies/acts-22.html",
     "overview": {
       "where": "The stairs of the Roman fortress beside the temple in Jerusalem, and in his story, the road to Damascus",
-      "when": "About AD 57, right after the temple riot of Acts 21; Paul's conversion was about AD 34 to 35",
+      "when": "Right after the temple riot of Acts 21; Paul looks back to the Damascus road of Acts 9",
       "people": [
         "paul",
         "jesus",
@@ -10523,7 +10523,7 @@ window.STUDIES = [
     "url": "studies/acts-23.html",
     "overview": {
       "where": "The council chamber and the Roman castle in Jerusalem, then by night to Antipatris and Caesarea",
-      "when": "About AD 57, just after Paul's arrest in Jerusalem",
+      "when": "Just after Paul's arrest in Jerusalem",
       "people": [
         "paul",
         "ananias-high-priest",
@@ -10574,7 +10574,7 @@ window.STUDIES = [
     "url": "studies/acts-24.html",
     "overview": {
       "where": "The governor's headquarters at Caesarea",
-      "when": "About AD 57 to 59: the trial five days after the night ride, then two years in custody",
+      "when": "The trial five days after the night ride (24:1), then two years in custody (24:27)",
       "people": [
         "paul",
         "ananias-high-priest",
@@ -10620,7 +10620,7 @@ window.STUDIES = [
     "url": "studies/acts-25.html",
     "overview": {
       "where": "Caesarea, the Roman capital on the coast of Judaea, with Jerusalem about sixty miles away",
-      "when": "About AD 59, two years after Paul's arrest",
+      "when": "Two years after Paul's arrest, when Festus followed Felix (24:27)",
       "people": [
         "paul",
         "festus",
@@ -10670,7 +10670,7 @@ window.STUDIES = [
     "url": "studies/acts-26.html",
     "overview": {
       "where": "The hearing room at Caesarea, and the Damascus road in Paul's story",
-      "when": "About AD 59, and Paul's conversion about AD 34 to 35",
+      "when": "Soon after Festus comes (25:13); Paul looks back to the Damascus road of Acts 9",
       "people": [
         "paul",
         "agrippa-ii",
@@ -10724,7 +10724,7 @@ window.STUDIES = [
     "url": "studies/acts-27.html",
     "overview": {
       "where": "From Caesarea by sea to Fair Havens on Crete, then fourteen days adrift in the Adria, ending on a beach on Malta",
-      "when": "Autumn, about AD 59, after the fast",
+      "when": "Autumn, “because the fast was now already past” (27:9)",
       "people": [
         "paul",
         "julius",
@@ -10776,7 +10776,7 @@ window.STUDIES = [
     "url": "studies/acts-28.html",
     "overview": {
       "where": "Melita (Malta), then Syracuse, Rhegium, Puteoli, Appii Forum and Rome",
-      "when": "Winter into spring, about AD 59 to 60, then two years in Rome",
+      "when": "Winter into spring, “after three months” (28:11), then “two whole years” in Rome (28:30)",
       "people": [
         "paul",
         "publius",
@@ -10830,7 +10830,7 @@ window.STUDIES = [
     "url": "studies/romans-01.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "jesus",
@@ -10876,7 +10876,7 @@ window.STUDIES = [
     "url": "studies/romans-02.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "jesus",
         "the-jews"
@@ -10916,7 +10916,7 @@ window.STUDIES = [
     "url": "studies/romans-03.html",
     "overview": {
       "where": "Paul’s letter to the church at Rome, written from Corinth",
-      "when": "About AD 57",
+      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "the-jews",
@@ -10958,7 +10958,7 @@ window.STUDIES = [
     "url": "studies/romans-04.html",
     "overview": {
       "where": "Paul’s letter to the church at Rome, looking back to Abraham in Canaan",
-      "when": "Written about AD 57; Abraham lived about 2000 BC",
+      "when": "Written as Paul takes the gift to Jerusalem (15:25–26); the law came 430 years after the promise to Abraham (Galatians 3:17)",
       "people": [
         "abraham",
         "david",
@@ -11004,7 +11004,7 @@ window.STUDIES = [
     "url": "studies/romans-05.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "jesus",
         "holy-spirit",
@@ -11049,7 +11049,7 @@ window.STUDIES = [
     "url": "studies/romans-06.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "jesus",
         "the-father"
@@ -11091,7 +11091,7 @@ window.STUDIES = [
     "url": "studies/romans-07.html",
     "overview": {
       "where": "A letter written from Corinth to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "jesus"
@@ -11134,7 +11134,7 @@ window.STUDIES = [
     "url": "studies/romans-08.html",
     "overview": {
       "where": "A letter written from Corinth to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "jesus",
@@ -11179,7 +11179,7 @@ window.STUDIES = [
     "url": "studies/romans-09.html",
     "overview": {
       "where": "Written from Corinth to the church at Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "abraham",
@@ -11233,7 +11233,7 @@ window.STUDIES = [
     "url": "studies/romans-10.html",
     "overview": {
       "where": "Written from Corinth to the church at Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "moses",
@@ -11280,7 +11280,7 @@ window.STUDIES = [
     "url": "studies/romans-11.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "About AD 57, near the end of Paul's third journey",
+      "when": "Near the end of Paul's third journey, as he takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "elijah",
@@ -11329,7 +11329,7 @@ window.STUDIES = [
     "url": "studies/romans-12.html",
     "overview": {
       "where": "Written from Corinth, in Greece, to the believers in Rome",
-      "when": "About AD 57, some seven years before Nero turned on the Christians in Rome",
+      "when": "Near the end of Paul's third journey, before Nero turned on the Christians in Rome",
       "people": [
         "paul",
         "saints-believers"
@@ -11371,7 +11371,7 @@ window.STUDIES = [
     "url": "studies/romans-13.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome, the emperor's own city",
-      "when": "About AD 57, early in Nero's reign",
+      "when": "Near the end of Paul's third journey, early in Nero's reign",
       "people": [
         "paul",
         "jesus"
@@ -11414,7 +11414,7 @@ window.STUDIES = [
     "url": "studies/romans-14.html",
     "overview": {
       "where": "A letter from Corinth to the believers in Rome, a church of Jewish and Gentile believers",
-      "when": "About AD 57",
+      "when": "From Corinth, as Paul takes the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "jesus",
@@ -11458,7 +11458,7 @@ window.STUDIES = [
     "url": "studies/romans-15.html",
     "overview": {
       "where": "Paul writes from Corinth to the believers in Rome, looking back over his work from Jerusalem to Illyricum",
-      "when": "About AD 57, just before Paul carries the gift to Jerusalem",
+      "when": "Just before Paul carries the gift to Jerusalem (15:25–26)",
       "people": [
         "paul",
         "jesus",
@@ -11512,7 +11512,7 @@ window.STUDIES = [
     "url": "studies/romans-16.html",
     "overview": {
       "where": "Written in Corinth, carried by Phebe from nearby Cenchrea to the churches in Rome",
-      "when": "About AD 57, the close of the letter",
+      "when": "The close of the letter, from Corinth (16:1, 23)",
       "people": [
         "paul",
         "phebe",
@@ -11569,7 +11569,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-01.html",
     "overview": {
       "where": "Written from Ephesus, in Asia; sent to the church at Corinth, on the isthmus of Greece",
-      "when": "About AD 55, a few years after Paul started the church (Acts 18)",
+      "when": "From Ephesus, before Pentecost (16:8); Paul had started the church on his second journey (Acts 18)",
       "people": [
         "paul",
         "sosthenes",
@@ -11617,7 +11617,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-02.html",
     "overview": {
       "where": "Written from Ephesus to the church at Corinth, looking back on Paul's first visit",
-      "when": "About AD 55, looking back on about AD 50 to 52",
+      "when": "From Ephesus (16:8), looking back on Paul's year and six months at Corinth (Acts 18:11)",
       "people": [
         "jesus",
         "holy-spirit"
@@ -11657,7 +11657,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-03.html",
     "overview": {
       "where": "Corinth, the church Paul planted, written from Ephesus",
-      "when": "About AD 55, about three years after Paul left Corinth",
+      "when": "From Ephesus (16:8), after Paul had planted and Apollos had watered (3:6; Acts 18:24–28)",
       "people": [
         "paul",
         "apollos",
@@ -11705,7 +11705,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-04.html",
     "overview": {
       "where": "Corinth, the church Paul planted, written from Ephesus",
-      "when": "About AD 55",
+      "when": "From Ephesus, before Pentecost (16:8)",
       "people": [
         "paul",
         "apollos",
@@ -11750,7 +11750,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-05.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, in Greece",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "satan",
         "jesus"
@@ -11794,7 +11794,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-06.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, in Greece",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "saints-believers",
         "angels",
@@ -11839,7 +11839,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-07.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "paul",
         "jesus",
@@ -11885,7 +11885,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-08.html",
     "overview": {
       "where": "A letter from Ephesus to the church at Corinth, a city of temples",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "paul",
         "the-father",
@@ -11930,7 +11930,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "A letter from Ephesus to the church in Corinth, the Greek port city beside the Isthmian games",
-      "when": "About AD 55",
+      "when": "From Ephesus, before Pentecost (16:8)",
       "people": [
         "paul",
         "barnabas",
@@ -11975,7 +11975,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "A letter from Ephesus to the church in Corinth, looking back to Israel in the wilderness",
-      "when": "About AD 55",
+      "when": "From Ephesus, before Pentecost (16:8)",
       "people": [
         "paul",
         "moses",
@@ -12020,7 +12020,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The church meeting in a house in Corinth, written to from Ephesus",
-      "when": "About AD 55",
+      "when": "From Ephesus, before Pentecost (16:8)",
       "people": [
         "jesus",
         "christ"
@@ -12060,7 +12060,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-12.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "paul",
         "holy-spirit",
@@ -12106,7 +12106,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-13.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "paul",
         "angels"
@@ -12148,7 +12148,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-14.html",
     "overview": {
       "where": "Written from Ephesus, in Asia, to the church at Corinth, in Greece",
-      "when": "About AD 55, during Paul's three years at Ephesus",
+      "when": "During Paul's three years at Ephesus (Acts 20:31; 16:8)",
       "people": [
         "paul",
         "brethren-believers",
@@ -12193,7 +12193,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-15.html",
     "overview": {
       "where": "Ephesus, where Paul wrote to the church in Corinth",
-      "when": "About AD 55, from Paul's third journey",
+      "when": "From Ephesus, on Paul's third journey (16:8; Acts 19)",
       "people": [
         "jesus",
         "paul",
@@ -12241,7 +12241,7 @@ window.STUDIES = [
     "url": "studies/1-corinthians-16.html",
     "overview": {
       "where": "Ephesus, where Paul wrote; Corinth, Macedonia and Jerusalem in his plans",
-      "when": "About AD 55, before Pentecost the next spring",
+      "when": "From Ephesus, before Pentecost the next spring (16:8)",
       "people": [
         "paul",
         "timothy",
@@ -12295,7 +12295,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-01.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth, with a look back at trouble in Asia and a changed travel plan",
-      "when": "About AD 56, after 1 Corinthians, a painful visit and a letter written with tears",
+      "when": "From Macedonia (7:5), after 1 Corinthians, a painful visit and a letter written with tears",
       "people": [
         "paul",
         "timothy",
@@ -12343,7 +12343,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-02.html",
     "overview": {
       "where": "Written from Macedonia, looking back at Troas and Corinth",
-      "when": "About AD 56; Paul recalls his painful visit and the letter written with many tears",
+      "when": "From Macedonia (7:5); Paul recalls his painful visit and the letter written with many tears",
       "people": [
         "paul",
         "titus",
@@ -12387,7 +12387,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-03.html",
     "overview": {
       "where": "Written from Macedonia to Corinth, looking back at Moses on Sinai",
-      "when": "About AD 56; Moses and the old covenant about 1,500 years earlier",
+      "when": "From Macedonia (7:5); Moses and the old covenant long before, at Sinai",
       "people": [
         "paul",
         "moses",
@@ -12431,7 +12431,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-04.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "About AD 56, near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), near the end of Paul's third journey",
       "people": [
         "jesus"
       ],
@@ -12473,7 +12473,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-05.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "About AD 56, near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), near the end of Paul's third journey",
       "people": [
         "jesus",
         "holy-spirit"
@@ -12515,7 +12515,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-06.html",
     "overview": {
       "where": "Written from Macedonia to the church at Corinth in Greece",
-      "when": "About AD 56, near the end of Paul's third journey",
+      "when": "From Macedonia (7:5), near the end of Paul's third journey",
       "people": [
         "corinthians",
         "holy-spirit"
@@ -12558,7 +12558,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, where Paul waits for news from Corinth",
-      "when": "About AD 56, on Paul's third journey",
+      "when": "From Macedonia (7:5), on Paul's third journey",
       "people": [
         "titus"
       ],
@@ -12598,7 +12598,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, with the gift bound for Jerusalem",
-      "when": "About AD 56",
+      "when": "From Macedonia (8:1), on Paul's third journey",
       "people": [
         "titus",
         "saints-of-jerusalem"
@@ -12640,7 +12640,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, with the gift bound for Jerusalem",
-      "when": "About AD 56",
+      "when": "From Macedonia (9:2), on Paul's third journey",
       "people": [
         "saints-of-jerusalem"
       ],
@@ -12682,7 +12682,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, where Paul writes to the church at Corinth in Achaia",
-      "when": "About AD 56, a year after 1 Corinthians",
+      "when": "From Macedonia, after 1 Corinthians, on Paul's third journey",
       "people": [
         "paul",
         "christ"
@@ -12724,7 +12724,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Macedonia, writing to Corinth; Damascus, Philippi and Lystra in his list",
-      "when": "About AD 56",
+      "when": "From Macedonia, on Paul's third journey",
       "people": [
         "paul",
         "christ",
@@ -12771,7 +12771,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-12.html",
     "overview": {
       "where": "Paul writing from Macedonia, looking back to a heavenly vision and ahead to Corinth",
-      "when": "About AD 56; the vision was about fourteen years earlier",
+      "when": "From Macedonia, on Paul's third journey; the vision was “above fourteen years ago” (12:2)",
       "people": [
         "paul",
         "jesus",
@@ -12818,7 +12818,7 @@ window.STUDIES = [
     "url": "studies/2-corinthians-13.html",
     "overview": {
       "where": "Paul in Macedonia, about to make his third visit to Corinth",
-      "when": "About AD 56",
+      "when": "From Macedonia, before Paul's third visit to Corinth (13:1)",
       "people": [
         "paul",
         "jesus",
@@ -12863,7 +12863,7 @@ window.STUDIES = [
     "url": "studies/galatians-01.html",
     "overview": {
       "where": "Written, many think, from Antioch in Syria to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe)",
-      "when": "About AD 48 to 49, soon after Paul's first journey and just before the Jerusalem council",
+      "when": "Soon after Paul's first journey (“so soon removed,” 1:6), and just before the Jerusalem council",
       "people": [
         "paul",
         "jesus",
@@ -12915,7 +12915,7 @@ window.STUDIES = [
     "url": "studies/galatians-02.html",
     "overview": {
       "where": "Jerusalem, then Antioch in Syria",
-      "when": "Fourteen years after Paul came to Christ; written about AD 48 to 49",
+      "when": "Fourteen years after Paul came to Christ (2:1); written soon after the first journey",
       "people": [
         "paul",
         "barnabas",
@@ -12963,7 +12963,7 @@ window.STUDIES = [
     "url": "studies/galatians-03.html",
     "overview": {
       "where": "Paul’s letter to the churches of Galatia, the towns of his first journey",
-      "when": "Written about AD 48 to 49; Abraham lived about 2000 BC, and the law came 430 years after the promise",
+      "when": "Written soon after Paul's first journey; the law came 430 years after the promise to Abraham (3:17)",
       "people": [
         "paul",
         "abraham",
@@ -13007,7 +13007,7 @@ window.STUDIES = [
     "url": "studies/galatians-04.html",
     "overview": {
       "where": "Paul’s letter to the churches of Galatia, looking back to his first visit and to Abraham’s family",
-      "when": "Written about AD 48 to 49; Christ was born about 6 to 4 BC, “when the fulness of the time was come”",
+      "when": "Written soon after Paul's first journey; Christ was born “when the fulness of the time was come” (4:4), in the days of Herod the king",
       "people": [
         "paul",
         "jesus",
@@ -13058,7 +13058,7 @@ window.STUDIES = [
     "url": "studies/galatians-05.html",
     "overview": {
       "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
-      "when": "About AD 48 to 49; chapter 5 opens the letter's last part: how a free man lives",
+      "when": "Soon after Paul's first journey; chapter 5 opens the letter's last part: how a free man lives",
       "people": [
         "paul",
         "jesus",
@@ -13102,7 +13102,7 @@ window.STUDIES = [
     "url": "studies/galatians-06.html",
     "overview": {
       "where": "A letter to the churches of Galatia (Antioch in Pisidia, Iconium, Lystra, Derbe), written, many think, from Antioch in Syria",
-      "when": "About AD 48 to 49; the letter's last chapter, which Paul finishes in his own hand",
+      "when": "Soon after Paul's first journey; the letter's last chapter, which Paul finishes in his own hand",
       "people": [
         "paul",
         "jesus",
@@ -13146,7 +13146,7 @@ window.STUDIES = [
     "url": "studies/ephesians-01.html",
     "overview": {
       "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13192,7 +13192,7 @@ window.STUDIES = [
     "url": "studies/ephesians-02.html",
     "overview": {
       "where": "Written from Rome, where Paul was a prisoner, to the believers at Ephesus",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "jesus",
         "the-father",
@@ -13240,7 +13240,7 @@ window.STUDIES = [
     "url": "studies/ephesians-03.html",
     "overview": {
       "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13290,7 +13290,7 @@ window.STUDIES = [
     "url": "studies/ephesians-04.html",
     "overview": {
       "where": "Written from Rome, where Paul was under guard, to the church at Ephesus in Asia",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13342,7 +13342,7 @@ window.STUDIES = [
     "url": "studies/ephesians-05.html",
     "overview": {
       "where": "Paul, a prisoner in Rome, writing to the believers at Ephesus",
-      "when": "About AD 60 to 62",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13388,7 +13388,7 @@ window.STUDIES = [
     "url": "studies/ephesians-06.html",
     "overview": {
       "where": "Paul, chained to a Roman soldier in Rome, writing to the believers at Ephesus; Tychicus carries the letter",
-      "when": "About AD 60 to 62",
+      "when": "In bonds (6:20), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13436,7 +13436,7 @@ window.STUDIES = [
     "url": "studies/philippians-01.html",
     "overview": {
       "where": "Rome, where Paul is under house arrest; the letter goes to Philippi in Macedonia",
-      "when": "About AD 60 to 62, in Paul's first Roman imprisonment",
+      "when": "In bonds (1:13), in Paul's first Roman imprisonment",
       "people": [
         "paul",
         "timothy",
@@ -13481,7 +13481,7 @@ window.STUDIES = [
     "url": "studies/philippians-02.html",
     "overview": {
       "where": "Rome, where Paul writes; Philippi, where the letter is read",
-      "when": "About AD 60 to 62",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13526,7 +13526,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome",
       "people": [
         "jesus",
         "pharisees"
@@ -13570,7 +13570,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Rome, where Paul is under guard, writing to the church at Philippi in Macedonia",
-      "when": "About AD 60 to 62, during Paul's house arrest in Rome",
+      "when": "In bonds (1:13), during Paul's house arrest in Rome",
       "people": [
         "jesus",
         "euodias",
@@ -13619,7 +13619,7 @@ window.STUDIES = [
     "url": "studies/colossians-01.html",
     "overview": {
       "where": "Written from Rome, where Paul was under house arrest, to the church at Colosse in the Lycus valley in Asia (now Turkey)",
-      "when": "About AD 60 to 62, in the years Paul was held in Rome",
+      "when": "In bonds (4:18), in the years Paul was held in Rome",
       "people": [
         "paul",
         "timothy",
@@ -13665,7 +13665,7 @@ window.STUDIES = [
     "url": "studies/colossians-02.html",
     "overview": {
       "where": "Written from Rome to the church at Colosse, with a thought for Laodicea nearby",
-      "when": "About AD 60 to 62",
+      "when": "In bonds (4:18), during Paul's house arrest in Rome",
       "people": [
         "paul",
         "jesus",
@@ -13708,7 +13708,7 @@ window.STUDIES = [
     "url": "studies/colossians-03.html",
     "overview": {
       "where": "Paul writes from a house in Rome, to the church at Colosse in Asia (now Turkey)",
-      "when": "About AD 60 to 62, while Paul was under house arrest in Rome",
+      "when": "In bonds (4:18), while Paul was under house arrest in Rome",
       "people": [
         "jesus",
         "the-father"
@@ -13749,7 +13749,7 @@ window.STUDIES = [
     "url": "studies/colossians-04.html",
     "overview": {
       "where": "Paul in Rome, writing to Colosse, with greetings from his friends and a note about Laodicea and Hierapolis nearby",
-      "when": "About AD 60 to 62, in Paul's first Roman imprisonment",
+      "when": "In bonds (4:18), in Paul's first Roman imprisonment",
       "people": [
         "tychicus",
         "onesimus",
@@ -13803,7 +13803,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written from Corinth to the church in Thessalonica, the capital of Macedonia (northern Greece)",
-      "when": "About AD 50 to 51, a few months after Paul had to leave Thessalonica on his second journey",
+      "when": "From Corinth, after Timothy came back with good news from Thessalonica (1 Thessalonians 3:6; Acts 18:5), on Paul's second journey",
       "people": [
         "paul",
         "silvanus",
@@ -13852,7 +13852,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written from Corinth to Thessalonica. Paul looks back at his time among them, with Philippi and Judaea in the background",
-      "when": "About AD 50 to 51, a few months after Paul left Thessalonica",
+      "when": "From Corinth, only “a short time” after Paul was taken from them (2:17)",
       "people": [
         "paul",
         "jesus",
@@ -13898,7 +13898,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Paul alone in Athens, then at Corinth; Timothy sent to Thessalonica and back",
-      "when": "About AD 50 to 51, within a few months of leaving Thessalonica",
+      "when": "From Corinth, just after Timothy came back from Thessalonica (3:6; Acts 18:5)",
       "people": [
         "paul",
         "timothy",
@@ -13945,7 +13945,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Corinth, where Paul writes after Timothy's report, to the young church at Thessalonica in Macedonia",
-      "when": "About AD 50 to 51, a few months after Paul was driven out of Thessalonica",
+      "when": "From Corinth, after Timothy's report (3:6), on Paul's second journey (Acts 18:5)",
       "people": [
         "paul",
         "jesus",
@@ -13992,7 +13992,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Corinth, where Paul writes to the young church at Thessalonica",
-      "when": "About AD 50 to 51, a few months after Paul was driven out of Thessalonica",
+      "when": "From Corinth, after Timothy's report (3:6); Paul had been driven out of Thessalonica (Acts 17:10)",
       "people": [
         "paul",
         "jesus",
@@ -14038,7 +14038,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-01.html",
     "overview": {
       "where": "Written from Corinth to the church at Thessalonica, the capital and chief port of Macedonia (northern Greece)",
-      "when": "About AD 51, a few months after 1 Thessalonians, on Paul's second journey",
+      "when": "Soon after 1 Thessalonians, still at Corinth with Silvanus and Timotheus (1:1; Acts 18:5), on Paul's second journey",
       "people": [
         "paul",
         "silvanus",
@@ -14087,7 +14087,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-02.html",
     "overview": {
       "where": "Written from Corinth to the church at Thessalonica in Macedonia",
-      "when": "About AD 51, soon after a rumor or a forged letter said “the day of Christ is at hand”",
+      "when": "Soon after a rumor or a forged letter said “the day of Christ is at hand” (2:2)",
       "people": [
         "paul",
         "jesus",
@@ -14134,7 +14134,7 @@ window.STUDIES = [
     "url": "studies/2-thessalonians-03.html",
     "overview": {
       "where": "Written from Corinth, where Paul worked as a tentmaker, to the church at Thessalonica",
-      "when": "About AD 51, the end of the letter",
+      "when": "Soon after 1 Thessalonians, from Corinth; the end of the letter",
       "people": [
         "paul",
         "jesus",
@@ -14178,7 +14178,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-01.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "About AD 62 to 64, after Paul was released from his first imprisonment in Rome",
+      "when": "After Paul was released from his first imprisonment in Rome, when he went into Macedonia and left Timothy at Ephesus (1:3)",
       "people": [
         "paul",
         "timothy",
@@ -14225,7 +14225,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-02.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "About AD 62 to 64",
+      "when": "After Paul was free to travel again (1:3)",
       "people": [
         "paul",
         "timothy",
@@ -14267,7 +14267,7 @@ window.STUDIES = [
     "url": "studies/1-timothy-03.html",
     "overview": {
       "where": "Written probably from Macedonia, to Timothy at Ephesus",
-      "when": "About AD 62 to 64",
+      "when": "After Paul was free to travel again; he hoped to come to Timothy shortly (3:14)",
       "people": [
         "paul",
         "timothy"
@@ -14306,7 +14306,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, where Paul had left Timothy in charge of the church",
-      "when": "About AD 62 to 64, after Paul was freed from his Roman house arrest",
+      "when": "After Paul was freed from his Roman house arrest (Acts 28:30; 1 Timothy 1:3)",
       "people": [
         "Paul",
         "Timothy"
@@ -14348,7 +14348,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, in the church Timothy was leading",
-      "when": "About AD 62 to 64, after Paul's release",
+      "when": "After Paul's release, with Timothy left at Ephesus (1:3)",
       "people": [
         "Paul",
         "Timothy",
@@ -14391,7 +14391,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Ephesus, in the church Timothy was leading",
-      "when": "About AD 62 to 64, after Paul's release",
+      "when": "After Paul's release, while Timothy led the church at Ephesus (1:3)",
       "people": [
         "Paul",
         "timothy",
@@ -14435,7 +14435,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-01.html",
     "overview": {
       "where": "A prison in Rome, with the letter going to Timothy, most likely at Ephesus",
-      "when": "About AD 66 to 67, under Nero; Paul's last letter",
+      "when": "In bonds again in Rome (1:8, 17); Paul's last letter",
       "people": [
         "paul",
         "timothy",
@@ -14486,7 +14486,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-02.html",
     "overview": {
       "where": "Paul's prison cell in Rome, with the letter going to Timothy, most likely at Ephesus",
-      "when": "About AD 66 to 67, under Nero; Paul's last letter",
+      "when": "Suffering “as an evil doer, even unto bonds” (2:9); Paul's last letter",
       "people": [
         "paul",
         "timothy",
@@ -14529,7 +14529,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-03.html",
     "overview": {
       "where": "Written from a Roman prison, to Timothy at Ephesus; Paul's old trouble spots, Antioch in Pisidia, Iconium and Lystra, are remembered",
-      "when": "About AD 66 to 67, near the end of Paul's life; Paul recalls his first journey, about AD 46 to 48",
+      "when": "Near the end of Paul's life; Paul recalls his first journey (3:11; Acts 13–14)",
       "people": [
         "paul",
         "timothy",
@@ -14575,7 +14575,7 @@ window.STUDIES = [
     "url": "studies/2-timothy-04.html",
     "overview": {
       "where": "Written from a prison in Rome to Timothy at Ephesus, with friends named in Thessalonica, Galatia, Dalmatia, Troas and Corinth",
-      "when": "About AD 66 to 67; by tradition Paul was put to death in Rome about AD 67 to 68",
+      "when": "Paul's last letter: “the time of my departure is at hand” (4:6); by tradition he was put to death in Rome soon after",
       "people": [
         "paul",
         "timothy",
@@ -14629,7 +14629,7 @@ window.STUDIES = [
     "url": "studies/titus-01.html",
     "overview": {
       "where": "The island of Crete, where Paul left Titus; Paul himself is on the road, a free man again",
-      "when": "About AD 62 to 64, after Paul's release from house arrest in Rome",
+      "when": "After Paul's release from house arrest in Rome (Acts 28:30), when he left Titus in Crete (1:5)",
       "people": [
         "paul",
         "titus",
@@ -14672,7 +14672,7 @@ window.STUDIES = [
     "url": "studies/titus-02.html",
     "overview": {
       "where": "The churches of Crete, in homes and at work",
-      "when": "About AD 62 to 64",
+      "when": "After Paul was free to travel again, with Titus left in Crete (1:5)",
       "people": [
         "jesus"
       ],
@@ -14711,7 +14711,7 @@ window.STUDIES = [
     "url": "studies/titus-03.html",
     "overview": {
       "where": "Crete, with Paul planning to winter at Nicopolis",
-      "when": "About AD 62 to 64",
+      "when": "After Paul was free again, planning to winter at Nicopolis (3:12)",
       "people": [
         "jesus",
         "artemas",
@@ -14756,7 +14756,7 @@ window.STUDIES = [
     "url": "studies/philemon-01.html",
     "overview": {
       "where": "Written from Paul's rented house in Rome, to Philemon's house at Colosse, a small town in Asia",
-      "when": "About AD 60 to 62, the same time as Colossians and Ephesians",
+      "when": "Written in bonds (verses 1, 9), the same time as Colossians and Ephesians",
       "people": [
         "paul",
         "timothy",
@@ -14808,7 +14808,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Sent to Jewish believers in Jesus; the letter has friends in Italy (“They of Italy salute you,” 13:24), and the temple in Jerusalem still stands",
-      "when": "About AD 64 to 68, after Rome burned and before Rome destroyed Jerusalem and the temple in AD 70",
+      "when": "After Timothy was “set at liberty” (13:23), while the temple still stood, before Rome destroyed Jerusalem as Jesus foretold (Matthew 24:2)",
       "people": [
         "jesus",
         "the-father",
@@ -14854,7 +14854,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Sent to Jewish believers in Jesus who were tempted to drift back to the old system; the letter has friends in Italy (13:24)",
-      "when": "About AD 64 to 68, while the temple in Jerusalem was still standing",
+      "when": "While the temple in Jerusalem was still standing and its priests still offered gifts (8:4)",
       "people": [
         "jesus",
         "angels",
@@ -14901,7 +14901,7 @@ window.STUDIES = [
     "url": "studies/hebrews-03.html",
     "overview": {
       "where": "A letter to Jewish believers tempted to slip back into the old religion; the chapter looks back to Israel's forty years in the wilderness between Egypt and Canaan",
-      "when": "Written about AD 64 to 68; the wilderness years were about 1440 BC, and David wrote Psalm 95 about 1000 BC",
+      "when": "Written while the temple still stood; it looks back to the wilderness (Numbers 14) and to David's Psalm 95 (4:7)",
       "people": [
         "jesus",
         "moses",
@@ -14947,7 +14947,7 @@ window.STUDIES = [
     "url": "studies/hebrews-04.html",
     "overview": {
       "where": "A letter to Jewish believers; the chapter moves from the wilderness and Canaan to the throne of God in heaven",
-      "when": "Written about AD 64 to 68, looking back to creation's seventh day, Joshua, and David's Psalm 95",
+      "when": "Written while the temple still stood, looking back to creation's seventh day, Joshua, and David's Psalm 95",
       "people": [
         "jesus",
         "joshua-called-jesus",
@@ -14991,7 +14991,7 @@ window.STUDIES = [
     "url": "studies/hebrews-05.html",
     "overview": {
       "where": "A letter to Hebrew believers; the writer and the place are not named",
-      "when": "About AD 64 to 68, before the temple fell",
+      "when": "While the priests still offered in the temple (8:4), before it fell",
       "people": [
         "jesus",
         "aaron",
@@ -15034,7 +15034,7 @@ window.STUDIES = [
     "url": "studies/hebrews-06.html",
     "overview": {
       "where": "A letter to Hebrew believers; the writer and the place are not named",
-      "when": "About AD 64 to 68, before the temple fell",
+      "when": "Before the temple fell; Timothy had been “set at liberty” (13:23)",
       "people": [
         "jesus",
         "holy-spirit",
@@ -15076,7 +15076,7 @@ window.STUDIES = [
     "url": "studies/hebrews-07.html",
     "overview": {
       "where": "A letter to Jewish believers tempted to go back to the temple; it looks back to Salem (Jerusalem) in Genesis 14",
-      "when": "Written about AD 64 to 68; Melchisedec met Abraham about 2000 BC",
+      "when": "Written while the priests of Levi still served (8:4); Melchisedec met Abraham in Genesis 14",
       "people": [
         "melchisedec",
         "abraham",
@@ -15124,7 +15124,7 @@ window.STUDIES = [
     "url": "studies/hebrews-08.html",
     "overview": {
       "where": "A letter to Jewish believers; it looks back to the tabernacle at Mount Sinai and the promise in Jeremiah 31",
-      "when": "Written about AD 64 to 68, a few years before the temple fell in AD 70",
+      "when": "Written while the old covenant was “ready to vanish away” (8:13), before the temple fell",
       "people": [
         "jesus",
         "moses"
@@ -15169,7 +15169,7 @@ window.STUDIES = [
     "url": "studies/hebrews-09.html",
     "overview": {
       "where": "The tabernacle of Moses' day, and heaven itself; written to Hebrew believers while the temple in Jerusalem still stood",
-      "when": "Written about AD 64 to 68, before the temple fell in AD 70",
+      "when": "Written while the priests still went in daily (9:6), before the temple fell",
       "people": [
         "jesus",
         "moses",
@@ -15217,7 +15217,7 @@ window.STUDIES = [
     "url": "studies/hebrews-10.html",
     "overview": {
       "where": "Written to Hebrew believers tempted to go back to the temple sacrifices",
-      "when": "Written about AD 64 to 68, before the temple fell in AD 70",
+      "when": "Written while the priests still stood “daily ministering” (10:11), before the temple fell",
       "people": [
         "jesus",
         "holy-spirit",
@@ -15266,7 +15266,7 @@ window.STUDIES = [
     "url": "studies/hebrews-11.html",
     "overview": {
       "where": "A letter to Jewish believers; its stories run from Ur and Canaan down to Egypt, through the Red sea, and in at Jericho",
-      "when": "Written about AD 64 to 68; the stories reach from Abel to the years before Christ",
+      "when": "Written while the temple still stood; the stories reach from Abel to the years before Christ",
       "people": [
         "abel",
         "cain",
@@ -15327,7 +15327,7 @@ window.STUDIES = [
     "url": "studies/hebrews-12.html",
     "overview": {
       "where": "A letter to Jewish believers; its pictures move from a stadium to mount Sinai and mount Sion, the heavenly Jerusalem",
-      "when": "Written about AD 64 to 68, to believers tempted to give up",
+      "when": "Written while the temple still stood, to believers tempted to give up",
       "people": [
         "jesus",
         "cloud-of-witnesses",
@@ -15375,7 +15375,7 @@ window.STUDIES = [
     "url": "studies/hebrews-13.html",
     "overview": {
       "where": "Written to Jewish believers under pressure; greetings come from “they of Italy”",
-      "when": "About AD 64 to 68, before Rome destroyed the temple",
+      "when": "Before Rome destroyed the temple; Timothy had been “set at liberty” (13:23)",
       "people": [
         "jesus",
         "rulers-over-you",
@@ -15423,7 +15423,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Jerusalem, where James led the church, writing to Jewish believers scattered across the Roman world",
-      "when": "About AD 45 to 50, perhaps the earliest letter in the New Testament",
+      "when": "James names no date; he writes to “the twelve tribes which are scattered abroad” (1:1)",
       "people": [
         "james",
         "jesus"
@@ -15465,7 +15465,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The church assembly at Jerusalem, and the stories of Abraham and Rahab",
-      "when": "About AD 45 to 50",
+      "when": "James names no date",
       "people": [
         "abraham",
         "isaac",
@@ -15507,7 +15507,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The churches of the scattered believers, with pictures from stables, ships and forests",
-      "when": "About AD 45 to 50",
+      "when": "James names no date",
       "people": [
         "the-father"
       ],
@@ -15545,7 +15545,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
-      "when": "About AD 45 to 50, one of the earliest letters in the New Testament",
+      "when": "James names no date; he writes to the believers scattered abroad (1:1)",
       "people": [
         "devil"
       ],
@@ -15583,7 +15583,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Written by James, leader of the church in Jerusalem, to Jewish believers scattered far from home",
-      "when": "About AD 45 to 50, one of the earliest letters in the New Testament",
+      "when": "James names no date; he writes to the believers scattered abroad (1:1)",
       "people": [
         "job",
         "elijah",
@@ -15624,7 +15624,7 @@ window.STUDIES = [
     "url": "studies/1-peter-01.html",
     "overview": {
       "where": "Written from “Babylon” (Rome) to believers scattered across what is now Turkey",
-      "when": "About AD 62 to 64, just before Nero turned on the Christians",
+      "when": "Written from “Babylon” (5:13)",
       "people": [
         "simon-peter",
         "jesus",
@@ -15672,7 +15672,7 @@ window.STUDIES = [
     "url": "studies/1-peter-02.html",
     "overview": {
       "where": "Believers scattered across Asia Minor, living among unbelieving neighbours",
-      "when": "About AD 62 to 64, under the emperor Nero",
+      "when": "Written from “Babylon” (5:13), under kings and governors (2:13–14)",
       "people": [
         "jesus"
       ],
@@ -15714,7 +15714,7 @@ window.STUDIES = [
     "url": "studies/1-peter-03.html",
     "overview": {
       "where": "Believers' homes and workplaces across Asia Minor",
-      "when": "About AD 62 to 64, shortly before Nero turned on the Christians",
+      "when": "Written from “Babylon” (5:13)",
       "people": [
         "jesus",
         "noah",
@@ -15757,7 +15757,7 @@ window.STUDIES = [
     "url": "studies/1-peter-04.html",
     "overview": {
       "where": "Rome (“Babylon”), writing to believers scattered across Asia Minor",
-      "when": "About AD 62 to 64, just before Rome burned and Nero turned on the Christians",
+      "when": "Written from “Babylon” (5:13), as “the fiery trial” comes on (4:12)",
       "people": [
         "christ",
         "gentiles"
@@ -15796,7 +15796,7 @@ window.STUDIES = [
     "url": "studies/1-peter-05.html",
     "overview": {
       "where": "Rome (“Babylon”), the letter carried by Silvanus to believers in Asia Minor",
-      "when": "About AD 62 to 64",
+      "when": "Written from “Babylon” (5:13)",
       "people": [
         "elders",
         "silvanus",
@@ -15840,7 +15840,7 @@ window.STUDIES = [
     "url": "studies/2-peter-01.html",
     "overview": {
       "where": "Rome, most likely, and the scattered churches of what is now Turkey",
-      "when": "About AD 64 to 68, in the last years of Nero, shortly before Peter's death",
+      "when": "Peter's last letter: “shortly I must put off this my tabernacle” (1:14)",
       "people": [
         "simon-peter",
         "jesus",
@@ -15885,7 +15885,7 @@ window.STUDIES = [
     "url": "studies/2-peter-02.html",
     "overview": {
       "where": "The scattered churches of what is now Turkey, with Old Testament scenes: the flood, Sodom and Balaam's road",
-      "when": "About AD 64 to 68, in Peter's last letter",
+      "when": "In Peter's last letter (1:14)",
       "people": [
         "noah",
         "lot",
@@ -15931,7 +15931,7 @@ window.STUDIES = [
     "url": "studies/2-peter-03.html",
     "overview": {
       "where": "The scattered churches of what is now Turkey, from Peter in Rome",
-      "when": "About AD 64 to 68, shortly before Peter's death",
+      "when": "Peter's last letter, shortly before his death (1:14)",
       "people": [
         "jesus",
         "paul",
@@ -15972,7 +15972,7 @@ window.STUDIES = [
     "url": "studies/1-john-01.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus, most likely to the churches of Asia around it",
-      "when": "About AD 85 to 95, near the end of John's life, before Revelation (about AD 95)",
+      "when": "Late in John's life, when he calls his readers “my little children” (2:1)",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16016,7 +16016,7 @@ window.STUDIES = [
     "url": "studies/1-john-02.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
-      "when": "About AD 85 to 95",
+      "when": "Late in John's life",
       "people": [
         "jesus",
         "the-father",
@@ -16062,7 +16062,7 @@ window.STUDIES = [
     "url": "studies/1-john-03.html",
     "overview": {
       "where": "Written, by long tradition, from Ephesus to believers in the churches of Asia",
-      "when": "About AD 85 to 95",
+      "when": "Late in John's life",
       "people": [
         "the-father",
         "jesus",
@@ -16110,7 +16110,7 @@ window.STUDIES = [
     "url": "studies/1-john-04.html",
     "overview": {
       "where": "Written by John from Ephesus, likely to the churches of Asia around it",
-      "when": "About AD 85 to 95, when John was an old man",
+      "when": "Late in John's life, when he was an old man",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16155,7 +16155,7 @@ window.STUDIES = [
     "url": "studies/1-john-05.html",
     "overview": {
       "where": "Written by John from Ephesus, likely to the churches of Asia around it",
-      "when": "About AD 85 to 95, at the end of John's letter",
+      "when": "Late in John's life, at the end of his letter",
       "people": [
         "john-the-apostle",
         "jesus",
@@ -16200,7 +16200,7 @@ window.STUDIES = [
     "url": "studies/2-john-01.html",
     "overview": {
       "where": "A church or household in Asia, written from Ephesus by tradition",
-      "when": "About AD 85 to 95",
+      "when": "Late in John's life; he calls himself “the elder” (1)",
       "people": [
         "the-elder",
         "elect-lady",
@@ -16241,7 +16241,7 @@ window.STUDIES = [
     "url": "studies/3-john-01.html",
     "overview": {
       "where": "A church in Asia, written from Ephesus by tradition",
-      "when": "About AD 85 to 95",
+      "when": "Late in John's life; he calls himself “the elder” (1)",
       "people": [
         "the-elder",
         "gaius-of-3-john",
@@ -16283,7 +16283,7 @@ window.STUDIES = [
     "url": "studies/jude-01.html",
     "overview": {
       "where": "Not said. Probably the region of Jerusalem, where his brother James led the church",
-      "when": "About AD 64 to 68",
+      "when": "Jude names no date",
       "people": [
         "jude",
         "james-the-lords-brother",
@@ -16332,7 +16332,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "The island of Patmos, off the coast of Asia, writing to seven churches on the mainland: Ephesus, Smyrna, Pergamos, Thyatira, Sardis, Philadelphia and Laodicea",
-      "when": "About AD 95, under the emperor Domitian, when John was the last of the apostles still living",
+      "when": "John names no year; he is on the isle of Patmos, “in tribulation” for the word of God (1:9)",
       "people": [
         "jesus",
         "john-the-apostle",
@@ -16385,7 +16385,7 @@ window.STUDIES = [
     ],
     "overview": {
       "where": "Letters sent from Patmos to four churches of Asia: Ephesus, Smyrna, Pergamos and Thyatira",
-      "when": "About AD 95, under the emperor Domitian",
+      "when": "John “in the isle that is called Patmos” (1:9), by tradition the last of the apostles still living",
       "people": [
         "jesus",
         "angel-of-the-church",
@@ -16438,7 +16438,7 @@ window.STUDIES = [
     "url": "studies/revelation-03.html",
     "overview": {
       "where": "Letters sent from Patmos to three churches of Asia: Sardis, Philadelphia and Laodicea",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "jesus",
         "holy-spirit",
@@ -16486,7 +16486,7 @@ window.STUDIES = [
     "url": "studies/revelation-04.html",
     "overview": {
       "where": "A vision of the throne room of heaven, seen by John on Patmos",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "lord-god-almighty",
         "twenty-four-elders",
@@ -16531,7 +16531,7 @@ window.STUDIES = [
     "url": "studies/revelation-05.html",
     "overview": {
       "where": "Heaven, before the throne of God, in John's vision on Patmos",
-      "when": "About AD 95, the same vision as chapter 4",
+      "when": "On Patmos (1:9), the same vision as chapter 4",
       "people": [
         "the-lamb",
         "john-the-apostle",
@@ -16576,7 +16576,7 @@ window.STUDIES = [
     "url": "studies/revelation-06.html",
     "overview": {
       "where": "Heaven's throne room, and the earth below, in John's vision on Patmos",
-      "when": "About AD 95; teachers read the seals as past, all through history, or still to come",
+      "when": "On Patmos (1:9); teachers read the seals as past, all through history, or still to come",
       "people": [
         "the-lamb",
         "four-beasts",
@@ -16622,7 +16622,7 @@ window.STUDIES = [
     "url": "studies/revelation-07.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "the-lamb",
         "angels",
@@ -16668,7 +16668,7 @@ window.STUDIES = [
     "url": "studies/revelation-08.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "angels",
         "saints-believers",
@@ -16712,7 +16712,7 @@ window.STUDIES = [
     "url": "studies/revelation-09.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the vision reaches the bottomless pit and the river Euphrates",
-      "when": "About AD 95, under Domitian; teachers read the trumpets as past, all through history, or still to come",
+      "when": "On Patmos (1:9); teachers read the trumpets as past, all through history, or still to come",
       "people": [
         "angels",
         "abaddon",
@@ -16759,7 +16759,7 @@ window.STUDIES = [
     "url": "studies/revelation-10.html",
     "overview": {
       "where": "Patmos, where John sees heaven opened, writing to the seven churches of Asia; the angel stands on the sea and the earth",
-      "when": "About AD 95, under Domitian; a pause between the sixth and seventh trumpets",
+      "when": "On Patmos (1:9); a pause between the sixth and seventh trumpets",
       "people": [
         "mighty-angel",
         "angels",
@@ -16802,7 +16802,7 @@ window.STUDIES = [
     "url": "studies/revelation-11.html",
     "overview": {
       "where": "Patmos, where John sees the temple measured, \"the great city\" where the witnesses fall, and the temple of God opened in heaven",
-      "when": "About AD 95, under Domitian; the seventh trumpet looks ahead to Christ's reign",
+      "when": "On Patmos (1:9); the seventh trumpet looks ahead to Christ's reign",
       "people": [
         "two-witnesses",
         "the-beast",
@@ -16850,7 +16850,7 @@ window.STUDIES = [
     "url": "studies/revelation-12.html",
     "overview": {
       "where": "Patmos, where John sees signs in heaven, a war there, and the woman kept in the wilderness",
-      "when": "About AD 95, under Domitian; the vision reaches back to Christ's birth and ascension",
+      "when": "On Patmos (1:9); the vision reaches back to Christ's birth and ascension",
       "people": [
         "woman-clothed-with-the-sun",
         "the-dragon",
@@ -16898,7 +16898,7 @@ window.STUDIES = [
     "url": "studies/revelation-13.html",
     "overview": {
       "where": "A vision John saw on Patmos: the shore of the sea, then the whole earth",
-      "when": "Written about AD 95 to struggling churches; teachers differ on when these things are fulfilled",
+      "when": "Written from Patmos to struggling churches; teachers differ on when these things are fulfilled",
       "people": [
         "the-dragon",
         "the-beast",
@@ -16944,7 +16944,7 @@ window.STUDIES = [
     "url": "studies/revelation-14.html",
     "overview": {
       "where": "A vision John saw on Patmos: mount Sion, the sky over the earth, and the harvest fields",
-      "when": "Written about AD 95; a look ahead to the end, just before the last seven plagues",
+      "when": "Written from Patmos; a look ahead to the end, just before the last seven plagues",
       "people": [
         "the-lamb",
         "the-father",
@@ -16994,7 +16994,7 @@ window.STUDIES = [
     "url": "studies/revelation-15.html",
     "overview": {
       "where": "Heaven, before God's throne and his temple, in John's vision on Patmos",
-      "when": "About AD 95; the calm just before the seven last plagues",
+      "when": "On Patmos (1:9); the calm just before the seven last plagues",
       "people": [
         "seven-angels-with-plagues",
         "the-lamb",
@@ -17042,7 +17042,7 @@ window.STUDIES = [
     "url": "studies/revelation-16.html",
     "overview": {
       "where": "The temple in heaven, and the whole earth below: the sea, the rivers, the Euphrates, and a place called Armageddon",
-      "when": "About AD 95, in John's vision; Bible teachers differ on when, and how literally, the bowls are poured",
+      "when": "On Patmos, in John's vision; Bible teachers differ on when, and how literally, the bowls are poured",
       "people": [
         "seven-angels-with-plagues",
         "angel-of-the-waters",
@@ -17094,7 +17094,7 @@ window.STUDIES = [
     "url": "studies/revelation-17.html",
     "overview": {
       "where": "In John's vision on Patmos: carried away in the spirit into the wilderness",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "john-the-apostle",
         "angels",
@@ -17145,7 +17145,7 @@ window.STUDIES = [
     "url": "studies/revelation-18.html",
     "overview": {
       "where": "In John's vision on Patmos: heaven, and the burning city seen from afar",
-      "when": "About AD 95, under Domitian",
+      "when": "On Patmos (1:9)",
       "people": [
         "angels",
         "merchants-of-the-earth",
@@ -17194,7 +17194,7 @@ window.STUDIES = [
     "url": "studies/revelation-19.html",
     "overview": {
       "where": "Heaven, then heaven opened over the earth, in John's vision on Patmos",
-      "when": "About AD 95; in the vision, after Babylon's fall (chapters 17–18)",
+      "when": "On Patmos (1:9); in the vision, after Babylon's fall (chapters 17–18)",
       "people": [
         "jesus",
         "the-lamb",
@@ -17246,7 +17246,7 @@ window.STUDIES = [
     "url": "studies/revelation-20.html",
     "overview": {
       "where": "The bottomless pit, the earth, and the great white throne, in John's vision on Patmos",
-      "when": "About AD 95; in the vision, after Christ's return in chapter 19",
+      "when": "On Patmos (1:9); in the vision, after Christ's return in chapter 19",
       "people": [
         "satan",
         "the-dragon",
@@ -17300,7 +17300,7 @@ window.STUDIES = [
     "url": "studies/revelation-21.html",
     "overview": {
       "where": "The new heaven and new earth, and the holy city, new Jerusalem, in John's vision on Patmos",
-      "when": "About AD 95; the vision looks ahead to the end, after the last judgment",
+      "when": "On Patmos (1:9); the vision looks ahead to the end, after the last judgment",
       "people": [
         "the-lamb",
         "john-the-apostle",
@@ -17347,7 +17347,7 @@ window.STUDIES = [
     "url": "studies/revelation-22.html",
     "overview": {
       "where": "Inside the holy city, new Jerusalem, by the river and the throne, in John's vision on Patmos",
-      "when": "About AD 95; the last chapter of the Bible, looking ahead to Christ's return",
+      "when": "On Patmos (1:9); the last chapter of the Bible, looking ahead to Christ's return",
       "people": [
         "jesus",
         "the-lamb",

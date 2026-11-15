@@ -47438,7 +47438,7 @@ window.GLOSSARY = [
  {
   "id": "jerusalem-compassed",
   "kind": "term",
-  "name": "Jerusalem compassed with armies (the siege of A.D. 70)",
+  "name": "Jerusalem compassed with armies (the siege Jesus foretold)",
   "refs": [
    [
     "Luke", 21,
@@ -49364,7 +49364,7 @@ window.GLOSSARY = [
  {
   "id": "claudius",
   "kind": "person",
-  "name": "Claudius, Roman emperor (AD 41 to 54)",
+  "name": "Claudius, Roman emperor (Acts 11:28; 18:2)",
   "refs": [
    [
     "Acts", 11,
@@ -49571,7 +49571,7 @@ window.GLOSSARY = [
  {
   "id": "herod-agrippa",
   "kind": "person",
-  "name": "Herod Agrippa I, king over the Jews (about AD 41 to 44)",
+  "name": "Herod Agrippa I, king over the Jews, who killed James (Acts 12)",
   "refs": [
    [
     "Acts", 12,
@@ -52547,7 +52547,7 @@ window.GLOSSARY = [
  {
   "id": "gallio",
   "kind": "person",
-  "name": "Gallio (the Roman proconsul of Achaia, about AD 51 to 52)",
+  "name": "Gallio (the Roman deputy of Achaia, Acts 18:12)",
   "refs": [
    [
     "Acts", 18,
@@ -52661,7 +52661,7 @@ window.GLOSSARY = [
  {
   "id": "festus",
   "kind": "person",
-  "name": "Festus (Porcius Festus, Roman governor of Judaea, about AD 59)",
+  "name": "Festus (Porcius Festus, Roman governor of Judaea after Felix, Acts 24:27)",
   "refs": [
    [
     "Acts", 24,
