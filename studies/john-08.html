@@ -12,16 +12,37 @@
 <style>
 .ex .note + .quote { margin-top: .9em; }
 
-/* Sunrise over the Mount of Olives */
-.jn08-dawn .jn08-hill { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.jn08-dawn .jn08-sun { fill: var(--accent-hot); transform: translateY(110px); }
-.slide.active .jn08-dawn .jn08-sun { animation: jn08-rise 3.4s .4s cubic-bezier(.3,.7,.3,1) forwards; }
-@keyframes jn08-rise { to { transform: translateY(0); } }
-.jn08-dawn .jn08-rays { opacity: 0; }
-.slide.active .jn08-dawn .jn08-rays { animation: jn08-fade 2s 2.6s ease forwards; }
+/* 5: dawn. The sun climbs over the Mount of Olives; on the step, the path back to the temple is walked. */
+.jn08-dawn .jn08-far { fill: color-mix(in srgb, var(--on-glow) 72%, var(--cool)); opacity: .9; }
+.jn08-dawn .jn08-roofs rect { fill: color-mix(in srgb, var(--on-glow) 82%, var(--warm)); }
+.jn08-dawn .jn08-mount { fill: color-mix(in srgb, var(--on-glow) 86%, var(--warm)); }
+.jn08-dawn .jn08-rim { stroke: var(--glow); stroke-width: 1.6; opacity: 0; }
+.jn08-dawn .jn08-olives ellipse { fill: color-mix(in srgb, var(--on-glow) 74%, var(--cool)); stroke: color-mix(in srgb, var(--warm) 30%, transparent); stroke-width: .6; }
+.jn08-dawn .jn08-olives .trunk { stroke: color-mix(in srgb, var(--on-glow) 70%, var(--warm)); }
+.jn08-dawn .jn08-hill { fill: color-mix(in srgb, var(--on-glow) 88%, var(--warm)); }
+.jn08-dawn .jn08-courses line { stroke: var(--on-glow); stroke-width: .8; opacity: .45; }
+.jn08-dawn .jn08-roof { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); }
+.jn08-dawn .jn08-cols line { stroke: color-mix(in srgb, var(--warm) 34%, var(--on-glow)); stroke-width: 2; }
+.jn08-dawn .jn08-gate, .jn08-dawn .jn08-door { fill: var(--on-glow); opacity: .85; }
+.jn08-dawn .jn08-gold { stroke: var(--warm); stroke-width: 2.4; }
+.jn08-dawn .jn08-goldr { fill: var(--warm); }
+.jn08-dawn .jn08-spikes line { stroke: var(--warm); stroke-width: 1; }
+.jn08-dawn .jn08-court { fill: color-mix(in srgb, var(--glow) 22%, var(--on-glow)); }
+.jn08-dawn .jn08-lit { fill: var(--warm); opacity: 0; }
+.jn08-dawn .jn08-sun { transform: translateY(120px); }
+.jn08-dawn .jn08-rays, .jn08-dawn .jn08-day { opacity: 0; }
+.slide.active .jn08-dawn .jn08-sun { animation: jn08-rise 4s .4s cubic-bezier(.3,.7,.3,1) forwards; }
+.slide.active .jn08-dawn .jn08-day { animation: jn08-fade 3.6s 1s ease forwards; }
+.slide.active .jn08-dawn .jn08-rays { animation: jn08-fade 2s 3s ease forwards; }
+.slide.active .jn08-dawn .jn08-rim { animation: jn08-fade70 2s 2.6s ease forwards; }
+.slide.active .jn08-dawn .jn08-lit { animation: jn08-fade90 2s 3s ease forwards; }
+@keyframes jn08-rise { to { transform: none; } }
 @keyframes jn08-fade { to { opacity: 1; } }
-.jn08-walk { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; opacity: 0; transition: opacity 1s ease; }
-.split:has(.jn08-walk-go.on) .jn08-walk { opacity: 1; }
+@keyframes jn08-fade70 { to { opacity: .7; } }
+@keyframes jn08-fade90 { to { opacity: .9; } }
+.jn08-dawn .jn08-walk { stroke: var(--glow); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; }
+.jn08-dawn .jn08-walk-draw { stroke-dasharray: 420; stroke-dashoffset: 420; transition: stroke-dashoffset 3s ease-in-out; }
+.split:has(.jn08-walk-go.on) .jn08-walk-draw { stroke-dashoffset: 0; }
 
 /* A question with two exits, both trapped */
 .jn08-trap { display: grid; gap: .8rem; margin: .4em 0 1em; }
@@ -38,30 +59,27 @@
 .jn08-path.on em { transform: rotate(-6deg) scale(1); opacity: 1; transition-delay: .5s; }
 @media (max-width: 600px) { .jn08-paths { grid-template-columns: 1fr; } }
 
-/* The accusers leave, eldest first, dropping their stones */
-.jn08-stones .jn08-man { fill: var(--ink-soft); }
-.jn08-stones .jn08-rock { fill: var(--line-strong); stroke: var(--ink); stroke-width: 1.5; }
-.jn08-stones .jn08-her { fill: var(--accent-hot); }
-.jn08-stones .jn08-him { fill: var(--ink); }
-.jn08-stones .jn08-scrawl { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-linecap: round; }
-.jn08-acc { transition: opacity 1s ease; transition-delay: calc(var(--k) * 550ms + 600ms); }
-.jn08-acc .jn08-rock { transform-box: fill-box; transition: transform .5s ease-in; transition-delay: calc(var(--k) * 550ms + 300ms); }
-.ex:has(.jn08-go.on) .jn08-acc { opacity: .07; }
-.ex:has(.jn08-go.on) .jn08-acc .jn08-rock { transform: translateY(46px); }
-.jn08-alone { opacity: 0; transition: opacity 1s ease 4.6s; }
-.ex:has(.jn08-go.on) .jn08-alone { opacity: 1; }
-
-/* Four great lampstands, lit and then out */
-.jn08-lamps .jn08-stand { fill: var(--warm); }
-.jn08-lamps .jn08-bowl { fill: var(--warm); }
-.jn08-lamps .jn08-fire { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; transition: opacity 1s ease; }
-.slide.active .jn08-lamps .jn08-fire { opacity: 1; animation: flicker 1.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * 300ms); transition-delay: calc(var(--k) * 450ms + 300ms); }
-.split:has(.jn08-out.on) .jn08-lamps .jn08-fire { opacity: 0; transition-delay: calc(var(--k) * 250ms); }
-.jn08-lamps .jn08-halo { opacity: 0; transition: opacity 1.2s ease; transition-delay: calc(var(--k) * 450ms + 600ms); }
-.slide.active .jn08-lamps .jn08-halo { opacity: .55; }
-.split:has(.jn08-out.on) .jn08-lamps .jn08-halo { opacity: 0; transition-delay: calc(var(--k) * 250ms); }
-.jn08-lamps .jn08-true { opacity: 0; transition: opacity 1.6s ease 1.4s; }
-.split:has(.jn08-out.on) .jn08-lamps .jn08-true { opacity: 1; }
+/* 15: the great lamps of the feast burn over the court, then go out; one light is left. */
+.jn08-lamps .jn08-cornice { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); }
+.jn08-lamps .jn08-cols rect { fill: color-mix(in srgb, var(--warm) 26%, var(--on-glow)); }
+.jn08-lamps .jn08-gatehouse { fill: color-mix(in srgb, var(--warm) 30%, var(--on-glow)); }
+.jn08-lamps .jn08-gatedoor { fill: color-mix(in srgb, var(--warm) 55%, var(--on-glow)); }
+.jn08-lamps .jn08-steps path { fill: none; stroke: color-mix(in srgb, var(--warm) 45%, var(--on-glow)); stroke-width: 3; }
+.jn08-lamps .jn08-floor line { stroke: var(--on-glow); stroke-width: 1; opacity: .4; }
+.jn08-lamps .jn08-ladder line { stroke: color-mix(in srgb, var(--leather-light) 60%, var(--on-glow)); stroke-width: 2; }
+.jn08-lamps .jn08-person { fill: color-mix(in srgb, var(--on-glow) 80%, var(--warm)); stroke: color-mix(in srgb, var(--warm) 35%, transparent); stroke-width: .6; }
+.jn08-lamps .jn08-him { fill: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); transition: fill 1.6s ease 1.2s; }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-him { fill: var(--glow); }
+.jn08-lamps .jn08-fire .o { fill: var(--warm); }
+.jn08-lamps .jn08-fire .i { fill: var(--glow); }
+.jn08-lamps .jn08-fire, .jn08-lamps .jn08-halo, .jn08-lamps .jn08-wash { opacity: 0; transition: opacity 1s ease; transition-delay: calc(var(--k, 0) * 350ms + 300ms); }
+.slide.active .jn08-lamps .jn08-fire, .slide.active .jn08-lamps .jn08-wash { opacity: 1; }
+.slide.active .jn08-lamps .jn08-halo { opacity: .8; }
+.slide.active .jn08-lamps .jn08-fire path { transform-box: fill-box; transform-origin: 50% 100%; animation: jn08-flicker 1.4s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.35s); }
+@keyframes jn08-flicker { from { transform: scale(1, 1) skewX(0); } to { transform: scale(.9, 1.08) skewX(-4deg); } }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-fire, .split:has(.jn08-out.on) .jn08-lamps .jn08-halo, .split:has(.jn08-out.on) .jn08-lamps .jn08-wash { opacity: 0; transition-delay: calc(var(--k, 0) * 250ms); }
+.jn08-lamps .jn08-true, .jn08-lamps .jn08-truelab { opacity: 0; transition: opacity 1.8s ease 1.4s; }
+.split:has(.jn08-out.on) .jn08-lamps .jn08-true, .split:has(.jn08-out.on) .jn08-lamps .jn08-truelab { opacity: 1; }
 
 /* "I am he": the added word fades away */
 .jn08-iam { font: 300 clamp(2rem, 1.2rem + 4vw, 4.6rem)/1.1 var(--serif); margin: .2em 0 .5em; }
@@ -84,14 +102,30 @@
 .jn08-break .jn08-snap { fill: var(--accent-hot); opacity: 0; transition: opacity .3s ease .4s; }
 .jn08-break.on .jn08-snap { opacity: 1; }
 
-/* A timeline, and a line that runs off past its start */
-.jn08-time .jn08-axis { stroke: var(--line-strong); stroke-width: 3; }
-.jn08-time .jn08-pt { fill: var(--ink-soft); }
-.jn08-time .jn08-now { fill: var(--accent-hot); }
+/* 41: the road of history, and a line of light that runs back past Abraham with no beginning. */
+.jn08-ever .jn08-stars circle { fill: var(--glow); opacity: .8; }
+.slide.active .jn08-ever .jn08-stars circle { animation: jn08-twinkle 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.45s); }
+@keyframes jn08-twinkle { to { opacity: .2; } }
+.jn08-ever .jn08-ehills { fill: color-mix(in srgb, var(--on-glow) 75%, var(--cool)); }
+.jn08-ever .jn08-grass path { fill: none; stroke: color-mix(in srgb, var(--warm) 35%, var(--on-glow)); stroke-width: 1.2; }
+.jn08-ever .jn08-tent path { fill: color-mix(in srgb, var(--on-glow) 70%, var(--leather)); }
+.jn08-ever .jn08-tent .door { fill: var(--warm); opacity: .7; }
+.jn08-ever .jn08-tent line { stroke: color-mix(in srgb, var(--leather-light) 50%, var(--on-glow)); stroke-width: 1.4; }
+.jn08-ever .jn08-figure { fill: color-mix(in srgb, var(--on-glow) 55%, var(--warm)); }
+.jn08-ever .jn08-bush path { fill: color-mix(in srgb, var(--on-glow) 60%, var(--warm)); }
+.jn08-ever .jn08-blaze path { fill: var(--warm); transform-box: fill-box; transform-origin: 50% 100%; }
+.slide.active .jn08-ever .jn08-blaze path { animation: jn08-flicker 1.2s ease-in-out infinite alternate; }
+.jn08-ever .jn08-porch rect, .jn08-ever .jn08-porch path { fill: color-mix(in srgb, var(--glow) 50%, var(--warm)); }
+.jn08-ever .jn08-porch .shade { fill: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); }
+.jn08-ever .jn08-jesus { fill: var(--glow); }
+.jn08-ever .jn08-ticks line { stroke: var(--glow); stroke-width: 2; opacity: .6; }
+.jn08-ever .jn08-drop { stroke: var(--glow); stroke-width: 1.5; stroke-dasharray: 3 4; }
 .jn08-forever { transform-box: view-box; transform-origin: 560px 0; transform: scaleX(0); transition: transform 2.4s cubic-bezier(.4,0,.2,1); }
-.split:has(.jn08-forever-go.on) .jn08-forever { transform: scaleX(1); }
-.jn08-time .jn08-forever-text { opacity: 0; transition: opacity 1s ease 2s; }
+.split:has(.jn08-forever-go.on) .jn08-forever { transform: none; }
+.jn08-ever .jn08-forever-text { opacity: 0; transition: opacity 1s ease 2s; }
 .split:has(.jn08-forever-go.on) .jn08-forever-text { opacity: 1; }
+/* paintings beside long text: a slimmer picture column on wide screens */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.art-narrow.jn08-slim { grid-template-columns: .6fr 1.4fr; } .jn08-slim .art img { max-height: 44vh; } }
 </style>
 </head>
 <body>
@@ -139,21 +173,49 @@
     <blockquote class="quote rise" data-q="1"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn08-dawn" viewBox="0 0 600 300" role="img" aria-label="The sun rises behind the Mount of Olives. Across the Kidron Valley stands the temple.">
-          <defs>
-            <radialGradient id="jn08-sunglow"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".45" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
-          </defs>
-          <g class="jn08-sun"><circle cx="470" cy="110" r="90" fill="url(#jn08-sunglow)"/><circle cx="470" cy="110" r="32"/></g>
-          <path class="jn08-hill" d="M330 290 Q380 150 470 140 Q560 135 600 170 V290 Z"/>
-          <path class="jn08-hill" d="M0 290 V170 Q60 150 200 155 Q250 160 270 290 Z"/>
-          <rect x="70" y="105" width="90" height="55" stroke-width="2" style="fill:var(--surface);stroke:var(--ink-soft)"/>
-          <rect x="100" y="80" width="30" height="25" stroke-width="2" style="fill:var(--surface);stroke:var(--ink-soft)"/>
-          <path class="jn08-walk" d="M470 140 Q420 200 300 260 Q240 230 160 150"/>
-          <text x="115" y="200" text-anchor="middle" font-size="18" font-weight="700">the temple</text>
-          <text x="300" y="298" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">Kidron Valley</text>
-          <text x="500" y="240" text-anchor="middle" font-size="18" font-weight="700">Mount of Olives</text>
-          <text x="560" y="30" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">east</text>
-        </svg>
+        <svg class="pic jn08-dawn" style="--ar:1.875" viewBox="0 0 600 320" role="img" aria-label="Sunrise behind the Mount of Olives, its slopes dotted with olive trees. Across the Kidron Valley, on its great stone platform, stands the temple. A path runs from the mount down through the valley and up to the temple gate.">
+  <defs>
+    <linearGradient id="jn08-dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="0.45" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/><stop offset="0.72" style="stop-color:color-mix(in srgb, var(--wine) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-dday" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 40%, var(--on-glow));stop-opacity:0"/><stop offset="0.5" style="stop-color:color-mix(in srgb, var(--warm) 50%, var(--glow));stop-opacity:0.35"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 70%, var(--glow));stop-opacity:0.8"/></linearGradient>
+    <radialGradient id="jn08-dsun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.14" style="stop-color:color-mix(in srgb, var(--glow) 70%, var(--warm))"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.45"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn08-dray" x1="0" y1="1" x2="0" y2="0"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.55"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></linearGradient>
+    <linearGradient id="jn08-dwall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 18%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 36%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-dhouse" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 30%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--glow) 55%, var(--warm))"/></linearGradient>
+    <linearGradient id="jn08-dvale" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 18%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <filter id="jn08-dblur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+    <mask id="jn08-dwalkm"><path class="jn08-walk-draw" d="M462 196 C440 228 392 262 330 294 C310 304 292 302 280 290 C266 274 254 252 244 236" fill="none" stroke-width="10" style="stroke:var(--glow)"/></mask>
+  </defs>
+  <rect width="600" height="320" fill="url(#jn08-dsky)"/>
+  <rect class="jn08-day" width="600" height="320" fill="url(#jn08-dday)"/>
+  <g class="jn08-rays" fill="url(#jn08-dray)">
+    <polygon points="470,150 380,0 410,0"/><polygon points="470,150 450,0 476,0"/><polygon points="470,150 520,0 548,0"/><polygon points="470,150 590,0 600,0 600,30"/><polygon points="470,150 300,0 318,0"/>
+  </g>
+  <g class="jn08-sun"><circle cx="470" cy="128" r="150" fill="url(#jn08-dsun)"/><circle cx="470" cy="128" r="22" style="fill:var(--glow)"/></g>
+  <path class="jn08-far" filter="url(#jn08-dblur)" d="M0 214 C60 204 120 210 180 200 C230 192 270 204 330 196 C400 188 480 196 600 186 L600 320 L0 320 Z"/>
+  <g class="jn08-roofs"><rect x="70.6" y="197.6" width="22.8" height="38.4"/><rect x="83.7" y="195.1" width="14.9" height="40.9"/><rect x="76.3" y="191.1" width="16.1" height="44.9"/><rect x="7.1" y="195.6" width="18.9" height="40.4"/><rect x="28.5" y="197.7" width="17.1" height="38.3"/><rect x="77.5" y="192.2" width="24" height="43.8"/><rect x="36.1" y="197.8" width="21.3" height="38.2"/><rect x="69" y="188.2" width="18.4" height="47.8"/><rect x="22.8" y="194.8" width="14.3" height="41.2"/></g>
+  <path class="jn08-mount" d="M296 320 C318 260 360 200 410 176 C440 162 476 158 506 162 C548 168 580 184 600 192 L600 320 Z"/>
+  <path class="jn08-rim" d="M296 320 C318 260 360 200 410 176 C440 162 476 158 506 162 C548 168 580 184 600 192" fill="none"/>
+  <g class="jn08-olives"><g transform="translate(537.8 203.9)"><path d="M0 0 L0.7 -6.4" class="trunk" stroke-width="1"/><ellipse cx="-3.7" cy="-7.6" rx="6.3" ry="4.1"/><ellipse cx="3.1" cy="-8.7" rx="5.7" ry="3.8"/><ellipse cx="0" cy="-11" rx="4.7" ry="2.9"/></g><g transform="translate(526.3 214)"><path d="M0 0 L-0.3 -7.2" class="trunk" stroke-width="1.1"/><ellipse cx="-3.5" cy="-8.5" rx="6" ry="4.6"/><ellipse cx="3" cy="-9.8" rx="5.5" ry="4.3"/><ellipse cx="0" cy="-12.5" rx="4.5" ry="3.3"/></g><g transform="translate(596.7 232.1)"><path d="M0 0 L0.8 -8.7" class="trunk" stroke-width="1.3"/><ellipse cx="-3.8" cy="-10.3" rx="6.5" ry="5.5"/><ellipse cx="3.2" cy="-11.8" rx="5.9" ry="5.1"/><ellipse cx="0" cy="-15" rx="4.9" ry="3.9"/></g><g transform="translate(361.5 244.3)"><path d="M0 0 L-0.9 -8.1" class="trunk" stroke-width="1.4"/><ellipse cx="-4" cy="-9.6" rx="6.9" ry="5.1"/><ellipse cx="3.4" cy="-11" rx="6.3" ry="4.8"/><ellipse cx="0" cy="-14" rx="5.1" ry="3.7"/></g><g transform="translate(537.1 245.1)"><path d="M0 0 L-0.8 -7.1" class="trunk" stroke-width="1.4"/><ellipse cx="-4.5" cy="-8.4" rx="7.7" ry="4.5"/><ellipse cx="3.8" cy="-9.6" rx="7" ry="4.2"/><ellipse cx="0" cy="-12.2" rx="5.8" ry="3.2"/></g><g transform="translate(477 249.5)"><path d="M0 0 L-0.9 -9.1" class="trunk" stroke-width="1.4"/><ellipse cx="-4.5" cy="-10.8" rx="7.7" ry="5.8"/><ellipse cx="3.8" cy="-12.5" rx="7" ry="5.4"/><ellipse cx="0" cy="-15.8" rx="5.8" ry="4.2"/></g><g transform="translate(363.1 250.6)"><path d="M0 0 L-0.2 -7.2" class="trunk" stroke-width="1.4"/><ellipse cx="-4.9" cy="-8.6" rx="8.5" ry="4.6"/><ellipse cx="4.2" cy="-9.9" rx="7.8" ry="4.3"/><ellipse cx="0" cy="-12.5" rx="6.3" ry="3.3"/></g><g transform="translate(356 252.9)"><path d="M0 0 L-0.1 -7.9" class="trunk" stroke-width="1.4"/><ellipse cx="-4.4" cy="-9.3" rx="7.5" ry="5"/><ellipse cx="3.7" cy="-10.7" rx="6.8" ry="4.7"/><ellipse cx="0" cy="-13.6" rx="5.6" ry="3.6"/></g><g transform="translate(429.5 254.6)"><path d="M0 0 L-0.1 -7.6" class="trunk" stroke-width="1.4"/><ellipse cx="-3.7" cy="-8.9" rx="6.3" ry="4.8"/><ellipse cx="3.1" cy="-10.3" rx="5.8" ry="4.5"/><ellipse cx="0" cy="-13.1" rx="4.7" ry="3.4"/></g><g transform="translate(514.1 255.6)"><path d="M0 0 L0.3 -10.2" class="trunk" stroke-width="1.5"/><ellipse cx="-3.7" cy="-12.1" rx="6.3" ry="6.5"/><ellipse cx="3.2" cy="-14" rx="5.8" ry="6"/><ellipse cx="0" cy="-17.7" rx="4.7" ry="4.7"/></g><g transform="translate(355.4 261.5)"><path d="M0 0 L-0.3 -8.6" class="trunk" stroke-width="1.5"/><ellipse cx="-5.1" cy="-10.2" rx="8.7" ry="5.5"/><ellipse cx="4.3" cy="-11.7" rx="7.9" ry="5.1"/><ellipse cx="0" cy="-14.8" rx="6.5" ry="3.9"/></g><g transform="translate(401.4 266.1)"><path d="M0 0 L0.5 -8.7" class="trunk" stroke-width="1.5"/><ellipse cx="-4.9" cy="-10.3" rx="8.5" ry="5.6"/><ellipse cx="4.2" cy="-11.9" rx="7.8" ry="5.2"/><ellipse cx="0" cy="-15.1" rx="6.4" ry="4"/></g><g transform="translate(355.2 268.3)"><path d="M0 0 L0.3 -9.8" class="trunk" stroke-width="1.6"/><ellipse cx="-4.8" cy="-11.6" rx="8.2" ry="6.2"/><ellipse cx="4.1" cy="-13.3" rx="7.5" ry="5.8"/><ellipse cx="0" cy="-16.9" rx="6.1" ry="4.4"/></g><g transform="translate(564.3 270.7)"><path d="M0 0 L0.7 -8.5" class="trunk" stroke-width="1.6"/><ellipse cx="-5" cy="-10" rx="8.5" ry="5.4"/><ellipse cx="4.3" cy="-11.5" rx="7.8" ry="5"/><ellipse cx="0" cy="-14.6" rx="6.4" ry="3.8"/></g><g transform="translate(401.6 271.5)"><path d="M0 0 L-0.5 -10.2" class="trunk" stroke-width="1.6"/><ellipse cx="-3.6" cy="-12.1" rx="6.2" ry="6.5"/><ellipse cx="3.1" cy="-13.9" rx="5.7" ry="6"/><ellipse cx="0" cy="-17.6" rx="4.6" ry="4.6"/></g><g transform="translate(549.2 274.6)"><path d="M0 0 L0.4 -10.8" class="trunk" stroke-width="1.6"/><ellipse cx="-3.6" cy="-12.7" rx="6.2" ry="6.9"/><ellipse cx="3.1" cy="-14.7" rx="5.7" ry="6.4"/><ellipse cx="0" cy="-18.6" rx="4.6" ry="4.9"/></g><g transform="translate(380.8 275.7)"><path d="M0 0 L-0.9 -9.4" class="trunk" stroke-width="1.6"/><ellipse cx="-4.1" cy="-11.1" rx="7" ry="6"/><ellipse cx="3.5" cy="-12.8" rx="6.4" ry="5.5"/><ellipse cx="0" cy="-16.2" rx="5.2" ry="4.3"/></g><g transform="translate(451.6 277)"><path d="M0 0 L0.4 -10.1" class="trunk" stroke-width="1.6"/><ellipse cx="-5.1" cy="-12" rx="8.7" ry="6.4"/><ellipse cx="4.4" cy="-13.8" rx="8" ry="6"/><ellipse cx="0" cy="-17.5" rx="6.6" ry="4.6"/></g><g transform="translate(380.7 278.9)"><path d="M0 0 L-0.3 -10.3" class="trunk" stroke-width="1.6"/><ellipse cx="-3.9" cy="-12.2" rx="6.7" ry="6.6"/><ellipse cx="3.4" cy="-14.1" rx="6.2" ry="6.1"/><ellipse cx="0" cy="-17.9" rx="5.1" ry="4.7"/></g><g transform="translate(528.7 279.8)"><path d="M0 0 L0.5 -7.8" class="trunk" stroke-width="1.6"/><ellipse cx="-4.7" cy="-9.2" rx="8" ry="5"/><ellipse cx="4" cy="-10.6" rx="7.3" ry="4.6"/><ellipse cx="0" cy="-13.4" rx="6" ry="3.5"/></g><g transform="translate(581.4 282.7)"><path d="M0 0 L-0.9 -10.9" class="trunk" stroke-width="1.7"/><ellipse cx="-5.6" cy="-12.8" rx="9.7" ry="6.9"/><ellipse cx="4.8" cy="-14.8" rx="8.9" ry="6.4"/><ellipse cx="0" cy="-18.8" rx="7.3" ry="4.9"/></g><g transform="translate(344 285.4)"><path d="M0 0 L0.8 -10.2" class="trunk" stroke-width="1.7"/><ellipse cx="-5.3" cy="-12.1" rx="9" ry="6.5"/><ellipse cx="4.5" cy="-13.9" rx="8.3" ry="6"/><ellipse cx="0" cy="-17.6" rx="6.8" ry="4.6"/></g><g transform="translate(598.2 287.7)"><path d="M0 0 L0.6 -8.2" class="trunk" stroke-width="1.7"/><ellipse cx="-5.3" cy="-9.7" rx="9.1" ry="5.2"/><ellipse cx="4.6" cy="-11.2" rx="8.4" ry="4.8"/><ellipse cx="0" cy="-14.2" rx="6.8" ry="3.7"/></g><g transform="translate(377.5 296.4)"><path d="M0 0 L0.4 -11" class="trunk" stroke-width="1.8"/><ellipse cx="-5.5" cy="-13" rx="9.4" ry="7"/><ellipse cx="4.7" cy="-15" rx="8.6" ry="6.5"/><ellipse cx="0" cy="-19" rx="7" ry="5"/></g><g transform="translate(388.6 297.4)"><path d="M0 0 L-0.8 -9.7" class="trunk" stroke-width="1.8"/><ellipse cx="-4.4" cy="-11.5" rx="7.5" ry="6.2"/><ellipse cx="3.7" cy="-13.2" rx="6.8" ry="5.7"/><ellipse cx="0" cy="-16.7" rx="5.6" ry="4.4"/></g><g transform="translate(453.6 298.3)"><path d="M0 0 L-0.8 -10.5" class="trunk" stroke-width="1.8"/><ellipse cx="-4.3" cy="-12.4" rx="7.4" ry="6.7"/><ellipse cx="3.7" cy="-14.3" rx="6.8" ry="6.2"/><ellipse cx="0" cy="-18.2" rx="5.6" ry="4.8"/></g><g transform="translate(407.1 299)"><path d="M0 0 L-0.2 -11.7" class="trunk" stroke-width="1.8"/><ellipse cx="-4.8" cy="-13.8" rx="8.2" ry="7.4"/><ellipse cx="4.1" cy="-15.9" rx="7.5" ry="6.9"/><ellipse cx="0" cy="-20.1" rx="6.1" ry="5.3"/></g><g transform="translate(330 306.2)"><path d="M0 0 L-0.8 -11.7" class="trunk" stroke-width="1.9"/><ellipse cx="-4.3" cy="-13.8" rx="7.4" ry="7.4"/><ellipse cx="3.7" cy="-15.9" rx="6.8" ry="6.9"/><ellipse cx="0" cy="-20.2" rx="5.5" ry="5.3"/></g><g transform="translate(344.5 307.8)"><path d="M0 0 L1 -11.4" class="trunk" stroke-width="1.9"/><ellipse cx="-5.7" cy="-13.4" rx="9.8" ry="7.2"/><ellipse cx="4.9" cy="-15.5" rx="9" ry="6.7"/><ellipse cx="0" cy="-19.6" rx="7.3" ry="5.2"/></g><g transform="translate(468.1 311.6)"><path d="M0 0 L-0.5 -10.2" class="trunk" stroke-width="1.9"/><ellipse cx="-6.3" cy="-12.1" rx="10.8" ry="6.5"/><ellipse cx="5.4" cy="-14" rx="9.9" ry="6.1"/><ellipse cx="0" cy="-17.7" rx="8.1" ry="4.7"/></g></g>
+  <path class="jn08-vale" d="M232 262 C252 280 270 304 292 320 L340 320 C330 304 318 292 300 290 C280 284 262 272 248 258 Z" fill="url(#jn08-dvale)"/>
+  <path class="jn08-hill" d="M0 262 L250 262 C262 280 276 304 296 320 L0 320 Z"/>
+  <rect x="20" y="196" width="230" height="66" fill="url(#jn08-dwall)"/>
+  <g class="jn08-courses"><line x1="22" y1="206" x2="248" y2="206"/><line x1="44.3" y1="197" x2="44.3" y2="206"/><line x1="70.7" y1="197" x2="70.7" y2="206"/><line x1="108.3" y1="197" x2="108.3" y2="206"/><line x1="134.9" y1="197" x2="134.9" y2="206"/><line x1="173.8" y1="197" x2="173.8" y2="206"/><line x1="201" y1="197" x2="201" y2="206"/><line x1="238.8" y1="197" x2="238.8" y2="206"/><line x1="22" y1="215" x2="248" y2="215"/><line x1="23.6" y1="206" x2="23.6" y2="215"/><line x1="66.4" y1="206" x2="66.4" y2="215"/><line x1="93.3" y1="206" x2="93.3" y2="215"/><line x1="115.4" y1="206" x2="115.4" y2="215"/><line x1="141.6" y1="206" x2="141.6" y2="215"/><line x1="170.1" y1="206" x2="170.1" y2="215"/><line x1="206.4" y1="206" x2="206.4" y2="215"/><line x1="22" y1="224" x2="248" y2="224"/><line x1="50.7" y1="215" x2="50.7" y2="224"/><line x1="96.3" y1="215" x2="96.3" y2="224"/><line x1="139.8" y1="215" x2="139.8" y2="224"/><line x1="176.6" y1="215" x2="176.6" y2="224"/><line x1="216.7" y1="215" x2="216.7" y2="224"/><line x1="22" y1="233" x2="248" y2="233"/><line x1="50.1" y1="224" x2="50.1" y2="233"/><line x1="81.8" y1="224" x2="81.8" y2="233"/><line x1="115.6" y1="224" x2="115.6" y2="233"/><line x1="153.8" y1="224" x2="153.8" y2="233"/><line x1="183.3" y1="224" x2="183.3" y2="233"/><line x1="225.4" y1="224" x2="225.4" y2="233"/><line x1="22" y1="242" x2="248" y2="242"/><line x1="38.8" y1="233" x2="38.8" y2="242"/><line x1="69" y1="233" x2="69" y2="242"/><line x1="103" y1="233" x2="103" y2="242"/><line x1="148.7" y1="233" x2="148.7" y2="242"/><line x1="184.2" y1="233" x2="184.2" y2="242"/><line x1="222.7" y1="233" x2="222.7" y2="242"/><line x1="22" y1="251" x2="248" y2="251"/><line x1="30.1" y1="242" x2="30.1" y2="251"/><line x1="54.2" y1="242" x2="54.2" y2="251"/><line x1="82.3" y1="242" x2="82.3" y2="251"/><line x1="106.2" y1="242" x2="106.2" y2="251"/><line x1="149.7" y1="242" x2="149.7" y2="251"/><line x1="186.7" y1="242" x2="186.7" y2="251"/><line x1="223.3" y1="242" x2="223.3" y2="251"/><line x1="22" y1="260" x2="248" y2="260"/><line x1="48.2" y1="251" x2="48.2" y2="260"/><line x1="87.2" y1="251" x2="87.2" y2="260"/><line x1="132.6" y1="251" x2="132.6" y2="260"/><line x1="161.5" y1="251" x2="161.5" y2="260"/><line x1="189" y1="251" x2="189" y2="260"/><line x1="218.6" y1="251" x2="218.6" y2="260"/></g>
+  <rect x="20" y="183" width="230" height="4" class="jn08-roof"/>
+  <g class="jn08-cols"><line x1="26" y1="186" x2="26" y2="197"/><line x1="33" y1="186" x2="33" y2="197"/><line x1="40" y1="186" x2="40" y2="197"/><line x1="47" y1="186" x2="47" y2="197"/><line x1="54" y1="186" x2="54" y2="197"/><line x1="61" y1="186" x2="61" y2="197"/><line x1="68" y1="186" x2="68" y2="197"/><line x1="75" y1="186" x2="75" y2="197"/><line x1="82" y1="186" x2="82" y2="197"/><line x1="89" y1="186" x2="89" y2="197"/><line x1="96" y1="186" x2="96" y2="197"/><line x1="103" y1="186" x2="103" y2="197"/><line x1="110" y1="186" x2="110" y2="197"/><line x1="117" y1="186" x2="117" y2="197"/><line x1="124" y1="186" x2="124" y2="197"/><line x1="131" y1="186" x2="131" y2="197"/><line x1="138" y1="186" x2="138" y2="197"/><line x1="145" y1="186" x2="145" y2="197"/><line x1="152" y1="186" x2="152" y2="197"/><line x1="159" y1="186" x2="159" y2="197"/><line x1="166" y1="186" x2="166" y2="197"/><line x1="173" y1="186" x2="173" y2="197"/><line x1="180" y1="186" x2="180" y2="197"/><line x1="187" y1="186" x2="187" y2="197"/><line x1="194" y1="186" x2="194" y2="197"/><line x1="201" y1="186" x2="201" y2="197"/><line x1="208" y1="186" x2="208" y2="197"/><line x1="215" y1="186" x2="215" y2="197"/><line x1="222" y1="186" x2="222" y2="197"/><line x1="229" y1="186" x2="229" y2="197"/><line x1="236" y1="186" x2="236" y2="197"/><line x1="243" y1="186" x2="243" y2="197"/></g>
+  <path class="jn08-gate" d="M236 262 L236 238 Q242 230 248 238 L248 262 Z"/>
+  <rect x="62" y="166" width="140" height="22" class="jn08-court"/><g class="jn08-cols"><line x1="66" y1="170" x2="66" y2="186"/><line x1="72" y1="170" x2="72" y2="186"/><line x1="78" y1="170" x2="78" y2="186"/><line x1="84" y1="170" x2="84" y2="186"/><line x1="90" y1="170" x2="90" y2="186"/><line x1="96" y1="170" x2="96" y2="186"/><line x1="102" y1="170" x2="102" y2="186"/><line x1="108" y1="170" x2="108" y2="186"/><line x1="114" y1="170" x2="114" y2="186"/><line x1="120" y1="170" x2="120" y2="186"/><line x1="126" y1="170" x2="126" y2="186"/><line x1="132" y1="170" x2="132" y2="186"/><line x1="138" y1="170" x2="138" y2="186"/><line x1="144" y1="170" x2="144" y2="186"/><line x1="150" y1="170" x2="150" y2="186"/><line x1="156" y1="170" x2="156" y2="186"/><line x1="162" y1="170" x2="162" y2="186"/><line x1="168" y1="170" x2="168" y2="186"/><line x1="174" y1="170" x2="174" y2="186"/><line x1="180" y1="170" x2="180" y2="186"/><line x1="186" y1="170" x2="186" y2="186"/><line x1="192" y1="170" x2="192" y2="186"/><line x1="198" y1="170" x2="198" y2="186"/></g>
+  <rect x="88" y="132" width="58" height="56" fill="url(#jn08-dhouse)"/>
+  <rect x="144" y="100" width="32" height="88" fill="url(#jn08-dhouse)"/>
+  <rect x="154" y="120" width="13" height="40" class="jn08-door"/><rect x="152" y="117" width="17" height="3" class="jn08-goldr"/><g class="jn08-spikes"><line x1="146" y1="100" x2="146" y2="96"/><line x1="150" y1="100" x2="150" y2="96"/><line x1="154" y1="100" x2="154" y2="96"/><line x1="158" y1="100" x2="158" y2="96"/><line x1="162" y1="100" x2="162" y2="96"/><line x1="166" y1="100" x2="166" y2="96"/><line x1="170" y1="100" x2="170" y2="96"/><line x1="174" y1="100" x2="174" y2="96"/><line x1="90" y1="132" x2="90" y2="128"/><line x1="94" y1="132" x2="94" y2="128"/><line x1="98" y1="132" x2="98" y2="128"/><line x1="102" y1="132" x2="102" y2="128"/><line x1="106" y1="132" x2="106" y2="128"/><line x1="110" y1="132" x2="110" y2="128"/><line x1="114" y1="132" x2="114" y2="128"/><line x1="118" y1="132" x2="118" y2="128"/><line x1="122" y1="132" x2="122" y2="128"/><line x1="126" y1="132" x2="126" y2="128"/><line x1="130" y1="132" x2="130" y2="128"/><line x1="134" y1="132" x2="134" y2="128"/><line x1="138" y1="132" x2="138" y2="128"/><line x1="142" y1="132" x2="142" y2="128"/></g>
+  <rect class="jn08-lit" x="172" y="100" width="4" height="88"/>
+  <rect class="jn08-lit" x="246" y="196" width="4" height="66"/>
+  <line x1="88" y1="132" x2="146" y2="132" class="jn08-gold"/><line x1="144" y1="100" x2="176" y2="100" class="jn08-gold"/>
+  <path class="jn08-walk" mask="url(#jn08-dwalkm)" d="M462 196 C440 228 392 262 330 294 C310 304 292 302 280 290 C266 274 254 252 244 236" fill="none"/>
+  <text class="pic-lab" x="135" y="292" text-anchor="middle">the temple</text>
+  <text class="pic-lab" x="512" y="304" text-anchor="middle">Mount of Olives</text>
+  <text class="pic-lab soft" x="310" y="314" text-anchor="middle">Kidron Valley</text>
+  <text class="pic-lab plain" x="588" y="22" text-anchor="end">east</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Everyone else went home</h2>
@@ -188,27 +250,15 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="9" data-hl="went out one by one, beginning at the eldest, even unto the last"></blockquote>
-    <div class="stage rise" style="--d:1"><svg class="jn08-stones" style="max-height:34vh" viewBox="0 0 640 260" role="img" aria-label="Seven accusers holding stones. One by one, starting with the oldest, they drop their stones and leave, until only Jesus and the woman are left.">
-      <defs><path id="jn08-body" d="M-18 46 Q-18 18 0 18 Q18 18 18 46 Z"/></defs>
-      <g class="jn08-acc" style="--k:0"><circle class="jn08-man" cx="60" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="60" y="40"/><ellipse class="jn08-rock" cx="84" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:1"><circle class="jn08-man" cx="145" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="145" y="40"/><ellipse class="jn08-rock" cx="169" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:2"><circle class="jn08-man" cx="230" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="230" y="40"/><ellipse class="jn08-rock" cx="254" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:3"><circle class="jn08-man" cx="315" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="315" y="40"/><ellipse class="jn08-rock" cx="339" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:4"><circle class="jn08-man" cx="400" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="400" y="40"/><ellipse class="jn08-rock" cx="424" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:5"><circle class="jn08-man" cx="485" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="485" y="40"/><ellipse class="jn08-rock" cx="509" cy="70" rx="9" ry="7"/></g>
-      <g class="jn08-acc" style="--k:6"><circle class="jn08-man" cx="570" cy="40" r="14"/><use class="jn08-man" href="#jn08-body" x="570" y="40"/><ellipse class="jn08-rock" cx="594" cy="70" rx="9" ry="7"/></g>
-      <text x="60" y="112" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">eldest</text>
-      <text x="570" y="112" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">youngest</text>
-      <circle class="jn08-her" cx="380" cy="168" r="14"/><use class="jn08-her" href="#jn08-body" x="380" y="168"/>
-      <text x="380" y="240" text-anchor="middle" font-size="16" style="fill:var(--accent-hot)">the woman, “in the midst”</text>
-      <circle class="jn08-him" cx="250" cy="188" r="14"/><path class="jn08-him" d="M232 222 Q236 196 258 200 Q270 204 268 222 Z"/>
-      <path class="jn08-scrawl" d="M190 226 q8 -8 14 0 t14 0 M222 230 l10 -6 l4 8"/>
-      <text x="230" y="250" text-anchor="middle" font-size="16">Jesus, writing</text>
-      <text class="jn08-alone serif" x="320" y="140" text-anchor="middle" font-size="20" font-style="italic" style="fill:var(--accent-hot)">“Jesus was left alone, and the woman”</text>
-    </svg></div>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:28% 45%"><span class="art-frame"><img src="../assets/art/tissot-christ-writing-upon-the-ground.jpg" width="588" height="500" alt="In a stone gateway of the temple, Jesus stoops and writes on the ground with his finger, while scribes and Pharisees in robes and turbans crowd around and stare down at him."></span>
+        <figcaption>James Tissot, <i>Christ Writing on the Ground</i></figcaption></figure>
+      <div>
     <h2 class="rise" style="--d:2">One by one, the stones drop</h2>
     <p class="note rise" style="--d:3">Jesus didn't say the law was wrong. He said, <em>let the sinless man go first.</em> Then he stooped down and wrote again. (The Bible doesn't tell us what he wrote, so we won't guess.)</p>
-    <p class="note step jn08-go">The oldest left first. They had the longest record, and they knew it. Every man walked away convicted, because there wasn't one man in that crowd without sin. There never is: “For all have sinned, and come short of the glory of God” (Romans 3:23).</p>
+    <p class="note step">The oldest left first. They had the longest record, and they knew it. Every man walked away convicted, because there wasn't one man in that crowd without sin. There never is: “For all have sinned, and come short of the glory of God” (Romans 3:23).</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -230,12 +280,18 @@
 
 <section class="slide ex">
   <div class="inner">
+    <div class="split art-narrow jn08-slim">
+      <figure class="art rise" style="--d:1;--kb:62% 35%"><span class="art-frame"><img src="../assets/art/tissot-woman-alone-with-jesus.jpg" width="500" height="550" alt="The crowd is gone. Jesus stands alone in a recess of the temple's stone wall and looks down at the woman, who stands by a great studded door with her face hidden in her hands."></span>
+        <figcaption>James Tissot, <i>The Woman Alone with Jesus</i></figcaption></figure>
+      <div>
     <h2 class="rise">The one man who could have thrown it</h2>
     <p class="note rise" style="--d:1">Only one person in that courtyard was without sin. By his own rule, he was the only one with the right to throw a stone. He didn't.</p>
     <p class="note step">Instead, a few months later, he took the condemnation himself:</p>
     <blockquote class="quote step"><p>“For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of God in him.”</p><cite>2 Corinthians 5:21</cite></blockquote>
     <blockquote class="quote step"><p>“There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.”</p><cite>Romans 8:1</cite></blockquote>
     <p class="note step">That's why he can say “neither do I condemn thee” and still be just. Your sin wasn't ignored. It was paid for.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -256,36 +312,37 @@
     <blockquote class="quote rise" data-q="20" data-hl="in the treasury"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn08-lamps" viewBox="0 0 560 360" role="img" aria-label="Four tall golden lampstands burn in the temple court, then go dark. One light remains.">
-          <defs>
-            <radialGradient id="jn08-flame"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".5" style="stop-color:var(--accent-hot)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
-            <radialGradient id="jn08-sure"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".55" style="stop-color:var(--glow)"/><stop offset=".7" stop-opacity=".6" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
-            <radialGradient id="jn08-halo"><stop offset="0" stop-opacity=".9" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
-          </defs>
-          <g>
-            <circle class="jn08-halo" style="--k:0" cx="60" cy="70" r="70" fill="url(#jn08-halo)"/>
-            <circle class="jn08-halo" style="--k:1" cx="170" cy="70" r="70" fill="url(#jn08-halo)"/>
-            <circle class="jn08-halo" style="--k:2" cx="390" cy="70" r="70" fill="url(#jn08-halo)"/>
-            <circle class="jn08-halo" style="--k:3" cx="500" cy="70" r="70" fill="url(#jn08-halo)"/>
-          </g>
-          <g>
-            <rect class="jn08-stand" x="55" y="90" width="10" height="230"/><path class="jn08-bowl" d="M35 86 H85 Q80 104 60 104 Q40 104 35 86 Z"/>
-            <rect class="jn08-stand" x="165" y="90" width="10" height="230"/><path class="jn08-bowl" d="M145 86 H195 Q190 104 170 104 Q150 104 145 86 Z"/>
-            <rect class="jn08-stand" x="385" y="90" width="10" height="230"/><path class="jn08-bowl" d="M365 86 H415 Q410 104 390 104 Q370 104 365 86 Z"/>
-            <rect class="jn08-stand" x="495" y="90" width="10" height="230"/><path class="jn08-bowl" d="M475 86 H525 Q520 104 500 104 Q480 104 475 86 Z"/>
-          </g>
-          <ellipse class="jn08-fire" style="--k:0" cx="60" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
-          <ellipse class="jn08-fire" style="--k:1" cx="170" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
-          <ellipse class="jn08-fire" style="--k:2" cx="390" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
-          <ellipse class="jn08-fire" style="--k:3" cx="500" cy="68" rx="16" ry="24" fill="url(#jn08-flame)"/>
-          <line x1="20" y1="322" x2="540" y2="322" stroke-width="3" style="stroke:var(--line-strong)"/>
-          <text x="280" y="348" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">Court of the Women, beside the treasury</text>
-          <g class="jn08-true">
-            <circle cx="280" cy="215" r="100" fill="url(#jn08-sure)"/>
-            <text x="280" y="210" text-anchor="middle" font-size="19" font-weight="700" class="serif" style="fill:var(--on-glow)">the light</text>
-            <text x="280" y="232" text-anchor="middle" font-size="19" font-weight="700" class="serif" style="fill:var(--on-glow)">of the world</text>
-          </g>
-        </svg>
+        <svg class="pic jn08-lamps" style="--ar:1.556" viewBox="0 0 560 360" role="img" aria-label="Night in the Court of the Women. Four towering golden lampstands, each with four bowls of fire, light up the court and the crowd. Then the lamps go dark, and Jesus stands in the middle of the court, the one light left.">
+  <defs>
+    <linearGradient id="jn08-lsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 22%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-lwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 20%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 34%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-lfloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 26%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 12%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-lgold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/><stop offset="0.45" style="stop-color:color-mix(in srgb, var(--warm) 80%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 45%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn08-lhalo"><stop offset="0" style="stop-color:var(--warm);stop-opacity:0.75"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.3"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <radialGradient id="jn08-lwash" cx=".5" cy=".3" r=".7"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 70%, var(--glow));stop-opacity:0.4"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <radialGradient id="jn08-lsure"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.25" style="stop-color:var(--glow);stop-opacity:0.8"/><stop offset="0.55" style="stop-color:color-mix(in srgb, var(--glow) 60%, var(--warm));stop-opacity:0.35"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn08-lray" x1="0" y1="1" x2="0" y2="0"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.6"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></linearGradient>
+  </defs>
+  <rect width="560" height="360" fill="url(#jn08-lsky)"/>
+  <rect y="138" width="560" height="114" fill="url(#jn08-lwall)"/>
+  <rect y="138" width="560" height="8" class="jn08-cornice"/>
+  <g class="jn08-cols"><rect x="14" y="150" width="7" height="96" rx="2"/><rect x="44" y="150" width="7" height="96" rx="2"/><rect x="74" y="150" width="7" height="96" rx="2"/><rect x="104" y="150" width="7" height="96" rx="2"/><rect x="134" y="150" width="7" height="96" rx="2"/><rect x="164" y="150" width="7" height="96" rx="2"/><rect x="194" y="150" width="7" height="96" rx="2"/><rect x="224" y="150" width="7" height="96" rx="2"/><rect x="344" y="150" width="7" height="96" rx="2"/><rect x="374" y="150" width="7" height="96" rx="2"/><rect x="404" y="150" width="7" height="96" rx="2"/><rect x="434" y="150" width="7" height="96" rx="2"/><rect x="464" y="150" width="7" height="96" rx="2"/><rect x="494" y="150" width="7" height="96" rx="2"/><rect x="524" y="150" width="7" height="96" rx="2"/><rect x="554" y="150" width="7" height="96" rx="2"/></g>
+  <path class="jn08-gatehouse" d="M226 252 L226 96 L334 96 L334 252 Z"/>
+  <path class="jn08-gatedoor" d="M252 236 L252 140 Q280 120 308 140 L308 236 Z"/>
+  <g class="jn08-steps"><path d="M214 252 Q280 236 346 252"/><path d="M204 252 Q280 242 356 252"/><path d="M220 246 Q280 232 340 246"/></g>
+  <rect y="252" width="560" height="108" fill="url(#jn08-lfloor)"/>
+  <g class="jn08-floor"><line x1="87.7" y1="252" x2="-116" y2="360"/><line x1="109" y1="252" x2="-72" y2="360"/><line x1="130.4" y1="252" x2="-28" y2="360"/><line x1="151.8" y1="252" x2="16" y2="360"/><line x1="173.1" y1="252" x2="60" y2="360"/><line x1="194.5" y1="252" x2="104" y2="360"/><line x1="215.9" y1="252" x2="148" y2="360"/><line x1="237.3" y1="252" x2="192" y2="360"/><line x1="258.6" y1="252" x2="236" y2="360"/><line x1="280" y1="252" x2="280" y2="360"/><line x1="301.4" y1="252" x2="324" y2="360"/><line x1="322.7" y1="252" x2="368" y2="360"/><line x1="344.1" y1="252" x2="412" y2="360"/><line x1="365.5" y1="252" x2="456" y2="360"/><line x1="386.9" y1="252" x2="500" y2="360"/><line x1="408.2" y1="252" x2="544" y2="360"/><line x1="429.6" y1="252" x2="588" y2="360"/><line x1="451" y1="252" x2="632" y2="360"/><line x1="472.3" y1="252" x2="676" y2="360"/><line x1="0" y1="258" x2="560" y2="258"/><line x1="0" y1="266" x2="560" y2="266"/><line x1="0" y1="277" x2="560" y2="277"/><line x1="0" y1="291" x2="560" y2="291"/><line x1="0" y1="309" x2="560" y2="309"/><line x1="0" y1="332" x2="560" y2="332"/></g>
+  <rect class="jn08-wash" width="560" height="360" fill="url(#jn08-lwash)"/>
+  <g class="jn08-halos"><circle class="jn08-halo" style="--k:0" cx="196" cy="92.1" r="78.4" fill="url(#jn08-lhalo)"/><circle class="jn08-halo" style="--k:1" cx="364" cy="92.1" r="78.4" fill="url(#jn08-lhalo)"/><circle class="jn08-halo" style="--k:2" cx="70" cy="44" r="120" fill="url(#jn08-lhalo)"/><circle class="jn08-halo" style="--k:3" cx="490" cy="44" r="120" fill="url(#jn08-lhalo)"/></g>
+  <g class="jn08-true"><circle cx="280" cy="268" r="110" fill="url(#jn08-lsure)"/>
+    <g fill="url(#jn08-lray)"><polygon points="280,262 262,120 298,120"/><polygon points="280,262 190,150 214,140"/><polygon points="280,262 346,140 370,150"/></g></g>
+  <g class="jn08-person"><path d="M112.1 300 C111.8 282.1 112.5 267.1 111.7 260 C113.5 256.8 123.5 256.8 125.3 260 C127.5 267.1 128.2 282.1 127.9 300 Z"/><ellipse cx="118.5" cy="253.9" rx="3" ry="3.7"/></g><g class="jn08-person"><path d="M129.8 304 C129.5 285.4 130.2 269.8 130.5 262.4 C132.3 259.1 142.7 259.1 144.6 262.4 C145.8 269.8 146.5 285.4 146.2 304 Z"/><ellipse cx="137.5" cy="256.1" rx="3.1" ry="3.9"/></g><g class="jn08-person"><path d="M396.5 298 C396.1 280.9 396.8 266.5 398.8 259.6 C400.5 256.5 410.1 256.5 411.8 259.6 C411.2 266.5 411.9 280.9 411.5 298 Z"/><ellipse cx="405.3" cy="253.8" rx="2.9" ry="3.6"/></g><g class="jn08-person"><path d="M421.5 306 C421.1 286.7 421.9 270.5 421.6 262.8 C423.5 259.3 434.3 259.3 436.2 262.8 C438.1 270.5 438.9 286.7 438.5 306 Z"/><ellipse cx="428.9" cy="256.2" rx="3.2" ry="4"/></g><g class="jn08-person"><path d="M230.3 276 C230.1 263.1 230.6 252.3 231.4 247.2 C232.6 244.9 239.8 244.9 241.1 247.2 C241.4 252.3 241.9 263.1 241.7 276 Z"/><ellipse cx="236.2" cy="242.8" rx="2.2" ry="2.7"/></g><g class="jn08-person"><path d="M324.5 274 C324.3 261.5 324.8 251 324.4 246 C325.7 243.8 332.7 243.8 333.9 246 C335.3 251 335.8 261.5 335.5 274 Z"/><ellipse cx="329.2" cy="241.8" rx="2.1" ry="2.6"/></g><g class="jn08-person"><path d="M80.7 330 C80.2 304.3 81.2 282.7 82.4 272.4 C85 267.8 99.4 267.8 101.9 272.4 C102.8 282.7 103.8 304.3 103.3 330 Z"/><ellipse cx="92.2" cy="263.7" rx="4.3" ry="5.3"/></g>
+  <g class="jn08-him"><path d="M270.9 300 C270.5 279.3 271.3 261.9 272.1 253.6 C274.2 249.9 285.8 249.9 287.9 253.6 C288.7 261.9 289.5 279.3 289.1 300 Z"/><ellipse cx="280" cy="246.6" rx="3.5" ry="4.3"/></g>
+  <g class="jn08-stand"><path d="M179 292 L185.5 281.5 L206.5 281.5 L213 292 Z" fill="url(#jn08-lgold)"/><rect x="193.1" y="101.2" width="5.9" height="181.6" fill="url(#jn08-lgold)"/><rect x="191.4" y="233.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="191.4" y="184.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="191.4" y="135.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="169.9" y="99.9" width="52.3" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><path d="M168.6 93.4 L180.3 93.4 Q179.7 99.9 174.4 100.6 Q169.2 99.9 168.6 93.4 Z" fill="url(#jn08-lgold)"/><path d="M182.9 93.4 L194.7 93.4 Q194 99.9 188.8 100.6 Q183.6 99.9 182.9 93.4 Z" fill="url(#jn08-lgold)"/><path d="M197.3 93.4 L209.1 93.4 Q208.4 99.9 203.2 100.6 Q198 99.9 197.3 93.4 Z" fill="url(#jn08-lgold)"/><path d="M211.7 93.4 L223.4 93.4 Q222.8 99.9 217.6 100.6 Q212.3 99.9 211.7 93.4 Z" fill="url(#jn08-lgold)"/></g><g class="jn08-stand"><path d="M347 292 L353.5 281.5 L374.5 281.5 L381 292 Z" fill="url(#jn08-lgold)"/><rect x="361.1" y="101.2" width="5.9" height="181.6" fill="url(#jn08-lgold)"/><rect x="359.4" y="233.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="359.4" y="184.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="359.4" y="135.2" width="9.1" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><rect x="337.9" y="99.9" width="52.3" height="3.3" rx="1.3" fill="url(#jn08-lgold)"/><path d="M336.6 93.4 L348.3 93.4 Q347.7 99.9 342.4 100.6 Q337.2 99.9 336.6 93.4 Z" fill="url(#jn08-lgold)"/><path d="M350.9 93.4 L362.7 93.4 Q362 99.9 356.8 100.6 Q351.6 99.9 350.9 93.4 Z" fill="url(#jn08-lgold)"/><path d="M365.3 93.4 L377.1 93.4 Q376.4 99.9 371.2 100.6 Q366 99.9 365.3 93.4 Z" fill="url(#jn08-lgold)"/><path d="M379.7 93.4 L391.4 93.4 Q390.8 99.9 385.6 100.6 Q380.3 99.9 379.7 93.4 Z" fill="url(#jn08-lgold)"/></g><g class="jn08-ladder"><line x1="116" y1="350" x2="74" y2="70"/><line x1="128" y1="350" x2="86" y2="70"/><line x1="113" y1="330" x2="125" y2="330"/><line x1="110" y1="310" x2="122" y2="310"/><line x1="107" y1="290" x2="119" y2="290"/><line x1="104" y1="270" x2="116" y2="270"/><line x1="101" y1="250" x2="113" y2="250"/><line x1="98" y1="230" x2="110" y2="230"/><line x1="95" y1="210" x2="107" y2="210"/><line x1="92" y1="190" x2="104" y2="190"/><line x1="89" y1="170" x2="101" y2="170"/><line x1="86" y1="150" x2="98" y2="150"/><line x1="83" y1="130" x2="95" y2="130"/><line x1="80" y1="110" x2="92" y2="110"/><line x1="77" y1="90" x2="89" y2="90"/></g><g class="jn08-stand"><path d="M44 350 L54 334 L86 334 L96 350 Z" fill="url(#jn08-lgold)"/><rect x="65.5" y="58" width="9" height="278" fill="url(#jn08-lgold)"/><rect x="63" y="260" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="63" y="185" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="63" y="110" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="30" y="56" width="80" height="5" rx="2" fill="url(#jn08-lgold)"/><path d="M28 46 L46 46 Q45 56 37 57 Q29 56 28 46 Z" fill="url(#jn08-lgold)"/><path d="M50 46 L68 46 Q67 56 59 57 Q51 56 50 46 Z" fill="url(#jn08-lgold)"/><path d="M72 46 L90 46 Q89 56 81 57 Q73 56 72 46 Z" fill="url(#jn08-lgold)"/><path d="M94 46 L112 46 Q111 56 103 57 Q95 56 94 46 Z" fill="url(#jn08-lgold)"/></g><g class="jn08-stand"><path d="M464 350 L474 334 L506 334 L516 350 Z" fill="url(#jn08-lgold)"/><rect x="485.5" y="58" width="9" height="278" fill="url(#jn08-lgold)"/><rect x="483" y="260" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="483" y="185" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="483" y="110" width="14" height="5" rx="2" fill="url(#jn08-lgold)"/><rect x="450" y="56" width="80" height="5" rx="2" fill="url(#jn08-lgold)"/><path d="M448 46 L466 46 Q465 56 457 57 Q449 56 448 46 Z" fill="url(#jn08-lgold)"/><path d="M470 46 L488 46 Q487 56 479 57 Q471 56 470 46 Z" fill="url(#jn08-lgold)"/><path d="M492 46 L510 46 Q509 56 501 57 Q493 56 492 46 Z" fill="url(#jn08-lgold)"/><path d="M514 46 L532 46 Q531 56 523 57 Q515 56 514 46 Z" fill="url(#jn08-lgold)"/></g>
+  <g class="jn08-fires"><g class="jn08-fire" style="--k:0"><path d="M174.4 73.8 C181 84.2 179.7 93.4 174.4 93.4 C169.2 93.4 167.9 84.2 174.4 73.8 Z" class="o"/><path d="M174.4 81.6 C177.1 87.5 177.1 92.1 174.4 92.1 C171.8 92.1 171.8 87.5 174.4 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:0"><path d="M188.8 73.8 C195.3 84.2 194 93.4 188.8 93.4 C183.6 93.4 182.3 84.2 188.8 73.8 Z" class="o"/><path d="M188.8 81.6 C191.4 87.5 191.4 92.1 188.8 92.1 C186.2 92.1 186.2 87.5 188.8 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:0"><path d="M203.2 73.8 C209.7 84.2 208.4 93.4 203.2 93.4 C198 93.4 196.7 84.2 203.2 73.8 Z" class="o"/><path d="M203.2 81.6 C205.8 87.5 205.8 92.1 203.2 92.1 C200.6 92.1 200.6 87.5 203.2 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:0"><path d="M217.6 73.8 C224.1 84.2 222.8 93.4 217.6 93.4 C212.3 93.4 211 84.2 217.6 73.8 Z" class="o"/><path d="M217.6 81.6 C220.2 87.5 220.2 92.1 217.6 92.1 C214.9 92.1 214.9 87.5 217.6 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:1"><path d="M342.4 73.8 C349 84.2 347.7 93.4 342.4 93.4 C337.2 93.4 335.9 84.2 342.4 73.8 Z" class="o"/><path d="M342.4 81.6 C345.1 87.5 345.1 92.1 342.4 92.1 C339.8 92.1 339.8 87.5 342.4 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:1"><path d="M356.8 73.8 C363.3 84.2 362 93.4 356.8 93.4 C351.6 93.4 350.3 84.2 356.8 73.8 Z" class="o"/><path d="M356.8 81.6 C359.4 87.5 359.4 92.1 356.8 92.1 C354.2 92.1 354.2 87.5 356.8 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:1"><path d="M371.2 73.8 C377.7 84.2 376.4 93.4 371.2 93.4 C366 93.4 364.7 84.2 371.2 73.8 Z" class="o"/><path d="M371.2 81.6 C373.8 87.5 373.8 92.1 371.2 92.1 C368.6 92.1 368.6 87.5 371.2 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:1"><path d="M385.6 73.8 C392.1 84.2 390.8 93.4 385.6 93.4 C380.3 93.4 379 84.2 385.6 73.8 Z" class="o"/><path d="M385.6 81.6 C388.2 87.5 388.2 92.1 385.6 92.1 C382.9 92.1 382.9 87.5 385.6 81.6 Z" class="i"/></g><g class="jn08-fire" style="--k:2"><path d="M37 16 C47 32 45 46 37 46 C29 46 27 32 37 16 Z" class="o"/><path d="M37 28 C41 37 41 44 37 44 C33 44 33 37 37 28 Z" class="i"/></g><g class="jn08-fire" style="--k:2"><path d="M59 16 C69 32 67 46 59 46 C51 46 49 32 59 16 Z" class="o"/><path d="M59 28 C63 37 63 44 59 44 C55 44 55 37 59 28 Z" class="i"/></g><g class="jn08-fire" style="--k:2"><path d="M81 16 C91 32 89 46 81 46 C73 46 71 32 81 16 Z" class="o"/><path d="M81 28 C85 37 85 44 81 44 C77 44 77 37 81 28 Z" class="i"/></g><g class="jn08-fire" style="--k:2"><path d="M103 16 C113 32 111 46 103 46 C95 46 93 32 103 16 Z" class="o"/><path d="M103 28 C107 37 107 44 103 44 C99 44 99 37 103 28 Z" class="i"/></g><g class="jn08-fire" style="--k:3"><path d="M457 16 C467 32 465 46 457 46 C449 46 447 32 457 16 Z" class="o"/><path d="M457 28 C461 37 461 44 457 44 C453 44 453 37 457 28 Z" class="i"/></g><g class="jn08-fire" style="--k:3"><path d="M479 16 C489 32 487 46 479 46 C471 46 469 32 479 16 Z" class="o"/><path d="M479 28 C483 37 483 44 479 44 C475 44 475 37 479 28 Z" class="i"/></g><g class="jn08-fire" style="--k:3"><path d="M501 16 C511 32 509 46 501 46 C493 46 491 32 501 16 Z" class="o"/><path d="M501 28 C505 37 505 44 501 44 C497 44 497 37 501 28 Z" class="i"/></g><g class="jn08-fire" style="--k:3"><path d="M523 16 C533 32 531 46 523 46 C515 46 513 32 523 16 Z" class="o"/><path d="M523 28 C527 37 527 44 523 44 C519 44 519 37 523 28 Z" class="i"/></g></g>
+  <text class="pic-lab b jn08-truelab" x="280" y="44" text-anchor="middle">the light of the world</text>
+  <text class="pic-lab soft" x="280" y="350" text-anchor="middle">Court of the Women, beside the treasury</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Where he said it</h2>
@@ -504,18 +561,42 @@
     <blockquote class="quote rise" data-q="58"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn08-time" viewBox="0 0 640 260" role="img" aria-label="A timeline: Abraham about 2000 B.C., Moses about 1450 B.C., Jesus speaking about A.D. 30. A bright line labeled I am runs back past Abraham and off the edge.">
-          <defs>
-            <linearGradient id="jn08-ever" x1="0" x2="1"><stop offset="0" stop-opacity="0" style="stop-color:var(--accent)"/><stop offset=".25" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--accent-hot)"/></linearGradient>
-          </defs>
-          <line class="jn08-axis" x1="60" y1="170" x2="600" y2="170"/>
-          <circle class="jn08-pt" cx="120" cy="170" r="9"/><text x="120" y="205" text-anchor="middle" font-size="18" font-weight="700">Abraham</text><text x="120" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about 2000 B.C.</text>
-          <circle class="jn08-pt" cx="239" cy="170" r="9"/><text x="239" y="205" text-anchor="middle" font-size="18" font-weight="700">Moses</text><text x="239" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about 1450 B.C.</text><text x="239" y="148" text-anchor="middle" font-size="14" font-style="italic" style="fill:var(--ink-soft)">“I AM THAT I AM”</text>
-                    <circle class="jn08-now" cx="560" cy="170" r="11"/><text x="560" y="205" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--accent-hot)">Jesus speaks</text><text x="560" y="228" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">about A.D. 30, “not yet fifty”</text>
-          <rect class="jn08-forever" x="0" y="96" width="560" height="14" rx="7" fill="url(#jn08-ever)"/>
-          <circle class="jn08-forever-text" cx="560" cy="103" r="10" style="fill:var(--accent-hot)"/>
-          <text class="jn08-forever-text serif" x="330" y="80" text-anchor="middle" font-size="24" font-style="italic" style="fill:var(--accent-hot)">“I am”: no beginning</text>
-        </svg>
+        <svg class="pic jn08-ever" style="--ar:2.133" viewBox="0 0 640 300" role="img" aria-label="A long road of history. Far back stands Abraham's tent under the stars. Later, Moses kneels at the burning bush where God said, I AM THAT I AM. At the near end Jesus speaks in the temple. Then a line of light runs back from Jesus, past Moses, past Abraham, and off the edge with no beginning.">
+  <defs>
+    <linearGradient id="jn08-esky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="0.6" style="stop-color:color-mix(in srgb, var(--cool) 22%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn08-eground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 30%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <linearGradient id="jn08-eroad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--on-glow));stop-opacity:0"/><stop offset="0.18" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 60%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn08-ebeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0"/><stop offset="0.12" style="stop-color:var(--glow);stop-opacity:0.55"/><stop offset="0.6" style="stop-color:var(--glow);stop-opacity:0.9"/><stop offset="1" style="stop-color:var(--glow)"/></linearGradient>
+    <radialGradient id="jn08-eglow"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.9"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.45"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn08-eblur" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <rect width="640" height="300" fill="url(#jn08-esky)"/>
+  <g class="jn08-stars"><circle cx="70.1" cy="47.8" r="1.3" style="--k:0"/><circle cx="148.2" cy="64" r="1.2" style="--k:1"/><circle cx="164.7" cy="32.4" r="0.9" style="--k:2"/><circle cx="97.6" cy="24.6" r="0.6" style="--k:3"/><circle cx="95.5" cy="10.3" r="0.6" style="--k:4"/><circle cx="163.9" cy="65.6" r="0.9" style="--k:5"/><circle cx="101" cy="62.6" r="0.7" style="--k:0"/><circle cx="178.3" cy="19.6" r="1.5" style="--k:1"/><circle cx="80.1" cy="43.7" r="0.8" style="--k:2"/><circle cx="190.5" cy="17.7" r="1.2" style="--k:3"/><circle cx="173.8" cy="22.4" r="0.7" style="--k:4"/><circle cx="167.9" cy="51.6" r="0.5" style="--k:5"/><circle cx="160.1" cy="62.3" r="1" style="--k:0"/><circle cx="94.7" cy="29.7" r="1.5" style="--k:1"/><circle cx="188.9" cy="51.7" r="1.3" style="--k:2"/><circle cx="98.1" cy="48.1" r="0.8" style="--k:3"/><circle cx="176.2" cy="28.7" r="1" style="--k:4"/><circle cx="162.1" cy="57.5" r="1.4" style="--k:5"/><circle cx="178.9" cy="49.4" r="0.7" style="--k:0"/><circle cx="78.3" cy="54" r="1" style="--k:1"/><circle cx="131.1" cy="25.7" r="1.4" style="--k:2"/><circle cx="135.5" cy="23.5" r="1.2" style="--k:3"/><circle cx="126.7" cy="25.8" r="1.5" style="--k:4"/><circle cx="106.1" cy="12.5" r="0.8" style="--k:5"/><circle cx="79.2" cy="10.1" r="1.2" style="--k:0"/><circle cx="191.9" cy="44.6" r="1.4" style="--k:1"/><circle cx="91.8" cy="50.3" r="0.5" style="--k:2"/><circle cx="105.3" cy="65.2" r="1.4" style="--k:3"/><circle cx="116.6" cy="40.8" r="1.2" style="--k:4"/><circle cx="79.6" cy="68.1" r="1" style="--k:5"/><circle cx="138.3" cy="56" r="0.9" style="--k:0"/><circle cx="170.1" cy="27.1" r="0.6" style="--k:1"/><circle cx="187.1" cy="58.5" r="1.1" style="--k:2"/><circle cx="82.1" cy="19.8" r="0.6" style="--k:3"/><circle cx="155.6" cy="30.6" r="1.4" style="--k:4"/><circle cx="90.3" cy="42.4" r="1.4" style="--k:5"/><circle cx="199.8" cy="64.7" r="0.9" style="--k:0"/><circle cx="122.1" cy="20" r="1.2" style="--k:1"/><circle cx="101.4" cy="60.3" r="0.8" style="--k:2"/><circle cx="114.1" cy="37.2" r="1.1" style="--k:3"/><circle cx="357.6" cy="21.9" r="0.6" style="--k:2"/><circle cx="585.5" cy="48.3" r="0.7" style="--k:3"/><circle cx="285.1" cy="75.2" r="0.8" style="--k:4"/><circle cx="331.6" cy="38.9" r="0.7" style="--k:5"/><circle cx="630.4" cy="53.7" r="0.4" style="--k:0"/><circle cx="27.8" cy="26.6" r="0.6" style="--k:1"/><circle cx="20.3" cy="66.1" r="0.5" style="--k:3"/><circle cx="489" cy="59.1" r="0.6" style="--k:4"/><circle cx="584.8" cy="69" r="0.6" style="--k:5"/><circle cx="375" cy="50.4" r="0.7" style="--k:0"/><circle cx="223.6" cy="71.4" r="0.4" style="--k:1"/><circle cx="370.1" cy="38.7" r="0.8" style="--k:2"/><circle cx="371.3" cy="72.7" r="0.8" style="--k:3"/><circle cx="510.8" cy="57.9" r="0.6" style="--k:0"/><circle cx="221.5" cy="41.4" r="0.5" style="--k:1"/><circle cx="535.3" cy="42.7" r="0.6" style="--k:3"/><circle cx="588" cy="11" r="0.9" style="--k:5"/><circle cx="310" cy="42.1" r="0.8" style="--k:0"/><circle cx="324.7" cy="84.2" r="0.6" style="--k:1"/></g>
+  <path class="jn08-ehills" d="M0 206 C70 190 140 196 210 188 C290 180 360 196 440 190 C520 184 590 194 640 190 L640 214 L0 214 Z"/>
+  <rect y="210" width="640" height="90" fill="url(#jn08-eground)"/>
+  <rect x="0" y="216" width="640" height="5" fill="url(#jn08-eroad)"/>
+  <g class="jn08-grass"><path d="M221.1 232.1 q-0.3 -4 2.7 -7.2"/><path d="M114.8 229.4 q-0.1 -4 2.7 -7.8"/><path d="M465.9 219.6 q-0.6 -4 -1 -7.1"/><path d="M109.2 232.4 q2 -4 -3.9 -5.8"/><path d="M538.1 225.5 q-0.7 -4 -0.7 -6"/><path d="M282.7 235.5 q-1.9 -4 -3.1 -5.6"/><path d="M287.5 233.2 q1.1 -4 -1 -5.4"/><path d="M464.2 226.3 q0.3 -4 -2.7 -4.9"/><path d="M397.5 226.1 q-1.7 -4 -3 -5.5"/><path d="M320.5 233.1 q-0.8 -4 2.8 -4.5"/><path d="M322.6 216.6 q1.1 -4 -2.6 -5.1"/><path d="M607.2 234 q0.3 -4 2 -4.1"/><path d="M32.6 232.8 q-1.3 -4 0.1 -4.9"/><path d="M374.2 224.4 q1.6 -4 0.1 -4.5"/><path d="M41.6 224.6 q1 -4 -1.5 -6.1"/><path d="M258.2 222.5 q0.8 -4 0.4 -4.9"/><path d="M612.9 227.5 q0.5 -4 -2.8 -5.9"/><path d="M37.3 224.2 q0 -4 -1.1 -5"/><path d="M420.1 216.8 q-1.9 -4 -2.8 -6.2"/><path d="M585.2 216 q1.4 -4 -1.9 -4.2"/><path d="M95 220.6 q1.7 -4 0.4 -7.6"/><path d="M464.5 231.9 q-0.5 -4 -3.2 -5.5"/><path d="M429.1 232.3 q1 -4 -1.8 -6.8"/><path d="M106.5 224.8 q0.4 -4 2.5 -4.9"/><path d="M329.7 216.8 q-1.6 -4 -3 -7.1"/><path d="M189.8 222.3 q-1.4 -4 3.1 -4.7"/><path d="M189.7 233 q-0.7 -4 2.8 -6.6"/><path d="M14.6 216.4 q-1.8 -4 3.9 -4.1"/><path d="M302.8 231.5 q1.7 -4 0.8 -6"/><path d="M127.4 225.9 q-0.2 -4 1.8 -7.9"/><path d="M141.9 231.8 q-1 -4 2.4 -7.2"/><path d="M461.1 225.6 q0.6 -4 1.6 -8"/><path d="M229.5 220.7 q-1.5 -4 -2.3 -6.9"/><path d="M554.1 234.7 q-0.3 -4 -1.4 -4.4"/><path d="M555 233.9 q-0.8 -4 1.4 -4.9"/><path d="M296.7 219.8 q-0.8 -4 3.6 -5"/><path d="M277.5 222.6 q-0.9 -4 -1.4 -4"/><path d="M34.5 221.2 q1.1 -4 0.8 -6"/><path d="M223.6 218.7 q0.9 -4 3.4 -5"/><path d="M480.1 228 q-0.2 -4 -0.9 -5.7"/></g>
+  <!-- Abraham: his tent, and Abraham under the stars -->
+  <g class="jn08-tent"><path d="M86 216 L96 190 L120 184 L146 190 L156 216 Z"/><path class="door" d="M114 216 L116 194 L126 194 L128 216 Z"/><line x1="96" y1="190" x2="88" y2="216"/><line x1="146" y1="190" x2="154" y2="216"/></g>
+  <g class="jn08-figure"><path d="M165.3 216 C165.1 205.3 165.5 196.3 167.4 192 C168.5 190.1 174.5 190.1 175.6 192 C174.5 196.3 174.9 205.3 174.7 216 Z"/><ellipse cx="171.5" cy="188.4" rx="1.8" ry="2.2"/></g>
+  <!-- Moses kneels at the bush -->
+  <circle cx="254" cy="200" r="26" fill="url(#jn08-eglow)" class="jn08-bushglow"/>
+  <g class="jn08-bush"><path d="M240 216 C238 206 244 198 252 200 C254 192 262 192 264 200 C272 198 274 208 270 216 Z"/></g>
+  <g class="jn08-blaze"><path d="M255 202 C246 194 250 184 256 176 C258 186 266 188 262 198 C266 194 268 190 268 186 C274 196 266 204 255 202 Z"/></g>
+  <g class="jn08-figure"><path d="M222 216 C220 208 222 202 226 200 C228 196 232 194 236 196 C238 200 236 204 234 206 L236 216 Z"/><ellipse cx="239" cy="195" rx="2.4" ry="3"/></g>
+  <!-- Jesus speaks in the temple court -->
+  <g class="jn08-porch"><path d="M516 150 L630 150 L630 158 L516 158 Z"/><path class="shade" d="M516 158 L630 158 L630 162 L516 162 Z"/><rect x="524" y="164" width="6" height="48"/><rect x="522" y="161" width="10" height="3"/><rect x="522" y="210" width="10" height="3"/><rect x="546" y="164" width="6" height="48"/><rect x="544" y="161" width="10" height="3"/><rect x="544" y="210" width="10" height="3"/><rect x="590" y="164" width="6" height="48"/><rect x="588" y="161" width="10" height="3"/><rect x="588" y="210" width="10" height="3"/><rect x="612" y="164" width="6" height="48"/><rect x="610" y="161" width="10" height="3"/><rect x="610" y="210" width="10" height="3"/><rect x="512" y="213" width="122" height="4"/><rect class="shade" x="508" y="217" width="130" height="3"/></g>
+  <g class="jn08-jesus"><path d="M554.7 216 C554.4 203.9 554.9 193.7 555.4 188.8 C556.6 186.6 563.4 186.6 564.6 188.8 C565.1 193.7 565.6 203.9 565.3 216 Z"/><ellipse cx="560" cy="184.7" rx="2" ry="2.5"/></g>
+  <g class="jn08-ticks"><line x1="121" y1="226" x2="121" y2="234"/><line x1="239" y1="226" x2="239" y2="234"/><line x1="560" y1="226" x2="560" y2="234"/></g>
+  <text class="pic-lab b" x="121" y="256" text-anchor="middle">Abraham</text>
+  <text class="pic-lab b" x="245" y="256" text-anchor="middle">Moses</text>
+  <text class="pic-lab soft" x="245" y="278" text-anchor="middle">“I AM THAT I AM”</text>
+  <text class="pic-lab b" x="560" y="256" text-anchor="middle">Jesus speaks</text>
+  <text class="pic-lab soft" x="560" y="278" text-anchor="middle">“not yet fifty”</text>
+  <g class="jn08-forever"><rect x="0" y="118" width="560" height="10" rx="5" fill="url(#jn08-ebeam)" filter="url(#jn08-eblur)"/><rect x="0" y="121" width="560" height="4" rx="2" fill="url(#jn08-ebeam)"/></g>
+  <g class="jn08-forever-text"><line x1="560" y1="128" x2="560" y2="176" class="jn08-drop"/><circle cx="560" cy="123" r="16" fill="url(#jn08-eglow)"/><circle cx="560" cy="123" r="5" style="fill:var(--glow)"/>
+    <text class="pic-lab big" x="330" y="106" text-anchor="middle">“I am”: no beginning</text></g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Before Abraham was, I am</h2>

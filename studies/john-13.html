@@ -10,36 +10,65 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* A U-shaped supper table seen from above, with men reclining around it, feet outward */
-.jn13-table .tbl { fill: none; stroke: var(--surface-2); stroke-width: 44; }
-.jn13-table .tbl-edge { fill: none; stroke: var(--line-strong); stroke-width: 2; }
-.jn13-table .man { stroke: var(--ink-soft); stroke-width: 9; stroke-linecap: round; }
-.jn13-table .head { fill: var(--ink-soft); }
-.jn13-table .foot { fill: var(--warm); transition: fill .6s ease; transition-delay: calc(var(--k, 0) * 220ms + 300ms); }
-.slide:has(.jn13-wash-go.on) .jn13-table .foot { fill: var(--cool); }
-.jn13-table .route { fill: none; stroke: var(--cool); stroke-width: 2.5; stroke-dasharray: 7 7; opacity: 0; transition: opacity .8s ease; }
-.slide:has(.jn13-wash-go.on) .jn13-table .route { opacity: .8; }
-.jn13-table .jesus { fill: var(--accent-hot); }
-.jn13-table .jesus-b { stroke: var(--accent); }
-.jn13-table .judas { fill: var(--danger); }
-.jn13-table .who { font-size: 17px; font-weight: 700; }
-.jn13-table .sop { fill: none; stroke: var(--warm); stroke-width: 4; stroke-linecap: round; }
-.jn13-table .bread { fill: var(--warm); opacity: 0; transition: opacity .6s ease 1.2s; }
-.slide:has(.jn13-sop-go.on) .jn13-table .bread { opacity: 1; }
-.slide:has(.jn13-sop-go.on) .jn13-table .draw { stroke-dashoffset: 0; }
+/* ---- John 13 picture cards. Each .pic paints its own scene from --on-glow (dark in every theme) and --glow (light). ---- */
+/* The supper table from above, in lamplight: men recline on the floor, leaning toward the table, feet out behind them */
+.jn13-table .jn13-floor { fill: color-mix(in srgb, var(--on-glow) 90%, var(--warm)); }
+.jn13-table .jn13-flags rect { fill: color-mix(in srgb, var(--warm) 13%, var(--on-glow)); stroke: color-mix(in srgb, var(--on-glow) 70%, transparent); stroke-width: 1; }
+.jn13-table .jn13-tshadow { fill: var(--on-glow); opacity: .6; }
+.jn13-table .jn13-tedge { stroke: color-mix(in srgb, var(--glow) 35%, transparent); stroke-width: 1.2; }
+.jn13-table .jn13-bread { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); }
+.jn13-table .jn13-cup { fill: color-mix(in srgb, var(--wine) 70%, var(--on-glow)); stroke: color-mix(in srgb, var(--warm) 60%, var(--glow)); stroke-width: 1.2; }
+.jn13-table .jn13-dish { fill: color-mix(in srgb, var(--leather) 60%, var(--glow)); }
+.jn13-table .jn13-dish-in { fill: color-mix(in srgb, var(--leather) 50%, var(--on-glow)); }
+.jn13-table .jn13-lamp { fill: color-mix(in srgb, var(--warm) 60%, var(--leather)); }
+.jn13-table .jn13-cast { fill: var(--on-glow); opacity: .45; }
+.jn13-table .jn13-robe { stroke: color-mix(in srgb, var(--on-glow) 60%, transparent); stroke-width: 1; }
+.jn13-table .jn13-arm { fill: none; stroke-width: 4.5; stroke-linecap: round; }
+.jn13-table .jn13-sheen { fill: none; stroke: var(--glow); stroke-width: 6; stroke-linecap: round; opacity: .16; }
+.jn13-table .jn13-head { fill: color-mix(in srgb, var(--leather) 45%, var(--on-glow)); stroke: color-mix(in srgb, var(--on-glow) 60%, transparent); stroke-width: 1; }
+.jn13-table .jn13-foot { fill: color-mix(in srgb, var(--leather-light) 70%, var(--warm)); }
+/* 13 (verses 4–5): dusty feet, washed one after another as Jesus goes round the outside */
+.jn13-wash .jn13-foot { fill: color-mix(in srgb, var(--warm) 50%, var(--leather)); transition: fill .6s ease; transition-delay: var(--t); }
+.slide:has(.jn13-wash-go.on) .jn13-wash .jn13-foot { fill: color-mix(in srgb, var(--cool) 55%, var(--glow)); }
+.jn13-wash .jn13-route { fill: none; stroke: color-mix(in srgb, var(--cool) 60%, var(--glow)); stroke-width: 2; stroke-dasharray: 6 7; opacity: 0; transition: opacity .8s ease; }
+.slide:has(.jn13-wash-go.on) .jn13-wash .jn13-route { opacity: .6; }
+.jn13-wash .jn13-servant { opacity: 0; transform: translate(40px, 366px); }
+.slide:has(.jn13-wash-go.on) .jn13-wash .jn13-servant { opacity: 1; animation: jn13-round 8s .6s linear forwards; transition: opacity .6s ease; }
+.jn13-wash .jn13-sglow { fill: var(--glow); opacity: .25; }
+.jn13-wash .jn13-basin-top { fill: color-mix(in srgb, var(--cool) 50%, var(--glow)); stroke: color-mix(in srgb, var(--leather) 60%, var(--glow)); stroke-width: 1.5; }
+.jn13-wash .jn13-jesus-robe { fill: var(--glow); }
+@keyframes jn13-round { 0% { transform: translate(40px, 366px); } 4.2% { transform: translate(40px, 316.8px); } 8.3% { transform: translate(40px, 273.8px); } 12.5% { transform: translate(40px, 224.6px); } 16.7% { transform: translate(40px, 181.5px); } 20.8% { transform: translate(40px, 132.3px); } 25% { transform: translate(42.7px, 87.8px); } 29.2% { transform: translate(59.2px, 45.8px); } 33.3% { transform: translate(94.7px, 16.3px); } 37.5% { transform: translate(137.2px, 5.2px); } 41.7% { transform: translate(188px, 4px); } 45.8% { transform: translate(230px, 4px); } 50% { transform: translate(279px, 4px); } 54.2% { transform: translate(321px, 4px); } 58.3% { transform: translate(370px, 4px); } 62.5% { transform: translate(412px, 4px); } 66.7% { transform: translate(457.3px, 4.7px); } 70.8% { transform: translate(501.2px, 14.4px); } 75% { transform: translate(538.3px, 42.4px); } 79.2% { transform: translate(556.3px, 83px); } 83.3% { transform: translate(560px, 129.6px); } 87.5% { transform: translate(560px, 177.6px); } 91.7% { transform: translate(560px, 220.8px); } 95.8% { transform: translate(560px, 268.8px); } 100% { transform: translate(560px, 312px); } }
+/* 26: the sop */
+.jn13-sop .jn13-sop-arc { fill: none; stroke: var(--warm); stroke-width: 2.5; stroke-linecap: round; }
+.slide:has(.jn13-sop-go.on) .jn13-sop .draw { stroke-dashoffset: 0; }
+.jn13-sop .jn13-sopbread { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); opacity: 0; transition: opacity .6s ease 1.2s; }
+.slide:has(.jn13-sop-go.on) .jn13-sop .jn13-sopbread { opacity: 1; }
 
-/* Bathed once, feet washed as needed */
-.jn13-bath .body { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.jn13-bath .leg { stroke: var(--surface-2); stroke-width: 22; stroke-linecap: round; }
-.jn13-bath .halo { fill: color-mix(in srgb, var(--cool) 10%, transparent); stroke: var(--cool); stroke-width: 2.5; stroke-dasharray: 6 6; }
-.jn13-bath .dust { fill: var(--warm); opacity: 0; transition: opacity .8s ease; }
-.slide.active .jn13-bath .dust { opacity: .95; transition-delay: calc(var(--k, 0) * 150ms + 1.4s); }
-.slide.active:has(.jn13-wash-go.on) .jn13-bath .dust { opacity: 0; transition-delay: calc(var(--k, 0) * 90ms + .6s); }
-.jn13-bath .drop { fill: var(--cool); opacity: 0; }
-.slide:has(.jn13-wash-go.on) .jn13-bath .drop { animation: jn13-fall 1.1s ease-in calc(var(--k, 0) * 160ms) 3 both; }
+/* 10: bathed once, feet washed as needed */
+.jn13-bath .jn13-wall rect { fill: color-mix(in srgb, var(--warm) 20%, var(--on-glow)); stroke: color-mix(in srgb, var(--on-glow) 70%, transparent); stroke-width: 1; }
+.jn13-bath .jn13-door { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); opacity: .85; }
+.jn13-bath .jn13-grit circle { fill: color-mix(in srgb, var(--warm) 50%, var(--glow)); }
+.jn13-bath .jn13-halo { fill: color-mix(in srgb, var(--cool) 10%, transparent); stroke: color-mix(in srgb, var(--cool) 60%, var(--glow)); stroke-width: 2; stroke-dasharray: 6 6; }
+.jn13-bath .jn13-shadow { fill: var(--on-glow); opacity: .5; }
+.jn13-bath .jn13-robe-edge { stroke: color-mix(in srgb, var(--on-glow) 40%, transparent); stroke-width: 1.2; }
+.jn13-bath .jn13-fold { fill: var(--on-glow); opacity: .1; }
+.jn13-bath .jn13-belt { fill: color-mix(in srgb, var(--leather) 80%, var(--on-glow)); }
+.jn13-bath .jn13-skin { fill: color-mix(in srgb, var(--leather-light) 75%, var(--warm)); }
+.jn13-bath .jn13-hair { fill: color-mix(in srgb, var(--leather) 40%, var(--on-glow)); }
+.jn13-bath .jn13-foot-b { fill: color-mix(in srgb, var(--leather-light) 75%, var(--warm)); transition: fill 1s ease 1.2s; }
+.slide:has(.jn13-wash-go.on) .jn13-bath .jn13-foot-b { fill: color-mix(in srgb, var(--leather-light) 55%, var(--glow)); }
+.jn13-bath .jn13-dust { fill: color-mix(in srgb, var(--warm) 45%, var(--leather)); opacity: 0; transition: opacity .8s ease; }
+.slide.active .jn13-bath .jn13-dust { opacity: .95; transition-delay: calc(var(--k) * 150ms + 1.4s); }
+.slide.active:has(.jn13-wash-go.on) .jn13-bath .jn13-dust { opacity: 0; transition-delay: calc(var(--k) * 90ms + .8s); }
+.jn13-bath .jn13-basin { fill: color-mix(in srgb, var(--leather) 55%, var(--glow)); stroke: color-mix(in srgb, var(--leather) 60%, var(--on-glow)); stroke-width: 1.5; opacity: 0; transition: opacity .8s ease; }
+.jn13-bath .jn13-basin-water { fill: color-mix(in srgb, var(--cool) 55%, var(--glow)); opacity: 0; transition: opacity .8s ease .4s; }
+.slide:has(.jn13-wash-go.on) .jn13-bath .jn13-basin, .slide:has(.jn13-wash-go.on) .jn13-bath .jn13-basin-water { opacity: 1; }
+.jn13-bath .jn13-drop { fill: color-mix(in srgb, var(--cool) 60%, var(--glow)); opacity: 0; }
+.slide:has(.jn13-wash-go.on) .jn13-bath .jn13-drop { animation: jn13-fall 1.1s ease-in calc(var(--k) * 160ms) 3 both; }
 @keyframes jn13-fall { 0% { opacity: 0; transform: translateY(-40px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(26px); } }
-.jn13-bath .basin { fill: var(--surface-2); stroke: var(--cool); stroke-width: 2.5; opacity: 0; transition: opacity .8s ease; }
-.slide:has(.jn13-wash-go.on) .jn13-bath .basin { opacity: 1; }
+
+/* Paintings beside longer text get a little less room, so the text keeps its lines */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.art-narrow.jn13-thin { grid-template-columns: .7fr 1.3fr; } }
 
 /* The twelve: every one wonders, and Judas looks like all the rest */
 .jn13-twelve { list-style: none; padding: 0; margin: .4em 0 1em; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
@@ -52,23 +81,6 @@
   opacity: 0; transform: scale(.4); transition: opacity .4s ease, transform .4s cubic-bezier(.3,1.6,.5,1); transition-delay: calc(var(--k, 0) * 120ms + 900ms);
 }
 .slide.active .jn13-twelve li::after { opacity: 1; transform: none; }
-
-/* The night outside the lit room. --glow is light and --on-glow is dark in every theme. */
-.stage svg.jn13-door { max-height: 32vh; }
-.jn13-door .night { fill: var(--on-glow); }
-.jn13-door .room { fill: var(--glow); stroke: var(--accent); stroke-width: 3; }
-.jn13-door .spill { fill: var(--glow); opacity: .18; }
-.jn13-door .star { fill: var(--glow); }
-.slide.active .jn13-door .star { animation: jn13-twinkle 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k, 0) * -.7s); }
-@keyframes jn13-twinkle { from { opacity: .25; } to { opacity: .9; } }
-.jn13-door .guest { fill: var(--on-glow); }
-.jn13-door .lord { fill: var(--accent); }
-.jn13-door .tbl { fill: var(--surface-2); stroke: var(--on-glow); stroke-width: 1.5; }
-.jn13-door .judas { fill: var(--on-glow); }
-.slide.active .jn13-door .judas { animation: jn13-out 5s 1s ease-in-out forwards; }
-@keyframes jn13-out { 0% { transform: translateX(0); } 45% { transform: translateX(90px); } 100% { transform: translateX(260px); opacity: .9; } }
-.jn13-door .was { fill: var(--glow); font-family: var(--serif); font-style: italic; opacity: 0; }
-.slide.active .jn13-door .was { animation: rise 1.4s 5.4s ease both; }
 
 /* Two measuring sticks for love */
 .jn13-measure { display: grid; gap: .9rem; margin: .4em 0 1.1em; }
@@ -163,7 +175,7 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="3" data-hl="the Father had given all things into his hands"></blockquote>
     <h2 class="rise" style="--d:1">All things in his hands. So he picked up a towel.</h2>
-    <ol class="stairs" style="--n:7" aria-label="Seven actions, each a step lower: rose from supper, laid aside His garments, took a towel, girded Himself, poured water into a basin, washed the disciples' feet, wiped them with the towel.">
+    <ol class="stairs" style="--n:7" aria-label="Seven actions, each a step lower: rose from supper, laid aside his garments, took a towel, girded himself, poured water into a basin, washed the disciples' feet, wiped them with the towel.">
       <li style="--k:0"><b>riseth</b>from supper</li>
       <li style="--k:1"><b>laid aside</b>his garments</li>
       <li style="--k:2"><b>took</b>a towel</li>
@@ -182,30 +194,122 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg class="jn13-table" viewBox="0 0 600 380" role="img" aria-label="A U-shaped table seen from above. Thirteen men recline around the outside with their feet pointing away from the table. The dusty feet are washed one by one, all the way around.">
-          <path class="tbl" d="M190 340 V140 H410 V340"/>
-          <path class="tbl-edge" d="M168 340 V118 H432 V340 M212 340 V162 H388 V340"/>
-          <g>
-            <!-- left side: heads at the table, feet out to the left -->
-            <line class="man" x1="150" y1="170" x2="80" y2="185"/><circle class="head" cx="150" cy="170" r="12"/><circle class="foot" style="--k:0" cx="70" cy="187" r="9"/>
-            <line class="man" x1="150" y1="225" x2="80" y2="240"/><circle class="head" cx="150" cy="225" r="12"/><circle class="foot" style="--k:1" cx="70" cy="242" r="9"/>
-            <line class="man" x1="150" y1="280" x2="80" y2="295"/><circle class="head" cx="150" cy="280" r="12"/><circle class="foot" style="--k:2" cx="70" cy="297" r="9"/>
-            <line class="man" x1="150" y1="335" x2="80" y2="350"/><circle class="head" cx="150" cy="335" r="12"/><circle class="foot" style="--k:3" cx="70" cy="352" r="9"/>
-            <!-- back side: heads at the table, feet out the top -->
-            <line class="man" x1="200" y1="100" x2="186" y2="34"/><circle class="head" cx="200" cy="100" r="12"/><circle class="foot" style="--k:4" cx="184" cy="24" r="9"/>
-            <line class="man" x1="250" y1="100" x2="236" y2="34"/><circle class="head" cx="250" cy="100" r="12"/><circle class="foot" style="--k:5" cx="234" cy="24" r="9"/>
-            <line class="man" x1="300" y1="100" x2="286" y2="34"/><circle class="head" cx="300" cy="100" r="12"/><circle class="foot" style="--k:6" cx="284" cy="24" r="9"/>
-            <line class="man" x1="350" y1="100" x2="336" y2="34"/><circle class="head" cx="350" cy="100" r="12"/><circle class="foot" style="--k:7" cx="334" cy="24" r="9"/>
-            <line class="man" x1="400" y1="100" x2="386" y2="34"/><circle class="head" cx="400" cy="100" r="12"/><circle class="foot" style="--k:8" cx="384" cy="24" r="9"/>
-            <!-- right side: feet out to the right -->
-            <line class="man" x1="450" y1="170" x2="520" y2="185"/><circle class="head" cx="450" cy="170" r="12"/><circle class="foot" style="--k:9" cx="530" cy="187" r="9"/>
-            <line class="man" x1="450" y1="225" x2="520" y2="240"/><circle class="head" cx="450" cy="225" r="12"/><circle class="foot" style="--k:10" cx="530" cy="242" r="9"/>
-            <line class="man" x1="450" y1="280" x2="520" y2="295"/><circle class="head" cx="450" cy="280" r="12"/><circle class="foot" style="--k:11" cx="530" cy="297" r="9"/>
-          </g>
-          <path class="route" d="M40 360 V200 Q40 4 200 4 H400 Q560 4 560 200 V320"/>
-          <text x="300" y="250" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">the low table</text>
-          <text x="300" y="372" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">open side, where the food was served</text>
-        </svg>
+        <svg class="pic jn13-table jn13-wash" style="--ar:1.579" viewBox="0 0 600 380" role="img" aria-label="A U-shaped low table seen from above in lamplight. Twelve men recline on the floor around the outside, leaning toward the table with their dusty feet pointing away from it. Jesus goes around the outside with a basin, and the feet are washed one by one, all the way round.">
+  <defs><radialGradient id="jn13-w-lamp" cx=".5" cy=".42" r=".62"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--glow));stop-opacity:0.9"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.35"/><stop offset="1" style="stop-color:var(--on-glow);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn13-w-wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--leather) 80%, var(--glow))"/><stop offset="0.5" style="stop-color:var(--leather)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--leather) 55%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn13-w-flame"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.35" style="stop-color:var(--warm);stop-opacity:0.8"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn13-w-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>
+  <rect width="600" height="380" class="jn13-floor"/>
+  <g class="jn13-flags"><rect x="-26.9" y="1.5" width="92.9" height="51" rx="5"/><rect x="69" y="1.5" width="99.3" height="51" rx="5"/><rect x="171.2" y="1.5" width="97.6" height="51" rx="5"/><rect x="271.8" y="1.5" width="93.9" height="51" rx="5"/><rect x="368.8" y="1.5" width="83.1" height="51" rx="5"/><rect x="454.9" y="1.5" width="93" height="51" rx="5"/><rect x="550.9" y="1.5" width="93.2" height="51" rx="5"/><rect x="-37.9" y="55.5" width="89.6" height="54.6" rx="5"/><rect x="54.7" y="55.5" width="91.9" height="54.6" rx="5"/><rect x="149.6" y="55.5" width="75.7" height="54.6" rx="5"/><rect x="228.3" y="55.5" width="87" height="54.6" rx="5"/><rect x="318.3" y="55.5" width="95.8" height="54.6" rx="5"/><rect x="417" y="55.5" width="88.3" height="54.6" rx="5"/><rect x="508.4" y="55.5" width="59.6" height="54.6" rx="5"/><rect x="571" y="55.5" width="100.3" height="54.6" rx="5"/><rect x="-15.6" y="113.1" width="97.7" height="71.9" rx="5"/><rect x="85.1" y="113.1" width="85.2" height="71.9" rx="5"/><rect x="173.3" y="113.1" width="59.4" height="71.9" rx="5"/><rect x="235.7" y="113.1" width="55" height="71.9" rx="5"/><rect x="293.7" y="113.1" width="94.1" height="71.9" rx="5"/><rect x="390.8" y="113.1" width="64" height="71.9" rx="5"/><rect x="457.8" y="113.1" width="78" height="71.9" rx="5"/><rect x="538.9" y="113.1" width="73.8" height="71.9" rx="5"/><rect x="-31.9" y="188" width="96.8" height="53.8" rx="5"/><rect x="67.9" y="188" width="73.9" height="53.8" rx="5"/><rect x="144.9" y="188" width="83.4" height="53.8" rx="5"/><rect x="231.3" y="188" width="81.2" height="53.8" rx="5"/><rect x="315.4" y="188" width="67.3" height="53.8" rx="5"/><rect x="385.7" y="188" width="65.3" height="53.8" rx="5"/><rect x="454" y="188" width="93.3" height="53.8" rx="5"/><rect x="550.4" y="188" width="95.6" height="53.8" rx="5"/><rect x="-7" y="244.8" width="90.6" height="69" rx="5"/><rect x="86.6" y="244.8" width="73.2" height="69" rx="5"/><rect x="162.8" y="244.8" width="91.5" height="69" rx="5"/><rect x="257.3" y="244.8" width="76.6" height="69" rx="5"/><rect x="336.9" y="244.8" width="98.5" height="69" rx="5"/><rect x="438.3" y="244.8" width="64.7" height="69" rx="5"/><rect x="506.1" y="244.8" width="78.1" height="69" rx="5"/><rect x="587.1" y="244.8" width="80.1" height="69" rx="5"/><rect x="-37.1" y="316.7" width="64.7" height="67.2" rx="5"/><rect x="30.6" y="316.7" width="59.2" height="67.2" rx="5"/><rect x="92.8" y="316.7" width="81.4" height="67.2" rx="5"/><rect x="177.2" y="316.7" width="85.8" height="67.2" rx="5"/><rect x="266" y="316.7" width="62.6" height="67.2" rx="5"/><rect x="331.6" y="316.7" width="69.9" height="67.2" rx="5"/><rect x="404.5" y="316.7" width="85.8" height="67.2" rx="5"/><rect x="493.3" y="316.7" width="92.7" height="67.2" rx="5"/><rect x="589" y="316.7" width="91.2" height="67.2" rx="5"/></g>
+  <rect width="600" height="380" fill="url(#jn13-w-lamp)"/>
+  <path d="M168 340 V118 H432 V340 H388 V162 H212 V340 Z" transform="translate(4 6)" class="jn13-tshadow" filter="url(#jn13-w-soft)"/>
+  <path d="M168 340 V118 H432 V340 H388 V162 H212 V340 Z" fill="url(#jn13-w-wood)" class="jn13-tbl"/>
+  <path d="M172 336 V122 H428 V336" fill="none" class="jn13-tedge"/>
+  <g><ellipse cx="190" cy="140" rx="7" ry="4.5" class="jn13-bread"/><circle cx="236" cy="136" r="4.4" class="jn13-cup"/><ellipse cx="270" cy="141" rx="5" ry="3.4" class="jn13-bread"/><ellipse cx="330" cy="136" rx="7" ry="4.5" class="jn13-bread"/><circle cx="366" cy="141" r="4.4" class="jn13-cup"/><ellipse cx="410" cy="138" rx="5" ry="3.4" class="jn13-bread"/><ellipse cx="190" cy="190" rx="7" ry="4.5" class="jn13-bread"/><circle cx="190" cy="250" r="4.4" class="jn13-cup"/><ellipse cx="190" cy="304" rx="5" ry="3.4" class="jn13-bread"/><ellipse cx="410" cy="190" rx="7" ry="4.5" class="jn13-bread"/><circle cx="410" cy="250" r="4.4" class="jn13-cup"/><ellipse cx="410" cy="304" rx="5" ry="3.4" class="jn13-bread"/></g>
+  <ellipse cx="300" cy="140" rx="16" ry="9" class="jn13-dish"/><ellipse cx="300" cy="140" rx="11" ry="5.5" class="jn13-dish-in"/>
+  <circle cx="300" cy="250" r="34" fill="url(#jn13-w-flame)"/><ellipse cx="300" cy="252" rx="8" ry="4" class="jn13-lamp"/><circle cx="300" cy="248" r="3" style="fill:var(--glow)"/>
+  <g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 342.3 C143.3 348.9 132.3 349.8 120.2 350 C102.3 352.2 80.8 353.4 72.8 353.7 L71.1 344.2 C78.7 341.6 99.3 335.4 116.8 331.3 C128.3 327.2 138.9 324.3 143.9 329.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 342.3 C143.3 348.9 132.3 349.8 120.2 350 C102.3 352.2 80.8 353.4 72.8 353.7 L71.1 344.2 C78.7 341.6 99.3 335.4 116.8 331.3 C128.3 327.2 138.9 324.3 143.9 329.5 Z" style="fill:color-mix(in srgb, var(--warm) 55%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M138.2 337.1 L81.8 347.2" class="jn13-sheen"/>
+    <path d="M140.9 346.8 Q148.2 353.6 156.2 347.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:0.7s" cx="68.5" cy="346.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0.7s" cx="69.4" cy="352" r="2.7"/>
+    <circle cx="150" cy="335" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 287.3 C143.3 293.9 132.3 294.8 120.2 295 C102.3 297.2 80.8 298.4 72.8 298.7 L71.1 289.2 C78.7 286.6 99.3 280.4 116.8 276.3 C128.3 272.2 138.9 269.3 143.9 274.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 287.3 C143.3 293.9 132.3 294.8 120.2 295 C102.3 297.2 80.8 298.4 72.8 298.7 L71.1 289.2 C78.7 286.6 99.3 280.4 116.8 276.3 C128.3 272.2 138.9 269.3 143.9 274.5 Z" style="fill:color-mix(in srgb, var(--cool) 45%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M138.2 282.1 L81.8 292.2" class="jn13-sheen"/>
+    <path d="M140.9 291.8 Q148.2 298.6 156.2 292.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:1.1s" cx="68.5" cy="291.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:1.1s" cx="69.4" cy="297" r="2.7"/>
+    <circle cx="150" cy="280" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 232.3 C143.3 238.9 132.3 239.8 120.2 240 C102.3 242.2 80.8 243.4 72.8 243.7 L71.1 234.2 C78.7 231.6 99.3 225.4 116.8 221.3 C128.3 217.2 138.9 214.3 143.9 219.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 232.3 C143.3 238.9 132.3 239.8 120.2 240 C102.3 242.2 80.8 243.4 72.8 243.7 L71.1 234.2 C78.7 231.6 99.3 225.4 116.8 221.3 C128.3 217.2 138.9 214.3 143.9 219.5 Z" style="fill:color-mix(in srgb, var(--glow) 62%, var(--warm))" class="jn13-robe"/>
+    <path d="M138.2 227.1 L81.8 237.2" class="jn13-sheen"/>
+    <path d="M140.9 236.8 Q148.2 243.6 156.2 237.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 62%, var(--warm))"/>
+    <circle class="jn13-foot" style="--t:1.5s" cx="68.5" cy="236.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:1.5s" cx="69.4" cy="242" r="2.7"/>
+    <circle cx="150" cy="225" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 177.3 C143.3 183.9 132.3 184.8 120.2 185 C102.3 187.2 80.8 188.4 72.8 188.7 L71.1 179.2 C78.7 176.6 99.3 170.4 116.8 166.3 C128.3 162.2 138.9 159.3 143.9 164.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 177.3 C143.3 183.9 132.3 184.8 120.2 185 C102.3 187.2 80.8 188.4 72.8 188.7 L71.1 179.2 C78.7 176.6 99.3 170.4 116.8 166.3 C128.3 162.2 138.9 159.3 143.9 164.5 Z" style="fill:color-mix(in srgb, var(--wine) 50%, var(--glow))" class="jn13-robe"/>
+    <path d="M138.2 172.1 L81.8 182.2" class="jn13-sheen"/>
+    <path d="M140.9 181.8 Q148.2 188.6 156.2 182.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--wine) 50%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:1.9s" cx="68.5" cy="181.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:1.9s" cx="69.4" cy="187" r="2.7"/>
+    <circle cx="150" cy="170" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M192.7 96.3 C186 93.5 185 82.5 184.7 70.3 C182.3 52.5 180.7 30.9 180.4 22.8 L189.8 21 C192.5 28.6 199 49.3 203.3 66.8 C207.6 78.2 210.6 88.8 205.4 93.9 Z" transform="translate(3 4)"/>
+    <path d="M192.7 96.3 C186 93.5 185 82.5 184.7 70.3 C182.3 52.5 180.7 30.9 180.4 22.8 L189.8 21 C192.5 28.6 199 49.3 203.3 66.8 C207.6 78.2 210.6 88.8 205.4 93.9 Z" style="fill:color-mix(in srgb, var(--leather) 75%, var(--glow))" class="jn13-robe"/>
+    <path d="M197.8 88.2 L187 31.7" class="jn13-sheen"/>
+    <path d="M188.1 91.1 Q181.4 98.5 188 106.4" class="jn13-arm" style="stroke:color-mix(in srgb, var(--leather) 75%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:3.9s" cx="187.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:3.9s" cx="182" cy="19.4" r="2.7"/>
+    <circle cx="200" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M242.7 96.3 C236 93.5 235 82.5 234.7 70.3 C232.3 52.5 230.7 30.9 230.4 22.8 L239.8 21 C242.5 28.6 249 49.3 253.3 66.8 C257.6 78.2 260.6 88.8 255.4 93.9 Z" transform="translate(3 4)"/>
+    <path d="M242.7 96.3 C236 93.5 235 82.5 234.7 70.3 C232.3 52.5 230.7 30.9 230.4 22.8 L239.8 21 C242.5 28.6 249 49.3 253.3 66.8 C257.6 78.2 260.6 88.8 255.4 93.9 Z" style="fill:color-mix(in srgb, var(--glow) 45%, var(--cool))" class="jn13-robe"/>
+    <path d="M247.8 88.2 L237 31.7" class="jn13-sheen"/>
+    <path d="M238.1 91.1 Q231.4 98.5 238 106.4" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 45%, var(--cool))"/>
+    <circle class="jn13-foot" style="--t:4.3s" cx="237.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:4.3s" cx="232" cy="19.4" r="2.7"/>
+    <circle cx="250" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M292.7 96.3 C286 93.5 285 82.5 284.7 70.3 C282.3 52.5 280.7 30.9 280.4 22.8 L289.8 21 C292.5 28.6 299 49.3 303.3 66.8 C307.6 78.2 310.6 88.8 305.4 93.9 Z" transform="translate(3 4)"/>
+    <path d="M292.7 96.3 C286 93.5 285 82.5 284.7 70.3 C282.3 52.5 280.7 30.9 280.4 22.8 L289.8 21 C292.5 28.6 299 49.3 303.3 66.8 C307.6 78.2 310.6 88.8 305.4 93.9 Z" style="fill:color-mix(in srgb, var(--warm) 55%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M297.8 88.2 L287 31.7" class="jn13-sheen"/>
+    <path d="M288.1 91.1 Q281.4 98.5 288 106.4" class="jn13-arm" style="stroke:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:4.7s" cx="287.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:4.7s" cx="282" cy="19.4" r="2.7"/>
+    <circle cx="300" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M342.7 96.3 C336 93.5 335 82.5 334.7 70.3 C332.3 52.5 330.7 30.9 330.4 22.8 L339.8 21 C342.5 28.6 349 49.3 353.3 66.8 C357.6 78.2 360.6 88.8 355.4 93.9 Z" transform="translate(3 4)"/>
+    <path d="M342.7 96.3 C336 93.5 335 82.5 334.7 70.3 C332.3 52.5 330.7 30.9 330.4 22.8 L339.8 21 C342.5 28.6 349 49.3 353.3 66.8 C357.6 78.2 360.6 88.8 355.4 93.9 Z" style="fill:color-mix(in srgb, var(--cool) 45%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M347.8 88.2 L337 31.7" class="jn13-sheen"/>
+    <path d="M338.1 91.1 Q331.4 98.5 338 106.4" class="jn13-arm" style="stroke:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:5.1s" cx="337.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:5.1s" cx="332" cy="19.4" r="2.7"/>
+    <circle cx="350" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M392.7 96.3 C386 93.5 385 82.5 384.7 70.3 C382.3 52.5 380.7 30.9 380.4 22.8 L389.8 21 C392.5 28.6 399 49.3 403.3 66.8 C407.6 78.2 410.6 88.8 405.4 93.9 Z" transform="translate(3 4)"/>
+    <path d="M392.7 96.3 C386 93.5 385 82.5 384.7 70.3 C382.3 52.5 380.7 30.9 380.4 22.8 L389.8 21 C392.5 28.6 399 49.3 403.3 66.8 C407.6 78.2 410.6 88.8 405.4 93.9 Z" style="fill:color-mix(in srgb, var(--glow) 62%, var(--warm))" class="jn13-robe"/>
+    <path d="M397.8 88.2 L387 31.7" class="jn13-sheen"/>
+    <path d="M388.1 91.1 Q381.4 98.5 388 106.4" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 62%, var(--warm))"/>
+    <circle class="jn13-foot" style="--t:5.4s" cx="387.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:5.4s" cx="382" cy="19.4" r="2.7"/>
+    <circle cx="400" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 164.5 C461.1 159.3 471.7 162.2 483.2 166.3 C500.7 170.4 521.3 176.6 528.9 179.2 L527.2 188.7 C519.2 188.4 497.7 187.2 479.8 185 C467.7 184.8 456.7 183.9 453.8 177.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 164.5 C461.1 159.3 471.7 162.2 483.2 166.3 C500.7 170.4 521.3 176.6 528.9 179.2 L527.2 188.7 C519.2 188.4 497.7 187.2 479.8 185 C467.7 184.8 456.7 183.9 453.8 177.3 Z" style="fill:color-mix(in srgb, var(--wine) 50%, var(--glow))" class="jn13-robe"/>
+    <path d="M461.8 172.1 L518.2 182.2" class="jn13-sheen"/>
+    <path d="M462.6 162.1 Q458.1 153.2 448.3 156.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--wine) 50%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:7.7s" cx="530.6" cy="187" r="2.7"/>
+    <circle class="jn13-foot" style="--t:7.7s" cx="531.5" cy="181.9" r="2.7"/>
+    <circle cx="450" cy="170" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 219.5 C461.1 214.3 471.7 217.2 483.2 221.3 C500.7 225.4 521.3 231.6 528.9 234.2 L527.2 243.7 C519.2 243.4 497.7 242.2 479.8 240 C467.7 239.8 456.7 238.9 453.8 232.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 219.5 C461.1 214.3 471.7 217.2 483.2 221.3 C500.7 225.4 521.3 231.6 528.9 234.2 L527.2 243.7 C519.2 243.4 497.7 242.2 479.8 240 C467.7 239.8 456.7 238.9 453.8 232.3 Z" style="fill:color-mix(in srgb, var(--leather) 75%, var(--glow))" class="jn13-robe"/>
+    <path d="M461.8 227.1 L518.2 237.2" class="jn13-sheen"/>
+    <path d="M462.6 217.1 Q458.1 208.2 448.3 211.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--leather) 75%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:8.1s" cx="530.6" cy="242" r="2.7"/>
+    <circle class="jn13-foot" style="--t:8.1s" cx="531.5" cy="236.9" r="2.7"/>
+    <circle cx="450" cy="225" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 274.5 C461.1 269.3 471.7 272.2 483.2 276.3 C500.7 280.4 521.3 286.6 528.9 289.2 L527.2 298.7 C519.2 298.4 497.7 297.2 479.8 295 C467.7 294.8 456.7 293.9 453.8 287.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 274.5 C461.1 269.3 471.7 272.2 483.2 276.3 C500.7 280.4 521.3 286.6 528.9 289.2 L527.2 298.7 C519.2 298.4 497.7 297.2 479.8 295 C467.7 294.8 456.7 293.9 453.8 287.3 Z" style="fill:color-mix(in srgb, var(--glow) 45%, var(--cool))" class="jn13-robe"/>
+    <path d="M461.8 282.1 L518.2 292.2" class="jn13-sheen"/>
+    <path d="M462.6 272.1 Q458.1 263.2 448.3 266.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 45%, var(--cool))"/>
+    <circle class="jn13-foot" style="--t:8.5s" cx="530.6" cy="297" r="2.7"/>
+    <circle class="jn13-foot" style="--t:8.5s" cx="531.5" cy="291.9" r="2.7"/>
+    <circle cx="450" cy="280" r="7" class="jn13-head"/>
+  </g></g>
+  <path class="jn13-route" d="M40 366 V120 Q40 4 160 4 H440 Q560 4 560 120 V312"/>
+  <g class="jn13-servant"><circle r="16" class="jn13-sglow"/><circle cx="-7" r="5" class="jn13-basin-top"/><path d="M-2 -7 C6 -9 10 -4 10 0 C10 4 6 9 -2 7 Z" class="jn13-jesus-robe"/><circle cx="4" r="5.8" class="jn13-head jn13-jesus-head"/></g>
+  <text x="300" y="214" text-anchor="middle" class="pic-lab soft">the low table</text>
+  <text x="300" y="372" text-anchor="middle" class="pic-lab soft">open side, where the food was served</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Dirty feet at supper</h2>
@@ -222,9 +326,15 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="8" data-hl="Thou shalt never wash my feet|If I wash thee not, thou hast no part with me"></blockquote>
-    <h2 class="rise" style="--d:1">“Never”</h2>
-    <p class="note rise" style="--d:2">Peter means well. He can't stand to see his Lord kneeling at his feet. But underneath it is pride: <em>I'll serve You, but You're not going to serve me.</em></p>
-    <p class="note step">Jesus' answer is strong. No washing, no part with him. Nobody belongs to Jesus without first letting him wash them. You can't clean yourself up first and then come.</p>
+    <div class="split art-narrow jn13-thin">
+      <figure class="art rise" style="--d:1;--kb:50% 55%"><span class="art-frame"><img src="../assets/art/tissot-the-washing-of-the-feet.jpg" width="476" height="274" alt="In a room hung with dark curtains, the disciples sit around the walls with their sandals off. One of them is having his feet washed over a basin, and another stands by holding a water jar."></span>
+        <figcaption>James Tissot, <i>The Washing of the Feet</i></figcaption></figure>
+      <div>
+        <h2 class="rise" style="--d:1">“Never”</h2>
+        <p class="note rise" style="--d:2">Peter means well. He can't stand to see his Lord kneeling at his feet. But underneath it is pride: <em>I'll serve you, but you're not going to serve me.</em></p>
+        <p class="note step">Jesus' answer is strong. No washing, no part with him. Nobody belongs to Jesus without first letting him wash them. You can't clean yourself up first and then come.</p>
+      </div>
+    </div>
     <blockquote class="quote step" data-q="7" data-hl="thou shalt know hereafter"></blockquote>
     <p class="note step">For a lot of us, that's the hardest part of getting well: letting somebody see the dirt and help with it. Jesus starts right there.</p>
   </div>
@@ -237,29 +347,40 @@
     <blockquote class="quote rise" data-q="10" data-hl="He that is washed needeth not save to wash his feet, but is clean every whit"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn13-bath" viewBox="0 0 360 340" role="img" aria-label="A man, washed clean all over, stands on a dusty road. Dust gathers on his feet. Water washes the feet, and the rest of him stays clean.">
-          <ellipse class="halo" cx="180" cy="174" rx="100" ry="136"/>
-          <text x="180" y="22" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--cool)">washed: clean every whit</text>
-          <line x1="16" y1="306" x2="344" y2="306" stroke-width="3" stroke-dasharray="10 8" style="stroke:var(--line-strong)"/>
-          <path class="basin" d="M104 300 H256 L240 330 H120 Z"/>
-          <line class="leg" x1="158" y1="200" x2="152" y2="278"/>
-          <line class="leg" x1="202" y1="200" x2="208" y2="278"/>
-          <path class="body" d="M136 106 Q180 92 224 106 L236 208 Q180 220 124 208 Z"/>
-          <circle class="body" cx="180" cy="70" r="27"/>
-          <ellipse class="body" cx="148" cy="290" rx="20" ry="9"/>
-          <ellipse class="body" cx="212" cy="290" rx="20" ry="9"/>
-          <g>
-            <circle class="dust" style="--k:0" cx="136" cy="292" r="4"/><circle class="dust" style="--k:1" cx="152" cy="285" r="3.5"/><circle class="dust" style="--k:2" cx="162" cy="294" r="4.5"/>
-            <circle class="dust" style="--k:3" cx="200" cy="293" r="4"/><circle class="dust" style="--k:4" cx="216" cy="285" r="3.5"/><circle class="dust" style="--k:5" cx="226" cy="294" r="4.5"/>
-            <circle class="dust" style="--k:6" cx="146" cy="296" r="3"/><circle class="dust" style="--k:7" cx="208" cy="297" r="3"/>
-          </g>
-          <g>
-            <ellipse class="drop" style="--k:0" cx="142" cy="256" rx="4" ry="6"/><ellipse class="drop" style="--k:1" cx="156" cy="250" rx="4" ry="6"/>
-            <ellipse class="drop" style="--k:2" cx="206" cy="254" rx="4" ry="6"/><ellipse class="drop" style="--k:3" cx="220" cy="250" rx="4" ry="6"/>
-          </g>
-          <text x="300" y="268" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">only the</text>
-          <text x="300" y="286" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">feet</text>
-        </svg>
+        <svg class="pic jn13-bath" style="--ar:1.059" viewBox="0 0 360 340" role="img" aria-label="A man in a clean white robe stands in the evening light on a dusty road. He is clean all over, but dust gathers on his feet. Then water is poured over his feet into a basin, and only the feet are washed.">
+  <defs>
+    <linearGradient id="jn13-bsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 30%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn13-blamp" cx=".18" cy=".5" r=".75"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 60%, var(--glow));stop-opacity:0.9"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.3"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn13-brobe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.55" style="stop-color:color-mix(in srgb, var(--glow) 85%, var(--warm))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--glow) 55%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn13-broad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 42%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 20%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn13-bwater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 70%, var(--glow))"/><stop offset="1" style="stop-color:var(--cool);stop-opacity:0.4"/></linearGradient>
+  </defs>
+  <rect width="360" height="340" fill="url(#jn13-bsky)"/>
+  <g class="jn13-wall"><rect x="1.5" y="41.5" width="53.5" height="27" rx="3"/><rect x="58" y="41.5" width="58.1" height="27" rx="3"/><rect x="119.1" y="41.5" width="68.2" height="27" rx="3"/><rect x="190.3" y="41.5" width="72.3" height="27" rx="3"/><rect x="265.6" y="41.5" width="80.5" height="27" rx="3"/><rect x="349.1" y="41.5" width="63.9" height="27" rx="3"/><rect x="-18.5" y="71.5" width="74.3" height="27" rx="3"/><rect x="58.8" y="71.5" width="78.6" height="27" rx="3"/><rect x="140.4" y="71.5" width="75.5" height="27" rx="3"/><rect x="219" y="71.5" width="75.2" height="27" rx="3"/><rect x="297.2" y="71.5" width="72.1" height="27" rx="3"/><rect x="1.5" y="101.5" width="66.4" height="27" rx="3"/><rect x="70.9" y="101.5" width="72.8" height="27" rx="3"/><rect x="146.8" y="101.5" width="74.4" height="27" rx="3"/><rect x="224.2" y="101.5" width="52" height="27" rx="3"/><rect x="279.2" y="101.5" width="57.3" height="27" rx="3"/><rect x="339.5" y="101.5" width="54.5" height="27" rx="3"/><rect x="-18.5" y="131.5" width="63.1" height="27" rx="3"/><rect x="47.6" y="131.5" width="68.9" height="27" rx="3"/><rect x="119.5" y="131.5" width="61.5" height="27" rx="3"/><rect x="183.9" y="131.5" width="54.8" height="27" rx="3"/><rect x="241.7" y="131.5" width="68.8" height="27" rx="3"/><rect x="313.4" y="131.5" width="53.2" height="27" rx="3"/><rect x="1.5" y="161.5" width="69.1" height="27" rx="3"/><rect x="73.6" y="161.5" width="47.7" height="27" rx="3"/><rect x="124.2" y="161.5" width="49" height="27" rx="3"/><rect x="176.3" y="161.5" width="78.1" height="27" rx="3"/><rect x="257.4" y="161.5" width="65.1" height="27" rx="3"/><rect x="325.6" y="161.5" width="72.2" height="27" rx="3"/><rect x="-18.5" y="191.5" width="62.8" height="27" rx="3"/><rect x="47.3" y="191.5" width="62" height="27" rx="3"/><rect x="112.3" y="191.5" width="55.2" height="27" rx="3"/><rect x="170.5" y="191.5" width="57.5" height="27" rx="3"/><rect x="231" y="191.5" width="52.4" height="27" rx="3"/><rect x="286.4" y="191.5" width="73.7" height="27" rx="3"/><rect x="1.5" y="221.5" width="62.5" height="27" rx="3"/><rect x="67" y="221.5" width="63.6" height="27" rx="3"/><rect x="133.6" y="221.5" width="53.4" height="27" rx="3"/><rect x="190" y="221.5" width="71" height="27" rx="3"/><rect x="264" y="221.5" width="72.2" height="27" rx="3"/><rect x="339.2" y="221.5" width="63.8" height="27" rx="3"/></g>
+  <rect x="18" y="120" width="56" height="140" rx="26" class="jn13-door"/>
+  <rect width="360" height="340" fill="url(#jn13-blamp)"/>
+  <rect y="258" width="360" height="82" fill="url(#jn13-broad)"/>
+  <g class="jn13-grit"><circle cx="0" cy="286.6" r="1.1" opacity="0.4"/><circle cx="118" cy="276.8" r="1" opacity="0.5"/><circle cx="285.5" cy="289.1" r="1.4" opacity="0.3"/><circle cx="111.5" cy="289" r="1.1" opacity="0.3"/><circle cx="256.1" cy="268" r="1.4" opacity="0.4"/><circle cx="62.9" cy="329.7" r="1.5" opacity="0.3"/><circle cx="166.2" cy="283" r="1.5" opacity="0.4"/><circle cx="57.6" cy="262.9" r="0.6" opacity="0.4"/><circle cx="224.8" cy="299" r="0.9" opacity="0.3"/><circle cx="117.5" cy="306" r="1.5" opacity="0.4"/><circle cx="169.3" cy="326.4" r="0.7" opacity="0.4"/><circle cx="185.5" cy="318.7" r="0.8" opacity="0.5"/><circle cx="261.8" cy="290.4" r="1.2" opacity="0.5"/><circle cx="136" cy="320.4" r="1.2" opacity="0.4"/><circle cx="311.5" cy="338.2" r="0.6" opacity="0.4"/><circle cx="16.8" cy="265.5" r="0.7" opacity="0.3"/><circle cx="311.9" cy="335.3" r="1.2" opacity="0.5"/><circle cx="172" cy="319.5" r="0.5" opacity="0.5"/><circle cx="277.5" cy="272.8" r="0.8" opacity="0.4"/><circle cx="147.5" cy="301.1" r="1.2" opacity="0.4"/><circle cx="100.1" cy="281.8" r="0.7" opacity="0.5"/><circle cx="245.7" cy="285" r="0.9" opacity="0.3"/><circle cx="358" cy="331.1" r="0.9" opacity="0.2"/><circle cx="183.7" cy="272.4" r="1.5" opacity="0.4"/><circle cx="43.5" cy="294.4" r="1.3" opacity="0.3"/><circle cx="134.3" cy="315" r="1.5" opacity="0.5"/><circle cx="193.4" cy="317.9" r="0.5" opacity="0.3"/><circle cx="124" cy="338.8" r="1.1" opacity="0.4"/><circle cx="196.5" cy="332.8" r="0.8" opacity="0.3"/><circle cx="215.2" cy="271.9" r="0.7" opacity="0.3"/><circle cx="327.6" cy="320.2" r="0.5" opacity="0.3"/><circle cx="96.8" cy="269.7" r="0.9" opacity="0.3"/><circle cx="291.2" cy="275.7" r="1.5" opacity="0.4"/><circle cx="181.2" cy="325.5" r="1.4" opacity="0.5"/><circle cx="359.1" cy="299.1" r="1.5" opacity="0.4"/><circle cx="324.4" cy="305.2" r="1.1" opacity="0.4"/><circle cx="299.9" cy="268.8" r="1" opacity="0.4"/><circle cx="187.7" cy="331" r="1.2" opacity="0.4"/><circle cx="93.7" cy="339.8" r="0.7" opacity="0.3"/><circle cx="96.2" cy="302" r="0.7" opacity="0.2"/><circle cx="172.2" cy="321.6" r="1.5" opacity="0.2"/><circle cx="102.2" cy="263.3" r="0.8" opacity="0.3"/><circle cx="171" cy="270" r="0.8" opacity="0.5"/><circle cx="331.8" cy="310.5" r="1.3" opacity="0.4"/><circle cx="191" cy="289.4" r="1.4" opacity="0.4"/><circle cx="178.3" cy="302.8" r="0.6" opacity="0.3"/><circle cx="185.9" cy="273.9" r="1.4" opacity="0.2"/><circle cx="180.5" cy="309.5" r="1.3" opacity="0.2"/><circle cx="1.4" cy="275.7" r="1.1" opacity="0.4"/><circle cx="184.9" cy="287.5" r="0.9" opacity="0.3"/><circle cx="320.3" cy="263.7" r="1.5" opacity="0.4"/><circle cx="184.6" cy="331.7" r="0.9" opacity="0.3"/><circle cx="12.4" cy="272.9" r="1.3" opacity="0.5"/><circle cx="144.1" cy="285.2" r="1.3" opacity="0.3"/><circle cx="2.6" cy="267.1" r="1" opacity="0.3"/><circle cx="309.7" cy="281.5" r="1.2" opacity="0.4"/><circle cx="48.3" cy="331.4" r="1.2" opacity="0.5"/><circle cx="358.4" cy="275" r="1.2" opacity="0.5"/><circle cx="158.2" cy="292.6" r="1.1" opacity="0.5"/><circle cx="55.9" cy="297.9" r="0.7" opacity="0.3"/><circle cx="293.4" cy="293" r="1.2" opacity="0.2"/><circle cx="234.6" cy="271" r="1.6" opacity="0.4"/><circle cx="109.8" cy="274.8" r="0.5" opacity="0.2"/><circle cx="264.1" cy="283.3" r="0.7" opacity="0.3"/><circle cx="297" cy="324.8" r="0.6" opacity="0.3"/><circle cx="32.1" cy="284.4" r="1.5" opacity="0.5"/><circle cx="230.4" cy="285.1" r="0.7" opacity="0.2"/><circle cx="291.8" cy="331.3" r="1.1" opacity="0.4"/><circle cx="323.5" cy="316" r="1.5" opacity="0.5"/><circle cx="276.7" cy="327.4" r="0.7" opacity="0.5"/></g>
+  <ellipse class="jn13-halo" cx="180" cy="168" rx="92" ry="134"/>
+  <ellipse cx="184" cy="296" rx="52" ry="7" class="jn13-shadow"/>
+  <path class="jn13-basin" d="M118 286 H250 L236 316 H132 Z"/>
+  <ellipse class="jn13-basin-water" cx="184" cy="288" rx="62" ry="5"/>
+  <g class="jn13-figure">
+    <path d="M151 100 C162 92 198 92 209 100 C220 108 222 130 220 160 C219 200 224 240 228 282 L132 282 C136 240 141 200 140 160 C138 130 140 108 151 100 Z" fill="url(#jn13-brobe)" class="jn13-robe-edge"/>
+    <path d="M150 104 C142 130 140 160 146 196 L156 196 C152 160 154 130 160 108 Z M210 104 C218 130 220 160 214 196 L204 196 C208 160 206 130 200 108 Z" class="jn13-fold"/>
+    <path d="M144 164 Q180 172 216 164 L216 172 Q180 180 144 172 Z" class="jn13-belt"/>
+    <ellipse cx="164" cy="290" rx="14" ry="5.5" class="jn13-foot-b"/><ellipse cx="200" cy="290" rx="14" ry="5.5" class="jn13-foot-b"/>
+    <rect x="174" y="84" width="12" height="16" class="jn13-skin"/>
+    <path d="M167 70 C167 59 173 54 180 54 C187 54 193 59 193 70 C193 79 188 87 180 89 C172 87 167 79 167 70 Z" class="jn13-skin"/>
+    <path d="M166 68 C165 57 172 52 180 52 C188 52 195 57 194 68 C192 62 187 60 180 60 C173 60 168 62 166 68 Z" class="jn13-hair"/>
+    <path d="M168 75 C169 85 174 92 180 94 C186 92 191 85 192 75 C189 81 185 84 180 84 C175 84 171 81 168 75 Z" class="jn13-hair"/>
+  </g>
+  <g><circle class="jn13-dust" style="--k:0" cx="159" cy="282.5" r="2.9"/><circle class="jn13-dust" style="--k:1" cx="199.2" cy="286.7" r="1.7"/><circle class="jn13-dust" style="--k:2" cx="168.8" cy="293.8" r="1.4"/><circle class="jn13-dust" style="--k:3" cx="198.1" cy="284.7" r="2.3"/><circle class="jn13-dust" style="--k:4" cx="160.1" cy="288.4" r="1.9"/><circle class="jn13-dust" style="--k:5" cx="185.3" cy="283.5" r="2"/><circle class="jn13-dust" style="--k:6" cx="158.7" cy="293.3" r="2.9"/><circle class="jn13-dust" style="--k:7" cx="194" cy="290" r="1.9"/><circle class="jn13-dust" style="--k:0" cx="165.4" cy="293.8" r="1.8"/><circle class="jn13-dust" style="--k:1" cx="188.2" cy="294" r="1.7"/><circle class="jn13-dust" style="--k:2" cx="164.4" cy="284.4" r="2.3"/><circle class="jn13-dust" style="--k:3" cx="200" cy="284.9" r="1.4"/><circle class="jn13-dust" style="--k:4" cx="167.7" cy="289" r="2.8"/><circle class="jn13-dust" style="--k:5" cx="195.2" cy="282.7" r="2.3"/><circle class="jn13-dust" style="--k:6" cx="168.4" cy="283.1" r="2"/><circle class="jn13-dust" style="--k:7" cx="189.9" cy="282.4" r="2.8"/></g>
+  <g><ellipse class="jn13-drop" style="--k:0" cx="160" cy="262" rx="2.6" ry="4"/><ellipse class="jn13-drop" style="--k:1" cx="208" cy="258" rx="2.6" ry="4"/><ellipse class="jn13-drop" style="--k:2" cx="170" cy="252" rx="2.4" ry="3.6"/><ellipse class="jn13-drop" style="--k:3" cx="196" cy="250" rx="2.4" ry="3.6"/></g>
+  <text x="180" y="24" text-anchor="middle" class="pic-lab b">washed: clean every whit</text>
+  <text x="300" y="276" text-anchor="middle" class="pic-lab soft">only the</text>
+  <text x="300" y="294" text-anchor="middle" class="pic-lab soft">feet</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Bathed once, feet as needed</h2>
@@ -345,31 +466,127 @@
   <div class="inner">
     <div class="split">
       <div class="stage">
-        <svg class="jn13-table" viewBox="0 0 600 380" role="img" aria-label="The supper table from above. John reclines in front of Jesus, leaning back against His chest. Jesus hands a dipped piece of bread to Judas, who is close beside Him.">
-          <path class="tbl" d="M190 340 V140 H410 V340"/>
-          <path class="tbl-edge" d="M168 340 V118 H432 V340 M212 340 V162 H388 V340"/>
-          <g>
-            <line class="man" x1="150" y1="170" x2="80" y2="185"/><circle class="head" cx="150" cy="170" r="12"/>
-            <line class="man" x1="150" y1="225" x2="80" y2="240"/><circle class="head" cx="150" cy="225" r="12"/>
-            <line class="man" x1="150" y1="280" x2="80" y2="295"/><circle class="head" cx="150" cy="280" r="12"/>
-            <line class="man" x1="150" y1="335" x2="80" y2="350"/><circle class="head" cx="150" cy="335" r="12"/>
-            <line class="man" x1="210" y1="100" x2="196" y2="34"/><circle class="head" cx="210" cy="100" r="12" style="fill:var(--danger)"/>
-            <line class="man jesus-b" x1="270" y1="100" x2="256" y2="34"/><circle class="head jesus" cx="270" cy="100" r="14"/>
-            <line class="man" x1="318" y1="96" x2="304" y2="30"/><circle class="head" cx="318" cy="96" r="12" style="fill:var(--cool)"/>
-            <line class="man" x1="360" y1="100" x2="346" y2="34"/><circle class="head" cx="360" cy="100" r="12"/>
-            <line class="man" x1="400" y1="100" x2="386" y2="34"/><circle class="head" cx="400" cy="100" r="12"/>
-            <line class="man" x1="450" y1="170" x2="520" y2="185"/><circle class="head" cx="450" cy="170" r="12"/>
-            <line class="man" x1="450" y1="225" x2="520" y2="240"/><circle class="head" cx="450" cy="225" r="12"/>
-            <line class="man" x1="450" y1="280" x2="520" y2="295"/><circle class="head" cx="450" cy="280" r="12"/>
-          </g>
-          <text class="who" x="270" y="140" text-anchor="middle" style="fill:var(--accent-hot)">Jesus</text>
-          <text class="who" x="330" y="140" text-anchor="start" style="fill:var(--cool)">John</text>
-          <text class="who" x="200" y="140" text-anchor="end" style="fill:var(--danger)">Judas</text>
-          <text class="who" x="472" y="150" text-anchor="start">Peter</text>
-          <path class="sop draw" pathLength="1" d="M262 92 Q240 62 218 92"/>
-          <circle class="bread" cx="218" cy="88" r="7"/>
-          <text x="300" y="250" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">one likely seating</text>
-        </svg>
+        <svg class="pic jn13-table jn13-sop" style="--ar:1.579" viewBox="0 0 600 380" role="img" aria-label="The supper table from above, in lamplight. John reclines just in front of Jesus and leans back against his breast. Jesus hands a dipped piece of bread to Judas, who lies close beside him, and Peter watches from across the table.">
+  <defs><radialGradient id="jn13-s-lamp" cx=".5" cy=".42" r=".62"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--glow));stop-opacity:0.9"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.35"/><stop offset="1" style="stop-color:var(--on-glow);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn13-s-wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--leather) 80%, var(--glow))"/><stop offset="0.5" style="stop-color:var(--leather)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--leather) 55%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn13-s-flame"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.35" style="stop-color:var(--warm);stop-opacity:0.8"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn13-s-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <radialGradient id="jn13-s-halo"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.75"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient></defs>
+  <rect width="600" height="380" class="jn13-floor"/>
+  <g class="jn13-flags"><rect x="-26.9" y="1.5" width="92.9" height="51" rx="5"/><rect x="69" y="1.5" width="99.3" height="51" rx="5"/><rect x="171.2" y="1.5" width="97.6" height="51" rx="5"/><rect x="271.8" y="1.5" width="93.9" height="51" rx="5"/><rect x="368.8" y="1.5" width="83.1" height="51" rx="5"/><rect x="454.9" y="1.5" width="93" height="51" rx="5"/><rect x="550.9" y="1.5" width="93.2" height="51" rx="5"/><rect x="-37.9" y="55.5" width="89.6" height="54.6" rx="5"/><rect x="54.7" y="55.5" width="91.9" height="54.6" rx="5"/><rect x="149.6" y="55.5" width="75.7" height="54.6" rx="5"/><rect x="228.3" y="55.5" width="87" height="54.6" rx="5"/><rect x="318.3" y="55.5" width="95.8" height="54.6" rx="5"/><rect x="417" y="55.5" width="88.3" height="54.6" rx="5"/><rect x="508.4" y="55.5" width="59.6" height="54.6" rx="5"/><rect x="571" y="55.5" width="100.3" height="54.6" rx="5"/><rect x="-15.6" y="113.1" width="97.7" height="71.9" rx="5"/><rect x="85.1" y="113.1" width="85.2" height="71.9" rx="5"/><rect x="173.3" y="113.1" width="59.4" height="71.9" rx="5"/><rect x="235.7" y="113.1" width="55" height="71.9" rx="5"/><rect x="293.7" y="113.1" width="94.1" height="71.9" rx="5"/><rect x="390.8" y="113.1" width="64" height="71.9" rx="5"/><rect x="457.8" y="113.1" width="78" height="71.9" rx="5"/><rect x="538.9" y="113.1" width="73.8" height="71.9" rx="5"/><rect x="-31.9" y="188" width="96.8" height="53.8" rx="5"/><rect x="67.9" y="188" width="73.9" height="53.8" rx="5"/><rect x="144.9" y="188" width="83.4" height="53.8" rx="5"/><rect x="231.3" y="188" width="81.2" height="53.8" rx="5"/><rect x="315.4" y="188" width="67.3" height="53.8" rx="5"/><rect x="385.7" y="188" width="65.3" height="53.8" rx="5"/><rect x="454" y="188" width="93.3" height="53.8" rx="5"/><rect x="550.4" y="188" width="95.6" height="53.8" rx="5"/><rect x="-7" y="244.8" width="90.6" height="69" rx="5"/><rect x="86.6" y="244.8" width="73.2" height="69" rx="5"/><rect x="162.8" y="244.8" width="91.5" height="69" rx="5"/><rect x="257.3" y="244.8" width="76.6" height="69" rx="5"/><rect x="336.9" y="244.8" width="98.5" height="69" rx="5"/><rect x="438.3" y="244.8" width="64.7" height="69" rx="5"/><rect x="506.1" y="244.8" width="78.1" height="69" rx="5"/><rect x="587.1" y="244.8" width="80.1" height="69" rx="5"/><rect x="-37.1" y="316.7" width="64.7" height="67.2" rx="5"/><rect x="30.6" y="316.7" width="59.2" height="67.2" rx="5"/><rect x="92.8" y="316.7" width="81.4" height="67.2" rx="5"/><rect x="177.2" y="316.7" width="85.8" height="67.2" rx="5"/><rect x="266" y="316.7" width="62.6" height="67.2" rx="5"/><rect x="331.6" y="316.7" width="69.9" height="67.2" rx="5"/><rect x="404.5" y="316.7" width="85.8" height="67.2" rx="5"/><rect x="493.3" y="316.7" width="92.7" height="67.2" rx="5"/><rect x="589" y="316.7" width="91.2" height="67.2" rx="5"/></g>
+  <rect width="600" height="380" fill="url(#jn13-s-lamp)"/>
+  <path d="M168 340 V118 H432 V340 H388 V162 H212 V340 Z" transform="translate(4 6)" class="jn13-tshadow" filter="url(#jn13-s-soft)"/>
+  <path d="M168 340 V118 H432 V340 H388 V162 H212 V340 Z" fill="url(#jn13-s-wood)" class="jn13-tbl"/>
+  <path d="M172 336 V122 H428 V336" fill="none" class="jn13-tedge"/>
+  <g><ellipse cx="410" cy="138" rx="5" ry="3.4" class="jn13-bread"/><ellipse cx="190" cy="190" rx="7" ry="4.5" class="jn13-bread"/><circle cx="190" cy="250" r="4.4" class="jn13-cup"/><ellipse cx="190" cy="304" rx="5" ry="3.4" class="jn13-bread"/><ellipse cx="410" cy="190" rx="7" ry="4.5" class="jn13-bread"/><circle cx="410" cy="250" r="4.4" class="jn13-cup"/><ellipse cx="410" cy="304" rx="5" ry="3.4" class="jn13-bread"/></g>
+  
+  <circle cx="300" cy="250" r="34" fill="url(#jn13-s-flame)"/><ellipse cx="300" cy="252" rx="8" ry="4" class="jn13-lamp"/><circle cx="300" cy="248" r="3" style="fill:var(--glow)"/>
+  <circle cx="268" cy="80" r="44" fill="url(#jn13-s-halo)"/>
+  <g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 177.3 C143.3 183.9 132.3 184.8 120.2 185 C102.3 187.2 80.8 188.4 72.8 188.7 L71.1 179.2 C78.7 176.6 99.3 170.4 116.8 166.3 C128.3 162.2 138.9 159.3 143.9 164.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 177.3 C143.3 183.9 132.3 184.8 120.2 185 C102.3 187.2 80.8 188.4 72.8 188.7 L71.1 179.2 C78.7 176.6 99.3 170.4 116.8 166.3 C128.3 162.2 138.9 159.3 143.9 164.5 Z" style="fill:color-mix(in srgb, var(--cool) 45%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M138.2 172.1 L81.8 182.2" class="jn13-sheen"/>
+    <path d="M140.9 181.8 Q148.2 188.6 156.2 182.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="68.5" cy="181.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="69.4" cy="187" r="2.7"/>
+    <circle cx="150" cy="170" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 232.3 C143.3 238.9 132.3 239.8 120.2 240 C102.3 242.2 80.8 243.4 72.8 243.7 L71.1 234.2 C78.7 231.6 99.3 225.4 116.8 221.3 C128.3 217.2 138.9 214.3 143.9 219.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 232.3 C143.3 238.9 132.3 239.8 120.2 240 C102.3 242.2 80.8 243.4 72.8 243.7 L71.1 234.2 C78.7 231.6 99.3 225.4 116.8 221.3 C128.3 217.2 138.9 214.3 143.9 219.5 Z" style="fill:color-mix(in srgb, var(--glow) 62%, var(--warm))" class="jn13-robe"/>
+    <path d="M138.2 227.1 L81.8 237.2" class="jn13-sheen"/>
+    <path d="M140.9 236.8 Q148.2 243.6 156.2 237.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 62%, var(--warm))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="68.5" cy="236.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="69.4" cy="242" r="2.7"/>
+    <circle cx="150" cy="225" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 287.3 C143.3 293.9 132.3 294.8 120.2 295 C102.3 297.2 80.8 298.4 72.8 298.7 L71.1 289.2 C78.7 286.6 99.3 280.4 116.8 276.3 C128.3 272.2 138.9 269.3 143.9 274.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 287.3 C143.3 293.9 132.3 294.8 120.2 295 C102.3 297.2 80.8 298.4 72.8 298.7 L71.1 289.2 C78.7 286.6 99.3 280.4 116.8 276.3 C128.3 272.2 138.9 269.3 143.9 274.5 Z" style="fill:color-mix(in srgb, var(--wine) 50%, var(--glow))" class="jn13-robe"/>
+    <path d="M138.2 282.1 L81.8 292.2" class="jn13-sheen"/>
+    <path d="M140.9 291.8 Q148.2 298.6 156.2 292.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--wine) 50%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="68.5" cy="291.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="69.4" cy="297" r="2.7"/>
+    <circle cx="150" cy="280" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M146.2 342.3 C143.3 348.9 132.3 349.8 120.2 350 C102.3 352.2 80.8 353.4 72.8 353.7 L71.1 344.2 C78.7 341.6 99.3 335.4 116.8 331.3 C128.3 327.2 138.9 324.3 143.9 329.5 Z" transform="translate(3 4)"/>
+    <path d="M146.2 342.3 C143.3 348.9 132.3 349.8 120.2 350 C102.3 352.2 80.8 353.4 72.8 353.7 L71.1 344.2 C78.7 341.6 99.3 335.4 116.8 331.3 C128.3 327.2 138.9 324.3 143.9 329.5 Z" style="fill:color-mix(in srgb, var(--leather) 75%, var(--glow))" class="jn13-robe"/>
+    <path d="M138.2 337.1 L81.8 347.2" class="jn13-sheen"/>
+    <path d="M140.9 346.8 Q148.2 353.6 156.2 347.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--leather) 75%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="68.5" cy="346.9" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="69.4" cy="352" r="2.7"/>
+    <circle cx="150" cy="335" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M352.8 96.1 C346.2 93.2 345.4 82.2 345.4 70 C343.4 52.1 342.4 30.8 342.3 22.7 L351.7 21.1 C354.2 28.8 360.2 49.3 364.1 66.9 C368.1 78.4 370.9 89.1 365.6 94 Z" transform="translate(3 4)"/>
+    <path d="M352.8 96.1 C346.2 93.2 345.4 82.2 345.4 70 C343.4 52.1 342.4 30.8 342.3 22.7 L351.7 21.1 C354.2 28.8 360.2 49.3 364.1 66.9 C368.1 78.4 370.9 89.1 365.6 94 Z" style="fill:color-mix(in srgb, var(--glow) 45%, var(--cool))" class="jn13-robe"/>
+    <path d="M358 88.2 L348.6 31.8" class="jn13-sheen"/>
+    <path d="M348.3 90.8 Q341.4 98 347.8 106.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 45%, var(--cool))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="349.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="343.9" cy="19.4" r="2.7"/>
+    <circle cx="360" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M396.8 96.1 C390.2 93.2 389.4 82.2 389.4 70 C387.4 52.1 386.4 30.8 386.3 22.7 L395.7 21.1 C398.2 28.8 404.2 49.3 408.1 66.9 C412.1 78.4 414.9 89.1 409.6 94 Z" transform="translate(3 4)"/>
+    <path d="M396.8 96.1 C390.2 93.2 389.4 82.2 389.4 70 C387.4 52.1 386.4 30.8 386.3 22.7 L395.7 21.1 C398.2 28.8 404.2 49.3 408.1 66.9 C412.1 78.4 414.9 89.1 409.6 94 Z" style="fill:color-mix(in srgb, var(--warm) 55%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M402 88.2 L392.6 31.8" class="jn13-sheen"/>
+    <path d="M392.3 90.8 Q385.4 98 391.8 106.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="393.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="387.9" cy="19.4" r="2.7"/>
+    <circle cx="404" cy="100" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 164.5 C461.1 159.3 471.7 162.2 483.2 166.3 C500.7 170.4 521.3 176.6 528.9 179.2 L527.2 188.7 C519.2 188.4 497.7 187.2 479.8 185 C467.7 184.8 456.7 183.9 453.8 177.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 164.5 C461.1 159.3 471.7 162.2 483.2 166.3 C500.7 170.4 521.3 176.6 528.9 179.2 L527.2 188.7 C519.2 188.4 497.7 187.2 479.8 185 C467.7 184.8 456.7 183.9 453.8 177.3 Z" style="fill:color-mix(in srgb, var(--cool) 45%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M461.8 172.1 L518.2 182.2" class="jn13-sheen"/>
+    <path d="M462.6 162.1 Q458.1 153.2 448.3 156.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="530.6" cy="187" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="531.5" cy="181.9" r="2.7"/>
+    <circle cx="450" cy="170" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 219.5 C461.1 214.3 471.7 217.2 483.2 221.3 C500.7 225.4 521.3 231.6 528.9 234.2 L527.2 243.7 C519.2 243.4 497.7 242.2 479.8 240 C467.7 239.8 456.7 238.9 453.8 232.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 219.5 C461.1 214.3 471.7 217.2 483.2 221.3 C500.7 225.4 521.3 231.6 528.9 234.2 L527.2 243.7 C519.2 243.4 497.7 242.2 479.8 240 C467.7 239.8 456.7 238.9 453.8 232.3 Z" style="fill:color-mix(in srgb, var(--glow) 62%, var(--warm))" class="jn13-robe"/>
+    <path d="M461.8 227.1 L518.2 237.2" class="jn13-sheen"/>
+    <path d="M462.6 217.1 Q458.1 208.2 448.3 211.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 62%, var(--warm))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="530.6" cy="242" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="531.5" cy="236.9" r="2.7"/>
+    <circle cx="450" cy="225" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M456.1 274.5 C461.1 269.3 471.7 272.2 483.2 276.3 C500.7 280.4 521.3 286.6 528.9 289.2 L527.2 298.7 C519.2 298.4 497.7 297.2 479.8 295 C467.7 294.8 456.7 293.9 453.8 287.3 Z" transform="translate(3 4)"/>
+    <path d="M456.1 274.5 C461.1 269.3 471.7 272.2 483.2 276.3 C500.7 280.4 521.3 286.6 528.9 289.2 L527.2 298.7 C519.2 298.4 497.7 297.2 479.8 295 C467.7 294.8 456.7 293.9 453.8 287.3 Z" style="fill:color-mix(in srgb, var(--wine) 50%, var(--glow))" class="jn13-robe"/>
+    <path d="M461.8 282.1 L518.2 292.2" class="jn13-sheen"/>
+    <path d="M462.6 272.1 Q458.1 263.2 448.3 266.5" class="jn13-arm" style="stroke:color-mix(in srgb, var(--wine) 50%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="530.6" cy="297" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="531.5" cy="291.9" r="2.7"/>
+    <circle cx="450" cy="280" r="7" class="jn13-head"/>
+  </g><g class="jn13-man">
+    <path class="jn13-cast" d="M204.8 96.1 C198.2 93.2 197.4 82.2 197.4 70 C195.4 52.1 194.4 30.8 194.3 22.7 L203.7 21.1 C206.2 28.8 212.2 49.3 216.1 66.9 C220.1 78.4 222.9 89.1 217.6 94 Z" transform="translate(3 4)"/>
+    <path d="M204.8 96.1 C198.2 93.2 197.4 82.2 197.4 70 C195.4 52.1 194.4 30.8 194.3 22.7 L203.7 21.1 C206.2 28.8 212.2 49.3 216.1 66.9 C220.1 78.4 222.9 89.1 217.6 94 Z" style="fill:color-mix(in srgb, var(--wine) 70%, var(--on-glow))" class="jn13-robe"/>
+    <path d="M210 88.2 L200.6 31.8" class="jn13-sheen"/>
+    <path d="M200.3 90.8 Q193.4 98 199.8 106.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--wine) 70%, var(--on-glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="201.1" cy="18.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="195.9" cy="19.4" r="2.7"/>
+    <circle cx="212" cy="100" r="7" class="jn13-head jn13-judas"/>
+  </g><g class="jn13-man jn13-lord">
+    <path class="jn13-cast" d="M260.8 94.1 C254.2 91.2 253.4 80.2 253.4 68 C251.4 50.1 250.4 28.8 250.3 20.7 L259.7 19.1 C262.2 26.8 268.2 47.3 272.1 64.9 C276.1 76.4 278.9 87.1 273.6 92 Z" transform="translate(3 4)"/>
+    <path d="M260.8 94.1 C254.2 91.2 253.4 80.2 253.4 68 C251.4 50.1 250.4 28.8 250.3 20.7 L259.7 19.1 C262.2 26.8 268.2 47.3 272.1 64.9 C276.1 76.4 278.9 87.1 273.6 92 Z" style="fill:color-mix(in srgb, var(--glow) 85%, var(--warm))" class="jn13-robe"/>
+    <path d="M266 86.2 L256.6 29.8" class="jn13-sheen"/>
+    <path d="M256.3 88.8 Q249.4 96 255.8 104.1" class="jn13-arm" style="stroke:color-mix(in srgb, var(--glow) 85%, var(--warm))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="257.1" cy="16.5" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="251.9" cy="17.4" r="2.7"/>
+    <circle cx="268" cy="98" r="7" class="jn13-head"/>
+  </g><g class="jn13-man jn13-john">
+    <path class="jn13-cast" d="M304.9 101.8 C298.5 98.6 298.1 87.6 298.6 75.4 C297.4 57.4 297.8 40.6 298 32.5 L307.5 31.4 C309.7 39.1 314.2 55.3 317.5 73.1 C320.9 84.7 323.3 95.5 317.8 100.2 Z" transform="translate(3 4)"/>
+    <path d="M304.9 101.8 C298.5 98.6 298.1 87.6 298.6 75.4 C297.4 57.4 297.8 40.6 298 32.5 L307.5 31.4 C309.7 39.1 314.2 55.3 317.5 73.1 C320.9 84.7 323.3 95.5 317.8 100.2 Z" style="fill:color-mix(in srgb, var(--cool) 55%, var(--glow))" class="jn13-robe"/>
+    <path d="M310.5 94.1 L304 41.9" class="jn13-sheen"/>
+    <path d="M300.7 96.3 Q293.5 103.3 299.6 111.6" class="jn13-arm" style="stroke:color-mix(in srgb, var(--cool) 55%, var(--glow))"/>
+    <circle class="jn13-foot" style="--t:0s" cx="305" cy="28.7" r="2.7"/>
+    <circle class="jn13-foot" style="--t:0s" cx="299.8" cy="29.3" r="2.7"/>
+    <circle cx="312" cy="106" r="7" class="jn13-head"/>
+  </g></g>
+  <path class="jn13-sop-arc draw" pathLength="1" d="M262 92 Q240 70 220 92"/>
+  <ellipse class="jn13-sopbread" cx="220" cy="92" rx="5" ry="3.6"/>
+  <text class="pic-lab b" x="268" y="140" text-anchor="middle">Jesus</text>
+  <text class="pic-lab" x="324" y="140">John</text>
+  <text class="pic-lab" x="204" y="140" text-anchor="end">Judas</text>
+  <text class="pic-lab" x="474" y="150">Peter</text>
+  <text x="300" y="214" text-anchor="middle" class="pic-lab soft">one likely seating</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">The sop</h2>
@@ -402,33 +619,16 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="30" data-hl="and it was night"></blockquote>
-    <div class="stage rise" style="--d:1">
-      <svg class="jn13-door" viewBox="0 0 600 260" role="img" aria-label="A lit room with Jesus and His disciples at the table. One figure gets up, walks out the door, and disappears into the dark night.">
-        <rect class="night" x="0" y="0" width="600" height="260" rx="10"/>
-        <circle class="star" style="--k:0" cx="380" cy="40" r="2.5"/><circle class="star" style="--k:1" cx="440" cy="80" r="2"/><circle class="star" style="--k:2" cx="520" cy="34" r="2.5"/>
-        <circle class="star" style="--k:3" cx="560" cy="110" r="2"/><circle class="star" style="--k:4" cx="410" cy="150" r="1.8"/><circle class="star" style="--k:5" cx="580" cy="200" r="2.2"/>
-        <circle class="star" style="--k:6" cx="30" cy="30" r="2"/><circle class="star" style="--k:7" cx="300" cy="24" r="1.8"/>
-        <circle cx="490" cy="70" r="20" style="fill:var(--glow)"/><circle cx="500" cy="63" r="18" class="night"/>
-        <rect class="room" x="40" y="50" width="250" height="180"/>
-        <path class="spill" d="M290 150 L420 120 L420 245 L290 230 Z"/>
-        <rect x="286" y="150" width="8" height="80" style="fill:var(--glow)"/>
-        <rect class="tbl" x="90" y="140" width="150" height="34" rx="4"/>
-        <g class="guest">
-          <circle cx="100" cy="122" r="9"/><circle cx="128" cy="118" r="9"/><circle cx="184" cy="118" r="9"/><circle cx="212" cy="120" r="9"/><circle cx="238" cy="124" r="9"/>
-          <circle cx="100" cy="194" r="9"/><circle cx="128" cy="198" r="9"/><circle cx="156" cy="198" r="9"/><circle cx="184" cy="198" r="9"/><circle cx="212" cy="196" r="9"/><circle cx="238" cy="192" r="9"/>
-        </g>
-        <circle class="lord" cx="156" cy="116" r="10"/>
-        <g class="judas">
-          <circle cx="266" cy="166" r="9"/>
-          <path d="M256 178 Q266 172 276 178 L280 222 H252 Z"/>
-        </g>
-        <text class="was" x="470" y="230" text-anchor="middle" font-size="30">and it was night</text>
-      </svg>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:56% 22%"><span class="art-frame"><img src="../assets/art/tissot-judas-leaves-the-upper-room.jpg" width="440" height="600" alt="Judas, wrapped in a brown cloak, pulls open a heavy wooden door and slips out of the house into the night, glancing back over his shoulder."></span>
+        <figcaption>James Tissot, <i>Judas Leaves the Upper Room</i></figcaption></figure>
+      <div>
+      <h2 class="rise" style="--d:1">Four words</h2>
+      <p class="note rise" style="--d:2">John could have just said Judas left. He adds <em>“and it was night.”</em> It was dark outside, and darker inside Judas. He walked out on the Light of the world.</p>
+      <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
+      <p class="note step">Judas and Peter both failed Jesus that night. Judas was sorry too (Matthew 27:3), but he took his sorrow everywhere except to Jesus, and it destroyed him. Peter wept, and came back (Luke 22:62). The difference wasn't the size of the sin. It was where each man took it.</p>
+      </div>
     </div>
-    <h2 class="rise" style="--d:2">Four words</h2>
-    <p class="note rise" style="--d:3">John could have just said Judas left. He adds <em>“and it was night.”</em> It was dark outside, and darker inside Judas. He walked out on the Light of the world.</p>
-    <blockquote class="quote step"><p>“Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.”</p><cite>John 8:12</cite></blockquote>
-    <p class="note step">Judas and Peter both failed Jesus that night. Judas was sorry too (Matthew 27:3), but he took his sorrow everywhere except to Jesus, and it destroyed him. Peter wept, and came back (Luke 22:62). The difference wasn't the size of the sin. It was where each man took it.</p>
   </div>
 </section>
 
@@ -460,11 +660,11 @@
     <blockquote class="quote rise" data-q="34" data-hl="as I have loved you"></blockquote>
     <h2 class="rise" style="--d:1">What makes it new</h2>
     <p class="note rise" style="--d:2">“Love thy neighbour” wasn't new. Moses wrote it about 1,400 years earlier (Leviticus 19:18). What's new is the <em>measuring stick</em>.</p>
-    <div class="jn13-measure" aria-label="Two measures of love. The old one: as thyself, a short bar. The new one: as I have loved you, a bar that runs the whole length, marked by the towel, the sop, and His life.">
+    <div class="jn13-measure" aria-label="Two measures of love. The old one: as thyself, a short bar. The new one: as I have loved you, a bar that runs the whole length, marked by the towel, the sop, and his life.">
       <div class="row rise" style="--d:3"><span class="lbl">“as thyself”<small>Leviticus 19:18</small></span><div class="bar"><i style="--w:38%"></i></div></div>
       <div class="new step">
         <div class="row"><span class="lbl">“as I have loved you”<small>John 13:34</small></span><div class="bar"><i style="--w:100%"></i></div></div>
-        <div class="row"><span></span><div class="ticks"><span style="--x:0%;--k:0">a towel (13:5)</span><span style="--x:50%;--k:1">the sop (13:26)</span><span style="--x:100%;--k:2">His life (15:13)</span></div></div>
+        <div class="row"><span></span><div class="ticks"><span style="--x:0%;--k:0">a towel (13:5)</span><span style="--x:50%;--k:1">the sop (13:26)</span><span style="--x:100%;--k:2">his life (15:13)</span></div></div>
       </div>
     </div>
     <p class="note step">Nobody loves like that on willpower. It starts with being loved: <em>“We love him, because he first loved us”</em> (1 John 4:19).</p>

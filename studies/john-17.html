@@ -10,40 +10,81 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* Circles widening out (svg.jn17-rings): each .jn17-ring grows in after the one inside it (--k);
-   a .jn17-you-go step lights the .jn17-you mark in the outer ring */
-.jn17-ring circle { stroke-width: 3; }
-.jn17-ring { transform-box: view-box; transform-origin: 300px 175px; transform: scale(0); opacity: 0; transition: transform 1.1s cubic-bezier(.3,1.3,.5,1), opacity .6s ease; transition-delay: calc(var(--k) * 700ms + 300ms); }
-.slide.active .jn17-ring { transform: scale(1); opacity: 1; }
-.jn17-ring.r1 circle { fill: color-mix(in srgb, var(--accent) 30%, var(--bg)); stroke: var(--accent-hot); }
-.jn17-ring.r2 circle { fill: color-mix(in srgb, var(--accent) 14%, var(--bg)); stroke: var(--accent); }
-.jn17-ring.r3 circle { fill: color-mix(in srgb, var(--accent) 6%, var(--bg)); stroke: color-mix(in srgb, var(--accent) 60%, transparent); }
-.jn17-ring text { font-size: 17px; font-weight: 700; }
-.jn17-ring .vs { font-weight: 400; fill: var(--ink-soft); font-size: 15px; }
-.jn17-you { opacity: 0; transition: opacity .8s ease; }
-.jn17-you circle { fill: var(--glow); stroke: var(--accent-hot); stroke-width: 3; }
-.jn17-you text { font-size: 18px; font-weight: 700; fill: var(--accent-hot); }
-.slide:has(.jn17-you-go.on) .jn17-you { opacity: 1; }
-.slide.active:has(.jn17-you-go.on) .jn17-you circle { animation: jn17-pulse 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes jn17-pulse { 50% { transform: scale(1.35); } }
-
-/* The son of perdition, outside the shared svg.kept circle: a .jn17-judas-go step shows him */
-.jn17-judas { opacity: 0; transition: opacity 1s ease; }
-.jn17-judas circle { fill: none; stroke: var(--line-strong); stroke-width: 3; stroke-dasharray: 4 4; }
-.jn17-judas text { font-size: 16px; fill: var(--ink-soft); }
-.slide:has(.jn17-judas-go.on) .jn17-judas { opacity: 1; }
-
-/* In the world, not of it (svg.jn17-boat): two boats on the water; a .jn17-sink-go step floods the right one and it goes down */
-.jn17-sea { fill: color-mix(in srgb, var(--cool) 40%, transparent); }
-.jn17-hull { fill: var(--leather-light); stroke: var(--leather); stroke-width: 3; }
-.jn17-mast { stroke: var(--leather); stroke-width: 5; }
-.jn17-sail { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
-.jn17-flood { fill: var(--cool); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.6s ease; }
-.jn17-sinker { transform-box: view-box; transform-origin: 440px 200px; transition: transform 2s ease 1.2s; }
-.slide:has(.jn17-sink-go.on) .jn17-flood { transform: scaleY(1); }
-.slide:has(.jn17-sink-go.on) .jn17-sinker { transform: translateY(46px) rotate(9deg); }
-.jn17-lbl { font-size: 18px; font-weight: 700; }
-.jn17-lbl.soft { font-weight: 400; fill: var(--ink-soft); font-family: var(--serif); font-style: italic; }
+/* 5: the prayer widens like ripples (svg.jn17-ripples). A drop falls, each .jn17-ring spreads after the one inside it (--k),
+   and a .jn17-you-go step lights the .jn17-you mark on the outer ripple. */
+.jn17-ripples .jn17-ptrees { fill: color-mix(in srgb, var(--on-glow) 80%, var(--cool)); }
+.jn17-ripples .jn17-pglints line { stroke: var(--glow); stroke-width: 1.3; stroke-linecap: round; opacity: .2; }
+.slide.active .jn17-ripples .jn17-pglints line { animation: jn17-glint 2.8s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.55s); }
+.jn17-ripples .jn17-ring { transform-box: view-box; transform-origin: 300px 168px; transform: scale(.05); opacity: 0; }
+.slide.active .jn17-ripples .jn17-ring { animation: jn17-spread 1.9s cubic-bezier(.2,.7,.3,1) forwards; animation-delay: calc(var(--k) * 900ms + 1.1s); }
+.jn17-ripples .jn17-ring .fill { fill: var(--glow); }
+.jn17-ripples .jn17-ring.r1 .fill { opacity: .22; } .jn17-ripples .jn17-ring.r2 .fill { opacity: .12; } .jn17-ripples .jn17-ring.r3 .fill { opacity: .07; }
+.jn17-ripples .jn17-ring .edge { fill: none; stroke: color-mix(in srgb, var(--glow) 80%, var(--warm)); stroke-width: 2.4; }
+.jn17-ripples .jn17-ring .shade { fill: none; stroke: var(--on-glow); stroke-width: 2; opacity: .45; }
+.jn17-ripples .jn17-rlab { opacity: 0; }
+.slide.active .jn17-ripples .jn17-rlab { animation: jn17-fade .9s forwards; animation-delay: calc(var(--k) * 900ms + 1.9s); }
+.jn17-ripples .jn17-vs { font-weight: 400; font-size: 15px; font-style: normal; font-family: var(--sans); opacity: .8; }
+.jn17-ripples .jn17-pdrop { opacity: 0; transform-box: fill-box; transform-origin: center; transform: translateY(-150px); }
+.slide.active .jn17-ripples .jn17-pdrop { animation: jn17-drop 1.3s .2s ease-in forwards; }
+.jn17-ripples .jn17-pwave ellipse { fill: none; stroke: var(--glow); stroke-width: 1.4; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .jn17-ripples .jn17-pwave ellipse { animation: jn17-wave 4s 4s ease-out infinite; }
+.jn17-ripples .jn17-preeds path { fill: none; stroke: color-mix(in srgb, var(--on-glow) 75%, var(--warm)); stroke-linecap: round; }
+.jn17-ripples .jn17-you { opacity: 0; transition: opacity .8s ease; }
+.jn17-ripples .jn17-you circle { fill: var(--glow); stroke: var(--warm); stroke-width: 3; }
+.jn17-ripples .jn17-you .halo { fill: var(--warm); stroke: none; opacity: .4; transform-box: fill-box; transform-origin: center; }
+.slide:has(.jn17-you-go.on) .jn17-ripples .jn17-you { opacity: 1; }
+.slide.active:has(.jn17-you-go.on) .jn17-ripples .jn17-you .halo { animation: jn17-pulse 1.8s ease-in-out infinite; }
+@keyframes jn17-spread { 0% { transform: scale(.05); opacity: 0; } 15% { opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes jn17-fade { to { opacity: 1; } }
+@keyframes jn17-glint { from { opacity: .08; } to { opacity: .4; } }
+@keyframes jn17-drop { 0% { opacity: 0; transform: translateY(-150px) scale(.5); } 20% { opacity: 1; } 75% { opacity: 1; transform: translateY(0) scale(.5); } 100% { opacity: .9; transform: translateY(0) scale(1.4); } }
+@keyframes jn17-wave { 0% { transform: scale(1); opacity: .5; } 100% { transform: scale(3); opacity: 0; } }
+@keyframes jn17-pulse { 50% { transform: scale(1.5); opacity: .15; } }
+/* 13: kept in thy name (svg.jn17-kept). Darts fly at the dome of light and burn out; a .jn17-judas-go step shows one man walking off into the dark. */
+.jn17-kept .jn17-kstars circle { fill: var(--glow); }
+.jn17-kept .jn17-khill { fill: color-mix(in srgb, var(--on-glow) 80%, var(--cool)); }
+.jn17-kept .jn17-khill.near { fill: color-mix(in srgb, var(--warm) 12%, var(--on-glow)); opacity: .8; }
+.jn17-kept .jn17-kmen g { fill: color-mix(in srgb, var(--on-glow) 78%, var(--warm)); }
+.jn17-kept .jn17-kmen path, .jn17-kept .jn17-kmen ellipse { stroke: color-mix(in srgb, var(--glow) 55%, var(--warm)); stroke-width: .9; stroke-opacity: .7; }
+.jn17-kept .jn17-kdome { fill: none; stroke: color-mix(in srgb, var(--glow) 75%, var(--warm)); stroke-width: 2.4; opacity: .85; }
+.jn17-kept .jn17-kbase { fill: none; stroke: color-mix(in srgb, var(--glow) 60%, var(--warm)); stroke-width: 1.6; opacity: .6; }
+.slide.active .jn17-kept .jn17-kglow { animation: jn17-breathe 3.4s ease-in-out infinite alternate; }
+.jn17-kept .jn17-dart { opacity: 0; }
+.jn17-kept .jn17-dart .shaft { stroke: color-mix(in srgb, var(--danger) 70%, var(--warm)); stroke-width: 3; stroke-linecap: round; }
+.jn17-kept .jn17-dart .fire { fill: color-mix(in srgb, var(--warm) 60%, var(--glow)); filter: drop-shadow(0 0 4px var(--danger)); }
+.slide.active .jn17-kept .jn17-dart { animation: jn17-dart 4.2s ease-in infinite; animation-delay: var(--w); }
+.jn17-kept .jn17-spark circle { fill: none; stroke: color-mix(in srgb, var(--glow) 70%, var(--warm)); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.slide.active .jn17-kept .jn17-spark circle { animation: jn17-spark 4.2s ease-out infinite; animation-delay: var(--w); }
+.jn17-kept .jn17-judas { opacity: 0; transition: opacity 1.2s ease; }
+.jn17-kept .jn17-judas .walk g { fill: color-mix(in srgb, var(--on-glow) 70%, var(--cool)); stroke: color-mix(in srgb, var(--glow) 30%, var(--transparent)); stroke-width: 1; }
+.jn17-kept .jn17-judas .walk { transition: transform 5s ease-out .4s; }
+.slide:has(.jn17-judas-go.on) .jn17-kept .jn17-judas { opacity: 1; }
+.slide:has(.jn17-judas-go.on) .jn17-kept .jn17-judas .walk { transform: translateX(46px); }
+@keyframes jn17-breathe { from { opacity: .8; } to { opacity: 1; } }
+@keyframes jn17-dart { 0% { opacity: 0; transform: translate(0, 0); } 8% { opacity: 1; } 34% { opacity: 1; transform: translate(var(--dx), var(--dy)); } 38%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); } }
+@keyframes jn17-spark { 0%, 33% { opacity: 0; transform: scale(.3); } 36% { opacity: 1; } 50%, 100% { opacity: 0; transform: scale(2.2); } }
+/* 15: in the world, not of it (svg.jn17-boat). Both boats ride the swell; a .jn17-sink-go step floods the right one and it goes down. */
+.jn17-boat .jn17-bshore { fill: color-mix(in srgb, var(--on-glow) 72%, var(--cool)); }
+.jn17-boat .jn17-bglints line { stroke: var(--glow); stroke-width: 1.3; stroke-linecap: round; opacity: .2; }
+.slide.active .jn17-boat .jn17-bglints line { animation: jn17-glint 2.8s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.55s); }
+.jn17-boat .hull { fill: color-mix(in srgb, var(--leather) 80%, var(--on-glow)); stroke: color-mix(in srgb, var(--leather) 50%, var(--on-glow)); stroke-width: 1.5; }
+.jn17-boat .plank { fill: none; stroke: color-mix(in srgb, var(--leather) 50%, var(--on-glow)); stroke-width: 1.2; }
+.jn17-boat .well { fill: color-mix(in srgb, var(--leather) 35%, var(--on-glow)); }
+.jn17-boat .mast, .jn17-boat .yard { stroke: color-mix(in srgb, var(--leather) 70%, var(--on-glow)); stroke-width: 4; stroke-linecap: round; }
+.jn17-boat .yard { stroke-width: 3; }
+.jn17-boat .stay { fill: none; stroke: color-mix(in srgb, var(--leather) 50%, var(--on-glow)); stroke-width: 1; opacity: .7; }
+.jn17-boat .sail { fill: color-mix(in srgb, var(--glow) 75%, var(--warm)); }
+.jn17-boat .jn17-bwaves { fill: none; stroke: color-mix(in srgb, var(--cool) 50%, var(--glow)); stroke-width: 1.4; opacity: .7; }
+.jn17-boat .jn17-bob { transform-box: view-box; transform-origin: 0 20px; }
+.slide.active .jn17-boat .jn17-bob { animation: jn17-rock 3.6s ease-in-out infinite alternate; }
+.slide.active .jn17-boat .jn17-bob.b2 { animation-delay: -1.8s; }
+.jn17-boat .jn17-flood { fill: color-mix(in srgb, var(--cool) 60%, var(--on-glow)); transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.6s ease; }
+.jn17-boat .jn17-pour path { fill: none; stroke: color-mix(in srgb, var(--cool) 60%, var(--glow)); stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .5s ease; }
+.jn17-boat .jn17-sinker { transition: transform 2.4s ease-in 1.2s; }
+.slide:has(.jn17-sink-go.on) .jn17-boat .jn17-flood { transform: scaleY(1); }
+.slide:has(.jn17-sink-go.on) .jn17-boat .jn17-pour path { opacity: .85; }
+.slide:has(.jn17-sink-go.on) .jn17-boat .jn17-sinker { transform: translateY(70px) rotate(9deg); }
+@keyframes jn17-rock { from { transform: rotate(-2deg) translateY(-1px); } to { transform: rotate(2deg) translateY(2px); } }
 </style>
 </head>
 <body>
@@ -91,12 +132,26 @@
     <blockquote class="quote rise" data-q="1" data-hl="lifted up his eyes to heaven"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn17-rings" viewBox="0 0 600 350" role="img" aria-label="Three circles, one inside the other: Jesus prays for Himself, then for His disciples, then for all who will believe. You are in the outer circle.">
-          <g class="jn17-ring r3" style="--k:2"><circle cx="300" cy="175" r="170"/><text x="300" y="34" text-anchor="middle">All who will believe</text><text class="vs" x="300" y="53" text-anchor="middle">verses 20–26</text></g>
-          <g class="jn17-ring r2" style="--k:1"><circle cx="300" cy="175" r="112"/><text x="300" y="96" text-anchor="middle">His disciples</text><text class="vs" x="300" y="115" text-anchor="middle">verses 6–19</text></g>
-          <g class="jn17-ring r1" style="--k:0"><circle cx="300" cy="175" r="52"/><text x="300" y="176" text-anchor="middle">Himself</text><text class="vs" x="300" y="195" text-anchor="middle">verses 1–5</text></g>
-          <g class="jn17-you"><circle cx="365" cy="298" r="11"/><text x="383" y="304">you</text></g>
-        </svg>
+        <svg class="pic jn17-ripples" style="--ar:1.818" viewBox="0 0 600 330" role="img" aria-label="A drop falls into a still pool at dusk, and three ripples spread out from it, each wider than the last: Jesus prays for himself, then for his disciples, then for all who will believe. You are on the outer ripple.">
+  <defs>
+    <linearGradient id="jn17-psky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn17-pwater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--cool))"/><stop offset="0.12" style="stop-color:color-mix(in srgb, var(--cool) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <radialGradient id="jn17-prefl" cx=".5" cy="0" r="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 70%, var(--warm));stop-opacity:0.5"/><stop offset="0.6" style="stop-color:var(--warm);stop-opacity:0.15"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <radialGradient id="jn17-pdrop"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.4" style="stop-color:var(--glow);stop-opacity:0.7"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn17-psoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="600" height="330" fill="url(#jn17-psky)"/>
+  <path class="jn17-ptrees" d="M0 62 C30 50 50 56 80 48 C110 40 130 52 170 50 C210 48 240 36 290 40 C340 44 360 52 400 46 C450 38 480 50 520 44 C560 40 580 50 600 48 L600 72 L0 72 Z"/>
+  <rect y="70" width="600" height="260" fill="url(#jn17-pwater)"/>
+  <ellipse cx="300" cy="150" rx="110" ry="150" fill="url(#jn17-prefl)" filter="url(#jn17-psoft)"/>
+  <g class="jn17-pglints"><line style="--k:0" x1="249.3" y1="301" x2="264.6" y2="301"/><line style="--k:1" x1="308.7" y1="172.9" x2="318.7" y2="172.9"/><line style="--k:2" x1="301.3" y1="110.1" x2="304.6" y2="110.1"/><line style="--k:3" x1="256.7" y1="239.6" x2="266.5" y2="239.6"/><line style="--k:4" x1="291.4" y1="230.8" x2="305.3" y2="230.8"/><line style="--k:0" x1="291.3" y1="155.4" x2="298.1" y2="155.4"/><line style="--k:1" x1="284.5" y1="97.9" x2="294.4" y2="97.9"/><line style="--k:2" x1="305.8" y1="84.6" x2="311.6" y2="84.6"/><line style="--k:3" x1="287.6" y1="124.1" x2="292.7" y2="124.1"/><line style="--k:4" x1="310.5" y1="147.2" x2="317.7" y2="147.2"/><line style="--k:0" x1="319.4" y1="314.9" x2="344.1" y2="314.9"/><line style="--k:1" x1="314" y1="288" x2="322.7" y2="288"/><line style="--k:2" x1="272.4" y1="213.8" x2="285.2" y2="213.8"/><line style="--k:3" x1="306.6" y1="235" x2="312.5" y2="235"/><line style="--k:4" x1="311.4" y1="123.7" x2="323.2" y2="123.7"/><line style="--k:0" x1="324.5" y1="293.1" x2="335.6" y2="293.1"/><line style="--k:1" x1="313.8" y1="191.8" x2="318.8" y2="191.8"/><line style="--k:2" x1="252" y1="313.8" x2="279" y2="313.8"/><line style="--k:3" x1="262.7" y1="192.6" x2="281.3" y2="192.6"/><line style="--k:4" x1="240.2" y1="263.8" x2="262.4" y2="263.8"/><line style="--k:0" x1="284.5" y1="279.1" x2="311.1" y2="279.1"/><line style="--k:1" x1="269" y1="175.5" x2="284.1" y2="175.5"/><line style="--k:2" x1="307.1" y1="229.2" x2="312.9" y2="229.2"/><line style="--k:3" x1="324" y1="154.4" x2="328.5" y2="154.4"/></g>
+  <g class="jn17-ring r3" style="--k:2"><ellipse cx="300" cy="168" rx="282" ry="107.2" class="fill"/><ellipse cx="300" cy="168" rx="282" ry="107.2" class="edge"/><ellipse cx="300" cy="170.5" rx="282" ry="107.2" class="shade"/></g><g class="jn17-ring r2" style="--k:1"><ellipse cx="300" cy="168" rx="178" ry="67.6" class="fill"/><ellipse cx="300" cy="168" rx="178" ry="67.6" class="edge"/><ellipse cx="300" cy="170.5" rx="178" ry="67.6" class="shade"/></g><g class="jn17-ring r1" style="--k:0"><ellipse cx="300" cy="168" rx="82" ry="31.2" class="fill"/><ellipse cx="300" cy="168" rx="82" ry="31.2" class="edge"/><ellipse cx="300" cy="170.5" rx="82" ry="31.2" class="shade"/></g>
+  <g class="jn17-pwave"><ellipse cx="300" cy="168" rx="40" ry="15.2"/><ellipse cx="300" cy="168" rx="40" ry="15.2" style="animation-delay:-2s"/></g>
+  <circle class="jn17-pdrop" cx="300" cy="168" r="14" fill="url(#jn17-pdrop)"/>
+  <text class="pic-lab b jn17-rlab" style="--k:0" x="300" y="222" text-anchor="middle">Himself <tspan class="jn17-vs">verses 1–5</tspan></text><text class="pic-lab b jn17-rlab" style="--k:1" x="300" y="260" text-anchor="middle">His disciples <tspan class="jn17-vs">verses 6–19</tspan></text><text class="pic-lab b jn17-rlab" style="--k:2" x="300" y="302" text-anchor="middle">All who will believe <tspan class="jn17-vs">verses 20–26</tspan></text>
+  <g class="jn17-preeds"><path d="M-6 310.6 Q-3.4 276.4 2.7 253.5" stroke-width="1.5"/><path d="M48.9 336 Q49.6 305.8 51.1 285.7" stroke-width="2.6"/><path d="M33.5 337.4 Q34.5 317.5 36.8 304.3" stroke-width="2.7"/><path d="M-5.6 318.4 Q-5.2 299.7 -4.2 287.3" stroke-width="1.6"/><path d="M1.4 330.4 Q4.2 314.1 10.6 303.2" stroke-width="1.9"/><path d="M66.8 325.4 Q63.8 304.7 56.7 291" stroke-width="2.7"/><path d="M30.1 343.1 Q32.8 315.6 39.1 297.3" stroke-width="2.1"/><path d="M38.1 334 Q41.1 296.9 48.1 272.1" stroke-width="1.7"/><path d="M9.2 331.7 Q11.9 309 18.2 294" stroke-width="1.5"/><path d="M11.9 333.2 Q13.3 316 16.4 304.5" stroke-width="2"/><path d="M-3.7 305.5 Q-2 288.6 1.8 277.4" stroke-width="1.6"/><path d="M57.1 312.2 Q57.1 288.4 57 272.5" stroke-width="1.4"/><path d="M22.8 326 Q22.5 291.6 21.8 268.7" stroke-width="2.5"/><path d="M24.2 323.6 Q21.5 294.5 15.1 275.2" stroke-width="1.8"/><path d="M32.9 323.9 Q33.5 290.5 34.8 268.3" stroke-width="1.4"/><path d="M599.1 344.8 Q602.9 310.1 611.7 286.9" stroke-width="1.5"/><path d="M544.8 305.9 Q546.7 282 551.1 266" stroke-width="2.5"/><path d="M586.3 323.2 Q590.5 299.4 600.1 283.5" stroke-width="1.5"/><path d="M603.6 309.3 Q605.7 272.3 610.5 247.6" stroke-width="1.5"/><path d="M565.2 300.2 Q566.1 276.2 568.2 260.2" stroke-width="1.5"/><path d="M548.9 343 Q545.5 304.5 537.7 278.9" stroke-width="2.3"/><path d="M587.4 328.8 Q584.5 299.9 577.6 280.6" stroke-width="2.1"/><path d="M555.9 332.4 Q553.4 305.2 547.6 287" stroke-width="2.3"/><path d="M560.8 332.2 Q558.3 300.7 552.7 279.7" stroke-width="1.7"/><path d="M576.1 330.1 Q572.8 312.3 565.2 300.4" stroke-width="2"/><path d="M544.4 342.5 Q541.4 323.1 534.4 310.2" stroke-width="2"/><path d="M545.2 303.8 Q546.2 273 548.4 252.5" stroke-width="2.2"/><path d="M579 322.3 Q583.1 294.2 592.6 275.4" stroke-width="1.9"/><path d="M542.1 310.9 Q542.5 282.4 543.6 263.4" stroke-width="2.4"/><path d="M602.6 318.5 Q601.3 289.3 598.1 269.9" stroke-width="1.8"/></g>
+  <g class="jn17-you"><circle class="halo" cx="469.9" cy="253.5" r="16"/><circle cx="469.9" cy="253.5" r="7"/><text class="pic-lab b" x="485.9" y="243.5">you</text></g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">The prayer of the High Priest</h2>
@@ -193,16 +248,29 @@
     <blockquote class="quote rise" data-q="12" data-hl="those that thou gavest me I have kept, and none of them is lost"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="kept" viewBox="0 0 600 360" role="img" aria-label="Believers inside a guarded circle. Arrows fly at it and fall away. One man stands outside it: the son of perdition.">
-          <circle class="kept-wall" cx="280" cy="180" r="130"/>
-          <text class="kept-tag" font-size="18" x="280" y="88" text-anchor="middle">kept in thy name</text>
-          <g class="kept-in"><circle cx="280" cy="130" r="9"/><circle cx="315" cy="140" r="9"/><circle cx="337" cy="168" r="9"/><circle cx="337" cy="202" r="9"/><circle cx="315" cy="230" r="9"/><circle cx="280" cy="240" r="9"/><circle cx="245" cy="230" r="9"/><circle cx="223" cy="202" r="9"/><circle cx="223" cy="168" r="9"/><circle cx="245" cy="140" r="9"/><circle cx="280" cy="185" r="9"/></g>
-          <path class="kept-dart" style="--dx:60px;--dy:30px;--w:0s" d="M60 60 l40 20 m-12 -14 l12 14 l-18 2"/>
-          <path class="kept-dart" style="--dx:-60px;--dy:20px;--w:.9s" d="M560 110 l-40 14 m10 -14 l-10 14 l16 6"/>
-          <path class="kept-dart" style="--dx:50px;--dy:-30px;--w:1.7s" d="M70 320 l40 -22 m-18 -2 l18 2 l-8 16"/>
-          <path class="kept-dart" style="--dx:-50px;--dy:-40px;--w:2.3s" d="M500 330 l-36 -26 m4 16 l-4 -16 l16 2"/>
-          <g class="jn17-judas"><circle cx="530" cy="262" r="10"/><text x="530" y="296" text-anchor="middle">“the son of</text><text x="530" y="316" text-anchor="middle">perdition”</text></g>
-        </svg>
+        <svg class="pic jn17-kept" style="--ar:1.667" viewBox="0 0 600 360" role="img" aria-label="At night, a small band of eleven men stands together under a dome of light. Fiery darts fly at it out of the dark and burn out against it. Off to one side, outside the light, a lone man walks away into the night: the son of perdition.">
+  <defs>
+    <linearGradient id="jn17-ksky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn17-kground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 16%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <radialGradient id="jn17-kdome" cx=".5" cy="1" r="1"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.6"/><stop offset="0.45" style="stop-color:color-mix(in srgb, var(--glow) 60%, var(--warm));stop-opacity:0.3"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0.08"/></radialGradient>
+    <radialGradient id="jn17-kfloor"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 60%, var(--warm));stop-opacity:0.9"/><stop offset="0.7" style="stop-color:var(--warm);stop-opacity:0.35"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn17-kblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <rect width="600" height="360" fill="url(#jn17-ksky)"/>
+  <g class="jn17-kstars"><circle cx="0.1" cy="82.7" r="0.6" opacity="0.5"/><circle cx="235.9" cy="89.3" r="1" opacity="0.3"/><circle cx="90.9" cy="33.4" r="1" opacity="0.4"/><circle cx="583" cy="60.4" r="1" opacity="0.4"/><circle cx="32.3" cy="16.6" r="1" opacity="0.7"/><circle cx="5.9" cy="36.8" r="0.6" opacity="0.3"/><circle cx="92.4" cy="47.9" r="0.6" opacity="0.7"/><circle cx="595.2" cy="60.3" r="1.2" opacity="0.3"/><circle cx="89.7" cy="81.5" r="1.2" opacity="0.7"/><circle cx="355" cy="14.5" r="1.2" opacity="0.4"/><circle cx="578.7" cy="111.5" r="1" opacity="0.3"/><circle cx="490.9" cy="122.6" r="1" opacity="0.6"/><circle cx="163.5" cy="36.2" r="0.7" opacity="0.6"/><circle cx="512" cy="44.6" r="0.7" opacity="0.7"/><circle cx="502.9" cy="109" r="1.2" opacity="0.6"/><circle cx="513.5" cy="11.4" r="0.7" opacity="0.7"/><circle cx="503.8" cy="130.2" r="0.7" opacity="0.3"/><circle cx="223.9" cy="124.4" r="0.5" opacity="0.6"/><circle cx="195" cy="135.4" r="0.8" opacity="0.5"/><circle cx="175.1" cy="85.7" r="0.6" opacity="0.4"/><circle cx="560.3" cy="72.6" r="0.7" opacity="0.4"/><circle cx="251.4" cy="79.4" r="1.2" opacity="0.6"/><circle cx="596.1" cy="94.1" r="1.1" opacity="0.6"/><circle cx="127.3" cy="25.7" r="0.6" opacity="0.3"/><circle cx="567" cy="17.3" r="0.7" opacity="0.7"/><circle cx="268.6" cy="87.6" r="0.9" opacity="0.3"/><circle cx="506.8" cy="120.9" r="1" opacity="0.4"/><circle cx="248" cy="137.5" r="0.9" opacity="0.7"/><circle cx="393" cy="97.7" r="0.9" opacity="0.3"/><circle cx="550.3" cy="79.2" r="1" opacity="0.5"/><circle cx="55.1" cy="44.1" r="0.5" opacity="0.7"/><circle cx="193.5" cy="74.4" r="0.7" opacity="0.7"/><circle cx="102.5" cy="114.2" r="1" opacity="0.7"/><circle cx="482.4" cy="28" r="1" opacity="0.6"/><circle cx="598.1" cy="108.8" r="0.5" opacity="0.3"/><circle cx="48.8" cy="67.2" r="1" opacity="0.6"/><circle cx="479.8" cy="127.1" r="1.1" opacity="0.6"/><circle cx="15.3" cy="121.3" r="1" opacity="0.5"/><circle cx="307.4" cy="58" r="1.2" opacity="0.5"/><circle cx="312.3" cy="114.8" r="0.9" opacity="0.6"/><circle cx="584.5" cy="101.5" r="1" opacity="0.5"/><circle cx="204.3" cy="115.5" r="0.6" opacity="0.6"/><circle cx="221.9" cy="129.6" r="1" opacity="0.6"/><circle cx="63.7" cy="132.7" r="1.2" opacity="0.4"/><circle cx="22" cy="88.5" r="0.8" opacity="0.5"/><circle cx="116.6" cy="62.2" r="1.1" opacity="0.3"/><circle cx="491.9" cy="83.3" r="0.6" opacity="0.7"/><circle cx="0.9" cy="48.9" r="1" opacity="0.3"/><circle cx="122.8" cy="114.3" r="0.6" opacity="0.5"/><circle cx="249.8" cy="84.6" r="0.7" opacity="0.7"/></g>
+  <path class="jn17-khill" d="M0 170 C70 156 130 166 210 160 C290 154 340 140 420 146 C500 152 550 160 600 156 L600 360 L0 360 Z"/>
+  <rect y="186" width="600" height="174" fill="url(#jn17-kground)"/>
+  <path class="jn17-khill near" d="M0 186 C120 180 240 190 360 184 C460 180 540 188 600 186 L600 196 L0 196 Z"/>
+  <ellipse cx="270" cy="262" rx="180" ry="54" fill="url(#jn17-kfloor)"/>
+  <g class="jn17-kglow"><path d="M120 262 A150 153 0 0 1 420 262 A150 40 0 0 1 120 262 Z" fill="url(#jn17-kdome)" filter="url(#jn17-kblur)" class="haze"/></g>
+  <g class="jn17-kmen"><g><path d="M266.5 198.3 Q262 199.5 261.4 202.7 L261.1 214.4 Q260.8 227 261.4 235.9 L274 235.9 Q274.7 227 274.4 214.4 L274 202.7 Q273.4 199.5 269 198.3 Z"/><ellipse cx="267.7" cy="194.8" rx="2.7" ry="3.2"/></g><g><path d="M308.3 200.3 Q303.8 201.6 303.1 204.8 L302.8 216.8 Q302.5 229.7 303.1 238.7 L316 238.7 Q316.7 229.7 316.4 216.8 L316 204.8 Q315.4 201.6 310.9 200.3 Z"/><ellipse cx="309.6" cy="196.8" rx="2.8" ry="3.2"/></g><g><path d="M231.5 201.1 Q226.9 202.4 226.3 205.7 L225.9 217.7 Q225.6 230.7 226.3 239.8 L239.3 239.8 Q239.9 230.7 239.6 217.7 L239.3 205.7 Q238.6 202.4 234.1 201.1 Z"/><ellipse cx="232.8" cy="197.5" rx="2.8" ry="3.3"/></g><g><path d="M188.8 206.8 Q184 208.2 183.3 211.6 L182.9 224.3 Q182.6 238.1 183.3 247.7 L197 247.7 Q197.7 238.1 197.4 224.3 L197 211.6 Q196.3 208.2 191.5 206.8 Z"/><ellipse cx="190.1" cy="203" rx="3" ry="3.4"/></g><g><path d="M344.5 208.3 Q339.6 209.7 338.9 213.2 L338.6 226.1 Q338.3 240.1 338.9 249.9 L352.9 249.9 Q353.6 240.1 353.3 226.1 L352.9 213.2 Q352.2 209.7 347.3 208.3 Z"/><ellipse cx="345.9" cy="204.5" rx="3" ry="3.5"/></g><g><path d="M335.7 217.7 Q330.4 219.2 329.6 223 L329.2 237.1 Q328.9 252.3 329.6 262.9 L344.8 262.9 Q345.6 252.3 345.2 237.1 L344.8 223 Q344 219.2 338.7 217.7 Z"/><ellipse cx="337.2" cy="213.6" rx="3.3" ry="3.8"/></g><g><path d="M249.9 218.8 Q244.6 220.3 243.8 224.1 L243.4 238.3 Q243 253.6 243.8 264.4 L259.1 264.4 Q259.9 253.6 259.5 238.3 L259.1 224.1 Q258.3 220.3 253 218.8 Z"/><ellipse cx="251.4" cy="214.5" rx="3.3" ry="3.8"/></g><g><path d="M208.7 220.7 Q203.2 222.2 202.5 226.1 L202.1 240.5 Q201.7 256.1 202.5 267 L218 267 Q218.8 256.1 218.4 240.5 L218 226.1 Q217.3 222.2 211.8 220.7 Z"/><ellipse cx="210.2" cy="216.4" rx="3.3" ry="3.9"/></g><g><path d="M293.3 221.3 Q287.8 222.9 287 226.8 L286.6 241.3 Q286.3 257 287 267.9 L302.7 267.9 Q303.5 257 303.1 241.3 L302.7 226.8 Q301.9 222.9 296.4 221.3 Z"/><ellipse cx="294.9" cy="217" rx="3.4" ry="3.9"/></g><g><path d="M171.8 221.4 Q166.3 223 165.5 226.9 L165.1 241.4 Q164.7 257.1 165.5 268.1 L181.2 268.1 Q182 257.1 181.6 241.4 L181.2 226.9 Q180.4 223 174.9 221.4 Z"/><ellipse cx="173.4" cy="217.1" rx="3.4" ry="3.9"/></g><g><path d="M373.5 222.2 Q368 223.8 367.2 227.8 L366.8 242.4 Q366.4 258.2 367.2 269.2 L382.9 269.2 Q383.7 258.2 383.3 242.4 L382.9 227.8 Q382.2 223.8 376.6 222.2 Z"/><ellipse cx="375.1" cy="217.9" rx="3.4" ry="3.9"/></g></g>
+  <path class="jn17-kdome" d="M120 262 A150 153 0 0 1 420 262"/>
+  <ellipse class="jn17-kbase" cx="270" cy="262" rx="150" ry="40"/>
+  <g class="jn17-dart" style="--dx:138px;--dy:90px;--w:0s"><g transform="translate(30 60)"><path d="M-21.8 -14.2 L0 0" class="shaft"/><circle r="3.4" class="fire"/></g></g><g class="jn17-spark" style="--w:0s" transform="translate(168 150)"><circle r="9"/></g><g class="jn17-dart" style="--dx:-210px;--dy:86px;--w:1s"><g transform="translate(590 70)"><path d="M24.1 -9.9 L0 0" class="shaft"/><circle r="3.4" class="fire"/></g></g><g class="jn17-spark" style="--w:1s" transform="translate(380 156)"><circle r="9"/></g><g class="jn17-dart" style="--dx:108px;--dy:-12px;--w:1.9s"><g transform="translate(20 250)"><path d="M-25.8 2.9 L0 0" class="shaft"/><circle r="3.4" class="fire"/></g></g><g class="jn17-spark" style="--w:1.9s" transform="translate(128 238)"><circle r="9"/></g><g class="jn17-dart" style="--dx:-182px;--dy:14px;--w:2.7s"><g transform="translate(600 200)"><path d="M25.9 -2 L0 0" class="shaft"/><circle r="3.4" class="fire"/></g></g><g class="jn17-spark" style="--w:2.7s" transform="translate(418 214)"><circle r="9"/></g><g class="jn17-dart" style="--dx:12px;--dy:136px;--w:3.4s"><g transform="translate(250 -20)"><path d="M-2.3 -25.9 L0 0" class="shaft"/><circle r="3.4" class="fire"/></g></g><g class="jn17-spark" style="--w:3.4s" transform="translate(262 116)"><circle r="9"/></g>
+  <text class="pic-lab b" x="270" y="96" text-anchor="middle">kept in thy name</text>
+  <g class="jn17-judas"><g class="walk"><g transform="translate(500 302)"><ellipse cx="2.5" cy="-46.4" rx="3.1" ry="3.6"/>
+    <path d="M0.7 -42.9 Q-5 -40.7 -4.3 -32.9 L-6.4 -2.1 L-10.7 0 L-4.3 0 L0.7 -10.7 L5 0 L10.7 0 L5.7 -4.3 L5 -32.9 Q6.4 -40.7 0.7 -42.9 Z"/></g></g><text class="pic-lab" x="520" y="330" text-anchor="middle">“the son of perdition”</text></g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">None of them is lost</h2>
@@ -221,24 +289,30 @@
     <blockquote class="quote rise" data-q="15"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn17-boat" viewBox="0 0 600 330" role="img" aria-label="Two boats on the sea. The left one floats. Water pours into the right one and it sinks.">
-          <g>
-            <path class="jn17-mast" d="M160 40 v120"/>
-            <path class="jn17-sail" d="M166 46 L236 150 L166 150 Z"/>
-            <path class="jn17-hull" d="M70 160 L250 160 L225 205 L95 205 Z"/>
-          </g>
-          <g class="jn17-sinker">
-            <path class="jn17-mast" d="M440 40 v120"/>
-            <path class="jn17-sail" d="M446 46 L516 150 L446 150 Z"/>
-            <path class="jn17-hull" d="M350 160 L530 160 L505 205 L375 205 Z"/>
-            <path class="jn17-flood" d="M358 168 L522 168 L503 201 L377 201 Z"/>
-          </g>
-          <path class="jn17-sea" d="M0 192 Q 37 180, 75 192 T 150 192 T 225 192 T 300 192 T 375 192 T 450 192 T 525 192 T 600 192 V 330 H 0 Z"/>
-          <text class="jn17-lbl" x="160" y="290" text-anchor="middle">The ship in the sea</text>
-          <text class="jn17-lbl soft" x="160" y="315" text-anchor="middle">“in the world”</text>
-          <text class="jn17-lbl" x="440" y="290" text-anchor="middle">The sea in the ship</text>
-          <text class="jn17-lbl soft" x="440" y="315" text-anchor="middle">“of the world”</text>
-        </svg>
+        <svg class="pic jn17-boat" style="--ar:1.818" viewBox="0 0 600 330" role="img" aria-label="Two fishing boats on the sea at dusk. The left one rides the water. On the right, the sea pours over the side and fills the boat, and it settles and goes down.">
+  <defs>
+    <linearGradient id="jn17-bsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 26%, var(--on-glow))"/><stop offset="0.7" style="stop-color:color-mix(in srgb, var(--warm) 45%, var(--cool))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 60%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn17-bsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 50%, var(--warm))"/><stop offset="0.2" style="stop-color:color-mix(in srgb, var(--cool) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <linearGradient id="jn17-bfront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 38%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <radialGradient id="jn17-bsun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.3" style="stop-color:var(--glow);stop-opacity:0.8"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <clipPath id="jn17-bwell"><path d="M-84 -6 C-60 -2 60 -2 84 -6 C60 2 -60 2 -84 -6 Z"/></clipPath>
+  </defs>
+  <rect width="600" height="330" fill="url(#jn17-bsky)"/>
+  <circle cx="300" cy="150" r="90" fill="url(#jn17-bsun)" opacity=".8"/>
+  <path class="jn17-bshore" d="M0 168 C60 158 120 164 180 160 C220 158 250 166 300 170 C360 166 420 154 480 158 C540 162 570 166 600 164 L600 178 L0 178 Z"/>
+  <rect y="176" width="600" height="154" fill="url(#jn17-bsea)"/>
+  <g class="jn17-bglints"><line style="--k:0" x1="196" y1="182" x2="218.2" y2="182"/><line style="--k:1" x1="160.4" y1="303.4" x2="198.1" y2="303.4"/><line style="--k:2" x1="120" y1="279.4" x2="132.1" y2="279.4"/><line style="--k:3" x1="453.8" y1="184.8" x2="472.4" y2="184.8"/><line style="--k:4" x1="459.6" y1="246.1" x2="478.5" y2="246.1"/><line style="--k:0" x1="79.7" y1="312.5" x2="89.6" y2="312.5"/><line style="--k:1" x1="163.3" y1="285.7" x2="170.5" y2="285.7"/><line style="--k:2" x1="543.5" y1="223.6" x2="567.8" y2="223.6"/><line style="--k:3" x1="216.5" y1="277.6" x2="248.5" y2="277.6"/><line style="--k:4" x1="302.8" y1="293.6" x2="317.2" y2="293.6"/><line style="--k:0" x1="535.3" y1="272.4" x2="553.9" y2="272.4"/><line style="--k:1" x1="533.1" y1="280.3" x2="541.2" y2="280.3"/><line style="--k:2" x1="497.3" y1="249.6" x2="512.2" y2="249.6"/><line style="--k:3" x1="421.6" y1="248.3" x2="445.3" y2="248.3"/><line style="--k:4" x1="444.6" y1="297.9" x2="461" y2="297.9"/><line style="--k:0" x1="164.5" y1="194.5" x2="178.6" y2="194.5"/><line style="--k:1" x1="290.8" y1="194.5" x2="306.3" y2="194.5"/><line style="--k:2" x1="80.9" y1="204.9" x2="97.6" y2="204.9"/><line style="--k:3" x1="177.9" y1="235.7" x2="195.6" y2="235.7"/><line style="--k:4" x1="517.8" y1="246.1" x2="539.7" y2="246.1"/><line style="--k:0" x1="426.2" y1="260.6" x2="447.5" y2="260.6"/><line style="--k:1" x1="234.2" y1="290.4" x2="264.6" y2="290.4"/><line style="--k:2" x1="131.5" y1="318.9" x2="151" y2="318.9"/><line style="--k:3" x1="439.3" y1="196.7" x2="454.3" y2="196.7"/><line style="--k:4" x1="540.1" y1="203.6" x2="559.6" y2="203.6"/><line style="--k:0" x1="435" y1="315.4" x2="446.5" y2="315.4"/></g>
+  <g transform="translate(160 222) scale(1.2)"><g class="jn17-bob"><path class="mast" d="M-6 -6 L-6 -128"/><path class="yard" d="M-48 -112 L40 -126"/><path class="sail" d="M-44 -110 L36 -123 Q30 -112 -40 -100 Z"/><path class="stay" d="M-6 -128 L88 -10 M-6 -128 L-90 -10"/>
+      <path class="hull" d="M-92 -8 C-70 -4 70 -4 92 -8 C86 6 76 24 58 30 L-58 30 C-76 24 -86 6 -92 -8 Z"/><path class="plank" d="M-88 4 C-60 10 60 10 88 4 M-78 18 C-50 23 50 23 78 18"/><path class="well" d="M-84 -6 C-60 -2 60 -2 84 -6 C60 2 -60 2 -84 -6 Z"/></g></g>
+  <g transform="translate(440 222) scale(1.2)"><g class="jn17-sinker"><g class="jn17-bob b2"><path class="mast" d="M-6 -6 L-6 -128"/><path class="yard" d="M-48 -112 L40 -126"/><path class="sail" d="M-44 -110 L36 -123 Q30 -112 -40 -100 Z"/><path class="stay" d="M-6 -128 L88 -10 M-6 -128 L-90 -10"/>
+      <path class="hull" d="M-92 -8 C-70 -4 70 -4 92 -8 C86 6 76 24 58 30 L-58 30 C-76 24 -86 6 -92 -8 Z"/><path class="plank" d="M-88 4 C-60 10 60 10 88 4 M-78 18 C-50 23 50 23 78 18"/><path class="well" d="M-84 -6 C-60 -2 60 -2 84 -6 C60 2 -60 2 -84 -6 Z"/><g clip-path="url(#jn17-bwell)"><rect class="jn17-flood" x="-92" y="-30" width="184" height="40"/></g><g class="jn17-pour"><path d="M60 -16 Q74 -4 66 4"/><path d="M-30 -14 Q-20 -4 -26 4"/></g></g></g></g>
+  <path d="M0 238 Q 25 228, 50 238 T 100 238 T 150 238 T 200 238 T 250 238 T 300 238 T 350 238 T 400 238 T 450 238 T 500 238 T 550 238 T 600 238 V 330 H 0 Z" fill="url(#jn17-bfront)"/>
+  <path class="jn17-bwaves" d="M0 238 Q 25 228, 50 238 T 100 238 T 150 238 T 200 238 T 250 238 T 300 238 T 350 238 T 400 238 T 450 238 T 500 238 T 550 238 T 600 238"/>
+  <text class="pic-lab b" x="160" y="286" text-anchor="middle">The ship in the sea</text>
+  <text class="pic-lab" x="160" y="310" text-anchor="middle">“in the world”</text>
+  <text class="pic-lab b" x="440" y="286" text-anchor="middle">The sea in the ship</text>
+  <text class="pic-lab" x="440" y="310" text-anchor="middle">“of the world”</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">In it, not of it</h2>
@@ -310,9 +384,17 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="24" data-hl="be with me where I am"></blockquote>
-    <h2 class="rise" style="--d:1">Where he wants you</h2>
-    <p class="note rise" style="--d:2">Of all the things Jesus could ask for his people, here's his last request: that we'd be <em>with him</em>. He wants your company. He said the same thing hours earlier:</p>
-    <blockquote class="quote step"><p>“And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.”</p><cite>John 14:3</cite></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:50% 25%">
+        <span class="art-frame"><img src="../assets/art/burnand-high-priestly-prayer.jpg" width="1010" height="650" alt="Jesus stands in a plain upper room with his arms open and his eyes lifted up. His disciples stand close on either side, some with hands folded, one hiding his face in his hand."></span>
+        <figcaption>Eugène Burnand, <i>The High Priestly Prayer</i></figcaption>
+      </figure>
+      <div>
+        <h2 class="rise" style="--d:1">Where he wants you</h2>
+        <p class="note rise" style="--d:2">Of all the things Jesus could ask for his people, here's his last request: that we'd be <em>with him</em>. He wants your company. He said the same thing hours earlier:</p>
+        <blockquote class="quote step"><p>“And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.”</p><cite>John 14:3</cite></blockquote>
+      </div>
+    </div>
     <p class="note step">And look how the prayer ends (v. 26): that the same love the Father has for the Son would be <em>in them</em>, and Jesus himself in them. That's where this whole prayer has been going.</p>
     <p class="note step">He hasn't stopped praying, either. Right now, he <em>“ever liveth to make intercession”</em> for those who come to God by him (Hebrews 7:25).</p>
   </div>

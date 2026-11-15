@@ -10,16 +10,6 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* jn05-pool: the pool of Bethesda from above, with water that gets "troubled" */
-.jn05-water { fill: color-mix(in srgb, var(--cool) 28%, var(--bg)); stroke: var(--cool); stroke-width: 2; }
-.jn05-cols { fill: none; stroke: var(--ink-soft); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 0 24; }
-.jn05-badge circle { fill: var(--accent); }
-.jn05-badge text { fill: var(--on-accent); font-weight: 700; font-size: 15px; }
-.jn05-sick { fill: var(--warm); }
-.jn05-ripple { fill: none; stroke: var(--cool); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
-.split:has(.jn05-stir.on) .jn05-ripple { animation: jn05-ripple 2.6s ease-out infinite; animation-delay: calc(var(--k, 0) * .85s); }
-@keyframes jn05-ripple { 0% { opacity: .95; transform: scale(.15); } 100% { opacity: 0; transform: scale(1.6); } }
-
 /* jn05-words: old words, each with its plain meaning */
 .jn05-words { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: .6rem; margin: .4em 0 1em; }
 .jn05-words div { padding: .6em .85em; border-radius: 8px; background: var(--surface); border: 1px solid var(--line-strong); }
@@ -85,20 +75,55 @@
 .jn05-trial:has(.jn05-w4.on) .jn05-meter i { width: 80%; }
 .jn05-trial:has(.jn05-w5.on) .jn05-meter i { width: 100%; }
 
-/* jn05-point: every part of the Scriptures points to Him */
-.jn05-node text.jn05-ref { font-weight: 700; font-size: 22px; fill: var(--accent-hot); }
-.jn05-node text.jn05-what { font-size: 17px; fill: var(--ink-soft); }
-.jn05-arrow { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+/* The pool of Bethesda from above: two pools, five porches, the sick in every one, and water that is "troubled" */
+.jn05-pool .jn05-city rect { fill: color-mix(in srgb, var(--glow) 55%, var(--warm)); opacity: .55; }
+.jn05-pool .jn05-wall { fill: color-mix(in srgb, var(--warm) 22%, var(--on-glow)); }
+.jn05-pool .jn05-walk path { fill: color-mix(in srgb, var(--glow) 55%, var(--warm)); opacity: .6; }
+.jn05-pool .jn05-pwall { fill: var(--on-glow); opacity: .45; }
+.jn05-pool .jn05-edge { stroke: color-mix(in srgb, var(--glow) 80%, var(--warm)); stroke-width: 2.5; fill: none; }
+.jn05-pool .jn05-cols line { stroke: color-mix(in srgb, var(--glow) 88%, var(--warm)); stroke-width: 3; stroke-linecap: round; }
+.jn05-pool .jn05-roofs .roof { fill: color-mix(in srgb, var(--leather) 70%, var(--warm)); stroke: color-mix(in srgb, var(--on-glow) 50%, transparent); stroke-width: .8; }
+.jn05-pool .jn05-sick .mat { fill: color-mix(in srgb, var(--leather-light) 70%, var(--glow)); }
+.jn05-pool .jn05-sick .body { fill: color-mix(in srgb, var(--wine) 45%, var(--on-glow)); }
+.jn05-pool .jn05-sick .head { fill: color-mix(in srgb, var(--leather) 70%, var(--warm)); }
+.jn05-pool .jn05-glints line { stroke: var(--glow); stroke-width: 1.3; stroke-linecap: round; opacity: .25; }
+.slide.active .jn05-pool .jn05-glints line { animation: jn05-glint 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.45s); }
+@keyframes jn05-glint { from { opacity: .08; } to { opacity: .5; } }
+.jn05-badge circle { fill: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke: var(--on-glow); stroke-width: 1.5; }
+.jn05-badge text { fill: var(--on-glow); font: 700 15px var(--sans); }
+.jn05-ripple { fill: none; stroke: var(--glow); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.split:has(.jn05-stir.on) .jn05-ripple { animation: jn05-ripple 2.6s ease-out infinite; animation-delay: calc(var(--k, 0) * .85s); }
+@keyframes jn05-ripple { 0% { opacity: .95; transform: scale(.15); } 100% { opacity: 0; transform: scale(1.3); } }
 
-/* jn05-scale: whose approval weighs more */
-.jn05-beam, .jn05-panL, .jn05-panR { transition: transform 1.4s cubic-bezier(.4,1.5,.5,1); }
-.jn05-beam { transform-box: view-box; transform-origin: 300px 80px; transform: rotate(-8deg); }
-.jn05-panL { transform: translateY(27px); }
-.jn05-panR { transform: translateY(-27px); }
-.split:has(.jn05-tip.on) .jn05-beam { transform: rotate(8deg); }
-.split:has(.jn05-tip.on) .jn05-panL { transform: translateY(-27px); }
-.split:has(.jn05-tip.on) .jn05-panR { transform: translateY(27px); }
-.jn05-pan { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
+/* Every part of the Scriptures points to him: scrolls around a light, each sending a beam to the center */
+.jn05-point .jn05-stars circle { fill: var(--glow); }
+.jn05-point .jn05-corelight { fill: var(--glow); }
+.jn05-point .jn05-corehalo { transform-box: fill-box; transform-origin: center; }
+.slide.active .jn05-point .jn05-corehalo { animation: jn05-breathe 4s ease-in-out infinite alternate; }
+@keyframes jn05-breathe { from { opacity: .8; transform: scale(.94); } to { opacity: 1; transform: scale(1.04); } }
+.jn05-point .jn05-beam { fill: none; stroke: color-mix(in srgb, var(--warm) 50%, var(--glow)); stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--warm)); }
+.jn05-point .jn05-scroll .sheet { fill: url(#jn05-sheet); }
+.jn05-point .jn05-scroll .roll { fill: color-mix(in srgb, var(--leather) 75%, var(--warm)); }
+.jn05-point .jn05-node .pic-lab.ink { stroke: none; }
+
+/* Whose approval weighs more: a brass balance in lamplight */
+.jn05-scale .jn05-stones rect { fill: color-mix(in srgb, var(--warm) 22%, var(--on-glow)); }
+.jn05-scale .jn05-table { fill: color-mix(in srgb, var(--leather) 45%, var(--on-glow)); }
+.jn05-scale .jn05-shadow { fill: var(--on-glow); opacity: .6; }
+.jn05-scale .jn05-needle { fill: color-mix(in srgb, var(--leather-light) 70%, var(--glow)); stroke: color-mix(in srgb, var(--leather-light) 70%, var(--glow)); stroke-width: 2; }
+.jn05-scale .jn05-chain { fill: none; stroke: color-mix(in srgb, var(--leather-light) 65%, var(--glow)); stroke-width: 1.6; stroke-dasharray: 3 2; }
+.jn05-scale .jn05-coins ellipse { fill: color-mix(in srgb, var(--warm) 75%, var(--glow)); stroke: color-mix(in srgb, var(--leather) 70%, var(--on-glow)); stroke-width: 1; }
+.jn05-scale .jn05-wreath { fill: none; stroke: color-mix(in srgb, var(--cool) 40%, var(--warm)); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 5 3; }
+.jn05-scale .jn05-god { fill: color-mix(in srgb, var(--warm) 35%, var(--glow)); }
+.jn05-scale .jn05-light { transform-box: fill-box; transform-origin: center; }
+.slide.active .jn05-scale .jn05-light { animation: jn05-breathe 3s ease-in-out infinite alternate; }
+.jn05-scale .jn05-beam, .jn05-scale .jn05-panL, .jn05-scale .jn05-panR { transition: transform 1.6s cubic-bezier(.4,1.4,.5,1); }
+.jn05-scale .jn05-beam { transform-box: view-box; transform-origin: 300px 80px; transform: rotate(-8deg); }
+.jn05-scale .jn05-panL { transform: translateY(28px); }
+.jn05-scale .jn05-panR { transform: translateY(-28px); }
+.split:has(.jn05-tip.on) .jn05-scale .jn05-beam { transform: rotate(8deg); }
+.split:has(.jn05-tip.on) .jn05-scale .jn05-panL { transform: translateY(-28px); }
+.split:has(.jn05-tip.on) .jn05-scale .jn05-panR { transform: translateY(28px); }
 </style>
 </head>
 <body>
@@ -147,38 +172,32 @@
     <blockquote class="quote rise" data-q="2" data-hl="Bethesda, having five porches"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 370" role="img" aria-label="The pool of Bethesda from above: two pools with covered porches on all four sides and one across the middle, sick people lying under them, and the water rippling.">
-          <rect class="rise" style="--d:2;fill:var(--surface);stroke:var(--line-strong)" x="30" y="30" width="540" height="305" rx="4" stroke-width="2"/>
-          <g class="rise" style="--d:2">
-            <rect class="jn05-water" x="75" y="62" width="450" height="96" rx="3"/>
-            <rect class="jn05-water" x="75" y="202" width="450" height="104" rx="3"/>
-            <circle class="jn05-ripple" style="--k:0" cx="190" cy="110" r="40"/>
-            <circle class="jn05-ripple" style="--k:1" cx="420" cy="254" r="44"/>
-            <circle class="jn05-ripple" style="--k:2" cx="330" cy="110" r="34"/>
-            <text x="300" y="116" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool);font-style:italic">water</text>
-            <text x="300" y="260" text-anchor="middle" font-size="17" class="serif" style="fill:var(--cool);font-style:italic">water</text>
-          </g>
-          <g class="rise" style="--d:3">
-            <path class="jn05-cols" d="M50 46 H552"/>
-            <path class="jn05-cols" d="M50 320 H552"/>
-            <path class="jn05-cols" d="M50 46 V320"/>
-            <path class="jn05-cols" d="M550 46 V320"/>
-            <path class="jn05-cols" d="M50 180 H552"/>
-          </g>
-          <g class="step">
-            <g class="jn05-sick">
-              <circle cx="110" cy="171" r="5"/><circle cx="135" cy="189" r="5"/><circle cx="180" cy="172" r="5"/><circle cx="240" cy="190" r="5"/><circle cx="285" cy="171" r="5"/><circle cx="350" cy="189" r="5"/><circle cx="400" cy="172" r="5"/><circle cx="470" cy="190" r="5"/><circle cx="505" cy="171" r="5"/>
-              <circle cx="40" cy="95" r="5"/><circle cx="40" cy="140" r="5"/><circle cx="40" cy="240" r="5"/><circle cx="40" cy="290" r="5"/><circle cx="560" cy="120" r="5"/><circle cx="560" cy="230" r="5"/><circle cx="560" cy="280" r="5"/>
-              <circle cx="150" cy="37" r="5"/><circle cx="260" cy="37" r="5"/><circle cx="420" cy="37" r="5"/><circle cx="200" cy="329" r="5"/><circle cx="330" cy="329" r="5"/><circle cx="480" cy="329" r="5"/>
-            </g>
-            <g class="jn05-badge"><circle cx="300" cy="46" r="13"/><text x="300" y="51" text-anchor="middle">1</text></g>
-            <g class="jn05-badge"><circle cx="550" cy="112" r="13"/><text x="550" y="117" text-anchor="middle">2</text></g>
-            <g class="jn05-badge"><circle cx="300" cy="320" r="13"/><text x="300" y="325" text-anchor="middle">3</text></g>
-            <g class="jn05-badge"><circle cx="50" cy="250" r="13"/><text x="50" y="255" text-anchor="middle">4</text></g>
-            <g class="jn05-badge"><circle cx="230" cy="180" r="13"/><text x="230" y="185" text-anchor="middle">5</text></g>
-          </g>
-          <text x="300" y="362" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">five porches: four sides, and one across the middle</text>
-        </svg>
+        <svg class="pic jn05-pool" style="--ar:1.579" viewBox="0 0 600 380" role="img" aria-label="The pool of Bethesda seen from above: two pools with covered porches of columns on all four sides and one across the middle. Sick people lie on mats in every porch, and the water stirs.">
+  <defs>
+    <linearGradient id="jn05-psky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn05-pground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 26%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn05-pwater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 50%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 55%, var(--on-glow))"/></linearGradient>
+    <filter id="jn05-phaze" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  </defs>
+  <rect width="600" height="380" fill="url(#jn05-psky)"/>
+  <g class="jn05-city" filter="url(#jn05-phaze)"><rect x="-2.5" y="66.3" width="35.7" height="17.7"/><rect x="40.8" y="62.3" width="26.5" height="21.7"/><rect x="78.2" y="66.1" width="29.2" height="17.9"/><rect x="115.4" y="67.4" width="30.9" height="16.6"/><rect x="160.4" y="50.9" width="32.7" height="33.1"/><rect x="204.3" y="69.2" width="26.2" height="14.8"/><rect x="240" y="57.3" width="38.9" height="26.7"/><rect x="285.9" y="61.6" width="35.4" height="22.4"/><rect x="316.8" y="54.3" width="39" height="29.7"/><rect x="357.8" y="63.1" width="37.8" height="20.9"/><rect x="397.3" y="69.4" width="30.9" height="14.6"/><rect x="439.9" y="58.1" width="34.9" height="25.9"/><rect x="475.8" y="57.1" width="28.5" height="26.9"/><rect x="519.6" y="61.2" width="27.1" height="22.8"/><rect x="556.7" y="68.8" width="28.7" height="15.2"/><rect x="601.7" y="55.6" width="31.2" height="28.4"/></g>
+  <path d="M0 84 L600 84 L600 380 L0 380 Z" fill="url(#jn05-pground)"/>
+  <path class="jn05-wall" d="M112.2 84.9 L487.8 84.9 L594.5 337.1 L5.5 337.1 Z"/>
+  <g class="jn05-walk"><path d="M120 92 L480 92 L486.7 108.7 L113.4 108.7 Z"/><path d="M77.3 199.1 L522.8 199.1 L532.3 222.9 L67.8 222.9 Z"/><path d="M31.6 313.3 L568.4 313.3 L575 330 L25 330 Z"/><path d="M120 92 L145.2 92 L63.5 330 L25 330 Z"/><path d="M454.8 92 L480 92 L575 330 L536.5 330 Z"/></g>
+  <path class="jn05-water" d="M148.4 115.8 L451.6 115.8 L475.9 192 L124.1 192 Z" fill="url(#jn05-pwater)"/>
+  <path class="jn05-water" d="M111.9 230 L488.1 230 L512.4 306.2 L87.6 306.2 Z" fill="url(#jn05-pwater)"/>
+  <path class="jn05-pwall" d="M148.4 115.8 L451.6 115.8 L453.9 122.9 L146.1 122.9 Z"/><path class="jn05-pwall" d="M111.9 230 L488.1 230 L490.4 237.2 L109.6 237.2 Z"/>
+  <path class="jn05-edge" d="M124.1 192 L475.9 192 M87.6 306.2 L512.4 306.2"/>
+  <g class="jn05-glints"><line style="--k:0" x1="268.4" y1="151.4" x2="284.4" y2="151.4"/><line style="--k:1" x1="222.7" y1="296.5" x2="238.7" y2="296.5"/><line style="--k:2" x1="443.5" y1="160.2" x2="459.5" y2="160.2"/><line style="--k:3" x1="402.6" y1="125.3" x2="418.6" y2="125.3"/><line style="--k:4" x1="350.2" y1="292.9" x2="366.2" y2="292.9"/><line style="--k:5" x1="390.2" y1="276.1" x2="406.2" y2="276.1"/><line style="--k:0" x1="455.2" y1="255" x2="471.2" y2="255"/><line style="--k:1" x1="318.1" y1="263.8" x2="334.1" y2="263.8"/><line style="--k:2" x1="306.7" y1="124.9" x2="322.7" y2="124.9"/><line style="--k:3" x1="311.5" y1="164.6" x2="327.5" y2="164.6"/><line style="--k:4" x1="440.2" y1="145" x2="456.2" y2="145"/><line style="--k:5" x1="292.3" y1="147.7" x2="308.3" y2="147.7"/><line style="--k:0" x1="162.1" y1="168.3" x2="178.1" y2="168.3"/><line style="--k:1" x1="475.4" y1="263.9" x2="491.4" y2="263.9"/><line style="--k:2" x1="264.8" y1="295.8" x2="280.8" y2="295.8"/><line style="--k:3" x1="261.6" y1="282.2" x2="277.6" y2="282.2"/><line style="--k:4" x1="320.4" y1="244.8" x2="336.4" y2="244.8"/><line style="--k:5" x1="159.7" y1="170.3" x2="175.7" y2="170.3"/></g>
+  <ellipse class="jn05-ripple" style="--k:0" cx="218.1" cy="153.9" rx="46" ry="15.2"/><ellipse class="jn05-ripple" style="--k:1" cx="380.7" cy="272.9" rx="52" ry="20.3"/><ellipse class="jn05-ripple" style="--k:2" cx="324.1" cy="144.4" rx="36" ry="11.8"/>
+  <g class="jn05-cols"><line x1="125.4" y1="96.8" x2="125.4" y2="76.4"/><line x1="150.3" y1="96.8" x2="150.3" y2="76.4"/><line x1="175.3" y1="96.8" x2="175.3" y2="76.4"/><line x1="200.2" y1="96.8" x2="200.2" y2="76.4"/><line x1="225.2" y1="96.8" x2="225.2" y2="76.4"/><line x1="250.1" y1="96.8" x2="250.1" y2="76.4"/><line x1="275.1" y1="96.8" x2="275.1" y2="76.4"/><line x1="300" y1="96.8" x2="300" y2="76.4"/><line x1="324.9" y1="96.8" x2="324.9" y2="76.4"/><line x1="349.9" y1="96.8" x2="349.9" y2="76.4"/><line x1="374.8" y1="96.8" x2="374.8" y2="76.4"/><line x1="399.8" y1="96.8" x2="399.8" y2="76.4"/><line x1="424.7" y1="96.8" x2="424.7" y2="76.4"/><line x1="449.7" y1="96.8" x2="449.7" y2="76.4"/><line x1="474.6" y1="96.8" x2="474.6" y2="76.4"/><line x1="125.4" y1="96.8" x2="125.4" y2="76.4"/><line x1="116.6" y1="119.6" x2="116.6" y2="97.5"/><line x1="107.9" y1="142.5" x2="107.9" y2="118.6"/><line x1="99.1" y1="165.3" x2="99.1" y2="139.8"/><line x1="90.4" y1="188.2" x2="90.4" y2="160.9"/><line x1="81.6" y1="211" x2="81.6" y2="182"/><line x1="72.8" y1="233.8" x2="72.8" y2="203.1"/><line x1="64.1" y1="256.7" x2="64.1" y2="224.2"/><line x1="55.3" y1="279.5" x2="55.3" y2="245.4"/><line x1="46.6" y1="302.4" x2="46.6" y2="266.5"/><line x1="37.8" y1="325.2" x2="37.8" y2="287.6"/><line x1="474.6" y1="96.8" x2="474.6" y2="76.4"/><line x1="483.4" y1="119.6" x2="483.4" y2="97.5"/><line x1="492.1" y1="142.5" x2="492.1" y2="118.6"/><line x1="500.9" y1="165.3" x2="500.9" y2="139.8"/><line x1="509.6" y1="188.2" x2="509.6" y2="160.9"/><line x1="518.4" y1="211" x2="518.4" y2="182"/><line x1="527.2" y1="233.8" x2="527.2" y2="203.1"/><line x1="535.9" y1="256.7" x2="535.9" y2="224.2"/><line x1="544.7" y1="279.5" x2="544.7" y2="245.4"/><line x1="553.4" y1="302.4" x2="553.4" y2="266.5"/><line x1="562.2" y1="325.2" x2="562.2" y2="287.6"/></g>
+  <g class="jn05-roofs"><path class="roof" d="M122.4 71.4 L477.6 71.4 L477.6 78.4 L122.4 78.4 Z"/><path class="roof" d="M125.4 70.4 L37.8 278.6 L37.8 289.6 L125.4 78.4 Z"/><path class="roof" d="M474.6 70.4 L562.2 278.6 L562.2 289.6 L474.6 78.4 Z"/></g>
+  <g class="jn05-sick"><g transform="translate(116.9 214.5) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(419.1 218.7) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(456.6 216.8) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(341 216.4) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(419.2 205.2) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(478 215.2) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(410 210.2) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(371.8 217.4) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(380.9 204.3) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(478.2 217.1) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(273.2 218.1) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(356.4 204.3) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(151.9 105) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(210.3 102.1) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(273.1 98.9) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(399.1 105.5) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(274 103.1) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(320.3 100.2) scale(0.6)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(63.5 275.3) scale(1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(80.7 259.7) scale(0.9)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(67.4 264.1) scale(0.9)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(69.2 267.9) scale(1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(60.2 296) scale(1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(504.5 213.6) scale(0.8)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(521.5 245.6) scale(0.9)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(496.1 159.6) scale(0.7)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(507.3 227.1) scale(0.9)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(488.7 151.1) scale(0.7)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(227.7 320.5) scale(1.1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(432 321.3) scale(1.1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(407.3 319.7) scale(1.1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g><g transform="translate(386.8 316.8) scale(1.1)"><rect class="mat" x="-9" y="-3" width="18" height="6" rx="1.5"/><ellipse class="body" cx="1.5" cy="-.5" rx="6" ry="2.3"/><circle class="head" cx="-6" cy="-1" r="2.2"/></g></g>
+  <g class="jn05-cols"><line x1="81.6" y1="211" x2="81.6" y2="182"/><line x1="112.8" y1="211" x2="112.8" y2="182"/><line x1="144" y1="211" x2="144" y2="182"/><line x1="175.2" y1="211" x2="175.2" y2="182"/><line x1="206.4" y1="211" x2="206.4" y2="182"/><line x1="237.6" y1="211" x2="237.6" y2="182"/><line x1="268.8" y1="211" x2="268.8" y2="182"/><line x1="300" y1="211" x2="300" y2="182"/><line x1="331.2" y1="211" x2="331.2" y2="182"/><line x1="362.4" y1="211" x2="362.4" y2="182"/><line x1="393.6" y1="211" x2="393.6" y2="182"/><line x1="424.8" y1="211" x2="424.8" y2="182"/><line x1="456" y1="211" x2="456" y2="182"/><line x1="487.2" y1="211" x2="487.2" y2="182"/><line x1="518.4" y1="211" x2="518.4" y2="182"/></g><g class="jn05-roofs"><path class="roof" d="M78.6 175.4 L521.4 175.4 L521.4 184 L78.6 184 Z"/></g>
+  <g class="jn05-cols"><line x1="37.8" y1="325.2" x2="37.8" y2="287.6"/><line x1="75.3" y1="325.2" x2="75.3" y2="287.6"/><line x1="112.7" y1="325.2" x2="112.7" y2="287.6"/><line x1="150.2" y1="325.2" x2="150.2" y2="287.6"/><line x1="187.6" y1="325.2" x2="187.6" y2="287.6"/><line x1="225.1" y1="325.2" x2="225.1" y2="287.6"/><line x1="262.5" y1="325.2" x2="262.5" y2="287.6"/><line x1="300" y1="325.2" x2="300" y2="287.6"/><line x1="337.5" y1="325.2" x2="337.5" y2="287.6"/><line x1="374.9" y1="325.2" x2="374.9" y2="287.6"/><line x1="412.4" y1="325.2" x2="412.4" y2="287.6"/><line x1="449.8" y1="325.2" x2="449.8" y2="287.6"/><line x1="487.3" y1="325.2" x2="487.3" y2="287.6"/><line x1="524.7" y1="325.2" x2="524.7" y2="287.6"/><line x1="562.2" y1="325.2" x2="562.2" y2="287.6"/></g><g class="jn05-roofs"><path class="roof" d="M34.8 279.3 L565.2 279.3 L565.2 289.6 L34.8 289.6 Z"/></g>
+  <g class="step jn05-nums"><g class="jn05-badge"><circle cx="300" cy="60.4" r="12"/><text x="300" y="65.4" text-anchor="middle">1</text></g><g class="jn05-badge"><circle cx="500.2" cy="126" r="12"/><text x="500.2" y="131" text-anchor="middle">2</text></g><g class="jn05-badge"><circle cx="300" cy="271.6" r="12"/><text x="300" y="276.6" text-anchor="middle">3</text></g><g class="jn05-badge"><circle cx="63.4" cy="214" r="12"/><text x="63.4" y="219" text-anchor="middle">4</text></g><g class="jn05-badge"><circle cx="209" cy="166" r="12"/><text x="209" y="171" text-anchor="middle">5</text></g></g>
+  <text class="pic-lab soft" x="300" y="372" text-anchor="middle">five porches: four sides, and one across the middle</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">A hospital with no doctor</h2>
@@ -223,9 +242,15 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="6" data-hl="knew that he had been now a long time in that case"></blockquote>
+    <div class="split art-narrow art-slimmer">
+      <figure class="art rise" style="--d:1;--kb:40% 35%"><span class="art-frame"><img src="../assets/art/bloch-christ-healing-the-sick-at-bethesda.jpg" width="500" height="398" style="max-height:36vh" alt="Under the stone porches by the pool, Jesus lifts a ragged cloth and holds out his hand to a sick man lying on his mat beneath it, while other sick people wait by the water."></span>
+        <figcaption>Carl Bloch, <i>Christ Healing the Sick at Bethesda</i></figcaption></figure>
+      <div>
     <div class="talk">
       <p class="rise" style="--d:1"><small>Jesus</small>Wilt thou be made whole?</p>
       <p class="reply step"><small>The man</small>Sir, I have no man, when the water is troubled, to put me into the pool: but while I am coming, another steppeth down before me.<br><span class="flag">not a yes</span></p>
+    </div>
+      </div>
     </div>
     <p class="note step">Jesus asked a yes-or-no question. The man answered with the reasons it couldn't happen: nobody to help, always too slow, always beaten to it.</p>
     <p class="note step">After thirty-eight years, a man can get used to the mat, and the excuses come out before the hope does. Jesus asks anyway, and he asks you too: <em>Do you really want to be made whole?</em></p>
@@ -238,8 +263,14 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="8"></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:60% 25%"><span class="art-frame"><img src="../assets/art/murillo-healing-of-the-paralytic.jpg" width="875" height="1100" style="max-height:36vh" alt="Jesus stands over a sick man lying on his mat by the pool and holds out his hand to him. The man looks up at him, and the disciples look on."></span>
+        <figcaption>Bartolomé Esteban Murillo, <i>Christ Healing the Paralytic</i></figcaption></figure>
+      <div>
     <p class="jn05-cmds" aria-label="Rise. Take up thy bed. Walk."><span style="--k:0">Rise,</span><i>·</i><span style="--k:1">take up thy bed,</span><i>·</i><span style="--k:2">and walk.</span></p>
     <p class="note rise" style="--d:2">No pool. No angel. No race to the water. Jesus just spoke, and <em>“immediately”</em> the man was made whole.</p>
+      </div>
+    </div>
     <p class="note step">His “bed” was a thin mat or pallet, light enough to roll up and carry. For thirty-eight years that mat had carried him. Now he carries it.</p>
     <p class="note step">Jesus didn't ask him to try harder, or to get to the water on his own. He told him to do the one thing he couldn't do, and with the command came the power to do it.</p>
   </div>
@@ -401,51 +432,61 @@
     <blockquote class="quote rise" data-q="39" data-hl="they are they which testify of me"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 640 400" role="img" aria-label="Six Old Testament passages around the outside, each with an arrow pointing to Jesus in the center.">
-          <defs>
-            <radialGradient id="jn05-core"><stop offset="0" style="stop-color:var(--glow)"/><stop offset=".55" stop-opacity=".5" style="stop-color:var(--accent)"/><stop offset="1" stop-opacity="0" style="stop-color:var(--accent)"/></radialGradient>
-          </defs>
-          <g class="rise" style="--d:2">
-            <circle cx="320" cy="200" r="92" fill="url(#jn05-core)"/>
-            <circle cx="320" cy="200" r="54" style="fill:var(--accent)"/>
-            <text x="320" y="196" text-anchor="middle" font-size="21" font-weight="700" class="serif" style="fill:var(--on-accent)">Jesus</text>
-            <text x="320" y="218" text-anchor="middle" font-size="14" style="fill:var(--on-accent)">“of me”</text>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="130" y="58" text-anchor="middle">Genesis 3:15</text>
-            <text class="jn05-what" x="130" y="80" text-anchor="middle">the seed who crushes</text>
-            <text class="jn05-what" x="130" y="98" text-anchor="middle">the serpent's head</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M190 112 L268 164"/>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="510" y="58" text-anchor="middle">Genesis 22</text>
-            <text class="jn05-what" x="510" y="80" text-anchor="middle">“God will provide</text>
-            <text class="jn05-what" x="510" y="98" text-anchor="middle">himself a lamb”</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M450 112 L372 164"/>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="90" y="194" text-anchor="middle">Exodus 12</text>
-            <text class="jn05-what" x="90" y="216" text-anchor="middle">the Passover lamb</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M172 202 L258 202"/>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="553" y="194" text-anchor="middle">Numbers 21</text>
-            <text class="jn05-what" x="556" y="216" text-anchor="middle">the serpent lifted up</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M466 202 L382 202"/>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="130" y="318" text-anchor="middle">Psalm 22</text>
-            <text class="jn05-what" x="130" y="340" text-anchor="middle">“they pierced my</text>
-            <text class="jn05-what" x="130" y="358" text-anchor="middle">hands and my feet”</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M190 300 L268 240"/>
-          </g>
-          <g class="jn05-node step">
-            <text class="jn05-ref" x="510" y="318" text-anchor="middle">Isaiah 53</text>
-            <text class="jn05-what" x="510" y="340" text-anchor="middle">“wounded for</text>
-            <text class="jn05-what" x="510" y="358" text-anchor="middle">our transgressions”</text>
-            <path class="jn05-arrow draw" pathLength="1" d="M450 300 L372 240"/>
-          </g>
-        </svg>
+        <svg class="pic jn05-point" style="--ar:1.6" viewBox="0 0 640 400" role="img" aria-label="Six scrolls from the Old Testament stand around a bright light in the center that is Jesus. One by one, a beam runs from each scroll to him: Genesis 3:15, Genesis 22, Exodus 12, Numbers 21, Psalm 22 and Isaiah 53.">
+  <defs>
+    <radialGradient id="jn05-psky2" cx=".5" cy=".5" r=".7"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 34%, var(--on-glow))"/><stop offset="0.5" style="stop-color:color-mix(in srgb, var(--cool) 18%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></radialGradient>
+    <radialGradient id="jn05-core"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.4" style="stop-color:var(--glow);stop-opacity:0.85"/><stop offset="0.7" style="stop-color:var(--warm);stop-opacity:0.4"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn05-sheet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 92%, var(--warm))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--glow) 74%, var(--leather-light))"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#jn05-psky2)"/>
+  <g class="jn05-stars"><circle cx="0" cy="157.8" r="0.7" opacity="0.4"/><circle cx="90.3" cy="14.6" r="0.5" opacity="0.5"/><circle cx="96.3" cy="223.3" r="0.9" opacity="0.2"/><circle cx="102.6" cy="235.6" r="0.5" opacity="0.2"/><circle cx="96.2" cy="80.2" r="0.7" opacity="0.2"/><circle cx="490.8" cy="316.5" r="0.9" opacity="0.4"/><circle cx="176.6" cy="384.7" r="0.7" opacity="0.2"/><circle cx="467.8" cy="114.6" r="1.1" opacity="0.3"/><circle cx="133.3" cy="393.9" r="1.2" opacity="0.3"/><circle cx="622.8" cy="38.4" r="1.1" opacity="0.6"/><circle cx="107.5" cy="104" r="1.3" opacity="0.3"/><circle cx="572.7" cy="261.6" r="1.2" opacity="0.3"/><circle cx="191.7" cy="173.3" r="1.1" opacity="0.5"/><circle cx="49.8" cy="199.8" r="0.9" opacity="0.5"/><circle cx="465.7" cy="72.7" r="1.1" opacity="0.4"/><circle cx="351.3" cy="382.8" r="1.3" opacity="0.4"/><circle cx="511" cy="108.9" r="1.2" opacity="0.3"/><circle cx="321.4" cy="61" r="1.2" opacity="0.5"/><circle cx="526.7" cy="60.1" r="0.7" opacity="0.3"/><circle cx="30.5" cy="26.1" r="1" opacity="0.6"/><circle cx="133.6" cy="70.5" r="1.3" opacity="0.5"/><circle cx="447.7" cy="367.6" r="0.5" opacity="0.4"/><circle cx="494.9" cy="215.2" r="0.7" opacity="0.4"/><circle cx="517.1" cy="98.5" r="1" opacity="0.4"/><circle cx="551.4" cy="214" r="0.9" opacity="0.5"/><circle cx="260.6" cy="39.7" r="1" opacity="0.4"/><circle cx="554.3" cy="98" r="1" opacity="0.5"/><circle cx="559.7" cy="210.4" r="0.9" opacity="0.5"/><circle cx="92.2" cy="156.5" r="0.7" opacity="0.5"/><circle cx="5.8" cy="97.2" r="0.6" opacity="0.3"/><circle cx="520.8" cy="287.9" r="0.9" opacity="0.6"/><circle cx="423" cy="382.5" r="0.9" opacity="0.2"/><circle cx="100.8" cy="65.3" r="0.9" opacity="0.4"/><circle cx="487.4" cy="214.7" r="1.1" opacity="0.5"/><circle cx="607.9" cy="90.5" r="0.8" opacity="0.5"/><circle cx="484.1" cy="186.2" r="0.8" opacity="0.6"/></g>
+  <g class="rise" style="--d:2">
+    <circle class="jn05-corehalo" cx="320" cy="200" r="118" fill="url(#jn05-core)"/>
+    <circle class="jn05-corelight" cx="320" cy="200" r="52"/>
+    <text class="pic-lab dark big" x="320" y="200" text-anchor="middle">Jesus</text>
+    <text class="pic-lab dark" x="320" y="222" text-anchor="middle">“of me”</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M206 114 L270 160"/>
+    <g class="jn05-scroll"><rect class="sheet" x="45" y="35" width="170" height="74" rx="3"/><rect class="roll" x="38" y="31" width="10" height="82" rx="5"/><rect class="roll" x="212" y="31" width="10" height="82" rx="5"/></g>
+    <text class="pic-lab ink b" x="130" y="60" text-anchor="middle">Genesis 3:15</text>
+    <text class="pic-lab ink" x="130" y="80" text-anchor="middle">the seed who crushes</text>
+    <text class="pic-lab ink" x="130" y="99" text-anchor="middle">the serpent's head</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M434 114 L370 160"/>
+    <g class="jn05-scroll"><rect class="sheet" x="425" y="35" width="170" height="74" rx="3"/><rect class="roll" x="418" y="31" width="10" height="82" rx="5"/><rect class="roll" x="592" y="31" width="10" height="82" rx="5"/></g>
+    <text class="pic-lab ink b" x="510" y="60" text-anchor="middle">Genesis 22</text>
+    <text class="pic-lab ink" x="510" y="80" text-anchor="middle">“God will provide</text>
+    <text class="pic-lab ink" x="510" y="99" text-anchor="middle">himself a lamb”</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M190 200 L252 200"/>
+    <g class="jn05-scroll"><rect class="sheet" x="15" y="172" width="170" height="56" rx="3"/><rect class="roll" x="8" y="168" width="10" height="64" rx="5"/><rect class="roll" x="182" y="168" width="10" height="64" rx="5"/></g>
+    <text class="pic-lab ink b" x="100" y="197" text-anchor="middle">Exodus 12</text>
+    <text class="pic-lab ink" x="100" y="217" text-anchor="middle">the Passover lamb</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M450 200 L388 200"/>
+    <g class="jn05-scroll"><rect class="sheet" x="455" y="172" width="170" height="56" rx="3"/><rect class="roll" x="448" y="168" width="10" height="64" rx="5"/><rect class="roll" x="622" y="168" width="10" height="64" rx="5"/></g>
+    <text class="pic-lab ink b" x="540" y="197" text-anchor="middle">Numbers 21</text>
+    <text class="pic-lab ink" x="540" y="217" text-anchor="middle">the serpent lifted up</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M206 288 L270 240"/>
+    <g class="jn05-scroll"><rect class="sheet" x="45" y="291" width="170" height="74" rx="3"/><rect class="roll" x="38" y="287" width="10" height="82" rx="5"/><rect class="roll" x="212" y="287" width="10" height="82" rx="5"/></g>
+    <text class="pic-lab ink b" x="130" y="316" text-anchor="middle">Psalm 22</text>
+    <text class="pic-lab ink" x="130" y="336" text-anchor="middle">“they pierced my</text>
+    <text class="pic-lab ink" x="130" y="355" text-anchor="middle">hands and my feet”</text>
+  </g>
+  <g class="jn05-node step">
+    <path class="jn05-beam draw" pathLength="1" d="M434 288 L370 240"/>
+    <g class="jn05-scroll"><rect class="sheet" x="425" y="291" width="170" height="74" rx="3"/><rect class="roll" x="418" y="287" width="10" height="82" rx="5"/><rect class="roll" x="592" y="287" width="10" height="82" rx="5"/></g>
+    <text class="pic-lab ink b" x="510" y="316" text-anchor="middle">Isaiah 53</text>
+    <text class="pic-lab ink" x="510" y="336" text-anchor="middle">“wounded for</text>
+    <text class="pic-lab ink" x="510" y="355" text-anchor="middle">our transgressions”</text>
+  </g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">The whole Book points to him</h2>
@@ -464,25 +505,41 @@
     <blockquote class="quote rise" data-q="44" data-hl="receive honour one of another|seek not the honour that cometh from God only"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 300" role="img" aria-label="A balance scale. At first the side marked honour from men hangs low; then it tips, and honour from God weighs more.">
-          <path d="M300 80 L300 262 M240 270 L360 270" stroke-width="6" stroke-linecap="round" fill="none" style="stroke:var(--ink-soft)"/>
-          <g class="jn05-beam">
-            <line x1="100" y1="80" x2="500" y2="80" stroke-width="7" stroke-linecap="round" style="stroke:var(--ink)"/>
-          </g>
-          <circle cx="300" cy="80" r="10" style="fill:var(--accent)"/>
-          <g class="jn05-panL">
-            <path d="M100 80 L50 170 M100 80 L150 170" stroke-width="2" fill="none" style="stroke:var(--ink-soft)"/>
-            <path class="jn05-pan" d="M40 170 L160 170 Q150 205 100 205 Q50 205 40 170 Z"/>
-            <text x="100" y="236" text-anchor="middle" font-size="19" font-weight="700">honour</text>
-            <text x="100" y="258" text-anchor="middle" font-size="19" font-weight="700">from men</text>
-          </g>
-          <g class="jn05-panR">
-            <path d="M500 80 L450 170 M500 80 L550 170" stroke-width="2" fill="none" style="stroke:var(--ink-soft)"/>
-            <path class="jn05-pan" d="M440 170 L560 170 Q550 205 500 205 Q450 205 440 170 Z" style="stroke:var(--accent)"/>
-            <text x="500" y="236" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">honour</text>
-            <text x="500" y="258" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">from God</text>
-          </g>
-        </svg>
+        <svg class="pic jn05-scale" style="--ar:1.875" viewBox="0 0 600 320" role="img" aria-label="A brass balance in lamplight. At first the pan holding honour from men, a heap of coins and a wreath, hangs low; then the scale tips, and the pan holding honour from God, a small steady light, weighs more.">
+  <defs>
+    <radialGradient id="jn05-slamp" cx=".5" cy=".3" r=".6"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 45%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></radialGradient>
+    <linearGradient id="jn05-sbrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--leather-light) 70%, var(--glow))"/><stop offset="0.5" style="stop-color:color-mix(in srgb, var(--warm) 70%, var(--leather))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--leather) 70%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn05-span" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--leather-light) 60%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--leather) 75%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn05-sgod"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.35" style="stop-color:var(--glow);stop-opacity:0.75"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+  </defs>
+  <rect width="600" height="320" fill="url(#jn05-slamp)"/>
+  <g class="jn05-stones"><rect x="2" y="2" width="46" height="32" rx="2" opacity="0.7"/><rect x="52" y="2" width="79.8" height="32" rx="2" opacity="0.9"/><rect x="135.8" y="2" width="48.3" height="32" rx="2" opacity="0.9"/><rect x="188.1" y="2" width="78" height="32" rx="2" opacity="0.8"/><rect x="270.1" y="2" width="67.9" height="32" rx="2" opacity="1"/><rect x="342" y="2" width="66.8" height="32" rx="2" opacity="0.9"/><rect x="412.8" y="2" width="51.1" height="32" rx="2" opacity="0.8"/><rect x="467.8" y="2" width="82.4" height="32" rx="2" opacity="0.6"/><rect x="554.2" y="2" width="62.4" height="32" rx="2" opacity="0.7"/><rect x="-28" y="38" width="66.7" height="32" rx="2" opacity="0.7"/><rect x="42.7" y="38" width="49.9" height="32" rx="2" opacity="0.9"/><rect x="96.6" y="38" width="46.5" height="32" rx="2" opacity="0.9"/><rect x="147.1" y="38" width="61.4" height="32" rx="2" opacity="1"/><rect x="212.5" y="38" width="68.5" height="32" rx="2" opacity="0.6"/><rect x="285" y="38" width="48.9" height="32" rx="2" opacity="1"/><rect x="337.9" y="38" width="65" height="32" rx="2" opacity="1"/><rect x="406.9" y="38" width="64.5" height="32" rx="2" opacity="0.9"/><rect x="475.4" y="38" width="66.5" height="32" rx="2" opacity="0.8"/><rect x="545.9" y="38" width="76.2" height="32" rx="2" opacity="0.9"/><rect x="2" y="74" width="79.9" height="32" rx="2" opacity="0.7"/><rect x="85.9" y="74" width="54" height="32" rx="2" opacity="0.9"/><rect x="143.9" y="74" width="57.4" height="32" rx="2" opacity="0.9"/><rect x="205.3" y="74" width="49" height="32" rx="2" opacity="0.7"/><rect x="258.3" y="74" width="75.5" height="32" rx="2" opacity="0.6"/><rect x="337.8" y="74" width="71.4" height="32" rx="2" opacity="0.8"/><rect x="413.3" y="74" width="47.2" height="32" rx="2" opacity="0.6"/><rect x="464.5" y="74" width="47.7" height="32" rx="2" opacity="0.9"/><rect x="516.2" y="74" width="50.3" height="32" rx="2" opacity="0.9"/><rect x="570.5" y="74" width="56.8" height="32" rx="2" opacity="0.7"/><rect x="-28" y="110" width="64.3" height="32" rx="2" opacity="0.6"/><rect x="40.3" y="110" width="61.2" height="32" rx="2" opacity="0.8"/><rect x="105.4" y="110" width="77.1" height="32" rx="2" opacity="0.8"/><rect x="186.5" y="110" width="76.9" height="32" rx="2" opacity="0.8"/><rect x="267.4" y="110" width="67" height="32" rx="2" opacity="0.8"/><rect x="338.4" y="110" width="50.5" height="32" rx="2" opacity="0.7"/><rect x="392.9" y="110" width="66.5" height="32" rx="2" opacity="0.8"/><rect x="463.4" y="110" width="74.4" height="32" rx="2" opacity="0.8"/><rect x="541.8" y="110" width="46.2" height="32" rx="2" opacity="1"/><rect x="592" y="110" width="85.9" height="32" rx="2" opacity="0.9"/><rect x="2" y="146" width="83.8" height="32" rx="2" opacity="0.6"/><rect x="89.8" y="146" width="48.9" height="32" rx="2" opacity="0.7"/><rect x="142.7" y="146" width="56.8" height="32" rx="2" opacity="0.9"/><rect x="203.5" y="146" width="76.4" height="32" rx="2" opacity="0.9"/><rect x="283.9" y="146" width="66.6" height="32" rx="2" opacity="0.7"/><rect x="354.6" y="146" width="85.6" height="32" rx="2" opacity="0.6"/><rect x="444.2" y="146" width="84.6" height="32" rx="2" opacity="0.7"/><rect x="532.8" y="146" width="84.7" height="32" rx="2" opacity="0.9"/><rect x="-28" y="182" width="48" height="32" rx="2" opacity="0.8"/><rect x="24" y="182" width="46.2" height="32" rx="2" opacity="0.7"/><rect x="74.2" y="182" width="69.1" height="32" rx="2" opacity="0.6"/><rect x="147.3" y="182" width="51.4" height="32" rx="2" opacity="1"/><rect x="202.7" y="182" width="81.3" height="32" rx="2" opacity="0.6"/><rect x="288" y="182" width="70.5" height="32" rx="2" opacity="0.9"/><rect x="362.5" y="182" width="71.6" height="32" rx="2" opacity="0.8"/><rect x="438.1" y="182" width="49.4" height="32" rx="2" opacity="0.8"/><rect x="491.6" y="182" width="55.6" height="32" rx="2" opacity="0.9"/><rect x="551.2" y="182" width="63.1" height="32" rx="2" opacity="0.7"/><rect x="2" y="218" width="70.9" height="32" rx="2" opacity="0.7"/><rect x="76.9" y="218" width="74.6" height="32" rx="2" opacity="0.8"/><rect x="155.5" y="218" width="52" height="32" rx="2" opacity="0.7"/><rect x="211.5" y="218" width="67.9" height="32" rx="2" opacity="0.9"/><rect x="283.4" y="218" width="48" height="32" rx="2" opacity="0.6"/><rect x="335.5" y="218" width="64.3" height="32" rx="2" opacity="0.6"/><rect x="403.7" y="218" width="83.8" height="32" rx="2" opacity="0.6"/><rect x="491.5" y="218" width="49" height="32" rx="2" opacity="0.8"/><rect x="544.5" y="218" width="49.2" height="32" rx="2" opacity="0.6"/><rect x="597.7" y="218" width="68.2" height="32" rx="2" opacity="0.8"/><rect x="-28" y="254" width="68.4" height="32" rx="2" opacity="0.8"/><rect x="44.4" y="254" width="65.8" height="32" rx="2" opacity="0.8"/><rect x="114.2" y="254" width="85.3" height="32" rx="2" opacity="0.7"/><rect x="203.5" y="254" width="47.3" height="32" rx="2" opacity="0.7"/><rect x="254.7" y="254" width="64.2" height="32" rx="2" opacity="0.8"/><rect x="322.9" y="254" width="74.6" height="32" rx="2" opacity="1"/><rect x="401.6" y="254" width="62.4" height="32" rx="2" opacity="0.8"/><rect x="468" y="254" width="57.4" height="32" rx="2" opacity="0.7"/><rect x="529.4" y="254" width="81.5" height="32" rx="2" opacity="0.7"/><rect x="2" y="290" width="51.7" height="32" rx="2" opacity="0.8"/><rect x="57.7" y="290" width="63.1" height="32" rx="2" opacity="0.9"/><rect x="124.8" y="290" width="52.2" height="32" rx="2" opacity="0.6"/><rect x="181" y="290" width="68.7" height="32" rx="2" opacity="0.9"/><rect x="253.7" y="290" width="54.5" height="32" rx="2" opacity="0.6"/><rect x="312.2" y="290" width="70.7" height="32" rx="2" opacity="0.8"/><rect x="386.9" y="290" width="65.3" height="32" rx="2" opacity="0.7"/><rect x="456.2" y="290" width="56" height="32" rx="2" opacity="0.8"/><rect x="516.2" y="290" width="50.3" height="32" rx="2" opacity="1"/><rect x="570.5" y="290" width="55.2" height="32" rx="2" opacity="0.6"/></g>
+  <rect width="600" height="320" fill="url(#jn05-slamp)" opacity=".55"/>
+  <path class="jn05-table" d="M0 286 L600 286 L600 320 L0 320 Z"/>
+  <ellipse class="jn05-shadow" cx="300" cy="288" rx="90" ry="8"/>
+  <path d="M296 84 L290 270 L310 270 L304 84 Z M250 270 C250 262 350 262 350 270 L356 286 L244 286 Z" fill="url(#jn05-sbrass)"/>
+  <g class="jn05-beam">
+    <path d="M100 76 L500 76 L500 84 L100 84 Z" fill="url(#jn05-sbrass)"/>
+    <circle cx="100" cy="80" r="6" fill="url(#jn05-sbrass)"/><circle cx="500" cy="80" r="6" fill="url(#jn05-sbrass)"/>
+    <path d="M300 80 L300 50 L296 54 L300 40 L304 54 L300 50" class="jn05-needle"/>
+  </g>
+  <circle cx="300" cy="80" r="11" fill="url(#jn05-sbrass)"/>
+  <g class="jn05-panL">
+    <path class="jn05-chain" d="M100 80 L52 168 M100 80 L148 168 M100 80 L100 168"/>
+    <path d="M40 168 L160 168 Q150 200 100 200 Q50 200 40 168 Z" fill="url(#jn05-span)"/>
+    <g class="jn05-coins"><ellipse cx="82" cy="165" rx="8" ry="3"/><ellipse cx="94" cy="166" rx="8" ry="3"/><ellipse cx="106" cy="165" rx="8" ry="3"/><ellipse cx="118" cy="166" rx="8" ry="3"/><ellipse cx="88" cy="159" rx="8" ry="3"/><ellipse cx="100" cy="159" rx="8" ry="3"/><ellipse cx="112" cy="159" rx="8" ry="3"/><ellipse cx="95" cy="153" rx="8" ry="3"/><ellipse cx="107" cy="153" rx="8" ry="3"/><ellipse cx="101" cy="147" rx="8" ry="3"/></g>
+    <path class="jn05-wreath" d="M78 148 C70 138 76 124 90 120 M122 148 C130 138 124 124 110 120"/>
+    <text class="pic-lab b" x="100" y="232" text-anchor="middle">honour</text>
+    <text class="pic-lab b" x="100" y="256" text-anchor="middle">from men</text>
+  </g>
+  <g class="jn05-panR">
+    <path class="jn05-chain" d="M500 80 L452 168 M500 80 L548 168 M500 80 L500 168"/>
+    <circle cx="500" cy="152" r="34" fill="url(#jn05-sgod)" class="jn05-light"/>
+    <path d="M440 168 L560 168 Q550 200 500 200 Q450 200 440 168 Z" fill="url(#jn05-span)"/>
+    <text class="pic-lab b jn05-god" x="500" y="232" text-anchor="middle">honour</text>
+    <text class="pic-lab b jn05-god" x="500" y="256" text-anchor="middle">from God</text>
+  </g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Whose approval do you need?</h2>
@@ -498,10 +555,16 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="46" data-hl="for he wrote of me"></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:50% 45%"><span class="art-frame"><img src="../assets/art/rembrandt-moses-with-the-ten-commandments.jpg" width="1100" height="988" alt="Moses, old and bearded, lifts the two stone tables of the law high over his head with both hands."></span>
+        <figcaption>Rembrandt, <i>Moses with the Ten Commandments</i></figcaption></figure>
+      <div>
     <h2 class="rise" style="--d:1">The witness they trusted</h2>
     <p class="note rise" style="--d:2">These men were proud to be followers of Moses. Jesus says Moses is the one who will stand up in court against them, because Moses wrote about him:</p>
     <blockquote class="quote rise" style="--d:3"><p>“The LORD thy God will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;”</p><cite>Deuteronomy 18:15</cite></blockquote>
     <p class="note step">You can't believe Moses and reject Jesus. Moses' law showed them their sin. Moses' lambs and sacrifices showed them that blood had to be shed. Moses' promise of a Prophet pointed straight at Jesus. The whole law was a signpost, and they were standing at the sign, refusing to go where it pointed.</p>
+      </div>
+    </div>
   </div>
 </section>
 

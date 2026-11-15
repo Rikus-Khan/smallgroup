@@ -10,29 +10,6 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* Jacob's well in cross-section, with a bucket going down */
-.jn04-well .earth { fill: var(--surface-2); }
-.jn04-well .shaft { fill: color-mix(in srgb, var(--ink) 22%, var(--bg)); }
-.jn04-well .water { fill: var(--cool); }
-.jn04-well .rope { stroke: var(--leather-light); stroke-width: 3; }
-.jn04-well .bucket { transform: translateY(0); }
-.slide.active .jn04-well .bucket { animation: jn04-lower 6s ease-in-out .6s infinite; }
-@keyframes jn04-lower { 0% { transform: translateY(0); } 45%, 55% { transform: translateY(268px); } 100% { transform: translateY(0); } }
-
-/* Mount Gerizim and Mount Ebal, with the well in the valley */
-.jn04-mount .peak { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
-.jn04-mount .gerizim { transition: fill 1s ease, stroke 1s ease; }
-.slide.active .jn04-mount .gerizim { transition-delay: 1.2s; fill: color-mix(in srgb, var(--accent) 16%, var(--surface-2)); stroke: var(--accent); }
-
-/* A field ripe for harvest, and the town coming out to Jesus */
-.jn04-harvest .stalk { fill: none; stroke: var(--warm); stroke-width: 3; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; }
-.jn04-harvest .head { fill: color-mix(in srgb, var(--warm) 45%, var(--glow)); stroke: var(--warm); stroke-width: 1.5; }
-.slide.active .jn04-harvest .ear { animation: jn04-sway 3.4s ease-in-out infinite; animation-delay: calc(var(--k) * -.3s); transform-box: fill-box; transform-origin: 50% 100%; }
-@keyframes jn04-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
-.jn04-harvest .person { fill: var(--glow); stroke: var(--ink); stroke-width: 1.5; }
-.jn04-harvest .crowd { transform: translateX(0); transition: transform 3.5s ease-in-out; }
-.split:has(.jn04-come.on) .jn04-harvest .crowd { transform: translateX(300px); }
-
 /* One, then many, then many more */
 .jn04-grow { display: grid; gap: .7rem; margin: .4em 0 1em; }
 .jn04-grow .row { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; gap: .3rem 1rem; align-items: center; }
@@ -41,15 +18,129 @@
 .jn04-grow .dots { margin: 0; }
 @media (max-width: 600px) { .jn04-grow .row { grid-template-columns: 1fr; } }
 
-/* The road from Cana down to Capernaum */
-.jn04-down .land { fill: var(--surface-2); stroke: var(--ink-soft); stroke-width: 2; }
-.jn04-down .lake { fill: var(--cool); }
-.jn04-down .sealevel { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 6 6; }
+/* Living water: a cracked cistern seeps dry beside a spring fed from below (Jeremiah 2:13) */
+.jn04-water .jn04-clouds ellipse { fill: color-mix(in srgb, var(--glow) 30%, var(--on-glow)); opacity: .5; }
+.jn04-water .jn04-far { fill: color-mix(in srgb, var(--on-glow) 70%, var(--cool)); }
+.jn04-water .jn04-cliff-crack { stroke: var(--on-glow); stroke-width: 2; opacity: .35; }
+.jn04-water .jn04-strata path { stroke: color-mix(in srgb, var(--warm) 22%, var(--on-glow)); stroke-width: 1.4; opacity: .7; }
+.jn04-water .jn04-pebbles ellipse { fill: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); opacity: .6; }
+.jn04-water .jn04-lining { stroke: color-mix(in srgb, var(--glow) 40%, var(--warm)); stroke-width: 2.5; opacity: .45; }
+.jn04-water .jn04-cap { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); }
+.jn04-water .jn04-cracks path { stroke: color-mix(in srgb, var(--warm) 60%, var(--glow)); stroke-width: 1.6; stroke-linejoin: round; }
+.jn04-water .jn04-drips circle { fill: color-mix(in srgb, var(--cool) 55%, var(--glow)); opacity: 0; }
+.jn04-water .jn04-vein-bed { stroke: var(--on-glow); stroke-width: 16; stroke-linecap: round; opacity: .8; }
+.jn04-water .jn04-vein { stroke: color-mix(in srgb, var(--cool) 55%, var(--glow)); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 12 10; }
+.jn04-water .jn04-stream { fill: color-mix(in srgb, var(--cool) 55%, var(--glow)); }
+.jn04-water .jn04-gush path { stroke: color-mix(in srgb, var(--cool) 30%, var(--glow)); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 6 5; }
+.jn04-water .jn04-grass path { stroke: color-mix(in srgb, color-mix(in srgb, var(--cool) 45%, var(--warm)) 70%, var(--glow)); stroke-width: 1.5; stroke-linecap: round; }
+.jn04-water .jn04-glints line { stroke: var(--glow); stroke-width: 1.4; stroke-linecap: round; opacity: .3; }
+.jn04-water .jn04-bubbles circle { fill: none; stroke: var(--glow); stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.jn04-water .jn04-still { transform: translateY(0); }
+.slide.active .jn04-water .jn04-still { animation: jn04-seep 9s .8s cubic-bezier(.3,0,.6,1) forwards; }
+.slide.active .jn04-water .jn04-drips circle { animation: jn04-drip 1.8s ease-in infinite; animation-delay: calc(var(--k) * .6s); }
+.slide.active .jn04-water .jn04-vein { animation: jn04-rise 1.4s linear infinite; }
+.slide.active .jn04-water .jn04-gush path { animation: jn04-rise .7s linear infinite; }
+.slide.active .jn04-water .jn04-glints line { animation: jn04-glint 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.5s); }
+.slide.active .jn04-water .jn04-bubbles circle { animation: jn04-bubble 1.9s ease-out infinite; animation-delay: calc(var(--k) * -.47s); }
+@keyframes jn04-seep { to { transform: translateY(84px); } }
+@keyframes jn04-drip { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(14px); } }
+@keyframes jn04-rise { to { stroke-dashoffset: -22; } }
+@keyframes jn04-glint { from { opacity: .1; } to { opacity: .55; } }
+@keyframes jn04-bubble { 0% { opacity: .8; transform: scale(.4); } 100% { opacity: 0; transform: scale(2.2); } }
 
-/* Two places, one hour */
-.jn04-same .track { stroke: var(--line-strong); stroke-width: 3; }
-.jn04-same .link { fill: none; stroke: var(--accent); stroke-width: 4; }
-.jn04-same .glow { fill: var(--accent); opacity: .18; }
+/* Thirst again, or never thirst */
+.jn04-thirst .jn04-grid line { stroke: var(--glow); stroke-width: 1; opacity: .1; }
+.jn04-thirst .jn04-axis { stroke: var(--glow); stroke-width: 2; opacity: .45; }
+.jn04-thirst .jn04-again { stroke: color-mix(in srgb, var(--glow) 55%, var(--on-glow)); stroke-width: 3; stroke-linejoin: round; }
+.jn04-thirst .jn04-never { stroke: url(#jn04-tline); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.jn04-thirst .jn04-never-glow { stroke: var(--warm); stroke-width: 12; opacity: .6; stroke-linecap: round; }
+
+/* "This mountain": looking west between Gerizim (south) and Ebal (north), with the well at the foot of Gerizim */
+.jn04-mount .jn04-farhills { fill: color-mix(in srgb, var(--cool) 40%, var(--glow)); opacity: .8; }
+.jn04-mount .jn04-gerlight { fill: var(--glow); opacity: 0; }
+.slide.active .jn04-mount .jn04-gerlight { animation: jn04-sunlit 2.4s 1.2s ease forwards; }
+@keyframes jn04-sunlit { to { opacity: .2; } }
+.jn04-mount .jn04-gname { transition: fill 1.6s ease 1.4s; }
+.slide.active .jn04-mount .jn04-gname { fill: color-mix(in srgb, var(--warm) 55%, var(--glow)); }
+.jn04-mount .jn04-ridges path { stroke: var(--on-glow); stroke-width: 2; opacity: .18; }
+.jn04-mount .jn04-ruins rect { fill: color-mix(in srgb, var(--glow) 75%, var(--warm)); }
+.jn04-mount .jn04-olives ellipse { fill: color-mix(in srgb, color-mix(in srgb, var(--cool) 40%, var(--warm)) 45%, var(--on-glow)); }
+.jn04-mount .jn04-road { stroke: color-mix(in srgb, var(--warm) 60%, var(--glow)); stroke-width: 5; stroke-linecap: round; opacity: .5; }
+.jn04-mount .jn04-houses .lit { fill: color-mix(in srgb, var(--glow) 72%, var(--warm)); }
+.jn04-mount .jn04-houses .side { fill: color-mix(in srgb, var(--warm) 45%, var(--on-glow)); }
+.jn04-mount .jn04-houses .door { fill: var(--on-glow); opacity: .7; }
+.jn04-mount .jn04-mwell .rim { fill: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); }
+.jn04-mount .jn04-mwell .rim-top { fill: color-mix(in srgb, var(--glow) 60%, var(--warm)); }
+.jn04-mount .jn04-mwell .hole { fill: var(--on-glow); }
+.jn04-mount .jn04-mwell .rim-shadow { fill: var(--on-glow); opacity: .35; }
+.jn04-mount .jn04-who .jesus { fill: color-mix(in srgb, var(--glow) 82%, var(--warm)); }
+.jn04-mount .jn04-who .woman { fill: color-mix(in srgb, var(--wine) 55%, var(--on-glow)); }
+.jn04-mount .jn04-who .jar { fill: color-mix(in srgb, var(--leather) 70%, var(--warm)); }
+
+/* The fields white to harvest, and the town coming out across them to Jesus */
+.jn04-harvest .jn04-hfar { fill: color-mix(in srgb, var(--cool) 35%, var(--glow)); opacity: .75; }
+.jn04-harvest .jn04-hhill { fill: color-mix(in srgb, var(--warm) 42%, var(--on-glow)); }
+.jn04-harvest .jn04-hhouses .lit { fill: color-mix(in srgb, var(--glow) 78%, var(--warm)); }
+.jn04-harvest .jn04-hhouses .side { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); }
+.jn04-harvest .jn04-hfarstalks path { stroke: color-mix(in srgb, var(--glow) 70%, var(--warm)); stroke-width: 1; opacity: .7; }
+.jn04-harvest .jn04-hmid path { stroke: color-mix(in srgb, var(--warm) 45%, var(--glow)); stroke-width: 1.4; opacity: .85; }
+.jn04-harvest .jn04-hpath { stroke: color-mix(in srgb, var(--warm) 30%, var(--glow)); stroke-width: 7; stroke-linecap: round; opacity: .55; }
+.jn04-harvest .jn04-hband .d { fill: color-mix(in srgb, var(--leather) 70%, var(--on-glow)); }
+.jn04-harvest .jn04-hband .jesus { fill: color-mix(in srgb, var(--glow) 88%, var(--warm)); stroke: color-mix(in srgb, var(--on-glow) 60%, transparent); stroke-width: 1; }
+.jn04-harvest .jn04-crowd .p0 { fill: color-mix(in srgb, var(--glow) 90%, var(--warm)); }
+.jn04-harvest .jn04-crowd .p1 { fill: color-mix(in srgb, var(--glow) 72%, var(--cool)); }
+.jn04-harvest .jn04-crowd .p2 { fill: color-mix(in srgb, var(--glow) 70%, var(--leather-light)); }
+.jn04-harvest .jn04-crowd g g { stroke: color-mix(in srgb, var(--on-glow) 45%, transparent); stroke-width: .8; }
+.jn04-harvest .stalk { fill: none; stroke: color-mix(in srgb, var(--warm) 70%, var(--leather)); stroke-width: 2; stroke-linecap: round; }
+.jn04-harvest .head { fill: color-mix(in srgb, var(--warm) 30%, var(--glow)); stroke: color-mix(in srgb, var(--warm) 80%, var(--leather)); stroke-width: 1; }
+.jn04-harvest .awn { fill: none; stroke: color-mix(in srgb, var(--warm) 25%, var(--glow)); stroke-width: .9; }
+.jn04-harvest .ear { transform-box: view-box; transform-origin: calc(var(--k) * 112px + 56px) 340px; }
+.slide.active .jn04-harvest .ear { animation: jn04-sway 4s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.7s); }
+@keyframes jn04-sway { from { transform: rotate(-1.2deg); } to { transform: rotate(1.4deg); } }
+.jn04-harvest .jn04-crowd { transform: translate(150px, 170px) scale(.45); transition: transform 4s cubic-bezier(.4,0,.4,1); }
+.split:has(.jn04-come.on) .jn04-harvest .jn04-crowd { transform: translate(430px, 246px) scale(1); }
+.split:has(.jn04-come.on) .jn04-harvest .jn04-hwalk { animation: jn04-step .5s ease-in-out 8 alternate; }
+@keyframes jn04-step { to { transform: translateY(-1.5px); } }
+
+/* A long way down: the road from Cana in the hills to Capernaum by the lake */
+.jn04-down .jn04-dfar { fill: color-mix(in srgb, var(--on-glow) 62%, var(--cool)); opacity: .9; }
+.jn04-down .jn04-dshore { fill: color-mix(in srgb, var(--cool) 30%, var(--on-glow)); }
+.jn04-down .jn04-dtrees ellipse { fill: color-mix(in srgb, color-mix(in srgb, var(--cool) 40%, var(--warm)) 40%, var(--on-glow)); }
+.jn04-down .jn04-dglints line { stroke: var(--glow); stroke-width: 1.3; stroke-linecap: round; opacity: .3; }
+.slide.active .jn04-down .jn04-dglints line { animation: jn04-glint 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.5s); }
+.jn04-down .jn04-dsea { stroke: var(--glow); stroke-width: 1.5; stroke-dasharray: 6 6; opacity: .55; }
+.jn04-down .jn04-droad { stroke: color-mix(in srgb, var(--warm) 55%, var(--glow)); stroke-width: 3; stroke-dasharray: 9 7; stroke-linecap: round; }
+.jn04-down .jn04-dtown rect { fill: color-mix(in srgb, var(--glow) 70%, var(--warm)); }
+.jn04-down .jn04-dman { fill: var(--glow); }
+.jn04-down .jn04-dwalker { transform: translate(560px, 194px); opacity: 0; }
+.slide.active .jn04-down .jn04-dwalker { animation: jn04-climb 9s 1s ease-in-out forwards; }
+@keyframes jn04-climb {
+  0% { transform: translate(560px, 194px); opacity: 0; } 6% { opacity: 1; }
+  20% { transform: translate(470px, 176px); } 40% { transform: translate(400px, 150px); } 60% { transform: translate(330px, 115px); }
+  78% { transform: translate(260px, 96px); } 92% { transform: translate(170px, 76px); } 100% { transform: translate(112px, 67px); opacity: 1; } }
+
+/* Two places, one hour: Cana and Capernaum under the same sun */
+.jn04-same .jn04-beams polygon { opacity: .14; transition: opacity 1.2s ease; }
+.jn04-same:has(.jn04-hour.on) .jn04-beams polygon { opacity: .5; }
+.jn04-same .jn04-sglints line { stroke: var(--glow); stroke-width: 1.3; stroke-linecap: round; opacity: .3; }
+.slide.active .jn04-same .jn04-sglints line { animation: jn04-glint 2.6s ease-in-out infinite alternate; animation-delay: calc(var(--k) * -.5s); }
+.jn04-same .jn04-sshore { fill: color-mix(in srgb, var(--warm) 30%, var(--on-glow)); }
+.jn04-same .jn04-sroad { stroke: color-mix(in srgb, var(--warm) 55%, var(--glow)); stroke-width: 4; stroke-dasharray: 9 7; stroke-linecap: round; opacity: .7; }
+.jn04-same .jn04-scana rect { fill: color-mix(in srgb, var(--glow) 72%, var(--warm)); }
+.jn04-same .jn04-sfigs .jesus { fill: color-mix(in srgb, var(--glow) 88%, var(--warm)); }
+.jn04-same .jn04-sfigs .father { fill: color-mix(in srgb, var(--wine) 60%, var(--on-glow)); }
+.jn04-same .jn04-shouse .wall { fill: color-mix(in srgb, var(--glow) 70%, var(--warm)); }
+.jn04-same .jn04-shouse .wall2 { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); }
+.jn04-same .jn04-shouse .roof { fill: color-mix(in srgb, var(--leather) 70%, var(--on-glow)); }
+.jn04-same .jn04-shouse .door { fill: var(--on-glow); }
+.jn04-same .jn04-shouse .glow { opacity: 0; transition: opacity 1.4s ease .4s; }
+.jn04-same:has(.jn04-hour.on) .jn04-shouse .glow { opacity: 1; }
+.jn04-same .jn04-mfi { fill: color-mix(in srgb, var(--wine) 60%, var(--on-glow)); }
+.jn04-same .jn04-msi { fill: color-mix(in srgb, var(--on-glow) 75%, var(--leather)); }
+.jn04-same .jn04-mf { transform: translate(250px, 236px); transition: transform 2.2s ease; }
+.jn04-same .jn04-ms { transform: translate(430px, 258px); transition: transform 2.2s ease; }
+.jn04-same .jn04-meet.on .jn04-mf { transform: translate(318px, 256px); }
+.jn04-same .jn04-meet.on .jn04-ms { transform: translate(346px, 260px); }
 </style>
 </head>
 <body>
@@ -134,30 +225,9 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="6" data-hl="being wearied with his journey|about the sixth hour"></blockquote>
-    <div class="split">
-      <div class="stage">
-        <svg class="jn04-well" viewBox="0 0 360 420" role="img" aria-label="Cross-section of Jacob's well: a narrow shaft roughly 100 feet deep, with water at the bottom and a bucket lowered on a rope.">
-          <defs><clipPath id="jn04-shaftclip"><rect x="0" y="0" width="360" height="400"/></clipPath></defs>
-          <circle cx="26" cy="34" r="20" style="fill:var(--warm)"/>
-          <text x="54" y="30" font-size="16" style="fill:var(--ink-soft)">the sixth hour,</text>
-          <text x="54" y="50" font-size="16" style="fill:var(--ink-soft)">about noon</text>
-          <rect class="earth" x="0" y="80" width="360" height="330"/>
-          <rect class="shaft" x="150" y="80" width="60" height="320"/>
-          <rect class="water" x="150" y="372" width="60" height="28"/>
-          <rect x="132" y="64" width="96" height="18" rx="3" style="fill:var(--line-strong)"/>
-          <g clip-path="url(#jn04-shaftclip)">
-            <g class="bucket">
-              <line class="rope" x1="180" y1="-300" x2="180" y2="84"/>
-              <path d="M168 84 L192 84 L189 104 L171 104 Z" style="fill:var(--leather)"/>
-            </g>
-          </g>
-          <line x1="250" y1="82" x2="250" y2="398" stroke-width="2" style="stroke:var(--ink-soft)"/>
-          <path d="M243 92 L250 82 L257 92 M243 388 L250 398 L257 388" fill="none" stroke-width="2" style="stroke:var(--ink-soft)"/>
-          <text x="262" y="236" font-size="18" font-weight="700">about</text>
-          <text x="262" y="258" font-size="18" font-weight="700">100 ft</text>
-          <text x="180" y="418" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">still there today, near Nablus</text>
-        </svg>
-      </div>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:35% 40%"><span class="art-frame"><img src="../assets/art/tissot-the-woman-of-samaria-at-the-well.jpg" width="486" height="338" alt="Jesus sits wrapped in a white cloak on the stone ledge inside the well-house, and a Samaritan woman leans over the well, letting down her bucket on a rope."></span>
+        <figcaption>James Tissot, <i>The Woman of Samaria at the Well</i></figcaption></figure>
       <div>
         <h2 class="rise" style="--d:1">Noon at Jacob's well</h2>
         <p class="note rise" style="--d:2">Hours were counted from sunrise, so <em>the sixth hour</em> was about noon, the hottest part of the day.</p>
@@ -173,12 +243,18 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="9" data-hl="How is it that thou, being a Jew, askest drink of me"></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:30% 45%"><span class="art-frame"><img src="../assets/art/duccio-christ-and-the-samaritan-woman.jpg" width="1200" height="900" alt="Jesus sits on the edge of a stone well and speaks with a Samaritan woman who carries a water jar on her head. On the right, his disciples come out of the city gate and look on in surprise."></span>
+        <figcaption>Duccio, <i>Christ and the Samaritan Woman</i></figcaption></figure>
+      <div>
     <h2 class="rise" style="--d:1">Three walls, one cup</h2>
     <p class="note rise" style="--d:2">Asking her for a drink meant sharing her water jar. To a strict Jew, a Samaritan's cup was unclean. With four words, “Give me to drink,” Jesus walked through three walls:</p>
     <div class="walls">
       <div class="step"><b>a Jew</b><i aria-hidden="true"></i><b>a Samaritan</b><small>“The Jews have no dealings with the Samaritans.”</small></div>
       <div class="step"><b>a man</b><i aria-hidden="true"></i><b>a woman</b><small>Teachers didn't talk with women in public. Even the disciples “marvelled” (verse 27).</small></div>
       <div class="step"><b>a holy Teacher</b><i aria-hidden="true"></i><b>a woman with a past</b><small>He knew exactly who she was, and he started the conversation anyway.</small></div>
+    </div>
+      </div>
     </div>
   </div>
 </section>
@@ -190,28 +266,44 @@
     <blockquote class="quote rise" data-q="10" data-hl="the gift of God|living water"></blockquote>
     <h2 class="rise" style="--d:1">Living water</h2>
     <div class="stage">
-      <svg class="wells" viewBox="0 0 640 300" role="img" aria-label="On the left, a cracked cistern leaks dry. On the right, a spring keeps bubbling up and overflowing.">
-        <defs><clipPath id="jn04-pitclip"><path d="M44 80 L44 258 Q44 276 62 276 L238 276 Q256 276 256 258 L256 80 Z"/></clipPath></defs>
-        <path class="wells-pit" d="M40 70 L40 260 Q40 280 60 280 L240 280 Q260 280 260 260 L260 70"/>
-        <g clip-path="url(#jn04-pitclip)"><rect class="wells-water wells-drain" x="40" y="128" width="222" height="150"/></g>
-        <path class="wells-crack" d="M90 280 L98 262 L90 250 L102 236"/>
-        <path class="wells-crack" d="M200 280 L192 266 L204 254 L196 240"/>
-        <path class="wells-crack" d="M260 200 L246 208 L252 222"/>
-        <circle class="wells-drip" style="--k:0" cx="90" cy="286" r="5"/>
-        <circle class="wells-drip" style="--k:1" cx="200" cy="286" r="5"/>
-        <circle class="wells-drip" style="--k:2" cx="264" cy="214" r="4"/>
-        <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="700">broken cisterns</text>
-        <text x="150" y="60" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">dug by hand, holding still water</text>
-        <path class="wells-rock" d="M380 280 Q390 200 440 190 L540 190 Q590 200 600 280 Z"/>
-        <path class="wells-spring" d="M490 192 C 470 170, 430 175, 410 210 S 380 270, 360 284"/>
-        <path class="wells-spring" d="M490 192 C 510 170, 560 175, 575 210 S 600 270, 630 284"/>
-        <circle class="wells-bubble" style="--k:0" cx="478" cy="190" r="7"/>
-        <circle class="wells-bubble" style="--k:1" cx="492" cy="190" r="9"/>
-        <circle class="wells-bubble" style="--k:2" cx="504" cy="190" r="6"/>
-        <circle class="wells-bubble" style="--k:3" cx="488" cy="190" r="5"/>
-        <text x="490" y="60" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--accent-hot)">the fountain of living waters</text>
-        <text x="490" y="80" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">a spring that never stops</text>
-      </svg>
+      <svg class="pic jn04-water" style="--ar:1.882;--mh:42vh" viewBox="0 0 640 340" role="img" aria-label="Cut away through the ground. On the left, a cistern hewn out of the rock is cracked, and its water seeps away until it is nearly dry. On the right, a spring fed from deep below rises out of the rock and runs on as a stream that never stops.">
+  <defs>
+    <linearGradient id="jn04-wsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="0.55" style="stop-color:color-mix(in srgb, var(--cool) 26%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 46%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-wrock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 44%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 14%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-wcut" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="0.5" style="stop-color:color-mix(in srgb, var(--warm) 10%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <linearGradient id="jn04-wstill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 18%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-wcliff" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 58%, var(--glow))"/><stop offset="0.35" style="stop-color:color-mix(in srgb, var(--warm) 44%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 22%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn04-wlife"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.6"/><stop offset="0.45" style="stop-color:var(--cool);stop-opacity:0.22"/><stop offset="1" style="stop-color:var(--cool);stop-opacity:0"/></radialGradient>
+    <clipPath id="jn04-wclip"><path d="M124 170 L124 188 C124 198 116 202 96 210 C58 224 40 250 40 278 C40 302 54 318 80 320 L188 320 C214 318 228 302 228 278 C228 250 210 224 172 210 C152 202 144 198 144 188 L144 170 Z"/></clipPath>
+    <filter id="jn04-wblur" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <rect width="640" height="340" fill="url(#jn04-wsky)"/>
+  <g class="jn04-clouds" filter="url(#jn04-wblur)"><ellipse cx="164.9" cy="117.3" rx="64.5" ry="6.9"/><ellipse cx="88.2" cy="106.3" rx="60.5" ry="10.5"/><ellipse cx="290.6" cy="102.7" rx="46.4" ry="8.1"/><ellipse cx="345.9" cy="119.2" rx="42.9" ry="10.4"/><ellipse cx="350.9" cy="119.5" rx="75.5" ry="8.7"/><ellipse cx="130.4" cy="124.1" rx="48.1" ry="6.6"/></g>
+  <path class="jn04-far" d="M0 150 C70 136 130 142 200 134 C270 126 330 146 400 140 C440 136 460 140 480 144 L480 176 L0 176 Z"/>
+  <path class="jn04-cliff" d="M430 176 C440 150 452 126 470 108 C490 88 520 80 552 84 C590 88 620 100 640 112 L640 176 Z" fill="url(#jn04-wcliff)"/>
+  <path class="jn04-cliff-crack" d="M520 92 L512 120 L524 140 M580 98 L586 130" fill="none"/>
+  <path d="M0 172 C60 168 120 171 180 170 C260 168 330 174 400 172 C450 170 470 174 520 173 C570 172 610 170 640 171 L640 340 L0 340 Z" fill="url(#jn04-wrock)"/>
+  <g class="jn04-strata" fill="none"><path d="M0 192 C160 190.7 420 197.8 640 195" /><path d="M0 215.7 C160 221.5 420 220.9 640 219.1" /><path d="M0 232.8 C160 230.7 420 235.5 640 230.8" /><path d="M0 243.6 C160 242.6 420 239.9 640 245.7" /><path d="M0 264.1 C160 261.9 420 266.8 640 266.5" /><path d="M0 277.9 C160 273.8 420 273.7 640 274.4" /><path d="M0 299.5 C160 300.8 420 302.8 640 302.6" /><path d="M0 311.4 C160 314.4 420 309.3 640 308.9" /><path d="M0 334.1 C160 339.4 420 330.2 640 333.7" /></g>
+  <g class="jn04-pebbles"><ellipse cx="404.8" cy="332.7" rx="2.5" ry="2.1"/><ellipse cx="402.6" cy="318.7" rx="4.8" ry="3.5"/><ellipse cx="272.8" cy="272.4" rx="5" ry="2"/><ellipse cx="467.1" cy="309.3" rx="5.8" ry="3.1"/><ellipse cx="289.5" cy="221" rx="5.6" ry="2.9"/><ellipse cx="338.6" cy="297.5" rx="3.4" ry="2.4"/><ellipse cx="460.6" cy="188.5" rx="4.3" ry="1.6"/><ellipse cx="416.4" cy="216.9" rx="4.4" ry="3.1"/><ellipse cx="625.8" cy="248.4" rx="4.2" ry="2.6"/><ellipse cx="250.6" cy="188.8" rx="2.9" ry="2.9"/><ellipse cx="26.9" cy="186.8" rx="2.1" ry="1.9"/><ellipse cx="396" cy="262.6" rx="4.2" ry="2.9"/><ellipse cx="467.6" cy="221.7" rx="2.5" ry="3.5"/><ellipse cx="290.4" cy="310.8" rx="3.7" ry="1.5"/><ellipse cx="104.8" cy="326" rx="5.3" ry="3.3"/><ellipse cx="313.2" cy="189.5" rx="2.3" ry="2.8"/></g>
+  <path d="M124 170 L124 188 C124 198 116 202 96 210 C58 224 40 250 40 278 C40 302 54 318 80 320 L188 320 C214 318 228 302 228 278 C228 250 210 224 172 210 C152 202 144 198 144 188 L144 170 Z" fill="url(#jn04-wcut)"/>
+  <g clip-path="url(#jn04-wclip)"><rect class="jn04-still" x="30" y="228" width="210" height="100" fill="url(#jn04-wstill)"/></g>
+  <path class="jn04-lining" d="M124 170 L124 188 C124 198 116 202 96 210 C58 224 40 250 40 278 C40 302 54 318 80 320 L188 320 C214 318 228 302 228 278 C228 250 210 224 172 210 C152 202 144 198 144 188 L144 170 Z" fill="none"/>
+  <path class="jn04-cap" d="M110 170 L158 170 L156 164 L112 164 Z"/>
+  <g class="jn04-cracks" fill="none"><path d="M54 300 L46 312 L52 322 L44 336"/><path d="M212 238 L224 232 L232 244 L246 240"/><path d="M150 320 L146 328 L154 334 L150 340"/></g>
+  <g class="jn04-drips"><circle style="--k:0" cx="45" cy="330" r="2.6"/><circle style="--k:1" cx="244" cy="242" r="2.4"/><circle style="--k:2" cx="151" cy="334" r="2.6"/></g>
+  <path class="jn04-vein-bed" d="M600 340 C606 310 586 290 560 276 C530 260 540 236 520 220 C500 204 482 196 480 176" fill="none"/>
+  <path class="jn04-vein" d="M600 340 C606 310 586 290 560 276 C530 260 540 236 520 220 C500 204 482 196 480 176" fill="none"/>
+  <ellipse cx="480" cy="168" rx="110" ry="60" fill="url(#jn04-wlife)" class="jn04-life"/>
+  <path class="jn04-stream" d="M462 172 C470 166 490 166 500 170 C540 168 600 168 640 168 L640 178 C600 178 540 178 500 178 C486 180 468 178 462 172 Z"/>
+  <g class="jn04-glints"><line style="--k:0" x1="527.5" y1="174.4" x2="541.5" y2="174.4"/><line style="--k:1" x1="585.3" y1="171.6" x2="599.3" y2="171.6"/><line style="--k:2" x1="560.1" y1="175.9" x2="574.1" y2="175.9"/><line style="--k:3" x1="605.4" y1="174.8" x2="619.4" y2="174.8"/><line style="--k:4" x1="609.8" y1="172.6" x2="623.8" y2="172.6"/><line style="--k:5" x1="537.7" y1="176" x2="551.7" y2="176"/><line style="--k:0" x1="531.9" y1="176.7" x2="545.9" y2="176.7"/><line style="--k:1" x1="564.3" y1="175" x2="578.3" y2="175"/><line style="--k:2" x1="589.2" y1="171.7" x2="603.2" y2="171.7"/></g>
+  <g class="jn04-gush" fill="none"><path d="M480 170 C476 158 470 152 462 150"/><path d="M480 170 C480 156 482 148 486 142"/><path d="M480 170 C486 158 494 152 502 152"/></g>
+  <g class="jn04-bubbles"><circle style="--k:0" cx="472" cy="170" r="3"/><circle style="--k:1" cx="486" cy="168" r="4"/><circle style="--k:2" cx="496" cy="171" r="2.6"/><circle style="--k:3" cx="479" cy="173" r="2"/></g>
+  <g class="jn04-grass" fill="none"><path d="M509.1 162.3 q-2.5 -6.6 4.2 -11"/><path d="M623.7 162.3 q2.8 -9.9 -2.3 -16.5"/><path d="M455.9 173.6 q1.9 -9.5 4.9 -15.8"/><path d="M601 165.3 q1.7 -7.8 2.1 -13"/><path d="M621 173.7 q0.2 -8.4 -5.5 -14"/><path d="M566.9 164.6 q-2 -10 -4.2 -16.7"/><path d="M577.8 171.6 q-1.4 -13.1 -3.4 -21.8"/><path d="M555.6 167.3 q2.7 -14.3 -6.9 -23.8"/><path d="M627.3 160.2 q-1.5 -12.6 4.1 -21"/><path d="M524.1 161.8 q2.2 -13.5 -6.5 -22.4"/><path d="M440.2 163.4 q0.9 -14.2 6.1 -23.6"/><path d="M429.1 172.9 q-1 -10.9 4.6 -18.2"/><path d="M632.9 165.7 q-1 -12.3 0.3 -20.5"/><path d="M639.2 169.4 q-2.7 -7.2 -1.8 -12"/><path d="M632.1 162.5 q0 -10.4 -0.1 -17.3"/><path d="M544 171.7 q2.7 -7.6 -5.6 -12.6"/><path d="M451.2 160.4 q-2.6 -6.4 6.6 -10.7"/><path d="M567.9 173.5 q2.1 -7.7 -3.2 -12.8"/><path d="M425.4 160.5 q1.9 -11.6 -5.8 -19.3"/><path d="M447.9 173.8 q-0.5 -13.5 -2.9 -22.4"/><path d="M434.5 173.7 q-0.9 -13.2 -2.5 -22"/><path d="M598.7 170.8 q-1.1 -12.1 6.2 -20.1"/><path d="M428.5 171.9 q-2.8 -14.2 -1.7 -23.7"/><path d="M562 171.9 q-1.1 -6.1 1 -10.2"/><path d="M629.6 166.5 q-1.1 -13.1 -6.9 -21.8"/><path d="M553.9 168.3 q0.8 -7.9 -3.5 -13.2"/><path d="M631.8 166.5 q0.3 -9.7 1.1 -16.1"/><path d="M456.8 173.9 q0.2 -5 1.2 -8.4"/><path d="M540.1 172.2 q2.8 -9.1 -2.6 -15.2"/><path d="M535.9 164.3 q1.2 -5.5 4.4 -9.1"/></g>
+  <text class="pic-lab b" x="134" y="48" text-anchor="middle">broken cisterns</text>
+  <text class="pic-lab soft" x="134" y="70" text-anchor="middle">hewn out by hand: they hold no water</text>
+  <text class="pic-lab b" x="470" y="40" text-anchor="middle">the fountain of living waters</text>
+  <text class="pic-lab soft" x="470" y="62" text-anchor="middle">fed from below: it never stops</text>
+</svg>
     </div>
     <p class="note step">“Living water” meant <em>running</em> water, from a spring or a stream, as opposed to water sitting in a pit. She heard plumbing. Jesus meant life from God.</p>
     <blockquote class="quote step"><p>“For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.”</p><cite>Jeremiah 2:13</cite></blockquote>
@@ -225,20 +317,30 @@
     <blockquote class="quote rise" data-q="13-14" data-hl="shall thirst again|shall never thirst"></blockquote>
     <h2 class="rise" style="--d:1">Thirst again, or never thirst</h2>
     <div class="stage">
-      <svg viewBox="0 0 640 220" role="img" aria-label="Chart over time. This water: satisfied, then thirsty again, over and over. The water Jesus gives: satisfied and stays that way.">
-        <text x="98" y="34" text-anchor="end" font-size="16" style="fill:var(--ink-soft)">satisfied</text>
-        <text x="98" y="176" text-anchor="end" font-size="16" style="fill:var(--ink-soft)">thirsty</text>
-        <line x1="108" y1="190" x2="625" y2="190" stroke-width="2" style="stroke:var(--line-strong)"/>
-        <text x="625" y="212" text-anchor="end" font-size="15" style="fill:var(--ink-soft)">time →</text>
-        <g class="step">
-          <path class="draw" pathLength="1" d="M110 170 L122 40 L190 170 L202 40 L270 170 L282 40 L350 170 L362 40 L430 170 L442 40 L510 170 L522 40 L590 170 L602 40 L620 70" fill="none" stroke-width="3" stroke-linejoin="round" style="stroke:var(--ink-soft)"/>
-          <text x="110" y="212" font-size="16" font-weight="700" style="fill:var(--ink-soft)">“this water”: thirst again</text>
-        </g>
-        <g class="step">
-          <path class="draw" pathLength="1" d="M110 170 L124 22 L622 22" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--accent-hot)"/>
-          <text x="620" y="14" text-anchor="end" font-size="18" font-weight="700" class="serif" style="fill:var(--accent-hot)">the water I give: never thirst</text>
-        </g>
-      </svg>
+      <svg class="pic jn04-thirst" style="--ar:2.667;--mh:34vh" viewBox="0 0 640 240" role="img" aria-label="Chart over time. This water: satisfied, then thirsty again, over and over. The water Jesus gives: satisfied, and it stays that way.">
+  <defs>
+    <linearGradient id="jn04-tsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 22%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></linearGradient>
+    <linearGradient id="jn04-tline" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--warm)"/><stop offset="0.25" style="stop-color:color-mix(in srgb, var(--glow) 70%, var(--warm))"/><stop offset="1" style="stop-color:var(--glow)"/></linearGradient>
+    <linearGradient id="jn04-tdry" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--warm);stop-opacity:0"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0.22"/></linearGradient>
+    <filter id="jn04-tglow" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <rect width="640" height="240" fill="url(#jn04-tsky)"/>
+  <rect x="108" y="120" width="520" height="72" fill="url(#jn04-tdry)"/>
+  <g class="jn04-grid"><line x1="108" y1="62" x2="628" y2="62"/><line x1="108" y1="116" x2="628" y2="116"/><line x1="108" y1="170" x2="628" y2="170"/></g>
+  <line class="jn04-axis" x1="108" y1="192" x2="628" y2="192"/>
+  <text class="pic-lab plain" x="98" y="58" text-anchor="end">satisfied</text>
+  <text class="pic-lab plain" x="98" y="175" text-anchor="end">thirsty</text>
+  <text class="pic-lab plain" x="626" y="220" text-anchor="end">time →</text>
+  <g class="step">
+    <path class="draw jn04-again" pathLength="1" d="M110 170 L122 64 L190 170 L202 64 L270 170 L282 64 L350 170 L362 64 L430 170 L442 64 L510 170 L522 64 L590 170 L602 64 L620 92" fill="none"/>
+    <text class="pic-lab" x="112" y="220">“this water”: thirst again</text>
+  </g>
+  <g class="step">
+    <path class="draw jn04-never-glow" pathLength="1" d="M110 170 L124 48 L622 48" fill="none" filter="url(#jn04-tglow)"/>
+    <path class="draw jn04-never" pathLength="1" d="M110 170 L124 48 L622 48" fill="none"/>
+    <text class="pic-lab b" x="620" y="32" text-anchor="end">the water I give: never thirst</text>
+  </g>
+</svg>
     </div>
     <p class="note step">Every man in recovery knows that first line. The drink, the high, the woman, the money: it hits, it fades, and you need more just to get back to even. It never fills the hole for long.</p>
     <p class="note step">What Jesus gives isn't another hit. It's <em>a well inside you</em>, his own Spirit, springing up for good (John 7:37–39).</p>
@@ -279,23 +381,46 @@
     <blockquote class="quote rise" data-q="20" data-hl="in this mountain"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn04-mount" viewBox="0 0 640 310" role="img" aria-label="Mount Ebal and Mount Gerizim face each other across a narrow valley. Jacob's well sits at the foot of Gerizim, with the town of Sychar nearby.">
-          <path class="peak" d="M10 260 L150 80 L300 260 Z"/>
-          <path class="peak gerizim" d="M330 260 L470 82 L630 260 Z"/>
-          <text x="150" y="40" text-anchor="middle" font-size="19" font-weight="700">Mount Ebal</text>
-          <text x="150" y="62" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">about 3,080 ft</text>
-          <text x="470" y="40" text-anchor="middle" font-size="19" font-weight="700" style="fill:var(--accent-hot)">Mount Gerizim</text>
-          <text x="470" y="62" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">“this mountain,” about 2,890 ft</text>
-          <rect x="452" y="96" width="36" height="14" style="fill:var(--line-strong)"/>
-          <path d="M456 96 L456 86 M466 96 L466 82 M476 96 L476 88 M484 96 L484 84" stroke-width="3" style="stroke:var(--ink-soft)"/>
-          <text x="470" y="190" text-anchor="middle" font-size="15" style="fill:var(--ink-soft)">temple ruins</text>
-          <g style="fill:var(--ink-soft)"><rect x="208" y="236" width="14" height="12"/><rect x="226" y="232" width="12" height="16"/><rect x="242" y="238" width="12" height="10"/></g>
-          <text x="231" y="224" text-anchor="middle" font-size="15" font-weight="700">Sychar</text>
-          <circle cx="318" cy="256" r="9" stroke-width="3" style="fill:var(--cool);stroke:var(--ink)"/>
-          <line x1="0" y1="262" x2="640" y2="262" stroke-width="2" style="stroke:var(--ink-soft)"/>
-          <text x="318" y="290" text-anchor="middle" font-size="16" font-weight="700">Jacob's well</text>
-          <text x="630" y="300" text-anchor="end" font-size="14" style="fill:var(--ink-soft)">Jerusalem: about 30 miles south</text>
-        </svg>
+        <svg class="pic jn04-mount" style="--ar:1.882" viewBox="0 0 640 340" role="img" aria-label="Looking west into the valley: Mount Gerizim on the left and Mount Ebal on the right, with a narrow pass between them. At the foot of Gerizim is Jacob's well, where Jesus sits and the woman stands with her water jar. The town of Sychar lies at the foot of Ebal. On the top of Gerizim are the ruins of the Samaritans' temple.">
+  <defs>
+    <linearGradient id="jn04-msky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/><stop offset="0.6" style="stop-color:color-mix(in srgb, var(--cool) 38%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 30%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn04-mger" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 50%, var(--on-glow))"/><stop offset="0.55" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 22%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-mebal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 20%, var(--on-glow))"/><stop offset="0.45" style="stop-color:color-mix(in srgb, var(--warm) 38%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 46%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-mfloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 48%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 30%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn04-msun"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.9"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.35"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn04-mhaze" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="640" height="340" fill="url(#jn04-msky)"/>
+  <circle cx="140" cy="18" r="90" fill="url(#jn04-msun)"/>
+  <path class="jn04-farhills" filter="url(#jn04-mhaze)" d="M280 206 C296 198 312 196 330 200 C346 202 362 198 380 204 L380 240 L280 240 Z"/>
+  <path d="M-10 290 L-10 150 C40 120 110 92 168 84 C200 80 220 84 240 98 C280 128 306 176 330 226 C300 246 240 264 160 280 Z" fill="url(#jn04-mger)"/>
+  <path class="jn04-gerlight" d="M-10 290 L-10 150 C40 120 110 92 168 84 C200 80 220 84 240 98 C280 128 306 176 330 226 C300 246 240 264 160 280 Z"/>
+  <path d="M650 280 L650 136 C600 108 540 74 480 66 C448 62 424 70 404 88 C370 120 350 172 330 226 C380 246 470 262 560 276 Z" fill="url(#jn04-mebal)"/>
+  <g class="jn04-ridges" fill="none"><path d="M168 84 C150 140 120 190 70 240"/><path d="M210 90 C200 150 180 210 150 262"/><path d="M480 66 C500 120 540 170 600 214"/><path d="M430 76 C440 140 470 200 520 246"/></g>
+  <g class="jn04-ruins"><rect x="170" y="74" width="40" height="8"/><rect x="174" y="62" width="4" height="12"/><rect x="186" y="58" width="4" height="16"/><rect x="198" y="66" width="4" height="8"/><rect x="205" y="64" width="4" height="10"/></g>
+  <path d="M-10 340 L-10 270 C80 262 200 252 300 236 C340 230 380 236 440 246 C520 258 600 264 650 268 L650 340 Z" fill="url(#jn04-mfloor)"/>
+  <g class="jn04-olives"><ellipse cx="0.1" cy="216.2" rx="3.2" ry="2.1" opacity="0.6"/><ellipse cx="23.1" cy="221.1" rx="3.8" ry="2.3" opacity="0.7"/><ellipse cx="525.2" cy="295.4" rx="5.5" ry="4.7" opacity="0.6"/><ellipse cx="117.2" cy="251.5" rx="4.1" ry="3.4" opacity="0.7"/><ellipse cx="385.4" cy="282.4" rx="6.6" ry="3.7" opacity="0.7"/><ellipse cx="76.4" cy="223.9" rx="2.8" ry="2.3" opacity="0.6"/><ellipse cx="599.9" cy="259.6" rx="4" ry="2.7" opacity="0.9"/><ellipse cx="351.6" cy="261.4" rx="5.2" ry="3.7" opacity="0.7"/><ellipse cx="397.6" cy="242.1" rx="5.8" ry="3" opacity="0.7"/><ellipse cx="222.9" cy="237.4" rx="3.3" ry="2.8" opacity="0.9"/><ellipse cx="300" cy="241.8" rx="4" ry="3.1" opacity="0.6"/><ellipse cx="413.5" cy="292.4" rx="6.5" ry="4.7" opacity="0.8"/><ellipse cx="559.8" cy="243" rx="5.1" ry="2.6" opacity="0.6"/><ellipse cx="55.6" cy="282.7" rx="7.1" ry="3.9" opacity="0.8"/><ellipse cx="238.6" cy="215.5" rx="2.8" ry="2.2" opacity="0.8"/><ellipse cx="97.2" cy="258.3" rx="6" ry="2.6" opacity="0.9"/><ellipse cx="620.6" cy="255.2" rx="6.4" ry="3.4" opacity="0.9"/><ellipse cx="279.8" cy="245.3" rx="3.6" ry="2.3" opacity="0.8"/><ellipse cx="381.2" cy="253.4" rx="5" ry="2.9" opacity="0.6"/><ellipse cx="65" cy="260.1" rx="4.4" ry="3.2" opacity="0.8"/><ellipse cx="187.1" cy="254" rx="6.5" ry="2.7" opacity="0.8"/><ellipse cx="571.7" cy="251.7" rx="6.4" ry="2.5" opacity="0.7"/><ellipse cx="44.2" cy="259.5" rx="5.7" ry="3" opacity="0.8"/><ellipse cx="194.2" cy="248.5" rx="6.2" ry="2.9" opacity="0.8"/><ellipse cx="559.2" cy="292.9" rx="6.9" ry="4" opacity="0.7"/><ellipse cx="623.6" cy="282.1" rx="6.1" ry="4" opacity="0.7"/><ellipse cx="167.6" cy="299.4" rx="8.4" ry="3.8" opacity="0.8"/><ellipse cx="67.3" cy="291.3" rx="7.2" ry="3.8" opacity="0.7"/><ellipse cx="585.2" cy="298.2" rx="6.4" ry="4.2" opacity="0.8"/><ellipse cx="613.1" cy="296.1" rx="7.7" ry="4.5" opacity="0.8"/><ellipse cx="518" cy="236.9" rx="5" ry="2.5" opacity="0.6"/><ellipse cx="236.7" cy="224.3" rx="4.2" ry="2.4" opacity="0.7"/><ellipse cx="525" cy="223.2" rx="2.7" ry="2.2" opacity="0.6"/><ellipse cx="608.5" cy="268.2" rx="7.1" ry="3.8" opacity="0.8"/><ellipse cx="564.1" cy="261.6" rx="4.3" ry="3.9" opacity="0.8"/><ellipse cx="96.5" cy="274.6" rx="7.6" ry="3.8" opacity="0.8"/><ellipse cx="169.3" cy="227.8" rx="3.1" ry="2.6" opacity="0.9"/><ellipse cx="294.3" cy="249.8" rx="4.3" ry="2.4" opacity="0.7"/><ellipse cx="242.4" cy="220.4" rx="3.9" ry="2.2" opacity="0.7"/><ellipse cx="157.2" cy="244.7" rx="5.2" ry="2.9" opacity="0.6"/><ellipse cx="585.8" cy="254.5" rx="5.2" ry="2.7" opacity="0.7"/><ellipse cx="483.4" cy="296.3" rx="6.1" ry="3.8" opacity="0.8"/><ellipse cx="175.7" cy="223.8" rx="4.3" ry="2.3" opacity="0.7"/><ellipse cx="553.6" cy="298.3" rx="7.3" ry="4.3" opacity="0.6"/><ellipse cx="8.8" cy="215.7" rx="3.9" ry="2.2" opacity="0.7"/><ellipse cx="388.9" cy="274" rx="6.6" ry="4" opacity="0.6"/><ellipse cx="195.3" cy="219.2" rx="2.9" ry="2.5" opacity="0.8"/><ellipse cx="583.4" cy="288.3" rx="8.3" ry="4.7" opacity="0.8"/><ellipse cx="618.6" cy="230.5" rx="5" ry="2.5" opacity="0.9"/><ellipse cx="18.5" cy="275.6" rx="6.1" ry="3.6" opacity="0.6"/><ellipse cx="392.5" cy="287.4" rx="5.4" ry="3.4" opacity="0.8"/><ellipse cx="43.7" cy="218.5" rx="3.7" ry="2.3" opacity="0.9"/><ellipse cx="238.6" cy="243" rx="3.5" ry="2.9" opacity="0.6"/></g>
+  <path class="jn04-road" d="M330 232 C326 246 316 258 304 270 C290 286 300 312 330 340" fill="none"/>
+  <g class="jn04-houses"><rect class="lit" x="436" y="262" width="22" height="14"/><rect class="side" x="458" y="264" width="6.6" height="12"/><rect class="door" x="444.8" y="268.3" width="3.5" height="7.7"/><rect class="lit" x="460" y="256" width="18" height="18"/><rect class="side" x="478" y="258" width="5.4" height="16"/><rect class="door" x="467.2" y="264.1" width="2.9" height="9.9"/><rect class="lit" x="480" y="264" width="26" height="13"/><rect class="side" x="506" y="266" width="7.8" height="11"/><rect class="door" x="490.4" y="269.9" width="4.2" height="7.2"/><rect class="lit" x="506" y="258" width="16" height="16"/><rect class="side" x="522" y="260" width="4.8" height="14"/><rect class="door" x="512.4" y="265.2" width="2.6" height="8.8"/><rect class="lit" x="452" y="274" width="24" height="12"/><rect class="side" x="476" y="276" width="7.2" height="10"/><rect class="door" x="461.6" y="279.4" width="3.8" height="6.6"/><rect class="lit" x="496" y="276" width="20" height="11"/><rect class="side" x="516" y="278" width="6" height="9"/><rect class="door" x="504" y="281" width="3.2" height="6.1"/><rect class="lit" x="524" y="268" width="18" height="13"/><rect class="side" x="542" y="270" width="5.4" height="11"/><rect class="door" x="531.2" y="273.9" width="2.9" height="7.2"/><rect class="lit" x="470" y="282" width="18" height="10"/><rect class="side" x="488" y="284" width="5.4" height="8"/><rect class="door" x="477.2" y="286.5" width="2.9" height="5.5"/></g>
+  <g class="jn04-mwell">
+    <ellipse class="rim-shadow" cx="270" cy="298" rx="32" ry="7"/>
+    <path class="rim" d="M244 282 L244 294 C244 300 296 300 296 294 L296 282 Z"/>
+    <ellipse class="rim-top" cx="270" cy="282" rx="26" ry="6"/>
+    <ellipse class="hole" cx="270" cy="282" rx="14" ry="3.2"/>
+  </g>
+  <g class="jn04-who">
+    <g class="jesus"><g><path d="M231 284 L230 269 Q235 259 240 269 L241 283 L251 284 L251 297 L246 297.5 L245 287 L231 287 Z"/><circle cx="235.5" cy="259.7" r="3.6"/></g></g>
+    <g class="woman"><g><path d="M305.2 304 C306.2 283.2 305.7 271.8 306.8 263.4 Q312 260.3 317.2 263.4 C320.3 271.8 321.8 283.2 322.8 304 Z"/><circle cx="312" cy="255.7" r="3.7"/></g><ellipse class="jar" cx="321" cy="262" rx="5" ry="7.5"/></g>
+  </g>
+  <text class="pic-lab b jn04-gname" x="130" y="40" text-anchor="middle">Mount Gerizim</text>
+  <text class="pic-lab soft" x="130" y="58" text-anchor="middle">“this mountain,” about 2,890 ft</text>
+  <text class="pic-lab b" x="508" y="38" text-anchor="middle">Mount Ebal</text>
+  <text class="pic-lab soft" x="508" y="56" text-anchor="middle">about 3,080 ft</text>
+  <text class="pic-lab soft" x="222" y="114">temple ruins</text>
+  <text class="pic-lab" x="480" y="244" text-anchor="middle">Sychar</text>
+  <text class="pic-lab" x="270" y="318" text-anchor="middle">Jacob's well</text>
+  <text class="pic-lab plain" x="14" y="334">← Jerusalem: about 30 miles south</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">“This mountain”</h2>
@@ -381,40 +506,33 @@
     <blockquote class="quote rise" data-q="35" data-hl="Lift up your eyes, and look on the fields; for they are white already to harvest"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="jn04-harvest" viewBox="0 0 640 280" role="img" aria-label="A ripe field. People from the town come walking across it toward Jesus.">
-          <path d="M0 150 Q60 110 140 130 L140 280 L0 280 Z" style="fill:var(--surface-2)"/>
-          <g style="fill:var(--ink-soft)"><rect x="20" y="118" width="22" height="20"/><rect x="48" y="110" width="18" height="28"/><rect x="72" y="116" width="24" height="22"/><rect x="100" y="122" width="16" height="16"/></g>
-          <text x="70" y="100" text-anchor="middle" font-size="16" font-weight="700">the city</text>
-          <line x1="0" y1="250" x2="640" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
-          <g>
-            <g class="ear" style="--k:0"><path class="stalk" d="M160 250 L160 196"/><ellipse class="head" cx="160" cy="186" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:1"><path class="stalk" d="M185 250 L185 204"/><ellipse class="head" cx="185" cy="194" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:2"><path class="stalk" d="M210 250 L210 192"/><ellipse class="head" cx="210" cy="182" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:3"><path class="stalk" d="M235 250 L235 200"/><ellipse class="head" cx="235" cy="190" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:4"><path class="stalk" d="M260 250 L260 194"/><ellipse class="head" cx="260" cy="184" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:5"><path class="stalk" d="M285 250 L285 202"/><ellipse class="head" cx="285" cy="192" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:6"><path class="stalk" d="M310 250 L310 190"/><ellipse class="head" cx="310" cy="180" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:7"><path class="stalk" d="M335 250 L335 198"/><ellipse class="head" cx="335" cy="188" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:8"><path class="stalk" d="M360 250 L360 192"/><ellipse class="head" cx="360" cy="182" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:9"><path class="stalk" d="M385 250 L385 202"/><ellipse class="head" cx="385" cy="192" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:10"><path class="stalk" d="M410 250 L410 194"/><ellipse class="head" cx="410" cy="184" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:11"><path class="stalk" d="M435 250 L435 200"/><ellipse class="head" cx="435" cy="190" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:12"><path class="stalk" d="M460 250 L460 192"/><ellipse class="head" cx="460" cy="182" rx="5" ry="12"/></g>
-            <g class="ear" style="--k:13"><path class="stalk" d="M485 250 L485 204"/><ellipse class="head" cx="485" cy="194" rx="5" ry="12"/></g>
-          </g>
-          <g class="crowd">
-            <g class="person"><circle cx="120" cy="214" r="8"/><path d="M110 250 L113 224 Q120 219 127 224 L130 250 Z"/></g>
-            <g class="person"><circle cx="146" cy="218" r="8"/><path d="M136 250 L139 228 Q146 223 153 228 L156 250 Z"/></g>
-            <g class="person"><circle cx="96" cy="220" r="8"/><path d="M86 250 L89 230 Q96 225 103 230 L106 250 Z"/></g>
-            <g class="person"><circle cx="172" cy="214" r="8"/><path d="M162 250 L165 224 Q172 219 179 224 L182 250 Z"/></g>
-            <g class="person"><circle cx="72" cy="216" r="8"/><path d="M62 250 L65 226 Q72 221 79 226 L82 250 Z"/></g>
-          </g>
-          <g>
-            <circle cx="590" cy="206" r="11" style="fill:var(--accent)"/>
-            <path d="M576 250 L580 222 Q590 214 600 222 L604 250 Z" style="fill:var(--accent)"/>
-            <text x="590" y="182" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">Jesus</text>
-          </g>
-        </svg>
+        <svg class="pic jn04-harvest" style="--ar:2" viewBox="0 0 640 320" role="img" aria-label="Fields of ripe grain, pale in the noon sun. The men of the city come out from Sychar and walk across the fields toward Jesus, who stands with his disciples near the well.">
+  <defs>
+    <linearGradient id="jn04-hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 34%, var(--on-glow))"/><stop offset="0.7" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 26%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn04-hfield" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 34%, var(--glow))"/><stop offset="0.4" style="stop-color:color-mix(in srgb, var(--warm) 52%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn04-hsun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.3" style="stop-color:var(--glow);stop-opacity:0.6"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <radialGradient id="jn04-hhalo"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.55"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient>
+    <filter id="jn04-hhaze" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+  </defs>
+  <rect width="640" height="320" fill="url(#jn04-hsky)"/>
+  <circle cx="330" cy="0" r="120" fill="url(#jn04-hsun)"/>
+  <path class="jn04-hfar" filter="url(#jn04-hhaze)" d="M0 150 C80 128 150 134 230 140 C320 146 400 120 480 126 C560 132 600 140 640 136 L640 172 L0 172 Z"/>
+  <path class="jn04-hhill" d="M0 186 L0 128 C40 112 90 112 130 130 C160 144 180 160 196 176 Z"/>
+  <g class="jn04-hhouses"><rect class="lit" x="22" y="132" width="22" height="16"/><rect class="side" x="44" y="134" width="6.2" height="14"/><rect class="lit" x="46" y="124" width="18" height="22"/><rect class="side" x="64" y="126" width="5" height="20"/><rect class="lit" x="68" y="130" width="26" height="16"/><rect class="side" x="94" y="132" width="7.3" height="14"/><rect class="lit" x="96" y="136" width="18" height="12"/><rect class="side" x="114" y="138" width="5" height="10"/><rect class="lit" x="30" y="148" width="24" height="12"/><rect class="side" x="54" y="150" width="6.7" height="10"/><rect class="lit" x="60" y="146" width="20" height="13"/><rect class="side" x="80" y="148" width="5.6" height="11"/><rect class="lit" x="86" y="150" width="22" height="11"/><rect class="side" x="108" y="152" width="6.2" height="9"/><rect class="lit" x="112" y="148" width="14" height="12"/><rect class="side" x="126" y="150" width="3.9" height="10"/></g>
+  <path d="M0 340 L0 182 C120 168 300 164 640 166 L640 340 Z" fill="url(#jn04-hfield)"/>
+  <g class="jn04-hfarstalks" fill="none"><path d="M150 192.3 l0.6 -6"/><path d="M293.7 192.6 l-0.8 -6.1"/><path d="M265.3 182.6 l-0.2 -4.8"/><path d="M480 201.9 l0.2 -7.2"/><path d="M225.9 174.4 l-0.5 -3.8"/><path d="M467.8 181.2 l-0.9 -4.6"/><path d="M599.4 180.4 l-0.8 -4.5"/><path d="M362.6 203 l0.3 -7.4"/><path d="M263.1 191.5 l-0.1 -5.9"/><path d="M282.1 171 l0 -3.4"/><path d="M420.3 198 l-0.4 -6.8"/><path d="M266.3 193.2 l0.3 -6.1"/><path d="M230 196.9 l0.9 -6.6"/><path d="M555.1 176.7 l0.8 -4.1"/><path d="M450.5 196.4 l-0.5 -6.5"/><path d="M328.1 173.9 l-0.2 -3.7"/><path d="M328.1 174.7 l0.7 -3.8"/><path d="M340.4 175 l-0.3 -3.9"/><path d="M540.2 198.8 l-0.1 -6.9"/><path d="M389.3 188.2 l-0.4 -5.5"/><path d="M406.4 187.3 l0.2 -5.4"/><path d="M441.6 202.5 l-0.1 -7.3"/><path d="M312.1 184.8 l0.5 -5.1"/><path d="M330.7 186.6 l0.8 -5.3"/><path d="M338.9 189.1 l0.3 -5.6"/><path d="M307.9 194.1 l-0.5 -6.3"/><path d="M545.7 199.5 l-0.7 -6.9"/><path d="M457.1 170.9 l-0.1 -3.4"/><path d="M317.2 173.5 l0.4 -3.7"/><path d="M457.3 204.9 l-0.1 -7.6"/><path d="M231.3 187.7 l0.5 -5.5"/><path d="M427.5 203.4 l-0.5 -7.4"/><path d="M179.6 175.7 l-0.3 -4"/><path d="M187.7 193.4 l-0.3 -6.2"/><path d="M363.7 201 l0.5 -7.1"/><path d="M570.6 168.4 l-0.7 -3.1"/><path d="M479.4 186.2 l0.6 -5.3"/><path d="M513.3 196.6 l-0.1 -6.6"/><path d="M210.9 175.8 l0.6 -4"/><path d="M181.2 189.2 l0.3 -5.7"/><path d="M372.9 181.8 l-1 -4.7"/><path d="M185 173 l0.1 -3.6"/><path d="M487.8 175.4 l0.8 -3.9"/><path d="M438 184.1 l-0.5 -5"/><path d="M518.3 183 l0.9 -4.9"/><path d="M609.9 186.5 l0.5 -5.3"/><path d="M608.6 176.4 l0.9 -4.1"/><path d="M530.8 196.9 l0.5 -6.6"/><path d="M599.1 169.6 l0.4 -3.2"/><path d="M554 177.6 l-0.1 -4.2"/><path d="M306.9 197.8 l0.3 -6.7"/><path d="M639.4 190.1 l-0.7 -5.8"/><path d="M460.4 177.5 l-0.8 -4.2"/><path d="M157.5 176.9 l-0.2 -4.1"/><path d="M613.8 168.6 l-0.7 -3.1"/><path d="M399.1 172.9 l0.4 -3.6"/><path d="M511.3 169.9 l0.3 -3.2"/><path d="M359.8 185.1 l0.6 -5.1"/><path d="M324.1 198.6 l-0.5 -6.8"/><path d="M481 201.9 l-0.4 -7.2"/><path d="M516.3 177.7 l-0.9 -4.2"/><path d="M472.6 177.6 l-0.8 -4.2"/><path d="M345 188.2 l-0.5 -5.5"/><path d="M299.1 181.2 l0.1 -4.6"/><path d="M151 171.2 l0.6 -3.4"/><path d="M302.5 196 l-0.7 -6.5"/><path d="M246.4 172.6 l-0.1 -3.6"/><path d="M400.4 202.6 l0.5 -7.3"/><path d="M275.6 184.5 l0.4 -5.1"/><path d="M430.4 187.1 l-0.9 -5.4"/><path d="M583 182.2 l-0.6 -4.8"/><path d="M467.9 180.8 l0.2 -4.6"/><path d="M151.8 187.7 l0.4 -5.5"/><path d="M196.8 183.9 l0.2 -5"/><path d="M305.1 180.1 l0.1 -4.5"/><path d="M367.9 180.5 l-0.2 -4.6"/><path d="M638.9 189.6 l-0.3 -5.7"/><path d="M370.5 194.6 l0.4 -6.3"/><path d="M273.4 203 l-0.8 -7.4"/><path d="M262.8 189.4 l0.1 -5.7"/><path d="M349.7 175.3 l-0.3 -3.9"/><path d="M166.3 198.6 l-0.9 -6.8"/><path d="M637.8 196.4 l-0.7 -6.6"/><path d="M190.1 168.1 l-1 -3"/><path d="M574.7 191.6 l0.2 -5.9"/><path d="M193.4 183.3 l-0.2 -4.9"/><path d="M162.9 174.7 l0.1 -3.8"/><path d="M220.3 185.5 l-0.2 -5.2"/><path d="M551.8 173.5 l-0.9 -3.7"/><path d="M183.2 183 l0.9 -4.9"/><path d="M522.8 195.3 l0.9 -6.4"/><path d="M319.6 185.1 l-0.2 -5.1"/><path d="M583.3 202 l-0.8 -7.3"/><path d="M351.3 203.9 l-0.9 -7.5"/><path d="M620 201.9 l-0.6 -7.2"/><path d="M198.3 193.2 l1 -6.2"/><path d="M152.5 200.7 l-0.7 -7.1"/><path d="M536.4 202.8 l-0.4 -7.3"/><path d="M232.3 186.8 l-0.8 -5.4"/><path d="M235.1 185.8 l0.9 -5.2"/><path d="M385.8 196.3 l-0.3 -6.5"/><path d="M231.9 178.4 l1 -4.3"/><path d="M216.2 190 l0 -5.7"/><path d="M437.7 198.1 l0.3 -6.8"/><path d="M527.1 202.8 l0.3 -7.3"/><path d="M402.3 194.5 l0.6 -6.3"/><path d="M359 179.1 l-0.9 -4.4"/><path d="M534.2 193.7 l0.2 -6.2"/><path d="M481.6 191.8 l0.1 -6"/><path d="M610.9 189.8 l-0.7 -5.7"/><path d="M294.2 199.5 l0.9 -6.9"/><path d="M264.8 182 l0.9 -4.8"/><path d="M344.3 182.5 l0.7 -4.8"/><path d="M282.1 181.3 l-0.2 -4.7"/><path d="M429.1 191.8 l0.2 -6"/><path d="M504.6 179.2 l0.4 -4.4"/><path d="M447.8 179.2 l0.2 -4.4"/><path d="M300.3 168.3 l-0.9 -3"/><path d="M606.9 195.8 l-0.3 -6.5"/><path d="M502.4 194.2 l0.2 -6.3"/><path d="M221.6 170.8 l-0.3 -3.3"/><path d="M255.3 195 l0.2 -6.4"/><path d="M313.2 199.5 l-0.5 -6.9"/><path d="M257.7 185.4 l-0.4 -5.2"/><path d="M191.9 172.1 l0.6 -3.5"/><path d="M412 187.9 l-0.6 -5.5"/><path d="M596.9 196.1 l0.9 -6.5"/><path d="M384.4 182.7 l0.5 -4.8"/><path d="M569.4 168.8 l0 -3.1"/><path d="M345.8 198.2 l0 -6.8"/><path d="M598.3 195.1 l-0.6 -6.4"/><path d="M165.5 202.2 l0.2 -7.3"/><path d="M313.8 194.6 l0.9 -6.3"/><path d="M188.8 202.4 l-0.7 -7.3"/><path d="M294.7 188.2 l0.4 -5.5"/><path d="M346.7 170.9 l0.7 -3.4"/><path d="M360.9 188.4 l-0.9 -5.5"/><path d="M404.3 190.4 l0.8 -5.8"/><path d="M200.7 178.2 l-0.3 -4.3"/><path d="M542.7 190.9 l0 -5.9"/><path d="M274 182.4 l-0.4 -4.8"/><path d="M444 176.6 l0.5 -4.1"/><path d="M360.6 174.2 l0 -3.8"/><path d="M585.6 183 l0.3 -4.9"/><path d="M290.8 202.6 l0.4 -7.3"/><path d="M154.1 178.4 l-0.7 -4.3"/><path d="M585 184.6 l0.8 -5.1"/><path d="M490.4 182.7 l0.4 -4.8"/><path d="M237.2 190.7 l0.7 -5.8"/><path d="M611.3 196 l-0.9 -6.5"/><path d="M168.6 191.3 l0.5 -5.9"/><path d="M527.4 197 l-0.6 -6.6"/><path d="M576.9 178.9 l-0.5 -4.4"/><path d="M209.6 170.4 l0 -3.3"/><path d="M259.2 197.7 l-0.1 -6.7"/><path d="M277 179.8 l-0.3 -4.5"/><path d="M435.6 169.8 l0.1 -3.2"/><path d="M510.1 169.1 l0.8 -3.1"/><path d="M638.4 173.9 l-0.2 -3.7"/><path d="M364.2 200.4 l-0.6 -7.1"/><path d="M452.9 200.1 l-0.7 -7"/><path d="M346.9 185.4 l0.7 -5.2"/><path d="M478.4 177.3 l0.6 -4.2"/><path d="M564.3 186.5 l0.5 -5.3"/><path d="M326.2 183.1 l0.6 -4.9"/><path d="M239.1 173.7 l-0.8 -3.7"/><path d="M548.4 177.7 l-0.8 -4.2"/><path d="M570.1 172.6 l-0.7 -3.6"/><path d="M279.9 198.7 l0.4 -6.8"/><path d="M541.4 176.8 l-0.4 -4.1"/><path d="M456.1 195.6 l-0.2 -6.4"/><path d="M201.6 189.1 l-0.8 -5.6"/><path d="M624.2 190.5 l0 -5.8"/><path d="M281.6 175.7 l0.2 -4"/><path d="M571.3 180.1 l-0.6 -4.5"/><path d="M584.1 180.5 l0.3 -4.6"/><path d="M262.5 194.5 l-0.9 -6.3"/><path d="M569.9 199.9 l0.4 -7"/><path d="M553.9 178.2 l-0.3 -4.3"/><path d="M453.4 191.4 l0.6 -5.9"/><path d="M438.4 187.5 l-0.6 -5.4"/><path d="M563 172.4 l0.3 -3.6"/><path d="M428.2 200.7 l-0.3 -7.1"/><path d="M537.7 174.8 l0 -3.8"/><path d="M613.2 193 l-0.9 -6.1"/><path d="M547.1 193.8 l-0.4 -6.2"/><path d="M154.1 175.5 l-0.2 -3.9"/><path d="M202.9 181.4 l-0.1 -4.7"/><path d="M407.2 171 l-1 -3.4"/><path d="M462.2 180.7 l-0.4 -4.6"/><path d="M257.2 188.6 l-0.4 -5.6"/><path d="M597.9 183 l-0.4 -4.9"/><path d="M230.5 204.1 l-0.1 -7.5"/><path d="M157.9 180.2 l-0.4 -4.5"/><path d="M211.7 202.6 l0.6 -7.3"/><path d="M478.4 204.2 l0.5 -7.5"/><path d="M569.3 169.1 l-0.4 -3.1"/><path d="M511.4 185.1 l0.1 -5.1"/><path d="M213.3 174.4 l0.3 -3.8"/><path d="M467.1 168.4 l-0.7 -3"/><path d="M261.1 175.7 l0.5 -4"/><path d="M559.3 179.4 l0.2 -4.4"/><path d="M466.4 171.8 l-1 -3.5"/><path d="M368 186.4 l0.1 -5.3"/><path d="M381.8 179.4 l0.1 -4.4"/><path d="M587 168.1 l-0.7 -3"/><path d="M238.4 180.9 l-0.4 -4.6"/><path d="M584.2 176.2 l-0.7 -4"/><path d="M453.2 173.9 l0.5 -3.7"/><path d="M619.4 172.2 l0.3 -3.5"/><path d="M228.6 193.3 l-0.7 -6.2"/><path d="M158.8 202.7 l0.7 -7.3"/><path d="M273.8 180.5 l0.1 -4.6"/><path d="M513.6 204.6 l-0.6 -7.6"/><path d="M316.8 192.4 l-0.1 -6.1"/><path d="M187.7 194.2 l0.7 -6.3"/><path d="M540.1 194.9 l-0.8 -6.4"/><path d="M530.8 175.6 l0.4 -3.9"/><path d="M419.5 185.9 l0.2 -5.2"/><path d="M204.9 197.9 l-0.4 -6.7"/><path d="M436.4 181.8 l0.4 -4.7"/><path d="M391.2 172.2 l0.9 -3.5"/><path d="M323.9 195 l-0.3 -6.4"/><path d="M494.7 190.4 l-0.8 -5.8"/><path d="M591.3 202.4 l0.7 -7.3"/><path d="M214.5 184.9 l0.6 -5.1"/><path d="M428.6 182.3 l0.9 -4.8"/><path d="M457.5 192 l-0.7 -6"/><path d="M409.6 173.8 l0.2 -3.7"/><path d="M154 190.9 l0.2 -5.9"/><path d="M372.5 197.9 l0.8 -6.7"/><path d="M577.2 181.6 l0.3 -4.7"/><path d="M391.5 180.4 l0 -4.6"/><path d="M514.4 170 l-0.3 -3.2"/><path d="M383.1 199.7 l0.9 -7"/><path d="M251.2 196 l0 -6.5"/><path d="M471.8 173.9 l-0.5 -3.7"/><path d="M449.1 190.3 l-0.6 -5.8"/><path d="M260.6 187.8 l0.8 -5.5"/><path d="M522 204.5 l-0.9 -7.6"/><path d="M481.4 199.8 l0.1 -7"/><path d="M362.4 177.3 l0 -4.2"/><path d="M168.5 184.1 l-0.2 -5"/><path d="M420.6 192.8 l-0.2 -6.1"/><path d="M163.6 182.8 l0 -4.9"/><path d="M469.7 193.6 l-0.6 -6.2"/><path d="M183.1 204.5 l0.8 -7.6"/><path d="M444.6 183.1 l-0.8 -4.9"/><path d="M462.2 173.6 l0.4 -3.7"/><path d="M393.8 177.5 l-0.5 -4.2"/><path d="M161.8 193.1 l-0.2 -6.1"/><path d="M294 182.6 l0.5 -4.8"/><path d="M411.7 190.7 l-0.8 -5.8"/><path d="M401.1 174.8 l0.1 -3.8"/><path d="M557.1 186.5 l-0.6 -5.3"/><path d="M504.2 186 l0.6 -5.2"/><path d="M489.3 192.2 l-0.4 -6"/><path d="M574.3 183.8 l-1 -5"/><path d="M430.5 200.3 l-0.4 -7"/><path d="M375 199 l-1 -6.9"/></g>
+  <path class="jn04-hpath" d="M120 168 C200 176 300 186 380 198 C440 208 500 222 548 244" fill="none"/>
+  <g class="jn04-hmid" fill="none"><path d="M519.1 250.5 q-0.8 -13.9 1.5 -23.2"/><path d="M217.9 256.5 q-0.3 -15.1 -2.3 -25.2"/><path d="M39.2 219.6 q0.2 -7.7 -1.2 -12.9"/><path d="M46.1 232.8 q0.4 -10.4 0 -17.3"/><path d="M544.1 253.7 q1.4 -14.5 -2.1 -24.2"/><path d="M10.5 239.8 q-0.8 -11.8 -0.7 -19.6"/><path d="M222.4 258.3 q1.8 -15.5 -2.6 -25.8"/><path d="M402.1 244.9 q-1.6 -12.8 2.4 -21.3"/><path d="M477.3 228 q0.8 -9.4 2.7 -15.7"/><path d="M458 238.9 q-0.4 -11.6 -0.8 -19.3"/><path d="M352.4 227.5 q1.2 -9.3 -0.3 -15.5"/><path d="M515.3 209.8 q-0.1 -5.8 -0.8 -9.6"/><path d="M520.4 208.7 q-0.4 -5.5 2.1 -9.2"/><path d="M112.7 232.5 q-0.4 -10.3 -0.4 -17.2"/><path d="M361.8 255.6 q1.7 -14.9 -0.4 -24.9"/><path d="M389.6 226.9 q0.9 -9.2 -0.7 -15.3"/><path d="M347.5 215.8 q1.8 -7 2.3 -11.6"/><path d="M92.1 228.1 q0.2 -9.4 1.9 -15.7"/><path d="M189.5 260.4 q-1.4 -15.9 -0.8 -26.5"/><path d="M315.6 228.9 q-1 -9.6 0 -16"/><path d="M450.4 242.9 q0 -12.4 1.4 -20.6"/><path d="M352.1 227.9 q1.4 -9.4 -2.8 -15.6"/><path d="M122.9 251.5 q-1.3 -14.1 2.9 -23.5"/><path d="M414.3 260.9 q0.8 -16 2.3 -26.6"/><path d="M128.9 257.9 q-1.3 -15.4 2 -25.6"/><path d="M583.4 205 q-1.4 -4.8 1.5 -8"/><path d="M224.6 260.7 q0 -15.9 -2.9 -26.6"/><path d="M157.7 210.6 q1.9 -5.9 2.2 -9.9"/><path d="M30.7 227.7 q-1.2 -9.3 -1.6 -15.6"/><path d="M143.7 261.7 q1.5 -16.1 1.7 -26.9"/><path d="M606.4 243.3 q-0.1 -12.5 1.3 -20.8"/><path d="M292.9 224.1 q-0.9 -8.6 0.4 -14.4"/><path d="M461.3 205.6 q-1.9 -4.9 0.6 -8.2"/><path d="M582.3 238.2 q0.9 -11.4 -1.1 -19.1"/><path d="M291.2 214.6 q0.5 -6.7 -2 -11.2"/><path d="M155.8 221.5 q1.5 -8.1 1.7 -13.5"/><path d="M498.7 223.8 q-1.8 -8.6 2.8 -14.3"/><path d="M514.9 230.3 q-1.7 -9.9 0.6 -16.4"/><path d="M366.7 239 q-1.2 -11.6 -2 -19.3"/><path d="M208 254.4 q-1 -14.7 -0.8 -24.5"/><path d="M7.8 252.4 q-1.4 -14.3 -2.3 -23.8"/><path d="M126.6 231.5 q1.6 -10.1 1.7 -16.8"/><path d="M429.2 259 q1.4 -15.6 -1.1 -26"/><path d="M89.1 246.2 q-1.9 -13 -1.5 -21.7"/><path d="M143.5 260.8 q1 -16 -1.1 -26.6"/><path d="M419.3 234.8 q-0.7 -10.8 -2 -17.9"/><path d="M580.1 221.7 q1.6 -8.1 -2.4 -13.6"/><path d="M388.7 260.5 q1.4 -15.9 0.7 -26.5"/><path d="M252.1 239.1 q1.8 -11.6 -1.9 -19.4"/><path d="M111 222.1 q0.6 -8.2 -1.7 -13.7"/><path d="M478.5 243.4 q-0.7 -12.5 0.7 -20.8"/><path d="M221.4 217.1 q0.4 -7.2 -0.7 -12"/><path d="M485.6 238.4 q-1.7 -11.5 -1.9 -19.1"/><path d="M520.1 242.9 q0.5 -12.4 1.1 -20.6"/><path d="M57.9 242 q-0.7 -12.2 -1.7 -20.3"/><path d="M452.6 261.1 q0.5 -16 -1.6 -26.7"/><path d="M277.5 260.9 q1.3 -16 -1.9 -26.6"/><path d="M7.7 211.6 q-1.2 -6.1 -0.9 -10.2"/><path d="M613 225.3 q-0.7 -8.9 0.5 -14.8"/><path d="M0.1 226.7 q-1.4 -9.1 -1.4 -15.2"/><path d="M557.9 214.2 q1 -6.6 -1.3 -11.1"/><path d="M546.7 222.5 q1.5 -8.3 -1.2 -13.8"/><path d="M462.3 227.7 q-1.1 -9.3 2.3 -15.6"/><path d="M293.8 232.7 q1.8 -10.3 2.8 -17.2"/><path d="M105.6 230.9 q-0.3 -10 2.1 -16.6"/><path d="M306.3 214.8 q-0.2 -6.8 -2.9 -11.3"/><path d="M261.5 225.6 q0.9 -8.9 -1.7 -14.9"/><path d="M490.4 226.9 q0.5 -9.2 1.8 -15.3"/><path d="M182.9 210 q-1.9 -5.8 2.5 -9.7"/><path d="M161.3 250.6 q-1.2 -13.9 2.2 -23.2"/><path d="M438.7 241.8 q-1.5 -12.2 0.1 -20.3"/><path d="M178.8 234.9 q0.5 -10.8 0.6 -18"/><path d="M329.8 224.6 q-0.4 -8.7 2.6 -14.5"/><path d="M612.8 213.9 q-1.1 -6.6 0.7 -11"/><path d="M410.6 218.7 q-2 -7.5 -1.5 -12.6"/><path d="M72.2 235.1 q1.8 -10.8 1.8 -18"/><path d="M574.9 239 q-0.7 -11.6 2.4 -19.3"/><path d="M483.8 249.8 q-0.2 -13.8 2.1 -22.9"/><path d="M75.8 225.3 q-1.9 -8.9 -0.4 -14.8"/><path d="M574 245.4 q-1.3 -12.9 0 -21.5"/><path d="M109.7 259.7 q-1 -15.7 -0.5 -26.2"/><path d="M206.9 253.4 q0.7 -14.5 -0.8 -24.1"/><path d="M636 247.8 q0.4 -13.4 1.9 -22.3"/><path d="M80.3 254.4 q-1.7 -14.7 -2 -24.5"/><path d="M105.8 241.9 q0.1 -12.2 -1 -20.3"/><path d="M262.6 259.9 q-0.8 -15.8 -2.6 -26.3"/><path d="M263.9 256.5 q-1.8 -15.1 0.9 -25.2"/><path d="M525 209.7 q1.5 -5.7 1.7 -9.6"/><path d="M345.1 261.4 q0.3 -16.1 2.7 -26.8"/><path d="M314.1 210.2 q1 -5.8 0.4 -9.7"/><path d="M303.9 220.6 q0.9 -7.9 2.5 -13.2"/><path d="M48.2 242.4 q-1.6 -12.3 0.4 -20.5"/><path d="M593.5 260.1 q0.6 -15.8 -2.1 -26.4"/><path d="M248.9 241.9 q0.9 -12.2 1.3 -20.3"/><path d="M519 248.3 q-0.4 -13.5 2.2 -22.4"/><path d="M564.5 217.6 q-0.1 -7.3 -2.5 -12.2"/><path d="M136.7 215.1 q1 -6.8 1.5 -11.4"/><path d="M260.9 238.9 q-1.5 -11.6 1.3 -19.3"/><path d="M504.1 255.3 q-1 -14.9 -2.6 -24.8"/><path d="M174.7 237.7 q-1.8 -11.3 0.8 -18.9"/><path d="M555.7 243 q-0.8 -12.4 0.8 -20.7"/><path d="M9 247.9 q-0.6 -13.4 -1.2 -22.3"/><path d="M522.4 214.9 q2 -6.8 -0.5 -11.3"/><path d="M260.2 220.5 q1.1 -7.9 0.6 -13.2"/><path d="M29.2 246.1 q-1.1 -13 -1.2 -21.7"/><path d="M95.1 245.2 q-2 -12.8 -2.2 -21.4"/><path d="M637.5 261.8 q-0.9 -16.2 -1.4 -26.9"/><path d="M596.4 208.5 q-1.7 -5.5 -2 -9.2"/><path d="M345.8 254.7 q-0.7 -14.7 -0.9 -24.6"/><path d="M110 215.9 q0.3 -7 2.7 -11.6"/><path d="M72.1 212.9 q-2 -6.4 -1.6 -10.6"/><path d="M31.3 242.9 q-1.6 -12.4 0.4 -20.6"/><path d="M564.8 222 q1.9 -8.2 -2.7 -13.7"/><path d="M421.8 211.8 q-0.9 -6.2 -1.7 -10.3"/><path d="M189.2 212.4 q1.7 -6.3 -2.8 -10.5"/><path d="M135.4 250.7 q1.5 -13.9 0.6 -23.2"/><path d="M157.1 244.2 q1.7 -12.6 1.3 -21.1"/><path d="M267.5 229.7 q-0.4 -9.7 1.9 -16.2"/><path d="M322.6 233.3 q-1.2 -10.5 0.4 -17.4"/><path d="M89.4 253.5 q-1.7 -14.5 2.9 -24.2"/><path d="M127.3 218.9 q-1.2 -7.6 -0.2 -12.6"/><path d="M50.4 224.4 q1.9 -8.7 -3 -14.5"/><path d="M418.1 224.2 q1.6 -8.6 0.5 -14.4"/><path d="M88.8 233.3 q1.7 -10.5 1.1 -17.4"/><path d="M187.1 230.4 q-0.4 -9.9 -2.7 -16.5"/><path d="M447.8 213.9 q0.1 -6.6 2.8 -11"/><path d="M42.2 226.3 q0.4 -9.1 -2.7 -15.1"/><path d="M592.2 239.9 q1.5 -11.8 -2 -19.6"/><path d="M635.5 205.1 q-1.4 -4.8 1.4 -8"/><path d="M229.9 231.3 q0.6 -10.1 0.6 -16.8"/><path d="M185.4 244.3 q2 -12.7 2.6 -21.1"/><path d="M148.6 221 q-0.9 -8 2 -13.3"/><path d="M296 251.1 q2 -14 3 -23.4"/><path d="M453.2 247.7 q1.9 -13.3 3 -22.2"/><path d="M2.4 245.7 q-1 -12.9 -3 -21.6"/><path d="M562 237.4 q1 -11.3 -2.8 -18.8"/><path d="M606.8 261.6 q1.1 -16.1 1.4 -26.9"/><path d="M342.4 240.3 q-1.1 -11.9 2.1 -19.8"/><path d="M430 227.4 q-0.6 -9.3 -1.7 -15.5"/><path d="M244 242.6 q0.9 -12.3 1.3 -20.5"/><path d="M198.1 205.8 q1.7 -5 1.7 -8.3"/><path d="M301.2 209.1 q0.5 -5.6 -2.6 -9.4"/><path d="M180.4 216.3 q-1.6 -7.1 1.3 -11.8"/><path d="M77.3 253.8 q-1.8 -14.6 -2.3 -24.3"/><path d="M539 242.2 q1.5 -12.2 2 -20.4"/><path d="M564.1 229.7 q1.7 -9.7 -2.5 -16.2"/><path d="M354.6 240.7 q-0.3 -11.9 1.9 -19.9"/><path d="M230 242.6 q1.5 -12.3 -1.2 -20.5"/><path d="M241.1 236.4 q1.8 -11.1 1.5 -18.5"/><path d="M315.9 241.3 q-0.5 -12.1 -1.2 -20.1"/></g>
+  <g class="jn04-hband">
+    <ellipse cx="560" cy="236" rx="60" ry="46" fill="url(#jn04-hhalo)"/>
+    <g class="d"><path d="M526.8 252 C527.9 230.4 528.4 218.5 530.6 209.9 Q536 206.6 541.4 209.9 C543.6 218.5 544.1 230.4 545.2 252 Z"/><circle cx="536" cy="201.9" r="3.9"/></g><g class="d"><path d="M579.2 254 C580.2 233.2 580.7 221.8 582.8 213.4 Q588 210.3 593.2 213.4 C595.3 221.8 595.8 233.2 596.8 254 Z"/><circle cx="588" cy="205.7" r="3.7"/></g><g class="d"><path d="M597.5 258 C598.5 238 599 227 601 219 Q606 216 611 219 C613 227 613.5 238 614.5 258 Z"/><circle cx="606" cy="211.6" r="3.6"/></g><g class="jesus"><path d="M552.1 256 C553.3 232.8 552.9 220 554.2 210.8 Q560 207.3 565.8 210.8 C569.1 220 570.7 232.8 571.9 256 Z"/><circle cx="560" cy="202.1" r="4.1"/></g>
+  </g>
+  <g class="jn04-crowd"><g class="jn04-hwalk"><g class="p0"><path d="M-5.8 0 C-5.1 -13.6 -4.6 -21.1 -3.1 -26.5 Q0.3 -28.6 3.7 -26.5 C4.9 -21.1 5.1 -13.6 5.8 0 Z"/><circle cx="0.3" cy="-31.6" r="2.4"/></g><g class="p1"><path d="M-23.6 4 C-22.9 -9.2 -21.8 -16.5 -19.6 -21.7 Q-16.3 -23.7 -13 -21.7 C-12.5 -16.5 -13 -9.2 -12.4 4 Z"/><circle cx="-16.3" cy="-26.6" r="2.4"/></g><g class="p2"><path d="M10.1 6 C10.8 -8 11.9 -15.7 14.2 -21.3 Q17.7 -23.4 21.2 -21.3 C21.7 -15.7 21.3 -8 22 6 Z"/><circle cx="17.7" cy="-26.5" r="2.5"/></g><g class="p0"><path d="M-39.4 -2 C-38.8 -14.8 -38.6 -21.8 -37.4 -27 Q-34.2 -28.9 -31 -27 C-29.6 -21.8 -29.2 -14.8 -28.6 -2 Z"/><circle cx="-34.2" cy="-31.7" r="2.3"/></g><g class="p1"><path d="M-11.8 10 C-11.1 -3.6 -10.3 -11.1 -8.6 -16.5 Q-5.2 -18.6 -1.8 -16.5 C-0.8 -11.1 -0.9 -3.6 -0.2 10 Z"/><circle cx="-5.2" cy="-21.6" r="2.4"/></g><g class="p2"><path d="M24.6 -1 C25.2 -13.8 26.3 -20.8 28.3 -26 Q31.5 -27.9 34.7 -26 C35.2 -20.8 34.8 -13.8 35.4 -1 Z"/><circle cx="31.5" cy="-30.7" r="2.3"/></g><g class="p0"><path d="M-53.6 6 C-52.9 -7.2 -52.5 -14.5 -51 -19.7 Q-47.7 -21.7 -44.4 -19.7 C-43.2 -14.5 -43 -7.2 -42.4 6 Z"/><circle cx="-47.7" cy="-24.6" r="2.4"/></g><g class="p1"><path d="M38.2 7 C38.9 -6.6 39.3 -14.1 40.6 -19.5 Q44 -21.6 47.4 -19.5 C48.8 -14.1 49.1 -6.6 49.8 7 Z"/><circle cx="44" cy="-24.6" r="2.4"/></g><g class="p2"><path d="M-29.9 14 C-29.2 0 -29 -7.7 -27.6 -13.3 Q-24.1 -15.4 -20.6 -13.3 C-19.2 -7.7 -18.7 0 -18 14 Z"/><circle cx="-24.1" cy="-18.5" r="2.5"/></g><g class="p0"><path d="M0.7 -4 C1.4 -16.4 1.7 -23.2 3 -28.2 Q6.1 -30 9.2 -28.2 C10.4 -23.2 10.6 -16.4 11.3 -4 Z"/><circle cx="6.1" cy="-32.8" r="2.2"/></g></g></g>
+  <g class="jn04-hnear"><g class="ear" style="--k:0"><path class="stalk" d="M18.9 326 Q17.9 303.4 15.5 280.8"/><ellipse class="head" cx="15.2" cy="272.8" rx="4.2" ry="11.2" transform="rotate(-4 15.5 280.8)"/><path class="awn" d="M15.5 264.8 l-1.3 -10 M13.5 268.8 l-4 -9 M17.5 268.8 l4 -9"/><path class="stalk" d="M19.6 341.9 Q18.6 317.7 16.2 293.5"/><ellipse class="head" cx="15.8" cy="285.5" rx="4" ry="9.9" transform="rotate(-4.2 16.2 293.5)"/><path class="awn" d="M16.2 277.5 l-1.4 -10 M14.2 281.5 l-4 -9 M18.2 281.5 l4 -9"/><path class="stalk" d="M79.1 318.3 Q81.4 287.1 86.9 255.8"/><ellipse class="head" cx="87.7" cy="247.8" rx="3.3" ry="9.9" transform="rotate(9.4 86.9 255.8)"/><path class="awn" d="M86.9 239.8 l3.1 -10 M84.9 243.8 l-4 -9 M88.9 243.8 l4 -9"/><path class="stalk" d="M85.6 314.7 Q84.7 289.3 82.4 264"/><ellipse class="head" cx="82.1" cy="256" rx="3.2" ry="10" transform="rotate(-3.8 82.4 264)"/><path class="awn" d="M82.4 248 l-1.3 -10 M80.4 252 l-4 -9 M84.4 252 l4 -9"/><path class="stalk" d="M108.3 335 Q107.6 314.1 106.1 293.2"/><ellipse class="head" cx="105.9" cy="285.2" rx="3.7" ry="10.3" transform="rotate(-2.6 106.1 293.2)"/><path class="awn" d="M106.1 277.2 l-0.9 -10 M104.1 281.2 l-4 -9 M108.1 281.2 l4 -9"/><path class="stalk" d="M97.8 319.4 Q99.4 291.5 103.1 263.6"/><ellipse class="head" cx="103.6" cy="255.6" rx="3" ry="11.6" transform="rotate(6.3 103.1 263.6)"/><path class="awn" d="M103.1 247.6 l2.1 -10 M101.1 251.6 l-4 -9 M105.1 251.6 l4 -9"/><path class="stalk" d="M116.8 315 Q117.2 290.2 118.2 265.3"/><ellipse class="head" cx="118.3" cy="257.3" rx="3.7" ry="10" transform="rotate(1.7 118.2 265.3)"/><path class="awn" d="M118.2 249.3 l0.6 -10 M116.2 253.3 l-4 -9 M120.2 253.3 l4 -9"/><path class="stalk" d="M49.9 315.5 Q51.1 292.6 53.8 269.6"/><ellipse class="head" cx="54.1" cy="261.6" rx="3.3" ry="11.1" transform="rotate(4.6 53.8 269.6)"/><path class="awn" d="M53.8 253.6 l1.5 -10 M51.8 257.6 l-4 -9 M55.8 257.6 l4 -9"/><path class="stalk" d="M29 300.9 Q27 269.8 22.3 238.7"/><ellipse class="head" cx="21.6" cy="230.7" rx="4" ry="10.6" transform="rotate(-8.1 22.3 238.7)"/><path class="awn" d="M22.3 222.7 l-2.7 -10 M20.3 226.7 l-4 -9 M24.3 226.7 l4 -9"/><path class="stalk" d="M93.1 336 Q91.3 313.1 87 290.1"/><ellipse class="head" cx="86.4" cy="282.1" rx="3.2" ry="10.3" transform="rotate(-7.3 87 290.1)"/><path class="awn" d="M87 274.1 l-2.4 -10 M85 278.1 l-4 -9 M89 278.1 l4 -9"/><path class="stalk" d="M62.5 332.4 Q62.2 301.2 61.4 270"/><ellipse class="head" cx="61.3" cy="262" rx="3.1" ry="11" transform="rotate(-1.2 61.4 270)"/><path class="awn" d="M61.4 254 l-0.4 -10 M59.4 258 l-4 -9 M63.4 258 l4 -9"/><path class="stalk" d="M85.3 315.8 Q86.1 285.8 87.9 255.9"/><ellipse class="head" cx="88.1" cy="247.9" rx="4" ry="10.7" transform="rotate(3.1 87.9 255.9)"/><path class="awn" d="M87.9 239.9 l1 -10 M85.9 243.9 l-4 -9 M89.9 243.9 l4 -9"/><path class="stalk" d="M8 336.7 Q8.1 316.4 8.1 296.1"/><ellipse class="head" cx="8.1" cy="288.1" rx="3.3" ry="10.4" transform="rotate(0.1 8.1 296.1)"/><path class="stalk" d="M22.2 329.5 Q20.4 306.9 16.1 284.3"/><ellipse class="head" cx="15.4" cy="276.3" rx="3.7" ry="9.1" transform="rotate(-7.4 16.1 284.3)"/><path class="awn" d="M16.1 268.3 l-2.5 -10 M14.1 272.3 l-4 -9 M18.1 272.3 l4 -9"/><path class="stalk" d="M70.4 320.1 Q72.3 299.9 76.9 279.7"/><ellipse class="head" cx="77.6" cy="271.7" rx="3.4" ry="10.6" transform="rotate(7.9 76.9 279.7)"/><path class="awn" d="M76.9 263.7 l2.6 -10 M74.9 267.7 l-4 -9 M78.9 267.7 l4 -9"/><path class="stalk" d="M90.2 304.5 Q90.9 281.6 92.4 258.7"/><ellipse class="head" cx="92.6" cy="250.7" rx="3.9" ry="11.8" transform="rotate(2.6 92.4 258.7)"/></g><g class="ear" style="--k:1"><path class="stalk" d="M187.2 335.7 Q185.1 307.6 180 279.4"/><ellipse class="head" cx="179.2" cy="271.4" rx="3.2" ry="11.5" transform="rotate(-8.7 180 279.4)"/><path class="awn" d="M180 263.4 l-2.9 -10 M178 267.4 l-4 -9 M182 267.4 l4 -9"/><path class="stalk" d="M220.7 330.9 Q220.9 302.2 221.4 273.5"/><ellipse class="head" cx="221.5" cy="265.5" rx="3.9" ry="11.4" transform="rotate(0.9 221.4 273.5)"/><path class="awn" d="M221.4 257.5 l0.3 -10 M219.4 261.5 l-4 -9 M223.4 261.5 l4 -9"/><path class="stalk" d="M216.9 309.1 Q215.4 289 211.9 268.8"/><ellipse class="head" cx="211.4" cy="260.8" rx="3.8" ry="10.2" transform="rotate(-6 211.9 268.8)"/><path class="awn" d="M211.9 252.8 l-2 -10 M209.9 256.8 l-4 -9 M213.9 256.8 l4 -9"/><path class="stalk" d="M160.3 319.3 Q158.9 295.9 155.5 272.5"/><ellipse class="head" cx="155" cy="264.5" rx="3.4" ry="10.9" transform="rotate(-5.8 155.5 272.5)"/><path class="stalk" d="M212.5 322.2 Q213.9 294.5 217 266.8"/><ellipse class="head" cx="217.4" cy="258.8" rx="3.9" ry="11.5" transform="rotate(5.3 217 266.8)"/><path class="awn" d="M217 250.8 l1.8 -10 M215 254.8 l-4 -9 M219 254.8 l4 -9"/><path class="stalk" d="M176.5 309.2 Q178.6 278.8 183.3 248.3"/><ellipse class="head" cx="184" cy="240.3" rx="3.1" ry="10.5" transform="rotate(8.2 183.3 248.3)"/><path class="stalk" d="M126 309.5 Q127.2 284.1 129.9 258.7"/><ellipse class="head" cx="130.3" cy="250.7" rx="3.5" ry="9.8" transform="rotate(4.7 129.9 258.7)"/><path class="stalk" d="M202.9 334.7 Q201.8 308.1 199.1 281.5"/><ellipse class="head" cx="198.8" cy="273.5" rx="4" ry="9.5" transform="rotate(-4.5 199.1 281.5)"/><path class="awn" d="M199.1 265.5 l-1.5 -10 M197.1 269.5 l-4 -9 M201.1 269.5 l4 -9"/><path class="stalk" d="M141.2 338.5 Q142.3 312 144.9 285.6"/><ellipse class="head" cx="145.2" cy="277.6" rx="4.2" ry="11.5" transform="rotate(4.4 144.9 285.6)"/><path class="stalk" d="M128.7 314 Q130.6 287.4 135.2 260.7"/><ellipse class="head" cx="135.9" cy="252.7" rx="3.4" ry="10.6" transform="rotate(7.9 135.2 260.7)"/><path class="awn" d="M135.2 244.7 l2.6 -10 M133.2 248.7 l-4 -9 M137.2 248.7 l4 -9"/><path class="stalk" d="M164.7 320.1 Q166.6 298.2 170.8 276.3"/><ellipse class="head" cx="171.4" cy="268.3" rx="3.9" ry="9.5" transform="rotate(7.2 170.8 276.3)"/><path class="stalk" d="M223.4 338.6 Q222.6 307.8 220.9 277.1"/><ellipse class="head" cx="220.7" cy="269.1" rx="3.2" ry="10.8" transform="rotate(-2.9 220.9 277.1)"/><path class="awn" d="M220.9 261.1 l-1 -10 M218.9 265.1 l-4 -9 M222.9 265.1 l4 -9"/><path class="stalk" d="M210.6 342.5 Q212.9 320.6 218.3 298.8"/><ellipse class="head" cx="219.1" cy="290.8" rx="3.6" ry="11.2" transform="rotate(9.3 218.3 298.8)"/><path class="awn" d="M218.3 282.8 l3.1 -10 M216.3 286.8 l-4 -9 M220.3 286.8 l4 -9"/><path class="stalk" d="M215.3 337.6 Q214.1 310.6 211.4 283.5"/><ellipse class="head" cx="211" cy="275.5" rx="3.5" ry="10.1" transform="rotate(-4.6 211.4 283.5)"/><path class="awn" d="M211.4 267.5 l-1.5 -10 M209.4 271.5 l-4 -9 M213.4 271.5 l4 -9"/><path class="stalk" d="M146.7 322 Q147.9 296.3 150.6 270.6"/><ellipse class="head" cx="151" cy="262.6" rx="3.9" ry="10.3" transform="rotate(4.6 150.6 270.6)"/><path class="awn" d="M150.6 254.6 l1.5 -10 M148.6 258.6 l-4 -9 M152.6 258.6 l4 -9"/><path class="stalk" d="M211.6 303.4 Q211.2 278 210.1 252.6"/><ellipse class="head" cx="210" cy="244.6" rx="3.7" ry="10.5" transform="rotate(-1.7 210.1 252.6)"/><path class="awn" d="M210.1 236.6 l-0.6 -10 M208.1 240.6 l-4 -9 M212.1 240.6 l4 -9"/></g><g class="ear" style="--k:2"><path class="stalk" d="M321.8 322.5 Q323 301.9 325.7 281.2"/><ellipse class="head" cx="326.1" cy="273.2" rx="4" ry="9.9" transform="rotate(4.6 325.7 281.2)"/><path class="stalk" d="M236.9 313 Q237.5 284.1 238.7 255.3"/><ellipse class="head" cx="238.9" cy="247.3" rx="3.3" ry="9.1" transform="rotate(2.1 238.7 255.3)"/><path class="stalk" d="M227.9 304.2 Q228.9 272.7 231.3 241.2"/><ellipse class="head" cx="231.6" cy="233.2" rx="4" ry="11.2" transform="rotate(4 231.3 241.2)"/><path class="awn" d="M231.3 225.2 l1.3 -10 M229.3 229.2 l-4 -9 M233.3 229.2 l4 -9"/><path class="stalk" d="M315.6 311.7 Q314.2 291.3 311.1 270.8"/><ellipse class="head" cx="310.7" cy="262.8" rx="3.6" ry="9.2" transform="rotate(-5.4 311.1 270.8)"/><path class="stalk" d="M218.5 316.8 Q218.5 287.5 218.6 258.2"/><ellipse class="head" cx="218.6" cy="250.2" rx="3.5" ry="11.3" transform="rotate(0.1 218.6 258.2)"/><path class="awn" d="M218.6 242.2 l0 -10 M216.6 246.2 l-4 -9 M220.6 246.2 l4 -9"/><path class="stalk" d="M279.5 304.8 Q278.4 273.4 275.8 242.1"/><ellipse class="head" cx="275.4" cy="234.1" rx="3.1" ry="11.5" transform="rotate(-4.4 275.8 242.1)"/><path class="awn" d="M275.8 226.1 l-1.5 -10 M273.8 230.1 l-4 -9 M277.8 230.1 l4 -9"/><path class="stalk" d="M221.4 300.4 Q221.6 272.5 222.2 244.7"/><ellipse class="head" cx="222.3" cy="236.7" rx="3.9" ry="10.1" transform="rotate(1 222.2 244.7)"/><path class="awn" d="M222.2 228.7 l0.3 -10 M220.2 232.7 l-4 -9 M224.2 232.7 l4 -9"/><path class="stalk" d="M331.4 317.9 Q329.2 285.5 324.1 253.1"/><ellipse class="head" cx="323.3" cy="245.1" rx="4" ry="11.1" transform="rotate(-8.8 324.1 253.1)"/><path class="awn" d="M324.1 237.1 l-2.9 -10 M322.1 241.1 l-4 -9 M326.1 241.1 l4 -9"/><path class="stalk" d="M335.4 302.5 Q337.5 277.1 342.4 251.7"/><ellipse class="head" cx="343.1" cy="243.7" rx="3.9" ry="11.5" transform="rotate(8.4 342.4 251.7)"/><path class="awn" d="M342.4 235.7 l2.8 -10 M340.4 239.7 l-4 -9 M344.4 239.7 l4 -9"/><path class="stalk" d="M257.9 325.8 Q259.2 295.3 262.2 264.8"/><ellipse class="head" cx="262.7" cy="256.8" rx="3" ry="10" transform="rotate(5.2 262.2 264.8)"/><path class="awn" d="M262.2 248.8 l1.7 -10 M260.2 252.8 l-4 -9 M264.2 252.8 l4 -9"/><path class="stalk" d="M223.2 310.6 Q222.6 282.2 221.1 253.7"/><ellipse class="head" cx="220.9" cy="245.7" rx="3.4" ry="11.7" transform="rotate(-2.6 221.1 253.7)"/><path class="awn" d="M221.1 237.7 l-0.9 -10 M219.1 241.7 l-4 -9 M223.1 241.7 l4 -9"/><path class="stalk" d="M273.7 329.2 Q272.2 308.2 268.7 287.1"/><ellipse class="head" cx="268.3" cy="279.1" rx="3.9" ry="11.9" transform="rotate(-5.9 268.7 287.1)"/><path class="awn" d="M268.7 271.1 l-2 -10 M266.7 275.1 l-4 -9 M270.7 275.1 l4 -9"/><path class="stalk" d="M310 308.6 Q311.9 288.5 316.5 268.4"/><ellipse class="head" cx="317.2" cy="260.4" rx="3.6" ry="11.6" transform="rotate(7.9 316.5 268.4)"/><path class="awn" d="M316.5 252.4 l2.6 -10 M314.5 256.4 l-4 -9 M318.5 256.4 l4 -9"/><path class="stalk" d="M305.7 323.4 Q306.4 297 308 270.5"/><ellipse class="head" cx="308.3" cy="262.5" rx="3.5" ry="9.3" transform="rotate(2.8 308 270.5)"/><path class="awn" d="M308 254.5 l0.9 -10 M306 258.5 l-4 -9 M310 258.5 l4 -9"/><path class="stalk" d="M332.5 338.4 Q334.1 314.2 337.7 290"/><ellipse class="head" cx="338.2" cy="282" rx="3.3" ry="9.7" transform="rotate(6.2 337.7 290)"/><path class="awn" d="M337.7 274 l2.1 -10 M335.7 278 l-4 -9 M339.7 278 l4 -9"/><path class="stalk" d="M336.3 336.1 Q336 312.8 335.1 289.5"/><ellipse class="head" cx="334.9" cy="281.5" rx="3.9" ry="10.8" transform="rotate(-1.5 335.1 289.5)"/><path class="awn" d="M335.1 273.5 l-0.5 -10 M333.1 277.5 l-4 -9 M337.1 277.5 l4 -9"/></g><g class="ear" style="--k:3"><path class="stalk" d="M381.4 333.4 Q379.2 309.6 374.3 285.8"/><ellipse class="head" cx="373.6" cy="277.8" rx="3.1" ry="10.7" transform="rotate(-8.4 374.3 285.8)"/><path class="awn" d="M374.3 269.8 l-2.8 -10 M372.3 273.8 l-4 -9 M376.3 273.8 l4 -9"/><path class="stalk" d="M433.9 343.5 Q436 323.5 440.9 303.5"/><ellipse class="head" cx="441.6" cy="295.5" rx="3" ry="9.1" transform="rotate(8.4 440.9 303.5)"/><path class="stalk" d="M419.1 328.6 Q420.7 297.3 424.6 265.9"/><ellipse class="head" cx="425.2" cy="257.9" rx="3.5" ry="9.1" transform="rotate(6.6 424.6 265.9)"/><path class="awn" d="M424.6 249.9 l2.2 -10 M422.6 253.9 l-4 -9 M426.6 253.9 l4 -9"/><path class="stalk" d="M345.6 320.4 Q347.5 293.5 351.9 266.6"/><ellipse class="head" cx="352.5" cy="258.6" rx="4.1" ry="11.8" transform="rotate(7.5 351.9 266.6)"/><path class="awn" d="M351.9 250.6 l2.5 -10 M349.9 254.6 l-4 -9 M353.9 254.6 l4 -9"/><path class="stalk" d="M403.8 318.1 Q403.4 297.6 402.3 277.1"/><ellipse class="head" cx="402.2" cy="269.1" rx="4.2" ry="9.1" transform="rotate(-1.8 402.3 277.1)"/><path class="stalk" d="M430.9 317.8 Q433.2 284.9 438.4 252.1"/><ellipse class="head" cx="439.1" cy="244.1" rx="3.4" ry="11.8" transform="rotate(8.9 438.4 252.1)"/><path class="awn" d="M438.4 236.1 l3 -10 M436.4 240.1 l-4 -9 M440.4 240.1 l4 -9"/><path class="stalk" d="M428.4 310.3 Q428.8 279.9 429.8 249.4"/><ellipse class="head" cx="429.9" cy="241.4" rx="4.2" ry="10" transform="rotate(1.6 429.8 249.4)"/><path class="awn" d="M429.8 233.4 l0.5 -10 M427.8 237.4 l-4 -9 M431.8 237.4 l4 -9"/><path class="stalk" d="M451.9 339.6 Q453.2 307.5 456.2 275.4"/><ellipse class="head" cx="456.7" cy="267.4" rx="3.1" ry="11.7" transform="rotate(5.2 456.2 275.4)"/><path class="awn" d="M456.2 259.4 l1.7 -10 M454.2 263.4 l-4 -9 M458.2 263.4 l4 -9"/><path class="stalk" d="M352.8 306.2 Q355.2 275.2 360.6 244.3"/><ellipse class="head" cx="361.4" cy="236.3" rx="4.1" ry="9.3" transform="rotate(9.3 360.6 244.3)"/><path class="stalk" d="M375.8 320 Q377 299.1 379.8 278.2"/><ellipse class="head" cx="380.2" cy="270.2" rx="3.6" ry="11.8" transform="rotate(4.9 379.8 278.2)"/><path class="stalk" d="M389.1 306.4 Q388.3 282.5 386.3 258.6"/><ellipse class="head" cx="386" cy="250.6" rx="3" ry="9.9" transform="rotate(-3.5 386.3 258.6)"/><path class="awn" d="M386.3 242.6 l-1.2 -10 M384.3 246.6 l-4 -9 M388.3 246.6 l4 -9"/><path class="stalk" d="M429.9 317.4 Q431 293 433.5 268.6"/><ellipse class="head" cx="433.9" cy="260.6" rx="3.3" ry="11.7" transform="rotate(4.3 433.5 268.6)"/><path class="stalk" d="M443 301.1 Q442 275.5 439.7 249.9"/><ellipse class="head" cx="439.4" cy="241.9" rx="3.8" ry="9.2" transform="rotate(-3.9 439.7 249.9)"/><path class="awn" d="M439.7 233.9 l-1.3 -10 M437.7 237.9 l-4 -9 M441.7 237.9 l4 -9"/><path class="stalk" d="M360.3 319.1 Q360.2 290.1 360 261.1"/><ellipse class="head" cx="360" cy="253.1" rx="3.4" ry="10.6" transform="rotate(-0.4 360 261.1)"/><path class="awn" d="M360 245.1 l-0.1 -10 M358 249.1 l-4 -9 M362 249.1 l4 -9"/><path class="stalk" d="M384.7 311.1 Q384.4 281.2 383.5 251.3"/><ellipse class="head" cx="383.3" cy="243.3" rx="3.4" ry="10.1" transform="rotate(-1.5 383.5 251.3)"/><path class="stalk" d="M394.1 321.5 Q395.5 299.2 398.8 277"/><ellipse class="head" cx="399.3" cy="269" rx="4" ry="10.8" transform="rotate(5.6 398.8 277)"/><path class="awn" d="M398.8 261 l1.9 -10 M396.8 265 l-4 -9 M400.8 265 l4 -9"/></g><g class="ear" style="--k:4"><path class="stalk" d="M478.2 343.2 Q479.9 312.1 483.9 280.9"/><ellipse class="head" cx="484.5" cy="272.9" rx="4.1" ry="9.8" transform="rotate(6.8 483.9 280.9)"/><path class="stalk" d="M461.2 310.4 Q459.6 281.1 455.6 251.9"/><ellipse class="head" cx="455" cy="243.9" rx="3.4" ry="11.7" transform="rotate(-6.8 455.6 251.9)"/><path class="awn" d="M455.6 235.9 l-2.3 -10 M453.6 239.9 l-4 -9 M457.6 239.9 l4 -9"/><path class="stalk" d="M514.8 341.3 Q514.3 308.8 513 276.4"/><ellipse class="head" cx="512.8" cy="268.4" rx="3.1" ry="9.6" transform="rotate(-2.2 513 276.4)"/><path class="stalk" d="M530.7 306.7 Q533 277.2 538.6 247.7"/><ellipse class="head" cx="539.4" cy="239.7" rx="4.1" ry="9.7" transform="rotate(9.5 538.6 247.7)"/><path class="stalk" d="M464.6 306.3 Q463.7 280.2 461.5 254.1"/><ellipse class="head" cx="461.2" cy="246.1" rx="3.3" ry="11.3" transform="rotate(-3.7 461.5 254.1)"/><path class="stalk" d="M482.2 324.6 Q484.5 294.9 490 265.1"/><ellipse class="head" cx="490.8" cy="257.1" rx="3.1" ry="9.2" transform="rotate(9.4 490 265.1)"/><path class="stalk" d="M507.7 335.7 Q505.4 309.4 500 283.1"/><ellipse class="head" cx="499.2" cy="275.1" rx="4.1" ry="9.4" transform="rotate(-9.2 500 283.1)"/><path class="awn" d="M500 267.1 l-3.1 -10 M498 271.1 l-4 -9 M502 271.1 l4 -9"/><path class="stalk" d="M544.1 303.8 Q542.2 282.7 537.5 261.6"/><ellipse class="head" cx="536.9" cy="253.6" rx="3.7" ry="9.9" transform="rotate(-7.9 537.5 261.6)"/><path class="stalk" d="M561.3 300.7 Q563.4 276.4 568.3 252"/><ellipse class="head" cx="569" cy="244" rx="3.8" ry="9.1" transform="rotate(8.4 568.3 252)"/><path class="stalk" d="M521.3 321.1 Q522 296.1 523.6 271"/><ellipse class="head" cx="523.8" cy="263" rx="3.2" ry="9.8" transform="rotate(2.7 523.6 271)"/><path class="awn" d="M523.6 255 l0.9 -10 M521.6 259 l-4 -9 M525.6 259 l4 -9"/><path class="stalk" d="M475.7 332.1 Q478 305.4 483.6 278.6"/><ellipse class="head" cx="484.3" cy="270.6" rx="3.5" ry="10.1" transform="rotate(9.5 483.6 278.6)"/><path class="stalk" d="M439.9 303.7 Q442 275.1 446.7 246.4"/><ellipse class="head" cx="447.4" cy="238.4" rx="3.9" ry="10.7" transform="rotate(8.2 446.7 246.4)"/><path class="awn" d="M446.7 230.4 l2.7 -10 M444.7 234.4 l-4 -9 M448.7 234.4 l4 -9"/><path class="stalk" d="M562.9 303.4 Q561.5 282.1 558.1 260.7"/><ellipse class="head" cx="557.6" cy="252.7" rx="4" ry="9.3" transform="rotate(-5.8 558.1 260.7)"/><path class="stalk" d="M483.2 316.9 Q482.1 294.6 479.3 272.2"/><ellipse class="head" cx="478.9" cy="264.2" rx="3.1" ry="9.5" transform="rotate(-4.8 479.3 272.2)"/><path class="stalk" d="M508.1 327.6 Q506 306.4 501.1 285.3"/><ellipse class="head" cx="500.4" cy="277.3" rx="3.8" ry="10.5" transform="rotate(-8.4 501.1 285.3)"/><path class="stalk" d="M460.9 306.1 Q461.6 283.4 463.3 260.6"/><ellipse class="head" cx="463.5" cy="252.6" rx="3.2" ry="11.6" transform="rotate(2.9 463.3 260.6)"/><path class="awn" d="M463.3 244.6 l1 -10 M461.3 248.6 l-4 -9 M465.3 248.6 l4 -9"/></g><g class="ear" style="--k:5"><path class="stalk" d="M658.1 317.4 Q656.8 286.8 653.9 256.2"/><ellipse class="head" cx="653.5" cy="248.2" rx="4.1" ry="10.1" transform="rotate(-5 653.9 256.2)"/><path class="stalk" d="M638.6 337 Q640.7 313.5 645.5 290"/><ellipse class="head" cx="646.2" cy="282" rx="3.5" ry="9.2" transform="rotate(8.3 645.5 290)"/><path class="awn" d="M645.5 274 l2.8 -10 M643.5 278 l-4 -9 M647.5 278 l4 -9"/><path class="stalk" d="M612.7 315.5 Q614.6 294.6 619.2 273.8"/><ellipse class="head" cx="619.9" cy="265.8" rx="3.9" ry="11" transform="rotate(7.9 619.2 273.8)"/><path class="awn" d="M619.2 257.8 l2.6 -10 M617.2 261.8 l-4 -9 M621.2 261.8 l4 -9"/><path class="stalk" d="M630.2 337.8 Q631.2 315.5 633.5 293.2"/><ellipse class="head" cx="633.8" cy="285.2" rx="3.2" ry="9" transform="rotate(3.9 633.5 293.2)"/><path class="stalk" d="M550.6 314.9 Q549.2 294.8 545.7 274.6"/><ellipse class="head" cx="545.3" cy="266.6" rx="3.9" ry="10.3" transform="rotate(-5.9 545.7 274.6)"/><path class="awn" d="M545.7 258.6 l-2 -10 M543.7 262.6 l-4 -9 M547.7 262.6 l4 -9"/><path class="stalk" d="M649.4 328.6 Q648.9 297.8 647.7 267.1"/><ellipse class="head" cx="647.5" cy="259.1" rx="3.7" ry="10.2" transform="rotate(-2 647.7 267.1)"/><path class="awn" d="M647.7 251.1 l-0.7 -10 M645.7 255.1 l-4 -9 M649.7 255.1 l4 -9"/><path class="stalk" d="M606.2 323.5 Q608.4 302 613.6 280.6"/><ellipse class="head" cx="614.3" cy="272.6" rx="3.9" ry="9.4" transform="rotate(8.8 613.6 280.6)"/><path class="awn" d="M613.6 264.6 l2.9 -10 M611.6 268.6 l-4 -9 M615.6 268.6 l4 -9"/><path class="stalk" d="M557.3 306.7 Q555.9 274.8 552.6 243"/><ellipse class="head" cx="552.1" cy="235" rx="3.9" ry="10" transform="rotate(-5.6 552.6 243)"/><path class="awn" d="M552.6 227 l-1.9 -10 M550.6 231 l-4 -9 M554.6 231 l4 -9"/><path class="stalk" d="M661.6 337.1 Q660 316.4 656.4 295.8"/><ellipse class="head" cx="655.8" cy="287.8" rx="3.9" ry="10" transform="rotate(-6.2 656.4 295.8)"/><path class="stalk" d="M659.2 338.3 Q660.5 311.6 663.5 285"/><ellipse class="head" cx="664" cy="277" rx="4" ry="9.3" transform="rotate(5.2 663.5 285)"/><path class="awn" d="M663.5 269 l1.7 -10 M661.5 273 l-4 -9 M665.5 273 l4 -9"/><path class="stalk" d="M643.8 334 Q645.4 306.4 649.1 278.9"/><ellipse class="head" cx="649.6" cy="270.9" rx="3.6" ry="10.3" transform="rotate(6.3 649.1 278.9)"/><path class="stalk" d="M587.7 329.9 Q588.3 299.4 589.9 268.9"/><ellipse class="head" cx="590.1" cy="260.9" rx="3.1" ry="9.6" transform="rotate(2.7 589.9 268.9)"/><path class="stalk" d="M635.2 336 Q637 305.1 641.2 274.2"/><ellipse class="head" cx="641.8" cy="266.2" rx="4.1" ry="10.9" transform="rotate(7.3 641.2 274.2)"/><path class="awn" d="M641.2 258.2 l2.4 -10 M639.2 262.2 l-4 -9 M643.2 262.2 l4 -9"/><path class="stalk" d="M620.9 309.8 Q622 284.9 624.5 260.1"/><ellipse class="head" cx="624.9" cy="252.1" rx="4.1" ry="11.2" transform="rotate(4.3 624.5 260.1)"/><path class="awn" d="M624.5 244.1 l1.4 -10 M622.5 248.1 l-4 -9 M626.5 248.1 l4 -9"/><path class="stalk" d="M630.3 331.9 Q628.7 299.7 624.9 267.5"/><ellipse class="head" cx="624.4" cy="259.5" rx="3.7" ry="11.4" transform="rotate(-6.4 624.9 267.5)"/><path class="awn" d="M624.9 251.5 l-2.1 -10 M622.9 255.5 l-4 -9 M626.9 255.5 l4 -9"/><path class="stalk" d="M555.9 313.9 Q555.7 283.3 555.3 252.8"/><ellipse class="head" cx="555.3" cy="244.8" rx="3.2" ry="10.4" transform="rotate(-0.6 555.3 252.8)"/><path class="awn" d="M555.3 236.8 l-0.2 -10 M553.3 240.8 l-4 -9 M557.3 240.8 l4 -9"/></g></g>
+  <text class="pic-lab" x="70" y="104" text-anchor="middle">the city</text>
+  <text class="pic-lab b" x="562" y="180" text-anchor="middle">Jesus</text>
+  <text class="pic-lab soft" x="16" y="308">white already to harvest</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Look on the fields</h2>
@@ -461,20 +579,34 @@
     <blockquote class="quote rise" data-q="47" data-hl="besought him that he would come down"></blockquote>
     <h2 class="rise" style="--d:1">A long way down</h2>
     <div class="stage">
-      <svg class="jn04-down" viewBox="0 0 640 230" role="img" aria-label="The road from Cana in the hills drops down to Capernaum on the Sea of Galilee, below sea level, a distance of roughly 16 to 20 miles.">
-        <path class="land" d="M0 70 C 60 60, 110 56, 160 72 C 240 96, 300 100, 360 140 C 420 176, 480 190, 560 196 L640 196 L640 230 L0 230 Z"/>
-        <rect class="lake" x="560" y="196" width="80" height="20"/>
-        <line class="sealevel" x1="0" y1="160" x2="640" y2="160"/>
-        <text x="10" y="152" font-size="14" style="fill:var(--ink-soft)">sea level</text>
-        <path d="M90 58 C 150 60, 200 78, 260 92 C 330 110, 400 150, 470 176 C 510 188, 540 190, 560 190" fill="none" stroke-width="4" stroke-dasharray="10 7" style="stroke:var(--accent)"/>
-        <circle cx="90" cy="58" r="8" style="fill:var(--ink)"/>
-        <text x="90" y="38" text-anchor="middle" font-size="18" font-weight="700">Cana</text>
-        <text x="90" y="100" text-anchor="middle" font-size="14" style="fill:var(--ink-soft)">in the hills</text>
-        <circle cx="560" cy="190" r="8" style="fill:var(--ink)"/>
-        <text x="600" y="140" text-anchor="end" font-size="18" font-weight="700">Capernaum</text>
-        <text x="600" y="226" text-anchor="end" font-size="14" style="fill:var(--ink-soft)">Sea of Galilee, about 700 ft below sea level</text>
-        <text x="630" y="60" text-anchor="end" font-size="16" style="fill:var(--accent-hot)">about 16–20 miles, all downhill</text>
-      </svg>
+      <svg class="pic jn04-down" style="--ar:2.462;--mh:36vh" viewBox="0 0 640 260" role="img" aria-label="Side view of the land: the road from Cana in the hills runs down and down to Capernaum on the shore of the Sea of Galilee, which lies below sea level, roughly 16 to 20 miles away. A lone traveller walks the road.">
+  <defs>
+    <linearGradient id="jn04-dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--on-glow)"/><stop offset="0.55" style="stop-color:color-mix(in srgb, var(--cool) 32%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 50%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-dland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 46%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 16%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-dlake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 55%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn04-ddawn" cx=".9" cy="1" r=".7"><stop offset="0" style="stop-color:var(--warm);stop-opacity:0.55"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <filter id="jn04-dhaze" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="640" height="260" fill="url(#jn04-dsky)"/>
+  <rect width="640" height="260" fill="url(#jn04-ddawn)"/>
+  <path class="jn04-dfar" filter="url(#jn04-dhaze)" d="M0 110 C80 80 160 70 240 92 C320 112 380 100 450 118 C520 136 580 150 640 154 L640 200 L0 200 Z"/>
+  <path d="M0 74 C40 62 70 58 100 62 C130 66 150 70 170 76 C240 96 300 104 360 140 C420 176 480 192 560 198 L640 198 L640 260 L0 260 Z" fill="url(#jn04-dland)"/>
+  <rect x="556" y="198" width="84" height="30" fill="url(#jn04-dlake)"/>
+  <path class="jn04-dshore" d="M556 198 C560 214 562 226 560 260 L640 260 L640 228 L556 228 Z"/>
+  <g class="jn04-dtrees"><ellipse cx="0.1" cy="102" rx="4.1" ry="3.1" opacity="0.5"/><ellipse cx="89.7" cy="106.4" rx="5.7" ry="3.5" opacity="0.8"/><ellipse cx="160.5" cy="107.7" rx="5.4" ry="3.1" opacity="0.5"/><ellipse cx="36" cy="107" rx="3.4" ry="2.5" opacity="0.6"/><ellipse cx="522.1" cy="177.4" rx="3.6" ry="3.1" opacity="0.5"/><ellipse cx="6.5" cy="109.8" rx="4.3" ry="3.4" opacity="0.6"/><ellipse cx="165.8" cy="95.9" rx="6" ry="3.4" opacity="0.9"/><ellipse cx="132.4" cy="80.9" rx="4.1" ry="3.3" opacity="0.9"/><ellipse cx="388.5" cy="162.4" rx="5.2" ry="2.5" opacity="0.7"/><ellipse cx="213.4" cy="92.4" rx="5.4" ry="2.3" opacity="0.6"/><ellipse cx="315.5" cy="122.6" rx="4.6" ry="2.4" opacity="0.8"/><ellipse cx="91.6" cy="84.5" rx="3.2" ry="2.4" opacity="0.6"/><ellipse cx="105.5" cy="97.5" rx="5.4" ry="2.1" opacity="0.8"/><ellipse cx="215.9" cy="95" rx="5.2" ry="2" opacity="0.7"/><ellipse cx="287.5" cy="122.6" rx="3.8" ry="2.6" opacity="0.5"/><ellipse cx="461.7" cy="189.3" rx="5.9" ry="2.8" opacity="0.8"/><ellipse cx="408" cy="157.9" rx="3.9" ry="2.1" opacity="0.7"/><ellipse cx="538.3" cy="213.8" rx="5.3" ry="3.6" opacity="0.9"/><ellipse cx="241.2" cy="127.8" rx="5" ry="3.2" opacity="0.6"/><ellipse cx="41.2" cy="109.1" rx="6" ry="2.2" opacity="0.9"/><ellipse cx="116.9" cy="109" rx="4.4" ry="2.6" opacity="0.9"/><ellipse cx="482.4" cy="173.4" rx="4.9" ry="2.2" opacity="0.7"/><ellipse cx="85" cy="83.9" rx="4.6" ry="3.5" opacity="0.8"/><ellipse cx="559.3" cy="187" rx="3.1" ry="2.9" opacity="0.7"/><ellipse cx="408.1" cy="152.4" rx="3.2" ry="3.4" opacity="0.7"/><ellipse cx="272.5" cy="136.3" rx="4.7" ry="2.7" opacity="0.5"/><ellipse cx="477.6" cy="177" rx="5.6" ry="3.5" opacity="0.6"/><ellipse cx="205.4" cy="107.1" rx="5.4" ry="2.3" opacity="0.5"/><ellipse cx="118.8" cy="84.1" rx="4.7" ry="3.3" opacity="0.8"/><ellipse cx="429.3" cy="174.3" rx="5.2" ry="3.3" opacity="0.6"/><ellipse cx="457.3" cy="167.1" rx="4.2" ry="3.3" opacity="0.5"/><ellipse cx="535.4" cy="193.2" rx="4.1" ry="3.3" opacity="0.6"/><ellipse cx="397" cy="143.8" rx="4.2" ry="3.4" opacity="0.7"/><ellipse cx="73.8" cy="81.1" rx="5.1" ry="2" opacity="0.8"/><ellipse cx="275.8" cy="137.4" rx="5.3" ry="2.1" opacity="0.6"/><ellipse cx="527.2" cy="204.6" rx="4.7" ry="3.4" opacity="0.8"/><ellipse cx="358.9" cy="151.9" rx="4.1" ry="3.1" opacity="0.7"/><ellipse cx="50.2" cy="111" rx="3.8" ry="3.2" opacity="0.6"/><ellipse cx="534.2" cy="199.9" rx="4.2" ry="2.9" opacity="0.6"/><ellipse cx="438.3" cy="155.7" rx="3.1" ry="2.6" opacity="0.8"/></g>
+  <g class="jn04-dglints"><line style="--k:0" x1="566" y1="207.5" x2="578" y2="207.5"/><line style="--k:1" x1="609.9" y1="202.9" x2="621.9" y2="202.9"/><line style="--k:2" x1="571.5" y1="210.9" x2="583.5" y2="210.9"/><line style="--k:3" x1="573.9" y1="217" x2="585.9" y2="217"/><line style="--k:4" x1="623.7" y1="219.1" x2="635.7" y2="219.1"/><line style="--k:0" x1="623.2" y1="214.4" x2="635.2" y2="214.4"/><line style="--k:1" x1="583.8" y1="219" x2="595.8" y2="219"/><line style="--k:2" x1="594.1" y1="213.1" x2="606.1" y2="213.1"/><line style="--k:3" x1="574.1" y1="209.3" x2="586.1" y2="209.3"/><line style="--k:4" x1="566.1" y1="208" x2="578.1" y2="208"/></g>
+  <line class="jn04-dsea" x1="0" y1="164" x2="640" y2="164"/>
+  <text class="pic-lab plain" x="10" y="156">sea level</text>
+  <path class="jn04-droad" d="M90 66 C150 68 200 84 260 96 C330 112 400 150 470 176 C510 188 540 192 560 194" fill="none"/>
+  <g class="jn04-dtown"><rect x="76" y="54" width="10" height="9"/><rect x="88" y="50" width="9" height="13"/><rect x="99" y="55" width="11" height="8"/></g>
+  <g class="jn04-dtown"><rect x="548" y="186" width="9" height="8"/><rect x="559" y="183" width="8" height="11"/><rect x="569" y="187" width="10" height="7"/></g>
+  <g class="jn04-dwalker"><g class="jn04-dman"><g><path d="M-3.4 0 C-3 -8 -2.8 -12.4 -2 -15.6 Q0 -16.8 2 -15.6 C2.8 -12.4 3 -8 3.4 0 Z"/><circle cx="0" cy="-18.6" r="1.4"/></g></g></g>
+  <text class="pic-lab b" x="92" y="34" text-anchor="middle">Cana</text>
+  <text class="pic-lab soft" x="92" y="98" text-anchor="middle">in the hills</text>
+  <text class="pic-lab b" x="626" y="168" text-anchor="end">Capernaum</text>
+  <text class="pic-lab soft" x="626" y="250" text-anchor="end">Sea of Galilee, about 700 ft below sea level</text>
+  <text class="pic-lab" x="626" y="40" text-anchor="end">about 16–20 miles, all downhill</text>
+</svg>
     </div>
     <p class="note rise" style="--d:3">A “nobleman” was a royal official, probably in the service of Herod the tetrarch, the ruler of Galilee. Money, rank, servants, and none of it could help his dying boy.</p>
     <p class="note step">So he walked a long day uphill to beg Jesus to <em>“come down.”</em> Trouble has a way of bringing important men to the end of themselves. That's often where faith starts.</p>
@@ -486,7 +618,13 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="50" data-hl="the man believed the word that Jesus had spoken unto him, and he went his way"></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:50% 40%"><span class="art-frame"><img src="../assets/art/tissot-the-healing-of-the-officers-son.jpg" width="490" height="366" style="max-height:30vh" alt="In a busy street under awnings, a richly dressed royal official stands with his hands clasped while Jesus speaks to him and the people look on."></span>
+        <figcaption>James Tissot, <i>The Healing of the Officer's Son</i></figcaption></figure>
+      <div>
     <p class="saying rise" style="--d:1">Go thy way; thy son <em>liveth</em>.</p>
+      </div>
+    </div>
     <p class="note rise" style="--d:3">Jesus' “ye” in verse 48 is plural. He's talking to the whole crowd that wanted a show. The father didn't argue about it. He just kept begging: “Sir, come down ere my child die.”</p>
     <p class="note step">Then Jesus wouldn't go. He only gave his word. No sign, no proof, no trip to Capernaum. And the man <em>believed the word</em> and started walking home.</p>
     <p class="note step">That's faith: taking Jesus at his word before you can see how it turns out.</p>
@@ -501,29 +639,44 @@
     <blockquote class="quote rise" data-q="53" data-hl="at the same hour|himself believed, and his whole house"></blockquote>
     <h2 class="rise" style="--d:1">The same hour</h2>
     <div class="stage">
-      <svg class="jn04-same" viewBox="0 0 640 220" role="img" aria-label="Two timelines, Cana and Capernaum. At the seventh hour Jesus speaks in Cana, and at that same hour the fever leaves the boy in Capernaum. The next day the servants meet the father on the road.">
-        <text x="20" y="66" font-size="18" font-weight="700">Cana</text>
-        <text x="20" y="166" font-size="18" font-weight="700">Capernaum</text>
-        <line class="track" x1="130" y1="60" x2="620" y2="60"/>
-        <line class="track" x1="130" y1="160" x2="620" y2="160"/>
-        <text x="250" y="22" text-anchor="middle" font-size="16" font-weight="700">7th hour, about 1 p.m.</text>
-        <text x="540" y="22" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">the next day</text>
-        <circle cx="250" cy="60" r="10" style="fill:var(--accent)"/>
-        <text x="270" y="48" font-size="16" class="serif" style="fill:var(--accent-hot)">“Thy son liveth”</text>
-        <circle cx="250" cy="160" r="10" style="fill:var(--accent)"/>
-        <text x="270" y="190" font-size="16" class="serif" style="fill:var(--accent-hot)">“the fever left him”</text>
-        <g class="step">
-          <rect class="glow" x="236" y="46" width="28" height="128" rx="14"/>
-          <path class="link draw" pathLength="1" d="M250 72 L250 148"/>
-        </g>
-        <g class="step">
-          <path d="M290 64 C 390 80, 450 100, 516 110" fill="none" stroke-width="3" stroke-dasharray="4 6" style="stroke:var(--ink-soft)"/>
-          <path d="M290 156 C 390 140, 450 120, 516 110" fill="none" stroke-width="3" stroke-dasharray="4 6" style="stroke:var(--ink-soft)"/>
-          <circle cx="520" cy="110" r="9" style="fill:var(--ink)"/>
-          <text x="536" y="98" font-size="15">father meets</text><text x="536" y="116" font-size="15">his servants:</text>
-          <text x="536" y="136" font-size="15" class="serif" style="fill:var(--accent-hot)">“Thy son liveth”</text>
-        </g>
-      </svg>
+      <svg class="pic jn04-same" style="--ar:2.133;--mh:38vh" viewBox="0 0 640 300" role="img" aria-label="Cana in the hills on the left and Capernaum by the lake on the right, under one sun at the seventh hour. In Cana, Jesus tells the father his son lives; at that same hour, in the house at Capernaum, the fever leaves the boy. The next day, on the road between, the father meets his servants coming with the news.">
+  <defs>
+    <linearGradient id="jn04-ssky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 30%, var(--on-glow))"/><stop offset="0.7" style="stop-color:color-mix(in srgb, var(--cool) 32%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 30%, var(--glow))"/></linearGradient>
+    <linearGradient id="jn04-shill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 50%, var(--on-glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 22%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn04-slake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 50%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--cool) 45%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn04-ssun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.25" style="stop-color:var(--glow);stop-opacity:0.8"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn04-sbeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--glow);stop-opacity:0.7"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></linearGradient>
+    <radialGradient id="jn04-sdoor"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.4" style="stop-color:var(--warm);stop-opacity:0.7"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+  </defs>
+  <rect width="640" height="300" fill="url(#jn04-ssky)"/>
+  <circle cx="352" cy="40" r="70" fill="url(#jn04-ssun)"/>
+  <g class="jn04-beams"><polygon points="346,52 120,190 170,190" fill="url(#jn04-sbeam)"/><polygon points="358,52 520,200 566,200" fill="url(#jn04-sbeam)"/></g>
+  <path d="M0 300 L0 150 C60 120 130 116 200 136 C250 150 290 178 340 200 C400 222 440 212 470 210 L640 210 L640 300 Z" fill="url(#jn04-shill)"/>
+  <rect x="460" y="208" width="180" height="40" fill="url(#jn04-slake)"/>
+  <g class="jn04-sglints"><line style="--k:0" x1="463" y1="210.8" x2="477" y2="210.8"/><line style="--k:1" x1="533.3" y1="215.9" x2="547.3" y2="215.9"/><line style="--k:2" x1="548.6" y1="236.4" x2="562.6" y2="236.4"/><line style="--k:3" x1="539.1" y1="209.6" x2="553.1" y2="209.6"/><line style="--k:4" x1="472.7" y1="243.1" x2="486.7" y2="243.1"/><line style="--k:0" x1="610.5" y1="211.7" x2="624.5" y2="211.7"/><line style="--k:1" x1="589.1" y1="210.6" x2="603.1" y2="210.6"/><line style="--k:2" x1="572.1" y1="223.1" x2="586.1" y2="223.1"/><line style="--k:3" x1="596.7" y1="216.6" x2="610.7" y2="216.6"/><line style="--k:4" x1="610.1" y1="210.6" x2="624.1" y2="210.6"/></g>
+  <path class="jn04-sshore" d="M440 216 C470 222 520 240 560 252 C600 262 620 262 640 262 L640 300 L380 300 Z"/>
+  <path class="jn04-sroad" d="M190 196 C250 220 300 250 360 262 C400 268 440 260 476 252" fill="none"/>
+  <g class="jn04-scana"><rect x="40" y="132" width="20" height="14"/><rect x="62" y="126" width="16" height="20"/><rect x="80" y="134" width="22" height="12"/></g>
+  <g class="jn04-sfigs"><g class="jesus"><path d="M142.2 196 C143.1 177.6 143.6 167.5 145.4 160.1 Q150 157.4 154.6 160.1 C156.4 167.5 156.9 177.6 157.8 196 Z"/><circle cx="150" cy="153.3" r="3.3"/></g><g class="father"><path d="M178.5 198 C179.4 180.4 178.3 170.7 178.6 163.7 Q183 161 187.4 163.7 C190.7 170.7 192.6 180.4 193.5 198 Z"/><circle cx="183" cy="157.1" r="3.1"/></g></g>
+  <g class="jn04-shouse">
+    <rect class="wall" x="492" y="166" width="70" height="44"/><rect class="wall2" x="562" y="170" width="22" height="40"/>
+    <rect class="roof" x="488" y="160" width="78" height="7"/>
+    <rect class="door" x="518" y="182" width="18" height="28"/>
+    <ellipse class="glow" cx="527" cy="196" rx="34" ry="30" fill="url(#jn04-sdoor)"/>
+  </g>
+  <text class="pic-lab b" x="70" y="112" text-anchor="middle">Cana</text>
+  <text class="pic-lab b" x="527" y="146" text-anchor="middle">Capernaum</text>
+  <text class="pic-lab" x="352" y="122" text-anchor="middle">the 7th hour, about 1 p.m.</text>
+  <g class="step jn04-hour">
+    <text class="pic-lab jn04-say" x="96" y="242" text-anchor="middle">“Thy son liveth”</text>
+    <text class="pic-lab jn04-say" x="560" y="284" text-anchor="middle">“the fever left him”</text>
+  </g>
+  <g class="step jn04-meet">
+    <g class="jn04-mf"><g class="jn04-mfi"><g><path d="M-5.8 0 C-5.1 -13.6 -4.3 -21.1 -2.4 -26.5 Q1 -28.6 4.4 -26.5 C5.3 -21.1 5.1 -13.6 5.8 0 Z"/><circle cx="1" cy="-31.6" r="2.4"/></g></g></g>
+    <g class="jn04-ms"><g class="jn04-msi"><g><path d="M-5.4 0 C-4.8 -12.8 -5 -19.8 -4.2 -25 Q-1 -26.9 2.2 -25 C4 -19.8 4.8 -12.8 5.4 0 Z"/><circle cx="-1" cy="-29.7" r="2.3"/></g><g><path d="M8.4 2 C9.1 -11.2 8.9 -18.5 9.7 -23.7 Q13 -25.7 16.3 -23.7 C18.1 -18.5 19 -11.2 19.6 2 Z"/><circle cx="13" cy="-28.6" r="2.4"/></g></g></g>
+    <text class="pic-lab" x="338" y="292" text-anchor="middle">the next day, on the road home</text>
+  </g>
+</svg>
     </div>
     <p class="note step">Miles apart, the same hour. Jesus didn't need to be in the room. His word is enough, wherever you are and wherever the people you love are.</p>
     <p class="note step">Watch the man's faith grow: he believed enough to ask, then believed the word and went, then believed fully, <em>“and his whole house.”</em> One man's faith reached his whole family.</p>

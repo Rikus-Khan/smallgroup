@@ -19,18 +19,12 @@
 .jn21-night .dawn { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
 .jn21-night .dawn b { color: var(--accent-hot); }
 
-/* The boat: an empty net on the left, then a full one on the right */
-.jn21-catch .water { fill: color-mix(in srgb, var(--cool) 22%, transparent); }
-.jn21-catch .wave { fill: none; stroke: var(--cool); stroke-width: 3; }
-.jn21-catch .hull { fill: var(--leather); stroke: var(--leather-light); stroke-width: 3; }
-.jn21-catch .mast { stroke: var(--leather-light); stroke-width: 5; }
-.jn21-catch .net { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 5 5; }
-.jn21-catch .left { transition: opacity 1s ease; }
-.jn21-catch .right { opacity: 0; transition: opacity 1s ease; }
-.jn21-catch .fish { fill: var(--warm); opacity: 0; transition: opacity .4s ease; transition-delay: calc(var(--k) * 45ms + .8s); }
-.slide:has(.jn21-cast.on) .jn21-catch .left { opacity: .25; }
-.slide:has(.jn21-cast.on) .jn21-catch .right { opacity: 1; }
-.slide:has(.jn21-cast.on) .jn21-catch .fish { opacity: 1; }
+/* Paintings beside long text: a slimmer picture column, so the text needs fewer lines */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.art-narrow.jn21-slim { grid-template-columns: .5fr 1.5fr; } }
+
+/* The 153 fish, with the painting of the full net beside them on wide screens */
+.jn21-haul { display: grid; gap: 1rem 2rem; align-items: center; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .jn21-haul { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); } .jn21-haul .art img { max-height: 34vh; } }
 
 /* Three questions: which Greek word for love each man used */
 .jn21-loves { display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 6px; margin: .4em 0 1em; text-align: center; align-items: stretch; }
@@ -141,35 +135,15 @@
   <div class="inner">
     <blockquote class="quote rise" data-q="5" data-hl="Children, have ye any meat?|They answered him, No."></blockquote>
     <div class="split">
-      <div class="stage">
-        <svg class="jn21-catch" viewBox="0 0 600 300" role="img" aria-label="A fishing boat. The net on the left side hangs empty. Then the net goes over the right side and fills with fish.">
-          <rect class="water" x="0" y="118" width="600" height="182"/>
-          <path class="wave" d="M0 118 Q25 110 50 118 T100 118 T150 118 T200 118 T250 118 T300 118 T350 118 T400 118 T450 118 T500 118 T550 118 T600 118"/>
-          <line class="mast" x1="300" y1="10" x2="300" y2="100"/>
-          <path class="hull" d="M190 96 L410 96 Q400 140 360 140 L240 140 Q200 140 190 96 Z"/>
-          <g class="left">
-            <path class="net" d="M200 110 Q150 140 130 200 Q160 250 190 210 Q200 170 214 128"/>
-            <text x="110" y="270" text-anchor="middle" font-size="16" style="fill:var(--ink-soft)">left side: all night, nothing</text>
-          </g>
-          <g class="right">
-            <path class="net" d="M396 110 Q470 130 500 200 Q470 268 410 240 Q396 190 386 130" style="stroke:var(--accent)"/>
-            <text x="470" y="290" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--accent-hot)">right side: too many to pull in</text>
-          </g>
-          <g>
-            <ellipse class="fish" style="--k:0" cx="420" cy="150" rx="11" ry="5"/><ellipse class="fish" style="--k:1" cx="445" cy="160" rx="11" ry="5"/><ellipse class="fish" style="--k:2" cx="468" cy="175" rx="11" ry="5"/>
-            <ellipse class="fish" style="--k:3" cx="415" cy="172" rx="11" ry="5"/><ellipse class="fish" style="--k:4" cx="440" cy="183" rx="11" ry="5"/><ellipse class="fish" style="--k:5" cx="480" cy="198" rx="11" ry="5"/>
-            <ellipse class="fish" style="--k:6" cx="420" cy="196" rx="11" ry="5"/><ellipse class="fish" style="--k:7" cx="452" cy="205" rx="11" ry="5"/><ellipse class="fish" style="--k:8" cx="478" cy="220" rx="11" ry="5"/>
-            <ellipse class="fish" style="--k:9" cx="425" cy="218" rx="11" ry="5"/><ellipse class="fish" style="--k:10" cx="455" cy="228" rx="11" ry="5"/><ellipse class="fish" style="--k:11" cx="430" cy="238" rx="11" ry="5"/>
-            <ellipse class="fish" style="--k:12" cx="462" cy="244" rx="11" ry="5"/><ellipse class="fish" style="--k:13" cx="410" cy="150" rx="9" ry="4"/><ellipse class="fish" style="--k:14" cx="460" cy="190" rx="9" ry="4"/>
-            <ellipse class="fish" style="--k:15" cx="436" cy="205" rx="9" ry="4"/><ellipse class="fish" style="--k:16" cx="485" cy="236" rx="9" ry="4"/><ellipse class="fish" style="--k:17" cx="444" cy="252" rx="9" ry="4"/>
-          </g>
-        </svg>
-      </div>
+      <figure class="art rise" style="--d:1;--kb:40% 40%">
+        <span class="art-frame"><img src="../assets/art/tissot-christ-appears-on-the-shore.jpg" width="500" height="328" alt="In the grey morning, Jesus stands alone on the stony shore beside a thin column of smoke from a fire and calls out across the water to the disciples in their boat."></span>
+        <figcaption>James Tissot, <i>Christ Appears on the Shore of the Lake</i></figcaption>
+      </figure>
       <div>
         <h2 class="rise" style="--d:1">“Have ye any meat?”</h2>
         <p class="note rise" style="--d:2">“Children” here is friendly, like calling out <em>“Lads!”</em> And “meat” just means food. He's asking a question he already knows the answer to.</p>
         <p class="note step">He wanted them to say it out loud: <em>“No.”</em> Empty hands, honestly admitted. That's where help starts.</p>
-        <p class="note step jn21-cast">Then one command, the same lake and the same net, a few feet over: <em>“Cast the net on the right side.”</em> And the net is suddenly too full to pull in.</p>
+        <p class="note step">Then one command, the same lake and the same net, a few feet over: <em>“Cast the net on the right side.”</em> And the net is suddenly too full to pull in.</p>
       </div>
     </div>
   </div>
@@ -193,14 +167,22 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="7" data-hl="It is the Lord|did cast himself into the sea"></blockquote>
-    <h2 class="rise" style="--d:1">John sees, Peter jumps</h2>
-    <p class="note rise" style="--d:2">John is the first to recognize him. Peter is the first to get to him. He'd been stripped down for work, so he threw on his outer coat and went over the side.</p>
-    <div class="math step">
-      <div><b>200 cubits</b><span>from the boat to shore</span></div>
-      <div><b>≈ 300 feet</b><span>a cubit is about 18 inches</span></div>
-      <div><b>≈ 100 yards</b><span>the length of a football field</span></div>
+    <div class="split art-narrow jn21-slim">
+      <figure class="art rise" style="--d:1;--kb:52% 25%">
+        <span class="art-frame"><img src="../assets/art/tissot-peter-casts-himself-into-the-water.jpg" width="552" height="512" alt="Peter, stripped for work, pulls his coat about him and steps over the side of the fishing boat toward the water, while two other disciples in the boat stare and shade their eyes toward the shore."></span>
+        <figcaption>James Tissot, <i>Peter Casts Himself into the Water</i></figcaption>
+      </figure>
+      <div>
+        <h2 class="rise" style="--d:1">John sees, Peter jumps</h2>
+        <p class="note rise" style="--d:2">John is the first to recognize him. Peter is the first to get to him. He'd been stripped down for work, so he threw on his outer coat and went over the side.</p>
+        <div class="math step">
+          <div><b>200 cubits</b><span>from the boat to shore</span></div>
+          <div><b>≈ 300 feet</b><span>a cubit is about 18 inches</span></div>
+          <div><b>≈ 100 yards</b><span>the length of a football field</span></div>
+        </div>
+        <p class="note step">This is the same man who had denied him three times. He didn't hang back and wait to be sure he was welcome. Guilt says, <em>stay away from him</em>. Peter swam straight toward him. That's the right instinct.</p>
+      </div>
     </div>
-    <p class="note step">This is the same man who had denied him three times. He didn't hang back and wait to be sure he was welcome. Guilt says, <em>stay away from him</em>. Peter swam straight toward him. That's the right instinct.</p>
   </div>
 </section>
 
@@ -232,8 +214,16 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="11" data-hl="hundred and fifty and three|yet was not the net broken"></blockquote>
-    <p class="dots-num rise" style="--d:1;--to:153"><small>great fishes</small></p>
-    <div class="dots rows fish" data-dots="153" style="--cols:17;--pace:16ms;gap:4px 5px;max-width:44rem" aria-label="One hundred fifty-three fish in seventeen rows of nine."></div>
+    <div class="jn21-haul">
+      <div>
+        <p class="dots-num rise" style="--d:1;--to:153"><small>great fishes</small></p>
+        <div class="dots rows fish" data-dots="153" style="--cols:17;--pace:16ms;gap:4px 5px;max-width:44rem" aria-label="One hundred fifty-three fish in seventeen rows of nine."></div>
+      </div>
+      <figure class="art rise" style="--d:3;--kb:52% 72%">
+        <span class="art-frame"><img src="../assets/art/tissot-second-miraculous-draught.jpg" width="732" height="446" alt="The disciples drag a net heavy with fish out of the water onto the stony shore beside their boat, while Jesus stands alone on the beach and watches."></span>
+        <figcaption>James Tissot, <i>The Second Miraculous Draught of Fishes</i></figcaption>
+      </figure>
+    </div>
     <p class="note step">Somebody counted. That's what fishermen do, and it's what an eyewitness remembers. People have guessed at hidden meanings in 153 for centuries. John doesn't give one, so we won't either.</p>
     <p class="note step">What John does point out: <em>the net didn't break</em>. The first time, “their net brake” (Luke 5:6). This time it held every one. What Jesus gathers, he keeps.</p>
   </div>
@@ -244,9 +234,17 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="12" data-hl="Come and dine"></blockquote>
-    <h2 class="rise" style="--d:1">Breakfast is ready</h2>
-    <p class="note rise" style="--d:2">Before they ever landed, he already had fish on the fire and bread ready. He didn't need their catch. He asked them to bring some anyway, and then he served them with his own hands.</p>
-    <p class="note step">This is the risen Son of God, cooking for men who had run out on him. No speech about where they were that night. Just <em>“Come and dine.”</em></p>
+    <div class="split art-narrow jn21-slim">
+      <figure class="art rise" style="--d:1;--kb:30% 62%">
+        <span class="art-frame"><img src="../assets/art/tissot-meal-of-our-lord-and-the-apostles.jpg" width="484" height="306" alt="On the grassy shore of the lake, the disciples sit in a circle around a small fire of coals with fish and loaves of bread laid by it, and Jesus sits with them, wrapped in white."></span>
+        <figcaption>James Tissot, <i>The Meal of Our Lord and the Apostles</i></figcaption>
+      </figure>
+      <div>
+        <h2 class="rise" style="--d:1">Breakfast is ready</h2>
+        <p class="note rise" style="--d:2">Before they ever landed, he already had fish on the fire and bread ready. He didn't need their catch. He asked them to bring some anyway, and then he served them with his own hands.</p>
+        <p class="note step">This is the risen Son of God, cooking for men who had run out on him. No speech about where they were that night. Just <em>“Come and dine.”</em></p>
+      </div>
+    </div>
     <blockquote class="quote step"><p>“It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.”</p><cite>Lamentations 3:22–23</cite></blockquote>
     <ol class="signs step">
       <li><b>The locked room</b>John 20:19</li>

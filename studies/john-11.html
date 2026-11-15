@@ -10,6 +10,50 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
+/* ---- John 11 pictures. Each .pic is a framed scene painted from --on-glow (dark in every theme) and --glow (light),
+   so it reads the same in every theme. .art is a public-domain painting, framed, with a slow push-in. ---- */
+/* 9: twelve hours in the day */
+.jn11-day .jn11-eve { opacity: 0; }
+.slide.active .jn11-day .jn11-eve { animation: jn11-fade 3s 6.4s ease-in forwards; }
+@keyframes jn11-fade { to { opacity: 1; } }
+.jn11-day .jn11-arc, .jn11-day .jn11-ticks line { stroke: var(--on-glow); opacity: .35; }
+.jn11-day .jn11-ticks line { stroke-width: 2; opacity: .45; }
+.jn11-day .jn11-sun { fill: var(--glow); }
+.jn11-day .jn11-sunarm { transform-box: view-box; transform-origin: 300px 250px; }
+.slide.active .jn11-day .jn11-sunarm { animation: jn11-arc 8.4s .6s cubic-bezier(.45,.05,.55,.95) both; }
+@keyframes jn11-arc { from { transform: rotate(0); } to { transform: rotate(170deg); } }
+.jn11-day .jn11-hfar { fill: color-mix(in srgb, var(--on-glow) 42%, color-mix(in srgb, var(--cool) 45%, var(--warm))); }
+.jn11-day .jn11-hnear { fill: color-mix(in srgb, var(--on-glow) 62%, var(--warm)); }
+.jn11-day .jn11-stones ellipse { fill: color-mix(in srgb, var(--on-glow) 50%, var(--warm)); opacity: .7; }
+.jn11-day .mn-robe { stroke: color-mix(in srgb, var(--glow) 55%, transparent); }
+.jn11-day .jn11-walker { transform: translate(40px, 288px); }
+.slide.active .jn11-day .jn11-walker { animation: jn11-walk 9s .6s linear both; }
+@keyframes jn11-walk { 0% { transform: translate(40px, 288px); } 35% { transform: translate(200px, 280px); } 70% { transform: translate(340px, 274px); } 100% { transform: translate(470px, 262px); } }
+.pic .sh-shadow, .pic .mn-shadow { fill: var(--on-glow); opacity: .35; }
+.pic .mn-robe { fill: color-mix(in srgb, var(--on-glow) 82%, var(--warm)); stroke-width: 1.2; }
+.pic .mn-cloak { fill: color-mix(in srgb, var(--on-glow) 70%, var(--wine)); }
+.pic .mn-head { fill: color-mix(in srgb, var(--on-glow) 70%, var(--leather)); }
+.pic .mn-cloth { fill: color-mix(in srgb, var(--glow) 60%, var(--warm)); }
+.pic .mn-arm { fill: none; stroke: color-mix(in srgb, var(--on-glow) 82%, var(--warm)); stroke-width: 6; stroke-linecap: round; }
+.pic .mn-staff { fill: none; stroke: color-mix(in srgb, var(--leather) 70%, var(--on-glow)); stroke-width: 3; stroke-linecap: round; }
+
+/* 35: weighed, and found wanting (the tilt is the shared svg.scale) */
+.jn11-scale .jn11-col rect { fill: color-mix(in srgb, var(--on-glow) 80%, var(--warm)); }
+.jn11-scale .jn11-col .lit { fill: color-mix(in srgb, var(--warm) 34%, var(--on-glow)); }
+.jn11-scale .jn11-col .cap { fill: color-mix(in srgb, var(--warm) 40%, var(--on-glow)); }
+.jn11-scale .jn11-flute line { stroke: var(--on-glow); stroke-width: 1.5; opacity: .45; }
+.jn11-scale .jn11-floor { fill: color-mix(in srgb, var(--on-glow) 86%, var(--warm)); }
+.jn11-scale .jn11-pin { fill: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); }
+.jn11-scale .jn11-cord { fill: none; stroke: color-mix(in srgb, var(--warm) 70%, var(--glow)); stroke-width: 1.6; opacity: .8; }
+.jn11-scale .jn11-cloth .fold { fill: none; stroke: color-mix(in srgb, var(--glow) 60%, var(--on-glow)); stroke-width: 1.2; }
+.jn11-scale .jn11-cloth { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--glow) 60%, transparent)); }
+.jn11-scale .jn11-cloth .face { fill: color-mix(in srgb, var(--leather) 70%, var(--glow)); }
+.jn11-scale .jn11-temple .door { fill: color-mix(in srgb, var(--on-glow) 80%, var(--warm)); }
+.jn11-scale .jn11-temple .rail { fill: none; stroke: color-mix(in srgb, var(--warm) 50%, var(--on-glow)); stroke-width: 1.2; }
+
+/* 25: Jesus wept. The painting gives the text a little more room than art-narrow does */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.art-narrow.jn11-wide { grid-template-columns: .64fr 1.36fr; } }
+
 /* The same words from two sisters, and two different answers */
 .jn11-echo { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.2rem; margin: .4em 0 1em; text-align: center; }
 .jn11-echo .who { padding: .5em .6em; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-strong); }
@@ -20,10 +64,6 @@
 .jn11-echo .line::before { content: "\2198\00a0\00a0\00a0\00a0\2199"; }
 .jn11-echo .back { padding: .5em .6em; border-radius: 10px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .jn11-echo .back b { display: block; font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .8vw, 1.6rem); color: var(--accent-hot); font-weight: 400; }
-
-/* "Lazarus, come forth": the call appears with the shared svg.tomb's .tomb-forth step */
-.jn11-call { opacity: 0; transition: opacity .8s ease; }
-.slide:has(.tomb-forth.on) .jn11-call { opacity: 1; }
 
 /* Grave clothes coming off, strip by strip */
 .jn11-loose { position: relative; display: grid; gap: 6px; max-width: 24rem; margin: .4em auto 1em; }
@@ -111,21 +151,35 @@
     <blockquote class="quote rise" data-q="9" data-hl="Are there not twelve hours in the day?"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg viewBox="0 0 600 300" role="img" aria-label="The sun crosses the sky through twelve hours of daylight.">
-          <path d="M80 250 A220 220 0 0 1 520 250" fill="none" stroke-width="2" stroke-dasharray="4 8" style="stroke:var(--ink-soft)"/>
-          <line x1="20" y1="250" x2="580" y2="250" stroke-width="2" style="stroke:var(--ink-soft)"/>
-          <g stroke-width="3" stroke-linecap="round" style="stroke:var(--line-strong)">
-            <path d="M80 250 l-14 0 M89 192 l-13 -4 M114 140 l-11 -8 M154 98 l-8 -11 M204 69 l-4 -13 M261 54 l-2 -14 M300 30 l0 -14 M339 54 l2 -14 M396 69 l4 -13 M446 98 l8 -11 M486 140 l11 -8 M511 192 l13 -4 M520 250 l14 0"/>
-          </g>
-          <text x="80" y="282" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">sunrise</text>
-          <text x="520" y="282" text-anchor="middle" font-size="18" style="fill:var(--ink-soft)">sunset</text>
-          <text x="300" y="190" text-anchor="middle" font-size="34" class="serif" style="fill:var(--accent-hot)">12 hours</text>
-          <text x="300" y="218" text-anchor="middle" font-size="17" style="fill:var(--ink-soft)">not one more, not one less</text>
-          <g class="arc-sun">
-            <circle cx="80" cy="250" r="26" opacity=".35" style="fill:var(--accent)"/>
-            <circle cx="80" cy="250" r="16" style="fill:var(--accent-hot)"/>
-          </g>
-        </svg>
+        <svg class="pic jn11-day" style="--ar:2" viewBox="0 0 600 300" role="img" aria-label="The sun rises over the hills of Judaea and crosses the whole sky in twelve hours, from sunrise to sunset. Below, a man walks the road in the daylight and does not stumble.">
+  <defs>
+    <linearGradient id="jn11-dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 50%, var(--glow))"/><stop offset="1" style="stop-color:var(--glow)"/></linearGradient>
+    <linearGradient id="jn11-deve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--cool) 40%, var(--on-glow))"/><stop offset="0.45" style="stop-color:color-mix(in srgb, var(--wine) 40%, var(--warm))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 60%, var(--glow))"/></linearGradient>
+    <radialGradient id="jn11-dsun"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="0.35" style="stop-color:var(--warm);stop-opacity:0.9"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn11-droad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 50%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 40%, var(--glow))"/></linearGradient>
+  </defs>
+  <rect width="600" height="300" fill="url(#jn11-dsky)"/>
+  <rect width="600" height="300" fill="url(#jn11-deve)" class="jn11-eve"/>
+  <path d="M88 250 A212 212 0 0 1 512 250" fill="none" stroke-width="1.5" stroke-dasharray="3 7" class="jn11-arc"/>
+  <g class="jn11-ticks"><line x1="88" y1="250" x2="74" y2="250"/><line x1="95.2" y1="195.1" x2="81.7" y2="191.5"/><line x1="116.4" y1="144" x2="104.3" y2="137"/><line x1="150.1" y1="100.1" x2="140.2" y2="90.2"/><line x1="194" y1="66.4" x2="187" y2="54.3"/><line x1="245.1" y1="45.2" x2="241.5" y2="31.7"/><line x1="300" y1="38" x2="300" y2="24"/><line x1="354.9" y1="45.2" x2="358.5" y2="31.7"/><line x1="406" y1="66.4" x2="413" y2="54.3"/><line x1="449.9" y1="100.1" x2="459.8" y2="90.2"/><line x1="483.6" y1="144" x2="495.7" y2="137"/><line x1="504.8" y1="195.1" x2="518.3" y2="191.5"/><line x1="512" y1="250" x2="526" y2="250"/></g>
+  <text class="pic-lab ink b" x="300" y="150" text-anchor="middle" style="font-size:26px">12 hours</text>
+  <text class="pic-lab ink" x="300" y="172" text-anchor="middle" style="font-size:15px">not one more, not one less</text>
+  <g class="jn11-sunarm"><circle cx="88" cy="250" r="36" fill="url(#jn11-dsun)"/><circle cx="88" cy="250" r="13" class="jn11-sun"/></g>
+  <path class="jn11-hfar" d="M0 226 C60 212 120 220 180 208 C240 196 280 218 340 214 C400 210 450 194 510 204 C550 210 580 216 600 214 L600 300 L0 300 Z"/>
+  <path class="jn11-hnear" d="M0 252 C70 244 140 250 220 252 C300 254 360 240 420 236 C480 232 540 242 600 248 L600 300 L0 300 Z"/>
+  <path class="jn11-road" d="M0 284 C80 276 150 270 230 272 C320 274 400 262 470 256 C520 252 570 254 600 256 L600 266 C560 264 520 264 474 268 C400 274 320 288 230 290 C150 292 80 296 0 300 Z" fill="url(#jn11-droad)"/>
+  <g class="jn11-stones"><ellipse cx="0.3" cy="279.9" rx="2.3" ry="1.2"/><ellipse cx="220.6" cy="279.3" rx="4.7" ry="2"/><ellipse cx="431.9" cy="272" rx="5.4" ry="1.9"/><ellipse cx="219" cy="296.9" rx="2.2" ry="1.3"/><ellipse cx="153.3" cy="277.8" rx="5.4" ry="2.2"/><ellipse cx="478" cy="267.3" rx="4.3" ry="1.1"/><ellipse cx="138.9" cy="263.3" rx="3" ry="1.4"/><ellipse cx="427.2" cy="296.8" rx="5.6" ry="1.7"/><ellipse cx="575.9" cy="287.4" rx="5.8" ry="2.1"/><ellipse cx="36.2" cy="266.2" rx="4" ry="2.2"/><ellipse cx="48.7" cy="262.2" rx="2.8" ry="2.4"/><ellipse cx="81.9" cy="267.2" rx="2" ry="1.6"/><ellipse cx="326.7" cy="293.5" rx="4.8" ry="1.3"/><ellipse cx="331.9" cy="286.1" rx="3.9" ry="1.7"/><ellipse cx="438.9" cy="268" rx="5.3" ry="1.7"/><ellipse cx="339.1" cy="289.3" rx="3.7" ry="1.3"/><ellipse cx="143.2" cy="267.6" rx="2.7" ry="1.3"/><ellipse cx="13.5" cy="269.3" rx="4.2" ry="2.3"/><ellipse cx="476.2" cy="265.2" rx="2.8" ry="1.7"/><ellipse cx="381.5" cy="292.8" rx="3.6" ry="2.4"/><ellipse cx="111.4" cy="267.2" rx="5.6" ry="1.4"/><ellipse cx="294.1" cy="293.8" rx="5.9" ry="1.5"/><ellipse cx="581.5" cy="285.4" rx="3.2" ry="1.7"/><ellipse cx="4.7" cy="271.2" rx="4.8" ry="1.3"/><ellipse cx="293.2" cy="296.8" rx="3.4" ry="2"/><ellipse cx="375.8" cy="286.2" rx="3.5" ry="1.2"/></g>
+  <g class="jn11-walker"><g class="mn" transform="translate(0 0) scale(0.46 0.46)">
+    <ellipse class="mn-shadow" cx="4" cy="1" rx="22" ry="3.5"/>
+    <path class="mn-staff" d="M22 0 L20 -94 Q20 -107 29 -105 Q35 -103 32 -96"/>
+    <path class="mn-robe" d="M-10 -78 C-13 -60 -15 -30 -16 0 L15 0 C14 -30 13 -60 10 -78 Q0 -83 -10 -78 Z"/>
+    <path class="mn-cloak" d="M-11 -80 C-18 -55 -19 -25 -18 -1 L-4 0 C-7 -30 -3 -60 5 -82 Z"/>
+    <circle class="mn-head" cx="2" cy="-88" r="7"/>
+    <path class="mn-cloth" d="M-7 -89 Q1 -101 10 -91 L9 -86 Q3 -93 -3 -88 L-8 -76 L-11 -78 Z"/>
+    <path class="mn-arm" d="M4 -75 Q10 -64 18 -60"/></g></g>
+  <text class="pic-lab plain" x="88" y="242" text-anchor="middle" style="font-size:13px">sunrise</text>
+  <text class="pic-lab plain" x="512" y="242" text-anchor="middle" style="font-size:13px">sunset</text>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Twelve hours in the day</h2>
@@ -216,7 +270,7 @@
       <div class="back step"><b>Truth</b><p>To Martha, Jesus gives teaching: “I am the resurrection.”</p></div>
       <div class="back step"><b>Tears</b><p>To Mary, Jesus gives tears: “Jesus wept.”</p></div>
     </div>
-    <p class="note step">Both sisters said the hard thing out loud, straight to his face. He didn't scold either one. Jesus can take your honest “Lord, where were You?” And he gives each person what they need.</p>
+    <p class="note step">Both sisters said the hard thing out loud, straight to his face. He didn't scold either one. Jesus can take your honest “Lord, where were you?” And he gives each person what they need.</p>
   </div>
 </section>
 
@@ -272,11 +326,17 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="36" data-hl="Behold how he loved him!"></blockquote>
-    <p class="saying rise" style="--d:1"><em>Jesus wept.</em></p>
-    <p class="note rise" style="--d:3">The shortest verse in the Bible. Jesus knew that in a few minutes Lazarus would walk out alive. He cried anyway.</p>
-    <p class="note step">Tears aren't weakness, and they aren't a lack of faith. Lots of us were taught to stuff our grief or drown it. The Son of God stood at a grave and wept out loud.</p>
-    <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
-    <p class="note step">Whatever you're grieving, a person, years lost, a family torn up, he doesn't stand at a distance. He weeps with you.</p>
+    <div class="split art-narrow jn11-wide">
+      <figure class="art rise" style="--d:1;--kb:28% 32%"><span class="art-frame"><img src="../assets/art/tissot-jesus-wept.jpg" width="1000" height="748" alt="Jesus sits on a rock outside the village with his face in his hand, weeping. Mary kneels on the grass before him, and the mourners stand behind her and watch."></span>
+        <figcaption>James Tissot, <i>Jesus Wept</i></figcaption></figure>
+      <div>
+        <p class="saying rise" style="--d:1"><em>Jesus wept.</em></p>
+        <p class="note rise" style="--d:3">The shortest verse in the Bible. Jesus knew that in a few minutes Lazarus would walk out alive. He cried anyway.</p>
+        <p class="note step">Tears aren't weakness, and they aren't a lack of faith. Lots of us were taught to stuff our grief or drown it. The Son of God stood at a grave and wept out loud.</p>
+        <blockquote class="quote step"><p>“For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin.”</p><cite>Hebrews 4:15</cite></blockquote>
+        <p class="note step">Whatever you're grieving, a person, years lost, a family torn up, he doesn't stand at a distance. He weeps with you.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -295,20 +355,9 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="39" data-hl="Take ye away the stone|by this time he stinketh"></blockquote>
-    <div class="split">
-      <div class="stage">
-        <svg class="tomb" style="--roll:170px;--turn:220deg" viewBox="0 0 600 330" role="img" aria-label="A tomb cut into a hillside, closed with a large stone. The stone is moved away and light falls into the opening.">
-          <path d="M0 300 L0 140 Q140 50 320 76 Q480 98 600 160 L600 300 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
-          <line x1="0" y1="300" x2="600" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
-          <path class="tomb-door" d="M228 300 L228 214 Q300 140 372 214 L372 300 Z"/>
-          <path class="tomb-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
-          <g class="tomb-stone">
-            <circle cx="300" cy="234" r="72" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
-            <path d="M260 200 Q290 214 280 250 M320 196 Q340 230 330 272 M250 262 Q280 270 300 296" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink)" opacity=".3"/>
-          </g>
-          <text class="step tomb-roll" x="300" y="34" text-anchor="middle" font-size="24" font-weight="700" style="fill:var(--accent-hot)">“Take ye away the stone”</text>
-        </svg>
-      </div>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:72% 48%"><span class="art-frame"><img src="../assets/art/duccio-raising-of-lazarus.jpg" width="960" height="909" alt="Jesus stretches out his hand toward a tomb cut into the rock, where Lazarus stands in the doorway wrapped in grave clothes. Mary kneels at his feet, and a man in the crowd holds his cloak over his nose."></span>
+        <figcaption>Duccio di Buoninsegna, <i>The Raising of Lazarus</i></figcaption></figure>
       <div>
         <h2 class="rise" style="--d:1">“He stinketh”</h2>
         <p class="note rise" style="--d:2">Tombs were often caves cut into the rock, closed with a big stone. After four days in that heat, Martha knew what was behind it. No one could pretend Lazarus was just unconscious.</p>
@@ -325,29 +374,13 @@
 <section class="slide ex turn">
   <div class="inner">
     <blockquote class="quote rise" data-q="43-44" data-hl="Lazarus, come forth|he that was dead came forth"></blockquote>
-    <div class="split">
-      <div class="stage">
-        <svg class="tomb open" style="--roll:170px;--turn:220deg" viewBox="0 0 600 330" role="img" aria-label="The stone is rolled away from the tomb. A man wrapped in grave clothes walks out into the light.">
-          <path d="M0 300 L0 140 Q140 50 320 76 Q480 98 600 160 L600 300 Z" stroke-width="2" style="fill:var(--surface-2);stroke:var(--line-strong)"/>
-          <line x1="0" y1="300" x2="600" y2="300" stroke-width="3" style="stroke:var(--line-strong)"/>
-          <path class="tomb-door" d="M228 300 L228 214 Q300 140 372 214 L372 300 Z"/>
-          <path class="tomb-light" d="M236 300 L236 218 Q300 156 364 218 L364 300 Z" style="fill:color-mix(in srgb, var(--glow) 35%, transparent)"/>
-          <g class="tomb-stone">
-            <circle cx="300" cy="234" r="72" stroke-width="3" style="fill:var(--line-strong);stroke:var(--ink-soft)"/>
-            <path d="M260 200 Q290 214 280 250 M320 196 Q340 230 330 272 M250 262 Q280 270 300 296" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--ink)" opacity=".3"/>
-          </g>
-          <g class="tomb-man">
-            <circle cx="300" cy="196" r="16" stroke-width="2" style="fill:var(--glow);stroke:var(--line-strong)"/>
-            <path d="M282 216 Q300 206 318 216 L322 282 Q300 290 278 282 Z" stroke-width="2" style="fill:var(--glow);stroke:var(--line-strong)"/>
-            <path d="M284 226 L316 232 M281 242 L319 248 M280 258 L320 264 M279 274 L321 278 M288 190 L312 196" fill="none" stroke-width="2" style="stroke:var(--line-strong)"/>
-          </g>
-          <text class="jn11-call" x="300" y="34" text-anchor="middle" font-size="26" font-weight="700" style="fill:var(--accent-hot)">“Lazarus, come forth.”</text>
-        </svg>
-      </div>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:36% 22%"><span class="art-frame"><img src="../assets/art/rembrandt-raising-of-lazarus.jpg" width="1000" height="892" alt="In a dark cave Jesus stands above an open grave with one hand raised high. Below him Lazarus, pale and wrapped in white, lifts his head from the grave, and the people around draw back in amazement."></span>
+        <figcaption>Rembrandt, <i>The Raising of Lazarus</i></figcaption></figure>
       <div>
         <h2 class="rise" style="--d:1">A dead man hears</h2>
         <p class="note rise" style="--d:2">Jesus prays out loud, so the crowd will know who sent him. Then he shouts three words into a grave.</p>
-        <p class="note step tomb-forth">And a man four days dead walks out, still wrapped up hand and foot. Dead men can't hear, but they hear <em>Him</em>.</p>
+        <p class="note step">And a man four days dead walks out, still wrapped up hand and foot. Dead men can't hear, but they hear <em>Him</em>.</p>
         <p class="note step">This is the seventh sign in John, the biggest one. It's also a preview. One day every grave will hear his voice (John 5:28). And right now, he still speaks life into people the world has written off.</p>
       </div>
     </div>
@@ -390,26 +423,40 @@
     <blockquote class="quote rise" data-q="48" data-hl="take away both our place and nation"></blockquote>
     <div class="split">
       <div class="stage">
-        <svg class="scale" style="--at:300px 70px; --arm:200; --tip:12deg; --wait:.4s" viewBox="0 0 600 340" role="img" aria-label="A balance scale. On one side, a man raised from the dead. On the other, our place and nation. The scale tips toward their place and nation.">
-          <path d="M240 330 L360 330 L330 310 L270 310 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
-          <rect x="294" y="64" width="12" height="250" style="fill:var(--ink-soft)"/>
-          <g class="scale-beam">
-            <rect x="96" y="64" width="408" height="12" rx="6" style="fill:var(--ink)"/>
-            <circle cx="300" cy="70" r="11" style="fill:var(--accent)"/>
-          </g>
-          <g class="scale-pan l">
-            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M100 70 L50 190 M100 70 L150 190"/></g>
-            <path d="M36 190 L164 190 Q100 232 36 190 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
-            <text x="100" y="252" text-anchor="middle" font-size="22" style="fill:var(--accent-hot)">a dead man</text>
-            <text x="100" y="276" text-anchor="middle" font-size="22" style="fill:var(--accent-hot)">raised</text>
-          </g>
-          <g class="scale-pan r">
-            <g fill="none" stroke-width="2" style="stroke:var(--ink-soft)"><path d="M500 70 L450 190 M500 70 L550 190"/></g>
-            <path d="M436 190 L564 190 Q500 232 436 190 Z" stroke-width="2.5" style="fill:var(--surface-2);stroke:var(--ink-soft)"/>
-            <g style="fill:var(--warm)"><rect x="462" y="168" width="30" height="22" rx="3"/><rect x="496" y="160" width="40" height="30" rx="3"/><rect x="476" y="146" width="26" height="22" rx="3"/></g>
-            <text x="500" y="252" text-anchor="middle" font-size="22">our place</text>
-          </g>
-        </svg>
+        <svg class="pic jn11-scale scale" style="--ar:1.765;--at:300px 70px;--arm:200;--tip:12deg;--wait:.4s" viewBox="0 0 600 340" role="img" aria-label="A bronze balance stands in the lamplit council chamber. On one pan lie the grave clothes of a dead man raised; on the other, a golden model of the temple, their place and nation. The scale tips down toward their place.">
+  <defs>
+    <linearGradient id="jn11-swall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--on-glow) 90%, var(--warm))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--on-glow) 72%, var(--warm))"/></linearGradient>
+    <radialGradient id="jn11-slamp" cx=".5" cy=".5" r=".5"><stop offset="0" style="stop-color:var(--warm);stop-opacity:0.55"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="jn11-sbronze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 70%, var(--glow))"/><stop offset="0.5" style="stop-color:var(--warm)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 55%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn11-span" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 80%, var(--glow))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 45%, var(--on-glow))"/></linearGradient>
+    <linearGradient id="jn11-sgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 60%, var(--warm))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--warm) 70%, var(--on-glow))"/></linearGradient>
+    <radialGradient id="jn11-slinen" cx=".5" cy=".3" r=".7"><stop offset="0" style="stop-color:var(--glow)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--glow) 65%, var(--on-glow))"/></radialGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#jn11-swall)"/>
+  <circle cx="300" cy="60" r="230" fill="url(#jn11-slamp)"/>
+  <g class="jn11-col"><rect x="22" y="0" width="36" height="300"/><rect class="lit" x="22" y="0" width="9" height="300"/><rect class="cap" x="14" y="0" width="52" height="16"/><rect class="cap" x="14" y="286" width="52" height="14"/></g><g class="jn11-col"><rect x="542" y="0" width="36" height="300"/><rect class="lit" x="542" y="0" width="9" height="300"/><rect class="cap" x="534" y="0" width="52" height="16"/><rect class="cap" x="534" y="286" width="52" height="14"/></g><g class="jn11-flute"><line x1="28" y1="18" x2="28" y2="284"/><line x1="34" y1="18" x2="34" y2="284"/><line x1="40" y1="18" x2="40" y2="284"/><line x1="46" y1="18" x2="46" y2="284"/><line x1="52" y1="18" x2="52" y2="284"/><line x1="548" y1="18" x2="548" y2="284"/><line x1="554" y1="18" x2="554" y2="284"/><line x1="560" y1="18" x2="560" y2="284"/><line x1="566" y1="18" x2="566" y2="284"/><line x1="572" y1="18" x2="572" y2="284"/></g>
+  <rect class="jn11-floor" x="0" y="300" width="600" height="40"/>
+  <path d="M232 334 L368 334 L340 312 L260 312 Z" fill="url(#jn11-sbronze)"/>
+  <rect x="293" y="64" width="14" height="250" fill="url(#jn11-sbronze)"/>
+  <g class="scale-beam">
+    <rect x="96" y="63" width="408" height="13" rx="6.5" fill="url(#jn11-sbronze)"/>
+    <circle cx="300" cy="70" r="12" fill="url(#jn11-sbronze)"/><circle cx="300" cy="70" r="4" class="jn11-pin"/>
+  </g>
+  <g class="scale-pan l">
+    <path class="jn11-cord" d="M100 70 L50 190 M100 70 L150 190"/>
+    <path d="M36 190 L164 190 Q100 234 36 190 Z" fill="url(#jn11-span)"/>
+    <g class="jn11-cloth"><g transform="translate(98 190) scale(.66)"><path d="M-10 -78 C-13 -60 -15 -30 -16 0 L15 0 C14 -30 13 -60 10 -78 Q0 -83 -10 -78 Z" fill="url(#jn11-slinen)"/><circle cx="1" cy="-88" r="7" class="face"/><path class="fold" d="M-14 -12 L14 -18 M-14 -30 L13 -36 M-12 -50 L12 -55 M-10 -66 L10 -70"/><path d="M13 -40 C26 -34 30 -18 40 -4 L36 0 C26 -14 22 -28 12 -32 Z" fill="url(#jn11-slinen)"/><path d="M-26 0 C-24 -4 -14 -5 -8 -3 C-12 0 -20 1 -26 0 Z" fill="url(#jn11-slinen)"/></g></g>
+    <text class="pic-lab b" x="100" y="262" text-anchor="middle">a dead man</text>
+    <text class="pic-lab b" x="100" y="286" text-anchor="middle">raised</text>
+  </g>
+  <g class="scale-pan r">
+    <path class="jn11-cord" d="M500 70 L450 190 M500 70 L550 190"/>
+    <path d="M436 190 L564 190 Q500 234 436 190 Z" fill="url(#jn11-span)"/>
+    <g class="jn11-temple"><rect x="462" y="166" width="76" height="24" fill="url(#jn11-sgold)"/><rect x="480" y="138" width="40" height="52" fill="url(#jn11-sgold)"/><rect class="door" x="494" y="160" width="12" height="30"/><rect x="476" y="134" width="48" height="6" fill="url(#jn11-sgold)"/><path class="rail" d="M462 166 h76 M480 150 h40"/></g>
+    <text class="pic-lab b" x="500" y="262" text-anchor="middle">our place</text>
+    <text class="pic-lab b" x="500" y="286" text-anchor="middle">and nation</text>
+  </g>
+</svg>
       </div>
       <div>
         <h2 class="rise" style="--d:1">Weighed, and found wanting</h2>

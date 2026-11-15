@@ -10,31 +10,26 @@
 <link rel="stylesheet" href="../assets/deck.css">
 <link rel="stylesheet" href="../assets/themes.css">
 <style>
-/* An eye that opens: the clay washes off, the lids part, light breaks in */
-.jn09-eye { max-width: 30rem; }
-.jn09-eye .lid { transform-box: fill-box; transform-origin: center; transform: scaleY(.05); }
-.slide.active .jn09-eye .lid { animation: jn09-open 1.6s 2.3s cubic-bezier(.3,.8,.3,1) forwards; }
-@keyframes jn09-open { to { transform: scaleY(1); } }
-.jn09-eye .white { fill: var(--glow); stroke: var(--ink); stroke-width: 4; }
-.jn09-eye .iris { fill: var(--accent); }
-.jn09-eye .pupil { fill: var(--on-glow); }
-.jn09-eye .shine { fill: var(--glow); }
-.jn09-eye .clay { fill: var(--leather-light); stroke: var(--leather); stroke-width: 2; }
-.slide.active .jn09-eye .clay { animation: jn09-wash 1.3s 1.1s ease-in forwards; }
-@keyframes jn09-wash { to { opacity: 0; transform: translateY(26px); } }
-.jn09-eye .drop { fill: var(--cool); opacity: 0; }
-.slide.active .jn09-eye .drop { animation: jn09-drip 1.1s ease-in forwards; animation-delay: calc(var(--k) * 170ms + .3s); }
-@keyframes jn09-drip { 0% { opacity: 0; transform: translateY(-50px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(40px); } }
-.jn09-eye .ray { stroke: var(--warm); stroke-width: 5; stroke-linecap: round; opacity: 0; }
-.slide.active .jn09-eye .ray { animation: jn09-ray 1s 3.7s ease forwards; }
-@keyframes jn09-ray { to { opacity: 1; } }
-
-/* Thirty-nine kinds of forbidden sabbath work, one of them kneading */
-.jn09-works { display: grid; grid-template-columns: repeat(13, 1fr); gap: 5px; margin: .5em 0 .4em; max-width: 34rem; }
-.jn09-works i { aspect-ratio: 1; border-radius: 4px; border: 1.5px solid var(--line-strong); background: var(--surface); opacity: 0; }
-.slide.active .jn09-works i { animation: rise .5s both; animation-delay: calc(var(--k) * 35ms + 400ms); }
-.jn09-works i.knead { transition: background-color .8s ease, border-color .8s ease, box-shadow .8s ease; }
-.jn09-sab:has(.jn09-knead-go.on) .jn09-works i.knead { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 25%, transparent); }
+/* 15: a scroll of the 39 banned works unrolls; on the step, the tenth, kneading, lights up. */
+.jn09-rules .jn09-shadow { fill: var(--on-glow); opacity: .7; }
+.jn09-rules .jn09-rule { stroke: var(--leather-light); stroke-width: 1; opacity: .5; }
+.jn09-rules .jn09-lines path { fill: none; stroke: color-mix(in srgb, var(--on-glow) 75%, var(--leather)); stroke-width: 1.9; stroke-linecap: round; }
+.jn09-rules .jn09-lines circle { fill: var(--leather); }
+.jn09-rules .jn09-knob { fill: var(--leather); }
+.jn09-rules .jn09-open { transform-box: view-box; transform-origin: 320px 0; transform: scaleX(.03); }
+.jn09-rules .jn09-rod.l { transform: translateX(286px); }
+.jn09-rules .jn09-rod.r { transform: translateX(-286px); }
+.slide.active .jn09-rules .jn09-open, .slide.active .jn09-rules .jn09-rod { animation: jn09-unroll 1.8s .3s cubic-bezier(.4,0,.2,1) forwards; }
+@keyframes jn09-unroll { to { transform: none; } }
+.jn09-rules .jn09-mark { fill: var(--warm); opacity: 0; transition: opacity .8s ease; }
+.jn09-rules .jn09-lines .jn09-knead { transition: stroke .8s ease; }
+.jn09-rules .jn09-lab { opacity: 0; transition: opacity .8s ease .3s; }
+.jn09-sab:has(.jn09-knead-go.on) .jn09-rules .jn09-mark { opacity: .55; }
+.jn09-sab:has(.jn09-knead-go.on) .jn09-rules .jn09-knead { stroke: var(--wine); stroke-width: 2.4; }
+.jn09-sab:has(.jn09-knead-go.on) .jn09-rules .jn09-lab { opacity: 1; }
+/* paintings beside long text: a gap below, and a slimmer picture column on wide screens */
+.jn09-gap { margin-bottom: 1.1em; }
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) { .split.art-narrow.jn09-slim { grid-template-columns: .6fr 1.4fr; } .jn09-slim .art img { max-height: 44vh; } }
 .jn09-works-key { font-size: clamp(.85rem, .8rem + .3vw, 1.05rem); color: var(--ink-soft); margin-bottom: 1em; }
 
 /* Two staircases: one man sees more and more, the others see less and less */
@@ -95,6 +90,10 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="2" data-hl="who did sin, this man, or his parents"></blockquote>
+    <div class="split art-narrow jn09-gap jn09-slim">
+      <figure class="art rise" style="--d:1;--kb:40% 25%"><span class="art-frame"><img src="../assets/art/bloch-healing-of-the-blind-man.jpg" width="664" height="740" alt="In a dusty lane by a sunlit wall, Jesus reaches out his hand to a blind beggar who kneels before him with his begging bowl on the ground, while the disciples and people of the town look on."></span>
+        <figcaption>Carl Bloch, <i>The Healing of the Blind Man</i></figcaption></figure>
+      <div>
     <h2 class="rise" style="--d:1">Whose fault is it?</h2>
     <p class="note rise" style="--d:2">The disciples assumed somebody must be to blame. Most people did back then, and plenty still do. They only argued over <em>who</em>.</p>
     <ul class="nots">
@@ -102,6 +101,8 @@
       <li class="step"><span class="k">“His parents sinned”</span><span class="why">(so he pays for their failure?)</span></li>
       <li class="step yes"><span class="k">“That the works of God should be made manifest in him”</span></li>
     </ul>
+      </div>
+    </div>
     <p class="note step">Jesus isn't saying the man or his parents never sinned. He's saying this blindness wasn't a payback for some sin. Some of what we carry comes from our own choices, and we know it. But not all of it. And either way, Jesus doesn't stand around assigning blame. He gets to work.</p>
   </div>
 </section>
@@ -147,32 +148,9 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="7" data-hl="He went his way therefore, and washed, and came seeing"></blockquote>
-    <div class="split">
-      <div class="stage">
-        <svg class="jn09-eye" viewBox="0 0 400 240" role="img" aria-label="An eye covered with clay. Water washes the clay away, and the eye opens to the light.">
-          <defs><clipPath id="jn09-almond"><path d="M40 120 Q200 0 360 120 Q200 240 40 120 Z"/></clipPath></defs>
-          <g class="rays">
-            <line class="ray" x1="200" y1="8" x2="200" y2="-22"/>
-            <line class="ray" x1="110" y1="30" x2="92" y2="6"/>
-            <line class="ray" x1="290" y1="30" x2="308" y2="6"/>
-            <line class="ray" x1="38" y1="74" x2="12" y2="58"/>
-            <line class="ray" x1="362" y1="74" x2="388" y2="58"/>
-          </g>
-          <g class="lid">
-            <path class="white" d="M40 120 Q200 0 360 120 Q200 240 40 120 Z"/>
-            <g clip-path="url(#jn09-almond)">
-              <circle class="iris" cx="200" cy="120" r="56"/>
-              <circle class="pupil" cx="200" cy="120" r="24"/>
-              <circle class="shine" cx="218" cy="104" r="9"/>
-            </g>
-          </g>
-          <path class="clay" d="M92 116 Q120 92 170 102 Q210 86 250 100 Q298 92 312 116 Q300 142 252 136 Q206 150 160 138 Q110 144 92 116 Z"/>
-          <circle class="drop" style="--k:0" cx="150" cy="70" r="7"/>
-          <circle class="drop" style="--k:1" cx="215" cy="60" r="8"/>
-          <circle class="drop" style="--k:2" cx="270" cy="72" r="7"/>
-          <circle class="drop" style="--k:3" cx="185" cy="80" r="6"/>
-        </svg>
-      </div>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:42% 60%"><span class="art-frame"><img src="../assets/art/tissot-blind-man-washes-in-siloam.jpg" width="748" height="542" alt="At the pool of Siloam, under a great stone arch, a man kneels at the water's edge and washes his eyes, while women nearby fill their water jars."></span>
+        <figcaption>James Tissot, <i>The Blind Man Washes in the Pool of Siloam</i></figcaption></figure>
       <div>
         <h2 class="rise" style="--d:1">He came seeing</h2>
         <p class="note rise" style="--d:2">Jesus could have healed him with a word. Instead he gave him something to <em>do</em>: go, and wash.</p>
@@ -218,10 +196,30 @@
     <blockquote class="quote rise" data-q="14" data-hl="it was the sabbath day when Jesus made the clay"></blockquote>
     <h2 class="rise" style="--d:1">The sabbath problem</h2>
     <p class="note rise" style="--d:2">God's law said to rest on the seventh day. Over time the teachers piled their own rules on top, and later wrote down <em>39 kinds of work</em> that were banned on the sabbath.</p>
-    <div class="jn09-works" aria-label="Thirty-nine squares, one for each kind of banned work. One is kneading.">
-      <i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i><i class="knead" style="--k:9"></i><i style="--k:10"></i><i style="--k:11"></i><i style="--k:12"></i>
-      <i style="--k:13"></i><i style="--k:14"></i><i style="--k:15"></i><i style="--k:16"></i><i style="--k:17"></i><i style="--k:18"></i><i style="--k:19"></i><i style="--k:20"></i><i style="--k:21"></i><i style="--k:22"></i><i style="--k:23"></i><i style="--k:24"></i><i style="--k:25"></i>
-      <i style="--k:26"></i><i style="--k:27"></i><i style="--k:28"></i><i style="--k:29"></i><i style="--k:30"></i><i style="--k:31"></i><i style="--k:32"></i><i style="--k:33"></i><i style="--k:34"></i><i style="--k:35"></i><i style="--k:36"></i><i style="--k:37"></i><i style="--k:38"></i>
+    <div class="stage rise" style="--d:3">
+      <svg class="pic jn09-rules" style="--ar:3.2;--mh:20vh" viewBox="0 0 640 200" role="img" aria-label="A scroll of the teachers' rules unrolls on a lamp-lit table, listing thirty-nine kinds of work banned on the sabbath, in three columns. One line lights up: kneading.">
+  <defs>
+    <radialGradient id="jn09-rlamp" cx=".25" cy="0" r="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--warm) 45%, var(--on-glow))"/><stop offset="0.6" style="stop-color:color-mix(in srgb, var(--leather) 40%, var(--on-glow))"/><stop offset="1" style="stop-color:var(--on-glow)"/></radialGradient>
+    <linearGradient id="jn09-rpage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:color-mix(in srgb, var(--glow) 82%, var(--leather-light))"/><stop offset="0.5" style="stop-color:color-mix(in srgb, var(--glow) 90%, var(--leather-light))"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--glow) 70%, var(--leather-light))"/></linearGradient>
+    <linearGradient id="jn09-redge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--leather);stop-opacity:0.45"/><stop offset="0.08" style="stop-color:var(--leather);stop-opacity:0"/><stop offset="0.92" style="stop-color:var(--leather);stop-opacity:0"/><stop offset="1" style="stop-color:var(--leather);stop-opacity:0.45"/></linearGradient>
+    <linearGradient id="jn09-rrod" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:color-mix(in srgb, var(--leather) 70%, var(--on-glow))"/><stop offset="0.5" style="stop-color:var(--leather-light)"/><stop offset="1" style="stop-color:color-mix(in srgb, var(--leather) 70%, var(--on-glow))"/></linearGradient>
+    <filter id="jn09-rsoft" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+    <mask id="jn09-rmask"><rect class="jn09-open" x="36" y="0" width="568" height="200" style="fill:var(--glow)"/></mask>
+  </defs>
+  <rect width="640" height="200" fill="url(#jn09-rlamp)"/>
+  <g mask="url(#jn09-rmask)">
+    <rect x="40" y="30" width="560" height="152" rx="3" class="jn09-shadow" filter="url(#jn09-rsoft)"/>
+    <rect x="40" y="20" width="560" height="156" rx="2" fill="url(#jn09-rpage)"/>
+    <rect x="40" y="20" width="560" height="156" fill="url(#jn09-redge)"/>
+    <line x1="232" y1="32" x2="232" y2="168" class="jn09-rule"/><line x1="416" y1="32" x2="416" y2="168" class="jn09-rule"/>
+    <rect class="jn09-mark" x="524" y="129.4" width="74" height="12" rx="3"/>
+    <g class="jn09-lines"><path style="--k:0" d="M584 40 q-2.8 -0.1 -5.5 0 q-4.1 0.1 -8.1 0 q-3.5 0 -6.9 0 q-4.4 -0.8 -8.8 0 q-3.2 -1.3 -6.4 0 q-2.8 -0.6 -5.7 0 q-3.7 -0.7 -7.4 0 q-4.4 -0.7 -8.9 0 m-5 0 q-3.6 0.3 -7.2 0"/><circle cx="591" cy="39.5" r="1.4" style="--k:0"/><path style="--k:1" d="M584 50.6 q-3.2 0 -6.4 0 q-3 1.1 -5.9 0 q-4.1 0.6 -8.2 0 q-3.8 -0.8 -7.6 0 q-3.1 -1 -6.3 0 q-3.3 1.1 -6.6 0 q-3.5 0.4 -7 0 m-5 0 q-4.3 0.4 -8.6 0 q-3.9 -1.6 -7.9 0 q-4.4 -1.6 -8.9 0 q-3.2 -0.7 -6.4 0"/><circle cx="591" cy="50.1" r="1.4" style="--k:1"/><path style="--k:2" d="M584 61.2 q-3.4 -0.1 -6.8 0 q-3.3 0.1 -6.5 0 q-4.3 0.1 -8.5 0 q-4.1 0.4 -8.2 0 q-2.7 0.6 -5.5 0 q-3.9 -1.5 -7.8 0 q-4.3 0.4 -8.6 0 q-4.2 0.2 -8.4 0 q-3.1 1.5 -6.2 0 q-2.7 1.4 -5.4 0 q-2.5 -1.4 -5.1 0"/><circle cx="591" cy="60.7" r="1.4" style="--k:2"/><path style="--k:3" d="M584 71.8 q-4.1 0 -8.3 0 q-4.4 -0.8 -8.8 0 q-4.4 1.6 -8.8 0 q-3.1 -0.7 -6.2 0 q-3.4 -0.8 -6.8 0 q-3.8 0.8 -7.5 0 q-4.2 -0.9 -8.4 0 q-4.2 -1.3 -8.5 0 q-3.9 -1.2 -7.8 0"/><circle cx="591" cy="71.3" r="1.4" style="--k:3"/><path style="--k:4" d="M584 82.4 q-3.9 0.2 -7.7 0 q-2.6 -0.4 -5.2 0 q-3.4 1.2 -6.7 0 q-2.6 -1.2 -5.2 0 q-4 1.3 -8 0 q-2.5 -0.8 -5.1 0 q-4.1 -0.5 -8.1 0 q-3.6 -1.5 -7.1 0 q-2.6 -1.3 -5.2 0 q-4.3 0.9 -8.7 0 q-3.6 1.4 -7.2 0"/><circle cx="591" cy="81.9" r="1.4" style="--k:4"/><path style="--k:5" d="M584 93 q-3.1 0.5 -6.3 0 q-2.9 1.4 -5.7 0 m-5 0 q-2.8 0.4 -5.7 0 q-4.4 -1.6 -8.8 0 m-5 0 q-3.6 0.3 -7.2 0 q-4 -0.8 -8.1 0 q-3 0.1 -6.1 0 q-3.8 0.4 -7.5 0 q-3.2 -0.3 -6.3 0 q-3.5 -0.2 -7 0 q-3.6 -0.4 -7.3 0"/><circle cx="591" cy="92.5" r="1.4" style="--k:5"/><path style="--k:6" d="M584 103.6 q-4.3 -0.1 -8.5 0 m-5 0 q-2.7 0.6 -5.4 0 q-2.8 1.2 -5.7 0 q-3.5 -0.9 -7 0 q-3.1 1.5 -6.1 0 m-5 0 q-2.6 -1.1 -5.1 0 q-2.9 -1.1 -5.7 0 q-4.3 1.3 -8.6 0 q-3.6 1.4 -7.2 0 q-3.6 -0.1 -7.2 0 m-5 0 q-3.6 1 -7.2 0 m-5 0 q-2.6 0.3 -5.2 0 q-4 0.9 -8 0"/><circle cx="591" cy="103.1" r="1.4" style="--k:6"/><path style="--k:7" d="M584 114.2 q-3.4 0.2 -6.7 0 q-3.3 -0.3 -6.6 0 q-2.6 -0.4 -5.3 0 q-3 -0.1 -5.9 0 q-3 1.5 -6 0 q-3.7 -1.5 -7.4 0 m-5 0 q-2.6 -1.1 -5.1 0 q-3.4 -0.7 -6.8 0 q-3.6 -1.6 -7.2 0 q-3.8 -0.6 -7.6 0 q-2.9 0.9 -5.8 0 q-3.2 -0.5 -6.4 0 q-2.8 -1.2 -5.7 0"/><circle cx="591" cy="113.7" r="1.4" style="--k:7"/><path style="--k:8" d="M584 124.8 q-3.5 1.6 -7 0 m-5 0 q-3.1 0.2 -6.2 0 q-2.5 0.2 -5 0 q-3.5 -0.5 -6.9 0 q-4.4 -0.6 -8.9 0"/><circle cx="591" cy="124.3" r="1.4" style="--k:8"/><path class="jn09-knead" style="--k:9" d="M584 135.4 q-3.4 1.3 -6.8 0 q-2.8 0.1 -5.6 0 m-5 0 q-2.7 1.5 -5.4 0 q-4 -1.1 -8 0 q-2.8 -0.4 -5.6 0 m-5 0 q-3.9 -1 -7.8 0 q-4.2 -0.2 -8.4 0"/><circle cx="591" cy="134.9" r="1.4" style="--k:9"/><path style="--k:10" d="M584 146 q-4 0.1 -8 0 q-4.4 1.1 -8.7 0 q-3.7 -0.6 -7.3 0 q-3.6 0.7 -7.2 0 q-4.1 -0.6 -8.3 0"/><circle cx="591" cy="145.5" r="1.4" style="--k:10"/><path style="--k:11" d="M584 156.6 q-2.7 1.4 -5.5 0 q-4.1 -1.3 -8.2 0 q-3.2 -0.2 -6.3 0 q-2.8 1.3 -5.5 0 m-5 0 q-3.3 1.3 -6.7 0 q-3.2 -1.5 -6.5 0 q-2.7 1.1 -5.4 0 q-3.8 0.1 -7.7 0 q-2.8 0.9 -5.7 0 q-3.7 -0.1 -7.5 0 q-2.8 -0.3 -5.5 0 q-3.3 -0.5 -6.6 0 q-3.9 -1.4 -7.8 0 q-4.1 -0.3 -8.2 0 q-3.7 1.3 -7.5 0 m-5 0 q-4 1.2 -8.1 0"/><circle cx="591" cy="156.1" r="1.4" style="--k:11"/><path style="--k:12" d="M584 167.2 q-3.6 0.3 -7.3 0 m-5 0 q-3.9 -0.6 -7.9 0 q-2.8 1.3 -5.5 0 q-3.9 -1.1 -7.7 0 q-2.7 -0.4 -5.5 0 q-3.6 -1.2 -7.1 0 m-5 0 q-3 1 -6 0 q-3.7 -0.9 -7.4 0 q-3.3 -1.5 -6.7 0 q-3.9 0.5 -7.8 0 m-5 0 q-4.4 1 -8.7 0"/><circle cx="591" cy="166.7" r="1.4" style="--k:12"/><path style="--k:13" d="M400 40 q-2.7 -0.4 -5.4 0 m-5 0 q-3.1 -0.8 -6.3 0 q-2.8 0.8 -5.6 0 q-3 0.3 -5.9 0 q-3.8 1.1 -7.5 0 q-3.3 1.2 -6.7 0 q-3.5 -1.2 -7.1 0 q-3.6 1.3 -7.3 0 q-3.5 -1.1 -7 0 m-5 0 q-3.3 -1.1 -6.6 0 q-2.7 -0.1 -5.4 0 q-3.5 1.3 -7 0 q-4.1 1.5 -8.1 0 q-3.9 1.4 -7.8 0 q-4.3 0.2 -8.6 0 q-4.3 0.6 -8.7 0 q-2.7 1 -5.4 0 q-3.9 -1.5 -7.8 0"/><circle cx="407" cy="39.5" r="1.4" style="--k:13"/><path style="--k:14" d="M400 50.6 q-2.7 0.4 -5.4 0 q-4.4 0.1 -8.8 0 q-3.4 -0.5 -6.7 0 q-4.2 -0.4 -8.5 0 q-2.9 1 -5.9 0 q-3.7 1 -7.4 0 q-2.8 -1.2 -5.6 0 q-2.5 -0.2 -5 0 q-2.6 1.6 -5.1 0 q-2.9 -0.9 -5.9 0 q-3.5 -0.3 -7.1 0 q-3.8 1.4 -7.6 0 q-2.6 0 -5.2 0 q-2.7 -0.1 -5.5 0 q-2.5 -0.9 -5.1 0 q-4.1 1.2 -8.3 0 m-5 0 q-4.3 -0.9 -8.5 0 q-3.9 -1.1 -7.8 0"/><circle cx="407" cy="50.1" r="1.4" style="--k:14"/><path style="--k:15" d="M400 61.2 q-2.7 -0.9 -5.4 0 q-2.7 0.2 -5.4 0 q-2.7 -0.8 -5.4 0 q-3.3 1.6 -6.6 0 m-5 0 q-3.9 0.1 -7.7 0 q-3.8 1.4 -7.5 0 q-4.2 0.1 -8.3 0 q-2.9 -1.3 -5.8 0 q-3.2 0.1 -6.5 0 q-4.2 0 -8.3 0 m-5 0 q-3.6 0.4 -7.3 0 q-2.8 -0.1 -5.7 0 q-2.7 -1.5 -5.5 0 q-3.8 -0.4 -7.7 0"/><circle cx="407" cy="60.7" r="1.4" style="--k:15"/><path style="--k:16" d="M400 71.8 q-3.3 -0.6 -6.7 0 m-5 0 q-3.4 -0.7 -6.8 0 q-2.7 0.6 -5.3 0 q-4 -0.7 -8 0 q-2.8 1.4 -5.6 0 m-5 0 q-2.5 -1.1 -5.1 0 q-3.3 1.4 -6.5 0 q-3.1 0.2 -6.1 0 q-2.6 1.3 -5.2 0 q-3.8 0 -7.5 0 q-3.3 1.2 -6.6 0 q-3.6 -0.5 -7.2 0 q-3.1 0.4 -6.1 0 q-3.7 1.5 -7.5 0 q-3.3 -0.8 -6.6 0"/><circle cx="407" cy="71.3" r="1.4" style="--k:16"/><path style="--k:17" d="M400 82.4 q-4.5 -0.1 -8.9 0 q-3.6 -0.7 -7.2 0 q-4 0.8 -8 0 q-2.6 -1.6 -5.3 0 q-3.7 -1.2 -7.3 0 q-3.2 -0.2 -6.3 0 q-3.2 -1.4 -6.5 0 m-5 0 q-4.2 -1.4 -8.4 0 q-4.1 0.8 -8.2 0 q-3.9 -1.1 -7.8 0 q-2.8 0.9 -5.6 0 q-4.4 -0.8 -8.8 0 q-4.4 1 -8.8 0 m-5 0 q-3.2 -0.9 -6.4 0 q-2.6 -1.4 -5.1 0"/><circle cx="407" cy="81.9" r="1.4" style="--k:17"/><path style="--k:18" d="M400 93 q-3.1 0.8 -6.2 0 q-4.2 1.3 -8.5 0 q-2.8 -0.6 -5.6 0 q-3 1.2 -6 0 q-2.8 0 -5.7 0 q-3.5 1.4 -7 0 q-4.1 1.1 -8.3 0 q-2.6 1.5 -5.1 0 q-4.2 -1.5 -8.3 0 m-5 0 q-2.7 -0.8 -5.4 0 q-4 -0.3 -7.9 0 q-3.4 -0.9 -6.9 0 q-2.8 -0.7 -5.6 0 m-5 0 q-3.3 0.5 -6.6 0"/><circle cx="407" cy="92.5" r="1.4" style="--k:18"/><path style="--k:19" d="M400 103.6 q-2.5 1 -5.1 0 q-4.1 -1.4 -8.3 0 q-3.1 1.5 -6.2 0 q-4.3 0.3 -8.6 0 q-3 -1.6 -5.9 0 q-3.5 -0.4 -7 0 q-2.9 1.4 -5.7 0 q-3.1 1.1 -6.2 0 q-2.7 -1.6 -5.4 0 q-3.2 -1 -6.4 0 q-4.5 0.7 -8.9 0 q-4.2 0.9 -8.3 0 q-4.3 -0.2 -8.7 0"/><circle cx="407" cy="103.1" r="1.4" style="--k:19"/><path style="--k:20" d="M400 114.2 q-2.9 -1.2 -5.7 0 q-3.6 1.2 -7.1 0 q-2.6 0.2 -5.1 0 q-3.7 -1.3 -7.4 0 q-3.3 -1 -6.6 0 q-4 0 -8 0 q-2.8 0.9 -5.6 0 q-3 -0.3 -6 0 m-5 0 q-2.9 1.2 -5.8 0 q-2.9 -0.2 -5.8 0 q-3.6 -1 -7.2 0 q-2.8 -0.5 -5.7 0 q-4.3 -0.1 -8.6 0 q-3.9 -1 -7.9 0 q-3.3 -0.6 -6.6 0 q-3 1 -6 0 q-4.2 -0.1 -8.4 0"/><circle cx="407" cy="113.7" r="1.4" style="--k:20"/><path style="--k:21" d="M400 124.8 q-3.3 -1.5 -6.6 0 q-4 -1.6 -8 0 q-2.8 -1.5 -5.6 0 q-3.2 -0.9 -6.3 0 q-3.2 0.3 -6.5 0 q-4.3 1.2 -8.6 0 q-3.8 0 -7.7 0 q-3.3 0.4 -6.5 0 q-3.2 -1 -6.4 0 q-4.5 -1.5 -8.9 0"/><circle cx="407" cy="124.3" r="1.4" style="--k:21"/><path style="--k:22" d="M400 135.4 q-3.9 -0.7 -7.8 0 m-5 0 q-3.5 -0.7 -7 0 q-4 -0.6 -8 0 q-3.9 -0.8 -7.8 0 m-5 0 q-4 1.5 -8.1 0 q-4.4 -0.3 -8.9 0 q-4.3 1 -8.7 0 q-4.5 0.3 -9 0 q-3.8 -0.7 -7.5 0 q-2.6 0.1 -5.2 0 q-3.4 -1.2 -6.8 0 q-4.5 0.7 -8.9 0 q-3.4 1.2 -6.8 0 q-3.5 1.2 -6.9 0 q-3.9 0.6 -7.8 0 q-2.8 1.4 -5.5 0 q-3.1 0.2 -6.2 0"/><circle cx="407" cy="134.9" r="1.4" style="--k:22"/><path style="--k:23" d="M400 146 q-2.6 0.5 -5.2 0 q-3.4 -1.1 -6.8 0 q-4.3 -0.4 -8.5 0 q-3.3 0.8 -6.6 0 q-2.8 1 -5.6 0 q-3.9 -1.2 -7.8 0 q-4.4 0.3 -8.8 0 q-3.9 1.4 -7.8 0 q-2.8 -1.1 -5.6 0 q-4.4 -1 -8.8 0 m-5 0 q-2.6 0.5 -5.2 0 q-2.5 -0.6 -5 0 q-3.7 0 -7.5 0 q-4.3 1.3 -8.6 0 q-3.4 -0.6 -6.7 0 q-3.5 1.1 -7 0 q-4.3 1.2 -8.6 0 q-2.7 -0.1 -5.3 0"/><circle cx="407" cy="145.5" r="1.4" style="--k:23"/><path style="--k:24" d="M400 156.6 q-2.5 1.2 -5 0 q-2.9 0 -5.8 0 m-5 0 q-2.6 1.1 -5.2 0 m-5 0 q-2.8 0.2 -5.5 0 q-4.3 1.3 -8.5 0 m-5 0 q-3.4 -0.1 -6.7 0 q-3.4 -1.4 -6.7 0 q-3.4 1.6 -6.7 0 q-2.6 0 -5.2 0 q-4.2 1.5 -8.3 0 q-3 -1 -6 0 q-2.7 -1.3 -5.4 0 q-3.5 0.5 -7 0 q-3.1 0.8 -6.2 0"/><circle cx="407" cy="156.1" r="1.4" style="--k:24"/><path style="--k:25" d="M400 167.2 q-4 -0.3 -8 0 q-2.6 -1.5 -5.3 0 q-3.6 0.8 -7.2 0 q-2.7 0.4 -5.3 0 q-4.3 0.4 -8.6 0 q-3 1 -6 0 q-2.7 0.2 -5.5 0 q-3.7 0.1 -7.5 0 q-3.5 1.3 -7.1 0 q-3 1.1 -6.1 0 q-3.9 -0.7 -7.9 0 q-3.8 0.3 -7.5 0 q-3.2 0.3 -6.4 0 q-3.1 0.7 -6.2 0 q-3 1.5 -6.1 0 m-5 0 q-3.5 -1.6 -7 0 q-3.5 0.7 -7.1 0"/><circle cx="407" cy="166.7" r="1.4" style="--k:25"/><path style="--k:26" d="M216 40 q-3.9 -0.5 -7.8 0 q-4.1 -0.1 -8.2 0 q-2.6 1.3 -5.1 0 q-4.3 0.3 -8.5 0 q-3.9 -1 -7.8 0 q-4.4 -1.6 -8.8 0 q-4.4 1.4 -8.7 0 q-4.3 0.9 -8.7 0 q-4.4 0.1 -8.8 0 q-3.7 1.5 -7.4 0 q-3.4 -0.1 -6.7 0"/><circle cx="223" cy="39.5" r="1.4" style="--k:26"/><path style="--k:27" d="M216 50.6 q-4.4 -0.2 -8.9 0 m-5 0 q-3.2 -0.5 -6.5 0 m-5 0 q-2.8 0.2 -5.6 0 q-3.9 0.1 -7.8 0 q-2.9 -1.3 -5.9 0 q-2.7 -0.7 -5.3 0 q-3.5 1 -6.9 0 q-3 1.1 -6.1 0 m-5 0 q-4.3 -1.2 -8.5 0 q-2.7 -0.3 -5.3 0 m-5 0 q-4.5 0.5 -9 0 q-2.8 -0.3 -5.5 0 q-3.9 -1 -7.9 0"/><circle cx="223" cy="50.1" r="1.4" style="--k:27"/><path style="--k:28" d="M216 61.2 q-3.7 -0.5 -7.4 0 m-5 0 q-3.1 0.1 -6.1 0 q-2.7 -1.6 -5.5 0 q-3.8 1 -7.5 0 q-4.4 -0.8 -8.8 0 q-3.3 0.3 -6.7 0 q-3.2 1.4 -6.3 0 q-3 -1.2 -6 0 q-4.1 1.3 -8.2 0 m-5 0 q-3.2 -1.5 -6.4 0 q-2.7 -0.9 -5.5 0 q-2.6 -0.1 -5.2 0 q-3.3 0.7 -6.6 0 q-4.2 -0.9 -8.4 0 q-2.8 -0.1 -5.7 0 q-3.6 0 -7.1 0"/><circle cx="223" cy="60.7" r="1.4" style="--k:28"/><path style="--k:29" d="M216 71.8 q-4.3 0.6 -8.7 0 q-3.8 -0.5 -7.5 0 q-3.4 -0.9 -6.7 0 m-5 0 q-3.3 0.8 -6.6 0 q-4 -1.1 -7.9 0 q-3.1 1.4 -6.1 0 q-4.3 -1.4 -8.5 0 q-4 0.4 -8 0 q-4.2 -0.3 -8.4 0 m-5 0 q-2.8 -0.7 -5.6 0 q-4.2 -0.5 -8.5 0 q-4 1.3 -7.9 0"/><circle cx="223" cy="71.3" r="1.4" style="--k:29"/><path style="--k:30" d="M216 82.4 q-2.9 1.3 -5.9 0 q-3 0.9 -6.1 0 q-3.6 -1.1 -7.3 0 q-3.8 -1.1 -7.7 0 q-4.4 0.6 -8.8 0 q-4.1 0.9 -8.3 0 q-3.2 0 -6.4 0 q-4.2 0.2 -8.5 0 q-3.6 -1.3 -7.2 0 q-3.9 -1.2 -7.7 0 q-2.9 -1.6 -5.9 0 q-2.8 0.1 -5.7 0"/><circle cx="223" cy="81.9" r="1.4" style="--k:30"/><path style="--k:31" d="M216 93 q-4.5 0.6 -9 0 q-2.6 -0.1 -5.2 0 q-3.3 1.2 -6.5 0 m-5 0 q-3.9 0.1 -7.7 0 q-4 1.4 -8.1 0 q-3.5 -1.2 -7 0 m-5 0 q-2.5 0 -5.1 0 m-5 0 q-2.6 1.1 -5.2 0 q-3.9 0 -7.8 0 q-4.2 -1.1 -8.4 0 q-3.7 -1 -7.3 0 q-4.4 0.5 -8.7 0 q-3.7 -0.7 -7.4 0 q-3.9 -1.2 -7.9 0 q-3.5 -1.5 -7 0 m-5 0 q-4.1 -0.8 -8.3 0 q-3.8 -0.7 -7.6 0 q-4 -1 -8 0"/><circle cx="223" cy="92.5" r="1.4" style="--k:31"/><path style="--k:32" d="M216 103.6 q-3.4 -0.5 -6.8 0 q-4.3 1.2 -8.5 0 q-4.2 -0.9 -8.4 0 q-3.5 0.7 -7.1 0 q-4.5 1.4 -9 0 q-2.8 0 -5.7 0 q-2.8 -1.6 -5.6 0 q-3.5 -0.3 -7 0 q-3.8 -0.2 -7.6 0 q-3.3 0.2 -6.5 0 m-5 0"/><circle cx="223" cy="103.1" r="1.4" style="--k:32"/><path style="--k:33" d="M216 114.2 q-2.9 1 -5.8 0 q-3.3 0 -6.6 0 q-4.4 1.4 -8.9 0 q-2.6 0.8 -5.3 0 q-2.8 1 -5.7 0 q-3.4 -1.5 -6.8 0 q-3.9 0.3 -7.9 0 q-3.8 0.7 -7.5 0 q-3.4 0.3 -6.7 0 q-2.6 -0.1 -5.2 0"/><circle cx="223" cy="113.7" r="1.4" style="--k:33"/><path style="--k:34" d="M216 124.8 q-2.8 1.4 -5.7 0 q-2.5 1 -5.1 0 q-4.1 0.5 -8.3 0 q-4.4 -1.4 -8.9 0 q-4.5 0.1 -9 0 q-3.3 1.4 -6.6 0 q-4.1 0.1 -8.3 0 q-3.5 0.3 -6.9 0 q-3.8 -0.4 -7.7 0 q-3.1 -0.6 -6.2 0 q-3.9 1.6 -7.9 0 m-5 0 q-4 -1.6 -8 0 q-3.6 -0.7 -7.2 0 q-3.4 -0.8 -6.7 0 q-3.5 -0.6 -7.1 0 q-4.1 -1.1 -8.2 0 q-4.3 -0.2 -8.6 0 q-2.5 -0.3 -5 0 q-3.7 1.5 -7.4 0 q-2.9 -0.2 -5.9 0 m-5 0"/><circle cx="223" cy="124.3" r="1.4" style="--k:34"/><path style="--k:35" d="M216 135.4 q-3.1 -0.8 -6.3 0 q-2.7 -1.5 -5.4 0 q-2.5 1.4 -5 0 q-4.1 0.8 -8.1 0 m-5 0 q-3.7 0.8 -7.4 0 q-2.8 0.5 -5.6 0 q-3.6 1.1 -7.3 0 q-3.4 -1.1 -6.9 0 q-4.4 0.7 -8.8 0 m-5 0 q-3.1 -1 -6.2 0 q-2.9 0 -5.8 0 q-4.4 -0.4 -8.8 0 q-3.4 0.8 -6.7 0 q-4.1 1.4 -8.1 0 q-3.8 -0.2 -7.5 0 q-2.7 1.2 -5.3 0 q-3.6 1.4 -7.3 0 q-3.6 0.2 -7.2 0 q-3.2 0.7 -6.4 0 q-4 0.1 -8 0"/><circle cx="223" cy="134.9" r="1.4" style="--k:35"/><path style="--k:36" d="M216 146 q-3.3 -0.4 -6.6 0 q-4 -1.6 -7.9 0 q-3.1 0.7 -6.2 0 q-4 0.7 -8 0 q-4.3 0.8 -8.6 0 q-4 0 -8 0 q-4.2 0.1 -8.3 0 q-3.6 0.8 -7.3 0 q-3.2 -1.6 -6.3 0 q-3.5 -0.9 -7 0 q-4 -1.6 -8.1 0 q-4 0.9 -8 0 q-2.7 1.5 -5.4 0 q-3.5 -1.5 -7.1 0"/><circle cx="223" cy="145.5" r="1.4" style="--k:36"/><path style="--k:37" d="M216 156.6 q-2.5 -1.4 -5 0 q-3.2 0.2 -6.4 0 q-2.5 0 -5.1 0 q-2.6 -1.4 -5.3 0 q-2.8 -0.9 -5.6 0 q-2.8 0.6 -5.5 0 q-2.6 1.4 -5.3 0 q-3.3 -0.8 -6.7 0 q-3.4 -0.2 -6.8 0 q-3.8 -0.1 -7.5 0 q-3.7 1.5 -7.4 0 q-2.6 -0.1 -5.3 0 m-5 0 q-3.3 -0.3 -6.7 0 q-2.8 0.8 -5.6 0 q-2.9 -0.7 -5.7 0 q-2.7 1.4 -5.5 0 q-3.8 0.6 -7.5 0 m-5 0"/><circle cx="223" cy="156.1" r="1.4" style="--k:37"/><path style="--k:38" d="M216 167.2 q-4.3 0.7 -8.5 0 m-5 0 q-2.7 1.6 -5.4 0 m-5 0 q-3.8 0.4 -7.7 0 q-2.5 -0.5 -5.1 0 q-2.6 -0.9 -5.2 0 q-2.8 -0.3 -5.6 0 m-5 0 q-4.2 1.4 -8.4 0 q-2.9 0.5 -5.9 0 q-3.6 1.3 -7.1 0 q-4.4 -0.2 -8.9 0 q-3.1 -1.4 -6.2 0 q-2.6 -0.1 -5.1 0 q-4.1 0.1 -8.2 0 q-4.1 -1 -8.2 0 q-4.3 0.2 -8.6 0 q-4.1 -1.5 -8.2 0"/><circle cx="223" cy="166.7" r="1.4" style="--k:38"/></g>
+  </g>
+  <g class="jn09-rod l"><rect x="28" y="12" width="14" height="172" rx="6" fill="url(#jn09-rrod)"/><rect x="31" y="4" width="8" height="10" rx="3" class="jn09-knob"/><rect x="31" y="182" width="8" height="10" rx="3" class="jn09-knob"/></g>
+  <g class="jn09-rod r"><rect x="598" y="12" width="14" height="172" rx="6" fill="url(#jn09-rrod)"/><rect x="601" y="4" width="8" height="10" rx="3" class="jn09-knob"/><rect x="601" y="182" width="8" height="10" rx="3" class="jn09-knob"/></g>
+  <g class="jn09-lab">
+    <text class="pic-lab ink b" x="520" y="142.4" text-anchor="end">kneading</text></g>
+</svg>
     </div>
     <p class="jn09-works-key rise" style="--d:3">Sowing, plowing, reaping, grinding, baking, writing, building, lighting a fire …</p>
     <p class="note step jn09-knead-go">One of them was <em>kneading</em>. By their rules, mixing spit and dirt into clay was kneading, and healing a man whose life wasn't in danger had to wait for another day.</p>
@@ -279,10 +277,16 @@
 <section class="slide ex">
   <div class="inner">
     <blockquote class="quote rise" data-q="32" data-hl="Since the world began was it not heard"></blockquote>
+    <div class="split art-narrow">
+      <figure class="art rise" style="--d:1;--kb:40% 25%"><span class="art-frame"><img src="../assets/art/tissot-healed-blind-man-tells-his-story.jpg" width="578" height="470" alt="In a temple court, a young man in a long yellow robe points across the room as he tells what happened to him, while rows of bearded elders lean over the low stone walls to listen."></span>
+        <figcaption>James Tissot, <i>The Healed Blind Man Tells His Story</i></figcaption></figure>
+      <div>
     <h2 class="rise" style="--d:1">Never been done</h2>
     <p class="note rise" style="--d:2">In all of the Old Testament, nobody born blind is ever given sight. The man is right: this had never happened. But the prophets said it would, when God himself came:</p>
     <blockquote class="quote step"><p>“Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.”</p><cite>Isaiah 35:5</cite></blockquote>
     <p class="note step">A beggar with no schooling reads the evidence better than the experts: <em>“If this man were not of God, he could do nothing.”</em></p>
+      </div>
+    </div>
   </div>
 </section>
 
